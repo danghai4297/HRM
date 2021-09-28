@@ -1,8 +1,8 @@
 import React from "react";
-import "./Sidebar.scss";
-import { SideBarData } from "./SideBarData.js";
+import "./SideBarLeft.scss";
+import { SideBarData } from "./SideBarDate";
 
-function SideBar() {
+function SideBarLeft() {
   return (
     <div className="Sidebar">
       <ul className="SidebarList">
@@ -26,4 +26,4 @@ function SideBar() {
   );
 }
 
-export default SideBar;
+export default SideBarLeft;

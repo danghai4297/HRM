@@ -1,14 +1,17 @@
 import React from "react";
 import "./App.css";
-import SideBar from './components/SidebarLeft/SideBar'
-import Header from "./components/Header/Header";
-import './components/FontAwesomeIcons/index'
+import "./components/FontAwesomeIcons/index";
+import { ListProvider } from "./Contexts/ListContext";
+import DashBoard from "./components/DashBoard/DashBoard";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <div>
-      <Header></Header>
-      <SideBar></SideBar>
+      <ListProvider>
+        <DashBoard />
+      </ListProvider>
     </div>
   );
 }

@@ -1,0 +1,69 @@
+.container {
+    display: block;
+    width: 85%;
+    height: 80%;
+
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    border-radius: 5px;
+
+    .top-excel {
+        box-shadow: 0.2rem 0.3rem 0.3rem rgb(7, 84, 35);
+        background-color: rgb(16, 124, 65);
+
+        border-radius: 5px 5px 0 0;
+        width: 100%;
+        height: 75%;
+        display: flex;
+
+        .left {
+            width: 60%;
+            height: 100%;
+            color: white;
+
+            h3 {
+                font-size: 400%;
+                margin: 0.5rem 1rem 0 0.9rem;
+            }
+
+            h5 {
+                font-size: 110%;
+                margin: 0 0 0 1.5rem;
+            }
+        }
+
+        .right {
+            width: 40%;
+            height: 100%;
+            margin: 0 0 0 2rem;
+            color: white;
+
+            .big-icon {
+                opacity: 0.8;
+                font-size: 500%;
+            }
+        }
+    }
+
+    .bot-excel {
+        box-shadow: 0.2rem 0.3rem 0.3rem rgb(7, 84, 35);
+        background-color: rgb(13, 102, 53);
+        border-radius: 0 0 5px 5px;
+        height: 25%;
+        width: 100%;
+        color: white;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 110%;
+
+        .small-icon {
+            margin: 0 0 0 0.8rem;
+            opacity: 0.6;
+        }
+    }
+}
