@@ -1,7 +1,13 @@
 import React from "react";
 import "./addProfile.scss";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import PropTypes from "prop-types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "../FontAwesomeIcons/index";
+import { useState } from "react";
+import { DatePicker } from "antd";
+import "antd/dist/antd.css";
+
 AddProfileForm.propTypes = {
   objectData: PropTypes.object,
 };
@@ -10,7 +16,14 @@ AddProfileForm.defaultProps = {
 };
 function AddProfileForm(props) {
   const { objectData } = props;
-  const { register, handleSubmit } = useForm();
+  const [checked, setCheked] = useState(false);
+  const handleClick = () => setCheked(!checked);
+  const [date, setDate] = useState(new Date());
+
+  console.log(checked);
+  console.log(date);
+
+  const { register, handleSubmit, control } = useForm();
   const onHandleSubmit = (data) => {
     console.log(data);
     objectData(data);
@@ -22,7 +35,28 @@ function AddProfileForm(props) {
         class="profile-form"
         onSubmit={handleSubmit(onHandleSubmit)}
       >
-        <div className="container-st">
+        <div className="Submit-button sticky-top">
+          <h2 className="">Thêm mới hồ sơ</h2>
+          <div className="button">
+            <input type="submit" className="btn btn-secondary " value="Huỷ" />
+            <input type="submit" className="btn btn-primary ml-3" value="Lưu" />
+          </div>
+        </div>
+        <div className="container-ava">
+          <span>
+            {" "}
+            <FontAwesomeIcon
+              className="icon"
+              icon={["fas", "user-circle"]}
+            ></FontAwesomeIcon>
+          </span>
+          <input
+            type="file"
+            {...register("img")}
+            class="form-control-file ml-2"
+          ></input>
+        </div>
+        <div className="container-div-form">
           <h3>Thông tin cơ bản</h3>
           <h5>Thông tin chung</h5>
           <div className="row">
@@ -110,12 +144,28 @@ function AddProfileForm(props) {
             <div className="col">
               <div class="form-group">
                 <label htmlFor="ngaySinh">Ngày sinh</label>
-                <input
+                {/* <input
                   type="text"
                   {...register("ngaySinh")}
                   id="ngaySinh"
                   className="form-control"
                   placeholder="DD/MM/YYYY"
+                /> */}
+                <Controller
+                  name="ngaySinh"
+                  control={control}
+                  defaultValue=""
+                  render={({ field }) => (
+                    <DatePicker
+                      // id="ngaySinh"
+                      className="form-control"
+                      placeholder="DD/MM/YYYY"
+                      format="DD/MM/YYYY"
+                      selected={date}
+                      onChange={(date) => setDate(date)}
+                      {...field}
+                    />
+                  )}
                 />
               </div>
             </div>
@@ -310,9 +360,9 @@ function AddProfileForm(props) {
           </div>
 
           <div className="row">
-            <div className="col">
+            <div className="col-6">
               <div class="form-group">
-                <label htmlFor="ngayHetHanCccd">Ngay hết hạn</label>
+                <label htmlFor="ngayHetHanCccd">Ngày hết hạn</label>
                 <input
                   type="text"
                   {...register("ngayHetHanCccd")}
@@ -323,7 +373,7 @@ function AddProfileForm(props) {
             </div>
           </div>
         </div>
-        <div className="container-sec">
+        <div className="container-div-form">
           <h3>Thông tin liên hệ</h3>
           <h5>Số điện thoại/Email/Khác</h5>
           <div className="row">
@@ -474,7 +524,7 @@ function AddProfileForm(props) {
           </div>
         </div>
 
-        <div className="container-rd">
+        <div className="container-div-form">
           <h3>Thông tin công việc</h3>
           <h5>Thông tin nhân viên</h5>
           <div className="row">
@@ -575,7 +625,7 @@ function AddProfileForm(props) {
             </div>
           </div>
           <div className="row">
-            <div className="col">
+            <div className="col-6">
               <div class="form-group">
                 <label htmlFor="chucVuHienTai">Chức vụ hiện tại</label>
                 <input
@@ -588,7 +638,7 @@ function AddProfileForm(props) {
             </div>
           </div>
           <div className="row">
-            <div className="col">
+            <div className="col-6">
               <div class="form-group">
                 <label htmlFor="trangThaiLaoDong">Trạng thái lao động</label>
                 <select
@@ -605,7 +655,7 @@ function AddProfileForm(props) {
             </div>
           </div>
           <div className="row">
-            <div className="col">
+            <div className="col-6">
               <div class="form-group">
                 <label htmlFor="tinhChatLaoDong">Tính chất lao động</label>
                 <select
@@ -627,7 +677,7 @@ function AddProfileForm(props) {
             </div>
           </div>
           <div className="row">
-            <div className="col">
+            <div className="col-6">
               <div class="form-group">
                 <label htmlFor="lyDoNghi">Lý do nghỉ</label>
                 <input
@@ -635,12 +685,13 @@ function AddProfileForm(props) {
                   {...register("lyDoNghi")}
                   id="lyDoNghi"
                   className="form-control"
+                  disabled="true"
                 />
               </div>
             </div>
           </div>
           <div className="row">
-            <div className="col">
+            <div className="col-6">
               <div class="form-group">
                 <label htmlFor="ngayNghiViec">Ngày nghỉ việc</label>
                 <input
@@ -649,12 +700,13 @@ function AddProfileForm(props) {
                   id="ngayNghiViec"
                   className="form-control"
                   placeholder="DD/MM/YYYY"
+                  disabled="true"
                 />
               </div>
             </div>
           </div>
         </div>
-        <div className="container-th">
+        <div className="container-div-form2">
           <h3>Thông tin chính trị, quân sự, y tế</h3>
           <h5>Thông tin chính trị</h5>
           <div className="row">
@@ -706,7 +758,7 @@ function AddProfileForm(props) {
             </div>
           </div>
           <div className="row">
-            <div className="col">
+            <div className="col-6">
               <div class="form-group">
                 <label htmlFor="ngayChinhThuc">Ngày chính thức</label>
                 <input
@@ -722,57 +774,64 @@ function AddProfileForm(props) {
           <h5>Thông tin quân sự</h5>
           <div className="row">
             <div className="col">
-              <div class="form-group">
-                <label htmlFor="quanNhan">Là quân nhân</label>
+              <div class="form-check mb-2">
                 <input
                   type="checkbox"
                   {...register("quanNhan")}
                   id="quanNhan"
-                  className=""
+                  className="form-check-input"
+                  onClick={handleClick}
+                  checked={checked}
                 />
+                <label className="form-check-label" htmlFor="quanNhan">
+                  Là quân nhân
+                </label>
               </div>
             </div>
             <div className="col">
-              <div className="form-group">
-                <label htmlFor="laThuongBinh">Là thương binh</label>
+              <div className="form-check">
                 <input
                   type="checkbox"
                   {...register("laThuongBinh")}
                   id="laThuongBinh"
-                  className=""
+                  className="form-check-input"
                 />
+                <label className="form-check-label" htmlFor="laThuongBinh">
+                  Là thương binh
+                </label>
               </div>
             </div>
           </div>
           <div className="row">
             <div className="col">
               <div class="form-group">
-                <label htmlFor="ngayNhapNgu">Ngày Nhập Ngũ</label>
+                <label htmlFor="ngayNhapNgu">Ngày nhập ngũ</label>
                 <input
                   type="text"
                   {...register("ngayNhapNgu")}
                   id="ngayNhapNgu"
                   className="form-control"
                   placeholder="DD/MM/YYYY"
+                  disabled={!checked}
                 />
               </div>
             </div>
             <div className="col">
-              <div className="form-group">
-                <label htmlFor="giaDinhChinhSach">
-                  Là con gia đình chính sách
-                </label>
+              <div className="form-check">
                 <input
                   type="checkbox"
                   {...register("giaDinhChinhSach")}
                   id="giaDinhChinhSach"
-                  className=""
+                  className="form-check-input"
                 />
+                <label className="form-check-label" htmlFor="giaDinhChinhSach">
+                  Là con gia đình chính sách
+                </label>
               </div>
             </div>
           </div>
           <div className="row">
-            <div className="col">
+            <div className="col-6">
               <div class="form-group">
                 <label htmlFor="ngayXuatNgu">Ngày xuất ngũ</label>
                 <input
@@ -781,12 +840,13 @@ function AddProfileForm(props) {
                   id="ngayXuatNgu"
                   className="form-control"
                   placeholder="DD/MM/YYYY"
+                  disabled={!checked}
                 />
               </div>
             </div>
           </div>
           <div className="row">
-            <div className="col">
+            <div className="col-6">
               <div class="form-group">
                 <label htmlFor="quanHam">Quân hàm cao nhất</label>
                 <input
@@ -794,6 +854,7 @@ function AddProfileForm(props) {
                   {...register("quanHam")}
                   id="quanHam"
                   className="form-control"
+                  disabled={!checked}
                 />
               </div>
             </div>
@@ -807,6 +868,7 @@ function AddProfileForm(props) {
                   {...register("danhHieu")}
                   id="danhHieu"
                   className="form-control"
+                  disabled={!checked}
                 />
               </div>
             </div>
@@ -874,19 +936,21 @@ function AddProfileForm(props) {
               </div>
             </div>
             <div className="col">
-              <div className="form-group">
-                <label htmlFor="nguoinKhuyetTat">Là người khuyết tật</label>
+              <div className="form-check">
                 <input
                   type="checkbox"
                   {...register("nguoinKhuyetTat")}
                   id="nguoinKhuyetTat"
-                  className=""
+                  className="form-check-input"
                 />
+                <label className="form-check-label" htmlFor="nguoinKhuyetTat">
+                  Là người khuyết tật
+                </label>
               </div>
             </div>
           </div>
           <div className="row">
-            <div className="col">
+            <div className="col-6">
               <div class="form-group">
                 <label htmlFor="tinhTrangSucKhoe">Tình trạng sức khoẻ</label>
                 <input
@@ -899,8 +963,8 @@ function AddProfileForm(props) {
             </div>
           </div>
         </div>
-        <input type="submit" className="btn btn-primary" />
       </form>
+      <div className="footer"></div>
     </div>
   );
 }

@@ -1,33 +1,44 @@
-.container-form {
-    width: 100%;
-    border: 1px solid black;
+.Submit-button {
+  margin-right: 2em;
+  background-color: #88bdbc;
+  padding: 1rem;
 }
 
-.profile-form {
-    width: 83rem;
-    border: 1px solid black;
+.button {
+  display: inline;
+  float: right;
 }
-
-.container-st {
-    background-color: white;
-    padding: 2rem;
-    margin: 2em;
+h2 {
+  display: inline;
+  margin-left: 2rem;
 }
-
-.container-sec {
-    background-color: white;
-    padding: 2rem;
-    margin: 2em;
+.container-div-form {
+  background-color: white;
+  padding: 2rem;
+  margin: 2em;
 }
+.container-div-form2 {
+  background-color: white;
+  padding: 2rem;
+  margin: 2em;
 
-.container-th {
-    background-color: white;
-    padding: 2rem;
-    margin: 2em;
+  input[type="checkbox"] {
+    width: 1em;
+    height: 1em;
+  }
 }
-
-.container-rd {
-    background-color: white;
-    padding: 2rem;
-    margin: 2em;
+.container-ava {
+  background-color: white;
+  height: 6rem;
+  margin: 2em;
+  .icon {
+    color: gray;
+    width: 3rem;
+    height: 3rem;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+  }
+}
+.footer {
+  height: 2em;
 }
