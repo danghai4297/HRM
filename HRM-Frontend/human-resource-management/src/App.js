@@ -1,9 +1,9 @@
 // <<<<<<< HEAD
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import AddProfile from "./components/AddProfile/AddProfile";
+import AddProfile from "./components/ScreenAddProfile/AddProfile";
 function App() {
-  return <AddProfile></AddProfile>;
+  return <AddProfile />;
   //=======
   // import React from "react";
   // import "./App.css";

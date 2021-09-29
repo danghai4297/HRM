@@ -2,15 +2,19 @@
   margin-right: 2em;
   background-color: #88bdbc;
   padding: 1rem;
+  .button {
+    display: inline;
+    float: right;
+  }
+  h2 {
+    display: inline;
+    margin-left: 2rem;
+  }
 }
-.button {
-  display: inline;
-  float: right;
+.message {
+  color: red;
 }
-h2 {
-  display: inline;
-  margin-left: 2rem;
-}
+
 .container-div-form {
   background-color: white;
   padding: 2rem;
@@ -37,8 +41,8 @@ h2 {
     margin-left: 2.8rem;
     margin-top: 0.5rem;
   }
-  input{
-      margin-left: 2em;
+  input {
+    margin-left: 2em;
   }
 }
 .footer {

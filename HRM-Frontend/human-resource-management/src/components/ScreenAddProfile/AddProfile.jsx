@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import AddProfileForm from "../AddProfileForm/AddProfileForm";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./addProfile.scss";
+import "./AddProfile.scss";
 import SideBarLeft from "../SideBarLeft/SideBarLeft";
 import Header from "../Header/Header";
 

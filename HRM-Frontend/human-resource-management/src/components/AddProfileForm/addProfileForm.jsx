@@ -1,12 +1,21 @@
 import React from "react";
-import "./addProfile.scss";
+import "./AddProfileForm.scss";
 import { Controller, useForm } from "react-hook-form";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../FontAwesomeIcons/index";
 import { useState } from "react";
-import { DatePicker } from "antd";
+//import { DatePicker } from "antd";
 import "antd/dist/antd.css";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const schema = yup
+  .object({
+    maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
+    atm: yup.string().required("Tài khoản ngân hàng không được bỏ trống."),
+  })
+  .required();
 
 AddProfileForm.propTypes = {
   objectData: PropTypes.object,
@@ -23,7 +32,16 @@ function AddProfileForm(props) {
   console.log(checked);
   //console.log(date);
 
-  const { register, handleSubmit, control } = useForm();
+  const {
+    register,
+    handleSubmit,
+    //control,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+  console.log(errors.maNhanVien);
+
   const onHandleSubmit = (data) => {
     console.log(data);
     objectData(data);
@@ -62,33 +80,54 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="maNhanVien">
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="maNhanVien"
+                >
                   Mã Nhân Viên
                 </label>
                 <input
                   type="text"
                   {...register("maNhanVien")}
                   id="maNhanVien"
-                  className="form-control col-sm-6 "
+                  className={
+                    !errors.maNhanVien
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 />
+                <span className="message col-sm-12 pr-4 text-center">
+                  {errors.maNhanVien?.message}
+                </span>
               </div>
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="atm">TK ngân hàng</label>
+                <label class="col-sm-4 justify-content-start" htmlFor="atm">
+                  TK ngân hàng
+                </label>
                 <input
                   type="text"
                   {...register("atm")}
                   id="atm"
-                  className="form-control col-sm-6"
+                  className={
+                    !errors.atm
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 />
+                <span className="message col-sm-12  text-center pl-5">
+                  {errors.atm?.message}
+                </span>
               </div>
             </div>
           </div>
           <div className="row">
             <div className="col">
               <div class="form-group form-inline ">
-                <label class="col-sm-4 justify-content-start" htmlFor="hoVaTen">Họ và tên</label>
+                <label class="col-sm-4 justify-content-start" htmlFor="hoVaTen">
+                  Họ và tên
+                </label>
                 <input
                   type="text"
                   {...register("hoVaTen")}
@@ -99,7 +138,12 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="nganHang">Ngân Hàng</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="nganHang"
+                >
+                  Ngân Hàng
+                </label>
                 <input
                   type="text"
                   {...register("nganHang")}
@@ -112,7 +156,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="gioiTinh">Giới tính</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="gioiTinh"
+                >
+                  Giới tính
+                </label>
                 <select
                   type="text"
                   {...register("gioiTinh")}
@@ -127,7 +176,9 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="honnhan">Tình trạng hôn nhân</label>
+                <label class="col-sm-4 justify-content-start" htmlFor="honnhan">
+                  Tình trạng hôn nhân
+                </label>
                 <select
                   type="text"
                   {...register("honnhan")}
@@ -145,7 +196,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="ngaySinh">Ngày sinh</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="ngaySinh"
+                >
+                  Ngày sinh
+                </label>
                 <input
                   type="text"
                   {...register("ngaySinh")}
@@ -173,7 +229,9 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="noiSinh">Nơi sinh</label>
+                <label class="col-sm-4 justify-content-start" htmlFor="noiSinh">
+                  Nơi sinh
+                </label>
                 <input
                   type="text"
                   {...register("noiSinh")}
@@ -186,7 +244,9 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="danToc">Dân tộc</label>
+                <label class="col-sm-4 justify-content-start" htmlFor="danToc">
+                  Dân tộc
+                </label>
                 <input
                   type="text"
                   {...register("danToc")}
@@ -197,7 +257,12 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="nguyenQuan">Nguyên Quán</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="nguyenQuan"
+                >
+                  Nguyên Quán
+                </label>
                 <input
                   type="text"
                   {...register("nguyenQuan")}
@@ -210,7 +275,9 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="tonGiao">Tôn giáo</label>
+                <label class="col-sm-4 justify-content-start" htmlFor="tonGiao">
+                  Tôn giáo
+                </label>
                 <input
                   type="text"
                   {...register("tonGiao")}
@@ -221,7 +288,12 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="thuongTru">HK thường trú</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="thuongTru"
+                >
+                  HK thường trú
+                </label>
                 <input
                   type="text"
                   {...register("thuongTru")}
@@ -234,7 +306,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="quocTich">Quốc tịch</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="quocTich"
+                >
+                  Quốc tịch
+                </label>
                 <input
                   type="text"
                   {...register("quocTich")}
@@ -245,7 +322,9 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="tamTru">Tạm trú</label>
+                <label class="col-sm-4 justify-content-start" htmlFor="tamTru">
+                  Tạm trú
+                </label>
                 <input
                   type="text"
                   {...register("tamTru")}
@@ -260,7 +339,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="loaiGiayTo">Loại giấy tờ</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="loaiGiayTo"
+                >
+                  Loại giấy tờ
+                </label>
                 <select
                   type="text"
                   {...register("loaiGiayTo")}
@@ -275,7 +359,9 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="hoChieu">Số Hộ chiếu</label>
+                <label class="col-sm-4 justify-content-start" htmlFor="hoChieu">
+                  Số Hộ chiếu
+                </label>
                 <input
                   type="text"
                   {...register("hoChieu")}
@@ -288,7 +374,9 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="cccd">Số CMND/CCCD</label>
+                <label class="col-sm-4 justify-content-start" htmlFor="cccd">
+                  Số CMND/CCCD
+                </label>
                 <input
                   type="text"
                   {...register("cccd")}
@@ -299,7 +387,12 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="ngayCapHoChieu">Ngày cấp Hộ chiếu</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="ngayCapHoChieu"
+                >
+                  Ngày cấp Hộ chiếu
+                </label>
                 <input
                   type="text"
                   {...register("ngayCapHoChieu")}
@@ -313,7 +406,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="ngayCapCccd">Ngày cấp(CMNN/CCCD)</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="ngayCapCccd"
+                >
+                  Ngày cấp(CMNN/CCCD)
+                </label>
                 <input
                   type="text"
                   {...register("ngayCapCccd")}
@@ -325,7 +423,12 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="NoiCapHoChieu">Nơi cấp hộ chiếu</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="NoiCapHoChieu"
+                >
+                  Nơi cấp hộ chiếu
+                </label>
                 <input
                   type="text"
                   {...register("NoiCapHoChieu")}
@@ -338,7 +441,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="noiCapCccd">Nơi cấp(CMND/CCCD)</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="noiCapCccd"
+                >
+                  Nơi cấp(CMND/CCCD)
+                </label>
                 <input
                   type="text"
                   {...register("noiCapCccd")}
@@ -349,7 +457,12 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="ngayHetHanHoChieu">Ngày hết hạn hộ chiếu</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="ngayHetHanHoChieu"
+                >
+                  Ngày hết hạn hộ chiếu
+                </label>
                 <input
                   type="text"
                   {...register("ngayHetHanHoChieu")}
@@ -364,7 +477,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col-6">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="ngayHetHanCccd">Ngày hết hạn</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="ngayHetHanCccd"
+                >
+                  Ngày hết hạn
+                </label>
                 <input
                   type="text"
                   {...register("ngayHetHanCccd")}
@@ -381,7 +499,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="dtDiDong">ĐT di động</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="dtDiDong"
+                >
+                  ĐT di động
+                </label>
                 <input
                   type="text"
                   {...register("dtDiDong")}
@@ -392,7 +515,9 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="email">Email cá nhân</label>
+                <label class="col-sm-4 justify-content-start" htmlFor="email">
+                  Email cá nhân
+                </label>
                 <input
                   type="text"
                   {...register("email")}
@@ -405,7 +530,9 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="dtKhac">ĐT khác</label>
+                <label class="col-sm-4 justify-content-start" htmlFor="dtKhac">
+                  ĐT khác
+                </label>
                 <input
                   type="text"
                   {...register("dtKhac")}
@@ -416,7 +543,12 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="facebook">Facebook</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="facebook"
+                >
+                  Facebook
+                </label>
                 <input
                   type="text"
                   {...register("facebook")}
@@ -429,7 +561,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="dtNhaRieng">ĐT nhà riêng</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="dtNhaRieng"
+                >
+                  ĐT nhà riêng
+                </label>
                 <input
                   type="text"
                   {...register("dtNhaRieng")}
@@ -440,7 +577,9 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="skype">Skype</label>
+                <label class="col-sm-4 justify-content-start" htmlFor="skype">
+                  Skype
+                </label>
                 <input
                   type="text"
                   {...register("skype")}
@@ -455,7 +594,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="lhkc_HoVaTen">Họ và tên</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="lhkc_HoVaTen"
+                >
+                  Họ và tên
+                </label>
                 <input
                   type="text"
                   {...register("lhkc_hoVaTen")}
@@ -466,7 +610,12 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="lhkc_dtNhaRieng">ĐT nhà riêng</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="lhkc_dtNhaRieng"
+                >
+                  ĐT nhà riêng
+                </label>
                 <input
                   type="text"
                   {...register("lhkc_dtNhaRieng")}
@@ -479,7 +628,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="lhkc_quanHe">Quan hệ</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="lhkc_quanHe"
+                >
+                  Quan hệ
+                </label>
                 <input
                   type="text"
                   {...register("lhkc_quanHe")}
@@ -490,7 +644,12 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="lhkc_email">Email</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="lhkc_email"
+                >
+                  Email
+                </label>
                 <input
                   type="text"
                   {...register("lhkc_email")}
@@ -503,7 +662,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="lhkc_dtDiDong">ĐT di động</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="lhkc_dtDiDong"
+                >
+                  ĐT di động
+                </label>
                 <input
                   type="text"
                   {...register("lhkc_dtDiDong")}
@@ -514,7 +678,12 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="lhkc_diaChi">Địa chỉ</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="lhkc_diaChi"
+                >
+                  Địa chỉ
+                </label>
                 <input
                   type="text"
                   {...register("lhkc_diaChi")}
@@ -532,7 +701,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="ngheNghiep">Nghề nghiệp</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="ngheNghiep"
+                >
+                  Nghề nghiệp
+                </label>
                 <input
                   type="text"
                   {...register("ngheNghiep")}
@@ -543,7 +717,12 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="congViecChinh">Công việc chính</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="congViecChinh"
+                >
+                  Công việc chính
+                </label>
                 <input
                   type="text"
                   {...register("congViecChinh")}
@@ -556,7 +735,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="ngayThuViec">Ngày thử việc</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="ngayThuViec"
+                >
+                  Ngày thử việc
+                </label>
                 <input
                   type="text"
                   {...register("ngayThuViec")}
@@ -568,7 +752,12 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="loaiHopDong">Loại hợp đồng</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="loaiHopDong"
+                >
+                  Loại hợp đồng
+                </label>
                 <input
                   type="text"
                   {...register("loaiHopDong")}
@@ -581,7 +770,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="ngayTuyenDung">Ngày tuyển dụng</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="ngayTuyenDung"
+                >
+                  Ngày tuyển dụng
+                </label>
                 <input
                   type="text"
                   {...register("ngayTuyenDung")}
@@ -592,7 +786,12 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="ngayVaoBan">Ngày vào ban</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="ngayVaoBan"
+                >
+                  Ngày vào ban
+                </label>
                 <input
                   type="text"
                   {...register("ngayVaoBan")}
@@ -605,7 +804,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label  class="col-sm-4 justify-content-start" htmlFor="coQuanTuyenDung">Cơ quan tuyển dụng</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="coQuanTuyenDung"
+                >
+                  Cơ quan tuyển dụng
+                </label>
                 <input
                   type="text"
                   {...register("coQuanTuyenDung")}
@@ -616,7 +820,12 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="ngayCongTac">Ngày công tác</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="ngayCongTac"
+                >
+                  Ngày công tác
+                </label>
                 <input
                   type="text"
                   {...register("ngayCongTac")}
@@ -629,7 +838,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col-6">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="chucVuHienTai">Chức vụ hiện tại</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="chucVuHienTai"
+                >
+                  Chức vụ hiện tại
+                </label>
                 <input
                   type="text"
                   {...register("chucVuHienTai")}
@@ -642,7 +856,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col-6">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="trangThaiLaoDong">Trạng thái lao động</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="trangThaiLaoDong"
+                >
+                  Trạng thái lao động
+                </label>
                 <select
                   type="text"
                   {...register("trangThaiLaoDong")}
@@ -659,7 +878,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col-6">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="tinhChatLaoDong">Tính chất lao động</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="tinhChatLaoDong"
+                >
+                  Tính chất lao động
+                </label>
                 <select
                   type="text"
                   {...register("tinhChatLaoDong")}
@@ -681,7 +905,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col-6">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="lyDoNghi">Lý do nghỉ</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="lyDoNghi"
+                >
+                  Lý do nghỉ
+                </label>
                 <input
                   type="text"
                   {...register("lyDoNghi")}
@@ -695,7 +924,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col-6">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="ngayNghiViec">Ngày nghỉ việc</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="ngayNghiViec"
+                >
+                  Ngày nghỉ việc
+                </label>
                 <input
                   type="text"
                   {...register("ngayNghiViec")}
@@ -714,7 +948,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="ngachCongChuc">Ngạch công chức</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="ngachCongChuc"
+                >
+                  Ngạch công chức
+                </label>
                 <input
                   type="text"
                   {...register("ngachCongChuc")}
@@ -725,7 +964,12 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="ngayVaoDoan">Ngày vào đoàn</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="ngayVaoDoan"
+                >
+                  Ngày vào đoàn
+                </label>
                 <input
                   type="text"
                   {...register("ngayVaoDoan")}
@@ -738,7 +982,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="ngayVaoDang">Ngày vào đảng</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="ngayVaoDang"
+                >
+                  Ngày vào đảng
+                </label>
                 <input
                   type="text"
                   {...register("ngayVaoDang")}
@@ -749,7 +998,12 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="NoiThamGia">Nơi tham gia</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="NoiThamGia"
+                >
+                  Nơi tham gia
+                </label>
                 <input
                   type="text"
                   {...register("NoiThamGia")}
@@ -762,7 +1016,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col-6">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="ngayChinhThuc">Ngày chính thức</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="ngayChinhThuc"
+                >
+                  Ngày chính thức
+                </label>
                 <input
                   type="text"
                   {...register("ngayChinhThuc")}
@@ -785,7 +1044,10 @@ function AddProfileForm(props) {
                   onClick={handleClick}
                   checked={checked}
                 />
-                <label className="form-check-label col-sm-4 justify-content-start " htmlFor="quanNhan">
+                <label
+                  className="form-check-label col-sm-4 justify-content-start "
+                  htmlFor="quanNhan"
+                >
                   Là quân nhân
                 </label>
               </div>
@@ -798,7 +1060,10 @@ function AddProfileForm(props) {
                   id="laThuongBinh"
                   className="form-check-input"
                 />
-                <label className="form-check-label col-sm-4 justify-content-start" htmlFor="laThuongBinh">
+                <label
+                  className="form-check-label col-sm-4 justify-content-start"
+                  htmlFor="laThuongBinh"
+                >
                   Là thương binh
                 </label>
               </div>
@@ -807,7 +1072,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="ngayNhapNgu">Ngày nhập ngũ</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="ngayNhapNgu"
+                >
+                  Ngày nhập ngũ
+                </label>
                 <input
                   type="text"
                   {...register("ngayNhapNgu")}
@@ -826,7 +1096,10 @@ function AddProfileForm(props) {
                   id="giaDinhChinhSach"
                   className="form-check-input"
                 />
-                <label className="form-check-label col-sm-4 justify-content-start" htmlFor="giaDinhChinhSach">
+                <label
+                  className="form-check-label col-sm-4 justify-content-start"
+                  htmlFor="giaDinhChinhSach"
+                >
                   Là con gia đình chính sách
                 </label>
               </div>
@@ -835,7 +1108,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col-6">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="ngayXuatNgu">Ngày xuất ngũ</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="ngayXuatNgu"
+                >
+                  Ngày xuất ngũ
+                </label>
                 <input
                   type="text"
                   {...register("ngayXuatNgu")}
@@ -850,7 +1128,9 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col-6">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="quanHam">Quân hàm cao nhất</label>
+                <label class="col-sm-4 justify-content-start" htmlFor="quanHam">
+                  Quân hàm cao nhất
+                </label>
                 <input
                   type="text"
                   {...register("quanHam")}
@@ -864,7 +1144,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col-6">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="danhHieu">DH được phong tặng cao nhất</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="danhHieu"
+                >
+                  DH được phong tặng cao nhất
+                </label>
                 <input
                   type="text"
                   {...register("danhHieu")}
@@ -880,7 +1165,9 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="nhomMau">Nhóm máu</label>
+                <label class="col-sm-4 justify-content-start" htmlFor="nhomMau">
+                  Nhóm máu
+                </label>
                 <input
                   type="text"
                   {...register("nhomMau")}
@@ -891,7 +1178,9 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="benhTat">Bệnh tật</label>
+                <label class="col-sm-4 justify-content-start" htmlFor="benhTat">
+                  Bệnh tật
+                </label>
                 <input
                   type="text"
                   {...register("benhTat")}
@@ -904,7 +1193,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="chieuCao">Chiều cao(cm)</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="chieuCao"
+                >
+                  Chiều cao(cm)
+                </label>
                 <input
                   type="text"
                   {...register("chieuCao")}
@@ -915,7 +1209,9 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="luuY">Lưu ý</label>
+                <label class="col-sm-4 justify-content-start" htmlFor="luuY">
+                  Lưu ý
+                </label>
                 <input
                   type="text"
                   {...register("luuY")}
@@ -928,7 +1224,9 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="canNang">Cân nặng(kg)</label>
+                <label class="col-sm-4 justify-content-start" htmlFor="canNang">
+                  Cân nặng(kg)
+                </label>
                 <input
                   type="text"
                   {...register("canNang")}
@@ -945,7 +1243,10 @@ function AddProfileForm(props) {
                   id="khuyetTat"
                   className="form-check-input"
                 />
-                <label className="form-check-label col-sm-4 justify-content-start" htmlFor="khuyetTat">
+                <label
+                  className="form-check-label col-sm-4 justify-content-start"
+                  htmlFor="khuyetTat"
+                >
                   Là người khuyết tật
                 </label>
               </div>
@@ -954,7 +1255,12 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col-6">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="tinhTrangSucKhoe">Tình trạng sức khoẻ</label>
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="tinhTrangSucKhoe"
+                >
+                  Tình trạng sức khoẻ
+                </label>
                 <input
                   type="text"
                   {...register("tinhTrangSucKhoe")}
