@@ -14,8 +14,8 @@ namespace HRMSolution.Data.Configurations
             builder.ToTable("DanhMucTo");
             builder.HasKey(x => x.idTo);
             builder.Property(x => x.idTo).UseIdentityColumn();
-            builder.Property(x => x.maTo).HasMaxLength(10);
-            builder.Property(x => x.tenTo).HasMaxLength(50);
+            builder.Property(x => x.maTo).HasMaxLength(10).IsRequired();
+            builder.Property(x => x.tenTo).HasMaxLength(50).IsRequired();
             builder.Property(x => x.idPhongBan).HasMaxLength(5).IsRequired();
         }
     }

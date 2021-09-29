@@ -10,12 +10,12 @@ namespace HRMSolution.Data.EF
 {
     public class HRMDbContext : DbContext
     {
-        public HRMDbContext( DbContextOptions options) : base(options)
+        public HRMDbContext(DbContextOptions options) : base(options)
         {
-            
+
         }
 
-        
+
 
         public DbSet<DanhMucChucDanh> danhMucChucDanhs { get; set; }
         public DbSet<DanhMucChucVu> danhMucChucVus { get; set; }
@@ -23,6 +23,7 @@ namespace HRMSolution.Data.EF
         public DbSet<DanhMucDanToc> danhMucDanTocs { get; set; }
         public DbSet<DanhMucKhenThuongKyLuat> danhMucKhenThuongKyLuats { get; set; }
         public DbSet<DanhMucNgachCongChuc> danhMucNgachCongChucs { get; set; }
+        public DbSet<DanhMucLoaiHopDong> danhMucLoaiHopDongs { get; set; }
         public DbSet<DanhMucNgoaiNgu> danhMucNgoaiNgus { get; set; }
         public DbSet<DanhMucNguoiThan> danhMucNguoiThans { get; set; }
         public DbSet<DanhMucPhongBan> danhMucPhongBans { get; set; }
@@ -42,6 +43,7 @@ namespace HRMSolution.Data.EF
         public DbSet<TrinhDoVanHoa> trinhDoVanHoas { get; set; }
         public DbSet<YTe> yTes { get; set; }
         public DbSet<TaiKhoan> taiKhoans { get; set; }
+        public DbSet<KhenThuongKyLuat> khenThuongKyLuats {get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -70,6 +72,8 @@ namespace HRMSolution.Data.EF
             modelBuilder.ApplyConfiguration(new TrinhDoVanHoaConfiguration());
             modelBuilder.ApplyConfiguration(new YTeConfiguration());
             modelBuilder.ApplyConfiguration(new TaiKhoanConfiguration());
+            modelBuilder.ApplyConfiguration(new KhenThuongKyLuatConfiguration());
+            modelBuilder.ApplyConfiguration(new LichSuBanThanConfiguration());
 
             modelBuilder.Entity<NhanVien>()
                 .HasOne(x => x.LichSuBanThan)
@@ -171,7 +175,6 @@ namespace HRMSolution.Data.EF
                 .HasOne(x => x.NhanVien)
                 .WithMany(x => x.KhenThuongKyLuats)
                 .HasForeignKey(x => x.maNhanVien);
-
 
             //base.OnModelCreating(modelBuilder);
         }

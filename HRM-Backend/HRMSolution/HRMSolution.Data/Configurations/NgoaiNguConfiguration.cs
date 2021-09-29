@@ -15,9 +15,9 @@ namespace HRMSolution.Data.Configurations
             builder.HasKey(x => x.id);
             builder.Property(x => x.id).UseIdentityColumn();
             builder.Property(x => x.ngayCap).HasColumnType("datetime");
-            builder.Property(x => x.trinhDo).HasMaxLength(50);
-            builder.Property(x => x.noiCap).HasMaxLength(50);
-            builder.Property(x => x.idDanhMucNgoaiNgu).IsRequired();
+            builder.Property(x => x.trinhDo).HasMaxLength(50).IsRequired();
+            builder.Property(x => x.noiCap).HasMaxLength(50).IsRequired();
+            builder.Property(x => x.idDanhMucNgoaiNgu).IsRequired().IsRequired();
             builder.Property(x => x.maNhanVien).HasMaxLength(10).IsRequired();
         }
     }

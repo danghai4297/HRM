@@ -14,11 +14,11 @@ namespace HRMSolution.Data.Configurations
             builder.ToTable("NguoiThan");
             builder.HasKey(x => x.id);
             builder.Property(x => x.id).UseIdentityColumn();
-            builder.Property(x => x.tenNguoiThan).HasMaxLength(40);
+            builder.Property(x => x.tenNguoiThan).HasMaxLength(40).IsRequired();
             builder.Property(x => x.ngaySinh).HasColumnType("datetime");
-            builder.Property(x => x.ngheNghiep).HasMaxLength(50);
-            builder.Property(x => x.diaChi).HasMaxLength(150);
-            builder.Property(x => x.dienThoai).HasMaxLength(16);
+            builder.Property(x => x.ngheNghiep).HasMaxLength(50).IsRequired();
+            builder.Property(x => x.diaChi).HasMaxLength(150).IsRequired();
+            builder.Property(x => x.dienThoai).HasMaxLength(16).IsRequired();
             builder.Property(x => x.khac).HasMaxLength(300);
             builder.Property(x => x.maNhanVien).HasMaxLength(10).IsRequired();
             builder.Property(x => x.idDanhMucNguoiThan).IsRequired();

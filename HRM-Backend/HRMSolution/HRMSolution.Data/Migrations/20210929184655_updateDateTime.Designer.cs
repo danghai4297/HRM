@@ -4,14 +4,16 @@ using HRMSolution.Data.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HRMSolution.Data.Migrations
 {
     [DbContext(typeof(HRMDbContext))]
-    partial class HRMDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210929184655_updateDateTime")]
+    partial class updateDateTime
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,7 +31,6 @@ namespace HRMSolution.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("maChucDanh")
-                        .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
@@ -39,7 +40,6 @@ namespace HRMSolution.Data.Migrations
                         .HasDefaultValue(0f);
 
                     b.Property<string>("tenChucDanh")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -58,7 +58,6 @@ namespace HRMSolution.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("maChucVu")
-                        .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
@@ -68,7 +67,6 @@ namespace HRMSolution.Data.Migrations
                         .HasDefaultValue(0f);
 
                     b.Property<string>("tenChucVu")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -87,12 +85,10 @@ namespace HRMSolution.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("maChuyenMon")
-                        .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("tenChuyenMon")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -111,7 +107,6 @@ namespace HRMSolution.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("tenDanhMuc")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -130,7 +125,6 @@ namespace HRMSolution.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("tenDanhMuc")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -149,12 +143,10 @@ namespace HRMSolution.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("maLoaiHopDong")
-                        .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("tenLoaiHopDong")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -173,7 +165,6 @@ namespace HRMSolution.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("tenNgach")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -192,7 +183,6 @@ namespace HRMSolution.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("tenDanhMuc")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -211,7 +201,6 @@ namespace HRMSolution.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("tenDanhMuc")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -230,12 +219,10 @@ namespace HRMSolution.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("maPhongBan")
-                        .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("tenPhongBan")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -273,12 +260,10 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("maTo")
-                        .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("tenTo")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -299,7 +284,6 @@ namespace HRMSolution.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("tenDanhMuc")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -318,7 +302,6 @@ namespace HRMSolution.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("tenTrinhDo")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -376,7 +359,6 @@ namespace HRMSolution.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("tenHinhThuc")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -407,7 +389,7 @@ namespace HRMSolution.Data.Migrations
                     b.Property<int>("idLoaiHopDong")
                         .HasColumnType("int");
 
-                    b.Property<float?>("luongCoBan")
+                    b.Property<float>("luongCoBan")
                         .HasColumnType("real");
 
                     b.Property<string>("maNhanVien")
@@ -431,27 +413,19 @@ namespace HRMSolution.Data.Migrations
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
-                        .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("idDanhMucKhenThuong")
                         .HasColumnType("int");
 
-                    b.Property<bool?>("loai")
-                        .HasColumnType("bit");
-
                     b.Property<string>("lyDo")
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("maNhanVien")
-                        .IsRequired()
                         .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("noiDung")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 
@@ -467,32 +441,27 @@ namespace HRMSolution.Data.Migrations
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
-                        .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("biBatDiTu")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("maNhanVien")
-                        .IsRequired()
                         .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("thamGiaChinhTri")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("thanNhanNuocNgoai")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 
                     b.HasIndex("maNhanVien")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[maNhanVien] IS NOT NULL");
 
-                    b.ToTable("LichSuBanThan");
+                    b.ToTable("lichSuBanThans");
                 });
 
             modelBuilder.Entity("HRMSolution.Data.Entities.LienHeKhanCap", b =>
@@ -505,12 +474,10 @@ namespace HRMSolution.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("diaChi")
-                        .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("dienThoai")
-                        .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
@@ -519,7 +486,6 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("hoTen")
-                        .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
@@ -528,7 +494,7 @@ namespace HRMSolution.Data.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<int?>("quanHe")
+                    b.Property<int>("quanHe")
                         .HasColumnType("int");
 
                     b.HasKey("id");
@@ -549,7 +515,6 @@ namespace HRMSolution.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("bacLuong")
-                        .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
@@ -557,7 +522,7 @@ namespace HRMSolution.Data.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<float?>("heSoLuong")
+                    b.Property<float>("heSoLuong")
                         .HasColumnType("real");
 
                     b.Property<string>("maHopDong")
@@ -571,21 +536,20 @@ namespace HRMSolution.Data.Migrations
                     b.Property<DateTime?>("ngayKetThuc")
                         .HasColumnType("datetime");
 
-                    b.Property<int?>("nhomLuong")
+                    b.Property<int>("nhomLuong")
                         .HasColumnType("int");
 
-                    b.Property<float?>("phuCapKhac")
+                    b.Property<float>("phuCapKhac")
                         .HasColumnType("real");
 
-                    b.Property<float?>("phuCapTrachNhiem")
+                    b.Property<float>("phuCapTrachNhiem")
                         .HasColumnType("real");
 
                     b.Property<string>("thoiHanLenLuong")
-                        .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<float?>("tongLuong")
+                    b.Property<float>("tongLuong")
                         .HasColumnType("real");
 
                     b.HasKey("id");
@@ -616,12 +580,10 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("datetime");
 
                     b.Property<string>("noiCap")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("trinhDo")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -644,16 +606,14 @@ namespace HRMSolution.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("diaChi")
-                        .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("dienThoai")
-                        .IsRequired()
                         .HasMaxLength(16)
                         .HasColumnType("nvarchar(16)");
 
-                    b.Property<bool?>("gioiTinh")
+                    b.Property<bool>("gioiTinh")
                         .HasColumnType("bit");
 
                     b.Property<int>("idDanhMucNguoiThan")
@@ -672,15 +632,13 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("datetime");
 
                     b.Property<string>("ngheNghiep")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int?>("quanHe")
+                    b.Property<int>("quanHe")
                         .HasColumnType("int");
 
                     b.Property<string>("tenNguoiThan")
-                        .IsRequired()
                         .HasMaxLength(40)
                         .HasColumnType("nvarchar(40)");
 
@@ -700,7 +658,6 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("anh")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -717,17 +674,14 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("cccd")
-                        .IsRequired()
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("chucVuHienTai")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("coQuanTuyenDung")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -736,7 +690,6 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("congViecChinh")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -745,12 +698,10 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("diDong")
-                        .IsRequired()
                         .HasMaxLength(16)
                         .HasColumnType("nvarchar(16)");
 
                     b.Property<string>("dienThoai")
-                        .IsRequired()
                         .HasMaxLength(16)
                         .HasColumnType("nvarchar(16)");
 
@@ -770,7 +721,6 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("nvarchar(25)");
 
                     b.Property<string>("hoTen")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -789,17 +739,17 @@ namespace HRMSolution.Data.Migrations
                     b.Property<int>("idTonGiao")
                         .HasColumnType("int");
 
-                    b.Property<bool?>("laConChinhSach")
+                    b.Property<bool>("laConChinhSach")
                         .HasColumnType("bit");
 
-                    b.Property<bool?>("laThuongBinh")
+                    b.Property<bool>("laThuongBinh")
                         .HasColumnType("bit");
 
                     b.Property<string>("lyDoNghiViec")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int?>("maSoThue")
+                    b.Property<int>("maSoThue")
                         .HasColumnType("int");
 
                     b.Property<string>("ngachCongChucNoiDung")
@@ -811,7 +761,6 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime?>("ngayCapCCCD")
-                        .IsRequired()
                         .HasColumnType("datetime");
 
                     b.Property<DateTime?>("ngayCapHoChieu")
@@ -821,7 +770,6 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("datetime");
 
                     b.Property<DateTime?>("ngayHetHanCCCD")
-                        .IsRequired()
                         .HasColumnType("datetime");
 
                     b.Property<DateTime?>("ngayHetHanHoChieu")
@@ -858,12 +806,10 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("datetime");
 
                     b.Property<string>("ngheNghiep")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("noiCapCCCD")
-                        .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
@@ -872,7 +818,6 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("nvarchar(25)");
 
                     b.Property<string>("noiSinh")
-                        .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
@@ -885,20 +830,14 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("queQuan")
-                        .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
-
-                    b.Property<string>("quocTich")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("skype")
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
                     b.Property<string>("tamTru")
-                        .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
@@ -907,7 +846,6 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("thuongTru")
-                        .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
@@ -917,7 +855,7 @@ namespace HRMSolution.Data.Migrations
                     b.Property<int>("to")
                         .HasColumnType("int");
 
-                    b.Property<bool?>("trangThaiLaoDong")
+                    b.Property<bool>("trangThaiLaoDong")
                         .HasColumnType("bit");
 
                     b.HasKey("maNhanVien");
@@ -981,7 +919,6 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("tenTruong")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -1014,13 +951,13 @@ namespace HRMSolution.Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<float?>("canNang")
+                    b.Property<float>("canNang")
                         .HasColumnType("real");
 
-                    b.Property<float?>("chieuCao")
+                    b.Property<float>("chieuCao")
                         .HasColumnType("real");
 
-                    b.Property<bool?>("khuyetTat")
+                    b.Property<bool>("khuyetTat")
                         .HasColumnType("bit");
 
                     b.Property<string>("luuY")
@@ -1115,9 +1052,7 @@ namespace HRMSolution.Data.Migrations
 
                     b.HasOne("HRMSolution.Data.Entities.NhanVien", "NhanVien")
                         .WithMany("KhenThuongKyLuats")
-                        .HasForeignKey("maNhanVien")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("maNhanVien");
 
                     b.Navigation("DanhMucKhenThuongKyLuat");
 
@@ -1128,9 +1063,7 @@ namespace HRMSolution.Data.Migrations
                 {
                     b.HasOne("HRMSolution.Data.Entities.NhanVien", "NhanVien")
                         .WithOne("LichSuBanThan")
-                        .HasForeignKey("HRMSolution.Data.Entities.LichSuBanThan", "maNhanVien")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("HRMSolution.Data.Entities.LichSuBanThan", "maNhanVien");
 
                     b.Navigation("NhanVien");
                 });
