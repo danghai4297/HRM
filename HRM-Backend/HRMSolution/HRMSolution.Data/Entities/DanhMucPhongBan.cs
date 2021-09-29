@@ -9,7 +9,7 @@ namespace HRMSolution.Data.Entities
         public int id { get; set; }
         public string maPhongBan { get; set; }
         public string tenPhongBan { get; set; }
-        public List<DanhMucTo> danhMucTos { get; set; }
-        public List<NhanVien> nhanViens { get; set; }
+        public List<DanhMucTo> DanhMucTos { get; set; }
+        public List<NhanVien> NhanViens { get; set; }
     }
 }

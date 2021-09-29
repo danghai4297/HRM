@@ -82,5 +82,6 @@ namespace HRMSolution.Data.Entities
         public DanhMucTonGiao DanhMucTonGiao { get; set; }
         public List<KhenThuongKyLuat> KhenThuongKyLuats { get; set; }
         public List<HopDong> HopDongs { get; set; }
+        public DanhMucTinhChatLaoDong DanhMucTinhChatLaoDong { get; set; }
     }
 }

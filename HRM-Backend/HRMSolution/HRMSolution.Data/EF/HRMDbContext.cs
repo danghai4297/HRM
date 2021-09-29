@@ -1,4 +1,5 @@
-﻿using HRMSolution.Data.Configurations;
+﻿
+using HRMSolution.Data.Configurations;
 using HRMSolution.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -40,6 +41,7 @@ namespace HRMSolution.Data.EF
         public DbSet<NhanVien> nhanViens { get; set; }
         public DbSet<TrinhDoVanHoa> trinhDoVanHoas { get; set; }
         public DbSet<YTe> yTes { get; set; }
+        public DbSet<TaiKhoan> taiKhoans { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -67,6 +69,7 @@ namespace HRMSolution.Data.EF
             modelBuilder.ApplyConfiguration(new NhanVienConfiguration());
             modelBuilder.ApplyConfiguration(new TrinhDoVanHoaConfiguration());
             modelBuilder.ApplyConfiguration(new YTeConfiguration());
+            modelBuilder.ApplyConfiguration(new TaiKhoanConfiguration());
 
             modelBuilder.Entity<NhanVien>()
                 .HasOne(x => x.LichSuBanThan)
@@ -82,7 +85,7 @@ namespace HRMSolution.Data.EF
                 .HasForeignKey<YTe>(x => x.maNhanVien);
             modelBuilder.Entity<NhanVien>()
                 .HasOne(x => x.DanhMucNgachCongChuc)
-                .WithMany(x => x.nhanViens)
+                .WithMany(x => x.NhanViens)
                 .HasForeignKey(x => x.idNgachCongChuc);
             modelBuilder.Entity<NhanVien>()
                 .HasOne(x => x.DanhMucDanToc)
@@ -94,19 +97,23 @@ namespace HRMSolution.Data.EF
                 .HasForeignKey(x => x.idTonGiao);
             modelBuilder.Entity<NhanVien>()
                 .HasOne(x => x.DanhMucPhongBan)
-                .WithMany(x => x.nhanViens)
+                .WithMany(x => x.NhanViens)
                 .HasForeignKey(x => x.idPhongBan);
+            modelBuilder.Entity<NhanVien>()
+                .HasOne(x => x.DanhMucTinhChatLaoDong)
+                .WithMany(x => x.NhanViens)
+                .HasForeignKey(x => x.tinhChatLaoDong);
             modelBuilder.Entity<TrinhDoVanHoa>()
                 .HasOne(x => x.HinhThucDaoTao)
-                .WithMany(x => x.trinhDoVanHoas)
+                .WithMany(x => x.TrinhDoVanHoas)
                 .HasForeignKey(x => x.idHinhThucDaoTao);
             modelBuilder.Entity<TrinhDoVanHoa>()
                 .HasOne(x => x.DanhMucTrinhDo)
-                .WithMany(x => x.trinhDoVanHoas)
+                .WithMany(x => x.TrinhDoVanHoas)
                 .HasForeignKey(x => x.idTrinhDo);
             modelBuilder.Entity<TrinhDoVanHoa>()
                 .HasOne(x => x.DanhMucChuyenMon)
-                .WithMany(x => x.trinhDoVanHoas)
+                .WithMany(x => x.TrinhDoVanHoas)
                 .HasForeignKey(x => x.idChuyenMon);
             modelBuilder.Entity<TrinhDoVanHoa>()
                 .HasOne(x => x.NhanVien)
@@ -114,7 +121,7 @@ namespace HRMSolution.Data.EF
                 .HasForeignKey(x=>x.maNhanVien);
             modelBuilder.Entity<DanhMucTo>()
                 .HasOne(x => x.DanhMucPhongBan)
-                .WithMany(x => x.danhMucTos)
+                .WithMany(x => x.DanhMucTos)
                 .HasForeignKey(x => x.idPhongBan);
             modelBuilder.Entity<Luong>()
                 .HasOne(x => x.HopDong)
@@ -122,11 +129,11 @@ namespace HRMSolution.Data.EF
                 .HasForeignKey(x => x.maHopDong);
             modelBuilder.Entity<HopDong>()
                 .HasOne(x => x.DanhMucLoaiHopDong)
-                .WithMany(x => x.hopDongs)
+                .WithMany(x => x.HopDongs)
                 .HasForeignKey(x => x.idLoaiHopDong);
             modelBuilder.Entity<HopDong>()
                 .HasOne(x => x.DanhMucChucDanh)
-                .WithMany(x => x.hopDongs)
+                .WithMany(x => x.HopDongs)
                 .HasForeignKey(x => x.idChucDanh);
             modelBuilder.Entity<HopDong>()
                 .HasOne(x => x.NhanVien)
@@ -137,20 +144,20 @@ namespace HRMSolution.Data.EF
                 .WithMany(x => x.NgoaiNgus)
                 .HasForeignKey(x => x.maNhanVien);
             modelBuilder.Entity<NgoaiNgu>()
-                .HasOne(x => x.danhMucNgoaiNgu)
-                .WithMany(x => x.ngoaiNgus)
+                .HasOne(x => x.DanhMucNgoaiNgu)
+                .WithMany(x => x.NgoaiNgus)
                 .HasForeignKey(x => x.idDanhMucNgoaiNgu);
             modelBuilder.Entity<NguoiThan>()
-                .HasOne(x => x.danhMucNguoiThan)
-                .WithMany(x => x.nguoiThans)
+                .HasOne(x => x.DanhMucNguoiThan)
+                .WithMany(x => x.NguoiThans)
                 .HasForeignKey(x => x.idDanhMucNguoiThan);
             modelBuilder.Entity<NguoiThan>()
-                .HasOne(x => x.nhanVien)
+                .HasOne(x => x.NhanVien)
                 .WithMany(x => x.NguoiThans)
                 .HasForeignKey(x => x.maNhanVien);
             modelBuilder.Entity<DieuChuyen>()
-                .HasOne(x => x.danhMucChucVu)
-                .WithMany(x => x.dieuChuyens)
+                .HasOne(x => x.DanhMucChucVu)
+                .WithMany(x => x.DieuChuyens)
                 .HasForeignKey(x => x.idChucVu);
             modelBuilder.Entity<DieuChuyen>()
                 .HasOne(x => x.NhanVien)

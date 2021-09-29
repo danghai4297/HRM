@@ -9,6 +9,6 @@ namespace HRMSolution.Data.Entities
         public int id { get; set; }
         public string maLoaiHopDong { get; set; }
         public string tenLoaiHopDong { get; set; }
-        public List<HopDong> hopDongs { get; set; }
+        public List<HopDong> HopDongs { get; set; }
     }
 }

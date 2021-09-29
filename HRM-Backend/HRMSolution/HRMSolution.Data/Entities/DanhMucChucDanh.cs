@@ -10,6 +10,6 @@ namespace HRMSolution.Data.Entities
         public string maChucDanh { get; set; }
         public string tenChucDanh { get; set; }
         public float phuCap { get; set; }
-        public List<HopDong> hopDongs { get; set; }
+        public List<HopDong> HopDongs { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace HRMSolution.Data.Entities
         public string maNhanVien { get; set; }
         public int idDanhMucNguoiThan { get; set; }
 
-        public NhanVien nhanVien { get; set; }
-        public DanhMucNguoiThan danhMucNguoiThan { get; set; }
+        public NhanVien NhanVien { get; set; }
+        public DanhMucNguoiThan DanhMucNguoiThan { get; set; }
     }
 }

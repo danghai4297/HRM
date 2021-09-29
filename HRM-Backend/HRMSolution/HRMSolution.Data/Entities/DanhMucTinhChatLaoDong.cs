@@ -8,5 +8,6 @@ namespace HRMSolution.Data.Entities
     {
         public int id { get; set; }
         public string tenTinhChat { get; set; }
+        public List<NhanVien> NhanViens { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace HRMSolution.Data.Entities
         public string trinhDo { get; set; }
         public string noiCap { get; set; }
         public string maNhanVien { get; set; }
-        public DanhMucNgoaiNgu danhMucNgoaiNgu { get; set; }
+        public DanhMucNgoaiNgu DanhMucNgoaiNgu { get; set; }
         public NhanVien NhanVien { get; set; }
     }
 }
