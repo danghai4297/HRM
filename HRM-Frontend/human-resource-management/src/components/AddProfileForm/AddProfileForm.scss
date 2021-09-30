@@ -2,17 +2,12 @@
   margin-right: 2em;
   background-color: #88bdbc;
   padding: 1rem;
-  .button {
-    display: inline;
-    float: right;
-  }
-  h2 {
-    display: inline;
-    margin-left: 2rem;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .sticky-top {
-  top: 100px;
+  //top: 100px;
 }
 .message {
   width: 20rem;

@@ -96,7 +96,9 @@ function AddProfileForm(props) {
         onSubmit={handleSubmit(onHandleSubmit)}
       >
         <div className="Submit-button sticky-top">
+          <div>
           <h2 className="">Thêm mới hồ sơ</h2>
+          </div>
           <div className="button">
             <input type="submit" className="btn btn-secondary " value="Huỷ" />
             <input type="submit" className="btn btn-primary ml-3" value="Lưu" />
