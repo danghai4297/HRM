@@ -9,13 +9,55 @@ import { useState } from "react";
 import "antd/dist/antd.css";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+const phoneRex = /([\|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})\b/;
+const number = /^\d+$/;
+const schema = yup.object({
+  maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
+  hoVaTen: yup.string().required("Họ và tên không được bỏ trống."),
+  gioiTinh: yup.string().required("Giới tính không được bỏ trống."),
+  honNhan: yup.string().required("Hôn nhân không được bỏ trống."),
+  ngaySinh: yup.string().required("Ngày sinh không được bỏ trống."),
+  noiSinh: yup.string().required("Nơi sinh không được bỏ trống."),
+  danToc: yup.string().required("Dân Tộc không được bỏ trống."),
+  nguyenQuan: yup.string().required("Nguyên quán không được bỏ trống."),
+  tonGiao: yup.string().required("Tôn giáo không được bỏ trống."),
+  thuongTru: yup.string().required("HK thường trú không được bỏ trống."),
+  quocTich: yup.string().required("Quốc tịch không được bỏ trống."),
+  tamTru: yup.string().required("Tạm trú không được bỏ trống."),
+  cccd: yup
+    .string()
+    .matches(number, "CMND/CCCD không được bỏ trống.")
+    .min(9, "CMND phải có 9 số/CCCD phải có 12 số")
+    .max(12, "CMND phải có 9 số,CCCD phải có 12 số")
+    .required(),
+  ngayCapCccd: yup.string().required("Ngày cấp CMND/CCCD không được bỏ trống."),
+  noiCapCccd: yup.string().required("Nơi cấp CMND/CCCD không được bỏ trống."),
+  ngayHetHanCccd: yup
+    .string()
+    .required("Ngày hết hạn CMND/CCCD không được bỏ trống."),
+  dtDiDong: yup
+    .string()
+    .matches(phoneRex, "Số điện thoại không được bỏ trống và là số.")
+    .required(),
+  lhkc_hoVaTen: yup.string().required("Họ và tên không được bỏ trống."),
+  lhkc_quanHe: yup.string().required("Quan hệ không được bỏ trống."),
+  lhkc_dtDiDong: yup
+    .string()
+    .matches(phoneRex, "Số điện thoại không được bỏ trống và là số.")
+    .required(),
+  lhkc_diaChi: yup.string().required("Địa chỉ không được bỏ trống."),
+  ngheNghiep:yup.string().required("Nghề nghiệp không được bỏ trống."),
+  ngayTuyenDung:yup.string().required("Ngày tuyển dụng không được bỏ trống."),
+  coQuanTuyenDung:yup.string().required("Cơ quan tuyển dụng không được bỏ trống."),
+  chucVuHienTai:yup.string().required("Chức vụ hiện tại không được bỏ trống."),
+  trangThaiLaoDong:yup.string().required("Trạng thái lao động không được bỏ trống."),
+  tinhChatLaoDong:yup.string().required("Tính chất lao động không được bỏ trống."),
+  congViecChinh:yup.string().required("Tính chất lao động không được bỏ trống."),
+  phongBan:yup.string().required("Phòng Ban động không được bỏ trống."),
+  ngachCongChuc:yup.string().required("Ngạch công chức không được bỏ trống."),
 
-const schema = yup
-  .object({
-    maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
-    atm: yup.string().required("Tài khoản ngân hàng không được bỏ trống."),
-  })
-  .required();
+});
+//.required();
 
 AddProfileForm.propTypes = {
   objectData: PropTypes.object,
@@ -96,9 +138,7 @@ function AddProfileForm(props) {
                       : "form-control col-sm-6 border-danger"
                   }
                 />
-                <span className="message col-sm-12 pr-4 text-center">
-                  {errors.maNhanVien?.message}
-                </span>
+                <span className="message">{errors.maNhanVien?.message}</span>
               </div>
             </div>
             <div className="col">
@@ -116,9 +156,7 @@ function AddProfileForm(props) {
                       : "form-control col-sm-6 border-danger"
                   }
                 />
-                <span className="message col-sm-12  text-center pl-5">
-                  {errors.atm?.message}
-                </span>
+                <span className="message">{errors.atm?.message}</span>
               </div>
             </div>
           </div>
@@ -132,8 +170,13 @@ function AddProfileForm(props) {
                   type="text"
                   {...register("hoVaTen")}
                   id="hoVaTen"
-                  className="form-control col-sm-6"
+                  className={
+                    !errors.maNhanVien
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 />
+                <span className="message">{errors.hoVaTen?.message}</span>
               </div>
             </div>
             <div className="col">
@@ -166,30 +209,40 @@ function AddProfileForm(props) {
                   type="text"
                   {...register("gioiTinh")}
                   id="gioiTinh"
-                  className="form-control col-sm-6"
+                  className={
+                    !errors.gioiTinh
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 >
                   <option value=""></option>
                   <option value="true">Nam</option>
                   <option value="false">Nữ</option>
                 </select>
+                <span className="message">{errors.gioiTinh?.message}</span>
               </div>
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="honnhan">
+                <label class="col-sm-4 justify-content-start" htmlFor="honNhan">
                   Tình trạng hôn nhân
                 </label>
                 <select
                   type="text"
-                  {...register("honnhan")}
-                  id="honnhan"
-                  className="form-control col-sm-6"
+                  {...register("honNhan")}
+                  id="honNhan"
+                  className={
+                    !errors.honNhan
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 >
                   <option value=""></option>
                   <option value="1">Độc thân</option>
                   <option value="2">Đã có gia đình</option>
                   <option value="3">Ly dị</option>
                 </select>
+                <span className="message">{errors.honNhan?.message}</span>
               </div>
             </div>
           </div>
@@ -206,9 +259,14 @@ function AddProfileForm(props) {
                   type="text"
                   {...register("ngaySinh")}
                   id="ngaySinh"
-                  className="form-control col-sm-6"
+                  className={
+                    !errors.ngaySinh
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                   placeholder="DD/MM/YYYY"
                 />
+                <span className="message">{errors.ngaySinh?.message}</span>
                 {/* <Controller
                   name="ngaySinh"
                   control={control}
@@ -236,8 +294,13 @@ function AddProfileForm(props) {
                   type="text"
                   {...register("noiSinh")}
                   id="noiSinh"
-                  className="form-control col-sm-6"
+                  className={
+                    !errors.noiSinh
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 />
+                <span className="message">{errors.noiSinh?.message}</span>
               </div>
             </div>
           </div>
@@ -247,12 +310,17 @@ function AddProfileForm(props) {
                 <label class="col-sm-4 justify-content-start" htmlFor="danToc">
                   Dân tộc
                 </label>
-                <input
+                <select
                   type="text"
                   {...register("danToc")}
                   id="danToc"
-                  className="form-control col-sm-6"
+                  className={
+                    !errors.danToc
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 />
+                <span className="message">{errors.danToc?.message}</span>
               </div>
             </div>
             <div className="col">
@@ -261,14 +329,19 @@ function AddProfileForm(props) {
                   class="col-sm-4 justify-content-start"
                   htmlFor="nguyenQuan"
                 >
-                  Nguyên Quán
+                  Nguyên quán
                 </label>
                 <input
                   type="text"
                   {...register("nguyenQuan")}
                   id="nguyenQuan"
-                  className="form-control col-sm-6"
+                  className={
+                    !errors.nguyenQuan
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 />
+                <span className="message">{errors.nguyenQuan?.message}</span>
               </div>
             </div>
           </div>
@@ -278,12 +351,17 @@ function AddProfileForm(props) {
                 <label class="col-sm-4 justify-content-start" htmlFor="tonGiao">
                   Tôn giáo
                 </label>
-                <input
+                <select
                   type="text"
                   {...register("tonGiao")}
                   id="tonGiao"
-                  className="form-control col-sm-6"
+                  className={
+                    !errors.tonGiao
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 />
+                <span className="message">{errors.tonGiao?.message}</span>
               </div>
             </div>
             <div className="col">
@@ -298,8 +376,13 @@ function AddProfileForm(props) {
                   type="text"
                   {...register("thuongTru")}
                   id="thuongTru"
-                  className="form-control col-sm-6"
+                  className={
+                    !errors.thuongTru
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 />
+                <span className="message">{errors.thuongTru?.message}</span>
               </div>
             </div>
           </div>
@@ -316,8 +399,13 @@ function AddProfileForm(props) {
                   type="text"
                   {...register("quocTich")}
                   id="quocTich"
-                  className="form-control col-sm-6"
+                  className={
+                    !errors.quocTich
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 />
+                <span className="message">{errors.quocTich?.message}</span>
               </div>
             </div>
             <div className="col">
@@ -329,8 +417,13 @@ function AddProfileForm(props) {
                   type="text"
                   {...register("tamTru")}
                   id="tamTru"
-                  className="form-control col-sm-6"
+                  className={
+                    !errors.tamTru
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 />
+                <span className="message">{errors.tamTru?.message}</span>
               </div>
             </div>
           </div>
@@ -339,22 +432,20 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label
-                  class="col-sm-4 justify-content-start"
-                  htmlFor="loaiGiayTo"
-                >
-                  Loại giấy tờ
+                <label class="col-sm-4 justify-content-start" htmlFor="cccd">
+                  Số CMND/CCCD
                 </label>
-                <select
+                <input
                   type="text"
-                  {...register("loaiGiayTo")}
-                  id="loaiGiayTo"
-                  className="form-control col-sm-6"
-                >
-                  <option value=""></option>
-                  <option value="CMND">CMND</option>
-                  <option value="CCCD">CCCD</option>
-                </select>
+                  {...register("cccd")}
+                  id="cccd"
+                  className={
+                    !errors.cccd
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
+                />
+                <span className="message">{errors.cccd?.message}</span>
               </div>
             </div>
             <div className="col">
@@ -374,15 +465,24 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="cccd">
-                  Số CMND/CCCD
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="ngayCapCccd"
+                >
+                  Ngày cấp(CMNN/CCCD)
                 </label>
                 <input
                   type="text"
-                  {...register("cccd")}
-                  id="cccd"
-                  className="form-control col-sm-6"
+                  {...register("ngayCapCccd")}
+                  id="ngayCapCccd"
+                  className={
+                    !errors.ngayCapCccd
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
+                  placeholder="DD/MM/YYYY"
                 />
+                <span className="message">{errors.ngayCapCccd?.message}</span>
               </div>
             </div>
             <div className="col">
@@ -408,17 +508,21 @@ function AddProfileForm(props) {
               <div class="form-group form-inline">
                 <label
                   class="col-sm-4 justify-content-start"
-                  htmlFor="ngayCapCccd"
+                  htmlFor="noiCapCccd"
                 >
-                  Ngày cấp(CMNN/CCCD)
+                  Nơi cấp(CMND/CCCD)
                 </label>
                 <input
                   type="text"
-                  {...register("ngayCapCccd")}
-                  id="ngayCapCccd"
-                  className="form-control col-sm-6"
-                  placeholder="DD/MM/YYYY"
+                  {...register("noiCapCccd")}
+                  id="noiCapCccd"
+                  className={
+                    !errors.noiCapCccd
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 />
+                <span className="message">{errors.noiCapCccd?.message}</span>
               </div>
             </div>
             <div className="col">
@@ -443,16 +547,24 @@ function AddProfileForm(props) {
               <div class="form-group form-inline">
                 <label
                   class="col-sm-4 justify-content-start"
-                  htmlFor="noiCapCccd"
+                  htmlFor="ngayHetHanCccd"
                 >
-                  Nơi cấp(CMND/CCCD)
+                  Ngày hết hạn
                 </label>
                 <input
                   type="text"
-                  {...register("noiCapCccd")}
-                  id="noiCapCccd"
-                  className="form-control col-sm-6"
+                  {...register("ngayHetHanCccd")}
+                  id="ngayHetHanCccd"
+                  className={
+                    !errors.ngayHetHanCccd
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
+                  placeholder="DD/MM/YYYY"
                 />
+                <span className="message">
+                  {errors.ngayHetHanCccd?.message}
+                </span>
               </div>
             </div>
             <div className="col">
@@ -469,25 +581,6 @@ function AddProfileForm(props) {
                   id="ngayHetHanHoChieu"
                   className="form-control col-sm-6"
                   placeholder="DD/MM/YYYY"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="col-6">
-              <div class="form-group form-inline">
-                <label
-                  class="col-sm-4 justify-content-start"
-                  htmlFor="ngayHetHanCccd"
-                >
-                  Ngày hết hạn
-                </label>
-                <input
-                  type="text"
-                  {...register("ngayHetHanCccd")}
-                  id="ngayHetHanCccd"
-                  className="form-control col-sm-6"
                 />
               </div>
             </div>
@@ -509,8 +602,13 @@ function AddProfileForm(props) {
                   type="text"
                   {...register("dtDiDong")}
                   id="dtDiDong"
-                  className="form-control col-sm-6"
+                  className={
+                    !errors.dtDiDong
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 />
+                <span className="message">{errors.dtDiDong?.message}</span>
               </div>
             </div>
             <div className="col">
@@ -596,7 +694,7 @@ function AddProfileForm(props) {
               <div class="form-group form-inline">
                 <label
                   class="col-sm-4 justify-content-start"
-                  htmlFor="lhkc_HoVaTen"
+                  htmlFor="lhkc_hoVaTen"
                 >
                   Họ và tên
                 </label>
@@ -604,42 +702,13 @@ function AddProfileForm(props) {
                   type="text"
                   {...register("lhkc_hoVaTen")}
                   id="lhkc_hoVaTen"
-                  className="form-control col-sm-6"
+                  className={
+                    !errors.lhkc_hoVaTen
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 />
-              </div>
-            </div>
-            <div className="col">
-              <div className="form-group form-inline">
-                <label
-                  class="col-sm-4 justify-content-start"
-                  htmlFor="lhkc_dtNhaRieng"
-                >
-                  ĐT nhà riêng
-                </label>
-                <input
-                  type="text"
-                  {...register("lhkc_dtNhaRieng")}
-                  id="lhkc_dtNhaRieng"
-                  className="form-control col-sm-6"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <div class="form-group form-inline">
-                <label
-                  class="col-sm-4 justify-content-start"
-                  htmlFor="lhkc_quanHe"
-                >
-                  Quan hệ
-                </label>
-                <input
-                  type="text"
-                  {...register("lhkc_quanHe")}
-                  id="lhkc_quanHe"
-                  className="form-control col-sm-6"
-                />
+                <span className="message">{errors.lhkc_hoVaTen?.message}</span>
               </div>
             </div>
             <div className="col">
@@ -664,16 +733,21 @@ function AddProfileForm(props) {
               <div class="form-group form-inline">
                 <label
                   class="col-sm-4 justify-content-start"
-                  htmlFor="lhkc_dtDiDong"
+                  htmlFor="lhkc_quanHe"
                 >
-                  ĐT di động
+                  Quan hệ
                 </label>
                 <input
                   type="text"
-                  {...register("lhkc_dtDiDong")}
-                  id="lhkc_dtDiDong"
-                  className="form-control col-sm-6"
+                  {...register("lhkc_quanHe")}
+                  id="lhkc_quanHe"
+                  className={
+                    !errors.lhkc_quanHe
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 />
+                <span className="message">{errors.lhkc_quanHe?.message}</span>
               </div>
             </div>
             <div className="col">
@@ -688,8 +762,36 @@ function AddProfileForm(props) {
                   type="text"
                   {...register("lhkc_diaChi")}
                   id="lhkc_diaChi"
-                  className="form-control col-sm-6"
+                  className={
+                    !errors.lhkc_diaChi
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 />
+                <span className="message">{errors.lhkc_diaChi?.message}</span>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-6">
+              <div class="form-group form-inline">
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="lhkc_dtDiDong"
+                >
+                  ĐT di động
+                </label>
+                <input
+                  type="text"
+                  {...register("lhkc_dtDiDong")}
+                  id="lhkc_dtDiDong"
+                  className={
+                    !errors.lhkc_dtDiDong
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
+                />
+                <span className="message">{errors.lhkc_dtDiDong?.message}</span>
               </div>
             </div>
           </div>
@@ -711,8 +813,13 @@ function AddProfileForm(props) {
                   type="text"
                   {...register("ngheNghiep")}
                   id="ngheNghiep"
-                  className="form-control col-sm-6"
+                  className={
+                    !errors.ngheNghiep
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 />
+                <span className="message">{errors.ngheNghiep?.message}</span>
               </div>
             </div>
             <div className="col">
@@ -727,8 +834,13 @@ function AddProfileForm(props) {
                   type="text"
                   {...register("congViecChinh")}
                   id="congViecChinh"
-                  className="form-control col-sm-6"
+                  className={
+                    !errors.congViecChinh
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 />
+                <span className="message">{errors.congViecChinh?.message}</span>
               </div>
             </div>
           </div>
@@ -754,14 +866,14 @@ function AddProfileForm(props) {
               <div className="form-group form-inline">
                 <label
                   class="col-sm-4 justify-content-start"
-                  htmlFor="loaiHopDong"
+                  htmlFor="ngayCongTac"
                 >
-                  Loại hợp đồng
+                  Ngày công tác
                 </label>
                 <input
                   type="text"
-                  {...register("loaiHopDong")}
-                  id="loaiHopDong"
+                  {...register("ngayCongTac")}
+                  id="ngayCongTac"
                   className="form-control col-sm-6"
                 />
               </div>
@@ -780,8 +892,13 @@ function AddProfileForm(props) {
                   type="text"
                   {...register("ngayTuyenDung")}
                   id="ngayTuyenDung"
-                  className="form-control col-sm-6"
+                  className={
+                    !errors.ngayTuyenDung
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 />
+                 <span className="message">{errors.ngayTuyenDung?.message}</span>
               </div>
             </div>
             <div className="col">
@@ -797,6 +914,7 @@ function AddProfileForm(props) {
                   {...register("ngayVaoBan")}
                   id="ngayVaoBan"
                   className="form-control col-sm-6"
+                  placeholder="DD/MM/YYYY"
                 />
               </div>
             </div>
@@ -814,29 +932,39 @@ function AddProfileForm(props) {
                   type="text"
                   {...register("coQuanTuyenDung")}
                   id="coQuanTuyenDung"
-                  className="form-control col-sm-6"
+                  className={
+                    !errors.coQuanTuyenDung
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 />
+                 <span className="message">{errors.coQuanTuyenDung?.message}</span>
               </div>
             </div>
             <div className="col">
               <div className="form-group form-inline">
                 <label
                   class="col-sm-4 justify-content-start"
-                  htmlFor="ngayCongTac"
+                  htmlFor="phongBan"
                 >
-                  Ngày công tác
+                  Phòng Ban
                 </label>
-                <input
+                <select
                   type="text"
-                  {...register("ngayCongTac")}
-                  id="ngayCongTac"
-                  className="form-control col-sm-6"
+                  {...register("phongBan")}
+                  id="phongBan"
+                  className={
+                    !errors.phongBan
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 />
+                 <span className="message">{errors.phongBan?.message}</span>
               </div>
             </div>
           </div>
           <div className="row">
-            <div className="col-6">
+            <div className="col">
               <div class="form-group form-inline">
                 <label
                   class="col-sm-4 justify-content-start"
@@ -848,6 +976,24 @@ function AddProfileForm(props) {
                   type="text"
                   {...register("chucVuHienTai")}
                   id="chucVuHienTai"
+                  className={
+                    !errors.chucVuHienTai
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
+                />
+                <span className="message">{errors.chucVuHienTai?.message}</span>
+              </div>
+            </div>
+            <div className="col">
+              <div class="form-group form-inline">
+                <label class="col-sm-4 justify-content-start" htmlFor="to">
+                  Tổ
+                </label>
+                <select
+                  type="text"
+                  {...register("to")}
+                  id="to"
                   className="form-control col-sm-6"
                 />
               </div>
@@ -866,14 +1012,20 @@ function AddProfileForm(props) {
                   type="text"
                   {...register("trangThaiLaoDong")}
                   id="trangThaiLaoDong"
-                  className="form-control col-sm-6"
+                  className={
+                    !errors.trangThaiLaoDong
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 >
                   <option value=""></option>
                   <option value="true">Đang làm việc</option>
                   <option value="false">Đã nghỉ việc</option>
                 </select>
+                <span className="message">{errors.trangThaiLaoDong?.message}</span>
               </div>
             </div>
+            
           </div>
           <div className="row">
             <div className="col-6">
@@ -888,7 +1040,11 @@ function AddProfileForm(props) {
                   type="text"
                   {...register("tinhChatLaoDong")}
                   id="tinhChatLaoDong"
-                  className="form-control col-sm-6"
+                  className={
+                    !errors.tinhChatLaoDong
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 >
                   <option value=""></option>
                   <option value="">Thực tập sinh</option>
@@ -899,6 +1055,7 @@ function AddProfileForm(props) {
                   <option value="">Nghỉ thai sản</option>
                   <option value="">Khác</option>
                 </select>
+                <span className="message">{errors.tinhChatLaoDong?.message}</span>
               </div>
             </div>
           </div>
@@ -958,8 +1115,13 @@ function AddProfileForm(props) {
                   type="text"
                   {...register("ngachCongChuc")}
                   id="ngachCongChuc"
-                  className="form-control col-sm-6"
+                  className={
+                    !errors.ngachCongChuc
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
                 />
+                 <span className="message">{errors.ngachCongChuc?.message}</span>
               </div>
             </div>
             <div className="col">
