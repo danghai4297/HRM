@@ -8,7 +8,6 @@ import {
   usePagination,
   useRowSelect,
 } from "react-table";
-import GlobalFilter from "../GlobalFilter/GlobalFilter";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -70,6 +69,7 @@ function TablePagination(props) {
   );
 
   const { pageIndex, pageSize, globalFilter, selectedRowIds } = state;
+
   const [chooseCol, setChooseCol] = useState(false);
 
   function disableChooseCol() {
@@ -78,31 +78,53 @@ function TablePagination(props) {
 
   return (
     <>
-      <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
-      <div>
-        <div>
-          {/* <IndeterminateCheckbox {...getToggleHideAllColumnsProps()} /> */}
-          <input type="checkbox" {...getToggleHideAllColumnsProps()} />
-          Toggle All
-        </div>
-        <div>
-          <button onClick={disableChooseCol}>Choose Col</button>
-        </div>
+      <div className="herder-table">
+        <div className="check-col">
+          <div>
+            <button className="btn-fil" onClick={disableChooseCol}>
+              <FontAwesomeIcon icon={["fas", "filter"]} />
+            </button>
 
-        {chooseCol && (
-          <div className="choose-col">
-            {allColumns.map((column) => (
-              <div className="item-chooseCol" key={column.id}>
-                <label>
-                  <input type="checkbox" {...column.getToggleHiddenProps()} />{" "}
-                  {column.id}
-                </label>
+            <label className="form-check-label" style={{ marginLeft: "1rem" }}>
+              <input
+                type="checkbox"
+                className="form-check-input"
+                {...getToggleHideAllColumnsProps()}
+              />
+              Hiển thị tất cả
+            </label>
+            {chooseCol && (
+              <div className="choose-col form-check">
+                {allColumns.map((column) => (
+                  <div className="item-chooseCol form-check" key={column.id}>
+                    <label className="form-check-label">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        {...column.getToggleHiddenProps()}
+                      />{" "}
+                      {column.id}
+                    </label>
+                  </div>
+                ))}
               </div>
-            ))}
+            )}
           </div>
-        )}
+        </div>
+        <div className="search-table">
+          <input
+            className="search-input"
+            placeholder="Search"
+            aria-label="true"
+            value={globalFilter || ""}
+            onChange={(e) => setGlobalFilter(e.target.value)}
+          />
+          <span className="icon-search">
+            <FontAwesomeIcon icon={["fas", "search"]} />
+          </span>
+        </div>
       </div>
-      <table {...getTableProps()} className="table table-striped">
+      <table {...getTableProps()} className="tablee-nv table table-striped">
         <thead className="thead-dark">
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
@@ -140,49 +162,71 @@ function TablePagination(props) {
           })}
         </tbody>
       </table>
-      <div>
-        <span>
-          Page{" "}
-          <strong>
-            {pageIndex + 1} of {pageOptions.length}
-          </strong>{" "}
-        </span>
-        <span>
-          | go to page :{" "}
-          <input
-            type="number"
-            defaultValue={pageIndex + 1}
-            onChange={(e) => {
-              const pageNumber = e.target.value
-                ? Number(e.target.value) - 1
-                : 0;
-              gotoPage(pageNumber);
-            }}
-            style={{ width: "50px" }}
-          />
-        </span>{" "}
-        <select
-          value={pageSize}
-          onChange={(e) => setPageSize(Number(e.target.value))}
-        >
-          {[10, 25, 50].map((pageSize) => (
-            <option key={pageSize} value={pageSize}>
-              Show {pageSize}
-            </option>
-          ))}
-        </select>
-        <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-          {"<<"}
-        </button>
-        <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-          Pre
-        </button>
-        <button onClick={() => nextPage()} disabled={!canNextPage}>
-          Next
-        </button>
-        <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-          {">>"}
-        </button>
+      <div className="footer-table">
+        <div className="f-table-left">
+          {/* page */}
+          <h6>
+            Trang {pageIndex + 1} Tổng {pageOptions.length}
+          </h6>
+          {/* show item */}
+          <select
+            className="select-item custom-select"
+            value={pageSize}
+            onChange={(e) => setPageSize(Number(e.target.value))}
+          >
+            {[10, 25, 50].map((pageSize) => (
+              <option key={pageSize} value={pageSize}>
+                {pageSize}
+              </option>
+            ))}
+          </select>
+        </div>
+        {/* next pre page */}
+        <div className="f-table-right">
+          {/* go to page */}
+          <span>
+            | Đến trang :{" "}
+            <input
+              type="number"
+              defaultValue={pageIndex + 1}
+              onChange={(e) => {
+                const pageNumber = e.target.value
+                  ? Number(e.target.value) - 1
+                  : 0;
+                gotoPage(pageNumber);
+              }}
+              style={{ width: "50px" }}
+            />
+          </span>{" "}
+          <button
+            className="btn-next-pre"
+            onClick={() => gotoPage(0)}
+            disabled={!canPreviousPage}
+          >
+            <FontAwesomeIcon icon={["fas", "angle-double-left"]} />
+          </button>
+          <button
+            className="btn-next-pre"
+            onClick={() => previousPage()}
+            disabled={!canPreviousPage}
+          >
+            <FontAwesomeIcon icon={["fas", "angle-left"]} />
+          </button>
+          <button
+            className="btn-next-pre"
+            onClick={() => nextPage()}
+            disabled={!canNextPage}
+          >
+            <FontAwesomeIcon icon={["fas", "angle-right"]} />
+          </button>
+          <button
+            className="btn-next-pre"
+            onClick={() => gotoPage(pageCount - 1)}
+            disabled={!canNextPage}
+          >
+            <FontAwesomeIcon icon={["fas", "angle-double-right"]} />
+          </button>
+        </div>
       </div>
       {/* <p>Selected Rows: {Object.keys(selectedRowIds).length}</p>
       <pre>

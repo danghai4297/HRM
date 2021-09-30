@@ -2,15 +2,15 @@ import React from "react";
 import "./App.css";
 import "./components/FontAwesomeIcons/index";
 import { ListProvider } from "./Contexts/ListContext";
-import DashBoard from "./components/DashBoard/DashBoard";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import ScreenTableNV from "./components/ScreenTableNV/ScreenTableNV";
 
 function App() {
   return (
     <div>
       <ListProvider>
-        <DashBoard />
+        <ScreenTableNV />
       </ListProvider>
     </div>
   );
