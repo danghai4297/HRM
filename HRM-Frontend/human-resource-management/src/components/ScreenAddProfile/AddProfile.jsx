@@ -12,19 +12,20 @@ const onHandleAdd = (profile) => {
 };
 function AddProfile(props) {
   return (
-    <div className="container">
-      <header className="header">
-        <Header />
-      </header>
-      <div className="body-contents">
-        <div className="menu-bar">
-          <SideBarLeft />
-        </div>
-        <div className="content">
-          <AddProfileForm objectData={onHandleAdd}></AddProfileForm>
-        </div>
-      </div>
-    </div>
+    // <div className="container">
+    //   <header className="header">
+    //     <Header />
+    //   </header>
+    //   <div className="body-contents">
+    //     <div className="menu-bar">
+    //       <SideBarLeft />
+    //     </div>
+    //     <div className="content">
+
+    //     </div>
+    //   </div>
+    // </div>
+    <AddProfileForm objectData={onHandleAdd}></AddProfileForm>
   );
 }
 

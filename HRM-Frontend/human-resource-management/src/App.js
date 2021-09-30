@@ -2,8 +2,9 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AddProfile from "./components/ScreenAddProfile/AddProfile";
+import ScreenProject from "./components/ScreenProject/ScreenProject";
 function App() {
-  return <AddProfile />;
+  return <ScreenProject />;
   //=======
   // import React from "react";
   // import "./App.css";
