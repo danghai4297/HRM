@@ -1,105 +1,63 @@
-// html,
-// body {
-//     width: 100%;
-//     height: 100%;
-// }
+.item-dash-board {
+    // border: 1px solid black;
 
-.dash-board {
-    min-width: 99vw;
-    min-height: 100vh;
-    position: relative;
-}
-
-.header {
-    width: auto;
-    position: sticky;
-    height: 10%;
-
-    top: 0;
-    z-index: 1;
-    box-shadow: 0 4px 2px -2px;
-}
-
-.body-contents {
-    background-color: rgb(136, 189, 188);
-    display: flex;
     width: 100%;
-    min-height: 100vh;
+    height: 15rem;
 
-    .menu-bar {
-        min-height: 100%;
-        width: 15%;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    .content {
-        // border: 1px solid black;
+    .item-da {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        width: 90%;
         height: 100%;
-        margin-top: 1%;
-
-        .item-dash-board {
-            // border: 1px solid black;
-
-            width: 100%;
-            height: 15rem;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            .item-da {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                height: 100%;
-                width: 25%;
-            }
-        }
-
-        .excel-item {
-            // border: 1px solid black;
-            width: 50%;
-            height: 15rem;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            .item-da {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                height: 100%;
-                width: 50%;
-            }
-        }
-
-        .two-table {
-            // border: 1px solid black;
-
-            margin-top: 5rem;
-            display: flex;
-            justify-content: space-around;
-            .tablex {
-                background-color: white;
-                border-radius: 0.2rem;
-                border-top: 3px solid rgb(156, 155, 155);
-                border-bottom: 2px solid rgb(156, 155, 155);
-
-                margin: 1rem;
-                box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.6);
-            }
-            // .table-one {
-            //     margin-left: 1rem;
-            //     margin-right: 1rem;
-            // }
-            // .table-two {
-            //     margin-left: 1rem;
-            //     margin-right: 1rem;
-            // }
-        }
+        width: 25%;
     }
+}
+
+.excel-item {
+    // border: 1px solid black;
+    width: 50%;
+    height: 15rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .item-da {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 100%;
+        width: 50%;
+    }
+}
+
+.two-table {
+    // border: 1px solid black;
+
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-around;
+    .tablex {
+        background-color: white;
+        border-radius: 0.2rem;
+        border-top: 3px solid rgb(156, 155, 155);
+        border-bottom: 2px solid rgb(156, 155, 155);
+
+        margin: 1rem;
+        box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.6);
+    }
+    // .table-one {
+    //     margin-left: 1rem;
+    //     margin-right: 1rem;
+    // }
+    // .table-two {
+    //     margin-left: 1rem;
+    //     margin-right: 1rem;
+    // }
 }

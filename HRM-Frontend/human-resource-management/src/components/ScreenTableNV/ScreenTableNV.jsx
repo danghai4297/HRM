@@ -49,30 +49,22 @@ function ScreenTableNV(props) {
   const { list } = useContext(ListContext);
   console.log(list);
   return (
-    <div className="Screen-nv">
-      <div className="herder">
-        <Header />
-      </div>
-      <div className="body-contents">
-        <div className="menu-bar">
-          <SideBarLeft />
+    <>
+      <div className="herder-content sticky-top">
+        <div>
+          <h2 className="">Tất cả nhân viên</h2>
         </div>
-        <div className="content">
-          <div className="herder-content">
-            <h2 className="">Tất cả nhân viên</h2>
-            <div className="button">
-              <input type="submit" className="btn btn-primary " value="Thêm" />
-              <button className="btn-fil" type="submit">
-                <FontAwesomeIcon icon={["fas", "download"]} />
-              </button>
-            </div>
-          </div>
-          <div className="table-nv">
-            <TablePagination columns={columns} data={list} />
-          </div>
+        <div className="button">
+          <input type="submit" className="btn btn-primary " value="Thêm" />
+          <button className="btn-fil" type="submit">
+            <FontAwesomeIcon icon={["fas", "download"]} />
+          </button>
         </div>
       </div>
-    </div>
+      <div className="table-nv">
+        <TablePagination columns={columns} data={list} />
+      </div>
+    </>
   );
 }
 

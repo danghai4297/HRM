@@ -51,64 +51,54 @@ function DashBoard(props) {
   console.log(list);
 
   return (
-    <div className="dash-board">
-      <div className="header">
-        <Header />
-      </div>
-      <div className="body-contents">
-        <div className="menu-bar">
-          <SideBarLeft />
+    <>
+      <div className="item-dash-board">
+        <div className="item-da">
+          <ItemDashBoard
+            totalEmployees="110"
+            fontIcon="users"
+            title="nhan vien"
+          />
         </div>
-        <div className="content">
-          <div className="item-dash-board">
-            <div className="item-da">
-              <ItemDashBoard
-                totalEmployees="110"
-                fontIcon="users"
-                title="nhan vien"
-              />
-            </div>
-            <div className="item-da">
-              <ItemDashBoard
-                totalEmployees="11"
-                fontIcon="building"
-                title="Phong ban"
-              />
-            </div>
-            <div className="item-da">
-              <ItemDashBoard
-                totalEmployees="110"
-                fontIcon="money-check-alt"
-                title="Luong n.vien"
-              />
-            </div>
-            <div className="item-da">
-              <ItemDashBoard
-                totalEmployees="12"
-                fontIcon="users-slash"
-                title="N.vien nghi viec"
-              />
-            </div>
-          </div>
-          <div className="excel-item">
-            <div className="item-da">
-              <ItemExcel title="nhan vien" />
-            </div>
-            <div className="item-da">
-              <ItemExcel title="luong nhan vien" />
-            </div>
-          </div>
-          <div className="two-table">
-            <div className="tablex table-one">
-              <TablePagination columns={columns} data={list} />
-            </div>
-            <div className="tablex table-two">
-              <TablePagination columns={columns} data={list} />
-            </div>
-          </div>
+        <div className="item-da">
+          <ItemDashBoard
+            totalEmployees="11"
+            fontIcon="building"
+            title="Phong ban"
+          />
+        </div>
+        <div className="item-da">
+          <ItemDashBoard
+            totalEmployees="110"
+            fontIcon="money-check-alt"
+            title="Luong n.vien"
+          />
+        </div>
+        <div className="item-da">
+          <ItemDashBoard
+            totalEmployees="12"
+            fontIcon="users-slash"
+            title="N.vien nghi viec"
+          />
         </div>
       </div>
-    </div>
+      <div className="excel-item">
+        <div className="item-da">
+          <ItemExcel title="nhan vien" />
+        </div>
+        <div className="item-da">
+          <ItemExcel title="luong nhan vien" />
+        </div>
+      </div>
+      <div className="two-table">
+        <div className="tablex table-one">
+          <TablePagination columns={columns} data={list} />
+        </div>
+        <div className="tablex table-two">
+          <TablePagination columns={columns} data={list} />
+        </div>
+      </div>
+    </>
   );
 }
 

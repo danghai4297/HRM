@@ -5,6 +5,10 @@
     cursor: pointer;
 }
 
+// .sticky-top{
+//     top: 100px i
+// }
+
 .tablee-nv {
     min-height: 38rem;
 }
@@ -50,7 +54,15 @@ tr > td:last-child:hover {
     transition: 0.8s ease-in-out;
     cursor: pointer;
     margin: 1rem;
+
+    position: sticky;
+    top: 9.8rem;
 }
+
+// .thead-dark {
+//     position: sticky;
+//     top: 9.8rem;
+// }
 
 .search-input {
     width: 0;

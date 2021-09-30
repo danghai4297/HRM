@@ -5,6 +5,7 @@ import Header from "../Header/Header";
 import SideBarLeft from "../SideBarLeft/SideBarLeft";
 
 import PropTypes from "prop-types";
+import ScreenTableNV from "../ScreenTableNV/ScreenTableNV";
 
 function ScreenProject(props) {
   return (
@@ -16,7 +17,10 @@ function ScreenProject(props) {
         <div className="menu-bar">
           <SideBarLeft />
         </div>
-        <div className="content">{/* Noi dung trang */}</div>
+        <div className="content">
+          {/* Noi dung trang */}
+          <ScreenTableNV />
+        </div>
       </div>
     </div>
   );
