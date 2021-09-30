@@ -4,13 +4,13 @@ import "./components/FontAwesomeIcons/index";
 import { ListProvider } from "./Contexts/ListContext";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import ScreenTableNV from "./components/ScreenTableNV/ScreenTableNV";
+import ScreenProject from "./components/ScreenProject/ScreenProject";
 
 function App() {
   return (
     <div>
       <ListProvider>
-        <ScreenTableNV />
+        <ScreenProject />
       </ListProvider>
     </div>
   );
