@@ -60,7 +60,6 @@ function DashBoard(props) {
           <div className="two-table"></div>
         </div>
       </div>
-      //{" "}
     </div>
   );
 }

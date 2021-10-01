@@ -1,74 +1,74 @@
-html,
-body {
-    width: 100%;
-    height: 100%;
-}
+// html,
+// body {
+//     width: 100%;
+//     height: 100%;
+// }
 
-.dash-board {
-    width: 100vw;
-    height: 100vh;
-}
+// .dash-board {
+//     width: 100vw;
+//     height: 100vh;
+// }
 
 
-.header{
+// .header{
     
-    height: 8%;
-    width: 100%;
-}
+//     height: 8%;
+//     width: 100%;
+// }
 
-.body-contents {
-    background-color: rgb(136, 189, 188);
-    display: flex;
-    width: 100%;
-    height: 100%;
+// .body-contents {
+//     background-color: rgb(136, 189, 188);
+//     display: flex;
+//     width: 100%;
+//     height: 100%;
 
-    .menu-bar {
-        height: 100%;
-        width: 15%;
-    }
+//     .menu-bar {
+//         height: 100%;
+//         width: 15%;
+//     }
 
-    .content {
-        width: 85%;
-        height: 100%;
-        margin-top: 1%;
+//     .content {
+//         width: 85%;
+//         height: 100%;
+//         margin-top: 1%;
 
-        .item-dash-board {
-            // border: 1px solid black;
+//         .item-dash-board {
+//             // border: 1px solid black;
 
-            width: 100%;
-            height: 25%;
+//             width: 100%;
+//             height: 25%;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
 
-            .item-da {
-                display: flex;
-                align-items: center;
-                justify-content: center;
+//             .item-da {
+//                 display: flex;
+//                 align-items: center;
+//                 justify-content: center;
 
-                height: 100%;
-                width: 25%;
-            }
-        }
+//                 height: 100%;
+//                 width: 25%;
+//             }
+//         }
 
-        .excel-item {
-            // border: 1px solid black;
-            width: 50%;
-            height: 25%;
+//         .excel-item {
+//             // border: 1px solid black;
+//             width: 50%;
+//             height: 25%;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
 
-            .item-da {
-                display: flex;
-                align-items: center;
-                justify-content: center;
+//             .item-da {
+//                 display: flex;
+//                 align-items: center;
+//                 justify-content: center;
 
-                height: 100%;
-                width: 50%;
-            }
-        }
-    }
-}
+//                 height: 100%;
+//                 width: 50%;
+//             }
+//         }
+//     }
+// }

@@ -5,7 +5,7 @@ import { SideBarData } from "./SideBarDate";
 function SideBarLeft() {
   return (
     <div className="Sidebar">
-      <ul className="SidebarList">
+      <ul className="SidebarList sticky-top">
         {SideBarData.map((val, key) => {
           return (
             <li
