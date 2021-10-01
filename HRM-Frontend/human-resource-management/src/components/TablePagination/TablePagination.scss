@@ -1,0 +1,161 @@
+.table tbody tr:hover td,
+.table tbody tr:hover th {
+    background-color: rgb(175, 255, 199);
+
+    cursor: pointer;
+}
+
+// .sticky-top{
+//     top: 100px i
+// }
+
+.tablee-nv {
+    min-height: 38rem;
+}
+
+tr > td:last-child {
+    object-fit: cover;
+    transition: transform 0.25s linear;
+}
+
+tr > td:last-child:hover {
+    transform: scale(1.2);
+}
+
+.choose-col {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 60%;
+
+    .item-chooseCol {
+        align-items: center;
+        margin-right: 1rem;
+    }
+}
+
+.herder-table {
+    // border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-table {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50px;
+
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 2px 2px rgba(2, 93, 155, 0.6);
+    transition: 0.8s ease-in-out;
+    cursor: pointer;
+    margin: 1rem;
+
+    position: sticky;
+    top: 9.8rem;
+}
+
+// .thead-dark {
+//     position: sticky;
+//     top: 9.8rem;
+// }
+
+.search-input {
+    width: 0;
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    height: 80%;
+    flex-grow: 1;
+    transition: 0.8s ease-in-out;
+}
+
+input:focus {
+    outline: none;
+}
+
+.icon-search {
+    display: inline-flex;
+    width: 2rem;
+    height: 2rem;
+
+    opacity: 0.6;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.search-table:hover {
+    width: 20%;
+}
+
+.search-table:hover .search-input {
+    margin-left: 1.5rem;
+}
+
+.btn-fil {
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem;
+
+    justify-content: center;
+    align-items: center;
+    opacity: 0.6;
+
+    background-color: white;
+    border: none;
+    box-shadow: 0 0 2px 2px rgba(2, 93, 155, 0.6);
+}
+
+.btn-fil:hover {
+    background-color: rgb(62, 148, 206);
+}
+
+.footer-table {
+    width: auto;
+    height: 5rem;
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgb(204, 204, 204);
+    background-color: rgb(236, 236, 236);
+
+    .f-table-left {
+        display: flex;
+        align-items: center;
+        width: 30%;
+
+        padding-left: 0.5rem;
+
+        .select-item {
+            margin-left: 1rem;
+            width: 20%;
+        }
+    }
+
+    .f-table-right {
+        padding-right: 0.5rem;
+
+        .btn-next-pre {
+            width: 1.8rem;
+            height: 1.8rem;
+            margin: 0.2rem;
+
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+
+            background-color: white;
+            border: none;
+        }
+
+        .btn-next-pre:hover {
+            background-color: rgb(200, 242, 250);
+        }
+    }
+}
