@@ -38,6 +38,11 @@ tr > td:last-child:hover {
     // border: 1px solid black;
     display: flex;
     justify-content: space-between;
+    background-color: white;
+
+    position: sticky;
+    top: 9.8rem;
+    z-index: 1;
 }
 
 .search-table {
@@ -54,15 +59,12 @@ tr > td:last-child:hover {
     transition: 0.8s ease-in-out;
     cursor: pointer;
     margin: 1rem;
-
-    position: sticky;
-    top: 9.8rem;
 }
 
-// .thead-dark {
-//     position: sticky;
-//     top: 9.8rem;
-// }
+.thead-dark {
+    position: sticky;
+    top: 13.5rem;
+}
 
 .search-input {
     width: 0;
