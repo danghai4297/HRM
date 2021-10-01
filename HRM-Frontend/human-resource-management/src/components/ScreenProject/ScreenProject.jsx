@@ -3,8 +3,9 @@ import "./ScreenProject.scss";
 
 import Header from "../Header/Header";
 import SideBarLeft from "../SideBarLeft/SideBarLeft";
-import AddProfile from "../ScreenAddProfile/AddProfile";
-
+import AddProfile from "../ScreenAddProfile/ScreenAddProfile";
+import ScreenAddContract from "../ScreenAddContract/ScreenAddContract";
+import ScreenAddSalary from "../ScreenAddSalary/ScreenAddSalary";
 function ScreenProject(props) {
   return (
     <div className="body-screen">
@@ -17,7 +18,9 @@ function ScreenProject(props) {
         </div>
         <div className="content">
           {/* Noi dung trang */}
-          <AddProfile />
+          {/* <AddProfile /> */}
+          {/* <ScreenAddContract /> */}
+          <ScreenAddSalary />
         </div>
       </div>
     </div>
