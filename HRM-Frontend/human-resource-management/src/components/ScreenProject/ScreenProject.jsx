@@ -8,6 +8,8 @@ import ScreenAddContract from "../ScreenAddContract/ScreenAddContract";
 import ScreenAddSalary from "../ScreenAddSalary/ScreenAddSalary";
 import ScreenAddTransfer from "../ScreenAddTransfer/ScreenAddTransfer";
 import ScreenAddResignation from "../ScreenAddResignation/ScreenAddResignation";
+import ScreenAddReward from "../ScreenAddReward/ScreenAddReward";
+import ScreenAddDiscipline from "../ScreenAddDiscipline/ScreenAddDiscipline";
 function ScreenProject(props) {
   return (
     <div className="body-screen">
@@ -24,7 +26,9 @@ function ScreenProject(props) {
           {/* <ScreenAddContract /> */}
           {/* <ScreenAddSalary /> */}
           {/* <ScreenAddTransfer /> */}
-          <ScreenAddResignation/>
+          {/* <ScreenAddResignation/> */}
+          {/* <ScreenAddReward/> */}
+          <ScreenAddDiscipline />
         </div>
       </div>
     </div>
