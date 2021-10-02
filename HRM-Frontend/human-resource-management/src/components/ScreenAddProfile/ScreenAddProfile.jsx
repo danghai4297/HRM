@@ -1,11 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
 import AddProfileForm from "../AddProfileForm/AddProfileForm";
 import "bootstrap/dist/css/bootstrap.min.css";
-import SideBarLeft from "../SideBarLeft/SideBarLeft";
-import Header from "../Header/Header";
 
-AddProfile.propTypes = {};
+
 const onHandleAdd = (profile) => {
   console.log("addProfile:", profile);
 };
