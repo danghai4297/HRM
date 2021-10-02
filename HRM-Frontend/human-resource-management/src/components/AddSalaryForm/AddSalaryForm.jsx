@@ -102,7 +102,6 @@ function AddSalaryForm(props) {
                       : "form-control col-sm-6 border-danger"
                   }
                 />
-
                 <span className="message">{errors.maNhanVien?.message}</span>
               </div>
             </div>

@@ -6,6 +6,7 @@ import SideBarLeft from "../SideBarLeft/SideBarLeft";
 import AddProfile from "../ScreenAddProfile/ScreenAddProfile";
 import ScreenAddContract from "../ScreenAddContract/ScreenAddContract";
 import ScreenAddSalary from "../ScreenAddSalary/ScreenAddSalary";
+import ScreenAddTransfer from "../ScreenAddTransfer/ScreenAddTransfer";
 function ScreenProject(props) {
   return (
     <div className="body-screen">
@@ -20,7 +21,8 @@ function ScreenProject(props) {
           {/* Noi dung trang */}
           {/* <AddProfile /> */}
           {/* <ScreenAddContract /> */}
-          <ScreenAddSalary />
+          {/* <ScreenAddSalary /> */}
+          <ScreenAddTransfer />
         </div>
       </div>
     </div>

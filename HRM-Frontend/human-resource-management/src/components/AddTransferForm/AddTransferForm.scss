@@ -1,0 +1,47 @@
+.Submit-button {
+    margin-right: 2em;
+    background-color: #88bdbc;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .sticky-top {
+    //top: 100px;
+  }
+  .message {
+    width: 20rem;
+    color: red;
+    margin-left: 34%;
+    text-align: left;
+  }
+  
+  .container-div-form {
+    background-color: white;
+    padding: 2rem;
+    margin: 2em;
+    margin-top:0 ;
+  }
+  .container-div-form-2 {
+   
+  input{
+      width: 1.5em;
+      height: 1.5em;
+  }
+ 
+  }
+  .container-salary{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button{
+        border:none;
+        background-color:transparent;
+    }
+   .icon{
+       width: 1.5em;
+       height: 1.5em;
+   }
+
+    }
