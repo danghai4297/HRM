@@ -15,7 +15,6 @@ import ScreenResign from "../ScreenResign/ScreenResign";
 import ScreenReward from "../ScreenReward/ScreenReward";
 import ScreenDiscipline from "../ScreenDiscipline/ScreenDiscipline";
 import ScreenReport from "../ScreenReport/ScreenReport";
-import SideBarDemo from "../SideBarLeft/SideBarDemo";
 function ScreenProject() {
   return (
     <Router>
@@ -25,7 +24,7 @@ function ScreenProject() {
         </div>
         <div className="body-contents">
           <div className="menu-bar">
-            <SideBarDemo />
+            <SideBarLeft />
           </div>
           <div className="content">
             <Switch>
