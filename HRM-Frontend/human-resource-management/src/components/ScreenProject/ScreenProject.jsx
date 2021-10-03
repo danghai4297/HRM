@@ -3,10 +3,10 @@ import "./ScreenProject.scss";
 
 import Header from "../Header/Header";
 import SideBarLeft from "../SideBarLeft/SideBarLeft";
-import {BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Detail from "../Detail/Detail";
-import ScreenProfile from "../ScreenProfile/ScreenProfile";
+import DashBoard from "../ScreenDashBoard/DashBoard";
+import ScreenTableNV from "../ScreenTableNV/ScreenTableNV";
 import ScreenContract from "../ScreenContract/ScreenContract";
 import ScreenSalary from "../ScreenSalary/ScreenSalary";
 import ScreenCategory from "../ScreenCategory/ScreenCategory";
@@ -27,8 +27,8 @@ function ScreenProject() {
             <SideBarLeft />
           </div>
           <div className="content">
-            <Route exact path="/" component={Detail} />
-            <Route path="/profile" component={ScreenProfile} />
+            <Route exact path="/" component={DashBoard} />
+            <Route path="/profile" component={ScreenTableNV} />
             <Route path="/contract" component={ScreenContract} />
             <Route path="/salary" component={ScreenSalary} />
             <Route path="/category" component={ScreenCategory} />
@@ -40,7 +40,7 @@ function ScreenProject() {
           </div>
         </div>
       </div>
-     </Router>
+    </Router>
   );
 }
 

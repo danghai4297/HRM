@@ -8,6 +8,7 @@ import ItemExcel from "../ItemExcel/ItemExcel";
 import { ListContext } from "../../Contexts/ListContext";
 import SideBarLeft from "../SideBarLeft/SideBarLeft";
 import TablePagination from "../TablePagination/TablePagination";
+import SelectColumnFilter from "../TablePagination/SelectColumnFilter";
 
 DashBoard.propTypes = {};
 
@@ -16,37 +17,54 @@ function DashBoard(props) {
     {
       Header: "ID",
       accessor: "id",
+      sticky: "left",
+      Filter: SelectColumnFilter,
+      disableFilters: true,
     },
     {
       Header: "First Name",
       accessor: "firstName",
+      sticky: "left",
+      Filter: SelectColumnFilter,
+      disableFilters: true,
     },
     {
       Header: "Last Name",
       accessor: "lastName",
+      sticky: "left",
+      Filter: SelectColumnFilter,
+      disableFilters: true,
     },
     {
       Header: "Email",
       accessor: "email",
+      Filter: SelectColumnFilter,
+      disableFilters: true,
     },
     {
       Header: "Gender",
       accessor: "gender",
+      Filter: SelectColumnFilter,
     },
-    // {
-    //   Header: "Birthday",
-    //   accessor: "birthday",
-    // },
+    {
+      Header: "Birthday",
+      accessor: "birthday",
+      Filter: SelectColumnFilter,
+      disableFilters: true,
+    },
     {
       Header: "Salary",
       accessor: "salary",
+      Filter: SelectColumnFilter,
+      disableFilters: true,
     },
     {
       Header: "Phone",
       accessor: "phone",
+      Filter: SelectColumnFilter,
+      disableFilters: true,
     },
   ];
-
   const { list } = useContext(ListContext);
   console.log(list);
 

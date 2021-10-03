@@ -10,14 +10,14 @@
     height: 10%;
 
     top: 0;
-    z-index: 1;
+    z-index: 10;
 }
 
 .body-contents {
     background-color: rgb(136, 189, 188);
     display: flex;
     width: 100%;
-    min-height: 100vh;
+    min-height: 93.7vh;
 
     .menu-bar {
         min-height: 100%;

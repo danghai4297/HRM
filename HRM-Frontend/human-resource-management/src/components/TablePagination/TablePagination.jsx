@@ -4,12 +4,16 @@ import "./TablePagination.scss";
 import {
   useTable,
   useSortBy,
+  useFilters,
   useGlobalFilter,
   usePagination,
   useRowSelect,
+  useBlockLayout,
 } from "react-table";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Styles } from "./TableStyles";
+import { useSticky } from "react-table-sticky";
 
 function TablePagination(props) {
   const { columns, data } = props;
@@ -43,10 +47,13 @@ function TablePagination(props) {
       data,
       initialState: { pageIndex: 0 },
     },
+    useFilters,
     useGlobalFilter,
     useSortBy,
     usePagination,
-    useRowSelect
+    useRowSelect,
+    useBlockLayout,
+    useSticky
     // (hooks) => {
     //   hooks.visibleColumns.push((columns) => [
     //     // Let's make a column for selection
@@ -81,20 +88,36 @@ function TablePagination(props) {
       <div className="herder-table">
         <div className="check-col">
           <div>
-            <button className="btn-fil" onClick={disableChooseCol}>
-              <FontAwesomeIcon icon={["fas", "filter"]} />
-            </button>
-
-            <label className="form-check-label" style={{ marginLeft: "1rem" }}>
-              <input
-                type="checkbox"
-                className="form-check-input"
-                {...getToggleHideAllColumnsProps()}
-              />
-              Hiển thị tất cả
-            </label>
+            <div className="select-fillter">
+              <button className="btn-fil" onClick={disableChooseCol}>
+                <FontAwesomeIcon icon={["fas", "filter"]} />
+              </button>
+              <div className="select-fillter">
+                {allColumns.map((column) => (
+                  <div>
+                    {column.canFilter && (
+                      <div className="select-fillter">
+                        {column.render("Header")}&nbsp;{" "}
+                        {column.render("Filter")}&emsp;
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
             {chooseCol && (
               <div className="choose-col form-check">
+                <label
+                  className="form-check-label"
+                  style={{ marginLeft: "20px", marginRight: "0.8rem" }}
+                >
+                  <input
+                    type="checkbox"
+                    className="form-check-input"
+                    {...getToggleHideAllColumnsProps()}
+                  />
+                  Hiển thị tất cả
+                </label>
                 {allColumns.map((column) => (
                   <div className="item-chooseCol form-check" key={column.id}>
                     <label className="form-check-label">
@@ -124,44 +147,53 @@ function TablePagination(props) {
           </span>
         </div>
       </div>
-      <table {...getTableProps()} className="tablee-nv table table-striped">
-        <thead className="thead-dark">
-          {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                  {column.render("Header")}
-                  <span>
-                    {column.isSorted
-                      ? column.isSortedDesc
-                        ? " 🔽"
-                        : " 🔼"
-                      : ""}
-                  </span>
-                </th>
+      <Styles>
+        <div className="table-sticky">
+          <table
+            {...getTableProps()}
+            className="tablee sticky"
+            // style={{ maxWidth: 1800, maxHeight: 600 }}
+          >
+            <thead className="headerr">
+              {headerGroups.map((headerGroup) => (
+                <tr {...headerGroup.getHeaderGroupProps()} className="tr">
+                  {headerGroup.headers.map((column) => (
+                    <th
+                      {...column.getHeaderProps(column.getSortByToggleProps())}
+                      className="th"
+                    >
+                      {column.render("Header")}
+                      <span>
+                        {column.isSorted
+                          ? column.isSortedDesc
+                            ? " 🔽"
+                            : " 🔼"
+                          : ""}
+                      </span>
+                    </th>
+                  ))}
+                </tr>
               ))}
-              <th></th>
-            </tr>
-          ))}
-        </thead>
-        <tbody {...getTableBodyProps()}>
-          {page.map((row, i) => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map((cell) => {
-                  return (
-                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                  );
-                })}
-                <td>
-                  <FontAwesomeIcon icon={["fas", "ellipsis-h"]} />
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+            </thead>
+            <tbody {...getTableBodyProps()} className="bodyy">
+              {page.map((row, i) => {
+                prepareRow(row);
+                return (
+                  <tr {...row.getRowProps()} className="tr">
+                    {row.cells.map((cell) => {
+                      return (
+                        <tr {...cell.getCellProps()} className="td">
+                          {cell.render("Cell")}
+                        </tr>
+                      );
+                    })}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </Styles>
       <div className="footer-table">
         <div className="f-table-left">
           {/* page */}

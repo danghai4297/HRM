@@ -1,26 +1,23 @@
-.table tbody tr:hover td,
-.table tbody tr:hover th {
+table body tr:hover td,
+table body tr:hover th {
     background-color: rgb(175, 255, 199);
 
     cursor: pointer;
 }
 
-// .sticky-top{
-//     top: 100px i
+.table-sticky {
+    overflow: auto;
+    max-height: 600px;
+}
+
+// .tr > .td {
+//     object-fit: cover;
+//     transition: transform 0.25s linear;
 // }
 
-.tablee-nv {
-    min-height: 38rem;
-}
-
-tr > td:last-child {
-    object-fit: cover;
-    transition: transform 0.25s linear;
-}
-
-tr > td:last-child:hover {
-    transform: scale(1.2);
-}
+// .tr > .td:hover {
+//     transform: scale(1.2);
+// }
 
 .choose-col {
     display: flex;
@@ -40,9 +37,14 @@ tr > td:last-child:hover {
     justify-content: space-between;
     background-color: white;
 
-    position: sticky;
-    top: 9.8rem;
+    // position: sticky;
+    // top: 9.8rem;
     z-index: 1;
+}
+
+.select-fillter {
+    display: flex;
+    align-items: center;
 }
 
 .search-table {
@@ -61,10 +63,10 @@ tr > td:last-child:hover {
     margin: 1rem;
 }
 
-.thead-dark {
-    position: sticky;
-    top: 13.5rem;
-}
+// .thead-dark {
+//     position: sticky;
+//     top: 13.5rem;
+// }
 
 .search-input {
     width: 0;
@@ -136,7 +138,7 @@ input:focus {
 
         .select-item {
             margin-left: 1rem;
-            width: 20%;
+            width: 30%;
         }
     }
 
