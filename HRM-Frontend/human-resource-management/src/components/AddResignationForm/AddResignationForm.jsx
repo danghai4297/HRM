@@ -65,8 +65,8 @@ function AddResignationForm(props) {
                   id="hoVaTen"
                   className={
                     !errors.hoVaTen
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
                   <option value=""></option>
@@ -112,8 +112,8 @@ function AddResignationForm(props) {
                   id="donViCongTac"
                   className={
                     !errors.donViCongTac
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
                   <option value=""></option>
@@ -136,8 +136,8 @@ function AddResignationForm(props) {
                   id="viTriCongTac"
                   className={
                     !errors.viTriCongTac
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
                   <option value=""></option>

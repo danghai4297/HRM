@@ -64,8 +64,8 @@ function AddRewardForm(props) {
                   id="hoVaTen"
                   className={
                     !errors.hoVaTen
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
                   <option value=""></option>

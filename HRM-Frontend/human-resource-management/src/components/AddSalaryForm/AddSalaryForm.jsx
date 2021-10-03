@@ -74,8 +74,8 @@ function AddSalaryForm(props) {
                   id="hoVaTen"
                   className={
                     !errors.hoVaTen
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
                   <option value=""></option>
@@ -121,8 +121,8 @@ function AddSalaryForm(props) {
                   id="loaiHopDong"
                   className={
                     !errors.loaiHopDong
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
                   <option value=""></option>
@@ -145,8 +145,8 @@ function AddSalaryForm(props) {
                   id="nhomLuong"
                   className={
                     !errors.nhomLuong
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
                   <option value=""></option>

@@ -64,8 +64,8 @@ function AddTransferForm(props) {
                   id="hoVaTen"
                   className={
                     !errors.hoVaTen
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
                   <option value=""></option>
@@ -111,8 +111,8 @@ function AddTransferForm(props) {
                   id="phongBan"
                   className={
                     !errors.phongBan
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
                   <option value=""></option>
@@ -156,8 +156,8 @@ function AddTransferForm(props) {
                   id="to"
                   className={
                     !errors.to
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
                   <option>Tổ 1</option>
@@ -200,8 +200,8 @@ function AddTransferForm(props) {
                   id="chucVuCongTac"
                   className={
                     !errors.chucVuCongTac
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
                   <option>CEO</option>
@@ -251,8 +251,8 @@ function AddTransferForm(props) {
                   id="tc_hoVaTen"
                   className={
                     !errors.tc_hoVaTen
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                   disabled={!checked}
                 >
@@ -300,8 +300,8 @@ function AddTransferForm(props) {
                   id="tc_phongBan"
                   className={
                     !errors.tc_phongBan
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                   disabled={!checked}
                 >
@@ -347,8 +347,8 @@ function AddTransferForm(props) {
                   id="tc_to"
                   className={
                     !errors.to
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                   disabled={!checked}
                 >
@@ -393,8 +393,8 @@ function AddTransferForm(props) {
                   id="tc_chucVuCongTac"
                   className={
                     !errors.tc_chucVuCongTac
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                   disabled={!checked}
                 >

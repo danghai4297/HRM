@@ -65,8 +65,8 @@ function AddContractForm(props) {
                   id="hoVaTen"
                   className={
                     !errors.hoVaTen
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
                   <option>Hai nd</option>
@@ -112,8 +112,8 @@ function AddContractForm(props) {
                   id="loaiHopDong"
                   className={
                     !errors.loaiHopDong
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
                   <option>ádasdasd</option>

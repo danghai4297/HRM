@@ -213,8 +213,8 @@ function AddProfileForm(props) {
                   id="gioiTinh"
                   className={
                     !errors.gioiTinh
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
                   <option value=""></option>
@@ -235,8 +235,8 @@ function AddProfileForm(props) {
                   id="honNhan"
                   className={
                     !errors.honNhan
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
                   <option value=""></option>
@@ -263,8 +263,8 @@ function AddProfileForm(props) {
                   id="ngaySinh"
                   className={
                     !errors.ngaySinh
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                   placeholder="DD/MM/YYYY"
                 />
@@ -318,8 +318,8 @@ function AddProfileForm(props) {
                   id="danToc"
                   className={
                     !errors.danToc
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                 />
                 <span className="message">{errors.danToc?.message}</span>
@@ -359,8 +359,8 @@ function AddProfileForm(props) {
                   id="tonGiao"
                   className={
                     !errors.tonGiao
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                 />
                 <span className="message">{errors.tonGiao?.message}</span>
@@ -957,8 +957,8 @@ function AddProfileForm(props) {
                   id="phongBan"
                   className={
                     !errors.phongBan
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                 />
                  <span className="message">{errors.phongBan?.message}</span>
@@ -996,7 +996,7 @@ function AddProfileForm(props) {
                   type="text"
                   {...register("to")}
                   id="to"
-                  className="form-control col-sm-6"
+                  className="form-control col-sm-6 custom-select"
                 />
               </div>
             </div>
@@ -1016,8 +1016,8 @@ function AddProfileForm(props) {
                   id="trangThaiLaoDong"
                   className={
                     !errors.trangThaiLaoDong
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
                   <option value=""></option>
@@ -1044,8 +1044,8 @@ function AddProfileForm(props) {
                   id="tinhChatLaoDong"
                   className={
                     !errors.tinhChatLaoDong
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
                   <option value=""></option>
