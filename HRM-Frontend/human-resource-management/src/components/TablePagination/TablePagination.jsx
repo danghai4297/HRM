@@ -149,11 +149,7 @@ function TablePagination(props) {
       </div>
       <Styles>
         <div className="table-sticky">
-          <table
-            {...getTableProps()}
-            className="tablee sticky"
-            // style={{ maxWidth: 1800, maxHeight: 600 }}
-          >
+          <table {...getTableProps()} className="tablee sticky">
             <thead className="headerr">
               {headerGroups.map((headerGroup) => (
                 <tr {...headerGroup.getHeaderGroupProps()} className="tr">
