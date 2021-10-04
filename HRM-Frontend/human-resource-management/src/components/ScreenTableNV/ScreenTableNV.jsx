@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./ScreenTableNV.scss";
@@ -6,80 +6,25 @@ import { ListContext } from "../../Contexts/ListContext";
 import TablePagination from "../TablePagination/TablePagination";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NVCOLUMNS } from "./NvColumns";
+import { ExportCSV } from "../ExportFile/ExportFile";
 
 ScreenTableNV.propTypes = {};
 
 function ScreenTableNV(props) {
-  // const columns = [
-  //   {
-  //     Header: "ID",
-  //     accessor: "id",
-  //     sticky: "left",
-  //     Filter: SelectColumnFilter,
-  //     disableFilters: true,
-  //   },
-  //   {
-  //     Header: "First Name",
-  //     accessor: "firstName",
-  //     sticky: "left",
-  //     minWidth: 200,
-  //     Filter: SelectColumnFilter,
-  //     disableFilters: true,
-  //   },
-  //   {
-  //     Header: "Last Name",
-  //     accessor: "lastName",
-  //     sticky: "left",
-  //     minWidth: 200,
-  //     Filter: SelectColumnFilter,
-  //     disableFilters: true,
-  //   },
-  //   {
-  //     Header: "Email",
-  //     accessor: "email",
-  //     minWidth: 300,
-  //     Filter: SelectColumnFilter,
-  //     disableFilters: true,
-  //   },
-  //   {
-  //     Header: "Gender",
-  //     accessor: (row) => {
-  //       return row.gender === false ? "Nữ" : "Nam";
-  //     },
-  //     // accessor: "gender",
-  //     minWidth: 200,
-  //     Filter: SelectColumnFilter,
-  //     // Cell: ({ value }) => {
-  //     //   return value === true ? "Male" : "Female";
-  //     // },
-  //   },
-  //   {
-  //     Header: "Birthday",
-  //     accessor: "birthday",
-  //     minWidth: 200,
-  //     Filter: SelectColumnFilter,
-  //     Cell: ({ value }) => {
-  //       return format(new Date(value), "dd/MM/yyyy");
-  //     },
-  //   },
-  //   {
-  //     Header: "Salary",
-  //     accessor: "salary",
-  //     minWidth: 150,
-  //     Filter: SelectColumnFilter,
-  //     disableFilters: true,
-  //   },
-  //   {
-  //     Header: "Phone",
-  //     accessor: "phone",
-  //     minWidth: 200,
-  //     Filter: SelectColumnFilter,
-  //     disableFilters: true,
-  //   },
-  // ];
-
+  const fileName = "DSNV";
   const { list } = useContext(ListContext);
-  console.log(list);
+  const [dataXp, setDataXp] = useState(list);
+
+  useEffect(() => {
+    const newData = [];
+    dataXp.map((item) => {
+      item.gender ? (item.gender = "nam") : (item.gender = "nu");
+      newData.push(item);
+    });
+    setDataXp(newData);
+    console.log(dataXp);
+  }, []);
+
   return (
     <>
       <div className="herder-content sticky-top">
@@ -88,13 +33,11 @@ function ScreenTableNV(props) {
         </div>
         <div className="button">
           <input type="submit" className="btn btn-primary " value="Thêm" />
-          <button className="btn-fil" type="submit">
-            <FontAwesomeIcon icon={["fas", "download"]} />
-          </button>
+          <ExportCSV csvData={dataXp} fileName={fileName} />
         </div>
       </div>
       <div className="table-nv">
-        <TablePagination columns={NVCOLUMNS} data={list} />
+        <TablePagination tid="tablenv" columns={NVCOLUMNS} data={list} />
       </div>
     </>
   );

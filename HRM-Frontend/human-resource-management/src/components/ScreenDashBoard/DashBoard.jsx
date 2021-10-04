@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./DashBoard.scss";
 import ItemDashBoard from "../ItemDashBoard/ItemDashBoard";
 import ItemExcel from "../ItemExcel/ItemExcel";
@@ -62,8 +62,19 @@ function DashBoard(props) {
       disableFilters: true,
     },
   ];
+  const fileName = "DSNV";
   const { list } = useContext(ListContext);
-  console.log(list);
+  const [dataXp, setDataXp] = useState(list);
+
+  useEffect(() => {
+    const newData = [];
+    dataXp.map((item) => {
+      item.gender === true ? (item.gender = "nam") : (item.gender = "nu");
+      newData.push(item);
+    });
+    setDataXp(newData);
+    console.log(dataXp);
+  }, []);
 
   return (
     <>
@@ -103,7 +114,7 @@ function DashBoard(props) {
       </div>
       <div className="excel-item">
         <div className="item-da">
-          <ItemExcel title="nhan vien" />
+          <ItemExcel dataXp={dataXp} fileName={fileName} title="nhan vien" />
         </div>
         <div className="item-da">
           <ItemExcel title="luong nhan vien" />

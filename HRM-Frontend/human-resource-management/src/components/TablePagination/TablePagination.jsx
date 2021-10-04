@@ -16,7 +16,7 @@ import { Styles } from "./TableStyles";
 import { useSticky } from "react-table-sticky";
 
 function TablePagination(props) {
-  const { columns, data } = props;
+  const { tid, columns, data } = props;
   const {
     getTableProps,
     getTableBodyProps,
@@ -149,7 +149,7 @@ function TablePagination(props) {
       </div>
       <Styles>
         <div className="table-sticky">
-          <table {...getTableProps()} className="tablee sticky">
+          <table {...getTableProps()} className="tablee sticky" id={tid}>
             <thead className="headerr">
               {headerGroups.map((headerGroup) => (
                 <tr {...headerGroup.getHeaderGroupProps()} className="tr">
