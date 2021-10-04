@@ -1,6 +1,7 @@
 ﻿
 using HRMSolution.Data.Configurations;
 using HRMSolution.Data.Entities;
+
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,7 @@ namespace HRMSolution.Data.EF
         public DbSet<DanhMucChucVu> danhMucChucVus { get; set; }
         public DbSet<DanhMucChuyenMon> danhMucChuyenMons { get; set; }
         public DbSet<DanhMucDanToc> danhMucDanTocs { get; set; }
+        public DbSet<DanhMucHonNhan> danhMucHonNhans { get; set; }
         public DbSet<DanhMucKhenThuongKyLuat> danhMucKhenThuongKyLuats { get; set; }
         public DbSet<DanhMucNgachCongChuc> danhMucNgachCongChucs { get; set; }
         public DbSet<DanhMucLoaiHopDong> danhMucLoaiHopDongs { get; set; }
@@ -44,13 +46,16 @@ namespace HRMSolution.Data.EF
         public DbSet<YTe> yTes { get; set; }
         public DbSet<TaiKhoan> taiKhoans { get; set; }
         public DbSet<KhenThuongKyLuat> khenThuongKyLuats {get; set; }
+        public DbSet<LichSu> lichSus { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //Configuration using Fluent API
             modelBuilder.ApplyConfiguration(new DanhMucChucDanhConfiguration());
             modelBuilder.ApplyConfiguration(new DanhMucChucVuConfiguration());
             modelBuilder.ApplyConfiguration(new DanhMucChuyenMonConfiguration());
             modelBuilder.ApplyConfiguration(new DanhMucDanTocConfiguration());
+            modelBuilder.ApplyConfiguration(new DanhMucHonNhanConfiguration());
             modelBuilder.ApplyConfiguration(new DanhMucKhenThuongKyLuatConfiguration());
             modelBuilder.ApplyConfiguration(new DanhMucLoaiHopDongConfiguration());
             modelBuilder.ApplyConfiguration(new DanhMucNgachCongChucConfiguration());
@@ -74,6 +79,7 @@ namespace HRMSolution.Data.EF
             modelBuilder.ApplyConfiguration(new TaiKhoanConfiguration());
             modelBuilder.ApplyConfiguration(new KhenThuongKyLuatConfiguration());
             modelBuilder.ApplyConfiguration(new LichSuBanThanConfiguration());
+            modelBuilder.ApplyConfiguration(new LichSuConfiguration());
 
             modelBuilder.Entity<NhanVien>()
                 .HasOne(x => x.LichSuBanThan)
@@ -175,6 +181,11 @@ namespace HRMSolution.Data.EF
                 .HasOne(x => x.NhanVien)
                 .WithMany(x => x.KhenThuongKyLuats)
                 .HasForeignKey(x => x.maNhanVien);
+            modelBuilder.Entity<NhanVien>()
+                .HasOne(x => x.DanhMucHonNhan)
+                .WithMany(x => x.NhanViens)
+                .HasForeignKey(x => x.idDanhMucHonNhan);
+            
 
             //base.OnModelCreating(modelBuilder);
         }

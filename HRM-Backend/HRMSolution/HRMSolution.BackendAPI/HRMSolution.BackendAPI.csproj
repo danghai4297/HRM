@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HRMSolution.Application\HRMSolution.Application.csproj" />
+    <ProjectReference Include="..\HRMSolution.Data\HRMSolution.Data.csproj" />
+    <ProjectReference Include="..\HRMSolution.Utilities\HRMSolution.Utilities.csproj" />
+  </ItemGroup>
+
+
+</Project>

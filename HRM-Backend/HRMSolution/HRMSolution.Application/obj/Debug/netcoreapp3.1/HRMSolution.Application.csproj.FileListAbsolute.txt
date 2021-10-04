@@ -8,3 +8,8 @@ E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Application\obj\Debug\netcoreapp3.1\H
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Application\obj\Debug\netcoreapp3.1\HRMSolution.Application.csproj.CoreCompileInputs.cache
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Application\obj\Debug\netcoreapp3.1\HRMSolution.Application.dll
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Application\obj\Debug\netcoreapp3.1\HRMSolution.Application.pdb
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Application\bin\Debug\netcoreapp3.1\HRMSolution.Data.dll
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Application\bin\Debug\netcoreapp3.1\HRMSolution.Utilities.dll
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Application\bin\Debug\netcoreapp3.1\HRMSolution.Data.pdb
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Application\bin\Debug\netcoreapp3.1\HRMSolution.Utilities.pdb
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Application\obj\Debug\netcoreapp3.1\HRMSolution.Application.csproj.CopyComplete

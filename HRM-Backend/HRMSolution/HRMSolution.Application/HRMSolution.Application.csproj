@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Catalog\NhanViens\" />
+    <ProjectReference Include="..\HRMSolution.Data\HRMSolution.Data.csproj" />
+    <ProjectReference Include="..\HRMSolution.Utilities\HRMSolution.Utilities.csproj" />
   </ItemGroup>
 
 </Project>

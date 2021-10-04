@@ -120,6 +120,25 @@ namespace HRMSolution.Data.Migrations
                     b.ToTable("DanhMucDanToc");
                 });
 
+            modelBuilder.Entity("HRMSolution.Data.Entities.DanhMucHonNhan", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                        .HasAnnotation("SqlServer:IdentitySeed", 1)
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("tenDanhMuc")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("DanhMucHonNhan");
+                });
+
             modelBuilder.Entity("HRMSolution.Data.Entities.DanhMucKhenThuongKyLuat", b =>
                 {
                     b.Property<int>("id")
@@ -407,9 +426,6 @@ namespace HRMSolution.Data.Migrations
                     b.Property<int>("idLoaiHopDong")
                         .HasColumnType("int");
 
-                    b.Property<float?>("luongCoBan")
-                        .HasColumnType("real");
-
                     b.Property<string>("maNhanVien")
                         .IsRequired()
                         .HasMaxLength(10)
@@ -434,6 +450,9 @@ namespace HRMSolution.Data.Migrations
                         .HasAnnotation("SqlServer:IdentityIncrement", 1)
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("anh")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("idDanhMucKhenThuong")
                         .HasColumnType("int");
@@ -460,6 +479,43 @@ namespace HRMSolution.Data.Migrations
                     b.HasIndex("maNhanVien");
 
                     b.ToTable("KhenThuongKyLuat");
+                });
+
+            modelBuilder.Entity("HRMSolution.Data.Entities.LichSu", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                        .HasAnnotation("SqlServer:IdentitySeed", 1)
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("hanhDong")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("maNhanVien")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime>("ngayThucHien")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("tenTaiKhoan")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("thaoTac")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("LichSu");
                 });
 
             modelBuilder.Entity("HRMSolution.Data.Entities.LichSuBanThan", b =>
@@ -558,6 +614,9 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<float?>("heSoLuong")
+                        .HasColumnType("real");
+
+                    b.Property<float?>("luongCoBan")
                         .HasColumnType("real");
 
                     b.Property<string>("maHopDong")
@@ -774,10 +833,10 @@ namespace HRMSolution.Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("honNhan")
+                    b.Property<int>("idDanToc")
                         .HasColumnType("int");
 
-                    b.Property<int>("idDanToc")
+                    b.Property<int>("idDanhMucHonNhan")
                         .HasColumnType("int");
 
                     b.Property<int>("idNgachCongChuc")
@@ -810,18 +869,16 @@ namespace HRMSolution.Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<DateTime?>("ngayCapCCCD")
-                        .IsRequired()
+                    b.Property<DateTime>("ngayCapCCCD")
                         .HasColumnType("datetime");
 
                     b.Property<DateTime?>("ngayCapHoChieu")
                         .HasColumnType("datetime");
 
-                    b.Property<DateTime?>("ngayChinhThuc")
+                    b.Property<DateTime>("ngayChinhThuc")
                         .HasColumnType("datetime");
 
-                    b.Property<DateTime?>("ngayHetHanCCCD")
-                        .IsRequired()
+                    b.Property<DateTime>("ngayHetHanCCCD")
                         .HasColumnType("datetime");
 
                     b.Property<DateTime?>("ngayHetHanHoChieu")
@@ -833,7 +890,7 @@ namespace HRMSolution.Data.Migrations
                     b.Property<DateTime?>("ngayNhapNgu")
                         .HasColumnType("datetime");
 
-                    b.Property<DateTime?>("ngaySinh")
+                    b.Property<DateTime>("ngaySinh")
                         .HasColumnType("datetime");
 
                     b.Property<DateTime?>("ngayThuViec")
@@ -923,6 +980,8 @@ namespace HRMSolution.Data.Migrations
                     b.HasKey("maNhanVien");
 
                     b.HasIndex("idDanToc");
+
+                    b.HasIndex("idDanhMucHonNhan");
 
                     b.HasIndex("idNgachCongChuc");
 
@@ -1203,6 +1262,12 @@ namespace HRMSolution.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("HRMSolution.Data.Entities.DanhMucHonNhan", "DanhMucHonNhan")
+                        .WithMany("NhanViens")
+                        .HasForeignKey("idDanhMucHonNhan")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("HRMSolution.Data.Entities.DanhMucNgachCongChuc", "DanhMucNgachCongChuc")
                         .WithMany("NhanViens")
                         .HasForeignKey("idNgachCongChuc")
@@ -1228,6 +1293,8 @@ namespace HRMSolution.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("DanhMucDanToc");
+
+                    b.Navigation("DanhMucHonNhan");
 
                     b.Navigation("DanhMucNgachCongChuc");
 
@@ -1300,6 +1367,11 @@ namespace HRMSolution.Data.Migrations
                 });
 
             modelBuilder.Entity("HRMSolution.Data.Entities.DanhMucDanToc", b =>
+                {
+                    b.Navigation("NhanViens");
+                });
+
+            modelBuilder.Entity("HRMSolution.Data.Entities.DanhMucHonNhan", b =>
                 {
                     b.Navigation("NhanViens");
                 });

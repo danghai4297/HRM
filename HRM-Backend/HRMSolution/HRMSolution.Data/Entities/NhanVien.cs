@@ -9,9 +9,9 @@ namespace HRMSolution.Data.Entities
     {
         public string maNhanVien { get; set; }
         public string hoTen { get; set; }
-        public int honNhan { get; set; }
+        
         public string quocTich { get; set; }
-        public DateTime? ngaySinh { get; set; }
+        public DateTime ngaySinh { get; set; }
         public bool gioiTinh { get; set; }
         public string dienThoai { get; set; }
         public string dienThoaiKhac { get; set; }
@@ -24,8 +24,8 @@ namespace HRMSolution.Data.Entities
         public DateTime? ngayCapHoChieu { get; set; }
         public DateTime? ngayHetHanHoChieu { get; set; }
         public string cccd { get; set; }
-        public DateTime? ngayCapCCCD { get; set; }
-        public DateTime? ngayHetHanCCCD { get; set; }
+        public DateTime ngayCapCCCD { get; set; }
+        public DateTime ngayHetHanCCCD { get; set; }
         public string noiCapCCCD { get; set; }
         public string noiSinh { get; set; }
         public string queQuan { get; set; }
@@ -37,7 +37,7 @@ namespace HRMSolution.Data.Entities
         public DateTime? ngayThuViec { get; set; }
         public string congViecChinh { get; set; }
         public DateTime? ngayVaoBan { get; set; }
-        public DateTime? ngayChinhThuc { get; set; }
+        public DateTime ngayChinhThuc { get; set; }
         public string coQuanTuyenDung { get; set; }
         public string ngachCongChucNoiDung { get; set; }
         public DateTime? ngayVaoDang { get; set; }
@@ -59,10 +59,10 @@ namespace HRMSolution.Data.Entities
         public bool? trangThaiLaoDong { get; set; }
         public DateTime? ngayNghiViec { get; set; }
         public string lyDoNghiViec { get; set; }
-        public int tinhChatLaoDong { get; set; }
         public string anh { get; set; }
 
-
+        public int tinhChatLaoDong { get; set; }
+        public int idDanhMucHonNhan { get; set; }
         public int idDanToc { get; set; }
         public int idTonGiao { get; set; }
         public int idPhongBan { get; set; }
@@ -84,5 +84,6 @@ namespace HRMSolution.Data.Entities
         public List<KhenThuongKyLuat> KhenThuongKyLuats { get; set; }
         public List<HopDong> HopDongs { get; set; }
         public DanhMucTinhChatLaoDong DanhMucTinhChatLaoDong { get; set; }
+        public DanhMucHonNhan DanhMucHonNhan { get; set; }
     }
 }

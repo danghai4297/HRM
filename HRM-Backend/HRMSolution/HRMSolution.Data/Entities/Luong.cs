@@ -11,6 +11,7 @@ namespace HRMSolution.Data.Entities
         public int? nhomLuong { get; set; }
         public float? heSoLuong { get; set; }
         public string bacLuong { get; set; }
+        public float? luongCoBan { get; set; }
         public float? phuCapTrachNhiem { get; set; }
         public float? phuCapKhac { get; set; }
         public float? tongLuong { get; set; }
