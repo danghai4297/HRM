@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import {Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { parse, isDate } from "date-fns";
 //import { DatePicker } from "antd";
 AddDisciplineForm.propTypes = {
   objectData: PropTypes.object,
@@ -35,7 +34,8 @@ function AddDisciplineForm(props) {
   });
   const onHandleSubmit = (data) => {
     console.log(data);
-    objectData(data);
+   objectData( JSON.stringify(data));
+   // objectData(data);
   };
 
   return (
@@ -43,7 +43,7 @@ function AddDisciplineForm(props) {
       <form
         action=""
         class="profile-form"
-        onSubmit={handleSubmit(onHandleSubmit)}
+        // onSubmit={handleSubmit(onHandleSubmit)}
       >
         <div className="Submit-button sticky-top">
           <div>
@@ -51,7 +51,7 @@ function AddDisciplineForm(props) {
           </div>
           <div className="button">
             <input type="submit" className="btn btn-secondary " value="Huỷ" />
-            <input type="submit" className="btn btn-primary ml-3" value="Lưu" />
+            <input type="submit" className="btn btn-primary ml-3" value="Lưu" onClick={handleSubmit(onHandleSubmit)}/>
           </div>
         </div>
 

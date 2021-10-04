@@ -86,14 +86,15 @@ function AddProfileForm(props) {
 
   const onHandleSubmit = (data) => {
     console.log(data);
-    objectData(data);
+    JSON.stringify(objectData(data));
+    //objectData(data);
   };
   return (
     <div className="container-form">
       <form
         action=""
         class="profile-form"
-        onSubmit={handleSubmit(onHandleSubmit)}
+        // onSubmit={handleSubmit(onHandleSubmit)}
       >
         <div className="Submit-button sticky-top">
           <div>
@@ -101,7 +102,7 @@ function AddProfileForm(props) {
           </div>
           <div className="button">
             <input type="submit" className="btn btn-secondary " value="Huỷ" />
-            <input type="submit" className="btn btn-primary ml-3" value="Lưu" />
+            <input type="submit" className="btn btn-primary ml-3" value="Lưu"  onClick={handleSubmit(onHandleSubmit)}/>
           </div>
         </div>
         <div className="container-ava">

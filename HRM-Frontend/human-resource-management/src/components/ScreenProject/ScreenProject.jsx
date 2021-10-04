@@ -24,11 +24,11 @@ function ScreenProject(props) {
           {/* Noi dung trang */}
           {/* <AddProfile /> */}
           {/* <ScreenAddContract /> */}
-          {/* <ScreenAddSalary /> */}
+          <ScreenAddSalary />
           {/* <ScreenAddTransfer /> */}
           {/* <ScreenAddResignation/> */}
           {/* <ScreenAddReward/> */}
-          <ScreenAddDiscipline />
+          {/* <ScreenAddDiscipline /> */}
         </div>
       </div>
     </div>

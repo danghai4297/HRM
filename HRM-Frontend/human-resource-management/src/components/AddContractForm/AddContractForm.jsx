@@ -39,7 +39,7 @@ function AddContractForm(props) {
       <form
         action=""
         class="profile-form"
-        onSubmit={handleSubmit(onHandleSubmit)}
+        // onSubmit={handleSubmit(onHandleSubmit)}
       >
         <div className="Submit-button sticky-top">
           <div>
@@ -47,7 +47,7 @@ function AddContractForm(props) {
           </div>
           <div className="button">
             <input type="submit" className="btn btn-secondary " value="Huỷ" />
-            <input type="submit" className="btn btn-primary ml-3" value="Lưu" />
+            <input type="submit" className="btn btn-primary ml-3" value="Lưu"  onClick={handleSubmit(onHandleSubmit)} />
           </div>
         </div>
 
