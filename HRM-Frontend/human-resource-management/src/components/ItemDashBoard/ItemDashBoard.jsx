@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./ItemDashBoard.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 ItemDashBoard.propTypes = {
   totalEmployees: PropTypes.number,
@@ -16,7 +17,7 @@ ItemDashBoard.defaultProps = {
 };
 
 function ItemDashBoard(props) {
-  const { totalEmployees, fontIcon, title } = props;
+  const { totalEmployees, fontIcon, title, link } = props;
 
   return (
     <div class="container">
@@ -31,12 +32,14 @@ function ItemDashBoard(props) {
           </span>
         </div>
       </div>
-      <div className="bot">
-        <h>Danh sach {title}</h>
-        <span className="small-icon">
-          <FontAwesomeIcon icon={["fas", "chevron-circle-right"]} />
-        </span>
-      </div>
+      <Link to={link} className="link-item">
+        <div className="bot">
+          <h>Danh sach {title}</h>
+          <span className="small-icon">
+            <FontAwesomeIcon icon={["fas", "chevron-circle-right"]} />
+          </span>
+        </div>
+      </Link>
     </div>
   );
 }

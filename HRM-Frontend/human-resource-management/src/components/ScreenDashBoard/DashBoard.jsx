@@ -1,12 +1,9 @@
 import React, { useContext } from "react";
-import PropTypes from "prop-types";
 import "./DashBoard.scss";
-import Header from "../Header/Header";
 import ItemDashBoard from "../ItemDashBoard/ItemDashBoard";
 import ItemExcel from "../ItemExcel/ItemExcel";
 
 import { ListContext } from "../../Contexts/ListContext";
-import SideBarLeft from "../SideBarLeft/SideBarLeft";
 import TablePagination from "../TablePagination/TablePagination";
 import SelectColumnFilter from "../TablePagination/SelectColumnFilter";
 
@@ -76,6 +73,7 @@ function DashBoard(props) {
             totalEmployees="110"
             fontIcon="users"
             title="nhan vien"
+            link="/profile"
           />
         </div>
         <div className="item-da">
@@ -83,6 +81,7 @@ function DashBoard(props) {
             totalEmployees="11"
             fontIcon="building"
             title="Phong ban"
+            link=""
           />
         </div>
         <div className="item-da">
@@ -90,6 +89,7 @@ function DashBoard(props) {
             totalEmployees="110"
             fontIcon="money-check-alt"
             title="Luong n.vien"
+            link="/salary"
           />
         </div>
         <div className="item-da">
@@ -97,6 +97,7 @@ function DashBoard(props) {
             totalEmployees="12"
             fontIcon="users-slash"
             title="N.vien nghi viec"
+            link="/resign"
           />
         </div>
       </div>
