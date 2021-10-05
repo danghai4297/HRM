@@ -8,7 +8,7 @@ namespace HRMSolution.Data.Entities
     {
         public int id { get; set; }
         public string maHopDong { get; set; }
-        public int? nhomLuong { get; set; }
+        public int idNhomLuong { get; set; }
         public float? heSoLuong { get; set; }
         public string bacLuong { get; set; }
         public float? luongCoBan { get; set; }
@@ -21,5 +21,6 @@ namespace HRMSolution.Data.Entities
         public string ghiChu { get; set; }
 
         public HopDong HopDong { get; set; }
+        public DanhMucNhomLuong DanhMucNhomLuong { get; set; }
     }
 }

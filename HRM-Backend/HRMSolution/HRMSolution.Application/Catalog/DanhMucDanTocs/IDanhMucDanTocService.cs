@@ -12,6 +12,6 @@ namespace HRMSolution.Application.Catalog.DanhMucDanTocs
         Task<int> Create(DanhMucDanTocCreateRequest request);
         Task<int> Update(DanhMucDanTocUpdateRequest request);
         Task<int> Delete(int idDanhMucDanToc);
-        List<DanhMucDanToc> GetAll();
+        Task<List<DanhMucDanTocViewModel>> GetAll();
     }
 }

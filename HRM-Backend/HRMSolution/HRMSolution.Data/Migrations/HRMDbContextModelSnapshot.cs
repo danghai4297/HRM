@@ -419,6 +419,30 @@ namespace HRMSolution.Data.Migrations
                         });
                 });
 
+            modelBuilder.Entity("HRMSolution.Data.Entities.DanhMucNhomLuong", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                        .HasAnnotation("SqlServer:IdentitySeed", 1)
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("maNhomLuong")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("tenNhomLuong")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("DanhMucNhomLuong");
+                });
+
             modelBuilder.Entity("HRMSolution.Data.Entities.DanhMucPhongBan", b =>
                 {
                     b.Property<int>("id")
@@ -1022,6 +1046,9 @@ namespace HRMSolution.Data.Migrations
                     b.Property<float?>("heSoLuong")
                         .HasColumnType("real");
 
+                    b.Property<int>("idNhomLuong")
+                        .HasColumnType("int");
+
                     b.Property<float?>("luongCoBan")
                         .HasColumnType("real");
 
@@ -1042,9 +1069,6 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("datetime")
                         .HasDefaultValueSql("GetDate()");
 
-                    b.Property<int?>("nhomLuong")
-                        .HasColumnType("int");
-
                     b.Property<float?>("phuCapKhac")
                         .HasColumnType("real");
 
@@ -1060,6 +1084,8 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("real");
 
                     b.HasKey("id");
+
+                    b.HasIndex("idNhomLuong");
 
                     b.HasIndex("maHopDong");
 
@@ -1288,7 +1314,6 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime>("ngayCapCCCD")
-<<<<<<< HEAD
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
                         .HasDefaultValueSql("GetDate()");
@@ -1311,38 +1336,15 @@ namespace HRMSolution.Data.Migrations
                     b.Property<DateTime?>("ngayHetHanHoChieu")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-=======
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("ngayCapHoChieu")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("Date")
-                        .HasDefaultValueSql("GetDate()");
-
-                    b.Property<DateTime>("ngayChinhThuc")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ngayHetHanCCCD")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("ngayHetHanHoChieu")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("Date")
->>>>>>> origin/back-end
                         .HasDefaultValueSql("GetDate()");
 
                     b.Property<DateTime?>("ngayNghiViec")
                         .ValueGeneratedOnAdd()
-<<<<<<< HEAD
                         .HasColumnType("datetime")
-=======
-                        .HasColumnType("Date")
->>>>>>> origin/back-end
                         .HasDefaultValueSql("GetDate()");
 
                     b.Property<DateTime?>("ngayNhapNgu")
                         .ValueGeneratedOnAdd()
-<<<<<<< HEAD
                         .HasColumnType("datetime")
                         .HasDefaultValueSql("GetDate()");
 
@@ -1354,72 +1356,36 @@ namespace HRMSolution.Data.Migrations
                     b.Property<DateTime?>("ngayThuViec")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-=======
-                        .HasColumnType("Date")
-                        .HasDefaultValueSql("GetDate()");
-
-                    b.Property<DateTime>("ngaySinh")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("ngayThuViec")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("Date")
->>>>>>> origin/back-end
                         .HasDefaultValueSql("GetDate()");
 
                     b.Property<DateTime?>("ngayTuyenDung")
                         .ValueGeneratedOnAdd()
-<<<<<<< HEAD
                         .HasColumnType("datetime")
-=======
-                        .HasColumnType("Date")
->>>>>>> origin/back-end
                         .HasDefaultValueSql("GetDate()");
 
                     b.Property<DateTime?>("ngayVaoBan")
                         .ValueGeneratedOnAdd()
-<<<<<<< HEAD
                         .HasColumnType("datetime")
-=======
-                        .HasColumnType("Date")
->>>>>>> origin/back-end
                         .HasDefaultValueSql("GetDate()");
 
                     b.Property<DateTime?>("ngayVaoDang")
                         .ValueGeneratedOnAdd()
-<<<<<<< HEAD
                         .HasColumnType("datetime")
                         .HasDefaultValueSql("GetDate()");
 
                     b.Property<DateTime?>("ngayVaoDangChinhThuc")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-=======
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("getdate()");
-
-                    b.Property<DateTime?>("ngayVaoDangChinhThuc")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("Date")
->>>>>>> origin/back-end
                         .HasDefaultValueSql("GetDate()");
 
                     b.Property<DateTime?>("ngayVaoDoan")
                         .ValueGeneratedOnAdd()
-<<<<<<< HEAD
                         .HasColumnType("datetime")
-=======
-                        .HasColumnType("Date")
->>>>>>> origin/back-end
                         .HasDefaultValueSql("GetDate()");
 
                     b.Property<DateTime?>("ngayXuatNgu")
                         .ValueGeneratedOnAdd()
-<<<<<<< HEAD
                         .HasColumnType("datetime")
-=======
-                        .HasColumnType("Date")
->>>>>>> origin/back-end
                         .HasDefaultValueSql("GetDate()");
 
                     b.Property<string>("ngheNghiep")
@@ -1463,7 +1429,6 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("nvarchar(25)");
 
                     b.Property<string>("tamTru")
-                        .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
@@ -1519,16 +1484,9 @@ namespace HRMSolution.Data.Migrations
                             idNgachCongChuc = 1,
                             idPhongBan = 1,
                             idTonGiao = 1,
-<<<<<<< HEAD
-                            ngayCapCCCD = new DateTime(1998, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(1998, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-=======
-                            ngayCapCCCD = new DateTime(2021, 10, 5, 2, 2, 2, 621, DateTimeKind.Local).AddTicks(2236),
-                            ngayChinhThuc = new DateTime(2021, 10, 5, 2, 2, 2, 621, DateTimeKind.Local).AddTicks(5552),
-                            ngayHetHanCCCD = new DateTime(2021, 10, 5, 2, 2, 2, 621, DateTimeKind.Local).AddTicks(2909),
-                            ngaySinh = new DateTime(2021, 10, 5, 2, 2, 2, 619, DateTimeKind.Local).AddTicks(5444),
->>>>>>> origin/back-end
+                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            ngaySinh = new DateTime(1998, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngheNghiep = "Sinh viên",
                             noiCapCCCD = "Điện Biên",
                             noiSinh = "Hưng Yên",
@@ -1564,11 +1522,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             tenDangNhap = "admin",
                             matKhau = "123",
-<<<<<<< HEAD
                             vaiTro = 1
-=======
-                            vaiTro = 0
->>>>>>> origin/back-end
                         });
                 });
 
@@ -1770,11 +1724,19 @@ namespace HRMSolution.Data.Migrations
 
             modelBuilder.Entity("HRMSolution.Data.Entities.Luong", b =>
                 {
+                    b.HasOne("HRMSolution.Data.Entities.DanhMucNhomLuong", "DanhMucNhomLuong")
+                        .WithMany("Luongs")
+                        .HasForeignKey("idNhomLuong")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("HRMSolution.Data.Entities.HopDong", "HopDong")
                         .WithMany("Luongs")
                         .HasForeignKey("maHopDong")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("DanhMucNhomLuong");
 
                     b.Navigation("HopDong");
                 });
@@ -1962,6 +1924,11 @@ namespace HRMSolution.Data.Migrations
             modelBuilder.Entity("HRMSolution.Data.Entities.DanhMucNguoiThan", b =>
                 {
                     b.Navigation("NguoiThans");
+                });
+
+            modelBuilder.Entity("HRMSolution.Data.Entities.DanhMucNhomLuong", b =>
+                {
+                    b.Navigation("Luongs");
                 });
 
             modelBuilder.Entity("HRMSolution.Data.Entities.DanhMucPhongBan", b =>

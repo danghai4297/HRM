@@ -35,7 +35,7 @@ namespace HRMSolution.Data.EF
         public DbSet<DanhMucTrinhDo> danhMucTrinhDos { get; set; }
         public DbSet<DieuChuyen> dieuChuyens { get; set; }
         public DbSet<HinhThucDaoTao> hinhThucDaoTaos { get; set; }
-        public DbSet<HopDong> HopDongs { get; set; }
+        public DbSet<HopDong> hopDongs { get; set; }
         public DbSet<LichSuBanThan> lichSuBanThans { get; set; }
         public DbSet<LienHeKhanCap> lienHeKhanCaps { get; set; }
         public DbSet<Luong> luongs { get; set; }
@@ -47,6 +47,7 @@ namespace HRMSolution.Data.EF
         public DbSet<TaiKhoan> taiKhoans { get; set; }
         public DbSet<KhenThuongKyLuat> khenThuongKyLuats {get; set; }
         public DbSet<LichSu> lichSus { get; set; }
+        public DbSet<DanhMucNhomLuong> danhMucNhomLuongs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -80,6 +81,7 @@ namespace HRMSolution.Data.EF
             modelBuilder.ApplyConfiguration(new KhenThuongKyLuatConfiguration());
             modelBuilder.ApplyConfiguration(new LichSuBanThanConfiguration());
             modelBuilder.ApplyConfiguration(new LichSuConfiguration());
+            modelBuilder.ApplyConfiguration(new DanhMucNhomLuongConfiguration());
 
             modelBuilder.Entity<NhanVien>()
                 .HasOne(x => x.LichSuBanThan)
@@ -185,7 +187,10 @@ namespace HRMSolution.Data.EF
                 .HasOne(x => x.DanhMucHonNhan)
                 .WithMany(x => x.NhanViens)
                 .HasForeignKey(x => x.idDanhMucHonNhan);
-
+            modelBuilder.Entity<Luong>()
+                .HasOne(x => x.DanhMucNhomLuong)
+                .WithMany(x => x.Luongs)
+                .HasForeignKey(x => x.idNhomLuong);
 
             //DataSeedinng
             modelBuilder.seed();

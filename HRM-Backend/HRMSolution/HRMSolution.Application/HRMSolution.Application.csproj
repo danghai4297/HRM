@@ -9,4 +9,18 @@
     <ProjectReference Include="..\HRMSolution.Utilities\HRMSolution.Utilities.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Catalog\DanhMucChucDanhs\" />
+    <Folder Include="Catalog\DanhMucChucVus\" />
+    <Folder Include="Catalog\DanhMucChuyenMons\" />
+    <Folder Include="Catalog\DanhMucKhenThuongKyLuats\" />
+    <Folder Include="Catalog\DanhMucLoaiHopDongs\" />
+    <Folder Include="Catalog\DanhMucNgachCongChucs\" />
+    <Folder Include="Catalog\DanhMucNgoaiNgus\" />
+    <Folder Include="Catalog\DanhMucNguoiThans\" />
+    <Folder Include="Catalog\DanhMucTos\" />
+    <Folder Include="Catalog\DanhMucPhongBans\" />
+    <Folder Include="Catalog\DanhMucTinhChatLaoDongs\" />
+  </ItemGroup>
+
 </Project>

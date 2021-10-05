@@ -144,6 +144,20 @@ namespace HRMSolution.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "DanhMucNhomLuong",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    maNhomLuong = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    tenNhomLuong = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DanhMucNhomLuong", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "DanhMucPhongBan",
                 columns: table => new
                 {
@@ -267,7 +281,7 @@ namespace HRMSolution.Data.Migrations
                     maNhanVien = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     hoTen = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     quocTich = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ngaySinh = table.Column<DateTime>(type: "datetime", nullable: false),
+                    ngaySinh = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "GetDate()"),
                     gioiTinh = table.Column<bool>(type: "bit", nullable: false),
                     dienThoai = table.Column<string>(type: "nvarchar(16)", maxLength: 16, nullable: false),
                     dienThoaiKhac = table.Column<string>(type: "nvarchar(16)", maxLength: 16, nullable: true),
@@ -275,34 +289,34 @@ namespace HRMSolution.Data.Migrations
                     facebook = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: true),
                     skype = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: true),
                     maSoThue = table.Column<int>(type: "int", nullable: true),
+                    cccd = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    noiCapCCCD = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
+                    ngayCapCCCD = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "GetDate()"),
+                    ngayHetHanCCCD = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "GetDate()"),
                     hoChieu = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: true),
                     noiCapHoChieu = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: true),
-                    ngayCapHoChieu = table.Column<DateTime>(type: "datetime", nullable: true),
-                    ngayHetHanHoChieu = table.Column<DateTime>(type: "datetime", nullable: true),
-                    cccd = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
-                    ngayCapCCCD = table.Column<DateTime>(type: "datetime", nullable: false),
-                    ngayHetHanCCCD = table.Column<DateTime>(type: "datetime", nullable: false),
-                    noiCapCCCD = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
+                    ngayCapHoChieu = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "GetDate()"),
+                    ngayHetHanHoChieu = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "GetDate()"),
                     noiSinh = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
                     queQuan = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
                     thuongTru = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
-                    tamTru = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
+                    tamTru = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: true),
                     ngheNghiep = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     chucVuHienTai = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    ngayTuyenDung = table.Column<DateTime>(type: "datetime", nullable: true),
-                    ngayThuViec = table.Column<DateTime>(type: "datetime", nullable: true),
+                    ngayTuyenDung = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "GetDate()"),
+                    ngayThuViec = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "GetDate()"),
                     congViecChinh = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    ngayVaoBan = table.Column<DateTime>(type: "datetime", nullable: true),
-                    ngayChinhThuc = table.Column<DateTime>(type: "datetime", nullable: false),
+                    ngayVaoBan = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "GetDate()"),
+                    ngayChinhThuc = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "GetDate()"),
                     coQuanTuyenDung = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     ngachCongChucNoiDung = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    ngayVaoDang = table.Column<DateTime>(type: "datetime", nullable: true),
-                    ngayVaoDangChinhThuc = table.Column<DateTime>(type: "datetime", nullable: true),
-                    ngayNhapNgu = table.Column<DateTime>(type: "datetime", nullable: true),
-                    ngayXuatNgu = table.Column<DateTime>(type: "datetime", nullable: true),
+                    ngayVaoDang = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "GetDate()"),
+                    ngayVaoDangChinhThuc = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "GetDate()"),
+                    ngayNhapNgu = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "GetDate()"),
+                    ngayXuatNgu = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "GetDate()"),
                     quanHamCaoNhat = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     danhHieuCaoNhat = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    ngayVaoDoan = table.Column<DateTime>(type: "datetime", nullable: true),
+                    ngayVaoDoan = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "GetDate()"),
                     noiThamGia = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     laThuongBinh = table.Column<bool>(type: "bit", nullable: true),
                     laConChinhSach = table.Column<bool>(type: "bit", nullable: true),
@@ -313,7 +327,7 @@ namespace HRMSolution.Data.Migrations
                     atm = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     nganHang = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     trangThaiLaoDong = table.Column<bool>(type: "bit", nullable: true),
-                    ngayNghiViec = table.Column<DateTime>(type: "datetime", nullable: true),
+                    ngayNghiViec = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "GetDate()"),
                     lyDoNghiViec = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     anh = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     tinhChatLaoDong = table.Column<int>(type: "int", nullable: false),
@@ -372,7 +386,7 @@ namespace HRMSolution.Data.Migrations
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     maNhanVien = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
-                    ngayHieuLuc = table.Column<DateTime>(type: "datetime", nullable: true),
+                    ngayHieuLuc = table.Column<DateTime>(type: "datetime", nullable: false),
                     phong = table.Column<int>(type: "int", nullable: false),
                     to = table.Column<int>(type: "int", nullable: false),
                     chiTiet = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: true),
@@ -402,8 +416,8 @@ namespace HRMSolution.Data.Migrations
                     maHopDong = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     idLoaiHopDong = table.Column<int>(type: "int", nullable: false),
                     idChucDanh = table.Column<int>(type: "int", nullable: false),
-                    hopDongTuNgay = table.Column<DateTime>(type: "datetime", nullable: true),
-                    hopDongDenNgay = table.Column<DateTime>(type: "datetime", nullable: true),
+                    hopDongTuNgay = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "GetDate()"),
+                    hopDongDenNgay = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "GetDate()"),
                     ghiChu = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: true),
                     maNhanVien = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false)
                 },
@@ -513,7 +527,7 @@ namespace HRMSolution.Data.Migrations
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     idDanhMucNgoaiNgu = table.Column<int>(type: "int", nullable: false),
-                    ngayCap = table.Column<DateTime>(type: "datetime", nullable: true),
+                    ngayCap = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "GetDate()"),
                     trinhDo = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     noiCap = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     maNhanVien = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false)
@@ -543,7 +557,7 @@ namespace HRMSolution.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     tenNguoiThan = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
                     gioiTinh = table.Column<bool>(type: "bit", nullable: true),
-                    ngaySinh = table.Column<DateTime>(type: "datetime", nullable: true),
+                    ngaySinh = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "GetDate()"),
                     quanHe = table.Column<int>(type: "int", nullable: true),
                     ngheNghiep = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     diaChi = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
@@ -577,8 +591,8 @@ namespace HRMSolution.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     tenTruong = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     idChuyenMon = table.Column<int>(type: "int", nullable: false),
-                    tuThoiGian = table.Column<DateTime>(type: "datetime", nullable: true),
-                    denThoiGian = table.Column<DateTime>(type: "datetime", nullable: true),
+                    tuThoiGian = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "GetDate()"),
+                    denThoiGian = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "GetDate()"),
                     idHinhThucDaoTao = table.Column<int>(type: "int", nullable: false),
                     idTrinhDo = table.Column<int>(type: "int", nullable: false),
                     maNhanVien = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false)
@@ -645,7 +659,7 @@ namespace HRMSolution.Data.Migrations
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     maHopDong = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-                    nhomLuong = table.Column<int>(type: "int", nullable: true),
+                    idNhomLuong = table.Column<int>(type: "int", nullable: false),
                     heSoLuong = table.Column<float>(type: "real", nullable: true),
                     bacLuong = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     luongCoBan = table.Column<float>(type: "real", nullable: true),
@@ -653,13 +667,19 @@ namespace HRMSolution.Data.Migrations
                     phuCapKhac = table.Column<float>(type: "real", nullable: true),
                     tongLuong = table.Column<float>(type: "real", nullable: true),
                     thoiHanLenLuong = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
-                    ngayHieuLuc = table.Column<DateTime>(type: "datetime", nullable: true),
-                    ngayKetThuc = table.Column<DateTime>(type: "datetime", nullable: true),
+                    ngayHieuLuc = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "GetDate()"),
+                    ngayKetThuc = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "GetDate()"),
                     ghiChu = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Luong", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_Luong_DanhMucNhomLuong_idNhomLuong",
+                        column: x => x.idNhomLuong,
+                        principalTable: "DanhMucNhomLuong",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Luong_HopDong_maHopDong",
                         column: x => x.maHopDong,
@@ -667,6 +687,176 @@ namespace HRMSolution.Data.Migrations
                         principalColumn: "maHopDong",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "DanhMucChucDanh",
+                columns: new[] { "id", "maChucDanh", "phuCap", "tenChucDanh" },
+                values: new object[,]
+                {
+                    { 1, "CD01", 100000f, "Cử Nhân" },
+                    { 2, "CD02", 200000f, "Thạc Sĩ" },
+                    { 3, "CD03", 300000f, "Tiến Sĩ" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "DanhMucChucVu",
+                columns: new[] { "id", "maChucVu", "phuCap", "tenChucVu" },
+                values: new object[,]
+                {
+                    { 1, "CV01", 100000f, "Nhân viên" },
+                    { 2, "CV02", 200000f, "Trưởng Phòng" },
+                    { 3, "CV03", 300000f, "Giám Đốc" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "DanhMucChuyenMon",
+                columns: new[] { "id", "maChuyenMon", "tenChuyenMon" },
+                values: new object[,]
+                {
+                    { 4, "CM04", "Kế toán – kiểm toán" },
+                    { 3, "CM03", "Quản tị kinh doanh" },
+                    { 5, "CM05", "Kinh Tế" },
+                    { 1, "CM01", "Tài chính – ngân hàng" },
+                    { 2, "CM02", "Hành chính văn phòng" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "DanhMucDanToc",
+                columns: new[] { "id", "tenDanhMuc" },
+                values: new object[,]
+                {
+                    { 1, "kinh" },
+                    { 2, "Mông" },
+                    { 3, "Thái" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "DanhMucHonNhan",
+                columns: new[] { "id", "tenDanhMuc" },
+                values: new object[] { 1, "Độc Thân" });
+
+            migrationBuilder.InsertData(
+                table: "DanhMucKhenThuongKyLuat",
+                columns: new[] { "id", "tenDanhMuc" },
+                values: new object[] { 1, "Thưởng Nhân viên suất xác tháng" });
+
+            migrationBuilder.InsertData(
+                table: "DanhMucLoaiHopDong",
+                columns: new[] { "id", "maLoaiHopDong", "tenLoaiHopDong" },
+                values: new object[,]
+                {
+                    { 1, "MHD01", "Hợp đồng một năm" },
+                    { 2, "MHD02", "Hợp đồng ba năm" },
+                    { 3, "MHD03", "Hợp đồng vô thời hạn" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "DanhMucNgachCongChuc",
+                columns: new[] { "id", "tenNgach" },
+                values: new object[,]
+                {
+                    { 4, "Loại D" },
+                    { 3, "Loại C" },
+                    { 1, "Loại A" },
+                    { 2, "Loại B" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "DanhMucNgoaiNgu",
+                columns: new[] { "id", "tenDanhMuc" },
+                values: new object[,]
+                {
+                    { 1, "Tiếng Anh" },
+                    { 2, "Tiếng Trung Quốc" },
+                    { 3, "Tiếng pháp" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "DanhMucNguoiThan",
+                columns: new[] { "id", "tenDanhMuc" },
+                values: new object[,]
+                {
+                    { 1, "Bố" },
+                    { 2, "Mẹ" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "DanhMucPhongBan",
+                columns: new[] { "id", "maPhongBan", "tenPhongBan" },
+                values: new object[,]
+                {
+                    { 3, "PB03", "3" },
+                    { 1, "PB01", "1" },
+                    { 2, "PB02", "2" },
+                    { 4, "PB04", "4" },
+                    { 5, "PB05", "5" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "DanhMucTonGiao",
+                columns: new[] { "id", "tenDanhMuc" },
+                values: new object[] { 1, "không" });
+
+            migrationBuilder.InsertData(
+                table: "DanhMucTrinhDo",
+                columns: new[] { "id", "tenTrinhDo" },
+                values: new object[,]
+                {
+                    { 1, "Giỏi" },
+                    { 2, "Khá" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "HinhThucDaoTao",
+                columns: new[] { "id", "tenHinhThuc" },
+                values: new object[,]
+                {
+                    { 1, "Đại học" },
+                    { 2, "Cao đẳng" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "TaiKhoan",
+                columns: new[] { "tenDangNhap", "matKhau", "vaiTro" },
+                values: new object[] { "admin", "123", 1 });
+
+            migrationBuilder.InsertData(
+                table: "danhMucTinhChatLaoDongs",
+                columns: new[] { "id", "tenTinhChat" },
+                values: new object[] { 1, "Chính thức" });
+
+            migrationBuilder.InsertData(
+                table: "DanhMucTo",
+                columns: new[] { "idTo", "idPhongBan", "maTo", "tenTo" },
+                values: new object[,]
+                {
+                    { 1, 1, "T01", "Tổ 1" },
+                    { 20, 5, "T019", "Tổ 19" },
+                    { 19, 5, "T018", "Tổ 18" },
+                    { 18, 5, "T017", "Tổ 17" },
+                    { 17, 4, "T016", "Tổ 16" },
+                    { 16, 4, "T015", "Tổ 15" },
+                    { 15, 4, "T014", "Tổ 14" },
+                    { 14, 4, "T013", "Tổ 13" },
+                    { 13, 3, "T012", "Tổ 12" },
+                    { 12, 3, "T011", "Tổ 11" },
+                    { 11, 3, "T010", "Tổ 10" },
+                    { 10, 3, "T09", "Tổ 9" },
+                    { 9, 2, "T08", "Tổ 8" },
+                    { 8, 2, "T07", "Tổ 7" },
+                    { 7, 2, "T06", "Tổ 6" },
+                    { 6, 2, "T06", "Tổ 5" },
+                    { 5, 1, "T05", "Tổ 4" },
+                    { 4, 1, "T04", "Tổ 3" },
+                    { 3, 1, "T03", "Tổ 2" },
+                    { 2, 1, "T02", "Tổ 1" },
+                    { 21, 5, "T020", "Tổ 20" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "NhanVien",
+                columns: new[] { "maNhanVien", "anh", "atm", "bhxh", "bhyt", "cccd", "chucVuHienTai", "coQuanTuyenDung", "conChinhSach", "congViecChinh", "danhHieuCaoNhat", "diDong", "dienThoai", "dienThoaiKhac", "facebook", "gioiTinh", "hoChieu", "hoTen", "idDanToc", "idDanhMucHonNhan", "idNgachCongChuc", "idPhongBan", "idTonGiao", "laConChinhSach", "laThuongBinh", "lyDoNghiViec", "maSoThue", "ngachCongChucNoiDung", "nganHang", "ngayCapCCCD", "ngayHetHanCCCD", "ngaySinh", "ngheNghiep", "noiCapCCCD", "noiCapHoChieu", "noiSinh", "noiThamGia", "quanHamCaoNhat", "queQuan", "quocTich", "skype", "tamTru", "thuongBinh", "thuongTru", "tinhChatLaoDong", "to", "trangThaiLaoDong" },
+                values: new object[] { "NV0001", "1", null, null, null, "040828462", "Nhân Viên", "Phát Đạt", null, "code", null, "0961441404", "02466666", null, null, true, null, "Đào Ngọc Hưởng", 1, 1, 1, 1, 1, null, null, null, null, null, null, new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(1998, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), "Sinh viên", "Điện Biên", null, "Hưng Yên", null, null, "Hưng Yên", "Việt Nam", null, "Đại học FPT", null, "Điện Biên", 1, 1, null });
 
             migrationBuilder.CreateIndex(
                 name: "IX_DanhMucTo_idPhongBan",
@@ -719,6 +909,11 @@ namespace HRMSolution.Data.Migrations
                 table: "LienHeKhanCap",
                 column: "maNhanVien",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Luong_idNhomLuong",
+                table: "Luong",
+                column: "idNhomLuong");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Luong_maHopDong",
@@ -845,6 +1040,9 @@ namespace HRMSolution.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "DanhMucKhenThuongKyLuat");
+
+            migrationBuilder.DropTable(
+                name: "DanhMucNhomLuong");
 
             migrationBuilder.DropTable(
                 name: "HopDong");

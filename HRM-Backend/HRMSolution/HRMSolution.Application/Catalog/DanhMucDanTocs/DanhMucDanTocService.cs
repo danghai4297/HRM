@@ -46,11 +46,19 @@ namespace HRMSolution.Application.Catalog.DanhMucDanTocs
             return await _context.SaveChangesAsync(); 
         }
 
-        public List<DanhMucDanToc> GetAll()
+        public async Task<List<DanhMucDanTocViewModel>> GetAll()
         {
             
-            var danhMucDanToc = _context.danhMucDanTocs.ToList();
-            return danhMucDanToc;
+            var query = from p in _context.danhMucDanTocs select p;
+            
+            var data = await query.Select(x => new DanhMucDanTocViewModel()
+            {
+                id = x.id,
+                tenDanhMuc = x.tenDanhMuc
+            }).ToListAsync();
+            
+
+            return data;
         }
 
 

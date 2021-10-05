@@ -1,18 +1,17 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace HRMSolution.Data.Entities
+namespace HRMSolution.Application.Catalog.NhanViens.Dtos
 {
-    public class NhanVien
+    public class NhanVienViewModel
     {
         public string maNhanVien { get; set; }
         public string hoTen { get; set; }
-        
+
         public string quocTich { get; set; }
         public DateTime ngaySinh { get; set; }
-        public bool gioiTinh { get; set; }
+        public string gioiTinh { get; set; }
         public string dienThoai { get; set; }
         public string dienThoaiKhac { get; set; }
         public string diDong { get; set; }
@@ -27,8 +26,8 @@ namespace HRMSolution.Data.Entities
         public string noiCapHoChieu { get; set; }
         public DateTime? ngayCapHoChieu { get; set; }
         public DateTime? ngayHetHanHoChieu { get; set; }
-        
-        
+
+
         public string noiSinh { get; set; }
         public string queQuan { get; set; }
         public string thuongTru { get; set; }
@@ -70,22 +69,5 @@ namespace HRMSolution.Data.Entities
         public int idPhongBan { get; set; }
         public int to { get; set; }
         public int idNgachCongChuc { get; set; }
-
-
-        public LichSuBanThan LichSuBanThan { get; set; }
-        public YTe YTe { get; set; }
-        public LienHeKhanCap LienHeKhanCap { get; set; }
-        public List<TrinhDoVanHoa> TrinhDoVanHoas { get; set; }
-        public DanhMucPhongBan DanhMucPhongBan { get; set; }
-        public List<DieuChuyen> DieuChuyens { get; set; }
-        public List<NgoaiNgu> NgoaiNgus { get; set; }
-        public List<NguoiThan> NguoiThans { get; set; }
-        public DanhMucNgachCongChuc DanhMucNgachCongChuc { get; set; }
-        public DanhMucDanToc DanhMucDanToc { get; set; }
-        public DanhMucTonGiao DanhMucTonGiao { get; set; }
-        public List<KhenThuongKyLuat> KhenThuongKyLuats { get; set; }
-        public List<HopDong> HopDongs { get; set; }
-        public DanhMucTinhChatLaoDong DanhMucTinhChatLaoDong { get; set; }
-        public DanhMucHonNhan DanhMucHonNhan { get; set; }
     }
 }
