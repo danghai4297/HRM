@@ -1,29 +1,10 @@
-html {
-  scroll-behavior: smooth;
-}
-
-.btn-back {
-  width: 2.3rem;
-  height: 2.3rem;
-  margin: 0 0.3rem 0.3rem 0.3rem;
-  background-color: transparent;
-
-  opacity: 0.6;
-
-  border: none;
-  border-radius: 4px;
-}
-
-.btn-back:hover {
-  // background-color: rgb(62, 148, 206);
-}
 
 .contents {
   width: 100%;
   .first-information {
     width: 98%;
     min-height: 200px;
-    background: whitesmoke;
+    background: rgba(255, 255, 255, 0.6);
     margin-top: 1em;
     margin-left: 0.7em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -31,25 +12,27 @@ html {
     display: flex;
     .left-path {
       width: 20%;
-      border: 1px solid red;
+
       .icons {
         font-size: 150%;
+        padding-left: 3%;
+        padding-top: 0.1%;
       }
-
       .icon-second {
         font-size: 300%;
         padding-left: 38%;
       }
       .names {
-        padding-left: 9%;
+        padding-right: 2%;
+        text-align: center;
       }
       .codes {
-        padding-left: 42%;
+        padding-left: 44%;
       }
     }
     .middle-path {
       width: 70%;
-      border: 1px solid green;
+
       .row-detail {
         width: 100%;
         p {
@@ -63,13 +46,24 @@ html {
     }
     .right-path {
       width: 10%;
-      border: 1px solid blue;
+
+      .btn {
+        float: right;
+        display: block;
+        margin: 8%;
+        margin-right: 30%;
+        box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25));
+      }
+      #btn-3 {
+        width: 32%;
+      }
     }
   }
   .main-information {
     display: flex;
     width: 98%;
     margin: 0.6em;
+
     .left-header-information {
       margin-top: 0.5em;
       width: 17%;
@@ -94,11 +88,15 @@ html {
     .right-information {
       margin-top: 0.5em;
       background: white;
-      height: auto;
+      // height: auto;
       width: 83%;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 5px;
       padding: 0;
+      
+      height: 600px;
+      overflow-y: auto;
+      scroll-behavior: smooth;
       .form {
         width: 100%;
         height: auto;
@@ -120,6 +118,15 @@ html {
             padding: 2%;
             .iconss {
               transform: rotate(180deg);
+              color: black;
+            }
+            .iconsss {
+              color: black;
+            }
+            .main-arrow-button {
+              background: transparent;
+              border: none;
+              margin-left: 65%;
             }
           }
         }
@@ -146,4 +153,15 @@ html {
       }
     }
   }
+}
+.btn-back {
+  width: 2.3rem;
+  height: 2.3rem;
+  margin: 0 0.3rem 0.3rem 0.3rem;
+  background-color: transparent;
+
+  opacity: 0.6;
+
+  border: none;
+  border-radius: 4px;
 }

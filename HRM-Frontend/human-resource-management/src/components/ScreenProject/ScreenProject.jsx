@@ -3,9 +3,9 @@ import "./ScreenProject.scss";
 
 import Header from "../Header/Header";
 import SideBarLeft from "../SideBarLeft/SideBarLeft";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
-import { RouterLink } from "./RouterLink";
+
 import DashBoard from "../ScreenDashBoard/DashBoard";
 import Detail from "../Detail/Detail";
 import ScreenReport from "../ScreenReport/ScreenReport";
@@ -17,8 +17,11 @@ import ScreenCategory from "../ScreenCategory/ScreenCategory";
 import ScreenSalary from "../ScreenSalary/ScreenSalary";
 import ScreenTableNV from "../ScreenTableNV/ScreenTableNV";
 import ScreenContract from "../ScreenContract/ScreenContract";
-import AddProfile from "../ScreenAddProfile/ScreenAddProfile"
+import ScreenNotFound from "./ScreenNotFound";
+
+
 function ScreenProject() {
+  
   return (
     <Router>
       <div className="body-screen">
@@ -31,7 +34,10 @@ function ScreenProject() {
           </div>
           <div className="content">
             <Switch>
-              <Route exact path="/" component={DashBoard} />
+              <Route exact path="/">
+                <Redirect to="/home"/>
+              </Route>
+              <Route exact path="/home" component={DashBoard} />
 
               <Route exact path="/profile" component={ScreenTableNV} />
               <Route path="/profile/:id" component={Detail} />
@@ -40,9 +46,9 @@ function ScreenProject() {
 
               <Route exact path="/salary" component={ScreenSalary} />
 
-              <Route exact path="/category" component={ScreenCategory} />
+              <Route path="/category" component={ScreenCategory} />
 
-              <Route exact path="/transfer" component={AddProfile} />
+              <Route exact path="/transfer" component={ScreenTransfer} />
 
               <Route exact path="/resign" component={ScreenResign} />
 
@@ -51,6 +57,7 @@ function ScreenProject() {
               <Route exact path="/discipline" component={ScreenDiscipline} />
 
               <Route exact path="/report" component={ScreenReport} />
+              <Route path="*" component={ScreenNotFound}/>
             </Switch>
           </div>
         </div>
