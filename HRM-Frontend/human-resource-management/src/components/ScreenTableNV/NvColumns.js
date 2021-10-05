@@ -34,10 +34,10 @@ export const NVCOLUMNS = [
   },
   {
     Header: "Gender",
-    accessor: (row) => {
-      return row.gender === false ? "Nữ" : "Nam";
-    },
-    // accessor: "gender",
+    // accessor: (row) => {
+    //   return row.gender ? "Nam" : "Nữ";
+    // },
+    accessor: "gender",
     minWidth: 200,
     Filter: SelectColumnFilter,
     // Cell: ({ value }) => {

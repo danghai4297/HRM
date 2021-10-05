@@ -1,11 +1,12 @@
 import React from "react";
+import "./Export.scss";
 
 import * as FileSaver from "file-saver";
 
 import * as XLSX from "xlsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export const ExportCSV = ({ csvData, fileName }) => {
+export const ExportCSV = ({ ful, csvData, fileName }) => {
   const fileType =
     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8";
 
@@ -26,10 +27,10 @@ export const ExportCSV = ({ csvData, fileName }) => {
   return (
     <button
       onClick={(e) => exportToCSV(csvData, fileName)}
-      className="btn-fil"
+      className="btn-export"
       type="submit"
     >
-      <FontAwesomeIcon icon={["fas", "download"]} />
+      <FontAwesomeIcon icon={["fas", "file-excel"]} /> All
     </button>
     // <button onClick={(e) => exportToCSV(csvData, fileName)}>Export</button>
   );

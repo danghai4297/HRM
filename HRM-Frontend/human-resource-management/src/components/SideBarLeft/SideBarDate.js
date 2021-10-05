@@ -4,7 +4,7 @@ export const SideBarData = [
   {
     title: "Tổng quan",
     icon: <FontAwesomeIcon icon={["fas", "home"]} />,
-    link: "/home",
+    link: "/",
   },
   {
     title: "Hồ sơ",
@@ -43,7 +43,7 @@ export const SideBarData = [
   },
   {
     title: "Kỉ luật",
-    icon: <FontAwesomeIcon icon={["fas", "thumbs-down"]} />,
+    icon: <FontAwesomeIcon icon={["fas", "ban"]} />,
     link: "/discipline",
   },
   {

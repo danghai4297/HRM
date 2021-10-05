@@ -15,13 +15,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Styles } from "./TableStyles";
 import { useSticky } from "react-table-sticky";
 
+import { Link } from "react-router-dom";
+
 function TablePagination(props) {
-  const { tid, columns, data } = props;
+  const { link, tid, columns, data } = props;
   const {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    // rows,
+    rows,
     state,
     //seach table all col
     setGlobalFilter,
@@ -174,16 +176,19 @@ function TablePagination(props) {
             <tbody {...getTableBodyProps()} className="bodyy">
               {page.map((row, i) => {
                 prepareRow(row);
+                // console.log(row);
                 return (
-                  <tr {...row.getRowProps()} className="tr">
-                    {row.cells.map((cell) => {
-                      return (
-                        <tr {...cell.getCellProps()} className="td">
-                          {cell.render("Cell")}
-                        </tr>
-                      );
-                    })}
-                  </tr>
+                  <Link to={link + row.original.id} className="link-item">
+                    <tr {...row.getRowProps()} className="tr">
+                      {row.cells.map((cell) => {
+                        return (
+                          <td {...cell.getCellProps()} className="td">
+                            {cell.render("Cell")}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  </Link>
                 );
               })}
             </tbody>
@@ -202,7 +207,7 @@ function TablePagination(props) {
             value={pageSize}
             onChange={(e) => setPageSize(Number(e.target.value))}
           >
-            {[10, 25, 50].map((pageSize) => (
+            {[10, 25, 50, rows.length].map((pageSize) => (
               <option key={pageSize} value={pageSize}>
                 {pageSize}
               </option>

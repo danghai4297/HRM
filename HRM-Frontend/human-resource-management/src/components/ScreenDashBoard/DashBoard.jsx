@@ -64,17 +64,23 @@ function DashBoard(props) {
   ];
   const fileName = "DSNV";
   const { list } = useContext(ListContext);
-  const [dataXp, setDataXp] = useState(list);
+  // const [dataEp, setDataEp] = useState(list);
+  // const newData = [];
 
-  useEffect(() => {
-    const newData = [];
-    dataXp.map((item) => {
-      item.gender === true ? (item.gender = "nam") : (item.gender = "nu");
-      newData.push(item);
-    });
-    setDataXp(newData);
-    console.log(dataXp);
-  }, []);
+  // useEffect(() => {
+  //   list.map((item) => {
+  //     item.gender === true ? (item.gender = "Nam") : (item.gender = "Nữ");
+  //     newData.push(item);
+  //   });
+  //   setDataEp(newData);
+  //   return () => {
+  //     list.map((item) => {
+  //       item.gender === "Nam" ? (item.gender = true) : (item.gender = false);
+  //       newData.push(item);
+  //     });
+  //     setDataEp(newData);
+  //   };
+  // }, []);
 
   return (
     <>
@@ -114,7 +120,7 @@ function DashBoard(props) {
       </div>
       <div className="excel-item">
         <div className="item-da">
-          <ItemExcel dataXp={dataXp} fileName={fileName} title="nhan vien" />
+          <ItemExcel dataXp={list} fileName={fileName} title="nhan vien" />
         </div>
         <div className="item-da">
           <ItemExcel title="luong nhan vien" />

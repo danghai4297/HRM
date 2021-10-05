@@ -7,6 +7,7 @@ function SideBarLeft() {
   function Menu({ val }) {
     let match = useRouteMatch({
       path: val.link,
+      exact: true,
     });
     return (
       <Link to={val.link} className="link-item">
