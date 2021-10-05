@@ -1,10 +1,11 @@
 import React from "react";
 import AddContractForm from "../../components/AddContractForm/AddContractForm";
 
+const onHandleAdd = (profile) => {
+  console.log("addProfile:", profile);
+};
 function ScreenAddContract(props) {
-  const onHandleAdd = (profile) => {
-    console.log("addProfile:", profile);
-  };
+ 
   return <AddContractForm objectData={onHandleAdd} />;
 }
 
