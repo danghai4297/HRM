@@ -11,6 +11,9 @@ body {
 .sticky-top {
   top: 61px !important;
 }
+.link-item:hover {
+    text-decoration: none;
+}
 .SidebarList {
   margin: 0;
   height: auto;

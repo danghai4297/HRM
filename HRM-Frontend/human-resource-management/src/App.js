@@ -3,13 +3,14 @@ import "./App.css";
 import "./components/FontAwesomeIcons/index";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ScreenProject from "./components/ScreenProject/ScreenProject.jsx";
+import { ListProvider } from "./Contexts/ListContext";
 
 function App() {
   return (
     <div>
-      
-      <ScreenProject></ScreenProject>
-
+      <ListProvider>
+        <ScreenProject />
+      </ListProvider>
     </div>
   );
 }

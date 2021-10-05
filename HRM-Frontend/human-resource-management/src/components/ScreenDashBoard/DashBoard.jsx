@@ -1,13 +1,11 @@
-import React, { useContext } from "react";
-import PropTypes from "prop-types";
+import React, { useContext, useEffect, useState } from "react";
 import "./DashBoard.scss";
-import Header from "../Header/Header";
 import ItemDashBoard from "../ItemDashBoard/ItemDashBoard";
 import ItemExcel from "../ItemExcel/ItemExcel";
 
 import { ListContext } from "../../Contexts/ListContext";
-import SideBarLeft from "../SideBarLeft/SideBarLeft";
 import TablePagination from "../TablePagination/TablePagination";
+import SelectColumnFilter from "../TablePagination/SelectColumnFilter";
 
 DashBoard.propTypes = {};
 
@@ -16,39 +14,73 @@ function DashBoard(props) {
     {
       Header: "ID",
       accessor: "id",
+      sticky: "left",
+      Filter: SelectColumnFilter,
+      disableFilters: true,
     },
     {
       Header: "First Name",
       accessor: "firstName",
+      sticky: "left",
+      Filter: SelectColumnFilter,
+      disableFilters: true,
     },
     {
       Header: "Last Name",
       accessor: "lastName",
+      sticky: "left",
+      Filter: SelectColumnFilter,
+      disableFilters: true,
     },
     {
       Header: "Email",
       accessor: "email",
+      Filter: SelectColumnFilter,
+      disableFilters: true,
     },
     {
       Header: "Gender",
       accessor: "gender",
+      Filter: SelectColumnFilter,
     },
-    // {
-    //   Header: "Birthday",
-    //   accessor: "birthday",
-    // },
+    {
+      Header: "Birthday",
+      accessor: "birthday",
+      Filter: SelectColumnFilter,
+      disableFilters: true,
+    },
     {
       Header: "Salary",
       accessor: "salary",
+      Filter: SelectColumnFilter,
+      disableFilters: true,
     },
     {
       Header: "Phone",
       accessor: "phone",
+      Filter: SelectColumnFilter,
+      disableFilters: true,
     },
   ];
-
+  const fileName = "DSNV";
   const { list } = useContext(ListContext);
-  console.log(list);
+  // const [dataEp, setDataEp] = useState(list);
+  // const newData = [];
+
+  // useEffect(() => {
+  //   list.map((item) => {
+  //     item.gender === true ? (item.gender = "Nam") : (item.gender = "Nữ");
+  //     newData.push(item);
+  //   });
+  //   setDataEp(newData);
+  //   return () => {
+  //     list.map((item) => {
+  //       item.gender === "Nam" ? (item.gender = true) : (item.gender = false);
+  //       newData.push(item);
+  //     });
+  //     setDataEp(newData);
+  //   };
+  // }, []);
 
   return (
     <>
@@ -58,6 +90,7 @@ function DashBoard(props) {
             totalEmployees="110"
             fontIcon="users"
             title="nhan vien"
+            link="/profile"
           />
         </div>
         <div className="item-da">
@@ -65,6 +98,7 @@ function DashBoard(props) {
             totalEmployees="11"
             fontIcon="building"
             title="Phong ban"
+            link=""
           />
         </div>
         <div className="item-da">
@@ -72,6 +106,7 @@ function DashBoard(props) {
             totalEmployees="110"
             fontIcon="money-check-alt"
             title="Luong n.vien"
+            link="/salary"
           />
         </div>
         <div className="item-da">
@@ -79,12 +114,13 @@ function DashBoard(props) {
             totalEmployees="12"
             fontIcon="users-slash"
             title="N.vien nghi viec"
+            link="/resign"
           />
         </div>
       </div>
       <div className="excel-item">
         <div className="item-da">
-          <ItemExcel title="nhan vien" />
+          <ItemExcel dataXp={list} fileName={fileName} title="nhan vien" />
         </div>
         <div className="item-da">
           <ItemExcel title="luong nhan vien" />

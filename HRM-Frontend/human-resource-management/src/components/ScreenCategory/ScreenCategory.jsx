@@ -20,6 +20,7 @@ import ItemRelation from "./ScreenItemCategory/ItemRelation/ItemRelation";
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Route, Switch } from "react-router-dom";
+import ScreenNotFound from "../ScreenProject/ScreenNotFound";
 function ScreenCategory() {
   return (
     <>
@@ -59,6 +60,7 @@ function ScreenCategory() {
               <Route path="/category/training" component={ItemTraining} />
               <Route path="/category/civil" component={ItemCivil} />
               <Route path="/category/relation" component={ItemRelation} />
+              <Route path="*" component={ScreenNotFound}/>
             </Switch>
           </div>
         </div>
