@@ -17,7 +17,7 @@ import ScreenCategory from "../ScreenCategory/ScreenCategory";
 import ScreenSalary from "../ScreenSalary/ScreenSalary";
 import ScreenTableNV from "../ScreenTableNV/ScreenTableNV";
 import ScreenContract from "../ScreenContract/ScreenContract";
-
+import AddProfile from "../ScreenAddProfile/ScreenAddProfile"
 function ScreenProject() {
   return (
     <Router>
@@ -42,7 +42,7 @@ function ScreenProject() {
 
               <Route exact path="/category" component={ScreenCategory} />
 
-              <Route exact path="/transfer" component={ScreenDiscipline} />
+              <Route exact path="/transfer" component={AddProfile} />
 
               <Route exact path="/resign" component={ScreenResign} />
 
