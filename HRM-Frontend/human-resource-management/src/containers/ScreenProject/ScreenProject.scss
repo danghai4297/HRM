@@ -1,0 +1,40 @@
+// .dash-board {
+//     min-width: 99vw;
+//     min-height: 99vh;
+//     position: relative;
+// }
+// .sticky-top {
+//     top: 61px !important;
+// }
+
+.header {
+    width: auto;
+    position: sticky;
+    height: 10%;
+
+    top: 0;
+    z-index: 10;
+}
+
+.body-contents {
+    background-color: rgb(136, 189, 188);
+    display: flex;
+    width: 100%;
+    min-height: 93.4vh;
+
+    .menu-bar {
+        min-height: 100%;
+        width: 15%;
+    }
+
+    .content {
+        width: 85%;
+        height: auto;
+        margin-top: 1%;
+    }
+}
+
+.btn:hover {
+    background-color: rgb(62, 148, 206);
+    box-shadow: 0 0 2px 2px rgb(52, 59, 54);
+}
