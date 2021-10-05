@@ -5,7 +5,7 @@ import { links } from "./ScrollData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import {dum} from "./Data";
-function Detail(props) {
+function Detail() {
   const [dropBase, setDropBase] = useState(true);
   const [dropContact, setDropContact] = useState(true);
   const [dropJob, setDropJob] = useState(true);
@@ -18,7 +18,7 @@ function Detail(props) {
   const [dropReward, setDropReward] = useState(true);
   const [dropDiscipline, setDropDiscipline] = useState(true);
   const clickHandle = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const target = e.target.getAttribute("href");
     const location = document.querySelector(target).offsetTop;
 
@@ -146,7 +146,11 @@ function Detail(props) {
                 </Row>
               </Container>
             </div>
-            <div className="right-path"></div>
+            <div className="right-path">
+              <Button>Sửa</Button>
+              <Button variant="danger">Xóa</Button>
+              <Button variant="light" id="btn-3"><FontAwesomeIcon icon={["fas", "download"]} /></Button>
+            </div>
           </div>
           <div className="main-information">
             <div className="left-header-information">
@@ -179,7 +183,7 @@ function Detail(props) {
                     <h3>Thông tin cơ bản</h3>
                   </div>
                   <div className="arrow-button">
-                    <Button onClick={arrowBaseClickHandle}><FontAwesomeIcon icon={["fas", "chevron-down"]} className={!dropBase ? "iconss" : ""}/></Button>
+                    <button className="main-arrow-button" onClick={arrowBaseClickHandle}><FontAwesomeIcon icon={["fas", "chevron-down"]} className={!dropBase ? "iconss" : "iconsss"}/></button>
                   </div>
                 </div>
                 {dropBase && (
@@ -276,7 +280,7 @@ function Detail(props) {
                     <h3>Thông tin liên hệ</h3>
                   </div>
                   <div className="arrow-button">
-                    <Button onClick={arrowContactClickHandle}><FontAwesomeIcon icon={["fas", "chevron-down"]} className={!dropContact ? "iconss" : ""}/></Button>
+                    <button className="main-arrow-button" onClick={arrowContactClickHandle}><FontAwesomeIcon icon={["fas", "chevron-down"]} className={!dropContact ? "iconss" : "iconsss"}/></button>
                   </div>
                 </div>
                 {dropContact && (
@@ -332,7 +336,7 @@ function Detail(props) {
                     <h3>Thông tin công việc</h3>
                   </div>
                   <div className="arrow-button">
-                    <Button onClick={arrowJobClickHandle}><FontAwesomeIcon icon={["fas", "chevron-down"]} className={!dropJob ? "iconss" : ""}/></Button>
+                    <button className="main-arrow-button" onClick={arrowJobClickHandle}><FontAwesomeIcon icon={["fas", "chevron-down"]} className={!dropJob ? "iconss" : "iconsss"}/></button>
                   </div>
                 </div>
                 {dropJob && (
@@ -423,7 +427,7 @@ function Detail(props) {
                     <h3>Thông tin bảo hiểm</h3>
                   </div>
                   <div className="arrow-button">
-                    <Button onClick={arrowInsuranceClickHandle}><FontAwesomeIcon icon={["fas", "chevron-down"]} className={!dropInsurance ? "iconss" : ""}/></Button>
+                    <button className="main-arrow-button" onClick={arrowInsuranceClickHandle}><FontAwesomeIcon icon={["fas", "chevron-down"]} className={!dropInsurance ? "iconss" : "iconsss"}/></button>
                   </div>
                 </div>
                 {dropInsurance && (
@@ -443,7 +447,7 @@ function Detail(props) {
                     <h3>Trình độ văn hóa</h3>
                   </div>
                   <div className="arrow-button">
-                    <Button onClick={arrowCulturalClickHandle}><FontAwesomeIcon icon={["fas", "chevron-down"]} className={!dropCultural ? "iconss" : ""}/></Button>
+                    <button className="main-arrow-button" onClick={arrowCulturalClickHandle}><FontAwesomeIcon icon={["fas", "chevron-down"]} className={!dropCultural ? "iconss" : "iconsss"}/></button>
                   </div>
                 </div>
                 {dropCultural && (
@@ -465,7 +469,7 @@ function Detail(props) {
                     <h3>Thông tin gia đình</h3>
                   </div>
                   <div className="arrow-button">
-                    <Button onClick={arrowFamilyClickHandle}><FontAwesomeIcon icon={["fas", "chevron-down"]} className={!dropFamily ? "iconss" : ""}/></Button>
+                    <button className="main-arrow-button" onClick={arrowFamilyClickHandle}><FontAwesomeIcon icon={["fas", "chevron-down"]} className={!dropFamily ? "iconss" : "iconsss"}/></button>
                   </div>
                 </div>
                 {dropFamily && (
@@ -480,7 +484,7 @@ function Detail(props) {
                     <h3>Thông tin chính trị, quân sự, y tế</h3>
                   </div>
                   <div className="arrow-button">
-                    <Button onClick={arrowPoliticsClickHandle}><FontAwesomeIcon icon={["fas", "chevron-down"]} className={!dropPolitics ? "iconss" : ""}/></Button>
+                    <button className="main-arrow-button" onClick={arrowPoliticsClickHandle}><FontAwesomeIcon icon={["fas", "chevron-down"]} className={!dropPolitics ? "iconss" : "iconsss"}/></button>
                   </div>
                 </div>
                 {dropPolitics && (
@@ -570,7 +574,7 @@ function Detail(props) {
                     <h3>Hợp đồng lao động</h3>
                   </div>
                   <div className="arrow-button">
-                    <Button onClick={arrowContractClickHandle}><FontAwesomeIcon icon={["fas", "chevron-down"]} className={!dropContract ? "iconss" : ""}/></Button>
+                    <button className="main-arrow-button" onClick={arrowContractClickHandle}><FontAwesomeIcon icon={["fas", "chevron-down"]} className={!dropContract ? "iconss" : "iconsss"}/></button>
                   </div>
                 </div>
                 {dropContract && (
@@ -585,7 +589,7 @@ function Detail(props) {
                     <h3>Thuyên chuyển</h3>
                   </div>
                   <div className="arrow-button">
-                    <Button onClick={arrowTransferClickHandle}><FontAwesomeIcon icon={["fas", "chevron-down"]} className={!dropTransfer ? "iconss" : ""}/></Button>
+                    <button className="main-arrow-button" onClick={arrowTransferClickHandle}><FontAwesomeIcon icon={["fas", "chevron-down"]} className={!dropTransfer ? "iconss" : "iconsss"}/></button>
                   </div>
                 </div>
                 {dropTransfer && (
@@ -600,7 +604,7 @@ function Detail(props) {
                     <h3>Khen thưởng</h3>
                   </div>
                   <div className="arrow-button">
-                    <Button onClick={arrowRewardClickHandle}><FontAwesomeIcon icon={["fas", "chevron-down"]} className={!dropReward ? "iconss" : ""}/></Button>
+                    <button className="main-arrow-button" onClick={arrowRewardClickHandle}><FontAwesomeIcon icon={["fas", "chevron-down"]} className={!dropReward ? "iconss" : "iconsss"}/></button>
                   </div>
                 </div>
                 {dropReward && (
@@ -615,7 +619,7 @@ function Detail(props) {
                     <h3 className="h3s">Kỷ luật</h3>
                   </div>
                   <div className="arrow-button">
-                    <Button onClick={arrowDisciplineClickHandle}><FontAwesomeIcon icon={["fas", "chevron-down"]} className={!dropReward ? "iconss" : ""}/></Button>
+                    <button className="main-arrow-button" onClick={arrowDisciplineClickHandle}><FontAwesomeIcon icon={["fas", "chevron-down"]} className={!dropDiscipline ? "iconss" : "iconsss"}/></button>
                   </div>
                 </div>
                 {dropDiscipline && (
