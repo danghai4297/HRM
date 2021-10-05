@@ -186,8 +186,10 @@ namespace HRMSolution.Data.EF
                 .WithMany(x => x.NhanViens)
                 .HasForeignKey(x => x.idDanhMucHonNhan);
 
+
             //DataSeedinng
             modelBuilder.seed();
+
 
             //base.OnModelCreating(modelBuilder);
         }

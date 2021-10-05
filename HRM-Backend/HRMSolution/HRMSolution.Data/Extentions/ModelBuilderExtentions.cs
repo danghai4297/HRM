@@ -1,4 +1,5 @@
-﻿using HRMSolution.Data.Entities;
+﻿
+using HRMSolution.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -110,8 +111,8 @@ namespace HRMSolution.Data.Extentions
             modelbulder.Entity<DanhMucHonNhan>().HasData(
                 new DanhMucHonNhan() { id = 1, tenDanhMuc = "Độc Thân" }
 
+
                 );
-            DateTime dt = new DateTime(2021, 04, 14, 16, 5, 7, 123);
             modelbulder.Entity<NhanVien>().HasData(
 
                 new NhanVien()
