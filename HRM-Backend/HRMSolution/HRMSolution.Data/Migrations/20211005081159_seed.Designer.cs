@@ -4,14 +4,16 @@ using HRMSolution.Data.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HRMSolution.Data.Migrations
 {
     [DbContext(typeof(HRMDbContext))]
-    partial class HRMDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211005081159_seed")]
+    partial class seed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1459,9 +1461,9 @@ namespace HRMSolution.Data.Migrations
                             idNgachCongChuc = 1,
                             idPhongBan = 1,
                             idTonGiao = 1,
-                            ngayCapCCCD = new DateTime(1998, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(1998, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            ngaySinh = new DateTime(1998, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngheNghiep = "Sinh viên",
                             noiCapCCCD = "Điện Biên",
                             noiSinh = "Hưng Yên",

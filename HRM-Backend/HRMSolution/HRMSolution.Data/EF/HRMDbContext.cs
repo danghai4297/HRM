@@ -1,7 +1,7 @@
 ﻿
 using HRMSolution.Data.Configurations;
 using HRMSolution.Data.Entities;
-
+using HRMSolution.Data.Extentions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -185,7 +185,9 @@ namespace HRMSolution.Data.EF
                 .HasOne(x => x.DanhMucHonNhan)
                 .WithMany(x => x.NhanViens)
                 .HasForeignKey(x => x.idDanhMucHonNhan);
-            
+
+            //DataSeedinng
+            modelBuilder.seed();
 
             //base.OnModelCreating(modelBuilder);
         }

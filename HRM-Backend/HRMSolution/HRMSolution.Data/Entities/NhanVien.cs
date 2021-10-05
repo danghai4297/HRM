@@ -37,7 +37,7 @@ namespace HRMSolution.Data.Entities
         public DateTime? ngayThuViec { get; set; }
         public string congViecChinh { get; set; }
         public DateTime? ngayVaoBan { get; set; }
-        public DateTime ngayChinhThuc { get; set; }
+        public DateTime? ngayChinhThuc { get; set; }
         public string coQuanTuyenDung { get; set; }
         public string ngachCongChucNoiDung { get; set; }
         public DateTime? ngayVaoDang { get; set; }
