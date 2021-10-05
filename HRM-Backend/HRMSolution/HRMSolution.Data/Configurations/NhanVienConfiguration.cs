@@ -56,20 +56,7 @@ namespace HRMSolution.Data.Configurations
             builder.Property(x => x.quanHamCaoNhat).HasMaxLength(50);
             builder.Property(x => x.danhHieuCaoNhat).HasMaxLength(50);
             builder.Property(x => x.ngayVaoDoan).HasColumnType("datetime").HasDefaultValueSql("GetDate()");
-            builder.Property(x => x.ngayTuyenDung).HasColumnType("datetime").HasDefaultValueSql("GetDate()");
-            builder.Property(x => x.ngayThuViec).HasColumnType("datetime").HasDefaultValueSql("GetDate()");
-            builder.Property(x => x.congViecChinh).HasMaxLength(50).IsRequired();
-            builder.Property(x => x.ngayVaoBan).HasColumnType("datetime").HasDefaultValueSql("GetDate()");
-            builder.Property(x => x.ngayChinhThuc).HasColumnType("datetime").HasDefaultValueSql("GetDate()");
-            builder.Property(x => x.coQuanTuyenDung).HasMaxLength(50).IsRequired();
-            builder.Property(x => x.ngachCongChucNoiDung).HasMaxLength(50);
-            builder.Property(x => x.ngayVaoDang).HasColumnType("datetime").HasDefaultValueSql("getdate()");
-            builder.Property(x => x.ngayVaoDangChinhThuc).HasColumnType("datetime").HasDefaultValueSql("GetDate()");
-            builder.Property(x => x.ngayNhapNgu).HasColumnType("datetime").HasDefaultValueSql("GetDate()");
-            builder.Property(x => x.ngayXuatNgu).HasColumnType("datetime").HasDefaultValueSql("GetDate()");
-            builder.Property(x => x.quanHamCaoNhat).HasMaxLength(50);
-            builder.Property(x => x.danhHieuCaoNhat).HasMaxLength(50);
-            builder.Property(x => x.ngayVaoDoan).HasColumnType("datetime").HasDefaultValueSql("GetDate()");
+            
             builder.Property(x => x.noiThamGia).HasMaxLength(50);
             builder.Property(x => x.thuongBinh).HasMaxLength(50);
             builder.Property(x => x.conChinhSach).HasMaxLength(50);
@@ -77,7 +64,6 @@ namespace HRMSolution.Data.Configurations
             builder.Property(x => x.bhyt).HasMaxLength(10);
             builder.Property(x => x.atm).HasMaxLength(20);
             builder.Property(x => x.nganHang).HasMaxLength(50);
-            builder.Property(x => x.ngayNghiViec).HasColumnType("datetime").HasDefaultValueSql("GetDate()");
             builder.Property(x => x.ngayNghiViec).HasColumnType("datetime").HasDefaultValueSql("GetDate()");
             builder.Property(x => x.lyDoNghiViec).HasMaxLength(50);
             builder.Property(x => x.anh).HasMaxLength(50).IsRequired();
