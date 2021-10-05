@@ -1,6 +1,5 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../FontAwesomeIcons/index";
 export const SideBarData = [
   {
     title: "Tổng quan",
@@ -44,7 +43,7 @@ export const SideBarData = [
   },
   {
     title: "Kỉ luật",
-    icon: <FontAwesomeIcon icon={["fas", "thumbs-down"]} />,
+    icon: <FontAwesomeIcon icon={["fas", "ban"]} />,
     link: "/discipline",
   },
   {

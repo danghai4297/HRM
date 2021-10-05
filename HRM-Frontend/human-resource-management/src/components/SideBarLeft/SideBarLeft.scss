@@ -5,8 +5,14 @@ body {
 }
 .Sidebar {
     min-height: 100%;
-    width: 100%;
+    min-width: 100%;
     background-color: #28144b;
+}
+.sticky-top {
+    top: 61px !important;
+}
+.link-item:hover {
+    text-decoration: none;
 }
 .SidebarList {
     margin: 0;
@@ -15,7 +21,7 @@ body {
     width: 100%;
 }
 .sticky-top {
-    top: 50px !important;
+    top: 61px !important;
 }
 .SidebarList .row {
     width: 100%;

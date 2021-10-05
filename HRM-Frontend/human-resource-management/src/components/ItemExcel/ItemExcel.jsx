@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./ItemExcel.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ExportDashBoard } from "../ExportFile/ExportDashBoard";
 
 ItemExcel.propTypes = {
   title: PropTypes.array,
@@ -12,7 +13,7 @@ ItemExcel.defaultProps = {
 };
 
 function ItemExcel(props) {
-  const { title } = props;
+  const { dataXp, fileName, title } = props;
 
   return (
     <div class="container">
@@ -27,12 +28,13 @@ function ItemExcel(props) {
           </span>
         </div>
       </div>
-      <div className="bot-excel">
+      <ExportDashBoard csvData={dataXp} fileName={fileName} title={title} />
+      {/* <div className="bot-excel">
         <h>Danh sach {title}</h>
         <span className="small-icon">
           <FontAwesomeIcon icon={["fas", "chevron-circle-right"]} />
         </span>
-      </div>
+      </div> */}
     </div>
   );
 }

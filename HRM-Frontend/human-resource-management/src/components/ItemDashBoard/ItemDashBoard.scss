@@ -9,6 +9,9 @@
 
     border-radius: 5px;
 
+    .link-item:hover {
+        text-decoration: none;
+    }
     .top {
         box-shadow: 0.2rem 0.3rem 0.3rem;
         background-color: white;
@@ -48,6 +51,7 @@
     .bot {
         box-shadow: 0.2rem 0.3rem 0.3rem;
         background-color: rgb(221, 224, 255);
+        color: rgb(54, 54, 54);
         border-radius: 0 0 5px 5px;
         height: 25%;
         width: 100%;
@@ -62,5 +66,9 @@
             margin: 0 0 0 0.8rem;
             opacity: 0.6;
         }
+    }
+
+    .bot:hover {
+        background-color: rgb(148, 203, 253);
     }
 }

@@ -1,28 +1,18 @@
 // <<<<<<< HEAD
 import "./App.css";
+import "./components/FontAwesomeIcons/index";
 import "bootstrap/dist/css/bootstrap.min.css";
-import AddProfile from "./components/AddProfile/AddProfile";
+import ScreenProject from "./components/ScreenProject/ScreenProject.jsx";
+import { ListProvider } from "./Contexts/ListContext";
+
 function App() {
-  return <AddProfile></AddProfile>;
-  //=======
-  // import React from "react";
-  // import "./App.css";
-  // import "./components/FontAwesomeIcons/index";
-  // import { ListProvider } from "./Contexts/ListContext";
-  // import DashBoard from "./components/DashBoard/DashBoard";
-
-  // import "bootstrap/dist/css/bootstrap.min.css";
-
-  // function App() {
-  //   return (
-  //     <div>
-  //       {/* <ListProvider>
-  //         <DashBoard />
-  //       </ListProvider> */}
-
-  //     </div>
-  //   );
-  //   //>>>>>>> 21cd160658f1c1c6721185dbf72db9500cc51314
+  return (
+    <div>
+      <ListProvider>
+        <ScreenProject />
+      </ListProvider>
+    </div>
+  );
 }
 
 export default App;

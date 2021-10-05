@@ -1,25 +1,29 @@
 import React from "react";
 import "./SideBarLeft.scss";
 import { SideBarData } from "./SideBarDate";
+import { Link, useRouteMatch } from "react-router-dom";
 
 function SideBarLeft() {
+  function Menu({ val }) {
+    let match = useRouteMatch({
+      path: val.link,
+      exact: true,
+    });
+    return (
+      <Link to={val.link} className="link-item">
+        <li className="row" id={match ? "active" : ""}>
+          <div id="icon">{val.icon}</div>
+          <div id="title">{val.title}</div>
+        </li>
+      </Link>
+    );
+  }
+
   return (
     <div className="Sidebar">
       <ul className="SidebarList sticky-top">
         {SideBarData.map((val, key) => {
-          return (
-            <li
-              className="row"
-              id={window.location.pathname === val.link ? "active" : ""}
-              key={key}
-              onClick={() => {
-                window.location.pathname = val.link;
-              }}
-            >
-              <div id="icon">{val.icon}</div>
-              <div id="title">{val.title}</div>
-            </li>
-          );
+          return <Menu val={val} key={key} />;
         })}
       </ul>
     </div>
