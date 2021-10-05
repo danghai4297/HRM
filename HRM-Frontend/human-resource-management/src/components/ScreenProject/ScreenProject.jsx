@@ -41,7 +41,7 @@ function ScreenProject() {
 
               <Route exact path="/profile" component={ScreenTableNV} />
               <Route path="/profile/:id" component={Detail} />
-
+              
               <Route exact path="/contract" component={ScreenContract} />
 
               <Route exact path="/salary" component={ScreenSalary} />
