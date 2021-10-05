@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./ScreenTableNV.scss";
@@ -8,6 +8,7 @@ import ReactHTMLTableToExcel from "react-html-to-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ExportCSV } from "../../components/ExportFile/ExportFile";
 import TablePagination from "../../components/TablePagination/TablePagination";
+import productApi from "../../api/productApi";
 
 ScreenTableNV.propTypes = {};
 
@@ -15,19 +16,20 @@ function ScreenTableNV(props) {
   const link = "/profile/";
   const fileName = "DSNV";
   const { list } = useContext(ListContext);
-  // const [dataEp, setDataEp] = useState([]);
-  // const newData = [];
+  const [dataAllNv, setdataAllNv] = useState([]);
 
-  // useEffect(() => {
-  //   dataEp.map((item) => {
-  //     item.gender === true ? (item.gender = "Nam") : (item.gender = "Nữ");
-  //     newData.push(item);
-  //   });
-  //   setDataEp(newData);
-  //   // return () => {
-  //   //   cleanup;
-  //   // };
-  // }, []);
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const responseNv = await productApi.getAllNv();
+        console.log(responseNv);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+    // setdataAllNv(responseNv);
+  }, []);
 
   return (
     <>
