@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Application\\HRMSolution.Application.csproj": {}
+    "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Application\\HRMSolution.Application.csproj": {}
   },
   "projects": {
-    "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Application\\HRMSolution.Application.csproj": {
+    "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Application\\HRMSolution.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Application\\HRMSolution.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Application\\HRMSolution.Application.csproj",
         "projectName": "HRMSolution.Application",
-        "projectPath": "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Application\\HRMSolution.Application.csproj",
-        "packagesPath": "C:\\Users\\Mina\\.nuget\\packages\\",
-        "outputPath": "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Application\\obj\\",
+        "projectPath": "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Application\\HRMSolution.Application.csproj",
+        "packagesPath": "C:\\Users\\Ngoc Huong\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ngoc Huong\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Data\\HRMSolution.Data.csproj": {
-                "projectPath": "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Data\\HRMSolution.Data.csproj"
+              "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Data\\HRMSolution.Data.csproj": {
+                "projectPath": "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Data\\HRMSolution.Data.csproj"
               },
-              "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Utilities\\HRMSolution.Utilities.csproj": {
-                "projectPath": "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Utilities\\HRMSolution.Utilities.csproj"
+              "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Utilities\\HRMSolution.Utilities.csproj": {
+                "projectPath": "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Utilities\\HRMSolution.Utilities.csproj"
               }
             }
           }
@@ -65,17 +65,17 @@
         }
       }
     },
-    "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Data\\HRMSolution.Data.csproj": {
+    "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Data\\HRMSolution.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Data\\HRMSolution.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Data\\HRMSolution.Data.csproj",
         "projectName": "HRMSolution.Data",
-        "projectPath": "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Data\\HRMSolution.Data.csproj",
-        "packagesPath": "C:\\Users\\Mina\\.nuget\\packages\\",
-        "outputPath": "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Data\\obj\\",
+        "projectPath": "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Data\\HRMSolution.Data.csproj",
+        "packagesPath": "C:\\Users\\Ngoc Huong\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ngoc Huong\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -145,17 +145,17 @@
         }
       }
     },
-    "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Utilities\\HRMSolution.Utilities.csproj": {
+    "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Utilities\\HRMSolution.Utilities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Utilities\\HRMSolution.Utilities.csproj",
+        "projectUniqueName": "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Utilities\\HRMSolution.Utilities.csproj",
         "projectName": "HRMSolution.Utilities",
-        "projectPath": "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Utilities\\HRMSolution.Utilities.csproj",
-        "packagesPath": "C:\\Users\\Mina\\.nuget\\packages\\",
-        "outputPath": "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Utilities\\obj\\",
+        "projectPath": "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Utilities\\HRMSolution.Utilities.csproj",
+        "packagesPath": "C:\\Users\\Ngoc Huong\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Utilities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ngoc Huong\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
