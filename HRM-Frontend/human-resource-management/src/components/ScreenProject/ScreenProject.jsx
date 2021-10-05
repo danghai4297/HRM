@@ -33,24 +33,24 @@ function ScreenProject() {
             <Switch>
               <Route exact path="/" component={DashBoard} />
 
-              <Route path="/profile" component={ScreenTableNV} />
-              <Route path="/detail/:id" component={Detail} />
+              <Route exact path="/profile" component={ScreenTableNV} />
+              <Route path="/profile/:id" component={Detail} />
 
-              <Route path="/contract" component={ScreenContract} />
+              <Route exact path="/contract" component={ScreenContract} />
 
-              <Route path="/salary" component={ScreenSalary} />
+              <Route exact path="/salary" component={ScreenSalary} />
 
-              <Route path="/category" component={ScreenCategory} />
+              <Route exact path="/category" component={ScreenCategory} />
 
-              <Route path="/transfer" component={ScreenTransfer} />
+              <Route exact path="/transfer" component={ScreenTransfer} />
 
-              <Route path="/resign" component={ScreenResign} />
+              <Route exact path="/resign" component={ScreenResign} />
 
-              <Route path="/reward" component={ScreenReward} />
+              <Route exact path="/reward" component={ScreenReward} />
 
-              <Route path="/discipline" component={ScreenDiscipline} />
+              <Route exact path="/discipline" component={ScreenDiscipline} />
 
-              <Route path="/report" component={ScreenReport} />
+              <Route exact path="/report" component={ScreenReport} />
             </Switch>
           </div>
         </div>

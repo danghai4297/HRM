@@ -84,10 +84,10 @@ function Detail(props) {
               <FontAwesomeIcon icon={["far", "user-circle"]} />
             </div>
             <div className="names">
-              <h5>{dum.name}</h5>
+              <h5>{dataDetail.firstName + " " + dataDetail.lastName}</h5>
             </div>
             <div className="codes">
-              <p>{dum.code}</p>
+              <p>{dataDetail.id}</p>
             </div>
           </div>
           <div className="middle-path">

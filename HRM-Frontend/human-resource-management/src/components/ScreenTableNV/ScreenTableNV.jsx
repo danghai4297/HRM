@@ -14,7 +14,7 @@ import Detail from "../Detail/Detail";
 ScreenTableNV.propTypes = {};
 
 function ScreenTableNV(props) {
-  const link = "/detail/";
+  const link = "/profile/";
   const fileName = "DSNV";
   const { list } = useContext(ListContext);
   // const [dataEp, setDataEp] = useState([]);
