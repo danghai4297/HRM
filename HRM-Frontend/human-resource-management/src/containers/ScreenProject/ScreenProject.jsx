@@ -21,6 +21,7 @@ import ScreenDiscipline from "../ScreenDiscipline/ScreenDiscipline";
 import ScreenReport from "../ScreenReport/ScreenReport";
 import ScreenNotFound from "./ScreenNotFound";
 import ScreenTransfer from "../ScreenTransfer/ScreenTransfer";
+import AddProfile from "../ScreenAddProfile/ScreenAddProfile";
 
 function ScreenProject() {
   return (
@@ -51,7 +52,7 @@ function ScreenProject() {
 
               <Route exact path="/transfer" component={ScreenTransfer}/>
 
-              <Route exact path="/resign" component={ScreenResign} />
+              <Route exact path="/resign" component={AddProfile} />
 
               <Route exact path="/reward" component={ScreenReward} />
 

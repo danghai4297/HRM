@@ -73,7 +73,7 @@ function AddProfileForm(props) {
 
   console.log(checked);
   //console.log(date);
-
+  const [image,setImage] = useState("/Images/userIcon.png");
   const {
     register,
     handleSubmit,
@@ -88,6 +88,15 @@ function AddProfileForm(props) {
     console.log(data);
     JSON.stringify(objectData(data));
     //objectData(data);
+  };
+  const imageHandler = (e) => {
+    const reader = new FileReader();
+    reader.onload = () =>{
+      if(reader.readyState === 2){
+       setImage(reader.result)
+      }
+    }
+    reader.readAsDataURL(e.target.files[0])
   };
   return (
     <div className="container-form">
@@ -108,15 +117,19 @@ function AddProfileForm(props) {
         <div className="container-ava">
           <span>
             {" "}
-            <FontAwesomeIcon
+            {/* <FontAwesomeIcon
               className="icon"
               icon={["fas", "user-circle"]}
-            ></FontAwesomeIcon>
+            ></FontAwesomeIcon> */}
+            <img src={image} className="icon" alt=""/>
           </span>
+          
           <input
             type="file"
             {...register("img")}
+            accept="Images/*"
             class="form-control-file"
+            onChange={imageHandler}
           ></input>
         </div>
         <div className="container-div-form">
@@ -431,6 +444,71 @@ function AddProfileForm(props) {
             </div>
           </div>
 
+          <div className="row">
+            <div className="col">
+              <div class="form-group form-inline">
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="baoHiemYte"
+                >
+                  Bảo hiểm y tế
+                </label>
+                <input
+                  type="text"
+                  {...register("baoHiemYte")}
+                  id="baoHiemYte"
+                  className={
+                    !errors.baoHiemYte
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
+                />
+                <span className="message">{errors.baoHiemYte?.message}</span>
+              </div>
+            </div>
+            <div className="col">
+              <div className="form-group form-inline">
+                <label class="col-sm-4 justify-content-start" htmlFor="baoHiemXaHoi">
+                  Bảo hiểm xã hội
+                </label>
+                <input
+                  type="text"
+                  {...register("baoHiemXaHoi")}
+                  id="baoHiemXaHoi"
+                  className={
+                    !errors.baoHiemXaHoi
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
+                />
+                <span className="message">{errors.baoHiemXaHoi?.message}</span>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-6">
+              <div class="form-group form-inline">
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="maSoThue"
+                >
+                  Mã số thuế cá nhân
+                </label>
+                <input
+                  type="text"
+                  {...register("maSoThue")}
+                  id="maSoThue"
+                  className={
+                    !errors.maSoThue
+                      ? "form-control col-sm-6 "
+                      : "form-control col-sm-6 border-danger"
+                  }
+                />
+                <span className="message">{errors.maSoThue?.message}</span>
+              </div>
+            </div>
+            
+          </div>
           <h5>CMND/Thẻ căn cước/Hộ chiếu</h5>
           <div className="row">
             <div className="col">
@@ -871,7 +949,7 @@ function AddProfileForm(props) {
                   class="col-sm-4 justify-content-start"
                   htmlFor="ngayCongTac"
                 >
-                  Ngày công tác
+                  Ngày chính thức
                 </label>
                 <input
                   type="text"
