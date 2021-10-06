@@ -60,4 +60,8 @@ export const SideBarLeftCategoryData=[
         title: "Danh mục quan hệ",
         link: "/category/relation"
     },
+    {
+        title: "Danh mục hôn nhân",
+        link: "/category/marriage"
+    },
 ]

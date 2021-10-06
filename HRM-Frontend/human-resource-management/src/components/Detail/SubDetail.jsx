@@ -5,30 +5,30 @@ import "./SubDetail.scss";
 function SubDetail(props) {
   const { titleLeft, itemLeft, titleRight, itemRight } = props;
   return (
-    <Container>
+    <div className="contains">
       <Row className="item">
         <Col>
-          <Row>
-            <Col xs lg="4">
+          <Row className="row-replace">
+            <Col>
               <p>{titleLeft}</p>
             </Col>
-            <Col className="border-bottom rows">
-              <p>{itemLeft}</p>
+            <Col className="border-bottom rows" xs={6}>
+              <p>{itemLeft === null ? "-" : itemLeft}</p>
             </Col>
           </Row>
         </Col>
         <Col>
-          <Row>
-            <Col xs lg="5">
+          <Row className="row-replace">
+            <Col>
               <p>{titleRight}</p>
             </Col>
-            <Col className={itemRight === null ? "" : "border-bottom rows"}>
-              <p>{itemRight}</p>
+            <Col className={titleRight === null ? "" : "border-bottom rows"} xs={6}>
+              <p>{itemRight === null ? "-" : itemRight}</p>
             </Col>
           </Row>
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 }
 

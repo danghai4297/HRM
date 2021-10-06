@@ -1,4 +1,3 @@
-
 .contents {
   width: 100%;
   .first-information {
@@ -18,16 +17,16 @@
         padding-left: 3%;
         padding-top: 0.1%;
       }
-      .icon-second {
-        font-size: 300%;
-        padding-left: 38%;
-      }
-      .names {
-        padding-right: 2%;
+      .avatar {
         text-align: center;
-      }
-      .codes {
-        padding-left: 44%;
+        margin-right: 3%;
+        .icon-second {
+          font-size: 300%;
+        }
+        .names {
+          padding-right: 2%;
+          text-align: center;
+        }
       }
     }
     .middle-path {
@@ -35,13 +34,17 @@
 
       .row-detail {
         width: 100%;
-        p {
-          font-size: x-small;
+        .fast-information {
+          font-size: smaller;
         }
         .col {
           padding-top: 4%;
           padding-left: 4%;
         }
+      }
+      .containn{
+        margin-left: 0;
+        width: 100%;
       }
     }
     .right-path {
@@ -78,9 +81,12 @@
         width: 100%;
         .row-left {
           list-style-type: none;
+          margin-top: 10%;
           a {
             text-decoration: none;
             color: black;
+            font-size: medium;
+            padding-left: 5%;
           }
         }
       }
@@ -88,15 +94,14 @@
     .right-information {
       margin-top: 0.5em;
       background: white;
-      // height: auto;
+      height: auto;
       width: 83%;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 5px;
       padding: 0;
-      
+
       height: 600px;
       overflow-y: auto;
-      scroll-behavior: smooth;
       .form {
         width: 100%;
         height: auto;
@@ -133,6 +138,7 @@
         .table {
           min-height: 100px;
           background: blue;
+          margin-top: 2%;
         }
         .title {
           width: 100%;
@@ -149,6 +155,7 @@
         .item {
           margin-top: 3%;
           margin-bottom: 3%;
+          width: 100%;
         }
       }
     }
@@ -164,4 +171,7 @@
 
   border: none;
   border-radius: 4px;
+  .icon-btn:hover {
+    font-size: large;
+  }
 }

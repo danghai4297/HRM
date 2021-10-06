@@ -1,13 +1,19 @@
 .item{
     margin-top: 2%;
     margin-bottom: 2%;
+    margin-right: 0;
+    margin-left: 0;
 }
 .rows{
     margin-right: 10% !important;
 }
-.container{
-    margin-left: 0.5%;
+.contains{
+    margin-left: 0;
+    width: 100%;
 }
 p{
-    font-size: smaller;
+    font-size: small;
+}
+.row-replace{
+    margin-left: 0;
 }

@@ -1,18 +1,75 @@
-.header-com{
-    width: 100%;
-    height: 100%;
-    background: #28144B;
-    position: sticky;
-    top: 0;
-    z-index: 2;
-}
-.name {
-    height: auto;
+.header-com {
+  width: 100%;
+  height: 100%;
+  background: #28144b;
+  position: sticky;
+  top: 0;
+  display: flex;
+  z-index: 1050;
+  .name {
+    height: 70px;
+    width: 80%;
+    .title-project {
+      height: 100%;
+    }
+    h1 {
+      margin: 0;
+      padding-left: 5%;
+      padding-top: 0.5%;
+      color: white;
+    }
+  }
+  .account {
     width: 20%;
-}
-.name h1 {
-    margin: 0;
-    padding-left: 20%;
-    padding-top: 3.5%;
-    color: white;
+
+    .screen-account {
+      display: flex;
+      cursor: pointer;
+      .header-icon {
+        width: 96%;
+        font-size: 250%;
+        color: white;
+        padding-top: 5%;
+        .detail-icon {
+          float: right;
+        }
+      }
+      .account-name {
+        width: 90%;
+        padding-top: 6%;
+        padding-left: 2%;
+        .account-style {
+          color: white;
+        }
+      }
+    }
+    .detail-information {
+      width: 175px;
+      height: 190px;
+      background: #e9e8e8;
+      position: absolute;
+      left: 84%;
+      top: 90%;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 20px;
+      text-align: center;
+      z-index: 1050;
+      .first-information {
+        height: 80%;
+        .detail-second-icon {
+          font-size: 300%;
+          height: 56px;
+        }
+        
+      }
+      .button-account {
+        border: none;
+        background: #e9e8e8;
+        font-size: medium;
+      }
+      .button-account:hover {
+        font-size: 15px;
+      }
+    }
+  }
 }
