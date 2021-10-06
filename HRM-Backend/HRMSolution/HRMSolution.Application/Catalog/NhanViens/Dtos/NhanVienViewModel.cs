@@ -57,17 +57,17 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
         public string bhyt { get; set; }
         public string atm { get; set; }
         public string nganHang { get; set; }
-        public bool? trangThaiLaoDong { get; set; }
+        public string trangThaiLaoDong { get; set; }
         public DateTime? ngayNghiViec { get; set; }
         public string lyDoNghiViec { get; set; }
         public string anh { get; set; }
 
-        public int tinhChatLaoDong { get; set; }
-        public int idDanhMucHonNhan { get; set; }
-        public int idDanToc { get; set; }
-        public int idTonGiao { get; set; }
-        public int idPhongBan { get; set; }
-        public int to { get; set; }
-        public int idNgachCongChuc { get; set; }
+        public string tinhChatLaoDong { get; set; }
+        public string DanhMucHonNhan { get; set; }
+        public string DanToc { get; set; }
+        public string TonGiao { get; set; }
+        public string PhongBan { get; set; }
+        public string to { get; set; }
+        public string NgachCongChuc { get; set; }
     }
 }
