@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./ScreenTableNV.scss";
 import { ListContext } from "../../Contexts/ListContext";
-import { NVCOLUMNS } from "./NvColumns";
+import { NVCOLUMNS2 } from "./NvColumns";
 import ReactHTMLTableToExcel from "react-html-to-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ExportCSV } from "../../components/ExportFile/ExportFile";
@@ -17,19 +17,22 @@ function ScreenTableNV(props) {
   const fileName = "DSNV";
   const { list } = useContext(ListContext);
   const [dataAllNv, setdataAllNv] = useState([]);
+  console.log(dataAllNv);
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
         const responseNv = await productApi.getAllNv();
-        console.log(responseNv);
+        // console.log(responseNv);
+        setdataAllNv(responseNv);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
     };
     fetchNvList();
-    // setdataAllNv(responseNv);
   }, []);
+
+  console.log(dataAllNv);
 
   return (
     <>
@@ -56,8 +59,8 @@ function ScreenTableNV(props) {
           <TablePagination
             link={link}
             tid="tablenv"
-            columns={NVCOLUMNS}
-            data={list}
+            columns={NVCOLUMNS2}
+            data={dataAllNv}
           />
         </div>
       </div>

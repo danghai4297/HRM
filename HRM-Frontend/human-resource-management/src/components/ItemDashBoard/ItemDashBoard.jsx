@@ -28,12 +28,12 @@ function ItemDashBoard(props) {
         </div>
         <div className="right">
           <span className="big-icon">
-            <FontAwesomeIcon icon={["fas", `${fontIcon}`]} />
+            <FontAwesomeIcon className="icon" icon={["fas", `${fontIcon}`]} />
           </span>
         </div>
       </div>
       <Link to={link} className="link-item">
-        <div className="bot">
+        <div className="bot bot-slide">
           <h>Danh sach {title}</h>
           <span className="small-icon">
             <FontAwesomeIcon icon={["fas", "chevron-circle-right"]} />

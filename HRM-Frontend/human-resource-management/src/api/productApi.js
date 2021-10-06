@@ -3,10 +3,8 @@ import axiosClient from "./axiosClient";
 // api/productApi.js
 const ProductApi = {
   getAllNv: () => {
-    const url = "/products";
-    return axiosClient.get(url, {
-      baseURL: "https://localhost:3001/api",
-    });
+    const url = "/NhanVien";
+    return axiosClient.get(url);
   },
 };
 export default ProductApi;
