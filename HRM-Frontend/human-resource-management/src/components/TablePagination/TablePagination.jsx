@@ -47,7 +47,12 @@ function TablePagination(props) {
     {
       columns,
       data,
-      initialState: { pageIndex: 0 },
+      initialState: {
+        pageIndex: 0,
+        hiddenColumns: columns
+          .filter((col) => col.show === false)
+          .map((col) => col.accessor),
+      },
     },
     useFilters,
     useGlobalFilter,
@@ -100,7 +105,7 @@ function TablePagination(props) {
                     {column.canFilter && (
                       <div className="select-fillter">
                         {column.render("Header")}&nbsp;{" "}
-                        {column.render("Filter")}&emsp;
+                        {column.render("Filter")}&emsp;&emsp;&emsp;
                       </div>
                     )}
                   </div>
@@ -110,7 +115,7 @@ function TablePagination(props) {
             {chooseCol && (
               <div className="choose-col form-check">
                 <label
-                  className="form-check-label"
+                  className="form-check-label item-chooseCol"
                   style={{ marginLeft: "20px", marginRight: "0.8rem" }}
                 >
                   <input
@@ -118,7 +123,7 @@ function TablePagination(props) {
                     className="form-check-input"
                     {...getToggleHideAllColumnsProps()}
                   />
-                  Hiển thị tất cả
+                  Tất cả
                 </label>
                 {allColumns.map((column) => (
                   <div className="item-chooseCol form-check" key={column.id}>
