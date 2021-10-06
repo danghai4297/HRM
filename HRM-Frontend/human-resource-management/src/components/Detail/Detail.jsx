@@ -29,12 +29,14 @@ function Detail(props) {
   const [dropReward, setDropReward] = useState(true);
   const [dropDiscipline, setDropDiscipline] = useState(true);
   const clickHandle = (e) => {
-    // e.preventDefault();
-    // const target = e.target.getAttribute("href");
-    // const location = document.querySelector(target).offsetTop;
-    // window.scrollTo({
-    //   top: location - 70
-    // });
+    e.preventDefault();
+    const target = e.target.getAttribute("href");
+    const height = document.getElementById("right");
+    const location = document.querySelector(target).offsetTop;
+    height.scrollTo({
+      top: location - 300,
+      behavior: "smooth",
+    });
   };
   const arrowBaseClickHandle = () => {
     setDropBase(!dropBase);
@@ -75,50 +77,55 @@ function Detail(props) {
         <div className="first-information">
           <div className="left-path">
             <div className="icons">
-              <button className="btn-back" onClick={() => history.push("/profile")}>
-                <FontAwesomeIcon icon={["fas", "long-arrow-alt-left"]} />
+              <button className="btn-back" onClick={() => history.goBack()}>
+                <FontAwesomeIcon
+                  className="icon-btn"
+                  icon={["fas", "long-arrow-alt-left"]}
+                />
               </button>
             </div>
-            <div className="icon-second">
-              <FontAwesomeIcon icon={["far", "user-circle"]} />
-            </div>
-            <div className="names">
-              <h5>{dataDetail.firstName + " " + dataDetail.lastName}</h5>
-            </div>
-            <div className="codes">
-              <p>{dataDetail.id}</p>
+            <div className="avatar">
+              <div className="icon-second">
+                <FontAwesomeIcon icon={["fas", "user-circle"]} />
+              </div>
+              <div className="names">
+                <h5>{dataDetail.firstName + " " + dataDetail.lastName}</h5>
+              </div>
+              <div className="codes">
+                <p>{dataDetail.id}</p>
+              </div>
             </div>
           </div>
           <div className="middle-path">
-            <Container>
+            <Container className="containn">
               <Row className="row-detail">
                 <Col>
                   <Row>
-                    <Col xs lg="5">
-                      <p>Đơn vị công tác</p>
+                    <Col>
+                      <p className="fast-information">Đơn vị công tác</p>
                     </Col>
                     <Col>
-                      <p></p>
+                      <p className="fast-information"></p>
                     </Col>
                   </Row>
                 </Col>
                 <Col>
                   <Row>
-                    <Col xs lg="5">
-                      <p>Ngày thử việc</p>
+                    <Col>
+                      <p className="fast-information">Ngày thử việc</p>
                     </Col>
                     <Col>
-                      <p></p>
+                      <p className="fast-information"></p>
                     </Col>
                   </Row>
                 </Col>
                 <Col>
                   <Row>
-                    <Col xs lg="5">
-                      <p>Ngày chính thức</p>
+                    <Col>
+                      <p className="fast-information">Ngày chính thức</p>
                     </Col>
                     <Col>
-                      <p></p>
+                      <p className="fast-information"></p>
                     </Col>
                   </Row>
                 </Col>
@@ -127,30 +134,30 @@ function Detail(props) {
                 <Col>
                   <Row>
                     <Col xs lg="5">
-                      <p>Ngày sinh</p>
+                      <p className="fast-information"> Ngày sinh</p>
                     </Col>
                     <Col>
-                      <p></p>
+                      <p className="fast-information"></p>
                     </Col>
                   </Row>
                 </Col>
                 <Col>
                   <Row>
                     <Col xs lg="5">
-                      <p>ĐT di động</p>
+                      <p className="fast-information">ĐT di động</p>
                     </Col>
                     <Col>
-                      <p></p>
+                      <p className="fast-information"></p>
                     </Col>
                   </Row>
                 </Col>
                 <Col>
                   <Row>
                     <Col xs lg="5">
-                      <p>Email</p>
+                      <p className="fast-information">Email</p>
                     </Col>
                     <Col>
-                      <p></p>
+                      <p className="fast-information"></p>
                     </Col>
                   </Row>
                 </Col>
@@ -172,24 +179,18 @@ function Detail(props) {
                 {links.map((link) => {
                   return (
                     <li className="row-left">
-                      <b>
-                        <p>
-                          <a
-                            href={link.url}
-                            key={link.id}
-                            onClick={clickHandle}
-                          >
-                            {link.text}
-                          </a>
-                        </p>
-                      </b>
+                      <h5>
+                        <a href={link.url} key={link.id} onClick={clickHandle}>
+                          {link.text}
+                        </a>
+                      </h5>
                     </li>
                   );
                 })}
               </ul>
             </div>
           </div>
-          <div className="right-information">
+          <div className="right-information" id="right">
             <div className="form" id="base">
               <div className="big-title">
                 <div className="name-title">
@@ -240,56 +241,56 @@ function Detail(props) {
                     titleLeft="Nơi sinh"
                     itemLeft={dum.birthplace}
                     titleRight="Dân tộc"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Nguyên quán"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Tôn giáo"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Nơi sinh"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Quốc tịch"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Nguyên quán"
-                    itemLeft="-"
-                    itemRight={null}
+                    itemLeft={null}
+                    titleRight={null}
                   ></SubDetail>
                   <div className="title">
                     <h5>CMND/Thẻ căn cước/Hộ chiếu</h5>
                   </div>
                   <SubDetail
                     titleLeft="Loại giấy tờ"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Số hộ chiếu"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Số CMND/CCCD"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Ngày cấp hộ chiếu"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày cấp(CMNN/CCCD)"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Nơi cấp hộ chiếu"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Nơi cấp(CMND/CCCD)"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Ngày hết hạn hộ chiếu"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày hết hạn"
-                    itemLeft="-"
-                    itemRight={null}
+                    itemLeft={null}
+                    titleRight={null}
                   ></SubDetail>
                 </>
               )}
@@ -319,42 +320,42 @@ function Detail(props) {
                   </div>
                   <SubDetail
                     titleLeft="ĐT di động"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Email cá nhân"
                     itemRight="-"
                   ></SubDetail>
                   <SubDetail
                     titleLeft="ĐT khác"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Facebook"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="ĐT nhà riêng"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Skype"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <div className="title">
                     <h5>Liên hệ khẩn cấp</h5>
                   </div>
                   <SubDetail
                     titleLeft="Họ và tên"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="ĐT nhà riêng"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Quan hệ"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Email"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="ĐT di động"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Địa chỉ"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                 </>
               )}
@@ -383,77 +384,77 @@ function Detail(props) {
                   </div>
                   <SubDetail
                     titleLeft="Nghề nghiệp"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Ngày thử việc"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Cơ quan tuyển dụng"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Ngày tuyển dụng"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Chức vụ hiện tại"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Ngày vào ban"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Trạng thái lao động"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Công việc chính"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Tính chất lao động"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Số sổ QL lao động"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Lý do nghỉ"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Loại hợp đồng"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày nghỉ việc"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Ngày công tác"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <div className="title">
                     <h5>Thông tin lương</h5>
                   </div>
                   <SubDetail
                     titleLeft="Nhóm lương"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Tiền lương"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Hệ số lương"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Thời hạn lên lương"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Bậc lương"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Ngày hiệu lực"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Phụ cấp chức vụ"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Ngày hết hạn"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Phụ cấp khác"
-                    itemLeft="-"
-                    itemRight={null}
+                    itemLeft={null}
+                    titleRight={null}
                   ></SubDetail>
                 </>
               )}
@@ -479,9 +480,9 @@ function Detail(props) {
                 <>
                   <SubDetail
                     titleLeft="Số sổ BHXH"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Số thẻ BHYT"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                 </>
               )}
@@ -563,76 +564,76 @@ function Detail(props) {
                   </div>
                   <SubDetail
                     titleLeft="Ngạch công chức"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Ngày vào đoàn"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày vào Đảng"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Nơi tham gia"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày chính thức"
-                    itemLeft="-"
-                    itemRight={null}
+                    itemLeft={null}
+                    titleRight={null}
                   ></SubDetail>
                   <div className="title">
                     <h5>Thông tin quân sự</h5>
                   </div>
                   <SubDetail
                     titleLeft="Là quân nhân"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Là thương binh"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày nhập ngũ"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Là con gia đình chính sách"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày xuất ngũ"
-                    itemLeft="-"
-                    itemRight={null}
+                    itemLeft={null}
+                    titleRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Quân hàm cao nhất"
-                    itemLeft="-"
-                    itemRight={null}
+                    itemLeft={null}
+                    titleRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="DH được phong tặng cao nhất"
-                    itemLeft="-"
-                    itemRight={null}
+                    itemLeft={null}
+                    titleRight={null}
                   ></SubDetail>
                   <div className="title">
                     <h5>Thông tin y tế</h5>
                   </div>
                   <SubDetail
                     titleLeft="Nhóm máu"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Bệnh tật"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Chiều cao(m)"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Lưu ý"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Cân nặng(kg)"
-                    itemLeft="-"
+                    itemLeft={null}
                     titleRight="Là người khuất tật"
-                    itemRight="-"
+                    itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Tình trạng sức khỏe"
-                    itemLeft="-"
-                    itemRight={null}
+                    itemLeft={null}
+                    titleRight={null}
                   ></SubDetail>
                 </>
               )}

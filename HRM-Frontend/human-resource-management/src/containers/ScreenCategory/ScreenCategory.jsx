@@ -21,6 +21,7 @@ import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Route, Switch } from "react-router-dom";
 import ScreenNotFound from "../ScreenProject/ScreenNotFound";
+import ItemMarriage from "./ScreenItemCategory/ItemMarriage/ItemMarriage";
 function ScreenCategory() {
   return (
     <>
@@ -59,7 +60,8 @@ function ScreenCategory() {
               <Route path="/category/training" component={ItemTraining} />
               <Route path="/category/civil" component={ItemCivil} />
               <Route path="/category/relation" component={ItemRelation} />
-              <Route path="*" component={ScreenNotFound} />
+              <Route path="/category/marriage" component={ItemMarriage} />
+              {/* <Route component={ScreenNotFound} /> */}
             </Switch>
           </div>
         </div>

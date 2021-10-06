@@ -11,6 +11,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+
 }
 
 .table-nv {
@@ -37,4 +39,7 @@
 .download-table-xls-button:hover {
     background-color: rgb(62, 148, 206);
     box-shadow: 0 0 2px 2px rgb(52, 59, 54);
+}
+.sticky-top{
+    z-index: 5 !important;
 }

@@ -10,20 +10,18 @@ table body tr:hover th {
     max-height: 600px;
 }
 
-// .tr > .td {
-//     object-fit: cover;
-//     transition: transform 0.25s linear;
-// }
-
-// .tr > .td:hover {
-//     transform: scale(1.2);
-// }
-
 .choose-col {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    max-width: 60%;
+    position: absolute;
+    display: block;
+    overflow: auto;
+
+    width: auto;
+    max-height: 20rem;
+    background-color: rgb(242, 253, 251);
+    z-index: 1000;
+    border-radius: 0.2rem;
+
+    box-shadow: 0 0 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
 
     .item-chooseCol {
         align-items: center;
@@ -46,6 +44,7 @@ table body tr:hover th {
     display: flex;
     align-items: center;
 }
+
 .select-item {
     cursor: pointer;
 }

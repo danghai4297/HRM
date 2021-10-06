@@ -28,7 +28,7 @@ function ScreenProject() {
     <Router>
       <div className="body-screen">
         <div className="header">
-          <Header />
+          <Header/>
         </div>
         <div className="body-contents">
           <div className="menu-bar">
@@ -59,7 +59,7 @@ function ScreenProject() {
               <Route exact path="/discipline" component={ScreenDiscipline} />
 
               <Route exact path="/report" component={ScreenReport} />
-              <Route path="*" component={ScreenNotFound} />
+              <Redirect to="/home"/>
             </Switch>
           </div>
         </div>

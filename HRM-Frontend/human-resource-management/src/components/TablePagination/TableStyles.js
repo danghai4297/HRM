@@ -21,7 +21,6 @@ export const Styles = styled.div`
 
     .td {
       padding: 15px;
-      border-bottom: 1px solid #ddd;
       background-color: #fff;
       overflow: hidden;
 
@@ -41,8 +40,6 @@ export const Styles = styled.div`
 
       .headerr {
         top: 0;
-
-        box-shadow: 0px 3px 3px #ccc;
       }
 
       .bodyy {
@@ -55,11 +52,11 @@ export const Styles = styled.div`
       }
 
       [data-sticky-last-left-td] {
-        box-shadow: 2px 0px 3px #ccc;
+        border-right: 1px solid rgb(216, 216, 216);
       }
 
       [data-sticky-first-right-td] {
-        box-shadow: -2px 0px 3px #ccc;
+        border-right: 1px solid rgb(216, 216, 216);
       }
     }
   }
