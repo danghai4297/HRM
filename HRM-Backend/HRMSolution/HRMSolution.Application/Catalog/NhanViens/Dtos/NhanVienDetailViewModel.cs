@@ -1,0 +1,122 @@
+﻿using HRMSolution.Data.Entities;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace HRMSolution.Application.Catalog.NhanViens.Dtos
+{
+    public class NhanVienDetailViewModel
+    {
+        public string maNhanVien { get; set; }
+        public string hoTen { get; set; }
+        public string gioiTinh { get; set; }
+        public DateTime ngaySinh { get; set; }
+        public string noiSinh { get; set; }
+        public string queQuan { get; set; }
+        public string thuongTru { get; set; }
+        public string tamTru { get; set; }
+        public string atm { get; set; }
+        public string nganHang { get; set; }
+        public string honNhan { get; set; }
+        public int? maSoThue { get; set; }
+        public string danToc { get; set; }
+        public string tonGiao { get; set; }
+        public string quocTich { get; set; }
+        public string cccd { get; set; }
+        public string noiCapCCCD { get; set; }
+        public DateTime ngayCapCCCD { get; set; }
+        public DateTime ngayHetHanCCCD { get; set; }
+        public string hoChieu { get; set; }
+        public string noiCapHoChieu { get; set; }
+        public DateTime? ngayCapHoChieu { get; set; }
+        public DateTime? ngayHetHanHoChieu { get; set; }
+        public string dienThoai { get; set; }
+        public string dienThoaiKhac { get; set; }
+        public string diDong { get; set; }
+        public string email { get; set; }
+        public string facebook { get; set; }
+        public string skype { get; set; }
+        public string lhkcHoTen { get; set; }
+        public string lhkcQuanHe { get; set; }
+        public string lhkcDienThoai { get; set; }
+        public string lhkcEmail { get; set; }
+        public string lhkcDiaChi { get; set; }
+        public string ngheNghiep { get; set; }
+        public string coQuanTuyenDung { get; set; }
+        public string chucVuHienTai { get; set; }
+        public string trangThaiLaoDong { get; set; }
+        public string tinhChatLaoDong { get; set; }
+        public DateTime? ngayNghiViec { get; set; }
+        public string lyDoNghiViec { get; set; }
+        public DateTime? ngayTuyenDung { get; set; }
+        public DateTime? ngayThuViec { get; set; }
+        public string congViecChinh { get; set; }
+        public DateTime? ngayVaoBan { get; set; }
+        public DateTime? ngayChinhThuc { get; set; }
+        public string nhomLuong { get; set; }
+        public float? heSoLuong { get; set; }
+        public string bacLuong { get; set; }
+        public float? luongCoBan { get; set; }
+        public float? phuCapTrachNhiem { get; set; }
+        public float? phuCapKhac { get; set; }
+        public float? tongLuong { get; set; }
+        public string thoiHanLenLuong { get; set; }
+        public DateTime? ngayHieuLuc { get; set; }
+        public DateTime? ngayKetThuc { get; set; }
+        public string bhxh { get; set; }
+        public string bhyt { get; set; }
+        public string tdvhTenTruong { get; set; }
+        public string tdvhChuyenMon { get; set; }
+        public DateTime? tdvhtuThoiGian { get; set; }
+        public DateTime? tdvhdenThoiGian { get; set; }
+        public string tdvhHinhThucDaoTao { get; set; }
+        public string tdvhTrinhDo { get; set; }
+        public string nnDanhMucNgoaiNgu { get; set; }
+        public DateTime? nnNgayCap { get; set; }
+        public string nnTrinhDo { get; set; }
+        public string nnNoiCap { get; set; }
+        public string ntTenNguoiThan { get; set; }
+        public string ntGioiTinh { get; set; }
+        public DateTime? ntNgaySinh { get; set; }
+        public string ntQuanHe { get; set; }
+        public string ntNgheNghiep { get; set; }
+        public string ntDiaChi { get; set; }
+        public string ntDienThoai { get; set; }
+        public string ntKhac { get; set; }
+        public string ngachCongChuc { get; set; }
+        public string ngachCongChucNoiDung { get; set; }
+        public string vaoDang { get; set; }
+        public DateTime? ngayVaoDang { get; set; }
+        public DateTime? ngayVaoDangChinhThuc { get; set; }
+        public DateTime? ngayVaoDoan { get; set; }
+        public string noiThamGia { get; set; }
+        public string quanNhan { get; set; }
+        public DateTime? ngayNhapNgu { get; set; }
+        public DateTime? ngayXuatNgu { get; set; }
+        public string quanHamCaoNhat { get; set; }
+        public string danhHieuCaoNhat { get; set; }
+        public string thuongBinh { get; set; }
+        public string conChinhSach { get; set; }
+        public string ytNhomMau { get; set; }
+        public float? ytChieuCao { get; set; }
+        public float? ytCanNang { get; set; }
+        public string ytTinhTrangSucKhoe { get; set; }
+        public string ytBenhTat { get; set; }
+        public string ytLuuY { get; set; }
+        public string ytKhuyetTat { get; set; }
+        public string hdLoaiHopDong { get; set; }
+        public string hdChucDanh { get; set; }
+        public DateTime? hdHopDongTuNgay { get; set; }
+        public DateTime? hdHopDongDenNgay { get; set; }
+        public string hdGhiChu { get; set; }
+        public DateTime? dcNgayHieuLuc { get; set; }
+        public string dcPhong { get; set; }
+        public string dcTo { get; set; }
+        public string dcChiTiet { get; set; }
+        public string dcChucVu { get; set; }
+        public string ktklDanhMucKhenThuong { get; set; }
+        public string ktklNoiDung { get; set; }
+        public string ktklLyDo { get; set; }
+        public string ktklloai { get; set; }
+    }
+}

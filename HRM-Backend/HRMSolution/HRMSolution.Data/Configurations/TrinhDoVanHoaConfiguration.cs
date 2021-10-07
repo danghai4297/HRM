@@ -15,8 +15,8 @@ namespace HRMSolution.Data.Configurations
             builder.HasKey(x => x.id);
             builder.Property(x => x.id).UseIdentityColumn();
             builder.Property(x => x.tenTruong).HasMaxLength(50).IsRequired();
-            builder.Property(x => x.tuThoiGian).HasColumnType("datetime").HasDefaultValueSql("GetDate()");
-            builder.Property(x => x.denThoiGian).HasColumnType("datetime").HasDefaultValueSql("GetDate()");
+            builder.Property(x => x.tuThoiGian).HasColumnType("datetime");
+            builder.Property(x => x.denThoiGian).HasColumnType("datetime");
             builder.Property(x => x.idHinhThucDaoTao).IsRequired();
             builder.Property(x => x.idChuyenMon).IsRequired();
             builder.Property(x => x.idTrinhDo).IsRequired();

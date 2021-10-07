@@ -43,18 +43,18 @@ namespace HRMSolution.Data.Entities
         public DateTime? ngayChinhThuc { get; set; }
         public string coQuanTuyenDung { get; set; }
         public string ngachCongChucNoiDung { get; set; }
-        public bool? vaoDang { get; set; }
+        public bool vaoDang { get; set; }
         public DateTime? ngayVaoDang { get; set; }
         public DateTime? ngayVaoDangChinhThuc { get; set; }
-        public bool? quanNhan { get; set; }
+        public bool quanNhan { get; set; }
         public DateTime? ngayNhapNgu { get; set; }
         public DateTime? ngayXuatNgu { get; set; }
         public string quanHamCaoNhat { get; set; }
         public string danhHieuCaoNhat { get; set; }
         public DateTime? ngayVaoDoan { get; set; }
         public string noiThamGia { get; set; }
-        public bool? laThuongBinh { get; set; }
-        public bool? laConChinhSach { get; set; }
+        public bool laThuongBinh { get; set; }
+        public bool laConChinhSach { get; set; }
         public string thuongBinh { get; set; }
         public string conChinhSach { get; set; }
         public string bhxh { get; set; }
