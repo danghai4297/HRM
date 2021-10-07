@@ -1,11 +1,9 @@
 ﻿using HRMSolution.Application.Catalog.NhanViens.Dtos;
 using HRMSolution.Data.EF;
-using HRMSolution.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace HRMSolution.Application.Catalog.NhanViens

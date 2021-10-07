@@ -10,9 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Catalog\DanhMucChucDanhs\" />
-    <Folder Include="Catalog\DanhMucChucVus\" />
-    <Folder Include="Catalog\DanhMucChuyenMons\" />
     <Folder Include="Catalog\DanhMucKhenThuongKyLuats\" />
     <Folder Include="Catalog\DanhMucLoaiHopDongs\" />
     <Folder Include="Catalog\DanhMucNgachCongChucs\" />

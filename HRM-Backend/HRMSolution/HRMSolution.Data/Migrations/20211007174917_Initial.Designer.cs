@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HRMSolution.Data.Migrations
 {
     [DbContext(typeof(HRMDbContext))]
-    [Migration("20211007161739_Initial")]
+    [Migration("20211007174917_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -825,7 +825,7 @@ namespace HRMSolution.Data.Migrations
                             chiTiet = "Không",
                             idChucVu = 1,
                             maNhanVien = "NV0001",
-                            ngayHieuLuc = new DateTime(2021, 10, 7, 23, 17, 37, 899, DateTimeKind.Local).AddTicks(552),
+                            ngayHieuLuc = new DateTime(2021, 10, 8, 0, 49, 16, 315, DateTimeKind.Local).AddTicks(6217),
                             phong = 1,
                             to = 1
                         });
@@ -906,7 +906,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD01",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 7, 23, 17, 37, 897, DateTimeKind.Local).AddTicks(3820),
+                            hopDongTuNgay = new DateTime(2021, 10, 8, 0, 49, 16, 314, DateTimeKind.Local).AddTicks(664),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0001"
@@ -915,7 +915,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD02",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 7, 23, 17, 37, 898, DateTimeKind.Local).AddTicks(5755),
+                            hopDongTuNgay = new DateTime(2021, 10, 8, 0, 49, 16, 315, DateTimeKind.Local).AddTicks(1879),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0002"
@@ -924,7 +924,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD03",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 7, 23, 17, 37, 898, DateTimeKind.Local).AddTicks(5863),
+                            hopDongTuNgay = new DateTime(2021, 10, 8, 0, 49, 16, 315, DateTimeKind.Local).AddTicks(1953),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0003"
@@ -933,7 +933,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD04",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 7, 23, 17, 37, 898, DateTimeKind.Local).AddTicks(5875),
+                            hopDongTuNgay = new DateTime(2021, 10, 8, 0, 49, 16, 315, DateTimeKind.Local).AddTicks(1965),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0004"
@@ -942,7 +942,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD05",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 7, 23, 17, 37, 898, DateTimeKind.Local).AddTicks(5882),
+                            hopDongTuNgay = new DateTime(2021, 10, 8, 0, 49, 16, 315, DateTimeKind.Local).AddTicks(1974),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0005"
@@ -951,7 +951,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD06",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 7, 23, 17, 37, 898, DateTimeKind.Local).AddTicks(5890),
+                            hopDongTuNgay = new DateTime(2021, 10, 8, 0, 49, 16, 315, DateTimeKind.Local).AddTicks(1981),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0006"
@@ -1301,7 +1301,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD01",
-                            ngayHieuLuc = new DateTime(2021, 10, 7, 23, 17, 37, 898, DateTimeKind.Local).AddTicks(8435),
+                            ngayHieuLuc = new DateTime(2021, 10, 8, 0, 49, 16, 315, DateTimeKind.Local).AddTicks(4145),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm"
                         },
@@ -1311,7 +1311,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD02",
-                            ngayHieuLuc = new DateTime(2021, 10, 7, 23, 17, 37, 898, DateTimeKind.Local).AddTicks(9328),
+                            ngayHieuLuc = new DateTime(2021, 10, 8, 0, 49, 16, 315, DateTimeKind.Local).AddTicks(5061),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm"
                         },
@@ -1321,7 +1321,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD03",
-                            ngayHieuLuc = new DateTime(2021, 10, 7, 23, 17, 37, 898, DateTimeKind.Local).AddTicks(9373),
+                            ngayHieuLuc = new DateTime(2021, 10, 8, 0, 49, 16, 315, DateTimeKind.Local).AddTicks(5106),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm"
                         },
@@ -1331,7 +1331,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD04",
-                            ngayHieuLuc = new DateTime(2021, 10, 7, 23, 17, 37, 898, DateTimeKind.Local).AddTicks(9384),
+                            ngayHieuLuc = new DateTime(2021, 10, 8, 0, 49, 16, 315, DateTimeKind.Local).AddTicks(5115),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm"
                         },
@@ -1341,7 +1341,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD05",
-                            ngayHieuLuc = new DateTime(2021, 10, 7, 23, 17, 37, 898, DateTimeKind.Local).AddTicks(9392),
+                            ngayHieuLuc = new DateTime(2021, 10, 8, 0, 49, 16, 315, DateTimeKind.Local).AddTicks(5123),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm"
                         });
