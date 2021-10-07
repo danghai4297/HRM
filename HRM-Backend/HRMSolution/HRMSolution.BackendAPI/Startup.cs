@@ -1,4 +1,8 @@
+using HRMSolution.Application.Catalog.DanhMucChucDanhs;
+using HRMSolution.Application.Catalog.DanhMucChucVus;
+using HRMSolution.Application.Catalog.DanhMucChuyenMons;
 using HRMSolution.Application.Catalog.DanhMucDanTocs;
+using HRMSolution.Application.Catalog.DanhMucHonNhans;
 using HRMSolution.Application.Catalog.NhanViens;
 using HRMSolution.Data.EF;
 using Microsoft.AspNetCore.Builder;
@@ -31,7 +35,10 @@ namespace HRMSolution.BackendAPI
            
             services.AddDbContext<HRMDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Data")));
-
+            services.AddTransient<IDanhMucChucDanhService, DanhMucChucDanhService>();
+            services.AddTransient<IDanhMucChucVuService, DanhMucChucVuService>();
+            services.AddTransient<IDanhMucChuyenMonService, DanhMucChuyenMonService>();
+            services.AddTransient<IDanhMucHonNhanService, DanhMucHonNhanService>();
             services.AddTransient<IDanhMucDanTocService, DanhMucDanTocService>();
             services.AddTransient<INhanVienService, NhanVienService>();
             services.AddControllers();

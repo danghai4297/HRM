@@ -15,6 +15,7 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
         public string dienThoai { get; set; }
         public string dienThoaiKhac { get; set; }
         public string diDong { get; set; }
+        public string email { get; set; }
         public string facebook { get; set; }
         public string skype { get; set; }
         public int? maSoThue { get; set; }

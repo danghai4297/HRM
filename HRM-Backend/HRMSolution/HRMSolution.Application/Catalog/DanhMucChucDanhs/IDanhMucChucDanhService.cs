@@ -1,6 +1,7 @@
 ﻿using HRMSolution.Application.Catalog.DanhMucChucDanhs.DchucDanhs;
 using System;
 using System.Collections.Generic;
+using HRMSolution.Data.Entities;
 using System.Text;
 using System.Threading.Tasks;
 

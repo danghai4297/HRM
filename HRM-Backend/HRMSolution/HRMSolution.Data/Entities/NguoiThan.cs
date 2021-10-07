@@ -11,7 +11,7 @@ namespace HRMSolution.Data.Entities
         public string tenNguoiThan { get; set; }
         public bool? gioiTinh { get; set; }
         public DateTime? ngaySinh { get; set; }
-        public int? quanHe { get; set; }
+        public string quanHe { get; set; }
         public string ngheNghiep { get; set; }
         public string diaChi { get; set; }
         public string dienThoai { get; set; }
