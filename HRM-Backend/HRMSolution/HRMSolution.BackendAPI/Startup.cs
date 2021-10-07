@@ -6,7 +6,7 @@ using HRMSolution.Application.Catalog.DanhMucDanTocs;
 using HRMSolution.Application.Catalog.DanhMucHonNhans;
 
 using HRMSolution.Application.Catalog.HopDongs;
-
+using HRMSolution.Application.Catalog.KhenThuongKyLuats;
 using HRMSolution.Application.Catalog.NhanViens;
 using HRMSolution.Data.EF;
 using Microsoft.AspNetCore.Builder;
@@ -45,7 +45,7 @@ namespace HRMSolution.BackendAPI
             services.AddTransient<IDanhMucChucVuService, DanhMucChucVuService>();
             services.AddTransient<IDanhMucChuyenMonService, DanhMucChuyenMonService>();
             services.AddTransient<IDanhMucHonNhanService, DanhMucHonNhanService>();
-
+            services.AddTransient<IKhenThuongKyLuatService, KhenThuongKyLuatService>();
 
             services.AddTransient<IHopDongService, HopDongService>();
 
