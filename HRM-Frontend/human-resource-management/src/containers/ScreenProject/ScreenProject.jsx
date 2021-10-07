@@ -43,7 +43,8 @@ function ScreenProject() {
               <Route exact path="/home" component={DashBoard} />
 
               <Route exact path="/profile" component={ScreenTableNV} />
-              {/* <Route path="/profile/:id" component={Detail} /> */}
+              <Route path="/profile/:id" component={Detail} />
+
               <Route path="/profile/edit" component={ScreenAddReward} />
 
               <Route exact path="/contract" component={ScreenContract} />
@@ -54,7 +55,7 @@ function ScreenProject() {
 
               <Route exact path="/transfer" component={ScreenTransfer} />
 
-              <Route exact path="/resign" component={AddProfile} />
+              <Route exact path="/resign" component={ScreenResign} />
 
               <Route exact path="/reward" component={ScreenReward} />
 

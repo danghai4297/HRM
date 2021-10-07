@@ -14,8 +14,10 @@ function Detail(props) {
   // console.log(match);
   // console.log(history);
   let { id } = match.params;
+  console.log(id);
+  const dataDetail = [];
 
-  const dataDetail = list.find((item) => item.id == id);
+  // const dataDetail = list.find((item) => item.id == id);
 
   const [dropBase, setDropBase] = useState(true);
   const [dropContact, setDropContact] = useState(true);
@@ -77,7 +79,7 @@ function Detail(props) {
         <div className="first-information">
           <div className="left-path">
             <div className="icons">
-              <button className="btn-back" onClick={() => history.goBack()}>
+              <button className="btn-back">
                 <FontAwesomeIcon
                   className="icon-btn"
                   icon={["fas", "long-arrow-alt-left"]}

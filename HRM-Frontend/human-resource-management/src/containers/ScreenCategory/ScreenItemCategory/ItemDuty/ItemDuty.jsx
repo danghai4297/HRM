@@ -9,9 +9,9 @@ import { ListContext } from "../../../../Contexts/ListContext";
 import { ExportCSV } from "../../../../components/ExportFile/ExportFile";
 import TablePagination from "../../../../components/TablePagination/TablePagination";
 
-function ItemBonus(props) {
+function ItemDuty(props) {
   const link = "/profile/";
-  const fileName = "Danhmuckhenthuong";
+  const fileName = "Danhmucchucvu";
   const { list } = useContext(ListContext);
   //   const [dataAllNv, setdataAllNv] = useState([]);
   //   console.log(dataAllNv);
@@ -34,7 +34,7 @@ function ItemBonus(props) {
       <div className="screen-table-nv">
         <div className="herder-content sticky-top">
           <div>
-            <h4 className="">Danh mục khen thưởng</h4>
+            <h4 className="">Danh mục chứ vụ</h4>
           </div>
           <div className="button">
             <Link to="/profile/edit" className="link-item">
@@ -43,7 +43,7 @@ function ItemBonus(props) {
             <ReactHTMLTableToExcel
               id="test-table-xls-button"
               className="download-table-xls-button"
-              table="Dmkt"
+              table="dmcvv"
               filename={fileName}
               sheet="tablexls"
               buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
@@ -54,7 +54,7 @@ function ItemBonus(props) {
         <div className="table-nv">
           <TablePagination
             link={link}
-            tid="Dmkt"
+            tid="dmcvv"
             columns={NVCOLUMNS}
             data={list}
           />
@@ -64,4 +64,4 @@ function ItemBonus(props) {
   );
 }
 
-export default ItemBonus;
+export default ItemDuty;
