@@ -25,20 +25,20 @@ function ScreenDetailReward() {
           <div className="second-main-path">
             <SubDetail
               titleLeft="Họ và tên"
-              itemLeft="-"
+              itemLeft={null}
               titleRight="Mã nhân viên"
-              itemRight="-"
+              itemRight={null}
             ></SubDetail>
             <SubDetail
               titleLeft="Thời gian"
-              itemLeft="-"
+              itemLeft={null}
+              titleRight="Lý do"
               itemRight={null}
             ></SubDetail>
             <SubDetail
               titleLeft="Nội dung"
-              itemLeft="-"
-              titleRight="Lý do"
-              itemRight="-"
+              itemLeft={null}
+              titleRight={null}
             ></SubDetail>
           </div>
         </div>

@@ -100,7 +100,7 @@ function AddProfileForm(props) {
 
   //get data from form
   const onHandleSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     JSON.stringify(objectData(data));
     //objectData(data);
   };

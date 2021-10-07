@@ -20,13 +20,17 @@
     }
   }
   .account {
-    width: 20%;
-
+    width: auto;
+    margin-left: 8%;
+    margin-top: 0.5%;
+    .button-top{
+      background: none;
+      border: none;
+    }
     .screen-account {
       display: flex;
-      cursor: pointer;
       .header-icon {
-        width: 96%;
+        width: auto;
         font-size: 250%;
         color: white;
         padding-top: 5%;
@@ -35,8 +39,8 @@
         }
       }
       .account-name {
-        width: 90%;
-        padding-top: 6%;
+        width: auto;
+        padding-top: 10%;
         padding-left: 2%;
         .account-style {
           color: white;

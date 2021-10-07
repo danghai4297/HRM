@@ -26,7 +26,7 @@ function AddRewardForm(props) {
     resolver: yupResolver(schema),
   });
   const onHandleSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     objectData(data);
   };
   return (
@@ -42,7 +42,12 @@ function AddRewardForm(props) {
           </div>
           <div className="button">
             <input type="submit" className="btn btn-secondary " value="Huỷ" />
-            <input type="submit" className="btn btn-primary ml-3" value="Lưu"  onClick={handleSubmit(onHandleSubmit)}/>
+            <input
+              type="submit"
+              className="btn btn-primary ml-3"
+              value="Lưu"
+              onClick={handleSubmit(onHandleSubmit)}
+            />
           </div>
         </div>
 

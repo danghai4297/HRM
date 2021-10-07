@@ -23,27 +23,27 @@ function ScreenDetailContract() {
           <div className="second-main-path">
             <SubDetail
               titleLeft="Họ và tên"
-              itemLeft="-"
+              itemLeft={null}
               titleRight="Mã nhân viên"
-              itemRight="-"
+              itemRight={null}
             ></SubDetail>
             <SubDetail
               titleLeft="Mã hợp đồng"
-              itemLeft="-"
+              itemLeft={null}
               titleRight="Loại hợp đồng"
-              itemRight="-"
+              itemRight={null}
             ></SubDetail>
             <SubDetail
               titleLeft="Lương cơ bản"
-              itemLeft="-"
+              itemLeft={null}
               titleRight="Chức danh công việc"
-              itemRight="-"
+              itemRight={null}
             ></SubDetail>
             <SubDetail
               titleLeft="Ngày có hiệu lực"
-              itemLeft="-"
+              itemLeft={null}
               titleRight="Ngày hết hạn"
-              itemRight="-"
+              itemRight={null}
             ></SubDetail>
           </div>
         </div>

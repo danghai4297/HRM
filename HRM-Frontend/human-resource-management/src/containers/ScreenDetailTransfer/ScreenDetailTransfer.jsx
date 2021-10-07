@@ -25,21 +25,25 @@ function ScreenDetailTransfer() {
           <div className="second-main-path">
             <SubDetail
               titleLeft="Họ và tên"
-              itemLeft="-"
+              itemLeft={null}
               titleRight="Ngày hiệu lực"
-              itemRight="-"
+              itemRight={null}
             ></SubDetail>
             <SubDetail
               titleLeft="Phòng ban"
-              itemLeft="-"
+              itemLeft={null}
               titleRight="Chi tiết"
-              itemRight="-"
+              itemRight={null}
             ></SubDetail>
-            <SubDetail titleLeft="Tổ" itemLeft="-" itemRight={null}></SubDetail>
+            <SubDetail
+              titleLeft="Tổ"
+              itemLeft={null}
+              titleRight={null}
+            ></SubDetail>
             <SubDetail
               titleLeft="Chức vụ công tác"
-              itemLeft="-"
-              itemRight={null}
+              itemLeft={null}
+              titleRight={null}
             ></SubDetail>
           </div>
         </div>

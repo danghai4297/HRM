@@ -8,7 +8,6 @@ import ItemSpecialize from "./ScreenItemCategory/ItemSpecialize/ItemSpecialize";
 import ItemLevel from "./ScreenItemCategory/ItemLevel/ItemLevel";
 import ItemLanguage from "./ScreenItemCategory/ItemLanguage/ItemLanguage";
 import ItemNest from "./ScreenItemCategory/ItemNest/ItemNest";
-import ItemReligion from "./ScreenItemCategory/ItemReligion/ItemReligion";
 import ItemBonus from "./ScreenItemCategory/ItemBonus/ItemBonus";
 import ItemPunish from "./ScreenItemCategory/ItemPunish/ItemPunish";
 import ItemDepartment from "./ScreenItemCategory/ItemDepartment/ItemDepartment";
@@ -16,12 +15,14 @@ import ItemDeal from "./ScreenItemCategory/ItemDeal/ItemDeal";
 import ItemWages from "./ScreenItemCategory/ItemWages/ItemWages";
 import ItemTraining from "./ScreenItemCategory/ItemTraining/ItemTraining";
 import ItemCivil from "./ScreenItemCategory/ItemCivil/ItemCivil";
-import ItemRelation from "./ScreenItemCategory/ItemRelation/ItemRelation";
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Route, Switch } from "react-router-dom";
 import ScreenNotFound from "../ScreenProject/ScreenNotFound";
 import ItemMarriage from "./ScreenItemCategory/ItemMarriage/ItemMarriage";
+import ItemRelation from "./ScreenItemCategory/ItemRelation/ItemRelation";
+import ItemReligion from "./ScreenItemCategory/ItemReligion/ItemReligion";
+import ItemDuty from "./ScreenItemCategory/ItemDuty/ItemDuty";
 function ScreenCategory() {
   return (
     <>
@@ -35,14 +36,14 @@ function ScreenCategory() {
           </div>
         </div>
         <div className="second-main">
-          <div className="button-first">
+          {/* <div className="button-first">
             <Button className="button-left">
               <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
             </Button>
             <Button className="button-left" variant="light">
               <FontAwesomeIcon icon={["fas", "download"]} />
             </Button>
-          </div>
+          </div> */}
           <div className="table-category">
             <Switch>
               <Route exact path="/category/" component={ItemNation} />
@@ -61,6 +62,7 @@ function ScreenCategory() {
               <Route path="/category/civil" component={ItemCivil} />
               <Route path="/category/relation" component={ItemRelation} />
               <Route path="/category/marriage" component={ItemMarriage} />
+              <Route path="/category/duty" component={ItemDuty} />
               {/* <Route component={ScreenNotFound} /> */}
             </Switch>
           </div>

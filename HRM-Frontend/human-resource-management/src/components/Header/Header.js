@@ -6,6 +6,7 @@ function Header() {
   const visionHandleClick = () => {
     setAccount(!account);
   };
+  console.log(account);
   return (
     <div>
       <div className="header-com">
@@ -15,17 +16,20 @@ function Header() {
           </div>
         </div>
         <div className="account">
-          <div className="screen-account" onClick={visionHandleClick}>
-            <div className="header-icon">
-              <FontAwesomeIcon
-                icon={["fas", "user-circle"]}
-                className="detail-icon"
-              />
+          <button className="button-top" onClick={visionHandleClick}>
+            <div className="screen-account">
+              <div className="header-icon">
+                <FontAwesomeIcon
+                  icon={["fas", "user-circle"]}
+                  className="detail-icon"
+                />
+              </div>
+              <div className="account-name">
+                <h5 className="account-style">DangHai</h5>
+              </div>
             </div>
-            <div className="account-name">
-              <h5 className="account-style">DangHai</h5>
-            </div>
-          </div>
+          </button>
+
           {account && (
             <div className="detail-information">
               <div className="first-information">

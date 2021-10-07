@@ -25,25 +25,25 @@ function ScreenDetailResign() {
           <div className="second-main-path">
             <SubDetail
               titleLeft="Họ và tên"
-              itemLeft="-"
+              itemLeft={null}
               titleRight="Mã nhân viên"
-              itemRight="-"
+              itemRight={null}
             ></SubDetail>
             <SubDetail
               titleLeft="Đơn vị công tác"
-              itemLeft="-"
+              itemLeft={null}
               titleRight="Vị trí công tác"
-              itemRight="-"
+              itemRight={null}
             ></SubDetail>
             <SubDetail
               titleLeft="Lý do nghỉ việc"
-              itemLeft="-"
-              itemRight={null}
+              itemLeft={null}
+              titleRight={null}
             ></SubDetail>
             <SubDetail
               titleLeft="Ngày nghỉ việc"
-              itemLeft="-"
-              itemRight={null}
+              itemLeft={null}
+              titleRight={null}
             ></SubDetail>
           </div>
         </div>

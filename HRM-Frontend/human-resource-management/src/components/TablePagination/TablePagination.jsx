@@ -37,8 +37,6 @@ function TablePagination(props) {
     gotoPage,
     pageCount,
     setPageSize,
-    //row select data
-    selectedFlatRows,
     //Collumns hiding
     allColumns,
     getToggleHideAllColumnsProps,
@@ -61,25 +59,6 @@ function TablePagination(props) {
     useRowSelect,
     useBlockLayout,
     useSticky
-    // (hooks) => {
-    //   hooks.visibleColumns.push((columns) => [
-    //     // Let's make a column for selection
-    //     {
-    //       id: "selection",
-    //       // The header can use the table's getToggleAllRowsSelectedProps method
-    //       // to render a checkbox
-    //       Header: ({ getToggleAllRowsSelectedProps }) => (
-    //         <IndeterminateCheckbox {...getToggleAllRowsSelectedProps()} />
-    //       ),
-    //       // The cell can use the individual row's getToggleRowSelectedProps method
-    //       // to the render a checkbox
-    //       Cell: ({ row }) => (
-    //         <IndeterminateCheckbox {...row.getToggleRowSelectedProps()} />
-    //       ),
-    //     },
-    //     ...columns,
-    //   ]);
-    // }
   );
 
   const { pageIndex, pageSize, globalFilter, selectedRowIds } = state;
@@ -183,7 +162,7 @@ function TablePagination(props) {
                 prepareRow(row);
                 // console.log(row);
                 return (
-                  <Link to={link + row.original.id} className="link-item">
+                  <Link to={link + row.values.maNhanVien} className="link-item">
                     <tr {...row.getRowProps()} className="tr">
                       {row.cells.map((cell) => {
                         return (
@@ -192,7 +171,7 @@ function TablePagination(props) {
                           </td>
                         );
                       })}
-                    </tr>
+                    </tr>{" "}
                   </Link>
                 );
               })}
@@ -233,7 +212,7 @@ function TablePagination(props) {
                   : 0;
                 gotoPage(pageNumber);
               }}
-              style={{ width: "50px" }}
+              style={{ border: "none", height: "1.6rem", width: "50px" }}
             />
           </span>{" "}
           <button
