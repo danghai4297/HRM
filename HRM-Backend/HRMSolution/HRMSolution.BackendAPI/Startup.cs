@@ -2,7 +2,11 @@ using HRMSolution.Application.Catalog.DanhMucChucDanhs;
 using HRMSolution.Application.Catalog.DanhMucChucVus;
 using HRMSolution.Application.Catalog.DanhMucChuyenMons;
 using HRMSolution.Application.Catalog.DanhMucDanTocs;
+<<<<<<< HEAD
 using HRMSolution.Application.Catalog.DanhMucHonNhans;
+=======
+using HRMSolution.Application.Catalog.HopDongs;
+>>>>>>> ed2453571acc5f83cc226705505ce55c964451b0
 using HRMSolution.Application.Catalog.NhanViens;
 using HRMSolution.Data.EF;
 using Microsoft.AspNetCore.Builder;
@@ -35,10 +39,15 @@ namespace HRMSolution.BackendAPI
            
             services.AddDbContext<HRMDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Data")));
+<<<<<<< HEAD
             services.AddTransient<IDanhMucChucDanhService, DanhMucChucDanhService>();
             services.AddTransient<IDanhMucChucVuService, DanhMucChucVuService>();
             services.AddTransient<IDanhMucChuyenMonService, DanhMucChuyenMonService>();
             services.AddTransient<IDanhMucHonNhanService, DanhMucHonNhanService>();
+=======
+
+            services.AddTransient<IHopDongService, HopDongService>();
+>>>>>>> ed2453571acc5f83cc226705505ce55c964451b0
             services.AddTransient<IDanhMucDanTocService, DanhMucDanTocService>();
             services.AddTransient<INhanVienService, NhanVienService>();
             services.AddControllers();

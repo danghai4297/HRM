@@ -3916,9 +3916,9 @@ namespace HRMSolution.Data.Extentions
             modelbulder.Entity<NgoaiNgu>().HasData(
                 new NgoaiNgu() { id = 1, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Đại học FPT", maNhanVien = "NV0001" }
                 );
-            //modelbulder.Entity<LienHeKhanCap>().HasData(
-            //    new LienHeKhanCap() { id = 1, hoTen="Mai Trung Hiếu",quanHe=1, maNhanVien = "NV0001" }
-            //    );
+            modelbulder.Entity<LienHeKhanCap>().HasData(
+                new LienHeKhanCap() { id = 1, hoTen = "Mai Trung Hiếu", quanHe = "Bạn", maNhanVien = "NV0001", diaChi= "Hà Nội", dienThoai = "0123434324" }
+                );
             modelbulder.Entity<NguoiThan>().HasData(
                 new NguoiThan() { id = 1, tenNguoiThan = "Nguyễn Đăng Hải", gioiTinh = true, ngaySinh = DateTime.ParseExact("1965-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), quanHe = "Bố", ngheNghiep = "kinh doanh Tại Nhà", diaChi = "điện biên", dienThoai = "0914637668", maNhanVien = "NV0001", idDanhMucNguoiThan = 1 }
                 );
@@ -3937,9 +3937,9 @@ namespace HRMSolution.Data.Extentions
                 new Luong() { id = 4,  maHopDong = "HD04", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture) },
                 new Luong() { id = 5,  maHopDong = "HD05", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture) }
                 );
-            //modelbulder.Entity<DieuChuyen>().HasData(
-            //    new DieuChuyen() { id = 1,maNhanVien="NV0005",ngayHieuLuc=DateTime.Now,phong= }
-            //    );
+            modelbulder.Entity<DieuChuyen>().HasData(
+                new DieuChuyen() { id = 1, maNhanVien = "NV0001", ngayHieuLuc = DateTime.Now, phong = 1, to = 1, idChucVu = 1, chiTiet = "Không" }
+                );
             modelbulder.Entity<KhenThuongKyLuat>().HasData(
                 new KhenThuongKyLuat() { id = 1, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0001" },
                 new KhenThuongKyLuat() { id = 2, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0001" },
@@ -3954,6 +3954,9 @@ namespace HRMSolution.Data.Extentions
                 new KhenThuongKyLuat() { id = 11, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0081" },
                 new KhenThuongKyLuat() { id = 12, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0091" }
 
+                );
+            modelbulder.Entity<LichSuBanThan>().HasData(
+                new LichSuBanThan(){ id = 1, biBatDiTu= "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai= "Không", maNhanVien = "NV0001" }
                 );
         }
     }
