@@ -31,6 +31,9 @@ import ScreenDetailTransfer from "../ScreenDetailTransfer/ScreenDetailTransfer";
 import ScreenDetailResign from "../ScreenDetailResign/ScreenDetailResign";
 import ScreenDetailReward from "../ScreenDetailReward/ScreenDetailReward";
 import ScreenDetailDiscipline from "../ScreenDetailDiscipline/ScreenDetailDiscipline";
+import AddProfile from "../ScreenAddProfile/ScreenAddProfile";
+import ScreenAddReward from "../ScreenAddReward/ScreenAddReward";
+
 function ScreenProject() {
   const [account, setAccount] = useState(false);
   const visionHandleClick = () => {
@@ -96,7 +99,7 @@ function ScreenProject() {
               <SideBarLeft />
             </div>
             <div className="content">
-              {/* <Switch>
+              <Switch>
               <Route exact path="/">
                 <Redirect to="/home" />
               </Route>
@@ -104,16 +107,17 @@ function ScreenProject() {
 
               <Route exact path="/profile" component={ScreenTableNV} />
               <Route path="/profile/:id" component={Detail} />
-              
+              <Route path="/profile/edit" component={ScreenAddReward} />
+
               <Route exact path="/contract" component={ScreenContract} />
 
               <Route exact path="/salary" component={ScreenSalary} />
 
               <Route path="/category" component={ScreenCategory} />
 
-              <Route exact path="/transfer" component={ScreenTransfer}/>
+              <Route exact path="/transfer" component={ScreenTransfer} />
 
-              <Route exact path="/resign" component={ScreenResign} />
+              <Route exact path="/resign" component={AddProfile} />
 
               <Route exact path="/reward" component={ScreenReward} />
 
@@ -121,8 +125,8 @@ function ScreenProject() {
 
               <Route exact path="/report" component={ScreenReport} />
               <Route path="/*" component={ScreenNotFound}/>
-            </Switch> */}
-              <Detail />
+            </Switch>
+              {/* <Detail /> */}
             </div>
           </div>
         </div>
