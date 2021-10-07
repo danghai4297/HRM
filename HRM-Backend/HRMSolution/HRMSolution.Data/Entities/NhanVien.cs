@@ -16,6 +16,7 @@ namespace HRMSolution.Data.Entities
         public string dienThoai { get; set; }
         public string dienThoaiKhac { get; set; }
         public string diDong { get; set; }
+        public string email { get; set; }
         public string facebook { get; set; }
         public string skype { get; set; }
         public int? maSoThue { get; set; }
@@ -42,8 +43,10 @@ namespace HRMSolution.Data.Entities
         public DateTime? ngayChinhThuc { get; set; }
         public string coQuanTuyenDung { get; set; }
         public string ngachCongChucNoiDung { get; set; }
+        public bool? vaoDang { get; set; }
         public DateTime? ngayVaoDang { get; set; }
         public DateTime? ngayVaoDangChinhThuc { get; set; }
+        public bool? quanNhan { get; set; }
         public DateTime? ngayNhapNgu { get; set; }
         public DateTime? ngayXuatNgu { get; set; }
         public string quanHamCaoNhat { get; set; }
@@ -58,7 +61,7 @@ namespace HRMSolution.Data.Entities
         public string bhyt { get; set; }
         public string atm { get; set; }
         public string nganHang { get; set; }
-        public bool? trangThaiLaoDong { get; set; }
+        public bool trangThaiLaoDong { get; set; }
         public DateTime? ngayNghiViec { get; set; }
         public string lyDoNghiViec { get; set; }
         public string anh { get; set; }

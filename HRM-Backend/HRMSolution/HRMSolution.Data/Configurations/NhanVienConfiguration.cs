@@ -23,6 +23,7 @@ namespace HRMSolution.Data.Configurations
             builder.Property(x => x.dienThoai).HasMaxLength(16).IsRequired();
             builder.Property(x => x.dienThoaiKhac).HasMaxLength(16);
             builder.Property(x => x.diDong).HasMaxLength(16).IsRequired();
+            builder.Property(x => x.email).HasMaxLength(50);
             builder.Property(x => x.facebook).HasMaxLength(25);
             builder.Property(x => x.skype).HasMaxLength(25);
             
@@ -56,7 +57,7 @@ namespace HRMSolution.Data.Configurations
             builder.Property(x => x.quanHamCaoNhat).HasMaxLength(50);
             builder.Property(x => x.danhHieuCaoNhat).HasMaxLength(50);
             builder.Property(x => x.ngayVaoDoan).HasColumnType("datetime").HasDefaultValueSql("GetDate()");
-            
+            builder.Property(x => x.trangThaiLaoDong).IsRequired().HasDefaultValue(true);
             builder.Property(x => x.noiThamGia).HasMaxLength(50);
             builder.Property(x => x.thuongBinh).HasMaxLength(50);
             builder.Property(x => x.conChinhSach).HasMaxLength(50);
