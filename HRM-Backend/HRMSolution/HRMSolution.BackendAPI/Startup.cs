@@ -1,4 +1,5 @@
 using HRMSolution.Application.Catalog.DanhMucDanTocs;
+using HRMSolution.Application.Catalog.HopDongs;
 using HRMSolution.Application.Catalog.NhanViens;
 using HRMSolution.Data.EF;
 using Microsoft.AspNetCore.Builder;
@@ -32,6 +33,7 @@ namespace HRMSolution.BackendAPI
             services.AddDbContext<HRMDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Data")));
 
+            services.AddTransient<IHopDongService, HopDongService>();
             services.AddTransient<IDanhMucDanTocService, DanhMucDanTocService>();
             services.AddTransient<INhanVienService, NhanVienService>();
             services.AddControllers();

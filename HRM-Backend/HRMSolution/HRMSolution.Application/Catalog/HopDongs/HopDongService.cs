@@ -29,17 +29,22 @@ namespace HRMSolution.Application.Catalog.HopDongs
 
         public async Task<List<HopDongViewModel>> GetAll()
         {
-            var query = from p in _context.hopDongs select p;
+            var query = from p in _context.hopDongs 
+                        join dmlhd in _context.danhMucLoaiHopDongs on p.idLoaiHopDong equals dmlhd.id
+                        join dmcd in _context.danhMucChucDanhs on p.idChucDanh equals dmcd.id
+                        join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
+                        select new  { p, nv, dmcd, dmlhd};
 
             var data = await query.Select(x => new HopDongViewModel()
             {
-                maHopDong = x.maHopDong,
-                idLoaiHopDong = x.idLoaiHopDong,
-                idChucDanh = x.idChucDanh,
-                hopDongTuNgay = x.hopDongTuNgay,
-                hopDongDenNgay = x.hopDongDenNgay,
-                ghiChu = x.ghiChu,
-                maNhanVien = x.maNhanVien
+                maHopDong = x.p.maHopDong,
+                idLoaiHopDong = x.dmlhd.tenLoaiHopDong,
+                idChucDanh = x.dmcd.tenChucDanh,
+                hopDongTuNgay = x.p.hopDongTuNgay,
+                hopDongDenNgay = x.p.hopDongDenNgay,
+                ghiChu = x.p.ghiChu,
+                maNhanVien = x.p.maNhanVien,
+                tenNhanVien = x.nv.hoTen
             }).ToListAsync();
 
             return data;

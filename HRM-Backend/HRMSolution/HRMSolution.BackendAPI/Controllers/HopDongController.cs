@@ -1,4 +1,4 @@
-﻿using HRMSolution.Application.Catalog.NhanViens;
+﻿using HRMSolution.Application.Catalog.HopDongs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,17 +10,17 @@ namespace HRMSolution.BackendAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class NhanVienController : ControllerBase
+    public class HopDongController : ControllerBase
     {
-        private readonly INhanVienService _nhanVienService;
-        public NhanVienController(INhanVienService nhanVienService)
+        private readonly IHopDongService _hopDongService;
+        public HopDongController(IHopDongService nhanVienService)
         {
-            _nhanVienService = nhanVienService;
+            _hopDongService = nhanVienService;
         }
 
         public async Task<IActionResult> Get()
         {
-            var nhanViens = await _nhanVienService.GetAll();
+            var nhanViens = await _hopDongService.GetAll();
             return Ok(nhanViens);
         }
     }

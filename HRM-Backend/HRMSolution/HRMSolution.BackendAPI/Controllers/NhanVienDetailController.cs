@@ -19,7 +19,7 @@ namespace HRMSolution.BackendAPI.Controllers
                 _nhanVienService = nhanVienService;
             }
             [HttpGet("{maNhanVien}")]
-            public async Task<IActionResult> Get([FromQuery]string maNhanVien)
+            public async Task<IActionResult> Get(string maNhanVien)
             {
                 var nhanViens = await _nhanVienService.GetAllDetail(maNhanVien);
                 return Ok(nhanViens);
