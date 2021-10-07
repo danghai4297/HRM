@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ExportCSV } from "../../components/ExportFile/ExportFile";
 import TablePagination from "../../components/TablePagination/TablePagination";
 import productApi from "../../api/productApi";
+import { Link } from "react-router-dom";
 
 ScreenTableNV.propTypes = {};
 
@@ -17,7 +18,6 @@ function ScreenTableNV(props) {
   const fileName = "DSNV";
   const { list } = useContext(ListContext);
   const [dataAllNv, setdataAllNv] = useState([]);
-  console.log(dataAllNv);
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -32,8 +32,6 @@ function ScreenTableNV(props) {
     fetchNvList();
   }, []);
 
-  console.log(dataAllNv);
-
   return (
     <>
       {/* <Route path="/profile/:id" component={Detail} /> */}
@@ -43,7 +41,9 @@ function ScreenTableNV(props) {
             <h2 className="">Tất cả nhân viên</h2>
           </div>
           <div className="button">
-            <input type="submit" className="btn btn-primary" value="Thêm" />
+            <Link to="/profile/edit" className="link-item">
+              <input type="submit" className="btn btn-primary" value="Thêm" />
+            </Link>
             <ReactHTMLTableToExcel
               id="test-table-xls-button"
               className="download-table-xls-button"

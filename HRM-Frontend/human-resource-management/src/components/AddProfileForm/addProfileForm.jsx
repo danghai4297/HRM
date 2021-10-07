@@ -46,16 +46,23 @@ const schema = yup.object({
     .matches(phoneRex, "Số điện thoại không được bỏ trống và là số.")
     .required(),
   lhkc_diaChi: yup.string().required("Địa chỉ không được bỏ trống."),
-  ngheNghiep:yup.string().required("Nghề nghiệp không được bỏ trống."),
-  ngayTuyenDung:yup.string().required("Ngày tuyển dụng không được bỏ trống."),
-  coQuanTuyenDung:yup.string().required("Cơ quan tuyển dụng không được bỏ trống."),
-  chucVuHienTai:yup.string().required("Chức vụ hiện tại không được bỏ trống."),
-  trangThaiLaoDong:yup.string().required("Trạng thái lao động không được bỏ trống."),
-  tinhChatLaoDong:yup.string().required("Tính chất lao động không được bỏ trống."),
-  congViecChinh:yup.string().required("Tính chất lao động không được bỏ trống."),
-  phongBan:yup.string().required("Phòng Ban động không được bỏ trống."),
-  ngachCongChuc:yup.string().required("Ngạch công chức không được bỏ trống."),
-
+  ngheNghiep: yup.string().required("Nghề nghiệp không được bỏ trống."),
+  ngayTuyenDung: yup.string().required("Ngày tuyển dụng không được bỏ trống."),
+  coQuanTuyenDung: yup
+    .string()
+    .required("Cơ quan tuyển dụng không được bỏ trống."),
+  chucVuHienTai: yup.string().required("Chức vụ hiện tại không được bỏ trống."),
+  trangThaiLaoDong: yup
+    .string()
+    .required("Trạng thái lao động không được bỏ trống."),
+  tinhChatLaoDong: yup
+    .string()
+    .required("Tính chất lao động không được bỏ trống."),
+  congViecChinh: yup
+    .string()
+    .required("Tính chất lao động không được bỏ trống."),
+  phongBan: yup.string().required("Phòng Ban động không được bỏ trống."),
+  ngachCongChuc: yup.string().required("Ngạch công chức không được bỏ trống."),
 });
 //.required();
 
@@ -69,11 +76,12 @@ function AddProfileForm(props) {
   const { objectData } = props;
   const [checked, setCheked] = useState(false);
   const handleClick = () => setCheked(!checked);
+
   //const [date, setDate] = useState(new Date());
 
   console.log(checked);
   //console.log(date);
-  const [image,setImage] = useState("/Images/userIcon.png");
+  const [image, setImage] = useState("/Images/userIcon.png");
   const {
     register,
     handleSubmit,
@@ -85,18 +93,18 @@ function AddProfileForm(props) {
   console.log(errors.maNhanVien);
 
   const onHandleSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     JSON.stringify(objectData(data));
     //objectData(data);
   };
   const imageHandler = (e) => {
     const reader = new FileReader();
-    reader.onload = () =>{
-      if(reader.readyState === 2){
-       setImage(reader.result)
+    reader.onload = () => {
+      if (reader.readyState === 2) {
+        setImage(reader.result);
       }
-    }
-    reader.readAsDataURL(e.target.files[0])
+    };
+    reader.readAsDataURL(e.target.files[0]);
   };
   return (
     <div className="container-form">
@@ -107,11 +115,16 @@ function AddProfileForm(props) {
       >
         <div className="Submit-button sticky-top">
           <div>
-          <h2 className="">Thêm mới hồ sơ</h2>
+            <h2 className="">Thêm mới hồ sơ</h2>
           </div>
           <div className="button">
             <input type="submit" className="btn btn-secondary " value="Huỷ" />
-            <input type="submit" className="btn btn-primary ml-3" value="Lưu"  onClick={handleSubmit(onHandleSubmit)}/>
+            <input
+              type="submit"
+              className="btn btn-primary ml-3"
+              value="Lưu"
+              onClick={handleSubmit(onHandleSubmit)}
+            />
           </div>
         </div>
         <div className="container-ava">
@@ -121,9 +134,9 @@ function AddProfileForm(props) {
               className="icon"
               icon={["fas", "user-circle"]}
             ></FontAwesomeIcon> */}
-            <img src={image} className="icon" alt=""/>
+            <img src={image} className="icon" alt="" />
           </span>
-          
+
           <input
             type="file"
             {...register("img")}
@@ -468,7 +481,10 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="baoHiemXaHoi">
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="baoHiemXaHoi"
+                >
                   Bảo hiểm xã hội
                 </label>
                 <input
@@ -507,7 +523,6 @@ function AddProfileForm(props) {
                 <span className="message">{errors.maSoThue?.message}</span>
               </div>
             </div>
-            
           </div>
           <h5>CMND/Thẻ căn cước/Hộ chiếu</h5>
           <div className="row">
@@ -979,7 +994,7 @@ function AddProfileForm(props) {
                       : "form-control col-sm-6 border-danger"
                   }
                 />
-                 <span className="message">{errors.ngayTuyenDung?.message}</span>
+                <span className="message">{errors.ngayTuyenDung?.message}</span>
               </div>
             </div>
             <div className="col">
@@ -1019,7 +1034,9 @@ function AddProfileForm(props) {
                       : "form-control col-sm-6 border-danger"
                   }
                 />
-                 <span className="message">{errors.coQuanTuyenDung?.message}</span>
+                <span className="message">
+                  {errors.coQuanTuyenDung?.message}
+                </span>
               </div>
             </div>
             <div className="col">
@@ -1040,7 +1057,7 @@ function AddProfileForm(props) {
                       : "form-control col-sm-6 border-danger custom-select"
                   }
                 />
-                 <span className="message">{errors.phongBan?.message}</span>
+                <span className="message">{errors.phongBan?.message}</span>
               </div>
             </div>
           </div>
@@ -1103,10 +1120,11 @@ function AddProfileForm(props) {
                   <option value="true">Đang làm việc</option>
                   <option value="false">Đã nghỉ việc</option>
                 </select>
-                <span className="message">{errors.trangThaiLaoDong?.message}</span>
+                <span className="message">
+                  {errors.trangThaiLaoDong?.message}
+                </span>
               </div>
             </div>
-            
           </div>
           <div className="row">
             <div className="col-6">
@@ -1136,7 +1154,9 @@ function AddProfileForm(props) {
                   <option value="">Nghỉ thai sản</option>
                   <option value="">Khác</option>
                 </select>
-                <span className="message">{errors.tinhChatLaoDong?.message}</span>
+                <span className="message">
+                  {errors.tinhChatLaoDong?.message}
+                </span>
               </div>
             </div>
           </div>
@@ -1202,7 +1222,7 @@ function AddProfileForm(props) {
                       : "form-control col-sm-6 border-danger"
                   }
                 />
-                 <span className="message">{errors.ngachCongChuc?.message}</span>
+                <span className="message">{errors.ngachCongChuc?.message}</span>
               </div>
             </div>
             <div className="col">

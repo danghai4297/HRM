@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./TablePagination.scss";
 import {
@@ -17,7 +17,7 @@ import { useSticky } from "react-table-sticky";
 
 import { Link } from "react-router-dom";
 
-function TablePagination(props) {
+function TableBasic(props) {
   const { link, tid, columns, data } = props;
   const {
     getTableProps,
@@ -37,11 +37,7 @@ function TablePagination(props) {
     gotoPage,
     pageCount,
     setPageSize,
-    //row select data
-    selectedFlatRows,
-    //Collumns hiding
-    allColumns,
-    getToggleHideAllColumnsProps,
+
     prepareRow,
   } = useTable(
     {
@@ -49,6 +45,7 @@ function TablePagination(props) {
       data,
       initialState: {
         pageIndex: 0,
+        pageSize: 5,
         hiddenColumns: columns
           .filter((col) => col.show === false)
           .map((col) => col.accessor),
@@ -82,9 +79,7 @@ function TablePagination(props) {
     // }
   );
 
-  const { pageIndex, pageSize, globalFilter, selectedRowIds } = state;
-
-  const [chooseCol, setChooseCol] = useState(false);
+  const { pageIndex, pageSize, globalFilter } = state;
 
   function disableChooseCol() {
     setChooseCol((value) => !value);
@@ -93,54 +88,6 @@ function TablePagination(props) {
   return (
     <>
       <div className="herder-table">
-        <div className="check-col">
-          <div>
-            <div className="select-fillter">
-              <button className="btn-fil" onClick={disableChooseCol}>
-                <FontAwesomeIcon icon={["fas", "filter"]} />
-              </button>
-              <div className="select-fillter">
-                {allColumns.map((column) => (
-                  <div>
-                    {column.canFilter && (
-                      <div className="select-fillter">
-                        {column.render("Header")}&nbsp;{" "}
-                        {column.render("Filter")}&emsp;&emsp;&emsp;
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-            {chooseCol && (
-              <div className="choose-col form-check">
-                <label
-                  className="form-check-label item-chooseCol"
-                  style={{ marginLeft: "20px", marginRight: "0.8rem" }}
-                >
-                  <input
-                    type="checkbox"
-                    className="form-check-input"
-                    {...getToggleHideAllColumnsProps()}
-                  />
-                  Tất cả
-                </label>
-                {allColumns.map((column) => (
-                  <div className="item-chooseCol form-check" key={column.id}>
-                    <label className="form-check-label">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        {...column.getToggleHiddenProps()}
-                      />{" "}
-                      {column.id}
-                    </label>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
         <div className="search-table">
           <input
             className="search-input"
@@ -212,7 +159,7 @@ function TablePagination(props) {
             value={pageSize}
             onChange={(e) => setPageSize(Number(e.target.value))}
           >
-            {[10, 25, 50, rows.length].map((pageSize) => (
+            {[10, 15, rows.length].map((pageSize) => (
               <option key={pageSize} value={pageSize}>
                 {pageSize}
               </option>
@@ -233,7 +180,7 @@ function TablePagination(props) {
                   : 0;
                 gotoPage(pageNumber);
               }}
-              style={{ border: "none", height: "1.6rem", width: "50px" }}
+              style={{ width: "50px" }}
             />
           </span>{" "}
           <button
@@ -285,4 +232,4 @@ function TablePagination(props) {
   );
 }
 
-export default TablePagination;
+export default TableBasic;

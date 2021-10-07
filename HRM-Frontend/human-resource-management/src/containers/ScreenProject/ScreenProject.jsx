@@ -22,13 +22,14 @@ import ScreenReport from "../ScreenReport/ScreenReport";
 import ScreenNotFound from "./ScreenNotFound";
 import ScreenTransfer from "../ScreenTransfer/ScreenTransfer";
 import AddProfile from "../ScreenAddProfile/ScreenAddProfile";
+import ScreenAddReward from "../ScreenAddReward/ScreenAddReward";
 
 function ScreenProject() {
   return (
     <Router>
       <div className="body-screen">
         <div className="header">
-          <Header/>
+          <Header />
         </div>
         <div className="body-contents">
           <div className="menu-bar">
@@ -42,15 +43,16 @@ function ScreenProject() {
               <Route exact path="/home" component={DashBoard} />
 
               <Route exact path="/profile" component={ScreenTableNV} />
-              <Route path="/profile/:id" component={Detail} />
-              
+              {/* <Route path="/profile/:id" component={Detail} /> */}
+              <Route path="/profile/edit" component={ScreenAddReward} />
+
               <Route exact path="/contract" component={ScreenContract} />
 
               <Route exact path="/salary" component={ScreenSalary} />
 
               <Route path="/category" component={ScreenCategory} />
 
-              <Route exact path="/transfer" component={ScreenTransfer}/>
+              <Route exact path="/transfer" component={ScreenTransfer} />
 
               <Route exact path="/resign" component={AddProfile} />
 
@@ -59,7 +61,7 @@ function ScreenProject() {
               <Route exact path="/discipline" component={ScreenDiscipline} />
 
               <Route exact path="/report" component={ScreenReport} />
-              <Redirect to="/home"/>
+              <Redirect to="/home" />
             </Switch>
           </div>
         </div>
