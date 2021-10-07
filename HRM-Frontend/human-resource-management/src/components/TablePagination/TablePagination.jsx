@@ -171,8 +171,7 @@ function TablePagination(props) {
                           </td>
                         );
                       })}
-                    </tr>
-                    //{" "}
+                    </tr>{" "}
                   </Link>
                 );
               })}

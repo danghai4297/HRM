@@ -2,8 +2,8 @@ import React from "react";
 import SubDetail from "../../components/Detail/SubDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
-import "./ScreenDetailReward.scss"
-function ScreenDetailReward() {
+import "./ScreenDetailLevel.scss"
+function ScreenDetailLevel() {
   return (
     <>
       <div className="main-screen">
@@ -12,7 +12,7 @@ function ScreenDetailReward() {
             <FontAwesomeIcon icon={["fas", "long-arrow-alt-left"]} />
           </div>
           <div className="second-path">
-            <h2>Thủ tục khen thưởng</h2>
+            <h2>Trình độ</h2>
           </div>
           <div className="third-path">
             <Button variant="light" className="btn-fix">
@@ -21,24 +21,25 @@ function ScreenDetailReward() {
           </div>
         </div>
         <div className="second-main">
-          <h3 className="title-main">Thông tin khen thưởng</h3>
+          <h3 className="title-main">Thông tin chung</h3>
           <div className="second-main-path">
             <SubDetail
-              titleLeft="Họ và tên"
+              titleLeft="Tên trường"
               itemLeft={null}
-              titleRight="Mã nhân viên"
+              titleRight="Chuyên ngành"
               itemRight={null}
             ></SubDetail>
             <SubDetail
-              titleLeft="Thời gian"
+              titleLeft="Trình độ"
               itemLeft={null}
-              titleRight="Lý do"
+              titleRight="Hình thức đào tạo"
               itemRight={null}
             ></SubDetail>
             <SubDetail
-              titleLeft="Nội dung"
+              titleLeft="Từ ngày"
               itemLeft={null}
-              titleRight={null}
+              titleRight="Đến ngày"
+              itemRight={null}
             ></SubDetail>
           </div>
         </div>
@@ -47,4 +48,4 @@ function ScreenDetailReward() {
   );
 }
 
-export default ScreenDetailReward;
+export default ScreenDetailLevel;

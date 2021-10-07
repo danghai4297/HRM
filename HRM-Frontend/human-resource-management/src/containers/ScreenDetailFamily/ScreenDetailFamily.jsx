@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react'
 import SubDetail from "../../components/Detail/SubDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
-import "./ScreenDetailReward.scss"
-function ScreenDetailReward() {
-  return (
-    <>
+import "./ScreenDetailFamily.scss"
+function ScreenDetailFamily() {
+    return (
+        <>
       <div className="main-screen">
         <div className="first-main">
           <div className="first-path">
             <FontAwesomeIcon icon={["fas", "long-arrow-alt-left"]} />
           </div>
           <div className="second-path">
-            <h2>Thủ tục khen thưởng</h2>
+            <h2>Thông tin gia đình</h2>
           </div>
           <div className="third-path">
             <Button variant="light" className="btn-fix">
@@ -21,30 +21,37 @@ function ScreenDetailReward() {
           </div>
         </div>
         <div className="second-main">
-          <h3 className="title-main">Thông tin khen thưởng</h3>
+          <h3 className="title-main">Thông tin chung</h3>
           <div className="second-main-path">
             <SubDetail
               titleLeft="Họ và tên"
               itemLeft={null}
-              titleRight="Mã nhân viên"
+              titleRight="Quan hệ"
               itemRight={null}
             ></SubDetail>
             <SubDetail
-              titleLeft="Thời gian"
+              titleLeft="Giới tính"
               itemLeft={null}
-              titleRight="Lý do"
+              titleRight="Ngày sinh"
               itemRight={null}
             ></SubDetail>
             <SubDetail
-              titleLeft="Nội dung"
+              titleLeft="Địa chỉ"
               itemLeft={null}
-              titleRight={null}
+              titleRight="Điện thoại"
+              itemRight={null}
+            ></SubDetail>
+            <SubDetail
+              titleLeft="Nghề nghiệp"
+              itemLeft={null}
+              titleRight="Thông tin khác"
+              itemRight={null}
             ></SubDetail>
           </div>
         </div>
       </div>
     </>
-  );
+    )
 }
 
-export default ScreenDetailReward;
+export default ScreenDetailFamily

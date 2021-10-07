@@ -1,11 +1,12 @@
-import React from 'react'
-
+import React from "react";
+import { useLocation } from "react-router-dom";
 function ScreenNotFound() {
-    return (
-        <div>
-            <h1>Page Not Found</h1>
-        </div>
-    )
+  let location = useLocation();
+  return (
+    <div>
+      <h1>Page Not match for <code>{location.pathname}</code></h1>
+    </div>
+  );
 }
 
-export default ScreenNotFound
+export default ScreenNotFound;

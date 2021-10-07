@@ -7,7 +7,8 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import { dum } from "./Data";
 import { ListContext } from "../../Contexts/ListContext";
 function Detail(props) {
-  const { list } = useContext(ListContext);
+  // const { list } = useContext(ListContext);
+  // let { match, history } = props;
 
   let { match, history } = props;
 
@@ -15,10 +16,10 @@ function Detail(props) {
   // console.log(history);
   let { id } = match.params;
   console.log(id);
-  const dataDetail = [];
 
   // const dataDetail = list.find((item) => item.id == id);
 
+  const dataDetail = [];
   const [dropBase, setDropBase] = useState(true);
   const [dropContact, setDropContact] = useState(true);
   const [dropJob, setDropJob] = useState(true);
@@ -167,9 +168,9 @@ function Detail(props) {
             </Container>
           </div>
           <div className="right-path">
-            <Button>Sửa</Button>
-            <Button variant="danger">Xóa</Button>
-            <Button variant="light" id="btn-3">
+            <Button className="button-color">Sửa</Button>
+            <Button className="button-color" variant="danger">Xóa</Button>
+            <Button className="button-color" variant="light">
               <FontAwesomeIcon icon={["fas", "download"]} />
             </Button>
           </div>
@@ -252,13 +253,13 @@ function Detail(props) {
                     itemRight={null}
                   ></SubDetail>
                   <SubDetail
-                    titleLeft="Nơi sinh"
+                    titleLeft="Thường trú"
                     itemLeft={null}
                     titleRight="Quốc tịch"
                     itemRight={null}
                   ></SubDetail>
                   <SubDetail
-                    titleLeft="Nguyên quán"
+                    titleLeft="Tạm trú"
                     itemLeft={null}
                     titleRight={null}
                   ></SubDetail>
@@ -266,33 +267,28 @@ function Detail(props) {
                     <h5>CMND/Thẻ căn cước/Hộ chiếu</h5>
                   </div>
                   <SubDetail
-                    titleLeft="Loại giấy tờ"
+                    titleLeft="Số CMND/CCCD"
                     itemLeft={null}
                     titleRight="Số hộ chiếu"
                     itemRight={null}
                   ></SubDetail>
                   <SubDetail
-                    titleLeft="Số CMND/CCCD"
+                    titleLeft="Ngày cấp(CMNN/CCCD)"
                     itemLeft={null}
                     titleRight="Ngày cấp hộ chiếu"
                     itemRight={null}
                   ></SubDetail>
                   <SubDetail
-                    titleLeft="Ngày cấp(CMNN/CCCD)"
+                    titleLeft="Nơi cấp(CMND/CCCD)"
                     itemLeft={null}
                     titleRight="Nơi cấp hộ chiếu"
                     itemRight={null}
                   ></SubDetail>
                   <SubDetail
-                    titleLeft="Nơi cấp(CMND/CCCD)"
+                    titleLeft="Ngày hết hạn"
                     itemLeft={null}
                     titleRight="Ngày hết hạn hộ chiếu"
                     itemRight={null}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Ngày hết hạn"
-                    itemLeft={null}
-                    titleRight={null}
                   ></SubDetail>
                 </>
               )}
@@ -344,20 +340,19 @@ function Detail(props) {
                   <SubDetail
                     titleLeft="Họ và tên"
                     itemLeft={null}
-                    titleRight="ĐT nhà riêng"
+                    titleRight="Email"
                     itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Quan hệ"
                     itemLeft={null}
-                    titleRight="Email"
+                    titleRight="Địa chỉ"
                     itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="ĐT di động"
                     itemLeft={null}
-                    titleRight="Địa chỉ"
-                    itemRight={null}
+                    titleRight={null}
                   ></SubDetail>
                 </>
               )}
@@ -411,19 +406,13 @@ function Detail(props) {
                   <SubDetail
                     titleLeft="Tính chất lao động"
                     itemLeft={null}
-                    titleRight="Số sổ QL lao động"
-                    itemRight={null}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Lý do nghỉ"
-                    itemLeft={null}
-                    titleRight="Loại hợp đồng"
+                    titleRight="Ngày công tác"
                     itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày nghỉ việc"
                     itemLeft={null}
-                    titleRight="Ngày công tác"
+                    titleRight="Lý do nghỉ"
                     itemRight={null}
                   ></SubDetail>
                   <div className="title">
@@ -448,15 +437,16 @@ function Detail(props) {
                     itemRight={null}
                   ></SubDetail>
                   <SubDetail
-                    titleLeft="Phụ cấp chức vụ"
+                    titleLeft="Lương cơ bản"
                     itemLeft={null}
                     titleRight="Ngày hết hạn"
                     itemRight={null}
                   ></SubDetail>
                   <SubDetail
-                    titleLeft="Phụ cấp khác"
+                    titleLeft="Phụ cấp chức vụ"
                     itemLeft={null}
-                    titleRight={null}
+                    titleRight="Phụ cấp khác"
+                    itemRight={null}
                   ></SubDetail>
                 </>
               )}
@@ -492,7 +482,9 @@ function Detail(props) {
             <div className="form" id="cultural">
               <div className="big-title">
                 <div className="name-title">
-                  <h3>Trình độ văn hóa</h3>
+                  <div>
+                    <h3>Trình độ văn hóa</h3>
+                  </div>
                 </div>
                 <div className="arrow-button">
                   <button
@@ -509,11 +501,25 @@ function Detail(props) {
               {dropCultural && (
                 <>
                   <div className="title">
-                    <h5>Trình độ</h5>
+                    <div className="title-cultural">
+                      <h5 className="title-name">Trình độ</h5>
+                    </div>
+                    <div className="icon-cultural">
+                      <button className="btn-cultural">
+                        <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                      </button>
+                    </div>
                   </div>
                   <div className="table"></div>
                   <div className="title">
-                    <h5>Ngoại ngữ</h5>
+                    <div className="title-cultural">
+                      <h5 className="title-name">Ngoại ngữ</h5>
+                    </div>
+                    <div className="icon-cultural">
+                      <button className="btn-cultural">
+                        <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                      </button>
+                    </div>
                   </div>
                   <div className="table"></div>
                 </>
@@ -538,6 +544,14 @@ function Detail(props) {
               </div>
               {dropFamily && (
                 <>
+                  <div className="title">
+                    <div className="title-cultural"></div>
+                    <div className="icon-cultural">
+                      <button className="btn-cultural">
+                        <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                      </button>
+                    </div>
+                  </div>
                   <div className="table"></div>
                 </>
               )}
@@ -567,6 +581,12 @@ function Detail(props) {
                   <SubDetail
                     titleLeft="Ngạch công chức"
                     itemLeft={null}
+                    titleRight="Ngạch công chức nội dung"
+                    itemRight={null}
+                  ></SubDetail>
+                  <SubDetail
+                    titleLeft="Là Đảng viên"
+                    itemLeft={null}
                     titleRight="Ngày vào đoàn"
                     itemRight={null}
                   ></SubDetail>
@@ -587,13 +607,13 @@ function Detail(props) {
                   <SubDetail
                     titleLeft="Là quân nhân"
                     itemLeft={null}
-                    titleRight="Là thương binh"
+                    titleRight="Thương binh"
                     itemRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày nhập ngũ"
                     itemLeft={null}
-                    titleRight="Là con gia đình chính sách"
+                    titleRight="Con gia đình chính sách"
                     itemRight={null}
                   ></SubDetail>
                   <SubDetail
@@ -659,6 +679,14 @@ function Detail(props) {
               </div>
               {dropContract && (
                 <>
+                  <div className="title">
+                    <div className="title-cultural"></div>
+                    <div className="icon-cultural">
+                      <button className="btn-cultural">
+                        <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                      </button>
+                    </div>
+                  </div>
                   <div className="table"></div>
                 </>
               )}
@@ -682,6 +710,14 @@ function Detail(props) {
               </div>
               {dropTransfer && (
                 <>
+                  <div className="title">
+                    <div className="title-cultural"></div>
+                    <div className="icon-cultural">
+                      <button className="btn-cultural">
+                        <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                      </button>
+                    </div>
+                  </div>
                   <div className="table"></div>
                 </>
               )}
@@ -705,6 +741,14 @@ function Detail(props) {
               </div>
               {dropReward && (
                 <>
+                  <div className="title">
+                    <div className="title-cultural"></div>
+                    <div className="icon-cultural">
+                      <button className="btn-cultural">
+                        <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                      </button>
+                    </div>
+                  </div>
                   <div className="table"></div>
                 </>
               )}
@@ -728,6 +772,14 @@ function Detail(props) {
               </div>
               {dropDiscipline && (
                 <>
+                  <div className="title">
+                    <div className="title-cultural"></div>
+                    <div className="icon-cultural">
+                      <button className="btn-cultural">
+                        <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                      </button>
+                    </div>
+                  </div>
                   <div className="table"></div>
                 </>
               )}
