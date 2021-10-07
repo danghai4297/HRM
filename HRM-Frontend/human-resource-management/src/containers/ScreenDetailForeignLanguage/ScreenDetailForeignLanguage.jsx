@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react'
 import SubDetail from "../../components/Detail/SubDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
-import "./ScreenDetailReward.scss"
-function ScreenDetailReward() {
-  return (
-    <>
+import "./ScreenDetailForeignLanguage.scss"
+function ScreenDetailForeignLanguage() {
+    return (
+        <>
       <div className="main-screen">
         <div className="first-main">
           <div className="first-path">
             <FontAwesomeIcon icon={["fas", "long-arrow-alt-left"]} />
           </div>
           <div className="second-path">
-            <h2>Thủ tục khen thưởng</h2>
+            <h2>Ngoại ngữ</h2>
           </div>
           <div className="third-path">
             <Button variant="light" className="btn-fix">
@@ -21,30 +21,25 @@ function ScreenDetailReward() {
           </div>
         </div>
         <div className="second-main">
-          <h3 className="title-main">Thông tin khen thưởng</h3>
+          <h3 className="title-main">Thông tin chung</h3>
           <div className="second-main-path">
             <SubDetail
-              titleLeft="Họ và tên"
+              titleLeft="Ngoại ngữ"
               itemLeft={null}
-              titleRight="Mã nhân viên"
+              titleRight="Ngày cấp"
               itemRight={null}
             ></SubDetail>
             <SubDetail
-              titleLeft="Thời gian"
+              titleLeft="Nơi cấp"
               itemLeft={null}
-              titleRight="Lý do"
+              titleRight="Trình độ"
               itemRight={null}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Nội dung"
-              itemLeft={null}
-              titleRight={null}
             ></SubDetail>
           </div>
         </div>
       </div>
     </>
-  );
+    )
 }
 
-export default ScreenDetailReward;
+export default ScreenDetailForeignLanguage

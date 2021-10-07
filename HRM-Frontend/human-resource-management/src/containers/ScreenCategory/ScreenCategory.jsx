@@ -61,7 +61,7 @@ function ScreenCategory() {
               <Route path="/category/civil" component={ItemCivil} />
               <Route path="/category/relation" component={ItemRelation} />
               <Route path="/category/marriage" component={ItemMarriage} />
-              {/* <Route component={ScreenNotFound} /> */}
+              <Route path="*" component={ScreenNotFound}/>
             </Switch>
           </div>
         </div>

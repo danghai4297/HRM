@@ -25,38 +25,38 @@ function ScreenDetailSalary() {
           <div className="second-main-path">
             <SubDetail
               titleLeft="Họ và tên"
-              itemLeft="-"
+              itemLeft={null}
               titleRight="Mã nhân viên"
-              itemRight="-"
+              itemRight={null}
             ></SubDetail>
             <SubDetail
               titleLeft="Mã hợp đồng"
-              itemLeft="-"
+              itemLeft={null}
               titleRight="Nhóm lương"
-              itemRight="-"
+              itemRight={null}
             ></SubDetail>
             <SubDetail
               titleLeft="Hệ số lương"
-              itemLeft="-"
+              itemLeft={null}
               titleRight="Bậc lương"
-              itemRight="-"
+              itemRight={null}
             ></SubDetail>
             <SubDetail
               titleLeft="Phụ cấp chức vụ"
-              itemLeft="-"
+              itemLeft={null}
               titleRight="Phụ cấp khác"
-              itemRight="-"
+              itemRight={null}
             ></SubDetail>
             <SubDetail
               titleLeft="Thời hạn lên lương"
-              itemLeft="-"
+              itemLeft={null}
               titleRight="Ngày hết hạn"
-              itemRight="-"
+              itemRight={null}
             ></SubDetail>
             <SubDetail
               titleLeft="Ngày có hiệu lực"
-              itemLeft="-"
-              itemRight={null}
+              itemLeft={null}
+              titleRight={null}
             ></SubDetail>
           </div>
         </div>
