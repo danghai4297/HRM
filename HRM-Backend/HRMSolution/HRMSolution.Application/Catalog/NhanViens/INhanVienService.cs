@@ -13,6 +13,6 @@ namespace HRMSolution.Application.Catalog.NhanViens
         Task<int> Update(NhanVienUpdateRequest request);
         Task<int> Delete(int idDanhMucDanToc);
         Task<List<NhanVienViewModel>> GetAll();
-        Task<List<NhanVienDetailViewModel>> GetAllDetail(string maNhanVien);
+        Task<NhanVienDetailViewModel> GetAllDetail(string maNhanVien);
     }
 }
