@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./ScreenContract.scss";
-import { ListContext } from "../../Contexts/ListContext";
 import { NVCOLUMNSHD } from "./NvColumns";
 import ReactHTMLTableToExcel from "react-html-to-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,9 +11,8 @@ import productApi from "../../api/productApi";
 import { Link } from "react-router-dom";
 
 function ScreenContract(props) {
-  const link = "/profile/";
+  const link = "/contract/detail/";
   const fileName = "Danhsachhopdong";
-  const { list } = useContext(ListContext);
   const [dataAllHd, setdataAllHd] = useState([]);
 
   useEffect(() => {
@@ -38,7 +36,7 @@ function ScreenContract(props) {
             <h2 className="">Danh sách hợp đồng</h2>
           </div>
           <div className="button">
-            <Link to="/profile/edit" className="link-item">
+            <Link to="/contract/add" className="link-item">
               <input type="submit" className="btn btn-primary" value="Thêm" />
             </Link>
             <ReactHTMLTableToExcel

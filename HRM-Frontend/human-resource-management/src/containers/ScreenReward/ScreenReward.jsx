@@ -11,8 +11,8 @@ import productApi from "../../api/productApi";
 import { Link } from "react-router-dom";
 
 function ScreenReward(props) {
-  const link = "/profile/";
-  const fileName = "DSNV";
+  const link = "/reward/detail/";
+  const fileName = "DSkhenthuong";
   const { list } = useContext(ListContext);
   //   const [dataAllNv, setdataAllNv] = useState([]);
   //   console.log(dataAllNv);
@@ -35,17 +35,17 @@ function ScreenReward(props) {
       <div className="screen-table-nv">
         <div className="herder-content sticky-top">
           <div>
-            <h2 className="">Tất cả nhân viên</h2>
+            <h2 className="">Nhân viên được khen thưởng</h2>
           </div>
           <div className="button">
-            <Link to="/profile/edit" className="link-item">
+            <Link to="/reward/add" className="link-item">
               <input type="submit" className="btn btn-primary" value="Thêm" />
             </Link>
             <ReactHTMLTableToExcel
               id="test-table-xls-button"
               className="download-table-xls-button"
               table="tableHd"
-              filename="Danh sach nhan vien"
+              filename={fileName}
               sheet="tablexls"
               buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
             />
