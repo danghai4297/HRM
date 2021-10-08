@@ -4,7 +4,11 @@ using HRMSolution.Application.Catalog.DanhMucChuyenMons;
 using HRMSolution.Application.Catalog.DanhMucDanTocs;
 
 using HRMSolution.Application.Catalog.DanhMucHonNhans;
-
+using HRMSolution.Application.Catalog.DanhMucKhenThuongKyLuats;
+using HRMSolution.Application.Catalog.DanhMucLoaiHopDongs;
+using HRMSolution.Application.Catalog.DanhMucNgachCongChucs;
+using HRMSolution.Application.Catalog.DanhMucNgoaiNgus;
+using HRMSolution.Application.Catalog.DanhMucNguoiThans;
 using HRMSolution.Application.Catalog.HopDongs;
 using HRMSolution.Application.Catalog.KhenThuongKyLuats;
 using HRMSolution.Application.Catalog.NhanViens;
@@ -46,9 +50,12 @@ namespace HRMSolution.BackendAPI
             services.AddTransient<IDanhMucChuyenMonService, DanhMucChuyenMonService>();
             services.AddTransient<IDanhMucHonNhanService, DanhMucHonNhanService>();
             services.AddTransient<IKhenThuongKyLuatService, KhenThuongKyLuatService>();
-
+            services.AddTransient<IDanhMucKhenThuongKyLuatService, DanhMucKhenThuongKyLuatService>();
+            services.AddTransient<IDanhMucLoaiHopDongService, DanhMucLoaiHopDongService>();
+            services.AddTransient<IDanhMucNgachCongChucService, DanhMucNgachCongChucService>();
+            services.AddTransient<IDanhMucNguoiThanService, DanhMucNguoiThanService>();
+            services.AddTransient<IDanhMucNgoaiNguService, DanhMucNgoaiNguService>();
             services.AddTransient<IHopDongService, HopDongService>();
-
             services.AddTransient<IDanhMucDanTocService, DanhMucDanTocService>();
             services.AddTransient<INhanVienService, NhanVienService>();
             services.AddControllers();

@@ -10,11 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Catalog\DanhMucKhenThuongKyLuats\" />
-    <Folder Include="Catalog\DanhMucLoaiHopDongs\" />
-    <Folder Include="Catalog\DanhMucNgachCongChucs\" />
-    <Folder Include="Catalog\DanhMucNgoaiNgus\" />
-    <Folder Include="Catalog\DanhMucNguoiThans\" />
     <Folder Include="Catalog\DanhMucTos\" />
     <Folder Include="Catalog\DanhMucPhongBans\" />
     <Folder Include="Catalog\DanhMucTinhChatLaoDongs\" />
