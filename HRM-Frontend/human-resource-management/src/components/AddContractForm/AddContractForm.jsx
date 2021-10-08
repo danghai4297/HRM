@@ -1,15 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./AddContractForm.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-AddContractForm.propTypes = {
-  objectData: PropTypes.object,
-};
-AddContractForm.defaultProps = {
-  objectData: null,
-};
+
 const schema = yup.object({
   hoVaTen: yup.string().required("Họ và tên không được bỏ trống."),
   maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
@@ -22,7 +16,6 @@ const schema = yup.object({
     .required("Ngày có hiệu lực không được bỏ trống."),
 });
 function AddContractForm(props) {
-  const { objectData } = props;
   const {
     register,
     handleSubmit,
@@ -32,25 +25,29 @@ function AddContractForm(props) {
   });
   const onHandleSubmit = (data) => {
     console.log(data);
-    objectData(data);
+    JSON.stringify(data);
   };
   return (
     <div className="container-form">
+      <div className="Submit-button sticky-top">
+        <div>
+          <h2 className="">Thêm hợp đồng</h2>
+        </div>
+        <div className="button">
+          <input type="submit" className="btn btn-secondary " value="Huỷ" />
+          <input
+            type="submit"
+            className="btn btn-primary ml-3"
+            value="Lưu"
+            onClick={handleSubmit(onHandleSubmit)}
+          />
+        </div>
+      </div>
       <form
         action=""
         class="profile-form"
         // onSubmit={handleSubmit(onHandleSubmit)}
       >
-        <div className="Submit-button sticky-top">
-          <div>
-            <h2 className="">Thêm hợp đồng</h2>
-          </div>
-          <div className="button">
-            <input type="submit" className="btn btn-secondary " value="Huỷ" />
-            <input type="submit" className="btn btn-primary ml-3" value="Lưu"  onClick={handleSubmit(onHandleSubmit)} />
-          </div>
-        </div>
-
         <div className="container-div-form">
           <h3>Thông tin chung</h3>
           <div className="row">

@@ -102,7 +102,7 @@ export const NVCOLUMNSHD = [
     show: true,
   },
   {
-    Header: "Quốc Tịnh",
+    Header: "Mã Hợp Đồng",
     accessor: "maHopDong",
     minWidth: 100,
     Filter: SelectColumnFilter,

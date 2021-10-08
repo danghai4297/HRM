@@ -6,18 +6,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 LogIn.propTypes = {};
 
 function LogIn(props) {
+  const { login } = props;
   return (
     <div className="loginn">
       <div className="form-login">
         <div className="left-login">
-          <img
-            src="https://cdn.discordapp.com/attachments/806041775910158346/889907940209872927/businessman_1.png"
-            alt=""
-          />
+          <img src="/Images/loginImage.png" alt="" />
         </div>
         <div className="right-login">
           <div className="logo">
-            <h1>HRM</h1>
+            <h1>3HMD</h1>
           </div>
           <div className="form-group">
             <span>
@@ -36,7 +34,7 @@ function LogIn(props) {
               placeholder="Mật khẩu"
             />
           </div>
-          <input type="submit" value="ĐĂNG NHẬP" />
+          <input onClick={login} type="submit" value="ĐĂNG NHẬP" />
         </div>
       </div>
     </div>

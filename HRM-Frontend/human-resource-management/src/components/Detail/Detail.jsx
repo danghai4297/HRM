@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Detail.scss";
 import SubDetail from "./SubDetail";
 import { links } from "./ScrollData";
@@ -6,18 +6,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { dum } from "./Data";
 import { ListContext } from "../../Contexts/ListContext";
+import ProductApi from "../../api/productApi";
 function Detail(props) {
-  // const { list } = useContext(ListContext);
-  // let { match, history } = props;
-
   let { match, history } = props;
-
-  // console.log(match);
-  // console.log(history);
   let { id } = match.params;
   console.log(id);
+  const [dataDetailNv, setdataDetailNv] = useState([]);
 
-  // const dataDetail = list.find((item) => item.id == id);
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const responseNv = await ProductApi.getNvDetail(id);
+        // console.log(responseNv);
+        setdataDetailNv(responseNv);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
+
+  console.log(dataDetailNv);
 
   const dataDetail = [];
   const [dropBase, setDropBase] = useState(true);
@@ -80,7 +89,7 @@ function Detail(props) {
         <div className="first-information">
           <div className="left-path">
             <div className="icons">
-              <button className="btn-back">
+              <button className="btn-back" onClick={history.goBack}>
                 <FontAwesomeIcon
                   className="icon-btn"
                   icon={["fas", "long-arrow-alt-left"]}
@@ -169,7 +178,9 @@ function Detail(props) {
           </div>
           <div className="right-path">
             <Button className="button-color">Sửa</Button>
-            <Button className="button-color" variant="danger">Xóa</Button>
+            <Button className="button-color" variant="danger">
+              Xóa
+            </Button>
             <Button className="button-color" variant="light">
               <FontAwesomeIcon icon={["fas", "download"]} />
             </Button>

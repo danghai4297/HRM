@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../FontAwesomeIcons/index";
 import { useState } from "react";
 //import { DatePicker } from "antd";
+
 import "antd/dist/antd.css";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -66,6 +67,7 @@ const schema = yup.object({
 //.required();
 
 function AddProfileForm(props) {
+  const { history } = props;
   //handle checkbox
   const [checkedSoldier, setCheckedSoldier] = useState(false);
   const handleClick = () => setCheckedSoldier(!checkedSoldier);
@@ -79,7 +81,6 @@ function AddProfileForm(props) {
 
   console.log(checkedSoldier);
   //console.log(date);
-  const [image, setImage] = useState("/Images/userIcon.png");
   const {
     register,
     handleSubmit,
@@ -89,46 +90,48 @@ function AddProfileForm(props) {
     resolver: yupResolver(schema),
   });
   console.log(errors.maNhanVien);
-
   //get data from form
   const onHandleSubmit = (data) => {
     // console.log(data);
     JSON.stringify(data);
     //objectData(data);
+    history.goBack();
   };
   //handle image
-  const [file, setFile] = useState("Images/userIcon.png");
+  const [file, setFile] = useState("/Images/userIcon.png");
   const handleChange = (e) => {
     setFile(URL.createObjectURL(e.target.files[0]));
   };
   return (
     <div className="container-form">
+      <div className="Submit-button sticky-top">
+        <div>
+          <h2 className="">Thêm mới hồ sơ</h2>
+        </div>
+        <div className="button">
+          <input
+            type="submit"
+            className="btn btn-secondary "
+            value="Huỷ"
+            onClick={history.goBack}
+          />
+          <input
+            type="submit"
+            className="btn btn-primary ml-3"
+            value="Lưu"
+            onClick={handleSubmit(onHandleSubmit)}
+          />
+        </div>
+      </div>
       <form
         action=""
         class="profile-form"
         // onSubmit={handleSubmit(onHandleSubmit)}
       >
-        <div className="Submit-button sticky-top">
-          <div>
-            <h2 className="">Thêm mới hồ sơ</h2>
-          </div>
-          <div className="button">
-            <input type="submit" className="btn btn-secondary " value="Huỷ" />
-            <input
-              type="submit"
-              className="btn btn-primary ml-3"
-              value="Lưu"
-              onClick={handleSubmit(onHandleSubmit)}
-            />
-          </div>
-        </div>
+        {/* container import image */}
         <div className="container-ava">
           <span>
             {" "}
-            {/* <FontAwesomeIcon
-              className="icon"
-              icon={["fas", "user-circle"]}
-            ></FontAwesomeIcon> */}
             <img src={file} className="icon" alt="" />
           </span>
 

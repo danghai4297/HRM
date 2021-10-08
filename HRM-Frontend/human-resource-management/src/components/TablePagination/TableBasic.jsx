@@ -81,8 +81,6 @@ function TableBasic(props) {
 
   const { pageIndex, pageSize, globalFilter } = state;
 
-  
-
   return (
     <>
       <div className="herder-table">
