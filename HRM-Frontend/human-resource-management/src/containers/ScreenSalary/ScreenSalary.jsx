@@ -11,8 +11,8 @@ import productApi from "../../api/productApi";
 import { Link } from "react-router-dom";
 
 function ScreenSalary(props) {
-  const link = "/profile/";
-  const fileName = "DSNV";
+  const link = "/salary/detail/";
+  const fileName = "Danhsachluong";
   const { list } = useContext(ListContext);
   //   const [dataAllNv, setdataAllNv] = useState([]);
   //   console.log(dataAllNv);
@@ -35,17 +35,17 @@ function ScreenSalary(props) {
       <div className="screen-table-nv">
         <div className="herder-content sticky-top">
           <div>
-            <h2 className="">Tất cả nhân viên</h2>
+            <h2 className="">Danh sách lương</h2>
           </div>
           <div className="button">
-            <Link to="/profile/edit" className="link-item">
+            <Link to="/salary/add" className="link-item">
               <input type="submit" className="btn btn-primary" value="Thêm" />
             </Link>
             <ReactHTMLTableToExcel
               id="test-table-xls-button"
               className="download-table-xls-button"
-              table="tableHd"
-              filename="Danh sach nhan vien"
+              table="tabledc"
+              fileName={fileName}
               sheet="tablexls"
               buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
             />
@@ -55,7 +55,7 @@ function ScreenSalary(props) {
         <div className="table-nv">
           <TablePagination
             link={link}
-            tid="tableHd"
+            tid="tabledc"
             columns={NVCOLUMNS}
             data={list}
           />

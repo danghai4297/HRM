@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./ScreenProject.scss";
 
-import Header from "../../components/Header/Header";
 import SideBarLeft from "../../components/SideBarLeft/SideBarLeft";
 import {
   BrowserRouter as Router,
@@ -19,19 +18,22 @@ import ScreenResign from "../ScreenResign/ScreenResign";
 import ScreenReward from "../ScreenReward/ScreenReward";
 import ScreenDiscipline from "../ScreenDiscipline/ScreenDiscipline";
 import ScreenReport from "../ScreenReport/ScreenReport";
-import ScreenNotFound from "./ScreenNotFound";
 import ScreenTransfer from "../ScreenTransfer/ScreenTransfer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../components/Header/Header.scss";
-import ScreenDetailForeignLanguage from "../ScreenDetailForeignLanguage/ScreenDetailForeignLanguage";
-import ScreenDetailLevel from "../ScreenDetailLevel/ScreenDetailLevel";
-import ScreenDetailFamily from "../ScreenDetailFamily/ScreenDetailFamily";
 import ScreenDetailSalary from "../ScreenDetailSalary/ScreenDetailSalary";
+import AddProfileForm from "../../components/AddProfileForm/addProfileForm";
+import ScreenDetailContract from "../ScreenDetailContract/ScreenDetailContract";
+import AddContractForm from "../../components/AddContractForm/AddContractForm";
+import AddSalaryForm from "../../components/AddSalaryForm/AddSalaryForm";
 import ScreenDetailTransfer from "../ScreenDetailTransfer/ScreenDetailTransfer";
+import AddTransferForm from "../../components/AddTransferForm/AddTransferForm";
 import ScreenDetailResign from "../ScreenDetailResign/ScreenDetailResign";
+import AddResignationForm from "../../components/AddResignationForm/AddResignationForm";
+import AddRewardForm from "../../components/AddRewardForm/AddRewardForm";
+import AddDisciplineForm from "../../components/AddDisciplineForm/AddDisciplineForm";
 import ScreenDetailReward from "../ScreenDetailReward/ScreenDetailReward";
 import ScreenDetailDiscipline from "../ScreenDetailDiscipline/ScreenDetailDiscipline";
-import AddProfileForm from "../../components/AddProfileForm/addProfileForm";
 
 function ScreenProject() {
   const [account, setAccount] = useState(false);
@@ -50,7 +52,7 @@ function ScreenProject() {
           <div className="header-com">
             <div className="name">
               <div className="title-project">
-                <h1>HRM</h1>
+                <h1>3HMD</h1>
               </div>
             </div>
             <div className="account">
@@ -110,18 +112,58 @@ function ScreenProject() {
               <Route exact path="/profile/add" component={AddProfileForm} />
 
               <Route exact path="/contract" component={ScreenContract} />
+              <Route
+                exact
+                path="/contract/detail/:id"
+                component={ScreenDetailContract}
+              />
+              <Route exact path="/contract/add" component={AddContractForm} />
 
               <Route exact path="/salary" component={ScreenSalary} />
+              <Route
+                exact
+                path="/salary/detail/:id"
+                component={ScreenDetailSalary}
+              />
+              <Route exact path="/salary/add" component={AddSalaryForm} />
 
               <Route path="/category" component={ScreenCategory} />
 
               <Route exact path="/transfer" component={ScreenTransfer} />
+              <Route
+                exact
+                path="/transfer/detail/:id"
+                component={ScreenDetailTransfer}
+              />
+              <Route exact path="/transfer/add" component={AddTransferForm} />
 
               <Route exact path="/resign" component={ScreenResign} />
+              <Route
+                exact
+                path="/resign/detail/:id"
+                component={ScreenDetailResign}
+              />
 
+              
               <Route exact path="/reward" component={ScreenReward} />
+              <Route
+                exact
+                path="/reward/detail/:id"
+                component={ScreenDetailSalary}
+              />
+              <Route exact path="/reward/add" component={AddRewardForm} />
 
               <Route exact path="/discipline" component={ScreenDiscipline} />
+              <Route
+                exact
+                path="/discipline/detail/:id"
+                component={ScreenDetailDiscipline}
+              />
+              <Route
+                exact
+                path="/discipline/add"
+                component={AddDisciplineForm}
+              />
 
               <Route exact path="/report" component={ScreenReport} />
             </Switch>

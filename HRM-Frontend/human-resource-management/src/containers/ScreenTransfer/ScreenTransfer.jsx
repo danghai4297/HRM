@@ -11,8 +11,8 @@ import productApi from "../../api/productApi";
 import { Link } from "react-router-dom";
 
 function ScreenTransfer(props) {
-  const link = "/profile/";
-  const fileName = "DSNV";
+  const link = "/transfer/detail/";
+  const fileName = "danhsachdieuchuyen";
   const { list } = useContext(ListContext);
   //   const [dataAllNv, setdataAllNv] = useState([]);
   //   console.log(dataAllNv);
@@ -35,17 +35,17 @@ function ScreenTransfer(props) {
       <div className="screen-table-nv">
         <div className="herder-content sticky-top">
           <div>
-            <h2 className="">Tất cả nhân viên</h2>
+            <h2 className="">Danh sách điều chuyển</h2>
           </div>
           <div className="button">
-            <Link to="/profile/edit" className="link-item">
+            <Link to="/transfer/add" className="link-item">
               <input type="submit" className="btn btn-primary" value="Thêm" />
             </Link>
             <ReactHTMLTableToExcel
               id="test-table-xls-button"
               className="download-table-xls-button"
               table="tableHd"
-              filename="Danh sach nhan vien"
+              filename={fileName}
               sheet="tablexls"
               buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
             />
