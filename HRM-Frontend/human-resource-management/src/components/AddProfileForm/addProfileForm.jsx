@@ -75,12 +75,18 @@ AddProfileForm.defaultProps = {
 function AddProfileForm(props) {
   let { history } = props;
   const { objectData } = props;
-  const [checked, setCheked] = useState(false);
-  const handleClick = () => setCheked(!checked);
-
+  //handle checkbox
+  const [checkedSoldier, setCheckedSoldier] = useState(false);
+  const handleClick = () => setCheckedSoldier(!checkedSoldier);
+  const [checkedParty, setChekedParty] = useState(false);
+  const handleClickParty = () => setChekedParty(!checkedParty);
+  const [veterans, setVeterans] = useState(false);
+  const handleClickVeteransy = () => setVeterans(!veterans);
+  const [policy, setPolicy] = useState(false);
+  const handleClickPolicy = () => setPolicy(!policy);
   //const [date, setDate] = useState(new Date());
 
-  console.log(checked);
+  console.log(checkedSoldier);
   //console.log(date);
   const [image, setImage] = useState("/Images/userIcon.png");
   const {
@@ -93,20 +99,20 @@ function AddProfileForm(props) {
   });
   console.log(errors.maNhanVien);
 
+  //get data from form
   const onHandleSubmit = (data) => {
     // console.log(data);
     JSON.stringify(objectData(data));
     //objectData(data);
   };
-  const imageHandler = (e) => {
-    const reader = new FileReader();
-    reader.onload = () => {
-      if (reader.readyState === 2) {
-        setImage(reader.result);
-      }
-    };
-    reader.readAsDataURL(e.target.files[0]);
-  };
+  //handle image
+   const [file,  setFile] = useState("Images/userIcon.png")
+     
+     const handleChange = (e) =>{
+       setFile(URL.createObjectURL(e.target.files[0]));
+       
+
+     }
   return (
     <div className="container-form">
       <input
@@ -146,7 +152,7 @@ function AddProfileForm(props) {
               className="icon"
               icon={["fas", "user-circle"]}
             ></FontAwesomeIcon> */}
-            <img src={image} className="icon" alt="" />
+            <img src={file} className="icon" alt="" />
           </span>
 
           <input
@@ -154,7 +160,7 @@ function AddProfileForm(props) {
             {...register("img")}
             accept="Images/*"
             class="form-control-file"
-            onChange={imageHandler}
+            onChange={handleChange}
           ></input>
         </div>
         <div className="container-div-form">
@@ -1243,7 +1249,7 @@ function AddProfileForm(props) {
                   class="col-sm-4 justify-content-start"
                   htmlFor="ngayVaoDoan"
                 >
-                  Ngày vào đoàn
+                  Ngày vào Đoàn
                 </label>
                 <input
                   type="text"
@@ -1256,19 +1262,21 @@ function AddProfileForm(props) {
           </div>
           <div className="row">
             <div className="col">
-              <div class="form-group form-inline">
-                <label
-                  class="col-sm-4 justify-content-start"
-                  htmlFor="ngayVaoDang"
-                >
-                  Ngày vào đảng
-                </label>
+              <div class="form-check mb-2 form-inline">
                 <input
-                  type="text"
-                  {...register("ngayVaoDang")}
-                  id="ngayVaoDang"
-                  className="form-control col-sm-6"
+                  type="checkbox"
+                  {...register("daVaoDang")}
+                  id="daVaoDang"
+                  className="form-check-input"
+                  onClick={handleClickParty}
+                  checked={checkedParty}
                 />
+                <label
+                  className="form-check-label col-sm-4 justify-content-start "
+                  htmlFor="daVaoDang"
+                >
+                  Đã vào Đảng
+                </label>
               </div>
             </div>
             <div className="col">
@@ -1293,6 +1301,26 @@ function AddProfileForm(props) {
               <div class="form-group form-inline">
                 <label
                   class="col-sm-4 justify-content-start"
+                  htmlFor="ngayVaoDang"
+                >
+                  Ngày vào Đảng
+                </label>
+                <input
+                  type="text"
+                  {...register("ngayVaoDang")}
+                  id="ngayVaoDang"
+                  className="form-control col-sm-6"
+                  disabled={!checkedParty}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-6">
+              <div class="form-group form-inline">
+                <label
+                  class="col-sm-4 justify-content-start"
                   htmlFor="ngayChinhThuc"
                 >
                   Ngày chính thức
@@ -1302,11 +1330,11 @@ function AddProfileForm(props) {
                   {...register("ngayChinhThuc")}
                   id="ngayChinhThuc"
                   className="form-control col-sm-6"
+                  disabled={!checkedParty}
                 />
               </div>
             </div>
           </div>
-
           <h5>Thông tin quân sự</h5>
           <div className="row">
             <div className="col">
@@ -1317,7 +1345,7 @@ function AddProfileForm(props) {
                   id="quanNhan"
                   className="form-check-input"
                   onClick={handleClick}
-                  checked={checked}
+                  checked={checkedSoldier}
                 />
                 <label
                   className="form-check-label col-sm-4 justify-content-start "
@@ -1334,6 +1362,8 @@ function AddProfileForm(props) {
                   {...register("laThuongBinh")}
                   id="laThuongBinh"
                   className="form-check-input"
+                  onClick={handleClickVeteransy}
+                  checked={veterans}
                 />
                 <label
                   className="form-check-label col-sm-4 justify-content-start"
@@ -1359,29 +1389,30 @@ function AddProfileForm(props) {
                   id="ngayNhapNgu"
                   className="form-control col-sm-6"
                   placeholder="DD/MM/YYYY"
-                  disabled={!checked}
+                  disabled={!checkedSoldier}
                 />
               </div>
             </div>
             <div className="col">
-              <div className="form-check form-inline">
-                <input
-                  type="checkbox"
-                  {...register("giaDinhChinhSach")}
-                  id="giaDinhChinhSach"
-                  className="form-check-input"
-                />
+              <div className="form-group form-inline">
                 <label
-                  className="form-check-label col-sm-4 justify-content-start"
-                  htmlFor="giaDinhChinhSach"
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="laThuongBinhHang"
                 >
-                  Là con gia đình chính sách
+                  Là thương binh hạng
                 </label>
+                <input
+                  type="text"
+                  {...register("laThuongBinhHang")}
+                  id="laThuongBinhHang"
+                  className="form-control col-sm-6"
+                  disabled={!veterans}
+                />
               </div>
             </div>
           </div>
           <div className="row">
-            <div className="col-6">
+            <div className="col">
               <div class="form-group form-inline">
                 <label
                   class="col-sm-4 justify-content-start"
@@ -1395,13 +1426,31 @@ function AddProfileForm(props) {
                   id="ngayXuatNgu"
                   className="form-control col-sm-6"
                   placeholder="DD/MM/YYYY"
-                  disabled={!checked}
+                  disabled={!checkedSoldier}
                 />
+              </div>
+            </div>
+            <div className="col">
+              <div className="form-check form-inline">
+                <input
+                  type="checkbox"
+                  {...register("giaDinhChinhSach")}
+                  id="giaDinhChinhSach"
+                  className="form-check-input"
+                  onClick={handleClickPolicy}
+                  checked={policy}
+                />
+                <label
+                  className="form-check-label col-sm-4 justify-content-start"
+                  htmlFor="giaDinhChinhSach"
+                >
+                  Là con gia đình chính sách
+                </label>
               </div>
             </div>
           </div>
           <div className="row">
-            <div className="col-6">
+            <div className="col">
               <div class="form-group form-inline">
                 <label class="col-sm-4 justify-content-start" htmlFor="quanHam">
                   Quân hàm cao nhất
@@ -1411,7 +1460,24 @@ function AddProfileForm(props) {
                   {...register("quanHam")}
                   id="quanHam"
                   className="form-control col-sm-6"
-                  disabled={!checked}
+                  disabled={!checkedSoldier}
+                />
+              </div>
+            </div>
+            <div className="col">
+              <div className="form-group form-inline">
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="laThuongBinhHang"
+                >
+                  Là con gia đình chính sách
+                </label>
+                <input
+                  type="text"
+                  {...register("laThuongBinhHang")}
+                  id="laThuongBinhHang"
+                  className="form-control col-sm-6"
+                  disabled={!policy}
                 />
               </div>
             </div>
@@ -1430,7 +1496,7 @@ function AddProfileForm(props) {
                   {...register("danhHieu")}
                   id="danhHieu"
                   className="form-control col-sm-6"
-                  disabled={!checked}
+                  disabled={!checkedSoldier}
                 />
               </div>
             </div>
