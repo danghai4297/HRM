@@ -75,9 +75,11 @@ function TablePagination(props) {
         <div className="check-col">
           <div>
             <div className="select-fillter">
+              {/* ẩn hiện bảng chọn cột */}
               <button className="btn-fil" onClick={disableChooseCol}>
                 <FontAwesomeIcon icon={["fas", "filter"]} />
               </button>
+              {/* dropdownlist */}
               <div className="select-fillter">
                 {allColumns.map((column) => (
                   <div>
@@ -91,6 +93,7 @@ function TablePagination(props) {
                 ))}
               </div>
             </div>
+            {/* bảng chọn cột */}
             {chooseCol && (
               <div className="choose-col form-check">
                 <label
@@ -120,6 +123,7 @@ function TablePagination(props) {
             )}
           </div>
         </div>
+        {/* tìm kiếm */}
         <div className="search-table">
           <input
             className="search-input"
@@ -133,6 +137,8 @@ function TablePagination(props) {
           </span>
         </div>
       </div>
+
+      {/* bảng */}
       <Styles>
         <div className="table-sticky">
           <table {...getTableProps()} className="tablee sticky" id={tid}>
@@ -245,21 +251,6 @@ function TablePagination(props) {
           </button>
         </div>
       </div>
-      {/* <p>Selected Rows: {Object.keys(selectedRowIds).length}</p>
-      <pre>
-        <code>
-          {JSON.stringify(
-            {
-              selectedRowIds: selectedRowIds,
-              "selectedFlatRows[].original": selectedFlatRows.map(
-                (d) => d.original
-              ),
-            },
-            null,
-            2
-          )}
-        </code>
-      </pre> */}
     </>
   );
 }

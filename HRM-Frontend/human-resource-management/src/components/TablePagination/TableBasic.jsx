@@ -81,10 +81,6 @@ function TableBasic(props) {
 
   const { pageIndex, pageSize, globalFilter } = state;
 
-  function disableChooseCol() {
-    setChooseCol((value) => !value);
-  }
-
   return (
     <>
       <div className="herder-table">

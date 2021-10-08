@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 ScreenTableNV.propTypes = {};
 
 function ScreenTableNV(props) {
-  const link = "/profile/";
+  const link = "/profile/detail/";
   const fileName = "DSNV";
   const { list } = useContext(ListContext);
   const [dataAllNv, setdataAllNv] = useState([]);
@@ -41,7 +41,7 @@ function ScreenTableNV(props) {
             <h2 className="">Tất cả nhân viên</h2>
           </div>
           <div className="button">
-            <Link to="/profile/edit" className="link-item">
+            <Link to="/profile/add" className="link-item">
               <input type="submit" className="btn btn-primary" value="Thêm" />
             </Link>
             <ReactHTMLTableToExcel

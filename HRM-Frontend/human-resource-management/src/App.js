@@ -7,11 +7,9 @@ import ScreenProject from "./containers/ScreenProject/ScreenProject";
 
 function App() {
   return (
-    <div>
-      <ListProvider>
-        <ScreenProject />
-      </ListProvider>
-    </div>
+    <ListProvider>
+      <ScreenProject />
+    </ListProvider>
   );
 }
 

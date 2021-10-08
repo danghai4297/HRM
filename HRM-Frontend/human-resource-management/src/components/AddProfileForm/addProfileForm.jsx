@@ -73,6 +73,7 @@ AddProfileForm.defaultProps = {
   objectData: null,
 };
 function AddProfileForm(props) {
+  let { history } = props;
   const { objectData } = props;
   const [checked, setCheked] = useState(false);
   const handleClick = () => setCheked(!checked);
@@ -108,6 +109,12 @@ function AddProfileForm(props) {
   };
   return (
     <div className="container-form">
+      <input
+        type="submit"
+        className="btn btn-secondary "
+        value="Huỷ"
+        onClick={history.goBack}
+      />
       <form
         action=""
         class="profile-form"
@@ -118,7 +125,12 @@ function AddProfileForm(props) {
             <h2 className="">Thêm mới hồ sơ</h2>
           </div>
           <div className="button">
-            <input type="submit" className="btn btn-secondary " value="Huỷ" />
+            {/* <input
+              type="submit"
+              className="btn btn-secondary "
+              value="Huỷ"
+              onClick={history.goBack}
+            /> */}
             <input
               type="submit"
               className="btn btn-primary ml-3"
