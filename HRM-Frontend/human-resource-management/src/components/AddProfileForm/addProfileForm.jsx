@@ -1,7 +1,6 @@
 import React from "react";
 import "./AddProfileForm.scss";
 import { Controller, useForm } from "react-hook-form";
-import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../FontAwesomeIcons/index";
 import { useState } from "react";
@@ -66,14 +65,7 @@ const schema = yup.object({
 });
 //.required();
 
-AddProfileForm.propTypes = {
-  objectData: PropTypes.object,
-};
-AddProfileForm.defaultProps = {
-  objectData: null,
-};
 function AddProfileForm(props) {
-  const { objectData } = props;
   //handle checkbox
   const [checkedSoldier, setCheckedSoldier] = useState(false);
   const handleClick = () => setCheckedSoldier(!checkedSoldier);
@@ -101,17 +93,14 @@ function AddProfileForm(props) {
   //get data from form
   const onHandleSubmit = (data) => {
     // console.log(data);
-    JSON.stringify(objectData(data));
+    JSON.stringify(data);
     //objectData(data);
   };
   //handle image
-   const [file,  setFile] = useState("Images/userIcon.png")
-     
-     const handleChange = (e) =>{
-       setFile(URL.createObjectURL(e.target.files[0]));
-       
-
-     }
+  const [file, setFile] = useState("Images/userIcon.png");
+  const handleChange = (e) => {
+    setFile(URL.createObjectURL(e.target.files[0]));
+  };
   return (
     <div className="container-form">
       <form
@@ -151,6 +140,7 @@ function AddProfileForm(props) {
             onChange={handleChange}
           ></input>
         </div>
+        {/* Container thông tin cơ bản */}
         <div className="container-div-form">
           <h3>Thông tin cơ bản</h3>
           <h5>Thông tin chung</h5>
@@ -688,6 +678,7 @@ function AddProfileForm(props) {
             </div>
           </div>
         </div>
+        {/* Container Thông tin liên hệ */}
         <div className="container-div-form">
           <h3>Thông tin liên hệ</h3>
           <h5>Số điện thoại/Email/Khác</h5>
@@ -898,7 +889,7 @@ function AddProfileForm(props) {
             </div>
           </div>
         </div>
-
+        {/* Container thông tin công việc*/}
         <div className="container-div-form">
           <h3>Thông tin công việc</h3>
           <h5>Thông tin nhân viên</h5>
@@ -1206,6 +1197,7 @@ function AddProfileForm(props) {
             </div>
           </div>
         </div>
+        {/* Container thông tin chính trị quân sự y tế */}
         <div className="container-div-form2">
           <h3>Thông tin chính trị, quân sự, y tế</h3>
           <h5>Thông tin chính trị</h5>
@@ -1489,7 +1481,7 @@ function AddProfileForm(props) {
               </div>
             </div>
           </div>
-
+          {/* Container thông tin y tế */}
           <h5>Thông tin y tế</h5>
           <div className="row">
             <div className="col">

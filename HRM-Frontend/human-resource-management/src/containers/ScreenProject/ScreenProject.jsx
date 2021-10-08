@@ -31,8 +31,7 @@ import ScreenDetailTransfer from "../ScreenDetailTransfer/ScreenDetailTransfer";
 import ScreenDetailResign from "../ScreenDetailResign/ScreenDetailResign";
 import ScreenDetailReward from "../ScreenDetailReward/ScreenDetailReward";
 import ScreenDetailDiscipline from "../ScreenDetailDiscipline/ScreenDetailDiscipline";
-import AddProfile from "../ScreenAddProfile/ScreenAddProfile";
-import ScreenAddReward from "../ScreenAddReward/ScreenAddReward";
+import AddProfileForm from "../../components/AddProfileForm/addProfileForm";
 
 function ScreenProject() {
   const [account, setAccount] = useState(false);
@@ -107,7 +106,7 @@ function ScreenProject() {
 
               <Route exact path="/profile" component={ScreenTableNV} />
               <Route path="/profile/:id" component={Detail} />
-              <Route path="/profile/edit" component={ScreenAddReward} />
+              <Route path="/profile/edit" component={AddProfileForm} />
 
               <Route exact path="/contract" component={ScreenContract} />
 
