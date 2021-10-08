@@ -40,7 +40,11 @@ namespace HRMSolution.Data.Extentions
                 new DanhMucDanToc() { id = 3, tenDanhMuc = "Thái" }
                 );
             modelbulder.Entity<DanhMucKhenThuongKyLuat>().HasData(
-                new DanhMucKhenThuongKyLuat() { id = 1, tenDanhMuc = "Thưởng Nhân viên suất xác tháng" }
+                new DanhMucKhenThuongKyLuat() { id = 1, tenDanhMuc = "Thưởng Nhân viên suất xác tháng", tieuDe = "Khen thưởng" },
+                new DanhMucKhenThuongKyLuat() { id = 2, tenDanhMuc = "Thưởng Nhân viên suất xác năm", tieuDe = "Khen thưởng" },
+                new DanhMucKhenThuongKyLuat() { id = 3, tenDanhMuc = "Thưởng Nhân viên suất xác quý", tieuDe = "Khen thưởng" },
+                new DanhMucKhenThuongKyLuat() { id = 4, tenDanhMuc = "Phạt Nhân viên kém nhất tháng", tieuDe = "Kỷ luật" },
+                new DanhMucKhenThuongKyLuat() { id = 5, tenDanhMuc = "Phạt Nhân viên kém nhất quý", tieuDe = "Kỷ luật" }
                 );
             modelbulder.Entity<DanhMucLoaiHopDong>().HasData(
                 new DanhMucLoaiHopDong() { id = 1, maLoaiHopDong = "MHD01", tenLoaiHopDong = "Hợp đồng một năm" },

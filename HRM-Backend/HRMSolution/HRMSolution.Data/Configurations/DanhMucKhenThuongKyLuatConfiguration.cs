@@ -15,6 +15,7 @@ namespace HRMSolution.Data.Configurations
             builder.HasKey(x => x.id);
             builder.Property(x => x.id).UseIdentityColumn();
             builder.Property(x => x.tenDanhMuc).HasMaxLength(50).IsRequired();
+            builder.Property(x => x.tieuDe).HasMaxLength(20).IsRequired();
         }
     }
 }
