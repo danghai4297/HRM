@@ -29,13 +29,9 @@ namespace HRMSolution.BackendAPI.Controllers
         {
             var result = await _danhMucDanTocService.Create(request);
             if(result == 0)
-            {
                 return BadRequest();
-            }
-            else
-            {
-                return Ok();
-            }
+            return Ok();
+
             
         }
     }
