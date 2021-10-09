@@ -4,9 +4,8 @@ using System.Text;
 
 namespace HRMSolution.Application.Catalog.DanhMucTos.Dtos
 {
-    public class DanhMucToViewModel
+    public class DanhMucToCreateRequest
     {
-        public int idTo { get; set; }
         public string maTo { get; set; }
         public string tenTo { get; set; }
         public int idPhongBan { get; set; }

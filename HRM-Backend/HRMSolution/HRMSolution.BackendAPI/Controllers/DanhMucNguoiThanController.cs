@@ -1,4 +1,5 @@
 ﻿using HRMSolution.Application.Catalog.DanhMucNguoiThans;
+using HRMSolution.Application.Catalog.DanhMucNguoiThans.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -22,6 +23,14 @@ namespace HRMSolution.BackendAPI.Controllers
         {
             var danhMucNguoiThan = await _danhMucNguoiThanService.GetAll();
             return Ok(danhMucNguoiThan);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] DanhMucNguoiThanCreateRequest request)
+        {
+            var result = await _danhMucNguoiThanService.Create(request);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
         }
     }
 }

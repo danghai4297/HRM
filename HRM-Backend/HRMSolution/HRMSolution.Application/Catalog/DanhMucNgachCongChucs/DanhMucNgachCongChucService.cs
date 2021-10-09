@@ -6,6 +6,7 @@ using System.Text;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
+using HRMSolution.Data.Entities;
 
 namespace HRMSolution.Application.Catalog.DanhMucNgachCongChucs
 {
@@ -16,6 +17,19 @@ namespace HRMSolution.Application.Catalog.DanhMucNgachCongChucs
         {
             _context = context;
         }
+
+        public async Task<int> Create(DanhMucNgachCongChucCreateRequest request)
+        {
+            var danhMucNgachCongChuc = new DanhMucNgachCongChuc()
+            {
+                
+                tenNgach = request.tenNgach
+
+            };
+            _context.danhMucNgachCongChucs.Add(danhMucNgachCongChuc);
+            return await _context.SaveChangesAsync();
+        }
+
         public async Task<List<DanhMucNgachCongChucViewModel>> GetAll()
         {
             var query = from p in _context.danhMucNgachCongChucs select p;
