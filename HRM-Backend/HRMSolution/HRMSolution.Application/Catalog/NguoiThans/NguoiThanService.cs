@@ -16,11 +16,12 @@ namespace HRMSolution.Application.Catalog.NguoiThans
         {
             _context = context;
         }
-        public async Task<List<NguoiThanViewModel>> GetAll()
+        public async Task<List<NguoiThanViewModel>> GetAll(string maNhanVien)
         {
             var query = from p in _context.nguoiThans
                         join dmnt in _context.danhMucNguoiThans on p.idDanhMucNguoiThan equals dmnt.id
                         join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
+                        where nv.maNhanVien == maNhanVien
                         select new { p, dmnt, nv };
 
 

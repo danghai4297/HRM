@@ -8,6 +8,6 @@ namespace HRMSolution.Application.Catalog.NgoaiNgus
 {
     public interface INgoaiNguService
     {
-        Task<List<NgoaiNguViewModel>> GetAll();
+        Task<List<NgoaiNguViewModel>> GetAll(string maNhanVien);
     }
 }

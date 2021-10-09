@@ -1,4 +1,4 @@
-﻿using HRMSolution.Application.Catalog.NgoaiNgus;
+﻿using HRMSolution.Application.Catalog.NguoiThans;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,18 +10,18 @@ namespace HRMSolution.BackendAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class NgoaiNguController : ControllerBase
+    public class NguoiThanController : ControllerBase
     {
-        private readonly INgoaiNguService _ngoaiNguService;
-        public NgoaiNguController(INgoaiNguService ngoaiNguService)
+        private readonly INguoiThanService _nguoiThanService;
+        public NguoiThanController(INguoiThanService nguoiThanService)
         {
-            _ngoaiNguService = ngoaiNguService;
+            _nguoiThanService = nguoiThanService;
         }
         [HttpGet("{maNhanVien}")]
         public async Task<IActionResult> Get(string maNhanVien)
         {
-            var ngoaiNgu = await _ngoaiNguService.GetAll(maNhanVien);
-            return Ok(ngoaiNgu);
+            var danhMucChucDanh = await _nguoiThanService.GetAll(maNhanVien);
+            return Ok(danhMucChucDanh);
         }
     }
 }

@@ -13,6 +13,7 @@ namespace HRMSolution.Application.Catalog.HopDongs.Dtos
         public DateTime? hopDongTuNgay { get; set; }
         public DateTime? hopDongDenNgay { get; set; }
         public string ghiChu { get; set; }
+        public string trangThai { get; set; }
         public string maNhanVien { get; set; }
         public string tenNhanVien { get; set; }
     }
