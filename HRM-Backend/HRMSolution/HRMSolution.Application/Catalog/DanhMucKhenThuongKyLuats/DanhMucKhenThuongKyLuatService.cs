@@ -16,9 +16,11 @@ namespace HRMSolution.Application.Catalog.DanhMucKhenThuongKyLuats
         {
             _context = context;
         }
-        public async Task<List<DanhMucKhenThuongKyLuatViewModel>> GetAll()
+
+        public async Task<List<DanhMucKhenThuongKyLuatViewModel>> GetAllKhenThuong()
         {
             var query = from p in _context.danhMucKhenThuongKyLuats
+                        where p.tieuDe == "Khen thưởng"
                         select p;
 
             var data = await query.Select(x => new DanhMucKhenThuongKyLuatViewModel()
@@ -30,7 +32,23 @@ namespace HRMSolution.Application.Catalog.DanhMucKhenThuongKyLuats
 
 
             return data;
+        }
 
+        public async Task<List<DanhMucKhenThuongKyLuatViewModel>> GetAllKyLuat()
+        {
+            var query = from p in _context.danhMucKhenThuongKyLuats
+                        where p.tieuDe == "Kỷ luật"
+                        select p;
+
+            var data = await query.Select(x => new DanhMucKhenThuongKyLuatViewModel()
+            {
+                id = x.id,
+                tenDanhMuc = x.tenDanhMuc,
+                tieuDe = x.tieuDe
+            }).ToListAsync();
+
+
+            return data;
         }
     }
 }

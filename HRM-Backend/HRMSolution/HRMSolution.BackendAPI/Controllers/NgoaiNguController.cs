@@ -1,4 +1,4 @@
-﻿using HRMSolution.Application.Catalog.NhanViens;
+﻿using HRMSolution.Application.Catalog.NgoaiNgus;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,18 +10,18 @@ namespace HRMSolution.BackendAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class NhanVienController : ControllerBase
+    public class NgoaiNguController : ControllerBase
     {
-        private readonly INhanVienService _nhanVienService;
-        public NhanVienController(INhanVienService nhanVienService)
+        private readonly INgoaiNguService _ngoaiNguService;
+        public NgoaiNguController(INgoaiNguService ngoaiNguService)
         {
-            _nhanVienService = nhanVienService;
+            _ngoaiNguService = ngoaiNguService;
         }
         [HttpGet()]
         public async Task<IActionResult> Get()
         {
-            var nhanViens = await _nhanVienService.GetAll();
-            return Ok(nhanViens);
+            var ngoaiNgu = await _ngoaiNguService.GetAll();
+            return Ok(danhMucChucDanh);
         }
     }
 }

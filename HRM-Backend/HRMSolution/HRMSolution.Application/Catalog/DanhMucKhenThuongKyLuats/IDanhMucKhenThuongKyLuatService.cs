@@ -8,6 +8,7 @@ namespace HRMSolution.Application.Catalog.DanhMucKhenThuongKyLuats
 {
     public interface IDanhMucKhenThuongKyLuatService
     {
-        Task<List<DanhMucKhenThuongKyLuatViewModel>> GetAll();
+        Task<List<DanhMucKhenThuongKyLuatViewModel>> GetAllKhenThuong();
+        Task<List<DanhMucKhenThuongKyLuatViewModel>> GetAllKyLuat();
     }
 }

@@ -38,8 +38,8 @@ namespace HRMSolution.Application.Catalog.HopDongs
             var data = await query.Select(x => new HopDongViewModel()
             {
                 maHopDong = x.p.maHopDong,
-                idLoaiHopDong = x.dmlhd.tenLoaiHopDong,
-                idChucDanh = x.dmcd.tenChucDanh,
+                loaiHopDong = x.dmlhd.tenLoaiHopDong,
+                chucDanh = x.dmcd.tenChucDanh,
                 hopDongTuNgay = x.p.hopDongTuNgay,
                 hopDongDenNgay = x.p.hopDongDenNgay,
                 ghiChu = x.p.ghiChu,
