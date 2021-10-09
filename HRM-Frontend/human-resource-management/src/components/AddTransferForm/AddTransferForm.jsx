@@ -1,21 +1,14 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddTransferForm.scss";
-AddTransferForm.propTypes = {
-  objectData: PropTypes.object,
-};
-AddTransferForm.defaultProps = {
-  objectData: null,
-};
+
 const schema = yup.object({
   hoVaTen: yup.string().required("Họ và tên không được bỏ trống."),
   maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
 });
 function AddTransferForm(props) {
-    const { objectData } = props;
   const {
     register,
     handleSubmit,
@@ -25,27 +18,31 @@ function AddTransferForm(props) {
   });
   const onHandleSubmit = (data) => {
     console.log(data);
-    objectData(data);
+    JSON.stringify(data);
   };
   const [checked, setCheked] = useState(false);
   const handleClick = () => setCheked(!checked);
   return (
     <div className="container-form">
+      <div className="Submit-button sticky-top">
+        <div>
+          <h2 className="">Thêm thủ tục thuyên chuyển</h2>
+        </div>
+        <div className="button">
+          <input type="submit" className="btn btn-secondary " value="Huỷ" />
+          <input
+            type="submit"
+            className="btn btn-primary ml-3"
+            value="Lưu"
+            onClick={handleSubmit(onHandleSubmit)}
+          />
+        </div>
+      </div>
       <form
         action=""
         class="profile-form"
         // onSubmit={handleSubmit(onHandleSubmit)}
       >
-        <div className="Submit-button sticky-top">
-          <div>
-            <h2 className="">Thêm thủ tục thuyên chuyển</h2>
-          </div>
-          <div className="button">
-            <input type="submit" className="btn btn-secondary " value="Huỷ" />
-            <input type="submit" className="btn btn-primary ml-3" value="Lưu"  onClick={handleSubmit(onHandleSubmit)}/>
-          </div>
-        </div>
-
         <div className="container-div-form">
           <div className="container-salary">
             <div>
@@ -212,7 +209,6 @@ function AddTransferForm(props) {
           </div>
         </div>
         <div className="container-div-form-2">
-       
           <div className="col-6">
             <div class="form-check mb-4 form-inline">
               <input
@@ -230,8 +226,7 @@ function AddTransferForm(props) {
                 Cho phép điều chuyển
               </label>
             </div>
-          
-        </div>
+          </div>
         </div>
         <div className="container-div-form">
           <div className="container-salary">
@@ -242,7 +237,10 @@ function AddTransferForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="tc_hoVaTen">
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="tc_hoVaTen"
+                >
                   Họ và tên
                 </label>
                 <select
@@ -331,7 +329,9 @@ function AddTransferForm(props) {
                   placeholder="DD/MM/YYYY"
                   disabled={!checked}
                 />
-                <span className="message">{errors.tc_ngayHieuLuc?.message}</span>
+                <span className="message">
+                  {errors.tc_ngayHieuLuc?.message}
+                </span>
               </div>
             </div>
           </div>
@@ -359,7 +359,10 @@ function AddTransferForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="tc_chiTiet">
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="tc_chiTiet"
+                >
                   Chi tiết
                 </label>
                 <textarea
@@ -400,7 +403,9 @@ function AddTransferForm(props) {
                 >
                   <option>CEO</option>
                 </select>
-                <span className="message">{errors.tc_chucVuCongTac?.message}</span>
+                <span className="message">
+                  {errors.tc_chucVuCongTac?.message}
+                </span>
               </div>
             </div>
           </div>

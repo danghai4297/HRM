@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./AddSalaryForm.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -9,12 +8,6 @@ import "../FontAwesomeIcons/index";
 import { useState } from "react";
 import { useEffect } from "react";
 
-AddSalaryForm.propTypes = {
-  // objectData: PropTypes.object,
-};
-AddSalaryForm.defaultProps = {
-  // objectData: null,
-};
 const schema = yup.object({
   hoVaTen: yup.string().required("Họ và tên không được bỏ trống."),
   maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
@@ -27,61 +20,56 @@ const schema = yup.object({
   luongCoBan: yup.string().required("Lương cơ bản không được bỏ trống."),
 });
 function AddSalaryForm(props) {
-  const { objectData } = props;
-  
-  const [salary,setSalary] = useState({
-    heSoLuong:"",
-    luongCoBan:"",
+  const [salary, setSalary] = useState({
+    heSoLuong: "",
+    luongCoBan: "",
   });
- 
+
   const {
     register,
     handleSubmit,
     setValue,
-    
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
   });
   const [rs, setRs] = useState();
   console.log(rs);
-  const handleOnChange = (e)=>{
-     setSalary({
-       ...salary,
-       [e.target.name]: e.target.value
-     });
-
-  }
+  const handleOnChange = (e) => {
+    setSalary({
+      ...salary,
+      [e.target.name]: e.target.value,
+    });
+  };
   useEffect(() => {
-    setRs(Number(salary.heSoLuong) * Number(salary.luongCoBan))
- }, [salary])
-  
+    setRs(Number(salary.heSoLuong) * Number(salary.luongCoBan));
+  }, [salary]);
+
   const onHandleSubmit = (data) => {
     console.log(data);
-    objectData(data);
+    JSON.stringify(data);
   };
   return (
     <div className="container-form">
+      <div className="Submit-button sticky-top">
+        <div>
+          <h2 className="">Thêm hồ sơ lương</h2>
+        </div>
+        <div className="button">
+          <input type="submit" className="btn btn-secondary " value="Huỷ" />
+          <input
+            type="submit"
+            className="btn btn-primary ml-3"
+            value="Lưu"
+            onClick={handleSubmit(onHandleSubmit)}
+          />
+        </div>
+      </div>
       <form
         action=""
         className="profile-form"
         // onSubmit={handleSubmit(onHandleSubmit)}
       >
-        <div className="Submit-button sticky-top">
-          <div>
-            <h2 className="">Thêm hồ sơ lương</h2>
-          </div>
-          <div className="button">
-            <input type="submit" className="btn btn-secondary " value="Huỷ" />
-            <input
-              type="submit"
-              className="btn btn-primary ml-3"
-              value="Lưu"
-              onClick={handleSubmit(onHandleSubmit)}
-            />
-          </div>
-        </div>
-
         <div className="container-div-form">
           <div className="container-salary">
             <div>
@@ -96,10 +84,12 @@ function AddSalaryForm(props) {
                   readOnly
                 ></input>
               </span>
-              <button onClick={(e)=>{
-                e.preventDefault()
-                setValue("tongLuong",rs)
-              }}>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setValue("tongLuong", rs);
+                }}
+              >
                 <FontAwesomeIcon
                   className="icon"
                   icon={["fas", "money-check-alt"]}
@@ -218,13 +208,12 @@ function AddSalaryForm(props) {
                   {...register("heSoLuong")}
                   id="heSoLuong"
                   value={salary.heSoLuong}
-                 onChange={handleOnChange}
+                  onChange={handleOnChange}
                   className={
                     !errors.heSoLuong
                       ? "form-control col-sm-6 "
                       : "form-control col-sm-6 border-danger"
                   }
-                 
                 />
                 <span className="message">{errors.heSoLuong?.message}</span>
               </div>
@@ -270,7 +259,7 @@ function AddSalaryForm(props) {
                       : "form-control col-sm-6 border-danger"
                   }
                   value={salary.luongCoBan}
-                 onChange={handleOnChange}
+                  onChange={handleOnChange}
                 />
                 <span className="message">{errors.luongCoBan?.message}</span>
               </div>

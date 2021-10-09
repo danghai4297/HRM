@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./ScreenProject.scss";
 
-import Header from "../../components/Header/Header";
 import SideBarLeft from "../../components/SideBarLeft/SideBarLeft";
 import {
   Route,
@@ -19,19 +18,22 @@ import ScreenResign from "../ScreenResign/ScreenResign";
 import ScreenReward from "../ScreenReward/ScreenReward";
 import ScreenDiscipline from "../ScreenDiscipline/ScreenDiscipline";
 import ScreenReport from "../ScreenReport/ScreenReport";
-import ScreenNotFound from "./ScreenNotFound";
 import ScreenTransfer from "../ScreenTransfer/ScreenTransfer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../components/Header/Header.scss";
-import ScreenDetailForeignLanguage from "../ScreenDetailForeignLanguage/ScreenDetailForeignLanguage";
-import ScreenDetailLevel from "../ScreenDetailLevel/ScreenDetailLevel";
-import ScreenDetailFamily from "../ScreenDetailFamily/ScreenDetailFamily";
 import ScreenDetailSalary from "../ScreenDetailSalary/ScreenDetailSalary";
+import AddProfileForm from "../../components/AddProfileForm/addProfileForm";
+import ScreenDetailContract from "../ScreenDetailContract/ScreenDetailContract";
+import AddContractForm from "../../components/AddContractForm/AddContractForm";
+import AddSalaryForm from "../../components/AddSalaryForm/AddSalaryForm";
 import ScreenDetailTransfer from "../ScreenDetailTransfer/ScreenDetailTransfer";
+import AddTransferForm from "../../components/AddTransferForm/AddTransferForm";
 import ScreenDetailResign from "../ScreenDetailResign/ScreenDetailResign";
+import AddResignationForm from "../../components/AddResignationForm/AddResignationForm";
+import AddRewardForm from "../../components/AddRewardForm/AddRewardForm";
+import AddDisciplineForm from "../../components/AddDisciplineForm/AddDisciplineForm";
 import ScreenDetailReward from "../ScreenDetailReward/ScreenDetailReward";
 import ScreenDetailDiscipline from "../ScreenDetailDiscipline/ScreenDetailDiscipline";
-import AddProfileForm from "../../components/AddProfileForm/addProfileForm";
 import ProtectedRoute from "./ProtectedRoute";
 function ScreenProject() {
   let history = useHistory();
@@ -55,7 +57,7 @@ function ScreenProject() {
           <div className="header-com">
             <div className="name">
               <div className="title-project">
-                <h1>HRM</h1>
+                <h1>3HMD</h1>
               </div>
             </div>
             <div className="account">
