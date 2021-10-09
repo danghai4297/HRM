@@ -11,6 +11,7 @@ function Detail(props) {
   let { match, history } = props;
   let { id } = match.params;
   console.log(id);
+
   const [dataDetailNv, setdataDetailNv] = useState([]);
 
   useEffect(() => {
@@ -27,6 +28,7 @@ function Detail(props) {
   }, []);
 
   console.log(dataDetailNv);
+    console.log(dataDetailNv.maNhanVien);
 
   const dataDetail = [];
   const [dropBase, setDropBase] = useState(true);
@@ -229,49 +231,49 @@ function Detail(props) {
                   </div>
                   <SubDetail
                     titleLeft="Mã nhân viên"
-                    itemLeft={dataDetail.id}
+                    itemLeft={dataDetailNv.maNhanVien}
                     titleRight="TK Ngân hàng"
-                    itemRight={dum.numberBank}
+                    itemRight={dataDetailNv.atm}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Họ và tên"
-                    itemLeft={dataDetail.firstName + " " + dataDetail.lastName}
+                    itemLeft={dataDetailNv.hoTen}
                     titleRight="Ngân hàng"
-                    itemRight={dum.bank}
+                    itemRight={dataDetailNv.nganHang}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Giới tính"
-                    itemLeft={dataDetail.gender}
+                    itemLeft={dataDetailNv.gioiTinh}
                     titleRight="Tình trạng hôn nhân"
-                    itemRight={dum.marriage}
+                    itemRight={dataDetailNv.honNhan}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày sinh"
-                    itemLeft={dataDetail.birthday}
+                    itemLeft={dataDetailNv.ngaySinh}
                     titleRight="MST cá nhân"
-                    itemRight={dum.taxCode}
+                    itemRight={dataDetailNv.maSoThue}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Nơi sinh"
-                    itemLeft={dum.birthplace}
+                    itemLeft={dataDetailNv.noiSinh}
                     titleRight="Dân tộc"
-                    itemRight={null}
+                    itemRight={dataDetailNv.danToc}
                   ></SubDetail>
                   <SubDetail
-                    titleLeft="Nguyên quán"
-                    itemLeft={null}
+                    titleLeft="Quê quán"
+                    itemLeft={dataDetailNv.queQuan}
                     titleRight="Tôn giáo"
-                    itemRight={null}
+                    itemRight={dataDetailNv.tonGiao}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Thường trú"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.thuongTru}
                     titleRight="Quốc tịch"
-                    itemRight={null}
+                    itemRight={dataDetailNv.quocTich}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Tạm trú"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.tamTru}
                     titleRight={null}
                   ></SubDetail>
                   <div className="title">
@@ -279,27 +281,27 @@ function Detail(props) {
                   </div>
                   <SubDetail
                     titleLeft="Số CMND/CCCD"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.cccd}
                     titleRight="Số hộ chiếu"
-                    itemRight={null}
+                    itemRight={dataDetailNv.hoChieu}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày cấp(CMNN/CCCD)"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ngayCapCCCD}
                     titleRight="Ngày cấp hộ chiếu"
-                    itemRight={null}
+                    itemRight={dataDetailNv.ngayCapHoChieu}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Nơi cấp(CMND/CCCD)"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.noiCapCCCD}
                     titleRight="Nơi cấp hộ chiếu"
-                    itemRight={null}
+                    itemRight={dataDetailNv.noiCapHoChieu}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày hết hạn"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ngayHetHanCCCD}
                     titleRight="Ngày hết hạn hộ chiếu"
-                    itemRight={null}
+                    itemRight={dataDetailNv.ngayHetHanHoChieu}
                   ></SubDetail>
                 </>
               )}
@@ -329,40 +331,40 @@ function Detail(props) {
                   </div>
                   <SubDetail
                     titleLeft="ĐT di động"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.diDong}
                     titleRight="Email cá nhân"
-                    itemRight="-"
+                    itemRight={dataDetailNv.email}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="ĐT khác"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.dienThoaiKhac}
                     titleRight="Facebook"
-                    itemRight={null}
+                    itemRight={dataDetailNv.facebook}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="ĐT nhà riêng"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.dienThoai}
                     titleRight="Skype"
-                    itemRight={null}
+                    itemRight={dataDetailNv.skype}
                   ></SubDetail>
                   <div className="title">
                     <h5>Liên hệ khẩn cấp</h5>
                   </div>
                   <SubDetail
                     titleLeft="Họ và tên"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.lhkcHoTen}
                     titleRight="Email"
-                    itemRight={null}
+                    itemRight={dataDetailNv.lhkcEmail}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Quan hệ"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.lhkcQuanHe}
                     titleRight="Địa chỉ"
-                    itemRight={null}
+                    itemRight={dataDetailNv.lhkcDiaChi}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="ĐT di động"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.lhkcDienThoai}
                     titleRight={null}
                   ></SubDetail>
                 </>
@@ -392,39 +394,39 @@ function Detail(props) {
                   </div>
                   <SubDetail
                     titleLeft="Nghề nghiệp"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ngheNghiep}
                     titleRight="Ngày thử việc"
-                    itemRight={null}
+                    itemRight={dataDetailNv.ngayThuViec}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Cơ quan tuyển dụng"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.coQuanTuyenDung}
                     titleRight="Ngày tuyển dụng"
-                    itemRight={null}
+                    itemRight={dataDetailNv.ngayTuyenDung}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Chức vụ hiện tại"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.chucVuHienTai}
                     titleRight="Ngày vào ban"
-                    itemRight={null}
+                    itemRight={dataDetailNv.ngayVaoBan}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Trạng thái lao động"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.trangThaiLaoDong}
                     titleRight="Công việc chính"
-                    itemRight={null}
+                    itemRight={dataDetailNv.congViecChinh}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Tính chất lao động"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.tinhChatLaoDong}
                     titleRight="Ngày công tác"
-                    itemRight={null}
+                    itemRight={dataDetailNv.ngayChinhThuc}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày nghỉ việc"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ngayNghiViec}
                     titleRight="Lý do nghỉ"
-                    itemRight={null}
+                    itemRight={dataDetailNv.lyDoNghiViec}
                   ></SubDetail>
                   <div className="title">
                     <h5>Thông tin lương</h5>
@@ -483,9 +485,9 @@ function Detail(props) {
                 <>
                   <SubDetail
                     titleLeft="Số sổ BHXH"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.bhxh}
                     titleRight="Số thẻ BHYT"
-                    itemRight={null}
+                    itemRight={dataDetailNv.bhyt}
                   ></SubDetail>
                 </>
               )}
@@ -591,25 +593,25 @@ function Detail(props) {
                   </div>
                   <SubDetail
                     titleLeft="Ngạch công chức"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ngachCongChuc}
                     titleRight="Ngạch công chức nội dung"
-                    itemRight={null}
+                    itemRight={dataDetailNv.ngachCongChucNoiDung}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Là Đảng viên"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.vaoDang}
                     titleRight="Ngày vào đoàn"
-                    itemRight={null}
+                    itemRight={dataDetailNv.ngayVaoDoan}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày vào Đảng"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ngayVaoDang}
                     titleRight="Nơi tham gia"
-                    itemRight={null}
+                    itemRight={dataDetailNv.noiThamGia}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày chính thức"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ngayChinhThuc}
                     titleRight={null}
                   ></SubDetail>
                   <div className="title">
@@ -617,29 +619,29 @@ function Detail(props) {
                   </div>
                   <SubDetail
                     titleLeft="Là quân nhân"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.quanNhan}
                     titleRight="Thương binh"
-                    itemRight={null}
+                    itemRight={dataDetailNv.thuongBinh}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày nhập ngũ"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ngayNhapNgu}
                     titleRight="Con gia đình chính sách"
-                    itemRight={null}
+                    itemRight={dataDetailNv.conChinhSach}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày xuất ngũ"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ngayXuatNgu}
                     titleRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Quân hàm cao nhất"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.quanHamCaoNhat}
                     titleRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="DH được phong tặng cao nhất"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.danhHieuCaoNhat}
                     titleRight={null}
                   ></SubDetail>
                   <div className="title">
@@ -647,25 +649,25 @@ function Detail(props) {
                   </div>
                   <SubDetail
                     titleLeft="Nhóm máu"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ytNhomMau}
                     titleRight="Bệnh tật"
-                    itemRight={null}
+                    itemRight={dataDetailNv.ytBenhTat}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Chiều cao(m)"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ytChieuCao}
                     titleRight="Lưu ý"
-                    itemRight={null}
+                    itemRight={dataDetailNv.ytLuuY}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Cân nặng(kg)"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ytCanNang}
                     titleRight="Là người khuất tật"
-                    itemRight={null}
+                    itemRight={dataDetailNv.ytKhuyetTat}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Tình trạng sức khỏe"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ytTinhTrangSucKhoe}
                     titleRight={null}
                   ></SubDetail>
                 </>

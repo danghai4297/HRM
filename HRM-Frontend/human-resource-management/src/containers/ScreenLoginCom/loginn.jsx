@@ -1,12 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useHistory } from "react-router-dom";
 import "./Login.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 LogIn.propTypes = {};
 
 function LogIn(props) {
-  const { login } = props;
+  let history = useHistory();
+  let login = () =>{
+    localStorage.setItem("accessToken", true);
+    history.replace("/home")
+  }
   return (
     <div className="loginn">
       <div className="form-login">

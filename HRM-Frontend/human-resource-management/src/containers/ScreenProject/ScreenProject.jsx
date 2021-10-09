@@ -4,10 +4,10 @@ import "./ScreenProject.scss";
 import Header from "../../components/Header/Header";
 import SideBarLeft from "../../components/SideBarLeft/SideBarLeft";
 import {
-  BrowserRouter as Router,
   Route,
   Switch,
   Redirect,
+  useHistory,
 } from "react-router-dom";
 import DashBoard from "../ScreenDashBoard/DashBoard";
 import ScreenTableNV from "../ScreenTableNV/ScreenTableNV";
@@ -32,8 +32,13 @@ import ScreenDetailResign from "../ScreenDetailResign/ScreenDetailResign";
 import ScreenDetailReward from "../ScreenDetailReward/ScreenDetailReward";
 import ScreenDetailDiscipline from "../ScreenDetailDiscipline/ScreenDetailDiscipline";
 import AddProfileForm from "../../components/AddProfileForm/addProfileForm";
-
+import ProtectedRoute from "./ProtectedRoute";
 function ScreenProject() {
+  let history = useHistory();
+  let logout = () => {
+    localStorage.removeItem("accessToken");
+    history.replace("/login");
+  };
   const [account, setAccount] = useState(false);
   const visionHandleClick = () => {
     setAccount(!account);
@@ -44,7 +49,7 @@ function ScreenProject() {
     }
   };
   return (
-    <Router>
+    <>
       <div className="body-screen" onClick={closeHandleClick}>
         <div className="header">
           <div className="header-com">
@@ -84,7 +89,7 @@ function ScreenProject() {
                     </div>
                   </div>
                   <div>
-                    <button className="button-account">
+                    <button onClick={logout} className="button-account">
                       <FontAwesomeIcon icon={["fas", "sign-out-alt"]} /> Đăng
                       xuất
                     </button>
@@ -100,36 +105,33 @@ function ScreenProject() {
           </div>
           <div className="content">
             <Switch>
-              <Route exact path="/">
-                <Redirect to="/home" />
-              </Route>
-              <Route exact path="/home" component={DashBoard} />
+              
+              <ProtectedRoute exact path="/home" component={DashBoard} />
+              <ProtectedRoute exact path="/profile" component={ScreenTableNV} />
+              <ProtectedRoute exact path="/profile/detail/:id" component={Detail} />
+              <ProtectedRoute exact path="/profile/add" component={AddProfileForm} />
 
-              <Route exact path="/profile" component={ScreenTableNV} />
-              <Route exact path="/profile/detail/:id" component={Detail} />
-              <Route exact path="/profile/add" component={AddProfileForm} />
+              <ProtectedRoute exact path="/contract" component={ScreenContract} />
 
-              <Route exact path="/contract" component={ScreenContract} />
+              <ProtectedRoute exact path="/salary" component={ScreenSalary} />
 
-              <Route exact path="/salary" component={ScreenSalary} />
+              <ProtectedRoute path="/category" component={ScreenCategory} />
 
-              <Route path="/category" component={ScreenCategory} />
+              <ProtectedRoute exact path="/transfer" component={ScreenTransfer} />
 
-              <Route exact path="/transfer" component={ScreenTransfer} />
+              <ProtectedRoute exact path="/resign" component={ScreenResign} />
 
-              <Route exact path="/resign" component={ScreenResign} />
+              <ProtectedRoute exact path="/reward" component={ScreenReward} />
 
-              <Route exact path="/reward" component={ScreenReward} />
+              <ProtectedRoute exact path="/discipline" component={ScreenDiscipline} />
 
-              <Route exact path="/discipline" component={ScreenDiscipline} />
-
-              <Route exact path="/report" component={ScreenReport} />
+              <ProtectedRoute exact path="/report" component={ScreenReport} />
+              {/* <Detail /> */}
             </Switch>
-            {/* <Detail /> */}
           </div>
         </div>
       </div>
-    </Router>
+    </>
   );
 }
 
