@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\HRMSolution.Application\HRMSolution.Application.csproj" />
     <ProjectReference Include="..\HRMSolution.Data\HRMSolution.Data.csproj" />
     <ProjectReference Include="..\HRMSolution.Utilities\HRMSolution.Utilities.csproj" />
