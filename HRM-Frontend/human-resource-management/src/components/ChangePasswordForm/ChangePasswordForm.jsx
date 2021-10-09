@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./ChangePasswordForm.scss"
+import usePasswordToggle from "./usePasswordToggle";
 const schema = yup.object({
     matKhauHienTai: yup.string().required("Mật khẩu hiện tại không được bỏ trống."),
     matKhauMoi: yup.string().required("Mật khẩu mới không được bỏ trống."),
@@ -12,7 +13,7 @@ const schema = yup.object({
 
 function ChangePasswordForm(props) {
   const { history } = props;
-
+  const [passwordInputType,Icon] =usePasswordToggle();
   const {
     register,
     handleSubmit,
@@ -43,7 +44,7 @@ function ChangePasswordForm(props) {
         >
           <div className="container-form-password">
             <div className="container-salary">
-              <div className="text-center">
+              <div className="">
                 <h3>Thay đổi mật khẩu</h3>
                 <p>
                   Nhập mật khẩu có tối thiểu 8 ký tự bao gồm số, chữ hoa, chữ
@@ -54,7 +55,7 @@ function ChangePasswordForm(props) {
             <div className="row justify-content-center">
                 <div class="input-group-lg">
                   <input
-                    type="password"
+                    type={passwordInputType}
                     {...register("matKhauHienTai")}
                     id="matKhauHienTai"
                     className={
@@ -64,6 +65,7 @@ function ChangePasswordForm(props) {
                     }
                     placeholder="Mật khẩu hiện tại"
                   />
+                  <span className="password-toogle-icon">{Icon}</span>
                   <span className="message-e">
                     {errors.matKhauHienTai?.message}
                   </span>

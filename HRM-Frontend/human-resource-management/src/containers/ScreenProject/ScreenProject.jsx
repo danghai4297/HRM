@@ -34,6 +34,7 @@ import AddRewardForm from "../../components/AddRewardForm/AddRewardForm";
 import AddDisciplineForm from "../../components/AddDisciplineForm/AddDisciplineForm";
 import ScreenDetailReward from "../ScreenDetailReward/ScreenDetailReward";
 import ScreenDetailDiscipline from "../ScreenDetailDiscipline/ScreenDetailDiscipline";
+import ChangePasswordForm from "../../components/ChangePasswordForm/ChangePasswordForm";
 
 function ScreenProject() {
   const [account, setAccount] = useState(false);
@@ -106,11 +107,11 @@ function ScreenProject() {
                 <Redirect to="/home" />
               </Route>
               <Route exact path="/home" component={DashBoard} />
-
+                
               <Route exact path="/profile" component={ScreenTableNV} />
               <Route exact path="/profile/detail/:id" component={Detail} />
-              <Route exact path="/profile/add" component={AddProfileForm} />
-
+              <Route exact path="/profile/add" component={ChangePasswordForm} />
+              
               <Route exact path="/contract" component={ScreenContract} />
               <Route
                 exact

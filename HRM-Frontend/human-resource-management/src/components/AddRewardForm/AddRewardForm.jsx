@@ -1,12 +1,12 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+import { Controller,useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-
+import { DatePicker } from "antd";
 const schema = yup.object({
   hoVaTen: yup.string().required("Họ và tên không được bỏ trống."),
   maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
-  thoiGian: yup.string().required("Thời gian không được bỏ trống."),
+  //thoiGian: yup.string().required("Thời gian không được bỏ trống."),
   noiDung: yup.string().required("Nội dung không được bỏ trống."),
   lyDo: yup.string().required("Lý do không được bỏ trống."),
 });
@@ -16,6 +16,7 @@ function AddRewardForm(props) {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -110,7 +111,7 @@ function AddRewardForm(props) {
                 >
                   Thời gian
                 </label>
-                <input
+                {/* <input
                   type="text"
                   {...register("thoiGian")}
                   id="thoiGian"
@@ -120,7 +121,23 @@ function AddRewardForm(props) {
                       : "form-control col-sm-6 border-danger"
                   }
                   placeholder="DD/MM/YYYY"
-                />
+                /> */}
+                 <Controller
+                  name="ngaySinh"
+                  control={control}
+                  defaultValue=""
+                  render={({ field }) => (
+                    <DatePicker
+                      id="ngaySinh"
+                      className="form-control col-sm-6"
+                      placeholder="DD/MM/YYYY"
+                      format="DD/MM/YYYY"
+                      //selected={field}
+                      //onChange={(field) => setDate(field)}
+                      {...field}
+                    />
+                  )}
+                /> 
                 <span className="message">{errors.thoiGian?.message}</span>
               </div>
             </div>
