@@ -8,6 +8,7 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
 {
     public interface IDanhMucLoaiHopDongService
     {
+        Task<int> Create(DanhMucLoaiHopDongCreateRequest request);
         Task<List<DanhMucLoaiHopDongViewModel>> GetAll();
     }
 }

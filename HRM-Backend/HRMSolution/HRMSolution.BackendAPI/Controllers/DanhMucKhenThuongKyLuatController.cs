@@ -29,5 +29,6 @@ namespace HRMSolution.BackendAPI.Controllers
             var danhMucKTKL = await _danhMucKhenThuongKyLuatService.GetAllKyLuat();
             return Ok(danhMucKTKL);
         }
+
     }
 }

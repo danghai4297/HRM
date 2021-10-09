@@ -8,6 +8,7 @@ namespace HRMSolution.Application.Catalog.DanhMucPhongBans
 {
     public interface IDanhMucPhongBanService
     {
+        Task<int> Create(DanhMucPhongBanCreateRequest request);
         Task<List<DanhMucPhongBanViewModel>> GetAll();
     }
 }

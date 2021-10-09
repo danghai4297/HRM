@@ -23,7 +23,14 @@ namespace HRMSolution.BackendAPI.Controllers
                 var danhMucTo = await _danhMucToService.GetAll();
                 return Ok(danhMucTo);
             }
-
-        }
+        //    [HttpPost]
+        //    public async Task<IActionResult> Create([FromBody] DanhMucPhongBanCreateRequest request)
+        //{
+        //    var result = await _danhMucPhongBanService.Create(request);
+        //    if (result == 0)
+        //        return BadRequest();
+        //    return Ok();
+        //}
+    }
     
 }

@@ -1,5 +1,6 @@
 ﻿using HRMSolution.Application.Catalog.DanhMucPhongBans.DphongBans;
 using HRMSolution.Data.EF;
+using HRMSolution.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,19 @@ namespace HRMSolution.Application.Catalog.DanhMucPhongBans
         {
             _context = context;
         }
+
+        public async Task<int> Create(DanhMucPhongBanCreateRequest request)
+        {
+            var danhMucPhongBan = new DanhMucPhongBan()
+            {
+                maPhongBan = request.maPhongBan,
+                tenPhongBan = request.tenPhongBan
+
+            };
+            _context.danhMucPhongBans.Add(danhMucPhongBan);
+            return await _context.SaveChangesAsync();
+        }
+
         public async Task<List<DanhMucPhongBanViewModel>> GetAll()
         {
             var query = from p in _context.danhMucPhongBans select p;

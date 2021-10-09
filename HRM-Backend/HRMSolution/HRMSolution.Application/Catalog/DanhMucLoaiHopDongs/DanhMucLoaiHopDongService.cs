@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using HRMSolution.Application.Catalog.DanhMucLoaiHopDongs.Dtos;
 using Microsoft.EntityFrameworkCore;
+using HRMSolution.Data.Entities;
 
 namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
 {
@@ -16,6 +17,19 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
         {
             _context = context;
         }
+
+        public async Task<int> Create(DanhMucLoaiHopDongCreateRequest request)
+        {
+            var danhMucLoaiHopDong = new DanhMucLoaiHopDong()
+            {
+                maLoaiHopDong=request.maLoaiHopDong,
+                tenLoaiHopDong = request.tenLoaiHopDong
+
+            };
+            _context.danhMucLoaiHopDongs.Add(danhMucLoaiHopDong);
+            return await _context.SaveChangesAsync();
+        }
+
         public async Task<List<DanhMucLoaiHopDongViewModel>> GetAll()
         {
             var query = from p in _context.danhMucLoaiHopDongs

@@ -1,6 +1,6 @@
 ﻿using HRMSolution.Application.Catalog.DanhMucHonNhans.DhonNhans;
 using HRMSolution.Data.EF;
-
+using HRMSolution.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -18,6 +18,18 @@ namespace HRMSolution.Application.Catalog.DanhMucHonNhans
         {
             _context = context;
         }
+
+        public async Task<int> Create(DanhMucHonNhanCreateRequest request)
+        {
+            var danhMucHonNhan = new DanhMucHonNhan()
+            {
+                tenDanhMuc = request.tenDanhMuc
+               
+            };
+            _context.danhMucHonNhans.Add(danhMucHonNhan);
+            return await _context.SaveChangesAsync();
+        }
+
         public async Task<List<DanhMucHonNhanViewModel>> GetALL()
         {
             var query = from p in _context.danhMucHonNhans select p;

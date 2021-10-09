@@ -1,4 +1,5 @@
 ﻿using HRMSolution.Application.Catalog.DanhMucPhongBans;
+using HRMSolution.Application.Catalog.DanhMucPhongBans.DphongBans;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,13 @@ namespace HRMSolution.BackendAPI.Controllers
             var danhMucPhongBan = await _danhMucPhongBanService.GetAll();
             return Ok(danhMucPhongBan);
         }
-
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] DanhMucPhongBanCreateRequest request)
+        {
+            var result = await _danhMucPhongBanService.Create(request);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
+        }
     }
 }
