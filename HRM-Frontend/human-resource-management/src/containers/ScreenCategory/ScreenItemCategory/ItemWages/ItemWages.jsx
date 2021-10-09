@@ -5,29 +5,26 @@ import { NVCOLUMNS } from "./NvColumns";
 import ReactHTMLTableToExcel from "react-html-to-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import { ListContext } from "../../../../Contexts/ListContext";
 import { ExportCSV } from "../../../../components/ExportFile/ExportFile";
 import TablePagination from "../../../../components/TablePagination/TablePagination";
+import ProductApi from "../../../../api/productApi";
 
 function ItemWages(props) {
   const link = "/profile/";
   const fileName = "Danhmucnhomluong";
-  const { list } = useContext(ListContext);
-  //   const [dataAllNv, setdataAllNv] = useState([]);
-  //   console.log(dataAllNv);
+  const [dataDmnl, setDataDmnl] = useState([]);
 
-  //   useEffect(() => {
-  //     const fetchNvList = async () => {
-  //       try {
-  //         const responseNv = await productApi.getAllNv();
-  //         // console.log(responseNv);
-  //         setdataAllNv(responseNv);
-  //       } catch (error) {
-  //         console.log("false to fetch nv list: ", error);
-  //       }
-  //     };
-  //     fetchNvList();
-  //   }, []);
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const responseNv = await ProductApi.getAllDMNL();
+        setDataDmnl(responseNv);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
 
   return (
     <>
@@ -48,7 +45,7 @@ function ItemWages(props) {
               sheet="tablexls"
               buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
             />
-            <ExportCSV csvData={list} fileName={fileName} />
+            <ExportCSV csvData={dataDmnl} fileName={fileName} />
           </div>
         </div>
         <div className="table-nv">
@@ -56,7 +53,7 @@ function ItemWages(props) {
             link={link}
             tid="dmnlc"
             columns={NVCOLUMNS}
-            data={list}
+            data={dataDmnl}
           />
         </div>
       </div>

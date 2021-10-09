@@ -2,12 +2,7 @@ import React, { useState } from "react";
 import "./ScreenProject.scss";
 
 import SideBarLeft from "../../components/SideBarLeft/SideBarLeft";
-import {
-  Route,
-  Switch,
-  Redirect,
-  useHistory,
-} from "react-router-dom";
+import { Route, Switch, Redirect, useHistory } from "react-router-dom";
 import DashBoard from "../ScreenDashBoard/DashBoard";
 import ScreenTableNV from "../ScreenTableNV/ScreenTableNV";
 import Detail from "../../components/Detail/Detail";
@@ -35,6 +30,7 @@ import AddDisciplineForm from "../../components/AddDisciplineForm/AddDisciplineF
 import ScreenDetailReward from "../ScreenDetailReward/ScreenDetailReward";
 import ScreenDetailDiscipline from "../ScreenDetailDiscipline/ScreenDetailDiscipline";
 import ProtectedRoute from "./ProtectedRoute";
+import ScreenNotFound from "./ScreenNotFound";
 function ScreenProject() {
   let history = useHistory();
   let logout = () => {
@@ -106,7 +102,7 @@ function ScreenProject() {
             <SideBarLeft />
           </div>
           <div className="content">
-            <Switch>
+            {/* <Switch>
               
               <ProtectedRoute exact path="/home" component={DashBoard} />
               <ProtectedRoute exact path="/profile" component={ScreenTableNV} />
@@ -128,7 +124,105 @@ function ScreenProject() {
               <ProtectedRoute exact path="/discipline" component={ScreenDiscipline} />
 
               <ProtectedRoute exact path="/report" component={ScreenReport} />
-              {/* <Detail /> */}
+            </Switch> */}
+            <Switch>
+              <ProtectedRoute exact path="/home" component={DashBoard} />
+
+              <ProtectedRoute exact path="/profile" component={ScreenTableNV} />
+              <ProtectedRoute
+                exact
+                path="/profile/detail/:id"
+                component={Detail}
+              />
+              <ProtectedRoute
+                exact
+                path="/profile/add"
+                component={AddProfileForm}
+              />
+
+              <ProtectedRoute
+                exact
+                path="/contract"
+                component={ScreenContract}
+              />
+              <ProtectedRoute
+                exact
+                path="/contract/detail/:id"
+                component={ScreenDetailContract}
+              />
+              <ProtectedRoute
+                exact
+                path="/contract/add"
+                component={AddContractForm}
+              />
+
+              <ProtectedRoute exact path="/salary" component={ScreenSalary} />
+              <ProtectedRoute
+                exact
+                path="/salary/detail/:id"
+                component={ScreenDetailSalary}
+              />
+              <ProtectedRoute
+                exact
+                path="/salary/add"
+                component={AddSalaryForm}
+              />
+
+              <ProtectedRoute path="/category" component={ScreenCategory} />
+
+              <ProtectedRoute
+                exact
+                path="/transfer"
+                component={ScreenTransfer}
+              />
+              <ProtectedRoute
+                exact
+                path="/transfer/detail/:id"
+                component={ScreenDetailTransfer}
+              />
+              <ProtectedRoute
+                exact
+                path="/transfer/add"
+                component={AddTransferForm}
+              />
+
+              <ProtectedRoute exact path="/resign" component={ScreenResign} />
+              <ProtectedRoute
+                exact
+                path="/resign/detail/:id"
+                component={ScreenDetailResign}
+              />
+
+              <ProtectedRoute exact path="/reward" component={ScreenReward} />
+              <ProtectedRoute
+                exact
+                path="/reward/detail/:id"
+                component={ScreenDetailReward}
+              />
+              <ProtectedRoute
+                exact
+                path="/reward/add"
+                component={AddRewardForm}
+              />
+
+              <ProtectedRoute
+                exact
+                path="/discipline"
+                component={ScreenDiscipline}
+              />
+              <ProtectedRoute
+                exact
+                path="/discipline/detail/:id"
+                component={ScreenDetailDiscipline}
+              />
+              <ProtectedRoute
+                exact
+                path="/discipline/add"
+                component={AddDisciplineForm}
+              />
+
+              <ProtectedRoute exact path="/report" component={ScreenReport} />
+              {/* <Route component={ScreenNotFound}/> */}
             </Switch>
           </div>
         </div>
