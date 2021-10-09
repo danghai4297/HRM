@@ -9,6 +9,12 @@ using HRMSolution.Application.Catalog.DanhMucLoaiHopDongs;
 using HRMSolution.Application.Catalog.DanhMucNgachCongChucs;
 using HRMSolution.Application.Catalog.DanhMucNgoaiNgus;
 using HRMSolution.Application.Catalog.DanhMucNguoiThans;
+using HRMSolution.Application.Catalog.DanhMucNhomLuongs;
+using HRMSolution.Application.Catalog.DanhMucPhongBans;
+using HRMSolution.Application.Catalog.DanhMucTinhChatLaoDongs;
+using HRMSolution.Application.Catalog.DanhMucTonGiaos;
+using HRMSolution.Application.Catalog.DanhMucTos;
+using HRMSolution.Application.Catalog.DanhMucTrinhDos;
 using HRMSolution.Application.Catalog.HopDongs;
 using HRMSolution.Application.Catalog.KhenThuongKyLuats;
 using HRMSolution.Application.Catalog.NhanViens;
@@ -22,6 +28,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,10 +62,18 @@ namespace HRMSolution.BackendAPI
             services.AddTransient<IDanhMucNgachCongChucService, DanhMucNgachCongChucService>();
             services.AddTransient<IDanhMucNguoiThanService, DanhMucNguoiThanService>();
             services.AddTransient<IDanhMucNgoaiNguService, DanhMucNgoaiNguService>();
+            services.AddTransient<IDanhMucNhomLuongService, DanhMucNhomLuongService>();
+            services.AddTransient<IDanhMucPhongBanService, DanhMucPhongBanService>();
+            services.AddTransient<IDanhMucTinhChatLaoDongService, DanhMucTinhChatLaoDongService>();
+            services.AddTransient<IDanhMucTonGiaoService, DanhMucTonGiaoService>();
+            services.AddTransient<IDanhMucToService, DanhMucToService>();
+            services.AddTransient<IDanhMucTrinhDoService, DanhMucTrinhDoService>();
             services.AddTransient<IHopDongService, HopDongService>();
             services.AddTransient<IDanhMucDanTocService, DanhMucDanTocService>();
             services.AddTransient<INhanVienService, NhanVienService>();
             services.AddControllers();
+            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -80,6 +95,7 @@ namespace HRMSolution.BackendAPI
                 .AllowCredentials());
 
             app.UseAuthentication();
+            
 
             app.UseAuthorization();
 
