@@ -17,7 +17,9 @@ namespace HRMSolution.BackendAPI.Controllers
         {
             _danhMucChucDanhService = danhMucChucDanhService;
         }
+
         [HttpGet()]
+
         public async Task<IActionResult> Get()
         {
             var danhMucChucDanh = await _danhMucChucDanhService.GetAll();
@@ -28,14 +30,8 @@ namespace HRMSolution.BackendAPI.Controllers
         {
             var result = await _danhMucChucDanhService.Create(request);
             if (result == 0)
-            {
                 return BadRequest();
-            }
-            else
-            {
-                return Ok();
-            }
-
+            return Ok();
         }
     }
 }

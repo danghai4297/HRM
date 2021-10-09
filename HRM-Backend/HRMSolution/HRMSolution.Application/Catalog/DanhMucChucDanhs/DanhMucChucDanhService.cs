@@ -20,9 +20,16 @@ namespace HRMSolution.Application.Catalog.DanhMucChucDanhs
             _context = context;
         }
 
-        public Task<int> Create(DanhMucChucDanhCreateRequest request)
+        public async Task<int> Create(DanhMucChucDanhCreateRequest request)
         {
-            throw new NotImplementedException();
+            var danhMucChucDanh = new DanhMucChucDanh()
+            {
+                tenChucDanh = request.tenChucDanh,
+                maChucDanh = request.maChucDanh,
+                phuCap = request.phuCap
+            };
+            _context.danhMucChucDanhs.Add(danhMucChucDanh);
+            return await _context.SaveChangesAsync();
         }
 
         public async Task<List<DanhMucChucDanhViewModel>> GetAll()
