@@ -8,6 +8,7 @@ namespace HRMSolution.Application.Catalog.DanhMucChucVus
 {
     public interface IDanhMucChucVuService
     {
+        Task<int> Create(DanhMucChucVuCreateRequest request);
         Task<List<DanhMucChucVuViewModel>> GetAll();
     }
 }
