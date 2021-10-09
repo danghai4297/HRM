@@ -166,7 +166,8 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 tongLuong = x.l.tongLuong,
                 thoiHanLenLuong = x.l.thoiHanLenLuong,
                 ngayHieuLuc = x.l.ngayHieuLuc,
-                ngayKetThuc = x.l.ngayKetThuc
+                ngayKetThuc = x.l.ngayKetThuc,
+                trangThai = x.l.trangThai == true? "Kích hoạt" : "Vô hiệu"
             }).ToListAsync();
 
             //List Hợp Đồng
@@ -183,6 +184,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 hdHopDongTuNgay = x.hd.hopDongTuNgay,
                 hdHopDongDenNgay = x.hd.hopDongDenNgay,
                 hdGhiChu = x.hd.ghiChu,
+                trangThai = x.hd.trangThai == true? "Kích hoạt": "Vô hiệu",
                 luongs = dataL
             }).Distinct().ToListAsync();
 
@@ -248,6 +250,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                         join lhkc in _context.lienHeKhanCaps on nv.maNhanVien equals lhkc.maNhanVien
                         join ncc in _context.danhMucNgachCongChucs on nv.idNgachCongChuc equals ncc.id
                         join yt in _context.yTes on nv.maNhanVien equals yt.maNhanVien
+                        join lsbt in _context.lichSuBanThans on nv.maNhanVien equals lsbt.maNhanVien
 
                         where nv.maNhanVien == maNhanVien
                         select new
@@ -259,7 +262,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                             tg,
                             ncc,
                             lhkc,
-                            yt
+                            yt, lsbt
                         };
             var data = await query.Select(x => new NhanVienDetailViewModel()
             {
@@ -332,7 +335,9 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 ytBenhTat = x.yt.benhTat,
                 ytLuuY = x.yt.luuY,
                 ytKhuyetTat = x.yt.khuyetTat == true ? "Có" : "Không",
-
+                biBatDitu = x.lsbt.biBatDiTu,
+                thamGiaChinhTri = x.lsbt.thamGiaChinhTri,
+                thanNhanNuocNgoai = x.lsbt.thanNhanNuocNgoai,
                 trinhDoVanHoas = dataTdvh,
                 hopDongs = dataHd,
                 dieuChuyenViewModels = dataDc,
