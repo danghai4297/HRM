@@ -28,9 +28,9 @@ function Detail(props) {
   }, []);
 
   console.log(dataDetailNv);
-    console.log(dataDetailNv.maNhanVien);
+  console.log(dataDetailNv.maNhanVien);
 
-  const dataDetail = [];
+  // const dataDetail = [];
   const [dropBase, setDropBase] = useState(true);
   const [dropContact, setDropContact] = useState(true);
   const [dropJob, setDropJob] = useState(true);
@@ -38,7 +38,9 @@ function Detail(props) {
   const [dropCultural, setDropCultural] = useState(true);
   const [dropFamily, setDropFamily] = useState(true);
   const [dropPolitics, setDropPolitics] = useState(true);
+  const [dropHistory, setDropHistory] = useState(true);
   const [dropContract, setDropContract] = useState(true);
+  const [dropSalary, setDropSalary] = useState(true);
   const [dropTransfer, setDropTransfer] = useState(true);
   const [dropReward, setDropReward] = useState(true);
   const [dropDiscipline, setDropDiscipline] = useState(true);
@@ -73,8 +75,14 @@ function Detail(props) {
   const arrowPoliticsClickHandle = () => {
     setDropPolitics(!dropPolitics);
   };
+  const arrowHistoryClickHandle = () => {
+    setDropHistory(!dropHistory);
+  };
   const arrowContractClickHandle = () => {
     setDropContract(!dropContract);
+  };
+  const arrowSalaryClickHandle = () => {
+    setDropSalary(!dropSalary);
   };
   const arrowTransferClickHandle = () => {
     setDropTransfer(!dropTransfer);
@@ -103,10 +111,10 @@ function Detail(props) {
                 <FontAwesomeIcon icon={["fas", "user-circle"]} />
               </div>
               <div className="names">
-                <h5>{dataDetail.firstName + " " + dataDetail.lastName}</h5>
+                <h5>{dataDetailNv.hoTen}</h5>
               </div>
               <div className="codes">
-                <p>{dataDetail.id}</p>
+                <p>{dataDetailNv.maNhanVien}</p>
               </div>
             </div>
           </div>
@@ -115,31 +123,31 @@ function Detail(props) {
               <Row className="row-detail">
                 <Col>
                   <Row>
-                    <Col>
+                    <Col xs lg="5">
                       <p className="fast-information">Đơn vị công tác</p>
                     </Col>
                     <Col>
-                      <p className="fast-information"></p>
+                      <p className="fast-information">{dataDetailNv.coQuanTuyenDung === null ? "-" : dataDetailNv.coQuanTuyenDung}</p>
                     </Col>
                   </Row>
                 </Col>
                 <Col>
                   <Row>
-                    <Col>
+                    <Col xs lg="5">
                       <p className="fast-information">Ngày thử việc</p>
                     </Col>
                     <Col>
-                      <p className="fast-information"></p>
+                      <p className="fast-information">{dataDetailNv.ngayThuViec === null ? "-" : dataDetailNv.ngayThuViec}</p>
                     </Col>
                   </Row>
                 </Col>
                 <Col>
                   <Row>
-                    <Col>
+                    <Col xs lg="5">
                       <p className="fast-information">Ngày chính thức</p>
                     </Col>
                     <Col>
-                      <p className="fast-information"></p>
+                      <p className="fast-information">{dataDetailNv.ngayChinhThuc === null ? "-" : dataDetailNv.ngayChinhThuc}</p>
                     </Col>
                   </Row>
                 </Col>
@@ -151,7 +159,7 @@ function Detail(props) {
                       <p className="fast-information"> Ngày sinh</p>
                     </Col>
                     <Col>
-                      <p className="fast-information"></p>
+                      <p className="fast-information">{dataDetailNv.ngaySinh === null ? "-" : dataDetailNv.ngaySinh}</p>
                     </Col>
                   </Row>
                 </Col>
@@ -161,7 +169,7 @@ function Detail(props) {
                       <p className="fast-information">ĐT di động</p>
                     </Col>
                     <Col>
-                      <p className="fast-information"></p>
+                      <p className="fast-information">{dataDetailNv.diDong === null ? "-" : dataDetailNv.diDong}</p>
                     </Col>
                   </Row>
                 </Col>
@@ -171,7 +179,7 @@ function Detail(props) {
                       <p className="fast-information">Email</p>
                     </Col>
                     <Col>
-                      <p className="fast-information"></p>
+                      <p className="fast-information">{dataDetailNv.email === null ? "-" : dataDetailNv.email}</p>
                     </Col>
                   </Row>
                 </Col>
@@ -419,7 +427,7 @@ function Detail(props) {
                   <SubDetail
                     titleLeft="Tính chất lao động"
                     itemLeft={dataDetailNv.tinhChatLaoDong}
-                    titleRight="Ngày công tác"
+                    titleRight="Ngày chính thức"
                     itemRight={dataDetailNv.ngayChinhThuc}
                   ></SubDetail>
                   <SubDetail
@@ -427,39 +435,6 @@ function Detail(props) {
                     itemLeft={dataDetailNv.ngayNghiViec}
                     titleRight="Lý do nghỉ"
                     itemRight={dataDetailNv.lyDoNghiViec}
-                  ></SubDetail>
-                  <div className="title">
-                    <h5>Thông tin lương</h5>
-                  </div>
-                  <SubDetail
-                    titleLeft="Nhóm lương"
-                    itemLeft={null}
-                    titleRight="Tiền lương"
-                    itemRight={null}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Hệ số lương"
-                    itemLeft={null}
-                    titleRight="Thời hạn lên lương"
-                    itemRight={null}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Bậc lương"
-                    itemLeft={null}
-                    titleRight="Ngày hiệu lực"
-                    itemRight={null}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Lương cơ bản"
-                    itemLeft={null}
-                    titleRight="Ngày hết hạn"
-                    itemRight={null}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Phụ cấp chức vụ"
-                    itemLeft={null}
-                    titleRight="Phụ cấp khác"
-                    itemRight={null}
                   ></SubDetail>
                 </>
               )}
@@ -673,6 +648,62 @@ function Detail(props) {
                 </>
               )}
             </div>
+            <div className="form" id="history">
+              <div className="big-title">
+                <div className="name-title">
+                  <h3>Lịch sử bản thân</h3>
+                </div>
+                <div className="arrow-button">
+                  <button
+                    className="main-arrow-button"
+                    onClick={arrowHistoryClickHandle}
+                  >
+                    <FontAwesomeIcon
+                      icon={["fas", "chevron-down"]}
+                      className={!dropHistory ? "iconss" : "iconsss"}
+                    />
+                  </button>
+                </div>
+              </div>
+
+              {dropHistory && (
+                <>
+                  <div className="titles">
+                    <div className="title-history">
+                      <h5 className="title-names">
+                        Bị bắt, bị tù (thời gian và địa điểm), khai báo cho ai,
+                        những vấn đề gì?
+                      </h5>
+                    </div>
+                  </div>
+                  <div className="areas">
+                    <p className="area-history">{dataDetailNv.biBatDitu}</p>
+                  </div>
+                  <div className="titles">
+                    <div className="title-history">
+                      <h5 className="title-names">
+                        Tham gia hoặc có quan hệ với các tổ chức chính trị, kinh
+                        tế, xã hội ở nước ngoài
+                      </h5>
+                    </div>
+                  </div>
+                  <div className="areas">
+                    <p className="area-history">{dataDetailNv.thamGiaChinhTri}</p>
+                  </div>
+                  <div className="titles">
+                    <div className="title-history">
+                      <h5 className="title-names">
+                        Có Thân nhân(cha, mẹ, vợ, chồng, con, anh chị em ruột) ở
+                        nước ngoài (làm gì, địa chỉ...)?
+                      </h5>
+                    </div>
+                  </div>
+                  <div className="areas">
+                    <p className="area-history">{dataDetailNv.thanNhanNuocNgoai}</p>
+                  </div>
+                </>
+              )}
+            </div>
             <div className="form" id="contract">
               <div className="big-title">
                 <div className="name-title">
@@ -691,6 +722,37 @@ function Detail(props) {
                 </div>
               </div>
               {dropContract && (
+                <>
+                  <div className="title">
+                    <div className="title-cultural"></div>
+                    <div className="icon-cultural">
+                      <button className="btn-cultural">
+                        <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                      </button>
+                    </div>
+                  </div>
+                  <div className="table"></div>
+                </>
+              )}
+            </div>
+            <div className="form" id="salary">
+              <div className="big-title">
+                <div className="name-title">
+                  <h3>Hồ sơ lương</h3>
+                </div>
+                <div className="arrow-button">
+                  <button
+                    className="main-arrow-button"
+                    onClick={arrowSalaryClickHandle}
+                  >
+                    <FontAwesomeIcon
+                      icon={["fas", "chevron-down"]}
+                      className={!dropSalary ? "iconss" : "iconsss"}
+                    />
+                  </button>
+                </div>
+              </div>
+              {dropSalary && (
                 <>
                   <div className="title">
                     <div className="title-cultural"></div>

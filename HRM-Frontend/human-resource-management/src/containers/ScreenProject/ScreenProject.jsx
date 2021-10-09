@@ -35,6 +35,7 @@ import AddDisciplineForm from "../../components/AddDisciplineForm/AddDisciplineF
 import ScreenDetailReward from "../ScreenDetailReward/ScreenDetailReward";
 import ScreenDetailDiscipline from "../ScreenDetailDiscipline/ScreenDetailDiscipline";
 import ProtectedRoute from "./ProtectedRoute";
+import ScreenNotFound from "./ScreenNotFound";
 function ScreenProject() {
   let history = useHistory();
   let logout = () => {
@@ -128,7 +129,7 @@ function ScreenProject() {
               <ProtectedRoute exact path="/discipline" component={ScreenDiscipline} />
 
               <ProtectedRoute exact path="/report" component={ScreenReport} />
-              {/* <Detail /> */}
+              {/* <Route component={ScreenNotFound}/> */}
             </Switch>
           </div>
         </div>
