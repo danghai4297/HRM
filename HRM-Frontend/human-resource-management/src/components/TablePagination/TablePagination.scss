@@ -1,80 +1,97 @@
 table body tr:hover td,
 table body tr:hover th {
-    background-color: rgb(175, 255, 199);
+  background-color: rgb(175, 255, 199);
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .table-sticky {
-    overflow: auto;
-    max-height: 600px;
+  overflow: auto;
+  max-height: 600px;
+}
+.table-sticky::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  border-radius: 20px;
+}
+.table-sticky::-webkit-scrollbar-track {
+  background-color: #efefef;
+  border-radius: 20px;
+}
+.table-sticky::-webkit-scrollbar-thumb {
+  background-color: rgb(129, 129, 129);
+  border-radius: 6px;
+}
+.table-sticky::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(158, 158, 158);
 }
 
 .choose-col {
-    position: absolute;
-    display: block;
-    overflow: auto;
+  position: absolute;
+  display: block;
+  overflow: auto;
 
-    width: auto;
-    max-height: 20rem;
-    background-color: rgb(242, 253, 251);
-    z-index: 1000;
-    border-radius: 0.2rem;
+  width: auto;
+  max-height: 20rem;
+  background-color: rgb(242, 253, 251);
+  z-index: 1000;
+  border-radius: 0.2rem;
 
-    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 
-    .item-chooseCol {
-        align-items: center;
-        margin-right: 1rem;
-    }
+  .item-chooseCol {
+    align-items: center;
+    margin-right: 1rem;
+  }
 }
 
 .herder-table {
-    // border: 1px solid black;
-    display: flex;
-    justify-content: space-between;
-    background-color: white;
+  // border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
 
-    // position: sticky;
-    // top: 9.8rem;
-    z-index: 1;
+  // position: sticky;
+  // top: 9.8rem;
+  z-index: 1;
 }
 
 .select-fillter {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .select-item {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .select-item:hover {
-    box-shadow: 0 0 2px 2px rgb(1, 132, 165);
+  box-shadow: 0 0 2px 2px rgb(1, 132, 165);
 }
 
 .link-item {
-    color: black;
+  color: black;
 }
 
 .link-item:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .search-table {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50px;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50px;
 
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    box-shadow: 0 0 2px 2px rgba(2, 93, 155, 0.6);
-    transition: 0.8s ease-in-out;
-    cursor: pointer;
-    margin: 1rem;
+  box-shadow: 0 0 2px 2px rgba(2, 93, 155, 0.6);
+  transition: 0.8s ease-in-out;
+  cursor: pointer;
+  margin: 1rem;
 }
 
 // .thead-dark {
@@ -83,100 +100,100 @@ table body tr:hover th {
 // }
 
 .search-input {
-    width: 0;
-    border: none;
-    background-color: transparent;
-    font-size: 1.5rem;
-    height: 80%;
-    flex-grow: 1;
-    transition: 0.8s ease-in-out;
+  width: 0;
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  height: 80%;
+  flex-grow: 1;
+  transition: 0.8s ease-in-out;
 }
 
 input:focus {
-    outline: none;
+  outline: none;
 }
 
 .icon-search {
-    display: inline-flex;
-    width: 2rem;
-    height: 2rem;
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
 
-    opacity: 0.6;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
+  opacity: 0.6;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
 }
 
 .search-table:hover {
-    width: 20%;
-    box-shadow: 0 0 2px 2px rgb(68, 166, 231);
+  width: 20%;
+  box-shadow: 0 0 2px 2px rgb(68, 166, 231);
 }
 
 .search-table:hover .search-input {
-    margin-left: 1.5rem;
+  margin-left: 1.5rem;
 }
 .button {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .btn-fil {
-    width: 2.3rem;
-    height: 2.3rem;
-    margin: 1rem;
+  width: 2.3rem;
+  height: 2.3rem;
+  margin: 1rem;
 
-    opacity: 0.6;
+  opacity: 0.6;
 
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0 0 2px 2px rgba(2, 93, 155, 0.6);
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 2px 2px rgba(2, 93, 155, 0.6);
 }
 
 .btn-fil:hover {
-    background-color: rgb(62, 148, 206);
-    box-shadow: 0 0 2px 2px rgb(44, 47, 47);
+  background-color: rgb(62, 148, 206);
+  box-shadow: 0 0 2px 2px rgb(44, 47, 47);
 }
 
 .footer-table {
-    width: auto;
-    height: 5rem;
+  width: auto;
+  height: 5rem;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgb(204, 204, 204);
+  background-color: rgb(236, 236, 236);
+
+  .f-table-left {
     display: flex;
-
-    justify-content: space-between;
     align-items: center;
-    border-top: 1px solid rgb(204, 204, 204);
-    background-color: rgb(236, 236, 236);
+    width: 30%;
 
-    .f-table-left {
-        display: flex;
-        align-items: center;
-        width: 30%;
+    padding-left: 0.5rem;
 
-        padding-left: 0.5rem;
+    .select-item {
+      margin-left: 1rem;
+      width: 30%;
+    }
+  }
 
-        .select-item {
-            margin-left: 1rem;
-            width: 30%;
-        }
+  .f-table-right {
+    padding-right: 0.5rem;
+    align-items: center;
+
+    .btn-next-pre {
+      width: 1.8rem;
+      height: 1.8rem;
+      margin: 0.2rem;
+
+      opacity: 1;
+
+      background-color: white;
+      border: none;
     }
 
-    .f-table-right {
-        padding-right: 0.5rem;
-        align-items: center;
-
-        .btn-next-pre {
-            width: 1.8rem;
-            height: 1.8rem;
-            margin: 0.2rem;
-
-            opacity: 1;
-
-            background-color: white;
-            border: none;
-        }
-
-        .btn-next-pre:hover {
-            background-color: rgb(200, 242, 250);
-        }
+    .btn-next-pre:hover {
+      background-color: rgb(200, 242, 250);
     }
+  }
 }

@@ -36,21 +36,31 @@ export const links = [
   },
   {
     id: 8,
+    text: "Lịch sử bản thân",
+    url: "#history",
+  },
+  {
+    id: 9,
     text: "Hợp đồng lao động",
     url: "#contract",
   },
   {
-    id: 9,
+    id: 10,
+    text: "Hồ sơ lương",
+    url: "#salary",
+  },
+  {
+    id: 11,
     text: "Thuyên chuyển",
     url: "#transfer",
   },
   {
-    id: 10,
+    id: 12,
     text: "Khen thưởng",
     url: "#reward",
   },
   {
-    id: 11,
+    id: 13,
     text: "Kỉ luật",
     url: "#discipline",
   },

@@ -11,6 +11,7 @@ function Detail(props) {
   let { match, history } = props;
   let { id } = match.params;
   console.log(id);
+
   const [dataDetailNv, setdataDetailNv] = useState([]);
 
   useEffect(() => {
@@ -27,8 +28,9 @@ function Detail(props) {
   }, []);
 
   console.log(dataDetailNv);
+  console.log(dataDetailNv.maNhanVien);
 
-  const dataDetail = [];
+  // const dataDetail = [];
   const [dropBase, setDropBase] = useState(true);
   const [dropContact, setDropContact] = useState(true);
   const [dropJob, setDropJob] = useState(true);
@@ -36,7 +38,9 @@ function Detail(props) {
   const [dropCultural, setDropCultural] = useState(true);
   const [dropFamily, setDropFamily] = useState(true);
   const [dropPolitics, setDropPolitics] = useState(true);
+  const [dropHistory, setDropHistory] = useState(true);
   const [dropContract, setDropContract] = useState(true);
+  const [dropSalary, setDropSalary] = useState(true);
   const [dropTransfer, setDropTransfer] = useState(true);
   const [dropReward, setDropReward] = useState(true);
   const [dropDiscipline, setDropDiscipline] = useState(true);
@@ -71,8 +75,14 @@ function Detail(props) {
   const arrowPoliticsClickHandle = () => {
     setDropPolitics(!dropPolitics);
   };
+  const arrowHistoryClickHandle = () => {
+    setDropHistory(!dropHistory);
+  };
   const arrowContractClickHandle = () => {
     setDropContract(!dropContract);
+  };
+  const arrowSalaryClickHandle = () => {
+    setDropSalary(!dropSalary);
   };
   const arrowTransferClickHandle = () => {
     setDropTransfer(!dropTransfer);
@@ -101,10 +111,10 @@ function Detail(props) {
                 <FontAwesomeIcon icon={["fas", "user-circle"]} />
               </div>
               <div className="names">
-                <h5>{dataDetail.firstName + " " + dataDetail.lastName}</h5>
+                <h5>{dataDetailNv.hoTen}</h5>
               </div>
               <div className="codes">
-                <p>{dataDetail.id}</p>
+                <p>{dataDetailNv.maNhanVien}</p>
               </div>
             </div>
           </div>
@@ -113,31 +123,31 @@ function Detail(props) {
               <Row className="row-detail">
                 <Col>
                   <Row>
-                    <Col>
+                    <Col xs lg="5">
                       <p className="fast-information">Đơn vị công tác</p>
                     </Col>
                     <Col>
-                      <p className="fast-information"></p>
+                      <p className="fast-information">{dataDetailNv.coQuanTuyenDung === null ? "-" : dataDetailNv.coQuanTuyenDung}</p>
                     </Col>
                   </Row>
                 </Col>
                 <Col>
                   <Row>
-                    <Col>
+                    <Col xs lg="5">
                       <p className="fast-information">Ngày thử việc</p>
                     </Col>
                     <Col>
-                      <p className="fast-information"></p>
+                      <p className="fast-information">{dataDetailNv.ngayThuViec === null ? "-" : dataDetailNv.ngayThuViec}</p>
                     </Col>
                   </Row>
                 </Col>
                 <Col>
                   <Row>
-                    <Col>
+                    <Col xs lg="5">
                       <p className="fast-information">Ngày chính thức</p>
                     </Col>
                     <Col>
-                      <p className="fast-information"></p>
+                      <p className="fast-information">{dataDetailNv.ngayChinhThuc === null ? "-" : dataDetailNv.ngayChinhThuc}</p>
                     </Col>
                   </Row>
                 </Col>
@@ -149,7 +159,7 @@ function Detail(props) {
                       <p className="fast-information"> Ngày sinh</p>
                     </Col>
                     <Col>
-                      <p className="fast-information"></p>
+                      <p className="fast-information">{dataDetailNv.ngaySinh === null ? "-" : dataDetailNv.ngaySinh}</p>
                     </Col>
                   </Row>
                 </Col>
@@ -159,7 +169,7 @@ function Detail(props) {
                       <p className="fast-information">ĐT di động</p>
                     </Col>
                     <Col>
-                      <p className="fast-information"></p>
+                      <p className="fast-information">{dataDetailNv.diDong === null ? "-" : dataDetailNv.diDong}</p>
                     </Col>
                   </Row>
                 </Col>
@@ -169,7 +179,7 @@ function Detail(props) {
                       <p className="fast-information">Email</p>
                     </Col>
                     <Col>
-                      <p className="fast-information"></p>
+                      <p className="fast-information">{dataDetailNv.email === null ? "-" : dataDetailNv.email}</p>
                     </Col>
                   </Row>
                 </Col>
@@ -229,49 +239,49 @@ function Detail(props) {
                   </div>
                   <SubDetail
                     titleLeft="Mã nhân viên"
-                    itemLeft={dataDetail.id}
+                    itemLeft={dataDetailNv.maNhanVien}
                     titleRight="TK Ngân hàng"
-                    itemRight={dum.numberBank}
+                    itemRight={dataDetailNv.atm}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Họ và tên"
-                    itemLeft={dataDetail.firstName + " " + dataDetail.lastName}
+                    itemLeft={dataDetailNv.hoTen}
                     titleRight="Ngân hàng"
-                    itemRight={dum.bank}
+                    itemRight={dataDetailNv.nganHang}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Giới tính"
-                    itemLeft={dataDetail.gender}
+                    itemLeft={dataDetailNv.gioiTinh}
                     titleRight="Tình trạng hôn nhân"
-                    itemRight={dum.marriage}
+                    itemRight={dataDetailNv.honNhan}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày sinh"
-                    itemLeft={dataDetail.birthday}
+                    itemLeft={dataDetailNv.ngaySinh}
                     titleRight="MST cá nhân"
-                    itemRight={dum.taxCode}
+                    itemRight={dataDetailNv.maSoThue}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Nơi sinh"
-                    itemLeft={dum.birthplace}
+                    itemLeft={dataDetailNv.noiSinh}
                     titleRight="Dân tộc"
-                    itemRight={null}
+                    itemRight={dataDetailNv.danToc}
                   ></SubDetail>
                   <SubDetail
-                    titleLeft="Nguyên quán"
-                    itemLeft={null}
+                    titleLeft="Quê quán"
+                    itemLeft={dataDetailNv.queQuan}
                     titleRight="Tôn giáo"
-                    itemRight={null}
+                    itemRight={dataDetailNv.tonGiao}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Thường trú"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.thuongTru}
                     titleRight="Quốc tịch"
-                    itemRight={null}
+                    itemRight={dataDetailNv.quocTich}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Tạm trú"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.tamTru}
                     titleRight={null}
                   ></SubDetail>
                   <div className="title">
@@ -279,27 +289,27 @@ function Detail(props) {
                   </div>
                   <SubDetail
                     titleLeft="Số CMND/CCCD"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.cccd}
                     titleRight="Số hộ chiếu"
-                    itemRight={null}
+                    itemRight={dataDetailNv.hoChieu}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày cấp(CMNN/CCCD)"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ngayCapCCCD}
                     titleRight="Ngày cấp hộ chiếu"
-                    itemRight={null}
+                    itemRight={dataDetailNv.ngayCapHoChieu}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Nơi cấp(CMND/CCCD)"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.noiCapCCCD}
                     titleRight="Nơi cấp hộ chiếu"
-                    itemRight={null}
+                    itemRight={dataDetailNv.noiCapHoChieu}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày hết hạn"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ngayHetHanCCCD}
                     titleRight="Ngày hết hạn hộ chiếu"
-                    itemRight={null}
+                    itemRight={dataDetailNv.ngayHetHanHoChieu}
                   ></SubDetail>
                 </>
               )}
@@ -329,40 +339,40 @@ function Detail(props) {
                   </div>
                   <SubDetail
                     titleLeft="ĐT di động"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.diDong}
                     titleRight="Email cá nhân"
-                    itemRight="-"
+                    itemRight={dataDetailNv.email}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="ĐT khác"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.dienThoaiKhac}
                     titleRight="Facebook"
-                    itemRight={null}
+                    itemRight={dataDetailNv.facebook}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="ĐT nhà riêng"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.dienThoai}
                     titleRight="Skype"
-                    itemRight={null}
+                    itemRight={dataDetailNv.skype}
                   ></SubDetail>
                   <div className="title">
                     <h5>Liên hệ khẩn cấp</h5>
                   </div>
                   <SubDetail
                     titleLeft="Họ và tên"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.lhkcHoTen}
                     titleRight="Email"
-                    itemRight={null}
+                    itemRight={dataDetailNv.lhkcEmail}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Quan hệ"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.lhkcQuanHe}
                     titleRight="Địa chỉ"
-                    itemRight={null}
+                    itemRight={dataDetailNv.lhkcDiaChi}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="ĐT di động"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.lhkcDienThoai}
                     titleRight={null}
                   ></SubDetail>
                 </>
@@ -392,72 +402,39 @@ function Detail(props) {
                   </div>
                   <SubDetail
                     titleLeft="Nghề nghiệp"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ngheNghiep}
                     titleRight="Ngày thử việc"
-                    itemRight={null}
+                    itemRight={dataDetailNv.ngayThuViec}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Cơ quan tuyển dụng"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.coQuanTuyenDung}
                     titleRight="Ngày tuyển dụng"
-                    itemRight={null}
+                    itemRight={dataDetailNv.ngayTuyenDung}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Chức vụ hiện tại"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.chucVuHienTai}
                     titleRight="Ngày vào ban"
-                    itemRight={null}
+                    itemRight={dataDetailNv.ngayVaoBan}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Trạng thái lao động"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.trangThaiLaoDong}
                     titleRight="Công việc chính"
-                    itemRight={null}
+                    itemRight={dataDetailNv.congViecChinh}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Tính chất lao động"
-                    itemLeft={null}
-                    titleRight="Ngày công tác"
-                    itemRight={null}
+                    itemLeft={dataDetailNv.tinhChatLaoDong}
+                    titleRight="Ngày chính thức"
+                    itemRight={dataDetailNv.ngayChinhThuc}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày nghỉ việc"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ngayNghiViec}
                     titleRight="Lý do nghỉ"
-                    itemRight={null}
-                  ></SubDetail>
-                  <div className="title">
-                    <h5>Thông tin lương</h5>
-                  </div>
-                  <SubDetail
-                    titleLeft="Nhóm lương"
-                    itemLeft={null}
-                    titleRight="Tiền lương"
-                    itemRight={null}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Hệ số lương"
-                    itemLeft={null}
-                    titleRight="Thời hạn lên lương"
-                    itemRight={null}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Bậc lương"
-                    itemLeft={null}
-                    titleRight="Ngày hiệu lực"
-                    itemRight={null}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Lương cơ bản"
-                    itemLeft={null}
-                    titleRight="Ngày hết hạn"
-                    itemRight={null}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Phụ cấp chức vụ"
-                    itemLeft={null}
-                    titleRight="Phụ cấp khác"
-                    itemRight={null}
+                    itemRight={dataDetailNv.lyDoNghiViec}
                   ></SubDetail>
                 </>
               )}
@@ -483,9 +460,9 @@ function Detail(props) {
                 <>
                   <SubDetail
                     titleLeft="Số sổ BHXH"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.bhxh}
                     titleRight="Số thẻ BHYT"
-                    itemRight={null}
+                    itemRight={dataDetailNv.bhyt}
                   ></SubDetail>
                 </>
               )}
@@ -591,25 +568,25 @@ function Detail(props) {
                   </div>
                   <SubDetail
                     titleLeft="Ngạch công chức"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ngachCongChuc}
                     titleRight="Ngạch công chức nội dung"
-                    itemRight={null}
+                    itemRight={dataDetailNv.ngachCongChucNoiDung}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Là Đảng viên"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.vaoDang}
                     titleRight="Ngày vào đoàn"
-                    itemRight={null}
+                    itemRight={dataDetailNv.ngayVaoDoan}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày vào Đảng"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ngayVaoDang}
                     titleRight="Nơi tham gia"
-                    itemRight={null}
+                    itemRight={dataDetailNv.noiThamGia}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày chính thức"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ngayChinhThuc}
                     titleRight={null}
                   ></SubDetail>
                   <div className="title">
@@ -617,29 +594,29 @@ function Detail(props) {
                   </div>
                   <SubDetail
                     titleLeft="Là quân nhân"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.quanNhan}
                     titleRight="Thương binh"
-                    itemRight={null}
+                    itemRight={dataDetailNv.thuongBinh}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày nhập ngũ"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ngayNhapNgu}
                     titleRight="Con gia đình chính sách"
-                    itemRight={null}
+                    itemRight={dataDetailNv.conChinhSach}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày xuất ngũ"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ngayXuatNgu}
                     titleRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Quân hàm cao nhất"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.quanHamCaoNhat}
                     titleRight={null}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="DH được phong tặng cao nhất"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.danhHieuCaoNhat}
                     titleRight={null}
                   ></SubDetail>
                   <div className="title">
@@ -647,27 +624,83 @@ function Detail(props) {
                   </div>
                   <SubDetail
                     titleLeft="Nhóm máu"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ytNhomMau}
                     titleRight="Bệnh tật"
-                    itemRight={null}
+                    itemRight={dataDetailNv.ytBenhTat}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Chiều cao(m)"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ytChieuCao}
                     titleRight="Lưu ý"
-                    itemRight={null}
+                    itemRight={dataDetailNv.ytLuuY}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Cân nặng(kg)"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ytCanNang}
                     titleRight="Là người khuất tật"
-                    itemRight={null}
+                    itemRight={dataDetailNv.ytKhuyetTat}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Tình trạng sức khỏe"
-                    itemLeft={null}
+                    itemLeft={dataDetailNv.ytTinhTrangSucKhoe}
                     titleRight={null}
                   ></SubDetail>
+                </>
+              )}
+            </div>
+            <div className="form" id="history">
+              <div className="big-title">
+                <div className="name-title">
+                  <h3>Lịch sử bản thân</h3>
+                </div>
+                <div className="arrow-button">
+                  <button
+                    className="main-arrow-button"
+                    onClick={arrowHistoryClickHandle}
+                  >
+                    <FontAwesomeIcon
+                      icon={["fas", "chevron-down"]}
+                      className={!dropHistory ? "iconss" : "iconsss"}
+                    />
+                  </button>
+                </div>
+              </div>
+
+              {dropHistory && (
+                <>
+                  <div className="titles">
+                    <div className="title-history">
+                      <h5 className="title-names">
+                        Bị bắt, bị tù (thời gian và địa điểm), khai báo cho ai,
+                        những vấn đề gì?
+                      </h5>
+                    </div>
+                  </div>
+                  <div className="areas">
+                    <p className="area-history">{dataDetailNv.biBatDitu}</p>
+                  </div>
+                  <div className="titles">
+                    <div className="title-history">
+                      <h5 className="title-names">
+                        Tham gia hoặc có quan hệ với các tổ chức chính trị, kinh
+                        tế, xã hội ở nước ngoài
+                      </h5>
+                    </div>
+                  </div>
+                  <div className="areas">
+                    <p className="area-history">{dataDetailNv.thamGiaChinhTri}</p>
+                  </div>
+                  <div className="titles">
+                    <div className="title-history">
+                      <h5 className="title-names">
+                        Có Thân nhân(cha, mẹ, vợ, chồng, con, anh chị em ruột) ở
+                        nước ngoài (làm gì, địa chỉ...)?
+                      </h5>
+                    </div>
+                  </div>
+                  <div className="areas">
+                    <p className="area-history">{dataDetailNv.thanNhanNuocNgoai}</p>
+                  </div>
                 </>
               )}
             </div>
@@ -689,6 +722,37 @@ function Detail(props) {
                 </div>
               </div>
               {dropContract && (
+                <>
+                  <div className="title">
+                    <div className="title-cultural"></div>
+                    <div className="icon-cultural">
+                      <button className="btn-cultural">
+                        <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                      </button>
+                    </div>
+                  </div>
+                  <div className="table"></div>
+                </>
+              )}
+            </div>
+            <div className="form" id="salary">
+              <div className="big-title">
+                <div className="name-title">
+                  <h3>Hồ sơ lương</h3>
+                </div>
+                <div className="arrow-button">
+                  <button
+                    className="main-arrow-button"
+                    onClick={arrowSalaryClickHandle}
+                  >
+                    <FontAwesomeIcon
+                      icon={["fas", "chevron-down"]}
+                      className={!dropSalary ? "iconss" : "iconsss"}
+                    />
+                  </button>
+                </div>
+              </div>
+              {dropSalary && (
                 <>
                   <div className="title">
                     <div className="title-cultural"></div>
