@@ -17,7 +17,7 @@ namespace HRMSolution.BackendAPI.Controllers
         {
             _hopDongService = nhanVienService;
         }
-
+        [HttpGet()]
         public async Task<IActionResult> Get()
         {
             var nhanViens = await _hopDongService.GetAll();

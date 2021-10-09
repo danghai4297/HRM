@@ -2,7 +2,6 @@ using HRMSolution.Application.Catalog.DanhMucChucDanhs;
 using HRMSolution.Application.Catalog.DanhMucChucVus;
 using HRMSolution.Application.Catalog.DanhMucChuyenMons;
 using HRMSolution.Application.Catalog.DanhMucDanTocs;
-
 using HRMSolution.Application.Catalog.DanhMucHonNhans;
 using HRMSolution.Application.Catalog.DanhMucKhenThuongKyLuats;
 using HRMSolution.Application.Catalog.DanhMucLoaiHopDongs;
@@ -28,7 +27,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+<<<<<<< HEAD
 
+=======
+using Microsoft.OpenApi.Models;
+>>>>>>> b8e6e78fb57d80658a20020cbbe1000a8b084e4a
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,8 +52,8 @@ namespace HRMSolution.BackendAPI
         {
            
             services.AddDbContext<HRMDbContext>(options =>
-            
             options.UseSqlServer(Configuration.GetConnectionString("Data")));
+
 
             services.AddTransient<IDanhMucChucDanhService, DanhMucChucDanhService>();
             services.AddTransient<IDanhMucChucVuService, DanhMucChucVuService>();
@@ -72,7 +75,16 @@ namespace HRMSolution.BackendAPI
             services.AddTransient<IDanhMucDanTocService, DanhMucDanTocService>();
             services.AddTransient<INhanVienService, NhanVienService>();
             services.AddControllers();
+<<<<<<< HEAD
             
+=======
+
+            services.AddSwaggerGen(x =>
+            {
+                x.SwaggerDoc("v1", new OpenApiInfo { Title = "Swagger HRM Sholution", Version = "v1" });
+            });
+
+>>>>>>> b8e6e78fb57d80658a20020cbbe1000a8b084e4a
 
         }
 
@@ -98,6 +110,13 @@ namespace HRMSolution.BackendAPI
             
 
             app.UseAuthorization();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(x=> 
+            {
+                x.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger HRMSolution V1");
+
+            });
 
             app.UseEndpoints(endpoints =>
             {

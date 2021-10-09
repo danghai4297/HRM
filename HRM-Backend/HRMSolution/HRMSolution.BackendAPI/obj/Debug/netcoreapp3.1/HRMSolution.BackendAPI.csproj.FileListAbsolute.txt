@@ -148,8 +148,16 @@ C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI
 C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Debug\netcoreapp3.1\HRMSolution.BackendAPI.dll
 C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Debug\netcoreapp3.1\HRMSolution.BackendAPI.pdb
 C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Debug\netcoreapp3.1\HRMSolution.BackendAPI.genruntimeconfig.cache
+<<<<<<< HEAD
 C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
 C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Debug\netcoreapp3.1\HRMSolution.BackendAPI.MvcApplicationPartsAssemblyInfo.cs
+=======
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Debug\netcoreapp3.1\HRMSolution.BackendAPI.MvcApplicationPartsAssemblyInfo.cs
+>>>>>>> b8e6e78fb57d80658a20020cbbe1000a8b084e4a

@@ -17,7 +17,7 @@ namespace HRMSolution.BackendAPI.Controllers
         public DanhMucDanTocController(IDanhMucDanTocService danhMucDanTocService) {
             _danhMucDanTocService = danhMucDanTocService;
         }
-        [HttpGet]
+        [HttpGet()]
         public async Task<IActionResult> Get()
         {
             var danhMucDanToc = await _danhMucDanTocService.GetAll();

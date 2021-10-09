@@ -17,10 +17,16 @@ namespace HRMSolution.BackendAPI.Controllers
         {
             _danhMucKhenThuongKyLuatService = danhMucKhenThuongKyLuatService;
         }
-        [HttpGet]
-        public async Task<IActionResult> Get()
+        [HttpGet("khen-thuong")]
+        public async Task<IActionResult> GetKhenThuong()
         {
-            var danhMucKTKL = await _danhMucKhenThuongKyLuatService.GetAll();
+            var danhMucKTKL = await _danhMucKhenThuongKyLuatService.GetAllKhenThuong();
+            return Ok(danhMucKTKL);
+        }
+        [HttpGet("ky-luat")]
+        public async Task<IActionResult> GetKyLuat()
+        {
+            var danhMucKTKL = await _danhMucKhenThuongKyLuatService.GetAllKyLuat();
             return Ok(danhMucKTKL);
         }
     }

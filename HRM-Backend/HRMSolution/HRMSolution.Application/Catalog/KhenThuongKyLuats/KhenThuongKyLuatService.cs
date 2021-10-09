@@ -26,13 +26,15 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
             throw new NotImplementedException();
         }
 
-        public async Task<List<KhenThuongKyLuatViewModel>> GetAll()
+
+        public async Task<List<KhenThuongKyLuatViewModel>> GetAllKhenThuong()
         {
             var query = from p in _context.khenThuongKyLuats
                         join dmktkl in _context.danhMucKhenThuongKyLuats on p.idDanhMucKhenThuong equals dmktkl.id
                         join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
+                        where p.loai == true
                         select new { p, dmktkl, nv };
-                       
+
 
             var data = await query.Select(x => new KhenThuongKyLuatViewModel()
             {
@@ -40,7 +42,32 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                 idDanhMucKhenThuong = x.dmktkl.tenDanhMuc,
                 noiDung = x.p.noiDung,
                 lyDo = x.p.lyDo,
-                loai = x.p.loai == true? "Khen Thưởng": "Kỷ Luật",
+                loai = x.p.loai == true ? "Khen Thưởng" : "Kỷ Luật",
+                anh = x.p.anh,
+                maNhanVien = x.p.maNhanVien,
+                hoTen = x.nv.hoTen
+            }).ToListAsync();
+
+
+            return data;
+        }
+
+        public async Task<List<KhenThuongKyLuatViewModel>> GetAllKyLuat()
+        {
+            var query = from p in _context.khenThuongKyLuats
+                        join dmktkl in _context.danhMucKhenThuongKyLuats on p.idDanhMucKhenThuong equals dmktkl.id
+                        join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
+                        where p.loai == false
+                        select new { p, dmktkl, nv };
+
+
+            var data = await query.Select(x => new KhenThuongKyLuatViewModel()
+            {
+                id = x.p.id,
+                idDanhMucKhenThuong = x.dmktkl.tenDanhMuc,
+                noiDung = x.p.noiDung,
+                lyDo = x.p.lyDo,
+                loai = x.p.loai == true ? "Khen Thưởng" : "Kỷ Luật",
                 anh = x.p.anh,
                 maNhanVien = x.p.maNhanVien,
                 hoTen = x.nv.hoTen
