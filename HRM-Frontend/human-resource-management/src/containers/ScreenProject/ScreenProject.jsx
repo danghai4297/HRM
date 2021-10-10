@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "./ScreenProject.scss";
 
 import SideBarLeft from "../../components/SideBarLeft/SideBarLeft";
-import { Route, Switch, Redirect, useHistory } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import DashBoard from "../ScreenDashBoard/DashBoard";
 import ScreenTableNV from "../ScreenTableNV/ScreenTableNV";
 import Detail from "../../components/Detail/Detail";
@@ -33,103 +33,25 @@ import ChangePasswordForm from "../../components/ChangePasswordForm/ChangePasswo
 
 import ProtectedRoute from "./ProtectedRoute";
 import ScreenNotFound from "./ScreenNotFound";
+import ScreenDetailForeignLanguage from "../ScreenDetailForeignLanguage/ScreenDetailForeignLanguage"
+import Header from "../../components/Header/Header";
+import { AccountContext } from "../../Contexts/StateContext";
 function ScreenProject() {
-  let history = useHistory();
-  let logout = () => {
-    localStorage.removeItem("accessToken");
-    history.replace("/login");
-  };
-  const [account, setAccount] = useState(false);
-  const visionHandleClick = () => {
-    setAccount(!account);
-  };
-  const closeHandleClick = () => {
-    if (account !== false) {
-      setAccount(false);
-    }
-  };
+  const { setAccount }= useContext(AccountContext);
   return (
     <>
-      <div className="body-screen" onClick={closeHandleClick}>
+      <div className="body-screen" >
         <div className="header">
-          <div className="header-com">
-            <div className="name">
-              <div className="title-project">
-                <h1>3HMD</h1>
-              </div>
-            </div>
-            <div className="account">
-              <button className="button-top" onClick={visionHandleClick}>
-                <div className="screen-account">
-                  <div className="header-icon">
-                    <FontAwesomeIcon
-                      icon={["fas", "user-circle"]}
-                      className="detail-icon"
-                    />
-                  </div>
-                  <div className="account-name">
-                    <h5 className="account-style">DangHai</h5>
-                  </div>
-                </div>
-              </button>
-
-              {account && (
-                <div className="detail-information">
-                  <div className="first-information">
-                    <div className="detail-second-icon">
-                      <FontAwesomeIcon icon={["fas", "user-circle"]} />
-                    </div>
-                    <div>
-                      <h5>DangHai</h5>
-                    </div>
-                    <div>
-                      <button className="button-account">
-                        <FontAwesomeIcon icon={["fas", "key"]} /> Đổi mật khẩu
-                      </button>
-                    </div>
-                  </div>
-                  <div>
-                    <button onClick={logout} className="button-account">
-                      <FontAwesomeIcon icon={["fas", "sign-out-alt"]} /> Đăng
-                      xuất
-                    </button>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
+          <Header />
         </div>
-        <div className="body-contents">
+        <div className="body-contents" onClick={() => setAccount(false)}>
           <div className="menu-bar">
             <SideBarLeft />
           </div>
           <div className="content">
-            {/* <Switch>
-              
-              <ProtectedRoute exact path="/home" component={DashBoard} />
-              <ProtectedRoute exact path="/profile" component={ScreenTableNV} />
-              <ProtectedRoute exact path="/profile/detail/:id" component={Detail} />
-              <ProtectedRoute exact path="/profile/add" component={AddProfileForm} />
-
-              <ProtectedRoute exact path="/contract" component={ScreenContract} />
-
-              <ProtectedRoute exact path="/salary" component={ScreenSalary} />
-
-              <ProtectedRoute path="/category" component={ScreenCategory} />
-
-              <ProtectedRoute exact path="/transfer" component={ScreenTransfer} />
-
-              <ProtectedRoute exact path="/resign" component={ScreenResign} />
-
-              <ProtectedRoute exact path="/reward" component={ScreenReward} />
-
-              <ProtectedRoute exact path="/discipline" component={ScreenDiscipline} />
-
-              <ProtectedRoute exact path="/report" component={ScreenReport} />
-            </Switch> */}
             <Switch>
               <ProtectedRoute exact path="/home" component={DashBoard} />
-
+              <ProtectedRoute path="/change" component={ChangePasswordForm} />
               <ProtectedRoute exact path="/profile" component={ScreenTableNV} />
               <ProtectedRoute
                 exact
@@ -222,12 +144,16 @@ function ScreenProject() {
                 path="/discipline/add"
                 component={AddDisciplineForm}
               />
+<<<<<<< HEAD
 
               <ProtectedRoute
                 exact
                 path="/report"
                 component={ChangePasswordForm}
               />
+=======
+              <ProtectedRoute exact path="/report" component={ScreenReport} />
+>>>>>>> 032ada69dff4d9b8836dc88bcdbae16c7d1c874b
               {/* <Route component={ScreenNotFound}/> */}
             </Switch>
           </div>

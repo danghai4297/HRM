@@ -8,7 +8,7 @@
   z-index: 1050;
   .name {
     height: 70px;
-    width: 80%;
+    width: 88%;
     .title-project {
       height: 100%;
     }
@@ -21,11 +21,10 @@
   }
   .account {
     width: auto;
-    margin-left: 8%;
-    margin-top: 0.5%;
     .button-top{
       background: none;
       border: none;
+      padding-top: 6%;
     }
     .screen-account {
       display: flex;
@@ -75,5 +74,8 @@
         font-size: 15px;
       }
     }
+  }
+  .last{
+    width: 5%;
   }
 }
