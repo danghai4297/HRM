@@ -29,6 +29,8 @@ import AddRewardForm from "../../components/AddRewardForm/AddRewardForm";
 import AddDisciplineForm from "../../components/AddDisciplineForm/AddDisciplineForm";
 import ScreenDetailReward from "../ScreenDetailReward/ScreenDetailReward";
 import ScreenDetailDiscipline from "../ScreenDetailDiscipline/ScreenDetailDiscipline";
+import ChangePasswordForm from "../../components/ChangePasswordForm/ChangePasswordForm";
+
 import ProtectedRoute from "./ProtectedRoute";
 import ScreenNotFound from "./ScreenNotFound";
 import ChangePasswordForm from "../../components/ChangePasswordForm/ChangePasswordForm";
