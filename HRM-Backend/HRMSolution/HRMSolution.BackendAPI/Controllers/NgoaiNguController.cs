@@ -23,5 +23,12 @@ namespace HRMSolution.BackendAPI.Controllers
             var ngoaiNgu = await _ngoaiNguService.GetAll(maNhanVien);
             return Ok(ngoaiNgu);
         }
+
+        [HttpGet("ngoai-ngu/{id}")]
+        public async Task<IActionResult> GetDetail(int id)
+        {
+            var ngoaiNgu = await _ngoaiNguService.GetNgoaiNgu(id);
+            return Ok(ngoaiNgu);
+        }
     }
 }

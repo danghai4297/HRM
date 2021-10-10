@@ -23,5 +23,12 @@ namespace HRMSolution.BackendAPI.Controllers
             var danhMucChucDanh = await _nguoiThanService.GetAll(maNhanVien);
             return Ok(danhMucChucDanh);
         }
+
+        [HttpGet("nguoi-than/{id}")]
+        public async Task<IActionResult> GetDetail(int id)
+        {
+            var danhMucChucDanh = await _nguoiThanService.GetNguoiThan(id);
+            return Ok(danhMucChucDanh);
+        }
     }
 }

@@ -6,6 +6,7 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
 {
     public class KhenThuongKyLuatViewModel
     {
+        public int id { get; set; }
         public string ktklDanhMucKhenThuong { get; set; }
         public string ktklNoiDung { get; set; }
         public string ktklLyDo { get; set; }

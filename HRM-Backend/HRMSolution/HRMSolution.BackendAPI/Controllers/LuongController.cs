@@ -24,5 +24,11 @@ namespace HRMSolution.BackendAPI.Controllers
             var luong = await _luongService.GetAll();
             return Ok(luong);
         }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetLuong(int id)
+        {
+            var luong = await _luongService.GetLuong(id);
+            return Ok(luong);
+        }
     }
 }

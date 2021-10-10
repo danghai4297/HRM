@@ -6,6 +6,7 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
 {
     public class LuongViewModel
     {
+        public int id { get; set; }
         public string nhomLuong { get; set; }
         public float? heSoLuong { get; set; }
         public string bacLuong { get; set; }

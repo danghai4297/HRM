@@ -14,6 +14,7 @@ using HRMSolution.Application.Catalog.DanhMucTinhChatLaoDongs;
 using HRMSolution.Application.Catalog.DanhMucTonGiaos;
 using HRMSolution.Application.Catalog.DanhMucTos;
 using HRMSolution.Application.Catalog.DanhMucTrinhDos;
+using HRMSolution.Application.Catalog.DieuChuyens;
 using HRMSolution.Application.Catalog.HopDongs;
 using HRMSolution.Application.Catalog.KhenThuongKyLuats;
 using HRMSolution.Application.Catalog.Luongs;
@@ -81,6 +82,7 @@ namespace HRMSolution.BackendAPI
             services.AddTransient<INguoiThanService, NguoiThanService>();
             services.AddTransient<INgoaiNguService, NgoaiNguService>();
             services.AddTransient<ITrinhDoVanHoaService, TrinhDoVanHoaService>();
+            services.AddTransient<IDieuChuyenService, DieuChuyenService>();
             services.AddControllers();
 
 

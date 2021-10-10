@@ -45,5 +45,35 @@ namespace HRMSolution.Application.Catalog.Luongs
 
             return data;
         }
+
+        public async Task<LuongViewModel> GetLuong(int id)
+        {
+            var query = from nv in _context.nhanViens
+                        join hd in _context.hopDongs on nv.maNhanVien equals hd.maNhanVien
+                        join l in _context.luongs on hd.maHopDong equals l.maHopDong
+                        join dml in _context.danhMucNhomLuongs on l.idNhomLuong equals dml.id
+                        where hd.maHopDong == l.maHopDong && l.id == id
+                        select new { hd, l, dml };
+
+            var data = await query.Select(x => new LuongViewModel()
+            {
+                id = x.l.id,
+                nhomLuong = x.dml.tenNhomLuong,
+                heSoLuong = x.l.heSoLuong,
+                bacLuong = x.l.bacLuong,
+                luongCoBan = x.l.luongCoBan,
+                phuCapTrachNhiem = x.l.phuCapTrachNhiem,
+                phuCapKhac = x.l.phuCapKhac,
+                tongLuong = x.l.tongLuong,
+                thoiHanLenLuong = x.l.thoiHanLenLuong,
+                ngayHieuLuc = x.l.ngayHieuLuc,
+                ngayKetThuc = x.l.ngayKetThuc,
+                trangThai = x.l.trangThai == true ? "Kích hoạt" : "Vô hiệu",
+                maHopDong = x.hd.maHopDong,
+                maNhanVien = x.hd.maNhanVien
+            }).FirstAsync();
+
+            return data;
+        }
     }
 }

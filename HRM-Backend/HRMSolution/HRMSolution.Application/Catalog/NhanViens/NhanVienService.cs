@@ -119,6 +119,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
 
             var dataKtkl = await queryKtkl.Select(x => new KhenThuongKyLuatViewModel()
             {
+                id = x.ktkl.id,
                 ktklDanhMucKhenThuong = x.dmktkl.tenDanhMuc,
                 ktklLyDo = x.ktkl.lyDo,
                 ktklNoiDung = x.ktkl.noiDung,
@@ -136,6 +137,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
 
             var dataDc = await queryDc.Select(x => new DieuChuyenViewModel()
             {
+                id = x.dc.id,
                 dcNgayHieuLuc = x.dc.ngayHieuLuc,
                 dcPhong = x.pb.tenPhongBan,
                 dcTo = x.to.tenTo,
@@ -153,6 +155,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
 
             var dataL = await queryL.Select(x => new LuongViewModel()
             {
+                id = x.l.id,
                 nhomLuong = x.dml.tenNhomLuong,
                 heSoLuong = x.l.heSoLuong,
                 bacLuong = x.l.bacLuong,
@@ -195,6 +198,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
 
             var dataTdvh = await queryTdvh.Select(x => new TrinhDoVanHoaViewModel()
             {
+                id = x.tdvh.id,
                 tdvhTenTruong = x.tdvh.tenTruong,
                 tdvhChuyenMon = x.dmcm.tenChuyenMon,
                 tdvhTrinhDo = x.dmtd.tenTrinhDo,
@@ -212,6 +216,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
 
             var dataNn = await queryNn.Select(x => new NgoaiNguViewModel()
             {
+                id = x.nn.id,
                 nnDanhMucNgoaiNgu = x.dmnn.tenDanhMuc,
                 nnNgayCap = x.nn.ngayCap,
                 nnNoiCap = x.nn.noiCap,
@@ -227,6 +232,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
 
             var dataNt = await queryNt.Select(x => new NguoiThanViewModel()
             {
+                id = x.nt.id,
                 ntTenNguoiThan = x.nt.tenNguoiThan,
                 ntGioiTinh = x.nt.gioiTinh == true ? "Nam" : "Nữ",
                 ntNgaySinh = x.nt.ngaySinh,

@@ -39,5 +39,25 @@ namespace HRMSolution.Application.Catalog.NgoaiNgus
 
             return data;
         }
+
+        public async Task<NgoaiNguViewModel> GetNgoaiNgu(int id)
+        {
+            var query = from p in _context.ngoaiNgus
+                        join dmnn in _context.danhMucNgoaiNgus on p.idDanhMucNgoaiNgu equals dmnn.id
+                        where p.id == id
+                        select new { p, dmnn };
+
+
+            var data = await query.Select(x => new NgoaiNguViewModel()
+            {
+                id = x.p.id,
+                danhMucNgoaiNgu = x.dmnn.tenDanhMuc,
+                ngayCap = x.p.ngayCap,
+                trinhDo = x.p.trinhDo,
+                noiCap = x.p.noiCap
+            }).FirstAsync();
+
+            return data;
+        }
     }
 }

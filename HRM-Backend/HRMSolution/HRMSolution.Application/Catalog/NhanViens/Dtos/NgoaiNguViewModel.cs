@@ -6,6 +6,7 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
 {
     public class NgoaiNguViewModel
     {
+        public int id { get; set; }
         public string nnDanhMucNgoaiNgu { get; set; }
         public DateTime? nnNgayCap { get; set; }
         public string nnTrinhDo { get; set; }
