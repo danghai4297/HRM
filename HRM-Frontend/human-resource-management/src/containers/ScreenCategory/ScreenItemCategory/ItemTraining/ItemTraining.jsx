@@ -34,7 +34,7 @@ function ItemTraining(props) {
             <h4 className="">Hình thức đào tạo</h4>
           </div>
           <div className="button">
-            <Link to="/profile/edit" className="link-item">
+            <Link to="/category/training/add" className="link-item">
               <input type="submit" className="btn btn-primary" value="Thêm" />
             </Link>
             <ReactHTMLTableToExcel

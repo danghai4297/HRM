@@ -34,7 +34,7 @@ function ItemDepartment(props) {
             <h4 className="">Các phòng ban</h4>
           </div>
           <div className="button">
-            <Link to="/profile/edit" className="link-item">
+            <Link to="/category/department/add" className="link-item">
               <input type="submit" className="btn btn-primary" value="Thêm" />
             </Link>
             <ReactHTMLTableToExcel

@@ -34,7 +34,7 @@ function ItemPunish(props) {
             <h4 className="">Các loại kỷ luật</h4>
           </div>
           <div className="button">
-            <Link to="/profile/edit" className="link-item">
+            <Link to="/category/punish/add" className="link-item">
               <input type="submit" className="btn btn-primary" value="Thêm" />
             </Link>
             <ReactHTMLTableToExcel

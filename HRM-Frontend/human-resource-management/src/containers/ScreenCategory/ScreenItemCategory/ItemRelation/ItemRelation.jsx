@@ -34,7 +34,7 @@ function ItemRelation(props) {
             <h4 className="">Danh mục quan hệ</h4>
           </div>
           <div className="button">
-            <Link to="/profile/edit" className="link-item">
+            <Link to="/category/relation/add" className="link-item">
               <input type="submit" className="btn btn-primary" value="Thêm" />
             </Link>
             <ReactHTMLTableToExcel

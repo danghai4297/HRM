@@ -23,6 +23,25 @@ import ItemMarriage from "./ScreenItemCategory/ItemMarriage/ItemMarriage";
 import ItemRelation from "./ScreenItemCategory/ItemRelation/ItemRelation";
 import ItemReligion from "./ScreenItemCategory/ItemReligion/ItemReligion";
 import ItemDuty from "./ScreenItemCategory/ItemDuty/ItemDuty";
+import AddTitleForm from "../../components/AddCategoryForm/AddTitleForm/AddTitleForm";
+import AddSpecializeForm from "../../components/AddCategoryForm/AddSpecializeForm/AddSpecializeForm";
+import AddLevelForm from "../../components/AddCategoryForm/AddLevelForm/AddLevelForm";
+
+import AddLanguageForm from "../../components/AddCategoryForm/AddLanguageForm/AddLanguageForm";
+import AddReligionForm from "../../components/AddCategoryForm/AddReligionForm/AddReligionForm";
+import AddBonusForm from "../../components/AddCategoryForm/AddBonusForm/AddBonusForm";
+import AddDisciplineForm from "../../components/AddCategoryForm/AddDisciplineForm/AddDisciplineForm";
+import AddDepartmentForm from "../../components/AddCategoryForm/AddDepartmentForm/AddDepartmentForm";
+import AddTypeOfContractForm from "../../components/AddCategoryForm/AddTypeOfContractForm/AddTypeOfContractForm";
+import AddSalaryGroupForm from "../../components/AddCategoryForm/AddSalaryGroupForm/AddSalaryGroupForm";
+import AddEducateForm from "../../components/AddCategoryForm/AddEducateForm/AddEducateForm";
+import AddRelationForm from "../../components/AddCategoryForm/AddRelationForm/AddRelationForm";
+import AddMarriageForm from "../../components/AddCategoryForm/AddMarriageForm/AddMarriageForm";
+import AddPositionForm from "../../components/AddCategoryForm/AddPositionForm/AddPositionForm";
+import AddCSRForm from "../../components/AddCategoryForm/AddCSRForm/AddCSRForm";
+import AddNestForm from "../../components/AddCategoryForm/AddNestForm/AddNestForm";
+import AddNationForm from "../../components/AddCategoryForm/AddNationForm/AddNationForm";
+
 function ScreenCategory() {
   return (
     <>
@@ -47,22 +66,123 @@ function ScreenCategory() {
           <div className="table-category">
             <Switch>
               <Route exact path="/category/" component={ItemNation} />
-              <Route path="/category/title" component={ItemTitle} />
-              <Route path="/category/specialize" component={ItemSpecialize} />
-              <Route path="/category/level" component={ItemLevel} />
-              <Route path="/category/language" component={ItemLanguage} />
-              <Route path="/category/nest" component={ItemNest} />
-              <Route path="/category/religion" component={ItemReligion} />
-              <Route path="/category/bonus" component={ItemBonus} />
-              <Route path="/category/punish" component={ItemPunish} />
-              <Route path="/category/department" component={ItemDepartment} />
-              <Route path="/category/deal" component={ItemDeal} />
-              <Route path="/category/wages" component={ItemWages} />
-              <Route path="/category/training" component={ItemTraining} />
-              <Route path="/category/civil" component={ItemCivil} />
-              <Route path="/category/relation" component={ItemRelation} />
-              <Route path="/category/marriage" component={ItemMarriage} />
-              <Route path="/category/duty" component={ItemDuty} />
+              <Route
+                exact
+                path="/category/nation/add"
+                component={AddNationForm}
+              />
+
+              <Route exact path="/category/title" component={ItemTitle} />
+              <Route
+                exact
+                path="/category/title/add"
+                component={AddTitleForm}
+              />
+
+              <Route
+                exact
+                path="/category/specialize"
+                component={ItemSpecialize}
+              />
+              <Route
+                exact
+                path="/category/specialize/add"
+                component={AddSpecializeForm}
+              />
+
+              <Route exact path="/category/level" component={ItemLevel} />
+              <Route
+                exact
+                path="/category/level/add"
+                component={AddLevelForm}
+              />
+
+              <Route exact path="/category/language" component={ItemLanguage} />
+              <Route
+                exact
+                path="/category/language/add"
+                component={AddLanguageForm}
+              />
+
+              <Route exact path="/category/nest" component={ItemNest} />
+              <Route exact path="/category/nest/add" component={AddNestForm} />
+
+              <Route exact path="/category/religion" component={ItemReligion} />
+              <Route
+                exact
+                path="/category/religion/add"
+                component={AddReligionForm}
+              />
+
+              <Route exact path="/category/bonus" component={ItemBonus} />
+              <Route
+                exact
+                path="/category/bonus/add"
+                component={AddBonusForm}
+              />
+
+              <Route exact path="/category/punish" component={ItemPunish} />
+              <Route
+                exact
+                path="/category/punish/add"
+                component={AddDisciplineForm}
+              />
+
+              <Route
+                exact
+                path="/category/department"
+                component={ItemDepartment}
+              />
+              <Route
+                exact
+                path="/category/department/add"
+                component={AddDepartmentForm}
+              />
+
+              <Route exact path="/category/deal" component={ItemDeal} />
+              <Route
+                exact
+                path="/category/deal/add"
+                component={AddTypeOfContractForm}
+              />
+
+              <Route exact path="/category/wages" component={ItemWages} />
+              <Route
+                exact
+                path="/category/wages/add"
+                component={AddSalaryGroupForm}
+              />
+
+              <Route exact path="/category/training" component={ItemTraining} />
+              <Route
+                exact
+                path="/category/training/add"
+                component={AddEducateForm}
+              />
+
+              <Route exact path="/category/civil" component={ItemCivil} />
+              <Route exact path="/category/civil/add" component={AddCSRForm} />
+
+              <Route exact path="/category/relation" component={ItemRelation} />
+              <Route
+                exact
+                path="/category/relation/add"
+                component={AddRelationForm}
+              />
+
+              <Route exact path="/category/marriage" component={ItemMarriage} />
+              <Route
+                exact
+                path="/category/marriage/add"
+                component={AddMarriageForm}
+              />
+
+              <Route exact path="/category/duty" component={ItemDuty} />
+              <Route
+                exact
+                path="/category/duty/add"
+                component={AddPositionForm}
+              />
               {/* <Route component={ScreenNotFound} /> */}
             </Switch>
           </div>

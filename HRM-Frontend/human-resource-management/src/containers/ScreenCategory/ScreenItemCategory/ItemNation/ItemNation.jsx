@@ -34,7 +34,7 @@ function ItemNation(props) {
             <h4 className="">Danh mục dân tộc</h4>
           </div>
           <div className="button">
-            <Link to="/profile/edit" className="link-item">
+            <Link to="/category/nation/add" className="link-item">
               <input type="submit" className="btn btn-primary" value="Thêm" />
             </Link>
             <ReactHTMLTableToExcel

@@ -10,7 +10,7 @@ import TablePagination from "../../../../components/TablePagination/TablePaginat
 import ProductApi from "../../../../api/productApi";
 
 function ItemTitle(props) {
-  const link = "/profile/";
+  const link = false;
   const fileName = "Danhmucchucdanh";
   const [dataDmcd, setdataDmcd] = useState([]);
 
@@ -34,7 +34,7 @@ function ItemTitle(props) {
             <h4 className="">Danh mục chức danh</h4>
           </div>
           <div className="button">
-            <Link to="/profile/edit" className="link-item">
+            <Link to="/category/title/add" className="link-item">
               <input type="submit" className="btn btn-primary" value="Thêm" />
             </Link>
             <ReactHTMLTableToExcel
