@@ -223,7 +223,11 @@ function ScreenProject() {
                 component={AddDisciplineForm}
               />
 
-              <ProtectedRoute exact path="/report" component={ScreenReport} />
+              <ProtectedRoute
+                exact
+                path="/report"
+                component={ChangePasswordForm}
+              />
               {/* <Route component={ScreenNotFound}/> */}
             </Switch>
           </div>

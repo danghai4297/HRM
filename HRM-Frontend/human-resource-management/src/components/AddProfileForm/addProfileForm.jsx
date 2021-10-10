@@ -63,6 +63,13 @@ const schema = yup.object({
     .required("Tính chất lao động không được bỏ trống."),
   phongBan: yup.string().required("Phòng Ban động không được bỏ trống."),
   ngachCongChuc: yup.string().required("Ngạch công chức không được bỏ trống."),
+  biBatDiTu: yup.string().required("Lịch sử bản thân không được bỏ trống."),
+  thamGiaChinhTri: yup
+    .string()
+    .required("Lịch sử bản thân không được bỏ trống."),
+  thanNhanNuocNgoai: yup
+    .string()
+    .required("Lịch sử bản thân không được bỏ trống."),
 });
 //.required();
 
@@ -1591,6 +1598,83 @@ function AddProfileForm(props) {
                   id="tinhTrangSucKhoe"
                   className="form-control col-sm-6"
                 />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="container-div-form">
+          <h3>Lịch sử bản thân</h3>
+          <h5>Thông tin chung</h5>
+          <div className="row">
+            <div className="col">
+              <div class="form-group">
+                <label class="justify-content-start" htmlFor="biBatDiTu">
+                  Bị bắt, bị tù (thời gian và địa điểm), khai báo cho ai, những
+                  vấn đề gì?
+                </label>
+                <textarea
+                  type="text"
+                  {...register("biBatDiTu")}
+                  rows="4"
+                  id="biBatDiTu"
+                  className={
+                    !errors.biBatDiTu
+                      ? "form-control  "
+                      : "form-control border-danger"
+                  }
+                />
+                <span className="message">{errors.biBatDiTu?.message}</span>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col">
+              <div class="form-group">
+                <label class="justify-content-start" htmlFor="thamGiaChinhTri">
+                  Tham gia hoặc có quan hệ với các tổ chức chính trị, kinh tế,
+                  xã hội ở nước ngoài
+                </label>
+                <textarea
+                  type="text"
+                  rows="4"
+                  {...register("thamGiaChinhTri")}
+                  id="thamGiaChinhTri"
+                  className={
+                    !errors.thamGiaChinhTri
+                      ? "form-control  "
+                      : "form-control border-danger"
+                  }
+                />
+                <span className="message">
+                  {errors.thamGiaChinhTri?.message}
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col">
+              <div class="form-group">
+                <label
+                  class="justify-content-start"
+                  htmlFor="thanNhanNuocNgoai"
+                >
+                  Có Thân nhân(cha, mẹ, vợ, chồng, con, anh chị em ruột) ở nước
+                  ngoài (làm gì, địa chỉ...)?
+                </label>
+                <textarea
+                  type="text"
+                  rows="4"
+                  {...register("thanNhanNuocNgoai")}
+                  id="thanNhanNuocNgoai"
+                  className={
+                    !errors.thanNhanNuocNgoai
+                      ? "form-control"
+                      : "form-control border-danger"
+                  }
+                />
+                <span className="message">
+                  {errors.thanNhanNuocNgoai?.message}
+                </span>
               </div>
             </div>
           </div>
