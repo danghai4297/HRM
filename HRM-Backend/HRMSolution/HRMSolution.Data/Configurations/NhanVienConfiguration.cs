@@ -72,7 +72,7 @@ namespace HRMSolution.Data.Configurations
             builder.Property(x => x.idDanToc).IsRequired();
             builder.Property(x => x.idNgachCongChuc).IsRequired();
             builder.Property(x => x.idTonGiao).IsRequired();
-            builder.Property(x => x.idPhongBan).IsRequired();
+            
 
 
 

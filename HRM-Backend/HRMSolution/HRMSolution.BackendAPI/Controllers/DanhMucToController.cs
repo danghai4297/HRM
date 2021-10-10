@@ -1,4 +1,5 @@
 ﻿using HRMSolution.Application.Catalog.DanhMucTos;
+using HRMSolution.Application.Catalog.DanhMucTos.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -23,14 +24,14 @@ namespace HRMSolution.BackendAPI.Controllers
                 var danhMucTo = await _danhMucToService.GetAll();
                 return Ok(danhMucTo);
             }
-        //    [HttpPost]
-        //    public async Task<IActionResult> Create([FromBody] DanhMucPhongBanCreateRequest request)
-        //{
-        //    var result = await _danhMucPhongBanService.Create(request);
-        //    if (result == 0)
-        //        return BadRequest();
-        //    return Ok();
-        //}
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody]DanhMucToCreateRequest request)
+        {
+            var result = await _danhMucToService.Create(request);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
+        }
     }
     
 }

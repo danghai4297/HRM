@@ -67,8 +67,6 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
         public string DanhMucHonNhan { get; set; }
         public string DanToc { get; set; }
         public string TonGiao { get; set; }
-        public string PhongBan { get; set; }
-        public string to { get; set; }
         public string NgachCongChuc { get; set; }
     }
 }

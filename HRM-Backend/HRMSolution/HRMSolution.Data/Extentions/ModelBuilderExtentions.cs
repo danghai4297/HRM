@@ -155,8 +155,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 1,
                     idNgachCongChuc = 1
                 },
                 new NhanVien()
@@ -190,8 +188,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 1,
                     idNgachCongChuc = 1
                 },
                 new NhanVien()
@@ -225,8 +221,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 1,
                     idNgachCongChuc = 1
                 },
                 new NhanVien()
@@ -260,8 +254,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 1,
                     idNgachCongChuc = 1
                 },
                 new NhanVien()
@@ -295,8 +287,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 1,
                     idNgachCongChuc = 1
                 },
                 new NhanVien()
@@ -330,8 +320,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 2,
                     idNgachCongChuc = 1
                 },
                 new NhanVien()
@@ -365,8 +353,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 2,
                     idNgachCongChuc = 1
                 },
                 new NhanVien()
@@ -400,8 +386,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 2,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -434,8 +418,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 2,
                     idNgachCongChuc = 1
                 },
                 new NhanVien()
@@ -469,8 +451,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 2,
                     idNgachCongChuc = 1
                 },
                 new NhanVien()
@@ -504,8 +484,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 3,
                     idNgachCongChuc = 1
                 },
                 new NhanVien()
@@ -539,8 +517,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 3,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -573,8 +549,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 3,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -607,8 +581,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 3,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -641,8 +613,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 3,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -675,8 +645,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 4,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -709,8 +677,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 4,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -743,8 +709,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 4,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -777,8 +741,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 4,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -811,8 +773,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 4,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -845,8 +805,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 5,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -879,8 +837,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 5,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -913,8 +869,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 5,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -947,8 +901,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 5,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -981,8 +933,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 1,
-                    to = 5,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1015,8 +965,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 2,
-                    to = 6,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1049,8 +997,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 2,
-                    to = 6,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1083,8 +1029,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 2,
-                    to = 6,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1117,8 +1061,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 2,
-                    to = 6,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1151,8 +1093,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 2,
-                    to = 6,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1185,8 +1125,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 2,
-                    to = 7,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1219,8 +1157,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 2,
-                    to = 7,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1253,8 +1189,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 2,
-                    to = 7,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1287,8 +1221,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 2,
-                    to = 7,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1321,8 +1253,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 2,
-                    to = 7,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1355,8 +1285,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 2,
-                    to = 8,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1389,8 +1317,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 2,
-                    to = 8,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1423,8 +1349,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 2,
-                    to = 8,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1457,8 +1381,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 2,
-                    to = 8,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1491,8 +1413,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 2,
-                    to = 8,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1525,8 +1445,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 2,
-                    to = 9,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1559,8 +1477,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 2,
-                    to = 9,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1593,8 +1509,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 2,
-                    to = 9,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1627,8 +1541,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 2,
-                    to = 9,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1661,8 +1573,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 2,
-                    to = 9,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1695,8 +1605,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 3,
-                    to = 10,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1729,8 +1637,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 3,
-                    to = 10,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1763,8 +1669,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 3,
-                    to = 10,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1797,8 +1701,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 3,
-                    to = 10,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1831,8 +1733,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 3,
-                    to = 10,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1865,8 +1765,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 3,
-                    to = 11,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1899,8 +1797,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 3,
-                    to = 11,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1933,8 +1829,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 3,
-                    to = 11,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -1967,8 +1861,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 3,
-                    to = 11,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2001,8 +1893,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 3,
-                    to = 11,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2035,8 +1925,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 3,
-                    to = 12,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2069,8 +1957,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 3,
-                    to = 12,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2103,8 +1989,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 3,
-                    to = 12,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2137,8 +2021,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 3,
-                    to = 12,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2171,8 +2053,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 3,
-                    to = 12,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2205,8 +2085,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 3,
-                    to = 13,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2239,8 +2117,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 3,
-                    to = 13,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2273,8 +2149,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 3,
-                    to = 13,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2307,8 +2181,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 3,
-                    to = 13,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2341,8 +2213,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 3,
-                    to = 13,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2375,8 +2245,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 4,
-                    to = 14,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2409,8 +2277,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 4,
-                    to = 14,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2443,8 +2309,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 4,
-                    to = 14,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2477,8 +2341,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 4,
-                    to = 14,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2511,8 +2373,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 4,
-                    to = 14,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2545,8 +2405,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 4,
-                    to = 15,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2579,8 +2437,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 4,
-                    to = 15,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2613,8 +2469,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 4,
-                    to = 15,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2647,8 +2501,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 4,
-                    to = 15,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2681,8 +2533,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 4,
-                    to = 15,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2715,8 +2565,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 4,
-                    to = 16,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2749,8 +2597,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 4,
-                    to = 16,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2783,8 +2629,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 4,
-                    to = 16,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2817,8 +2661,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 4,
-                    to = 16,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2851,8 +2693,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 4,
-                    to = 16,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2885,8 +2725,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 4,
-                    to = 17,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2919,8 +2757,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 4,
-                    to = 17,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2953,8 +2789,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 4,
-                    to = 17,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -2987,8 +2821,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 4,
-                    to = 17,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3021,8 +2853,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 4,
-                    to = 17,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3055,8 +2885,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 18,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3089,8 +2917,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 18,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3123,8 +2949,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 18,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3157,8 +2981,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 18,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3191,8 +3013,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 18,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3225,8 +3045,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 19,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3259,8 +3077,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 19,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3293,8 +3109,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 19,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3327,8 +3141,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 19,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3361,8 +3173,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 19,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3395,8 +3205,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 19,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3429,8 +3237,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 20,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3463,8 +3269,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 20,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3497,8 +3301,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 20,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3531,8 +3333,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 20,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3565,8 +3365,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 20,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3599,8 +3397,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 21,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3633,8 +3429,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 20,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3667,8 +3461,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 20,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3701,8 +3493,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 20,
                     idNgachCongChuc = 1
                 },
                 new NhanVien()
@@ -3736,8 +3526,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 20,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3770,8 +3558,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 21,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3804,8 +3590,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 21,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3838,8 +3622,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 21,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3872,8 +3654,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 21,
                     idNgachCongChuc = 1
                 }, new NhanVien()
                 {
@@ -3906,8 +3686,6 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idPhongBan = 5,
-                    to = 21,
                     idNgachCongChuc = 1
                 }
                 );
@@ -3945,8 +3723,9 @@ namespace HRMSolution.Data.Extentions
                 new Luong() { id = 5,  maHopDong = "HD05", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true }
                 );
             modelbulder.Entity<DieuChuyen>().HasData(
-                new DieuChuyen() { id = 1, maNhanVien = "NV0001", ngayHieuLuc = DateTime.Now, phong = 1, to = 1, idChucVu = 1, chiTiet = "Không" },
-                new DieuChuyen() { id = 2, maNhanVien = "NV0001", ngayHieuLuc = DateTime.Now, phong = 1, to = 1, idChucVu = 1, chiTiet = "Ahihi" }
+                new DieuChuyen() { id = 1, maNhanVien = "NV0001", ngayHieuLuc = DateTime.Now, idPhongBan = 1, to = 1, idChucVu = 1, chiTiet = "Không", trangThai = false },
+                new DieuChuyen() { id = 2, maNhanVien = "NV0001", ngayHieuLuc = DateTime.Now, idPhongBan = 2, to = 2, idChucVu = 1, chiTiet = "Ahihi", trangThai = false },
+                new DieuChuyen() { id = 3, maNhanVien = "NV0001", ngayHieuLuc = DateTime.Now, idPhongBan = 3, to = 3, idChucVu = 1, chiTiet = "Ahihi", trangThai = true }
                 );
             modelbulder.Entity<KhenThuongKyLuat>().HasData(
                 new KhenThuongKyLuat() { id = 1, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0001" },

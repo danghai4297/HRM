@@ -70,8 +70,7 @@ namespace HRMSolution.Data.Entities
         public int idDanhMucHonNhan { get; set; }
         public int idDanToc { get; set; }
         public int idTonGiao { get; set; }
-        public int idPhongBan { get; set; }
-        public int to { get; set; }
+        
         public int idNgachCongChuc { get; set; }
 
 
@@ -79,7 +78,7 @@ namespace HRMSolution.Data.Entities
         public YTe YTe { get; set; }
         public LienHeKhanCap LienHeKhanCap { get; set; }
         public List<TrinhDoVanHoa> TrinhDoVanHoas { get; set; }
-        public DanhMucPhongBan DanhMucPhongBan { get; set; }
+        
         public List<DieuChuyen> DieuChuyens { get; set; }
         public List<NgoaiNgu> NgoaiNgus { get; set; }
         public List<NguoiThan> NguoiThans { get; set; }

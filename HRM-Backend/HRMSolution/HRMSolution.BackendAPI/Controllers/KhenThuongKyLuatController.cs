@@ -17,6 +17,7 @@ namespace HRMSolution.BackendAPI.Controllers
         {
             _khenThuongKyLuatService = khenThuongKyLuatService;
         }
+
         [HttpGet("khen-thuong")]
         public async Task<IActionResult> GetKhenThuong()
         {
@@ -24,10 +25,24 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok(khenThuongKyLuats);
         }
 
+        [HttpGet("khen-thuong/{maNhanVien}/{id}")]
+        public async Task<IActionResult> GetKhenThuongDetail(string maNhanVien, int id)
+        {
+            var khenThuongKyLuats = await _khenThuongKyLuatService.GetAllKhenThuongDetail(maNhanVien, id);
+            return Ok(khenThuongKyLuats);
+        }
+
         [HttpGet("ky-luat")]
         public async Task<IActionResult> GetKyLuat()
         {
             var khenThuongKyLuats = await _khenThuongKyLuatService.GetAllKyLuat();
+            return Ok(khenThuongKyLuats);
+        }
+
+        [HttpGet("ky-luat/{maNhanVien}/{id}")]
+        public async Task<IActionResult> GetKyLuatDetail(string maNhanVien, int id)
+        {
+            var khenThuongKyLuats = await _khenThuongKyLuatService.GetAllKyLuatDetail(maNhanVien, id);
             return Ok(khenThuongKyLuats);
         }
     }

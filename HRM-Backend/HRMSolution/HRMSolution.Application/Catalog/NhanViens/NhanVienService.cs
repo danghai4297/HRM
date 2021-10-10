@@ -38,10 +38,8 @@ namespace HRMSolution.Application.Catalog.NhanViens
                         join hn in _context.danhMucHonNhans on nv.idDanhMucHonNhan equals hn.id
                         join dt in _context.danhMucDanTocs on nv.idDanToc equals dt.id
                         join tg in _context.danhMucTonGiaos on nv.idTonGiao equals tg.id
-                        join pb in _context.danhMucPhongBans on nv.idPhongBan equals pb.id
                         join ncc in _context.danhMucNgachCongChucs on nv.idNgachCongChuc equals ncc.id
-                        join to in _context.danhMucTos on nv.to equals to.idTo
-                        select new { nv, tc,dt,  hn, tg,pb,ncc,to };
+                        select new { nv, tc,dt,  hn, tg,ncc};
 
 
             var data = await query.Select(x => new NhanVienViewModel()
@@ -100,8 +98,6 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 DanhMucHonNhan = x.hn.tenDanhMuc,
                 DanToc= x.dt.tenDanhMuc,
                 TonGiao = x.tg.tenDanhMuc,
-                PhongBan = x.pb.tenPhongBan,
-                to = x.to.tenTo,
                 NgachCongChuc = x.ncc.tenNgach,
                 lyDoNghiViec = x.nv.lyDoNghiViec
 
@@ -133,7 +129,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
             var queryDc = from nv in _context.nhanViens
                           join dc in _context.dieuChuyens on nv.maNhanVien equals dc.maNhanVien
                           join dmcv in _context.danhMucChucVus on dc.idChucVu equals dmcv.id
-                          join pb in _context.danhMucPhongBans on dc.phong equals pb.id
+                          join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
                           join to in _context.danhMucTos on dc.to equals to.idTo
                           where nv.maNhanVien == maNhanVien
                           select new { dc, dmcv, pb, to };

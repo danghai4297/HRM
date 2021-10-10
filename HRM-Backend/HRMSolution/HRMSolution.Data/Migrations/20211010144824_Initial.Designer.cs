@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HRMSolution.Data.Migrations
 {
     [DbContext(typeof(HRMDbContext))]
-    [Migration("20211009145651_Initial")]
+    [Migration("20211010144824_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -825,6 +825,9 @@ namespace HRMSolution.Data.Migrations
                     b.Property<int>("idChucVu")
                         .HasColumnType("int");
 
+                    b.Property<int>("idPhongBan")
+                        .HasColumnType("int");
+
                     b.Property<string>("maNhanVien")
                         .IsRequired()
                         .HasMaxLength(10)
@@ -834,15 +837,17 @@ namespace HRMSolution.Data.Migrations
                         .IsRequired()
                         .HasColumnType("datetime");
 
-                    b.Property<int>("phong")
-                        .HasColumnType("int");
-
                     b.Property<int>("to")
                         .HasColumnType("int");
+
+                    b.Property<bool>("trangThai")
+                        .HasColumnType("bit");
 
                     b.HasKey("id");
 
                     b.HasIndex("idChucVu");
+
+                    b.HasIndex("idPhongBan");
 
                     b.HasIndex("maNhanVien");
 
@@ -854,20 +859,33 @@ namespace HRMSolution.Data.Migrations
                             id = 1,
                             chiTiet = "Không",
                             idChucVu = 1,
+                            idPhongBan = 1,
                             maNhanVien = "NV0001",
-                            ngayHieuLuc = new DateTime(2021, 10, 9, 21, 56, 49, 679, DateTimeKind.Local).AddTicks(431),
-                            phong = 1,
-                            to = 1
+                            ngayHieuLuc = new DateTime(2021, 10, 10, 21, 48, 23, 62, DateTimeKind.Local).AddTicks(3424),
+                            to = 1,
+                            trangThai = false
                         },
                         new
                         {
                             id = 2,
                             chiTiet = "Ahihi",
                             idChucVu = 1,
+                            idPhongBan = 2,
                             maNhanVien = "NV0001",
-                            ngayHieuLuc = new DateTime(2021, 10, 9, 21, 56, 49, 679, DateTimeKind.Local).AddTicks(1654),
-                            phong = 1,
-                            to = 1
+                            ngayHieuLuc = new DateTime(2021, 10, 10, 21, 48, 23, 62, DateTimeKind.Local).AddTicks(4863),
+                            to = 2,
+                            trangThai = false
+                        },
+                        new
+                        {
+                            id = 3,
+                            chiTiet = "Ahihi",
+                            idChucVu = 1,
+                            idPhongBan = 3,
+                            maNhanVien = "NV0001",
+                            ngayHieuLuc = new DateTime(2021, 10, 10, 21, 48, 23, 62, DateTimeKind.Local).AddTicks(4914),
+                            to = 3,
+                            trangThai = true
                         });
                 });
 
@@ -949,7 +967,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD01",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 9, 21, 56, 49, 677, DateTimeKind.Local).AddTicks(3921),
+                            hopDongTuNgay = new DateTime(2021, 10, 10, 21, 48, 23, 60, DateTimeKind.Local).AddTicks(7800),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0001",
@@ -959,7 +977,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD02",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 9, 21, 56, 49, 678, DateTimeKind.Local).AddTicks(6316),
+                            hopDongTuNgay = new DateTime(2021, 10, 10, 21, 48, 23, 61, DateTimeKind.Local).AddTicks(9023),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0001",
@@ -969,7 +987,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD03",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 9, 21, 56, 49, 678, DateTimeKind.Local).AddTicks(6396),
+                            hopDongTuNgay = new DateTime(2021, 10, 10, 21, 48, 23, 61, DateTimeKind.Local).AddTicks(9101),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0003",
@@ -979,7 +997,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD04",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 9, 21, 56, 49, 678, DateTimeKind.Local).AddTicks(6406),
+                            hopDongTuNgay = new DateTime(2021, 10, 10, 21, 48, 23, 61, DateTimeKind.Local).AddTicks(9112),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0004",
@@ -989,7 +1007,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD05",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 9, 21, 56, 49, 678, DateTimeKind.Local).AddTicks(6415),
+                            hopDongTuNgay = new DateTime(2021, 10, 10, 21, 48, 23, 61, DateTimeKind.Local).AddTicks(9120),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0005",
@@ -999,7 +1017,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD06",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 9, 21, 56, 49, 678, DateTimeKind.Local).AddTicks(6422),
+                            hopDongTuNgay = new DateTime(2021, 10, 10, 21, 48, 23, 61, DateTimeKind.Local).AddTicks(9127),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0006",
@@ -1353,7 +1371,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD01",
-                            ngayHieuLuc = new DateTime(2021, 10, 9, 21, 56, 49, 678, DateTimeKind.Local).AddTicks(8277),
+                            ngayHieuLuc = new DateTime(2021, 10, 10, 21, 48, 23, 62, DateTimeKind.Local).AddTicks(1002),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = false
@@ -1364,7 +1382,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD01",
-                            ngayHieuLuc = new DateTime(2021, 10, 9, 21, 56, 49, 678, DateTimeKind.Local).AddTicks(9365),
+                            ngayHieuLuc = new DateTime(2021, 10, 10, 21, 48, 23, 62, DateTimeKind.Local).AddTicks(2131),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
@@ -1375,7 +1393,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD03",
-                            ngayHieuLuc = new DateTime(2021, 10, 9, 21, 56, 49, 678, DateTimeKind.Local).AddTicks(9418),
+                            ngayHieuLuc = new DateTime(2021, 10, 10, 21, 48, 23, 62, DateTimeKind.Local).AddTicks(2181),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
@@ -1386,7 +1404,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD04",
-                            ngayHieuLuc = new DateTime(2021, 10, 9, 21, 56, 49, 678, DateTimeKind.Local).AddTicks(9426),
+                            ngayHieuLuc = new DateTime(2021, 10, 10, 21, 48, 23, 62, DateTimeKind.Local).AddTicks(2191),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
@@ -1397,7 +1415,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD05",
-                            ngayHieuLuc = new DateTime(2021, 10, 9, 21, 56, 49, 678, DateTimeKind.Local).AddTicks(9434),
+                            ngayHieuLuc = new DateTime(2021, 10, 10, 21, 48, 23, 62, DateTimeKind.Local).AddTicks(2198),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
@@ -1646,9 +1664,6 @@ namespace HRMSolution.Data.Migrations
                     b.Property<int>("idNgachCongChuc")
                         .HasColumnType("int");
 
-                    b.Property<int>("idPhongBan")
-                        .HasColumnType("int");
-
                     b.Property<int>("idTonGiao")
                         .HasColumnType("int");
 
@@ -1777,9 +1792,6 @@ namespace HRMSolution.Data.Migrations
                     b.Property<int>("tinhChatLaoDong")
                         .HasColumnType("int");
 
-                    b.Property<int>("to")
-                        .HasColumnType("int");
-
                     b.Property<bool>("trangThaiLaoDong")
                         .HasColumnType("bit");
 
@@ -1793,8 +1805,6 @@ namespace HRMSolution.Data.Migrations
                     b.HasIndex("idDanhMucHonNhan");
 
                     b.HasIndex("idNgachCongChuc");
-
-                    b.HasIndex("idPhongBan");
 
                     b.HasIndex("idTonGiao");
 
@@ -1818,7 +1828,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -1834,7 +1843,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Điện Biên",
                             tinhChatLaoDong = 1,
-                            to = 1,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -1853,7 +1861,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -1869,7 +1876,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 1,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -1888,7 +1894,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -1904,7 +1909,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 1,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -1923,7 +1927,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -1939,7 +1942,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 1,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -1958,7 +1960,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -1974,7 +1975,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 1,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -1993,7 +1993,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2009,7 +2008,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 2,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -2028,7 +2026,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2044,7 +2041,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 2,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -2063,7 +2059,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2079,7 +2074,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 2,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -2098,7 +2092,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2114,7 +2107,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 2,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -2133,7 +2125,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2149,7 +2140,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 2,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -2168,7 +2158,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2184,7 +2173,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 3,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -2203,7 +2191,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2219,7 +2206,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 3,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -2238,7 +2224,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2254,7 +2239,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 3,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -2273,7 +2257,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2289,7 +2272,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 3,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -2308,7 +2290,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2324,7 +2305,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 3,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -2343,7 +2323,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2359,7 +2338,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 4,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -2378,7 +2356,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2394,7 +2371,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 4,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -2413,7 +2389,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2429,7 +2404,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 4,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -2448,7 +2422,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2464,7 +2437,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 4,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -2483,7 +2455,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2499,7 +2470,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 4,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -2518,7 +2488,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2534,7 +2503,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 5,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -2553,7 +2521,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2569,7 +2536,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 5,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -2588,7 +2554,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2604,7 +2569,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 5,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -2623,7 +2587,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2639,7 +2602,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 5,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -2658,7 +2620,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 1,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2674,7 +2635,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 5,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -2693,7 +2653,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 2,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2709,7 +2668,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 6,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -2728,7 +2686,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 2,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2744,7 +2701,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 6,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -2763,7 +2719,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 2,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2779,7 +2734,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 6,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -2798,7 +2752,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 2,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2814,7 +2767,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 6,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -2833,7 +2785,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 2,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2849,7 +2800,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 6,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -2868,7 +2818,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 2,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2884,7 +2833,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 7,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -2903,7 +2851,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 2,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2919,7 +2866,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 7,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -2938,7 +2884,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 2,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2954,7 +2899,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 7,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -2973,7 +2917,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 2,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -2989,7 +2932,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 7,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -3008,7 +2950,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 2,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3024,7 +2965,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 7,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -3043,7 +2983,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 2,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3059,7 +2998,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 8,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -3078,7 +3016,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 2,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3094,7 +3031,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 8,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -3113,7 +3049,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 2,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3129,7 +3064,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 8,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -3148,7 +3082,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 2,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3164,7 +3097,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 8,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -3183,7 +3115,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 2,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3199,7 +3130,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 8,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -3218,7 +3148,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 2,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3234,7 +3163,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 9,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -3253,7 +3181,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 2,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3269,7 +3196,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 9,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -3288,7 +3214,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 2,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3304,7 +3229,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 9,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -3323,7 +3247,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 2,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3339,7 +3262,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 9,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -3358,7 +3280,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 2,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3374,7 +3295,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 9,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -3393,7 +3313,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 3,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3409,7 +3328,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 10,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -3428,7 +3346,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 3,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3444,7 +3361,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 10,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -3463,7 +3379,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 3,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3479,7 +3394,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 10,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -3498,7 +3412,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 3,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3514,7 +3427,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 10,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -3533,7 +3445,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 3,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3549,7 +3460,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 10,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -3568,7 +3478,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 3,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3584,7 +3493,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 11,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -3603,7 +3511,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 3,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3619,7 +3526,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 11,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -3638,7 +3544,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 3,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3654,7 +3559,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 11,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -3673,7 +3577,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 3,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3689,7 +3592,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 11,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -3708,7 +3610,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 3,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3724,7 +3625,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 11,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -3743,7 +3643,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 3,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3759,7 +3658,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 12,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -3778,7 +3676,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 3,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3794,7 +3691,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 12,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -3813,7 +3709,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 3,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3829,7 +3724,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 12,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -3848,7 +3742,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 3,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3864,7 +3757,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 12,
                             trangThaiLaoDong = false,
                             vaoDang = false
                         },
@@ -3883,7 +3775,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 3,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3899,7 +3790,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 12,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -3918,7 +3808,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 3,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3934,7 +3823,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 13,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -3953,7 +3841,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 3,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -3969,7 +3856,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 13,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -3988,7 +3874,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 3,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4004,7 +3889,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 13,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4023,7 +3907,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 3,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4039,7 +3922,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 13,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4058,7 +3940,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 3,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4074,7 +3955,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 13,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4093,7 +3973,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 4,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4109,7 +3988,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 14,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4128,7 +4006,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 4,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4144,7 +4021,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 14,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4163,7 +4039,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 4,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4179,7 +4054,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 14,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4198,7 +4072,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 4,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4214,7 +4087,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 14,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4233,7 +4105,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 4,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4249,7 +4120,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 14,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4268,7 +4138,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 4,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4284,7 +4153,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 15,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4303,7 +4171,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 4,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4319,7 +4186,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 15,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4338,7 +4204,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 4,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4354,7 +4219,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 15,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4373,7 +4237,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 4,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4389,7 +4252,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 15,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4408,7 +4270,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 4,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4424,7 +4285,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 15,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4443,7 +4303,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 4,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4459,7 +4318,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 16,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4478,7 +4336,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 4,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4494,7 +4351,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 16,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4513,7 +4369,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 4,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4529,7 +4384,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 16,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4548,7 +4402,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 4,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4564,7 +4417,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 16,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4583,7 +4435,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 4,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4599,7 +4450,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 16,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4618,7 +4468,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 4,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4634,7 +4483,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 17,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4653,7 +4501,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 4,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4669,7 +4516,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 17,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4688,7 +4534,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 4,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4704,7 +4549,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 17,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4723,7 +4567,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 4,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4739,7 +4582,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 17,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4758,7 +4600,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 4,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4774,7 +4615,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 17,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4793,7 +4633,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4809,7 +4648,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 18,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4828,7 +4666,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4844,7 +4681,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 18,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4863,7 +4699,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4879,7 +4714,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 18,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4898,7 +4732,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4914,7 +4747,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 18,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4933,7 +4765,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4949,7 +4780,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 18,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -4968,7 +4798,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -4984,7 +4813,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 19,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -5003,7 +4831,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -5019,7 +4846,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 19,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -5038,7 +4864,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -5054,7 +4879,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 19,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -5073,7 +4897,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -5089,7 +4912,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 19,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -5108,7 +4930,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -5124,7 +4945,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 19,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -5143,7 +4963,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -5159,7 +4978,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 19,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -5178,7 +4996,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -5194,7 +5011,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 20,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -5213,7 +5029,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -5229,7 +5044,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 20,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -5248,7 +5062,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -5264,7 +5077,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 20,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -5283,7 +5095,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -5299,7 +5110,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 20,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -5318,7 +5128,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -5334,7 +5143,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 20,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -5353,7 +5161,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -5369,7 +5176,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 21,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -5388,7 +5194,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -5404,7 +5209,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 20,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -5423,7 +5227,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -5439,7 +5242,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 20,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -5458,7 +5260,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -5474,7 +5275,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 20,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -5493,7 +5293,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -5509,7 +5308,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 20,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -5528,7 +5326,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -5544,7 +5341,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 21,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -5563,7 +5359,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -5579,7 +5374,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 21,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -5598,7 +5392,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -5614,7 +5407,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 21,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -5633,7 +5425,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -5649,7 +5440,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 21,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         },
@@ -5668,7 +5458,6 @@ namespace HRMSolution.Data.Migrations
                             idDanToc = 1,
                             idDanhMucHonNhan = 1,
                             idNgachCongChuc = 1,
-                            idPhongBan = 5,
                             idTonGiao = 1,
                             laConChinhSach = false,
                             laThuongBinh = false,
@@ -5684,7 +5473,6 @@ namespace HRMSolution.Data.Migrations
                             tamTru = "Đại học FPT",
                             thuongTru = "Hà Nội",
                             tinhChatLaoDong = 1,
-                            to = 21,
                             trangThaiLaoDong = true,
                             vaoDang = false
                         });
@@ -5860,6 +5648,12 @@ namespace HRMSolution.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("HRMSolution.Data.Entities.DanhMucPhongBan", "DanhMucPhongBan")
+                        .WithMany("DieuChuyens")
+                        .HasForeignKey("idPhongBan")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("HRMSolution.Data.Entities.NhanVien", "NhanVien")
                         .WithMany("DieuChuyens")
                         .HasForeignKey("maNhanVien")
@@ -5867,6 +5661,8 @@ namespace HRMSolution.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("DanhMucChucVu");
+
+                    b.Navigation("DanhMucPhongBan");
 
                     b.Navigation("NhanVien");
                 });
@@ -6016,12 +5812,6 @@ namespace HRMSolution.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HRMSolution.Data.Entities.DanhMucPhongBan", "DanhMucPhongBan")
-                        .WithMany("NhanViens")
-                        .HasForeignKey("idPhongBan")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("HRMSolution.Data.Entities.DanhMucTonGiao", "DanhMucTonGiao")
                         .WithMany("NhanViens")
                         .HasForeignKey("idTonGiao")
@@ -6039,8 +5829,6 @@ namespace HRMSolution.Data.Migrations
                     b.Navigation("DanhMucHonNhan");
 
                     b.Navigation("DanhMucNgachCongChuc");
-
-                    b.Navigation("DanhMucPhongBan");
 
                     b.Navigation("DanhMucTinhChatLaoDong");
 
@@ -6152,7 +5940,7 @@ namespace HRMSolution.Data.Migrations
                 {
                     b.Navigation("DanhMucTos");
 
-                    b.Navigation("NhanViens");
+                    b.Navigation("DieuChuyens");
                 });
 
             modelBuilder.Entity("HRMSolution.Data.Entities.DanhMucTinhChatLaoDong", b =>

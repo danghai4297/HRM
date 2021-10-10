@@ -9,5 +9,6 @@ namespace HRMSolution.Application.Catalog.DanhMucTos
     public interface IDanhMucToService
     {
         Task<List<DanhMucToViewModel>> GetAll();
+        Task<int> Create(DanhMucToCreateRequest request);
     }
 }

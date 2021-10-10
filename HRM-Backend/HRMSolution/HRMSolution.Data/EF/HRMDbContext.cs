@@ -107,9 +107,9 @@ namespace HRMSolution.Data.EF
                 .HasOne(x => x.DanhMucTonGiao)
                 .WithMany(x => x.NhanViens)
                 .HasForeignKey(x => x.idTonGiao);
-            modelBuilder.Entity<NhanVien>()
+            modelBuilder.Entity<DieuChuyen>()
                 .HasOne(x => x.DanhMucPhongBan)
-                .WithMany(x => x.NhanViens)
+                .WithMany(x => x.DieuChuyens)
                 .HasForeignKey(x => x.idPhongBan);
             modelBuilder.Entity<NhanVien>()
                 .HasOne(x => x.DanhMucTinhChatLaoDong)

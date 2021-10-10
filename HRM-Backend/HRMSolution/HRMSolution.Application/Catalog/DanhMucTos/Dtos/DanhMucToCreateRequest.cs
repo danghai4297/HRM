@@ -9,6 +9,5 @@ namespace HRMSolution.Application.Catalog.DanhMucTos.Dtos
         public string maTo { get; set; }
         public string tenTo { get; set; }
         public int idPhongBan { get; set; }
-        public string tenPhongBan { get; set; }
     }
 }
