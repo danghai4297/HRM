@@ -1,22 +1,30 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "./Header.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { AccountContext } from "../../Contexts/StateContext";
+import { useHistory, Link } from "react-router-dom";
 function Header() {
-  const [account, setAccount] = useState(false);
-  const visionHandleClick = () => {
-    setAccount(!account);
+  const { account, setAccount } = useContext(AccountContext);
+  let history = useHistory();
+  let logout = () => {
+    localStorage.removeItem("accessToken");
+    history.replace("/login");
   };
-  console.log(account);
+  // const [account, setAccount] = useState(false);
+  // const visionHandleClick = () => {
+  //   setAccount(!account);
+  // };
+  // console.log(account);
   return (
     <div>
-      <div className="header-com">
-        <div className="name">
+      <div className="header-com" >
+        <div className="name" onClick={() => setAccount(false)}>
           <div className="title-project">
             <h1>HRM</h1>
           </div>
         </div>
         <div className="account">
-          <button className="button-top" onClick={visionHandleClick}>
+          <button className="button-top" onClick={() => setAccount(!account)}>
             <div className="screen-account">
               <div className="header-icon">
                 <FontAwesomeIcon
@@ -40,19 +48,22 @@ function Header() {
                   <h5>DangHai</h5>
                 </div>
                 <div>
-                  <button className="button-account">
-                    <FontAwesomeIcon icon={["fas", "key"]} /> Đổi mật khẩu
-                  </button>
+                  <Link to="/change" onClick={() => setAccount(false)}>
+                    <button className="button-account">
+                      <FontAwesomeIcon icon={["fas", "key"]} /> Đổi mật khẩu
+                    </button>
+                  </Link>
                 </div>
               </div>
               <div>
-                <button className="button-account">
+                <button onClick={logout} className="button-account">
                   <FontAwesomeIcon icon={["fas", "sign-out-alt"]} /> Đăng xuất
                 </button>
               </div>
             </div>
           )}
         </div>
+        <div className="last" onClick={() => setAccount(false)}></div>
       </div>
     </div>
   );
