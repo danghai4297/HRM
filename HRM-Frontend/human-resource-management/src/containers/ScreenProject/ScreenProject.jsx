@@ -33,7 +33,6 @@ import ChangePasswordForm from "../../components/ChangePasswordForm/ChangePasswo
 
 import ProtectedRoute from "./ProtectedRoute";
 import ScreenNotFound from "./ScreenNotFound";
-import ChangePasswordForm from "../../components/ChangePasswordForm/ChangePasswordForm";
 import ScreenDetailForeignLanguage from "../ScreenDetailForeignLanguage/ScreenDetailForeignLanguage"
 import Header from "../../components/Header/Header";
 import { AccountContext } from "../../Contexts/StateContext";
@@ -145,7 +144,7 @@ function ScreenProject() {
                 path="/discipline/add"
                 component={AddDisciplineForm}
               />
-              <ProtectedRoute exact path="/report" component={ScreenDetailForeignLanguage} />
+              <ProtectedRoute exact path="/report" component={ScreenReport} />
               {/* <Route component={ScreenNotFound}/> */}
             </Switch>
           </div>
