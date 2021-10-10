@@ -139,7 +139,7 @@ function ScreenProject() {
               <ProtectedRoute
                 exact
                 path="/profile/add"
-                component={AddProfileForm}
+                component={ChangePasswordForm}
               />
 
               <ProtectedRoute
