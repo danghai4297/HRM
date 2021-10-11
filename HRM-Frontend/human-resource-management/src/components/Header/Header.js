@@ -10,11 +10,6 @@ function Header() {
     localStorage.removeItem("accessToken");
     history.replace("/login");
   };
-  // const [account, setAccount] = useState(false);
-  // const visionHandleClick = () => {
-  //   setAccount(!account);
-  // };
-  // console.log(account);
   return (
     <div>
       <div className="header-com" >

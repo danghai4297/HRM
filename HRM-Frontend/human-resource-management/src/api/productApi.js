@@ -10,7 +10,7 @@ const ProductApi = {
 
   //detail nhân viên
   getNvDetail: (maNv) => {
-    const url = `/NhanVien/${maNv}`;
+    const url = `/NhanViendetail/${maNv}`;
     return axiosClient.get(url);
   },
 

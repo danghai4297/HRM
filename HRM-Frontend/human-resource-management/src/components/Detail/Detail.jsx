@@ -16,13 +16,30 @@ function Detail(props) {
   const link = true;
 
   const [dataDetailNv, setdataDetailNv] = useState([]);
+  const [dataDetailTDVH, setdataDetailTDVH] = useState([]);
+  const [dataDetailNgn, setdataDetailNgn] = useState([]);
+  const [dataDetailGd, setdataDetailGd] = useState([]);
+  const [dataDetailHd, setdataDetailHd] = useState([]);
+  // const [dataDetailHSL, setdataDetailHSL] = useState([]);
+  const [dataDetailTc, setdataDetailTc] = useState([]);
+  const [dataDetailKt, setdataDetailKt] = useState([]);
+  const [dataDetailKl, setdataDetailKl] = useState([]);
   const dataTDVH = [];
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
         const responseNv = await ProductApi.getNvDetail(id);
+        // const responseHd = await ProductApi.getHdDetail(id);
         setdataDetailNv(responseNv);
+        setdataDetailTDVH(responseNv.trinhDoVanHoas);
+        setdataDetailNgn(responseNv.ngoaiNgus);
+        setdataDetailGd(responseNv.nguoiThans);
+        setdataDetailHd(responseNv.hopDongs);
+        // setdataDetailHSL(responseNv);
+        setdataDetailTc(responseNv.dieuChuyenViewModels);
+        setdataDetailKt(responseNv.khenThuongKyLuatViewModels);
+        setdataDetailKl(responseNv.khenThuongKyLuatViewModels);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
@@ -30,12 +47,13 @@ function Detail(props) {
     fetchNvList();
   }, []);
 
-  dataDetailNv.trinhDoVanHoas.map((item) => {
-    return console.log(item.tdvhTenTruong);
-  });
+  // dataDetailNv.trinhDoVanHoas.map((item) => {
+  //   return console.log(item.tdvhTenTruong);
+  // });
 
   console.log(dataDetailNv);
-  console.log(dataDetailNv.trinhDoVanHoas);
+  // console.log(dataDetailNv.trinhDoVanHoas);
+  // console.log(dataDetailHd);
 
   const [dropBase, setDropBase] = useState(true);
   const [dropContact, setDropContact] = useState(true);
@@ -527,11 +545,11 @@ function Detail(props) {
                     </div>
                   </div>
                   <div className="table">
-                    {/* <TableBasic
+                    <TableBasic
                       link={link}
                       columns={NVCOLUMNSTDVH}
-                      data={dataDetailNv}
-                    /> */}
+                      data={dataDetailTDVH}
+                    />
                   </div>
                   <div className="title">
                     <div className="title-cultural">
@@ -543,7 +561,13 @@ function Detail(props) {
                       </button>
                     </div>
                   </div>
-                  <div className="table"></div>
+                  <div className="table">
+                  {/* <TableBasic
+                      link={link}
+                      columns={NVCOLUMNSTDVH}
+                      data={dataDetailNgn}
+                    /> */}
+                  </div>
                 </>
               )}
             </div>
@@ -574,7 +598,13 @@ function Detail(props) {
                       </button>
                     </div>
                   </div>
-                  <div className="table"></div>
+                  <div className="table">
+                    {/* <TableBasic
+                      link={link}
+                      columns={NVCOLUMNSTDVH}
+                      data={dataDetailGd}
+                    /> */}
+                  </div>
                 </>
               )}
             </div>
@@ -769,7 +799,13 @@ function Detail(props) {
                       </button>
                     </div>
                   </div>
-                  <div className="table"></div>
+                  <div className="table">
+                    {/* <TableBasic
+                      link={link}
+                      columns={NVCOLUMNSTDVH}
+                      data={dataDetailHd}
+                    /> */}
+                  </div>
                 </>
               )}
             </div>
@@ -831,7 +867,13 @@ function Detail(props) {
                       </button>
                     </div>
                   </div>
-                  <div className="table"></div>
+                  <div className="table">
+                    {/* <TableBasic
+                      link={link}
+                      columns={NVCOLUMNSTDVH}
+                      data={dataDetailTc}
+                    /> */}
+                  </div>
                 </>
               )}
             </div>
@@ -862,14 +904,20 @@ function Detail(props) {
                       </button>
                     </div>
                   </div>
-                  <div className="table"></div>
+                  <div className="table">
+                    {/* <TableBasic
+                      link={link}
+                      columns={NVCOLUMNSTDVH}
+                      data={dataDetailKtvKl}
+                    /> */}
+                  </div>
                 </>
               )}
             </div>
             <div className="form" id="discipline">
               <div className="big-title">
                 <div className="name-title">
-                  <h3 className="h3s">Kỷ luật</h3>
+                  <h3>Kỉ luật</h3>
                 </div>
                 <div className="arrow-button">
                   <button
@@ -893,7 +941,13 @@ function Detail(props) {
                       </button>
                     </div>
                   </div>
-                  <div className="table"></div>
+                  <div className="table">
+                    {/* <TableBasic
+                      link={link}
+                      columns={NVCOLUMNSTDVH}
+                      data={dataDetailKtvKl}
+                    /> */}
+                  </div>
                 </>
               )}
             </div>
