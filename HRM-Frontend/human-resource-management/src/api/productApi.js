@@ -21,8 +21,8 @@ const ProductApi = {
   },
 
   //detail hợp đồng
-  getHdDetail: (maNv) => {
-    const url = `/HopDong/${maNv}`;
+  getHdDetail: (maHd) => {
+    const url = `/HopDong/detail/${maHd}`;
     return axiosClient.get(url);
   },
 

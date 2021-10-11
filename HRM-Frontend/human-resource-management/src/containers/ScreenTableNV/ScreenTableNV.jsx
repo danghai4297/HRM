@@ -31,10 +31,8 @@ function ScreenTableNV(props) {
     fetchNvList();
   }, []);
 
-  console.log(dataAllNv);
   return (
     <>
-      {/* <Route path="/profile/:id" component={Detail} /> */}
       <div className="screen-table-nv">
         <div className="herder-content sticky-top">
           <div>

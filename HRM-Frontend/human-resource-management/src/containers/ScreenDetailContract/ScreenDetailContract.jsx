@@ -21,7 +21,6 @@ function ScreenDetailContract(props) {
     };
     fetchNvList();
   }, []);
-  console.log(dataDetailHd);
   return (
     <>
       <div className="main-screen">

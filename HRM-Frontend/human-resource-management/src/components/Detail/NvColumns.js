@@ -75,7 +75,7 @@ export const NVCOLUMNSTDVH = [
 export const NVCOLUMNSHD = [
   {
     Header: "ID",
-    accessor: "maHopDong",
+    accessor: "id",
     sticky: "left",
     minWidth: 70,
     Filter: SelectColumnFilter,
@@ -332,6 +332,55 @@ export const NVCOLUMNSNT = [
     Header: "Khác",
     accessor: "ntKhac",
     minWidth: 150,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+    show: true,
+  },
+];
+
+export const NVCOLUMNSKTvKL = [
+  {
+    Header: "ID",
+    accessor: "id",
+    sticky: "left",
+    minWidth: 200,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+
+    show: true,
+  },
+  {
+    Header: "Danh mục",
+    accessor: "ktklDanhMucKhenThuong",
+    sticky: "left",
+    minWidth: 300,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+
+    show: true,
+  },
+  {
+    Header: "Nội dung",
+    accessor: "ktklNoiDung",
+    sticky: "left",
+    minWidth: 300,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+
+    show: true,
+  },
+  {
+    Header: "Lý do",
+    accessor: "ktklLyDo",
+    minWidth: 300,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+    show: true,
+  },
+  {
+    Header: "Loại",
+    accessor: "ktklloai",
+    minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
