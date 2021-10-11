@@ -1,6 +1,7 @@
 ﻿using HRMSolution.Application.Catalog.DanhMucTonGiaos.DtonGiaos;
 using HRMSolution.Data.EF;
 using HRMSolution.Data.Entities;
+using HRMSolution.Utilities.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,15 @@ namespace HRMSolution.Application.Catalog.DanhMucTonGiaos
             return await _context.SaveChangesAsync();
         }
 
+        public async Task<int> Delete(int idDanhMucTonGiao)
+        {
+            var danhMucTonGiao = await _context.danhMucTonGiaos.FindAsync(idDanhMucTonGiao);
+            if (danhMucTonGiao == null) throw new HRMException($"Không tìm thấy danh mục tôn giáo : {idDanhMucTonGiao}");
+
+            _context.danhMucTonGiaos.Remove(danhMucTonGiao);
+            return await _context.SaveChangesAsync();
+        }
+
         public async Task<List<DanhMucTonGiaoViewModel>> GetAll()
         {
             var query = from p in _context.danhMucTonGiaos select p;
@@ -43,6 +53,16 @@ namespace HRMSolution.Application.Catalog.DanhMucTonGiaos
 
 
             return data;
+        }
+
+        public async Task<int> Update(DanhMucTonGiaoUpdateRequest request)
+        {
+            var danhMucTonGiao = await _context.danhMucTonGiaos.FindAsync(request.id);
+            if (danhMucTonGiao == null) throw new HRMException($"Không tìm thấy danh mục tôn giáo có id: {request.id }");
+
+            danhMucTonGiao.tenDanhMuc = request.tenDanhMuc;
+
+            return await _context.SaveChangesAsync();
         }
     }
 }

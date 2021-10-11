@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using HRMSolution.Data.Entities;
+using HRMSolution.Utilities.Exceptions;
 
 namespace HRMSolution.Application.Catalog.DanhMucNgoaiNgus
 {
@@ -30,6 +31,15 @@ namespace HRMSolution.Application.Catalog.DanhMucNgoaiNgus
             return await _context.SaveChangesAsync();
         }
 
+        public async Task<int> Delete(int idDanhMucNgoaiNgu)
+        {
+            var danhMucNgoaiNgu = await _context.danhMucNgoaiNgus.FindAsync(idDanhMucNgoaiNgu);
+            if (danhMucNgoaiNgu == null) throw new HRMException($"Không tìm thấy danh mục ngoại ngữ : {idDanhMucNgoaiNgu}");
+
+            _context.danhMucNgoaiNgus.Remove(danhMucNgoaiNgu);
+            return await _context.SaveChangesAsync();
+        }
+
         public async Task<List<DanhMucNgoaiNguViewModel>> GetAll()
         {
             var query = from p in _context.danhMucNgoaiNgus select p;
@@ -42,6 +52,15 @@ namespace HRMSolution.Application.Catalog.DanhMucNgoaiNgus
 
 
             return data;
+        }
+
+        public async Task<int> Update(DanhMucNgoaiNguUpdateRequest request)
+        {
+            var danhMucNgoaiNgu = await _context.danhMucNgoaiNgus.FindAsync(request.id);
+            if (danhMucNgoaiNgu == null) throw new HRMException($"Không tìm thấy danh mục ngoại ngữ có id: {request.id }");
+
+            danhMucNgoaiNgu.tenDanhMuc = request.tenDanhMuc;
+            return await _context.SaveChangesAsync();
         }
     }
 }

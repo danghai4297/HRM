@@ -6,7 +6,7 @@ namespace HRMSolution.Application.Catalog.HopDongs.Dtos
 {
     public class HopDongViewModel
     {
-        public string maHopDong { get; set; }
+        public string id { get; set; }
         public string loaiHopDong { get; set; }
         public string chucDanh { get; set; }
 
