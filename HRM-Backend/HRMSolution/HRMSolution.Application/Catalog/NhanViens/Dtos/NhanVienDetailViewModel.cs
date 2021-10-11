@@ -7,7 +7,7 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
 {
     public class NhanVienDetailViewModel
     {
-        public string maNhanVien { get; set; }
+        public string id { get; set; }
         public string hoTen { get; set; }
         public string gioiTinh { get; set; }
         public DateTime ngaySinh { get; set; }
@@ -81,8 +81,9 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
         public string thanNhanNuocNgoai { get; set; }
 
         public List<TrinhDoVanHoaViewModel> trinhDoVanHoas { get; set; }
-        public List<DieuChuyenViewModel> dieuChuyenViewModels { get; set; }
-        public List<KhenThuongKyLuatViewModel> khenThuongKyLuatViewModels { get; set; }
+        public List<DieuChuyenViewModel> dieuChuyens { get; set; }
+        public List<KhenThuongViewModel> khenThuongs { get; set; }
+        public List<KyLuatViewModel> kyLuats { get; set; }
         public List<HopDongViewModel> hopDongs { get; set; }
         public List<NgoaiNguViewModel> ngoaiNgus { get; set; }
         public List<NguoiThanViewModel> nguoiThans { get; set; }

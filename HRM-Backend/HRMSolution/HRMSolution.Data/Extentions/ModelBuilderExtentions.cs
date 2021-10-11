@@ -3729,17 +3729,17 @@ namespace HRMSolution.Data.Extentions
                 );
             modelbulder.Entity<KhenThuongKyLuat>().HasData(
                 new KhenThuongKyLuat() { id = 1, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0001" },
-                new KhenThuongKyLuat() { id = 2, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0001" },
+                new KhenThuongKyLuat() { id = 2, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = false, maNhanVien = "NV0001" },
                 new KhenThuongKyLuat() { id = 3, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0009" },
                 new KhenThuongKyLuat() { id = 4, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0021" },
-                new KhenThuongKyLuat() { id = 5, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0035" },
+                new KhenThuongKyLuat() { id = 5, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = false, maNhanVien = "NV0035" },
                 new KhenThuongKyLuat() { id = 6, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0078" },
                 new KhenThuongKyLuat() { id = 7, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0023" },
-                new KhenThuongKyLuat() { id = 8, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0099" },
+                new KhenThuongKyLuat() { id = 8, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = false, maNhanVien = "NV0099" },
                 new KhenThuongKyLuat() { id = 9, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0022" },
-                new KhenThuongKyLuat() { id = 10, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0056" },
+                new KhenThuongKyLuat() { id = 10, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = false, maNhanVien = "NV0056" },
                 new KhenThuongKyLuat() { id = 11, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0081" },
-                new KhenThuongKyLuat() { id = 12, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0091" }
+                new KhenThuongKyLuat() { id = 12, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = false, maNhanVien = "NV0091" }
 
                 );
             modelbulder.Entity<LichSuBanThan>().HasData(

@@ -6,7 +6,7 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
 {
     public class NhanVienCreateRequest
     {
-        public string maNhanVien { get; set; }
+        public string id { get; set; }
         public string hoTen { get; set; }
         public string quocTich { get; set; }
         public DateTime ngaySinh { get; set; }

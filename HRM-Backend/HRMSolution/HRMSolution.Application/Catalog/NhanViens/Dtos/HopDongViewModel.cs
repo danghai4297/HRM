@@ -6,12 +6,13 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
 {
     public class HopDongViewModel
     {
-        public string maHopDong { get; set; }
-        public float? luongCoBan { get; set; }
+        public string id { get; set; }
+        public string idLoaiHopDong { get; set; }
+        public string idChucDanh { get; set; }
         public DateTime? hdHopDongTuNgay { get; set; }
         public DateTime? hdHopDongDenNgay { get; set; }
         public string hdGhiChu { get; set; }
         public string trangThai { get; set; }
-        public List<LuongViewModel> luongs { get; set; }
+        //public List<LuongViewModel> luongs { get; set; }
     }
 }

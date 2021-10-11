@@ -39,7 +39,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
             throw new NotImplementedException();
         }
 
-        public async Task<List<HopDongViewModel>> GetHopDong(string maHopDong)
+        public async Task<HopDongViewModel> GetHopDong(string maHopDong)
         {
             var query = from p in _context.hopDongs
                         join dmlhd in _context.danhMucLoaiHopDongs on p.idLoaiHopDong equals dmlhd.id
@@ -59,7 +59,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
                 trangThai = x.p.trangThai == true ? "Kích hoạt" : "Vô hiệu",
                 maNhanVien = x.p.maNhanVien,
                 tenNhanVien = x.nv.hoTen
-            }).ToListAsync();
+            }).FirstAsync();
 
             return data;
         }
