@@ -46,11 +46,12 @@ namespace HRMSolution.Application.Catalog.Luongs
                          join hd in _context.hopDongs on nv.maNhanVien equals hd.maNhanVien
                          join l in _context.luongs on hd.maHopDong equals l.maHopDong
                          join dml in _context.danhMucNhomLuongs on l.idNhomLuong equals dml.id
-                         where hd.maHopDong == l.maHopDong && hd.trangThai == true && l.trangThai == true
+                         where hd.maHopDong == l.maHopDong /*&& hd.trangThai == true && l.trangThai == true*/
                          select new { hd, l, dml };
 
             var data = await query.Select(x => new LuongViewModel()
             {
+                id = x.l.id,
                 nhomLuong = x.dml.tenNhomLuong,
                 heSoLuong = x.l.heSoLuong,
                 bacLuong = x.l.bacLuong,
