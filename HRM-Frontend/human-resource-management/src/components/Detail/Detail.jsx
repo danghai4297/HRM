@@ -16,7 +16,6 @@ function Detail(props) {
   const link = true;
 
   const [dataDetailNv, setdataDetailNv] = useState([]);
-  const dataTDVH = [];
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -29,13 +28,6 @@ function Detail(props) {
     };
     fetchNvList();
   }, []);
-
-  dataDetailNv.trinhDoVanHoas.map((item) => {
-    return console.log(item.tdvhTenTruong);
-  });
-
-  console.log(dataDetailNv);
-  console.log(dataDetailNv.trinhDoVanHoas);
 
   const [dropBase, setDropBase] = useState(true);
   const [dropContact, setDropContact] = useState(true);
@@ -530,7 +522,7 @@ function Detail(props) {
                     {/* <TableBasic
                       link={link}
                       columns={NVCOLUMNSTDVH}
-                      data={dataDetailNv}
+                      data={dataDetailHd}
                     /> */}
                   </div>
                   <div className="title">
