@@ -16,7 +16,7 @@ export const NVCOLUMNSTDVH = [
     Header: "Tên trường",
     accessor: "tdvhTenTruong",
     sticky: "left",
-    minWidth: 200,
+    minWidth: 245,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -25,7 +25,7 @@ export const NVCOLUMNSTDVH = [
   {
     Header: "Chuyên môn",
     accessor: "tdvhChuyenMon",
-    minWidth: 130,
+    minWidth: 250,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -34,7 +34,7 @@ export const NVCOLUMNSTDVH = [
   {
     Header: "Bắt đầu",
     accessor: "tdvhtuThoiGian",
-    minWidth: 200,
+    minWidth: 180,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -65,7 +65,7 @@ export const NVCOLUMNSTDVH = [
   {
     Header: "Tốt nghiệp loại",
     accessor: "tdvhTrinhDo",
-    minWidth: 150,
+    minWidth: 140,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -96,7 +96,7 @@ export const NVCOLUMNSHD = [
   {
     Header: "Chức danh",
     accessor: "chucDanh",
-    minWidth: 130,
+    minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -128,7 +128,7 @@ export const NVCOLUMNSHD = [
   {
     Header: "Hình thức đào tạo",
     accessor: "hdGhiChu",
-    minWidth: 150,
+    minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -136,7 +136,7 @@ export const NVCOLUMNSHD = [
   {
     Header: "Tốt nghiệp loại",
     accessor: "trangThai",
-    minWidth: 150,
+    minWidth: 175,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -148,7 +148,7 @@ export const NVCOLUMNSDC = [
     Header: "ID",
     accessor: "id",
     sticky: "left",
-    minWidth: 70,
+    minWidth: 150,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -167,7 +167,7 @@ export const NVCOLUMNSDC = [
   {
     Header: "Tổ",
     accessor: "dcTo",
-    minWidth: 130,
+    minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -176,7 +176,7 @@ export const NVCOLUMNSDC = [
   {
     Header: "Ngày hiệu lực",
     accessor: "dcNgayHieuLuc",
-    minWidth: 200,
+    minWidth: 250,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -188,7 +188,7 @@ export const NVCOLUMNSDC = [
   {
     Header: "Chi tiết",
     accessor: "dcChiTiet",
-    minWidth: 180,
+    minWidth: 300,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -196,7 +196,7 @@ export const NVCOLUMNSDC = [
   {
     Header: "Chức vụ",
     accessor: "dcChucVu",
-    minWidth: 150,
+    minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -205,10 +205,20 @@ export const NVCOLUMNSDC = [
 
 export const NVCOLUMNSNN = [
   {
+    Header: "ID",
+    accessor: "id",
+    sticky: "left",
+    minWidth: 200,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+
+    show: true,
+  },
+  {
     Header: "Ngoại ngữ",
     accessor: "nnDanhMucNgoaiNgu",
     sticky: "left",
-    minWidth: 70,
+    minWidth: 270,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -217,7 +227,7 @@ export const NVCOLUMNSNN = [
   {
     Header: "Ngày cấp",
     accessor: "nnNgayCap",
-    minWidth: 200,
+    minWidth: 300,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -229,7 +239,7 @@ export const NVCOLUMNSNN = [
   {
     Header: "Trình độ",
     accessor: "nnTrinhDo",
-    minWidth: 180,
+    minWidth: 270,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -237,7 +247,7 @@ export const NVCOLUMNSNN = [
   {
     Header: "Nơi cấp",
     accessor: "nnNoiCap",
-    minWidth: 150,
+    minWidth: 265,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -249,7 +259,7 @@ export const NVCOLUMNSNT = [
     Header: "ID",
     accessor: "id",
     sticky: "left",
-    minWidth: 70,
+    minWidth: 50,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -259,7 +269,7 @@ export const NVCOLUMNSNT = [
     Header: "Họ Tên",
     accessor: "ntTenNguoiThan",
     sticky: "left",
-    minWidth: 70,
+    minWidth: 50,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -278,7 +288,7 @@ export const NVCOLUMNSNT = [
   {
     Header: "Ngày sinh",
     accessor: "ntNgaySinh",
-    minWidth: 200,
+    minWidth: 150,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -289,7 +299,7 @@ export const NVCOLUMNSNT = [
   {
     Header: "Quan hệ",
     accessor: "ntQuanHe",
-    minWidth: 180,
+    minWidth: 70,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -297,7 +307,7 @@ export const NVCOLUMNSNT = [
   {
     Header: "Nghề nghiệp",
     accessor: "ntNgheNghiep",
-    minWidth: 150,
+    minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -305,7 +315,7 @@ export const NVCOLUMNSNT = [
   {
     Header: "Địa chỉ",
     accessor: "ntDiaChi",
-    minWidth: 150,
+    minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -313,7 +323,7 @@ export const NVCOLUMNSNT = [
   {
     Header: "Điên thoại",
     accessor: "ntDienThoai",
-    minWidth: 150,
+    minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,

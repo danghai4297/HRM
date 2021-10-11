@@ -10,7 +10,7 @@ const ProductApi = {
 
   //detail nhân viên
   getNvDetail: (maNv) => {
-    const url = `/NhanViendetail/${maNv}`;
+    const url = `/NhanVien/${maNv}`;
     return axiosClient.get(url);
   },
 
@@ -19,7 +19,7 @@ const ProductApi = {
     const url = "/HopDong";
     return axiosClient.get(url);
   },
-  
+
   //detail hợp đồng
   getHdDetail: (maNv) => {
     const url = `/HopDong/${maNv}`;

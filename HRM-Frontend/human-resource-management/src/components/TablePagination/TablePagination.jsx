@@ -169,7 +169,7 @@ function TablePagination(props) {
                 // console.log(row);
                 return (
                   <Link
-                    to={link ? link + row.original.maNhanVien : ""}
+                    to={link ? link + row.original.id : ""}
                     className="link-item"
                   >
                     <tr {...row.getRowProps()} className="tr">
