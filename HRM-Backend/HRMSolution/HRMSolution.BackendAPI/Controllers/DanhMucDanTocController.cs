@@ -25,14 +25,12 @@ namespace HRMSolution.BackendAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody]DanhMucDanTocCreateRequest request)
+        public async Task<IActionResult> Create([FromForm]DanhMucDanTocCreateRequest request)
         {
             var result = await _danhMucDanTocService.Create(request);
             if(result == 0)
                 return BadRequest();
             return Ok();
-
-            
         }
 
         [HttpDelete("id")]
@@ -45,7 +43,7 @@ namespace HRMSolution.BackendAPI.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update([FromBody]DanhMucDanTocUpdateRequest request)
+        public async Task<IActionResult> Update([FromForm]DanhMucDanTocUpdateRequest request)
         {
             var result = await _danhMucDanTocService.Update(request);
             if (result == 0)

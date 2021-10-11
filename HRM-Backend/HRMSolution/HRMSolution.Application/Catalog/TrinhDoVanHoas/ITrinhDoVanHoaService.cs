@@ -9,7 +9,7 @@ namespace HRMSolution.Application.Catalog.TrinhDoVanHoas
     public interface ITrinhDoVanHoaService
     {
         Task<List<TrinhDoVanHoaViewModel>> GetAll();
-        Task<List<TrinhDoVanHoaViewModel>> GetAllByNV(string maNhanVien);
+        Task<TrinhDoVanHoaViewModel> GetAllById(int id);
 
     }
 }

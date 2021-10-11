@@ -16,29 +16,6 @@ namespace HRMSolution.Application.Catalog.NgoaiNgus
         {
             _context = context;
         }
-        public async Task<List<NgoaiNguViewModel>> GetAll(string maNhanVien)
-        {
-            var query = from p in _context.ngoaiNgus
-                        join dmnn in _context.danhMucNgoaiNgus on p.idDanhMucNgoaiNgu equals dmnn.id
-                        join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
-                        where p.maNhanVien == maNhanVien
-                        select new { p, dmnn, nv };
-
-
-            var data = await query.Select(x => new NgoaiNguViewModel()
-            {
-                id = x.p.id,
-                danhMucNgoaiNgu = x.dmnn.tenDanhMuc,
-                ngayCap = x.p.ngayCap,
-                trinhDo = x.p.trinhDo,
-                noiCap = x.p.noiCap,
-                maNhanVien = x.p.maNhanVien,
-                tenNhanVien = x.nv.hoTen
-            }).ToListAsync();
-
-
-            return data;
-        }
 
         public async Task<NgoaiNguViewModel> GetNgoaiNgu(int id)
         {

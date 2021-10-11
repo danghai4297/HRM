@@ -23,10 +23,10 @@ namespace HRMSolution.BackendAPI.Controllers
             var trinhDoVanHoa = await _trinhDoVanHoaService.GetAll();
             return Ok(trinhDoVanHoa);
         }
-        [HttpGet("{maNhanVien}")]
-        public async Task<IActionResult> GetDetail(string maNhanVien)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetDetail(int id)
         {
-            var trinhDoVanHoa = await _trinhDoVanHoaService.GetAllByNV(maNhanVien);
+            var trinhDoVanHoa = await _trinhDoVanHoaService.GetAllById(id);
             return Ok(trinhDoVanHoa);
         }
     }

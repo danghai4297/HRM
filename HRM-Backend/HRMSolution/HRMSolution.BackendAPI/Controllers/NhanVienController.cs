@@ -1,4 +1,5 @@
 ﻿using HRMSolution.Application.Catalog.NhanViens;
+using HRMSolution.Application.Catalog.NhanViens.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -28,6 +29,14 @@ namespace HRMSolution.BackendAPI.Controllers
         {
             var nhanViens = await _nhanVienService.GetAllDetail(maNhanVien);
             return Ok(nhanViens);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create([FromForm] NhanVienCreateRequest request)
+        {
+            var result = await _nhanVienService.Create(request);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
         }
     }
 }

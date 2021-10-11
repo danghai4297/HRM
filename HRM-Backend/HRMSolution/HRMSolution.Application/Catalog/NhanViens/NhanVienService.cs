@@ -1,5 +1,6 @@
 ﻿using HRMSolution.Application.Catalog.NhanViens.Dtos;
 using HRMSolution.Data.EF;
+using HRMSolution.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,101 @@ namespace HRMSolution.Application.Catalog.NhanViens
             _context = context;
         }
 
-        public Task<int> Create(NhanVienCreateRequest request)
+        public async Task<int> Create(NhanVienCreateRequest request)
         {
-            throw new NotImplementedException();
+            var nhanVien = new NhanVien()
+            {
+                maNhanVien = request.maNhanVien,
+                hoTen = request.hoTen,
+                quocTich = request.quocTich,
+                ngaySinh = request.ngaySinh,
+                gioiTinh = request.gioiTinh,
+                dienThoai = request.dienThoai,
+                dienThoaiKhac = request.dienThoaiKhac,
+                diDong = request.diDong,
+                email = request.email,
+                facebook = request.facebook,
+                skype = request.skype,
+                maSoThue = request.maSoThue,
+                cccd = request.cccd,
+                noiCapCCCD = request.noiCapCCCD,
+                ngayCapCCCD = request.ngayCapCCCD,
+                ngayHetHanCCCD = request.ngayHetHanCCCD,
+                hoChieu = request.hoChieu,
+                noiCapHoChieu = request.noiCapHoChieu,
+                ngayCapHoChieu = request.ngayCapHoChieu,
+                ngayHetHanHoChieu = request.ngayHetHanHoChieu,
+                noiSinh =request.noiSinh,
+                queQuan = request.queQuan,
+                thuongTru = request.thuongTru,
+                tamTru = request.tamTru,
+                ngheNghiep = request.ngheNghiep,
+                chucVuHienTai = request.chucVuHienTai,
+                ngayTuyenDung = request.ngayTuyenDung,
+                ngayThuViec = request.ngayThuViec,
+                congViecChinh = request.congViecChinh,
+                ngayVaoBan = request.ngayVaoBan,
+                ngayChinhThuc = request.ngayChinhThuc,
+                coQuanTuyenDung  = request.coQuanTuyenDung,
+                ngachCongChucNoiDung = request.ngachCongChucNoiDung,
+                vaoDang = request.vaoDang,
+                ngayVaoDang = request.ngayVaoDang,
+                ngayVaoDangChinhThuc = request.ngayVaoDangChinhThuc,
+                quanNhan = request.quanNhan,
+                ngayNhapNgu = request.ngayNhapNgu,
+                ngayXuatNgu = request.ngayXuatNgu,
+                quanHamCaoNhat = request.quanHamCaoNhat,
+                danhHieuCaoNhat = request.danhHieuCaoNhat,
+                ngayVaoDoan = request.ngayVaoDoan,
+                noiThamGia = request.noiThamGia,
+                laThuongBinh = request.laThuongBinh,
+                laConChinhSach = request.laConChinhSach,
+                thuongBinh = request.thuongBinh,
+                conChinhSach = request.conChinhSach,
+                bhxh = request.bhxh,
+                bhyt = request.bhyt,
+                atm = request.atm,
+                nganHang = request.nganHang,
+                trangThaiLaoDong = request.trangThaiLaoDong,
+                ngayNghiViec = request.ngayNghiViec,
+                lyDoNghiViec = request.lyDoNghiViec,
+                anh = request.anh,
+                tinhChatLaoDong = request.tinhChatLaoDong,
+                idDanhMucHonNhan = request.idDanhMucHonNhan,
+                idDanToc = request.idDanToc,
+                idTonGiao = request.idTonGiao,
+                idNgachCongChuc = request.idNgachCongChuc,
+                YTe = new YTe()
+                {
+                    nhomMau = request.YTe.nhomMau,
+                    chieuCao = request.YTe.chieuCao,
+                    canNang = request.YTe.canNang,
+                    tinhTrangSucKhoe = request.YTe.tinhTrangSucKhoe,
+                    benhTat = request.YTe.benhTat,
+                    luuY = request.YTe.luuY,
+                    khuyetTat = request.YTe.khuyetTat,
+                    maNhanVien = request.YTe.maNhanVien
+                },
+                LichSuBanThan = new LichSuBanThan()
+                {
+                    biBatDiTu = request.LichSuBanThan.biBatDiTu,
+                    thamGiaChinhTri = request.LichSuBanThan.thamGiaChinhTri,
+                    thanNhanNuocNgoai = request.LichSuBanThan.thanNhanNuocNgoai,
+                    maNhanVien = request.LichSuBanThan.maNhanVien
+                },
+                LienHeKhanCap = new LienHeKhanCap()
+                {
+                    hoTen = request.LienHeKhanCap.hoTen,
+                    quanHe = request.LienHeKhanCap.quanHe,
+                    dienThoai = request.LienHeKhanCap.dienThoai,
+                    email = request.LienHeKhanCap.email,
+                    diaChi = request.LienHeKhanCap.diaChi,
+                    maNhanVien = request.LienHeKhanCap.maNhanVien,
+                }
+
+            };
+            _context.nhanViens.Add(nhanVien);
+            return await _context.SaveChangesAsync();
         }
 
         public Task<int> Delete(int idDanhMucDanToc)
