@@ -33,14 +33,14 @@ import ChangePasswordForm from "../../components/ChangePasswordForm/ChangePasswo
 
 import ProtectedRoute from "./ProtectedRoute";
 import ScreenNotFound from "./ScreenNotFound";
-import ScreenDetailForeignLanguage from "../ScreenDetailForeignLanguage/ScreenDetailForeignLanguage"
+import ScreenDetailForeignLanguage from "../ScreenDetailForeignLanguage/ScreenDetailForeignLanguage";
 import Header from "../../components/Header/Header";
 import { AccountContext } from "../../Contexts/StateContext";
 function ScreenProject() {
-  const { setAccount }= useContext(AccountContext);
+  const { setAccount } = useContext(AccountContext);
   return (
     <>
-      <div className="body-screen" >
+      <div className="body-screen">
         <div className="header">
           <Header />
         </div>

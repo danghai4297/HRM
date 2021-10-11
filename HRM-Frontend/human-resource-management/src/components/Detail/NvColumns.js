@@ -1,10 +1,10 @@
 import { format } from "date-fns";
 import SelectColumnFilter from "../../components/TablePagination/SelectColumnFilter";
 
-export const NVCOLUMNSHD = [
+export const NVCOLUMNSTDVH = [
   {
-    Header: "Mã Nhân Viên",
-    accessor: "maNhanVien",
+    Header: "ID",
+    accessor: "id",
     sticky: "left",
     minWidth: 70,
     Filter: SelectColumnFilter,
@@ -13,8 +13,8 @@ export const NVCOLUMNSHD = [
     show: true,
   },
   {
-    Header: "Họ Và Tên",
-    accessor: "tenNhanVien",
+    Header: "Tên trường",
+    accessor: "tdvhTenTruong",
     sticky: "left",
     minWidth: 200,
     Filter: SelectColumnFilter,
@@ -23,8 +23,8 @@ export const NVCOLUMNSHD = [
     show: true,
   },
   {
-    Header: "Mã Hợp Đồng",
-    accessor: "id",
+    Header: "Chuyên môn",
+    accessor: "tdvhChuyenMon",
     minWidth: 130,
     Filter: SelectColumnFilter,
     disableFilters: true,
@@ -32,64 +32,42 @@ export const NVCOLUMNSHD = [
     show: true,
   },
   {
-    Header: "Loại Hợp Đồng",
-    accessor: "idLoaiHopDong",
+    Header: "Bắt đầu",
+    accessor: "tdvhtuThoiGian",
     minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: true,
-
     show: true,
+    Cell: ({ value }) => {
+      return format(new Date(value), "dd/MM/yyyy");
+    },
   },
 
   {
-    Header: "Chức Danh",
-    accessor: "idChucDanh",
+    Header: "Kết thúc",
+    accessor: "tdvhdenThoiGian",
     minWidth: 180,
     Filter: SelectColumnFilter,
     disableFilters: true,
-
     show: true,
-  },
-  {
-    Header: "Từ Ngày",
-    accessor: "hopDongTuNgay",
-    minWidth: 150,
-    Filter: SelectColumnFilter,
-    disableFilters: true,
     Cell: ({ value }) => {
       return format(new Date(value), "dd/MM/yyyy");
     },
-
-    show: true,
   },
   {
-    Header: "Đến Ngày",
-    accessor: "hopDongDenNgay",
+    Header: "Hình thức đào tạo",
+    accessor: "tdvhHinhThucDaoTao",
     minWidth: 150,
     Filter: SelectColumnFilter,
     disableFilters: true,
-    Cell: ({ value }) => {
-      return format(new Date(value), "dd/MM/yyyy");
-    },
-
     show: true,
   },
   {
-    Header: "Trạng thái",
-    accessor: "trangThai",
-    minWidth: 400,
+    Header: "Tốt nghiệp loại",
+    accessor: "tdvhTrinhDo",
+    minWidth: 150,
     Filter: SelectColumnFilter,
     disableFilters: true,
-
     show: true,
-  },
-  {
-    Header: "Ghi chú",
-    accessor: "ghiChu",
-    minWidth: 400,
-    Filter: SelectColumnFilter,
-    disableFilters: true,
-
-    show: false,
   },
 ];

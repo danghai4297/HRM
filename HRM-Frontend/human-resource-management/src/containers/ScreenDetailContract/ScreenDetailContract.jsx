@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
 import "./ScreenDetailContract.scss";
 import SubDetail from "../../components/Detail/SubDetail";
-function ScreenDetailContract() {
+import ProductApi from "../../api/productApi";
+function ScreenDetailContract(props) {
+  let { match, history } = props;
+  let { id } = match.params;
+
+  const [dataDetailHd, setdataDetailHd] = useState([]);
+
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const responseHD = await ProductApi.getHdDetail(id);
+        setdataDetailHd(responseHD);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
+  console.log(dataDetailHd);
   return (
     <>
       <div className="main-screen">
@@ -15,7 +33,9 @@ function ScreenDetailContract() {
             <h2>Chi tiết hợp đồng</h2>
           </div>
           <div className="third-path">
-            <Button variant="light" className="btn-fix">Sửa</Button>
+            <Button variant="light" className="btn-fix">
+              Sửa
+            </Button>
           </div>
         </div>
         <div className="second-main">

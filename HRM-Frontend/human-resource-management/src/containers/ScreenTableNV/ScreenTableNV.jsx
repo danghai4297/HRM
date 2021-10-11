@@ -23,7 +23,6 @@ function ScreenTableNV(props) {
     const fetchNvList = async () => {
       try {
         const responseNv = await productApi.getAllNv();
-        // console.log(responseNv);
         setdataAllNv(responseNv);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -32,6 +31,7 @@ function ScreenTableNV(props) {
     fetchNvList();
   }, []);
 
+  console.log(dataAllNv);
   return (
     <>
       {/* <Route path="/profile/:id" component={Detail} /> */}

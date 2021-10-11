@@ -7,18 +7,21 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import { dum } from "./Data";
 import { ListContext } from "../../Contexts/ListContext";
 import ProductApi from "../../api/productApi";
+import TableBasic from "../TablePagination/TableBasic";
+import { NVCOLUMNSTDVH } from "./NvColumns";
+
 function Detail(props) {
   let { match, history } = props;
   let { id } = match.params;
-  console.log(id);
+  const link = true;
 
   const [dataDetailNv, setdataDetailNv] = useState([]);
+  const dataTDVH = [];
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
         const responseNv = await ProductApi.getNvDetail(id);
-        // console.log(responseNv);
         setdataDetailNv(responseNv);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -27,10 +30,13 @@ function Detail(props) {
     fetchNvList();
   }, []);
 
-  console.log(dataDetailNv);
-  console.log(dataDetailNv.maNhanVien);
+  dataDetailNv.trinhDoVanHoas.map((item) => {
+    return console.log(item.tdvhTenTruong);
+  });
 
-  // const dataDetail = [];
+  console.log(dataDetailNv);
+  console.log(dataDetailNv.trinhDoVanHoas);
+
   const [dropBase, setDropBase] = useState(true);
   const [dropContact, setDropContact] = useState(true);
   const [dropJob, setDropJob] = useState(true);
@@ -127,7 +133,11 @@ function Detail(props) {
                       <p className="fast-information">Đơn vị công tác</p>
                     </Col>
                     <Col>
-                      <p className="fast-information">{dataDetailNv.coQuanTuyenDung === null ? "-" : dataDetailNv.coQuanTuyenDung}</p>
+                      <p className="fast-information">
+                        {dataDetailNv.coQuanTuyenDung === null
+                          ? "-"
+                          : dataDetailNv.coQuanTuyenDung}
+                      </p>
                     </Col>
                   </Row>
                 </Col>
@@ -137,7 +147,11 @@ function Detail(props) {
                       <p className="fast-information">Ngày thử việc</p>
                     </Col>
                     <Col>
-                      <p className="fast-information">{dataDetailNv.ngayThuViec === null ? "-" : dataDetailNv.ngayThuViec}</p>
+                      <p className="fast-information">
+                        {dataDetailNv.ngayThuViec === null
+                          ? "-"
+                          : dataDetailNv.ngayThuViec}
+                      </p>
                     </Col>
                   </Row>
                 </Col>
@@ -147,7 +161,11 @@ function Detail(props) {
                       <p className="fast-information">Ngày chính thức</p>
                     </Col>
                     <Col>
-                      <p className="fast-information">{dataDetailNv.ngayChinhThuc === null ? "-" : dataDetailNv.ngayChinhThuc}</p>
+                      <p className="fast-information">
+                        {dataDetailNv.ngayChinhThuc === null
+                          ? "-"
+                          : dataDetailNv.ngayChinhThuc}
+                      </p>
                     </Col>
                   </Row>
                 </Col>
@@ -159,7 +177,11 @@ function Detail(props) {
                       <p className="fast-information"> Ngày sinh</p>
                     </Col>
                     <Col>
-                      <p className="fast-information">{dataDetailNv.ngaySinh === null ? "-" : dataDetailNv.ngaySinh}</p>
+                      <p className="fast-information">
+                        {dataDetailNv.ngaySinh === null
+                          ? "-"
+                          : dataDetailNv.ngaySinh}
+                      </p>
                     </Col>
                   </Row>
                 </Col>
@@ -169,7 +191,11 @@ function Detail(props) {
                       <p className="fast-information">ĐT di động</p>
                     </Col>
                     <Col>
-                      <p className="fast-information">{dataDetailNv.diDong === null ? "-" : dataDetailNv.diDong}</p>
+                      <p className="fast-information">
+                        {dataDetailNv.diDong === null
+                          ? "-"
+                          : dataDetailNv.diDong}
+                      </p>
                     </Col>
                   </Row>
                 </Col>
@@ -179,7 +205,9 @@ function Detail(props) {
                       <p className="fast-information">Email</p>
                     </Col>
                     <Col>
-                      <p className="fast-information">{dataDetailNv.email === null ? "-" : dataDetailNv.email}</p>
+                      <p className="fast-information">
+                        {dataDetailNv.email === null ? "-" : dataDetailNv.email}
+                      </p>
                     </Col>
                   </Row>
                 </Col>
@@ -498,7 +526,13 @@ function Detail(props) {
                       </button>
                     </div>
                   </div>
-                  <div className="table"></div>
+                  <div className="table">
+                    {/* <TableBasic
+                      link={link}
+                      columns={NVCOLUMNSTDVH}
+                      data={dataDetailNv}
+                    /> */}
+                  </div>
                   <div className="title">
                     <div className="title-cultural">
                       <h5 className="title-name">Ngoại ngữ</h5>
@@ -688,7 +722,9 @@ function Detail(props) {
                     </div>
                   </div>
                   <div className="areas">
-                    <p className="area-history">{dataDetailNv.thamGiaChinhTri}</p>
+                    <p className="area-history">
+                      {dataDetailNv.thamGiaChinhTri}
+                    </p>
                   </div>
                   <div className="titles">
                     <div className="title-history">
@@ -699,7 +735,9 @@ function Detail(props) {
                     </div>
                   </div>
                   <div className="areas">
-                    <p className="area-history">{dataDetailNv.thanNhanNuocNgoai}</p>
+                    <p className="area-history">
+                      {dataDetailNv.thanNhanNuocNgoai}
+                    </p>
                   </div>
                 </>
               )}

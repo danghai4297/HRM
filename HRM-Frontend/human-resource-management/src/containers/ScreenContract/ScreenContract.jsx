@@ -52,6 +52,7 @@ function ScreenContract(props) {
         </div>
         <div className="table-nv">
           <TablePagination
+            ma="maHopDong"
             link={link}
             tid="tableHd"
             columns={NVCOLUMNSHD}
