@@ -9,5 +9,7 @@ namespace HRMSolution.Application.Catalog.Luongs
     public interface ILuongService
     {
         Task<List<LuongViewModel>> GetAll();
+        Task<LuongViewModel> GetLuong(int id);
+        Task<int> Create(LuongCreateRequest request);
     }
 }

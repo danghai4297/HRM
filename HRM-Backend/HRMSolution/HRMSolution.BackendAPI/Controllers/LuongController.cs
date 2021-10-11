@@ -1,4 +1,5 @@
 ﻿using HRMSolution.Application.Catalog.Luongs;
+using HRMSolution.Application.Catalog.Luongs.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -23,6 +24,20 @@ namespace HRMSolution.BackendAPI.Controllers
         {
             var luong = await _luongService.GetAll();
             return Ok(luong);
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetLuong(int id)
+        {
+            var luong = await _luongService.GetLuong(id);
+            return Ok(luong);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create([FromForm] LuongCreateRequest request)
+        {
+            var result = await _luongService.Create(request);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
         }
     }
 }

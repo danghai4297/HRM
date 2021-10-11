@@ -1,6 +1,7 @@
 ﻿using HRMSolution.Application.Catalog.DanhMucTos.Dtos;
 using HRMSolution.Data.EF;
 using HRMSolution.Data.Entities;
+using HRMSolution.Utilities.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -31,18 +32,37 @@ namespace HRMSolution.Application.Catalog.DanhMucTos
             return await _context.SaveChangesAsync();
         }
 
+        public Task<int> Delete(int idDanhMucTo)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<List<DanhMucToViewModel>> GetAll()
         {
             var query = from p in _context.danhMucTos select p;
 
             var data = await query.Select(x => new DanhMucToViewModel()
             {
-                idTo = x.idTo,
+                id = x.idTo,
                 maTo = x.maTo,
                 tenTo=x.tenTo,
                 idPhongBan=x.idPhongBan
             }).ToListAsync();
             return data;
+        }
+
+        public async Task<int> Update(DanhMucToUpdateRequest request)
+        {
+            var danhMucTo = await _context.danhMucTos.FindAsync(request.idTo);
+            if (danhMucTo == null) throw new HRMException($"Không tìm thấy danh mục tổ có id: {request.idTo }");
+
+            danhMucTo.maTo = request.maTo;
+            danhMucTo.tenTo = request.tenTo;
+            danhMucTo.idPhongBan = request.idPhongBan;
+            
+
+            return await _context.SaveChangesAsync();
+            
         }
     }
 }

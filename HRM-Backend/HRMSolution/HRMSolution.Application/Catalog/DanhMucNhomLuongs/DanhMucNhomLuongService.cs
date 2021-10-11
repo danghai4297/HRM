@@ -1,6 +1,7 @@
 ﻿using HRMSolution.Application.Catalog.DanhMucNhomLuongs.DnhomLuongs;
 using HRMSolution.Data.EF;
 using HRMSolution.Data.Entities;
+using HRMSolution.Utilities.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,15 @@ namespace HRMSolution.Application.Catalog.DanhMucNhomLuongs
             return await _context.SaveChangesAsync();
         }
 
+        public async Task<int> Delete(int idDanhMucNhomLuong)
+        {
+            var danhMucNhomLuong = await _context.danhMucNhomLuongs.FindAsync(idDanhMucNhomLuong);
+            if (danhMucNhomLuong == null) throw new HRMException($"Không tìm thấy danh mục nhóm lương : {idDanhMucNhomLuong}");
+
+            _context.danhMucNhomLuongs.Remove(danhMucNhomLuong);
+            return await _context.SaveChangesAsync();
+        }
+
         public async Task<List<DanhMucNhomLuongViewModel>> GetAll()
         {
             var query = from p in _context.danhMucNhomLuongs select p;
@@ -44,6 +54,16 @@ namespace HRMSolution.Application.Catalog.DanhMucNhomLuongs
 
 
             return data;
+        }
+
+        public async Task<int> Update(DanhMucNhomLuongUpdateRequest request)
+        {
+            var danhMucNhomLuong = await _context.danhMucNhomLuongs.FindAsync(request.id);
+            if (danhMucNhomLuong == null) throw new HRMException($"Không tìm thấy danh mục nhóm lương có id: {request.id }");
+
+            danhMucNhomLuong.maNhomLuong = request.maNhomLuong;
+            danhMucNhomLuong.tenNhomLuong = request.tenNhomLuong;
+            return await _context.SaveChangesAsync();
         }
     }
 }

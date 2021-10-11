@@ -1,4 +1,5 @@
 ﻿using HRMSolution.Application.Catalog.TrinhDoVanHoas;
+using HRMSolution.Application.Catalog.TrinhDoVanHoas.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -23,11 +24,19 @@ namespace HRMSolution.BackendAPI.Controllers
             var trinhDoVanHoa = await _trinhDoVanHoaService.GetAll();
             return Ok(trinhDoVanHoa);
         }
-        [HttpGet("{maNhanVien}")]
-        public async Task<IActionResult> GetDetail(string maNhanVien)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetDetail(int id)
         {
-            var trinhDoVanHoa = await _trinhDoVanHoaService.GetAllByNV(maNhanVien);
+            var trinhDoVanHoa = await _trinhDoVanHoaService.GetAllById(id);
             return Ok(trinhDoVanHoa);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create([FromForm] TrinhDoVanHoaCreateRequest request)
+        {
+            var result = await _trinhDoVanHoaService.Create(request);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
         }
     }
 }

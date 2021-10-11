@@ -17,14 +17,51 @@ namespace HRMSolution.Application.Catalog.HopDongs
         {
             _context = context;
         }
-        public Task<int> Create(HopDongCreateRequest request)
+        public async Task<int> Create(HopDongCreateRequest request)
         {
-            throw new NotImplementedException();
+            var hopDong = new HopDong()
+            {
+                maHopDong = request.maHopDong,
+                idLoaiHopDong = request.idLoaiHopDong,
+                idChucDanh = request.idChucDanh,
+                hopDongTuNgay = request.hopDongTuNgay,
+                hopDongDenNgay = request.hopDongDenNgay,
+                ghiChu = request.ghiChu,
+                trangThai = request.trangThai,
+                maNhanVien = request.maNhanVien
+            };
+            _context.hopDongs.Add(hopDong);
+            return await _context.SaveChangesAsync();
         }
 
         public Task<int> Delete(int idDanhMucDanToc)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<List<HopDongViewModel>> GetHopDong(string maHopDong)
+        {
+            var query = from p in _context.hopDongs
+                        join dmlhd in _context.danhMucLoaiHopDongs on p.idLoaiHopDong equals dmlhd.id
+                        join dmcd in _context.danhMucChucDanhs on p.idChucDanh equals dmcd.id
+                        join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
+                        where p.maHopDong == maHopDong
+                        select new { p, nv, dmcd, dmlhd };
+
+            var data = await query.Select(x => new HopDongViewModel()
+            {
+                id = x.p.maHopDong,
+                loaiHopDong = x.dmlhd.tenLoaiHopDong,
+                chucDanh = x.dmcd.tenChucDanh,
+                hopDongTuNgay = x.p.hopDongTuNgay,
+                hopDongDenNgay = x.p.hopDongDenNgay,
+                ghiChu = x.p.ghiChu,
+                trangThai = x.p.trangThai == true ? "Kích hoạt" : "Vô hiệu",
+                maNhanVien = x.p.maNhanVien,
+                tenNhanVien = x.nv.hoTen
+            }).ToListAsync();
+
+            return data;
         }
 
         public async Task<List<HopDongViewModel>> GetAll()
@@ -37,7 +74,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
 
             var data = await query.Select(x => new HopDongViewModel()
             {
-                maHopDong = x.p.maHopDong,
+                id = x.p.maHopDong,
                 loaiHopDong = x.dmlhd.tenLoaiHopDong,
                 chucDanh = x.dmcd.tenChucDanh,
                 hopDongTuNgay = x.p.hopDongTuNgay,
@@ -62,7 +99,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
 
             var data = await query.Select(x => new HopDongViewModel()
             {
-                maHopDong = x.p.maHopDong,
+                id = x.p.maHopDong,
                 loaiHopDong = x.dmlhd.tenLoaiHopDong,
                 chucDanh = x.dmcd.tenChucDanh,
                 hopDongTuNgay = x.p.hopDongTuNgay,

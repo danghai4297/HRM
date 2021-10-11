@@ -1,4 +1,5 @@
 ﻿using HRMSolution.Application.Catalog.NguoiThans;
+using HRMSolution.Application.Catalog.NguoiThans.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -17,11 +18,20 @@ namespace HRMSolution.BackendAPI.Controllers
         {
             _nguoiThanService = nguoiThanService;
         }
-        [HttpGet("{maNhanVien}")]
-        public async Task<IActionResult> Get(string maNhanVien)
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetDetail(int id)
         {
-            var danhMucChucDanh = await _nguoiThanService.GetAll(maNhanVien);
+            var danhMucChucDanh = await _nguoiThanService.GetNguoiThan(id);
             return Ok(danhMucChucDanh);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create([FromForm] NguoiThanCreateRequest request)
+        {
+            var result = await _nguoiThanService.Create(request);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
         }
     }
 }
