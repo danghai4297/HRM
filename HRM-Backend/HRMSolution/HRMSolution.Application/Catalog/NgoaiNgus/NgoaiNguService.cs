@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using HRMSolution.Data.Entities;
 
 namespace HRMSolution.Application.Catalog.NgoaiNgus
 {
@@ -15,6 +16,20 @@ namespace HRMSolution.Application.Catalog.NgoaiNgus
         public NgoaiNguService(HRMDbContext context)
         {
             _context = context;
+        }
+
+        public async Task<int> Create(NgoaiNguCreateRequest request)
+        {
+            var ngoaiNgu = new NgoaiNgu()
+            {
+                idDanhMucNgoaiNgu = request.idDanhMucNgoaiNgu,
+                ngayCap = request.ngayCap,
+                noiCap = request.noiCap,
+                trinhDo = request.trinhDo,
+                maNhanVien = request.maNhanVien
+            };
+            _context.ngoaiNgus.Add(ngoaiNgu);
+            return await _context.SaveChangesAsync();
         }
 
         public async Task<NgoaiNguViewModel> GetNgoaiNgu(int id)

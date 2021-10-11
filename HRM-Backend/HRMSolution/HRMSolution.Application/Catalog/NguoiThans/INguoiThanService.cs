@@ -9,5 +9,6 @@ namespace HRMSolution.Application.Catalog.NguoiThans
     public interface INguoiThanService
     {
         Task<NguoiThanViewModel> GetNguoiThan(int id);
+        Task<int> Create(NguoiThanCreateRequest request);
     }
 }

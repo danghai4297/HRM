@@ -9,5 +9,6 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
     public interface IDieuChuyenService
     {
         Task<DieuChuyenViewModel> GetDetail(int id);
+        Task<int> Create(DieuChuyenCreateRequest request);
     }
 }

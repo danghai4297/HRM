@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using HRMSolution.Data.Entities;
 
 namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
 {
@@ -16,9 +17,19 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
         {
             _context = context;
         }
-        public Task<int> Create(KhenThuongKyLuatCreateRequest request)
+        public async Task<int> Create(KhenThuongKyLuatCreateRequest request)
         {
-            throw new NotImplementedException();
+            var ktkl = new KhenThuongKyLuat()
+            {
+                idDanhMucKhenThuong = request.idDanhMucKhenThuong,
+                noiDung = request.noiDung,
+                lyDo = request.lyDo,
+                loai = request.loai,
+                anh = request.anh,
+                maNhanVien = request.maNhanVien
+            };
+            _context.khenThuongKyLuats.Add(ktkl);
+            return await _context.SaveChangesAsync();
         }
 
         public Task<int> Delete(int idDanhMucDanToc)

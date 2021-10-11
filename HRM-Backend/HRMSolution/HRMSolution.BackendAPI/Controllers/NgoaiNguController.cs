@@ -1,4 +1,5 @@
 ﻿using HRMSolution.Application.Catalog.NgoaiNgus;
+using HRMSolution.Application.Catalog.NgoaiNgus.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -23,6 +24,14 @@ namespace HRMSolution.BackendAPI.Controllers
         {
             var ngoaiNgu = await _ngoaiNguService.GetNgoaiNgu(id);
             return Ok(ngoaiNgu);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create([FromForm] NgoaiNguCreateRequest request)
+        {
+            var result = await _ngoaiNguService.Create(request);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
         }
     }
 }

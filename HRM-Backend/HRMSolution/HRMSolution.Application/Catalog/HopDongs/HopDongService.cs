@@ -17,9 +17,21 @@ namespace HRMSolution.Application.Catalog.HopDongs
         {
             _context = context;
         }
-        public Task<int> Create(HopDongCreateRequest request)
+        public async Task<int> Create(HopDongCreateRequest request)
         {
-            throw new NotImplementedException();
+            var hopDong = new HopDong()
+            {
+                maHopDong = request.maHopDong,
+                idLoaiHopDong = request.idLoaiHopDong,
+                idChucDanh = request.idChucDanh,
+                hopDongTuNgay = request.hopDongTuNgay,
+                hopDongDenNgay = request.hopDongDenNgay,
+                ghiChu = request.ghiChu,
+                trangThai = request.trangThai,
+                maNhanVien = request.maNhanVien
+            };
+            _context.hopDongs.Add(hopDong);
+            return await _context.SaveChangesAsync();
         }
 
         public Task<int> Delete(int idDanhMucDanToc)

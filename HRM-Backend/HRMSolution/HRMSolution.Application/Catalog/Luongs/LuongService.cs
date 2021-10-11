@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using HRMSolution.Data.EF;
+using HRMSolution.Data.Entities;
 
 namespace HRMSolution.Application.Catalog.Luongs
 {
@@ -15,6 +16,28 @@ namespace HRMSolution.Application.Catalog.Luongs
         public LuongService(HRMDbContext context)
         {
             _context = context;
+        }
+
+        public async Task<int> Create(LuongCreateRequest request)
+        {
+            var luong = new Luong()
+            {
+                maHopDong = request.maHopDong,
+                idNhomLuong = request.idNhomLuong,
+                heSoLuong = request.heSoLuong,
+                bacLuong = request.bacLuong,
+                luongCoBan = request.luongCoBan,
+                phuCapTrachNhiem = request.phuCapTrachNhiem,
+                phuCapKhac = request.phuCapKhac,
+                tongLuong = request.tongLuong,
+                thoiHanLenLuong = request.thoiHanLenLuong,
+                ngayHieuLuc = request.ngayHieuLuc,
+                ngayKetThuc = request.ngayKetThuc,
+                ghiChu = request.ghiChu,
+                trangThai = request.trangThai
+            };
+            _context.luongs.Add(luong);
+            return await _context.SaveChangesAsync();
         }
 
         public async Task<List<LuongViewModel>> GetAll()

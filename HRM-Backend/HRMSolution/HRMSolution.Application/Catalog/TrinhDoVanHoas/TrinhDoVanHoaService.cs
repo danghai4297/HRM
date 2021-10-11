@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using HRMSolution.Data.Entities;
 
 namespace HRMSolution.Application.Catalog.TrinhDoVanHoas
 {
@@ -16,6 +17,23 @@ namespace HRMSolution.Application.Catalog.TrinhDoVanHoas
         {
             _context = context;
         }
+
+        public async Task<int> Create(TrinhDoVanHoaCreateRequest request)
+        {
+            var tdvh = new TrinhDoVanHoa()
+            {
+                tenTruong = request.tenTruong,
+                idChuyenMon = request.idChuyenMon,
+                tuThoiGian = request.tuThoiGian,
+                denThoiGian = request.denThoiGian,
+                idHinhThucDaoTao = request.idHinhThucDaoTao,
+                idTrinhDo = request.idTrinhDo,
+                maNhanVien = request.maNhanVien
+            };
+            _context.trinhDoVanHoas.Add(tdvh);
+            return await _context.SaveChangesAsync();
+        }
+
         public async Task<List<TrinhDoVanHoaViewModel>> GetAll()
         {
             var query = from p in _context.trinhDoVanHoas

@@ -1,4 +1,5 @@
 ﻿using HRMSolution.Application.Catalog.KhenThuongKyLuats;
+using HRMSolution.Application.Catalog.KhenThuongKyLuats.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -44,6 +45,14 @@ namespace HRMSolution.BackendAPI.Controllers
         {
             var khenThuongKyLuats = await _khenThuongKyLuatService.GetAllKyLuatDetail(maNhanVien, id);
             return Ok(khenThuongKyLuats);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create([FromForm] KhenThuongKyLuatCreateRequest request)
+        {
+            var result = await _khenThuongKyLuatService.Create(request);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
         }
     }
 }

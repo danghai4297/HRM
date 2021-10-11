@@ -10,5 +10,6 @@ namespace HRMSolution.Application.Catalog.Luongs
     {
         Task<List<LuongViewModel>> GetAll();
         Task<LuongViewModel> GetLuong(int id);
+        Task<int> Create(LuongCreateRequest request);
     }
 }

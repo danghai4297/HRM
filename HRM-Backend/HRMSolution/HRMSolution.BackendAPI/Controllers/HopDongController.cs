@@ -1,4 +1,5 @@
 ﻿using HRMSolution.Application.Catalog.HopDongs;
+using HRMSolution.Application.Catalog.HopDongs.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -28,6 +29,14 @@ namespace HRMSolution.BackendAPI.Controllers
         {
             var nhanViens = await _hopDongService.GetAll(maNhanVien);
             return Ok(nhanViens);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create([FromForm] HopDongCreateRequest request)
+        {
+            var result = await _hopDongService.Create(request);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
         }
     }
 }

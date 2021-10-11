@@ -10,6 +10,7 @@ namespace HRMSolution.Application.Catalog.TrinhDoVanHoas
     {
         Task<List<TrinhDoVanHoaViewModel>> GetAll();
         Task<TrinhDoVanHoaViewModel> GetAllById(int id);
+        Task<int> Create(TrinhDoVanHoaCreateRequest request);
 
     }
 }

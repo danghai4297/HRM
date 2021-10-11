@@ -19,6 +19,25 @@ namespace HRMSolution.Application.Catalog.NguoiThans
             _context = context;
         }
 
+        public async Task<int> Create(NguoiThanCreateRequest request)
+        {
+            var nguoiThan = new NguoiThan()
+            {
+                tenNguoiThan = request.tenNguoiThan,
+                gioiTinh = request.gioiTinh,
+                ngaySinh = request.ngaySinh,
+                quanHe = request.quanHe,
+                ngheNghiep = request.ngheNghiep,
+                diaChi = request.diaChi,
+                dienThoai = request.dienThoai,
+                khac = request.khac,
+                idDanhMucNguoiThan = request.idDanhMucNguoiThan,
+                maNhanVien = request.maNhanVien
+            };
+            _context.nguoiThans.Add(nguoiThan);
+            return await _context.SaveChangesAsync();
+        }
+
         public async Task<NguoiThanViewModel> GetNguoiThan(int id)
         {
             var query = from p in _context.nguoiThans
