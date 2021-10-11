@@ -8,7 +8,7 @@ import { dum } from "./Data";
 import { ListContext } from "../../Contexts/ListContext";
 import ProductApi from "../../api/productApi";
 import TableBasic from "../TablePagination/TableBasic";
-import { NVCOLUMNSTDVH } from "./NvColumns";
+import { NVCOLUMNSDC, NVCOLUMNSHD, NVCOLUMNSNN, NVCOLUMNSNT, NVCOLUMNSTDVH } from "./NvColumns";
 
 function Detail(props) {
   let { match, history } = props;
@@ -562,11 +562,11 @@ function Detail(props) {
                     </div>
                   </div>
                   <div className="table">
-                  {/* <TableBasic
+                  <TableBasic
                       link={link}
-                      columns={NVCOLUMNSTDVH}
+                      columns={NVCOLUMNSNN}
                       data={dataDetailNgn}
-                    /> */}
+                    />
                   </div>
                 </>
               )}
@@ -599,11 +599,11 @@ function Detail(props) {
                     </div>
                   </div>
                   <div className="table">
-                    {/* <TableBasic
+                    <TableBasic
                       link={link}
-                      columns={NVCOLUMNSTDVH}
+                      columns={NVCOLUMNSNT}
                       data={dataDetailGd}
-                    /> */}
+                    />
                   </div>
                 </>
               )}
@@ -800,11 +800,11 @@ function Detail(props) {
                     </div>
                   </div>
                   <div className="table">
-                    {/* <TableBasic
+                    <TableBasic
                       link={link}
-                      columns={NVCOLUMNSTDVH}
+                      columns={NVCOLUMNSHD}
                       data={dataDetailHd}
-                    /> */}
+                    />
                   </div>
                 </>
               )}
@@ -868,11 +868,11 @@ function Detail(props) {
                     </div>
                   </div>
                   <div className="table">
-                    {/* <TableBasic
+                    <TableBasic
                       link={link}
-                      columns={NVCOLUMNSTDVH}
+                      columns={NVCOLUMNSDC}
                       data={dataDetailTc}
-                    /> */}
+                    />
                   </div>
                 </>
               )}
@@ -908,7 +908,7 @@ function Detail(props) {
                     {/* <TableBasic
                       link={link}
                       columns={NVCOLUMNSTDVH}
-                      data={dataDetailKtvKl}
+                      data={dataDetailKt}
                     /> */}
                   </div>
                 </>
@@ -945,7 +945,7 @@ function Detail(props) {
                     {/* <TableBasic
                       link={link}
                       columns={NVCOLUMNSTDVH}
-                      data={dataDetailKtvKl}
+                      data={dataDetailKl}
                     /> */}
                   </div>
                 </>

@@ -95,7 +95,7 @@ export const NVCOLUMNS2 = [
   },
   {
     Header: "Mã Nhân Viên",
-    accessor: "maNhanVien",
+    accessor: "id",
     sticky: "left",
     Filter: SelectColumnFilter,
     disableFilters: true,
