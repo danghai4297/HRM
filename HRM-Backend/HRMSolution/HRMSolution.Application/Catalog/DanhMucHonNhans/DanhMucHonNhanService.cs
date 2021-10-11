@@ -1,6 +1,7 @@
 ﻿using HRMSolution.Application.Catalog.DanhMucHonNhans.DhonNhans;
 using HRMSolution.Data.EF;
 using HRMSolution.Data.Entities;
+using HRMSolution.Utilities.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,15 @@ namespace HRMSolution.Application.Catalog.DanhMucHonNhans
             return await _context.SaveChangesAsync();
         }
 
+        public async Task<int> Delete(int idDanhMucHonNhan)
+        {
+            var danhMucHonNhan = await _context.danhMucHonNhans.FindAsync(idDanhMucHonNhan);
+            if (danhMucHonNhan == null) throw new HRMException($"Không tìm thấy danh mục hôn nhân : {idDanhMucHonNhan}");
+
+            _context.danhMucHonNhans.Remove(danhMucHonNhan);
+            return await _context.SaveChangesAsync();
+        }
+
         public async Task<List<DanhMucHonNhanViewModel>> GetALL()
         {
             var query = from p in _context.danhMucHonNhans select p;
@@ -42,6 +52,15 @@ namespace HRMSolution.Application.Catalog.DanhMucHonNhans
 
 
             return data;
+        }
+
+        public async Task<int> Update(DanhMucHonNhanUpdateRequest request)
+        {
+            var danhMucHonNhan = await _context.danhMucHonNhans.FindAsync(request.id);
+            if (danhMucHonNhan == null) throw new HRMException($"Không tìm thấy danh mục hôn nhân có id: {request.id }");
+
+            danhMucHonNhan.tenDanhMuc = request.tenDanhMuc;
+            return await _context.SaveChangesAsync();
         }
     }
 }

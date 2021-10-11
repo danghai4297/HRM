@@ -2,6 +2,7 @@
 using HRMSolution.Application.Catalog.DanhMucChuyenMons.DchuyenMons;
 using HRMSolution.Data.EF;
 using HRMSolution.Data.Entities;
+using HRMSolution.Utilities.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,15 @@ namespace HRMSolution.Application.Catalog.DanhMucChuyenMons
             return await _context.SaveChangesAsync();
         }
 
+        public async Task<int> Delete(int idDanhMucChuyenMon)
+        {
+            var danhMucChuyenMon = await _context.danhMucChuyenMons.FindAsync(idDanhMucChuyenMon);
+            if (danhMucChuyenMon == null) throw new HRMException($"Không tìm thấy danh mục chuyên môn : {idDanhMucChuyenMon}");
+
+            _context.danhMucChuyenMons.Remove(danhMucChuyenMon);
+            return await _context.SaveChangesAsync();
+        }
+
         public async Task<List<DanhMucChuyenMonViewModel>> GetAll()
         {
             var query = from p in _context.danhMucChuyenMons select p;
@@ -44,6 +54,16 @@ namespace HRMSolution.Application.Catalog.DanhMucChuyenMons
 
 
             return data;
+        }
+
+        public async Task<int> Update(DanhMucChuyenMonUpdateRequest request)
+        {
+            var danhMucChuyenMon = await _context.danhMucChuyenMons.FindAsync(request.id);
+            if (danhMucChuyenMon == null) throw new HRMException($"Không tìm thấy danh mục chuyên môn có id: {request.id }");
+
+            danhMucChuyenMon.maChuyenMon = request.maChuyenMon;
+            danhMucChuyenMon.tenChuyenMon = request.tenChuyenMon;
+            return await _context.SaveChangesAsync();
         }
     }
 }

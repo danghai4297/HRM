@@ -7,6 +7,7 @@ using System.Linq;
 using HRMSolution.Application.Catalog.DanhMucLoaiHopDongs.Dtos;
 using Microsoft.EntityFrameworkCore;
 using HRMSolution.Data.Entities;
+using HRMSolution.Utilities.Exceptions;
 
 namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
 {
@@ -30,6 +31,15 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
             return await _context.SaveChangesAsync();
         }
 
+        public async Task<int> Delete(int idDanhMucLoaiHopDong)
+        {
+            var danhMucLoaiHopDong = await _context.danhMucLoaiHopDongs.FindAsync(idDanhMucLoaiHopDong);
+            if (danhMucLoaiHopDong == null) throw new HRMException($"Không tìm thấy danh mục hôn nhân : {idDanhMucLoaiHopDong}");
+
+            _context.danhMucLoaiHopDongs.Remove(danhMucLoaiHopDong);
+            return await _context.SaveChangesAsync();
+        }
+
         public async Task<List<DanhMucLoaiHopDongViewModel>> GetAll()
         {
             var query = from p in _context.danhMucLoaiHopDongs
@@ -42,6 +52,16 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
             }).ToListAsync();
 
             return data;
+        }
+
+        public async Task<int> Update(DanhMucLoaiHopDongUpdateRequest request)
+        {
+            var danhMucLoaiHopDong = await _context.danhMucLoaiHopDongs.FindAsync(request.id);
+            if (danhMucLoaiHopDong == null) throw new HRMException($"Không tìm thấy danh mục hôn nhân có id: {request.id }");
+
+            danhMucLoaiHopDong.maLoaiHopDong = request.maLoaiHopDong;
+            danhMucLoaiHopDong.tenLoaiHopDong = request.tenLoaiHopDong;
+            return await _context.SaveChangesAsync();
         }
     }
 }
