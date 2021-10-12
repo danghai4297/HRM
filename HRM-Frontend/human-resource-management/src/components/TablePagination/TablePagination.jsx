@@ -167,10 +167,7 @@ function TablePagination(props) {
               {page.map((row, i) => {
                 prepareRow(row);
                 return (
-                  <Link
-                    to={link ? link + row.original.id : ""}
-                    className="link-item"
-                  >
+                  <Link to={link + row.original.id} className="link-item">
                     <tr {...row.getRowProps()} className="tr">
                       {row.cells.map((cell) => {
                         return (

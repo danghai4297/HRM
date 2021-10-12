@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddTypeOfContractForm.scss";
+import ProductApi from "../../../api/productApi";
 const schema = yup.object({
   maPhongBan: yup.string().required("Mã phòng ban không được bỏ trống."),
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
@@ -19,9 +20,10 @@ function AddTypeOfContractForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onHandleSubmit = (data) => {
-    console.log(data);
-    objectData(data);
+  const onHandleSubmit = async (data) => {
+    try {
+      await ProductApi.PostDMLHD(data);
+    } catch (error) {}
   };
   return (
     <div className="container-form">

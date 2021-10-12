@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddPositionForm.scss";
+import ProductApi from "../../../api/productApi";
 const schema = yup.object({
   maChucVu: yup.string().required("Mã chức vụ được bỏ trống."),
   tenChucVu: yup.string().required("Tên chức vụ không được bỏ trống."),
@@ -17,9 +18,10 @@ function AddPositionForm(props) {
     } = useForm({
       resolver: yupResolver(schema),
     });
-    const onHandleSubmit = (data) => {
-      console.log(data);
-      objectData(data);
+    const onHandleSubmit = async (data) => {
+      try {
+        await ProductApi.PostDMCV(data);
+      } catch (error) {}
     };
     return (
       <div className="container-form">

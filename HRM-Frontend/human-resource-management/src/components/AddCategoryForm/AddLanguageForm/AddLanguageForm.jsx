@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddLanguageForm.scss";
+import ProductApi from "../../../api/productApi";
 AddLanguageForm.propTypes = {};
 const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
@@ -17,9 +18,10 @@ function AddLanguageForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onHandleSubmit = (data) => {
-    console.log(data);
-    objectData(data);
+  const onHandleSubmit = async (data) => {
+    try {
+      await ProductApi.PostDMNN(data);
+    } catch (error) {}
   };
   return (
     <div className="container-form">

@@ -7,28 +7,25 @@ import ReactHTMLTableToExcel from "react-html-to-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ExportCSV } from "../../components/ExportFile/ExportFile";
 import TablePagination from "../../components/TablePagination/TablePagination";
-import productApi from "../../api/productApi";
+import ProductApi from "../../api/productApi";
 import { Link } from "react-router-dom";
 
 function ScreenDiscipline(props) {
   const link = "/discipline/detail/";
   const fileName = "DSkyluat";
-  const { list } = useContext(ListContext);
-  //   const [dataAllNv, setdataAllNv] = useState([]);
-  //   console.log(dataAllNv);
+  const [dataAllkl, setDataAllKl] = useState([]);
 
-  //   useEffect(() => {
-  //     const fetchNvList = async () => {
-  //       try {
-  //         const responseNv = await productApi.getAllNv();
-  //         // console.log(responseNv);
-  //         setdataAllNv(responseNv);
-  //       } catch (error) {
-  //         console.log("false to fetch nv list: ", error);
-  //       }
-  //     };
-  //     fetchNvList();
-  //   }, []);
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const response = await ProductApi.getAllKLNV();
+        setDataAllKl(response);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
 
   return (
     <>
@@ -49,7 +46,7 @@ function ScreenDiscipline(props) {
               sheet="tablexls"
               buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
             />
-            <ExportCSV csvData={list} fileName={fileName} />
+            <ExportCSV csvData={dataAllkl} fileName={fileName} />
           </div>
         </div>
         <div className="table-nv">
@@ -57,7 +54,7 @@ function ScreenDiscipline(props) {
             link={link}
             tid="tableHd"
             columns={NVCOLUMNS}
-            data={list}
+            data={dataAllkl}
           />
         </div>
       </div>

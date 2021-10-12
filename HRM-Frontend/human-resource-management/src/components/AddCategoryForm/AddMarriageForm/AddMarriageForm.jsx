@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddMarriageForm.scss";
+import ProductApi from "../../../api/productApi";
 const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
 });
@@ -18,9 +19,10 @@ function AddMarriageForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onHandleSubmit = (data) => {
-    console.log(data);
-    objectData(data);
+  const onHandleSubmit = async (data) => {
+    try {
+      await ProductApi.PostDMHN(data);
+    } catch (error) {}
   };
   return (
     <div className="container-form">
