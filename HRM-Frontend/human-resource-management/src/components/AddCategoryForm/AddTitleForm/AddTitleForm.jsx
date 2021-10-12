@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddTitleForm.scss";
+import ProductApi from "../../../api/productApi";
 AddTitleForm.propTypes = {};
 const schema = yup.object({
   maChucDanh: yup.string().required("Mã chức danh không được bỏ trống."),
@@ -18,9 +19,10 @@ function AddTitleForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onHandleSubmit = (data) => {
-    console.log(data);
-    objectData(data);
+  const onHandleSubmit = async (data) => {
+    try {
+      await ProductApi.PostDMCD(data);
+    } catch (error) {}
   };
   return (
     <div className="container-form">

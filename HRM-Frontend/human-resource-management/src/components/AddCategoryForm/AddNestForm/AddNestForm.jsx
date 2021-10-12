@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddNestForm.scss";
+import ProductApi from "../../../api/productApi";
 const schema = yup.object({
   maTo: yup.string().required("Mã tổ không được bỏ trống."),
   thuocPhongBan: yup.string().required("Thuộc phòng ban không được bỏ trống."),
@@ -17,9 +18,10 @@ function AddNestForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onHandleSubmit = (data) => {
-    console.log(data);
-    objectData(data);
+  const onHandleSubmit = async (data) => {
+    try {
+      await ProductApi.PostDMT(data);
+    } catch (error) {}
   };
   return (
     <div className="container-form">

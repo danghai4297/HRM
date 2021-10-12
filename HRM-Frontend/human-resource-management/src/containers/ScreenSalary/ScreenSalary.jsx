@@ -14,21 +14,19 @@ function ScreenSalary(props) {
   const link = "/salary/detail/";
   const fileName = "Danhsachluong";
   const { list } = useContext(ListContext);
-  //   const [dataAllNv, setdataAllNv] = useState([]);
-  //   console.log(dataAllNv);
+  const [dataAllL, setDataAllL] = useState([]);
 
-  //   useEffect(() => {
-  //     const fetchNvList = async () => {
-  //       try {
-  //         const responseNv = await productApi.getAllNv();
-  //         // console.log(responseNv);
-  //         setdataAllNv(responseNv);
-  //       } catch (error) {
-  //         console.log("false to fetch nv list: ", error);
-  //       }
-  //     };
-  //     fetchNvList();
-  //   }, []);
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const response = await productApi.getAllL();
+        setDataAllL(response);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
 
   return (
     <>
@@ -49,7 +47,7 @@ function ScreenSalary(props) {
               sheet="tablexls"
               buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
             />
-            <ExportCSV csvData={list} fileName={fileName} />
+            <ExportCSV csvData={dataAllL} fileName={fileName} />
           </div>
         </div>
         <div className="table-nv">
@@ -57,7 +55,7 @@ function ScreenSalary(props) {
             link={link}
             tid="tabledc"
             columns={NVCOLUMNS}
-            data={list}
+            data={dataAllL}
           />
         </div>
       </div>

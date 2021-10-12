@@ -17,7 +17,7 @@ export const SideBarData = [
     link: "/contract",
   },
   {
-    title: "Hồ sơ lương",
+    title: "Danh sách lương",
     icon: <FontAwesomeIcon icon={["fas", "file-invoice-dollar"]} />,
     link: "/salary",
   },

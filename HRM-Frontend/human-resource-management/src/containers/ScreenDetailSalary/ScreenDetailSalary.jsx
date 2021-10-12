@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SubDetail from "../../components/Detail/SubDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
 import "./ScreenDetailSalary.scss";
-function ScreenDetailSalary() {
+import ProductApi from "../../api/productApi";
+function ScreenDetailSalary(props) {
+  let { match, history } = props;
+  let { id } = match.params;
+
+  const [dataLDetail, setDataLDetail] = useState([]);
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const response = await ProductApi.getLDetail(id);
+        setDataLDetail(response);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
+
+
   return (
     <>
       <div className="main-screen">
