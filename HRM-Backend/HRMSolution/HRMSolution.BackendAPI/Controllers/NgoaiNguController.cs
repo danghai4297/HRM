@@ -26,7 +26,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok(ngoaiNgu);
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromForm] NgoaiNguCreateRequest request)
+        public async Task<IActionResult> Create([FromBody] NgoaiNguCreateRequest request)
         {
             var result = await _ngoaiNguService.Create(request);
             if (result == 0)

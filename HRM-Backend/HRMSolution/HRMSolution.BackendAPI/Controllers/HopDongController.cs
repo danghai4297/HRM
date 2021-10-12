@@ -38,7 +38,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok(hopDong);
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromForm] HopDongCreateRequest request)
+        public async Task<IActionResult> Create([FromBody] HopDongCreateRequest request)
         {
             var result = await _hopDongService.Create(request);
             if (result == 0)

@@ -26,7 +26,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok(danhMucChucDanh);
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromForm] NguoiThanCreateRequest request)
+        public async Task<IActionResult> Create([FromBody] NguoiThanCreateRequest request)
         {
             var result = await _nguoiThanService.Create(request);
             if (result == 0)

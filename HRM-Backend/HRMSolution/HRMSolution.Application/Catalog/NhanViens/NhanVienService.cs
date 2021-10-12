@@ -132,6 +132,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                         join dt in _context.danhMucDanTocs on nv.idDanToc equals dt.id
                         join tg in _context.danhMucTonGiaos on nv.idTonGiao equals tg.id
                         join ncc in _context.danhMucNgachCongChucs on nv.idNgachCongChuc equals ncc.id
+                         
                         select new { nv, tc,dt,  hn, tg,ncc};
 
 

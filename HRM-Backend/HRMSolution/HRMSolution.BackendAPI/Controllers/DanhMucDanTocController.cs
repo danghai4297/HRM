@@ -24,13 +24,23 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok(danhMucDanToc);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Create([FromForm]DanhMucDanTocCreateRequest request)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
         {
-            var result = await _danhMucDanTocService.Create(request);
-            if(result == 0)
+            var danhMucDanToc = await _danhMucDanTocService.GetById(id);
+            if (danhMucDanToc == null)
+                return BadRequest("Không tìm thấy Danh mục dân tộc");
+            return Ok(danhMucDanToc);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody]DanhMucDanTocCreateRequest request)
+        {
+            var dmdt = await _danhMucDanTocService.Create(request);
+            if(dmdt == 0)
                 return BadRequest();
             return Ok();
+
         }
 
         [HttpDelete("id")]
@@ -43,7 +53,7 @@ namespace HRMSolution.BackendAPI.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update([FromForm]DanhMucDanTocUpdateRequest request)
+        public async Task<IActionResult> Update([FromBody]DanhMucDanTocUpdateRequest request)
         {
             var result = await _danhMucDanTocService.Update(request);
             if (result == 0)
