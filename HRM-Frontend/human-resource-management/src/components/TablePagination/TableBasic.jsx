@@ -83,20 +83,6 @@ function TableBasic(props) {
 
   return (
     <>
-      <div className="herder-table">
-        <div className="search-table">
-          <input
-            className="search-input"
-            placeholder="Search"
-            aria-label="true"
-            value={globalFilter || ""}
-            onChange={(e) => setGlobalFilter(e.target.value)}
-          />
-          <span className="icon-search">
-            <FontAwesomeIcon icon={["fas", "search"]} />
-          </span>
-        </div>
-      </div>
       <Styles>
         <div className="table-sticky">
           <table {...getTableProps()} className="tablee sticky" id={tid}>

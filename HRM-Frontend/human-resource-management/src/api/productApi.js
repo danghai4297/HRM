@@ -49,6 +49,11 @@ const ProductApi = {
     const url = "/KhenThuongKyLuat/khen-thuong";
     return axiosClient.get(url);
   },
+   //detail kt
+   getKTDetail: (id) => {
+    const url = `/KhenThuongKyLuat/khen-thuong/${id}`;
+    return axiosClient.get(url);
+  },
 
   //all kỷ luật nv
   getAllKLNV: () => {
@@ -59,6 +64,18 @@ const ProductApi = {
   //detail kl
   getKLDetail: (id) => {
     const url = `/KhenThuongKyLuat/ky-luat/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //all điều chuyển nv
+  getAllDCNV: () => {
+    const url = "/DieuChuyen";
+    return axiosClient.get(url);
+  },
+
+  //detail DC
+  getDCDetail: (id) => {
+    const url = `/DieuChuyen/dieu-chuyen/${id}`;
     return axiosClient.get(url);
   },
 
@@ -85,8 +102,6 @@ const ProductApi = {
     const url = "/DanhMucDanToc";
     return axiosClient.get(url);
   },
-
-  
 
   //all dm hôn nhân
   getAllDMHN: () => {
@@ -172,80 +187,179 @@ const ProductApi = {
     return axiosClient.post(url, data);
   },
 
-   //add danh mục 
-   PostDMCD: (data) => {
+  //add danh mục
+  PostDMCD: (data) => {
     const url = "/DanhMucChucDanh";
     return axiosClient.post(url, data);
   },
 
-   //add danh mục 
-   PostDMCV: (data) => {
+  //add danh mục
+  PostDMCV: (data) => {
     const url = "/DanhMucChucVu";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMCM: (data) => {
+  //add danh mục
+  PostDMCM: (data) => {
     const url = "/DanhMucChuyenMon";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMHN: (data) => {
+  //add danh mục
+  PostDMHN: (data) => {
     const url = "/DanhMucHonNhan";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMLHD: (data) => {
+  //add danh mục
+  PostDMLHD: (data) => {
     const url = "/DanhMucLoaiHopDong";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMNCC: (data) => {
+  //add danh mục
+  PostDMNCC: (data) => {
     const url = "/DanhMucNgachCongChuc";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMNN: (data) => {
+  //add danh mục
+  PostDMNN: (data) => {
     const url = "/DanhMucNgoaiNgu";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMNT: (data) => {
+  //add danh mục
+  PostDMNT: (data) => {
     const url = "/DanhMucNguoiThan";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMNL: (data) => {
+  //add danh mục
+  PostDMNL: (data) => {
     const url = "/DanhMucNhomLuong";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMPB: (data) => {
+  //add danh mục
+  PostDMPB: (data) => {
     const url = "/DanhMucPhongBan";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMTCLD: (data) => {
+  //add danh mục
+  PostDMTCLD: (data) => {
     const url = "/DanhMucTinhChatLaoDong";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMT: (data) => {
+  //add danh mục
+  PostDMT: (data) => {
     const url = "/DanhMucTo";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMTG: (data) => {
+  //add danh mục
+  PostDMTG: (data) => {
     const url = "/DanhMucTonGiao";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMTD: (data) => {
+  //add danh mục
+  PostDMTD: (data) => {
     const url = "/DanhMucTrinhDo";
     return axiosClient.post(url, data);
   },
 
-  
+  //Detail dm chức danh
+  getDetailDMCD: (id) => {
+    const url = `/DanhMucChucDanh/${id}`;
+    return axiosClient.get(url);
+  },
 
+  //Detail danh muc chức vụ
+  getDetailDMCV: (id) => {
+    const url = `/DanhMucChucVu/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail danh muc chuyên môn
+  getDetailDMCM: (id) => {
+    const url = `/DanhMucChuyenMon/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail danh mục dân tộc
+  getDetailDMDT: (id) => {
+    const url = `/DanhMucDanToc/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail dm hôn nhân
+  getDetailDMHN: (id) => {
+    const url = `/DanhMucHonNhan/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail dm khen thưởng
+  getDetailDMKT: (id) => {
+    const url = `/DanhMucKhenThuongKyLuat/khen-thuong/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail dm kỷ luật
+  getDetailDMKL: (id) => {
+    const url = `/DanhMucKhenThuongKyLuat/ky-luat/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail dm loại hợp đồng
+  getDetailDMLHD: (id) => {
+    const url = `/DanhMucLoaiHopDong/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail dm ngạch công chức
+  getDetailDMNCC: (id) => {
+    const url = `/DanhMucNgachCongChuc/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail dm ngoại ngữ
+  getDetailDMNN: (id) => {
+    const url = `/DanhMucNgoaiNgu/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail dm người thân
+  getDetailDMNT: (id) => {
+    const url = `/DanhMucNguoiThan/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail dm nhóm lương
+  getDetailDMNL: (id) => {
+    const url = `/DanhMucNhomLuong/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail dm phòng ban
+  getDetailDMPB: (id) => {
+    const url = `/DanhMucPhongBan/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail dm tính chất lao động
+  getDetailDMTCLD: (id) => {
+    const url = `/DanhMucTinhChatLaoDong/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail danh mục tổ
+  getDetailDMT: (id) => {
+    const url = `/DanhMucTo/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail danh mục tôn giáo
+  getDetailDMTG: (id) => {
+    const url = `/DanhMucTonGiao/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail dm trình độ
+  getDetailDMTD: (id) => {
+    const url = `/DanhMucTrinhDo/${id}`;
+    return axiosClient.get(url);
+  },
 };
 
 export default ProductApi;

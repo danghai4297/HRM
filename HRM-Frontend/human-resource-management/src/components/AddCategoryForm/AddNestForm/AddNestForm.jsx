@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -18,6 +18,20 @@ function AddNestForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
+  //dữ liệu phòng ban
+  const [dataDmpb, setDataDmpb] = useState([]);
+
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const responseNv = await ProductApi.getAllDMPB();
+        setDataDmpb(responseNv);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
   const onHandleSubmit = async (data) => {
     try {
       await ProductApi.PostDMT(data);
@@ -87,7 +101,7 @@ function AddNestForm(props) {
                       : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
-                    <option> Phòng ban 1</option>
+                  <option>1</option>
                 </select>
                 <span className="message">{errors.thuocPhongBan?.message}</span>
               </div>
@@ -96,10 +110,7 @@ function AddNestForm(props) {
           <div className="row">
             <div className="col-6">
               <div className="form-group form-inline">
-                <label
-                  className="col-sm-4 justify-content-start"
-                  htmlFor="to"
-                >
+                <label className="col-sm-4 justify-content-start" htmlFor="to">
                   Tổ
                 </label>
                 <input
