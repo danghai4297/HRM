@@ -10,7 +10,7 @@ import TablePagination from "../../../../components/TablePagination/TablePaginat
 import ProductApi from "../../../../api/productApi";
 
 function ItemRelation(props) {
-  const link = "/profile/";
+  const link = "/category/relation/";
   const fileName = "Danhmucquanhe";
   const [dataDmnt, setDataDmnt] = useState([]);
 

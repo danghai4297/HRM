@@ -10,7 +10,7 @@ import TablePagination from "../../../../components/TablePagination/TablePaginat
 import ProductApi from "../../../../api/productApi";
 
 function ItemCivil(props) {
-  const link = "/profile/";
+  const link = "/category/civil/";
   const fileName = "Ngachcongchuc";
   const [dataDmncc, setDataDmncc] = useState([]);
 

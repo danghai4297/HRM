@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddEducateForm";
+import ProductApi from "../../../api/productApi";
 const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddEducateForm(props) {
-  const { objectData } = props;
   const {
     register,
     handleSubmit,
@@ -15,10 +15,23 @@ function AddEducateForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onHandleSubmit = (data) => {
-    console.log(data);
-    objectData(data);
-  };
+  // let { match, history } = props;
+  // let { id } = match.params;
+
+  // const [dataDetail, setdataDetail] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchNvList = async () => {
+  //     try {
+  //       const response = await ProductApi.getDetailDMHTDT(id);
+  //       setdataDetail(response);
+  //     } catch (error) {
+  //       console.log("false to fetch nv list: ", error);
+  //     }
+  //   };
+  //   fetchNvList();
+  // }, []);
+  const onHandleSubmit = (data) => {};
   return (
     <div className="container-form">
       <form

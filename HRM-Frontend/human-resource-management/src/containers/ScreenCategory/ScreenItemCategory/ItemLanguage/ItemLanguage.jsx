@@ -10,7 +10,7 @@ import TablePagination from "../../../../components/TablePagination/TablePaginat
 import ProductApi from "../../../../api/productApi";
 
 function ItemLangguage(props) {
-  const link = "/profile/";
+  const link = "/category/language/";
   const fileName = "Danhmucngoaingu";
   const [dataDmnn, setDataDmnn] = useState([]);
 

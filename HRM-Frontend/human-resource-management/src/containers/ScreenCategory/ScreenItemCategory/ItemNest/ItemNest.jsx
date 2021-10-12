@@ -10,7 +10,7 @@ import TablePagination from "../../../../components/TablePagination/TablePaginat
 import ProductApi from "../../../../api/productApi";
 
 function ItemNest(props) {
-  const link = "/profile/";
+  const link = "/category/nest/";
   const fileName = "Danhmucto";
     const [dataAll, setDataAll] = useState([]);
 

@@ -10,7 +10,7 @@ import TablePagination from "../../../../components/TablePagination/TablePaginat
 import ProductApi from "../../../../api/productApi";
 
 function ItemPunish(props) {
-  const link = "/profile/";
+  const link = "/category/punish/";
   const fileName = "Danhmuckyluat";
   const [dataDmkl, setDataDmkl] = useState([]);
 

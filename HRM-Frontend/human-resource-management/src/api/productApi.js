@@ -360,6 +360,7 @@ const ProductApi = {
     const url = `/DanhMucTrinhDo/${id}`;
     return axiosClient.get(url);
   },
+ 
 };
 
 export default ProductApi;

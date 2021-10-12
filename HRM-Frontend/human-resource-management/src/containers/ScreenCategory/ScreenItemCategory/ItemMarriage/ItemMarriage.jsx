@@ -11,7 +11,7 @@ import TablePagination from "../../../../components/TablePagination/TablePaginat
 import ProductApi from "../../../../api/productApi";
 
 function ItemMarriage(props) {
-  const link = "/profile/";
+  const link = "/category/marriage/";
   const fileName = "Danhmuchonnha";
   const [dataDmhn, setDataDmhn] = useState([]);
 

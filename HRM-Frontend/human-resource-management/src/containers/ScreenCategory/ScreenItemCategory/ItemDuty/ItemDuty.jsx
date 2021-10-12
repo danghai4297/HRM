@@ -10,7 +10,7 @@ import TablePagination from "../../../../components/TablePagination/TablePaginat
 import ProductApi from "../../../../api/productApi";
 
 function ItemDuty(props) {
-  const link = "/profile/";
+  const link = "/category/duty/";
   const fileName = "Danhmucchucvu";
   const [dataDmcd, setDataDmcd] = useState([]);
 

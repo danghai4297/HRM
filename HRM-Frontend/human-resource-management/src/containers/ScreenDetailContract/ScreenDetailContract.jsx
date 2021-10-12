@@ -21,12 +21,15 @@ function ScreenDetailContract(props) {
     };
     fetchNvList();
   }, []);
+  console.log(dataDetailHd);
   return (
     <>
       <div className="main-screen">
         <div className="first-main">
           <div className="first-path">
-            <FontAwesomeIcon icon={["fas", "long-arrow-alt-left"]} />
+            <button className="btn-back" onClick={history.goBack}>
+              <FontAwesomeIcon className="icon-btn" icon={["fas", "long-arrow-alt-left"]} />
+            </button>
           </div>
           <div className="second-path">
             <h2>Chi tiết hợp đồng</h2>
@@ -42,27 +45,32 @@ function ScreenDetailContract(props) {
           <div className="second-main-path">
             <SubDetail
               titleLeft="Họ và tên"
-              itemLeft={null}
+              itemLeft={dataDetailHd.tenNhanVien}
               titleRight="Mã nhân viên"
-              itemRight={null}
+              itemRight={dataDetailHd.maNhanVien}
             ></SubDetail>
             <SubDetail
               titleLeft="Mã hợp đồng"
-              itemLeft={null}
+              itemLeft={dataDetailHd.id}
               titleRight="Loại hợp đồng"
-              itemRight={null}
+              itemRight={dataDetailHd.loaiHopDong}
             ></SubDetail>
             <SubDetail
-              titleLeft="Lương cơ bản"
-              itemLeft={null}
+              titleLeft="Trạng thái"
+              itemLeft={dataDetailHd.trangThai}
               titleRight="Chức danh công việc"
-              itemRight={null}
+              itemRight={dataDetailHd.chucDanh}
             ></SubDetail>
             <SubDetail
               titleLeft="Ngày có hiệu lực"
-              itemLeft={null}
+              itemLeft={dataDetailHd.hopDongTuNgay}
               titleRight="Ngày hết hạn"
-              itemRight={null}
+              itemRight={dataDetailHd.hopDongDenNgay}
+            ></SubDetail>
+            <SubDetail
+              titleLeft="Ghi chú"
+              itemLeft={dataDetailHd.ghiChu}
+              titleRight={null}
             ></SubDetail>
           </div>
         </div>

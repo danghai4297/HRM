@@ -4,7 +4,6 @@ import SubDetail from "./SubDetail";
 import { links } from "./ScrollData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { dum } from "./Data";
 import { ListContext } from "../../Contexts/ListContext";
 import ProductApi from "../../api/productApi";
 import TableBasic from "../TablePagination/TableBasic";
@@ -58,9 +57,11 @@ function Detail(props) {
   //   return console.log(item.tdvhTenTruong);
   // });
 
-  // console.log(dataDetailNv);
+  console.log(dataDetailNv);
   // console.log(dataDetailNv.trinhDoVanHoas);
   // console.log(dataDetailHd);
+
+
 
   const [dropBase, setDropBase] = useState(true);
   const [dropContact, setDropContact] = useState(true);
@@ -126,7 +127,7 @@ function Detail(props) {
   };
   return (
     <>
-      <div className="contents">
+      <div className="contents" id="abc">
         <div className="first-information">
           <div className="left-path">
             <div className="icons">
@@ -145,7 +146,7 @@ function Detail(props) {
                 <h5>{dataDetailNv.hoTen}</h5>
               </div>
               <div className="codes">
-                <p>{dataDetailNv.maNhanVien}</p>
+                <p>{dataDetailNv.id}</p>
               </div>
             </div>
           </div>
@@ -250,7 +251,7 @@ function Detail(props) {
           </div>
         </div>
         <div className="main-information">
-          <div className="left-header-information">
+          <div className="left-header-information" id="bc">
             <div className="sticky-top">
               <ul className="list-left">
                 {links.map((link) => {
@@ -292,7 +293,7 @@ function Detail(props) {
                   </div>
                   <SubDetail
                     titleLeft="Mã nhân viên"
-                    itemLeft={dataDetailNv.maNhanVien}
+                    itemLeft={dataDetailNv.id}
                     titleRight="TK Ngân hàng"
                     itemRight={dataDetailNv.atm}
                   ></SubDetail>

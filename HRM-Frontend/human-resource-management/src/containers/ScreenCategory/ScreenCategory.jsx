@@ -17,7 +17,7 @@ import ItemTraining from "./ScreenItemCategory/ItemTraining/ItemTraining";
 import ItemCivil from "./ScreenItemCategory/ItemCivil/ItemCivil";
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import ScreenNotFound from "../ScreenProject/ScreenNotFound";
 import ItemMarriage from "./ScreenItemCategory/ItemMarriage/ItemMarriage";
 import ItemRelation from "./ScreenItemCategory/ItemRelation/ItemRelation";
@@ -65,10 +65,18 @@ function ScreenCategory() {
           </div> */}
           <div className="table-category">
             <Switch>
-              <Route exact path="/category/" component={ItemNation} />
+              <Route exact path="/category/">
+                <Redirect to="/category/nation" />
+              </Route>
+              <Route exact path="/category/nation" component={ItemNation} />
               <Route
                 exact
                 path="/category/nation/add"
+                component={AddNationForm}
+              />
+              <Route
+                exact
+                path="/category/nation/:id"
                 component={AddNationForm}
               />
 
@@ -76,6 +84,11 @@ function ScreenCategory() {
               <Route
                 exact
                 path="/category/title/add"
+                component={AddTitleForm}
+              />
+              <Route
+                exact
+                path="/category/title/:id"
                 component={AddTitleForm}
               />
 
@@ -89,11 +102,21 @@ function ScreenCategory() {
                 path="/category/specialize/add"
                 component={AddSpecializeForm}
               />
+              <Route
+                exact
+                path="/category/specialize/:id"
+                component={AddSpecializeForm}
+              />
 
               <Route exact path="/category/level" component={ItemLevel} />
               <Route
                 exact
                 path="/category/level/add"
+                component={AddLevelForm}
+              />
+              <Route
+                exact
+                path="/category/level/:id"
                 component={AddLevelForm}
               />
 
@@ -103,14 +126,29 @@ function ScreenCategory() {
                 path="/category/language/add"
                 component={AddLanguageForm}
               />
+              <Route
+                exact
+                path="/category/language/:id"
+                component={AddLanguageForm}
+              />
 
               <Route exact path="/category/nest" component={ItemNest} />
               <Route exact path="/category/nest/add" component={AddNestForm} />
+              <Route
+                exact
+                path="/category/nest/:id"
+                component={AddNestForm}
+              />
 
               <Route exact path="/category/religion" component={ItemReligion} />
               <Route
                 exact
                 path="/category/religion/add"
+                component={AddReligionForm}
+              />
+              <Route
+                exact
+                path="/category/religion/:id"
                 component={AddReligionForm}
               />
 
@@ -120,11 +158,21 @@ function ScreenCategory() {
                 path="/category/bonus/add"
                 component={AddBonusForm}
               />
+              <Route
+                exact
+                path="/category/bonus/:id"
+                component={AddBonusForm}
+              />
 
               <Route exact path="/category/punish" component={ItemPunish} />
               <Route
                 exact
                 path="/category/punish/add"
+                component={AddDisciplineForm}
+              />
+              <Route
+                exact
+                path="/category/punish/:id"
                 component={AddDisciplineForm}
               />
 
@@ -138,11 +186,21 @@ function ScreenCategory() {
                 path="/category/department/add"
                 component={AddDepartmentForm}
               />
+              <Route
+                exact
+                path="/category/department/:id"
+                component={AddDepartmentForm}
+              />
 
               <Route exact path="/category/deal" component={ItemDeal} />
               <Route
                 exact
                 path="/category/deal/add"
+                component={AddTypeOfContractForm}
+              />
+              <Route
+                exact
+                path="/category/deal/:id"
                 component={AddTypeOfContractForm}
               />
 
@@ -152,6 +210,11 @@ function ScreenCategory() {
                 path="/category/wages/add"
                 component={AddSalaryGroupForm}
               />
+              <Route
+                exact
+                path="/category/wages/:id"
+                component={AddSalaryGroupForm}
+              />
 
               <Route exact path="/category/training" component={ItemTraining} />
               <Route
@@ -159,14 +222,29 @@ function ScreenCategory() {
                 path="/category/training/add"
                 component={AddEducateForm}
               />
+              <Route
+                exact
+                path="/category/training/:id"
+                component={AddEducateForm}
+              />
 
               <Route exact path="/category/civil" component={ItemCivil} />
               <Route exact path="/category/civil/add" component={AddCSRForm} />
+              <Route
+                exact
+                path="/category/civil/:id"
+                component={AddCSRForm}
+              />
 
               <Route exact path="/category/relation" component={ItemRelation} />
               <Route
                 exact
                 path="/category/relation/add"
+                component={AddRelationForm}
+              />
+              <Route
+                exact
+                path="/category/relation/:id"
                 component={AddRelationForm}
               />
 
@@ -176,11 +254,21 @@ function ScreenCategory() {
                 path="/category/marriage/add"
                 component={AddMarriageForm}
               />
+              <Route
+                exact
+                path="/category/marriage/:id"
+                component={AddMarriageForm}
+              />
 
               <Route exact path="/category/duty" component={ItemDuty} />
               <Route
                 exact
                 path="/category/duty/add"
+                component={AddPositionForm}
+              />
+              <Route
+                exact
+                path="/category/duty/:id"
                 component={AddPositionForm}
               />
               {/* <Route component={ScreenNotFound} /> */}

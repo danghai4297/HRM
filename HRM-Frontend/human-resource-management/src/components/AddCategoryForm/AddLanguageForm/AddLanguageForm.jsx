@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -23,6 +23,22 @@ function AddLanguageForm(props) {
       await ProductApi.PostDMNN(data);
     } catch (error) {}
   };
+  let { match, history } = props;
+  let { id } = match.params;
+
+  const [dataDetail, setdataDetail] = useState([]);
+
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const response = await ProductApi.getDetailDMNN(id);
+        setdataDetail(response);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
   return (
     <div className="container-form">
       <form

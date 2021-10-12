@@ -19,6 +19,11 @@ function AddNestForm(props) {
     resolver: yupResolver(schema),
   });
   //dữ liệu phòng ban
+  let { match, history } = props;
+  let { id } = match.params;
+
+  const [dataDetail, setdataDetail] = useState([]);
+
   const [dataDmpb, setDataDmpb] = useState([]);
 
   useEffect(() => {
@@ -26,6 +31,8 @@ function AddNestForm(props) {
       try {
         const responseNv = await ProductApi.getAllDMPB();
         setDataDmpb(responseNv);
+        const response = await ProductApi.getDetailDMDT(id);
+        setdataDetail(response);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }

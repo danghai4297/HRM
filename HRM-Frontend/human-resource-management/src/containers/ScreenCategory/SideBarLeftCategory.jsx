@@ -6,7 +6,6 @@ function SideBarLeftCategory() {
   function ListMenu({ val }) {
     let match = useRouteMatch({
       path: val.link,
-      exact: true,
     });
     return (
       <Link to={val.link} className="category-link">

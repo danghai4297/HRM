@@ -145,7 +145,7 @@ function ScreenProject() {
                 path="/discipline/add"
                 component={AddDisciplineForm}
               />
-              <ProtectedRoute exact path="/report" component={AddNationForm} />
+              <ProtectedRoute exact path="/report" component={ScreenReport} />
               {/* <Route component={ScreenNotFound}/> */}
             </Switch>
           </div>

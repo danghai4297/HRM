@@ -10,7 +10,7 @@ import TablePagination from "../../../../components/TablePagination/TablePaginat
 import ProductApi from "../../../../api/productApi";
 
 function ItemTraining(props) {
-  const link = "/profile/";
+  const link = "/category/training/";
   const fileName = "Hinhthucdaotao";
   const [dataDmtcld, setDataDmtcld] = useState([]);
 
