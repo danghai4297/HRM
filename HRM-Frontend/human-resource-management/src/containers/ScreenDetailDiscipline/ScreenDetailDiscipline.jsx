@@ -1,11 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import SubDetail from "../../components/Detail/SubDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
-import "./ScreenDetailDiscipline.scss"
-function ScreenDetailDiscipline() {
-    return (
-        <>
+import "./ScreenDetailDiscipline.scss";
+import ProductApi from "../../api/productApi";
+function ScreenDetailDiscipline(props) {
+  let { match, history } = props;
+  let { id } = match.params;
+
+  const [dataKLDetail, setDataKLDetail] = useState([]);
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const response = await ProductApi.getLDetail(id);
+        setDataKLDetail(response);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
+  console.log(dataKLDetail);
+
+  return (
+    <>
       <div className="main-screen">
         <div className="first-main">
           <div className="first-path">
@@ -44,7 +62,7 @@ function ScreenDetailDiscipline() {
         </div>
       </div>
     </>
-    )
+  );
 }
 
-export default ScreenDetailDiscipline
+export default ScreenDetailDiscipline;

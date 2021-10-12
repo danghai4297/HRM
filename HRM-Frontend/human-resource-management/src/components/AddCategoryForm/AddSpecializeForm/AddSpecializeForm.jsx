@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddSpecializeForm.scss";
+import ProductApi from "../../../api/productApi";
 const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
   maDanhMuc:yup.string().required("Mã danh mục không được bỏ trống."),
@@ -16,9 +17,10 @@ function AddSpecializeForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onHandleSubmit = (data) => {
-    console.log(data);
-    objectData(data);
+  const onHandleSubmit = async (data) => {
+    try {
+      await ProductApi.PostDMCM(data);
+    } catch (error) {}
   };
   return (
     <div className="container-form">

@@ -1,7 +1,7 @@
 export const SideBarLeftCategoryData = [
   {
     title: "Danh mục dân tộc",
-    link: "/category/",
+    link: "/category/nation",
   },
   {
     title: "Danh mục chức danh",

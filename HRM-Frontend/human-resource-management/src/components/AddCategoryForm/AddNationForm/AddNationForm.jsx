@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddNationForm.scss";
+import { useState } from "react";
 import ProductApi from "../../../api/productApi";
 // import { Alert } from "react-alert";
 AddNationForm.propTypes = {};
@@ -18,19 +18,26 @@ function AddNationForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
+  let { match, history } = props;
+  let { id } = match.params;
 
-  // const fetchNvList = async () => {
-  //   try {
-  //     const responseNv = await productApi.getAllNv();
-  //     setdataAllNv(responseNv);
-  //   } catch (error) {
-  //     console.log("false to fetch nv list: ", error);
-  //   }
-  // };
+  const [nationValue, setNationValue] = useState(null);
+
+  // useEffect(() => {
+  //   const fetchNvList = async () => {
+  //     try {
+  //       const response = await ProductApi.getLDetail(id);
+  //       setNationValue(response);
+  //     } catch (error) {
+  //       console.log("false to fetch nv list: ", error);
+  //     }
+  //   };
+  //   fetchNvList();
+  // }, []);
+
   const onHandleSubmit = async (data) => {
-    console.log(data);
     try {
-       await ProductApi.PostDMDT(data);
+      await ProductApi.PostDMDT(data);
     } catch (error) {}
   };
   return (
@@ -45,11 +52,20 @@ function AddNationForm(props) {
             <h2 className="">Thêm danh mục dân tộc</h2>
           </div>
           <div className="button">
-            <input type="submit" className="btn btn-secondary " value="Huỷ" />
+            <input
+              type="submit"
+              className={nationValue ? "btn btn-danger" : "delete-button"}
+              value="Xoá"
+            />
+            <input
+              type="submit"
+              className="btn btn-secondary ml-3"
+              value="Huỷ"
+            />
             <input
               type="submit"
               className="btn btn-primary ml-3"
-              value="Lưu"
+              value={nationValue ? "Sửa" : "Lưu"}
               onClick={handleSubmit(onHandleSubmit)}
             />
           </div>
@@ -70,6 +86,7 @@ function AddNationForm(props) {
                   type="text"
                   {...register("tenDanhMuc")}
                   id="tenDanhMuc"
+                  defaultValue={nationValue}
                   className={
                     !errors.tenDanhMuc
                       ? "form-control col-sm-6"

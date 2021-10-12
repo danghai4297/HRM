@@ -1,15 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SubDetail from "../../components/Detail/SubDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
 import "./ScreenDetailSalary.scss";
-function ScreenDetailSalary() {
+import ProductApi from "../../api/productApi";
+function ScreenDetailSalary(props) {
+  let { match, history } = props;
+  let { id } = match.params;
+
+  const [dataLDetail, setDataLDetail] = useState([]);
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const response = await ProductApi.getLDetail(id);
+        setDataLDetail(response);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
+  console.log(dataLDetail);
+
   return (
     <>
       <div className="main-screen">
         <div className="first-main">
           <div className="first-path">
-            <FontAwesomeIcon icon={["fas", "long-arrow-alt-left"]} />
+            <button className="btn-back" onClick={history.goBack}>
+            <FontAwesomeIcon className="icon-btn" icon={["fas", "long-arrow-alt-left"]} />
+            </button>
           </div>
           <div className="second-path">
             <h2>Chi tiết hồ sơ lương</h2>
@@ -20,43 +40,50 @@ function ScreenDetailSalary() {
             </Button>
           </div>
         </div>
-        <div className="second-main">
+        <div className="second-mains">
           <h3 className="title-main">Thông tin chung</h3>
           <div className="second-main-path">
             <SubDetail
               titleLeft="Họ và tên"
               itemLeft={null}
               titleRight="Mã nhân viên"
-              itemRight={null}
+              itemRight={dataLDetail.maNhanVien}
             ></SubDetail>
             <SubDetail
               titleLeft="Mã hợp đồng"
-              itemLeft={null}
+              itemLeft={dataLDetail.maHopDong}
               titleRight="Nhóm lương"
-              itemRight={null}
+              itemRight={dataLDetail.nhomLuong}
             ></SubDetail>
             <SubDetail
               titleLeft="Hệ số lương"
-              itemLeft={null}
+              itemLeft={dataLDetail.heSoLuong}
               titleRight="Bậc lương"
-              itemRight={null}
+              itemRight={dataLDetail.bacLuong}
             ></SubDetail>
             <SubDetail
               titleLeft="Phụ cấp chức vụ"
-              itemLeft={null}
+              itemLeft={dataLDetail.phuCapTrachNhiem}
               titleRight="Phụ cấp khác"
-              itemRight={null}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Thời hạn lên lương"
-              itemLeft={null}
-              titleRight="Ngày hết hạn"
-              itemRight={null}
+              itemRight={dataLDetail.phuCapKhac}
             ></SubDetail>
             <SubDetail
               titleLeft="Ngày có hiệu lực"
-              itemLeft={null}
-              titleRight={null}
+              itemLeft={dataLDetail.ngayHieuLuc}
+              titleRight="Ngày hết hạn"
+              itemRight={dataLDetail.ngayKetThuc}
+            ></SubDetail>
+            <SubDetail
+              titleLeft="Thời hạn lên lương"
+              itemLeft={dataLDetail.thoiHanLenLuong}
+              titleRight="Tổng lương"
+              itemRight={dataLDetail.tongLuong}
+            ></SubDetail>
+            <SubDetail
+              titleLeft="Trạng thái"
+              itemLeft={dataLDetail.trangThai}
+              titleRight="Ghi chú"
+              itemRight={dataLDetail.ghiChu}
             ></SubDetail>
           </div>
         </div>

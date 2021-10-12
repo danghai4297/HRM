@@ -17,7 +17,7 @@ import ItemTraining from "./ScreenItemCategory/ItemTraining/ItemTraining";
 import ItemCivil from "./ScreenItemCategory/ItemCivil/ItemCivil";
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import ScreenNotFound from "../ScreenProject/ScreenNotFound";
 import ItemMarriage from "./ScreenItemCategory/ItemMarriage/ItemMarriage";
 import ItemRelation from "./ScreenItemCategory/ItemRelation/ItemRelation";
@@ -65,7 +65,10 @@ function ScreenCategory() {
           </div> */}
           <div className="table-category">
             <Switch>
-              <Route exact path="/category/" component={ItemNation} />
+              <Route exact path="/category/">
+                <Redirect to="/category/nation" />
+              </Route>
+              <Route exact path="/category/nation" component={ItemNation} />
               <Route
                 exact
                 path="/category/nation/add"
