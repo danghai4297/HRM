@@ -9,7 +9,6 @@ const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddDisciplineForm(props) {
-  const { objectData } = props;
   const {
     register,
     handleSubmit,
@@ -18,8 +17,7 @@ function AddDisciplineForm(props) {
     resolver: yupResolver(schema),
   });
   const onHandleSubmit = (data) => {
-    console.log(data);
-    objectData(data);
+ 
   };
   return (
     <div className="container-form">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -22,6 +22,22 @@ function AddSalaryGroupForm(props) {
     } = useForm({
       resolver: yupResolver(schema),
     });
+    let { match, history } = props;
+    let { id } = match.params;
+  
+    const [dataDetail, setdataDetail] = useState([]);
+  
+    useEffect(() => {
+      const fetchNvList = async () => {
+        try {
+          const response = await ProductApi.getDetailDMNL(id);
+          setdataDetail(response);
+        } catch (error) {
+          console.log("false to fetch nv list: ", error);
+        }
+      };
+      fetchNvList();
+    }, []);
     const onHandleSubmit = async (data) => {
       try {
         await ProductApi.PostDMNL(data);

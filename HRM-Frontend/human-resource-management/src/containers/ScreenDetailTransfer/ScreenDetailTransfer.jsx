@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SubDetail from "../../components/Detail/SubDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
 import "./ScreenDetailTransfer.scss";
-function ScreenDetailTransfer() {
+import ProductApi from "../../api/productApi";
+function ScreenDetailTransfer(props) {
+  let { match, history } = props;
+  let { id } = match.params;
+
+  const [dataDetailDC, setDataDetailDC] = useState([]);
+
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const response = await ProductApi.getDCDetail(id);
+        setDataDetailDC(response);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
+  console.log(dataDetailDC);
   return (
     <>
       <div className="main-screen">

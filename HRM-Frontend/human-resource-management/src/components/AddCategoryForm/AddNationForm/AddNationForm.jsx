@@ -21,19 +21,19 @@ function AddNationForm(props) {
   let { match, history } = props;
   let { id } = match.params;
 
-  const [nationValue, setNationValue] = useState(null);
+  const [dataDetail, setdataDetail] = useState([]);
 
-  // useEffect(() => {
-  //   const fetchNvList = async () => {
-  //     try {
-  //       const response = await ProductApi.getLDetail(id);
-  //       setNationValue(response);
-  //     } catch (error) {
-  //       console.log("false to fetch nv list: ", error);
-  //     }
-  //   };
-  //   fetchNvList();
-  // }, []);
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const response = await ProductApi.getDetailDMDT(id);
+        setdataDetail(response);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
 
   const onHandleSubmit = async (data) => {
     try {
@@ -54,7 +54,7 @@ function AddNationForm(props) {
           <div className="button">
             <input
               type="submit"
-              className={nationValue ? "btn btn-danger" : "delete-button"}
+              className={dataDetail ? "btn btn-danger" : "delete-button"}
               value="Xoá"
             />
             <input
@@ -65,7 +65,7 @@ function AddNationForm(props) {
             <input
               type="submit"
               className="btn btn-primary ml-3"
-              value={nationValue ? "Sửa" : "Lưu"}
+              value={dataDetail ? "Sửa" : "Lưu"}
               onClick={handleSubmit(onHandleSubmit)}
             />
           </div>
@@ -86,7 +86,7 @@ function AddNationForm(props) {
                   type="text"
                   {...register("tenDanhMuc")}
                   id="tenDanhMuc"
-                  defaultValue={nationValue}
+                  defaultValue={dataDetail}
                   className={
                     !errors.tenDanhMuc
                       ? "form-control col-sm-6"

@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { ListContext } from "../../Contexts/ListContext";
 import { NVCOLUMNS } from "./NvColumns";
 import ReactHTMLTableToExcel from "react-html-to-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,22 +12,19 @@ import { Link } from "react-router-dom";
 function ScreenTransfer(props) {
   const link = "/transfer/detail/";
   const fileName = "danhsachdieuchuyen";
-  const { list } = useContext(ListContext);
-  //   const [dataAllNv, setdataAllNv] = useState([]);
-  //   console.log(dataAllNv);
+  const [dataDCAll, setDataDCAll] = useState([]);
 
-  //   useEffect(() => {
-  //     const fetchNvList = async () => {
-  //       try {
-  //         const responseNv = await productApi.getAllNv();
-  //         // console.log(responseNv);
-  //         setdataAllNv(responseNv);
-  //       } catch (error) {
-  //         console.log("false to fetch nv list: ", error);
-  //       }
-  //     };
-  //     fetchNvList();
-  //   }, []);
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const response = await productApi.getAllDCNV();
+        setDataDCAll(response);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
 
   return (
     <>
@@ -49,7 +45,7 @@ function ScreenTransfer(props) {
               sheet="tablexls"
               buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
             />
-            <ExportCSV csvData={list} fileName={fileName} />
+            <ExportCSV csvData={dataDCAll} fileName={fileName} />
           </div>
         </div>
         <div className="table-nv">
@@ -57,7 +53,7 @@ function ScreenTransfer(props) {
             link={link}
             tid="tableHd"
             columns={NVCOLUMNS}
-            data={list}
+            data={dataDCAll}
           />
         </div>
       </div>
