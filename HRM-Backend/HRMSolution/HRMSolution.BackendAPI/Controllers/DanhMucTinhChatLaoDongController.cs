@@ -48,5 +48,13 @@ namespace HRMSolution.BackendAPI.Controllers
                 return BadRequest();
             return Ok();
         }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var result = await _danhMucTinhChatLaoDongService.GetById(id);
+            if (result == null)
+                return BadRequest("Không tìm thấy Danh mục tính chất lao động");
+            return Ok(result);
+        }
     }
 }
