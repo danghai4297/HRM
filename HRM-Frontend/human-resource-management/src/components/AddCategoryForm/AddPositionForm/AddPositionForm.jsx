@@ -37,6 +37,7 @@ function AddPositionForm(props) {
   const onHandleSubmit = async (data) => {
     try {
       await ProductApi.PostDMCV(data);
+      history.goBack();
     } catch (error) {}
   };
   return (

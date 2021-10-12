@@ -6,7 +6,7 @@ import "./AddNestForm.scss";
 import ProductApi from "../../../api/productApi";
 const schema = yup.object({
   maTo: yup.string().required("Mã tổ không được bỏ trống."),
-  idPhongBan: yup.string().required("Thuộc phòng ban không được bỏ trống."),
+  idPhongBan: yup.number().required("Thuộc phòng ban không được bỏ trống."),
   tenTo: yup.string().required("Tổ không được bỏ trống."),
 });
 function AddNestForm(props) {
@@ -40,8 +40,11 @@ function AddNestForm(props) {
     fetchNvList();
   }, []);
   const onHandleSubmit = async (data) => {
+    console.log(data);
+
     try {
       await ProductApi.PostDMT(data);
+      history.goBack();
     } catch (error) {}
   };
   return (
@@ -117,7 +120,10 @@ function AddNestForm(props) {
                       : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
-                  <option> Phòng ban 1</option>
+                  <option value=""></option>
+                  {dataDmpb.map((item) => (
+                    <option value={item.id}>{item.tenPhongBan} </option>
+                  ))}
                 </select>
                 <span className="message">{errors.idPhongBan?.message}</span>
               </div>
@@ -126,7 +132,10 @@ function AddNestForm(props) {
           <div className="row">
             <div className="col-6">
               <div className="form-group form-inline">
-                <label className="col-sm-4 justify-content-start" htmlFor="tenTo">
+                <label
+                  className="col-sm-4 justify-content-start"
+                  htmlFor="tenTo"
+                >
                   Tổ
                 </label>
                 <input

@@ -8,7 +8,7 @@ import ProductApi from "../../../api/productApi";
 
 AddCSRForm.propTypes = {};
 const schema = yup.object({
-  tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
+  tenNgach: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddCSRForm(props) {
   const [crmValue, setCrmValue] = useState(null);
@@ -40,6 +40,7 @@ function AddCSRForm(props) {
   const onHandleSubmit = async (data) => {
     try {
       await ProductApi.PostDMNCC(data);
+      history.goBack();
     } catch (error) {}
   };
   return (
@@ -80,21 +81,21 @@ function AddCSRForm(props) {
               <div className="form-group form-inline">
                 <label
                   className="col-sm-4 justify-content-start"
-                  htmlFor="tenDanhMuc"
+                  htmlFor="tenNgach"
                 >
                   Tên danh mục
                 </label>
                 <input
                   type="text"
-                  {...register("tenDanhMuc")}
-                  id="tenDanhMuc"
+                  {...register("tenNgach")}
+                  id="tenNgach"
                   className={
-                    !errors.tenDanhMuc
+                    !errors.tenNgach
                       ? "form-control col-sm-6"
                       : "form-control col-sm-6 border-danger "
                   }
                 />
-                <span className="message">{errors.tenDanhMuc?.message}</span>
+                <span className="message">{errors.tenNgach?.message}</span>
               </div>
             </div>
           </div>

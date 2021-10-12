@@ -49,8 +49,8 @@ const ProductApi = {
     const url = "/KhenThuongKyLuat/khen-thuong";
     return axiosClient.get(url);
   },
-   //detail kt
-   getKTDetail: (id) => {
+  //detail kt
+  getKTDetail: (id) => {
     const url = `/KhenThuongKyLuat/khen-thuong/${id}`;
     return axiosClient.get(url);
   },
@@ -106,6 +106,11 @@ const ProductApi = {
   //all dm hôn nhân
   getAllDMHN: () => {
     const url = "/DanhMucHonNhan";
+    return axiosClient.get(url);
+  },
+  //all dm HTDT
+  getAllDMHTDT: () => {
+    const url = "/DanhMucHinhThucDaoTao";
     return axiosClient.get(url);
   },
 
@@ -248,6 +253,13 @@ const ProductApi = {
     const url = "/DanhMucTo";
     return axiosClient.post(url, data);
   },
+
+  //add danh mục
+  PostDMHTDT: (data) => {
+    const url = "/DanhMucHinhThucDaoTao";
+    return axiosClient.post(url, data);
+  },
+
   //add danh mục
   PostDMTG: (data) => {
     const url = "/DanhMucTonGiao";
@@ -360,7 +372,12 @@ const ProductApi = {
     const url = `/DanhMucTrinhDo/${id}`;
     return axiosClient.get(url);
   },
- 
+
+  //Detail dm trình độ
+  getDetailDMHTDT: (id) => {
+    const url = `/DanhMucHinhThucDaoTao/${id}`;
+    return axiosClient.get(url);
+  },
 };
 
 export default ProductApi;

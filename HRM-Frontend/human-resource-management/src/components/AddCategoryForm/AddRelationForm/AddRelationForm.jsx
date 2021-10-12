@@ -38,6 +38,7 @@ function AddRelationForm(props) {
   const onHandleSubmit = async (data) => {
     try {
       await ProductApi.PostDMNT(data);
+      history.goBack();
     } catch (error) {}
   };
   return (

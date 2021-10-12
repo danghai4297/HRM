@@ -35,7 +35,7 @@ function AddEducateForm(props) {
   // }, []);
   const onHandleSubmit = async (data) => {
     try {
-      await ProductApi.PostDMTCLD(data);
+      await ProductApi.PostDMHTDT(data);
       history.goBack();
     } catch (error) {}
   };

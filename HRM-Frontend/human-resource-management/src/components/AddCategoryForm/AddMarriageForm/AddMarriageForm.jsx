@@ -38,6 +38,7 @@ function AddMarriageForm(props) {
   const onHandleSubmit = async (data) => {
     try {
       await ProductApi.PostDMHN(data);
+      history.goBack();
     } catch (error) {}
   };
   return (
