@@ -63,12 +63,12 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
             return data;
         }
 
-        public async Task<KhenThuongKyLuatViewModel> GetAllKhenThuongDetail(int id)
+        public async Task<KhenThuongKyLuatViewModel> GetAllKTKLDetail(int id)
         {
             var query = from p in _context.khenThuongKyLuats
                         join dmktkl in _context.danhMucKhenThuongKyLuats on p.idDanhMucKhenThuong equals dmktkl.id
                         join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
-                        where p.loai == true && p.id == id
+                        where p.id == id
                         select new { p, dmktkl, nv };
 
 
@@ -110,29 +110,6 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
             }).ToListAsync();
 
 
-            return data;
-        }
-
-        public async Task<KhenThuongKyLuatViewModel> GetAllKyLuatDetail(int id)
-        {
-            var query = from p in _context.khenThuongKyLuats
-                        join dmktkl in _context.danhMucKhenThuongKyLuats on p.idDanhMucKhenThuong equals dmktkl.id
-                        join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
-                        where p.loai == false && p.id == id
-                        select new { p, dmktkl, nv };
-
-
-            var data = await query.Select(x => new KhenThuongKyLuatViewModel()
-            {
-                id = x.p.id,
-                idDanhMucKhenThuong = x.dmktkl.tenDanhMuc,
-                noiDung = x.p.noiDung,
-                lyDo = x.p.lyDo,
-                loai = x.p.loai == true ? "Khen Thưởng" : "Kỷ Luật",
-                anh = x.p.anh,
-                maNhanVien = x.p.maNhanVien,
-                hoTen = x.nv.hoTen
-            }).FirstAsync();
             return data;
         }
 
