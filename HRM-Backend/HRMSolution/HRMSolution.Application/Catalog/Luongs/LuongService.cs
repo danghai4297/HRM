@@ -47,7 +47,7 @@ namespace HRMSolution.Application.Catalog.Luongs
                          join l in _context.luongs on hd.maHopDong equals l.maHopDong
                          join dml in _context.danhMucNhomLuongs on l.idNhomLuong equals dml.id
                          where hd.maHopDong == l.maHopDong && hd.trangThai == true && l.trangThai == true
-                        select new { hd, l, dml };
+                        select new { hd, l, dml, nv };
 
             var data = await query.Select(x => new LuongViewModel()
             {
@@ -64,7 +64,8 @@ namespace HRMSolution.Application.Catalog.Luongs
                 ngayKetThuc = x.l.ngayKetThuc,
                 trangThai = x.l.trangThai == true ? "Kích hoạt" : "Vô hiệu",
                 maHopDong = x.hd.maHopDong,
-                maNhanVien = x.hd.maNhanVien
+                maNhanVien = x.hd.maNhanVien,
+                tenNhanVien = x.nv.hoTen
             }).ToListAsync();
 
             return data;

@@ -113,12 +113,12 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
             return data;
         }
 
-        public async Task<KhenThuongKyLuatViewModel> GetAllKyLuatDetail(string maNhanVien, int id)
+        public async Task<KhenThuongKyLuatViewModel> GetAllKyLuatDetail( int id)
         {
             var query = from p in _context.khenThuongKyLuats
                         join dmktkl in _context.danhMucKhenThuongKyLuats on p.idDanhMucKhenThuong equals dmktkl.id
                         join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
-                        where p.loai == false && p.id == id && nv.maNhanVien == maNhanVien
+                        where p.loai == false && p.id == id 
                         select new { p, dmktkl, nv };
 
 
