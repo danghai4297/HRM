@@ -1,17 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddLanguageForm.scss";
 import ProductApi from "../../../api/productApi";
-import { useState } from "react";
 AddLanguageForm.propTypes = {};
 const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddLanguageForm(props) {
   const [languageValue, setLanguageValue] = useState(null);
-  const { history } = props;
   const {
     register,
     handleSubmit,
@@ -25,6 +24,22 @@ function AddLanguageForm(props) {
       history.goBack();
     } catch (error) {}
   };
+  let { match, history } = props;
+  let { id } = match.params;
+
+  const [dataDetail, setdataDetail] = useState([]);
+
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const response = await ProductApi.getDetailDMNN(id);
+        setdataDetail(response);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">

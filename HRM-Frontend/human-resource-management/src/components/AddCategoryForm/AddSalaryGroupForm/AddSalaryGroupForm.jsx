@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddSalaryGroupForm.scss";
 import ProductApi from "../../../api/productApi";
-import { useState } from "react";
 const schema = yup.object({
   maNhomLuong: yup.string().required("Mã phòng ban không được bỏ trống."),
   tenNhomLuong: yup.string().required("Tên danh mục không được bỏ trống."),

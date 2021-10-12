@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddTypeOfContractForm.scss";
 import ProductApi from "../../../api/productApi";
-import { useState } from "react";
 const schema = yup.object({
   maLoaiHopDong: yup.string().required("Mã phòng ban không được bỏ trống."),
   tenLoaiHopDong: yup.string().required("Tên danh mục không được bỏ trống."),
@@ -13,7 +13,6 @@ AddTypeOfContractForm.propTypes = {};
 
 function AddTypeOfContractForm(props) {
   const [contractValue, setContractValue] = useState(null);
-  const { history } = props;
   const {
     register,
     handleSubmit,
@@ -21,6 +20,22 @@ function AddTypeOfContractForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
+  let { match, history } = props;
+  let { id } = match.params;
+
+  const [dataDetail, setdataDetail] = useState([]);
+
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const response = await ProductApi.getDetailDMLHD(id);
+        setdataDetail(response);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
   const onHandleSubmit = async (data) => {
     try {
       await ProductApi.PostDMLHD(data);

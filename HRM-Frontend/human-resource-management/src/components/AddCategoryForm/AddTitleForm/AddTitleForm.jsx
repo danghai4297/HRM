@@ -1,19 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddTitleForm.scss";
 import ProductApi from "../../../api/productApi";
-import { useState } from "react";
 AddTitleForm.propTypes = {};
 const schema = yup.object({
   maChucDanh: yup.string().required("Mã chức danh không được bỏ trống."),
   tenChucDanh: yup.string().required("Tên chức danh không được bỏ trống."),
-  phuCap: yup.number().required("Tên chức danh không được bỏ trống."),
+  phuCap: yup.number(),
 });
 function AddTitleForm(props) {
   const [titleValue, setTitleValue] = useState(null);
-  const { history } = props;
   const {
     register,
     handleSubmit,
@@ -21,6 +20,22 @@ function AddTitleForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
+  let { match, history } = props;
+  let { id } = match.params;
+
+  const [dataDetail, setdataDetail] = useState([]);
+
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const response = await ProductApi.getDetailDMCD(id);
+        setdataDetail(response);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
   const onHandleSubmit = async (data) => {
     try {
       await ProductApi.PostDMCD(data);

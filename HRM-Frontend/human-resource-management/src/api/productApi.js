@@ -49,6 +49,11 @@ const ProductApi = {
     const url = "/KhenThuongKyLuat/khen-thuong";
     return axiosClient.get(url);
   },
+   //detail kt
+   getKTDetail: (id) => {
+    const url = `/KhenThuongKyLuat/khen-thuong/${id}`;
+    return axiosClient.get(url);
+  },
 
   //all kỷ luật nv
   getAllKLNV: () => {
@@ -59,6 +64,18 @@ const ProductApi = {
   //detail kl
   getKLDetail: (id) => {
     const url = `/KhenThuongKyLuat/ky-luat/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //all điều chuyển nv
+  getAllDCNV: () => {
+    const url = "/DieuChuyen";
+    return axiosClient.get(url);
+  },
+
+  //detail DC
+  getDCDetail: (id) => {
+    const url = `/DieuChuyen/dieu-chuyen/${id}`;
     return axiosClient.get(url);
   },
 
@@ -241,7 +258,109 @@ const ProductApi = {
     const url = "/DanhMucTrinhDo";
     return axiosClient.post(url, data);
   },
-  
+
+  //Detail dm chức danh
+  getDetailDMCD: (id) => {
+    const url = `/DanhMucChucDanh/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail danh muc chức vụ
+  getDetailDMCV: (id) => {
+    const url = `/DanhMucChucVu/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail danh muc chuyên môn
+  getDetailDMCM: (id) => {
+    const url = `/DanhMucChuyenMon/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail danh mục dân tộc
+  getDetailDMDT: (id) => {
+    const url = `/DanhMucDanToc/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail dm hôn nhân
+  getDetailDMHN: (id) => {
+    const url = `/DanhMucHonNhan/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail dm khen thưởng
+  getDetailDMKT: (id) => {
+    const url = `/DanhMucKhenThuongKyLuat/khen-thuong/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail dm kỷ luật
+  getDetailDMKL: (id) => {
+    const url = `/DanhMucKhenThuongKyLuat/ky-luat/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail dm loại hợp đồng
+  getDetailDMLHD: (id) => {
+    const url = `/DanhMucLoaiHopDong/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail dm ngạch công chức
+  getDetailDMNCC: (id) => {
+    const url = `/DanhMucNgachCongChuc/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail dm ngoại ngữ
+  getDetailDMNN: (id) => {
+    const url = `/DanhMucNgoaiNgu/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail dm người thân
+  getDetailDMNT: (id) => {
+    const url = `/DanhMucNguoiThan/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail dm nhóm lương
+  getDetailDMNL: (id) => {
+    const url = `/DanhMucNhomLuong/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail dm phòng ban
+  getDetailDMPB: (id) => {
+    const url = `/DanhMucPhongBan/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail dm tính chất lao động
+  getDetailDMTCLD: (id) => {
+    const url = `/DanhMucTinhChatLaoDong/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail danh mục tổ
+  getDetailDMT: (id) => {
+    const url = `/DanhMucTo/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail danh mục tôn giáo
+  getDetailDMTG: (id) => {
+    const url = `/DanhMucTonGiao/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Detail dm trình độ
+  getDetailDMTD: (id) => {
+    const url = `/DanhMucTrinhDo/${id}`;
+    return axiosClient.get(url);
+  },
+ 
 };
 
 export default ProductApi;

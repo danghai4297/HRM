@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddNestForm.scss";
 import ProductApi from "../../../api/productApi";
-import { useState } from "react";
 const schema = yup.object({
   maTo: yup.string().required("Mã tổ không được bỏ trống."),
   idPhongBan: yup.string().required("Thuộc phòng ban không được bỏ trống."),
@@ -12,7 +11,6 @@ const schema = yup.object({
 });
 function AddNestForm(props) {
   const [nestValue, setNestValue] = useState(null);
-  const { history } = props;
   const {
     register,
     handleSubmit,
@@ -20,6 +18,27 @@ function AddNestForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
+  //dữ liệu phòng ban
+  let { match, history } = props;
+  let { id } = match.params;
+
+  const [dataDetail, setdataDetail] = useState([]);
+
+  const [dataDmpb, setDataDmpb] = useState([]);
+
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const responseNv = await ProductApi.getAllDMPB();
+        setDataDmpb(responseNv);
+        const response = await ProductApi.getDetailDMDT(id);
+        setdataDetail(response);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
   const onHandleSubmit = async (data) => {
     try {
       await ProductApi.PostDMT(data);

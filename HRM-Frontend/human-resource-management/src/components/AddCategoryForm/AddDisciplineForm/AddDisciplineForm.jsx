@@ -19,7 +19,7 @@ function AddDisciplineForm(props) {
     resolver: yupResolver(schema),
   });
   const onHandleSubmit = (data) => {
-    console.log(data);
+ 
   };
   return (
     <div className="container-form">

@@ -11,6 +11,7 @@ const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddNationForm(props) {
+  const [nationValue, setNationValue] = useState(null);
   const {
     register,
     handleSubmit,
@@ -21,19 +22,19 @@ function AddNationForm(props) {
   let { match, history } = props;
   let { id } = match.params;
 
-  const [nationValue, setNationValue] = useState(null);
+  const [dataDetail, setdataDetail] = useState([]);
 
-  // useEffect(() => {
-  //   const fetchNvList = async () => {
-  //     try {
-  //       const response = await ProductApi.getLDetail(id);
-  //       setNationValue(response);
-  //     } catch (error) {
-  //       console.log("false to fetch nv list: ", error);
-  //     }
-  //   };
-  //   fetchNvList();
-  // }, []);
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const response = await ProductApi.getDetailDMDT(id);
+        setdataDetail(response);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
 
   const onHandleSubmit = async (data) => {
     try {
@@ -87,7 +88,7 @@ function AddNationForm(props) {
                   type="text"
                   {...register("tenDanhMuc")}
                   id="tenDanhMuc"
-                  defaultValue={nationValue}
+                  defaultValue={dataDetail}
                   className={
                     !errors.tenDanhMuc
                       ? "form-control col-sm-6"

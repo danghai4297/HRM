@@ -1,17 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddSpecializeForm.scss";
 import ProductApi from "../../../api/productApi";
-import { useState } from "react";
 const schema = yup.object({
   tenChuyenMon: yup.string().required("Tên danh mục không được bỏ trống."),
   maChuyenMon: yup.string().required("Mã danh mục không được bỏ trống."),
 });
 function AddSpecializeForm(props) {
   const [specializeValue, setSpecializeValue] = useState(null);
-  const { history } = props;
   const {
     register,
     handleSubmit,
@@ -19,6 +17,22 @@ function AddSpecializeForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
+  let { match, history } = props;
+  let { id } = match.params;
+
+  const [dataDetail, setdataDetail] = useState([]);
+
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const response = await ProductApi.getDetailDMCM(id);
+        setdataDetail(response);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
   const onHandleSubmit = async (data) => {
     try {
       await ProductApi.PostDMCM(data);

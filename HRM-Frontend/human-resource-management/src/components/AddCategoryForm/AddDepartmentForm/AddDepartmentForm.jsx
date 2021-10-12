@@ -1,17 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddDepartmentForm.scss";
 import ProductApi from "../../../api/productApi";
-import { useState } from "react";
 const schema = yup.object({
   maPhongBan: yup.string().required("Mã phòng ban không được bỏ trống."),
   tenPhongBan: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddDepartmentForm(props) {
   const [departmentValue, setDepartmentValue] = useState(null);
-  const { history } = props;
   const {
     register,
     handleSubmit,
@@ -19,6 +17,23 @@ function AddDepartmentForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
+
+  let { match, history } = props;
+  let { id } = match.params;
+
+  const [dataDetail, setdataDetail] = useState([]);
+
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const response = await ProductApi.getDetailDMPB(id);
+        setdataDetail(response);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
   const onHandleSubmit = async (data) => {
     try {
       await ProductApi.PostDMPB(data);

@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddEducateForm";
-import { useState } from "react";
 import ProductApi from "../../../api/productApi";
 const schema = yup.object({
   tenHinhThuc: yup.string().required("Tên danh mục không được bỏ trống."),
@@ -18,11 +17,27 @@ function AddEducateForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
+  // let { match, history } = props;
+  // let { id } = match.params;
+
+  // const [dataDetail, setdataDetail] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchNvList = async () => {
+  //     try {
+  //       const response = await ProductApi.getDetailDMHTDT(id);
+  //       setdataDetail(response);
+  //     } catch (error) {
+  //       console.log("false to fetch nv list: ", error);
+  //     }
+  //   };
+  //   fetchNvList();
+  // }, []);
   const onHandleSubmit = async (data) => {
-    // try {
-    //   await ProductApi.PostDMTCLD(data);
-    //   history.goBack();
-    // } catch (error) {}
+    try {
+      await ProductApi.PostDMTCLD(data);
+      history.goBack();
+    } catch (error) {}
   };
   return (
     <div className="container-form">
