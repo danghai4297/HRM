@@ -48,7 +48,11 @@ export const SideBarLeftCategoryData = [
     link: "/category/wages",
   },
   {
-    title: "Danh mục tính chất đào tạo",
+    title: "Danh mục tính chất lao động",
+    link: "/category/labor",
+  },
+  {
+    title: "Danh mục hình thức đào tạo",
     link: "/category/training",
   },
   {

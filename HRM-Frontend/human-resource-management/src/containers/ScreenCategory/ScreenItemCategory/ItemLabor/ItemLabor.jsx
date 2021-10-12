@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { NVCOLUMNS } from "../ItemLabor/NvColumns";
+import { NVCOLUMNS } from "./NvColumns";
 import ReactHTMLTableToExcel from "react-html-to-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
@@ -9,9 +9,9 @@ import { ExportCSV } from "../../../../components/ExportFile/ExportFile";
 import TablePagination from "../../../../components/TablePagination/TablePagination";
 import ProductApi from "../../../../api/productApi";
 
-function ItemTraining(props) {
-  const link = "/category/training/";
-  const fileName = "Hinhthucdaotao";
+function ItemLabor() {
+    const link = "/category/labor/";
+  const fileName = "Tinhchatlaodong";
   const [dataDmtcld, setDataDmtcld] = useState([]);
 
   useEffect(() => {
@@ -31,10 +31,10 @@ function ItemTraining(props) {
       <div className="screen-table-nv">
         <div className="herder-content sticky-top">
           <div>
-            <h4 className="">Hình thức đào tạo</h4>
+            <h4 className="">Tính chất lao động</h4>
           </div>
           <div className="button">
-            <Link to="/category/training/add" className="link-item">
+            <Link to="/category/labor/add" className="link-item">
               <input type="submit" className="btn btn-primary" value="Thêm" />
             </Link>
             <ReactHTMLTableToExcel
@@ -61,4 +61,4 @@ function ItemTraining(props) {
   );
 }
 
-export default ItemTraining;
+export default ItemLabor
