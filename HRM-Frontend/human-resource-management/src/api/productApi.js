@@ -86,8 +86,6 @@ const ProductApi = {
     return axiosClient.get(url);
   },
 
-  
-
   //all dm hôn nhân
   getAllDMHN: () => {
     const url = "/DanhMucHonNhan";
@@ -172,80 +170,78 @@ const ProductApi = {
     return axiosClient.post(url, data);
   },
 
-   //add danh mục 
-   PostDMCD: (data) => {
+  //add danh mục
+  PostDMCD: (data) => {
     const url = "/DanhMucChucDanh";
     return axiosClient.post(url, data);
   },
 
-   //add danh mục 
-   PostDMCV: (data) => {
+  //add danh mục
+  PostDMCV: (data) => {
     const url = "/DanhMucChucVu";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMCM: (data) => {
+  //add danh mục
+  PostDMCM: (data) => {
     const url = "/DanhMucChuyenMon";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMHN: (data) => {
+  //add danh mục
+  PostDMHN: (data) => {
     const url = "/DanhMucHonNhan";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMLHD: (data) => {
+  //add danh mục
+  PostDMLHD: (data) => {
     const url = "/DanhMucLoaiHopDong";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMNCC: (data) => {
+  //add danh mục
+  PostDMNCC: (data) => {
     const url = "/DanhMucNgachCongChuc";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMNN: (data) => {
+  //add danh mục
+  PostDMNN: (data) => {
     const url = "/DanhMucNgoaiNgu";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMNT: (data) => {
+  //add danh mục
+  PostDMNT: (data) => {
     const url = "/DanhMucNguoiThan";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMNL: (data) => {
+  //add danh mục
+  PostDMNL: (data) => {
     const url = "/DanhMucNhomLuong";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMPB: (data) => {
+  //add danh mục
+  PostDMPB: (data) => {
     const url = "/DanhMucPhongBan";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMTCLD: (data) => {
+  //add danh mục
+  PostDMTCLD: (data) => {
     const url = "/DanhMucTinhChatLaoDong";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMT: (data) => {
+  //add danh mục
+  PostDMT: (data) => {
     const url = "/DanhMucTo";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMTG: (data) => {
+  //add danh mục
+  PostDMTG: (data) => {
     const url = "/DanhMucTonGiao";
     return axiosClient.post(url, data);
   },
-   //add danh mục 
-   PostDMTD: (data) => {
+  //add danh mục
+  PostDMTD: (data) => {
     const url = "/DanhMucTrinhDo";
     return axiosClient.post(url, data);
   },
-
   
-
 };
 
 export default ProductApi;

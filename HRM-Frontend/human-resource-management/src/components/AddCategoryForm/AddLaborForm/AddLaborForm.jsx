@@ -2,14 +2,16 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import "./AddEducateForm";
+import "./AddLaborForm.scss";
 import { useState } from "react";
 import ProductApi from "../../../api/productApi";
 const schema = yup.object({
-  tenHinhThuc: yup.string().required("Tên danh mục không được bỏ trống."),
+  tenHtenLaoDonginhThuc: yup
+    .string()
+    .required("Tên danh mục không được bỏ trống."),
 });
-function AddEducateForm(props) {
-  const [educateValue, setEducateValue] = useState(null);
+function AddLaborForm(props) {
+  const [laborValue, setLaborValue] = useState(null);
   const { history } = props;
   const {
     register,
@@ -19,10 +21,10 @@ function AddEducateForm(props) {
     resolver: yupResolver(schema),
   });
   const onHandleSubmit = async (data) => {
-    try {
-      await ProductApi.PostDMTCLD(data);
-      history.goBack();
-    } catch (error) {}
+    //   try {
+    //     await ProductApi.PostDMTCLD(data);
+    //     history.goBack();
+    //   } catch (error) {}
   };
   return (
     <div className="container-form">
@@ -33,7 +35,7 @@ function AddEducateForm(props) {
         <div className="button">
           <input
             type="submit"
-            className={educateValue ? "btn btn-danger" : "delete-button"}
+            className={laborValue ? "btn btn-danger" : "delete-button"}
             value="Xoá"
           />
           <input
@@ -45,7 +47,7 @@ function AddEducateForm(props) {
           <input
             type="submit"
             className="btn btn-primary ml-3"
-            value={educateValue ? "Sửa" : "Lưu"}
+            value={laborValue ? "Sửa" : "Lưu"}
             onClick={handleSubmit(onHandleSubmit)}
           />
         </div>
@@ -62,21 +64,21 @@ function AddEducateForm(props) {
               <div className="form-group form-inline">
                 <label
                   className="col-sm-4 justify-content-start"
-                  htmlFor="tenLaoDong"
+                  htmlFor="tenHinhThuc"
                 >
                   Tên danh mục
                 </label>
                 <input
                   type="text"
-                  {...register("tenLaoDong")}
+                  {...register("tenHinhThuc")}
                   id="tenLaoDong"
                   className={
-                    !errors.tenLaoDong
+                    !errors.tenHinhThuc
                       ? "form-control col-sm-6"
                       : "form-control col-sm-6 border-danger "
                   }
                 />
-                <span className="message">{errors.tenLaoDong?.message}</span>
+                <span className="message">{errors.tenHinhThuc?.message}</span>
               </div>
             </div>
           </div>
@@ -86,4 +88,4 @@ function AddEducateForm(props) {
   );
 }
 
-export default AddEducateForm;
+export default AddLaborForm;

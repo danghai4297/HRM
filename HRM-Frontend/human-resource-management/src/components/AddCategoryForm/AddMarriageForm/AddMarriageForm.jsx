@@ -1,17 +1,18 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddMarriageForm.scss";
 import ProductApi from "../../../api/productApi";
+import { useState } from "react";
 const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 AddMarriageForm.propTypes = {};
 
 function AddMarriageForm(props) {
-  const { objectData } = props;
+  const [marriageValue, setMarriageValue] = useState(null);
+  const { history } = props;
   const {
     register,
     handleSubmit,
@@ -26,27 +27,36 @@ function AddMarriageForm(props) {
   };
   return (
     <div className="container-form">
+      <div className="Submit-button sticky-top">
+        <div>
+          <h2 className="">Thêm danh mục hôn nhân</h2>
+        </div>
+        <div className="button">
+          <input
+            type="submit"
+            className={marriageValue ? "btn btn-danger" : "delete-button"}
+            value="Xoá"
+          />
+          <input
+            type="submit"
+            className="btn btn-secondary ml-3"
+            value="Huỷ"
+            onClick={history.goBack}
+          />
+          <input
+            type="submit"
+            className="btn btn-primary ml-3"
+            value={marriageValue ? "Sửa" : "Lưu"}
+            onClick={handleSubmit(onHandleSubmit)}
+          />
+        </div>
+      </div>
       <form
         action=""
         className="profile-form"
         // onSubmit={handleSubmit(onHandleSubmit)}
       >
-        <div className="Submit-button sticky-top">
-          <div>
-            <h2 className="">Thêm danh mục hôn nhân</h2>
-          </div>
-          <div className="button">
-            <input type="submit" className="btn btn-secondary " value="Huỷ" />
-            <input
-              type="submit"
-              className="btn btn-primary ml-3"
-              value="Lưu"
-              onClick={handleSubmit(onHandleSubmit)}
-            />
-          </div>
-        </div>
-
-        <div className="container-div-form">
+        <div className="container-div-form-category">
           <h3>Thông tin chung</h3>
           <div className="row">
             <div className="col-6">
