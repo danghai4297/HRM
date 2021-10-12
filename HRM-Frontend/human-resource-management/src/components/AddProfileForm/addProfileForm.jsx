@@ -1,5 +1,5 @@
 import React from "react";
-import "./AddProfileForm.scss"
+import "./AddProfileForm.scss";
 import { Controller, useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../FontAwesomeIcons/index";
@@ -9,6 +9,7 @@ import { DatePicker } from "antd";
 import "antd/dist/antd.css";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import ProductApi from "../../api/productApi";
 const phoneRex = /([\|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})\b/;
 const number = /^\d+$/;
 const schema = yup.object({
@@ -98,12 +99,17 @@ function AddProfileForm(props) {
   });
   console.log(errors.maNhanVien);
   //get data from form
-  const onHandleSubmit = (data) => {
-    // console.log(data);
-    JSON.stringify(data);
-    //objectData(data);
-    history.goBack();
+
+  const onHandleSubmit = async (data) => {
+    console.log(data);
+    try {
+      JSON.stringify(data);
+
+      await ProductApi.postNv(data);
+      history.goBack();
+    } catch (error) {}
   };
+
   //handle image
   const [file, setFile] = useState("/Images/userIcon.png");
   const handleChange = (e) => {

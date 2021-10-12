@@ -8,6 +8,12 @@ const ProductApi = {
     return axiosClient.get(url);
   },
 
+  //thêm nhân viên
+  postNv: (data) => {
+    const url = "/NhanVien";
+    return axiosClient.post(url, data);
+  },
+
   //detail nhân viên
   getNvDetail: (maNv) => {
     const url = `/NhanVien/${maNv}`;

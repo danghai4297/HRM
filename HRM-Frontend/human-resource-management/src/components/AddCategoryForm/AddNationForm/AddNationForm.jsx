@@ -19,14 +19,7 @@ function AddNationForm(props) {
     resolver: yupResolver(schema),
   });
   const[nationValue, setNationValue] = useState(null);
-  // const fetchNvList = async () => {
-  //   try {
-  //     const responseNv = await productApi.getAllNv();
-  //     setdataAllNv(responseNv);
-  //   } catch (error) {
-  //     console.log("false to fetch nv list: ", error);
-  //   }
-  // };
+
   const onHandleSubmit = async (data) => {
     console.log(data);
     try {
