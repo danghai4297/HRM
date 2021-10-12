@@ -50,17 +50,18 @@ const ProductApi = {
     return axiosClient.get(url);
   },
 
+  //detail khen thưởng và kỉ luật
+  getKTvKLDetail: (id) => {
+    const url = `/KhenThuongKyLuat/detail/${id}`;
+    return axiosClient.get(url);
+  },
+
   //all kỷ luật nv
   getAllKLNV: () => {
     const url = "/KhenThuongKyLuat/ky-luat";
     return axiosClient.get(url);
   },
 
-  //detail kl
-  getKLDetail: (id) => {
-    const url = `/KhenThuongKyLuat/ky-luat/${id}`;
-    return axiosClient.get(url);
-  },
 
   //tất cả dm chức danh
   getAllDMCD: () => {

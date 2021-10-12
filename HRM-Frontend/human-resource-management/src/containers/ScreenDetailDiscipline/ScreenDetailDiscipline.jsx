@@ -12,7 +12,7 @@ function ScreenDetailDiscipline(props) {
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const response = await ProductApi.getLDetail(id);
+        const response = await ProductApi.getKTvKLDetail(id);
         setDataKLDetail(response);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -43,20 +43,21 @@ function ScreenDetailDiscipline(props) {
           <div className="second-main-path">
             <SubDetail
               titleLeft="Họ và tên"
-              itemLeft={null}
+              itemLeft={dataKLDetail.hoTen}
               titleRight="Mã nhân viên"
-              itemRight={null}
+              itemRight={dataKLDetail.maNhanVien}
             ></SubDetail>
             <SubDetail
-              titleLeft="Thời gian"
-              itemLeft={null}
+              titleLeft="Danh mục"
+              itemLeft={dataKLDetail.idDanhMucKhenThuong}
               titleRight="Lý do"
-              itemRight={null}
+              itemRight={dataKLDetail.lyDo}
             ></SubDetail>
             <SubDetail
               titleLeft="Nội dung"
-              itemLeft={null}
-              titleRight={null}
+              itemLeft={dataKLDetail.noiDung}
+              titleRight="Ảnh"
+              itemRight={dataKLDetail.anh}
             ></SubDetail>
           </div>
         </div>

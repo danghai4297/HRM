@@ -13,7 +13,7 @@ function ScreenDetailReward(props) {
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const responseKT = await ProductApi.getHdDetail(id);
+        const responseKT = await ProductApi.getKTvKLDetail(id);
         setdataDetailKt(responseKT);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -46,20 +46,21 @@ function ScreenDetailReward(props) {
           <div className="second-main-path">
             <SubDetail
               titleLeft="Họ và tên"
-              itemLeft={null}
+              itemLeft={dataDetailKt.hoTen}
               titleRight="Mã nhân viên"
-              itemRight={null}
+              itemRight={dataDetailKt.maNhanVien}
             ></SubDetail>
             <SubDetail
-              titleLeft="Thời gian"
-              itemLeft={null}
+              titleLeft="Danh mục"
+              itemLeft={dataDetailKt.idDanhMucKhenThuong}
               titleRight="Lý do"
-              itemRight={null}
+              itemRight={dataDetailKt.lyDo}
             ></SubDetail>
             <SubDetail
               titleLeft="Nội dung"
-              itemLeft={null}
-              titleRight={null}
+              itemLeft={dataDetailKt.noiDung}
+              titleRight="Ảnh"
+              itemRight={dataDetailKt.anh}
             ></SubDetail>
           </div>
         </div>
