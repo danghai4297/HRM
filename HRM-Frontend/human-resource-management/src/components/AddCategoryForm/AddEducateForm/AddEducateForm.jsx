@@ -19,10 +19,10 @@ function AddEducateForm(props) {
     resolver: yupResolver(schema),
   });
   const onHandleSubmit = async (data) => {
-    try {
-      await ProductApi.PostDMTCLD(data);
-      history.goBack();
-    } catch (error) {}
+    // try {
+    //   await ProductApi.PostDMTCLD(data);
+    //   history.goBack();
+    // } catch (error) {}
   };
   return (
     <div className="container-form">
@@ -62,21 +62,21 @@ function AddEducateForm(props) {
               <div className="form-group form-inline">
                 <label
                   className="col-sm-4 justify-content-start"
-                  htmlFor="tenLaoDong"
+                  htmlFor="tenHinhThuc"
                 >
                   Tên danh mục
                 </label>
                 <input
                   type="text"
-                  {...register("tenLaoDong")}
-                  id="tenLaoDong"
+                  {...register("tenHinhThuc")}
+                  id="tenHinhThuc"
                   className={
-                    !errors.tenLaoDong
+                    !errors.tenHinhThuc
                       ? "form-control col-sm-6"
                       : "form-control col-sm-6 border-danger "
                   }
                 />
-                <span className="message">{errors.tenLaoDong?.message}</span>
+                <span className="message">{errors.tenHinhThuc?.message}</span>
               </div>
             </div>
           </div>

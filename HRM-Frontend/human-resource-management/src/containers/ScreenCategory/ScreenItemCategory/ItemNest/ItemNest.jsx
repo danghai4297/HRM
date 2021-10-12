@@ -10,7 +10,7 @@ import { ExportCSV } from "../../../../components/ExportFile/ExportFile";
 import TablePagination from "../../../../components/TablePagination/TablePagination";
 
 function ItemNest(props) {
-  const link = "/profile/";
+  const link = "/category/nest/";
   const fileName = "Danhmucto";
   const { list } = useContext(ListContext);
   //   const [dataAllNv, setdataAllNv] = useState([]);

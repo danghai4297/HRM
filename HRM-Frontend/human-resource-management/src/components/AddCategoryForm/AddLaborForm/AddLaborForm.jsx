@@ -6,7 +6,7 @@ import "./AddLaborForm.scss";
 import { useState } from "react";
 import ProductApi from "../../../api/productApi";
 const schema = yup.object({
-  tenHtenLaoDonginhThuc: yup
+    tenLaoDong: yup
     .string()
     .required("Tên danh mục không được bỏ trống."),
 });
@@ -21,16 +21,16 @@ function AddLaborForm(props) {
     resolver: yupResolver(schema),
   });
   const onHandleSubmit = async (data) => {
-    //   try {
-    //     await ProductApi.PostDMTCLD(data);
-    //     history.goBack();
-    //   } catch (error) {}
+    try {
+      await ProductApi.PostDMTCLD(data);
+      history.goBack();
+    } catch (error) {}
   };
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">Thêm danh mục hình thức đào tạo</h2>
+          <h2 className="">Thêm danh mục tính chất lao động</h2>
         </div>
         <div className="button">
           <input
@@ -64,21 +64,21 @@ function AddLaborForm(props) {
               <div className="form-group form-inline">
                 <label
                   className="col-sm-4 justify-content-start"
-                  htmlFor="tenHinhThuc"
+                  htmlFor="tenLaoDong"
                 >
                   Tên danh mục
                 </label>
                 <input
                   type="text"
-                  {...register("tenHinhThuc")}
+                  {...register("tenLaoDong")}
                   id="tenLaoDong"
                   className={
-                    !errors.tenHinhThuc
+                    !errors.tenLaoDong
                       ? "form-control col-sm-6"
                       : "form-control col-sm-6 border-danger "
                   }
                 />
-                <span className="message">{errors.tenHinhThuc?.message}</span>
+                <span className="message">{errors.tenLaoDong?.message}</span>
               </div>
             </div>
           </div>

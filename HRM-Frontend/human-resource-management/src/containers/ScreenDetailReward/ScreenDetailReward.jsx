@@ -1,15 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SubDetail from "../../components/Detail/SubDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
-import "./ScreenDetailReward.scss"
-function ScreenDetailReward() {
+import "./ScreenDetailReward.scss";
+import ProductApi from "../../api/productApi";
+function ScreenDetailReward(props) {
+  let { match, history } = props;
+  let { id } = match.params;
+
+  const [dataDetailKt, setdataDetailKt] = useState([]);
+
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const responseKT = await ProductApi.getHdDetail(id);
+        setdataDetailKt(responseKT);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
+
+  console.log(dataDetailKt);
   return (
     <>
       <div className="main-screen">
         <div className="first-main">
           <div className="first-path">
-            <FontAwesomeIcon icon={["fas", "long-arrow-alt-left"]} />
+            <button className="btn-back" onClick={history.goBack}>
+              <FontAwesomeIcon className="icon-btn" icon={["fas", "long-arrow-alt-left"]} />
+            </button>
           </div>
           <div className="second-path">
             <h2>Thủ tục khen thưởng</h2>

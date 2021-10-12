@@ -10,7 +10,7 @@ import { NVCOLUMNS } from "./NvColumns";
 import ProductApi from "../../../../api/productApi";
 
 function ItemSpecialize(props) {
-  const link = "/profile/";
+  const link = "/category/specialize/";
   const fileName = "Danhmucchuyenmon";
   const [dataDmcm, setDataDmcm] = useState([]);
 

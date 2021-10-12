@@ -10,7 +10,7 @@ import TablePagination from "../../../../components/TablePagination/TablePaginat
 import ProductApi from "../../../../api/productApi";
 
 function ItemTitle(props) {
-  const link = false;
+  const link = "/category/title/";
   const fileName = "Danhmucchucdanh";
   const [dataDmcd, setdataDmcd] = useState([]);
 

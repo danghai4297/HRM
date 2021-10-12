@@ -10,7 +10,7 @@ import TablePagination from "../../../../components/TablePagination/TablePaginat
 import ProductApi from "../../../../api/productApi";
 
 function ItemReligion(props) {
-  const link = "/profile/";
+  const link = "/category/religion/";
   const fileName = "Danhmuctongiao";
   const [dataDmtl, setDataDmtl] = useState([]);
 

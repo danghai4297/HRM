@@ -10,7 +10,7 @@ import TablePagination from "../../../../components/TablePagination/TablePaginat
 import ProductApi from "../../../../api/productApi";
 
 function ItemLevel(props) {
-  const link = "/profile/";
+  const link = "/category/level/";
   const fileName = "Danhmuctrinhdo";
   const [dataDmtd, setDataDmtd] = useState([]);
 
