@@ -36,6 +36,7 @@ import ScreenNotFound from "./ScreenNotFound";
 import ScreenDetailForeignLanguage from "../ScreenDetailForeignLanguage/ScreenDetailForeignLanguage"
 import Header from "../../components/Header/Header";
 import { AccountContext } from "../../Contexts/StateContext";
+import AddNationForm from "../../components/AddCategoryForm/AddNationForm/AddNationForm";
 function ScreenProject() {
   const { setAccount }= useContext(AccountContext);
   return (
@@ -144,7 +145,7 @@ function ScreenProject() {
                 path="/discipline/add"
                 component={AddDisciplineForm}
               />
-              <ProtectedRoute exact path="/report" component={ScreenReport} />
+              <ProtectedRoute exact path="/report" component={AddNationForm} />
               {/* <Route component={ScreenNotFound}/> */}
             </Switch>
           </div>
