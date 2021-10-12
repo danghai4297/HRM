@@ -10,7 +10,7 @@ import TablePagination from "../../../../components/TablePagination/TablePaginat
 import ProductApi from "../../../../api/productApi";
 
 function ItemDepartment(props) {
-  const link = "/profile/";
+  const link = "/category/department/";
   const fileName = "Cacphongban";
   const [dataDmpb, setDataDmpb] = useState([]);
 

@@ -10,7 +10,7 @@ import TablePagination from "../../../../components/TablePagination/TablePaginat
 import ProductApi from "../../../../api/productApi";
 
 function ItemDeal(props) {
-  const link = "/profile/";
+  const link = "/category/deal/";
   const fileName = "Cacloaihopdong";
   const [dataClhd, setDataClhd] = useState([]);
 

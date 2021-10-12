@@ -10,7 +10,7 @@ import TablePagination from "../../../../components/TablePagination/TablePaginat
 import ProductApi from "../../../../api/productApi";
 
 function ItemNation(props) {
-  const link = "/profile/";
+  const link = "/category/nation/";
   const fileName = "Danhmucdantoc";
   const [dataDmdt, setDataDmdt] = useState([]);
 
