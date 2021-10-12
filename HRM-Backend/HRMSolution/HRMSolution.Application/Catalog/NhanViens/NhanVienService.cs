@@ -83,30 +83,30 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 idNgachCongChuc = request.idNgachCongChuc,
                 YTe = new YTe()
                 {
-                    yt_nhomMau = request.YTe.nhomMau,
-                    yt_chieuCao = request.YTe.chieuCao,
-                    yt_canNang = request.YTe.canNang,
-                    yt_tinhTrangSucKhoe = request.YTe.tinhTrangSucKhoe,
-                    yt_benhTat = request.YTe.benhTat,
-                    yt_luuY = request.YTe.luuY,
-                    yt_khuyetTat = request.YTe.khuyetTat,
-                    yt_maNhanVien = request.YTe.maNhanVien
+                    yt_nhomMau = request.YTe.yt_nhomMau,
+                    yt_chieuCao = request.YTe.yt_chieuCao,
+                    yt_canNang = request.YTe.yt_canNang,
+                    yt_tinhTrangSucKhoe = request.YTe.yt_tinhTrangSucKhoe,
+                    yt_benhTat = request.YTe.yt_benhTat,
+                    yt_luuY = request.YTe.yt_luuY,
+                    yt_khuyetTat = request.YTe.yt_khuyetTat,
+                    yt_maNhanVien = request.YTe.yt_maNhanVien
                 },
                 LichSuBanThan = new LichSuBanThan()
                 {
-                    lsbt_biBatDiTu = request.LichSuBanThan.biBatDiTu,
-                    lsbt_thamGiaChinhTri = request.LichSuBanThan.thamGiaChinhTri,
-                    lsbt_thanNhanNuocNgoai = request.LichSuBanThan.thanNhanNuocNgoai,
-                    lsbt_maNhanVien = request.LichSuBanThan.maNhanVien
+                    lsbt_biBatDiTu = request.LichSuBanThan.lsbt_biBatDiTu,
+                    lsbt_thamGiaChinhTri = request.LichSuBanThan.lsbt_thamGiaChinhTri,
+                    lsbt_thanNhanNuocNgoai = request.LichSuBanThan.lsbt_thanNhanNuocNgoai,
+                    lsbt_maNhanVien = request.LichSuBanThan.lsbt_maNhanVien
                 },
                 LienHeKhanCap = new LienHeKhanCap()
                 {
-                    lhkc_hoTen = request.LienHeKhanCap.hoTen,
-                    lhkc_quanHe = request.LienHeKhanCap.quanHe,
-                    lhkc_dienThoai = request.LienHeKhanCap.dienThoai,
-                    lhkc_email = request.LienHeKhanCap.email,
-                    lhkc_diaChi = request.LienHeKhanCap.diaChi,
-                    lhkc_maNhanVien = request.LienHeKhanCap.maNhanVien,
+                    lhkc_hoTen = request.LienHeKhanCap.lhkc_hoTen,
+                    lhkc_quanHe = request.LienHeKhanCap.lhkc_quanHe,
+                    lhkc_dienThoai = request.LienHeKhanCap.lhkc_dienThoai,
+                    lhkc_email = request.LienHeKhanCap.lhkc_email,
+                    lhkc_diaChi = request.LienHeKhanCap.lhkc_diaChi,
+                    lhkc_maNhanVien = request.LienHeKhanCap.lhkc_maNhanVien,
                 }
 
             };

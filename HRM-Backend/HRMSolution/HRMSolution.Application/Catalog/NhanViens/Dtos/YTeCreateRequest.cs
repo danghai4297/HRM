@@ -6,13 +6,13 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
 {
     public class YTeCreateRequest
     {
-        public string nhomMau { get; set; }
-        public float? chieuCao { get; set; }
-        public float? canNang { get; set; }
-        public string tinhTrangSucKhoe { get; set; }
-        public string benhTat { get; set; }
-        public string luuY { get; set; }
-        public bool? khuyetTat { get; set; }
-        public string maNhanVien { get; set; }
+        public string yt_nhomMau { get; set; }
+        public float? yt_chieuCao { get; set; }
+        public float? yt_canNang { get; set; }
+        public string yt_tinhTrangSucKhoe { get; set; }
+        public string yt_benhTat { get; set; }
+        public string yt_luuY { get; set; }
+        public bool? yt_khuyetTat { get; set; }
+        public string yt_maNhanVien { get; set; }
     }
 }
