@@ -12,19 +12,19 @@ import ProductApi from "../../../../api/productApi";
 function ItemLangguage(props) {
   const link = "/profile/";
   const fileName = "Danhmucngoaingu";
-    const [dataDmnn, setDataDmnn] = useState([]);
+  const [dataDmnn, setDataDmnn] = useState([]);
 
-    useEffect(() => {
-      const fetchNvList = async () => {
-        try {
-          const responseNv = await ProductApi.getAllDMNN();
-          setDataDmnn(responseNv);
-        } catch (error) {
-          console.log("false to fetch nv list: ", error);
-        }
-      };
-      fetchNvList();
-    }, []);
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const responseNv = await ProductApi.getAllDMNN();
+        setDataDmnn(responseNv);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
 
   return (
     <>
@@ -34,7 +34,7 @@ function ItemLangguage(props) {
             <h4 className="">Danh mục ngoại ngữ</h4>
           </div>
           <div className="button">
-            <Link to="/profile/edit" className="link-item">
+            <Link to="/category/language/add" className="link-item">
               <input type="submit" className="btn btn-primary" value="Thêm" />
             </Link>
             <ReactHTMLTableToExcel

@@ -7,19 +7,46 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import { dum } from "./Data";
 import { ListContext } from "../../Contexts/ListContext";
 import ProductApi from "../../api/productApi";
+import TableBasic from "../TablePagination/TableBasic";
+import {
+  NVCOLUMNSDC,
+  NVCOLUMNSHD,
+  NVCOLUMNSKTvKL,
+  NVCOLUMNSNN,
+  NVCOLUMNSNT,
+  NVCOLUMNSTDVH,
+} from "./NvColumns";
+
 function Detail(props) {
   let { match, history } = props;
   let { id } = match.params;
-  console.log(id);
+  const link = true;
 
   const [dataDetailNv, setdataDetailNv] = useState([]);
+  const [dataDetailTDVH, setdataDetailTDVH] = useState([]);
+  const [dataDetailNgn, setdataDetailNgn] = useState([]);
+  const [dataDetailGd, setdataDetailGd] = useState([]);
+  const [dataDetailHd, setdataDetailHd] = useState([]);
+  // const [dataDetailHSL, setdataDetailHSL] = useState([]);
+  const [dataDetailTc, setdataDetailTc] = useState([]);
+  const [dataDetailKt, setdataDetailKt] = useState([]);
+  const [dataDetailKl, setdataDetailKl] = useState([]);
+  const dataTDVH = [];
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
         const responseNv = await ProductApi.getNvDetail(id);
-        // console.log(responseNv);
+        // const responseHd = await ProductApi.getHdDetail(id);
         setdataDetailNv(responseNv);
+        setdataDetailTDVH(responseNv.trinhDoVanHoas);
+        setdataDetailNgn(responseNv.ngoaiNgus);
+        setdataDetailGd(responseNv.nguoiThans);
+        setdataDetailHd(responseNv.hopDongs);
+        // setdataDetailHSL(responseNv);
+        setdataDetailTc(responseNv.dieuChuyens);
+        setdataDetailKt(responseNv.khenThuongs);
+        setdataDetailKl(responseNv.kyLuats);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
@@ -27,10 +54,14 @@ function Detail(props) {
     fetchNvList();
   }, []);
 
-  console.log(dataDetailNv);
-  console.log(dataDetailNv.maNhanVien);
+  // dataDetailNv.trinhDoVanHoas.map((item) => {
+  //   return console.log(item.tdvhTenTruong);
+  // });
 
-  // const dataDetail = [];
+  // console.log(dataDetailNv);
+  // console.log(dataDetailNv.trinhDoVanHoas);
+  // console.log(dataDetailHd);
+
   const [dropBase, setDropBase] = useState(true);
   const [dropContact, setDropContact] = useState(true);
   const [dropJob, setDropJob] = useState(true);
@@ -127,7 +158,11 @@ function Detail(props) {
                       <p className="fast-information">Đơn vị công tác</p>
                     </Col>
                     <Col>
-                      <p className="fast-information">{dataDetailNv.coQuanTuyenDung === null ? "-" : dataDetailNv.coQuanTuyenDung}</p>
+                      <p className="fast-information">
+                        {dataDetailNv.coQuanTuyenDung === null
+                          ? "-"
+                          : dataDetailNv.coQuanTuyenDung}
+                      </p>
                     </Col>
                   </Row>
                 </Col>
@@ -137,7 +172,11 @@ function Detail(props) {
                       <p className="fast-information">Ngày thử việc</p>
                     </Col>
                     <Col>
-                      <p className="fast-information">{dataDetailNv.ngayThuViec === null ? "-" : dataDetailNv.ngayThuViec}</p>
+                      <p className="fast-information">
+                        {dataDetailNv.ngayThuViec === null
+                          ? "-"
+                          : dataDetailNv.ngayThuViec}
+                      </p>
                     </Col>
                   </Row>
                 </Col>
@@ -147,7 +186,11 @@ function Detail(props) {
                       <p className="fast-information">Ngày chính thức</p>
                     </Col>
                     <Col>
-                      <p className="fast-information">{dataDetailNv.ngayChinhThuc === null ? "-" : dataDetailNv.ngayChinhThuc}</p>
+                      <p className="fast-information">
+                        {dataDetailNv.ngayChinhThuc === null
+                          ? "-"
+                          : dataDetailNv.ngayChinhThuc}
+                      </p>
                     </Col>
                   </Row>
                 </Col>
@@ -159,7 +202,11 @@ function Detail(props) {
                       <p className="fast-information"> Ngày sinh</p>
                     </Col>
                     <Col>
-                      <p className="fast-information">{dataDetailNv.ngaySinh === null ? "-" : dataDetailNv.ngaySinh}</p>
+                      <p className="fast-information">
+                        {dataDetailNv.ngaySinh === null
+                          ? "-"
+                          : dataDetailNv.ngaySinh}
+                      </p>
                     </Col>
                   </Row>
                 </Col>
@@ -169,7 +216,11 @@ function Detail(props) {
                       <p className="fast-information">ĐT di động</p>
                     </Col>
                     <Col>
-                      <p className="fast-information">{dataDetailNv.diDong === null ? "-" : dataDetailNv.diDong}</p>
+                      <p className="fast-information">
+                        {dataDetailNv.diDong === null
+                          ? "-"
+                          : dataDetailNv.diDong}
+                      </p>
                     </Col>
                   </Row>
                 </Col>
@@ -179,7 +230,9 @@ function Detail(props) {
                       <p className="fast-information">Email</p>
                     </Col>
                     <Col>
-                      <p className="fast-information">{dataDetailNv.email === null ? "-" : dataDetailNv.email}</p>
+                      <p className="fast-information">
+                        {dataDetailNv.email === null ? "-" : dataDetailNv.email}
+                      </p>
                     </Col>
                   </Row>
                 </Col>
@@ -498,7 +551,13 @@ function Detail(props) {
                       </button>
                     </div>
                   </div>
-                  <div className="table"></div>
+                  <div className="table">
+                    <TableBasic
+                      link={link}
+                      columns={NVCOLUMNSTDVH}
+                      data={dataDetailTDVH}
+                    />
+                  </div>
                   <div className="title">
                     <div className="title-cultural">
                       <h5 className="title-name">Ngoại ngữ</h5>
@@ -509,7 +568,13 @@ function Detail(props) {
                       </button>
                     </div>
                   </div>
-                  <div className="table"></div>
+                  <div className="table">
+                    <TableBasic
+                      link={link}
+                      columns={NVCOLUMNSNN}
+                      data={dataDetailNgn}
+                    />
+                  </div>
                 </>
               )}
             </div>
@@ -540,7 +605,13 @@ function Detail(props) {
                       </button>
                     </div>
                   </div>
-                  <div className="table"></div>
+                  <div className="table">
+                    <TableBasic
+                      link={link}
+                      columns={NVCOLUMNSNT}
+                      data={dataDetailGd}
+                    />
+                  </div>
                 </>
               )}
             </div>
@@ -688,7 +759,9 @@ function Detail(props) {
                     </div>
                   </div>
                   <div className="areas">
-                    <p className="area-history">{dataDetailNv.thamGiaChinhTri}</p>
+                    <p className="area-history">
+                      {dataDetailNv.thamGiaChinhTri}
+                    </p>
                   </div>
                   <div className="titles">
                     <div className="title-history">
@@ -699,7 +772,9 @@ function Detail(props) {
                     </div>
                   </div>
                   <div className="areas">
-                    <p className="area-history">{dataDetailNv.thanNhanNuocNgoai}</p>
+                    <p className="area-history">
+                      {dataDetailNv.thanNhanNuocNgoai}
+                    </p>
                   </div>
                 </>
               )}
@@ -731,7 +806,13 @@ function Detail(props) {
                       </button>
                     </div>
                   </div>
-                  <div className="table"></div>
+                  <div className="table">
+                    <TableBasic
+                      link={link}
+                      columns={NVCOLUMNSHD}
+                      data={dataDetailHd}
+                    />
+                  </div>
                 </>
               )}
             </div>
@@ -793,7 +874,13 @@ function Detail(props) {
                       </button>
                     </div>
                   </div>
-                  <div className="table"></div>
+                  <div className="table">
+                    <TableBasic
+                      link={link}
+                      columns={NVCOLUMNSDC}
+                      data={dataDetailTc}
+                    />
+                  </div>
                 </>
               )}
             </div>
@@ -824,14 +911,20 @@ function Detail(props) {
                       </button>
                     </div>
                   </div>
-                  <div className="table"></div>
+                  <div className="table">
+                    <TableBasic
+                      link={link}
+                      columns={NVCOLUMNSKTvKL}
+                      data={dataDetailKt}
+                    />
+                  </div>
                 </>
               )}
             </div>
             <div className="form" id="discipline">
               <div className="big-title">
                 <div className="name-title">
-                  <h3 className="h3s">Kỷ luật</h3>
+                  <h3>Kỉ luật</h3>
                 </div>
                 <div className="arrow-button">
                   <button
@@ -855,7 +948,13 @@ function Detail(props) {
                       </button>
                     </div>
                   </div>
-                  <div className="table"></div>
+                  <div className="table">
+                    <TableBasic
+                      link={link}
+                      columns={NVCOLUMNSKTvKL}
+                      data={dataDetailKl}
+                    />
+                  </div>
                 </>
               )}
             </div>

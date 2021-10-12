@@ -4,6 +4,12 @@ table body tr:hover th {
 
   cursor: pointer;
 }
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #fffdfd;
+  color: #cfcfcf;
+}
 
 .table-sticky {
   overflow: auto;

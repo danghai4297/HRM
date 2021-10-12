@@ -34,7 +34,7 @@ function ItemCivil(props) {
             <h4 className="">Ngạch công chức</h4>
           </div>
           <div className="button">
-            <Link to="/profile/edit" className="link-item">
+            <Link to="/category/civil/add" className="link-item">
               <input type="submit" className="btn btn-primary" value="Thêm" />
             </Link>
             <ReactHTMLTableToExcel

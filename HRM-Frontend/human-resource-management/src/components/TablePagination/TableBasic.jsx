@@ -155,7 +155,7 @@ function TableBasic(props) {
             value={pageSize}
             onChange={(e) => setPageSize(Number(e.target.value))}
           >
-            {[10, 15, rows.length].map((pageSize) => (
+            {[5, 10, rows.length].map((pageSize) => (
               <option key={pageSize} value={pageSize}>
                 {pageSize}
               </option>
@@ -209,21 +209,6 @@ function TableBasic(props) {
           </button>
         </div>
       </div>
-      {/* <p>Selected Rows: {Object.keys(selectedRowIds).length}</p>
-      <pre>
-        <code>
-          {JSON.stringify(
-            {
-              selectedRowIds: selectedRowIds,
-              "selectedFlatRows[].original": selectedFlatRows.map(
-                (d) => d.original
-              ),
-            },
-            null,
-            2
-          )}
-        </code>
-      </pre> */}
     </>
   );
 }

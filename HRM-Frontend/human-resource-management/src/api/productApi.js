@@ -10,13 +10,19 @@ const ProductApi = {
 
   //detail nhân viên
   getNvDetail: (maNv) => {
-    const url = `/NhanVienDetail/${maNv}`;
+    const url = `/NhanVien/${maNv}`;
     return axiosClient.get(url);
   },
 
   //tất cả hợp đồng
   getAllHd: () => {
     const url = "/HopDong";
+    return axiosClient.get(url);
+  },
+
+  //detail hợp đồng
+  getHdDetail: (maHd) => {
+    const url = `/HopDong/detail/${maHd}`;
     return axiosClient.get(url);
   },
 
@@ -50,10 +56,16 @@ const ProductApi = {
     return axiosClient.get(url);
   },
 
-  //all dm dân tộc
+  //all danh mục dân tộc
   getAllDMDT: () => {
     const url = "/DanhMucDanToc";
     return axiosClient.get(url);
+  },
+
+  //add danh mục dân tộc
+  PostDMDT: (data) => {
+    const url = "/DanhMucDanToc";
+    return axiosClient.post(url, data);
   },
 
   //all dm hôn nhân

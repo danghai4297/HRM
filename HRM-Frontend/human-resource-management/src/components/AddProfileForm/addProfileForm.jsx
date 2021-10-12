@@ -1,5 +1,5 @@
 import React from "react";
-import "./AddProfileForm.scss";
+import "./AddProfileForm.scss"
 import { Controller, useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../FontAwesomeIcons/index";

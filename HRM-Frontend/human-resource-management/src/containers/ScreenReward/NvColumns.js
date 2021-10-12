@@ -24,7 +24,7 @@ export const NVCOLUMNS = [
     Header: "Họ Tên",
     accessor: "hoTen",
     sticky: "left",
-    minWidth: 200,
+    minWidth: 250,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -33,7 +33,7 @@ export const NVCOLUMNS = [
   {
     Header: "Mục Khen thưởng",
     accessor: "idDanhMucKhenThuong",
-    minWidth: 320,
+    minWidth: 350,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -50,7 +50,7 @@ export const NVCOLUMNS = [
   {
     Header: "Lý do",
     accessor: "lyDo",
-    minWidth: 300,
+    minWidth: 340,
     Filter: SelectColumnFilter,
     disableFilters: true,
     disableFilters: true,

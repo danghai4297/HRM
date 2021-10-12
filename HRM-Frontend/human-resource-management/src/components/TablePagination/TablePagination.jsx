@@ -166,10 +166,9 @@ function TablePagination(props) {
             <tbody {...getTableBodyProps()} className="bodyy">
               {page.map((row, i) => {
                 prepareRow(row);
-                // console.log(row);
                 return (
                   <Link
-                    to={link + row.original.maNhanVien}
+                    to={link ? link + row.original.id : ""}
                     className="link-item"
                   >
                     <tr {...row.getRowProps()} className="tr">

@@ -34,7 +34,7 @@ function ItemDuty(props) {
             <h4 className="">Danh mục chứ vụ</h4>
           </div>
           <div className="button">
-            <Link to="/profile/edit" className="link-item">
+            <Link to="/category/duty/add" className="link-item">
               <input type="submit" className="btn btn-primary" value="Thêm" />
             </Link>
             <ReactHTMLTableToExcel

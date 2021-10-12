@@ -4,14 +4,13 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddNationForm.scss";
 import { useState } from "react";
+import ProductApi from "../../../api/productApi";
+// import { Alert } from "react-alert";
 AddNationForm.propTypes = {};
 const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddNationForm(props) {
-  const [nationValue,setNationValue] = useState(null);
-
-
   const {
     register,
     handleSubmit,
@@ -19,8 +18,20 @@ function AddNationForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onHandleSubmit = (data) => {
+  const[nationValue, setNationValue] = useState(null);
+  // const fetchNvList = async () => {
+  //   try {
+  //     const responseNv = await productApi.getAllNv();
+  //     setdataAllNv(responseNv);
+  //   } catch (error) {
+  //     console.log("false to fetch nv list: ", error);
+  //   }
+  // };
+  const onHandleSubmit = async (data) => {
     console.log(data);
+    try {
+       await ProductApi.PostDMDT(data);
+    } catch (error) {}
   };
   return (
     <div className="container-form">
