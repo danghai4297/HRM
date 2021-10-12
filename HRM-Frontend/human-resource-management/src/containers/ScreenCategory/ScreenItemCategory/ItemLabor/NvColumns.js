@@ -11,8 +11,8 @@ export const NVCOLUMNS = [
     show: true,
   },
   {
-    Header: "Hình thức đào tạo",
-    accessor: "tenHinhThuc",
+    Header: "Tính chất lao động",
+    accessor: "tenLaoDong",
     sticky: "left",
     minWidth: 630,
     Filter: SelectColumnFilter,

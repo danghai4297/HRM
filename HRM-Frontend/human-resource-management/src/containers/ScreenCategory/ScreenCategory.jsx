@@ -41,6 +41,7 @@ import AddPositionForm from "../../components/AddCategoryForm/AddPositionForm/Ad
 import AddCSRForm from "../../components/AddCategoryForm/AddCSRForm/AddCSRForm";
 import AddNestForm from "../../components/AddCategoryForm/AddNestForm/AddNestForm";
 import AddNationForm from "../../components/AddCategoryForm/AddNationForm/AddNationForm";
+import ItemLabor from "./ScreenItemCategory/ItemLabor/ItemLabor";
 
 function ScreenCategory() {
   return (
@@ -134,11 +135,7 @@ function ScreenCategory() {
 
               <Route exact path="/category/nest" component={ItemNest} />
               <Route exact path="/category/nest/add" component={AddNestForm} />
-              <Route
-                exact
-                path="/category/nest/:id"
-                component={AddNestForm}
-              />
+              <Route exact path="/category/nest/:id" component={AddNestForm} />
 
               <Route exact path="/category/religion" component={ItemReligion} />
               <Route
@@ -216,6 +213,18 @@ function ScreenCategory() {
                 component={AddSalaryGroupForm}
               />
 
+              <Route exact path="/category/labor" component={ItemLabor} />
+              <Route
+                exact
+                path="/category/labor/add"
+                component={AddEducateForm}
+              />
+              <Route
+                exact
+                path="/category/labor/:id"
+                component={AddEducateForm}
+              />
+
               <Route exact path="/category/training" component={ItemTraining} />
               <Route
                 exact
@@ -230,11 +239,7 @@ function ScreenCategory() {
 
               <Route exact path="/category/civil" component={ItemCivil} />
               <Route exact path="/category/civil/add" component={AddCSRForm} />
-              <Route
-                exact
-                path="/category/civil/:id"
-                component={AddCSRForm}
-              />
+              <Route exact path="/category/civil/:id" component={AddCSRForm} />
 
               <Route exact path="/category/relation" component={ItemRelation} />
               <Route
