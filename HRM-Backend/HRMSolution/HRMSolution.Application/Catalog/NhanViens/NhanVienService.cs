@@ -83,30 +83,30 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 idNgachCongChuc = request.idNgachCongChuc,
                 YTe = new YTe()
                 {
-                    nhomMau = request.YTe.nhomMau,
-                    chieuCao = request.YTe.chieuCao,
-                    canNang = request.YTe.canNang,
-                    tinhTrangSucKhoe = request.YTe.tinhTrangSucKhoe,
-                    benhTat = request.YTe.benhTat,
-                    luuY = request.YTe.luuY,
-                    khuyetTat = request.YTe.khuyetTat,
-                    maNhanVien = request.YTe.maNhanVien
+                    yt_nhomMau = request.YTe.nhomMau,
+                    yt_chieuCao = request.YTe.chieuCao,
+                    yt_canNang = request.YTe.canNang,
+                    yt_tinhTrangSucKhoe = request.YTe.tinhTrangSucKhoe,
+                    yt_benhTat = request.YTe.benhTat,
+                    yt_luuY = request.YTe.luuY,
+                    yt_khuyetTat = request.YTe.khuyetTat,
+                    yt_maNhanVien = request.YTe.maNhanVien
                 },
                 LichSuBanThan = new LichSuBanThan()
                 {
-                    biBatDiTu = request.LichSuBanThan.biBatDiTu,
-                    thamGiaChinhTri = request.LichSuBanThan.thamGiaChinhTri,
-                    thanNhanNuocNgoai = request.LichSuBanThan.thanNhanNuocNgoai,
-                    maNhanVien = request.LichSuBanThan.maNhanVien
+                    lsbt_biBatDiTu = request.LichSuBanThan.biBatDiTu,
+                    lsbt_thamGiaChinhTri = request.LichSuBanThan.thamGiaChinhTri,
+                    lsbt_thanNhanNuocNgoai = request.LichSuBanThan.thanNhanNuocNgoai,
+                    lsbt_maNhanVien = request.LichSuBanThan.maNhanVien
                 },
                 LienHeKhanCap = new LienHeKhanCap()
                 {
-                    hoTen = request.LienHeKhanCap.hoTen,
-                    quanHe = request.LienHeKhanCap.quanHe,
-                    dienThoai = request.LienHeKhanCap.dienThoai,
-                    email = request.LienHeKhanCap.email,
-                    diaChi = request.LienHeKhanCap.diaChi,
-                    maNhanVien = request.LienHeKhanCap.maNhanVien,
+                    lhkc_hoTen = request.LienHeKhanCap.hoTen,
+                    lhkc_quanHe = request.LienHeKhanCap.quanHe,
+                    lhkc_dienThoai = request.LienHeKhanCap.dienThoai,
+                    lhkc_email = request.LienHeKhanCap.email,
+                    lhkc_diaChi = request.LienHeKhanCap.diaChi,
+                    lhkc_maNhanVien = request.LienHeKhanCap.maNhanVien,
                 }
 
             };
@@ -191,6 +191,83 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 tinhChatLaoDong = x.tc.tenTinhChat,
                 DanhMucHonNhan = x.hn.tenDanhMuc,
                 DanToc= x.dt.tenDanhMuc,
+                TonGiao = x.tg.tenDanhMuc,
+                NgachCongChuc = x.ncc.tenNgach,
+                lyDoNghiViec = x.nv.lyDoNghiViec
+
+            }).ToListAsync();
+
+
+            return data;
+        }
+
+        public async Task<List<NhanVienViewModel>> GetAllNVNghi()
+        {
+            var query = from nv in _context.nhanViens
+                        join tc in _context.danhMucTinhChatLaoDongs on nv.tinhChatLaoDong equals tc.id
+                        join hn in _context.danhMucHonNhans on nv.idDanhMucHonNhan equals hn.id
+                        join dt in _context.danhMucDanTocs on nv.idDanToc equals dt.id
+                        join tg in _context.danhMucTonGiaos on nv.idTonGiao equals tg.id
+                        join ncc in _context.danhMucNgachCongChucs on nv.idNgachCongChuc equals ncc.id
+                        where nv.trangThaiLaoDong == false
+                        select new { nv, tc, dt, hn, tg, ncc };
+
+
+            var data = await query.Select(x => new NhanVienViewModel()
+            {
+                id = x.nv.maNhanVien,
+                hoTen = x.nv.hoTen,
+                quocTich = x.nv.quocTich,
+                ngaySinh = x.nv.ngaySinh,
+                gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
+                dienThoai = x.nv.dienThoai,
+                dienThoaiKhac = x.nv.dienThoaiKhac,
+                diDong = x.nv.diDong,
+                email = x.nv.email,
+                facebook = x.nv.facebook,
+                skype = x.nv.skype,
+                maSoThue = x.nv.maSoThue,
+                cccd = x.nv.cccd,
+                noiCapCCCD = x.nv.noiCapCCCD,
+                ngayCapCCCD = x.nv.ngayCapCCCD,
+                ngayHetHanCCCD = x.nv.ngayHetHanCCCD,
+                hoChieu = x.nv.hoChieu,
+                noiCapHoChieu = x.nv.noiCapHoChieu,
+                ngayCapHoChieu = x.nv.ngayCapHoChieu,
+                ngayHetHanHoChieu = x.nv.ngayHetHanHoChieu,
+                noiSinh = x.nv.noiSinh,
+                queQuan = x.nv.queQuan,
+                thuongTru = x.nv.thuongTru,
+                tamTru = x.nv.tamTru,
+                ngheNghiep = x.nv.ngheNghiep,
+                chucVuHienTai = x.nv.chucVuHienTai,
+                ngayTuyenDung = x.nv.ngayTuyenDung,
+                ngayThuViec = x.nv.ngayThuViec,
+                congViecChinh = x.nv.congViecChinh,
+                ngayVaoBan = x.nv.ngayVaoBan,
+                ngayChinhThuc = x.nv.ngayChinhThuc,
+                coQuanTuyenDung = x.nv.coQuanTuyenDung,
+                ngachCongChucNoiDung = x.nv.ngachCongChucNoiDung,
+                ngayVaoDang = x.nv.ngayVaoDang,
+                ngayVaoDangChinhThuc = x.nv.ngayVaoDangChinhThuc,
+                ngayNhapNgu = x.nv.ngayNhapNgu,
+                ngayXuatNgu = x.nv.ngayXuatNgu,
+                quanHamCaoNhat = x.nv.quanHamCaoNhat,
+                danhHieuCaoNhat = x.nv.danhHieuCaoNhat,
+                ngayVaoDoan = x.nv.ngayVaoDoan,
+                noiThamGia = x.nv.noiThamGia,
+                laThuongBinh = x.nv.laThuongBinh,
+                laConChinhSach = x.nv.laConChinhSach,
+                bhxh = x.nv.bhxh,
+                bhyt = x.nv.bhyt,
+                atm = x.nv.atm,
+                nganHang = x.nv.nganHang,
+                trangThaiLaoDong = x.nv.trangThaiLaoDong == true ? "Đang làm việc" : "Đã nghỉ việc",
+                ngayNghiViec = x.nv.ngayNghiViec,
+                anh = x.nv.anh,
+                tinhChatLaoDong = x.tc.tenTinhChat,
+                DanhMucHonNhan = x.hn.tenDanhMuc,
+                DanToc = x.dt.tenDanhMuc,
                 TonGiao = x.tg.tenDanhMuc,
                 NgachCongChuc = x.ncc.tenNgach,
                 lyDoNghiViec = x.nv.lyDoNghiViec
@@ -361,10 +438,10 @@ namespace HRMSolution.Application.Catalog.NhanViens
                         join hn in _context.danhMucHonNhans on nv.idDanhMucHonNhan equals hn.id
                         join dt in _context.danhMucDanTocs on nv.idDanToc equals dt.id
                         join tg in _context.danhMucTonGiaos on nv.idTonGiao equals tg.id
-                        join lhkc in _context.lienHeKhanCaps on nv.maNhanVien equals lhkc.maNhanVien
+                        join lhkc in _context.lienHeKhanCaps on nv.maNhanVien equals lhkc.lhkc_maNhanVien
                         join ncc in _context.danhMucNgachCongChucs on nv.idNgachCongChuc equals ncc.id
-                        join yt in _context.yTes on nv.maNhanVien equals yt.maNhanVien
-                        join lsbt in _context.lichSuBanThans on nv.maNhanVien equals lsbt.maNhanVien
+                        join yt in _context.yTes on nv.maNhanVien equals yt.yt_maNhanVien
+                        join lsbt in _context.lichSuBanThans on nv.maNhanVien equals lsbt.lsbt_maNhanVien
 
                         where nv.maNhanVien == maNhanVien
                         select new
@@ -409,11 +486,11 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 email = x.nv.email,
                 facebook = x.nv.facebook,
                 skype = x.nv.skype,
-                lhkcHoTen = x.lhkc.hoTen,
-                lhkcQuanHe = x.lhkc.quanHe,
-                lhkcDienThoai = x.lhkc.dienThoai,
-                lhkcEmail = x.lhkc.email,
-                lhkcDiaChi = x.lhkc.diaChi,
+                lhkcHoTen = x.lhkc.lhkc_hoTen,
+                lhkcQuanHe = x.lhkc.lhkc_quanHe,
+                lhkcDienThoai = x.lhkc.lhkc_dienThoai,
+                lhkcEmail = x.lhkc.lhkc_email,
+                lhkcDiaChi = x.lhkc.lhkc_diaChi,
                 ngheNghiep = x.nv.ngheNghiep,
                 coQuanTuyenDung = x.nv.coQuanTuyenDung,
                 chucVuHienTai = x.nv.chucVuHienTai,
@@ -442,16 +519,16 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 danhHieuCaoNhat = x.nv.danhHieuCaoNhat,
                 thuongBinh = x.nv.thuongBinh,
                 conChinhSach = x.nv.conChinhSach,
-                ytNhomMau = x.yt.nhomMau,
-                ytChieuCao = x.yt.chieuCao,
-                ytCanNang = x.yt.canNang,
-                ytTinhTrangSucKhoe = x.yt.tinhTrangSucKhoe,
-                ytBenhTat = x.yt.benhTat,
-                ytLuuY = x.yt.luuY,
-                ytKhuyetTat = x.yt.khuyetTat == true ? "Có" : "Không",
-                biBatDitu = x.lsbt.biBatDiTu,
-                thamGiaChinhTri = x.lsbt.thamGiaChinhTri,
-                thanNhanNuocNgoai = x.lsbt.thanNhanNuocNgoai,
+                ytNhomMau = x.yt.yt_nhomMau,
+                ytChieuCao = x.yt.yt_chieuCao,
+                ytCanNang = x.yt.yt_canNang,
+                ytTinhTrangSucKhoe = x.yt.yt_tinhTrangSucKhoe,
+                ytBenhTat = x.yt.yt_benhTat,
+                ytLuuY = x.yt.yt_luuY,
+                ytKhuyetTat = x.yt.yt_khuyetTat == true ? "Có" : "Không",
+                biBatDitu = x.lsbt.lsbt_biBatDiTu,
+                thamGiaChinhTri = x.lsbt.lsbt_thamGiaChinhTri,
+                thanNhanNuocNgoai = x.lsbt.lsbt_thanNhanNuocNgoai,
                 trinhDoVanHoas = dataTdvh,
                 hopDongs = dataHd,
                 dieuChuyens = dataDc,

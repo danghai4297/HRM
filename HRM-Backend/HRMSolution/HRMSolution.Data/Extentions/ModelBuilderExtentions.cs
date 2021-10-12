@@ -3694,14 +3694,14 @@ namespace HRMSolution.Data.Extentions
                 new TrinhDoVanHoa() { id = 2, tenTruong = "Đại Học Bách Khoa", idChuyenMon = 1, idHinhThucDaoTao = 1, idTrinhDo = 1, maNhanVien = "NV0001" }
                 );
             modelbulder.Entity<YTe>().HasData(
-                new YTe() { id = 1, nhomMau = "O", chieuCao = (float)1.73, canNang = (float)56.1, maNhanVien = "NV0001" }
+                new YTe() { yt_id = 1, yt_nhomMau = "O", yt_chieuCao = (float)1.73, yt_canNang = (float)56.1, yt_maNhanVien = "NV0001" }
                 );
             modelbulder.Entity<NgoaiNgu>().HasData(
                 new NgoaiNgu() { id = 1, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Đại học FPT", maNhanVien = "NV0001" },
                 new NgoaiNgu() { id = 2, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Đại học Bách Khoa", maNhanVien = "NV0001" }
                 );
             modelbulder.Entity<LienHeKhanCap>().HasData(
-                new LienHeKhanCap() { id = 1, hoTen = "Mai Trung Hiếu", quanHe = "Bạn", maNhanVien = "NV0001", diaChi= "Hà Nội", dienThoai = "0123434324" }
+                new LienHeKhanCap() { lhkc_id = 1, lhkc_hoTen = "Mai Trung Hiếu", lhkc_quanHe = "Bạn", lhkc_maNhanVien = "NV0001", lhkc_diaChi = "Hà Nội", lhkc_dienThoai = "0123434324" }
                 );
             modelbulder.Entity<NguoiThan>().HasData(
                 new NguoiThan() { id = 1, tenNguoiThan = "Nguyễn Đăng Hải", gioiTinh = true, ngaySinh = DateTime.ParseExact("1965-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), quanHe = "Bố", ngheNghiep = "kinh doanh Tại Nhà", diaChi = "điện biên", dienThoai = "0914637668", maNhanVien = "NV0001", idDanhMucNguoiThan = 1 },
@@ -3743,7 +3743,7 @@ namespace HRMSolution.Data.Extentions
 
                 );
             modelbulder.Entity<LichSuBanThan>().HasData(
-                new LichSuBanThan(){ id = 1, biBatDiTu= "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai= "Không", maNhanVien = "NV0001" }
+                new LichSuBanThan(){ lsbt_id = 1, lsbt_biBatDiTu= "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0001" }
                 );
         }
     }

@@ -14,5 +14,6 @@ namespace HRMSolution.Application.Catalog.NhanViens
         Task<int> Delete(int idDanhMucDanToc);
         Task<List<NhanVienViewModel>> GetAll();
         Task<NhanVienDetailViewModel> GetAllDetail(string maNhanVien);
+        Task<List<NhanVienViewModel>> GetAllNVNghi();
     }
 }

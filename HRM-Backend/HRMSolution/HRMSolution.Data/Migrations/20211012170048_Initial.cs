@@ -482,19 +482,19 @@ namespace HRMSolution.Data.Migrations
                 name: "LichSuBanThan",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    lsbt_id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    biBatDiTu = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
-                    thamGiaChinhTri = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
-                    thanNhanNuocNgoai = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
-                    maNhanVien = table.Column<string>(type: "nvarchar(10)", nullable: false)
+                    lsbt_biBatDiTu = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    lsbt_thamGiaChinhTri = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    lsbt_thanNhanNuocNgoai = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    lsbt_maNhanVien = table.Column<string>(type: "nvarchar(10)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_LichSuBanThan", x => x.id);
+                    table.PrimaryKey("PK_LichSuBanThan", x => x.lsbt_id);
                     table.ForeignKey(
-                        name: "FK_LichSuBanThan_NhanVien_maNhanVien",
-                        column: x => x.maNhanVien,
+                        name: "FK_LichSuBanThan_NhanVien_lsbt_maNhanVien",
+                        column: x => x.lsbt_maNhanVien,
                         principalTable: "NhanVien",
                         principalColumn: "maNhanVien",
                         onDelete: ReferentialAction.Cascade);
@@ -504,21 +504,21 @@ namespace HRMSolution.Data.Migrations
                 name: "LienHeKhanCap",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    lhkc_id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    hoTen = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-                    quanHe = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-                    dienThoai = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-                    email = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
-                    diaChi = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
-                    maNhanVien = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false)
+                    lhkc_hoTen = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    lhkc_quanHe = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    lhkc_dienThoai = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    lhkc_email = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
+                    lhkc_diaChi = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
+                    lhkc_maNhanVien = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_LienHeKhanCap", x => x.id);
+                    table.PrimaryKey("PK_LienHeKhanCap", x => x.lhkc_id);
                     table.ForeignKey(
-                        name: "FK_LienHeKhanCap_NhanVien_maNhanVien",
-                        column: x => x.maNhanVien,
+                        name: "FK_LienHeKhanCap_NhanVien_lhkc_maNhanVien",
+                        column: x => x.lhkc_maNhanVien,
                         principalTable: "NhanVien",
                         principalColumn: "maNhanVien",
                         onDelete: ReferentialAction.Cascade);
@@ -634,23 +634,23 @@ namespace HRMSolution.Data.Migrations
                 name: "YTe",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    yt_id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    nhomMau = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: true),
-                    chieuCao = table.Column<float>(type: "real", nullable: true),
-                    canNang = table.Column<float>(type: "real", nullable: true),
-                    tinhTrangSucKhoe = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    benhTat = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    luuY = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    khuyetTat = table.Column<bool>(type: "bit", nullable: true),
-                    maNhanVien = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false)
+                    yt_nhomMau = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: true),
+                    yt_chieuCao = table.Column<float>(type: "real", nullable: true),
+                    yt_canNang = table.Column<float>(type: "real", nullable: true),
+                    yt_tinhTrangSucKhoe = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    yt_benhTat = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    yt_luuY = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    yt_khuyetTat = table.Column<bool>(type: "bit", nullable: true),
+                    yt_maNhanVien = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_YTe", x => x.id);
+                    table.PrimaryKey("PK_YTe", x => x.yt_id);
                     table.ForeignKey(
-                        name: "FK_YTe_NhanVien_maNhanVien",
-                        column: x => x.maNhanVien,
+                        name: "FK_YTe_NhanVien_yt_maNhanVien",
+                        column: x => x.yt_maNhanVien,
                         principalTable: "NhanVien",
                         principalColumn: "maNhanVien",
                         onDelete: ReferentialAction.Cascade);
@@ -1019,9 +1019,9 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "id", "chiTiet", "idChucVu", "idPhongBan", "maNhanVien", "ngayHieuLuc", "to", "trangThai" },
                 values: new object[,]
                 {
-                    { 1, "Không", 1, 1, "NV0001", new DateTime(2021, 10, 12, 23, 27, 48, 811, DateTimeKind.Local).AddTicks(769), 1, false },
-                    { 2, "Ahihi", 1, 2, "NV0001", new DateTime(2021, 10, 12, 23, 27, 48, 811, DateTimeKind.Local).AddTicks(2256), 2, false },
-                    { 3, "Ahihi", 1, 3, "NV0001", new DateTime(2021, 10, 12, 23, 27, 48, 811, DateTimeKind.Local).AddTicks(2313), 3, true }
+                    { 1, "Không", 1, 1, "NV0001", new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(4666), 1, false },
+                    { 2, "Ahihi", 1, 2, "NV0001", new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(6936), 2, false },
+                    { 3, "Ahihi", 1, 3, "NV0001", new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(7016), 3, true }
                 });
 
             migrationBuilder.InsertData(
@@ -1029,12 +1029,12 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "maHopDong", "ghiChu", "hopDongDenNgay", "hopDongTuNgay", "idChucDanh", "idLoaiHopDong", "maNhanVien", "trangThai" },
                 values: new object[,]
                 {
-                    { "HD05", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 10, 12, 23, 27, 48, 810, DateTimeKind.Local).AddTicks(6525), 1, 1, "NV0005", true },
-                    { "HD06", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 10, 12, 23, 27, 48, 810, DateTimeKind.Local).AddTicks(6532), 1, 1, "NV0006", true },
-                    { "HD04", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 10, 12, 23, 27, 48, 810, DateTimeKind.Local).AddTicks(6516), 1, 1, "NV0004", true },
-                    { "HD03", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 10, 12, 23, 27, 48, 810, DateTimeKind.Local).AddTicks(6504), 1, 1, "NV0003", true },
-                    { "HD02", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 10, 12, 23, 27, 48, 810, DateTimeKind.Local).AddTicks(6424), 1, 1, "NV0001", true },
-                    { "HD01", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 10, 12, 23, 27, 48, 809, DateTimeKind.Local).AddTicks(5767), 1, 1, "NV0001", false }
+                    { "HD05", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 10, 13, 0, 0, 46, 892, DateTimeKind.Local).AddTicks(8279), 1, 1, "NV0005", true },
+                    { "HD06", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 10, 13, 0, 0, 46, 892, DateTimeKind.Local).AddTicks(8294), 1, 1, "NV0006", true },
+                    { "HD04", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 10, 13, 0, 0, 46, 892, DateTimeKind.Local).AddTicks(8265), 1, 1, "NV0004", true },
+                    { "HD03", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 10, 13, 0, 0, 46, 892, DateTimeKind.Local).AddTicks(8246), 1, 1, "NV0003", true },
+                    { "HD02", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 10, 13, 0, 0, 46, 892, DateTimeKind.Local).AddTicks(8118), 1, 1, "NV0001", true },
+                    { "HD01", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 10, 13, 0, 0, 46, 891, DateTimeKind.Local).AddTicks(2344), 1, 1, "NV0001", false }
                 });
 
             migrationBuilder.InsertData(
@@ -1058,12 +1058,12 @@ namespace HRMSolution.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "LichSuBanThan",
-                columns: new[] { "id", "biBatDiTu", "maNhanVien", "thamGiaChinhTri", "thanNhanNuocNgoai" },
+                columns: new[] { "lsbt_id", "lsbt_biBatDiTu", "lsbt_maNhanVien", "lsbt_thamGiaChinhTri", "lsbt_thanNhanNuocNgoai" },
                 values: new object[] { 1, "Không", "NV0001", "Không", "Không" });
 
             migrationBuilder.InsertData(
                 table: "LienHeKhanCap",
-                columns: new[] { "id", "diaChi", "dienThoai", "email", "hoTen", "maNhanVien", "quanHe" },
+                columns: new[] { "lhkc_id", "lhkc_diaChi", "lhkc_dienThoai", "lhkc_email", "lhkc_hoTen", "lhkc_maNhanVien", "lhkc_quanHe" },
                 values: new object[] { 1, "Hà Nội", "0123434324", null, "Mai Trung Hiếu", "NV0001", "Bạn" });
 
             migrationBuilder.InsertData(
@@ -1095,7 +1095,7 @@ namespace HRMSolution.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "YTe",
-                columns: new[] { "id", "benhTat", "canNang", "chieuCao", "khuyetTat", "luuY", "maNhanVien", "nhomMau", "tinhTrangSucKhoe" },
+                columns: new[] { "yt_id", "yt_benhTat", "yt_canNang", "yt_chieuCao", "yt_khuyetTat", "yt_luuY", "yt_maNhanVien", "yt_nhomMau", "yt_tinhTrangSucKhoe" },
                 values: new object[] { 1, null, 56.1f, 1.73f, null, null, "NV0001", "O", null });
 
             migrationBuilder.InsertData(
@@ -1103,11 +1103,11 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "id", "bacLuong", "ghiChu", "heSoLuong", "idNhomLuong", "luongCoBan", "maHopDong", "ngayHieuLuc", "ngayKetThuc", "phuCapKhac", "phuCapTrachNhiem", "thoiHanLenLuong", "tongLuong", "trangThai" },
                 values: new object[,]
                 {
-                    { 1, "1", null, null, 1, null, "HD01", new DateTime(2021, 10, 12, 23, 27, 48, 810, DateTimeKind.Local).AddTicks(8495), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", null, false },
-                    { 2, "1", null, null, 1, null, "HD01", new DateTime(2021, 10, 12, 23, 27, 48, 810, DateTimeKind.Local).AddTicks(9661), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", null, true },
-                    { 3, "1", null, null, 1, null, "HD03", new DateTime(2021, 10, 12, 23, 27, 48, 810, DateTimeKind.Local).AddTicks(9716), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", null, true },
-                    { 4, "1", null, null, 1, null, "HD04", new DateTime(2021, 10, 12, 23, 27, 48, 810, DateTimeKind.Local).AddTicks(9726), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", null, true },
-                    { 5, "1", null, null, 1, null, "HD05", new DateTime(2021, 10, 12, 23, 27, 48, 810, DateTimeKind.Local).AddTicks(9734), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", null, true }
+                    { 1, "1", null, null, 1, null, "HD01", new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(1336), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", null, false },
+                    { 2, "1", null, null, 1, null, "HD01", new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(3009), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", null, true },
+                    { 3, "1", null, null, 1, null, "HD03", new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(3089), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", null, true },
+                    { 4, "1", null, null, 1, null, "HD04", new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(3106), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", null, true },
+                    { 5, "1", null, null, 1, null, "HD05", new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(3120), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", null, true }
                 });
 
             migrationBuilder.CreateIndex(
@@ -1156,15 +1156,15 @@ namespace HRMSolution.Data.Migrations
                 column: "maNhanVien");
 
             migrationBuilder.CreateIndex(
-                name: "IX_LichSuBanThan_maNhanVien",
+                name: "IX_LichSuBanThan_lsbt_maNhanVien",
                 table: "LichSuBanThan",
-                column: "maNhanVien",
+                column: "lsbt_maNhanVien",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_LienHeKhanCap_maNhanVien",
+                name: "IX_LienHeKhanCap_lhkc_maNhanVien",
                 table: "LienHeKhanCap",
-                column: "maNhanVien",
+                column: "lhkc_maNhanVien",
                 unique: true);
 
             migrationBuilder.CreateIndex(
@@ -1243,9 +1243,9 @@ namespace HRMSolution.Data.Migrations
                 column: "maNhanVien");
 
             migrationBuilder.CreateIndex(
-                name: "IX_YTe_maNhanVien",
+                name: "IX_YTe_yt_maNhanVien",
                 table: "YTe",
-                column: "maNhanVien",
+                column: "yt_maNhanVien",
                 unique: true);
         }
 

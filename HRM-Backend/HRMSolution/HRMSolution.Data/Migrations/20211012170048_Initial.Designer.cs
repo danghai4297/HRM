@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HRMSolution.Data.Migrations
 {
     [DbContext(typeof(HRMDbContext))]
-    [Migration("20211012162750_Initial")]
+    [Migration("20211012170048_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -861,7 +861,7 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0001",
-                            ngayHieuLuc = new DateTime(2021, 10, 12, 23, 27, 48, 811, DateTimeKind.Local).AddTicks(769),
+                            ngayHieuLuc = new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(4666),
                             to = 1,
                             trangThai = false
                         },
@@ -872,7 +872,7 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0001",
-                            ngayHieuLuc = new DateTime(2021, 10, 12, 23, 27, 48, 811, DateTimeKind.Local).AddTicks(2256),
+                            ngayHieuLuc = new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(6936),
                             to = 2,
                             trangThai = false
                         },
@@ -883,7 +883,7 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0001",
-                            ngayHieuLuc = new DateTime(2021, 10, 12, 23, 27, 48, 811, DateTimeKind.Local).AddTicks(2313),
+                            ngayHieuLuc = new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(7016),
                             to = 3,
                             trangThai = true
                         });
@@ -967,7 +967,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD01",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 12, 23, 27, 48, 809, DateTimeKind.Local).AddTicks(5767),
+                            hopDongTuNgay = new DateTime(2021, 10, 13, 0, 0, 46, 891, DateTimeKind.Local).AddTicks(2344),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0001",
@@ -977,7 +977,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD02",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 12, 23, 27, 48, 810, DateTimeKind.Local).AddTicks(6424),
+                            hopDongTuNgay = new DateTime(2021, 10, 13, 0, 0, 46, 892, DateTimeKind.Local).AddTicks(8118),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0001",
@@ -987,7 +987,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD03",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 12, 23, 27, 48, 810, DateTimeKind.Local).AddTicks(6504),
+                            hopDongTuNgay = new DateTime(2021, 10, 13, 0, 0, 46, 892, DateTimeKind.Local).AddTicks(8246),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0003",
@@ -997,7 +997,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD04",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 12, 23, 27, 48, 810, DateTimeKind.Local).AddTicks(6516),
+                            hopDongTuNgay = new DateTime(2021, 10, 13, 0, 0, 46, 892, DateTimeKind.Local).AddTicks(8265),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0004",
@@ -1007,7 +1007,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD05",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 12, 23, 27, 48, 810, DateTimeKind.Local).AddTicks(6525),
+                            hopDongTuNgay = new DateTime(2021, 10, 13, 0, 0, 46, 892, DateTimeKind.Local).AddTicks(8279),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0005",
@@ -1017,7 +1017,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD06",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 12, 23, 27, 48, 810, DateTimeKind.Local).AddTicks(6532),
+                            hopDongTuNgay = new DateTime(2021, 10, 13, 0, 0, 46, 892, DateTimeKind.Local).AddTicks(8294),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0006",
@@ -1201,32 +1201,32 @@ namespace HRMSolution.Data.Migrations
 
             modelBuilder.Entity("HRMSolution.Data.Entities.LichSuBanThan", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("lsbt_id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:IdentityIncrement", 1)
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("biBatDiTu")
+                    b.Property<string>("lsbt_biBatDiTu")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<string>("maNhanVien")
+                    b.Property<string>("lsbt_maNhanVien")
                         .IsRequired()
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<string>("thamGiaChinhTri")
+                    b.Property<string>("lsbt_thamGiaChinhTri")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<string>("thanNhanNuocNgoai")
+                    b.Property<string>("lsbt_thanNhanNuocNgoai")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.HasKey("id");
+                    b.HasKey("lsbt_id");
 
-                    b.HasIndex("maNhanVien")
+                    b.HasIndex("lsbt_maNhanVien")
                         .IsUnique();
 
                     b.ToTable("LichSuBanThan");
@@ -1234,55 +1234,55 @@ namespace HRMSolution.Data.Migrations
                     b.HasData(
                         new
                         {
-                            id = 1,
-                            biBatDiTu = "Không",
-                            maNhanVien = "NV0001",
-                            thamGiaChinhTri = "Không",
-                            thanNhanNuocNgoai = "Không"
+                            lsbt_id = 1,
+                            lsbt_biBatDiTu = "Không",
+                            lsbt_maNhanVien = "NV0001",
+                            lsbt_thamGiaChinhTri = "Không",
+                            lsbt_thanNhanNuocNgoai = "Không"
                         });
                 });
 
             modelBuilder.Entity("HRMSolution.Data.Entities.LienHeKhanCap", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("lhkc_id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:IdentityIncrement", 1)
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("diaChi")
+                    b.Property<string>("lhkc_diaChi")
                         .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
-                    b.Property<string>("dienThoai")
+                    b.Property<string>("lhkc_dienThoai")
                         .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.Property<string>("email")
+                    b.Property<string>("lhkc_email")
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.Property<string>("hoTen")
+                    b.Property<string>("lhkc_hoTen")
                         .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.Property<string>("maNhanVien")
+                    b.Property<string>("lhkc_maNhanVien")
                         .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<string>("quanHe")
+                    b.Property<string>("lhkc_quanHe")
                         .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.HasKey("id");
+                    b.HasKey("lhkc_id");
 
-                    b.HasIndex("maNhanVien")
+                    b.HasIndex("lhkc_maNhanVien")
                         .IsUnique();
 
                     b.ToTable("LienHeKhanCap");
@@ -1290,12 +1290,12 @@ namespace HRMSolution.Data.Migrations
                     b.HasData(
                         new
                         {
-                            id = 1,
-                            diaChi = "Hà Nội",
-                            dienThoai = "0123434324",
-                            hoTen = "Mai Trung Hiếu",
-                            maNhanVien = "NV0001",
-                            quanHe = "Bạn"
+                            lhkc_id = 1,
+                            lhkc_diaChi = "Hà Nội",
+                            lhkc_dienThoai = "0123434324",
+                            lhkc_hoTen = "Mai Trung Hiếu",
+                            lhkc_maNhanVien = "NV0001",
+                            lhkc_quanHe = "Bạn"
                         });
                 });
 
@@ -1371,7 +1371,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD01",
-                            ngayHieuLuc = new DateTime(2021, 10, 12, 23, 27, 48, 810, DateTimeKind.Local).AddTicks(8495),
+                            ngayHieuLuc = new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(1336),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = false
@@ -1382,7 +1382,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD01",
-                            ngayHieuLuc = new DateTime(2021, 10, 12, 23, 27, 48, 810, DateTimeKind.Local).AddTicks(9661),
+                            ngayHieuLuc = new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(3009),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
@@ -1393,7 +1393,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD03",
-                            ngayHieuLuc = new DateTime(2021, 10, 12, 23, 27, 48, 810, DateTimeKind.Local).AddTicks(9716),
+                            ngayHieuLuc = new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(3089),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
@@ -1404,7 +1404,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD04",
-                            ngayHieuLuc = new DateTime(2021, 10, 12, 23, 27, 48, 810, DateTimeKind.Local).AddTicks(9726),
+                            ngayHieuLuc = new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(3106),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
@@ -1415,7 +1415,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD05",
-                            ngayHieuLuc = new DateTime(2021, 10, 12, 23, 27, 48, 810, DateTimeKind.Local).AddTicks(9734),
+                            ngayHieuLuc = new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(3120),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
@@ -5574,46 +5574,46 @@ namespace HRMSolution.Data.Migrations
 
             modelBuilder.Entity("HRMSolution.Data.Entities.YTe", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("yt_id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:IdentityIncrement", 1)
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("benhTat")
+                    b.Property<string>("yt_benhTat")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<float?>("canNang")
+                    b.Property<float?>("yt_canNang")
                         .HasColumnType("real");
 
-                    b.Property<float?>("chieuCao")
+                    b.Property<float?>("yt_chieuCao")
                         .HasColumnType("real");
 
-                    b.Property<bool?>("khuyetTat")
+                    b.Property<bool?>("yt_khuyetTat")
                         .HasColumnType("bit");
 
-                    b.Property<string>("luuY")
+                    b.Property<string>("yt_luuY")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("maNhanVien")
+                    b.Property<string>("yt_maNhanVien")
                         .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<string>("nhomMau")
+                    b.Property<string>("yt_nhomMau")
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
-                    b.Property<string>("tinhTrangSucKhoe")
+                    b.Property<string>("yt_tinhTrangSucKhoe")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.HasKey("id");
+                    b.HasKey("yt_id");
 
-                    b.HasIndex("maNhanVien")
+                    b.HasIndex("yt_maNhanVien")
                         .IsUnique();
 
                     b.ToTable("YTe");
@@ -5621,11 +5621,11 @@ namespace HRMSolution.Data.Migrations
                     b.HasData(
                         new
                         {
-                            id = 1,
-                            canNang = 56.1f,
-                            chieuCao = 1.73f,
-                            maNhanVien = "NV0001",
-                            nhomMau = "O"
+                            yt_id = 1,
+                            yt_canNang = 56.1f,
+                            yt_chieuCao = 1.73f,
+                            yt_maNhanVien = "NV0001",
+                            yt_nhomMau = "O"
                         });
                 });
 
@@ -5717,7 +5717,7 @@ namespace HRMSolution.Data.Migrations
                 {
                     b.HasOne("HRMSolution.Data.Entities.NhanVien", "NhanVien")
                         .WithOne("LichSuBanThan")
-                        .HasForeignKey("HRMSolution.Data.Entities.LichSuBanThan", "maNhanVien")
+                        .HasForeignKey("HRMSolution.Data.Entities.LichSuBanThan", "lsbt_maNhanVien")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -5728,7 +5728,7 @@ namespace HRMSolution.Data.Migrations
                 {
                     b.HasOne("HRMSolution.Data.Entities.NhanVien", "NhanVien")
                         .WithOne("LienHeKhanCap")
-                        .HasForeignKey("HRMSolution.Data.Entities.LienHeKhanCap", "maNhanVien")
+                        .HasForeignKey("HRMSolution.Data.Entities.LienHeKhanCap", "lhkc_maNhanVien")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -5874,7 +5874,7 @@ namespace HRMSolution.Data.Migrations
                 {
                     b.HasOne("HRMSolution.Data.Entities.NhanVien", "NhanVien")
                         .WithOne("YTe")
-                        .HasForeignKey("HRMSolution.Data.Entities.YTe", "maNhanVien")
+                        .HasForeignKey("HRMSolution.Data.Entities.YTe", "yt_maNhanVien")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
