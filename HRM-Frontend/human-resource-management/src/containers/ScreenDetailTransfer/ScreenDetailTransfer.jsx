@@ -27,7 +27,9 @@ function ScreenDetailTransfer(props) {
       <div className="main-screen">
         <div className="first-main">
           <div className="first-path">
-            <FontAwesomeIcon icon={["fas", "long-arrow-alt-left"]} />
+            <button className="btn-back" onClick={history.goBack}>
+              <FontAwesomeIcon className="icon-btn" icon={["fas", "long-arrow-alt-left"]} />
+            </button>
           </div>
           <div className="second-path">
             <h2>Thủ tục thuyên chuyển</h2>
@@ -45,22 +47,23 @@ function ScreenDetailTransfer(props) {
               titleLeft="Họ và tên"
               itemLeft={null}
               titleRight="Ngày hiệu lực"
-              itemRight={null}
+              itemRight={dataDetailDC.ngayHieuLuc}
             ></SubDetail>
             <SubDetail
               titleLeft="Phòng ban"
-              itemLeft={null}
+              itemLeft={dataDetailDC.idPhongBan}
               titleRight="Chi tiết"
-              itemRight={null}
+              itemRight={dataDetailDC.chiTiet}
             ></SubDetail>
             <SubDetail
               titleLeft="Tổ"
-              itemLeft={null}
-              titleRight={null}
+              itemLeft={dataDetailDC.to}
+              titleRight="Chức vụ"
+              itemRight={dataDetailDC.idChucVu}
             ></SubDetail>
             <SubDetail
-              titleLeft="Chức vụ công tác"
-              itemLeft={null}
+              titleLeft="Trạng thái"
+              itemLeft={dataDetailDC.trangThai}
               titleRight={null}
             ></SubDetail>
           </div>

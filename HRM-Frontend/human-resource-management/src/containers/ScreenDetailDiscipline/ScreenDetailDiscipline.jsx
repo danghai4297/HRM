@@ -27,7 +27,9 @@ function ScreenDetailDiscipline(props) {
       <div className="main-screen">
         <div className="first-main">
           <div className="first-path">
-            <FontAwesomeIcon icon={["fas", "long-arrow-alt-left"]} />
+            <button className="btn-back" onClick={history.goBack}>
+              <FontAwesomeIcon className="icon-btn" icon={["fas", "long-arrow-alt-left"]} />
+            </button>
           </div>
           <div className="second-path">
             <h2>Thủ tục kỷ luật</h2>

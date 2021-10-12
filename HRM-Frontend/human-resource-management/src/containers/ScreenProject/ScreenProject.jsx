@@ -23,7 +23,6 @@ import AddContractForm from "../../components/AddContractForm/AddContractForm";
 import AddSalaryForm from "../../components/AddSalaryForm/AddSalaryForm";
 import ScreenDetailTransfer from "../ScreenDetailTransfer/ScreenDetailTransfer";
 import AddTransferForm from "../../components/AddTransferForm/AddTransferForm";
-import ScreenDetailResign from "../ScreenDetailResign/ScreenDetailResign";
 import AddResignationForm from "../../components/AddResignationForm/AddResignationForm";
 import AddRewardForm from "../../components/AddRewardForm/AddRewardForm";
 import AddDisciplineForm from "../../components/AddDisciplineForm/AddDisciplineForm";
@@ -112,11 +111,6 @@ function ScreenProject() {
               />
 
               <ProtectedRoute exact path="/resign" component={ScreenResign} />
-              <ProtectedRoute
-                exact
-                path="/resign/detail/:id"
-                component={ScreenDetailResign}
-              />
 
               <ProtectedRoute exact path="/reward" component={ScreenReward} />
               <ProtectedRoute
