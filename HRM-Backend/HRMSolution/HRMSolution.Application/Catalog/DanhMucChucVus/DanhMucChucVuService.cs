@@ -66,6 +66,7 @@ namespace HRMSolution.Application.Catalog.DanhMucChucDanhs
             var data = await query.Select(x => new DanhMucChucVuViewModel()
             {
                 id = x.id,
+                maChucVu = x.tenChucVu,
                 tenChucVu = x.tenChucVu,
                 phuCap = x.phuCap
             }).FirstAsync();
