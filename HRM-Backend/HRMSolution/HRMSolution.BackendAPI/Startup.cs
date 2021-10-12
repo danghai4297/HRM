@@ -2,6 +2,7 @@ using HRMSolution.Application.Catalog.DanhMucChucDanhs;
 using HRMSolution.Application.Catalog.DanhMucChucVus;
 using HRMSolution.Application.Catalog.DanhMucChuyenMons;
 using HRMSolution.Application.Catalog.DanhMucDanTocs;
+using HRMSolution.Application.Catalog.DanhMucHinhThucDaoTaos;
 using HRMSolution.Application.Catalog.DanhMucHonNhans;
 using HRMSolution.Application.Catalog.DanhMucKhenThuongKyLuats;
 using HRMSolution.Application.Catalog.DanhMucLoaiHopDongs;
@@ -71,6 +72,7 @@ namespace HRMSolution.BackendAPI
             services.AddTransient<IDanhMucNgoaiNguService, DanhMucNgoaiNguService>();
             services.AddTransient<IDanhMucNhomLuongService, DanhMucNhomLuongService>();
             services.AddTransient<IDanhMucPhongBanService, DanhMucPhongBanService>();
+            services.AddTransient<IDanhMucHinhThucDaoTaoService, DanhMucHinhThucDaoTaoService>();
             services.AddTransient<IDanhMucTinhChatLaoDongService, DanhMucTinhChatLaoDongService>();
             services.AddTransient<IDanhMucTonGiaoService, DanhMucTonGiaoService>();
             services.AddTransient<IDanhMucToService, DanhMucToService>();

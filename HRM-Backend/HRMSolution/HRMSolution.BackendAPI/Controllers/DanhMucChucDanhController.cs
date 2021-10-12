@@ -49,5 +49,13 @@ namespace HRMSolution.BackendAPI.Controllers
                 return BadRequest();
             return Ok();
         }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var danhMucChucDanh = await _danhMucChucDanhService.GetById(id);
+            if (danhMucChucDanh == null)
+                return BadRequest("Không tìm thấy Danh mục chức danh");
+            return Ok(danhMucChucDanh);
+        }
     }
 }

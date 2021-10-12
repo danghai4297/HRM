@@ -12,5 +12,6 @@ namespace HRMSolution.Application.Catalog.DanhMucPhongBans
         Task<int> Update(DanhMucPhongBanUpdateRequest request);
         Task<int> Delete(int idDanhMucPhongBan);
         Task<List<DanhMucPhongBanViewModel>> GetAll();
+        Task<DanhMucPhongBanViewModel> GetById(int id);
     }
 }
