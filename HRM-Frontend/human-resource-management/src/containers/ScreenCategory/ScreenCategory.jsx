@@ -42,6 +42,7 @@ import AddCSRForm from "../../components/AddCategoryForm/AddCSRForm/AddCSRForm";
 import AddNestForm from "../../components/AddCategoryForm/AddNestForm/AddNestForm";
 import AddNationForm from "../../components/AddCategoryForm/AddNationForm/AddNationForm";
 import ItemLabor from "./ScreenItemCategory/ItemLabor/ItemLabor";
+import AddLaborForm from "../../components/AddCategoryForm/AddLaborForm/AddLaborForm";
 
 function ScreenCategory() {
   return (
@@ -217,12 +218,12 @@ function ScreenCategory() {
               <Route
                 exact
                 path="/category/labor/add"
-                component={AddEducateForm}
+                component={AddLaborForm}
               />
               <Route
                 exact
                 path="/category/labor/:id"
-                component={AddEducateForm}
+                component={AddLaborForm}
               />
 
               <Route exact path="/category/training" component={ItemTraining} />
