@@ -39,7 +39,14 @@ namespace HRMSolution.BackendAPI.Controllers
                 return BadRequest();
             return Ok();
         }
-
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var result = await _danhMucTonGiaoService.GetById(id);
+            if (result == null)
+                return BadRequest("Không tìm thấy Danh mục tôn giáo");
+            return Ok(result);
+        }
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] DanhMucTonGiaoUpdateRequest request)
         {

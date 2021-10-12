@@ -32,7 +32,14 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
 
         }
-
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var result = await _danhMucHinhThucDaoTaoService.GetById(id);
+            if (result == null)
+                return BadRequest("Không tìm thấy Danh mục hình thức đào tạo");
+            return Ok(result);
+        }
         [HttpDelete("id")]
         public async Task<IActionResult> Delete(int id)
         {

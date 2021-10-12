@@ -53,6 +53,18 @@ namespace HRMSolution.Application.Catalog.DanhMucTrinhDos
             return data;
         }
 
+        public async Task<DanhMucTrinhDoViewModel> GetById(int id)
+        {
+            var query = from p in _context.danhMucTrinhDos select p;
+
+            var data = await query.Select(x => new DanhMucTrinhDoViewModel()
+            {
+                id = x.id,
+                tenTrinhDo = x.tenTrinhDo
+            }).FirstAsync();
+            return data;
+        }
+
         public async Task<int> Update(DanhMucTrinhDoUpdateRequest request)
         {
             var danhMucTrinhDo = await _context.danhMucTrinhDos.FindAsync(request.id);
