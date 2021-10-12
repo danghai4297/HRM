@@ -4,7 +4,7 @@ import { Controller, useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../FontAwesomeIcons/index";
 import { useState } from "react";
-//import { DatePicker } from "antd";
+import { DatePicker } from "antd";
 
 import "antd/dist/antd.css";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -91,7 +91,7 @@ function AddProfileForm(props) {
   const {
     register,
     handleSubmit,
-    //control,
+    control,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -290,26 +290,26 @@ function AddProfileForm(props) {
                 >
                   Ngày sinh
                 </label>
-                <input
+                {/* <input
                   type="text"
                   {...register("ngaySinh")}
                   id="ngaySinh"
                   className={
                     !errors.ngaySinh
-                      ? "form-control col-sm-6 custom-select"
-                      : "form-control col-sm-6 border-danger custom-select"
+                      ? "form-control col-sm-6"
+                      : "form-control col-sm-6 border-danger"
                   }
                   placeholder="DD/MM/YYYY"
                 />
-                <span className="message">{errors.ngaySinh?.message}</span>
-                {/* <Controller
+                <span className="message">{errors.ngaySinh?.message}</span> */}
+                <Controller
                   name="ngaySinh"
                   control={control}
                   defaultValue=""
                   render={({ field }) => (
                     <DatePicker
                       id="ngaySinh"
-                      className="form-control"
+                      className="form-control col-sm-6"
                       placeholder="DD/MM/YYYY"
                       format="DD/MM/YYYY"
                       //selected={field}
@@ -317,7 +317,7 @@ function AddProfileForm(props) {
                       {...field}
                     />
                   )}
-                /> */}
+                />
               </div>
             </div>
             <div className="col">
@@ -354,7 +354,9 @@ function AddProfileForm(props) {
                       ? "form-control col-sm-6 custom-select"
                       : "form-control col-sm-6 border-danger custom-select"
                   }
-                />
+                >
+                  <option value="1">Kinh</option>
+                </select>
                 <span className="message">{errors.danToc?.message}</span>
               </div>
             </div>
@@ -395,7 +397,9 @@ function AddProfileForm(props) {
                       ? "form-control col-sm-6 custom-select"
                       : "form-control col-sm-6 border-danger custom-select"
                   }
-                />
+                >
+                  <option value="1">Không</option>
+                </select>
                 <span className="message">{errors.tonGiao?.message}</span>
               </div>
             </div>
@@ -1023,7 +1027,7 @@ function AddProfileForm(props) {
             </div>
           </div>
           <div className="row">
-            <div className="col">
+            <div className="col-6">
               <div class="form-group form-inline">
                 <label
                   class="col-sm-4 justify-content-start"
@@ -1046,7 +1050,7 @@ function AddProfileForm(props) {
                 </span>
               </div>
             </div>
-            <div className="col">
+            {/* <div className="col">
               <div className="form-group form-inline">
                 <label
                   class="col-sm-4 justify-content-start"
@@ -1066,10 +1070,10 @@ function AddProfileForm(props) {
                 />
                 <span className="message">{errors.phongBan?.message}</span>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="row">
-            <div className="col">
+            <div className="col-6">
               <div class="form-group form-inline">
                 <label
                   class="col-sm-4 justify-content-start"
@@ -1090,7 +1094,7 @@ function AddProfileForm(props) {
                 <span className="message">{errors.chucVuHienTai?.message}</span>
               </div>
             </div>
-            <div className="col">
+            {/* <div className="col">
               <div class="form-group form-inline">
                 <label class="col-sm-4 justify-content-start" htmlFor="to">
                   Tổ
@@ -1100,9 +1104,9 @@ function AddProfileForm(props) {
                   {...register("to")}
                   id="to"
                   className="form-control col-sm-6 custom-select"
-                />
+                ></select>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="row">
             <div className="col-6">
