@@ -23,6 +23,7 @@ using HRMSolution.Application.Catalog.NgoaiNgus;
 using HRMSolution.Application.Catalog.NguoiThans;
 using HRMSolution.Application.Catalog.NhanViens;
 using HRMSolution.Application.Catalog.TrinhDoVanHoas;
+using HRMSolution.Application.Common;
 using HRMSolution.Data.EF;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -85,6 +86,7 @@ namespace HRMSolution.BackendAPI
             services.AddTransient<INgoaiNguService, NgoaiNguService>();
             services.AddTransient<ITrinhDoVanHoaService, TrinhDoVanHoaService>();
             services.AddTransient<IDieuChuyenService, DieuChuyenService>();
+            services.AddTransient<IStorageService, FileStorageService>();
             services.AddControllers();
 
 

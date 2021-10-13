@@ -27,7 +27,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
                 hopDongTuNgay = request.hopDongTuNgay,
                 hopDongDenNgay = request.hopDongDenNgay,
                 ghiChu = request.ghiChu,
-                trangThai = request.trangThai,
+                trangThai = true,
                 maNhanVien = request.maNhanVien
             };
             _context.hopDongs.Add(hopDong);

@@ -1,10 +1,14 @@
 ﻿using HRMSolution.Application.Catalog.NhanViens.Dtos;
+using HRMSolution.Application.Common;
 using HRMSolution.Data.EF;
 using HRMSolution.Data.Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace HRMSolution.Application.Catalog.NhanViens
@@ -12,9 +16,12 @@ namespace HRMSolution.Application.Catalog.NhanViens
     public class NhanVienService : INhanVienService
     {
         private readonly HRMDbContext _context;
-        public NhanVienService(HRMDbContext context)
+        private readonly IStorageService _storageService;
+        private const string USER_CONTENT_FOLDER_NAME = "user-content";
+        public NhanVienService(HRMDbContext context, IStorageService storageService)
         {
             _context = context;
+            _storageService = storageService;
         }
 
         public async Task<int> Create(NhanVienCreateRequest request)
@@ -75,7 +82,6 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 trangThaiLaoDong = request.trangThaiLaoDong,
                 ngayNghiViec = request.ngayNghiViec,
                 lyDoNghiViec = request.lyDoNghiViec,
-                anh = request.anh,
                 tinhChatLaoDong = request.tinhChatLaoDong,
                 idDanhMucHonNhan = request.idDanhMucHonNhan,
                 idDanToc = request.idDanToc,
@@ -110,6 +116,11 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 }
 
             };
+            //lưu ảnh
+             if(request.anh != null)
+             {
+                nhanVien.anh = await this.SaveFile(request.anh);
+             }
             _context.nhanViens.Add(nhanVien);
             return await _context.SaveChangesAsync();
         }
@@ -187,14 +198,13 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 nganHang = x.nv.nganHang,
                 trangThaiLaoDong = x.nv.trangThaiLaoDong == true ? "Đang làm việc": "Đã nghỉ việc",
                 ngayNghiViec = x.nv.ngayNghiViec,
-                anh = x.nv.anh,
                 tinhChatLaoDong = x.tc.tenTinhChat,
                 DanhMucHonNhan = x.hn.tenDanhMuc,
                 DanToc= x.dt.tenDanhMuc,
                 TonGiao = x.tg.tenDanhMuc,
                 NgachCongChuc = x.ncc.tenNgach,
-                lyDoNghiViec = x.nv.lyDoNghiViec
-
+                lyDoNghiViec = x.nv.lyDoNghiViec,
+                anh = x.nv.anh 
             }).ToListAsync();
 
 
@@ -332,29 +342,6 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 dcChucVu = x.dmcv.tenChucVu
             }).ToListAsync();
 
-            //List Lương 
-            //var queryL = from nv in _context.nhanViens
-            //             join hd in _context.hopDongs on nv.maNhanVien equals hd.maNhanVien
-            //             join l in _context.luongs on hd.maHopDong equals l.maHopDong
-            //             join dml in _context.danhMucNhomLuongs on l.idNhomLuong equals dml.id
-            //             where hd.maHopDong == l.maHopDong && nv.maNhanVien == maNhanVien
-            //             select new { hd, l, dml };
-
-            //var dataL = await queryL.Select(x => new LuongViewModel()
-            //{
-            //    id = x.l.id,
-            //    nhomLuong = x.dml.tenNhomLuong,
-            //    heSoLuong = x.l.heSoLuong,
-            //    bacLuong = x.l.bacLuong,
-            //    luongCoBan = x.l.luongCoBan,
-            //    phuCapTrachNhiem = x.l.phuCapTrachNhiem,
-            //    phuCapKhac = x.l.phuCapKhac,
-            //    tongLuong = x.l.tongLuong,
-            //    thoiHanLenLuong = x.l.thoiHanLenLuong,
-            //    ngayHieuLuc = x.l.ngayHieuLuc,
-            //    ngayKetThuc = x.l.ngayKetThuc,
-            //    trangThai = x.l.trangThai == true? "Kích hoạt" : "Vô hiệu"
-            //}).ToListAsync();
 
             //List Hợp Đồng
             var queryHd = from nv in _context.nhanViens
@@ -541,6 +528,14 @@ namespace HRMSolution.Application.Catalog.NhanViens
 
 
             return data;
+        }
+
+        private async Task<string> SaveFile(IFormFile file)
+        {
+            var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(originalFileName)}";
+            await _storageService.SaveFileAsync(file.OpenReadStream(), fileName);
+            return "/" + USER_CONTENT_FOLDER_NAME + "/" + fileName;
         }
     }
 }

@@ -34,7 +34,7 @@ namespace HRMSolution.Application.Catalog.Luongs
                 ngayHieuLuc = request.ngayHieuLuc,
                 ngayKetThuc = request.ngayKetThuc,
                 ghiChu = request.ghiChu,
-                trangThai = request.trangThai
+                trangThai = true
             };
             _context.luongs.Add(luong);
             return await _context.SaveChangesAsync();

@@ -150,7 +150,6 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "1",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -183,7 +182,6 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "2",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -216,7 +214,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "3",
+
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -249,7 +247,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "4",
+
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -282,7 +280,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "5",
+              
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -315,7 +313,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "6",
+                 
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -348,7 +346,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "7",
+             
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -381,7 +379,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "8",
+             
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -413,7 +411,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "9",
+              
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -446,7 +444,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "10",
+            
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -479,7 +477,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "11",
+             
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -512,7 +510,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "12",
+               
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -544,7 +542,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "13",
+       
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -576,7 +574,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "14",
+           
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -608,7 +606,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "15",
+            
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -640,7 +638,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "16",
+              
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -672,7 +670,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "17",
+           
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -704,7 +702,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "18",
+            
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -736,7 +734,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "19",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -768,7 +766,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "20",
+               
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -800,7 +798,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "21",
+            
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -832,7 +830,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "22",
+            
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -864,7 +862,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "23",
+            
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -896,7 +894,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "24",
+            
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -928,7 +926,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "25",
+            
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -960,7 +958,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "26",
+               
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -992,7 +990,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "27",
+               
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1024,7 +1022,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "28",
+           
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1056,7 +1054,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "29",
+           
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1088,7 +1086,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "30",
+           
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1120,7 +1118,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "31",
+         
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1152,7 +1150,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "32",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1184,7 +1182,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "33",
+        
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1216,7 +1214,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "34",
+    
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1248,7 +1246,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "35",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1280,7 +1278,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "36",
+           
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1312,7 +1310,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "37",
+         
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1344,7 +1342,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "38",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1376,7 +1374,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "39",
+             
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1408,7 +1406,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "40",
+             
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1440,7 +1438,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "41",
+           
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1472,7 +1470,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "42",
+        
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1504,7 +1502,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "43",
+            
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1536,7 +1534,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "44",
+              
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1568,7 +1566,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "45",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1600,7 +1598,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "46",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1632,7 +1630,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "47",
+                 
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1664,7 +1662,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "48",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1696,7 +1694,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "49",
+              
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1728,7 +1726,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "50",
+               
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1760,7 +1758,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "51",
+               
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1792,7 +1790,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "52",
+              
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1824,7 +1822,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "53",
+                 
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1856,7 +1854,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "54",
+              
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1888,7 +1886,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "55",
+      
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1920,7 +1918,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "56",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1952,7 +1950,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "57",
+               
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -1984,7 +1982,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "58",
+              
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2016,7 +2014,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "59",
+              
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2048,7 +2046,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "60",
+             
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2080,7 +2078,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "61",
+                 
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2112,7 +2110,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "62",
+        
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2144,7 +2142,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "63",
+                 
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2176,7 +2174,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "64",
+           
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2208,7 +2206,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "65",
+            
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2240,7 +2238,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "66",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2272,7 +2270,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "67",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2304,7 +2302,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "68",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2336,7 +2334,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "69",
+              
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2368,7 +2366,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "70",
+               
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2400,7 +2398,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "71",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2432,7 +2430,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "72",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2464,7 +2462,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "73",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2496,7 +2494,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "74",
+            
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2528,7 +2526,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "75",
+            
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2560,7 +2558,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "76",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2592,7 +2590,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "77",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2624,7 +2622,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "78",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2656,7 +2654,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "79",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2688,7 +2686,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "80",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2720,7 +2718,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "81",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2752,7 +2750,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "82",
+              
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2784,7 +2782,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "83",
+              
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2816,7 +2814,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "84",
+            
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2848,7 +2846,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "85",
+               
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2880,7 +2878,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "86",
+               
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2912,7 +2910,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "87",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2944,7 +2942,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "88",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -2976,7 +2974,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "89",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -3008,7 +3006,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "90",
+               
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -3040,7 +3038,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "91",
+           
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -3072,7 +3070,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "92",
+            
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -3104,7 +3102,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "111",
+                 
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -3136,7 +3134,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "93",
+              
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -3168,7 +3166,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "94",
+                  
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -3200,7 +3198,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "95",
+            
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -3232,7 +3230,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "96",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -3264,7 +3262,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "97",
+               
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -3296,7 +3294,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "98",
+              
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -3328,7 +3326,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "99",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -3360,7 +3358,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "100",
+               
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -3392,7 +3390,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "101",
+               
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -3424,7 +3422,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "102",
+             
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -3456,7 +3454,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "103",
+                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -3488,7 +3486,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "104",
+             
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -3521,7 +3519,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "105",
+              
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -3553,7 +3551,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "106",
+             
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -3585,7 +3583,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "107",
+                 
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -3617,7 +3615,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "108",
+               
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -3649,7 +3647,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "109",
+            
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -3681,7 +3679,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                    anh = "110",
+             
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,

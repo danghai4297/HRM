@@ -161,3 +161,6 @@ E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\Sw
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Debug\netcoreapp3.1\HRMSolution.BackendAPI.MvcApplicationPartsAssemblyInfo.cs
 >>>>>>> b8e6e78fb57d80658a20020cbbe1000a8b084e4a
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll

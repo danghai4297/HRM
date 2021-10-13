@@ -859,7 +859,7 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0001",
-                            ngayHieuLuc = new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(4666),
+                            ngayHieuLuc = new DateTime(2021, 10, 13, 16, 13, 40, 806, DateTimeKind.Local).AddTicks(4055),
                             to = 1,
                             trangThai = false
                         },
@@ -870,7 +870,7 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0001",
-                            ngayHieuLuc = new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(6936),
+                            ngayHieuLuc = new DateTime(2021, 10, 13, 16, 13, 40, 806, DateTimeKind.Local).AddTicks(6489),
                             to = 2,
                             trangThai = false
                         },
@@ -881,7 +881,7 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0001",
-                            ngayHieuLuc = new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(7016),
+                            ngayHieuLuc = new DateTime(2021, 10, 13, 16, 13, 40, 806, DateTimeKind.Local).AddTicks(6597),
                             to = 3,
                             trangThai = true
                         });
@@ -965,7 +965,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD01",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 13, 0, 0, 46, 891, DateTimeKind.Local).AddTicks(2344),
+                            hopDongTuNgay = new DateTime(2021, 10, 13, 16, 13, 40, 802, DateTimeKind.Local).AddTicks(5110),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0001",
@@ -975,7 +975,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD02",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 13, 0, 0, 46, 892, DateTimeKind.Local).AddTicks(8118),
+                            hopDongTuNgay = new DateTime(2021, 10, 13, 16, 13, 40, 805, DateTimeKind.Local).AddTicks(7094),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0001",
@@ -985,7 +985,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD03",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 13, 0, 0, 46, 892, DateTimeKind.Local).AddTicks(8246),
+                            hopDongTuNgay = new DateTime(2021, 10, 13, 16, 13, 40, 805, DateTimeKind.Local).AddTicks(7226),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0003",
@@ -995,7 +995,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD04",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 13, 0, 0, 46, 892, DateTimeKind.Local).AddTicks(8265),
+                            hopDongTuNgay = new DateTime(2021, 10, 13, 16, 13, 40, 805, DateTimeKind.Local).AddTicks(7245),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0004",
@@ -1005,7 +1005,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD05",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 13, 0, 0, 46, 892, DateTimeKind.Local).AddTicks(8279),
+                            hopDongTuNgay = new DateTime(2021, 10, 13, 16, 13, 40, 805, DateTimeKind.Local).AddTicks(7259),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0005",
@@ -1015,7 +1015,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD06",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 13, 0, 0, 46, 892, DateTimeKind.Local).AddTicks(8294),
+                            hopDongTuNgay = new DateTime(2021, 10, 13, 16, 13, 40, 805, DateTimeKind.Local).AddTicks(7275),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0006",
@@ -1369,7 +1369,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD01",
-                            ngayHieuLuc = new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(1336),
+                            ngayHieuLuc = new DateTime(2021, 10, 13, 16, 13, 40, 806, DateTimeKind.Local).AddTicks(576),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = false
@@ -1380,7 +1380,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD01",
-                            ngayHieuLuc = new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(3009),
+                            ngayHieuLuc = new DateTime(2021, 10, 13, 16, 13, 40, 806, DateTimeKind.Local).AddTicks(2160),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
@@ -1391,7 +1391,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD03",
-                            ngayHieuLuc = new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(3089),
+                            ngayHieuLuc = new DateTime(2021, 10, 13, 16, 13, 40, 806, DateTimeKind.Local).AddTicks(2344),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
@@ -1402,7 +1402,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD04",
-                            ngayHieuLuc = new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(3106),
+                            ngayHieuLuc = new DateTime(2021, 10, 13, 16, 13, 40, 806, DateTimeKind.Local).AddTicks(2361),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
@@ -1413,7 +1413,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD05",
-                            ngayHieuLuc = new DateTime(2021, 10, 13, 0, 0, 46, 893, DateTimeKind.Local).AddTicks(3120),
+                            ngayHieuLuc = new DateTime(2021, 10, 13, 16, 13, 40, 806, DateTimeKind.Local).AddTicks(2374),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
@@ -1575,9 +1575,7 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("anh")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("atm")
                         .HasMaxLength(20)
@@ -1814,7 +1812,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0001",
-                            anh = "1",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -1847,7 +1844,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0002",
-                            anh = "2",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -1880,7 +1876,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0003",
-                            anh = "3",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -1913,7 +1908,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0004",
-                            anh = "4",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -1946,7 +1940,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0005",
-                            anh = "5",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -1979,7 +1972,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0006",
-                            anh = "6",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2012,7 +2004,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0007",
-                            anh = "7",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2045,7 +2036,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0008",
-                            anh = "8",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2078,7 +2068,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0009",
-                            anh = "9",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2111,7 +2100,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0010",
-                            anh = "10",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2144,7 +2132,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0011",
-                            anh = "11",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2177,7 +2164,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0012",
-                            anh = "12",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2210,7 +2196,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0013",
-                            anh = "13",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2243,7 +2228,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0014",
-                            anh = "14",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2276,7 +2260,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0015",
-                            anh = "15",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2309,7 +2292,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0016",
-                            anh = "16",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2342,7 +2324,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0017",
-                            anh = "17",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2375,7 +2356,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0018",
-                            anh = "18",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2408,7 +2388,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0019",
-                            anh = "19",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2441,7 +2420,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0020",
-                            anh = "20",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2474,7 +2452,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0021",
-                            anh = "21",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2507,7 +2484,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0022",
-                            anh = "22",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2540,7 +2516,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0023",
-                            anh = "23",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2573,7 +2548,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0024",
-                            anh = "24",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2606,7 +2580,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0025",
-                            anh = "25",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2639,7 +2612,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0026",
-                            anh = "26",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2672,7 +2644,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0027",
-                            anh = "27",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2705,7 +2676,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0028",
-                            anh = "28",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2738,7 +2708,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0029",
-                            anh = "29",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2771,7 +2740,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0030",
-                            anh = "30",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2804,7 +2772,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0031",
-                            anh = "31",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2837,7 +2804,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0032",
-                            anh = "32",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2870,7 +2836,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0033",
-                            anh = "33",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2903,7 +2868,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0034",
-                            anh = "34",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2936,7 +2900,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0035",
-                            anh = "35",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -2969,7 +2932,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0036",
-                            anh = "36",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3002,7 +2964,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0037",
-                            anh = "37",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3035,7 +2996,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0038",
-                            anh = "38",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3068,7 +3028,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0039",
-                            anh = "39",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3101,7 +3060,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0040",
-                            anh = "40",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3134,7 +3092,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0041",
-                            anh = "41",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3167,7 +3124,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0042",
-                            anh = "42",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3200,7 +3156,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0043",
-                            anh = "43",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3233,7 +3188,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0044",
-                            anh = "44",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3266,7 +3220,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0045",
-                            anh = "45",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3299,7 +3252,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0046",
-                            anh = "46",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3332,7 +3284,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0047",
-                            anh = "47",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3365,7 +3316,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0048",
-                            anh = "48",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3398,7 +3348,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0049",
-                            anh = "49",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3431,7 +3380,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0050",
-                            anh = "50",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3464,7 +3412,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0051",
-                            anh = "51",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3497,7 +3444,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0052",
-                            anh = "52",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3530,7 +3476,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0053",
-                            anh = "53",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3563,7 +3508,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0054",
-                            anh = "54",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3596,7 +3540,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0055",
-                            anh = "55",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3629,7 +3572,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0056",
-                            anh = "56",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3662,7 +3604,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0057",
-                            anh = "57",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3695,7 +3636,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0058",
-                            anh = "58",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3728,7 +3668,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0059",
-                            anh = "59",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3761,7 +3700,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0060",
-                            anh = "60",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3794,7 +3732,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0061",
-                            anh = "61",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3827,7 +3764,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0062",
-                            anh = "62",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3860,7 +3796,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0063",
-                            anh = "63",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3893,7 +3828,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0064",
-                            anh = "64",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3926,7 +3860,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0065",
-                            anh = "65",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3959,7 +3892,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0066",
-                            anh = "66",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -3992,7 +3924,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0067",
-                            anh = "67",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4025,7 +3956,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0068",
-                            anh = "68",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4058,7 +3988,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0069",
-                            anh = "69",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4091,7 +4020,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0070",
-                            anh = "70",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4124,7 +4052,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0071",
-                            anh = "71",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4157,7 +4084,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0072",
-                            anh = "72",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4190,7 +4116,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0073",
-                            anh = "73",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4223,7 +4148,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0074",
-                            anh = "74",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4256,7 +4180,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0075",
-                            anh = "75",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4289,7 +4212,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0076",
-                            anh = "76",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4322,7 +4244,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0077",
-                            anh = "77",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4355,7 +4276,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0078",
-                            anh = "78",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4388,7 +4308,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0079",
-                            anh = "79",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4421,7 +4340,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0080",
-                            anh = "80",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4454,7 +4372,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0081",
-                            anh = "81",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4487,7 +4404,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0082",
-                            anh = "82",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4520,7 +4436,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0083",
-                            anh = "83",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4553,7 +4468,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0084",
-                            anh = "84",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4586,7 +4500,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0085",
-                            anh = "85",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4619,7 +4532,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0086",
-                            anh = "86",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4652,7 +4564,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0087",
-                            anh = "87",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4685,7 +4596,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0088",
-                            anh = "88",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4718,7 +4628,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0089",
-                            anh = "89",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4751,7 +4660,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0090",
-                            anh = "90",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4784,7 +4692,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0091",
-                            anh = "91",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4817,7 +4724,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0092",
-                            anh = "92",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4850,7 +4756,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0111",
-                            anh = "111",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4883,7 +4788,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0093",
-                            anh = "93",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4916,7 +4820,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0094",
-                            anh = "94",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4949,7 +4852,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0095",
-                            anh = "95",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -4982,7 +4884,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0096",
-                            anh = "96",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -5015,7 +4916,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0097",
-                            anh = "97",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -5048,7 +4948,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0098",
-                            anh = "98",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -5081,7 +4980,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0099",
-                            anh = "99",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -5114,7 +5012,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0100",
-                            anh = "100",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -5147,7 +5044,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0101",
-                            anh = "101",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -5180,7 +5076,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0102",
-                            anh = "102",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -5213,7 +5108,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0103",
-                            anh = "103",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -5246,7 +5140,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0104",
-                            anh = "104",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -5279,7 +5172,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0105",
-                            anh = "105",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -5312,7 +5204,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0106",
-                            anh = "106",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -5345,7 +5236,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0107",
-                            anh = "107",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -5378,7 +5268,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0108",
-                            anh = "108",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -5411,7 +5300,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0109",
-                            anh = "109",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
@@ -5444,7 +5332,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             maNhanVien = "NV0110",
-                            anh = "110",
                             cccd = "040828462",
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",

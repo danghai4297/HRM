@@ -28,7 +28,7 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                 to = request.to,
                 chiTiet = request.chiTiet,
                 idChucVu = request.idChucVu,
-                trangThai = request.trangThai
+                trangThai = true
             };
             _context.dieuChuyens.Add(dieuChuyen);
             return await _context.SaveChangesAsync();
@@ -54,7 +54,6 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                 idChucVu = x.cv.tenChucVu,
                 trangThai = x.dc.trangThai == true ? "Kích hoạt" : "Vô hiệu"
             }).ToListAsync();
-
             return data;
         }
 
