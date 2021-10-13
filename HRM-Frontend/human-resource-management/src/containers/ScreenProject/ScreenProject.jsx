@@ -27,6 +27,9 @@ import AddRewardForm from "../../components/AddRewardForm/AddRewardForm";
 import AddDisciplineForm from "../../components/AddDisciplineForm/AddDisciplineForm";
 import ScreenDetailReward from "../ScreenDetailReward/ScreenDetailReward";
 import ScreenDetailDiscipline from "../ScreenDetailDiscipline/ScreenDetailDiscipline";
+import ScreenDetailLevel from "../ScreenDetailLevel/ScreenDetailLevel";
+import ScreenDetailForeignLanguage from "../ScreenDetailForeignLanguage/ScreenDetailForeignLanguage";
+import ScreenDetailFamily from "../ScreenDetailFamily/ScreenDetailFamily";
 import ChangePasswordForm from "../../components/ChangePasswordForm/ChangePasswordForm";
 
 import ProtectedRoute from "./ProtectedRoute";
@@ -53,6 +56,21 @@ function ScreenProject() {
                 exact
                 path="/profile/detail/:id"
                 component={Detail}
+              />
+              <ProtectedRoute
+                exact
+                path="/profile/detail/level/:id"
+                component={ScreenDetailLevel}
+              />
+              <ProtectedRoute
+                exact
+                path="/profile/detail/language/:id"
+                component={ScreenDetailForeignLanguage}
+              />
+              <ProtectedRoute
+                exact
+                path="/profile/detail/family/:id"
+                component={ScreenDetailFamily}
               />
               <ProtectedRoute
                 exact

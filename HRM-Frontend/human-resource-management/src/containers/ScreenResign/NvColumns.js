@@ -1,84 +1,6 @@
 import { format } from "date-fns";
 import SelectColumnFilter from "../../components/TablePagination/SelectColumnFilter";
 
-export const NVCOLUMNS = [
-  {
-    Header: "ID",
-    accessor: "id",
-    sticky: "left",
-    Filter: SelectColumnFilter,
-    disableFilters: true,
-    show: true,
-  },
-  {
-    Header: "First Name",
-    accessor: "firstName",
-    sticky: "left",
-    minWidth: 200,
-    Filter: SelectColumnFilter,
-    disableFilters: true,
-    show: true,
-  },
-  {
-    Header: "Last Name",
-    accessor: "lastName",
-    sticky: "left",
-    minWidth: 200,
-    Filter: SelectColumnFilter,
-    disableFilters: true,
-    show: true,
-  },
-
-  {
-    Header: "Gender",
-    // accessor: (row) => {
-    //   return row.gender ? "Nam" : "Nữ";
-    // },
-    accessor: "gender",
-    minWidth: 200,
-    Filter: SelectColumnFilter,
-    // Cell: ({ value }) => {
-    //   return value === true ? "Male" : "Female";
-    // },
-    show: true,
-  },
-  {
-    Header: "Email",
-    accessor: "email",
-    minWidth: 300,
-    Filter: SelectColumnFilter,
-    disableFilters: true,
-    show: true,
-  },
-  {
-    Header: "Birthday",
-    accessor: "birthday",
-    minWidth: 200,
-    Filter: SelectColumnFilter,
-    disableFilters: true,
-    Cell: ({ value }) => {
-      return format(new Date(value), "dd/MM/yyyy");
-    },
-    show: true,
-  },
-  {
-    Header: "Salary",
-    accessor: "salary",
-    minWidth: 150,
-    Filter: SelectColumnFilter,
-    disableFilters: true,
-    show: true,
-  },
-  {
-    Header: "Phone",
-    accessor: "phone",
-    minWidth: 200,
-    Filter: SelectColumnFilter,
-    disableFilters: true,
-    show: true,
-  },
-];
-
 export const NVCOLUMNS2 = [
   {
     Header: "Ảnh",
@@ -93,7 +15,7 @@ export const NVCOLUMNS2 = [
   },
   {
     Header: "Mã Nhân Viên",
-    accessor: "maNhanVien",
+    accessor: "id",
     sticky: "left",
     Filter: SelectColumnFilter,
     disableFilters: true,
