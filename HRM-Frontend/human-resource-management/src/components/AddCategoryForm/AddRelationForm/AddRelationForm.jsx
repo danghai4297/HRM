@@ -4,6 +4,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddRelationForm.scss";
 import ProductApi from "../../../api/productApi";
+import PutApi from "../../../api/putAAPI";
+import DeleteApi from "../../../api/deleteAPI";
 const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
 });
@@ -38,7 +40,18 @@ function AddRelationForm(props) {
 
   const onHandleSubmit = async (data) => {
     try {
+      if (id !== undefined) {
+        await PutApi.PutDMNT(data, id);
+      } else {
       await ProductApi.PostDMNT(data);
+      }
+      history.goBack();
+    } catch (error) {}
+  };
+
+  const handleDelete = async () => {
+    try {
+      await DeleteApi.deleteDMNT(id);
       history.goBack();
     } catch (error) {}
   };
@@ -59,6 +72,7 @@ function AddRelationForm(props) {
             className={
               dataDetailDMNT.length !== 0 ? "btn btn-danger" : "delete-button"
             }
+            onClick={handleDelete}
             value="Xoá"
           />
           <input

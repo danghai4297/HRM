@@ -4,6 +4,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddDepartmentForm.scss";
 import ProductApi from "../../../api/productApi";
+import PutApi from "../../../api/putAAPI";
+import DeleteApi from "../../../api/deleteAPI";
 const schema = yup.object({
   maPhongBan: yup.string().required("Mã phòng ban không được bỏ trống."),
   tenPhongBan: yup.string().required("Tên danh mục không được bỏ trống."),
@@ -35,24 +37,41 @@ function AddDepartmentForm(props) {
     };
     fetchNvList();
   }, []);
+  console.log(dataDetailDMPB);
+
   const onHandleSubmit = async (data) => {
     try {
-      await ProductApi.PostDMPB(data);
+      if (id !== undefined) {
+        await PutApi.PutDMPB(data, id);
+      } else {
+        await ProductApi.PostDMPB(data);
+      }
       history.goBack();
     } catch (error) {}
   };
-console.log(dataDetailDMPB)
+
+  const handleDelete = async () => {
+    try {
+      await DeleteApi.deleteDMPB(id);
+      history.goBack();
+    } catch (error) {}
+  };
 
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">{dataDetailDMPB.length !== 0 ? "Sửa" : "Thêm"} danh mục phòng ban</h2>
+          <h2 className="">
+            {dataDetailDMPB.length !== 0 ? "Sửa" : "Thêm"} danh mục phòng ban
+          </h2>
         </div>
         <div className="button">
           <input
             type="submit"
-            className={dataDetailDMPB.length !== 0 ? "btn btn-danger" : "delete-button"}
+            className={
+              dataDetailDMPB.length !== 0 ? "btn btn-danger" : "delete-button"
+            }
+            onClick={handleDelete}
             value="Xoá"
           />
           <input

@@ -4,7 +4,6 @@ import SubDetail from "./SubDetail";
 import { links } from "./ScrollData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { ListContext } from "../../Contexts/ListContext";
 import ProductApi from "../../api/productApi";
 import TableBasic from "../TablePagination/TableBasic";
 import {
@@ -52,16 +51,6 @@ function Detail(props) {
     };
     fetchNvList();
   }, []);
-
-  // dataDetailNv.trinhDoVanHoas.map((item) => {
-  //   return console.log(item.tdvhTenTruong);
-  // });
-
-  console.log(dataDetailNv);
-  // console.log(dataDetailNv.trinhDoVanHoas);
-  // console.log(dataDetailHd);
-
-
 
   const [dropBase, setDropBase] = useState(true);
   const [dropContact, setDropContact] = useState(true);
@@ -554,7 +543,7 @@ function Detail(props) {
                   </div>
                   <div className="table">
                     <TableBasic
-                      link={link}
+                      link="/profile/detail/level/"
                       columns={NVCOLUMNSTDVH}
                       data={dataDetailTDVH}
                     />
@@ -571,7 +560,7 @@ function Detail(props) {
                   </div>
                   <div className="table">
                     <TableBasic
-                      link={link}
+                      link="/profile/detail/language/"
                       columns={NVCOLUMNSNN}
                       data={dataDetailNgn}
                     />
@@ -608,7 +597,7 @@ function Detail(props) {
                   </div>
                   <div className="table">
                     <TableBasic
-                      link={link}
+                      link="/profile/detail/family/"
                       columns={NVCOLUMNSNT}
                       data={dataDetailGd}
                     />
@@ -809,7 +798,7 @@ function Detail(props) {
                   </div>
                   <div className="table">
                     <TableBasic
-                      link={link}
+                      link="/contract/detail/"
                       columns={NVCOLUMNSHD}
                       data={dataDetailHd}
                     />
@@ -877,7 +866,7 @@ function Detail(props) {
                   </div>
                   <div className="table">
                     <TableBasic
-                      link={link}
+                      link="/transfer/detail/"
                       columns={NVCOLUMNSDC}
                       data={dataDetailTc}
                     />
@@ -914,7 +903,7 @@ function Detail(props) {
                   </div>
                   <div className="table">
                     <TableBasic
-                      link={link}
+                      link="/reward/detail/"
                       columns={NVCOLUMNSKTvKL}
                       data={dataDetailKt}
                     />
@@ -951,7 +940,7 @@ function Detail(props) {
                   </div>
                   <div className="table">
                     <TableBasic
-                      link={link}
+                      link="/discipline/detail/"
                       columns={NVCOLUMNSKTvKL}
                       data={dataDetailKl}
                     />

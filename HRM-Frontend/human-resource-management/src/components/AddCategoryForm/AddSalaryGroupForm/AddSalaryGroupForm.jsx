@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddSalaryGroupForm.scss";
 import ProductApi from "../../../api/productApi";
+import PutApi from "../../../api/putAAPI";
+import DeleteApi from "../../../api/deleteAPI";
 const schema = yup.object({
   maNhomLuong: yup.string().required("Mã phòng ban không được bỏ trống."),
   tenNhomLuong: yup.string().required("Tên danh mục không được bỏ trống."),
@@ -12,7 +13,6 @@ const schema = yup.object({
 AddSalaryGroupForm.propTypes = {};
 
 function AddSalaryGroupForm(props) {
-  const [salaryValue, setSalaryValue] = useState(null);
   const {
     register,
     handleSubmit,
@@ -39,15 +39,26 @@ function AddSalaryGroupForm(props) {
     };
     fetchNvList();
   }, []);
+  console.log(dataDetailDMNL);
 
   const onHandleSubmit = async (data) => {
     try {
+      if (id !== undefined) {
+        await PutApi.PutDMNL(data, id);
+      } else {
       await ProductApi.PostDMNL(data);
+      }
       history.goBack();
     } catch (error) {}
   };
-  console.log(dataDetailDMNL);
 
+  const handleDelete = async () => {
+    try {
+      await DeleteApi.deleteDMNL(id);
+      history.goBack();
+    } catch (error) {}
+  };
+  
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
@@ -62,6 +73,7 @@ function AddSalaryGroupForm(props) {
             className={
               dataDetailDMNL.length !== 0 ? "btn btn-danger" : "delete-button"
             }
+            onClick={handleDelete}
             value="Xoá"
           />
           <input

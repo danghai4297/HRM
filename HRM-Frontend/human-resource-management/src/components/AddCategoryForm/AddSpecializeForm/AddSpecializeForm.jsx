@@ -4,6 +4,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddSpecializeForm.scss";
 import ProductApi from "../../../api/productApi";
+import PutApi from "../../../api/putAAPI";
+import DeleteApi from "../../../api/deleteAPI";
 const schema = yup.object({
   tenChuyenMon: yup.string().required("Tên danh mục không được bỏ trống."),
   maChuyenMon: yup.string().required("Mã danh mục không được bỏ trống."),
@@ -39,10 +41,23 @@ function AddSpecializeForm(props) {
 
   const onHandleSubmit = async (data) => {
     try {
-      await ProductApi.PostDMCM(data);
+      if (id !== undefined) {
+        await PutApi.PutDMCM(data, id);
+      } else {
+        await ProductApi.PostDMCM(data);
+      }
       history.goBack();
     } catch (error) {}
   };
+
+  const handleDelete = async () => {
+    try {
+      await DeleteApi.deleteDMCM(id);
+      history.goBack();
+    } catch (error) {}
+  };
+
+
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
@@ -57,6 +72,7 @@ function AddSpecializeForm(props) {
             className={
               dataDetailDMCM.length !== 0 ? "btn btn-danger" : "delete-button"
             }
+            onClick={handleDelete}
             value="Xoá"
           />
           <input
