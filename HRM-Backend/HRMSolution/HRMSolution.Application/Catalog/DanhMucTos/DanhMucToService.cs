@@ -39,15 +39,35 @@ namespace HRMSolution.Application.Catalog.DanhMucTos
 
         public async Task<List<DanhMucToViewModel>> GetAll()
         {
-            var query = from p in _context.danhMucTos select p;
+            var query = from p in _context.danhMucTos
+                        join pb in _context.danhMucPhongBans on p.idPhongBan equals pb.id
+                        select new { p, pb };
 
             var data = await query.Select(x => new DanhMucToViewModel()
             {
-                id = x.idTo,
-                maTo = x.maTo,
-                tenTo=x.tenTo,
-                idPhongBan=x.idPhongBan
+                id = x.p.idTo,
+                maTo = x.p.maTo,
+                tenTo=x.p.tenTo,
+                idPhongBan=x.p.idPhongBan,
+                tenPhongBan = x.pb.tenPhongBan
             }).ToListAsync();
+            return data;
+        }
+
+        public async Task<DanhMucToViewModel> GetDetail(int id)
+        {
+            var query = from p in _context.danhMucTos
+                        join pb in _context.danhMucPhongBans on p.idPhongBan equals pb.id
+                        select new { p, pb };
+
+            var data = await query.Select(x => new DanhMucToViewModel()
+            {
+                id = x.p.idTo,
+                maTo = x.p.maTo,
+                tenTo = x.p.tenTo,
+                idPhongBan = x.p.idPhongBan,
+                tenPhongBan = x.pb.tenPhongBan
+            }).FirstAsync();
             return data;
         }
 

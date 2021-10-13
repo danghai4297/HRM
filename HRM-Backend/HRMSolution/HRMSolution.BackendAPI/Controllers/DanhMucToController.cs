@@ -24,14 +24,20 @@ namespace HRMSolution.BackendAPI.Controllers
                 var danhMucTo = await _danhMucToService.GetAll();
                 return Ok(danhMucTo);
             }
-        [HttpPost]
-        public async Task<IActionResult> Create([FromBody]DanhMucToCreateRequest request)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetDetail(int id)
         {
-            var result = await _danhMucToService.Create(request);
-            if (result == 0)
-                return BadRequest();
-            return Ok();
+            var danhMucTo = await _danhMucToService.GetDetail(id);
+            return Ok(danhMucTo);
         }
-    }
+        [HttpPost]
+            public async Task<IActionResult> Create([FromBody]DanhMucToCreateRequest request)
+            {
+                var result = await _danhMucToService.Create(request);
+                if (result == 0)
+                    return BadRequest();
+                return Ok();
+            }
+        }
     
 }

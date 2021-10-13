@@ -34,6 +34,30 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
             return await _context.SaveChangesAsync();
         }
 
+        public async Task<List<DieuChuyenViewModel>> GetAll()
+        {
+            var query = from dc in _context.dieuChuyens
+                        join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
+                        join to in _context.danhMucTos on dc.to equals to.idTo
+                        join cv in _context.danhMucChucVus on dc.idChucVu equals cv.id
+                        join nv in _context.nhanViens on dc.maNhanVien equals nv.maNhanVien
+                        select new { dc, pb, to, cv, nv };
+            var data = await query.Select(x => new DieuChuyenViewModel()
+            {
+                id = x.dc.id,
+                maNhanVien = x.dc.maNhanVien,
+                tenNhanVien = x.nv.hoTen,
+                ngayHieuLuc = x.dc.ngayHieuLuc,
+                idPhongBan = x.pb.tenPhongBan,
+                to = x.to.tenTo,
+                chiTiet = x.dc.chiTiet,
+                idChucVu = x.cv.tenChucVu,
+                trangThai = x.dc.trangThai == true ? "Kích hoạt" : "Vô hiệu"
+            }).ToListAsync();
+
+            return data;
+        }
+
         public async Task<DieuChuyenViewModel> GetDetail(int id)
         {
             var query = from dc in _context.dieuChuyens
