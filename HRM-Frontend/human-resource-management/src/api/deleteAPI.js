@@ -102,7 +102,7 @@ const DeleteApi = {
     return axiosClient.delete(url);
   },
 
-  //delete dm trình độ
+  //delete dm hình thức đào tạo
   deleteDMHTDT: (id) => {
     const url = `/DanhMucHinhThucDaoTao/${id}`;
     return axiosClient.delete(url);

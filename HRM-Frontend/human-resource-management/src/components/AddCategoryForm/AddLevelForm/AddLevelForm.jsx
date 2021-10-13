@@ -4,6 +4,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddLevelForm.scss";
 import ProductApi from "../../../api/productApi";
+import PutApi from "../../../api/putAAPI";
+import DeleteApi from "../../../api/deleteAPI";
 const schema = yup.object({
   tenTrinhDo: yup.string().required("Tên danh mục không được bỏ trống."),
 });
@@ -38,10 +40,23 @@ function AddLevelForm(props) {
 
   const onHandleSubmit = async (data) => {
     try {
-      await ProductApi.PostDMTD(data);
+      if (id !== undefined) {
+        await PutApi.PutDMTD(data, id);
+      } else {
+        await ProductApi.PostDMTD(data);
+      }
       history.goBack();
     } catch (error) {}
   };
+
+  const handleDelete = async () => {
+    try {
+      await DeleteApi.deleteDMTD(id);
+      history.goBack();
+    } catch (error) {}
+  };
+
+
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
@@ -56,6 +71,7 @@ function AddLevelForm(props) {
             className={
               dataDetailDMTD.length !== 0 ? "btn btn-danger" : "delete-button"
             }
+            onClick={handleDelete}
             value="Xoá"
           />
           <input

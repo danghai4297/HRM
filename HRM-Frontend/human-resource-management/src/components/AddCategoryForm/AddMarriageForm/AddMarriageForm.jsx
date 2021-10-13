@@ -4,6 +4,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddMarriageForm.scss";
 import ProductApi from "../../../api/productApi";
+import PutApi from "../../../api/putAAPI";
+import DeleteApi from "../../../api/deleteAPI";
 const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
 });
@@ -38,10 +40,22 @@ function AddMarriageForm(props) {
 
   const onHandleSubmit = async (data) => {
     try {
-      await ProductApi.PostDMHN(data);
+      if (id !== undefined) {
+        await PutApi.PutDMHN(data, id);
+      } else {
+        await ProductApi.PostDMHN(data);
+      }
       history.goBack();
     } catch (error) {}
   };
+
+  const handleDelete = async () => {
+    try {
+      await DeleteApi.deleteDMHN(id);
+      history.goBack();
+    } catch (error) {}
+  };
+
 
   console.log(dataDetailDMHN);
 
@@ -59,6 +73,7 @@ function AddMarriageForm(props) {
             className={
               dataDetailDMHN.length !== 0 ? "btn btn-danger" : "delete-button"
             }
+            onClick={handleDelete}
             value="Xoá"
           />
           <input

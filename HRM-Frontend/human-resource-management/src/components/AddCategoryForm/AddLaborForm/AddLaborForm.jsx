@@ -4,6 +4,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddLaborForm.scss";
 import ProductApi from "../../../api/productApi";
+import PutApi from "../../../api/putAAPI";
+import DeleteApi from "../../../api/deleteAPI";
 const schema = yup.object({
   tenLaoDong: yup.string().required("Tên danh mục không được bỏ trống."),
 });
@@ -37,11 +39,22 @@ function AddLaborForm(props) {
 
   const onHandleSubmit = async (data) => {
     try {
-      await ProductApi.PostDMTCLD(data);
+      if (id !== undefined) {
+        await PutApi.PutDMTCLD(data, id);
+      } else {
+        await ProductApi.PostDMTCLD(data);
+      }
       history.goBack();
     } catch (error) {}
   };
   console.log(dataDetailDMTCLD);
+
+  const handleDelete = async () => {
+    try {
+      await DeleteApi.deleteDMTCLD(id);
+      history.goBack();
+    } catch (error) {}
+  };
 
   return (
     <div className="container-form">
@@ -58,6 +71,7 @@ function AddLaborForm(props) {
             className={
               dataDetailDMTCLD.length !== 0 ? "btn btn-danger" : "delete-button"
             }
+            onClick={handleDelete}
             value="Xoá"
           />
           <input

@@ -4,13 +4,14 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddPositionForm.scss";
 import ProductApi from "../../../api/productApi";
+import PutApi from "../../../api/putAAPI";
+import DeleteApi from "../../../api/deleteAPI";
 const schema = yup.object({
   maChucVu: yup.string().required("Mã chức vụ được bỏ trống."),
   tenChucVu: yup.string().required("Tên chức vụ không được bỏ trống."),
   phuCap: yup.number().required("Phụ cấp không được bỏ trống."),
 });
 function AddPositionForm(props) {
-  const [positionValue, setPositionValue] = useState(null);
   const {
     register,
     handleSubmit,
@@ -39,12 +40,23 @@ function AddPositionForm(props) {
 
   const onHandleSubmit = async (data) => {
     try {
-      await ProductApi.PostDMCV(data);
+      if (id !== undefined) {
+        await PutApi.PutDMCV(data, id);
+      } else {
+        await ProductApi.PostDMCV(data);
+      }
       history.goBack();
     } catch (error) {}
   };
 
-console.log(dataDetailDMCV)
+  const handleDelete = async () => {
+    try {
+      await DeleteApi.deleteDMCV(id);
+      history.goBack();
+    } catch (error) {}
+  };
+
+  console.log(dataDetailDMCV);
 
   return (
     <div className="container-form">
@@ -57,7 +69,10 @@ console.log(dataDetailDMCV)
         <div className="button">
           <input
             type="submit"
-            className={dataDetailDMCV.length !== 0 ? "btn btn-danger" : "delete-button"}
+            className={
+              dataDetailDMCV.length !== 0 ? "btn btn-danger" : "delete-button"
+            }
+            onClick={handleDelete}
             value="Xoá"
           />
           <input

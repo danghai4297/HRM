@@ -2,87 +2,87 @@ import axiosClient from "./axiosClient";
 
 const PutApi = {
   //Sửa danh mục dân tộc
-  PutDMDT: (data) => {
-    const url = "/DanhMucDanToc";
+  PutDMDT: (data, id) => {
+    const url = `/DanhMucDanToc/${id}`;
     return axiosClient.put(url, data);
   },
 
-  //Sửa danh mục
-  PutDMCD: (data) => {
-    const url = "/DanhMucChucDanh";
+  //Sửa danh mục chức danh
+  PutDMCD: (data, id) => {
+    const url = `/DanhMucChucDanh/${id}`;
     return axiosClient.put(url, data);
   },
 
-  //Sửa danh mục
-  PutDMCV: (data) => {
-    const url = "/DanhMucChucVu";
+  //Sửa danh mục chức vụ
+  PutDMCV: (data, id) => {
+    const url = `/DanhMucChucVu/${id}`;
     return axiosClient.put(url, data);
   },
-  //Sửa danh mục
-  PutDMCM: (data) => {
-    const url = "/DanhMucChuyenMon";
+  //Sửa danh mục chuyên môn
+  PutDMCM: (data, id) => {
+    const url = `/DanhMucChuyenMon/${id}`;
     return axiosClient.put(url, data);
   },
-  //Sửa danh mục
-  PutDMHN: (data) => {
-    const url = "/DanhMucHonNhan";
+  //Sửa danh mục hôn nhân
+  PutDMHN: (data, id) => {
+    const url = `/DanhMucHonNhan/${id}`;
     return axiosClient.put(url, data);
   },
-  //Sửa danh mục
-  PutDMLHD: (data) => {
-    const url = "/DanhMucLoaiHopDong";
+  //Sửa danh mục loại hợp đồng
+  PutDMLHD: (data, id) => {
+    const url = `/DanhMucLoaiHopDong/${id}`;
     return axiosClient.put(url, data);
   },
-  //Sửa danh mục
-  PutDMNCC: (data) => {
-    const url = "/DanhMucNgachCongChuc";
+  //Sửa danh mục ngạch công chức
+  PutDMNCC: (data, id) => {
+    const url = `/DanhMucNgachCongChuc/${id}`;
     return axiosClient.put(url, data);
   },
-  //Sửa danh mục
-  PutDMNN: (data) => {
-    const url = "/DanhMucNgoaiNgu";
+  //Sửa danh mục ngoại ngữ
+  PutDMNN: (data, id) => {
+    const url = `/DanhMucNgoaiNgu/${id}`;
     return axiosClient.put(url, data);
   },
-  //Sửa danh mục
-  PutDMNT: (data) => {
-    const url = "/DanhMucNguoiThan";
+  //Sửa danh mục người thân
+  PutDMNT: (data, id) => {
+    const url = `/DanhMucNguoiThan/${id}`;
     return axiosClient.put(url, data);
   },
-  //Sửa danh mục
-  PutDMNL: (data) => {
-    const url = "/DanhMucNhomLuong";
+  //Sửa danh mục nhóm lương
+  PutDMNL: (data, id) => {
+    const url = `/DanhMucNhomLuong/${id}`;
     return axiosClient.put(url, data);
   },
-  //Sửa danh mục
-  PutDMPB: (data) => {
-    const url = "/DanhMucPhongBan";
+  //Sửa danh mục phòng ban
+  PutDMPB: (data, id) => {
+    const url = `/DanhMucPhongBan/${id}`;
     return axiosClient.put(url, data);
   },
-  //Sửa danh mục
-  PutDMTCLD: (data) => {
-    const url = "/DanhMucTinhChatLaoDong";
+  //Sửa danh mục tính chất lao động
+  PutDMTCLD: (data, id) => {
+    const url = `/DanhMucTinhChatLaoDong/${id}`;
     return axiosClient.put(url, data);
   },
-  //Sửa danh mục
-  PutDMT: (data) => {
-    const url = "/DanhMucTo";
-    return axiosClient.put(url, data);
-  },
-
-  //Sửa danh mục
-  PutDMHTDT: (data) => {
-    const url = "/DanhMucHinhThucDaoTao";
+  //Sửa danh mục tổ
+  PutDMT: (data, id) => {
+    const url = `/DanhMucTo/${id}`;
     return axiosClient.put(url, data);
   },
 
-  //Sửa danh mục
-  PutDMTG: (data) => {
-    const url = "/DanhMucTonGiao";
+  //Sửa danh mục hình thức đào tạo
+  PutDMHTDT: (data, id) => {
+    const url = `/DanhMucHinhThucDaoTao/${id}`;
     return axiosClient.put(url, data);
   },
-  //Sửa danh mục
-  PutDMTD: (data) => {
-    const url = "/DanhMucTrinhDo";
+
+  //Sửa danh mục tôn giáo
+  PutDMTG: (data, id) => {
+    const url = `/DanhMucTonGiao/${id}`;
+    return axiosClient.put(url, data);
+  },
+  //Sửa danh mục trình độ
+  PutDMTD: (data, id) => {
+    const url = `/DanhMucTrinhDo/${id}`;
     return axiosClient.put(url, data);
   },
 };

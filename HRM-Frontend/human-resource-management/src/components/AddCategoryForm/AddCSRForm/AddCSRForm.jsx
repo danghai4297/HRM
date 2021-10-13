@@ -4,6 +4,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddCSRForm.scss";
 import ProductApi from "../../../api/productApi";
+import PutApi from "../../../api/putAAPI";
+import DeleteApi from "../../../api/deleteAPI";
 
 AddCSRForm.propTypes = {};
 const schema = yup.object({
@@ -39,23 +41,40 @@ function AddCSRForm(props) {
 
   const onHandleSubmit = async (data) => {
     try {
-      await ProductApi.PostDMNCC(data);
+      if (id !== undefined) {
+        await PutApi.PutDMNCC(data, id);
+      } else {
+        await ProductApi.PostDMNCC(data);
+      }
       history.goBack();
     } catch (error) {}
   };
 
-console.log(dataDetailDMNCC)
+  const handleDelete = async () => {
+    try {
+      await DeleteApi.deleteDMNCC(id);
+      history.goBack();
+    } catch (error) {}
+  };
+
+  console.log(dataDetailDMNCC);
 
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">{dataDetailDMNCC.length !== 0 ? "Sửa" : "Thêm"} danh mục ngạch công chức</h2>
+          <h2 className="">
+            {dataDetailDMNCC.length !== 0 ? "Sửa" : "Thêm"} danh mục ngạch công
+            chức
+          </h2>
         </div>
         <div className="button">
           <input
             type="submit"
-            className={dataDetailDMNCC.length !== 0 ? "btn btn-danger" : "delete-button"}
+            className={
+              dataDetailDMNCC.length !== 0 ? "btn btn-danger" : "delete-button"
+            }
+            onClick={handleDelete}
             value="Xoá"
           />
           <input

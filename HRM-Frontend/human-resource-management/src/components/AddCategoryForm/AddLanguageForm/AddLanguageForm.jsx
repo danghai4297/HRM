@@ -4,6 +4,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddLanguageForm.scss";
 import ProductApi from "../../../api/productApi";
+import PutApi from "../../../api/putAAPI";
+import DeleteApi from "../../../api/deleteAPI";
 AddLanguageForm.propTypes = {};
 const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
@@ -16,12 +18,7 @@ function AddLanguageForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onHandleSubmit = async (data) => {
-    try {
-      await ProductApi.PostDMNN(data);
-      history.goBack();
-    } catch (error) {}
-  };
+
   let { match, history } = props;
   let { id } = match.params;
 
@@ -42,6 +39,25 @@ function AddLanguageForm(props) {
   }, []);
   console.log(dataDetailDMNN);
 
+  const onHandleSubmit = async (data) => {
+    try {
+      if (id !== undefined) {
+        await PutApi.PutDMNN(data, id);
+      } else {
+        await ProductApi.PostDMNN(data);
+      }
+      history.goBack();
+    } catch (error) {}
+  };
+
+  const handleDelete = async () => {
+    try {
+      await DeleteApi.deleteDMNN(id);
+      history.goBack();
+    } catch (error) {}
+  };
+
+
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
@@ -56,6 +72,7 @@ function AddLanguageForm(props) {
             className={
               dataDetailDMNN.length !== 0 ? "btn btn-danger" : "delete-button"
             }
+            onClick={handleDelete}
             value="Xoá"
           />
           <input

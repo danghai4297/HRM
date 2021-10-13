@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddReligionForm.scss";
 import ProductApi from "../../../api/productApi";
+import PutApi from "../../../api/putAAPI";
+import DeleteApi from "../../../api/deleteAPI";
 AddReligionForm.propTypes = {};
 const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddReligionForm(props) {
-  const [religionValue, setReligionValue] = useState(null);
   const {
     register,
     handleSubmit,
@@ -18,6 +18,7 @@ function AddReligionForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
+
   let { match, history } = props;
   let { id } = match.params;
 
@@ -36,13 +37,28 @@ function AddReligionForm(props) {
     };
     fetchNvList();
   }, []);
+
+  console.log(dataDetailDMTG);
+
   const onHandleSubmit = async (data) => {
     try {
-      await ProductApi.PostDMTG(data);
+      if (id !== undefined) {
+        await PutApi.PutDMTG(data, id);
+      } else {
+        await ProductApi.PostDMTG(data);
+      }
       history.goBack();
     } catch (error) {}
   };
-  console.log(dataDetailDMTG);
+
+  const handleDelete = async () => {
+    try {
+      await DeleteApi.deleteDMTG(id);
+      history.goBack();
+    } catch (error) {}
+  };
+
+  
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
@@ -54,7 +70,10 @@ function AddReligionForm(props) {
         <div className="button">
           <input
             type="submit"
-            className={dataDetailDMTG.length !== 0 ? "btn btn-danger" : "delete-button"}
+            className={
+              dataDetailDMTG.length !== 0 ? "btn btn-danger" : "delete-button"
+            }
+            onClick={handleDelete}
             value="Xoá"
           />
           <input

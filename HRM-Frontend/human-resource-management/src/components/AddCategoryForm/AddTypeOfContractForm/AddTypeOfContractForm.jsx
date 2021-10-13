@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddTypeOfContractForm.scss";
 import ProductApi from "../../../api/productApi";
+import PutApi from "../../../api/putAAPI";
+import DeleteApi from "../../../api/deleteAPI";
 const schema = yup.object({
   maLoaiHopDong: yup.string().required("Mã phòng ban không được bỏ trống."),
   tenLoaiHopDong: yup.string().required("Tên danh mục không được bỏ trống."),
@@ -37,23 +38,42 @@ function AddTypeOfContractForm(props) {
     };
     fetchNvList();
   }, []);
+  console.log(dataDetailDMLHD);
+
   const onHandleSubmit = async (data) => {
     try {
-      await ProductApi.PostDMLHD(data);
+      if (id !== undefined) {
+        await PutApi.PutDMLHD(data, id);
+      } else {
+        await ProductApi.PostDMLHD(data);
+      }
       history.goBack();
     } catch (error) {}
   };
-  console.log(dataDetailDMLHD)
+
+  const handleDelete = async () => {
+    try {
+      await DeleteApi.deleteDMLHD(id);
+      history.goBack();
+    } catch (error) {}
+  };
+
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">{dataDetailDMLHD.length !== 0 ? "Sửa" : "Thêm"} danh mục loại hợp đồng</h2>
+          <h2 className="">
+            {dataDetailDMLHD.length !== 0 ? "Sửa" : "Thêm"} danh mục loại hợp
+            đồng
+          </h2>
         </div>
         <div className="button">
           <input
             type="submit"
-            className={dataDetailDMLHD.length !== 0 ? "btn btn-danger" : "delete-button"}
+            className={
+              dataDetailDMLHD.length !== 0 ? "btn btn-danger" : "delete-button"
+            }
+            onClick={handleDelete}
             value="Xoá"
           />
           <input

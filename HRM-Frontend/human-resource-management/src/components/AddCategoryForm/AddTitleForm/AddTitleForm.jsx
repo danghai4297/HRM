@@ -4,6 +4,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddTitleForm.scss";
 import ProductApi from "../../../api/productApi";
+import PutApi from "../../../api/putAAPI";
+import DeleteApi from "../../../api/deleteAPI";
 AddTitleForm.propTypes = {};
 const schema = yup.object({
   maChucDanh: yup.string().required("Mã chức danh không được bỏ trống."),
@@ -42,10 +44,24 @@ function AddTitleForm(props) {
 
   const onHandleSubmit = async (data) => {
     try {
-      await ProductApi.PostDMCD(data);
+      if (id !== undefined) {
+        await PutApi.PutDMCD(data, id);
+      }
+      else{
+        await ProductApi.PostDMCD(data);
+      }
+      
       history.goBack();
     } catch (error) {}
   };
+
+  const handleDelete = async () => {
+    try {
+      await DeleteApi.deleteDMCD(id);
+      history.goBack();
+    } catch (error) {}
+  };
+
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
@@ -60,6 +76,7 @@ function AddTitleForm(props) {
             className={
               dataDetailDMCD.length !== 0 ? "btn btn-danger" : "delete-button"
             }
+            onClick={handleDelete}
             value="Xoá"
           />
           <input

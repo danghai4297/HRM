@@ -6,6 +6,7 @@ import "./AddNationForm.scss";
 import { useState } from "react";
 import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
+import DeleteApi from "../../../api/deleteAPI";
 // import { Alert } from "react-alert";
 AddNationForm.propTypes = {};
 const schema = yup.object({
@@ -38,16 +39,22 @@ function AddNationForm(props) {
     fetchNvList();
   }, []);
 
-  console.log(dataDetailDMDT);
+  // console.log(dataDetailDMDT);
 
   const onHandleSubmit = async (data) => {
     try {
       if (id !== undefined) {
-        await PutApi.PutDMDT(data);
+        await PutApi.PutDMDT(data, id);
       } else {
         await ProductApi.PostDMDT(data);
       }
+      history.goBack();
+    } catch (error) {}
+  };
 
+  const handleDelete = async () => {
+    try {
+      await DeleteApi.deleteDMDT(id);
       history.goBack();
     } catch (error) {}
   };
@@ -66,6 +73,7 @@ function AddNationForm(props) {
             className={
               dataDetailDMDT.length !== 0 ? "btn btn-danger" : "delete-button"
             }
+            onClick={handleDelete}
             value="Xoá"
           />
           <input
