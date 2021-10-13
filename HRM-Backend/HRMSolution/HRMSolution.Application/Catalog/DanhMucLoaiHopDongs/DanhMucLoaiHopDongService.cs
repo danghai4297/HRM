@@ -56,7 +56,7 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
 
         public async Task<DanhMucLoaiHopDongViewModel> GetById(int id)
         {
-            var query = from p in _context.danhMucLoaiHopDongs select p;
+            var query = from p in _context.danhMucLoaiHopDongs where p.id == id select p;
 
             var data = await query.Select(x => new DanhMucLoaiHopDongViewModel()
             {
@@ -68,10 +68,10 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
             return data;
         }
 
-        public async Task<int> Update(DanhMucLoaiHopDongUpdateRequest request)
+        public async Task<int> Update(int id,DanhMucLoaiHopDongUpdateRequest request)
         {
-            var danhMucLoaiHopDong = await _context.danhMucLoaiHopDongs.FindAsync(request.id);
-            if (danhMucLoaiHopDong == null) throw new HRMException($"Không tìm thấy danh mục hôn nhân có id: {request.id }");
+            var danhMucLoaiHopDong = await _context.danhMucLoaiHopDongs.FindAsync(id);
+            if (danhMucLoaiHopDong == null) throw new HRMException($"Không tìm thấy danh mục hôn nhân có id: {id }");
 
             danhMucLoaiHopDong.maLoaiHopDong = request.maLoaiHopDong;
             danhMucLoaiHopDong.tenLoaiHopDong = request.tenLoaiHopDong;

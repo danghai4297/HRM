@@ -55,7 +55,7 @@ namespace HRMSolution.Application.Catalog.DanhMucTrinhDos
 
         public async Task<DanhMucTrinhDoViewModel> GetById(int id)
         {
-            var query = from p in _context.danhMucTrinhDos select p;
+            var query = from p in _context.danhMucTrinhDos where p.id == id select p;
 
             var data = await query.Select(x => new DanhMucTrinhDoViewModel()
             {
@@ -65,10 +65,10 @@ namespace HRMSolution.Application.Catalog.DanhMucTrinhDos
             return data;
         }
 
-        public async Task<int> Update(DanhMucTrinhDoUpdateRequest request)
+        public async Task<int> Update(int id,DanhMucTrinhDoUpdateRequest request)
         {
-            var danhMucTrinhDo = await _context.danhMucTrinhDos.FindAsync(request.id);
-            if (danhMucTrinhDo == null) throw new HRMException($"Không tìm thấy danh mục trình độ có id: {request.id }");
+            var danhMucTrinhDo = await _context.danhMucTrinhDos.FindAsync(id);
+            if (danhMucTrinhDo == null) throw new HRMException($"Không tìm thấy danh mục trình độ có id: {id }");
 
             danhMucTrinhDo.tenTrinhDo = request.tenTrinhDo;
 

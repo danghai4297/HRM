@@ -58,7 +58,7 @@ namespace HRMSolution.Application.Catalog.DanhMucPhongBans
 
         public async Task<DanhMucPhongBanViewModel> GetById(int id)
         {
-            var query = from p in _context.danhMucPhongBans select p;
+            var query = from p in _context.danhMucPhongBans where p.id == id select p;
 
             var data = await query.Select(x => new DanhMucPhongBanViewModel()
             {
@@ -71,10 +71,10 @@ namespace HRMSolution.Application.Catalog.DanhMucPhongBans
             return data;
         }
 
-        public async Task<int> Update(DanhMucPhongBanUpdateRequest request)
+        public async Task<int> Update(int id,DanhMucPhongBanUpdateRequest request)
         {
-            var danhMucPhongBan = await _context.danhMucPhongBans.FindAsync(request.id);
-            if (danhMucPhongBan == null) throw new HRMException($"Không tìm thấy danh mục phòng ban có id: {request.id }");
+            var danhMucPhongBan = await _context.danhMucPhongBans.FindAsync(id);
+            if (danhMucPhongBan == null) throw new HRMException($"Không tìm thấy danh mục phòng ban có id: {id }");
 
             danhMucPhongBan.maPhongBan = request.maPhongBan;
             danhMucPhongBan.tenPhongBan = request.tenPhongBan;

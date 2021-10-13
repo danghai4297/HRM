@@ -55,7 +55,7 @@ namespace HRMSolution.Application.Catalog.DanhMucTinhChatLaoDongs
 
         public async Task<DanhMucTinhChatLaoDongViewModel> GetById(int id)
         {
-            var query = from p in _context.danhMucTinhChatLaoDongs select p;
+            var query = from p in _context.danhMucTinhChatLaoDongs where p.id == id select p;
 
             var data = await query.Select(x => new DanhMucTinhChatLaoDongViewModel()
             {
@@ -65,10 +65,10 @@ namespace HRMSolution.Application.Catalog.DanhMucTinhChatLaoDongs
             return data;
         }
 
-        public async Task<int> Update(DanhMucTinhChatLaoDongUpdateRequest request)
+        public async Task<int> Update(int id,DanhMucTinhChatLaoDongUpdateRequest request)
         {
-            var danhMucTinhChatLaoDong = await _context.danhMucTinhChatLaoDongs.FindAsync(request.id);
-            if (danhMucTinhChatLaoDong == null) throw new HRMException($"Không tìm thấy danh mục phòng ban có id: {request.id }");
+            var danhMucTinhChatLaoDong = await _context.danhMucTinhChatLaoDongs.FindAsync(id);
+            if (danhMucTinhChatLaoDong == null) throw new HRMException($"Không tìm thấy danh mục phòng ban có id: {id }");
 
             danhMucTinhChatLaoDong.tenTinhChat = request.tenLaoDong;
             

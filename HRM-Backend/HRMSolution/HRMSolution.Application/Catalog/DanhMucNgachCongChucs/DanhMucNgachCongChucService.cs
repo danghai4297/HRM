@@ -56,7 +56,7 @@ namespace HRMSolution.Application.Catalog.DanhMucNgachCongChucs
 
         public async Task<DanhMucNgachCongChucViewModel> GetById(int id)
         {
-            var query = from p in _context.danhMucNgachCongChucs select p;
+            var query = from p in _context.danhMucNgachCongChucs where p.id == id select p;
 
             var data = await query.Select(x => new DanhMucNgachCongChucViewModel()
             {
@@ -68,10 +68,10 @@ namespace HRMSolution.Application.Catalog.DanhMucNgachCongChucs
             return data;
         }
 
-        public async Task<int> Update(DanhMucNgachCongChucUpdateRequest request)
+        public async Task<int> Update(int id,DanhMucNgachCongChucUpdateRequest request)
         {
-            var danhMucNgachCongChuc = await _context.danhMucNgachCongChucs.FindAsync(request.id);
-            if (danhMucNgachCongChuc == null) throw new HRMException($"Không tìm thấy danh mục ngạch công chức có id: {request.id }");
+            var danhMucNgachCongChuc = await _context.danhMucNgachCongChucs.FindAsync(id);
+            if (danhMucNgachCongChuc == null) throw new HRMException($"Không tìm thấy danh mục ngạch công chức có id: {id }");
 
             danhMucNgachCongChuc.tenNgach = request.tenNgach;
             return await _context.SaveChangesAsync();

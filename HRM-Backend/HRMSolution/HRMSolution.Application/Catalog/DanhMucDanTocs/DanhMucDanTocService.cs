@@ -37,10 +37,10 @@ namespace HRMSolution.Application.Catalog.DanhMucDanTocs
             return await _context.SaveChangesAsync();
         }
 
-        public async Task<int> Update(DanhMucDanTocUpdateRequest request)
+        public async Task<int> Update(int id,DanhMucDanTocUpdateRequest request)
         {
-            var danhMucDanToc = await _context.danhMucDanTocs.FindAsync(request.id);
-            if (danhMucDanToc == null) throw new HRMException($"Không tìm thấy danh mục Dân Tộc có id: {request.id }");
+            var danhMucDanToc = await _context.danhMucDanTocs.FindAsync(id);
+            if (danhMucDanToc == null) throw new HRMException($"Không tìm thấy danh mục Dân Tộc có id: {id }");
 
             danhMucDanToc.tenDanhMuc = request.tenDanhMuc;
             return await _context.SaveChangesAsync(); 
@@ -63,7 +63,7 @@ namespace HRMSolution.Application.Catalog.DanhMucDanTocs
 
         public async Task<DanhMucDanTocViewModel> GetById(int id)
         {
-            var query = from p in _context.danhMucDanTocs select p;
+            var query = from p in _context.danhMucDanTocs where p.id == id select p;
 
             var data = await query.Select(x => new DanhMucDanTocViewModel()
             {
