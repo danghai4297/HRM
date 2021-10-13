@@ -52,17 +52,11 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
 
-<<<<<<< HEAD
-        [HttpPut("{id:int}")]
-        public async Task<IActionResult> Update(int id, DanhMucDanTocUpdateRequest request)
-        {
-            var result = await _danhMucDanTocService.Update(id, request);
-=======
+
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id,DanhMucDanTocUpdateRequest request)
         {
             var result = await _danhMucDanTocService.Update(id,request);
->>>>>>> fec998c699e1da5c5acb2a969f82391a75a1b459
             if (result == 0)
                 return BadRequest();
             return Ok();
