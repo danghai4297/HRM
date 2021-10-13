@@ -5,6 +5,7 @@ import * as yup from "yup";
 import "./AddNationForm.scss";
 import { useState } from "react";
 import ProductApi from "../../../api/productApi";
+import PutApi from "../../../api/productApi";
 // import { Alert } from "react-alert";
 AddNationForm.propTypes = {};
 const schema = yup.object({
@@ -41,11 +42,16 @@ function AddNationForm(props) {
 
   const onHandleSubmit = async (data) => {
     try {
-      await ProductApi.PostDMDT(data);
+      if (id !== undefined) {
+        await PutApi.PutDMDT(data);
+      } else {
+        await ProductApi.PostDMDT(data);
+      }
+
       history.goBack();
     } catch (error) {}
   };
-  
+
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">

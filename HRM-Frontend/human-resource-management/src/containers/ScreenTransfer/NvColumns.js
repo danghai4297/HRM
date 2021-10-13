@@ -73,7 +73,6 @@ export const NVCOLUMNS = [
     minWidth: 150,
     Filter: SelectColumnFilter,
     disableFilters: true,
-    disableFilters: true,
     show: true,
   },
   {
@@ -81,7 +80,6 @@ export const NVCOLUMNS = [
     accessor: "trangThai",
     minWidth: 200,
     Filter: SelectColumnFilter,
-    disableFilters: true,
     disableFilters: true,
     show: true,
   },

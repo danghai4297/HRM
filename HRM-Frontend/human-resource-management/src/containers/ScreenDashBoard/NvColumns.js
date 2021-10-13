@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 import SelectColumnFilter from "../../components/TablePagination/SelectColumnFilter";
 
-export const NVCOLUMNS = [
+export const NVCOLUMNSSALARY = [
   {
     Header: "Mã nhân viên",
     accessor: "maNhanVien",
@@ -14,6 +14,7 @@ export const NVCOLUMNS = [
     Header: "Họ tên",
     accessor: "tenNhanVien",
     sticky: "left",
+    minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -21,7 +22,7 @@ export const NVCOLUMNS = [
   {
     Header: "Tổng lương",
     accessor: "tongLuong",
-    minWidth: 300,
+    minWidth: 100,
     sticky: "left",
     Filter: SelectColumnFilter,
     disableFilters: true,
@@ -30,7 +31,7 @@ export const NVCOLUMNS = [
   {
     Header: "Mã hợp đồng",
     accessor: "maHopDong",
-    minWidth: 200,
+    minWidth: 70,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -38,7 +39,7 @@ export const NVCOLUMNS = [
   {
     Header: "Mã Lương",
     accessor: "id",
-    minWidth: 200,
+    minWidth: 70,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: false,
@@ -47,23 +48,23 @@ export const NVCOLUMNS = [
   {
     Header: "Nhóm lương",
     accessor: "nhomLuong",
-    minWidth: 200,
+    minWidth: 70,
     Filter: SelectColumnFilter,
-    disableFilters: true,
     show: true,
   },
 
   {
     Header: "Hệ số lương",
     accessor: "heSoLuong",
-    minWidth: 200,
+    minWidth: 70,
     Filter: SelectColumnFilter,
+    disableFilters: true,
     show: true,
   },
   {
     Header: "Bậc lương",
     accessor: "bacLuong",
-    minWidth: 300,
+    minWidth: 70,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -71,7 +72,7 @@ export const NVCOLUMNS = [
   {
     Header: "Lương cơ bản",
     accessor: "luongCoBan",
-    minWidth: 200,
+    minWidth: 70,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -80,7 +81,7 @@ export const NVCOLUMNS = [
   {
     Header: "Phụ cấp trách nhiệm",
     accessor: "phuCapTrachNhiem",
-    minWidth: 150,
+    minWidth: 70,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -88,7 +89,7 @@ export const NVCOLUMNS = [
   {
     Header: "Phụ cấp khác",
     accessor: "phuCapKhac",
-    minWidth: 200,
+    minWidth: 70,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -96,7 +97,7 @@ export const NVCOLUMNS = [
   {
     Header: "Thời hạn lên lương",
     accessor: "thoiHanLenLuong",
-    minWidth: 200,
+    minWidth: 70,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -134,9 +135,36 @@ export const NVCOLUMNS = [
   {
     Header: "Trạng thái",
     accessor: "trangThai",
-    minWidth: 200,
+    minWidth: 70,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: false,
+  },
+];
+
+export const NVCOLUMNS = [
+  {
+    Header: "ID",
+    accessor: "id",
+    minWidth: 100,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+    show: true,
+  },
+  {
+    Header: "Mã Phòng ban",
+    accessor: "maPhongBan",
+    minWidth: 300,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+    show: true,
+  },
+  {
+    Header: "Phòng ban",
+    accessor: "tenPhongBan",
+    minWidth: 300,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+    show: true,
   },
 ];

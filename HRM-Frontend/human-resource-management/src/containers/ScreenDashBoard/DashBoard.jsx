@@ -1,86 +1,38 @@
-import React, { useContext } from "react";
+import React, { useEffect, useState } from "react";
 import "./DashBoard.scss";
 
-import { ListContext } from "../../Contexts/ListContext";
 import ItemDashBoard from "../../components/ItemDashBoard/ItemDashBoard";
 import ItemExcel from "../../components/ItemExcel/ItemExcel";
 import TablePagination from "../../components/TablePagination/TablePagination";
-import SelectColumnFilter from "../../components/TablePagination/SelectColumnFilter";
+import ProductApi from "../../api/productApi";
+import { NVCOLUMNS, NVCOLUMNSSALARY } from "./NvColumns";
 
 DashBoard.propTypes = {};
 
-function DashBoard(props) {
-  const columns = [
-    {
-      Header: "ID",
-      accessor: "id",
-      sticky: "left",
-      Filter: SelectColumnFilter,
-      disableFilters: true,
-    },
-    {
-      Header: "First Name",
-      accessor: "firstName",
-      sticky: "left",
-      Filter: SelectColumnFilter,
-      disableFilters: true,
-    },
-    {
-      Header: "Last Name",
-      accessor: "lastName",
-      sticky: "left",
-      Filter: SelectColumnFilter,
-      disableFilters: true,
-    },
-    {
-      Header: "Email",
-      accessor: "email",
-      Filter: SelectColumnFilter,
-      disableFilters: true,
-    },
-    {
-      Header: "Gender",
-      accessor: "gender",
-      Filter: SelectColumnFilter,
-    },
-    {
-      Header: "Birthday",
-      accessor: "birthday",
-      Filter: SelectColumnFilter,
-      disableFilters: true,
-    },
-    {
-      Header: "Salary",
-      accessor: "salary",
-      Filter: SelectColumnFilter,
-      disableFilters: true,
-    },
-    {
-      Header: "Phone",
-      accessor: "phone",
-      Filter: SelectColumnFilter,
-      disableFilters: true,
-    },
-  ];
+function DashBoard() {
+  const link1 = "/category/department/";
+  const link2 = "/salary/detail/";
   const fileName = "DSNV";
-  const { list } = useContext(ListContext);
-  // const [dataEp, setDataEp] = useState(list);
-  // const newData = [];
+  const fileName2 = "DSLNV";
+  const [dataAllNv, setdataAllNv] = useState([]);
+  const [dataAllPB, setdataAllPB] = useState([]);
+  const [dataAllLNV, setdataAllLNV] = useState([]);
 
-  // useEffect(() => {
-  //   list.map((item) => {
-  //     item.gender === true ? (item.gender = "Nam") : (item.gender = "Nữ");
-  //     newData.push(item);
-  //   });
-  //   setDataEp(newData);
-  //   return () => {
-  //     list.map((item) => {
-  //       item.gender === "Nam" ? (item.gender = true) : (item.gender = false);
-  //       newData.push(item);
-  //     });
-  //     setDataEp(newData);
-  //   };
-  // }, []);
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const responseNv = await ProductApi.getAllNv();
+        const responsePB = await ProductApi.getAllDMPB();
+        const responseLNV = await ProductApi.getAllL();
+        setdataAllNv(responseNv);
+        setdataAllPB(responsePB);
+        setdataAllLNV(responseLNV);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
 
   return (
     <>
@@ -88,7 +40,7 @@ function DashBoard(props) {
         <div className="item-dash-board">
           <div className="item-da">
             <ItemDashBoard
-              totalEmployees="110"
+              totalEmployees={dataAllNv.length}
               fontIcon="users"
               title="nhan vien"
               link="/profile"
@@ -96,15 +48,15 @@ function DashBoard(props) {
           </div>
           <div className="item-da">
             <ItemDashBoard
-              totalEmployees="11"
+              totalEmployees={dataAllPB.length}
               fontIcon="building"
               title="Phong ban"
-              link=""
+              link="category/department"
             />
           </div>
           <div className="item-da">
             <ItemDashBoard
-              totalEmployees="110"
+              totalEmployees={dataAllLNV.length}
               fontIcon="money-check-alt"
               title="Luong n.vien"
               link="/salary"
@@ -121,18 +73,36 @@ function DashBoard(props) {
         </div>
         <div className="excel-item">
           <div className="item-da">
-            <ItemExcel dataXp={list} fileName={fileName} title="nhan vien" />
+            <ItemExcel
+              dataXp={dataAllNv}
+              fileName={fileName}
+              title="nhan vien"
+            />
           </div>
           <div className="item-da">
-            <ItemExcel title="luong nhan vien" />
+            <ItemExcel
+              dataXp={dataAllLNV}
+              fileName={fileName2}
+              title="luong nhan vien"
+            />
           </div>
         </div>
         <div className="two-table">
           <div className="tablex table-one">
-            <TablePagination columns={columns} data={list} />
+            <TablePagination
+              link={link1}
+              tid="tablenv"
+              columns={NVCOLUMNS}
+              data={dataAllPB}
+            />
           </div>
           <div className="tablex table-two">
-            <TablePagination columns={columns} data={list} />
+            <TablePagination
+              link={link2}
+              tid="tablenv"
+              columns={NVCOLUMNSSALARY}
+              data={dataAllLNV}
+            />
           </div>
         </div>
       </div>

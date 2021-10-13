@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { ListContext } from "../../Contexts/ListContext";
 import { NVCOLUMNS } from "./NvColumns";
 import ReactHTMLTableToExcel from "react-html-to-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,7 +12,6 @@ import { Link } from "react-router-dom";
 function ScreenSalary(props) {
   const link = "/salary/detail/";
   const fileName = "Danhsachluong";
-  const { list } = useContext(ListContext);
   const [dataAllL, setDataAllL] = useState([]);
 
   useEffect(() => {

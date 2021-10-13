@@ -67,7 +67,6 @@ const ProductApi = {
     return axiosClient.get(url);
   },
 
-
   //all điều chuyển nv
   getAllDCNV: () => {
     const url = "/DieuChuyen";
@@ -379,6 +378,7 @@ const ProductApi = {
     const url = `/DanhMucHinhThucDaoTao/${id}`;
     return axiosClient.get(url);
   },
+  
 };
 
 export default ProductApi;
