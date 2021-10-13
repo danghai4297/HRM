@@ -12,13 +12,13 @@ import ProductApi from "../../../../api/productApi";
 function ItemTraining(props) {
   const link = "/category/training/";
   const fileName = "Hinhthucdaotao";
-  const [dataDmtcld, setDataDmtcld] = useState([]);
+  const [dataDmHtdt, setDataDmHtdt] = useState([]);
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const responseNv = await ProductApi.getAllDMHTDT();
-        setDataDmtcld(responseNv);
+        const response = await ProductApi.getAllDMHTDT();
+        setDataDmHtdt(response);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
@@ -45,7 +45,7 @@ function ItemTraining(props) {
               sheet="tablexls"
               buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
             />
-            <ExportCSV csvData={dataDmtcld} fileName={fileName} />
+            <ExportCSV csvData={dataDmHtdt} fileName={fileName} />
           </div>
         </div>
         <div className="table-nv">
@@ -53,7 +53,7 @@ function ItemTraining(props) {
             link={link}
             tid="htdt"
             columns={NVCOLUMNS}
-            data={dataDmtcld}
+            data={dataDmHtdt}
           />
         </div>
       </div>
