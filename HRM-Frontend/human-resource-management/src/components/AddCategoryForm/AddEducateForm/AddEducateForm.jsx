@@ -9,7 +9,6 @@ const schema = yup.object({
 });
 function AddEducateForm(props) {
   const [educateValue, setEducateValue] = useState(null);
-  const { history } = props;
   const {
     register,
     handleSubmit,
@@ -17,22 +16,22 @@ function AddEducateForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  // let { match, history } = props;
-  // let { id } = match.params;
+  let { match, history } = props;
+  let { id } = match.params;
 
-  // const [dataDetail, setdataDetail] = useState([]);
+  const [dataDetail, setdataDetail] = useState([]);
 
-  // useEffect(() => {
-  //   const fetchNvList = async () => {
-  //     try {
-  //       const response = await ProductApi.getDetailDMHTDT(id);
-  //       setdataDetail(response);
-  //     } catch (error) {
-  //       console.log("false to fetch nv list: ", error);
-  //     }
-  //   };
-  //   fetchNvList();
-  // }, []);
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const response = await ProductApi.getDetailDMHTDT(id);
+        setdataDetail(response);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
   const onHandleSubmit = async (data) => {
     try {
       await ProductApi.PostDMHTDT(data);
