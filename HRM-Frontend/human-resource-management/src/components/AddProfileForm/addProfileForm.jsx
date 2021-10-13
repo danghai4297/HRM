@@ -13,15 +13,15 @@ import ProductApi from "../../api/productApi";
 const phoneRex = /([\|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})\b/;
 const number = /^\d+$/;
 const schema = yup.object({
-  maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
+  id: yup.string().required("Mã nhân viên không được bỏ trống."),
   hoTen: yup.string().required("Họ và tên không được bỏ trống."),
-  gioiTinh: yup.string().required("Giới tính không được bỏ trống."),
-  idDanhMucHonNhan: yup.string().required("Hôn nhân không được bỏ trống."),
-  ngaySinh: yup.string().required("Ngày sinh không được bỏ trống."),
+  gioiTinh: yup.boolean().required("Giới tính không được bỏ trống."),
+  idDanhMucHonNhan: yup.number().required("Hôn nhân không được bỏ trống."),
+  ngaySinh: yup.date().required("Ngày sinh không được bỏ trống."),
   noiSinh: yup.string().required("Nơi sinh không được bỏ trống."),
-  idDanToc: yup.string().required("Dân Tộc không được bỏ trống."),
+  idDanToc: yup.number().required("Dân Tộc không được bỏ trống."),
   queQuan: yup.string().required("Nguyên quán không được bỏ trống."),
-  idTonGiao: yup.string().required("Tôn giáo không được bỏ trống."),
+  idTonGiao: yup.number().required("Tôn giáo không được bỏ trống."),
   thuongTru: yup.string().required("HK thường trú không được bỏ trống."),
   quocTich: yup.string().required("Quốc tịch không được bỏ trống."),
   tamTru: yup.string().required("Tạm trú không được bỏ trống."),
@@ -31,44 +31,59 @@ const schema = yup.object({
     .min(9, "CMND phải có 9 số/CCCD phải có 12 số")
     .max(12, "CMND phải có 9 số,CCCD phải có 12 số")
     .required(),
-    ngayCapCCCD: yup.string().required("Ngày cấp CMND/CCCD không được bỏ trống."),
-    noiCapCCCD: yup.string().required("Nơi cấp CMND/CCCD không được bỏ trống."),
-    ngayHetHanCCCD: yup
-    .string()
+  ngayCapCCCD: yup.date().required("Ngày cấp CMND/CCCD không được bỏ trống."),
+  ngayCapHoChieu: yup.date().required("Ngày cấp CMND/CCCD không được bỏ trống."),
+  ngayChinhThuc: yup.date().required("Ngày cấp CMND/CCCD không được bỏ trống."),
+  ngayVaoDoan: yup.date().required("Ngày cấp CMND/CCCD không được bỏ trống."),
+  ngayThuViec: yup.date().required("Ngày cấp CMND/CCCD không được bỏ trống."),
+  ngayVaoBan: yup.date().required("Ngày cấp CMND/CCCD không được bỏ trống."),
+  ngayVaoDang: yup.date().required("Ngày cấp CMND/CCCD không được bỏ trống."),
+  ngayVaoDangChinhThuc: yup.date().required("Ngày cấp CMND/CCCD không được bỏ trống."),
+  ngayXuatNgu: yup.date().required("Ngày cấp CMND/CCCD không được bỏ trống."),
+  
+  noiCapCCCD: yup.string().required("Nơi cấp CMND/CCCD không được bỏ trống."),
+  ngayNhapNgu: yup.date().required("Nơi cấp CMND/CCCD không được bỏ trống."),
+  ngayHetHanHoChieu: yup.date().required("Nơi cấp CMND/CCCD không được bỏ trống."),
+  ngayHetHanCCCD: yup
+    .date()
     .required("Ngày hết hạn CMND/CCCD không được bỏ trống."),
-    diDong: yup
+  diDong: yup
     .string()
     .matches(phoneRex, "Số điện thoại không được bỏ trống và là số.")
     .required(),
-  lhkc_hoVaTen: yup.string().required("Họ và tên không được bỏ trống."),
+  lhkc_hoTen: yup.string().required("Họ và tên không được bỏ trống."),
   lhkc_quanHe: yup.string().required("Quan hệ không được bỏ trống."),
-  lhkc_dtDiDong: yup
+  lhkc_dienThoai: yup
     .string()
     .matches(phoneRex, "Số điện thoại không được bỏ trống và là số.")
     .required(),
   lhkc_diaChi: yup.string().required("Địa chỉ không được bỏ trống."),
   ngheNghiep: yup.string().required("Nghề nghiệp không được bỏ trống."),
-  ngayTuyenDung: yup.string().required("Ngày tuyển dụng không được bỏ trống."),
+  ngayTuyenDung: yup.date().required("Ngày tuyển dụng không được bỏ trống."),
   coQuanTuyenDung: yup
     .string()
     .required("Cơ quan tuyển dụng không được bỏ trống."),
   chucVuHienTai: yup.string().required("Chức vụ hiện tại không được bỏ trống."),
   trangThaiLaoDong: yup
-    .string()
+    .boolean()
     .required("Trạng thái lao động không được bỏ trống."),
   tinhChatLaoDong: yup
-    .string()
+    .number()
     .required("Tính chất lao động không được bỏ trống."),
   congViecChinh: yup
     .string()
     .required("Tính chất lao động không được bỏ trống."),
-  phongBan: yup.string().required("Phòng Ban động không được bỏ trống."),
-  idNgachCongChuc: yup.string().required("Ngạch công chức không được bỏ trống."),
-  biBatDiTu: yup.string().required("Lịch sử bản thân không được bỏ trống."),
-  thamGiaChinhTri: yup
+  //phongBan: yup.string().required("Phòng Ban động không được bỏ trống."),
+  idNgachCongChuc: yup
+    .number()
+    .required("Ngạch công chức không được bỏ trống."),
+  lsbt_biBatDiTu: yup
     .string()
     .required("Lịch sử bản thân không được bỏ trống."),
-  thanNhanNuocNgoai: yup
+  lsbt_thamGiaChinhTri: yup
+    .string()
+    .required("Lịch sử bản thân không được bỏ trống."),
+  lsbt_thanNhanNuocNgoai: yup
     .string()
     .required("Lịch sử bản thân không được bỏ trống."),
 });
@@ -104,7 +119,6 @@ function AddProfileForm(props) {
     console.log(data);
     try {
       JSON.stringify(data);
-
       await ProductApi.postNv(data);
       history.goBack();
     } catch (error) {}
@@ -148,12 +162,17 @@ function AddProfileForm(props) {
             <img src={file} className="icon" alt="" />
           </span>
 
-          <input
+          {/* <input
             type="file"
-            {...register("img")}
+            {...register("anh")}
             accept="Images/*"
             class="form-control-file"
             onChange={handleChange}
+          ></input> */}
+          <input
+            type="text"
+            {...register("anh")}
+            class="form-control-file"
           ></input>
         </div>
         {/* Container thông tin cơ bản */}
@@ -163,23 +182,20 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label
-                  class="col-sm-4 justify-content-start"
-                  htmlFor="maNhanVien"
-                >
+                <label class="col-sm-4 justify-content-start" htmlFor="id">
                   Mã Nhân Viên
                 </label>
                 <input
                   type="text"
-                  {...register("maNhanVien")}
-                  id="maNhanVien"
+                  {...register("id")}
+                  id="id"
                   className={
-                    !errors.maNhanVien
+                    !errors.id
                       ? "form-control col-sm-6 "
                       : "form-control col-sm-6 border-danger"
                   }
                 />
-                <span className="message">{errors.maNhanVien?.message}</span>
+                <span className="message">{errors.id?.message}</span>
               </div>
             </div>
             <div className="col">
@@ -265,7 +281,10 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="idDanhMucHonNhan">
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="idDanhMucHonNhan"
+                >
                   Tình trạng hôn nhân
                 </label>
                 <select
@@ -283,7 +302,9 @@ function AddProfileForm(props) {
                   <option value="2">Đã có gia đình</option>
                   <option value="3">Ly dị</option>
                 </select>
-                <span className="message">{errors.idDanhMucHonNhan?.message}</span>
+                <span className="message">
+                  {errors.idDanhMucHonNhan?.message}
+                </span>
               </div>
             </div>
           </div>
@@ -296,7 +317,7 @@ function AddProfileForm(props) {
                 >
                   Ngày sinh
                 </label>
-                {/* <input
+                <input
                   type="text"
                   {...register("ngaySinh")}
                   id="ngaySinh"
@@ -307,8 +328,8 @@ function AddProfileForm(props) {
                   }
                   placeholder="DD/MM/YYYY"
                 />
-                <span className="message">{errors.ngaySinh?.message}</span> */}
-                <Controller
+                <span className="message">{errors.ngaySinh?.message}</span>
+                {/* <Controller
                   name="ngaySinh"
                   control={control}
                   defaultValue=""
@@ -323,7 +344,7 @@ function AddProfileForm(props) {
                       {...field}
                     />
                   )}
-                />
+                /> */}
               </div>
             </div>
             <div className="col">
@@ -348,7 +369,10 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="idDanToc">
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="idDanToc"
+                >
                   Dân tộc
                 </label>
                 <select
@@ -368,10 +392,7 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label
-                  class="col-sm-4 justify-content-start"
-                  htmlFor="queQuan"
-                >
+                <label class="col-sm-4 justify-content-start" htmlFor="queQuan">
                   Nguyên quán
                 </label>
                 <input
@@ -391,7 +412,10 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="idTonGiao">
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="idTonGiao"
+                >
                   Tôn giáo
                 </label>
                 <select
@@ -476,10 +500,7 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label
-                  class="col-sm-4 justify-content-start"
-                  htmlFor="bhyt"
-                >
+                <label class="col-sm-4 justify-content-start" htmlFor="bhyt">
                   Bảo hiểm y tế
                 </label>
                 <input
@@ -497,10 +518,7 @@ function AddProfileForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label
-                  class="col-sm-4 justify-content-start"
-                  htmlFor="bhxh"
-                >
+                <label class="col-sm-4 justify-content-start" htmlFor="bhxh">
                   Bảo hiểm xã hội
                 </label>
                 <input
@@ -705,10 +723,7 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label
-                  class="col-sm-4 justify-content-start"
-                  htmlFor="diDong"
-                >
+                <label class="col-sm-4 justify-content-start" htmlFor="diDong">
                   ĐT di động
                 </label>
                 <input
@@ -741,7 +756,10 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="dienThoaiKhac">
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="dienThoaiKhac"
+                >
                   ĐT khác
                 </label>
                 <input
@@ -807,21 +825,21 @@ function AddProfileForm(props) {
               <div class="form-group form-inline">
                 <label
                   class="col-sm-4 justify-content-start"
-                  htmlFor="lhkc_hoVaTen"
+                  htmlFor="lhkc_hoTen"
                 >
                   Họ và tên
                 </label>
                 <input
                   type="text"
-                  {...register("lhkc_hoVaTen")}
-                  id="lhkc_hoVaTen"
+                  {...register("lhkc_hoTen")}
+                  id="lhkc_hoTen"
                   className={
-                    !errors.lhkc_hoVaTen
+                    !errors.lhkc_hoTen
                       ? "form-control col-sm-6 "
                       : "form-control col-sm-6 border-danger"
                   }
                 />
-                <span className="message">{errors.lhkc_hoVaTen?.message}</span>
+                <span className="message">{errors.lhkc_hoTen?.message}</span>
               </div>
             </div>
             <div className="col">
@@ -890,21 +908,24 @@ function AddProfileForm(props) {
               <div class="form-group form-inline">
                 <label
                   class="col-sm-4 justify-content-start"
-                  htmlFor="lhkc_dtDiDong"
+                  htmlFor="lhkc_dienThoai"
                 >
                   ĐT di động
                 </label>
                 <input
                   type="text"
-                  {...register("lhkc_dtDiDong")}
-                  id="lhkc_dtDiDong"
+                  {...register("lhkc_dienThoai")}
+                  id="lhkc_dienThoai"
                   className={
-                    !errors.lhkc_dtDiDong
+                    !errors.lhkc_dienThoai
                       ? "form-control col-sm-6 "
                       : "form-control col-sm-6 border-danger"
                   }
                 />
-                <span className="message">{errors.lhkc_dtDiDong?.message}</span>
+                <input type="text" {...register("lsbt_maNhanVien")} />
+                <span className="message">
+                  {errors.lhkc_dienThoai?.message}
+                </span>
               </div>
             </div>
           </div>
@@ -1242,7 +1263,9 @@ function AddProfileForm(props) {
                 >
                   <option value="1">A1</option>
                 </select>
-                <span className="message">{errors.idNgachCongChuc?.message}</span>
+                <span className="message">
+                  {errors.idNgachCongChuc?.message}
+                </span>
               </div>
             </div>
             <div className="col">
@@ -1454,7 +1477,10 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="quanHamCaoNhat">
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="quanHamCaoNhat"
+                >
                   Quân hàm cao nhất
                 </label>
                 <input
@@ -1508,26 +1534,32 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="nhomMau">
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="yt_nhomMau"
+                >
                   Nhóm máu
                 </label>
                 <input
                   type="text"
-                  {...register("nhomMau")}
-                  id="nhomMau"
+                  {...register("yt_nhomMau")}
+                  id="yt_nhomMau"
                   className="form-control col-sm-6"
                 />
               </div>
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="benhTat">
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="yt_benhTat"
+                >
                   Bệnh tật
                 </label>
                 <input
                   type="text"
-                  {...register("benhTat")}
-                  id="benhTat"
+                  {...register("yt_benhTat")}
+                  id="yt_benhTat"
                   className="form-control col-sm-6"
                 />
               </div>
@@ -1538,27 +1570,27 @@ function AddProfileForm(props) {
               <div class="form-group form-inline">
                 <label
                   class="col-sm-4 justify-content-start"
-                  htmlFor="chieuCao"
+                  htmlFor="yt_chieuCao"
                 >
                   Chiều cao(cm)
                 </label>
                 <input
                   type="text"
-                  {...register("chieuCao")}
-                  id="chieuCao"
+                  {...register("yt_chieuCao")}
+                  id="yt_chieuCao"
                   className="form-control col-sm-6"
                 />
               </div>
             </div>
             <div className="col">
               <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="luuY">
+                <label class="col-sm-4 justify-content-start" htmlFor="yt_luuY">
                   Lưu ý
                 </label>
                 <input
                   type="text"
-                  {...register("luuY")}
-                  id="luuY"
+                  {...register("yt_luuY")}
+                  id="yt_luuY"
                   className="form-control col-sm-6"
                 />
               </div>
@@ -1567,13 +1599,16 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="canNang">
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="yt_canNang"
+                >
                   Cân nặng(kg)
                 </label>
                 <input
                   type="text"
-                  {...register("canNang")}
-                  id="canNang"
+                  {...register("yt_canNang")}
+                  id="yt_canNang"
                   className="form-control col-sm-6"
                 />
               </div>
@@ -1582,13 +1617,13 @@ function AddProfileForm(props) {
               <div className="form-check form-inline">
                 <input
                   type="checkbox"
-                  {...register("khuyetTat")}
-                  id="khuyetTat"
+                  {...register("yt_khuyetTat")}
+                  id="yt_khuyetTat"
                   className="form-check-input"
                 />
                 <label
                   className="form-check-label col-sm-4 justify-content-start"
-                  htmlFor="khuyetTat"
+                  htmlFor="yt_khuyetTat"
                 >
                   Là người khuyết tật
                 </label>
@@ -1600,16 +1635,17 @@ function AddProfileForm(props) {
               <div class="form-group form-inline">
                 <label
                   class="col-sm-4 justify-content-start"
-                  htmlFor="tinhTrangSucKhoe"
+                  htmlFor="yt_tinhTrangSucKhoe"
                 >
                   Tình trạng sức khoẻ
                 </label>
                 <input
                   type="text"
-                  {...register("tinhTrangSucKhoe")}
-                  id="tinhTrangSucKhoe"
+                  {...register("yt_tinhTrangSucKhoe")}
+                  id="yt_tinhTrangSucKhoe"
                   className="form-control col-sm-6"
                 />
+                <input type="text" {...register("yt_maNhanVien")} />
               </div>
             </div>
           </div>
@@ -1620,22 +1656,24 @@ function AddProfileForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group">
-                <label class="justify-content-start" htmlFor="biBatDiTu">
+                <label class="justify-content-start" htmlFor="lsbt_biBatDiTu">
                   Bị bắt, bị tù (thời gian và địa điểm), khai báo cho ai, những
                   vấn đề gì?
                 </label>
                 <textarea
                   type="text"
-                  {...register("biBatDiTu")}
+                  {...register("lsbt_biBatDiTu")}
                   rows="4"
-                  id="biBatDiTu"
+                  id="lsbt_biBatDiTu"
                   className={
-                    !errors.biBatDiTu
+                    !errors.lsbt_biBatDiTu
                       ? "form-control  "
                       : "form-control border-danger"
                   }
                 />
-                <span className="message">{errors.biBatDiTu?.message}</span>
+                <span className="message">
+                  {errors.lsbt_biBatDiTu?.message}
+                </span>
               </div>
             </div>
           </div>
@@ -1649,16 +1687,16 @@ function AddProfileForm(props) {
                 <textarea
                   type="text"
                   rows="4"
-                  {...register("thamGiaChinhTri")}
-                  id="thamGiaChinhTri"
+                  {...register("lsbt_thamGiaChinhTri")}
+                  id="lsbt_thamGiaChinhTri"
                   className={
-                    !errors.thamGiaChinhTri
+                    !errors.lsbt_thamGiaChinhTri
                       ? "form-control  "
                       : "form-control border-danger"
                   }
                 />
                 <span className="message">
-                  {errors.thamGiaChinhTri?.message}
+                  {errors.lsbt_thamGiaChinhTri?.message}
                 </span>
               </div>
             </div>
@@ -1676,16 +1714,17 @@ function AddProfileForm(props) {
                 <textarea
                   type="text"
                   rows="4"
-                  {...register("thanNhanNuocNgoai")}
-                  id="thanNhanNuocNgoai"
+                  {...register("lsbt_thanNhanNuocNgoai")}
+                  id="lsbt_thanNhanNuocNgoai"
                   className={
-                    !errors.thanNhanNuocNgoai
+                    !errors.lsbt_thanNhanNuocNgoai
                       ? "form-control"
                       : "form-control border-danger"
                   }
                 />
+                <input type="text" {...register("lsbt_maNhanVien")} />
                 <span className="message">
-                  {errors.thanNhanNuocNgoai?.message}
+                  {errors.lsbt_thanNhanNuocNgoai?.message}
                 </span>
               </div>
             </div>
