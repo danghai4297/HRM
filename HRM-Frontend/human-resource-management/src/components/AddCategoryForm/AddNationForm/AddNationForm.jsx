@@ -5,7 +5,7 @@ import * as yup from "yup";
 import "./AddNationForm.scss";
 import { useState } from "react";
 import ProductApi from "../../../api/productApi";
-import PutApi from "../../../api/productApi";
+import PutApi from "../../../api/putAAPI";
 // import { Alert } from "react-alert";
 AddNationForm.propTypes = {};
 const schema = yup.object({
