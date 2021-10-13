@@ -1,8 +1,12 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "2FP7/PzrjrKPay9XyFRfCsblPAXdYPxFohuY2d+5gRX6tNVvpmBHEyHtdN0TmXt+udW92RQRdqNyBaUAsEov3g==",
+=======
+  "dgSpecHash": "7P2zVHbJG19KMBG12xJlr4rSpwMXjrJ2SJJP1K8muYiki7PZgXAxB3a7imX+/WGnNh6UMuJHA+3vQSGr5YUfcA==",
+>>>>>>> ebe0b76b4102fe8c7ef71c326bec4b5a93af053e
   "success": true,
-  "projectFilePath": "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Utilities\\HRMSolution.Utilities.csproj",
+  "projectFilePath": "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Utilities\\HRMSolution.Utilities.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
