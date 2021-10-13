@@ -193,80 +193,80 @@ const ProductApi = {
     return axiosClient.post(url, data);
   },
 
-  //add danh mục
+  //add danh mục chức danh
   PostDMCD: (data) => {
     const url = "/DanhMucChucDanh";
     return axiosClient.post(url, data);
   },
 
-  //add danh mục
+  //add danh mục chức vụ
   PostDMCV: (data) => {
     const url = "/DanhMucChucVu";
     return axiosClient.post(url, data);
   },
-  //add danh mục
+  //add danh mục chuyên môn
   PostDMCM: (data) => {
     const url = "/DanhMucChuyenMon";
     return axiosClient.post(url, data);
   },
-  //add danh mục
+  //add danh mục hôn nhân
   PostDMHN: (data) => {
     const url = "/DanhMucHonNhan";
     return axiosClient.post(url, data);
   },
-  //add danh mục
+  //add danh mục loại hợp đồng
   PostDMLHD: (data) => {
     const url = "/DanhMucLoaiHopDong";
     return axiosClient.post(url, data);
   },
-  //add danh mục
+  //add danh mục ngạch công chức
   PostDMNCC: (data) => {
     const url = "/DanhMucNgachCongChuc";
     return axiosClient.post(url, data);
   },
-  //add danh mục
+  //add danh mục ngoại ngữ
   PostDMNN: (data) => {
     const url = "/DanhMucNgoaiNgu";
     return axiosClient.post(url, data);
   },
-  //add danh mục
+  //add danh mục người thân
   PostDMNT: (data) => {
     const url = "/DanhMucNguoiThan";
     return axiosClient.post(url, data);
   },
-  //add danh mục
+  //add danh mục nhóm lương
   PostDMNL: (data) => {
     const url = "/DanhMucNhomLuong";
     return axiosClient.post(url, data);
   },
-  //add danh mục
+  //add danh mục phòng ban
   PostDMPB: (data) => {
     const url = "/DanhMucPhongBan";
     return axiosClient.post(url, data);
   },
-  //add danh mục
+  //add danh mục tính chất lao động
   PostDMTCLD: (data) => {
     const url = "/DanhMucTinhChatLaoDong";
     return axiosClient.post(url, data);
   },
-  //add danh mục
+  //add danh mục tổ
   PostDMT: (data) => {
     const url = "/DanhMucTo";
     return axiosClient.post(url, data);
   },
 
-  //add danh mục
+  //add danh mục hình thức đào tạo
   PostDMHTDT: (data) => {
     const url = "/DanhMucHinhThucDaoTao";
     return axiosClient.post(url, data);
   },
 
-  //add danh mục
+  //add danh mục tôn giáo
   PostDMTG: (data) => {
     const url = "/DanhMucTonGiao";
     return axiosClient.post(url, data);
   },
-  //add danh mục
+  //add danh mục trình độ
   PostDMTD: (data) => {
     const url = "/DanhMucTrinhDo";
     return axiosClient.post(url, data);
