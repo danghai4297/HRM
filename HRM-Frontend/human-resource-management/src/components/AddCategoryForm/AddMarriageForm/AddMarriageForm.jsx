@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -11,7 +10,6 @@ const schema = yup.object({
 AddMarriageForm.propTypes = {};
 
 function AddMarriageForm(props) {
-  const [marriageValue, setMarriageValue] = useState(null);
   const {
     register,
     handleSubmit,
@@ -22,35 +20,45 @@ function AddMarriageForm(props) {
   let { match, history } = props;
   let { id } = match.params;
 
-  const [dataDetail, setdataDetail] = useState([]);
+  const [dataDetailDMHN, setdataDetailDMHN] = useState([]);
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const response = await ProductApi.getDetailDMHN(id);
-        setdataDetail(response);
+        if (id !== undefined) {
+          const response = await ProductApi.getDetailDMHN(id);
+          setdataDetailDMHN(response);
+        }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
     };
     fetchNvList();
   }, []);
+
   const onHandleSubmit = async (data) => {
     try {
       await ProductApi.PostDMHN(data);
       history.goBack();
     } catch (error) {}
   };
+
+  console.log(dataDetailDMHN);
+
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">Thêm danh mục hôn nhân</h2>
+          <h2 className="">
+            {dataDetailDMHN.length !== 0 ? "Sửa" : "Thêm"} danh mục hôn nhân
+          </h2>
         </div>
         <div className="button">
           <input
             type="submit"
-            className={marriageValue ? "btn btn-danger" : "delete-button"}
+            className={
+              dataDetailDMHN.length !== 0 ? "btn btn-danger" : "delete-button"
+            }
             value="Xoá"
           />
           <input
@@ -62,7 +70,7 @@ function AddMarriageForm(props) {
           <input
             type="submit"
             className="btn btn-primary ml-3"
-            value={marriageValue ? "Sửa" : "Lưu"}
+            value={dataDetailDMHN.length !== 0 ? "Sửa" : "Lưu"}
             onClick={handleSubmit(onHandleSubmit)}
           />
         </div>
@@ -87,6 +95,7 @@ function AddMarriageForm(props) {
                   type="text"
                   {...register("tenDanhMuc")}
                   id="tenDanhMuc"
+                  defaultValue={dataDetailDMHN.tenDanhMuc}
                   className={
                     !errors.tenDanhMuc
                       ? "form-control col-sm-6"

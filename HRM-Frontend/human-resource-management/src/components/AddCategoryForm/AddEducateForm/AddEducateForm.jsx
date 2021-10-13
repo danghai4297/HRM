@@ -8,8 +8,6 @@ const schema = yup.object({
   tenHinhThuc: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddEducateForm(props) {
-  const [educateValue, setEducateValue] = useState(null);
-  const { history } = props;
   const {
     register,
     handleSubmit,
@@ -17,38 +15,48 @@ function AddEducateForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  // let { match, history } = props;
-  // let { id } = match.params;
 
-  // const [dataDetail, setdataDetail] = useState([]);
+  let { match, history } = props;
+  let { id } = match.params;
 
-  // useEffect(() => {
-  //   const fetchNvList = async () => {
-  //     try {
-  //       const response = await ProductApi.getDetailDMHTDT(id);
-  //       setdataDetail(response);
-  //     } catch (error) {
-  //       console.log("false to fetch nv list: ", error);
-  //     }
-  //   };
-  //   fetchNvList();
-  // }, []);
+  const [dataDetailDMHTDT, setdataDetailDMHTDT] = useState([]);
+
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        if (id !== undefined) {
+          const response = await ProductApi.getDetailDMHTDT(id);
+          setdataDetailDMHTDT(response);
+        }
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
+
   const onHandleSubmit = async (data) => {
     try {
       await ProductApi.PostDMHTDT(data);
       history.goBack();
     } catch (error) {}
   };
+
+  console.log(dataDetailDMHTDT);
+
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">Thêm danh mục hình thức đào tạo</h2>
+          <h2 className="">
+            {dataDetailDMHTDT.length !== 0 ? "Sửa" : "Thêm"} danh mục hình thức
+            đào tạo
+          </h2>
         </div>
         <div className="button">
           <input
             type="submit"
-            className={educateValue ? "btn btn-danger" : "delete-button"}
+            className={dataDetailDMHTDT.length !== 0 ? "btn btn-danger" : "delete-button"}
             value="Xoá"
           />
           <input
@@ -60,7 +68,7 @@ function AddEducateForm(props) {
           <input
             type="submit"
             className="btn btn-primary ml-3"
-            value={educateValue ? "Sửa" : "Lưu"}
+            value={dataDetailDMHTDT.length !== 0 ? "Sửa" : "Lưu"}
             onClick={handleSubmit(onHandleSubmit)}
           />
         </div>
@@ -85,6 +93,7 @@ function AddEducateForm(props) {
                   type="text"
                   {...register("tenHinhThuc")}
                   id="tenHinhThuc"
+                  defaultValue={dataDetailDMHTDT.tenHinhThuc}
                   className={
                     !errors.tenHinhThuc
                       ? "form-control col-sm-6"

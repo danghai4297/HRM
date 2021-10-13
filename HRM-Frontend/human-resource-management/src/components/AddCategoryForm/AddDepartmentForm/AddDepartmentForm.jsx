@@ -9,7 +9,6 @@ const schema = yup.object({
   tenPhongBan: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddDepartmentForm(props) {
-  const [departmentValue, setDepartmentValue] = useState(null);
   const {
     register,
     handleSubmit,
@@ -21,13 +20,15 @@ function AddDepartmentForm(props) {
   let { match, history } = props;
   let { id } = match.params;
 
-  const [dataDetail, setdataDetail] = useState([]);
+  const [dataDetailDMPB, setdataDetailDMPB] = useState([]);
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const response = await ProductApi.getDetailDMPB(id);
-        setdataDetail(response);
+        if (id !== undefined) {
+          const response = await ProductApi.getDetailDMPB(id);
+          setdataDetailDMPB(response);
+        }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
@@ -40,16 +41,18 @@ function AddDepartmentForm(props) {
       history.goBack();
     } catch (error) {}
   };
+console.log(dataDetailDMPB)
+
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">Thêm danh mục phòng ban</h2>
+          <h2 className="">{dataDetailDMPB.length !== 0 ? "Sửa" : "Thêm"} danh mục phòng ban</h2>
         </div>
         <div className="button">
           <input
             type="submit"
-            className={departmentValue ? "btn btn-danger" : "delete-button"}
+            className={dataDetailDMPB.length !== 0 ? "btn btn-danger" : "delete-button"}
             value="Xoá"
           />
           <input
@@ -61,7 +64,7 @@ function AddDepartmentForm(props) {
           <input
             type="submit"
             className="btn btn-primary ml-3"
-            value={departmentValue ? "Sửa" : "Lưu"}
+            value={dataDetailDMPB.length !== 0 ? "Sửa" : "Lưu"}
             onClick={handleSubmit(onHandleSubmit)}
           />
         </div>
@@ -86,6 +89,7 @@ function AddDepartmentForm(props) {
                   type="text"
                   {...register("maPhongBan")}
                   id="maPhongBan"
+                  defaultValue={dataDetailDMPB.maPhongBan}
                   className={
                     !errors.maPhongBan
                       ? "form-control col-sm-6"
@@ -107,6 +111,7 @@ function AddDepartmentForm(props) {
                   type="text"
                   {...register("tenPhongBan")}
                   id="tenPhongBan"
+                  defaultValue={dataDetailDMPB.tenPhongBan}
                   className={
                     !errors.tenPhongBan
                       ? "form-control col-sm-6"

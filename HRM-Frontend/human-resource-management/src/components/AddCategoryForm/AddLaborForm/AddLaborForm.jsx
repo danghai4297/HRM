@@ -1,18 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddLaborForm.scss";
-import { useState } from "react";
 import ProductApi from "../../../api/productApi";
 const schema = yup.object({
-    tenLaoDong: yup
-    .string()
-    .required("Tên danh mục không được bỏ trống."),
+  tenLaoDong: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddLaborForm(props) {
-  const [laborValue, setLaborValue] = useState(null);
-  const { history } = props;
   const {
     register,
     handleSubmit,
@@ -20,22 +15,49 @@ function AddLaborForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
+
+  let { match, history } = props;
+  let { id } = match.params;
+
+  const [dataDetailDMTCLD, setdataDetailDMTCLD] = useState([]);
+
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        if (id !== undefined) {
+          const response = await ProductApi.getDetailDMTCLD(id);
+          setdataDetailDMTCLD(response);
+        }
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
+
   const onHandleSubmit = async (data) => {
     try {
       await ProductApi.PostDMTCLD(data);
       history.goBack();
     } catch (error) {}
   };
+  console.log(dataDetailDMTCLD);
+
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">Thêm danh mục tính chất lao động</h2>
+          <h2 className="">
+            {dataDetailDMTCLD.length !== 0 ? "Sửa" : "Thêm"} danh mục tính chất
+            lao động
+          </h2>
         </div>
         <div className="button">
           <input
             type="submit"
-            className={laborValue ? "btn btn-danger" : "delete-button"}
+            className={
+              dataDetailDMTCLD.length !== 0 ? "btn btn-danger" : "delete-button"
+            }
             value="Xoá"
           />
           <input
@@ -47,7 +69,7 @@ function AddLaborForm(props) {
           <input
             type="submit"
             className="btn btn-primary ml-3"
-            value={laborValue ? "Sửa" : "Lưu"}
+            value={dataDetailDMTCLD.length !== 0 ? "Sửa" : "Lưu"}
             onClick={handleSubmit(onHandleSubmit)}
           />
         </div>
@@ -72,6 +94,7 @@ function AddLaborForm(props) {
                   type="text"
                   {...register("tenLaoDong")}
                   id="tenLaoDong"
+                  defaultValue={dataDetailDMTCLD.tenLaoDong}
                   className={
                     !errors.tenLaoDong
                       ? "form-control col-sm-6"

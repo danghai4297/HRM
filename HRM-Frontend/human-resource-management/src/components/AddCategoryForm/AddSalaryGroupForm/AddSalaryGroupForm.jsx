@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -13,7 +13,6 @@ AddSalaryGroupForm.propTypes = {};
 
 function AddSalaryGroupForm(props) {
   const [salaryValue, setSalaryValue] = useState(null);
-  const { history } = props;
   const {
     register,
     handleSubmit,
@@ -21,22 +20,48 @@ function AddSalaryGroupForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
+
+  let { match, history } = props;
+  let { id } = match.params;
+
+  const [dataDetailDMNL, setdataDetailDMNL] = useState([]);
+
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        if (id !== undefined) {
+          const response = await ProductApi.getDetailDMNL(id);
+          setdataDetailDMNL(response);
+        }
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
+
   const onHandleSubmit = async (data) => {
     try {
       await ProductApi.PostDMNL(data);
       history.goBack();
     } catch (error) {}
   };
+  console.log(dataDetailDMNL);
+
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">Thêm danh mục nhóm lương</h2>
+          <h2 className="">
+            {dataDetailDMNL.length !== 0 ? "Sửa" : "Thêm"} danh mục nhóm lương
+          </h2>
         </div>
         <div className="button">
           <input
             type="submit"
-            className={salaryValue ? "btn btn-danger" : "delete-button"}
+            className={
+              dataDetailDMNL.length !== 0 ? "btn btn-danger" : "delete-button"
+            }
             value="Xoá"
           />
           <input
@@ -48,7 +73,7 @@ function AddSalaryGroupForm(props) {
           <input
             type="submit"
             className="btn btn-primary ml-3"
-            value={salaryValue ? "Sửa" : "Lưu"}
+            value={dataDetailDMNL.length !== 0 ? "Sửa" : "Lưu"}
             onClick={handleSubmit(onHandleSubmit)}
           />
         </div>
@@ -73,6 +98,7 @@ function AddSalaryGroupForm(props) {
                   type="text"
                   {...register("maNhomLuong")}
                   id="maNhomLuong"
+                  defaultValue={dataDetailDMNL.maNhomLuong}
                   className={
                     !errors.maNhomLuong
                       ? "form-control col-sm-6"
@@ -94,6 +120,7 @@ function AddSalaryGroupForm(props) {
                   type="text"
                   {...register("tenNhomLuong")}
                   id="tenNhomLuong"
+                  defaultValue={dataDetailDMNL.tenNhomLuong}
                   className={
                     !errors.tenNhomLuong
                       ? "form-control col-sm-6"

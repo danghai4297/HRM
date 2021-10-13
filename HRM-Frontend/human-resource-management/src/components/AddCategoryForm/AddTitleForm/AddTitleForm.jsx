@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -12,7 +11,6 @@ const schema = yup.object({
   phuCap: yup.number(),
 });
 function AddTitleForm(props) {
-  const [titleValue, setTitleValue] = useState(null);
   const {
     register,
     handleSubmit,
@@ -23,19 +21,25 @@ function AddTitleForm(props) {
   let { match, history } = props;
   let { id } = match.params;
 
-  const [dataDetail, setdataDetail] = useState([]);
+  const [dataDetailDMCD, setdataDetailDMCD] = useState([]);
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const response = await ProductApi.getDetailDMCD(id);
-        setdataDetail(response);
+        if (id !== undefined) {
+          const response = await ProductApi.getDetailDMCD(id);
+          setdataDetailDMCD(response);
+        }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
     };
     fetchNvList();
   }, []);
+
+  console.log(id);
+  console.log(dataDetailDMCD);
+
   const onHandleSubmit = async (data) => {
     try {
       await ProductApi.PostDMCD(data);
@@ -46,12 +50,16 @@ function AddTitleForm(props) {
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">Thêm danh mục chức danh</h2>
+          <h2 className="">
+            {dataDetailDMCD.length !== 0 ? "Sửa" : "Thêm"} danh mục chức danh
+          </h2>
         </div>
         <div className="button">
           <input
             type="submit"
-            className={titleValue ? "btn btn-danger" : "delete-button"}
+            className={
+              dataDetailDMCD.length !== 0 ? "btn btn-danger" : "delete-button"
+            }
             value="Xoá"
           />
           <input
@@ -63,7 +71,7 @@ function AddTitleForm(props) {
           <input
             type="submit"
             className="btn btn-primary ml-3"
-            value={titleValue ? "Sửa" : "Lưu"}
+            value={dataDetailDMCD.length !== 0 ? "Sửa" : "Lưu"}
             onClick={handleSubmit(onHandleSubmit)}
           />
         </div>
@@ -88,6 +96,7 @@ function AddTitleForm(props) {
                   type="text"
                   {...register("maChucDanh")}
                   id="maChucDanh"
+                  defaultValue={dataDetailDMCD.maChucDanh}
                   className={
                     !errors.maChucDanh
                       ? "form-control col-sm-6"
@@ -109,6 +118,7 @@ function AddTitleForm(props) {
                   type="text"
                   {...register("tenChucDanh")}
                   id="tenChucDanh"
+                  defaultValue={dataDetailDMCD.tenChucDanh}
                   className={
                     !errors.tenChucDanh
                       ? "form-control col-sm-6"
@@ -132,6 +142,7 @@ function AddTitleForm(props) {
                   type="text"
                   {...register("phuCap")}
                   id="phuCap"
+                  defaultValue={dataDetailDMCD.phuCap}
                   className={
                     !errors.phuCap
                       ? "form-control col-sm-6"

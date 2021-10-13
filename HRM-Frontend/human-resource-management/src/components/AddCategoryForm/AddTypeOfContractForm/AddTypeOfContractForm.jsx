@@ -12,7 +12,6 @@ const schema = yup.object({
 AddTypeOfContractForm.propTypes = {};
 
 function AddTypeOfContractForm(props) {
-  const [contractValue, setContractValue] = useState(null);
   const {
     register,
     handleSubmit,
@@ -23,13 +22,15 @@ function AddTypeOfContractForm(props) {
   let { match, history } = props;
   let { id } = match.params;
 
-  const [dataDetail, setdataDetail] = useState([]);
+  const [dataDetailDMLHD, setdataDetailDMLHD] = useState([]);
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const response = await ProductApi.getDetailDMLHD(id);
-        setdataDetail(response);
+        if (id !== undefined) {
+          const response = await ProductApi.getDetailDMLHD(id);
+          setdataDetailDMLHD(response);
+        }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
@@ -42,16 +43,17 @@ function AddTypeOfContractForm(props) {
       history.goBack();
     } catch (error) {}
   };
+  console.log(dataDetailDMLHD)
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">Thêm danh mục loại hợp đồng</h2>
+          <h2 className="">{dataDetailDMLHD.length !== 0 ? "Sửa" : "Thêm"} danh mục loại hợp đồng</h2>
         </div>
         <div className="button">
           <input
             type="submit"
-            className={contractValue ? "btn btn-danger" : "delete-button"}
+            className={dataDetailDMLHD.length !== 0 ? "btn btn-danger" : "delete-button"}
             value="Xoá"
           />
           <input
@@ -63,7 +65,7 @@ function AddTypeOfContractForm(props) {
           <input
             type="submit"
             className="btn btn-primary ml-3"
-            value={contractValue ? "Sửa" : "Lưu"}
+            value={dataDetailDMLHD.length !== 0 ? "Sửa" : "Lưu"}
             onClick={handleSubmit(onHandleSubmit)}
           />
         </div>
@@ -88,6 +90,7 @@ function AddTypeOfContractForm(props) {
                   type="text"
                   {...register("maLoaiHopDong")}
                   id="maLoaiHopDong"
+                  defaultValue={dataDetailDMLHD.maLoaiHopDong}
                   className={
                     !errors.maLoaiHopDong
                       ? "form-control col-sm-6"
@@ -109,6 +112,7 @@ function AddTypeOfContractForm(props) {
                   type="text"
                   {...register("tenLoaiHopDong")}
                   id="tenLoaiHopDong"
+                  defaultValue={dataDetailDMLHD.tenLoaiHopDong}
                   className={
                     !errors.tenLoaiHopDong
                       ? "form-control col-sm-6"

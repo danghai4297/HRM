@@ -11,7 +11,6 @@ const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddNationForm(props) {
-  const [nationValue, setNationValue] = useState(null);
   const {
     register,
     handleSubmit,
@@ -22,19 +21,23 @@ function AddNationForm(props) {
   let { match, history } = props;
   let { id } = match.params;
 
-  const [dataDetail, setdataDetail] = useState([]);
+  const [dataDetailDMDT, setdataDetailDMDT] = useState([]);
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const response = await ProductApi.getDetailDMDT(id);
-        setdataDetail(response);
+        if (id !== undefined) {
+          const response = await ProductApi.getDetailDMDT(id);
+          setdataDetailDMDT(response);
+        }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
     };
     fetchNvList();
   }, []);
+
+  console.log(dataDetailDMDT);
 
   const onHandleSubmit = async (data) => {
     try {
@@ -46,12 +49,16 @@ function AddNationForm(props) {
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">Thêm danh mục dân tộc</h2>
+          <h2 className="">
+            {dataDetailDMDT.length !== 0 ? "Sửa" : "Thêm"} danh mục dân tộc
+          </h2>
         </div>
         <div className="button">
           <input
             type="submit"
-            className={nationValue ? "btn btn-danger" : "delete-button"}
+            className={
+              dataDetailDMDT.length !== 0 ? "btn btn-danger" : "delete-button"
+            }
             value="Xoá"
           />
           <input
@@ -63,7 +70,7 @@ function AddNationForm(props) {
           <input
             type="submit"
             className="btn btn-primary ml-3"
-            value={nationValue ? "Sửa" : "Lưu"}
+            value={dataDetailDMDT.length !== 0 ? "Sửa" : "Lưu"}
             onClick={handleSubmit(onHandleSubmit)}
           />
         </div>
@@ -88,7 +95,7 @@ function AddNationForm(props) {
                   type="text"
                   {...register("tenDanhMuc")}
                   id="tenDanhMuc"
-                  defaultValue={dataDetail}
+                  defaultValue={dataDetailDMDT.tenDanhMuc}
                   className={
                     !errors.tenDanhMuc
                       ? "form-control col-sm-6"

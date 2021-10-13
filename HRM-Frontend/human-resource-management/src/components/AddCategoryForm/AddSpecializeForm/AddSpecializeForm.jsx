@@ -9,7 +9,6 @@ const schema = yup.object({
   maChuyenMon: yup.string().required("Mã danh mục không được bỏ trống."),
 });
 function AddSpecializeForm(props) {
-  const [specializeValue, setSpecializeValue] = useState(null);
   const {
     register,
     handleSubmit,
@@ -20,19 +19,24 @@ function AddSpecializeForm(props) {
   let { match, history } = props;
   let { id } = match.params;
 
-  const [dataDetail, setdataDetail] = useState([]);
+  const [dataDetailDMCM, setdataDetailDMCM] = useState([]);
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const response = await ProductApi.getDetailDMCM(id);
-        setdataDetail(response);
+        if (id !== undefined) {
+          const response = await ProductApi.getDetailDMCM(id);
+          setdataDetailDMCM(response);
+        }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
     };
     fetchNvList();
   }, []);
+
+  console.log(dataDetailDMCM);
+
   const onHandleSubmit = async (data) => {
     try {
       await ProductApi.PostDMCM(data);
@@ -43,12 +47,16 @@ function AddSpecializeForm(props) {
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">Thêm danh mục chuyên môn</h2>
+          <h2 className="">
+            {dataDetailDMCM.length !== 0 ? "Sửa" : "Thêm"} danh mục chuyên môn
+          </h2>
         </div>
         <div className="button">
           <input
             type="submit"
-            className={specializeValue ? "btn btn-danger" : "delete-button"}
+            className={
+              dataDetailDMCM.length !== 0 ? "btn btn-danger" : "delete-button"
+            }
             value="Xoá"
           />
           <input
@@ -60,7 +68,7 @@ function AddSpecializeForm(props) {
           <input
             type="submit"
             className="btn btn-primary ml-3"
-            value={specializeValue ? "Sửa" : "Lưu"}
+            value={dataDetailDMCM.length !== 0 ? "Sửa" : "Lưu"}
             onClick={handleSubmit(onHandleSubmit)}
           />
         </div>
@@ -85,6 +93,7 @@ function AddSpecializeForm(props) {
                   type="text"
                   {...register("maChuyenMon")}
                   id="maChuyenMon"
+                  defaultValue={dataDetailDMCM.maChuyenMon}
                   className={
                     !errors.maChuyenMon
                       ? "form-control col-sm-6"
@@ -106,6 +115,7 @@ function AddSpecializeForm(props) {
                   type="text"
                   {...register("tenChuyenMon")}
                   id="tenChuyenMon"
+                  defaultValue={dataDetailDMCM.tenChuyenMon}
                   className={
                     !errors.tenChuyenMon
                       ? "form-control col-sm-6"

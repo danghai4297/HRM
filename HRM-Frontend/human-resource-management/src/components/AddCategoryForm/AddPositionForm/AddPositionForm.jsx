@@ -21,35 +21,43 @@ function AddPositionForm(props) {
   let { match, history } = props;
   let { id } = match.params;
 
-  const [dataDetail, setdataDetail] = useState([]);
+  const [dataDetailDMCV, setdataDetailDMCV] = useState([]);
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const response = await ProductApi.getDetailDMCV(id);
-        setdataDetail(response);
+        if (id !== undefined) {
+          const response = await ProductApi.getDetailDMCV(id);
+          setdataDetailDMCV(response);
+        }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
     };
     fetchNvList();
   }, []);
+
   const onHandleSubmit = async (data) => {
     try {
       await ProductApi.PostDMCV(data);
       history.goBack();
     } catch (error) {}
   };
+
+console.log(dataDetailDMCV)
+
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">Thêm danh mục chức vụ</h2>
+          <h2 className="">
+            {dataDetailDMCV.length !== 0 ? "Sửa" : "Thêm"} danh mục chức vụ
+          </h2>
         </div>
         <div className="button">
           <input
             type="submit"
-            className={positionValue ? "btn btn-danger" : "delete-button"}
+            className={dataDetailDMCV.length !== 0 ? "btn btn-danger" : "delete-button"}
             value="Xoá"
           />
           <input
@@ -61,7 +69,7 @@ function AddPositionForm(props) {
           <input
             type="submit"
             className="btn btn-primary ml-3"
-            value={positionValue ? "Sửa" : "Lưu"}
+            value={dataDetailDMCV.length !== 0 ? "Sửa" : "Lưu"}
             onClick={handleSubmit(onHandleSubmit)}
           />
         </div>
@@ -86,6 +94,7 @@ function AddPositionForm(props) {
                   type="text"
                   {...register("maChucVu")}
                   id="maChucVu"
+                  defaultValue={dataDetailDMCV.maChucVu}
                   className={
                     !errors.maChucVu
                       ? "form-control col-sm-6"
@@ -107,6 +116,7 @@ function AddPositionForm(props) {
                   type="text"
                   {...register("tenChucVu")}
                   id="tenChucVu"
+                  defaultValue={dataDetailDMCV.tenChucVu}
                   className={
                     !errors.tenChucVu
                       ? "form-control col-sm-6 "
@@ -130,6 +140,7 @@ function AddPositionForm(props) {
                   type="text"
                   {...register("phuCap")}
                   id="phuCap"
+                  defaultValue={dataDetailDMCV.phuCap}
                   className={
                     !errors.phuCap
                       ? "form-control col-sm-6"

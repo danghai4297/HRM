@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { NVCOLUMNS } from "../ItemLabor/NvColumns";
+import { NVCOLUMNS } from "../ItemTraining/NvColumns";
 import ReactHTMLTableToExcel from "react-html-to-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
@@ -17,7 +17,7 @@ function ItemTraining(props) {
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const responseNv = await ProductApi.getAllDMTCLD();
+        const responseNv = await ProductApi.getAllDMHTDT();
         setDataDmtcld(responseNv);
       } catch (error) {
         console.log("false to fetch nv list: ", error);

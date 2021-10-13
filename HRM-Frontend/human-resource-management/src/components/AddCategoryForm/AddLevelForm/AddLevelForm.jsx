@@ -8,7 +8,6 @@ const schema = yup.object({
   tenTrinhDo: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddLevelForm(props) {
-  const [levelValue, setLevelValue] = useState(null);
   const {
     register,
     handleSubmit,
@@ -19,19 +18,24 @@ function AddLevelForm(props) {
   let { match, history } = props;
   let { id } = match.params;
 
-  const [dataDetail, setdataDetail] = useState([]);
+  const [dataDetailDMTD, setdataDetailDMTD] = useState([]);
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const response = await ProductApi.getDetailDMTD(id);
-        setdataDetail(response);
+        if (id !== undefined) {
+          const response = await ProductApi.getDetailDMTD(id);
+          setdataDetailDMTD(response);
+        }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
     };
     fetchNvList();
   }, []);
+
+  console.log(dataDetailDMTD);
+
   const onHandleSubmit = async (data) => {
     try {
       await ProductApi.PostDMTD(data);
@@ -42,12 +46,16 @@ function AddLevelForm(props) {
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">Thêm danh mục trình độ</h2>
+          <h2 className="">
+            {dataDetailDMTD.length !== 0 ? "Sửa" : "Thêm"} danh mục trình độ
+          </h2>
         </div>
         <div className="button">
           <input
             type="submit"
-            className={levelValue ? "btn btn-danger" : "delete-button"}
+            className={
+              dataDetailDMTD.length !== 0 ? "btn btn-danger" : "delete-button"
+            }
             value="Xoá"
           />
           <input
@@ -59,7 +67,7 @@ function AddLevelForm(props) {
           <input
             type="submit"
             className="btn btn-primary ml-3"
-            value={levelValue ? "Sửa" : "Lưu"}
+            value={dataDetailDMTD.length !== 0 ? "Sửa" : "Lưu"}
             onClick={handleSubmit(onHandleSubmit)}
           />
         </div>
@@ -84,6 +92,7 @@ function AddLevelForm(props) {
                   type="text"
                   {...register("tenTrinhDo")}
                   id="tenTrinhDo"
+                  defaultValue={dataDetailDMTD.tenTrinhDo}
                   className={
                     !errors.tenTrinhDo
                       ? "form-control col-sm-6"

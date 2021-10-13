@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -11,7 +10,6 @@ const schema = yup.object({
   tenNgach: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddCSRForm(props) {
-  const [crmValue, setCrmValue] = useState(null);
   const {
     register,
     handleSubmit,
@@ -23,13 +21,15 @@ function AddCSRForm(props) {
   let { match, history } = props;
   let { id } = match.params;
 
-  const [dataDetail, setdataDetail] = useState([]);
+  const [dataDetailDMNCC, setdataDetailDMNCC] = useState([]);
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const response = await ProductApi.getDetailDMNCC(id);
-        setdataDetail(response);
+        if (id !== undefined) {
+          const response = await ProductApi.getDetailDMNCC(id);
+          setdataDetailDMNCC(response);
+        }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
@@ -43,16 +43,19 @@ function AddCSRForm(props) {
       history.goBack();
     } catch (error) {}
   };
+
+console.log(dataDetailDMNCC)
+
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">Thêm danh mục ngạch công chức</h2>
+          <h2 className="">{dataDetailDMNCC.length !== 0 ? "Sửa" : "Thêm"} danh mục ngạch công chức</h2>
         </div>
         <div className="button">
           <input
             type="submit"
-            className={crmValue ? "btn btn-danger" : "delete-button"}
+            className={dataDetailDMNCC.length !== 0 ? "btn btn-danger" : "delete-button"}
             value="Xoá"
           />
           <input
@@ -64,7 +67,7 @@ function AddCSRForm(props) {
           <input
             type="submit"
             className="btn btn-primary ml-3"
-            value={crmValue ? "Sửa" : "Lưu"}
+            value={dataDetailDMNCC.length !== 0 ? "Sửa" : "Lưu"}
             onClick={handleSubmit(onHandleSubmit)}
           />
         </div>
@@ -89,6 +92,7 @@ function AddCSRForm(props) {
                   type="text"
                   {...register("tenNgach")}
                   id="tenNgach"
+                  defaultValue={dataDetailDMNCC.tenNgach}
                   className={
                     !errors.tenNgach
                       ? "form-control col-sm-6"

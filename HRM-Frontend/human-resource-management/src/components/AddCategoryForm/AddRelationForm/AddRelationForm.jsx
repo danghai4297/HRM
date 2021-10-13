@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -11,7 +10,6 @@ const schema = yup.object({
 AddRelationForm.propTypes = {};
 
 function AddRelationForm(props) {
-  const [relationValue, setRelativeValue] = useState(null);
   const {
     register,
     handleSubmit,
@@ -22,35 +20,45 @@ function AddRelationForm(props) {
   let { match, history } = props;
   let { id } = match.params;
 
-  const [dataDetail, setdataDetail] = useState([]);
+  const [dataDetailDMNT, setdataDetailDMNT] = useState([]);
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const response = await ProductApi.getDetailDMNT(id);
-        setdataDetail(response);
+        if (id !== undefined) {
+          const response = await ProductApi.getDetailDMNT(id);
+          setdataDetailDMNT(response);
+        }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
     };
     fetchNvList();
   }, []);
+
   const onHandleSubmit = async (data) => {
     try {
       await ProductApi.PostDMNT(data);
       history.goBack();
     } catch (error) {}
   };
+
+  console.log(dataDetailDMNT);
+
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">Thêm danh mục quan hệ</h2>
+          <h2 className="">
+            {dataDetailDMNT.length !== 0 ? "Sửa" : "Thêm"} danh mục quan hệ
+          </h2>
         </div>
         <div className="button">
           <input
             type="submit"
-            className={relationValue ? "btn btn-danger" : "delete-button"}
+            className={
+              dataDetailDMNT.length !== 0 ? "btn btn-danger" : "delete-button"
+            }
             value="Xoá"
           />
           <input
@@ -62,7 +70,7 @@ function AddRelationForm(props) {
           <input
             type="submit"
             className="btn btn-primary ml-3"
-            value={relationValue ? "Sửa" : "Lưu"}
+            value={dataDetailDMNT.length !== 0 ? "Sửa" : "Lưu"}
             onClick={handleSubmit(onHandleSubmit)}
           />
         </div>
@@ -87,6 +95,7 @@ function AddRelationForm(props) {
                   type="text"
                   {...register("tenDanhMuc")}
                   id="tenDanhMuc"
+                  defaultValue={dataDetailDMNT.tenDanhMuc}
                   className={
                     !errors.tenDanhMuc
                       ? "form-control col-sm-6"

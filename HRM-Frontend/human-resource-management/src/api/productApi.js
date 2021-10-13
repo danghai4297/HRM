@@ -50,10 +50,10 @@ const ProductApi = {
     return axiosClient.get(url);
   },
   //detail kt
-  getKTDetail: (id) => {
-    const url = `/KhenThuongKyLuat/khen-thuong/${id}`;
-    return axiosClient.get(url);
-  },
+  // getKTDetail: (id) => {
+  //   const url = `/KhenThuongKyLuat/khen-thuong/${id}`;
+  //   return axiosClient.get(url);
+  // },
 
   //detail khen thưởng và kỉ luật
   getKTvKLDetail: (id) => {
@@ -374,7 +374,7 @@ const ProductApi = {
     return axiosClient.get(url);
   },
 
-  //Detail dm trình độ
+  //Detail dm hình thức đào tạo
   getDetailDMHTDT: (id) => {
     const url = `/DanhMucHinhThucDaoTao/${id}`;
     return axiosClient.get(url);

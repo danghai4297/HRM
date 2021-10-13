@@ -21,13 +21,15 @@ function AddReligionForm(props) {
   let { match, history } = props;
   let { id } = match.params;
 
-  const [dataDetail, setdataDetail] = useState([]);
+  const [dataDetailDMTG, setdataDetailDMTG] = useState([]);
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const response = await ProductApi.getDetailDMTG(id);
-        setdataDetail(response);
+        if (id !== undefined) {
+          const response = await ProductApi.getDetailDMTG(id);
+          setdataDetailDMTG(response);
+        }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
@@ -40,16 +42,19 @@ function AddReligionForm(props) {
       history.goBack();
     } catch (error) {}
   };
+  console.log(dataDetailDMTG);
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">Thêm danh mục Tôn giáo</h2>
+          <h2 className="">
+            {dataDetailDMTG.length !== 0 ? "Sửa" : "Thêm"} danh mục Tôn giáo
+          </h2>
         </div>
         <div className="button">
           <input
             type="submit"
-            className={religionValue ? "btn btn-danger" : "delete-button"}
+            className={dataDetailDMTG.length !== 0 ? "btn btn-danger" : "delete-button"}
             value="Xoá"
           />
           <input
@@ -61,7 +66,7 @@ function AddReligionForm(props) {
           <input
             type="submit"
             className="btn btn-primary ml-3"
-            value={religionValue ? "Sửa" : "Lưu"}
+            value={dataDetailDMTG.length !== 0 ? "Sửa" : "Lưu"}
             onClick={handleSubmit(onHandleSubmit)}
           />
         </div>
@@ -86,6 +91,7 @@ function AddReligionForm(props) {
                   type="text"
                   {...register("tenDanhMuc")}
                   id="tenDanhMuc"
+                  defaultValue={dataDetailDMTG.tenDanhMuc}
                   className={
                     !errors.tenDanhMuc
                       ? "form-control col-sm-6"

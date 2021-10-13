@@ -10,7 +10,6 @@ const schema = yup.object({
   tenTo: yup.string().required("Tổ không được bỏ trống."),
 });
 function AddNestForm(props) {
-  const [nestValue, setNestValue] = useState(null);
   const {
     register,
     handleSubmit,
@@ -22,7 +21,7 @@ function AddNestForm(props) {
   let { match, history } = props;
   let { id } = match.params;
 
-  const [dataDetail, setdataDetail] = useState([]);
+  const [dataDetailDMT, setdataDetailDMT] = useState([]);
 
   const [dataDmpb, setDataDmpb] = useState([]);
 
@@ -31,8 +30,10 @@ function AddNestForm(props) {
       try {
         const responseNv = await ProductApi.getAllDMPB();
         setDataDmpb(responseNv);
-        const response = await ProductApi.getDetailDMDT(id);
-        setdataDetail(response);
+        if (id !== undefined) {
+          const response = await ProductApi.getDetailDMT(id);
+          setdataDetailDMT(response);
+        }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
@@ -47,16 +48,23 @@ function AddNestForm(props) {
       history.goBack();
     } catch (error) {}
   };
+
+  console.log(dataDmpb);
+  console.log(dataDetailDMT);
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">Thêm danh mục tổ</h2>
+          <h2 className="">
+            {dataDetailDMT.length !== 0 ? "Sửa" : "Thêm"} danh mục tổ
+          </h2>
         </div>
         <div className="button">
           <input
             type="submit"
-            className={nestValue ? "btn btn-danger" : "delete-button"}
+            className={
+              dataDetailDMT.length !== 0 ? "btn btn-danger" : "delete-button"
+            }
             value="Xoá"
           />
           <input
@@ -68,7 +76,7 @@ function AddNestForm(props) {
           <input
             type="submit"
             className="btn btn-primary ml-3"
-            value={nestValue ? "Sửa" : "Lưu"}
+            value={dataDetailDMT.length !== 0 ? "Sửa" : "Lưu"}
             onClick={handleSubmit(onHandleSubmit)}
           />
         </div>
@@ -93,6 +101,7 @@ function AddNestForm(props) {
                   type="text"
                   {...register("maTo")}
                   id="maTo"
+                  defaultValue={dataDetailDMT.maTo}
                   className={
                     !errors.maTo
                       ? "form-control col-sm-6"
@@ -120,9 +129,11 @@ function AddNestForm(props) {
                       : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
-                  <option value=""></option>
-                  {dataDmpb.map((item) => (
-                    <option value={item.id}>{item.tenPhongBan} </option>
+                  <option value={dataDetailDMT.idPhongBan}>
+                    {dataDetailDMT.tenPhongBan}
+                  </option>
+                  {dataDmpb.map((item, key) => (
+                    <option key={key} value={item.id}>{item.tenPhongBan} </option>
                   ))}
                 </select>
                 <span className="message">{errors.idPhongBan?.message}</span>
@@ -142,6 +153,7 @@ function AddNestForm(props) {
                   type="text"
                   {...register("tenTo")}
                   id="tenTo"
+                  defaultValue={dataDetailDMT.tenTo}
                   className={
                     !errors.tenTo
                       ? "form-control col-sm-6"

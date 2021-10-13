@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -10,7 +9,6 @@ const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddLanguageForm(props) {
-  const [languageValue, setLanguageValue] = useState(null);
   const {
     register,
     handleSubmit,
@@ -27,29 +25,37 @@ function AddLanguageForm(props) {
   let { match, history } = props;
   let { id } = match.params;
 
-  const [dataDetail, setdataDetail] = useState([]);
+  const [dataDetailDMNN, setdataDetailDMNN] = useState([]);
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const response = await ProductApi.getDetailDMNN(id);
-        setdataDetail(response);
+        if (id !== undefined) {
+          const response = await ProductApi.getDetailDMNN(id);
+          setdataDetailDMNN(response);
+        }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
     };
     fetchNvList();
   }, []);
+  console.log(dataDetailDMNN);
+
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">Thêm danh mục ngoại ngữ</h2>
+          <h2 className="">
+            {dataDetailDMNN.length !== 0 ? "Sửa" : "Thêm"} danh mục ngoại ngữ
+          </h2>
         </div>
         <div className="button">
           <input
             type="submit"
-            className={languageValue ? "btn btn-danger" : "delete-button"}
+            className={
+              dataDetailDMNN.length !== 0 ? "btn btn-danger" : "delete-button"
+            }
             value="Xoá"
           />
           <input
@@ -61,7 +67,7 @@ function AddLanguageForm(props) {
           <input
             type="submit"
             className="btn btn-primary ml-3"
-            value={languageValue ? "Sửa" : "Lưu"}
+            value={dataDetailDMNN.length !== 0 ? "Sửa" : "Lưu"}
             onClick={handleSubmit(onHandleSubmit)}
           />
         </div>
@@ -87,6 +93,7 @@ function AddLanguageForm(props) {
                   type="text"
                   {...register("tenDanhMuc")}
                   id="tenDanhMuc"
+                  defaultValue={dataDetailDMNN.tenDanhMuc}
                   className={
                     !errors.tenDanhMuc
                       ? "form-control col-sm-6"
