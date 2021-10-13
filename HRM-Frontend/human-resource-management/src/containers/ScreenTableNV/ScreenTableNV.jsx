@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./ScreenTableNV.scss";
-import { ListContext } from "../../Contexts/ListContext";
 import { NVCOLUMNS2 } from "./NvColumns";
 import ReactHTMLTableToExcel from "react-html-to-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,7 +15,6 @@ ScreenTableNV.propTypes = {};
 function ScreenTableNV(props) {
   const link = "/profile/detail/";
   const fileName = "DSNV";
-  const { list } = useContext(ListContext);
   const [dataAllNv, setdataAllNv] = useState([]);
 
   useEffect(() => {
@@ -50,7 +48,7 @@ function ScreenTableNV(props) {
               sheet="tablexls"
               buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
             />
-            <ExportCSV csvData={list} fileName={fileName} />
+            <ExportCSV csvData={dataAllNv} fileName={fileName} />
           </div>
         </div>
         <div className="table-nv">

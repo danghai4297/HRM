@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "./ScreenProject.scss";
 
 import SideBarLeft from "../../components/SideBarLeft/SideBarLeft";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import DashBoard from "../ScreenDashBoard/DashBoard";
 import ScreenTableNV from "../ScreenTableNV/ScreenTableNV";
 import Detail from "../../components/Detail/Detail";
@@ -23,7 +23,6 @@ import AddContractForm from "../../components/AddContractForm/AddContractForm";
 import AddSalaryForm from "../../components/AddSalaryForm/AddSalaryForm";
 import ScreenDetailTransfer from "../ScreenDetailTransfer/ScreenDetailTransfer";
 import AddTransferForm from "../../components/AddTransferForm/AddTransferForm";
-import AddResignationForm from "../../components/AddResignationForm/AddResignationForm";
 import AddRewardForm from "../../components/AddRewardForm/AddRewardForm";
 import AddDisciplineForm from "../../components/AddDisciplineForm/AddDisciplineForm";
 import ScreenDetailReward from "../ScreenDetailReward/ScreenDetailReward";
@@ -31,11 +30,8 @@ import ScreenDetailDiscipline from "../ScreenDetailDiscipline/ScreenDetailDiscip
 import ChangePasswordForm from "../../components/ChangePasswordForm/ChangePasswordForm";
 
 import ProtectedRoute from "./ProtectedRoute";
-import ScreenNotFound from "./ScreenNotFound";
-import ScreenDetailForeignLanguage from "../ScreenDetailForeignLanguage/ScreenDetailForeignLanguage";
 import Header from "../../components/Header/Header";
 import { AccountContext } from "../../Contexts/StateContext";
-import AddNationForm from "../../components/AddCategoryForm/AddNationForm/AddNationForm";
 function ScreenProject() {
   const { setAccount } = useContext(AccountContext);
   return (

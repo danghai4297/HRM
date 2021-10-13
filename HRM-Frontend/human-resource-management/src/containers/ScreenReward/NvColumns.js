@@ -1,4 +1,3 @@
-import { format } from "date-fns";
 import SelectColumnFilter from "../../components/TablePagination/SelectColumnFilter";
 
 export const NVCOLUMNS = [
@@ -52,7 +51,6 @@ export const NVCOLUMNS = [
     accessor: "lyDo",
     minWidth: 340,
     Filter: SelectColumnFilter,
-    disableFilters: true,
     disableFilters: true,
     show: true,
   },
