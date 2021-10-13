@@ -6,7 +6,6 @@ namespace HRMSolution.Application.Catalog.DanhMucHinhThucDaoTaos.Dtos
 {
     public class DanhMucHinhThucDaoTaoUpdateRequest
     {
-        public int id { get; set; }
         public string tenHinhThuc { get; set; }
     }
 }

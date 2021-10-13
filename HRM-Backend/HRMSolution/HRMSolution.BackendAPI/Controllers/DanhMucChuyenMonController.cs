@@ -47,10 +47,10 @@ namespace HRMSolution.BackendAPI.Controllers
                 return BadRequest("Không tìm thấy Danh mục chuyên môn");
             return Ok(result);
         }
-        [HttpPut]
-        public async Task<IActionResult> Update([FromBody] DanhMucChuyenMonUpdateRequest request)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, DanhMucChuyenMonUpdateRequest request)
         {
-            var result = await _danhMucChuyenMonService.Update(request);
+            var result = await _danhMucChuyenMonService.Update(id,request);
             if (result == 0)
                 return BadRequest();
             return Ok();

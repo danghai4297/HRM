@@ -32,7 +32,7 @@ namespace HRMSolution.BackendAPI.Controllers
                 return BadRequest();
             return Ok();
         }
-        [HttpDelete("id")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var result = await _danhMucNgachCongChucService.Delete(id);
@@ -41,10 +41,10 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
 
-        [HttpPut]
-        public async Task<IActionResult> Update([FromBody] DanhMucNgachCongChucUpdateRequest request)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, DanhMucNgachCongChucUpdateRequest request)
         {
-            var result = await _danhMucNgachCongChucService.Update(request);
+            var result = await _danhMucNgachCongChucService.Update(id,request);
             if (result == 0)
                 return BadRequest();
             return Ok();

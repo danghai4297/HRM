@@ -57,7 +57,7 @@ namespace HRMSolution.Application.Catalog.DanhMucTonGiaos
 
         public async Task<DanhMucTonGiaoViewModel> GetById(int id)
         {
-            var query = from p in _context.danhMucTonGiaos select p;
+            var query = from p in _context.danhMucTonGiaos where p.id == id select p;
 
             var data = await query.Select(x => new DanhMucTonGiaoViewModel()
             {
@@ -69,10 +69,10 @@ namespace HRMSolution.Application.Catalog.DanhMucTonGiaos
             return data;
         }
 
-        public async Task<int> Update(DanhMucTonGiaoUpdateRequest request)
+        public async Task<int> Update(int id,DanhMucTonGiaoUpdateRequest request)
         {
-            var danhMucTonGiao = await _context.danhMucTonGiaos.FindAsync(request.id);
-            if (danhMucTonGiao == null) throw new HRMException($"Không tìm thấy danh mục tôn giáo có id: {request.id }");
+            var danhMucTonGiao = await _context.danhMucTonGiaos.FindAsync(id);
+            if (danhMucTonGiao == null) throw new HRMException($"Không tìm thấy danh mục tôn giáo có id: {id }");
 
             danhMucTonGiao.tenDanhMuc = request.tenDanhMuc;
 

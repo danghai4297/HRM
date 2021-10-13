@@ -58,7 +58,7 @@ namespace HRMSolution.Application.Catalog.DanhMucNhomLuongs
 
         public async Task<DanhMucNhomLuongViewModel> GetById(int id)
         {
-            var query = from p in _context.danhMucNhomLuongs select p;
+            var query = from p in _context.danhMucNhomLuongs where p.id == id select p;
 
             var data = await query.Select(x => new DanhMucNhomLuongViewModel()
             {
@@ -71,10 +71,10 @@ namespace HRMSolution.Application.Catalog.DanhMucNhomLuongs
             return data;
         }
 
-        public async Task<int> Update(DanhMucNhomLuongUpdateRequest request)
+        public async Task<int> Update(int id,DanhMucNhomLuongUpdateRequest request)
         {
-            var danhMucNhomLuong = await _context.danhMucNhomLuongs.FindAsync(request.id);
-            if (danhMucNhomLuong == null) throw new HRMException($"Không tìm thấy danh mục nhóm lương có id: {request.id }");
+            var danhMucNhomLuong = await _context.danhMucNhomLuongs.FindAsync(id);
+            if (danhMucNhomLuong == null) throw new HRMException($"Không tìm thấy danh mục nhóm lương có id: {id }");
 
             danhMucNhomLuong.maNhomLuong = request.maNhomLuong;
             danhMucNhomLuong.tenNhomLuong = request.tenNhomLuong;

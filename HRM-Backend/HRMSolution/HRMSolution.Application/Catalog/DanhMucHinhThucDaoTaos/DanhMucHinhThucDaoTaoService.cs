@@ -55,7 +55,7 @@ namespace HRMSolution.Application.Catalog.DanhMucHinhThucDaoTaos
 
         public async Task<DanhMucHinhThucDaoTaoViewModel> GetById(int id)
         {
-            var query = from p in _context.hinhThucDaoTaos select p;
+            var query = from p in _context.hinhThucDaoTaos where p.id == id select p;
 
             var data = await query.Select(x => new DanhMucHinhThucDaoTaoViewModel()
             {
@@ -67,10 +67,10 @@ namespace HRMSolution.Application.Catalog.DanhMucHinhThucDaoTaos
             return data;
         }
 
-        public async Task<int> Update(DanhMucHinhThucDaoTaoUpdateRequest request)
+        public async Task<int> Update(int id,DanhMucHinhThucDaoTaoUpdateRequest request)
         {
-            var danhMucHinhThucDaoTao = await _context.hinhThucDaoTaos.FindAsync(request.id);
-            if (danhMucHinhThucDaoTao == null) throw new HRMException($"Không tìm thấy danh mục hình thức đào tạo có id: {request.id }");
+            var danhMucHinhThucDaoTao = await _context.hinhThucDaoTaos.FindAsync(id);
+            if (danhMucHinhThucDaoTao == null) throw new HRMException($"Không tìm thấy danh mục hình thức đào tạo có id: {id }");
 
             danhMucHinhThucDaoTao.tenHinhThuc = request.tenHinhThuc;
             return await _context.SaveChangesAsync();
