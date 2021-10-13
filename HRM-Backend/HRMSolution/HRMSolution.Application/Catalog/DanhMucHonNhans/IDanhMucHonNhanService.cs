@@ -9,7 +9,7 @@ namespace HRMSolution.Application.Catalog.DanhMucHonNhans
     public interface IDanhMucHonNhanService
     {
         Task<int> Create(DanhMucHonNhanCreateRequest request);
-        Task<int> Update(DanhMucHonNhanUpdateRequest request);
+        Task<int> Update(int id,DanhMucHonNhanUpdateRequest request);
         Task<int> Delete(int idDanhMucHonNhan);
         Task<List<DanhMucHonNhanViewModel>> GetALL();
         Task<DanhMucHonNhanViewModel> GetById(int id);

@@ -32,7 +32,7 @@ namespace HRMSolution.BackendAPI.Controllers
                 return BadRequest();
             return Ok();
         }
-        [HttpDelete("id")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var result = await _danhMucLoaiHopDongService.Delete(id);
@@ -48,10 +48,10 @@ namespace HRMSolution.BackendAPI.Controllers
                 return BadRequest("Không tìm thấy Danh mục loại hợp đồng");
             return Ok(result);
         }
-        [HttpPut]
-        public async Task<IActionResult> Update([FromBody] DanhMucLoaiHopDongUpdateRequest request)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, DanhMucLoaiHopDongUpdateRequest request)
         {
-            var result = await _danhMucLoaiHopDongService.Update(request);
+            var result = await _danhMucLoaiHopDongService.Update(id, request);
             if (result == 0)
                 return BadRequest();
             return Ok();
