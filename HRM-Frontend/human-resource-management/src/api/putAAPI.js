@@ -2,87 +2,87 @@ import axiosClient from "./axiosClient";
 
 const PutApi = {
   //Sửa danh mục dân tộc
-  PutDMDT: (data) => {
-    const url = "/DanhMucDanToc";
+  PutDMDT: (data, id) => {
+    const url = `/DanhMucDanToc/${id}`;
     return axiosClient.put(url, data);
   },
 
   //Sửa danh mục
-  PutDMCD: (data) => {
-    const url = "/DanhMucChucDanh";
+  PutDMCD: (data, id) => {
+    const url = `/DanhMucChucDanh/${id}`;
     return axiosClient.put(url, data);
   },
 
   //Sửa danh mục
-  PutDMCV: (data) => {
-    const url = "/DanhMucChucVu";
+  PutDMCV: (data, id) => {
+    const url = `/DanhMucChucVu/${id}`;
     return axiosClient.put(url, data);
   },
   //Sửa danh mục
-  PutDMCM: (data) => {
-    const url = "/DanhMucChuyenMon";
+  PutDMCM: (data, id) => {
+    const url = `/DanhMucChuyenMon/${id}`;
     return axiosClient.put(url, data);
   },
   //Sửa danh mục
-  PutDMHN: (data) => {
-    const url = "/DanhMucHonNhan";
+  PutDMHN: (data, id) => {
+    const url = `/DanhMucHonNhan/${id}`;
     return axiosClient.put(url, data);
   },
   //Sửa danh mục
-  PutDMLHD: (data) => {
-    const url = "/DanhMucLoaiHopDong";
+  PutDMLHD: (data, id) => {
+    const url = `/DanhMucLoaiHopDong/${id}`;
     return axiosClient.put(url, data);
   },
   //Sửa danh mục
-  PutDMNCC: (data) => {
-    const url = "/DanhMucNgachCongChuc";
+  PutDMNCC: (data, id) => {
+    const url = `/DanhMucNgachCongChuc/${id}`;
     return axiosClient.put(url, data);
   },
   //Sửa danh mục
-  PutDMNN: (data) => {
-    const url = "/DanhMucNgoaiNgu";
+  PutDMNN: (data, id) => {
+    const url = `/DanhMucNgoaiNgu/${id}`;
     return axiosClient.put(url, data);
   },
   //Sửa danh mục
-  PutDMNT: (data) => {
-    const url = "/DanhMucNguoiThan";
+  PutDMNT: (data, id) => {
+    const url = `/DanhMucNguoiThan/${id}`;
     return axiosClient.put(url, data);
   },
   //Sửa danh mục
-  PutDMNL: (data) => {
-    const url = "/DanhMucNhomLuong";
+  PutDMNL: (data, id) => {
+    const url = `/DanhMucNhomLuong/${id}`;
     return axiosClient.put(url, data);
   },
   //Sửa danh mục
-  PutDMPB: (data) => {
-    const url = "/DanhMucPhongBan";
+  PutDMPB: (data, id) => {
+    const url = `/DanhMucPhongBan/${id}`;
     return axiosClient.put(url, data);
   },
   //Sửa danh mục
-  PutDMTCLD: (data) => {
-    const url = "/DanhMucTinhChatLaoDong";
+  PutDMTCLD: (data, id) => {
+    const url = `/DanhMucTinhChatLaoDong/${id}`;
     return axiosClient.put(url, data);
   },
   //Sửa danh mục
-  PutDMT: (data) => {
-    const url = "/DanhMucTo";
-    return axiosClient.put(url, data);
-  },
-
-  //Sửa danh mục
-  PutDMHTDT: (data) => {
-    const url = "/DanhMucHinhThucDaoTao";
+  PutDMT: (data, id) => {
+    const url = `/DanhMucTo/${id}`;
     return axiosClient.put(url, data);
   },
 
   //Sửa danh mục
-  PutDMTG: (data) => {
-    const url = "/DanhMucTonGiao";
+  PutDMHTDT: (data, id) => {
+    const url = `/DanhMucHinhThucDaoTao/${id}`;
+    return axiosClient.put(url, data);
+  },
+
+  //Sửa danh mục
+  PutDMTG: (data, id) => {
+    const url = `/DanhMucTonGiao/${id}`;
     return axiosClient.put(url, data);
   },
   //Sửa danh mục
-  PutDMTD: (data) => {
-    const url = "/DanhMucTrinhDo";
+  PutDMTD: (data, id) => {
+    const url = `/DanhMucTrinhDo/${id}`;
     return axiosClient.put(url, data);
   },
 };

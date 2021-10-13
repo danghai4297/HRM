@@ -14,9 +14,10 @@ function DashBoard() {
   const link2 = "/salary/detail/";
   const fileName = "DSNV";
   const fileName2 = "DSLNV";
-  const [dataAllNv, setdataAllNv] = useState([]);
-  const [dataAllPB, setdataAllPB] = useState([]);
-  const [dataAllLNV, setdataAllLNV] = useState([]);
+  const [dataAllNv, setDataAllNv] = useState([]);
+  const [dataAllPB, setDataAllPB] = useState([]);
+  const [dataAllLNV, setDataAllLNV] = useState([]);
+  const [dataAllNVnv, setDataAllNVnv] = useState([]);
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -24,9 +25,11 @@ function DashBoard() {
         const responseNv = await ProductApi.getAllNv();
         const responsePB = await ProductApi.getAllDMPB();
         const responseLNV = await ProductApi.getAllL();
-        setdataAllNv(responseNv);
-        setdataAllPB(responsePB);
-        setdataAllLNV(responseLNV);
+        const responseNVnv = await ProductApi.getAllNvnv();
+        setDataAllNv(responseNv);
+        setDataAllPB(responsePB);
+        setDataAllLNV(responseLNV);
+        setDataAllNVnv(responseNVnv);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
@@ -64,7 +67,7 @@ function DashBoard() {
           </div>
           <div className="item-da">
             <ItemDashBoard
-              totalEmployees="12"
+              totalEmployees={dataAllNVnv.length}
               fontIcon="users-slash"
               title="N.vien nghi viec"
               link="/resign"
