@@ -12,7 +12,7 @@ export const NVCOLUMNS = [
   },
   {
     Header: "Mã Chức Vụ",
-    accessor: "tenChuyenMon",
+    accessor: "maChuyenMon",
     sticky: "left",
     minWidth: 500,
     Filter: SelectColumnFilter,
@@ -21,7 +21,7 @@ export const NVCOLUMNS = [
   },
   {
     Header: "Tên Chức Vụ",
-    accessor: "maChuyenMon",
+    accessor: "tenChuyenMon",
     sticky: "left",
     minWidth: 380,
     Filter: SelectColumnFilter,

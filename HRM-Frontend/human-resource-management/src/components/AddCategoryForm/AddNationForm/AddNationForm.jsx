@@ -7,6 +7,7 @@ import { useState } from "react";
 import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
+import Dialog from "../../Dialog/Dialog";
 // import { Alert } from "react-alert";
 AddNationForm.propTypes = {};
 const schema = yup.object({
@@ -20,15 +21,27 @@ function AddNationForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
+
   let { match, history } = props;
   let { id } = match.params;
 
   const [dataDetailDMDT, setdataDetailDMDT] = useState([]);
+  const [showDialog, setShowDialog] = useState(false);
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [description, setDescription] = useState(
+    "Bạn chắc chắn muốm thêm dân tộc"
+  );
+
+  const cancel = () => {
+    setShowDialog(false);
+    setShowDeleteDialog(false);
+  };
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
         if (id !== undefined) {
+          setDescription("Bạn chắc chắn muốm sửa dân tộc");
           const response = await ProductApi.getDetailDMDT(id);
           setdataDetailDMDT(response);
         }
@@ -39,14 +52,14 @@ function AddNationForm(props) {
     fetchNvList();
   }, []);
 
-  // console.log(dataDetailDMDT);
-
   const onHandleSubmit = async (data) => {
     try {
       if (id !== undefined) {
         await PutApi.PutDMDT(data, id);
+        setShowDialog(false);
       } else {
         await ProductApi.PostDMDT(data);
+        setShowDialog(false);
       }
       history.goBack();
     } catch (error) {}
@@ -60,70 +73,90 @@ function AddNationForm(props) {
   };
 
   return (
-    <div className="container-form">
-      <div className="Submit-button sticky-top">
-        <div>
-          <h2 className="">
-            {dataDetailDMDT.length !== 0 ? "Sửa" : "Thêm"} danh mục dân tộc
-          </h2>
+    <>
+      <div className="container-form">
+        <div className="Submit-button sticky-top">
+          <div>
+            <h2 className="">
+              {dataDetailDMDT.length !== 0 ? "Sửa" : "Thêm"} danh mục dân tộc
+            </h2>
+          </div>
+          <div className="button">
+            <input
+              type="submit"
+              className={
+                dataDetailDMDT.length !== 0 ? "btn btn-danger" : "delete-button"
+              }
+              onClick={() => {
+                setShowDeleteDialog(true);
+              }}
+              value="Xoá"
+            />
+            <input
+              type="submit"
+              className="btn btn-secondary ml-3"
+              value="Huỷ"
+              onClick={history.goBack}
+            />
+            <input
+              type="submit"
+              className="btn btn-primary ml-3"
+              value={dataDetailDMDT.length !== 0 ? "Sửa" : "Lưu"}
+              onClick={() => {
+                setShowDialog(true);
+              }}
+            />
+          </div>
         </div>
-        <div className="button">
-          <input
-            type="submit"
-            className={
-              dataDetailDMDT.length !== 0 ? "btn btn-danger" : "delete-button"
-            }
-            onClick={handleDelete}
-            value="Xoá"
-          />
-          <input
-            type="submit"
-            className="btn btn-secondary ml-3"
-            value="Huỷ"
-            onClick={history.goBack}
-          />
-          <input
-            type="submit"
-            className="btn btn-primary ml-3"
-            value={dataDetailDMDT.length !== 0 ? "Sửa" : "Lưu"}
-            onClick={handleSubmit(onHandleSubmit)}
-          />
-        </div>
-      </div>
-      <form
-        action=""
-        className="profile-form"
-        // onSubmit={handleSubmit(onHandleSubmit)}
-      >
-        <div className="container-div-form-category">
-          <h3>Thông tin chung</h3>
-          <div className="row">
-            <div className="col-6">
-              <div className="form-group form-inline">
-                <label
-                  className="col-sm-4 justify-content-start"
-                  htmlFor="tenDanhMuc"
-                >
-                  Tên danh mục
-                </label>
-                <input
-                  type="text"
-                  {...register("tenDanhMuc")}
-                  id="tenDanhMuc"
-                  defaultValue={dataDetailDMDT.tenDanhMuc}
-                  className={
-                    !errors.tenDanhMuc
-                      ? "form-control col-sm-6"
-                      : "form-control col-sm-6 border-danger "
-                  }
-                />
-                <span className="message">{errors.tenDanhMuc?.message}</span>
+        <form
+          action=""
+          className="profile-form"
+          // onSubmit={handleSubmit(onHandleSubmit)}
+        >
+          <div className="container-div-form-category">
+            <h3>Thông tin chung</h3>
+            <div className="row">
+              <div className="col-6">
+                <div className="form-group form-inline">
+                  <label
+                    className="col-sm-4 justify-content-start"
+                    htmlFor="tenDanhMuc"
+                  >
+                    Tên danh mục
+                  </label>
+                  <input
+                    type="text"
+                    {...register("tenDanhMuc")}
+                    id="tenDanhMuc"
+                    defaultValue={dataDetailDMDT.tenDanhMuc}
+                    className={
+                      !errors.tenDanhMuc
+                        ? "form-control col-sm-6"
+                        : "form-control col-sm-6 border-danger "
+                    }
+                  />
+                  <span className="message">{errors.tenDanhMuc?.message}</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
+      <Dialog
+        show={showDialog}
+        title="Thông báo"
+        description={description}
+        confirm={handleSubmit(onHandleSubmit)}
+        cancel={cancel}
+      />
+      <Dialog
+        show={showDeleteDialog}
+        title="Thông báo"
+        description="Bạn chắc chắn muốn xóa dân tộc"
+        confirm={handleDelete}
+        cancel={cancel}
+      />
+    </>
   );
 }
 

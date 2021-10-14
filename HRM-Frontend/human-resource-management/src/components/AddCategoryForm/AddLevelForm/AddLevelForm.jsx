@@ -6,6 +6,7 @@ import "./AddLevelForm.scss";
 import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
+import Dialog from "../../Dialog/Dialog";
 const schema = yup.object({
   tenTrinhDo: yup.string().required("Tên danh mục không được bỏ trống."),
 });
@@ -21,11 +22,22 @@ function AddLevelForm(props) {
   let { id } = match.params;
 
   const [dataDetailDMTD, setdataDetailDMTD] = useState([]);
+  const [showDialog, setShowDialog] = useState(false);
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [description, setDescription] = useState(
+    "Bạn chắc chắn muốm thêm danh mục trình độ"
+  );
+
+  const cancel = () => {
+    setShowDialog(false);
+    setShowDeleteDialog(false);
+  };
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
         if (id !== undefined) {
+          setDescription("Bạn chắc chắn muốm sửa dang mục trình độ");
           const response = await ProductApi.getDetailDMTD(id);
           setdataDetailDMTD(response);
         }
@@ -58,6 +70,7 @@ function AddLevelForm(props) {
 
 
   return (
+    <>
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
@@ -71,7 +84,9 @@ function AddLevelForm(props) {
             className={
               dataDetailDMTD.length !== 0 ? "btn btn-danger" : "delete-button"
             }
-            onClick={handleDelete}
+            onClick={() => {
+              setShowDeleteDialog(true);
+            }}
             value="Xoá"
           />
           <input
@@ -84,7 +99,9 @@ function AddLevelForm(props) {
             type="submit"
             className="btn btn-primary ml-3"
             value={dataDetailDMTD.length !== 0 ? "Sửa" : "Lưu"}
-            onClick={handleSubmit(onHandleSubmit)}
+            onClick={() => {
+              setShowDialog(true);
+            }}
           />
         </div>
       </div>
@@ -122,6 +139,21 @@ function AddLevelForm(props) {
         </div>
       </form>
     </div>
+      <Dialog
+      show={showDialog}
+      title="Thông báo"
+      description={description}
+      confirm={handleSubmit(onHandleSubmit)}
+      cancel={cancel}
+    />
+    <Dialog
+      show={showDeleteDialog}
+      title="Thông báo"
+      description="Bạn chắc chắn muốn xóa trình độ"
+      confirm={handleDelete}
+      cancel={cancel}
+    />
+  </>
   );
 }
 

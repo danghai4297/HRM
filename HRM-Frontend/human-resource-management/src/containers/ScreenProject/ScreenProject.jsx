@@ -14,7 +14,6 @@ import ScreenReward from "../ScreenReward/ScreenReward";
 import ScreenDiscipline from "../ScreenDiscipline/ScreenDiscipline";
 import ScreenReport from "../ScreenReport/ScreenReport";
 import ScreenTransfer from "../ScreenTransfer/ScreenTransfer";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../components/Header/Header.scss";
 import ScreenDetailSalary from "../ScreenDetailSalary/ScreenDetailSalary";
 import AddProfileForm from "../../components/AddProfileForm/addProfileForm";
@@ -154,7 +153,6 @@ function ScreenProject() {
                 component={AddDisciplineForm}
               />
               <ProtectedRoute exact path="/report" component={ScreenReport} />
-              {/* <Route component={ScreenNotFound}/> */}
             </Switch>
           </div>
         </div>

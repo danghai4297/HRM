@@ -6,6 +6,7 @@ import "./AddLanguageForm.scss";
 import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
+import Dialog from "../../Dialog/Dialog";
 AddLanguageForm.propTypes = {};
 const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
@@ -23,11 +24,22 @@ function AddLanguageForm(props) {
   let { id } = match.params;
 
   const [dataDetailDMNN, setdataDetailDMNN] = useState([]);
+  const [showDialog, setShowDialog] = useState(false);
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [description, setDescription] = useState(
+    "Bạn chắc chắn muốm thêm ngoại ngữ mới"
+  );
+
+  const cancel = () => {
+    setShowDialog(false);
+    setShowDeleteDialog(false);
+  };
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
         if (id !== undefined) {
+          setDescription("Bạn chắc chắn muốm sửa ngoại ngữ");
           const response = await ProductApi.getDetailDMNN(id);
           setdataDetailDMNN(response);
         }
@@ -57,8 +69,8 @@ function AddLanguageForm(props) {
     } catch (error) {}
   };
 
-
   return (
+    <>
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
@@ -72,7 +84,9 @@ function AddLanguageForm(props) {
             className={
               dataDetailDMNN.length !== 0 ? "btn btn-danger" : "delete-button"
             }
-            onClick={handleDelete}
+            onClick={() => {
+              setShowDeleteDialog(true);
+            }}
             value="Xoá"
           />
           <input
@@ -85,7 +99,9 @@ function AddLanguageForm(props) {
             type="submit"
             className="btn btn-primary ml-3"
             value={dataDetailDMNN.length !== 0 ? "Sửa" : "Lưu"}
-            onClick={handleSubmit(onHandleSubmit)}
+            onClick={() => {
+              setShowDialog(true);
+            }}
           />
         </div>
       </div>
@@ -124,6 +140,21 @@ function AddLanguageForm(props) {
         </div>
       </form>
     </div>
+    <Dialog
+        show={showDialog}
+        title="Thông báo"
+        description={description}
+        confirm={handleSubmit(onHandleSubmit)}
+        cancel={cancel}
+      />
+      <Dialog
+        show={showDeleteDialog}
+        title="Thông báo"
+        description="Bạn chắc chắn muốn xóa"
+        confirm={handleDelete}
+        cancel={cancel}
+      />
+    </>
   );
 }
 
