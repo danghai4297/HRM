@@ -10,16 +10,21 @@
 .header {
   width: auto;
   position: sticky;
-  height: 50px;
+  height: 30px;
   top: 0;
   z-index: 10;
 }
 
+.body-screen{
+  background-color: #28144b;
+  min-height: 100vh;
+}
+
 .body-contents {
-  background-color: rgb(245, 239, 239);
+
   display: flex;
   width: 100%;
-  min-height: 93.4vh;
+  
 
   .menu-bar {
     background-color: #28144b;
@@ -36,4 +41,7 @@
 .btn:hover {
   background-color: rgb(62, 148, 206);
   box-shadow: 0 0 2px 2px rgb(52, 59, 54);
+}
+.child-content{
+  background-color: #E3DFEF
 }

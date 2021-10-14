@@ -20,7 +20,7 @@ body {
   width: 100%;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
-  background-color: #4d2d80;
+  background-color: #6640a3;
 }
 .sticky-top {
   top: 59px !important;
@@ -47,6 +47,18 @@ body {
 }
 .SidebarList #active {
   background-color: #88bdbc;
+}
+.SidebarList .row::before{
+  content: '';
+  position: absolute;
+  right: 0;
+  left: 155px;
+  top: 50px;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px var(--green);
 }
 #active {
   background-color: #88bdbc;
