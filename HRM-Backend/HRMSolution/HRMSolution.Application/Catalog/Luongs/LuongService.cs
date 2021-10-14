@@ -81,7 +81,7 @@ namespace HRMSolution.Application.Catalog.Luongs
             return data;
         }
 
-        public async Task<LuongViewModel> GetLuong(int id)
+        public async Task<LuongViewModel> GetById(int id)
         {
             var query = from nv in _context.nhanViens
                         join hd in _context.hopDongs on nv.maNhanVien equals hd.maNhanVien

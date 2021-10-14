@@ -8,7 +8,7 @@ namespace HRMSolution.Application.Catalog.NguoiThans
 {
     public interface INguoiThanService
     {
-        Task<NguoiThanViewModel> GetNguoiThan(int id);
+        Task<NguoiThanViewModel> GetById(int id);
         Task<int> Create(NguoiThanCreateRequest request);
         Task<int> Update(int id, NguoiThanUpdateRequest request);
         Task<int> Delete(int id);

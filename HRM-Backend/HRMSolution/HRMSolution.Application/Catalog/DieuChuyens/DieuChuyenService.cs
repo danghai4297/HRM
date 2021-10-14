@@ -67,7 +67,7 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
             return data;
         }
 
-        public async Task<DieuChuyenViewModel> GetDetail(int id)
+        public async Task<DieuChuyenViewModel> GetById(int id)
         {
             var query = from dc in _context.dieuChuyens
                         join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id

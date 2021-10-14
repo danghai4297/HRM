@@ -12,7 +12,7 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
         Task<int> Update(int id, KhenThuongKyLuatUpdateRequest request);
         Task<int> Delete(int idDanhMucKTKL);
         Task<List<KhenThuongKyLuatViewModel>> GetAllKhenThuong();
-        Task<KhenThuongKyLuatViewModel> GetAllKTKLDetail(int id);
+        Task<KhenThuongKyLuatViewModel> GetById(int id);
         Task<List<KhenThuongKyLuatViewModel>> GetAllKyLuat();
     }
 }

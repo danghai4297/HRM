@@ -8,7 +8,7 @@ namespace HRMSolution.Application.Catalog.NgoaiNgus
 {
     public interface INgoaiNguService
     {
-        Task<NgoaiNguViewModel> GetNgoaiNgu(int id);
+        Task<NgoaiNguViewModel> GetById(int id);
         Task<int> Create(NgoaiNguCreateRequest request);
         Task<int> Update(int id, NgoaiNguUpdateRequest request);
         Task<int> Delete(int idNgoaiNgu);

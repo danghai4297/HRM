@@ -14,9 +14,9 @@ namespace HRMSolution.BackendAPI.Controllers
     public class HopDongController : ControllerBase
     {
         private readonly IHopDongService _hopDongService;
-        public HopDongController(IHopDongService nhanVienService)
+        public HopDongController(IHopDongService hopDongService)
         {
-            _hopDongService = nhanVienService;
+            _hopDongService = hopDongService;
         }
         [HttpGet()]
         public async Task<IActionResult> Get()

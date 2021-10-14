@@ -25,9 +25,9 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok(trinhDoVanHoa);
         }
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetDetail(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            var trinhDoVanHoa = await _trinhDoVanHoaService.GetAllById(id);
+            var trinhDoVanHoa = await _trinhDoVanHoaService.GetById(id);
             return Ok(trinhDoVanHoa);
         }
         [HttpPost]

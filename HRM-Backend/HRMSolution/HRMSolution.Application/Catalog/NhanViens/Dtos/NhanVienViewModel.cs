@@ -68,6 +68,6 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
         public string DanToc { get; set; }
         public string TonGiao { get; set; }
         public string NgachCongChuc { get; set; }
-        public PhongBanViewModel phongBan { get; set; }
+        //public string phongBan { get; set; }
     }
 }

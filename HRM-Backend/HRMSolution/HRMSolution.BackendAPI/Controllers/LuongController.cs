@@ -20,15 +20,15 @@ namespace HRMSolution.BackendAPI.Controllers
         }
 
         [HttpGet()]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> GetAll()
         {
             var luong = await _luongService.GetAll();
             return Ok(luong);
         }
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetLuong(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            var luong = await _luongService.GetLuong(id);
+            var luong = await _luongService.GetById(id);
             return Ok(luong);
         }
         [HttpPost]

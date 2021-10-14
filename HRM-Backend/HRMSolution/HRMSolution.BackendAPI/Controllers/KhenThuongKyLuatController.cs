@@ -20,21 +20,21 @@ namespace HRMSolution.BackendAPI.Controllers
         }
 
         [HttpGet("khen-thuong")]
-        public async Task<IActionResult> GetKhenThuong()
+        public async Task<IActionResult> GetAllKhenThuong()
         {
             var khenThuongKyLuats = await _khenThuongKyLuatService.GetAllKhenThuong();
             return Ok(khenThuongKyLuats);
         }
 
         [HttpGet("detail/{id}")]
-        public async Task<IActionResult> GetKhenThuongDetail(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            var khenThuongKyLuats = await _khenThuongKyLuatService.GetAllKTKLDetail(id);
+            var khenThuongKyLuats = await _khenThuongKyLuatService.GetById(id);
             return Ok(khenThuongKyLuats);
         }
 
         [HttpGet("ky-luat")]
-        public async Task<IActionResult> GetKyLuat()
+        public async Task<IActionResult> GetAllKyLuat()
         {
             var khenThuongKyLuats = await _khenThuongKyLuatService.GetAllKyLuat();
             return Ok(khenThuongKyLuats);

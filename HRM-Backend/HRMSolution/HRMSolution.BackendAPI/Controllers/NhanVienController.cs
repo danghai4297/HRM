@@ -33,7 +33,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpGet("{maNhanVien}")]
         public async Task<IActionResult> Get(string maNhanVien)
         {
-            var nhanViens = await _nhanVienService.GetAllDetail(maNhanVien);
+            var nhanViens = await _nhanVienService.GetByMaNV(maNhanVien);
             return Ok(nhanViens);
         }
         [HttpPost]

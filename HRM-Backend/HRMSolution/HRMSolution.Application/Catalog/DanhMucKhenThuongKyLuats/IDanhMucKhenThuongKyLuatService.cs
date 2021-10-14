@@ -10,9 +10,9 @@ namespace HRMSolution.Application.Catalog.DanhMucKhenThuongKyLuats
     {
         Task<List<DanhMucKhenThuongKyLuatViewModel>> GetAllKhenThuong();
         Task<List<DanhMucKhenThuongKyLuatViewModel>> GetAllKyLuat();
+        Task<DanhMucKhenThuongKyLuatViewModel> GetDetail(int id);
         Task<int> Create(DanhMucKhenThuongKyLuatCreateRequest request);
         Task<int> Update(int id, DanhMucKhenThuongKyLuatUpdateRequest request);
         Task<int> Delete(int idDanhMucHonNhan);
-
     }
 }

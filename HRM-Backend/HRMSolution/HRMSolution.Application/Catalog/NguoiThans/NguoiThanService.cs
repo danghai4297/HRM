@@ -48,7 +48,7 @@ namespace HRMSolution.Application.Catalog.NguoiThans
             return await _context.SaveChangesAsync();
         }
 
-        public async Task<NguoiThanViewModel> GetNguoiThan(int id)
+        public async Task<NguoiThanViewModel> GetById(int id)
         {
             var query = from p in _context.nguoiThans
                         join dmnt in _context.danhMucNguoiThans on p.idDanhMucNguoiThan equals dmnt.id

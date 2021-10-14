@@ -71,7 +71,7 @@ namespace HRMSolution.Application.Catalog.TrinhDoVanHoas
         }
 
 
-        public async Task<TrinhDoVanHoaViewModel> GetAllById(int id)
+        public async Task<TrinhDoVanHoaViewModel> GetById(int id)
         {
             var query = from p in _context.trinhDoVanHoas
                         join dmtd in _context.danhMucTrinhDos on p.idTrinhDo equals dmtd.id

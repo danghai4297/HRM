@@ -20,9 +20,9 @@ namespace HRMSolution.BackendAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetDetail(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            var ngoaiNgu = await _ngoaiNguService.GetNgoaiNgu(id);
+            var ngoaiNgu = await _ngoaiNguService.GetById(id);
             return Ok(ngoaiNgu);
         }
         [HttpPost]

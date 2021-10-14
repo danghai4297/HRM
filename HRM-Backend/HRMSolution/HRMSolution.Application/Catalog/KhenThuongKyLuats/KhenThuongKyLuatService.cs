@@ -68,7 +68,7 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
             return data;
         }
 
-        public async Task<KhenThuongKyLuatViewModel> GetAllKTKLDetail(int id)
+        public async Task<KhenThuongKyLuatViewModel> GetById(int id)
         {
             var query = from p in _context.khenThuongKyLuats
                         join dmktkl in _context.danhMucKhenThuongKyLuats on p.idDanhMucKhenThuong equals dmktkl.id
