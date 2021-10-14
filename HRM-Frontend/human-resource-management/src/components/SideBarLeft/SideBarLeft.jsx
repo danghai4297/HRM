@@ -22,7 +22,7 @@ function SideBarLeft() {
       <ul className="SidebarList sticky-top">
         <li className="title-project">
           <div className="title-names">
-            <h1>HRM</h1>
+            <h1 style={{ color: "white" }}>HRM</h1>
           </div>
         </li>
         {SideBarData.map((val, key) => {
