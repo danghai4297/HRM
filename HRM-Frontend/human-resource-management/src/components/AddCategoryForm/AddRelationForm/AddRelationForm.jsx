@@ -27,7 +27,7 @@ function AddRelationForm(props) {
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
-    "Bạn chắc chắn muốm thêm danh mục người thân"
+    "Bạn chắc chắn muốn thêm danh mục người thân mới"
   );
 
   const cancel = () => {
@@ -38,7 +38,7 @@ function AddRelationForm(props) {
     const fetchNvList = async () => {
       try {
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốm sửa danh mục người thân");
+          setDescription("Bạn chắc chắn muốn sửa danh mục người thân");
           const response = await ProductApi.getDetailDMNT(id);
           setdataDetailDMNT(response);
         }
@@ -75,7 +75,7 @@ function AddRelationForm(props) {
         <div className="Submit-button sticky-top">
           <div>
             <h2 className="">
-              {dataDetailDMNT.length !== 0 ? "Sửa" : "Thêm"} danh mục quan hệ
+              {dataDetailDMNT.length !== 0 ? "Sửa" : "Thêm"} danh mục người thân
             </h2>
           </div>
           <div className="button">
@@ -149,7 +149,7 @@ function AddRelationForm(props) {
       <Dialog
         show={showDeleteDialog}
         title="Thông báo"
-        description="Bạn chắc chắn muốn xóa"
+        description={`Bạn chắc chắn muốn xóa danh mục người thân ${dataDetailDMNT.tenDanhMuc}`}
         confirm={handleDelete}
         cancel={cancel}
       />

@@ -20,6 +20,11 @@ function SideBarLeft() {
   return (
     <div className="Sidebar">
       <ul className="SidebarList sticky-top">
+        <li className="title-project">
+          <div className="title-names">
+            <h1>HRM</h1>
+          </div>
+        </li>
         {SideBarData.map((val, key) => {
           return <Menu val={val} key={key} />;
         })}

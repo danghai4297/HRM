@@ -28,7 +28,7 @@ function AddTypeOfContractForm(props) {
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
-    "Bạn chắc chắn muốm thêm loại hợp đồng"
+    "Bạn chắc chắn muốn thêm danh mục loại hợp đồng mới"
   );
 
   const cancel = () => {
@@ -40,7 +40,7 @@ function AddTypeOfContractForm(props) {
     const fetchNvList = async () => {
       try {
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốm sửa loại hợp đồng");
+          setDescription("Bạn chắc chắn muốn sửa loại hợp đồng");
           const response = await ProductApi.getDetailDMLHD(id);
           setdataDetailDMLHD(response);
         }
@@ -178,7 +178,7 @@ function AddTypeOfContractForm(props) {
       <Dialog
         show={showDeleteDialog}
         title="Thông báo"
-        description="Bạn chắc chắn muốn xóa dân tộc"
+        description={`Bạn chắc chắn muốn xóa danh mục loại hợp đồng ${dataDetailDMLHD.tenLoaiHopDong}`}
         confirm={handleDelete}
         cancel={cancel}
       />

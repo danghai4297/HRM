@@ -1,15 +1,38 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import SubDetail from "../../components/Detail/SubDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
-import "./ScreenDetailForeignLanguage.scss"
-function ScreenDetailForeignLanguage() {
-    return (
-        <>
+import "./ScreenDetailForeignLanguage.scss";
+import ProductApi from "../../api/productApi";
+function ScreenDetailForeignLanguage(props) {
+  let { match, history } = props;
+  let { id } = match.params;
+  const [dataDetailNN, setdataDetailNN] = useState([]);
+
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const responseNN = await ProductApi.getNNDetail(id);
+        setdataDetailNN(responseNN);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
+
+  console.log(dataDetailNN);
+  return (
+    <>
       <div className="main-screen">
         <div className="first-main">
           <div className="first-path">
-            <FontAwesomeIcon icon={["fas", "long-arrow-alt-left"]} />
+            <button className="btn-back" onClick={history.goBack}>
+              <FontAwesomeIcon
+                className="icon-btn"
+                icon={["fas", "long-arrow-alt-left"]}
+              />
+            </button>
           </div>
           <div className="second-path">
             <h2>Ngoại ngữ</h2>
@@ -24,22 +47,28 @@ function ScreenDetailForeignLanguage() {
           <h3 className="title-main">Thông tin chung</h3>
           <div className="second-main-path">
             <SubDetail
+              titleLeft="Mã nhân viên"
+              itemLeft={dataDetailNN.maNhanVien}
+              titleRight="Tên nhân viên"
+              itemRight={dataDetailNN.tenNhanVien}
+            ></SubDetail>
+            <SubDetail
               titleLeft="Ngoại ngữ"
-              itemLeft={null}
+              itemLeft={dataDetailNN.danhMucNgoaiNgu}
               titleRight="Ngày cấp"
-              itemRight={null}
+              itemRight={dataDetailNN.ngayCap}
             ></SubDetail>
             <SubDetail
               titleLeft="Nơi cấp"
-              itemLeft={null}
+              itemLeft={dataDetailNN.noiCap}
               titleRight="Trình độ"
-              itemRight={null}
+              itemRight={dataDetailNN.trinhDo}
             ></SubDetail>
           </div>
         </div>
       </div>
     </>
-    )
+  );
 }
 
-export default ScreenDetailForeignLanguage
+export default ScreenDetailForeignLanguage;

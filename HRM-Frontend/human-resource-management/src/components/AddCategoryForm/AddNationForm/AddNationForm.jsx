@@ -29,7 +29,7 @@ function AddNationForm(props) {
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
-    "Bạn chắc chắn muốm thêm dân tộc"
+    "Bạn chắc chắn muốn thêm danh mục dân tộc"
   );
 
   const cancel = () => {
@@ -41,7 +41,7 @@ function AddNationForm(props) {
     const fetchNvList = async () => {
       try {
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốm sửa dân tộc");
+          setDescription("Bạn chắc chắn muốn sửa danh mục dân tộc");
           const response = await ProductApi.getDetailDMDT(id);
           setdataDetailDMDT(response);
         }
@@ -152,7 +152,7 @@ function AddNationForm(props) {
       <Dialog
         show={showDeleteDialog}
         title="Thông báo"
-        description="Bạn chắc chắn muốn xóa dân tộc"
+        description={`Bạn chắc chắn muốn xóa danh mục dân tộc ${dataDetailDMDT.tenDanhMuc}`}
         confirm={handleDelete}
         cancel={cancel}
       />

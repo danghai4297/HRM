@@ -29,7 +29,7 @@ function AddSalaryGroupForm(props) {
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
-    "Bạn chắc chắn muốm thêm nhóm lương"
+    "Bạn chắc chắn muốn thêm danh mục nhóm lương mới"
   );
 
   const cancel = () => {
@@ -41,7 +41,7 @@ function AddSalaryGroupForm(props) {
     const fetchNvList = async () => {
       try {
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốm sửa nhóm lương");
+          setDescription("Bạn chắc chắn muốn sửa danh mục nhóm lương");
           const response = await ProductApi.getDetailDMNL(id);
           setdataDetailDMNL(response);
         }
@@ -173,7 +173,7 @@ function AddSalaryGroupForm(props) {
     <Dialog
       show={showDeleteDialog}
       title="Thông báo"
-      description="Bạn chắc chắn muốn xóa"
+      description={`Bạn chắc chắn muốn xóa danh mục nhóm lương ${dataDetailDMNL.tenNhomLuong}`}
       confirm={handleDelete}
       cancel={cancel}
     />
