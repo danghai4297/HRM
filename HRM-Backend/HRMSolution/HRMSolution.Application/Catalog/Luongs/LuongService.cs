@@ -7,6 +7,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using HRMSolution.Data.EF;
 using HRMSolution.Data.Entities;
+using HRMSolution.Utilities.Exceptions;
 
 namespace HRMSolution.Application.Catalog.Luongs
 {
@@ -37,6 +38,15 @@ namespace HRMSolution.Application.Catalog.Luongs
                 trangThai = true
             };
             _context.luongs.Add(luong);
+            return await _context.SaveChangesAsync();
+        }
+
+        public async Task<int> Delete(int id)
+        {
+            var luong = await _context.luongs.FindAsync(id);
+            if (luong == null) throw new HRMException($"Không tìm thấy lương có id : {id}");
+
+            _context.luongs.Remove(luong);
             return await _context.SaveChangesAsync();
         }
 
@@ -78,7 +88,7 @@ namespace HRMSolution.Application.Catalog.Luongs
                         join l in _context.luongs on hd.maHopDong equals l.maHopDong
                         join dml in _context.danhMucNhomLuongs on l.idNhomLuong equals dml.id
                         where hd.maHopDong == l.maHopDong && l.id == id
-                        select new { hd, l, dml };
+                        select new { hd, l, dml, nv };
 
             var data = await query.Select(x => new LuongViewModel()
             {
@@ -95,10 +105,32 @@ namespace HRMSolution.Application.Catalog.Luongs
                 ngayKetThuc = x.l.ngayKetThuc,
                 trangThai = x.l.trangThai == true ? "Kích hoạt" : "Vô hiệu",
                 maHopDong = x.hd.maHopDong,
-                maNhanVien = x.hd.maNhanVien
+                maNhanVien = x.hd.maNhanVien,
+                tenNhanVien = x.nv.hoTen
             }).FirstAsync();
 
             return data;
+        }
+
+        public async Task<int> Update(int id, LuongUpdateRequest request)
+        {
+            var luong = await _context.luongs.FindAsync(id);
+            if (luong == null) throw new HRMException($"Không tìm thấy lương có id : {id}");
+
+            luong.idNhomLuong = request.idNhomLuong;
+            luong.heSoLuong = request.heSoLuong;
+            luong.bacLuong = request.bacLuong;
+            luong.luongCoBan = request.luongCoBan;
+            luong.phuCapTrachNhiem = request.phuCapTrachNhiem;
+            luong.phuCapKhac = request.phuCapKhac;
+            luong.tongLuong = request.tongLuong;
+            luong.thoiHanLenLuong = request.thoiHanLenLuong;
+            luong.ngayHieuLuc = request.ngayHieuLuc;
+            luong.ngayKetThuc = request.ngayKetThuc;
+            luong.ghiChu = request.ghiChu;
+            luong.trangThai = request.trangThai;
+
+            return await _context.SaveChangesAsync();
         }
     }
 }

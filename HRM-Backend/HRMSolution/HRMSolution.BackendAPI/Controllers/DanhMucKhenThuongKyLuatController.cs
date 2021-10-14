@@ -1,4 +1,5 @@
 ﻿using HRMSolution.Application.Catalog.DanhMucKhenThuongKyLuats;
+using HRMSolution.Application.Catalog.DanhMucKhenThuongKyLuats.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -29,6 +30,29 @@ namespace HRMSolution.BackendAPI.Controllers
             var danhMucKTKL = await _danhMucKhenThuongKyLuatService.GetAllKyLuat();
             return Ok(danhMucKTKL);
         }
-
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] DanhMucKhenThuongKyLuatCreateRequest request)
+        {
+            var result = await _danhMucKhenThuongKyLuatService.Create(request);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var result = await _danhMucKhenThuongKyLuatService.Delete(id);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
+        }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, DanhMucKhenThuongKyLuatUpdateRequest request)
+        {
+            var result = await _danhMucKhenThuongKyLuatService.Update(id, request);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
+        }
     }
 }

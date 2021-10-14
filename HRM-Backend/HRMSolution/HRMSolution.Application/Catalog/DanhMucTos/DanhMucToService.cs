@@ -32,9 +32,13 @@ namespace HRMSolution.Application.Catalog.DanhMucTos
             return await _context.SaveChangesAsync();
         }
 
-        public Task<int> Delete(int idDanhMucTo)
+        public async Task<int> Delete(int idDanhMucTo)
         {
-            throw new NotImplementedException();
+            var danhMucTo = await _context.danhMucTos.FindAsync(idDanhMucTo);
+            if (danhMucTo == null) throw new HRMException($"Không tìm thấy danh mục hôn nhân có id : {idDanhMucTo}");
+
+            _context.danhMucTos.Remove(danhMucTo);
+            return await _context.SaveChangesAsync();
         }
 
         public async Task<List<DanhMucToViewModel>> GetAll()
@@ -58,6 +62,7 @@ namespace HRMSolution.Application.Catalog.DanhMucTos
         {
             var query = from p in _context.danhMucTos
                         join pb in _context.danhMucPhongBans on p.idPhongBan equals pb.id
+                        where p.idTo == id
                         select new { p, pb };
 
             var data = await query.Select(x => new DanhMucToViewModel()
@@ -71,10 +76,10 @@ namespace HRMSolution.Application.Catalog.DanhMucTos
             return data;
         }
 
-        public async Task<int> Update(DanhMucToUpdateRequest request)
+        public async Task<int> Update(int id,DanhMucToUpdateRequest request)
         {
-            var danhMucTo = await _context.danhMucTos.FindAsync(request.idTo);
-            if (danhMucTo == null) throw new HRMException($"Không tìm thấy danh mục tổ có id: {request.idTo }");
+            var danhMucTo = await _context.danhMucTos.FindAsync(id);
+            if (danhMucTo == null) throw new HRMException($"Không tìm thấy danh mục tổ có id: {id}");
 
             danhMucTo.maTo = request.maTo;
             danhMucTo.tenTo = request.tenTo;

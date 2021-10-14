@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using HRMSolution.Data.Entities;
+using HRMSolution.Utilities.Exceptions;
 
 namespace HRMSolution.Application.Catalog.TrinhDoVanHoas
 {
@@ -31,6 +32,15 @@ namespace HRMSolution.Application.Catalog.TrinhDoVanHoas
                 maNhanVien = request.maNhanVien
             };
             _context.trinhDoVanHoas.Add(tdvh);
+            return await _context.SaveChangesAsync();
+        }
+
+        public async Task<int> Delete(int id)
+        {
+            var trinhDoVanHoa = await _context.trinhDoVanHoas.FindAsync(id);
+            if (trinhDoVanHoa == null) throw new HRMException($"Không tìm thấy trình độ văn hóa có id: {id}");
+
+            _context.trinhDoVanHoas.Remove(trinhDoVanHoa);
             return await _context.SaveChangesAsync();
         }
 
@@ -86,6 +96,22 @@ namespace HRMSolution.Application.Catalog.TrinhDoVanHoas
             }).FirstAsync();
 
             return data;
+        }
+
+        public async Task<int> Update(int id, TrinhDoVanHoaUpdateRequest request)
+        {
+            var trinhDoVanHoa = await _context.trinhDoVanHoas.FindAsync(id);
+            if (trinhDoVanHoa == null) throw new HRMException($"Không tìm thấy trình độ văn hóa có id: {id}");
+
+            trinhDoVanHoa.tenTruong = request.tenTruong;
+            trinhDoVanHoa.idChuyenMon = request.idChuyenMon;
+            trinhDoVanHoa.tuThoiGian = request.tuThoiGian;
+            trinhDoVanHoa.denThoiGian = request.denThoiGian;
+            trinhDoVanHoa.idHinhThucDaoTao = request.idHinhThucDaoTao;
+            trinhDoVanHoa.idTrinhDo = request.idTrinhDo;
+            trinhDoVanHoa.maNhanVien = request.maNhanVien;
+
+            return await _context.SaveChangesAsync();
         }
     }
 }

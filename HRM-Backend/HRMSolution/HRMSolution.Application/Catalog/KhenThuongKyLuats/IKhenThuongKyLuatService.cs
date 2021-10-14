@@ -9,8 +9,8 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
     public interface IKhenThuongKyLuatService
     {
         Task<int> Create(KhenThuongKyLuatCreateRequest request);
-        Task<int> Update(KhenThuongKyLuatUpdateRequest request);
-        Task<int> Delete(int idDanhMucDanToc);
+        Task<int> Update(int id, KhenThuongKyLuatUpdateRequest request);
+        Task<int> Delete(int idDanhMucKTKL);
         Task<List<KhenThuongKyLuatViewModel>> GetAllKhenThuong();
         Task<KhenThuongKyLuatViewModel> GetAllKTKLDetail(int id);
         Task<List<KhenThuongKyLuatViewModel>> GetAllKyLuat();

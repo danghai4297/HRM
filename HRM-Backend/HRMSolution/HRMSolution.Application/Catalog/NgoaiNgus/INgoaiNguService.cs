@@ -10,5 +10,7 @@ namespace HRMSolution.Application.Catalog.NgoaiNgus
     {
         Task<NgoaiNguViewModel> GetNgoaiNgu(int id);
         Task<int> Create(NgoaiNguCreateRequest request);
+        Task<int> Update(int id, NgoaiNguUpdateRequest request);
+        Task<int> Delete(int idNgoaiNgu);
     }
 }

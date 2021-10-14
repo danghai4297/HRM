@@ -9,8 +9,8 @@ namespace HRMSolution.Application.Catalog.HopDongs
     public interface IHopDongService
     {
         Task<int> Create(HopDongCreateRequest request);
-        Task<int> Update(HopDongUpdateRequest request);
-        Task<int> Delete(int idDanhMucDanToc);
+        Task<int> Update(string maHopDong, HopDongUpdateRequest request);
+        Task<int> Delete(string maHopDong);
         Task<List<HopDongViewModel>> GetAll();
         Task<List<HopDongViewModel>> GetAll(string maNhanVien);
         Task<HopDongViewModel> GetHopDong(string maHopDong);

@@ -45,5 +45,21 @@ namespace HRMSolution.BackendAPI.Controllers
                 return BadRequest();
             return Ok();
         }
+        [HttpDelete("{maHopDong}")]
+        public async Task<IActionResult> Delete(string maHopDong)
+        {
+            var result = await _hopDongService.Delete(maHopDong);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
+        }
+        [HttpPut("{maHopDong}")]
+        public async Task<IActionResult> Update(string maHopDong, HopDongUpdateRequest request)
+        {
+            var result = await _hopDongService.Update(maHopDong, request);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
+        }
     }
 }

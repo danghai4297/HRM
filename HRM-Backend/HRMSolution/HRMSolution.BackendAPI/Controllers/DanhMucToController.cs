@@ -31,13 +31,30 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok(danhMucTo);
         }
         [HttpPost]
-            public async Task<IActionResult> Create([FromBody]DanhMucToCreateRequest request)
-            {
-                var result = await _danhMucToService.Create(request);
-                if (result == 0)
-                    return BadRequest();
-                return Ok();
-            }
+        public async Task<IActionResult> Create([FromBody]DanhMucToCreateRequest request)
+        {
+             var result = await _danhMucToService.Create(request);
+             if (result == 0)
+                 return BadRequest();
+             return Ok();
         }
-    
+        
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var result = await _danhMucToService.Delete(id);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, DanhMucToUpdateRequest request)
+        {
+            var result = await _danhMucToService.Update(id, request);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
+        }
+    }
 }

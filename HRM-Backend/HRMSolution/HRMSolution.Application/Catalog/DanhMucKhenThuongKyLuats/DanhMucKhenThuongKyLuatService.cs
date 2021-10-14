@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
+using HRMSolution.Data.Entities;
+using HRMSolution.Utilities.Exceptions;
 
 namespace HRMSolution.Application.Catalog.DanhMucKhenThuongKyLuats
 {
@@ -15,6 +17,26 @@ namespace HRMSolution.Application.Catalog.DanhMucKhenThuongKyLuats
         public DanhMucKhenThuongKyLuatService(HRMDbContext context)
         {
             _context = context;
+        }
+
+        public async Task<int> Create(DanhMucKhenThuongKyLuatCreateRequest request)
+        {
+            var danhMucKTKL = new DanhMucKhenThuongKyLuat()
+            {
+                tenDanhMuc = request.tenDanhMuc,
+                tieuDe = request.tieuDe
+            };
+            _context.danhMucKhenThuongKyLuats.Add(danhMucKTKL);
+            return await _context.SaveChangesAsync();
+        }
+
+        public async Task<int> Delete(int idDanhMucKTKL)
+        {
+            var danhMucKTKL = await _context.danhMucKhenThuongKyLuats.FindAsync(idDanhMucKTKL);
+            if (danhMucKTKL == null) throw new HRMException($"Không tìm thấy danh mục khen thưởng kỉ luật : {idDanhMucKTKL}");
+
+            _context.danhMucKhenThuongKyLuats.Remove(danhMucKTKL);
+            return await _context.SaveChangesAsync();
         }
 
         public async Task<List<DanhMucKhenThuongKyLuatViewModel>> GetAllKhenThuong()
@@ -49,6 +71,15 @@ namespace HRMSolution.Application.Catalog.DanhMucKhenThuongKyLuats
 
 
             return data;
+        }
+
+        public async Task<int> Update(int id, DanhMucKhenThuongKyLuatUpdateRequest request)
+        {
+            var danhMucKTKL = await _context.danhMucHonNhans.FindAsync(id);
+            if (danhMucKTKL == null) throw new HRMException($"Không tìm thấy danh mục khen thưởng kỉ luật có id: {id }");
+
+            danhMucKTKL.tenDanhMuc = request.tenDanhMuc;
+            return await _context.SaveChangesAsync();
         }
     }
 }

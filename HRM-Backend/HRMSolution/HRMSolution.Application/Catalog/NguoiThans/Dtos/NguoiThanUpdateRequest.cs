@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HRMSolution.Application.Catalog.NguoiThans.Dtos
 {
-    public class NguoiThanCreateRequest
+    public class NguoiThanUpdateRequest
     {
         public int idDanhMucNguoiThan { get; set; }
         public string tenNguoiThan { get; set; }
@@ -16,6 +16,5 @@ namespace HRMSolution.Application.Catalog.NguoiThans.Dtos
         public string dienThoai { get; set; }
         public string khac { get; set; }
         public string maNhanVien { get; set; }
-        
     }
 }

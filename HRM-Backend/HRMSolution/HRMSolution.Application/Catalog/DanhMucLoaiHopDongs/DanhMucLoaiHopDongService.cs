@@ -61,6 +61,7 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
             var data = await query.Select(x => new DanhMucLoaiHopDongViewModel()
             {
                 id = x.id,
+                maLoaiHopDong = x.maLoaiHopDong,
                 tenLoaiHopDong = x.tenLoaiHopDong
             }).FirstAsync();
 

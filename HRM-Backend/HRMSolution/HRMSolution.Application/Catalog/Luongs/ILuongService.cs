@@ -11,5 +11,7 @@ namespace HRMSolution.Application.Catalog.Luongs
         Task<List<LuongViewModel>> GetAll();
         Task<LuongViewModel> GetLuong(int id);
         Task<int> Create(LuongCreateRequest request);
+        Task<int> Update(int id, LuongUpdateRequest request);
+        Task<int> Delete(int id);
     }
 }

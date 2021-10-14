@@ -1,6 +1,7 @@
 ﻿using HRMSolution.Application.Catalog.HopDongs.Dtos;
 using HRMSolution.Data.EF;
 using HRMSolution.Data.Entities;
+using HRMSolution.Utilities.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -34,9 +35,13 @@ namespace HRMSolution.Application.Catalog.HopDongs
             return await _context.SaveChangesAsync();
         }
 
-        public Task<int> Delete(int idDanhMucDanToc)
+        public async Task<int> Delete(string maHopDong)
         {
-            throw new NotImplementedException();
+            var hopDong = await _context.hopDongs.FindAsync(maHopDong);
+            if (hopDong == null) throw new HRMException($"Không tìm thấy hợp đồng có id : {maHopDong}");
+
+            _context.hopDongs.Remove(hopDong);
+            return await _context.SaveChangesAsync();
         }
 
         public async Task<HopDongViewModel> GetHopDong(string maHopDong)
@@ -113,9 +118,21 @@ namespace HRMSolution.Application.Catalog.HopDongs
             return data;
         }
 
-        public Task<int> Update(HopDongUpdateRequest request)
+        public async Task<int> Update(string maHopDong, HopDongUpdateRequest request)
         {
-            throw new NotImplementedException();
+            var hopDong = await _context.hopDongs.FindAsync(maHopDong);
+            if (hopDong == null) throw new HRMException($"Không tìm thấy hợp đồng có id : {maHopDong}");
+
+            hopDong.maHopDong = request.maHopDong;
+            hopDong.idLoaiHopDong = request.idLoaiHopDong;
+            hopDong.idChucDanh = request.idChucDanh;
+            hopDong.hopDongTuNgay = request.hopDongTuNgay;
+            hopDong.hopDongDenNgay = request.hopDongDenNgay;
+            hopDong.ghiChu = request.ghiChu;
+            hopDong.trangThai = request.trangThai;
+            hopDong.maNhanVien = request.maNhanVien;
+
+            return await _context.SaveChangesAsync();
         }
     }
 }

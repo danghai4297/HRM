@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using HRMSolution.Data.Entities;
+using HRMSolution.Utilities.Exceptions;
 
 namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
 {
@@ -32,9 +33,13 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
             return await _context.SaveChangesAsync();
         }
 
-        public Task<int> Delete(int idDanhMucDanToc)
+        public async Task<int> Delete(int idDanhMucKTKL)
         {
-            throw new NotImplementedException();
+            var danhMucKTKL = await _context.khenThuongKyLuats.FindAsync(idDanhMucKTKL);
+            if (danhMucKTKL == null) throw new HRMException($"Không tìm thấy khen thưởng kỷ luật có id: {idDanhMucKTKL}");
+
+            _context.khenThuongKyLuats.Remove(danhMucKTKL);
+            return await _context.SaveChangesAsync();
         }
 
 
@@ -113,9 +118,19 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
             return data;
         }
 
-        public Task<int> Update(KhenThuongKyLuatUpdateRequest request)
+        public async Task<int> Update(int id, KhenThuongKyLuatUpdateRequest request)
         {
-            throw new NotImplementedException();
+            var danhMucKTKL = await _context.khenThuongKyLuats.FindAsync(id);
+            if (danhMucKTKL == null) throw new HRMException($"Không tìm thấy khen thưởng kỷ luật : {id}");
+
+            danhMucKTKL.idDanhMucKhenThuong = request.idDanhMucKhenThuong;
+            danhMucKTKL.noiDung = request.noiDung;
+            danhMucKTKL.lyDo = request.lyDo;
+            danhMucKTKL.loai = request.loai;
+            danhMucKTKL.anh = request.anh;
+            danhMucKTKL.maNhanVien = request.maNhanVien;
+
+            return await _context.SaveChangesAsync();
         }
     }
 }

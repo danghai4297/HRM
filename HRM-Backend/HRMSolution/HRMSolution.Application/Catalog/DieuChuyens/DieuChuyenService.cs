@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using HRMSolution.Data.Entities;
+using HRMSolution.Utilities.Exceptions;
 
 namespace HRMSolution.Application.Catalog.DieuChuyens
 {
@@ -31,6 +32,15 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                 trangThai = true
             };
             _context.dieuChuyens.Add(dieuChuyen);
+            return await _context.SaveChangesAsync();
+        }
+
+        public async Task<int> Delete(int idDieuChuyen)
+        {
+            var dieuChuyen = await _context.dieuChuyens.FindAsync(idDieuChuyen);
+            if (dieuChuyen == null) throw new HRMException($"Không tìm thấy điều chuyển có id: {idDieuChuyen}");
+
+            _context.dieuChuyens.Remove(dieuChuyen);
             return await _context.SaveChangesAsync();
         }
 
@@ -78,6 +88,22 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
             }).FirstAsync();
 
             return data;
+        }
+
+        public async Task<int> Update(int id, DieuChuyenUpdateRequest request)
+        {
+            var dieuChuyen = await _context.dieuChuyens.FindAsync(id);
+            if (dieuChuyen == null) throw new HRMException($"Không tìm thấy điều chuyển có id: {id}");
+
+            dieuChuyen.maNhanVien = request.maNhanVien;
+            dieuChuyen.ngayHieuLuc = request.ngayHieuLuc;
+            dieuChuyen.idPhongBan = request.idPhongBan;
+            dieuChuyen.to = request.to;
+            dieuChuyen.chiTiet = request.chiTiet;
+            dieuChuyen.idChucVu = request.idChucVu;
+            dieuChuyen.trangThai = request.trangThai;
+
+            return await _context.SaveChangesAsync();
         }
     }
 }

@@ -154,7 +154,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 },
                 new NhanVien()
                 {
@@ -186,7 +187,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 },
                 new NhanVien()
                 {
@@ -219,7 +221,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 },
                 new NhanVien()
                 {
@@ -252,7 +255,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 },
                 new NhanVien()
                 {
@@ -285,7 +289,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 },
                 new NhanVien()
                 {
@@ -318,7 +323,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 },
                 new NhanVien()
                 {

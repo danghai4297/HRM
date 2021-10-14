@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using HRMSolution.Data.Entities;
+using HRMSolution.Utilities.Exceptions;
 
 namespace HRMSolution.Application.Catalog.NguoiThans
 {
@@ -38,12 +39,22 @@ namespace HRMSolution.Application.Catalog.NguoiThans
             return await _context.SaveChangesAsync();
         }
 
+        public async Task<int> Delete(int id)
+        {
+            var nguoiThan = await _context.nguoiThans.FindAsync(id);
+            if (nguoiThan == null) throw new HRMException($"Không tìm thấy người thân có id: {id}");
+
+            _context.nguoiThans.Remove(nguoiThan);
+            return await _context.SaveChangesAsync();
+        }
+
         public async Task<NguoiThanViewModel> GetNguoiThan(int id)
         {
             var query = from p in _context.nguoiThans
                         join dmnt in _context.danhMucNguoiThans on p.idDanhMucNguoiThan equals dmnt.id
+                        join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
                         where p.id == id
-                        select new { p, dmnt };
+                        select new { p, dmnt, nv };
 
 
             var data = await query.Select(x => new NguoiThanViewModel()
@@ -57,11 +68,32 @@ namespace HRMSolution.Application.Catalog.NguoiThans
                 ngheNghiep = x.p.ngheNghiep,
                 diaChi = x.p.diaChi,
                 dienThoai = x.p.dienThoai,
-                khac = x.p.khac
+                khac = x.p.khac,
+                maNhanVien = x.p.maNhanVien,
+                tenNhanVien = x.nv.hoTen
             }).FirstOrDefaultAsync();
 
 
             return data;
+        }
+
+        public async Task<int> Update(int id, NguoiThanUpdateRequest request)
+        {
+            var nguoiThan = await _context.nguoiThans.FindAsync(id);
+            if (nguoiThan == null) throw new HRMException($"Không tìm thấy người thân có id: {id}");
+
+            nguoiThan.tenNguoiThan = request.tenNguoiThan;
+            nguoiThan.gioiTinh = request.gioiTinh;
+            nguoiThan.ngaySinh = request.ngaySinh;
+            nguoiThan.quanHe = request.quanHe;
+            nguoiThan.ngheNghiep = request.ngheNghiep;
+            nguoiThan.diaChi = request.diaChi;
+            nguoiThan.dienThoai = request.dienThoai;
+            nguoiThan.khac = request.khac;
+            nguoiThan.idDanhMucNguoiThan = request.idDanhMucNguoiThan;
+            nguoiThan.maNhanVien = request.maNhanVien;
+
+            return await _context.SaveChangesAsync();
         }
     }
 }

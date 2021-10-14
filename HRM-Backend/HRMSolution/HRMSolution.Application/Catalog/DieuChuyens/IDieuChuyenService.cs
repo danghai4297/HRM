@@ -11,5 +11,7 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
         Task<List<DieuChuyenViewModel>> GetAll();
         Task<DieuChuyenViewModel> GetDetail(int id);
         Task<int> Create(DieuChuyenCreateRequest request);
+        Task<int> Update(int id, DieuChuyenUpdateRequest request);
+        Task<int> Delete(int idDieuChuyen);
     }
 }

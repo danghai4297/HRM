@@ -137,15 +137,26 @@ namespace HRMSolution.Application.Catalog.NhanViens
 
         public async Task<List<NhanVienViewModel>> GetAll()
         {
+            //Phòng Ban
+            var queryPb = from nv in _context.nhanViens
+                          join dc in _context.dieuChuyens on nv.maNhanVien equals dc.maNhanVien
+                          join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
+                          where dc.trangThai == true && nv.maNhanVien == dc.maNhanVien
+                          select new { nv,dc,pb };
+
+            var dataPb = await queryPb.Select(x => new PhongBanViewModel()
+            {
+                tenPhongBan = x.pb.tenPhongBan
+            }).FirstAsync();
+
             var query = from nv in _context.nhanViens
                         join tc in _context.danhMucTinhChatLaoDongs on nv.tinhChatLaoDong equals tc.id
                         join hn in _context.danhMucHonNhans on nv.idDanhMucHonNhan equals hn.id
                         join dt in _context.danhMucDanTocs on nv.idDanToc equals dt.id
                         join tg in _context.danhMucTonGiaos on nv.idTonGiao equals tg.id
                         join ncc in _context.danhMucNgachCongChucs on nv.idNgachCongChuc equals ncc.id
-                         
-                        select new { nv, tc,dt,  hn, tg,ncc};
 
+                        select new { nv, tc,dt,  hn, tg, ncc};
 
             var data = await query.Select(x => new NhanVienViewModel()
             {
@@ -204,7 +215,8 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 TonGiao = x.tg.tenDanhMuc,
                 NgachCongChuc = x.ncc.tenNgach,
                 lyDoNghiViec = x.nv.lyDoNghiViec,
-                anh = x.nv.anh 
+                anh = x.nv.anh,
+                phongBan = dataPb
             }).ToListAsync();
 
 
