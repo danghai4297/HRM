@@ -47,6 +47,8 @@ function DashBoard() {
               fontIcon="users"
               title="nhan vien"
               link="/profile"
+              color="rgba(27, 92, 173,1)"
+              colorBot="rgba(58, 127, 213,1)"
             />
           </div>
           <div className="item-da">
@@ -55,6 +57,8 @@ function DashBoard() {
               fontIcon="building"
               title="Phong ban"
               link="category/department"
+              color="rgba(34, 141, 34,1)"
+              colorBot="rgba(47, 185, 47,1)"
             />
           </div>
           <div className="item-da">
@@ -63,6 +67,8 @@ function DashBoard() {
               fontIcon="money-check-alt"
               title="Luong n.vien"
               link="/salary"
+              color="rgba(255, 180, 0,1)"
+              colorBot="rgba(249, 201, 86,1)"
             />
           </div>
           <div className="item-da">
@@ -71,6 +77,8 @@ function DashBoard() {
               fontIcon="users-slash"
               title="N.vien nghi viec"
               link="/resign"
+              color="rgba(255, 81, 20,1)"
+              colorBot="rgba(253, 110, 59,1)"
             />
           </div>
         </div>
