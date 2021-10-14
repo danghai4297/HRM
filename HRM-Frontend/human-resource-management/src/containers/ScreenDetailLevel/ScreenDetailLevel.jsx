@@ -1,15 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SubDetail from "../../components/Detail/SubDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
-import "./ScreenDetailLevel.scss"
-function ScreenDetailLevel() {
+import "./ScreenDetailLevel.scss";
+import ProductApi from "../../api/productApi";
+function ScreenDetailLevel(props) {
+  let { match, history } = props;
+  let { id } = match.params;
+  const [dataDetailTD, setdataDetailTD] = useState([]);
+
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const responseTD = await ProductApi.getTDDetail(id);
+        setdataDetailTD(responseTD);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
+
+  console.log(dataDetailTD);
   return (
     <>
       <div className="main-screen">
         <div className="first-main">
           <div className="first-path">
-            <FontAwesomeIcon icon={["fas", "long-arrow-alt-left"]} />
+            <button className="btn-back" onClick={history.goBack}>
+              <FontAwesomeIcon className="icon-btn" icon={["fas", "long-arrow-alt-left"]} />
+            </button>
           </div>
           <div className="second-path">
             <h2>Trình độ</h2>
@@ -24,22 +44,28 @@ function ScreenDetailLevel() {
           <h3 className="title-main">Thông tin chung</h3>
           <div className="second-main-path">
             <SubDetail
+              titleLeft="Mã nhân viên"
+              itemLeft={dataDetailTD.maNhanVien}
+              titleRight="Tên nhân viên"
+              itemRight={dataDetailTD.tenNhanVien}
+            ></SubDetail>
+            <SubDetail
               titleLeft="Tên trường"
-              itemLeft={null}
+              itemLeft={dataDetailTD.tenTruong}
               titleRight="Chuyên ngành"
-              itemRight={null}
+              itemRight={dataDetailTD.chuyenMon}
             ></SubDetail>
             <SubDetail
               titleLeft="Trình độ"
-              itemLeft={null}
+              itemLeft={dataDetailTD.trinhDo}
               titleRight="Hình thức đào tạo"
-              itemRight={null}
+              itemRight={dataDetailTD.hinhThucDaoTao}
             ></SubDetail>
             <SubDetail
               titleLeft="Từ ngày"
-              itemLeft={null}
+              itemLeft={dataDetailTD.tuThoiGian}
               titleRight="Đến ngày"
-              itemRight={null}
+              itemRight={dataDetailTD.denThoiGian}
             ></SubDetail>
           </div>
         </div>

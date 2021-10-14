@@ -26,6 +26,24 @@ const ProductApi = {
     return axiosClient.get(url);
   },
 
+  //detail trình độ văn hóa
+  getTDDetail: (id) => {
+    const url = `/TrinhDoVanHoa/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //detail ngoại ngữ
+  getNNDetail: (id) => {
+    const url = `/NgoaiNgu/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //detail người thân
+  getNTDetail: (id) => {
+    const url = `/NguoiThan/${id}`;
+    return axiosClient.get(url);
+  },
+
   //tất cả hợp đồng
   getAllHd: () => {
     const url = "/HopDong";

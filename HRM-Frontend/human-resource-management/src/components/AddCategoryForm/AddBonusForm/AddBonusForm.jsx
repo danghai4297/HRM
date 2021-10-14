@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddBonusForm.scss";
-import { useState } from "react";
+import ProductApi from "../../../api/productApi";
+import PutApi from "../../../api/putAAPI";
 AddBonusForm.propTypes = {};
 const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
 });
+
 function AddBonusForm(props) {
   const [bonusValue, setBonusValue] = useState(null);
-  const { history } = props;
   const {
     register,
     handleSubmit,
@@ -18,9 +19,50 @@ function AddBonusForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onHandleSubmit = (data) => {
-    console.log(data);
+
+  let { match, history } = props;
+  let { id } = match.params;
+
+  const [dataDetailDMKT, setdataDetailDMKT] = useState([]);
+  const [showDialog, setShowDialog] = useState(false);
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [description, setDescription] = useState(
+    "Bạn chắc chắn muốn thêm khen thưởng mới"
+  );
+
+  const cancel = () => {
+    setShowDialog(false);
+    setShowDeleteDialog(false);
   };
+
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        if (id !== undefined) {
+          setDescription("Bạn chắc chắn muốn sửa khen thưởng");
+          const response = await ProductApi.getDetailDMKT(id);
+          setdataDetailDMKT(response);
+        }
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
+
+console.log(dataDetailDMKT)
+
+  const onHandleSubmit = async (data) => {
+    try {
+      if (id !== undefined) {
+        await PutApi.PutDMKTvKL(data, id);
+      } else {
+        await ProductApi.PostDMTCLD(data);
+      }
+      history.goBack();
+    } catch (error) {}
+  };
+
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
@@ -76,6 +118,27 @@ function AddBonusForm(props) {
                 <span className="message">{errors.tenDanhMuc?.message}</span>
               </div>
             </div>
+            {/* <div className="col-6">
+              <div className="form-group form-inline">
+                <label
+                  className="col-sm-4 justify-content-start"
+                  htmlFor="tieuDe"
+                >
+                  Tiêu đề
+                </label>
+                <input
+                  type="text"
+                  {...register("tenDanhMuc")}
+                  id="tenDanhMuc"
+                  className={
+                    !errors.tenDanhMuc
+                      ? "form-control col-sm-6"
+                      : "form-control col-sm-6 border-danger "
+                  }
+                />
+                <span className="message">{errors.tenDanhMuc?.message}</span>
+              </div>
+            </div> */}
           </div>
         </div>
       </form>

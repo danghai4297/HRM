@@ -28,7 +28,7 @@ function AddCSRForm(props) {
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
-    "Bạn chắc chắn muốm thêm danh ngạch"
+    "Bạn chắc chắn muốn thêm ngạch công chức mới"
   );
   const cancel = () => {
     setShowDialog(false);
@@ -39,7 +39,7 @@ function AddCSRForm(props) {
     const fetchNvList = async () => {
       try {
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốm sửa danh ngạch");
+          setDescription("Bạn chắc chắn muốn sửa ngạch công chức");
           const response = await ProductApi.getDetailDMNCC(id);
           setdataDetailDMNCC(response);
         }
@@ -153,7 +153,7 @@ function AddCSRForm(props) {
       <Dialog
         show={showDeleteDialog}
         title="Thông báo"
-        description="Bạn chắc chắn muốn xóa danh ngạch"
+        description={`Bạn chắc chắn muốn xóa ngạch công chức ${dataDetailDMNCC.tenNgach}`}
         confirm={handleDelete}
         cancel={cancel}
       />

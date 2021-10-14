@@ -85,6 +85,11 @@ const PutApi = {
     const url = `/DanhMucTrinhDo/${id}`;
     return axiosClient.put(url, data);
   },
+  //Sửa danh mục khen thưởng và kỉ luật
+  PutDMKTvKL: (data, id) => {
+    const url = `/DanhMucKhenThuongKyLuat/${id}`;
+    return axiosClient.put(url, data);
+  }
 };
 
 export default PutApi;

@@ -26,7 +26,7 @@ function AddSpecializeForm(props) {
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
-    "Bạn chắc chắn muốm thêm chuyên môn"
+    "Bạn chắc chắn muốn thêm danh mục chuyên môn mới"
   );
 
   const cancel = () => {
@@ -38,7 +38,7 @@ function AddSpecializeForm(props) {
     const fetchNvList = async () => {
       try {
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốm sửa chuyên môn");
+          setDescription("Bạn chắc chắn muốn sửa danh mục chuyên môn");
           const response = await ProductApi.getDetailDMCM(id);
           setdataDetailDMCM(response);
         }
@@ -170,7 +170,7 @@ function AddSpecializeForm(props) {
       <Dialog
         show={showDeleteDialog}
         title="Thông báo"
-        description="Bạn chắc chắn muốn xóa"
+        description={`Bạn chắc chắn muốn xóa danh mục chuyên môn ${dataDetailDMCM.tenChuyenMon}`}
         confirm={handleDelete}
         cancel={cancel}
       />

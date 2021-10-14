@@ -11,12 +11,10 @@ function Header() {
     history.replace("/login");
   };
   return (
-    <div>
+    <>
       <div className="header-com" >
         <div className="name" onClick={() => setAccount(false)}>
-          <div className="title-project">
-            <h1>HRM</h1>
-          </div>
+          
         </div>
         <div className="account">
           <button className="button-top" onClick={() => setAccount(!account)}>
@@ -60,7 +58,7 @@ function Header() {
         </div>
         <div className="last" onClick={() => setAccount(false)}></div>
       </div>
-    </div>
+    </>
   );
 }
 

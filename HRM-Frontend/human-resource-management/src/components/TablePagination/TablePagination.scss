@@ -4,8 +4,9 @@ table body tr:hover th {
 
   cursor: pointer;
 }
+
 button:disabled,
-button[disabled]{
+button[disabled] {
   border: 1px solid #999999;
   background-color: #fffdfd;
   color: #cfcfcf;
@@ -43,8 +44,7 @@ button[disabled]{
   z-index: 1000;
   border-radius: 0.2rem;
 
-  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
-    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 
   .item-chooseCol {
     align-items: center;
@@ -54,6 +54,8 @@ button[disabled]{
 
 .herder-table {
   // border: 1px solid black;
+  width: auto;
+  height: 4rem;
   display: flex;
   justify-content: space-between;
   background-color: white;
@@ -61,6 +63,7 @@ button[disabled]{
   // position: sticky;
   // top: 9.8rem;
   z-index: 1;
+  border-radius: 1rem 1rem 0 0;
 }
 
 .select-fillter {
@@ -164,6 +167,7 @@ input:focus {
   width: auto;
   height: 5rem;
   display: flex;
+  border-radius: 0 0 1rem 1rem;
 
   justify-content: space-between;
   align-items: center;
@@ -178,7 +182,7 @@ input:focus {
     padding-left: 0.5rem;
 
     .select-item {
-      margin-left: 1rem;
+      margin-left: 0.5rem;
       width: 30%;
     }
   }

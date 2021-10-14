@@ -146,7 +146,7 @@ export const NVCOLUMNS = [
   {
     Header: "ID",
     accessor: "id",
-    minWidth: 100,
+    minWidth: 189,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,

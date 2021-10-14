@@ -45,7 +45,7 @@ function ScreenDetailSalary(props) {
           <div className="second-main-path">
             <SubDetail
               titleLeft="Họ và tên"
-              itemLeft={null}
+              itemLeft={dataLDetail.tenNhanVien}
               titleRight="Mã nhân viên"
               itemRight={dataLDetail.maNhanVien}
             ></SubDetail>
@@ -84,6 +84,11 @@ function ScreenDetailSalary(props) {
               itemLeft={dataLDetail.trangThai}
               titleRight="Ghi chú"
               itemRight={dataLDetail.ghiChu}
+            ></SubDetail>
+            <SubDetail
+              titleLeft="Lương cơ bản"
+              itemLeft={dataLDetail.luongCoBan}
+              titleRight={null}
             ></SubDetail>
           </div>
         </div>

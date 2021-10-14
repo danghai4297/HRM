@@ -10,19 +10,19 @@
 .header {
   width: auto;
   position: sticky;
-  height: 10%;
-
+  height: 50px;
   top: 0;
   z-index: 10;
 }
 
 .body-contents {
-  background-color: rgb(136, 189, 188);
+  background-color: #f4f1f6;
   display: flex;
   width: 100%;
   min-height: 93.4vh;
 
   .menu-bar {
+    background-color: #302c54;
     min-height: 100%;
     width: 15%;
   }

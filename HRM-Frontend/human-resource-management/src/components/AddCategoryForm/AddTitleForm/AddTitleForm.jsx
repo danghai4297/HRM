@@ -28,7 +28,7 @@ function AddTitleForm(props) {
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
-    "Bạn chắc chắn muốm thêm chức danh"
+    "Bạn chắc chắn muốn thêm danh mục chức danh mới"
   );
 
   const cancel = () => {
@@ -40,7 +40,7 @@ function AddTitleForm(props) {
     const fetchNvList = async () => {
       try {
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốm sửa chức danh");
+          setDescription("Bạn chắc chắn muốn sửa danh mục chức danh");
           const response = await ProductApi.getDetailDMCD(id);
           setdataDetailDMCD(response);
         }
@@ -199,7 +199,7 @@ function AddTitleForm(props) {
       <Dialog
         show={showDeleteDialog}
         title="Thông báo"
-        description="Bạn chắc chắn muốn xóa"
+        description={`Bạn chắc chắn muốn xóa danh mục chức danh ${dataDetailDMCD.tenChucDanh}`}
         confirm={handleDelete}
         cancel={cancel}
       />

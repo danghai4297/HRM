@@ -27,7 +27,7 @@ function AddMarriageForm(props) {
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
-    "Bạn chắc chắn muốm thêm danh mục hôn nhân"
+    "Bạn chắc chắn muốn thêm danh mục hôn nhân mới"
   );
 
   const cancel = () => {
@@ -39,7 +39,7 @@ function AddMarriageForm(props) {
     const fetchNvList = async () => {
       try {
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốm sửa danh mục hôn nhân");
+          setDescription("Bạn chắc chắn muốn sửa danh mục hôn nhân");
           const response = await ProductApi.getDetailDMHN(id);
           setdataDetailDMHN(response);
         }
@@ -151,7 +151,7 @@ function AddMarriageForm(props) {
    <Dialog
      show={showDeleteDialog}
      title="Thông báo"
-     description="Bạn chắc chắn muốn xóa"
+     description={`Bạn chắc chắn muốn xóa danh mục hôn nhân ${dataDetailDMHN.tenDanhMuc}`}
      confirm={handleDelete}
      cancel={cancel}
    />
