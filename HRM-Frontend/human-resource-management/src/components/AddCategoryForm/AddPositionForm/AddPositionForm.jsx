@@ -27,7 +27,7 @@ function AddPositionForm(props) {
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
-    "Bạn chắc chắn muốm thêm chức vụ"
+    "Bạn chắc chắn muốn thêm danh mục chức vụ mới"
   );
 
   const cancel = () => {
@@ -39,7 +39,7 @@ function AddPositionForm(props) {
     const fetchNvList = async () => {
       try {
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốm sửa chức vụ");
+          setDescription("Bạn chắc chắn muốn sửa danh mục chức vụ");
           const response = await ProductApi.getDetailDMCV(id);
           setdataDetailDMCV(response);
         }
@@ -196,7 +196,7 @@ function AddPositionForm(props) {
       <Dialog
         show={showDeleteDialog}
         title="Thông báo"
-        description="Bạn chắc chắn muốn xóa"
+        description={`Bạn chắc chắn muốn xóa danh mục chức vụ ${dataDetailDMCV.tenChucVu}`}
         confirm={handleDelete}
         cancel={cancel}
       />

@@ -27,7 +27,7 @@ function AddReligionForm(props) {
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
-    "Bạn chắc chắn muốm thêm tôn giáo"
+    "Bạn chắc chắn muốn thêm danh mục tôn giáo mới"
   );
 
   const cancel = () => {
@@ -39,7 +39,7 @@ function AddReligionForm(props) {
     const fetchNvList = async () => {
       try {
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốm sửa tôn giáo");
+          setDescription("Bạn chắc chắn muốn sửa danh mục tôn giáo");
           const response = await ProductApi.getDetailDMTG(id);
           setdataDetailDMTG(response);
         }
@@ -150,7 +150,7 @@ function AddReligionForm(props) {
       <Dialog
         show={showDeleteDialog}
         title="Thông báo"
-        description="Bạn chắc chắn muốn xóa"
+        description={`Bạn chắc chắn muốn xóa danh mục tôn giáo ${dataDetailDMTG.tenDanhMuc}`}
         confirm={handleDelete}
         cancel={cancel}
       />

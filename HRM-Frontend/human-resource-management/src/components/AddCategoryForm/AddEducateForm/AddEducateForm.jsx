@@ -26,7 +26,7 @@ function AddEducateForm(props) {
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
-    "Bạn chắc chắn muốm thêm hình thức đào tạo"
+    "Bạn chắc chắn muốn thêm hình thức đào tạo mới"
   );
 
   const cancel = () => {
@@ -38,7 +38,7 @@ function AddEducateForm(props) {
     const fetchNvList = async () => {
       try {
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốm sửa hình thức đào tạo");
+          setDescription("Bạn chắc chắn muốn sửa hình thức đào tạo");
           const response = await ProductApi.getDetailDMHTDT(id);
           setdataDetailDMHTDT(response);
         }
@@ -152,7 +152,7 @@ function AddEducateForm(props) {
       <Dialog
         show={showDeleteDialog}
         title="Thông báo"
-        description="Bạn chắc chắn muốn xóa dân tộc"
+        description={`Bạn chắc chắn muốn xóa hình thức đào tạo ${dataDetailDMHTDT.tenHinhThuc}`}
         confirm={handleDelete}
         cancel={cancel}
       />

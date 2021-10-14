@@ -60,7 +60,7 @@ export const SideBarLeftCategoryData = [
     link: "/category/civil",
   },
   {
-    title: "Danh mục quan hệ",
+    title: "Danh mục người thân",
     link: "/category/relation",
   },
   {

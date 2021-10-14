@@ -6,6 +6,7 @@ import "./AddNestForm.scss";
 import ProductApi from "../../../api/productApi";
 import Dialog from "../../Dialog/Dialog";
 import DeleteApi from "../../../api/deleteAPI";
+import PutApi from "../../../api/putAAPI";
 const schema = yup.object({
   maTo: yup.string().required("Mã tổ không được bỏ trống."),
   idPhongBan: yup.number().required("Thuộc phòng ban không được bỏ trống."),
@@ -27,7 +28,9 @@ function AddNestForm(props) {
   const [dataDmpb, setDataDmpb] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
-  const [description, setDescription] = useState("Bạn chắc chắn muốm thêm tổ");
+  const [description, setDescription] = useState(
+    "Bạn chắc chắn muốn thêm danh mục tổ mới"
+  );
 
   const cancel = () => {
     setShowDialog(false);
@@ -49,11 +52,14 @@ function AddNestForm(props) {
     };
     fetchNvList();
   }, []);
-  const onHandleSubmit = async (data) => {
-    console.log(data);
 
+  const onHandleSubmit = async (data) => {
     try {
-      await ProductApi.PostDMT(data);
+      if (id !== undefined) {
+        await PutApi.PutDMT(data, id);
+      } else {
+        await ProductApi.PostDMT(data);
+      }
       history.goBack();
     } catch (error) {}
   };
@@ -64,6 +70,7 @@ function AddNestForm(props) {
       history.goBack();
     } catch (error) {}
   };
+  
   return (
     <>
       <div className="container-form">
@@ -198,7 +205,7 @@ function AddNestForm(props) {
       <Dialog
         show={showDeleteDialog}
         title="Thông báo"
-        description="Bạn chắc chắn muốn xóa"
+        description={`Bạn chắc chắn muốn xóa danh mục tổ ${dataDetailDMT.tenTo} của phòng ban ${dataDetailDMT.tenPhongBan}`}
         confirm={handleDelete}
         cancel={cancel}
       />

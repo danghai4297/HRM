@@ -26,7 +26,7 @@ function AddLaborForm(props) {
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
-    "Bạn chắc chắn muốm thêm tính chất lao động"
+    "Bạn chắc chắn muốn thêm tính chất lao động mới"
   );
 
   const cancel = () => {
@@ -38,7 +38,7 @@ function AddLaborForm(props) {
     const fetchNvList = async () => {
       try {
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốm sửa tính chất lao động");
+          setDescription("Bạn chắc chắn muốn sửa tính chất lao động");
           const response = await ProductApi.getDetailDMTCLD(id);
           setdataDetailDMTCLD(response);
         }
@@ -151,7 +151,7 @@ function AddLaborForm(props) {
       <Dialog
         show={showDeleteDialog}
         title="Thông báo"
-        description="Bạn chắc chắn muốn xóa"
+        description={`Bạn chắc chắn muốn xóa tính chất lao động ${dataDetailDMTCLD.tenLaoDong}`}
         confirm={handleDelete}
         cancel={cancel}
       />

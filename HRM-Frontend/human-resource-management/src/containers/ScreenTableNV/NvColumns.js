@@ -600,7 +600,7 @@ export const NVCOLUMNS2 = [
   },
   {
     Header: "Ban",
-    accessor: "phongBan",
+    accessor: "tenphongBan",
     minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: false,

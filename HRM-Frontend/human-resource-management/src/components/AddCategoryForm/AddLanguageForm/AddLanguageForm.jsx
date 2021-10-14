@@ -27,7 +27,7 @@ function AddLanguageForm(props) {
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
-    "Bạn chắc chắn muốm thêm ngoại ngữ mới"
+    "Bạn chắc chắn muốn thêm danh mục ngoại ngữ mới"
   );
 
   const cancel = () => {
@@ -39,7 +39,7 @@ function AddLanguageForm(props) {
     const fetchNvList = async () => {
       try {
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốm sửa ngoại ngữ");
+          setDescription("Bạn chắc chắn muốn sửa danh mục ngoại ngữ");
           const response = await ProductApi.getDetailDMNN(id);
           setdataDetailDMNN(response);
         }
@@ -150,7 +150,7 @@ function AddLanguageForm(props) {
       <Dialog
         show={showDeleteDialog}
         title="Thông báo"
-        description="Bạn chắc chắn muốn xóa"
+        description={`Bạn chắc chắn muốn xóa danh mục ngoại ngữ ${dataDetailDMNN.tenDanhMuc}`}
         confirm={handleDelete}
         cancel={cancel}
       />

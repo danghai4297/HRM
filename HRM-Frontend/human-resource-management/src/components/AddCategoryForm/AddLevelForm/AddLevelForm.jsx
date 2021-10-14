@@ -25,7 +25,7 @@ function AddLevelForm(props) {
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
-    "Bạn chắc chắn muốm thêm danh mục trình độ"
+    "Bạn chắc chắn muốn thêm danh mục trình độ mới"
   );
 
   const cancel = () => {
@@ -37,7 +37,7 @@ function AddLevelForm(props) {
     const fetchNvList = async () => {
       try {
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốm sửa dang mục trình độ");
+          setDescription("Bạn chắc chắn muốn sửa danh mục trình độ");
           const response = await ProductApi.getDetailDMTD(id);
           setdataDetailDMTD(response);
         }
@@ -149,7 +149,7 @@ function AddLevelForm(props) {
     <Dialog
       show={showDeleteDialog}
       title="Thông báo"
-      description="Bạn chắc chắn muốn xóa trình độ"
+      description={`Bạn chắc chắn muốn xóa danh mục trình độ ${dataDetailDMTD.tenTrinhDo}`}
       confirm={handleDelete}
       cancel={cancel}
     />
