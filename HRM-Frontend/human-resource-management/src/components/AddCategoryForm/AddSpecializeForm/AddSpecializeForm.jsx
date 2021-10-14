@@ -6,6 +6,7 @@ import "./AddSpecializeForm.scss";
 import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
+import Dialog from "../../Dialog/Dialog";
 const schema = yup.object({
   tenChuyenMon: yup.string().required("Tên danh mục không được bỏ trống."),
   maChuyenMon: yup.string().required("Mã danh mục không được bỏ trống."),
@@ -22,11 +23,22 @@ function AddSpecializeForm(props) {
   let { id } = match.params;
 
   const [dataDetailDMCM, setdataDetailDMCM] = useState([]);
+  const [showDialog, setShowDialog] = useState(false);
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [description, setDescription] = useState(
+    "Bạn chắc chắn muốm thêm chuyên môn"
+  );
+
+  const cancel = () => {
+    setShowDialog(false);
+    setShowDeleteDialog(false);
+  };
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
         if (id !== undefined) {
+          setDescription("Bạn chắc chắn muốm sửa chuyên môn");
           const response = await ProductApi.getDetailDMCM(id);
           setdataDetailDMCM(response);
         }
@@ -37,7 +49,6 @@ function AddSpecializeForm(props) {
     fetchNvList();
   }, []);
 
-  console.log(dataDetailDMCM);
 
   const onHandleSubmit = async (data) => {
     try {
@@ -57,8 +68,8 @@ function AddSpecializeForm(props) {
     } catch (error) {}
   };
 
-
   return (
+    <>
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
@@ -72,7 +83,9 @@ function AddSpecializeForm(props) {
             className={
               dataDetailDMCM.length !== 0 ? "btn btn-danger" : "delete-button"
             }
-            onClick={handleDelete}
+            onClick={() => {
+              setShowDeleteDialog(true);
+            }}
             value="Xoá"
           />
           <input
@@ -85,7 +98,9 @@ function AddSpecializeForm(props) {
             type="submit"
             className="btn btn-primary ml-3"
             value={dataDetailDMCM.length !== 0 ? "Sửa" : "Lưu"}
-            onClick={handleSubmit(onHandleSubmit)}
+            onClick={() => {
+              setShowDialog(true);
+            }}
           />
         </div>
       </div>
@@ -145,6 +160,21 @@ function AddSpecializeForm(props) {
         </div>
       </form>
     </div>
+    <Dialog
+        show={showDialog}
+        title="Thông báo"
+        description={description}
+        confirm={handleSubmit(onHandleSubmit)}
+        cancel={cancel}
+      />
+      <Dialog
+        show={showDeleteDialog}
+        title="Thông báo"
+        description="Bạn chắc chắn muốn xóa"
+        confirm={handleDelete}
+        cancel={cancel}
+      />
+    </>
   );
 }
 

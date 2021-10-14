@@ -6,6 +6,7 @@ import "./AddSalaryGroupForm.scss";
 import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
+import Dialog from "../../Dialog/Dialog";
 const schema = yup.object({
   maNhomLuong: yup.string().required("Mã phòng ban không được bỏ trống."),
   tenNhomLuong: yup.string().required("Tên danh mục không được bỏ trống."),
@@ -25,11 +26,22 @@ function AddSalaryGroupForm(props) {
   let { id } = match.params;
 
   const [dataDetailDMNL, setdataDetailDMNL] = useState([]);
+  const [showDialog, setShowDialog] = useState(false);
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [description, setDescription] = useState(
+    "Bạn chắc chắn muốm thêm nhóm lương"
+  );
+
+  const cancel = () => {
+    setShowDialog(false);
+    setShowDeleteDialog(false);
+  };
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
         if (id !== undefined) {
+          setDescription("Bạn chắc chắn muốm sửa nhóm lương");
           const response = await ProductApi.getDetailDMNL(id);
           setdataDetailDMNL(response);
         }
@@ -60,6 +72,7 @@ function AddSalaryGroupForm(props) {
   };
   
   return (
+    <>
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
@@ -73,7 +86,9 @@ function AddSalaryGroupForm(props) {
             className={
               dataDetailDMNL.length !== 0 ? "btn btn-danger" : "delete-button"
             }
-            onClick={handleDelete}
+            onClick={() => {
+              setShowDeleteDialog(true);
+            }}
             value="Xoá"
           />
           <input
@@ -86,7 +101,9 @@ function AddSalaryGroupForm(props) {
             type="submit"
             className="btn btn-primary ml-3"
             value={dataDetailDMNL.length !== 0 ? "Sửa" : "Lưu"}
-            onClick={handleSubmit(onHandleSubmit)}
+            onClick={() => {
+              setShowDialog(true);
+            }}
           />
         </div>
       </div>
@@ -146,6 +163,21 @@ function AddSalaryGroupForm(props) {
         </div>
       </form>
     </div>
+      <Dialog
+      show={showDialog}
+      title="Thông báo"
+      description={description}
+      confirm={handleSubmit(onHandleSubmit)}
+      cancel={cancel}
+    />
+    <Dialog
+      show={showDeleteDialog}
+      title="Thông báo"
+      description="Bạn chắc chắn muốn xóa"
+      confirm={handleDelete}
+      cancel={cancel}
+    />
+  </>
   );
 }
 
