@@ -116,7 +116,7 @@ function Detail(props) {
   };
   return (
     <>
-      <div className="contents" id="abc">
+      <div className="contents">
         <div className="first-information">
           <div className="left-path">
             <div className="icons">
@@ -240,7 +240,7 @@ function Detail(props) {
           </div>
         </div>
         <div className="main-information">
-          <div className="left-header-information" id="bc">
+          <div className="left-header-information">
             <div className="sticky-top">
               <ul className="list-left">
                 {links.map((link) => {

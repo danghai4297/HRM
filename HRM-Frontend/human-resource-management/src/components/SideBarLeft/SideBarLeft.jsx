@@ -8,7 +8,7 @@ function SideBarLeft() {
       path: val.link,
     });
     return (
-      <Link to={val.link} className="link-item">
+      <Link to={val.link} className="link-item" id={match ? "actived" : ""}>
         <li className="row" id={match ? "active" : ""}>
           <div id="icon">{val.icon}</div>
           <div id="title">{val.title}</div>

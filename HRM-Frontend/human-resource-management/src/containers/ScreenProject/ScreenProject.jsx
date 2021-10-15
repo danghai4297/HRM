@@ -46,7 +46,8 @@ function ScreenProject() {
           <div className="menu-bar">
             <SideBarLeft />
           </div>
-          <div className="content">
+          <div className="content">  
+            <div className="child-content">
             <Switch>
               <ProtectedRoute exact path="/home" component={DashBoard} />
               <ProtectedRoute path="/change" component={ChangePasswordForm} />
@@ -154,6 +155,7 @@ function ScreenProject() {
               />
               <ProtectedRoute exact path="/report" component={ScreenReport} />
             </Switch>
+            </div>
           </div>
         </div>
         <div className="footer"></div>

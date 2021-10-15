@@ -4,13 +4,15 @@
 }
 .herder-content {
     // margin-right: 1em;
-    width: 100%;
+    width: 98%;
     max-height: 10%;
-    background-color: #f4f1f6;
+    background-color: white;
     padding: 0 0.5rem 0 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 1rem;
+    margin-left: 1rem;
 }
 
 .table-nv {
