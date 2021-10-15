@@ -10,6 +10,7 @@ import {
   NVCOLUMNSDC,
   NVCOLUMNSHD,
   NVCOLUMNSKTvKL,
+  NVCOLUMNSL,
   NVCOLUMNSNN,
   NVCOLUMNSNT,
   NVCOLUMNSTDVH,
@@ -29,7 +30,7 @@ function Detail(props) {
   const [dataDetailTc, setdataDetailTc] = useState([]);
   const [dataDetailKt, setdataDetailKt] = useState([]);
   const [dataDetailKl, setdataDetailKl] = useState([]);
-  const dataTDVH = [];
+  const [dataLuong, setDataLuong] = useState([]);
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -45,6 +46,7 @@ function Detail(props) {
         setdataDetailTc(responseNv.dieuChuyens);
         setdataDetailKt(responseNv.khenThuongs);
         setdataDetailKl(responseNv.kyLuats);
+        setDataLuong(responseNv.luongs);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
@@ -116,7 +118,7 @@ function Detail(props) {
   };
   return (
     <>
-      <div className="contents" id="abc">
+      <div className="contents">
         <div className="first-information">
           <div className="left-path">
             <div className="icons">
@@ -240,7 +242,7 @@ function Detail(props) {
           </div>
         </div>
         <div className="main-information">
-          <div className="left-header-information" id="bc">
+          <div className="left-header-information">
             <div className="sticky-top">
               <ul className="list-left">
                 {links.map((link) => {
@@ -833,7 +835,13 @@ function Detail(props) {
                       </button>
                     </div>
                   </div>
-                  <div className="table"></div>
+                  <div className="table">
+                    <TableBasic
+                      link="/salary/detail/"
+                      columns={NVCOLUMNSL}
+                      data={dataLuong}
+                    />
+                  </div>
                 </>
               )}
             </div>

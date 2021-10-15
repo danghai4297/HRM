@@ -114,7 +114,6 @@ function AddNationForm(props) {
         <form
           action=""
           className="profile-form"
-          // onSubmit={handleSubmit(onHandleSubmit)}
         >
           <div className="container-div-form-category">
             <h3>Thông tin chung</h3>

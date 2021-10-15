@@ -13,6 +13,7 @@ export const NVCOLUMNS = [
   {
     Header: "Họ tên",
     accessor: "tenNhanVien",
+    minWidth: 200,
     sticky: "left",
     Filter: SelectColumnFilter,
     disableFilters: true,
