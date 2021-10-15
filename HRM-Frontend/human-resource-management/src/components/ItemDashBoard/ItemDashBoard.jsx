@@ -17,11 +17,16 @@ ItemDashBoard.defaultProps = {
 };
 
 function ItemDashBoard(props) {
-  const { totalEmployees, fontIcon, title, link } = props;
-
+  const { totalEmployees, fontIcon, title, link, color, colorBot } = props;
+  const style = {
+    backgroundColor: color,
+  };
+  const styleBot = {
+    backgroundColor: colorBot,
+  };
   return (
     <div class="container">
-      <div className="top">
+      <div className="top" style={style}>
         <div className="left">
           <h3>{totalEmployees}</h3>
           <h5>{title}</h5>
@@ -33,7 +38,7 @@ function ItemDashBoard(props) {
         </div>
       </div>
       <Link to={link} className="link-item">
-        <div className="bot bot-slide">
+        <div style={styleBot} className="bot bot-slide">
           <h>Danh sach {title}</h>
           <span className="small-icon">
             <FontAwesomeIcon icon={["fas", "chevron-circle-right"]} />

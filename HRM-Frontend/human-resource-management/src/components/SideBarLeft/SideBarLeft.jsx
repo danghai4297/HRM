@@ -8,7 +8,7 @@ function SideBarLeft() {
       path: val.link,
     });
     return (
-      <Link to={val.link} className="link-item">
+      <Link to={val.link} className="link-item" id={match ? "actived" : ""}>
         <li className="row" id={match ? "active" : ""}>
           <div id="icon">{val.icon}</div>
           <div id="title">{val.title}</div>
@@ -22,7 +22,7 @@ function SideBarLeft() {
       <ul className="SidebarList sticky-top">
         <li className="title-project">
           <div className="title-names">
-            <h1>HRM</h1>
+            <h1 style={{ color: "white" }}>HRM</h1>
           </div>
         </li>
         {SideBarData.map((val, key) => {

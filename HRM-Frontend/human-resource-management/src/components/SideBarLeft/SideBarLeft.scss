@@ -1,15 +1,14 @@
 body {
   margin: 0;
   padding: 0;
-  background: #88bdbc;
 }
 .Sidebar {
   min-height: auto;
   width: 100%;
-  background-color: #28144b;
   margin-top: 10%;
   padding-left: 10%;
 }
+
 .sticky-top {
   top: 61px !important;
 }
@@ -20,12 +19,13 @@ body {
   width: 100%;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
-  background-color: #6640a3;
+  background-color: #5F5490;
 }
 .sticky-top {
   top: 59px !important;
 }
 .SidebarList .row {
+  position: relative;
   width: auto;
   height: 50px;
   list-style-type: none;
@@ -40,28 +40,38 @@ body {
   border-bottom-left-radius: 50px;
   margin-left: 20px;
 }
-.SidebarList .row:hover {
-  cursor: pointer;
-  box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.25);
-  color: yellow;
+.SidebarList .link-item:hover .row,
+.SidebarList .link-item#actived .row{
+  background-color: #e3dfef;
+  color: black;
 }
-.SidebarList #active {
-  background-color: #88bdbc;
-}
-.SidebarList .row::before{
-  content: '';
+
+.link-item:hover .row::before,
+.link-item#actived .row::before
+{
+  content: "";
   position: absolute;
+  top: -50px;
   right: 0;
-  left: 155px;
-  top: 50px;
   width: 50px;
   height: 50px;
-  background-color: red;
   border-radius: 50%;
-  box-shadow: 35px 35px 0 10px var(--green);
+  background: transparent;
+  box-shadow: 35px 35px 0 10px #e3dfef;
+  pointer-events: none;
 }
-#active {
-  background-color: #88bdbc;
+.link-item:hover .row::after,
+.link-item#actived .row::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 35px -35px 0 10px #e3dfef;
+  pointer-events: none;
 }
 .link-item:hover {
   text-decoration: none;
@@ -75,7 +85,7 @@ body {
   flex: 70%;
   padding-left: 20px;
 }
-.title-project{
+.title-project {
   height: 100px;
   padding-left: 30%;
   padding-top: 10%;

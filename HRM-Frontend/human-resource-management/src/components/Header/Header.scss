@@ -1,7 +1,7 @@
 .header-com {
   width: 100%;
   height: 100%;
-  background: #28144b;
+  background: #302c54;
   position: sticky;
   top: 0;
   display: flex;
@@ -21,7 +21,7 @@
   }
   .account {
     width: auto;
-    .button-top{
+    .button-top {
       background: none;
       border: none;
     }
@@ -62,7 +62,6 @@
           font-size: 300%;
           height: 56px;
         }
-        
       }
       .button-account {
         border: none;
@@ -74,7 +73,7 @@
       }
     }
   }
-  .last{
+  .last {
     width: 5%;
   }
 }
