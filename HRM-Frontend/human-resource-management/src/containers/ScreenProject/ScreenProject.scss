@@ -15,7 +15,7 @@
   z-index: 100000;
 }
 
-.body-screen{
+.body-screen {
   background-color: #312B57;
   min-height: 100vh;
 }
@@ -24,7 +24,7 @@
   background-color: #f4f1f6;
   display: flex;
   width: 100%;
-  height: 92.2vh;
+  height: 90vh;
 
   .menu-bar {
     background-color: #302c54;
@@ -34,8 +34,9 @@
 
   .content {
     width: 85%;
-    height: 860px;
+    max-height: 860px;
     margin-top: 1px;
+    margin-bottom: 1px;
     z-index: 10000;
   }
 }
@@ -46,6 +47,6 @@
 
 .footer {
   width: auto;
-  height: 2rem;
+  height: 1rem;
   background: #302c54;
 }
