@@ -73,7 +73,7 @@ namespace HRMSolution.Application.Catalog.DanhMucKhenThuongKyLuats
             return data;
         }
 
-        public async Task<DanhMucKhenThuongKyLuatViewModel> GetDetail(int id)
+        public async Task<DanhMucKhenThuongKyLuatViewModel> GetById(int id)
         {
             var query = from p in _context.danhMucKhenThuongKyLuats
                         where p.id == id

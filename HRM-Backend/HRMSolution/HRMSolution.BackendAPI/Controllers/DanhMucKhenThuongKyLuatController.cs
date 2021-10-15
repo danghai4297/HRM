@@ -30,6 +30,16 @@ namespace HRMSolution.BackendAPI.Controllers
             var danhMucKTKL = await _danhMucKhenThuongKyLuatService.GetAllKyLuat();
             return Ok(danhMucKTKL);
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var result = await _danhMucKhenThuongKyLuatService.GetById(id);
+            if (result == null)
+                return BadRequest("Không tìm thấy Danh mục khen thưởng kỷ luật");
+            return Ok(result);
+        }
+
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] DanhMucKhenThuongKyLuatCreateRequest request)
         {

@@ -146,18 +146,21 @@ namespace HRMSolution.Application.Catalog.NhanViens
             //Phòng Ban
             var queryPb = from dc in _context.dieuChuyens
                           join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
-                          where dc.trangThai == true 
-                          select new {dc, pb };
+                          where dc.trangThai == true
+                          select new {dc, pb, phongBan = pb.tenPhongBan };
 
             var query = from nv in _context.nhanViens
+                        
                         join tc in _context.danhMucTinhChatLaoDongs on nv.tinhChatLaoDong equals tc.id
                         join hn in _context.danhMucHonNhans on nv.idDanhMucHonNhan equals hn.id
                         join dt in _context.danhMucDanTocs on nv.idDanToc equals dt.id
                         join tg in _context.danhMucTonGiaos on nv.idTonGiao equals tg.id
                         join ncc in _context.danhMucNgachCongChucs on nv.idNgachCongChuc equals ncc.id
+                        join d in queryPb on nv.maNhanVien equals d.dc.maNhanVien into x
+                        from xx in x.DefaultIfEmpty()
                         //join q in queryPb on nv.maNhanVien equals q.dc.maNhanVien
 
-                        select new { nv, tc,dt,  hn, tg, ncc };
+                        select new { nv, tc,dt,  hn, tg, ncc, x, xx };
 
             var data = await query.Select(x => new NhanVienViewModel()
             {
@@ -217,7 +220,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 NgachCongChuc = x.ncc.tenNgach,
                 lyDoNghiViec = x.nv.lyDoNghiViec,
                 anh = x.nv.anh,
-                //phongBan = x.q.pb.tenPhongBan
+                phongBan = x.xx.phongBan ?? String.Empty
             }).ToListAsync();
 
 

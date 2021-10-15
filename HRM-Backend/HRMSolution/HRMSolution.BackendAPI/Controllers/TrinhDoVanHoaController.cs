@@ -19,7 +19,7 @@ namespace HRMSolution.BackendAPI.Controllers
             _trinhDoVanHoaService = trinhDoVanHoaService;
         }
         [HttpGet()]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> GetAll()
         {
             var trinhDoVanHoa = await _trinhDoVanHoaService.GetAll();
             return Ok(trinhDoVanHoa);
