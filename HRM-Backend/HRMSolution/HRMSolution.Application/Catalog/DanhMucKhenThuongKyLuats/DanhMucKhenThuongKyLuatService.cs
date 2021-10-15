@@ -92,8 +92,8 @@ namespace HRMSolution.Application.Catalog.DanhMucKhenThuongKyLuats
 
         public async Task<int> Update(int id, DanhMucKhenThuongKyLuatUpdateRequest request)
         {
-            var danhMucKTKL = await _context.danhMucHonNhans.FindAsync(id);
-            if (danhMucKTKL == null) throw new HRMException($"Không tìm thấy danh mục khen thưởng kỉ luật có id: {id }");
+            var danhMucKTKL = await _context.danhMucKhenThuongKyLuats.FindAsync(id);
+            if (danhMucKTKL == null) throw new HRMException($"Không tìm thấy danh mục khen thưởng kỉ luật có id: {id}");
 
             danhMucKTKL.tenDanhMuc = request.tenDanhMuc;
             return await _context.SaveChangesAsync();
