@@ -47,7 +47,6 @@ function ScreenProject() {
             <SideBarLeft />
           </div>
           <div className="content">  
-            <div className="child-content">
             <Switch>
               <ProtectedRoute exact path="/home" component={DashBoard} />
               <ProtectedRoute path="/change" component={ChangePasswordForm} />
@@ -158,7 +157,7 @@ function ScreenProject() {
             </div>
           </div>
         </div>
-      </div>
+
     </>
   );
 }

@@ -30,15 +30,9 @@ const DeleteApi = {
     return axiosClient.delete(url);
   },
 
-  //delete dm khen thưởng
-  deleteDMKT: (id) => {
-    const url = `/DanhMucKhenThuongKyLuat/khen-thuong/${id}`;
-    return axiosClient.delete(url);
-  },
-
-  //delete dm kỷ luật
-  deleteDMKL: (id) => {
-    const url = `/DanhMucKhenThuongKyLuat/ky-luat/${id}`;
+  //delete dm khen thưởng và kỉ luật
+  deleteDMKTvKL: (id) => {
+    const url = `/DanhMucKhenThuongKyLuat/${id}`;
     return axiosClient.delete(url);
   },
 

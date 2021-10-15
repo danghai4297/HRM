@@ -5,7 +5,7 @@ import "./SubDetail.scss";
 function SubDetail(props) {
   const { titleLeft, itemLeft, titleRight, itemRight } = props;
   return (
-    <div className="contains">
+    <div className="containss">
       <Row className="item">
         <Col>
           <Row className="row-replace">

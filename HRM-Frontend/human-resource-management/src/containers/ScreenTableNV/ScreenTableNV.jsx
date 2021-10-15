@@ -28,6 +28,7 @@ function ScreenTableNV(props) {
     };
     fetchNvList();
   }, []);
+  console.log(dataAllNv)
 
   return (
     <>

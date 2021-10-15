@@ -18,7 +18,7 @@ import {
 function Detail(props) {
   let { match, history } = props;
   let { id } = match.params;
-  const link = true;
+  
 
   const [dataDetailNv, setdataDetailNv] = useState([]);
   const [dataDetailTDVH, setdataDetailTDVH] = useState([]);
@@ -29,7 +29,7 @@ function Detail(props) {
   const [dataDetailTc, setdataDetailTc] = useState([]);
   const [dataDetailKt, setdataDetailKt] = useState([]);
   const [dataDetailKl, setdataDetailKl] = useState([]);
-  const dataTDVH = [];
+  
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -51,7 +51,7 @@ function Detail(props) {
     };
     fetchNvList();
   }, []);
-
+  console.log(dataDetailNv)
   const [dropBase, setDropBase] = useState(true);
   const [dropContact, setDropContact] = useState(true);
   const [dropJob, setDropJob] = useState(true);
@@ -230,7 +230,7 @@ function Detail(props) {
             </Container>
           </div>
           <div className="right-path">
-            <Button className="button-color">Sửa</Button>
+            <Button className="button-color" variant="dark">Sửa</Button>
             <Button className="button-color" variant="danger">
               Xóa
             </Button>

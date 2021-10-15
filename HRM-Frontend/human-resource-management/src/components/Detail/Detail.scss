@@ -1,5 +1,5 @@
 .contents {
-  width: 100%;
+  max-width: 100%;
   .first-information {
     width: 98%;
     min-height: 200px;
@@ -65,7 +65,8 @@
   .main-information {
     display: flex;
     width: 98%;
-    margin: 0.6em;
+    // margin: 0.6em;
+    margin-left: 0.6em;
     .left-header-information {
       margin-top: 0.5em;
       width: 17%;
@@ -93,13 +94,14 @@
       }
     }
     .right-information {
+      right: 10px;
+      flex: 7;
       margin-top: 0.5em;
       background: white;
-      width: 83%;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 10px;
+      // border-radius: 10px;
       padding: 0;
-      height: 605px;
+      height: 600px;
       overflow: auto;
       .form {
         width: 100%;

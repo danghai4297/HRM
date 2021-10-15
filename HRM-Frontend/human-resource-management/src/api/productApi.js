@@ -262,6 +262,11 @@ const ProductApi = {
     const url = "/DanhMucNhomLuong";
     return axiosClient.post(url, data);
   },
+  //add danh mục khen thưởng và kỉ luật
+  PostDMKTvKL: (data) => {
+    const url = "/DanhMucKhenThuongKyLuat";
+    return axiosClient.post(url, data);
+  },
   //add danh mục phòng ban
   PostDMPB: (data) => {
     const url = "/DanhMucPhongBan";
@@ -325,17 +330,17 @@ const ProductApi = {
     return axiosClient.get(url);
   },
 
-  //Detail dm khen thưởng
-  getDetailDMKT: (id) => {
-    const url = `/DanhMucKhenThuongKyLuat/khen-thuong/${id}`;
+  //Detail dm khen thưởng và kỷ luật
+  getDetailDMKTvKL: (id) => {
+    const url = `/DanhMucKhenThuongKyLuat/${id}`;
     return axiosClient.get(url);
   },
 
-  //Detail dm kỷ luật
-  getDetailDMKL: (id) => {
-    const url = `/DanhMucKhenThuongKyLuat/ky-luat/${id}`;
-    return axiosClient.get(url);
-  },
+  // //Detail dm kỷ luật
+  // getDetailDMKL: (id) => {
+  //   const url = `/DanhMucKhenThuongKyLuat/ky-luat/${id}`;
+  //   return axiosClient.get(url);
+  // },
 
   //Detail dm loại hợp đồng
   getDetailDMLHD: (id) => {
