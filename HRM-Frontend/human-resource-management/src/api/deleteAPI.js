@@ -107,6 +107,16 @@ const DeleteApi = {
     const url = `/DanhMucHinhThucDaoTao/${id}`;
     return axiosClient.delete(url);
   },
+  // delete trình độ văn hoá
+  deleteTDVH: (id) =>{
+    const url = `/TrinhDoVanHoa/${id}`;
+    return axiosClient.delete(url);
+  },
+  // delete ngoại ngữ
+  deleteNN:(id) =>{
+    const url = `/NgoaiNgu/{id}/${id}`;
+    return axiosClient.delete(url);
+  }
 };
 
 export default DeleteApi;

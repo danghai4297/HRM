@@ -34,6 +34,9 @@ import ChangePasswordForm from "../../components/ChangePasswordForm/ChangePasswo
 import ProtectedRoute from "./ProtectedRoute";
 import Header from "../../components/Header/Header";
 import { AccountContext } from "../../Contexts/StateContext";
+import AddLevelForm from "../../components/AddLevelForm/AddLevelForm";
+import AddLanguageForm from "../../components/AddLanguageForm/AddLanguageForm";
+import AddFamilyForm from "../../components/AddFamilyForm/AddFamilyForm";
 function ScreenProject() {
   const { setAccount } = useContext(AccountContext);
   return (
@@ -152,7 +155,7 @@ function ScreenProject() {
                 path="/discipline/add"
                 component={AddDisciplineForm}
               />
-              <ProtectedRoute exact path="/report" component={ScreenReport} />
+              <ProtectedRoute exact path="/report" component={AddFamilyForm} />
             </Switch>
           </div>
         </div>
