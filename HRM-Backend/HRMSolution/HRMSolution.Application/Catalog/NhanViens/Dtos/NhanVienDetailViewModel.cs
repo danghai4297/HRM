@@ -85,6 +85,7 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
         public List<KhenThuongViewModel> khenThuongs { get; set; }
         public List<KyLuatViewModel> kyLuats { get; set; }
         public List<HopDongViewModel> hopDongs { get; set; }
+        public List<LuongViewModel> luongs { get; set; }
         public List<NgoaiNguViewModel> ngoaiNgus { get; set; }
         public List<NguoiThanViewModel> nguoiThans { get; set; }
     }

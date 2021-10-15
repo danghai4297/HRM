@@ -13,6 +13,5 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
         public DateTime? hdHopDongDenNgay { get; set; }
         public string hdGhiChu { get; set; }
         public string trangThai { get; set; }
-        //public List<LuongViewModel> luongs { get; set; }
     }
 }

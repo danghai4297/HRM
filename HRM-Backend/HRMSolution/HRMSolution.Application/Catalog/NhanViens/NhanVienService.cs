@@ -360,13 +360,38 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 dcChucVu = x.dmcv.tenChucVu
             }).ToListAsync();
 
+            //List Lương
+            var queryL = from nv in _context.nhanViens
+                         join hd in _context.hopDongs on nv.maNhanVien equals hd.maNhanVien
+                         join l in _context.luongs on hd.maHopDong equals l.maHopDong
+                         join dmnl in _context.danhMucNhomLuongs on l.idNhomLuong equals dmnl.id
+                         where hd.maHopDong == l.maHopDong && nv.maNhanVien == maNhanVien
+                          select new { hd, l, dmnl };
+
+            var dataL = await queryL.Select(x => new LuongViewModel()
+            {
+                id = x.l.id,
+                maHopDong = x.l.maHopDong,
+                nhomLuong = x.dmnl.tenNhomLuong,
+                heSoLuong = x.l.heSoLuong,
+                bacLuong = x.l.bacLuong,
+                luongCoBan = x.l.luongCoBan,
+                phuCapTrachNhiem = x.l.phuCapTrachNhiem,
+                phuCapKhac = x.l.phuCapKhac,
+                tongLuong = x.l.tongLuong,
+                thoiHanLenLuong = x.l.thoiHanLenLuong,
+                ngayHieuLuc = x.l.ngayHieuLuc,
+                ngayKetThuc = x.l.ngayKetThuc,
+                trangThai = x.l.trangThai == true? "Kích hoạt" : "Vô hiệu"
+            }).Distinct().ToListAsync();
+
 
             //List Hợp Đồng
             var queryHd = from nv in _context.nhanViens
                           join hd in _context.hopDongs on nv.maNhanVien equals hd.maNhanVien
                           join lhd in _context.danhMucLoaiHopDongs on hd.idLoaiHopDong equals lhd.id
-                          join dmcd in _context.danhMucChucDanhs on hd.idChucDanh equals dmcd.id
-                          where hd.maNhanVien == maNhanVien
+                          join dmcd in _context.danhMucChucDanhs on hd.idChucDanh equals dmcd.id              
+                          where nv.maNhanVien == maNhanVien 
                           select new { hd, lhd, dmcd };
 
             var dataHd = await queryHd.Select(x => new HopDongViewModel()
@@ -378,8 +403,8 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 hdHopDongDenNgay = x.hd.hopDongDenNgay,
                 hdGhiChu = x.hd.ghiChu,
                 trangThai = x.hd.trangThai == true? "Kích hoạt": "Vô hiệu",
-                //luongs = dataL
-            }).ToListAsync();
+                
+            }).Distinct().ToListAsync();
 
             //List Trình Độ Văn Hóa
             var queryTdvh = from nv in _context.nhanViens
@@ -536,6 +561,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 thanNhanNuocNgoai = x.lsbt.lsbt_thanNhanNuocNgoai,
                 trinhDoVanHoas = dataTdvh,
                 hopDongs = dataHd,
+                luongs = dataL,
                 dieuChuyens = dataDc,
                 khenThuongs = dataKt,
                 ngoaiNgus = dataNn,
