@@ -2,6 +2,7 @@
     overflow: auto;
     max-height: 890px;
     width: 100%;
+    // border-radius: 15px;
 }
 .item-dash-board {
     // border: 1px solid black;
@@ -53,8 +54,6 @@
         width: 49%;
         background-color: white;
         border-radius: 1rem;
-        border-top: 3px solid rgb(156, 155, 155);
-        border-bottom: 2px solid rgb(156, 155, 155);
 
         margin: 0.2rem;
         box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.6);

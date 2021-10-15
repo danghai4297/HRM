@@ -10,7 +10,7 @@
 .header {
   width: auto;
   position: sticky;
-  height: 50px;
+  height: 3rem;
   top: 0;
   z-index: 10;
 }
@@ -19,7 +19,7 @@
   background-color: #f4f1f6;
   display: flex;
   width: 100%;
-  min-height: 93.4vh;
+  height: 92.2vh;
 
   .menu-bar {
     background-color: #302c54;
@@ -30,10 +30,16 @@
   .content {
     width: 85%;
     height: auto;
-    margin-top: 1%;
+    margin-top: 1px;
   }
 }
 .btn:hover {
   background-color: rgb(62, 148, 206);
   box-shadow: 0 0 2px 2px rgb(52, 59, 54);
+}
+
+.footer {
+  width: auto;
+  height: 2rem;
+  background: #302c54;
 }
