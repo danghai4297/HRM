@@ -209,13 +209,21 @@ const ProductApi = {
     const url = "/DanhMucTrinhDo";
     return axiosClient.get(url);
   },
-
+  // add trình độ văn hoá 
+  PostTDVH: (data) =>{
+    const url = "/TrinhDoVanHoa";
+    return axiosClient.post(url, data);
+  },
   //add danh mục dân tộc
   PostDMDT: (data) => {
     const url = "/DanhMucDanToc";
     return axiosClient.post(url, data);
   },
-
+  //add ngoại ngữ
+  PostNN: (data) =>{
+    const url = "/NgoaiNgu";
+    return axiosClient.post(url, data);
+  },
   //add danh mục chức danh
   PostDMCD: (data) => {
     const url = "/DanhMucChucDanh";

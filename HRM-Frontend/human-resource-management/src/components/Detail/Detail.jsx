@@ -15,11 +15,11 @@ import {
   NVCOLUMNSNT,
   NVCOLUMNSTDVH,
 } from "./NvColumns";
+import { Link } from "react-router-dom";
 
 function Detail(props) {
   let { match, history } = props;
   let { id } = match.params;
-  
 
   const [dataDetailNv, setdataDetailNv] = useState([]);
   const [dataDetailTDVH, setdataDetailTDVH] = useState([]);
@@ -53,7 +53,7 @@ function Detail(props) {
     };
     fetchNvList();
   }, []);
-  console.log(dataDetailNv)
+  console.log(dataDetailNv);
   const [dropBase, setDropBase] = useState(true);
   const [dropContact, setDropContact] = useState(true);
   const [dropJob, setDropJob] = useState(true);
@@ -232,7 +232,9 @@ function Detail(props) {
             </Container>
           </div>
           <div className="right-path">
-            <Button className="button-color" variant="dark">Sửa</Button>
+            <Button className="button-color" variant="dark">
+              Sửa
+            </Button>
             <Button className="button-color" variant="danger">
               Xóa
             </Button>
@@ -538,9 +540,11 @@ function Detail(props) {
                       <h5 className="title-name">Trình độ</h5>
                     </div>
                     <div className="icon-cultural">
-                      <button className="btn-cultural">
-                        <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
-                      </button>
+                      <Link to="/profile/detail/level/add">
+                        <button className="btn-cultural">
+                          <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                        </button>
+                      </Link>
                     </div>
                   </div>
                   <div className="table">
@@ -555,9 +559,11 @@ function Detail(props) {
                       <h5 className="title-name">Ngoại ngữ</h5>
                     </div>
                     <div className="icon-cultural">
-                      <button className="btn-cultural">
-                        <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
-                      </button>
+                      <Link to="/profile/detail/language/add">
+                        <button className="btn-cultural">
+                          <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                        </button>
+                      </Link>
                     </div>
                   </div>
                   <div className="table">
@@ -592,9 +598,11 @@ function Detail(props) {
                   <div className="title">
                     <div className="title-cultural"></div>
                     <div className="icon-cultural">
-                      <button className="btn-cultural">
-                        <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
-                      </button>
+                      <Link to="/profile/detail/family/add">
+                        <button className="btn-cultural">
+                          <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                        </button>
+                      </Link>
                     </div>
                   </div>
                   <div className="table">

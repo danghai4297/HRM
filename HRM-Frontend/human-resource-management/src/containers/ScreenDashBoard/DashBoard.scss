@@ -2,7 +2,25 @@
     overflow: auto;
     max-height: 860px;
     width: 100%;
+
+    background-color: #f4f1f6;
     // border-radius: 15px;
+}
+.Screen-dash-board::-webkit-scrollbar {
+    width: 6px;
+    // height: 6px;
+    border-radius: 20px;
+}
+.Screen-dash-board::-webkit-scrollbar-track {
+    background-color: #efefef;
+    border-radius: 20px;
+}
+.Screen-dash-board::-webkit-scrollbar-thumb {
+    background-color: rgb(129, 129, 129);
+    border-radius: 6px;
+}
+.Screen-dash-board::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(158, 158, 158);
 }
 .item-dash-board {
     // border: 1px solid black;

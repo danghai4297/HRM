@@ -630,7 +630,6 @@ export const NVCOLUMNS2 = [
     minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: false,
-
     show: true,
   },
 ];

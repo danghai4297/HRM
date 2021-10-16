@@ -8,7 +8,7 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
-import { useToast } from '../../Toast/Toast';
+import { useToast } from "../../Toast/Toast";
 // import { Alert } from "react-alert";
 AddNationForm.propTypes = {};
 const schema = yup.object({
@@ -58,11 +58,11 @@ function AddNationForm(props) {
       if (id !== undefined) {
         await PutApi.PutDMDT(data, id);
         setShowDialog(false);
-        success('sửa danh mục thành công');
+        success("sửa danh mục thành công");
       } else {
         await ProductApi.PostDMDT(data);
         setShowDialog(false);
-        success('Thêm danh mục thành công');
+        success("Thêm danh mục thành công");
       }
       history.goBack();
     } catch (error) {}

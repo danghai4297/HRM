@@ -89,7 +89,17 @@ const PutApi = {
   PutDMKTvKL: (data, id) => {
     const url = `/DanhMucKhenThuongKyLuat/${id}`;
     return axiosClient.put(url, data);
-  }
+  },
+  // Sửa trình độ văn hoá
+  PutTDVH: (data,id) =>{
+    const url =`/TrinhDoVanHoa/${id}`;
+    return axiosClient.put(url, data);
+  },
+  // Sửa ngoại ngữ
+  PutNN:(data,id) =>{
+    const url =`/NgoaiNgu/{id}/${id}`;
+    return axiosClient.put(url, data);
+  },
 };
 
 export default PutApi;
