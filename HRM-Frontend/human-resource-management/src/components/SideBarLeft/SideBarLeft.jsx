@@ -19,7 +19,10 @@ function SideBarLeft() {
 
   return (
     <div className="Sidebar">
-      <ul className="SidebarList sticky-top">
+      <ul
+        className="SidebarList sticky-top"
+        // style={{ backgroundImage: `url("/Images/bcr.png")` }}
+      >
         <li className="title-project">
           <div className="title-names">
             <h1 style={{ color: "white" }}>HRM</h1>
@@ -28,6 +31,7 @@ function SideBarLeft() {
         {SideBarData.map((val, key) => {
           return <Menu val={val} key={key} />;
         })}
+        <img className="Side-img" src="/Images/pcr.jpg" alt="" />
       </ul>
     </div>
   );
