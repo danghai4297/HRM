@@ -177,7 +177,7 @@ function ScreenProject() {
           </div>
         </div>
       </div>
-      <div className="footer"></div>
+      
     </>
   );
 }
