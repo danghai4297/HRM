@@ -24,7 +24,7 @@ namespace HRMSolution.Application.Catalog.NgoaiNgus
             var ngoaiNgu = new NgoaiNgu()
             {
                 idDanhMucNgoaiNgu = request.idDanhMucNgoaiNgu,
-                ngayCap = request.ngayCap,
+                ngayCap = DateTime.Parse(request.ngayCap),
                 noiCap = request.noiCap,
                 trinhDo = request.trinhDo,
                 maNhanVien = request.maNhanVien
@@ -70,7 +70,7 @@ namespace HRMSolution.Application.Catalog.NgoaiNgus
             if (ngoaiNgu == null) throw new HRMException($"Không tìm thấy ngoại ngữ có id : {id}");
 
             ngoaiNgu.idDanhMucNgoaiNgu = request.idDanhMucNgoaiNgu;
-            ngoaiNgu.ngayCap = request.ngayCap;
+            ngoaiNgu.ngayCap = DateTime.Parse(request.ngayCap);
             ngoaiNgu.trinhDo = request.trinhDo;
             ngoaiNgu.noiCap = request.noiCap;
             ngoaiNgu.maNhanVien = request.maNhanVien;

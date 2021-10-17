@@ -26,7 +26,7 @@ namespace HRMSolution.Application.Catalog.NguoiThans
             {
                 tenNguoiThan = request.tenNguoiThan,
                 gioiTinh = request.gioiTinh,
-                ngaySinh = request.ngaySinh,
+                ngaySinh = DateTime.Parse(request.ngaySinh),
                 quanHe = request.quanHe,
                 ngheNghiep = request.ngheNghiep,
                 diaChi = request.diaChi,
@@ -84,7 +84,7 @@ namespace HRMSolution.Application.Catalog.NguoiThans
 
             nguoiThan.tenNguoiThan = request.tenNguoiThan;
             nguoiThan.gioiTinh = request.gioiTinh;
-            nguoiThan.ngaySinh = request.ngaySinh;
+            nguoiThan.ngaySinh = DateTime.Parse(request.ngaySinh);
             nguoiThan.quanHe = request.quanHe;
             nguoiThan.ngheNghiep = request.ngheNghiep;
             nguoiThan.diaChi = request.diaChi;
