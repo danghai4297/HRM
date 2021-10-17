@@ -286,7 +286,7 @@ function AddLevelForm(props) {
                   >
                     Từ ngày
                   </label>
-                  {/* <input
+                  <input
                   type="text"
                   {...register("tuThoiGian")}
                   id="tuThoiGian"
@@ -297,8 +297,8 @@ function AddLevelForm(props) {
                   }
                   placeholder="DD/MM/YYYY"
                 />
-                <span className="message">{errors.tuThoiGian?.message}</span> */}
-                  <Controller
+                <span className="message">{errors.tuThoiGian?.message}</span>
+                  {/* <Controller
                     name="tuThoiGian"
                     control={control}
                     defaultValue=""
@@ -313,7 +313,7 @@ function AddLevelForm(props) {
                         {...field}
                       ></DatePicker>
                     )}
-                  />
+                  /> */}
                 </div>
               </div>
               <div className="col">
