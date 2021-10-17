@@ -5,7 +5,7 @@ export const NVCOLUMNS = [
     Header: "Ảnh",
     accessor: "anh",
     sticky: "left",
-    minWidth: 60,
+    minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -14,7 +14,7 @@ export const NVCOLUMNS = [
     Header: "Mã nhân viên",
     accessor: "maNhanVien",
     sticky: "left",
-    minWidth: 60,
+    minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -30,9 +30,9 @@ export const NVCOLUMNS = [
   },
 
   {
-    Header: "Kỉ luật",
+    Header: "Mục Khen thưởng",
     accessor: "idDanhMucKhenThuong",
-    minWidth: 350,
+    minWidth: 408,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -40,19 +40,29 @@ export const NVCOLUMNS = [
   {
     Header: "Nội dung",
     accessor: "noiDung",
-    minWidth: 340,
+    minWidth: 440,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
     show: true,
   },
   {
-    Header: "Lý do",
-    accessor: "lyDo",
-    minWidth: 340,
+    Header: "Khen thưởng",
+    accessor: "loai",
+    minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
-    disableFilters: true,
     show: true,
+    Cell: () => {
+      return <img src="/Images/redcard.png" width={30} alt="" />;
+    },
+  },
+  {
+    Header: "Lý do",
+    accessor: "lyDo",
+    minWidth: 500,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+    show: false,
   },
 ];

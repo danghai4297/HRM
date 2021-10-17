@@ -14,7 +14,7 @@ export const NVCOLUMNS = [
     Header: "Mã nhân viên",
     accessor: "maNhanVien",
     sticky: "left",
-    minWidth: 200,
+    minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -32,7 +32,7 @@ export const NVCOLUMNS = [
     Header: "Ngày Hiệu lực",
     accessor: "ngayHieuLuc",
     sticky: "left",
-    minWidth: 200,
+    minWidth: 150,
     Filter: SelectColumnFilter,
     disableFilters: true,
     Cell: ({ value }) => {
@@ -45,7 +45,7 @@ export const NVCOLUMNS = [
     Header: "Phòng ban",
 
     accessor: "idPhongBan",
-    minWidth: 200,
+    minWidth: 198,
     Filter: SelectColumnFilter,
 
     show: true,
@@ -53,7 +53,7 @@ export const NVCOLUMNS = [
   {
     Header: "Tổ",
     accessor: "to",
-    minWidth: 300,
+    minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -82,5 +82,12 @@ export const NVCOLUMNS = [
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
+    Cell: ({ value }) => {
+      return value === "Kích hoạt" ? (
+        <img src="/Images/greenC.png" width={20} alt="" />
+      ) : (
+        <img src="/Images/orangeC.png" width={20} alt="" />
+      );
+    },
   },
 ];

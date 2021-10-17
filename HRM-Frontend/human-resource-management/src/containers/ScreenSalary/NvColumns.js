@@ -22,7 +22,7 @@ export const NVCOLUMNS = [
   {
     Header: "Tổng lương",
     accessor: "tongLuong",
-    minWidth: 300,
+    minWidth: 150,
     sticky: "left",
     Filter: SelectColumnFilter,
     disableFilters: true,
