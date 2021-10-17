@@ -4,9 +4,11 @@ import { Button } from "react-bootstrap";
 import "./ScreenDetailContract.scss";
 import SubDetail from "../../components/Detail/SubDetail";
 import ProductApi from "../../api/productApi";
+import { Link } from "react-router-dom";
 function ScreenDetailContract(props) {
   let { match, history } = props;
   let { id } = match.params;
+  console.log(id);
 
   const [dataDetailHd, setdataDetailHd] = useState([]);
 
@@ -21,23 +23,28 @@ function ScreenDetailContract(props) {
     };
     fetchNvList();
   }, []);
-  console.log(dataDetailHd);
+  
   return (
     <>
       <div className="main-screen">
         <div className="first-main">
           <div className="first-path">
             <button className="btn-back" onClick={history.goBack}>
-              <FontAwesomeIcon className="icon-btn" icon={["fas", "long-arrow-alt-left"]} />
+              <FontAwesomeIcon
+                className="icon-btn"
+                icon={["fas", "long-arrow-alt-left"]}
+              />
             </button>
           </div>
           <div className="second-path">
             <h2>Chi tiết hợp đồng</h2>
           </div>
           <div className="third-path">
-            <Button variant="light" className="btn-fix">
-              Sửa
-            </Button>
+            <Link to={`/contract/${id}`}>
+              <Button variant="light" className="btn-fix">
+                Sửa
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="second-main">

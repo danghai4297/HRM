@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
 import "./ScreenDetailFamily.scss";
 import ProductApi from "../../api/productApi";
+import { Link } from "react-router-dom";
 function ScreenDetailFamily(props) {
   let { match, history } = props;
   let { id } = match.params;
@@ -39,9 +40,11 @@ function ScreenDetailFamily(props) {
             <h2>Thông tin gia đình</h2>
           </div>
           <div className="third-path">
-            <Button variant="light" className="btn-fix">
-              Sửa
-            </Button>
+          <Link to={`/profile/detail/family/update/${id}`}>
+              <Button variant="light" className="btn-fix">
+                Sửa
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="second-main">

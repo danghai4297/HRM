@@ -7,6 +7,7 @@ import DeleteApi from "../../../src/api/deleteAPI";
 import PutApi from "../../../src/api/putAAPI";
 import ProductApi from "../../../src/api/productApi";
 import Dialog from "../../components/Dialog/Dialog";
+import { useLocation } from "react-router-dom";
 const schema = yup.object({
     tenTruong: yup.string().required("Tên trường không được bỏ trống."),
     idChuyenMon: yup.string().required("Chuyên môn không được bỏ trống."),
@@ -17,6 +18,11 @@ const schema = yup.object({
 });
 function AddLevelForm(props) {
   let { match, history } = props;
+  
+  let location = useLocation();
+  console.log(location)
+  let query = new URLSearchParams(location.search);
+  console.log(query.get("maNhanVien"));
   let { id } = match.params;
   const {
     register,
@@ -42,6 +48,7 @@ function AddLevelForm(props) {
     setShowDeleteDialog(false);
   };
 
+  console.log(dataDetailTDVH);
   useEffect(() => {
     const fetchNvList = async () => {
       try {

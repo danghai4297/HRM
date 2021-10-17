@@ -69,6 +69,11 @@ function ScreenProject() {
                 path="/profile/detail/level/:id"
                 component={ScreenDetailLevel}
               />
+              <ProtectedRoute
+                exact
+                path="/profile/detail/level/update/:id"
+                component={AddLevelForm}
+              />
 
               <ProtectedRoute
                 exact
@@ -79,6 +84,11 @@ function ScreenProject() {
                 exact
                 path="/profile/detail/language/:id"
                 component={ScreenDetailForeignLanguage}
+              />
+              <ProtectedRoute
+                exact
+                path="/profile/detail/language/update/:id"
+                component={AddLanguageForm}
               />
 
               <ProtectedRoute
@@ -91,6 +101,13 @@ function ScreenProject() {
                 path="/profile/detail/family/:id"
                 component={ScreenDetailFamily}
               />
+              <ProtectedRoute
+                exact
+                path="/profile/detail/family/update/:id"
+                component={AddFamilyForm}
+              />
+
+
               <ProtectedRoute
                 exact
                 path="/profile/add"
@@ -112,6 +129,11 @@ function ScreenProject() {
                 path="/contract/add"
                 component={AddContractForm}
               />
+              <ProtectedRoute
+                exact
+                path="/contract/:id"
+                component={AddContractForm}
+              />
 
               <ProtectedRoute exact path="/salary" component={ScreenSalary} />
               <ProtectedRoute
@@ -122,6 +144,11 @@ function ScreenProject() {
               <ProtectedRoute
                 exact
                 path="/salary/add"
+                component={AddSalaryForm}
+              />
+              <ProtectedRoute
+                exact
+                path="/salary/:id"
                 component={AddSalaryForm}
               />
 
@@ -140,6 +167,11 @@ function ScreenProject() {
               <ProtectedRoute
                 exact
                 path="/transfer/add"
+                component={AddTransferForm}
+              />
+              <ProtectedRoute
+                exact
+                path="/transfer/:id"
                 component={AddTransferForm}
               />
 
@@ -177,7 +209,6 @@ function ScreenProject() {
           </div>
         </div>
       </div>
-      <div className="footer"></div>
     </>
   );
 }

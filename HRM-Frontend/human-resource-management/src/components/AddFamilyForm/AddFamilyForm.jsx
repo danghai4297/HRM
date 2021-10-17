@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useLocation } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddFamilyForm.scss";
@@ -24,6 +25,35 @@ const schema = yup.object({
 function AddFamilyForm(props) {
   let { match, history } = props;
   let { id } = match.params;
+
+  let location = useLocation();
+  console.log(location)
+  let query = new URLSearchParams(location.search);
+  console.log(query.get("maNhanVien"));
+
+  const [dataDetailNT, setdataDetailNT] = useState([]);
+
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        // const responseCM = await ProductApi.getAllDMCM();
+        // setDataCM(responseCM);
+        // const responseHTDT = await ProductApi.getAllDMHTDT();
+        // setDataHTDT(responseHTDT);
+        // const responseTD = await ProductApi.getAllDMTD();
+        // setDataTD(responseTD);
+        if (id !== undefined) {
+          setDescription("Bạn chắc chắn muốm sửa trình độ");
+          const response = await ProductApi.getNTDetail(id);
+          setdataDetailNT(response);
+        }
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
+console.log(dataDetailNT)
   const {
     register,
     handleSubmit,
@@ -31,7 +61,6 @@ function AddFamilyForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const [dataDetailNT, setdataDetailNT] = useState([]);
   const [dataNN, setDataNN] = useState([]);
 
   const [showDialog, setShowDialog] = useState(false);

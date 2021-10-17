@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
 import "./ScreenDetailTransfer.scss";
 import ProductApi from "../../api/productApi";
+import { Link } from "react-router-dom";
 function ScreenDetailTransfer(props) {
   let { match, history } = props;
   let { id } = match.params;
@@ -35,9 +36,11 @@ function ScreenDetailTransfer(props) {
             <h2>Thủ tục thuyên chuyển</h2>
           </div>
           <div className="third-path">
-            <Button variant="light" className="btn-fix">
-              Sửa
-            </Button>
+          <Link to={`/transfer/${id}`}>
+              <Button variant="light" className="btn-fix">
+                Sửa
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="second-main">
