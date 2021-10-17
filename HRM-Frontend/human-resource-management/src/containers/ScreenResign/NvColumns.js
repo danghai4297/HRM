@@ -553,7 +553,13 @@ export const NVCOLUMNS2 = [
     minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: false,
-
     show: true,
+    Cell: ({ value }) => {
+      return value === "Đang làm việc" ? (
+        <img src="/Images/userIn.png" width={20} alt="" />
+      ) : (
+        <img src="/Images/useOut.png" width={20} alt="" />
+      );
+    },
   },
 ];

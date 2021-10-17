@@ -144,6 +144,13 @@ export const NVCOLUMNS2 = [
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
+    Cell: ({ value }) => {
+      return value === "Nam" ? (
+        <img src="/Images/male.png" width={20} alt="" />
+      ) : (
+        <img src="/Images/female.png" width={20} alt="" />
+      );
+    },
   },
   {
     Header: "Điện Thoại Nhà",
@@ -631,5 +638,12 @@ export const NVCOLUMNS2 = [
     Filter: SelectColumnFilter,
     disableFilters: false,
     show: true,
+    Cell: ({ value }) => {
+      return value === "Đang làm việc" ? (
+        <img src="/Images/userIn.png" width={23} alt="" />
+      ) : (
+        <img src="/Images/useOut.png" width={23} alt="" />
+      );
+    },
   },
 ];

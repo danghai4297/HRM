@@ -34,7 +34,7 @@ export const NVCOLUMNSHD = [
   {
     Header: "Loại Hợp Đồng",
     accessor: "idLoaiHopDong",
-    minWidth: 200,
+    minWidth: 268,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -53,7 +53,7 @@ export const NVCOLUMNSHD = [
   {
     Header: "Từ Ngày",
     accessor: "hopDongTuNgay",
-    minWidth: 150,
+    minWidth: 250,
     Filter: SelectColumnFilter,
     disableFilters: true,
     Cell: ({ value }) => {
@@ -65,7 +65,7 @@ export const NVCOLUMNSHD = [
   {
     Header: "Đến Ngày",
     accessor: "hopDongDenNgay",
-    minWidth: 150,
+    minWidth: 250,
     Filter: SelectColumnFilter,
     disableFilters: true,
     Cell: ({ value }) => {
@@ -77,11 +77,17 @@ export const NVCOLUMNSHD = [
   {
     Header: "Trạng thái",
     accessor: "trangThai",
-    minWidth: 400,
+    minWidth: 50,
     Filter: SelectColumnFilter,
     disableFilters: true,
-
     show: true,
+    Cell: ({ value }) => {
+      return value === "Kích hoạt" ? (
+        <img src="/Images/greenC.png" width={20} alt="" />
+      ) : (
+        <img src="/Images/orangeC.png" width={20} alt="" />
+      );
+    },
   },
   {
     Header: "Ghi chú",
