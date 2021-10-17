@@ -177,7 +177,11 @@ function ScreenProject() {
           </div>
         </div>
       </div>
+<<<<<<< HEAD
       {/* <div className="footer"></div> */}
+=======
+      
+>>>>>>> 93901a5e10b8da5afbe88f2aaaa1f343680b7f24
     </>
   );
 }
