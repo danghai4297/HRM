@@ -8,8 +8,8 @@ const ProductApi = {
     return axiosClient.get(url);
   },
 
-   //tất cả nhân viên nghi viec
-   getAllNvnv: () => {
+  //tất cả nhân viên nghi viec
+  getAllNvnv: () => {
     const url = "/NhanVien/nghiviec";
     return axiosClient.get(url);
   },
@@ -25,19 +25,31 @@ const ProductApi = {
     const url = `/NhanVien/${maNv}`;
     return axiosClient.get(url);
   },
-
+  // add trình độ văn hoá
+  PostTDVH: (data) => {
+    const url = "/TrinhDoVanHoa";
+    return axiosClient.post(url, data);
+  },
   //detail trình độ văn hóa
   getTDDetail: (id) => {
     const url = `/TrinhDoVanHoa/${id}`;
     return axiosClient.get(url);
   },
-
+  //add ngoại ngữ
+  PostNN: (data) => {
+    const url = "/NgoaiNgu";
+    return axiosClient.post(url, data);
+  },
   //detail ngoại ngữ
   getNNDetail: (id) => {
     const url = `/NgoaiNgu/${id}`;
     return axiosClient.get(url);
   },
-
+  //thêm người thân
+  postNT: (data) => {
+    const url = `/NguoiThan`;
+    return axiosClient.post(url, data);
+  },
   //detail người thân
   getNTDetail: (id) => {
     const url = `/NguoiThan/${id}`;
@@ -209,21 +221,13 @@ const ProductApi = {
     const url = "/DanhMucTrinhDo";
     return axiosClient.get(url);
   },
-  // add trình độ văn hoá 
-  PostTDVH: (data) =>{
-    const url = "/TrinhDoVanHoa";
-    return axiosClient.post(url, data);
-  },
+
   //add danh mục dân tộc
   PostDMDT: (data) => {
     const url = "/DanhMucDanToc";
     return axiosClient.post(url, data);
   },
-  //add ngoại ngữ
-  PostNN: (data) =>{
-    const url = "/NgoaiNgu";
-    return axiosClient.post(url, data);
-  },
+
   //add danh mục chức danh
   PostDMCD: (data) => {
     const url = "/DanhMucChucDanh";
@@ -415,7 +419,6 @@ const ProductApi = {
     const url = `/DanhMucHinhThucDaoTao/${id}`;
     return axiosClient.get(url);
   },
-  
 };
 
 export default ProductApi;
