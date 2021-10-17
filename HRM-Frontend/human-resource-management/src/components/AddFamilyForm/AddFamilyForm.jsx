@@ -10,7 +10,7 @@ import Dialog from "../../components/Dialog/Dialog";
 
 const schema = yup.object({
   idDanhMucNguoiThan: yup
-    .string()
+    .number()
     .required("Danh mục người thân không được bỏ trống."),
   tenNguoiThan: yup.string().required("Tên người thân không được bỏ trống."),
   gioiTinh: yup.boolean().required("Giới tính không được bỏ trống."),
@@ -37,7 +37,7 @@ function AddFamilyForm(props) {
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
-    "Bạn chắc chắn muốn thêm người thân mới"
+    "Bạn chắc chắn muốn thêm thông tin gia đình mới"
   );
 
   const cancel = () => {
@@ -50,7 +50,7 @@ function AddFamilyForm(props) {
         const responseNN = await ProductApi.getAllDMNT();
         setDataNT(responseNN);
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốm sửa trình độ");
+          setDescription("Bạn chắc chắn muốm sửa thông tin gia đình");
         //  const response = await ProductApi.getTDDetail(id);
          // setdataDetailNT(response);
         }
@@ -67,9 +67,15 @@ function AddFamilyForm(props) {
         //  await PutApi.PutTDVH(data, id);
 
       } else {
-        //   await ProductApi.PostTDVH(data);
+          await ProductApi.postNT(data);
       }
-      //history.goBack();
+      history.goBack();
+    } catch (error) {}
+  };
+  const handleDelete = async () => {
+    try {
+      await DeleteApi.deleteNT(id);
+      history.goBack();
     } catch (error) {}
   };
   return (
@@ -400,7 +406,7 @@ function AddFamilyForm(props) {
           </div>
         </form>
       </div>
-      {/* <Dialog
+      <Dialog
         show={showDialog}
         title="Thông báo"
         description={description}
@@ -410,10 +416,10 @@ function AddFamilyForm(props) {
       <Dialog
         show={showDeleteDialog}
         title="Thông báo"
-        description={`Bạn chắc chắn muốn xóa trình độ `}
+        description={`Bạn chắc chắn muốn xóa thông tin gia đình `}
         confirm={handleDelete}
         cancel={cancel}
-      /> */}
+      />
     </>
   );
 }

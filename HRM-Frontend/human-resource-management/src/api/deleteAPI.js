@@ -108,7 +108,12 @@ const DeleteApi = {
   },
   // delete ngoại ngữ
   deleteNN:(id) =>{
-    const url = `/NgoaiNgu/{id}/${id}`;
+    const url = `/NgoaiNgu/${id}`;
+    return axiosClient.delete(url);
+  },
+  // delete người thân
+  deleteNT:(id) =>{
+    const url = `/NguoiThan/${id}`;
     return axiosClient.delete(url);
   }
 };

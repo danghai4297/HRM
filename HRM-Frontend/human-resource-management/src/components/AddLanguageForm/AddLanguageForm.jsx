@@ -8,7 +8,7 @@ import ProductApi from "../../../src/api/productApi";
 import Dialog from "../../components/Dialog/Dialog";
 import "./AddLanguageForm.scss";
 const schema = yup.object({
-    idDanhMucNgoaiNgu: yup.string().required("Ngoại ngữ không được bỏ trống."),
+    idDanhMucNgoaiNgu: yup.number().required("Ngoại ngữ không được bỏ trống."),
     ngayCap: yup.string().required("Ngày cấp không được bỏ trống."),
     trinhDo: yup.string().required("Trình độ không được bỏ trống."),
     noiCap: yup.string().required("Nơi cấp không được bỏ trống."),
@@ -53,6 +53,8 @@ function AddLanguageForm(props) {
         fetchNvList();
       }, []);
       const onHandleSubmit = async (data) => {
+        console.log(data);
+        
         try {
           if (id !== undefined) {
             await PutApi.PutNN(data, id);
