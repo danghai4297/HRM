@@ -10,33 +10,38 @@ import Dialog from "../../components/Dialog/Dialog";
 import { useLocation } from "react-router-dom";
 import { DatePicker } from "antd";
 import moment from "moment/moment.js";
+
 const schema = yup.object({
   tenTruong: yup.string().required("Tên trường không được bỏ trống."),
   idChuyenMon: yup.number().required("Chuyên môn không được bỏ trống."),
   idHinhThucDaoTao: yup
     .number()
     .required("Hình thức đào tạo không được bỏ trống."),
-  idTrinhDo: yup.number().required("Trình độ không được bỏ trống."),
-  maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
+  idTrinhDo: yup
+    .number("Trình độ không được bỏ trống.")
+    .required("Trình độ không được bỏ trống."),
 });
 function AddLevelForm(props) {
   let { match, history } = props;
-  
+
   let location = useLocation();
-  console.log(location)
+  console.log(location);
   let query = new URLSearchParams(location.search);
   console.log(query.get("maNhanVien"));
+  let eCode = query.get("maNhanVien");
   let { id } = match.params;
-  //let oldDate = moment().add(10, 'days').calendar();
-  let oldDate = moment().toDate();
+  let oldDate = moment().add(10, "days").calendar();
+  //let oldDate = moment().toDate();
   // const [date, setDate] = useState({
   //   date: oldDate,
   // });
-  const [date, setDate] = useState();
-  const handleChangeDate = (e) => {
-    console.log(e.target.value);
-    setDate({ date: e.target.value });
+
+  const [dates, setDate] = useState(moment());
+  const handleChangeDate = (value) => {
+    let dateInput = value.format("MM/DD/YYYY");
+    setDate(dateInput);
   };
+ 
   const {
     register,
     handleSubmit,
@@ -86,14 +91,14 @@ function AddLevelForm(props) {
 
   const onHandleSubmit = async (data) => {
     console.log(data);
-
+    console.log("date",dates);
     try {
       if (id !== undefined) {
         await PutApi.PutTDVH(data, id);
       } else {
-        await ProductApi.PostTDVH(data);
+        // await ProductApi.PostTDVH(data);
       }
-      history.goBack();
+      //history.goBack();
     } catch (error) {}
   };
   const handleDelete = async () => {
@@ -156,12 +161,14 @@ function AddLevelForm(props) {
                   <input
                     type="text"
                     {...register("maNhanVien")}
+                    defaultValue={eCode}
                     id="maNhanVien"
                     className={
                       !errors.maNhanVien
                         ? "form-control col-sm-6 "
                         : "form-control col-sm-6 border-danger"
                     }
+                    readOnly
                   />
                   <span className="message">{errors.maNhanVien?.message}</span>
                 </div>
@@ -293,34 +300,44 @@ function AddLevelForm(props) {
                   >
                     Từ ngày
                   </label>
-                  <input
-                  type="text"
-                  {...register("tuThoiGian")}
-                  id="tuThoiGian"
-                  className={
-                    !errors.tuThoiGian
-                      ? "form-control col-sm-6"
-                      : "form-control col-sm-6 border-danger"
-                  }
-                  placeholder="DD/MM/YYYY"
-                />
-                <span className="message">{errors.tuThoiGian?.message}</span>
-                  {/* <Controller
+                  {/* <input
+                    type="text"
+                    {...register("tuThoiGian")}
+                    id="tuThoiGian"
+                    className={
+                      !errors.tuThoiGian
+                        ? "form-control col-sm-6"
+                        : "form-control col-sm-6 border-danger"
+                    }
+                    placeholder="DD/MM/YYYY"
+                  /> */}
+
+                  <Controller
                     name="tuThoiGian"
                     control={control}
                     defaultValue=""
-                    render={({ field }) => (
+                    render={({field}) => 
                       <DatePicker
                         id="tuThoiGian"
-                        className="form-control col-sm-6"
+                        className={
+                          !errors.tuThoiGian
+                            ? "form-control col-sm-6"
+                            : "form-control col-sm-6 border-danger"
+                        }
                         placeholder="DD/MM/YYYY"
                         format="DD/MM/YYYY"
-                        //selected={field}
-                        //onChange={(field) => setDate(field)}
+                        onChange={(event) => {
+                          handleChangeDate(event);                       
+                        }}
+                        selected={dates.format("MM/DD/YYYY")}
                         {...field}
+                       
                       ></DatePicker>
-                    )}
-                  /> */}
+                      
+                    }
+                    
+                  />
+                  <span className="message">{errors.tuThoiGian?.message}</span>
                 </div>
               </div>
               <div className="col">
