@@ -26,8 +26,6 @@ function ScreenReward(props) {
     fetchNvList();
   }, []);
 
-  console.log(dataDskt);
-
   return (
     <>
       <div className="screen-table-nv">

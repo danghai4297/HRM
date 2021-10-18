@@ -16,7 +16,7 @@ export const NVCOLUMNSTDVH = [
     Header: "Tên trường",
     accessor: "tdvhTenTruong",
     sticky: "left",
-    minWidth: 264,
+    minWidth: 260,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -25,7 +25,7 @@ export const NVCOLUMNSTDVH = [
   {
     Header: "Chuyên môn",
     accessor: "tdvhChuyenMon",
-    minWidth: 250,
+    minWidth: 249,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -65,7 +65,7 @@ export const NVCOLUMNSTDVH = [
   {
     Header: "Tốt nghiệp loại",
     accessor: "tdvhTrinhDo",
-    minWidth: 140,
+    minWidth: 120,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -84,10 +84,10 @@ export const NVCOLUMNSHD = [
     show: true,
   },
   {
-    Header: "Lương cơ bản",
-    accessor: "luongCoBan",
+    Header: "Loại hợp đồng",
+    accessor: "idLoaiHopDong",
     sticky: "left",
-    minWidth: 205,
+    minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -95,7 +95,7 @@ export const NVCOLUMNSHD = [
   },
   {
     Header: "Chức danh",
-    accessor: "chucDanh",
+    accessor: "idChucDanh",
     minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: true,
@@ -117,7 +117,7 @@ export const NVCOLUMNSHD = [
   {
     Header: "Kết thúc",
     accessor: "hdHopDongDenNgay",
-    minWidth: 194,
+    minWidth: 190,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -126,7 +126,7 @@ export const NVCOLUMNSHD = [
     },
   },
   {
-    Header: "Hình thức đào tạo",
+    Header: "Ghi trú",
     accessor: "hdGhiChu",
     minWidth: 200,
     Filter: SelectColumnFilter,
@@ -134,9 +134,15 @@ export const NVCOLUMNSHD = [
     show: true,
   },
   {
-    Header: "Tốt nghiệp loại",
-    accessor: "trangThai",
-    minWidth: 175,
+    Header: "Trạng thái",
+    accessor: (row) => {
+      return row.trangThai === "Kích hoạt" ? (
+        <img src="/Images/greenC.png" width={20} alt="" />
+      ) : (
+        <img src="/Images/orangeC.png" width={20} alt="" />
+      );
+    },
+    minWidth: 179,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -167,7 +173,7 @@ export const NVCOLUMNSDC = [
   {
     Header: "Tổ",
     accessor: "dcTo",
-    minWidth: 224,
+    minWidth: 219,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -218,7 +224,7 @@ export const NVCOLUMNSNN = [
     Header: "Ngoại ngữ",
     accessor: "nnDanhMucNgoaiNgu",
     sticky: "left",
-    minWidth: 289,
+    minWidth: 280,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -247,7 +253,7 @@ export const NVCOLUMNSNN = [
   {
     Header: "Nơi cấp",
     accessor: "nnNoiCap",
-    minWidth: 265,
+    minWidth: 269,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -276,15 +282,20 @@ export const NVCOLUMNSNT = [
     show: true,
   },
   {
-    Header: "Giới tính",
-    accessor: "ntGioiTinh",
-    sticky: "left",
-    minWidth: 70,
+    Header: "Giới Tính",
+    accessor: (row) => {
+      return row.ntGioiTinh === "Nam" ? (
+        <img src="/Images/male.png" width={20} alt="" />
+      ) : (
+        <img src="/Images/female.png" width={20} alt="" />
+      );
+    },
+    minWidth: 50,
     Filter: SelectColumnFilter,
     disableFilters: true,
-
     show: true,
   },
+
   {
     Header: "Ngày sinh",
     accessor: "ntNgaySinh",
@@ -307,7 +318,7 @@ export const NVCOLUMNSNT = [
   {
     Header: "Nghề nghiệp",
     accessor: "ntNgheNghiep",
-    minWidth: 219,
+    minWidth: 214,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -371,8 +382,14 @@ export const NVCOLUMNSKTvKL = [
   },
   {
     Header: "Loại",
-    accessor: "ktklloai",
-    minWidth: 224,
+    accessor: (row) => {
+      return row.ktklloai === "Khen Thưởng" ? (
+        <img src="/Images/medal.png" width={20} alt="" />
+      ) : (
+        <img src="/Images/redcard.png" width={20} alt="" />
+      );
+    },
+    minWidth: 219,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -383,7 +400,7 @@ export const NVCOLUMNSL = [
     Header: "ID",
     accessor: "id",
     sticky: "left",
-    minWidth: 50,
+    maxWidth: 69,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -412,7 +429,7 @@ export const NVCOLUMNSL = [
   {
     Header: "Nhóm lương",
     accessor: "nhomLuong",
-    minWidth: 155,
+    minWidth: 150,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -428,7 +445,7 @@ export const NVCOLUMNSL = [
   {
     Header: "Bậc lương",
     accessor: "bacLuong",
-    minWidth: 219,
+    minWidth: 60,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -439,11 +456,47 @@ export const NVCOLUMNSL = [
     minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
-    show: true,
+    show: false,
   },
   {
     Header: "Phụ cấp trách nhiệm",
     accessor: "phuCapTrachNhiem",
+    minWidth: 100,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+    show: false,
+  },
+  {
+    Header: "Ngày hiệu lực",
+    accessor: "ngayHieuLuc",
+    minWidth: 100,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+    show: true,
+    Cell: ({ value }) => {
+      return format(new Date(value), "dd/MM/yyyy");
+    },
+  },
+  {
+    Header: "Ngày kết thúc",
+    accessor: "ngayKetThuc",
+    minWidth: 100,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+    show: true,
+    Cell: ({ value }) => {
+      return format(new Date(value), "dd/MM/yyyy");
+    },
+  },
+  {
+    Header: "Trạng thái",
+    accessor: (row) => {
+      return row.trangThai === "Kích hoạt" ? (
+        <img src="/Images/greenC.png" width={20} alt="" />
+      ) : (
+        <img src="/Images/orangeC.png" width={20} alt="" />
+      );
+    },
     minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
