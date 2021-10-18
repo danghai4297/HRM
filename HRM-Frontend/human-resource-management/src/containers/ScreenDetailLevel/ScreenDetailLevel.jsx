@@ -22,7 +22,6 @@ function ScreenDetailLevel(props) {
     fetchNvList();
   }, []);
 
-  console.log(id);
   return (
     <>
       <div className="main-screen">

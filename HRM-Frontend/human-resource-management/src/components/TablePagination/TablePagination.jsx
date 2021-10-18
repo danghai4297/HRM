@@ -50,7 +50,6 @@ function TablePagination(props) {
         hiddenColumns: columns
           .filter((col) => col.show === false)
           .map((col) => col.accessor),
-          
       },
     },
     useFilters,
@@ -81,11 +80,11 @@ function TablePagination(props) {
                 <FontAwesomeIcon icon={["fas", "filter"]} />
               </button>
               {/* dropdownlist */}
-              <div className="select-fillter">
+              <div className="select">
                 {allColumns.map((column) => (
-                  <div>
+                  <div className="select">
                     {column.canFilter && (
-                      <div className="select-fillter">
+                      <div className="select">
                         {column.render("Header")}&nbsp;{" "}
                         {column.render("Filter")}&emsp;&emsp;&emsp;
                       </div>
@@ -116,7 +115,7 @@ function TablePagination(props) {
                         type="checkbox"
                         {...column.getToggleHiddenProps()}
                       />{" "}
-                      {column.id}
+                      {column.Header}
                     </label>
                   </div>
                 ))}
@@ -144,35 +143,50 @@ function TablePagination(props) {
         <div className="table-sticky">
           <table {...getTableProps()} className="tablee sticky" id={tid}>
             <thead className="headerr">
-              {headerGroups.map((headerGroup) => (
-                <tr {...headerGroup.getHeaderGroupProps()} className="tr">
-                  {headerGroup.headers.map((column) => (
+              {headerGroups.map((headerGroup, index) => (
+                <tr
+                  {...headerGroup.getHeaderGroupProps()}
+                  className="tr"
+                  key={index}
+                >
+                  {headerGroup.headers.map((column, index) => (
                     <th
                       {...column.getHeaderProps(column.getSortByToggleProps())}
                       className="th"
+                      key={index}
                     >
                       {column.render("Header")}
-                      <span>
-                        {column.isSorted
-                          ? column.isSortedDesc
-                            ? " 🔽"
-                            : " 🔼"
-                          : ""}
-                      </span>
+                      {column.isSorted ? (
+                        column.isSortedDesc ? (
+                          <img src="/Images/ascending.png" width={15} alt="" />
+                        ) : (
+                          <img src="/Images/descending.png" width={15} alt="" />
+                        )
+                      ) : (
+                        ""
+                      )}
                     </th>
                   ))}
                 </tr>
               ))}
             </thead>
             <tbody {...getTableBodyProps()} className="bodyy">
-              {page.map((row, i) => {
+              {page.map((row, index) => {
                 prepareRow(row);
                 return (
-                  <Link to={link + row.original.id} className="link-item">
+                  <Link
+                    to={link + row.original.id}
+                    className="link-item"
+                    key={index}
+                  >
                     <tr {...row.getRowProps()} className="tr">
-                      {row.cells.map((cell) => {
+                      {row.cells.map((cell, index) => {
                         return (
-                          <td {...cell.getCellProps()} className="td">
+                          <td
+                            {...cell.getCellProps()}
+                            className="td"
+                            key={index}
+                          >
                             {cell.render("Cell")}
                           </td>
                         );
@@ -197,8 +211,8 @@ function TablePagination(props) {
             value={pageSize}
             onChange={(e) => setPageSize(Number(e.target.value))}
           >
-            {[10, 25, 50, rows.length].map((pageSize) => (
-              <option key={pageSize} value={pageSize}>
+            {[10, 25, 50, rows.length].map((pageSize, index) => (
+              <option key={pageSize} value={pageSize} key={index}>
                 {pageSize}
               </option>
             ))}

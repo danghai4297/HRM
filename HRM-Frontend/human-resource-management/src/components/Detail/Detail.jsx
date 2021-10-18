@@ -53,7 +53,6 @@ function Detail(props) {
     };
     fetchNvList();
   }, []);
-  console.log(id);
   const [dropBase, setDropBase] = useState(true);
   const [dropContact, setDropContact] = useState(true);
   const [dropJob, setDropJob] = useState(true);

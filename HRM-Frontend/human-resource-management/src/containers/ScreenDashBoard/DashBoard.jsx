@@ -10,10 +10,10 @@ import { NVCOLUMNS, NVCOLUMNSSALARY } from "./NvColumns";
 DashBoard.propTypes = {};
 
 function DashBoard() {
-  const link1 = "/category/department/";
-  const link2 = "/salary/detail/";
-  const fileName = "DSNV";
-  const fileName2 = "DSLNV";
+  let link1 = "/category/department/";
+  let link2 = "/salary/detail/";
+  let fileName = "DSNV";
+  let fileName2 = "DSLNV";
   const [dataAllNv, setDataAllNv] = useState([]);
   const [dataAllPB, setDataAllPB] = useState([]);
   const [dataAllLNV, setDataAllLNV] = useState([]);

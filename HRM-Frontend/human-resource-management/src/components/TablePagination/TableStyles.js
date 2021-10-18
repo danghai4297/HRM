@@ -13,11 +13,14 @@ export const Styles = styled.div`
     }
 
     .th {
+      display: flex !important;
       padding: 15px;
       background-color: rgb(55, 58, 61);
       color: white;
       font-weight: bold;
     }
+
+    
 
     .td {
       padding: 15px;

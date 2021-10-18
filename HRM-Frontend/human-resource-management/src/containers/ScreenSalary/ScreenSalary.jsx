@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 function ScreenSalary(props) {
   const link = "/salary/detail/";
-  const fileName = "Danhsachluong";
+  let fileName = "Danhsachluong";
   const [dataAllL, setDataAllL] = useState([]);
 
   useEffect(() => {
