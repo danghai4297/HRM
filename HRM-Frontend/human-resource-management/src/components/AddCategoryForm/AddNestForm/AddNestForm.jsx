@@ -70,7 +70,7 @@ function AddNestForm(props) {
       history.goBack();
     } catch (error) {}
   };
-  
+
   return (
     <>
       <div className="container-form">
@@ -158,11 +158,13 @@ function AddNestForm(props) {
                     <option value={dataDetailDMT.idPhongBan}>
                       {dataDetailDMT.tenPhongBan}
                     </option>
-                    {dataDmpb.map((item, key) => (
-                      <option key={key} value={item.id}>
-                        {item.tenPhongBan}{" "}
-                      </option>
-                    ))}
+                    {dataDmpb
+                      .filter((item) => item.id !== dataDetailDMT.idPhongBan)
+                      .map((item, key) => (
+                        <option key={key} value={item.id}>
+                          {item.tenPhongBan}{" "}
+                        </option>
+                      ))}
                   </select>
                   <span className="message">{errors.idPhongBan?.message}</span>
                 </div>

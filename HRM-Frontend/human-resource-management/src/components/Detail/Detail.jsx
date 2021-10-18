@@ -539,7 +539,7 @@ function Detail(props) {
                       <h5 className="title-name">Trình độ</h5>
                     </div>
                     <div className="icon-cultural">
-                      <Link to="/profile/detail/level/add">
+                      <Link to={`/profile/detail/level/add?maNhanVien=${dataDetailNv.id}`}>
                         <button className="btn-cultural">
                           <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
                         </button>
@@ -558,7 +558,7 @@ function Detail(props) {
                       <h5 className="title-name">Ngoại ngữ</h5>
                     </div>
                     <div className="icon-cultural">
-                      <Link to="/profile/detail/language/add">
+                      <Link to={`/profile/detail/language/add?maNhanVien=${dataDetailNv.id}`}>
                         <button className="btn-cultural">
                           <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
                         </button>
@@ -597,7 +597,7 @@ function Detail(props) {
                   <div className="title">
                     <div className="title-cultural"></div>
                     <div className="icon-cultural">
-                      <Link to="/profile/detail/family/add">
+                      <Link to={`/profile/detail/family/add?maNhanVien=${dataDetailNv.id}`}>
                         <button className="btn-cultural">
                           <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
                         </button>

@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
 import "./ScreenDetailForeignLanguage.scss";
 import ProductApi from "../../api/productApi";
+import { Link } from "react-router-dom";
 function ScreenDetailForeignLanguage(props) {
   let { match, history } = props;
   let { id } = match.params;
@@ -38,9 +39,11 @@ function ScreenDetailForeignLanguage(props) {
             <h2>Ngoại ngữ</h2>
           </div>
           <div className="third-path">
-            <Button variant="light" className="btn-fix">
-              Sửa
-            </Button>
+          <Link to={`/profile/detail/language/update/${id}`}>
+              <Button variant="light" className="btn-fix">
+                Sửa
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="second-main">

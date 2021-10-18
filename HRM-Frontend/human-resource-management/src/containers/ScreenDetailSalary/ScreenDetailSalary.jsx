@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import SubDetail from "../../components/Detail/SubDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./ScreenDetailSalary.scss";
 import ProductApi from "../../api/productApi";
 function ScreenDetailSalary(props) {
@@ -35,9 +36,11 @@ function ScreenDetailSalary(props) {
             <h2>Chi tiết hồ sơ lương</h2>
           </div>
           <div className="third-path">
-            <Button variant="light" className="btn-fix">
-              Sửa
-            </Button>
+          <Link to={`/salary/${id}`}>
+              <Button variant="light" className="btn-fix">
+                Sửa
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="second-mains">

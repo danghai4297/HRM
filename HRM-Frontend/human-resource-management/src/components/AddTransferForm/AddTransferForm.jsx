@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddTransferForm.scss";
+import ProductApi from "../../api/productApi";
 
 const schema = yup.object({
   hoVaTen: yup.string().required("Họ và tên không được bỏ trống."),
@@ -20,6 +21,25 @@ function AddTransferForm(props) {
     console.log(data);
     JSON.stringify(data);
   };
+
+  let { match, history } = props;
+  let { id } = match.params;
+
+  const [dataDetailDC, setDataDetailDC] = useState([]);
+
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const response = await ProductApi.getDCDetail(id);
+        setDataDetailDC(response);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
+
+
   const [checked, setCheked] = useState(false);
   const handleClick = () => setCheked(!checked);
   return (

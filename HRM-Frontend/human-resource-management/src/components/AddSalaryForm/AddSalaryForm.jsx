@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../FontAwesomeIcons/index";
 import { useState } from "react";
 import { useEffect } from "react";
+import ProductApi from "../../api/productApi";
 
 const schema = yup.object({
   hoVaTen: yup.string().required("Họ và tên không được bỏ trống."),
@@ -24,6 +25,23 @@ function AddSalaryForm(props) {
     heSoLuong: "",
     luongCoBan: "",
   });
+
+
+  let { match, history } = props;
+  let { id } = match.params;
+
+  const [dataLDetail, setDataLDetail] = useState([]);
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const response = await ProductApi.getLDetail(id);
+        setDataLDetail(response);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
 
   const {
     register,
@@ -53,10 +71,10 @@ function AddSalaryForm(props) {
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">Thêm hồ sơ lương</h2>
+          <h2 className="">{dataLDetail.length !== 0 ? "Sửa" : "Thêm"} hồ sơ lương</h2>
         </div>
         <div className="button">
-          <input type="submit" className="btn btn-secondary " value="Huỷ" />
+          <input type="submit" className="btn btn-secondary " value="Huỷ" onClick={history.goBack}/>
           <input
             type="submit"
             className="btn btn-primary ml-3"

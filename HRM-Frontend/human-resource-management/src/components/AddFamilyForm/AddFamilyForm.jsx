@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useLocation } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddFamilyForm.scss";
@@ -24,6 +25,11 @@ const schema = yup.object({
 function AddFamilyForm(props) {
   let { match, history } = props;
   let { id } = match.params;
+
+  let location = useLocation();
+  console.log(location)
+  let query = new URLSearchParams(location.search);
+  console.log(query.get("maNhanVien"));
   const {
     register,
     handleSubmit,
@@ -51,8 +57,8 @@ function AddFamilyForm(props) {
         setDataNT(responseNN);
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốm sửa thông tin gia đình");
-        //  const response = await ProductApi.getTDDetail(id);
-         // setdataDetailNT(response);
+         const response = await ProductApi.getTDDetail(id);
+         setdataDetailNT(response);
         }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -60,6 +66,7 @@ function AddFamilyForm(props) {
     };
     fetchNvList();
   }, []);
+  console.log(dataDetailNT);
   const onHandleSubmit = async (data) => {
     console.log(data);
     try {

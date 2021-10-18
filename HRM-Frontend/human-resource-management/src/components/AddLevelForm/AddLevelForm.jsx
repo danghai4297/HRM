@@ -7,6 +7,7 @@ import DeleteApi from "../../../src/api/deleteAPI";
 import PutApi from "../../../src/api/putAAPI";
 import ProductApi from "../../../src/api/productApi";
 import Dialog from "../../components/Dialog/Dialog";
+import { useLocation } from "react-router-dom";
 import { DatePicker } from "antd";
 import moment from "moment/moment.js";
 const schema = yup.object({
@@ -20,6 +21,11 @@ const schema = yup.object({
 });
 function AddLevelForm(props) {
   let { match, history } = props;
+  
+  let location = useLocation();
+  console.log(location)
+  let query = new URLSearchParams(location.search);
+  console.log(query.get("maNhanVien"));
   let { id } = match.params;
   //let oldDate = moment().add(10, 'days').calendar();
   let oldDate = moment().toDate();
@@ -56,6 +62,7 @@ function AddLevelForm(props) {
     setShowDeleteDialog(false);
   };
 
+  console.log(dataDetailTDVH);
   useEffect(() => {
     const fetchNvList = async () => {
       try {

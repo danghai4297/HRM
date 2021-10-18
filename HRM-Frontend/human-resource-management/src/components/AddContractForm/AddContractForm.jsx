@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./AddContractForm.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import ProductApi from "../../api/productApi";
 
 const schema = yup.object({
   hoVaTen: yup.string().required("Họ và tên không được bỏ trống."),
@@ -16,6 +17,25 @@ const schema = yup.object({
     .required("Ngày có hiệu lực không được bỏ trống."),
 });
 function AddContractForm(props) {
+  let { match, history } = props;
+  let { id } = match.params;
+
+  const [dataDetailHd, setdataDetailHd] = useState([]);
+
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        if (id !== undefined) {
+        const responseHD = await ProductApi.getHdDetail(id);
+        setdataDetailHd(responseHD);
+        }
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
+
   const {
     register,
     handleSubmit,
@@ -31,10 +51,10 @@ function AddContractForm(props) {
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">Thêm hợp đồng</h2>
+          <h2 className="">{dataDetailHd.length !== 0 ? "Sửa" : "Thêm"} hợp đồng</h2>
         </div>
         <div className="button">
-          <input type="submit" className="btn btn-secondary " value="Huỷ" />
+          <input type="submit" className="btn btn-secondary " value="Huỷ" onClick={history.goBack}/>
           <input
             type="submit"
             className="btn btn-primary ml-3"
