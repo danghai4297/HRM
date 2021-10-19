@@ -5,6 +5,7 @@ import "./ScreenDetailContract.scss";
 import SubDetail from "../../components/Detail/SubDetail";
 import ProductApi from "../../api/productApi";
 import { Link } from "react-router-dom";
+import dateFormat from "dateformat";
 function ScreenDetailContract(props) {
   let { match, history } = props;
   let { id } = match.params;
@@ -70,9 +71,9 @@ function ScreenDetailContract(props) {
             ></SubDetail>
             <SubDetail
               titleLeft="Ngày có hiệu lực"
-              itemLeft={dataDetailHd.hopDongTuNgay}
+              itemLeft={dataDetailHd.hopDongTuNgay === null ? "-" : dateFormat(dataDetailHd.hopDongTuNgay, "dd/mm/yyyy")}
               titleRight="Ngày hết hạn"
-              itemRight={dataDetailHd.hopDongDenNgay}
+              itemRight={dataDetailHd.hopDongDenNgay === null ? "-" : dateFormat(dataDetailHd.hopDongDenNgay, "dd/mm/yyyy")}
             ></SubDetail>
             <SubDetail
               titleLeft="Ghi chú"

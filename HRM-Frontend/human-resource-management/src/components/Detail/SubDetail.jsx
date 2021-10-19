@@ -1,9 +1,9 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import "./SubDetail.scss";
 
 function SubDetail(props) {
-  const { titleLeft, itemLeft, titleRight, itemRight } = props;
+  const { titleLeft, itemLeft, titleRight, itemRight, datas } = props;
   return (
     <div className="containss">
       <Row className="item">
