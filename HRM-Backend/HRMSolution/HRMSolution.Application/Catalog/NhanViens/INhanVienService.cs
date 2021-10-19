@@ -10,7 +10,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
     public interface INhanVienService
     {
         Task<int> Create(NhanVienCreateRequest request);
-        Task<int> Update(NhanVienUpdateRequest request);
+        Task<int> Update(string id, NhanVienUpdateRequest request);
         Task<int> Delete(int idDanhMucDanToc);
         Task<List<NhanVienViewModel>> GetAll();
         Task<NhanVienDetailViewModel> GetByMaNV(string maNhanVien);

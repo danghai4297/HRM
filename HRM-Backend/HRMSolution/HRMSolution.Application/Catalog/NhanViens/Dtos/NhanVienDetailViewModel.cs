@@ -79,6 +79,7 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
         public string biBatDitu { get; set; }
         public string thamGiaChinhTri { get; set; }
         public string thanNhanNuocNgoai { get; set; }
+        public string anh { get; set; }
 
         public List<TrinhDoVanHoaViewModel> trinhDoVanHoas { get; set; }
         public List<DieuChuyenViewModel> dieuChuyens { get; set; }

@@ -44,5 +44,14 @@ namespace HRMSolution.BackendAPI.Controllers
                 return BadRequest();
             return Ok();
         }
+
+        [HttpPut("{maNhanVien}")]
+        public async Task<IActionResult> Update(string maNhanVien, NhanVienUpdateRequest request)
+        {
+            var result = await _nhanVienService.Update(maNhanVien, request);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
+        }
     }
 }

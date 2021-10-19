@@ -2,6 +2,7 @@
 using HRMSolution.Application.Common;
 using HRMSolution.Data.EF;
 using HRMSolution.Data.Entities;
+using HRMSolution.Utilities.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -32,7 +33,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 maNhanVien = request.id,
                 hoTen = request.hoTen,
                 quocTich = request.quocTich,
-                ngaySinh = DateTime.Parse(request.ngaySinh),
+                ngaySinh = request.ngaySinh,
                 gioiTinh = request.gioiTinh,
                 dienThoai = request.dienThoai,
                 dienThoaiKhac = request.dienThoaiKhac,
@@ -43,34 +44,34 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 maSoThue = request.maSoThue,
                 cccd = request.cccd,
                 noiCapCCCD = request.noiCapCCCD,
-                ngayCapCCCD = DateTime.Parse(request.ngayCapCCCD),
-                ngayHetHanCCCD = DateTime.Parse(request.ngayHetHanCCCD),
+                ngayCapCCCD = request.ngayCapCCCD,
+                ngayHetHanCCCD = request.ngayHetHanCCCD,
                 hoChieu = request.hoChieu,
                 noiCapHoChieu = request.noiCapHoChieu,
-                ngayCapHoChieu = request.ngayCapHoChieu == "" ? dt : DateTime.Parse(request.ngayCapHoChieu),
-                ngayHetHanHoChieu = request.ngayHetHanHoChieu == "" ? dt : DateTime.Parse(request.ngayHetHanHoChieu),
+                ngayCapHoChieu = request.ngayCapHoChieu,
+                ngayHetHanHoChieu = request.ngayHetHanHoChieu,
                 noiSinh =request.noiSinh,
                 queQuan = request.queQuan,
                 thuongTru = request.thuongTru,
                 tamTru = request.tamTru,
                 ngheNghiep = request.ngheNghiep,
                 chucVuHienTai = request.chucVuHienTai,
-                ngayTuyenDung = request.ngayTuyenDung == "" ? dt : DateTime.Parse(request.ngayTuyenDung),
-                ngayThuViec = request.ngayThuViec == "" ? dt : DateTime.Parse(request.ngayThuViec),
+                ngayTuyenDung = request.ngayTuyenDung,
+                ngayThuViec = request.ngayThuViec,
                 congViecChinh = request.congViecChinh,
-                ngayVaoBan = request.ngayVaoBan == "" ? dt : DateTime.Parse(request.ngayVaoBan),
-                ngayChinhThuc = request.ngayChinhThuc == "" ? dt : DateTime.Parse(request.ngayChinhThuc),
+                ngayVaoBan = request.ngayVaoBan,
+                ngayChinhThuc = request.ngayChinhThuc,
                 coQuanTuyenDung  = request.coQuanTuyenDung,
                 ngachCongChucNoiDung = request.ngachCongChucNoiDung,
                 vaoDang = request.vaoDang,
-                ngayVaoDang = request.ngayVaoDang == "" ? dt : DateTime.Parse(request.ngayVaoDang),
-                ngayVaoDangChinhThuc = DateTime.Parse(request.ngayVaoDangChinhThuc),
+                ngayVaoDang = request.ngayVaoDang,
+                ngayVaoDangChinhThuc = request.ngayVaoDangChinhThuc,
                 quanNhan = request.quanNhan,
-                ngayNhapNgu = request.ngayNhapNgu == "" ? dt : DateTime.Parse(request.ngayNhapNgu),
-                ngayXuatNgu = request.ngayXuatNgu == "" ? dt : DateTime.Parse(request.ngayXuatNgu),
+                ngayNhapNgu = request.ngayNhapNgu,
+                ngayXuatNgu = request.ngayXuatNgu,
                 quanHamCaoNhat = request.quanHamCaoNhat,
                 danhHieuCaoNhat = request.danhHieuCaoNhat,
-                ngayVaoDoan = request.ngayVaoDoan == "" ? dt : DateTime.Parse(request.ngayVaoDoan),
+                ngayVaoDoan = request.ngayVaoDoan,
                 noiThamGia = request.noiThamGia,
                 laThuongBinh = request.laThuongBinh,
                 laConChinhSach = request.laConChinhSach,
@@ -81,7 +82,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 atm = request.atm,
                 nganHang = request.nganHang,
                 trangThaiLaoDong = request.trangThaiLaoDong,
-                ngayNghiViec = request.ngayNghiViec == "" ? dt : DateTime.Parse(request.ngayNghiViec),
+                ngayNghiViec = request.ngayNghiViec,
                 lyDoNghiViec = request.lyDoNghiViec,
                 tinhChatLaoDong = request.tinhChatLaoDong,
                 idDanhMucHonNhan = request.idDanhMucHonNhan,
@@ -131,9 +132,93 @@ namespace HRMSolution.Application.Catalog.NhanViens
             throw new NotImplementedException();
         }
 
-        public Task<int> Update(NhanVienUpdateRequest request)
+        public async Task<int> Update(string id, NhanVienUpdateRequest request)
         {
-            throw new NotImplementedException();
+            var nhanVien = await _context.nhanViens.FindAsync(id);
+            var lhkc = await _context.lienHeKhanCaps.FindAsync(id);
+            var yt = await _context.yTes.FindAsync(id);
+            var lsbt = await _context.lichSuBanThans.FindAsync(id);
+
+            if (nhanVien == null) throw new HRMException($"Không tìm thấy nhân viên có mã nhân viên là : {id}");
+
+            nhanVien.hoTen = request.hoTen;
+            nhanVien.quocTich = request.quocTich;
+            nhanVien.ngaySinh = request.ngaySinh;
+            nhanVien.gioiTinh = request.gioiTinh;
+            nhanVien.dienThoai = request.dienThoai;
+            nhanVien.dienThoaiKhac = request.dienThoaiKhac;
+            nhanVien.diDong = request.diDong;
+            nhanVien.email = request.email;
+            nhanVien.facebook = request.facebook;
+            nhanVien.skype = request.skype;
+            nhanVien.maSoThue = request.maSoThue;
+            nhanVien.cccd = request.cccd;
+            nhanVien.noiCapCCCD = request.noiCapCCCD;
+            nhanVien.ngayCapCCCD = request.ngayCapCCCD;
+            nhanVien.ngayHetHanCCCD = request.ngayHetHanCCCD;
+            nhanVien.hoChieu = request.hoChieu;
+            nhanVien.noiCapHoChieu = request.noiCapHoChieu;
+            nhanVien.ngayCapHoChieu = request.ngayCapHoChieu;
+            nhanVien.ngayHetHanHoChieu = request.ngayHetHanHoChieu;
+            nhanVien.noiSinh = request.noiSinh;
+            nhanVien.queQuan = request.queQuan;
+            nhanVien.thuongTru = request.thuongTru;
+            nhanVien.tamTru = request.tamTru;
+            nhanVien.ngheNghiep = request.ngheNghiep;
+            nhanVien.chucVuHienTai = request.chucVuHienTai;
+            nhanVien.ngayTuyenDung = request.ngayTuyenDung;
+            nhanVien.ngayThuViec = request.ngayThuViec;
+            nhanVien.congViecChinh = request.congViecChinh;
+            nhanVien.ngayVaoBan = request.ngayVaoBan;
+            nhanVien.ngayChinhThuc = request.ngayChinhThuc;
+            nhanVien.coQuanTuyenDung = request.coQuanTuyenDung;
+            nhanVien.ngachCongChucNoiDung = request.ngachCongChucNoiDung;
+            nhanVien.vaoDang = request.vaoDang;
+            nhanVien.ngayVaoDang = request.ngayVaoDang;
+            nhanVien.ngayVaoDangChinhThuc = request.ngayVaoDangChinhThuc;
+            nhanVien.quanNhan = request.quanNhan;
+            nhanVien.ngayNhapNgu = request.ngayNhapNgu;
+            nhanVien.ngayXuatNgu = request.ngayXuatNgu;
+            nhanVien.quanHamCaoNhat = request.quanHamCaoNhat;
+            nhanVien.danhHieuCaoNhat = request.danhHieuCaoNhat;
+            nhanVien.ngayVaoDoan = request.ngayVaoDoan;
+            nhanVien.noiThamGia = request.noiThamGia;
+            nhanVien.laThuongBinh = request.laThuongBinh;
+            nhanVien.laConChinhSach = request.laConChinhSach;
+            nhanVien.thuongBinh = request.thuongBinh;
+            nhanVien.conChinhSach = request.conChinhSach;
+            nhanVien.bhxh = request.bhxh;
+            nhanVien.bhyt = request.bhyt;
+            nhanVien.atm = request.atm;
+            nhanVien.nganHang = request.nganHang;
+            nhanVien.trangThaiLaoDong = request.trangThaiLaoDong;
+            nhanVien.ngayNghiViec = request.ngayNghiViec;
+            nhanVien.lyDoNghiViec = request.lyDoNghiViec;
+            nhanVien.tinhChatLaoDong = request.tinhChatLaoDong;
+            nhanVien.idDanhMucHonNhan = request.idDanhMucHonNhan;
+            nhanVien.idDanToc = request.idDanToc;
+            nhanVien.idTonGiao = request.idTonGiao;
+            nhanVien.idNgachCongChuc = request.idNgachCongChuc;
+            yt.yt_nhomMau = request.YTe.yt_nhomMau;
+            yt.yt_chieuCao = request.YTe.yt_chieuCao;
+            yt.yt_canNang = request.YTe.yt_canNang;
+            yt.yt_tinhTrangSucKhoe = request.YTe.yt_tinhTrangSucKhoe;
+            yt.yt_benhTat = request.YTe.yt_benhTat;
+            yt.yt_luuY = request.YTe.yt_luuY;
+            yt.yt_khuyetTat = request.YTe.yt_khuyetTat;
+            yt.yt_maNhanVien = request.YTe.yt_maNhanVien;
+            lsbt.lsbt_biBatDiTu = request.LichSuBanThan.lsbt_biBatDiTu;
+            lsbt.lsbt_thamGiaChinhTri = request.LichSuBanThan.lsbt_thamGiaChinhTri;
+            lsbt.lsbt_thanNhanNuocNgoai = request.LichSuBanThan.lsbt_thanNhanNuocNgoai;
+            lsbt.lsbt_maNhanVien = request.LichSuBanThan.lsbt_maNhanVien;
+            lhkc.lhkc_hoTen = request.LienHeKhanCap.lhkc_hoTen;
+            lhkc.lhkc_quanHe = request.LienHeKhanCap.lhkc_quanHe;
+            lhkc.lhkc_dienThoai = request.LienHeKhanCap.lhkc_dienThoai;
+            lhkc.lhkc_email = request.LienHeKhanCap.lhkc_email;
+            lhkc.lhkc_diaChi = request.LienHeKhanCap.lhkc_diaChi;
+            lhkc.lhkc_maNhanVien = request.LienHeKhanCap.lhkc_maNhanVien;
+
+            return await _context.SaveChangesAsync();
         }
 
         public async Task<List<NhanVienViewModel>> GetAll()
@@ -560,6 +645,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 biBatDitu = x.lsbt.lsbt_biBatDiTu,
                 thamGiaChinhTri = x.lsbt.lsbt_thamGiaChinhTri,
                 thanNhanNuocNgoai = x.lsbt.lsbt_thanNhanNuocNgoai,
+                anh = x.nv.anh,
                 trinhDoVanHoas = dataTdvh,
                 hopDongs = dataHd,
                 luongs = dataL,
@@ -582,5 +668,6 @@ namespace HRMSolution.Application.Catalog.NhanViens
             await _storageService.SaveFileAsync(file.OpenReadStream(), fileName);
             return "/" + USER_CONTENT_FOLDER_NAME + "/" + fileName;
         }
+
     }
 }

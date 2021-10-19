@@ -25,8 +25,8 @@ namespace HRMSolution.Application.Catalog.TrinhDoVanHoas
             {
                 tenTruong = request.tenTruong,
                 idChuyenMon = request.idChuyenMon,
-                tuThoiGian = DateTime.Parse(request.tuThoiGian),
-                denThoiGian = DateTime.Parse(request.denThoiGian),
+                tuThoiGian = request.tuThoiGian,
+                denThoiGian = request.denThoiGian,
                 idHinhThucDaoTao = request.idHinhThucDaoTao,
                 idTrinhDo = request.idTrinhDo,
                 maNhanVien = request.maNhanVien
@@ -105,8 +105,8 @@ namespace HRMSolution.Application.Catalog.TrinhDoVanHoas
 
             trinhDoVanHoa.tenTruong = request.tenTruong;
             trinhDoVanHoa.idChuyenMon = request.idChuyenMon;
-            trinhDoVanHoa.tuThoiGian = DateTime.Parse(request.tuThoiGian);
-            trinhDoVanHoa.denThoiGian = DateTime.Parse(request.denThoiGian);
+            trinhDoVanHoa.tuThoiGian = request.tuThoiGian;
+            trinhDoVanHoa.denThoiGian = request.denThoiGian;
             trinhDoVanHoa.idHinhThucDaoTao = request.idHinhThucDaoTao;
             trinhDoVanHoa.idTrinhDo = request.idTrinhDo;
             trinhDoVanHoa.maNhanVien = request.maNhanVien;
