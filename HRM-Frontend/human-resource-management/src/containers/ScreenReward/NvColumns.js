@@ -48,14 +48,21 @@ export const NVCOLUMNS = [
   },
   {
     Header: "Khen thưởng",
-    accessor: "loai",
+    accessor: () => {
+      return <img src="/Images/medal.png" width={20} alt="" />;
+    },
     minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
-    Cell: () => {
-      return <img src="/Images/medal.png" width={30} alt="" />;
-    },
+  },
+  {
+    Header: "Khen thưởng",
+    accessor: "loai",
+    minWidth: 100,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+    show: false,
   },
   {
     Header: "Lý do",

@@ -38,7 +38,6 @@ function AddTransferForm(props) {
     };
     fetchNvList();
   }, []);
-  console.log(dataDetailDC);
 
 
   const [checked, setCheked] = useState(false);

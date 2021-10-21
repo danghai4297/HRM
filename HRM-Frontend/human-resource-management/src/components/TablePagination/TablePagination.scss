@@ -16,6 +16,10 @@ button[disabled] {
   overflow: auto;
   max-height: 600px;
 }
+
+th img {
+  margin: 3px;
+}
 .table-sticky::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -85,6 +89,12 @@ button[disabled] {
 .select-fillter {
   display: flex;
   align-items: center;
+}
+
+.select {
+  display: flex;
+  align-items: center;
+  
 }
 
 .select-item {

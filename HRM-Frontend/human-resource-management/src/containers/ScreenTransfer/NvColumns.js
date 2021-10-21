@@ -47,7 +47,7 @@ export const NVCOLUMNS = [
     accessor: "idPhongBan",
     minWidth: 198,
     Filter: SelectColumnFilter,
-
+    disableFilters: true,
     show: true,
   },
   {
@@ -77,17 +77,25 @@ export const NVCOLUMNS = [
   },
   {
     Header: "Trạng thái",
-    accessor: "trangThai",
-    minWidth: 200,
-    Filter: SelectColumnFilter,
-    disableFilters: true,
-    show: true,
-    Cell: ({ value }) => {
-      return value === "Kích hoạt" ? (
+    accessor: (row) => {
+      return row.trangThai === "Kích hoạt" ? (
         <img src="/Images/greenC.png" width={20} alt="" />
       ) : (
         <img src="/Images/orangeC.png" width={20} alt="" />
       );
     },
+    minWidth: 200,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+    show: true,
+  },
+  {
+    Header: "Trạng thái",
+
+    accessor: "trangThai",
+    minWidth: 200,
+    Filter: SelectColumnFilter,
+    disableFilters: false,
+    show: false,
   },
 ];

@@ -55,18 +55,43 @@ export const NVCOLUMNS2 = [
   },
   {
     Header: "Giới Tính",
-    // accessor: (row) => {
-    //   return row.gender ? "Nam" : "Nữ";
-    // },
-    accessor: "gioiTinh",
+    accessor: (row) => {
+      return row.gioiTinh === "Nam" ? (
+        <img src="/Images/male.png" width={20} alt="" />
+      ) : (
+        <img src="/Images/female.png" width={20} alt="" />
+      );
+    },
     minWidth: 50,
     Filter: SelectColumnFilter,
     disableFilters: true,
     // Cell: ({ value }) => {
-    //   return value === true ? "Male" : "Female";
+    //   return value === "Nam" ? (
+    //     <div style={{ display: "flex" }}>
+    //       <img src="/Images/male.png" width={20} alt="" />
+    //       &ensp;{value}
+    //     </div>
+    //   ) : (
+    //     <div style={{ display: "flex" }}>
+    //       <img src="/Images/female.png" width={20} alt="" />
+    //       &ensp;
+    //       {value}
+    //     </div>
+    //   );
     // },
     show: true,
   },
+  {
+    Header: "Giới Tính K2",
+
+    accessor: "gioiTinh",
+    minWidth: 50,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+
+    show: false,
+  },
+
   {
     Header: "Điện Thoại Nhà",
     accessor: "dienThoai",
@@ -549,17 +574,25 @@ export const NVCOLUMNS2 = [
   },
   {
     Header: "Trạng Thái Lao Động",
-    accessor: "trangThaiLaoDong",
-    minWidth: 200,
-    Filter: SelectColumnFilter,
-    disableFilters: false,
-    show: true,
-    Cell: ({ value }) => {
-      return value === "Đang làm việc" ? (
+    accessor: (row) => {
+      return row.trangThaiLaoDong === "Đang làm việc" ? (
         <img src="/Images/userIn.png" width={20} alt="" />
       ) : (
         <img src="/Images/useOut.png" width={20} alt="" />
       );
     },
+    minWidth: 200,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+    show: true,
+  },
+  {
+    Header: "Trạng Thái Lao Động K2",
+
+    accessor: "trangThaiLaoDong",
+    minWidth: 200,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+    show: false,
   },
 ];

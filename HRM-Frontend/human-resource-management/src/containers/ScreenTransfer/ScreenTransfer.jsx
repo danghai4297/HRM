@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 function ScreenTransfer(props) {
   const link = "/transfer/detail/";
-  const fileName = "danhsachdieuchuyen";
+  let fileName = "danhsachdieuchuyen";
   const [dataDCAll, setDataDCAll] = useState([]);
 
   useEffect(() => {

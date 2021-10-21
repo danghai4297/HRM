@@ -19,7 +19,7 @@ import {
 } from "./NvColumns";
 import { Link } from "react-router-dom";
 import jsPDF from "jspdf";
-import { dum } from "./Data";
+import { lhkc } from "./Data";
 
 function Detail(props) {
   let { match, history } = props;
@@ -131,7 +131,8 @@ function Detail(props) {
     doc.text(`${dataDetailNv.coQuanTuyenDung}`, 190, 15);
     doc.save("profile.pdf");
   };
-  console.log(dataDetailNv);
+  console.log(dataDetailNv.diDong);
+  console.log(dataDetailNv.ngaySinh);
   return (
     <>
       <div className="contents">
@@ -147,7 +148,7 @@ function Detail(props) {
             </div>
             <div className="avatar">
               <div className="icon-second">
-                {`https://localhost:5001/${dataDetailNv.anh}`}
+                <img src={`https://localhost:5001/${dataDetailNv.anh}`} alt=""/>
               </div>
               <div className="names">
                 <h5>{dataDetailNv.hoTen}</h5>
@@ -451,18 +452,17 @@ function Detail(props) {
                   <div className="title">
                     <h5>Liên hệ khẩn cấp</h5>
                   </div>
-                  {/* {dum.map((detail) => {
+                  {lhkc.map((detail) => {
                     return (
                       <SubDetail
                         titleLeft={detail.title1}
-                        itemLeft={detail.data1}
+                        itemLeft={dataDetailNv[detail.data1]}
                         titleRight={detail.title2}
-                        itemRight={detail.data2}
-                        datas={dataDetailNv}
+                        itemRight={dataDetailNv[detail.data2]}
                       />
                     );
-                  })} */}
-                  <SubDetail
+                  })}
+                  {/* <SubDetail
                     titleLeft="Họ và tên"
                     itemLeft={dataDetailNv.lhkcHoTen}
                     titleRight="Email"
@@ -478,7 +478,7 @@ function Detail(props) {
                     titleLeft="ĐT di động"
                     itemLeft={dataDetailNv.lhkcDienThoai}
                     titleRight={null}
-                  ></SubDetail>
+                  ></SubDetail> */}
                 </>
               )}
             </div>

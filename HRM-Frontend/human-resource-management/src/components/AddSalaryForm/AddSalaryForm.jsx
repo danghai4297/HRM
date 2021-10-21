@@ -42,7 +42,6 @@ function AddSalaryForm(props) {
     };
     fetchNvList();
   }, []);
-  console.log(dataLDetail);
 
   const {
     register,

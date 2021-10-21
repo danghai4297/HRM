@@ -47,15 +47,22 @@ export const NVCOLUMNS = [
     show: true,
   },
   {
-    Header: "Khen thưởng",
-    accessor: "loai",
+    Header: "Kỷ luật",
+    accessor: () => {
+      return <img src="/Images/redcard.png" width={20} alt="" />;
+    },
     minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
-    Cell: () => {
-      return <img src="/Images/redcard.png" width={30} alt="" />;
-    },
+  },
+  {
+    Header: "Kỷ luật K2",
+    accessor: "loai",
+    minWidth: 100,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+    show: false,
   },
   {
     Header: "Lý do",

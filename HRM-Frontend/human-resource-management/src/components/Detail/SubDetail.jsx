@@ -3,7 +3,7 @@ import { Row, Col } from "react-bootstrap";
 import "./SubDetail.scss";
 
 function SubDetail(props) {
-  const { titleLeft, itemLeft, titleRight, itemRight, datas } = props;
+  const { titleLeft, itemLeft, titleRight, itemRight } = props;
   return (
     <div className="containss">
       <Row className="item">

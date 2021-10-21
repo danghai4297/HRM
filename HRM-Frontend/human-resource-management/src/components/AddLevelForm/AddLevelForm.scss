@@ -1,1 +1,6 @@
 @import "../AddProfileForm/AddProfileForm.scss";
+
+.ant-picker-dropdown{
+    position: absolute;
+    z-index: 11000 !important;
+}

@@ -58,25 +58,6 @@ function TableBasic(props) {
     useRowSelect,
     useBlockLayout,
     useSticky
-    // (hooks) => {
-    //   hooks.visibleColumns.push((columns) => [
-    //     // Let's make a column for selection
-    //     {
-    //       id: "selection",
-    //       // The header can use the table's getToggleAllRowsSelectedProps method
-    //       // to render a checkbox
-    //       Header: ({ getToggleAllRowsSelectedProps }) => (
-    //         <IndeterminateCheckbox {...getToggleAllRowsSelectedProps()} />
-    //       ),
-    //       // The cell can use the individual row's getToggleRowSelectedProps method
-    //       // to the render a checkbox
-    //       Cell: ({ row }) => (
-    //         <IndeterminateCheckbox {...row.getToggleRowSelectedProps()} />
-    //       ),
-    //     },
-    //     ...columns,
-    //   ]);
-    // }
   );
 
   const { pageIndex, pageSize, globalFilter } = state;
@@ -87,20 +68,37 @@ function TableBasic(props) {
         <div className="table-sticky">
           <table {...getTableProps()} className="tablee sticky" id={tid}>
             <thead className="headerr">
-              {headerGroups.map((headerGroup) => (
-                <tr {...headerGroup.getHeaderGroupProps()} className="tr">
-                  {headerGroup.headers.map((column) => (
+              {headerGroups.map((headerGroup, index) => (
+                <tr
+                  {...headerGroup.getHeaderGroupProps()}
+                  className="tr"
+                  key={index}
+                >
+                  {headerGroup.headers.map((column, index) => (
                     <th
                       {...column.getHeaderProps(column.getSortByToggleProps())}
                       className="th"
+                      key={index}
                     >
                       {column.render("Header")}
                       <span>
-                        {column.isSorted
-                          ? column.isSortedDesc
-                            ? " 🔽"
-                            : " 🔼"
-                          : ""}
+                        {column.isSorted ? (
+                          column.isSortedDesc ? (
+                            <img
+                              src="/Images/ascending.png"
+                              width={15}
+                              alt=""
+                            />
+                          ) : (
+                            <img
+                              src="/Images/descending.png"
+                              width={15}
+                              alt=""
+                            />
+                          )
+                        ) : (
+                          ""
+                        )}
                       </span>
                     </th>
                   ))}
@@ -108,15 +106,23 @@ function TableBasic(props) {
               ))}
             </thead>
             <tbody {...getTableBodyProps()} className="bodyy">
-              {page.map((row, i) => {
+              {page.map((row, index) => {
                 prepareRow(row);
                 // console.log(row);
                 return (
-                  <Link to={link + row.original.id} className="link-item">
+                  <Link
+                    to={link + row.original.id}
+                    className="link-item"
+                    key={index}
+                  >
                     <tr {...row.getRowProps()} className="tr">
-                      {row.cells.map((cell) => {
+                      {row.cells.map((cell, index) => {
                         return (
-                          <td {...cell.getCellProps()} className="td">
+                          <td
+                            {...cell.getCellProps()}
+                            className="td"
+                            key={index}
+                          >
                             {cell.render("Cell")}
                           </td>
                         );
@@ -141,8 +147,8 @@ function TableBasic(props) {
             value={pageSize}
             onChange={(e) => setPageSize(Number(e.target.value))}
           >
-            {[5, 10, rows.length].map((pageSize) => (
-              <option key={pageSize} value={pageSize}>
+            {[5, 10, rows.length].map((pageSize, index) => (
+              <option key={pageSize} value={pageSize} key={index}>
                 {pageSize}
               </option>
             ))}
