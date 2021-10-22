@@ -81,13 +81,14 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
             var data = await query.Select(x => new KhenThuongKyLuatViewModel()
             {
                 id = x.p.id,
-                idDanhMucKhenThuong = x.dmktkl.tenDanhMuc,
+                DanhMucKhenThuong = x.dmktkl.tenDanhMuc,
                 noiDung = x.p.noiDung,
                 lyDo = x.p.lyDo,
                 loai = x.p.loai == true ? "Khen Thưởng" : "Kỷ Luật",
                 anh = x.p.anh,
                 maNhanVien = x.p.maNhanVien,
-                hoTen = x.nv.hoTen
+                hoTen = x.nv.hoTen,
+                idDanhMucKhenThuong = x.p.idDanhMucKhenThuong
             }).FirstAsync();
 
 
@@ -106,13 +107,14 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
             var data = await query.Select(x => new KhenThuongKyLuatViewModel()
             {
                 id = x.p.id,
-                idDanhMucKhenThuong = x.dmktkl.tenDanhMuc,
+                DanhMucKhenThuong = x.dmktkl.tenDanhMuc,
                 noiDung = x.p.noiDung,
                 lyDo = x.p.lyDo,
                 loai = x.p.loai == true ? "Khen Thưởng" : "Kỷ Luật",
                 anh = x.p.anh,
                 maNhanVien = x.p.maNhanVien,
-                hoTen = x.nv.hoTen
+                hoTen = x.nv.hoTen,
+                idDanhMucKhenThuong = x.p.idDanhMucKhenThuong
             }).ToListAsync();
 
 
