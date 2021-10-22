@@ -58,11 +58,13 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                 maNhanVien = x.dc.maNhanVien,
                 tenNhanVien = x.nv.hoTen,
                 ngayHieuLuc = x.dc.ngayHieuLuc,
-                idPhongBan = x.pb.tenPhongBan,
+                PhongBan = x.pb.tenPhongBan,
                 to = x.to.tenTo,
                 chiTiet = x.dc.chiTiet,
-                idChucVu = x.cv.tenChucVu,
-                trangThai = x.dc.trangThai == true ? "Kích hoạt" : "Vô hiệu"
+                ChucVu = x.cv.tenChucVu,
+                trangThai = x.dc.trangThai == true ? "Kích hoạt" : "Vô hiệu",
+                idChucVu = x.dc.idChucVu,
+                idPhongBan = x.dc.idPhongBan
             }).ToListAsync();
             return data;
         }

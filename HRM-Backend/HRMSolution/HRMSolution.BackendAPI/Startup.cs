@@ -111,6 +111,7 @@ namespace HRMSolution.BackendAPI
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseAuthentication();
             app.UseRouting();
 
             app.UseCors(x => x
@@ -118,10 +119,7 @@ namespace HRMSolution.BackendAPI
                 .AllowAnyHeader()
                 .SetIsOriginAllowed(origin => true) // allow any origin
                 .AllowCredentials());
-
-            app.UseAuthentication();
             
-
             app.UseAuthorization();
 
             app.UseSwagger();

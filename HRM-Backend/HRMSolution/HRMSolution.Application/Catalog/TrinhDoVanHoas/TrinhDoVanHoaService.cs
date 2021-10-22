@@ -92,7 +92,10 @@ namespace HRMSolution.Application.Catalog.TrinhDoVanHoas
                 hinhThucDaoTao = x.htdt.tenHinhThuc,
                 trinhDo = x.dmtd.tenTrinhDo,
                 maNhanVien = x.p.maNhanVien,
-                tenNhanVien = x.nv.hoTen
+                tenNhanVien = x.nv.hoTen,
+                idChuyenMon = x.p.idChuyenMon,
+                idHinhThucDaoTao = x.p.idHinhThucDaoTao,
+                idTrinhDo = x.p.idTrinhDo
             }).FirstAsync();
 
             return data;

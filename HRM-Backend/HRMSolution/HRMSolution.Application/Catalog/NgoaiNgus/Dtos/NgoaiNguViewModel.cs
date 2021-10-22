@@ -13,5 +13,6 @@ namespace HRMSolution.Application.Catalog.NgoaiNgus.Dtos
         public string noiCap { get; set; }
         public string maNhanVien { get; set; }
         public string tenNhanVien { get; set; }
+        public int idDanhMucNgoaiNgu { get; set; }
     }
 }

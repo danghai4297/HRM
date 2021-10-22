@@ -70,7 +70,8 @@ namespace HRMSolution.Application.Catalog.NguoiThans
                 dienThoai = x.p.dienThoai,
                 khac = x.p.khac,
                 maNhanVien = x.p.maNhanVien,
-                tenNhanVien = x.nv.hoTen
+                tenNhanVien = x.nv.hoTen,
+                idDanhMucNguoiThan = x.p.idDanhMucNguoiThan
             }).FirstOrDefaultAsync();
 
 

@@ -16,5 +16,7 @@ namespace HRMSolution.Application.Catalog.HopDongs.Dtos
         public string trangThai { get; set; }
         public string maNhanVien { get; set; }
         public string tenNhanVien { get; set; }
+        public int idLoaiHopDong { get; set; }
+        public int idChucDanh { get; set; }
     }
 }

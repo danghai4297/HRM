@@ -75,7 +75,8 @@ namespace HRMSolution.Application.Catalog.Luongs
                 trangThai = x.l.trangThai == true ? "Kích hoạt" : "Vô hiệu",
                 maHopDong = x.hd.maHopDong,
                 maNhanVien = x.hd.maNhanVien,
-                tenNhanVien = x.nv.hoTen
+                tenNhanVien = x.nv.hoTen,
+                idNhomLuong = x.l.idNhomLuong
             }).ToListAsync();
 
             return data;

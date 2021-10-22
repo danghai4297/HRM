@@ -63,7 +63,9 @@ namespace HRMSolution.Application.Catalog.HopDongs
                 ghiChu = x.p.ghiChu,
                 trangThai = x.p.trangThai == true ? "Kích hoạt" : "Vô hiệu",
                 maNhanVien = x.p.maNhanVien,
-                tenNhanVien = x.nv.hoTen
+                tenNhanVien = x.nv.hoTen,
+                idChucDanh = x.p.idChucDanh,
+                idLoaiHopDong = x.p.idLoaiHopDong
             }).FirstAsync();
 
             return data;

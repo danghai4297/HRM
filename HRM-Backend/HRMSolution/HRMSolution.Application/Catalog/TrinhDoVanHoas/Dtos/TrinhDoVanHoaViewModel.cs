@@ -15,5 +15,9 @@ namespace HRMSolution.Application.Catalog.TrinhDoVanHoas.Dtos
         public string trinhDo { get; set; }
         public string maNhanVien { get; set; }
         public string tenNhanVien { get; set; }
+        public int idChuyenMon { get; set; }
+        public int idTrinhDo { get; set; }
+
+        public int idHinhThucDaoTao { get; set; }
     }
 }

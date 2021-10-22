@@ -58,7 +58,8 @@ namespace HRMSolution.Application.Catalog.NgoaiNgus
                 trinhDo = x.p.trinhDo,
                 noiCap = x.p.noiCap,
                 maNhanVien = x.p.maNhanVien,
-                tenNhanVien = x.nv.hoTen
+                tenNhanVien = x.nv.hoTen,
+                idDanhMucNgoaiNgu = x.p.idDanhMucNgoaiNgu
             }).FirstAsync();
 
             return data;
