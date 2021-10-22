@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./ScreenDetailSalary.scss";
 import ProductApi from "../../api/productApi";
+import dateFormat from "dateformat";
 function ScreenDetailSalary(props) {
   let { match, history } = props;
   let { id } = match.params;
@@ -72,9 +73,9 @@ function ScreenDetailSalary(props) {
             ></SubDetail>
             <SubDetail
               titleLeft="Ngày có hiệu lực"
-              itemLeft={dataLDetail.ngayHieuLuc}
+              itemLeft={dataLDetail.ngayHieuLuc === null ? "-" : dateFormat(dataLDetail.ngayHieuLuc, "dd/mm/yyyy")}
               titleRight="Ngày hết hạn"
-              itemRight={dataLDetail.ngayKetThuc}
+              itemRight={dataLDetail.ngayKetThuc === null ? "-" : dateFormat(dataLDetail.ngayKetThuc, "dd/mm/yyyy")}
             ></SubDetail>
             <SubDetail
               titleLeft="Thời hạn lên lương"

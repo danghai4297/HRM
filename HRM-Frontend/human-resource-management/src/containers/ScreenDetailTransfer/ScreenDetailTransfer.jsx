@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import "./ScreenDetailTransfer.scss";
 import ProductApi from "../../api/productApi";
 import { Link } from "react-router-dom";
+import dateFormat from "dateformat";
 function ScreenDetailTransfer(props) {
   let { match, history } = props;
   let { id } = match.params;
@@ -50,7 +51,7 @@ function ScreenDetailTransfer(props) {
               titleLeft="Họ và tên"
               itemLeft={null}
               titleRight="Ngày hiệu lực"
-              itemRight={dataDetailDC.ngayHieuLuc}
+              itemRight={dataDetailDC.ngayHieuLuc === null ? "-" : dateFormat(dataDetailDC.ngayHieuLuc, "dd/mm/yyyy")}
             ></SubDetail>
             <SubDetail
               titleLeft="Phòng ban"
