@@ -61,6 +61,11 @@ function ScreenProject() {
               />
               <ProtectedRoute
                 exact
+                path="/profile/add"
+                component={AddProfileForm}
+              />
+              <ProtectedRoute
+                exact
                 path="/profile/detail/level/add"
                 component={AddLevelForm}
               />
@@ -108,11 +113,7 @@ function ScreenProject() {
               />
 
 
-              <ProtectedRoute
-                exact
-                path="/profile/add"
-                component={AddProfileForm}
-              />
+              
 
               <ProtectedRoute
                 exact

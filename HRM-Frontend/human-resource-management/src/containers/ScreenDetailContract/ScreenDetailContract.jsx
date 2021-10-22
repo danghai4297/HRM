@@ -6,6 +6,7 @@ import SubDetail from "../../components/Detail/SubDetail";
 import ProductApi from "../../api/productApi";
 import { Link } from "react-router-dom";
 import dateFormat from "dateformat";
+import { ttc } from "./DataContract";
 function ScreenDetailContract(props) {
   let { match, history } = props;
   let { id } = match.params;
@@ -24,7 +25,7 @@ function ScreenDetailContract(props) {
     };
     fetchNvList();
   }, []);
-  
+
   return (
     <>
       <div className="main-screen">
@@ -51,35 +52,27 @@ function ScreenDetailContract(props) {
         <div className="second-main">
           <h3 className="title-main">Thông tin chung</h3>
           <div className="second-main-path">
-            <SubDetail
-              titleLeft="Họ và tên"
-              itemLeft={dataDetailHd.tenNhanVien}
-              titleRight="Mã nhân viên"
-              itemRight={dataDetailHd.maNhanVien}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Mã hợp đồng"
-              itemLeft={dataDetailHd.id}
-              titleRight="Loại hợp đồng"
-              itemRight={dataDetailHd.loaiHopDong}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Trạng thái"
-              itemLeft={dataDetailHd.trangThai}
-              titleRight="Chức danh công việc"
-              itemRight={dataDetailHd.chucDanh}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Ngày có hiệu lực"
-              itemLeft={dataDetailHd.hopDongTuNgay === null ? "-" : dateFormat(dataDetailHd.hopDongTuNgay, "dd/mm/yyyy")}
-              titleRight="Ngày hết hạn"
-              itemRight={dataDetailHd.hopDongDenNgay === null ? "-" : dateFormat(dataDetailHd.hopDongDenNgay, "dd/mm/yyyy")}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Ghi chú"
-              itemLeft={dataDetailHd.ghiChu}
-              titleRight={null}
-            ></SubDetail>
+            {ttc.map((detail, key) => {
+              return (
+                <SubDetail
+                  key={key}
+                  titleLeft={detail.title1}
+                  itemLeft={
+                    detail.data1[1] === true &&
+                    dataDetailHd[detail.data1[0]] !== null
+                      ? dateFormat(dataDetailHd[detail.data1[0]], "dd/mm/yyyy")
+                      : dataDetailHd[detail.data1[0]]
+                  }
+                  titleRight={detail.title2}
+                  itemRight={
+                    detail.data2[1] === true &&
+                    dataDetailHd[detail.data2[0]] !== null
+                      ? dateFormat(dataDetailHd[detail.data2[0]], "dd/mm/yyyy")
+                      : dataDetailHd[detail.data2[0]]
+                  }
+                />
+              );
+            })}
           </div>
         </div>
       </div>

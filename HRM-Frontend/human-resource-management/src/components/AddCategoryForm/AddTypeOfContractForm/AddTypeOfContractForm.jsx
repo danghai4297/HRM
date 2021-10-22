@@ -14,13 +14,7 @@ const schema = yup.object({
 AddTypeOfContractForm.propTypes = {};
 
 function AddTypeOfContractForm(props) {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
+
   let { match, history } = props;
   let { id } = match.params;
 
@@ -50,8 +44,29 @@ function AddTypeOfContractForm(props) {
     };
     fetchNvList();
   }, []);
-
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: {
+      maLoaiHopDong: `${dataDetailDMLHD.maLoaiHopDong}`,
+      tenLoaiHopDong: `${dataDetailDMLHD.tenLoaiHopDong}`
+   }
+  });
+  useEffect(()=>{
+    if(dataDetailDMLHD){
+      reset({
+        maLoaiHopDong: `${dataDetailDMLHD.maLoaiHopDong}`,
+        tenLoaiHopDong: `${dataDetailDMLHD.tenLoaiHopDong}`
+      })
+    }
+  },[dataDetailDMLHD])
+  console.log(register.defaultValues)
   const onHandleSubmit = async (data) => {
+    console.log(data)
     try {
       if (id !== undefined) {
         await PutApi.PutDMLHD(data, id);
@@ -128,7 +143,7 @@ function AddTypeOfContractForm(props) {
                     type="text"
                     {...register("maLoaiHopDong")}
                     id="maLoaiHopDong"
-                    defaultValue={dataDetailDMLHD.maLoaiHopDong}
+                    // defaultValue={dataDetailDMLHD.maLoaiHopDong}
                     className={
                       !errors.maLoaiHopDong
                         ? "form-control col-sm-6"
@@ -152,7 +167,7 @@ function AddTypeOfContractForm(props) {
                     type="text"
                     {...register("tenLoaiHopDong")}
                     id="tenLoaiHopDong"
-                    defaultValue={dataDetailDMLHD.tenLoaiHopDong}
+                    // defaultValue={dataDetailDMLHD.tenLoaiHopDong}
                     className={
                       !errors.tenLoaiHopDong
                         ? "form-control col-sm-6"

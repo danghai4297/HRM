@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -13,14 +13,6 @@ const schema = yup.object({
   tenNgach: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddCSRForm(props) {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
-
   let { match, history } = props;
   let { id } = match.params;
 
@@ -50,6 +42,24 @@ function AddCSRForm(props) {
     fetchNvList();
   }, []);
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: {
+       tenNgach: id !== undefined ? `${dataDetailDMNCC.tenNgach}`: null
+    }
+  });
+  useEffect(()=>{
+    if(dataDetailDMNCC && id !== undefined){
+      reset({
+        tenNgach: `${dataDetailDMNCC.tenNgach}`
+      })
+    }
+  },[dataDetailDMNCC])
   const onHandleSubmit = async (data) => {
     try {
       if (id !== undefined) {
@@ -59,6 +69,7 @@ function AddCSRForm(props) {
       }
       history.goBack();
     } catch (error) {}
+    console.log(data)
   };
 
   const handleDelete = async () => {
@@ -129,12 +140,13 @@ function AddCSRForm(props) {
                     type="text"
                     {...register("tenNgach")}
                     id="tenNgach"
-                    defaultValue={dataDetailDMNCC.tenNgach}
+                    // defaultValue={dataDetailDMNCC.tenNgach}
                     className={
                       !errors.tenNgach
                         ? "form-control col-sm-6"
                         : "form-control col-sm-6 border-danger "
                     }
+                    // name="tenNgach"
                   />
                   <span className="message">{errors.tenNgach?.message}</span>
                 </div>
