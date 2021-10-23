@@ -7,25 +7,19 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import Dialog from "../../Dialog/Dialog";
 import DeleteApi from "../../../api/deleteAPI";
+import DialogCheck from "../../Dialog/DialogCheck";
 AddBonusForm.propTypes = {};
 const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 
 function AddBonusForm(props) {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
-
   let { match, history } = props;
   let { id } = match.params;
 
   const [dataDetailDMKT, setdataDetailDMKT] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
+  const [showCheckDialog, setShowCheckDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm danh mục khen thưởng mới"
@@ -34,6 +28,7 @@ function AddBonusForm(props) {
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
+    setShowCheckDialog(false);
   };
 
   useEffect(() => {
@@ -51,7 +46,30 @@ function AddBonusForm(props) {
     fetchNvList();
   }, []);
 
-  console.log(dataDetailDMKT);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    getValues,
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: {
+      tenDanhMuc: id !== undefined ? `${dataDetailDMKT.tenDanhMuc}` : null,
+    },
+  });
+
+  useEffect(() => {
+    if (dataDetailDMKT && id !== undefined) {
+      reset({
+        tenDanhMuc: `${dataDetailDMKT.tenDanhMuc}`,
+      });
+    }
+  }, [dataDetailDMKT]);
+
+  const checkInputBonusChange = () => {
+    return getValues("tenDanhMuc") === `${dataDetailDMKT.tenDanhMuc}`;
+  };
 
   const onHandleSubmit = async (data) => {
     try {
@@ -102,16 +120,16 @@ function AddBonusForm(props) {
               className="btn btn-primary ml-3"
               value={dataDetailDMKT.length !== 0 ? "Sửa" : "Lưu"}
               onClick={() => {
-                setShowDialog(true);
+                if (checkInputBonusChange()) {
+                  setShowCheckDialog(true);
+                } else {
+                  setShowDialog(true);
+                }
               }}
             />
           </div>
         </div>
-        <form
-          action=""
-          className="profile-form"
-          // onSubmit={handleSubmit(onHandleSubmit)}
-        >
+        <form action="" className="profile-form">
           <div className="container-div-form-category">
             <h3>Thông tin chung</h3>
             <div className="row">
@@ -127,7 +145,6 @@ function AddBonusForm(props) {
                     type="text"
                     {...register("tenDanhMuc")}
                     id="tenDanhMuc"
-                    defaultValue={dataDetailDMKT.tenDanhMuc}
                     className={
                       !errors.tenDanhMuc
                         ? "form-control col-sm-6"
@@ -145,7 +162,7 @@ function AddBonusForm(props) {
                         type="text"
                         {...register("tieuDe")}
                         id="tieuDe"
-                        defaultValue="Khen thưởng"
+                        value="Khen thưởng"
                         style={{ display: "none" }}
                         className={
                           !errors.tieuDe
@@ -167,6 +184,13 @@ function AddBonusForm(props) {
         title="Thông báo"
         description={description}
         confirm={handleSubmit(onHandleSubmit)}
+        cancel={cancel}
+      />
+      <DialogCheck
+        show={showCheckDialog}
+        title="Thông báo"
+        description={"Bạn chưa thay đổi gì"}
+        confirm={null}
         cancel={cancel}
       />
       <Dialog

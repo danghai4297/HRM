@@ -5,6 +5,8 @@ import { Button } from "react-bootstrap";
 import "./ScreenDetailFamily.scss";
 import ProductApi from "../../api/productApi";
 import { Link } from "react-router-dom";
+import dateFormat from "dateformat";
+import { ttc } from "./DataFamily";
 function ScreenDetailFamily(props) {
   let { match, history } = props;
   let { id } = match.params;
@@ -40,7 +42,7 @@ function ScreenDetailFamily(props) {
             <h2>Thông tin gia đình</h2>
           </div>
           <div className="third-path">
-          <Link to={`/profile/detail/family/update/${id}`}>
+            <Link to={`/profile/detail/family/update/${id}`}>
               <Button variant="light" className="btn-fix">
                 Sửa
               </Button>
@@ -50,41 +52,22 @@ function ScreenDetailFamily(props) {
         <div className="second-main">
           <h3 className="title-main">Thông tin chung</h3>
           <div className="second-main-path">
-            <SubDetail
-              titleLeft="Mã nhân viên"
-              itemLeft={dataDetailNT.maNhanVien}
-              titleRight="Tên nhân viên"
-              itemRight={dataDetailNT.tenNhanVien}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Họ và tên"
-              itemLeft={dataDetailNT.tenNguoiThan}
-              titleRight="Danh mục người thân"
-              itemRight={dataDetailNT.danhMucNguoiThan}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Giới tính"
-              itemLeft={dataDetailNT.gioiTinh}
-              titleRight="Quan hệ"
-              itemRight={dataDetailNT.quanHe}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Địa chỉ"
-              itemLeft={dataDetailNT.diaChi}
-              titleRight="Ngày sinh"
-              itemRight={dataDetailNT.ngaySinh}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Nghề nghiệp"
-              itemLeft={dataDetailNT.ngheNghiep}
-              titleRight="Điện thoại"
-              itemRight={dataDetailNT.dienThoai}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Thông tin khác"
-              itemLeft={dataDetailNT.khac}
-              titleRight={null}
-            ></SubDetail>
+            {ttc.map((detail, key) => {
+              return (
+                <SubDetail
+                  key={key}
+                  titleLeft={detail.title1}
+                  itemLeft={dataDetailNT[detail.data1]}
+                  titleRight={detail.title2}
+                  itemRight={
+                    detail.data2[1] === true &&
+                    dataDetailNT[detail.data2[0]] !== null
+                      ? dateFormat(dataDetailNT[detail.data2[0]], "dd/mm/yyyy")
+                      : dataDetailNT[detail.data2[0]]
+                  }
+                />
+              );
+            })}
           </div>
         </div>
       </div>

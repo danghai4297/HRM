@@ -7,24 +7,18 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
+import DialogCheck from "../../Dialog/DialogCheck";
 AddDisciplineForm.propTypes = {};
 const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddDisciplineForm(props) {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
-
   let { match, history } = props;
   let { id } = match.params;
 
   const [dataDetailDMKL, setdataDetailDMKL] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
+  const [showCheckDialog, setShowCheckDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm danh mục kỉ luật mới"
@@ -33,6 +27,7 @@ function AddDisciplineForm(props) {
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
+    setShowCheckDialog(false);
   };
 
   useEffect(() => {
@@ -50,7 +45,30 @@ function AddDisciplineForm(props) {
     fetchNvList();
   }, []);
 
-  // console.log(dataDetailDMKL);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    getValues,
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: {
+      tenDanhMuc: id !== undefined ? `${dataDetailDMKL.tenDanhMuc}` : null,
+    },
+  });
+
+  useEffect(() => {
+    if (dataDetailDMKL && id !== undefined) {
+      reset({
+        tenDanhMuc: `${dataDetailDMKL.tenDanhMuc}`,
+      });
+    }
+  }, [dataDetailDMKL]);
+
+  const checkInputDisciplineChange = () => {
+    return getValues("tenDanhMuc") === `${dataDetailDMKL.tenDanhMuc}`;
+  };
 
   const onHandleSubmit = async (data) => {
     try {
@@ -58,7 +76,7 @@ function AddDisciplineForm(props) {
         await PutApi.PutDMKTvKL(data, id);
       } else {
         await ProductApi.PostDMKTvKL(data);
-        console.log(data)
+        console.log(data);
       }
       history.goBack();
     } catch (error) {}
@@ -102,16 +120,16 @@ function AddDisciplineForm(props) {
               className="btn btn-primary ml-3"
               value={dataDetailDMKL.length !== 0 ? "Sửa" : "Lưu"}
               onClick={() => {
-                setShowDialog(true);
+                if (checkInputDisciplineChange()) {
+                  setShowCheckDialog(true);
+                } else {
+                  setShowDialog(true);
+                }
               }}
             />
           </div>
         </div>
-        <form
-          action=""
-          className="profile-form"
-          // onSubmit={handleSubmit(onHandleSubmit)}
-        >
+        <form action="" className="profile-form">
           <div className="container-div-form-category">
             <h3>Thông tin chung</h3>
             <div className="row">
@@ -127,7 +145,6 @@ function AddDisciplineForm(props) {
                     type="text"
                     {...register("tenDanhMuc")}
                     id="tenDanhMuc"
-                    defaultValue={dataDetailDMKL.tenDanhMuc}
                     className={
                       !errors.tenDanhMuc
                         ? "form-control col-sm-6"
@@ -167,6 +184,13 @@ function AddDisciplineForm(props) {
         title="Thông báo"
         description={description}
         confirm={handleSubmit(onHandleSubmit)}
+        cancel={cancel}
+      />
+      <DialogCheck
+        show={showCheckDialog}
+        title="Thông báo"
+        description={"Bạn chưa thay đổi gì"}
+        confirm={null}
         cancel={cancel}
       />
       <Dialog

@@ -5,6 +5,8 @@ import { Button } from "react-bootstrap";
 import "./ScreenDetailLevel.scss";
 import ProductApi from "../../api/productApi";
 import { Link } from "react-router-dom";
+import dateFormat from "dateformat";
+import { ttc } from "./DataLevel";
 function ScreenDetailLevel(props) {
   let { match, history } = props;
   let { id } = match.params;
@@ -48,30 +50,27 @@ function ScreenDetailLevel(props) {
         <div className="second-main">
           <h3 className="title-main">Thông tin chung</h3>
           <div className="second-main-path">
-            <SubDetail
-              titleLeft="Mã nhân viên"
-              itemLeft={dataDetailTD.maNhanVien}
-              titleRight="Tên nhân viên"
-              itemRight={dataDetailTD.tenNhanVien}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Tên trường"
-              itemLeft={dataDetailTD.tenTruong}
-              titleRight="Chuyên ngành"
-              itemRight={dataDetailTD.chuyenMon}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Trình độ"
-              itemLeft={dataDetailTD.trinhDo}
-              titleRight="Hình thức đào tạo"
-              itemRight={dataDetailTD.hinhThucDaoTao}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Từ ngày"
-              itemLeft={dataDetailTD.tuThoiGian}
-              titleRight="Đến ngày"
-              itemRight={dataDetailTD.denThoiGian}
-            ></SubDetail>
+            {ttc.map((detail, key) => {
+              return (
+                <SubDetail
+                  key={key}
+                  titleLeft={detail.title1}
+                  itemLeft={
+                    detail.data1[1] === true &&
+                    dataDetailTD[detail.data1[0]] !== null
+                      ? dateFormat(dataDetailTD[detail.data1[0]], "dd/mm/yyyy")
+                      : dataDetailTD[detail.data1[0]]
+                  }
+                  titleRight={detail.title2}
+                  itemRight={
+                    detail.data2[1] === true &&
+                    dataDetailTD[detail.data2[0]] !== null
+                      ? dateFormat(dataDetailTD[detail.data2[0]], "dd/mm/yyyy")
+                      : dataDetailTD[detail.data2[0]]
+                  }
+                />
+              );
+            })}
           </div>
         </div>
       </div>

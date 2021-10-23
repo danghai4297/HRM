@@ -6,6 +6,7 @@ import "./ScreenDetailTransfer.scss";
 import ProductApi from "../../api/productApi";
 import { Link } from "react-router-dom";
 import dateFormat from "dateformat";
+import { vtctht } from "./DataTransfer";
 function ScreenDetailTransfer(props) {
   let { match, history } = props;
   let { id } = match.params;
@@ -47,29 +48,22 @@ function ScreenDetailTransfer(props) {
         <div className="second-main">
           <h3 className="title-main">Vị trí công tác hiện tại</h3>
           <div className="second-main-path">
-            <SubDetail
-              titleLeft="Họ và tên"
-              itemLeft={null}
-              titleRight="Ngày hiệu lực"
-              itemRight={dataDetailDC.ngayHieuLuc === null ? "-" : dateFormat(dataDetailDC.ngayHieuLuc, "dd/mm/yyyy")}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Phòng ban"
-              itemLeft={dataDetailDC.idPhongBan}
-              titleRight="Chi tiết"
-              itemRight={dataDetailDC.chiTiet}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Tổ"
-              itemLeft={dataDetailDC.to}
-              titleRight="Chức vụ"
-              itemRight={dataDetailDC.idChucVu}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Trạng thái"
-              itemLeft={dataDetailDC.trangThai}
-              titleRight={null}
-            ></SubDetail>
+          {vtctht.map((detail, key) => {
+              return (
+                <SubDetail
+                  key={key}
+                  titleLeft={detail.title1}
+                  itemLeft={dataDetailDC[detail.data1]}
+                  titleRight={detail.title2}
+                  itemRight={
+                    detail.data2[1] === true &&
+                    dataDetailDC[detail.data2[0]] !== null
+                      ? dateFormat(dataDetailDC[detail.data2[0]], "dd/mm/yyyy")
+                      : dataDetailDC[detail.data2[0]]
+                  }
+                />
+              );
+            })}
           </div>
         </div>
       </div>

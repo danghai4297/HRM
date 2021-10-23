@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import "./ScreenDetailSalary.scss";
 import ProductApi from "../../api/productApi";
 import dateFormat from "dateformat";
+import { ttc } from "./DataSalary";
 function ScreenDetailSalary(props) {
   let { match, history } = props;
   let { id } = match.params;
@@ -30,14 +31,17 @@ function ScreenDetailSalary(props) {
         <div className="first-main">
           <div className="first-path">
             <button className="btn-back" onClick={history.goBack}>
-            <FontAwesomeIcon className="icon-btn" icon={["fas", "long-arrow-alt-left"]} />
+              <FontAwesomeIcon
+                className="icon-btn"
+                icon={["fas", "long-arrow-alt-left"]}
+              />
             </button>
           </div>
           <div className="second-path">
             <h2>Chi tiết hồ sơ lương</h2>
           </div>
           <div className="third-path">
-          <Link to={`/salary/${id}`}>
+            <Link to={`/salary/${id}`}>
               <Button variant="light" className="btn-fix">
                 Sửa
               </Button>
@@ -47,53 +51,27 @@ function ScreenDetailSalary(props) {
         <div className="second-mains">
           <h3 className="title-main">Thông tin chung</h3>
           <div className="second-main-path">
-            <SubDetail
-              titleLeft="Họ và tên"
-              itemLeft={dataLDetail.tenNhanVien}
-              titleRight="Mã nhân viên"
-              itemRight={dataLDetail.maNhanVien}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Mã hợp đồng"
-              itemLeft={dataLDetail.maHopDong}
-              titleRight="Nhóm lương"
-              itemRight={dataLDetail.nhomLuong}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Hệ số lương"
-              itemLeft={dataLDetail.heSoLuong}
-              titleRight="Bậc lương"
-              itemRight={dataLDetail.bacLuong}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Phụ cấp chức vụ"
-              itemLeft={dataLDetail.phuCapTrachNhiem}
-              titleRight="Phụ cấp khác"
-              itemRight={dataLDetail.phuCapKhac}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Ngày có hiệu lực"
-              itemLeft={dataLDetail.ngayHieuLuc === null ? "-" : dateFormat(dataLDetail.ngayHieuLuc, "dd/mm/yyyy")}
-              titleRight="Ngày hết hạn"
-              itemRight={dataLDetail.ngayKetThuc === null ? "-" : dateFormat(dataLDetail.ngayKetThuc, "dd/mm/yyyy")}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Thời hạn lên lương"
-              itemLeft={dataLDetail.thoiHanLenLuong}
-              titleRight="Tổng lương"
-              itemRight={dataLDetail.tongLuong}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Trạng thái"
-              itemLeft={dataLDetail.trangThai}
-              titleRight="Ghi chú"
-              itemRight={dataLDetail.ghiChu}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Lương cơ bản"
-              itemLeft={dataLDetail.luongCoBan}
-              titleRight={null}
-            ></SubDetail>
+            {ttc.map((detail, key) => {
+              return (
+                <SubDetail
+                  key={key}
+                  titleLeft={detail.title1}
+                  itemLeft={
+                    detail.data1[1] === true &&
+                    dataLDetail[detail.data1[0]] !== null
+                      ? dateFormat(dataLDetail[detail.data1[0]], "dd/mm/yyyy")
+                      : dataLDetail[detail.data1[0]]
+                  }
+                  titleRight={detail.title2}
+                  itemRight={
+                    detail.data2[1] === true &&
+                    dataLDetail[detail.data2[0]] !== null
+                      ? dateFormat(dataLDetail[detail.data2[0]], "dd/mm/yyyy")
+                      : dataLDetail[detail.data2[0]]
+                  }
+                />
+              );
+            })}
           </div>
         </div>
       </div>

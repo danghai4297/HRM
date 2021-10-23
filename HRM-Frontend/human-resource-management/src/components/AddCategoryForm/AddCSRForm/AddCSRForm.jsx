@@ -7,25 +7,19 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
+import DialogCheck from "../../Dialog/DialogCheck";
 
 AddCSRForm.propTypes = {};
 const schema = yup.object({
   tenNgach: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddCSRForm(props) {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
-
   let { match, history } = props;
   let { id } = match.params;
 
   const [dataDetailDMNCC, setdataDetailDMNCC] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
+  const [showCheckDialog, setShowCheckDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm ngạch công chức mới"
@@ -33,6 +27,7 @@ function AddCSRForm(props) {
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
+    setShowCheckDialog(false);
   };
 
   useEffect(() => {
@@ -50,6 +45,31 @@ function AddCSRForm(props) {
     fetchNvList();
   }, []);
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    getValues,
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: {
+      tenNgach: id !== undefined ? `${dataDetailDMNCC.tenNgach}` : null,
+    },
+  });
+
+  useEffect(() => {
+    if (dataDetailDMNCC && id !== undefined) {
+      reset({
+        tenNgach: `${dataDetailDMNCC.tenNgach}`,
+      });
+    }
+  }, [dataDetailDMNCC]);
+
+  const checkInputChange = () => {
+    return getValues("tenNgach") === `${dataDetailDMNCC.tenNgach}`;
+  };
+
   const onHandleSubmit = async (data) => {
     try {
       if (id !== undefined) {
@@ -59,6 +79,7 @@ function AddCSRForm(props) {
       }
       history.goBack();
     } catch (error) {}
+    console.log(data);
   };
 
   const handleDelete = async () => {
@@ -67,8 +88,6 @@ function AddCSRForm(props) {
       history.goBack();
     } catch (error) {}
   };
-
-  console.log(dataDetailDMNCC);
 
   return (
     <>
@@ -104,16 +123,16 @@ function AddCSRForm(props) {
               className="btn btn-primary ml-3"
               value={dataDetailDMNCC.length !== 0 ? "Sửa" : "Lưu"}
               onClick={() => {
-                setShowDialog(true);
+                if (checkInputChange()) {
+                  setShowCheckDialog(true);
+                } else {
+                  setShowDialog(true);
+                }
               }}
             />
           </div>
         </div>
-        <form
-          action=""
-          className="profile-form"
-          // onSubmit={handleSubmit(onHandleSubmit)}
-        >
+        <form action="" className="profile-form">
           <div className="container-div-form-category">
             <h3>Thông tin chung</h3>
             <div className="row">
@@ -129,7 +148,6 @@ function AddCSRForm(props) {
                     type="text"
                     {...register("tenNgach")}
                     id="tenNgach"
-                    defaultValue={dataDetailDMNCC.tenNgach}
                     className={
                       !errors.tenNgach
                         ? "form-control col-sm-6"
@@ -148,6 +166,13 @@ function AddCSRForm(props) {
         title="Thông báo"
         description={description}
         confirm={handleSubmit(onHandleSubmit)}
+        cancel={cancel}
+      />
+      <DialogCheck
+        show={showCheckDialog}
+        title="Thông báo"
+        description={"Bạn chưa thay đổi gì"}
+        confirm={null}
         cancel={cancel}
       />
       <Dialog
