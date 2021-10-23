@@ -7,24 +7,18 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
+import DialogCheck from "../../Dialog/DialogCheck";
 AddReligionForm.propTypes = {};
 const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddReligionForm(props) {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
-
   let { match, history } = props;
   let { id } = match.params;
 
   const [dataDetailDMTG, setdataDetailDMTG] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
+  const [showCheckDialog, setShowCheckDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm danh mục tôn giáo mới"
@@ -33,6 +27,7 @@ function AddReligionForm(props) {
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
+    setShowCheckDialog(false);
   };
 
   useEffect(() => {
@@ -50,7 +45,30 @@ function AddReligionForm(props) {
     fetchNvList();
   }, []);
 
-  console.log(dataDetailDMTG);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    getValues,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: {
+      tenDanhMuc: id !== undefined ? `${dataDetailDMTG.tenDanhMuc}` : null,
+    },
+  });
+
+  useEffect(() => {
+    if (dataDetailDMTG && id !== undefined) {
+      reset({
+        tenDanhMuc: `${dataDetailDMTG.tenDanhMuc}`,
+      });
+    }
+  }, [dataDetailDMTG]);
+
+  const checkInputReligionChange = () => {
+    return getValues("tenDanhMuc") === `${dataDetailDMTG.tenDanhMuc}`;
+  };
 
   const onHandleSubmit = async (data) => {
     try {
@@ -101,16 +119,16 @@ function AddReligionForm(props) {
               className="btn btn-primary ml-3"
               value={dataDetailDMTG.length !== 0 ? "Sửa" : "Lưu"}
               onClick={() => {
-                setShowDialog(true);
+                if (checkInputReligionChange()) {
+                  setShowCheckDialog(true);
+                } else {
+                  setShowDialog(true);
+                }
               }}
             />
           </div>
         </div>
-        <form
-          action=""
-          className="profile-form"
-          // onSubmit={handleSubmit(onHandleSubmit)}
-        >
+        <form action="" className="profile-form">
           <div className="container-div-form-category">
             <h3>Thông tin chung</h3>
             <div className="row">
@@ -145,6 +163,13 @@ function AddReligionForm(props) {
         title="Thông báo"
         description={description}
         confirm={handleSubmit(onHandleSubmit)}
+        cancel={cancel}
+      />
+      <DialogCheck
+        show={showCheckDialog}
+        title="Thông báo"
+        description={"Bạn chưa thay đổi gì"}
+        confirm={null}
         cancel={cancel}
       />
       <Dialog

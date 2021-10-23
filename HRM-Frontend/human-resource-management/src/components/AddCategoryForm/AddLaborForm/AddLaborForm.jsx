@@ -7,23 +7,17 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
+import DialogCheck from "../../Dialog/DialogCheck";
 const schema = yup.object({
   tenLaoDong: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddLaborForm(props) {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
-
   let { match, history } = props;
   let { id } = match.params;
 
   const [dataDetailDMTCLD, setdataDetailDMTCLD] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
+  const [showCheckDialog, setShowCheckDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm tính chất lao động mới"
@@ -32,6 +26,7 @@ function AddLaborForm(props) {
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
+    setShowCheckDialog(false);
   };
 
   useEffect(() => {
@@ -49,6 +44,31 @@ function AddLaborForm(props) {
     fetchNvList();
   }, []);
 
+  const {
+    register,
+    handleSubmit,
+    reset,
+    getValues,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: {
+      tenLaoDong: id !== undefined ? `${dataDetailDMTCLD.tenLaoDong}` : null,
+    },
+  });
+
+  useEffect(() => {
+    if (dataDetailDMTCLD && id !== undefined) {
+      reset({
+        tenLaoDong: `${dataDetailDMTCLD.tenLaoDong}`,
+      });
+    }
+  }, [dataDetailDMTCLD]);
+
+  const checkInputLaborChange = () => {
+    return getValues("tenLaoDong") === `${dataDetailDMTCLD.tenLaoDong}`;
+  };
+
   const onHandleSubmit = async (data) => {
     try {
       if (id !== undefined) {
@@ -59,7 +79,6 @@ function AddLaborForm(props) {
       history.goBack();
     } catch (error) {}
   };
-  console.log(dataDetailDMTCLD);
 
   const handleDelete = async () => {
     try {
@@ -102,7 +121,11 @@ function AddLaborForm(props) {
               className="btn btn-primary ml-3"
               value={dataDetailDMTCLD.length !== 0 ? "Sửa" : "Lưu"}
               onClick={() => {
-                setShowDialog(true);
+                if (checkInputLaborChange()) {
+                  setShowCheckDialog(true);
+                } else {
+                  setShowDialog(true);
+                }
               }}
             />
           </div>
@@ -110,7 +133,6 @@ function AddLaborForm(props) {
         <form
           action=""
           className="profile-form"
-          // onSubmit={handleSubmit(onHandleSubmit)}
         >
           <div className="container-div-form-category">
             <h3>Thông tin chung</h3>
@@ -127,7 +149,6 @@ function AddLaborForm(props) {
                     type="text"
                     {...register("tenLaoDong")}
                     id="tenLaoDong"
-                    defaultValue={dataDetailDMTCLD.tenLaoDong}
                     className={
                       !errors.tenLaoDong
                         ? "form-control col-sm-6"
@@ -146,6 +167,13 @@ function AddLaborForm(props) {
         title="Thông báo"
         description={description}
         confirm={handleSubmit(onHandleSubmit)}
+        cancel={cancel}
+      />
+      <DialogCheck
+        show={showCheckDialog}
+        title="Thông báo"
+        description={"Bạn chưa thay đổi gì"}
+        confirm={null}
         cancel={cancel}
       />
       <Dialog

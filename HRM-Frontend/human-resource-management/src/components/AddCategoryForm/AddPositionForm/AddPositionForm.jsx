@@ -7,24 +7,19 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
+import DialogCheck from "../../Dialog/DialogCheck";
 const schema = yup.object({
   maChucVu: yup.string().required("Mã chức vụ được bỏ trống."),
   tenChucVu: yup.string().required("Tên chức vụ không được bỏ trống."),
   phuCap: yup.number().required("Phụ cấp không được bỏ trống."),
 });
 function AddPositionForm(props) {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
   let { match, history } = props;
   let { id } = match.params;
 
   const [dataDetailDMCV, setdataDetailDMCV] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
+  const [showCheckDialog, setShowCheckDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm danh mục chức vụ mới"
@@ -33,6 +28,7 @@ function AddPositionForm(props) {
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
+    setShowCheckDialog(false);
   };
 
   useEffect(() => {
@@ -49,6 +45,39 @@ function AddPositionForm(props) {
     };
     fetchNvList();
   }, []);
+
+  const intitalValue = {
+    maChucVu: `${dataDetailDMCV.maChucVu}`,
+    tenChucVu: `${dataDetailDMCV.tenChucVu}`,
+    phuCap: `${dataDetailDMCV.phuCap}`,
+  };
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    getValues,
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: id !== undefined ? intitalValue : null,
+  });
+
+  useEffect(() => {
+    if (dataDetailDMCV && id !== undefined) {
+      reset(intitalValue);
+    }
+  }, [dataDetailDMCV]);
+
+  const checkInputPositionChange = () => {
+    const positionValues = getValues(["maChucVu", "tenChucVu", "phuCap"]);
+    const dfPositionValues = [
+      intitalValue.maChucVu,
+      intitalValue.tenChucVu,
+      intitalValue.phuCap,
+    ];
+    return JSON.stringify(positionValues) === JSON.stringify(dfPositionValues);
+  };
 
   const onHandleSubmit = async (data) => {
     try {
@@ -67,8 +96,6 @@ function AddPositionForm(props) {
       history.goBack();
     } catch (error) {}
   };
-
-  console.log(dataDetailDMCV);
 
   return (
     <>
@@ -101,16 +128,16 @@ function AddPositionForm(props) {
               className="btn btn-primary ml-3"
               value={dataDetailDMCV.length !== 0 ? "Sửa" : "Lưu"}
               onClick={() => {
-                setShowDialog(true);
+                if (checkInputPositionChange()) {
+                  setShowCheckDialog(true);
+                } else {
+                  setShowDialog(true);
+                }
               }}
             />
           </div>
         </div>
-        <form
-          action=""
-          className="profile-form"
-          // onSubmit={handleSubmit(onHandleSubmit)}
-        >
+        <form action="" className="profile-form">
           <div className="container-div-form-category">
             <h3>Thông tin chung</h3>
             <div className="row">
@@ -126,7 +153,6 @@ function AddPositionForm(props) {
                     type="text"
                     {...register("maChucVu")}
                     id="maChucVu"
-                    defaultValue={dataDetailDMCV.maChucVu}
                     className={
                       !errors.maChucVu
                         ? "form-control col-sm-6"
@@ -148,7 +174,6 @@ function AddPositionForm(props) {
                     type="text"
                     {...register("tenChucVu")}
                     id="tenChucVu"
-                    defaultValue={dataDetailDMCV.tenChucVu}
                     className={
                       !errors.tenChucVu
                         ? "form-control col-sm-6 "
@@ -172,7 +197,6 @@ function AddPositionForm(props) {
                     type="text"
                     {...register("phuCap")}
                     id="phuCap"
-                    defaultValue={dataDetailDMCV.phuCap}
                     className={
                       !errors.phuCap
                         ? "form-control col-sm-6"
@@ -191,6 +215,13 @@ function AddPositionForm(props) {
         title="Thông báo"
         description={description}
         confirm={handleSubmit(onHandleSubmit)}
+        cancel={cancel}
+      />
+      <DialogCheck
+        show={showCheckDialog}
+        title="Thông báo"
+        description={"Bạn chưa thay đổi gì"}
+        confirm={null}
         cancel={cancel}
       />
       <Dialog

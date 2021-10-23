@@ -7,24 +7,18 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
+import DialogCheck from "../../Dialog/DialogCheck";
 const schema = yup.object({
   maPhongBan: yup.string().required("Mã phòng ban không được bỏ trống."),
   tenPhongBan: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddDepartmentForm(props) {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
-
   let { match, history } = props;
   let { id } = match.params;
 
   const [dataDetailDMPB, setdataDetailDMPB] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
+  const [showCheckDialog, setShowCheckDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm phòng ban mới"
@@ -33,6 +27,7 @@ function AddDepartmentForm(props) {
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
+    setShowCheckDialog(false);
   };
 
   useEffect(() => {
@@ -49,7 +44,39 @@ function AddDepartmentForm(props) {
     };
     fetchNvList();
   }, []);
-  console.log(dataDetailDMPB);
+
+  const intitalValue = {
+    maPhongBan: `${dataDetailDMPB.maPhongBan}`,
+    tenPhongBan: `${dataDetailDMPB.tenPhongBan}`,
+  };
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    getValues,
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: id !== undefined ? intitalValue : null,
+  });
+
+  useEffect(() => {
+    if (dataDetailDMPB && id !== undefined) {
+      reset(intitalValue);
+    }
+  }, [dataDetailDMPB]);
+
+  const checkInputDepartmentChange = () => {
+    const departmentValues = getValues(["maPhongBan", "tenPhongBan"]);
+    const dfDepartmentValues = [
+      intitalValue.maPhongBan,
+      intitalValue.tenPhongBan,
+    ];
+    return (
+      JSON.stringify(departmentValues) === JSON.stringify(dfDepartmentValues)
+    );
+  };
 
   const onHandleSubmit = async (data) => {
     try {
@@ -100,16 +127,16 @@ function AddDepartmentForm(props) {
               className="btn btn-primary ml-3"
               value={dataDetailDMPB.length !== 0 ? "Sửa" : "Lưu"}
               onClick={() => {
-                setShowDialog(true);
+                if (checkInputDepartmentChange()) {
+                  setShowCheckDialog(true);
+                } else {
+                  setShowDialog(true);
+                }
               }}
             />
           </div>
         </div>
-        <form
-          action=""
-          className="profile-form"
-          // onSubmit={handleSubmit(onHandleSubmit)}
-        >
+        <form action="" className="profile-form">
           <div className="container-div-form-category">
             <h3>Thông tin chung</h3>
             <div className="row">
@@ -125,7 +152,6 @@ function AddDepartmentForm(props) {
                     type="text"
                     {...register("maPhongBan")}
                     id="maPhongBan"
-                    defaultValue={dataDetailDMPB.maPhongBan}
                     className={
                       !errors.maPhongBan
                         ? "form-control col-sm-6"
@@ -147,7 +173,6 @@ function AddDepartmentForm(props) {
                     type="text"
                     {...register("tenPhongBan")}
                     id="tenPhongBan"
-                    defaultValue={dataDetailDMPB.tenPhongBan}
                     className={
                       !errors.tenPhongBan
                         ? "form-control col-sm-6"
@@ -166,6 +191,13 @@ function AddDepartmentForm(props) {
         title="Thông báo"
         description={description}
         confirm={handleSubmit(onHandleSubmit)}
+        cancel={cancel}
+      />
+      <DialogCheck
+        show={showCheckDialog}
+        title="Thông báo"
+        description={"Bạn chưa thay đổi gì"}
+        confirm={null}
         cancel={cancel}
       />
       <Dialog

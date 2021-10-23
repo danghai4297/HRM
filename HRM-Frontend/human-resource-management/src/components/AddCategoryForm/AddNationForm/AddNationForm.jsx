@@ -9,25 +9,20 @@ import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import { useToast } from "../../Toast/Toast";
+import DialogCheck from "../../Dialog/DialogCheck";
 // import { Alert } from "react-alert";
 AddNationForm.propTypes = {};
 const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddNationForm(props) {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
   const { error, warn, info, success } = useToast();
   let { match, history } = props;
   let { id } = match.params;
 
   const [dataDetailDMDT, setdataDetailDMDT] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
+  const [showCheckDialog, setShowCheckDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm danh mục dân tộc"
@@ -36,6 +31,7 @@ function AddNationForm(props) {
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
+    setShowCheckDialog(false);
   };
 
   useEffect(() => {
@@ -52,6 +48,31 @@ function AddNationForm(props) {
     };
     fetchNvList();
   }, []);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    getValues,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: {
+      tenDanhMuc: id !== undefined ? `${dataDetailDMDT.tenDanhMuc}` : null,
+    },
+  });
+
+  useEffect(() => {
+    if (dataDetailDMDT && id !== undefined) {
+      reset({
+        tenDanhMuc: `${dataDetailDMDT.tenDanhMuc}`,
+      });
+    }
+  }, [dataDetailDMDT]);
+
+  const checkInputNationChange = () => {
+    return getValues("tenDanhMuc") === `${dataDetailDMDT.tenDanhMuc}`;
+  };
 
   const onHandleSubmit = async (data) => {
     try {
@@ -106,15 +127,16 @@ function AddNationForm(props) {
               className="btn btn-primary ml-3"
               value={dataDetailDMDT.length !== 0 ? "Sửa" : "Lưu"}
               onClick={() => {
-                setShowDialog(true);
+                if (checkInputNationChange()) {
+                  setShowCheckDialog(true);
+                } else {
+                  setShowDialog(true);
+                }
               }}
             />
           </div>
         </div>
-        <form
-          action=""
-          className="profile-form"
-        >
+        <form action="" className="profile-form">
           <div className="container-div-form-category">
             <h3>Thông tin chung</h3>
             <div className="row">
@@ -130,7 +152,6 @@ function AddNationForm(props) {
                     type="text"
                     {...register("tenDanhMuc")}
                     id="tenDanhMuc"
-                    defaultValue={dataDetailDMDT.tenDanhMuc}
                     className={
                       !errors.tenDanhMuc
                         ? "form-control col-sm-6"
@@ -149,6 +170,13 @@ function AddNationForm(props) {
         title="Thông báo"
         description={description}
         confirm={handleSubmit(onHandleSubmit)}
+        cancel={cancel}
+      />
+      <DialogCheck
+        show={showCheckDialog}
+        title="Thông báo"
+        description={"Bạn chưa thay đổi gì"}
+        confirm={null}
         cancel={cancel}
       />
       <Dialog

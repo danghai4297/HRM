@@ -7,6 +7,7 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
+import DialogCheck from "../../Dialog/DialogCheck";
 const schema = yup.object({
   maNhomLuong: yup.string().required("Mã phòng ban không được bỏ trống."),
   tenNhomLuong: yup.string().required("Tên danh mục không được bỏ trống."),
@@ -14,19 +15,12 @@ const schema = yup.object({
 AddSalaryGroupForm.propTypes = {};
 
 function AddSalaryGroupForm(props) {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
-
   let { match, history } = props;
   let { id } = match.params;
 
   const [dataDetailDMNL, setdataDetailDMNL] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
+  const [showCheckDialog, setShowCheckDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm danh mục nhóm lương mới"
@@ -35,6 +29,7 @@ function AddSalaryGroupForm(props) {
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
+    setShowCheckDialog(false);
   };
 
   useEffect(() => {
@@ -51,14 +46,46 @@ function AddSalaryGroupForm(props) {
     };
     fetchNvList();
   }, []);
-  console.log(dataDetailDMNL);
+
+  const intitalValue = {
+    maNhomLuong: `${dataDetailDMNL.maNhomLuong}`,
+    tenNhomLuong: `${dataDetailDMNL.tenNhomLuong}`,
+  };
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    getValues,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: id !== undefined ? intitalValue : null,
+  });
+
+  useEffect(() => {
+    if (dataDetailDMNL && id !== undefined) {
+      reset(intitalValue);
+    }
+  }, [dataDetailDMNL]);
+
+  const checkInputSalaryGroupChange = () => {
+    const salaryGroupValues = getValues(["maNhomLuong", "tenNhomLuong"]);
+    const dfSalaryGroupValues = [
+      intitalValue.maNhomLuong,
+      intitalValue.tenNhomLuong,
+    ];
+    return (
+      JSON.stringify(salaryGroupValues) === JSON.stringify(dfSalaryGroupValues)
+    );
+  };
 
   const onHandleSubmit = async (data) => {
     try {
       if (id !== undefined) {
         await PutApi.PutDMNL(data, id);
       } else {
-      await ProductApi.PostDMNL(data);
+        await ProductApi.PostDMNL(data);
       }
       history.goBack();
     } catch (error) {}
@@ -70,114 +97,121 @@ function AddSalaryGroupForm(props) {
       history.goBack();
     } catch (error) {}
   };
-  
+
   return (
     <>
-    <div className="container-form">
-      <div className="Submit-button sticky-top">
-        <div>
-          <h2 className="">
-            {dataDetailDMNL.length !== 0 ? "Sửa" : "Thêm"} danh mục nhóm lương
-          </h2>
+      <div className="container-form">
+        <div className="Submit-button sticky-top">
+          <div>
+            <h2 className="">
+              {dataDetailDMNL.length !== 0 ? "Sửa" : "Thêm"} danh mục nhóm lương
+            </h2>
+          </div>
+          <div className="button">
+            <input
+              type="submit"
+              className={
+                dataDetailDMNL.length !== 0 ? "btn btn-danger" : "delete-button"
+              }
+              onClick={() => {
+                setShowDeleteDialog(true);
+              }}
+              value="Xoá"
+            />
+            <input
+              type="submit"
+              className="btn btn-secondary ml-3"
+              value="Huỷ"
+              onClick={history.goBack}
+            />
+            <input
+              type="submit"
+              className="btn btn-primary ml-3"
+              value={dataDetailDMNL.length !== 0 ? "Sửa" : "Lưu"}
+              onClick={() => {
+                if (checkInputSalaryGroupChange()) {
+                  setShowCheckDialog(true);
+                } else {
+                  setShowDialog(true);
+                }
+              }}
+            />
+          </div>
         </div>
-        <div className="button">
-          <input
-            type="submit"
-            className={
-              dataDetailDMNL.length !== 0 ? "btn btn-danger" : "delete-button"
-            }
-            onClick={() => {
-              setShowDeleteDialog(true);
-            }}
-            value="Xoá"
-          />
-          <input
-            type="submit"
-            className="btn btn-secondary ml-3"
-            value="Huỷ"
-            onClick={history.goBack}
-          />
-          <input
-            type="submit"
-            className="btn btn-primary ml-3"
-            value={dataDetailDMNL.length !== 0 ? "Sửa" : "Lưu"}
-            onClick={() => {
-              setShowDialog(true);
-            }}
-          />
-        </div>
-      </div>
-      <form
-        action=""
-        className="profile-form"
-        // onSubmit={handleSubmit(onHandleSubmit)}
-      >
-        <div className="container-div-form-category">
-          <h3>Thông tin chung</h3>
-          <div className="row">
-            <div className="col">
-              <div className="form-group form-inline">
-                <label
-                  className="col-sm-4 justify-content-start"
-                  htmlFor="maNhomLuong"
-                >
-                  Mã nhóm lương
-                </label>
-                <input
-                  type="text"
-                  {...register("maNhomLuong")}
-                  id="maNhomLuong"
-                  defaultValue={dataDetailDMNL.maNhomLuong}
-                  className={
-                    !errors.maNhomLuong
-                      ? "form-control col-sm-6"
-                      : "form-control col-sm-6 border-danger "
-                  }
-                />
-                <span className="message">{errors.maNhomLuong?.message}</span>
+        <form action="" className="profile-form">
+          <div className="container-div-form-category">
+            <h3>Thông tin chung</h3>
+            <div className="row">
+              <div className="col">
+                <div className="form-group form-inline">
+                  <label
+                    className="col-sm-4 justify-content-start"
+                    htmlFor="maNhomLuong"
+                  >
+                    Mã nhóm lương
+                  </label>
+                  <input
+                    type="text"
+                    {...register("maNhomLuong")}
+                    id="maNhomLuong"
+                    className={
+                      !errors.maNhomLuong
+                        ? "form-control col-sm-6"
+                        : "form-control col-sm-6 border-danger "
+                    }
+                  />
+                  <span className="message">{errors.maNhomLuong?.message}</span>
+                </div>
               </div>
-            </div>
-            <div className="col">
-              <div className="form-group form-inline">
-                <label
-                  className="col-sm-4 justify-content-start"
-                  htmlFor="tenNhomLuong"
-                >
-                  Tên danh mục
-                </label>
-                <input
-                  type="text"
-                  {...register("tenNhomLuong")}
-                  id="tenNhomLuong"
-                  defaultValue={dataDetailDMNL.tenNhomLuong}
-                  className={
-                    !errors.tenNhomLuong
-                      ? "form-control col-sm-6"
-                      : "form-control col-sm-6 border-danger "
-                  }
-                />
-                <span className="message">{errors.tenNhomLuong?.message}</span>
+              <div className="col">
+                <div className="form-group form-inline">
+                  <label
+                    className="col-sm-4 justify-content-start"
+                    htmlFor="tenNhomLuong"
+                  >
+                    Tên nhóm lương
+                  </label>
+                  <input
+                    type="text"
+                    {...register("tenNhomLuong")}
+                    id="tenNhomLuong"
+                    className={
+                      !errors.tenNhomLuong
+                        ? "form-control col-sm-6"
+                        : "form-control col-sm-6 border-danger "
+                    }
+                  />
+                  <span className="message">
+                    {errors.tenNhomLuong?.message}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
       <Dialog
-      show={showDialog}
-      title="Thông báo"
-      description={description}
-      confirm={handleSubmit(onHandleSubmit)}
-      cancel={cancel}
-    />
-    <Dialog
-      show={showDeleteDialog}
-      title="Thông báo"
-      description={`Bạn chắc chắn muốn xóa danh mục nhóm lương ${dataDetailDMNL.tenNhomLuong}`}
-      confirm={handleDelete}
-      cancel={cancel}
-    />
-  </>
+        show={showDialog}
+        title="Thông báo"
+        description={description}
+        confirm={handleSubmit(onHandleSubmit)}
+        cancel={cancel}
+      />
+      <DialogCheck
+        show={showCheckDialog}
+        title="Thông báo"
+        description={"Bạn chưa thay đổi gì"}
+        confirm={null}
+        cancel={cancel}
+      />
+      <Dialog
+        show={showDeleteDialog}
+        title="Thông báo"
+        description={`Bạn chắc chắn muốn xóa danh mục nhóm lương ${dataDetailDMNL.tenNhomLuong}`}
+        confirm={handleDelete}
+        cancel={cancel}
+      />
+    </>
   );
 }
 

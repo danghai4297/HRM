@@ -10,6 +10,7 @@ import Dialog from "../../components/Dialog/Dialog";
 import { useLocation } from "react-router-dom";
 import { DatePicker } from "antd";
 import moment from "moment/moment.js";
+import { stringify } from "query-string";
 
 const schema = yup.object({
   tenTruong: yup.string().required("Tên trường không được bỏ trống."),
@@ -25,31 +26,12 @@ function AddLevelForm(props) {
   let { match, history } = props;
 
   let location = useLocation();
-  console.log(location);
+  // console.log(location);
   let query = new URLSearchParams(location.search);
-  console.log(query.get("maNhanVien"));
+  //console.log(query.get("maNhanVien"));
   let eCode = query.get("maNhanVien");
   let { id } = match.params;
-  let oldDate = moment().add(10, "days").calendar();
-  //let oldDate = moment().toDate();
-  // const [date, setDate] = useState({
-  //   date: oldDate,
-  // });
-
-  const [dates, setDate] = useState(moment());
-  const handleChangeDate = (value) => {
-    let dateInput = value.format("MM/DD/YYYY");
-    setDate(dateInput);
-  };
- 
-  const {
-    register,
-    handleSubmit,
-    control,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
+    
   const [dataDetailTDVH, setdataDetailTDVH] = useState([]);
 
   const [dataCM, setDataCM] = useState([]);
@@ -61,13 +43,15 @@ function AddLevelForm(props) {
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm trình độ mới"
   );
+  // const [notChangeDialog,setNotChangeDialog] = useState(false);
 
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
   };
+  console.log(eCode);
 
-  console.log(dataDetailTDVH);
+  //console.log(dataDetailTDVH);
   useEffect(() => {
     const fetchNvList = async () => {
       try {
@@ -77,7 +61,11 @@ function AddLevelForm(props) {
         setDataHTDT(responseHTDT);
         const responseTD = await ProductApi.getAllDMTD();
         setDataTD(responseTD);
+
         if (id !== undefined) {
+          // if(checkInputChange === true){
+          //   setDescription("Bạn chưa thay dổi");
+          // }
           setDescription("Bạn chắc chắn muốm sửa trình độ");
           const response = await ProductApi.getTDDetail(id);
           setdataDetailTDVH(response);
@@ -88,25 +76,83 @@ function AddLevelForm(props) {
     };
     fetchNvList();
   }, []);
+  //ussing react-hooks-form
+  const intitalValue = {
+    maNhanVien: `${dataDetailTDVH.maNhanVien}`,
+    idChuyenMon: `${dataDetailTDVH.idChuyenMon}`,
+    tuThoiGian: dataDetailTDVH.tuThoiGian,
+    denThoiGian: dataDetailTDVH.denThoiGian,
+    idHinhThucDaoTao: `${dataDetailTDVH.idHinhThucDaoTao}`,
+    idTrinhDo: `${dataDetailTDVH.idTrinhDo}`,
+    tenTruong: `${dataDetailTDVH.tenTruong}`,
+  };
+  //  console.log(typeof(intitalValue.tuThoiGian));
+   console.log(dataDetailTDVH.tuThoiGian);
+  
+  const {
+    register,
+    handleSubmit,
+    control,
+    setValue,
+    getValues,
+    reset,
+    formState: { errors },
+  } = useForm({
+    defaultValues: intitalValue,
+    resolver: yupResolver(schema),
+  });
 
+  useEffect(() => {
+    if (dataDetailTDVH) {
+      reset(intitalValue);
+    }
+  }, [dataDetailTDVH]);
+  const checkInputChange = () => {
+    const values = getValues([
+      "maNhanVien",
+      "idChuyenMon",
+      "tuThoiGian",
+      "denThoiGian",
+      "idHinhThucDaoTao",
+      "idTrinhDo",
+      "tenTruong",
+    ]);
+    const dfValue = [
+      intitalValue.maNhanVien,
+      intitalValue.idChuyenMon,
+      intitalValue.tuThoiGian,
+      intitalValue.denThoiGian,
+      intitalValue.idHinhThucDaoTao,
+      intitalValue.idTrinhDo,
+      intitalValue.tenTruong,
+    ];
+    if (JSON.stringify(values) === JSON.stringify(dfValue)) {
+      return true;
+    }
+    return false;
+  };
+ 
   const onHandleSubmit = async (data) => {
     console.log(data);
-    console.log("date",dates);
+    checkInputChange();
     try {
       if (id !== undefined) {
         await PutApi.PutTDVH(data, id);
       } else {
-        // await ProductApi.PostTDVH(data);
+        await ProductApi.PostTDVH(data);
       }
-      //history.goBack();
-    } catch (error) {}
+      history.goBack();
+    } catch (error) {
+      console.log("Có lỗi xảy ra: ", error);
+    }
   };
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteTDVH(id);
-      history.goBack();
+      history.push(`/profile/detail/${dataDetailTDVH.maNhanVien}`);
     } catch (error) {}
   };
+
   return (
     <>
       <div className="container-form">
@@ -161,7 +207,10 @@ function AddLevelForm(props) {
                   <input
                     type="text"
                     {...register("maNhanVien")}
-                    defaultValue={eCode}
+                    // defaultValue={
+                    //   id !== undefined ? de.maNhanVien : eCode
+                    // }
+                    //setValue={id !== undefined ? dataDetailTDVH.maNhanVien : eCode}
                     id="maNhanVien"
                     className={
                       !errors.maNhanVien
@@ -185,6 +234,7 @@ function AddLevelForm(props) {
                     type="text"
                     {...register("idChuyenMon")}
                     id="idChuyenMon"
+                    //defaultValue={defaultValue.idChuyenMon}
                     className={
                       !errors.idChuyenMon
                         ? "form-control col-sm-6 custom-select"
@@ -192,13 +242,15 @@ function AddLevelForm(props) {
                     }
                   >
                     <option value={dataDetailTDVH.idChuyenMon}>
-                      {dataDetailTDVH.tenChuyenMon}
+                      {dataDetailTDVH.chuyenMon}
                     </option>
-                    {dataCM.map((item, key) => (
-                      <option key={key} value={item.id}>
-                        {item.tenChuyenMon}{" "}
-                      </option>
-                    ))}
+                    {dataCM
+                      .filter((item) => item.id !== dataDetailTDVH.idChuyenMon)
+                      .map((item, key) => (
+                        <option key={key} value={item.id}>
+                          {item.tenChuyenMon}{" "}
+                        </option>
+                      ))}
                   </select>
                   <span className="message">{errors.idChuyenMon?.message}</span>
                 </div>
@@ -215,6 +267,7 @@ function AddLevelForm(props) {
                   </label>
                   <input
                     type="text"
+                    // defaultValue={defaultValue.tenTruong}
                     {...register("tenTruong")}
                     id="tenTruong"
                     className={
@@ -245,13 +298,17 @@ function AddLevelForm(props) {
                     }
                   >
                     <option value={dataDetailTDVH.idHinhThucDaoTao}>
-                      {dataDetailTDVH.tenHinhThuc}
+                      {dataDetailTDVH.hinhThucDaoTao}
                     </option>
-                    {dataHTDT.map((item, key) => (
-                      <option key={key} value={item.id}>
-                        {item.tenHinhThuc}{" "}
-                      </option>
-                    ))}
+                    {dataHTDT
+                      .filter(
+                        (item) => item.id !== dataDetailTDVH.idHinhThucDaoTao
+                      )
+                      .map((item, key) => (
+                        <option key={key} value={item.id}>
+                          {item.tenHinhThuc}{" "}
+                        </option>
+                      ))}
                   </select>
                   <span className="message">
                     {errors.idHinhThucDaoTao?.message}
@@ -281,11 +338,13 @@ function AddLevelForm(props) {
                     <option value={dataDetailTDVH.idTrinhDo}>
                       {dataDetailTDVH.trinhDo}
                     </option>
-                    {dataTD.map((item, key) => (
-                      <option key={key} value={item.id}>
-                        {item.tenTrinhDo}{" "}
-                      </option>
-                    ))}
+                    {dataTD
+                      .filter((item) => item.id !== dataDetailTDVH.idTrinhDo)
+                      .map((item, key) => (
+                        <option key={key} value={item.id}>
+                          {item.tenTrinhDo}{" "}
+                        </option>
+                      ))}
                   </select>
                   <span className="message">{errors.idTrinhDo?.message}</span>
                 </div>
@@ -315,8 +374,8 @@ function AddLevelForm(props) {
                   <Controller
                     name="tuThoiGian"
                     control={control}
-                    defaultValue=""
-                    render={({field}) => 
+                    
+                    render={({ field, onChange }) => (
                       <DatePicker
                         id="tuThoiGian"
                         className={
@@ -326,16 +385,20 @@ function AddLevelForm(props) {
                         }
                         placeholder="DD/MM/YYYY"
                         format="DD/MM/YYYY"
+                        //defaultValue={moment(dataDetailTDVH.tuThoiGian)}
+                        // onChange={(event) => {
+                        //   handleChangeDate(event);
+                        // }}
+                        value={moment(field.value)}
                         onChange={(event) => {
-                          handleChangeDate(event);                       
+                          field.onChange(event.toDate());
                         }}
-                        selected={dates.format("MM/DD/YYYY")}
-                        {...field}
-                       
-                      ></DatePicker>
-                      
-                    }
-                    
+                        //selected={field}
+                        {...field._d}
+
+                        //inputRef={dates}
+                      />
+                    )}
                   />
                   <span className="message">{errors.tuThoiGian?.message}</span>
                 </div>
@@ -348,7 +411,7 @@ function AddLevelForm(props) {
                   >
                     Đến ngày
                   </label>
-                  <input
+                  {/* <input
                     type="text"
                     {...register("denThoiGian")}
                     id="denThoiGian"
@@ -358,6 +421,37 @@ function AddLevelForm(props) {
                         : "form-control col-sm-6 border-danger"
                     }
                     placeholder="DD/MM/YYYY"
+                  /> */}
+                  <Controller
+                    name="denThoiGian"
+                    control={control}
+                    // defaultValue={defaultValue}
+                    
+                    render={({ field, onChange }) => (
+                      <DatePicker
+                        id="denThoiGian"
+                        // defaultValue={moment(dataDetailTDVH.denThoiGian)._d}
+                        //defaultValue={moment(dataDetailTDVH.denThoiGian)}
+                        className={
+                          !errors.denThoiGian
+                            ? "form-control col-sm-6"
+                            : "form-control col-sm-6 border-danger"
+                        }
+                        placeholder="DD/MM/YYYY"
+                        format="DD/MM/YYYY"
+                        // onChange={(event) => {
+                        //   handleChangeDate(event);
+                        // }}
+                        value={moment(field.value)}
+                        onChange={(event) => {
+                          field.onChange(event.toDate());
+                        }}
+                        //selected={field}
+                        {...field._d}
+
+                        //inputRef={dates}
+                      />
+                    )}
                   />
                   <span className="message">{errors.denThoiGian?.message}</span>
                 </div>
@@ -380,6 +474,7 @@ function AddLevelForm(props) {
         confirm={handleDelete}
         cancel={cancel}
       />
+      
     </>
   );
 }

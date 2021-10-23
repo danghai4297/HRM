@@ -7,6 +7,7 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
+import DialogCheck from "../../Dialog/DialogCheck";
 const schema = yup.object({
   maLoaiHopDong: yup.string().required("Mã phòng ban không được bỏ trống."),
   tenLoaiHopDong: yup.string().required("Tên danh mục không được bỏ trống."),
@@ -14,12 +15,12 @@ const schema = yup.object({
 AddTypeOfContractForm.propTypes = {};
 
 function AddTypeOfContractForm(props) {
-
   let { match, history } = props;
   let { id } = match.params;
 
   const [dataDetailDMLHD, setdataDetailDMLHD] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
+  const [showCheckDialog, setShowCheckDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm danh mục loại hợp đồng mới"
@@ -28,6 +29,7 @@ function AddTypeOfContractForm(props) {
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
+    setShowCheckDialog(false);
   };
 
   useEffect(() => {
@@ -44,29 +46,43 @@ function AddTypeOfContractForm(props) {
     };
     fetchNvList();
   }, []);
+
+  const intitalValue = {
+    maLoaiHopDong: `${dataDetailDMLHD.maLoaiHopDong}`,
+    tenLoaiHopDong: `${dataDetailDMLHD.tenLoaiHopDong}`,
+  };
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
+    getValues,
   } = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
-      maLoaiHopDong: `${dataDetailDMLHD.maLoaiHopDong}`,
-      tenLoaiHopDong: `${dataDetailDMLHD.tenLoaiHopDong}`
-   }
+      defaultValues: id !== undefined ? intitalValue : null,
+    },
   });
-  useEffect(()=>{
-    if(dataDetailDMLHD){
-      reset({
-        maLoaiHopDong: `${dataDetailDMLHD.maLoaiHopDong}`,
-        tenLoaiHopDong: `${dataDetailDMLHD.tenLoaiHopDong}`
-      })
+
+  useEffect(() => {
+    if (dataDetailDMLHD && id !== undefined) {
+      reset(intitalValue);
     }
-  },[dataDetailDMLHD])
-  console.log(register.defaultValues)
+  }, [dataDetailDMLHD]);
+
+  const checkInputTypeOfContractChange = () => {
+    const typeOfContractValues = getValues(["maLoaiHopDong", "tenLoaiHopDong"]);
+    const dfTypeOfContractValues = [
+      intitalValue.maLoaiHopDong,
+      intitalValue.tenLoaiHopDong,
+    ];
+    return (
+      JSON.stringify(typeOfContractValues) === JSON.stringify(dfTypeOfContractValues)
+    );
+  };
+
   const onHandleSubmit = async (data) => {
-    console.log(data)
     try {
       if (id !== undefined) {
         await PutApi.PutDMLHD(data, id);
@@ -118,7 +134,11 @@ function AddTypeOfContractForm(props) {
               className="btn btn-primary ml-3"
               value={dataDetailDMLHD.length !== 0 ? "Sửa" : "Lưu"}
               onClick={() => {
-                setShowDialog(true);
+                if (checkInputTypeOfContractChange()) {
+                  setShowCheckDialog(true);
+                } else {
+                  setShowDialog(true);
+                }
               }}
             />
           </div>
@@ -126,7 +146,6 @@ function AddTypeOfContractForm(props) {
         <form
           action=""
           className="profile-form"
-          // onSubmit={handleSubmit(onHandleSubmit)}
         >
           <div className="container-div-form-category">
             <h3>Thông tin chung</h3>
@@ -143,7 +162,6 @@ function AddTypeOfContractForm(props) {
                     type="text"
                     {...register("maLoaiHopDong")}
                     id="maLoaiHopDong"
-                    // defaultValue={dataDetailDMLHD.maLoaiHopDong}
                     className={
                       !errors.maLoaiHopDong
                         ? "form-control col-sm-6"
@@ -167,7 +185,6 @@ function AddTypeOfContractForm(props) {
                     type="text"
                     {...register("tenLoaiHopDong")}
                     id="tenLoaiHopDong"
-                    // defaultValue={dataDetailDMLHD.tenLoaiHopDong}
                     className={
                       !errors.tenLoaiHopDong
                         ? "form-control col-sm-6"
@@ -188,6 +205,13 @@ function AddTypeOfContractForm(props) {
         title="Thông báo"
         description={description}
         confirm={handleSubmit(onHandleSubmit)}
+        cancel={cancel}
+      />
+      <DialogCheck
+        show={showCheckDialog}
+        title="Thông báo"
+        description={"Bạn chưa thay đổi gì"}
+        confirm={null}
         cancel={cancel}
       />
       <Dialog
