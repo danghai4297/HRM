@@ -21,11 +21,11 @@ const schema = yup.object({
 });
 function AddLevelForm(props) {
   let { match, history } = props;
-  
+
   let location = useLocation();
-  console.log(location)
+  // console.log(location);
   let query = new URLSearchParams(location.search);
-  console.log(query.get("maNhanVien"));
+  // console.log(query.get("maNhanVien"));
   let { id } = match.params;
   //let oldDate = moment().add(10, 'days').calendar();
   let oldDate = moment().toDate();
@@ -34,7 +34,7 @@ function AddLevelForm(props) {
   // });
   const [date, setDate] = useState();
   const handleChangeDate = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     setDate({ date: e.target.value });
   };
   const {
@@ -56,16 +56,18 @@ function AddLevelForm(props) {
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm trình độ mới"
   );
+  const [idCm, setIdCm] = useState(null);
 
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
   };
 
-  console.log(dataDetailTDVH);
+  // console.log(dataDetailTDVH);
   useEffect(() => {
     const fetchNvList = async () => {
       try {
+        setIdCm(localStorage.getItem("ID"));
         const responseCM = await ProductApi.getAllDMCM();
         setDataCM(responseCM);
         const responseHTDT = await ProductApi.getAllDMHTDT();
@@ -84,8 +86,9 @@ function AddLevelForm(props) {
     fetchNvList();
   }, []);
 
+  console.log(idCm);
   const onHandleSubmit = async (data) => {
-    console.log(data);
+    // console.log(data);
 
     try {
       if (id !== undefined) {
@@ -294,17 +297,17 @@ function AddLevelForm(props) {
                     Từ ngày
                   </label>
                   <input
-                  type="text"
-                  {...register("tuThoiGian")}
-                  id="tuThoiGian"
-                  className={
-                    !errors.tuThoiGian
-                      ? "form-control col-sm-6"
-                      : "form-control col-sm-6 border-danger"
-                  }
-                  placeholder="DD/MM/YYYY"
-                />
-                <span className="message">{errors.tuThoiGian?.message}</span>
+                    type="text"
+                    {...register("tuThoiGian")}
+                    id="tuThoiGian"
+                    className={
+                      !errors.tuThoiGian
+                        ? "form-control col-sm-6"
+                        : "form-control col-sm-6 border-danger"
+                    }
+                    placeholder="DD/MM/YYYY"
+                  />
+                  <span className="message">{errors.tuThoiGian?.message}</span>
                   {/* <Controller
                     name="tuThoiGian"
                     control={control}

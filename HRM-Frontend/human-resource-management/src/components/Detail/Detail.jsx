@@ -16,6 +16,8 @@ import {
   NVCOLUMNSTDVH,
 } from "./NvColumns";
 import { Link } from "react-router-dom";
+import { lhkc } from "./Data";
+import dateFormat from "dateformat";
 
 function Detail(props) {
   let { match, history } = props;
@@ -404,7 +406,7 @@ function Detail(props) {
                   <div className="title">
                     <h5>Liên hệ khẩn cấp</h5>
                   </div>
-                  <SubDetail
+                  {/* <SubDetail
                     titleLeft="Họ và tên"
                     itemLeft={dataDetailNv.lhkcHoTen}
                     titleRight="Email"
@@ -420,7 +422,24 @@ function Detail(props) {
                     titleLeft="ĐT di động"
                     itemLeft={dataDetailNv.lhkcDienThoai}
                     titleRight={null}
-                  ></SubDetail>
+                  ></SubDetail> */}
+                  {lhkc.map((detail) => {
+                    return (
+                      <SubDetail
+                        titleLeft={detail.title1}
+                        itemLeft={dataDetailNv[detail.data1]}
+                        titleRight={detail.title2}
+                        itemRight={
+                          [detail.data2[1]] == true
+                            ? dateFormat(
+                                dataDetailNv[detail.data2[0]],
+                                "paddedShortDate"
+                              )
+                            : dataDetailNv[detail.data2[0]]
+                        }
+                      />
+                    );
+                  })}
                 </>
               )}
             </div>
@@ -539,7 +558,9 @@ function Detail(props) {
                       <h5 className="title-name">Trình độ</h5>
                     </div>
                     <div className="icon-cultural">
-                      <Link to={`/profile/detail/level/add?maNhanVien=${dataDetailNv.id}`}>
+                      <Link
+                        to={`/profile/detail/level/add?maNhanVien=${dataDetailNv.id}`}
+                      >
                         <button className="btn-cultural">
                           <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
                         </button>
@@ -558,7 +579,9 @@ function Detail(props) {
                       <h5 className="title-name">Ngoại ngữ</h5>
                     </div>
                     <div className="icon-cultural">
-                      <Link to={`/profile/detail/language/add?maNhanVien=${dataDetailNv.id}`}>
+                      <Link
+                        to={`/profile/detail/language/add?maNhanVien=${dataDetailNv.id}`}
+                      >
                         <button className="btn-cultural">
                           <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
                         </button>
@@ -597,7 +620,9 @@ function Detail(props) {
                   <div className="title">
                     <div className="title-cultural"></div>
                     <div className="icon-cultural">
-                      <Link to={`/profile/detail/family/add?maNhanVien=${dataDetailNv.id}`}>
+                      <Link
+                        to={`/profile/detail/family/add?maNhanVien=${dataDetailNv.id}`}
+                      >
                         <button className="btn-cultural">
                           <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
                         </button>
