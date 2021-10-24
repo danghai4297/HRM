@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { useLocation } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -8,9 +8,11 @@ import PutApi from "../../../src/api/putAAPI";
 import ProductApi from "../../../src/api/productApi";
 import Dialog from "../../components/Dialog/Dialog";
 import "./AddLanguageForm.scss";
+import { DatePicker } from "antd";
+import moment from "moment/moment.js";
 const schema = yup.object({
-  idDanhMucNgoaiNgu: yup.string().required("Ngoại ngữ không được bỏ trống."),
-  ngayCap: yup.string().required("Ngày cấp không được bỏ trống."),
+  idDanhMucNgoaiNgu: yup.number().required("Ngoại ngữ không được bỏ trống."),
+  //ngayCap: yup.string().required("Ngày cấp không được bỏ trống."),
   trinhDo: yup.string().required("Trình độ không được bỏ trống."),
   noiCap: yup.string().required("Nơi cấp không được bỏ trống."),
   maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
@@ -22,15 +24,9 @@ function AddLanguageForm(props) {
   console.log(location);
   let query = new URLSearchParams(location.search);
   console.log(query.get("maNhanVien"));
-
+  const eCode = query.get("maNhanVien");
   let { id } = match.params;
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
+
   const [dataDetailNN, setdataDetailNN] = useState([]);
   const [dataNN, setDataNN] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
@@ -59,8 +55,30 @@ function AddLanguageForm(props) {
     };
     fetchNvList();
   }, []);
-  console.log(dataDetailNN);
+  const intitalValue = {
+    ngayCap: dataDetailNN.ngayCap,
+    trinhDo: id !== undefined ? `${dataDetailNN.trinhDo}` : null,
+    noiCap: id !== undefined ? `${dataDetailNN.noiCap}` : null,
+    maNhanVien: id !== undefined ? `${dataDetailNN.maNhanVien}` : eCode,
+    idDanhMucNgoaiNgu: `${dataDetailNN.idDanhMucNgoaiNgu}`,
+  };
+  const {
+    register,
+    handleSubmit,
+    reset,
+    control,
+    formState: { errors },
+  } = useForm({
+    defaultValues: intitalValue,
+    resolver: yupResolver(schema),
+  });
+  useEffect(() => {
+    if (dataDetailNN) {
+      reset(intitalValue);
+    }
+  }, [dataDetailNN]);
   const onHandleSubmit = async (data) => {
+    console.log(data);
     try {
       if (id !== undefined) {
         await PutApi.PutNN(data, id);
@@ -73,7 +91,7 @@ function AddLanguageForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteNN(id);
-      history.goBack();
+      history.push(`/profile/detail/${dataDetailNN.maNhanVien}`);
     } catch (error) {}
   };
   return (
@@ -136,6 +154,7 @@ function AddLanguageForm(props) {
                         ? "form-control col-sm-6 "
                         : "form-control col-sm-6 border-danger"
                     }
+                    readOnly
                   />
                   <span className="message">{errors.maNhanVien?.message}</span>
                 </div>
@@ -161,13 +180,17 @@ function AddLanguageForm(props) {
                     }
                   >
                     <option value={dataDetailNN.idDanhMucNgoaiNgu}>
-                      {dataDetailNN.tenChuyenMon}
+                      {dataDetailNN.danhMucNgoaiNgu}
                     </option>
-                    {dataNN.map((item, key) => (
-                      <option key={key} value={item.id}>
-                        {item.tenDanhMuc}{" "}
-                      </option>
-                    ))}
+                    {dataNN
+                      .filter(
+                        (item) => item.id !== dataDetailNN.idDanhMucNgoaiNgu
+                      )
+                      .map((item, key) => (
+                        <option key={key} value={item.id}>
+                          {item.tenDanhMuc}{" "}
+                        </option>
+                      ))}
                   </select>
                   <span className="message">
                     {errors.idDanhMucNgoaiNgu?.message}
@@ -182,7 +205,7 @@ function AddLanguageForm(props) {
                   >
                     ngày cấp
                   </label>
-                  <input
+                  {/* <input
                     type="text"
                     {...register("ngayCap")}
                     id="ngayCap"
@@ -199,7 +222,34 @@ function AddLanguageForm(props) {
                     {item.tenHinhThuc}{" "}
                   </option>
                   ))} */}
+                  <Controller
+                    name="ngayCap"
+                    control={control}
+                    render={({ field, onChange }) => (
+                      <DatePicker
+                        id="ngayCap"
+                        className={
+                          !errors.ngayCap
+                            ? "form-control col-sm-6"
+                            : "form-control col-sm-6 border-danger"
+                        }
+                        placeholder="DD/MM/YYYY"
+                        format="DD/MM/YYYY"
+                        //defaultValue={moment(dataDetailTDVH.tuThoiGian)}
+                        // onChange={(event) => {
+                        //   handleChangeDate(event);
+                        // }}
+                        value={moment(field.value)}
+                        onChange={(event) => {
+                          field.onChange(event.toDate());
+                        }}
+                        //selected={field}
+                        {...field._d}
 
+                        //inputRef={dates}
+                      />
+                    )}
+                  />
                   <span className="message">{errors.ngayCap?.message}</span>
                 </div>
               </div>

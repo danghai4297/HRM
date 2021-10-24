@@ -49,7 +49,7 @@ function AddLevelForm(props) {
     setShowDialog(false);
     setShowDeleteDialog(false);
   };
-  console.log(eCode);
+  //console.log(eCode);
 
   //console.log(dataDetailTDVH);
   useEffect(() => {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { useLocation } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -8,14 +8,15 @@ import DeleteApi from "../../../src/api/deleteAPI";
 import PutApi from "../../../src/api/putAAPI";
 import ProductApi from "../../../src/api/productApi";
 import Dialog from "../../components/Dialog/Dialog";
-
+import { DatePicker } from "antd";
+import moment from "moment/moment.js";
 const schema = yup.object({
   idDanhMucNguoiThan: yup
     .number()
     .required("Danh mục người thân không được bỏ trống."),
   tenNguoiThan: yup.string().required("Tên người thân không được bỏ trống."),
-  gioiTinh: yup.boolean().required("Giới tính không được bỏ trống."),
-  ngaySinh: yup.string().required("Ngày sinh được bỏ trống."),
+  //gioiTinh: yup.boolean().required("Giới tính không được bỏ trống."),
+  //ngaySinh: yup.string().required("Ngày sinh được bỏ trống."),
   maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
   quanHe: yup.string().required("Quan hệ không được bỏ trống."),
   ngheNghiep: yup.string().required("Nghề nghệp không được bỏ trống."),
@@ -27,19 +28,13 @@ function AddFamilyForm(props) {
   let { id } = match.params;
 
   let location = useLocation();
-  console.log(location)
+  console.log(location);
   let query = new URLSearchParams(location.search);
   console.log(query.get("maNhanVien"));
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
+  const eCode = query.get("maNhanVien");
   const [dataDetailNT, setdataDetailNT] = useState([]);
   const [dataNT, setDataNT] = useState([]);
-
+  const [gender,setGender] = useState();
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
@@ -57,8 +52,9 @@ function AddFamilyForm(props) {
         setDataNT(responseNN);
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốm sửa thông tin gia đình");
-         const response = await ProductApi.getTDDetail(id);
-         setdataDetailNT(response);
+          const response = await ProductApi.getNTDetail(id);
+          setdataDetailNT(response);
+          setGender(response.gioiTinh);
         }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -66,15 +62,53 @@ function AddFamilyForm(props) {
     };
     fetchNvList();
   }, []);
+  
+  const intitalValue = {
+    idDanhMucNguoiThan:
+      id !== undefined ? `${dataDetailNT.idDanhMucNguoiThan}` : null,
+    tenNguoiThan: id !== undefined ? `${dataDetailNT.tenNguoiThan}` : null,
+    gioiTinh: id !== undefined ? `${dataDetailNT.gioiTinh}` : null,
+    ngaySinh: dataDetailNT.ngaySinh,
+    quanHe: id !== undefined ? `${dataDetailNT.quanHe}` : null,
+    ngheNghiep: id !== undefined ? `${dataDetailNT.ngheNghiep}` : null,
+    diaChi: id !== undefined ? `${dataDetailNT.diaChi}` : null,
+    dienThoai: id !== undefined ? `${dataDetailNT.dienThoai}` : null,
+    khac:
+      id !== undefined
+        ? `${dataDetailNT.khac}` === null
+          ? null
+          : `${dataDetailNT.khac}`
+        : null,
+    maNhanVien: id !== undefined ? `${dataDetailNT.maNhanVien}` : eCode,
+  };
+
+  
+  const {
+    register,
+    handleSubmit,
+    control,
+    reset,
+    getValues,
+    formState: { errors },
+  } = useForm({
+    defaultValues: intitalValue,
+    resolver: yupResolver(schema),
+  });
+  useEffect(() => {
+    if (dataDetailNT) {
+      reset(intitalValue);
+    }
+  }, [dataDetailNT]);
+ 
+  
   console.log(dataDetailNT);
   const onHandleSubmit = async (data) => {
     console.log(data);
     try {
       if (id !== undefined) {
-        //  await PutApi.PutTDVH(data, id);
-
+        await PutApi.PutNT(data, id);
       } else {
-          await ProductApi.postNT(data);
+        await ProductApi.postNT(data);
       }
       history.goBack();
     } catch (error) {}
@@ -82,7 +116,7 @@ function AddFamilyForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteNT(id);
-      history.goBack();
+      history.push(`/profile/detail/${dataDetailNT.maNhanVien}`);
     } catch (error) {}
   };
   return (
@@ -145,6 +179,7 @@ function AddFamilyForm(props) {
                         ? "form-control col-sm-6 "
                         : "form-control col-sm-6 border-danger"
                     }
+                    readOnly
                   />
                   <span className="message">{errors.maNhanVien?.message}</span>
                 </div>
@@ -167,12 +202,14 @@ function AddFamilyForm(props) {
                         : "form-control col-sm-6 border-danger custom-select"
                     }
                   >
-                    <option value={dataDetailNT.idDanhMucNguoiThan}>{dataDetailNT.tenDanhMuc}</option>
-                  {dataNT.map((item,key)=>(
-                    <option key={key} value={item.id}>
-                    {item.tenDanhMuc}{" "}
-                  </option>
-                  ))}
+                    <option value={dataDetailNT.idDanhMucNguoiThan}>
+                      {dataDetailNT.danhMucNguoiThan}
+                    </option>
+                    {dataNT.map((item, key) => (
+                      <option key={key} value={item.id}>
+                        {item.tenDanhMuc}{" "}
+                      </option>
+                    ))}
                   </select>
                   <span className="message">
                     {errors.idDanhMucNguoiThan?.message}
@@ -246,11 +283,16 @@ function AddFamilyForm(props) {
                     type="text"
                     {...register("gioiTinh")}
                     id="gioiTinh"
+                    value={ id !== undefined? (gender === "Nam"?true:false):null}
                     className={
                       !errors.gioiTinh
                         ? "form-control col-sm-6 custom-select"
                         : "form-control col-sm-6 border-danger custom-select"
                     }
+                  onChange={(e)=>{
+                    const selectGender = e.target.value
+                    setGender(selectGender);
+                  }}
                   >
                     {/* <option value={dataDetailTDVH.idTrinhDo}>{dataDetailTDVH.trinhDo}</option>
                 {dataTD.map((item,key)=>(
@@ -258,9 +300,10 @@ function AddFamilyForm(props) {
                     {item.tenTrinhDo}{" "}
                   </option>
                   ))} */}
-                    <option value=""></option>
-                    <option value={true}>Nam</option>
-                    <option value={false}>Nữ</option>
+                    <option value={null}></option>
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                   
                   </select>
                   <span className="message">{errors.gioiTinh?.message}</span>
                 </div>
@@ -273,34 +316,35 @@ function AddFamilyForm(props) {
                   >
                     Ngày sinh
                   </label>
-                  <input
-                    type="text"
-                    {...register("ngaySinh")}
-                    id="ngaySinh"
-                    className={
-                      !errors.ngaySinh
-                        ? "form-control col-sm-6"
-                        : "form-control col-sm-6 border-danger"
-                    }
-                    placeholder="DD/MM/YYYY"
+                  <Controller
+                    name="ngaySinh"
+                    control={control}
+                    render={({ field, onChange }) => (
+                      <DatePicker
+                        id="ngaySinh"
+                        className={
+                          !errors.ngaySinh
+                            ? "form-control col-sm-6"
+                            : "form-control col-sm-6 border-danger"
+                        }
+                        placeholder="DD/MM/YYYY"
+                        format="DD/MM/YYYY"
+                        //defaultValue={moment(dataDetailTDVH.tuThoiGian)}
+                        // onChange={(event) => {
+                        //   handleChangeDate(event);
+                        // }}
+                        value={moment(field.value)}
+                        onChange={(event) => {
+                          field.onChange(event.toDate());
+                        }}
+                        //selected={field}
+                        {...field._d}
+
+                        //inputRef={dates}
+                      />
+                    )}
                   />
                   <span className="message">{errors.ngaySinh?.message}</span>
-                  {/* <Controller
-              name="ngaySinh"
-              control={control}
-              defaultValue=""
-              render={({ field }) => (
-                <DatePicker
-                  id="ngaySinh"
-                  className="form-control col-sm-6"
-                  placeholder="DD/MM/YYYY"
-                  format="DD/MM/YYYY"
-                  //selected={field}
-                  //onChange={(field) => setDate(field)}
-                  {...field}
-                />
-              )}
-            /> */}
                 </div>
               </div>
             </div>
@@ -324,22 +368,6 @@ function AddFamilyForm(props) {
                     }
                   />
                   <span className="message">{errors.diaChi?.message}</span>
-                  {/* <Controller
-              name="ngaySinh"
-              control={control}
-              defaultValue=""
-              render={({ field }) => (
-                <DatePicker
-                  id="ngaySinh"
-                  className="form-control col-sm-6"
-                  placeholder="DD/MM/YYYY"
-                  format="DD/MM/YYYY"
-                  //selected={field}
-                  //onChange={(field) => setDate(field)}
-                  {...field}
-                />
-              )}
-            /> */}
                 </div>
               </div>
               <div className="col">
@@ -384,15 +412,11 @@ function AddFamilyForm(props) {
                     }
                   />
                   <span className="message">{errors.ngheNghiep?.message}</span>
-               
                 </div>
               </div>
               <div className="col">
                 <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="khac"
-                  >
+                  <label class="col-sm-4 justify-content-start" htmlFor="khac">
                     Thông tin khác
                   </label>
                   <textarea
