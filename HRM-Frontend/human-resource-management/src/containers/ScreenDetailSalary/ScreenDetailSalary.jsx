@@ -72,6 +72,11 @@ function ScreenDetailSalary(props) {
                 />
               );
             })}
+            <Link to={`/profile/detail/${dataLDetail.maNhanVien}?move=moveToSalary`}>
+              <Button variant="light" className="btn-fix">
+                Chuyển
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
