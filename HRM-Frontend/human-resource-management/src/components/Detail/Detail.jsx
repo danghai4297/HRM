@@ -1,11 +1,13 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Detail.scss";
 import SubDetail from "./SubDetail";
 import { links } from "./ScrollData";
+import dateFormat from "dateformat";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import ProductApi from "../../api/productApi";
 import TableBasic from "../TablePagination/TableBasic";
+import "./Font VietNamS-normal";
 import {
   NVCOLUMNSDC,
   NVCOLUMNSHD,
@@ -16,8 +18,8 @@ import {
   NVCOLUMNSTDVH,
 } from "./NvColumns";
 import { Link } from "react-router-dom";
+import jsPDF from "jspdf";
 import { lhkc } from "./Data";
-import dateFormat from "dateformat";
 
 function Detail(props) {
   let { match, history } = props;
@@ -55,6 +57,7 @@ function Detail(props) {
     };
     fetchNvList();
   }, []);
+  console.log(dataDetailNv);
   const [dropBase, setDropBase] = useState(true);
   const [dropContact, setDropContact] = useState(true);
   const [dropJob, setDropJob] = useState(true);
@@ -117,6 +120,19 @@ function Detail(props) {
   const arrowDisciplineClickHandle = () => {
     setDropDiscipline(!dropDiscipline);
   };
+  const pdfGenerate = () => {
+    let doc = new jsPDF("l", "px", "a4");
+    doc.setFont("Font VietNamS");
+    doc.text("Anh", 25, 10);
+    doc.text(`${dataDetailNv.hoTen}`, 5, 25);
+    doc.text(`${dataDetailNv.id}`, 20, 40);
+    doc.setFontSize(10);
+    doc.text("Đơn vị công tác:", 130, 15);
+    doc.text(`${dataDetailNv.coQuanTuyenDung}`, 190, 15);
+    doc.save("profile.pdf");
+  };
+  console.log(dataDetailNv.diDong);
+  console.log(dataDetailNv.ngaySinh);
   return (
     <>
       <div className="contents">
@@ -132,7 +148,7 @@ function Detail(props) {
             </div>
             <div className="avatar">
               <div className="icon-second">
-                <FontAwesomeIcon icon={["fas", "user-circle"]} />
+                <img src={`https://localhost:5001/${dataDetailNv.anh}`} alt=""/>
               </div>
               <div className="names">
                 <h5>{dataDetailNv.hoTen}</h5>
@@ -168,21 +184,24 @@ function Detail(props) {
                       <p className="fast-information">
                         {dataDetailNv.ngayThuViec === null
                           ? "-"
-                          : dataDetailNv.ngayThuViec}
+                          : dateFormat(dataDetailNv.ngayThuViec, "dd/mm/yyyy")}
                       </p>
                     </Col>
                   </Row>
                 </Col>
                 <Col>
                   <Row>
-                    <Col xs lg="5">
+                    <Col xs lg="5" id="dee">
                       <p className="fast-information">Ngày chính thức</p>
                     </Col>
                     <Col>
                       <p className="fast-information">
                         {dataDetailNv.ngayChinhThuc === null
                           ? "-"
-                          : dataDetailNv.ngayChinhThuc}
+                          : dateFormat(
+                              dataDetailNv.ngayChinhThuc,
+                              "dd/mm/yyyy"
+                            )}
                       </p>
                     </Col>
                   </Row>
@@ -198,7 +217,7 @@ function Detail(props) {
                       <p className="fast-information">
                         {dataDetailNv.ngaySinh === null
                           ? "-"
-                          : dataDetailNv.ngaySinh}
+                          : dateFormat(dataDetailNv.ngaySinh, "dd/mm/yyyy")}
                       </p>
                     </Col>
                   </Row>
@@ -239,13 +258,17 @@ function Detail(props) {
             <Button className="button-color" variant="danger">
               Xóa
             </Button>
-            <Button className="button-color" variant="light">
+            <Button
+              className="button-color"
+              variant="light"
+              onClick={pdfGenerate}
+            >
               <FontAwesomeIcon icon={["fas", "download"]} />
             </Button>
           </div>
         </div>
         <div className="main-information">
-          <div className="left-header-information">
+          <div className="left-header-information" id="abcccc">
             <div className="sticky-top">
               <ul className="list-left">
                 {links.map((link) => {
@@ -305,7 +328,11 @@ function Detail(props) {
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày sinh"
-                    itemLeft={dataDetailNv.ngaySinh}
+                    itemLeft={
+                      dataDetailNv.ngaySinh === null
+                        ? "-"
+                        : dateFormat(dataDetailNv.ngaySinh, "dd/mm/yyyy")
+                    }
                     titleRight="MST cá nhân"
                     itemRight={dataDetailNv.maSoThue}
                   ></SubDetail>
@@ -343,9 +370,17 @@ function Detail(props) {
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày cấp(CMNN/CCCD)"
-                    itemLeft={dataDetailNv.ngayCapCCCD}
+                    itemLeft={
+                      dataDetailNv.ngayCapCCCD === null
+                        ? "-"
+                        : dateFormat(dataDetailNv.ngayCapCCCD, "dd/mm/yyyy")
+                    }
                     titleRight="Ngày cấp hộ chiếu"
-                    itemRight={dataDetailNv.ngayCapHoChieu}
+                    itemRight={
+                      dataDetailNv.ngayCapHoChieu === null
+                        ? "-"
+                        : dateFormat(dataDetailNv.ngayCapHoChieu, "dd/mm/yyyy")
+                    }
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Nơi cấp(CMND/CCCD)"
@@ -355,9 +390,20 @@ function Detail(props) {
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày hết hạn"
-                    itemLeft={dataDetailNv.ngayHetHanCCCD}
+                    itemLeft={
+                      dataDetailNv.ngayHetHanCCCD === null
+                        ? "-"
+                        : dateFormat(dataDetailNv.ngayHetHanCCCD, "dd/mm/yyyy")
+                    }
                     titleRight="Ngày hết hạn hộ chiếu"
-                    itemRight={dataDetailNv.ngayHetHanHoChieu}
+                    itemRight={
+                      dataDetailNv.ngayHetHanHoChieu === null
+                        ? "-"
+                        : dateFormat(
+                            dataDetailNv.ngayHetHanHoChieu,
+                            "dd/mm/yyyy"
+                          )
+                    }
                   ></SubDetail>
                 </>
               )}
@@ -406,6 +452,16 @@ function Detail(props) {
                   <div className="title">
                     <h5>Liên hệ khẩn cấp</h5>
                   </div>
+                  {lhkc.map((detail) => {
+                    return (
+                      <SubDetail
+                        titleLeft={detail.title1}
+                        itemLeft={dataDetailNv[detail.data1]}
+                        titleRight={detail.title2}
+                        itemRight={dataDetailNv[detail.data2]}
+                      />
+                    );
+                  })}
                   {/* <SubDetail
                     titleLeft="Họ và tên"
                     itemLeft={dataDetailNv.lhkcHoTen}
@@ -423,23 +479,6 @@ function Detail(props) {
                     itemLeft={dataDetailNv.lhkcDienThoai}
                     titleRight={null}
                   ></SubDetail> */}
-                  {lhkc.map((detail) => {
-                    return (
-                      <SubDetail
-                        titleLeft={detail.title1}
-                        itemLeft={dataDetailNv[detail.data1]}
-                        titleRight={detail.title2}
-                        itemRight={
-                          [detail.data2[1]] == true
-                            ? dateFormat(
-                                dataDetailNv[detail.data2[0]],
-                                "paddedShortDate"
-                              )
-                            : dataDetailNv[detail.data2[0]]
-                        }
-                      />
-                    );
-                  })}
                 </>
               )}
             </div>
@@ -469,19 +508,31 @@ function Detail(props) {
                     titleLeft="Nghề nghiệp"
                     itemLeft={dataDetailNv.ngheNghiep}
                     titleRight="Ngày thử việc"
-                    itemRight={dataDetailNv.ngayThuViec}
+                    itemRight={
+                      dataDetailNv.ngayThuViec === null
+                        ? "-"
+                        : dateFormat(dataDetailNv.ngayThuViec, "dd/mm/yyyy")
+                    }
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Cơ quan tuyển dụng"
                     itemLeft={dataDetailNv.coQuanTuyenDung}
                     titleRight="Ngày tuyển dụng"
-                    itemRight={dataDetailNv.ngayTuyenDung}
+                    itemRight={
+                      dataDetailNv.ngayTuyenDung === null
+                        ? "-"
+                        : dateFormat(dataDetailNv.ngayTuyenDung, "dd/mm/yyyy")
+                    }
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Chức vụ hiện tại"
                     itemLeft={dataDetailNv.chucVuHienTai}
                     titleRight="Ngày vào ban"
-                    itemRight={dataDetailNv.ngayVaoBan}
+                    itemRight={
+                      dataDetailNv.ngayVaoBan === null
+                        ? "-"
+                        : dateFormat(dataDetailNv.ngayVaoBan, "dd/mm/yyyy")
+                    }
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Trạng thái lao động"
@@ -493,11 +544,19 @@ function Detail(props) {
                     titleLeft="Tính chất lao động"
                     itemLeft={dataDetailNv.tinhChatLaoDong}
                     titleRight="Ngày chính thức"
-                    itemRight={dataDetailNv.ngayChinhThuc}
+                    itemRight={
+                      dataDetailNv.ngayChinhThuc === null
+                        ? "-"
+                        : dateFormat(dataDetailNv.ngayChinhThuc, "dd/mm/yyyy")
+                    }
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày nghỉ việc"
-                    itemLeft={dataDetailNv.ngayNghiViec}
+                    itemLeft={
+                      dataDetailNv.ngayNghiViec === null
+                        ? "-"
+                        : dateFormat(dataDetailNv.ngayNghiViec, "dd/mm/yyyy")
+                    }
                     titleRight="Lý do nghỉ"
                     itemRight={dataDetailNv.lyDoNghiViec}
                   ></SubDetail>
@@ -671,17 +730,29 @@ function Detail(props) {
                     titleLeft="Là Đảng viên"
                     itemLeft={dataDetailNv.vaoDang}
                     titleRight="Ngày vào đoàn"
-                    itemRight={dataDetailNv.ngayVaoDoan}
+                    itemRight={
+                      dataDetailNv.ngayVaoDoan === null
+                        ? "-"
+                        : dateFormat(dataDetailNv.ngayVaoDoan, "dd/mm/yyyy")
+                    }
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày vào Đảng"
-                    itemLeft={dataDetailNv.ngayVaoDang}
+                    itemLeft={
+                      dataDetailNv.ngayVaoDang === null
+                        ? "-"
+                        : dateFormat(dataDetailNv.ngayVaoDang, "dd/mm/yyyy")
+                    }
                     titleRight="Nơi tham gia"
                     itemRight={dataDetailNv.noiThamGia}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày chính thức"
-                    itemLeft={dataDetailNv.ngayChinhThuc}
+                    itemLeft={
+                      dataDetailNv.ngayChinhThuc === null
+                        ? "-"
+                        : dateFormat(dataDetailNv.ngayChinhThuc, "dd/mm/yyyy")
+                    }
                     titleRight={null}
                   ></SubDetail>
                   <div className="title">
@@ -695,13 +766,21 @@ function Detail(props) {
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày nhập ngũ"
-                    itemLeft={dataDetailNv.ngayNhapNgu}
+                    itemLeft={
+                      dataDetailNv.ngayNhapNgu === null
+                        ? "-"
+                        : dateFormat(dataDetailNv.ngayNhapNgu, "dd/mm/yyyy")
+                    }
                     titleRight="Con gia đình chính sách"
                     itemRight={dataDetailNv.conChinhSach}
                   ></SubDetail>
                   <SubDetail
                     titleLeft="Ngày xuất ngũ"
-                    itemLeft={dataDetailNv.ngayXuatNgu}
+                    itemLeft={
+                      dataDetailNv.ngayXuatNgu === null
+                        ? "-"
+                        : dateFormat(dataDetailNv.ngayXuatNgu, "dd/mm/yyyy")
+                    }
                     titleRight={null}
                   ></SubDetail>
                   <SubDetail
