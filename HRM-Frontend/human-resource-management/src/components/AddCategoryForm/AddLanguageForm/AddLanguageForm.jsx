@@ -7,24 +7,18 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
+import DialogCheck from "../../Dialog/DialogCheck";
 AddLanguageForm.propTypes = {};
 const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddLanguageForm(props) {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
-
   let { match, history } = props;
   let { id } = match.params;
 
   const [dataDetailDMNN, setdataDetailDMNN] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
+  const [showCheckDialog, setShowCheckDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm danh mục ngoại ngữ mới"
@@ -33,6 +27,7 @@ function AddLanguageForm(props) {
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
+    setShowCheckDialog(false);
   };
 
   useEffect(() => {
@@ -49,7 +44,31 @@ function AddLanguageForm(props) {
     };
     fetchNvList();
   }, []);
-  console.log(dataDetailDMNN);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    getValues,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: {
+      tenDanhMuc: id !== undefined ? `${dataDetailDMNN.tenDanhMuc}` : null,
+    },
+  });
+
+  useEffect(() => {
+    if (dataDetailDMNN && id !== undefined) {
+      reset({
+        tenDanhMuc: `${dataDetailDMNN.tenDanhMuc}`,
+      });
+    }
+  }, [dataDetailDMNN]);
+
+  const checkInputLanguageChange = () => {
+    return getValues("tenDanhMuc") === `${dataDetailDMNN.tenDanhMuc}`;
+  };
 
   const onHandleSubmit = async (data) => {
     try {
@@ -100,7 +119,11 @@ function AddLanguageForm(props) {
             className="btn btn-primary ml-3"
             value={dataDetailDMNN.length !== 0 ? "Sửa" : "Lưu"}
             onClick={() => {
-              setShowDialog(true);
+              if (checkInputLanguageChange()) {
+                setShowCheckDialog(true);
+              } else {
+                setShowDialog(true);
+              }
             }}
           />
         </div>
@@ -109,7 +132,6 @@ function AddLanguageForm(props) {
       <form
         action=""
         className="profile-form"
-        // onSubmit={handleSubmit(onHandleSubmit)}
       >
         <div className="container-div-form-category">
           <h3>Thông tin chung</h3>
@@ -126,7 +148,6 @@ function AddLanguageForm(props) {
                   type="text"
                   {...register("tenDanhMuc")}
                   id="tenDanhMuc"
-                  defaultValue={dataDetailDMNN.tenDanhMuc}
                   className={
                     !errors.tenDanhMuc
                       ? "form-control col-sm-6"
@@ -145,6 +166,13 @@ function AddLanguageForm(props) {
         title="Thông báo"
         description={description}
         confirm={handleSubmit(onHandleSubmit)}
+        cancel={cancel}
+      />
+      <DialogCheck
+        show={showCheckDialog}
+        title="Thông báo"
+        description={"Bạn chưa thay đổi gì"}
+        confirm={null}
         cancel={cancel}
       />
       <Dialog

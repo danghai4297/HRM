@@ -5,6 +5,8 @@ import { Button } from "react-bootstrap";
 import "./ScreenDetailForeignLanguage.scss";
 import ProductApi from "../../api/productApi";
 import { Link } from "react-router-dom";
+import dateFormat from "dateformat";
+import { ttc } from "./DataForeignLanguage";
 function ScreenDetailForeignLanguage(props) {
   let { match, history } = props;
   let { id } = match.params;
@@ -39,7 +41,7 @@ function ScreenDetailForeignLanguage(props) {
             <h2>Ngoại ngữ</h2>
           </div>
           <div className="third-path">
-          <Link to={`/profile/detail/language/update/${id}`}>
+            <Link to={`/profile/detail/language/update/${id}`}>
               <Button variant="light" className="btn-fix">
                 Sửa
               </Button>
@@ -49,24 +51,22 @@ function ScreenDetailForeignLanguage(props) {
         <div className="second-main">
           <h3 className="title-main">Thông tin chung</h3>
           <div className="second-main-path">
-            <SubDetail
-              titleLeft="Mã nhân viên"
-              itemLeft={dataDetailNN.maNhanVien}
-              titleRight="Tên nhân viên"
-              itemRight={dataDetailNN.tenNhanVien}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Ngoại ngữ"
-              itemLeft={dataDetailNN.danhMucNgoaiNgu}
-              titleRight="Ngày cấp"
-              itemRight={dataDetailNN.ngayCap}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Nơi cấp"
-              itemLeft={dataDetailNN.noiCap}
-              titleRight="Trình độ"
-              itemRight={dataDetailNN.trinhDo}
-            ></SubDetail>
+            {ttc.map((detail, key) => {
+              return (
+                <SubDetail
+                  key={key}
+                  titleLeft={detail.title1}
+                  itemLeft={dataDetailNN[detail.data1]}
+                  titleRight={detail.title2}
+                  itemRight={
+                    detail.data2[1] === true &&
+                    dataDetailNN[detail.data2[0]] !== null
+                      ? dateFormat(dataDetailNN[detail.data2[0]], "dd/mm/yyyy")
+                      : dataDetailNN[detail.data2[0]]
+                  }
+                />
+              );
+            })}
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
+import DialogCheck from "../../Dialog/DialogCheck";
 AddTitleForm.propTypes = {};
 const schema = yup.object({
   maChucDanh: yup.string().required("Mã chức danh không được bỏ trống."),
@@ -14,18 +15,12 @@ const schema = yup.object({
   phuCap: yup.number(),
 });
 function AddTitleForm(props) {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
   let { match, history } = props;
   let { id } = match.params;
 
   const [dataDetailDMCD, setdataDetailDMCD] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
+  const [showCheckDialog, setShowCheckDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm danh mục chức danh mới"
@@ -34,6 +29,7 @@ function AddTitleForm(props) {
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
+    setShowCheckDialog(false);
   };
 
   useEffect(() => {
@@ -51,8 +47,38 @@ function AddTitleForm(props) {
     fetchNvList();
   }, []);
 
-  console.log(id);
-  console.log(dataDetailDMCD);
+  const intitalValue = {
+    maChucDanh: `${dataDetailDMCD.maChucDanh}`,
+    tenChucDanh: `${dataDetailDMCD.tenChucDanh}`,
+    phuCap: `${dataDetailDMCD.phuCap}`,
+  };
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    getValues,
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: id !== undefined ? intitalValue : null,
+  });
+
+  useEffect(() => {
+    if (dataDetailDMCD && id !== undefined) {
+      reset(intitalValue);
+    }
+  }, [dataDetailDMCD]);
+
+  const checkInputTitleChange = () => {
+    const titleValues = getValues(["maChucDanh", "tenChucDanh", "phuCap"]);
+    const dfTitleValues = [
+      intitalValue.maChucDanh,
+      intitalValue.tenChucDanh,
+      intitalValue.phuCap,
+    ];
+    return JSON.stringify(titleValues) === JSON.stringify(dfTitleValues);
+  };
 
   const onHandleSubmit = async (data) => {
     try {
@@ -104,16 +130,16 @@ function AddTitleForm(props) {
               className="btn btn-primary ml-3"
               value={dataDetailDMCD.length !== 0 ? "Sửa" : "Lưu"}
               onClick={() => {
-                setShowDialog(true);
+                if (checkInputTitleChange()) {
+                  setShowCheckDialog(true);
+                } else {
+                  setShowDialog(true);
+                }
               }}
             />
           </div>
         </div>
-        <form
-          action=""
-          className="profile-form"
-          // onSubmit={handleSubmit(onHandleSubmit)}
-        >
+        <form action="" className="profile-form">
           <div className="container-div-form-category">
             <h3>Thông tin chung</h3>
             <div className="row">
@@ -194,6 +220,13 @@ function AddTitleForm(props) {
         title="Thông báo"
         description={description}
         confirm={handleSubmit(onHandleSubmit)}
+        cancel={cancel}
+      />
+      <DialogCheck
+        show={showCheckDialog}
+        title="Thông báo"
+        description={"Bạn chưa thay đổi gì"}
+        confirm={null}
         cancel={cancel}
       />
       <Dialog

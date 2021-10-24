@@ -97,9 +97,14 @@ const PutApi = {
   },
   // Sửa ngoại ngữ
   PutNN:(data,id) =>{
-    const url =`/NgoaiNgu/{id}/${id}`;
+    const url =`/NgoaiNgu/${id}`;
+    return axiosClient.put(url, data);
+  },
+
+  // Sửa người thân
+  PutNT:(data,id)=>{
+    const url =`/NguoiThan/${id}`;
     return axiosClient.put(url, data);
   },
 };
-
 export default PutApi;

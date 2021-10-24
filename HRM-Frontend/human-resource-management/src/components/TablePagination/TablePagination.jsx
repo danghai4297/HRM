@@ -50,6 +50,12 @@ function TablePagination(props) {
         hiddenColumns: columns
           .filter((col) => col.show === false)
           .map((col) => col.accessor),
+        filters: [
+          {
+            id: "trangThai",
+            value: "Kích hoạt",
+          },
+        ],
       },
     },
     useFilters,

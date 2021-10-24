@@ -19,7 +19,17 @@ import {
 } from "./NvColumns";
 import { Link } from "react-router-dom";
 import jsPDF from "jspdf";
-import { lhkc } from "./Data";
+import {
+  cmndTccHC,
+  lhkc,
+  sdtEK,
+  ttbh,
+  ttc,
+  ttct,
+  ttnv,
+  ttqs,
+  ttyt,
+} from "./Data";
 
 function Detail(props) {
   let { match, history } = props;
@@ -30,7 +40,6 @@ function Detail(props) {
   const [dataDetailNgn, setdataDetailNgn] = useState([]);
   const [dataDetailGd, setdataDetailGd] = useState([]);
   const [dataDetailHd, setdataDetailHd] = useState([]);
-  // const [dataDetailHSL, setdataDetailHSL] = useState([]);
   const [dataDetailTc, setdataDetailTc] = useState([]);
   const [dataDetailKt, setdataDetailKt] = useState([]);
   const [dataDetailKl, setdataDetailKl] = useState([]);
@@ -40,13 +49,11 @@ function Detail(props) {
     const fetchNvList = async () => {
       try {
         const responseNv = await ProductApi.getNvDetail(id);
-        // const responseHd = await ProductApi.getHdDetail(id);
         setdataDetailNv(responseNv);
         setdataDetailTDVH(responseNv.trinhDoVanHoas);
         setdataDetailNgn(responseNv.ngoaiNgus);
         setdataDetailGd(responseNv.nguoiThans);
         setdataDetailHd(responseNv.hopDongs);
-        // setdataDetailHSL(responseNv);
         setdataDetailTc(responseNv.dieuChuyens);
         setdataDetailKt(responseNv.khenThuongs);
         setdataDetailKl(responseNv.kyLuats);
@@ -57,7 +64,6 @@ function Detail(props) {
     };
     fetchNvList();
   }, []);
-  console.log(dataDetailNv);
   const [dropBase, setDropBase] = useState(true);
   const [dropContact, setDropContact] = useState(true);
   const [dropJob, setDropJob] = useState(true);
@@ -131,8 +137,7 @@ function Detail(props) {
     doc.text(`${dataDetailNv.coQuanTuyenDung}`, 190, 15);
     doc.save("profile.pdf");
   };
-  console.log(dataDetailNv.diDong);
-  console.log(dataDetailNv.ngaySinh);
+
   return (
     <>
       <div className="contents">
@@ -148,7 +153,10 @@ function Detail(props) {
             </div>
             <div className="avatar">
               <div className="icon-second">
-                <img src={`https://localhost:5001/${dataDetailNv.anh}`} alt=""/>
+                <img
+                  src={`https://localhost:5001/${dataDetailNv.anh}`}
+                  alt=""
+                />
               </div>
               <div className="names">
                 <h5>{dataDetailNv.hoTen}</h5>
@@ -308,103 +316,63 @@ function Detail(props) {
                   <div className="title">
                     <h5>Thông tin chung</h5>
                   </div>
-                  <SubDetail
-                    titleLeft="Mã nhân viên"
-                    itemLeft={dataDetailNv.id}
-                    titleRight="TK Ngân hàng"
-                    itemRight={dataDetailNv.atm}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Họ và tên"
-                    itemLeft={dataDetailNv.hoTen}
-                    titleRight="Ngân hàng"
-                    itemRight={dataDetailNv.nganHang}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Giới tính"
-                    itemLeft={dataDetailNv.gioiTinh}
-                    titleRight="Tình trạng hôn nhân"
-                    itemRight={dataDetailNv.honNhan}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Ngày sinh"
-                    itemLeft={
-                      dataDetailNv.ngaySinh === null
-                        ? "-"
-                        : dateFormat(dataDetailNv.ngaySinh, "dd/mm/yyyy")
-                    }
-                    titleRight="MST cá nhân"
-                    itemRight={dataDetailNv.maSoThue}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Nơi sinh"
-                    itemLeft={dataDetailNv.noiSinh}
-                    titleRight="Dân tộc"
-                    itemRight={dataDetailNv.danToc}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Quê quán"
-                    itemLeft={dataDetailNv.queQuan}
-                    titleRight="Tôn giáo"
-                    itemRight={dataDetailNv.tonGiao}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Thường trú"
-                    itemLeft={dataDetailNv.thuongTru}
-                    titleRight="Quốc tịch"
-                    itemRight={dataDetailNv.quocTich}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Tạm trú"
-                    itemLeft={dataDetailNv.tamTru}
-                    titleRight={null}
-                  ></SubDetail>
+                  {ttc.map((detail, key) => {
+                    return (
+                      <SubDetail
+                        key={key}
+                        titleLeft={detail.title1}
+                        itemLeft={
+                          detail.data1[1] === true &&
+                          dataDetailNv[detail.data1[0]] !== null
+                            ? dateFormat(
+                                dataDetailNv[detail.data1[0]],
+                                "dd/mm/yyyy"
+                              )
+                            : dataDetailNv[detail.data1[0]]
+                        }
+                        titleRight={detail.title2}
+                        itemRight={
+                          detail.data2[1] === true &&
+                          dataDetailNv[detail.data2[0]] !== null
+                            ? dateFormat(
+                                dataDetailNv[detail.data2[0]],
+                                "dd/mm/yyyy"
+                              )
+                            : dataDetailNv[detail.data2[0]]
+                        }
+                      />
+                    );
+                  })}
                   <div className="title">
                     <h5>CMND/Thẻ căn cước/Hộ chiếu</h5>
                   </div>
-                  <SubDetail
-                    titleLeft="Số CMND/CCCD"
-                    itemLeft={dataDetailNv.cccd}
-                    titleRight="Số hộ chiếu"
-                    itemRight={dataDetailNv.hoChieu}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Ngày cấp(CMNN/CCCD)"
-                    itemLeft={
-                      dataDetailNv.ngayCapCCCD === null
-                        ? "-"
-                        : dateFormat(dataDetailNv.ngayCapCCCD, "dd/mm/yyyy")
-                    }
-                    titleRight="Ngày cấp hộ chiếu"
-                    itemRight={
-                      dataDetailNv.ngayCapHoChieu === null
-                        ? "-"
-                        : dateFormat(dataDetailNv.ngayCapHoChieu, "dd/mm/yyyy")
-                    }
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Nơi cấp(CMND/CCCD)"
-                    itemLeft={dataDetailNv.noiCapCCCD}
-                    titleRight="Nơi cấp hộ chiếu"
-                    itemRight={dataDetailNv.noiCapHoChieu}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Ngày hết hạn"
-                    itemLeft={
-                      dataDetailNv.ngayHetHanCCCD === null
-                        ? "-"
-                        : dateFormat(dataDetailNv.ngayHetHanCCCD, "dd/mm/yyyy")
-                    }
-                    titleRight="Ngày hết hạn hộ chiếu"
-                    itemRight={
-                      dataDetailNv.ngayHetHanHoChieu === null
-                        ? "-"
-                        : dateFormat(
-                            dataDetailNv.ngayHetHanHoChieu,
-                            "dd/mm/yyyy"
-                          )
-                    }
-                  ></SubDetail>
+                  {cmndTccHC.map((detail, key) => {
+                    return (
+                      <SubDetail
+                        key={key}
+                        titleLeft={detail.title1}
+                        itemLeft={
+                          detail.data1[1] === true &&
+                          dataDetailNv[detail.data1[0]] !== null
+                            ? dateFormat(
+                                dataDetailNv[detail.data1[0]],
+                                "dd/mm/yyyy"
+                              )
+                            : dataDetailNv[detail.data1[0]]
+                        }
+                        titleRight={detail.title2}
+                        itemRight={
+                          detail.data2[1] === true &&
+                          dataDetailNv[detail.data2[0]] !== null
+                            ? dateFormat(
+                                dataDetailNv[detail.data2[0]],
+                                "dd/mm/yyyy"
+                              )
+                            : dataDetailNv[detail.data2[0]]
+                        }
+                      />
+                    );
+                  })}
                 </>
               )}
             </div>
@@ -431,30 +399,10 @@ function Detail(props) {
                   <div className="title">
                     <h5>Số điện thoại/Email/Khác</h5>
                   </div>
-                  <SubDetail
-                    titleLeft="ĐT di động"
-                    itemLeft={dataDetailNv.diDong}
-                    titleRight="Email cá nhân"
-                    itemRight={dataDetailNv.email}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="ĐT khác"
-                    itemLeft={dataDetailNv.dienThoaiKhac}
-                    titleRight="Facebook"
-                    itemRight={dataDetailNv.facebook}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="ĐT nhà riêng"
-                    itemLeft={dataDetailNv.dienThoai}
-                    titleRight="Skype"
-                    itemRight={dataDetailNv.skype}
-                  ></SubDetail>
-                  <div className="title">
-                    <h5>Liên hệ khẩn cấp</h5>
-                  </div>
-                  {lhkc.map((detail) => {
+                  {sdtEK.map((detail, key) => {
                     return (
                       <SubDetail
+                        key={key}
                         titleLeft={detail.title1}
                         itemLeft={dataDetailNv[detail.data1]}
                         titleRight={detail.title2}
@@ -462,23 +410,20 @@ function Detail(props) {
                       />
                     );
                   })}
-                  {/* <SubDetail
-                    titleLeft="Họ và tên"
-                    itemLeft={dataDetailNv.lhkcHoTen}
-                    titleRight="Email"
-                    itemRight={dataDetailNv.lhkcEmail}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Quan hệ"
-                    itemLeft={dataDetailNv.lhkcQuanHe}
-                    titleRight="Địa chỉ"
-                    itemRight={dataDetailNv.lhkcDiaChi}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="ĐT di động"
-                    itemLeft={dataDetailNv.lhkcDienThoai}
-                    titleRight={null}
-                  ></SubDetail> */}
+                  <div className="title">
+                    <h5>Liên hệ khẩn cấp</h5>
+                  </div>
+                  {lhkc.map((detail, key) => {
+                    return (
+                      <SubDetail
+                        key={key}
+                        titleLeft={detail.title1}
+                        itemLeft={dataDetailNv[detail.data1]}
+                        titleRight={detail.title2}
+                        itemRight={dataDetailNv[detail.data2]}
+                      />
+                    );
+                  })}
                 </>
               )}
             </div>
@@ -504,62 +449,25 @@ function Detail(props) {
                   <div className="title">
                     <h5>Thông tin nhân viên</h5>
                   </div>
-                  <SubDetail
-                    titleLeft="Nghề nghiệp"
-                    itemLeft={dataDetailNv.ngheNghiep}
-                    titleRight="Ngày thử việc"
-                    itemRight={
-                      dataDetailNv.ngayThuViec === null
-                        ? "-"
-                        : dateFormat(dataDetailNv.ngayThuViec, "dd/mm/yyyy")
-                    }
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Cơ quan tuyển dụng"
-                    itemLeft={dataDetailNv.coQuanTuyenDung}
-                    titleRight="Ngày tuyển dụng"
-                    itemRight={
-                      dataDetailNv.ngayTuyenDung === null
-                        ? "-"
-                        : dateFormat(dataDetailNv.ngayTuyenDung, "dd/mm/yyyy")
-                    }
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Chức vụ hiện tại"
-                    itemLeft={dataDetailNv.chucVuHienTai}
-                    titleRight="Ngày vào ban"
-                    itemRight={
-                      dataDetailNv.ngayVaoBan === null
-                        ? "-"
-                        : dateFormat(dataDetailNv.ngayVaoBan, "dd/mm/yyyy")
-                    }
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Trạng thái lao động"
-                    itemLeft={dataDetailNv.trangThaiLaoDong}
-                    titleRight="Công việc chính"
-                    itemRight={dataDetailNv.congViecChinh}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Tính chất lao động"
-                    itemLeft={dataDetailNv.tinhChatLaoDong}
-                    titleRight="Ngày chính thức"
-                    itemRight={
-                      dataDetailNv.ngayChinhThuc === null
-                        ? "-"
-                        : dateFormat(dataDetailNv.ngayChinhThuc, "dd/mm/yyyy")
-                    }
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Ngày nghỉ việc"
-                    itemLeft={
-                      dataDetailNv.ngayNghiViec === null
-                        ? "-"
-                        : dateFormat(dataDetailNv.ngayNghiViec, "dd/mm/yyyy")
-                    }
-                    titleRight="Lý do nghỉ"
-                    itemRight={dataDetailNv.lyDoNghiViec}
-                  ></SubDetail>
+                  {ttnv.map((detail, key) => {
+                    return (
+                      <SubDetail
+                        key={key}
+                        titleLeft={detail.title1}
+                        itemLeft={dataDetailNv[detail.data1]}
+                        titleRight={detail.title2}
+                        itemRight={
+                          detail.data2[1] === true &&
+                          dataDetailNv[detail.data2[0]] !== null
+                            ? dateFormat(
+                                dataDetailNv[detail.data2[0]],
+                                "dd/mm/yyyy"
+                              )
+                            : dataDetailNv[detail.data2[0]]
+                        }
+                      />
+                    );
+                  })}
                 </>
               )}
             </div>
@@ -582,12 +490,17 @@ function Detail(props) {
               </div>
               {dropInsurance && (
                 <>
-                  <SubDetail
-                    titleLeft="Số sổ BHXH"
-                    itemLeft={dataDetailNv.bhxh}
-                    titleRight="Số thẻ BHYT"
-                    itemRight={dataDetailNv.bhyt}
-                  ></SubDetail>
+                  {ttbh.map((detail, key) => {
+                    return (
+                      <SubDetail
+                        key={key}
+                        titleLeft={detail.title1}
+                        itemLeft={dataDetailNv[detail.data1]}
+                        titleRight={detail.title2}
+                        itemRight={dataDetailNv[detail.data2]}
+                      />
+                    );
+                  })}
                 </>
               )}
             </div>
@@ -720,105 +633,69 @@ function Detail(props) {
                   <div className="title">
                     <h5>Thông tin chính trị</h5>
                   </div>
-                  <SubDetail
-                    titleLeft="Ngạch công chức"
-                    itemLeft={dataDetailNv.ngachCongChuc}
-                    titleRight="Ngạch công chức nội dung"
-                    itemRight={dataDetailNv.ngachCongChucNoiDung}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Là Đảng viên"
-                    itemLeft={dataDetailNv.vaoDang}
-                    titleRight="Ngày vào đoàn"
-                    itemRight={
-                      dataDetailNv.ngayVaoDoan === null
-                        ? "-"
-                        : dateFormat(dataDetailNv.ngayVaoDoan, "dd/mm/yyyy")
-                    }
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Ngày vào Đảng"
-                    itemLeft={
-                      dataDetailNv.ngayVaoDang === null
-                        ? "-"
-                        : dateFormat(dataDetailNv.ngayVaoDang, "dd/mm/yyyy")
-                    }
-                    titleRight="Nơi tham gia"
-                    itemRight={dataDetailNv.noiThamGia}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Ngày chính thức"
-                    itemLeft={
-                      dataDetailNv.ngayChinhThuc === null
-                        ? "-"
-                        : dateFormat(dataDetailNv.ngayChinhThuc, "dd/mm/yyyy")
-                    }
-                    titleRight={null}
-                  ></SubDetail>
+                  {ttct.map((detail, key) => {
+                    return (
+                      <SubDetail
+                        key={key}
+                        titleLeft={detail.title1}
+                        itemLeft={
+                          detail.data1[1] === true &&
+                          dataDetailNv[detail.data1[0]] !== null
+                            ? dateFormat(
+                                dataDetailNv[detail.data1[0]],
+                                "dd/mm/yyyy"
+                              )
+                            : dataDetailNv[detail.data1[0]]
+                        }
+                        titleRight={detail.title2}
+                        itemRight={
+                          detail.data2[1] === true &&
+                          dataDetailNv[detail.data2[0]] !== null
+                            ? dateFormat(
+                                dataDetailNv[detail.data2[0]],
+                                "dd/mm/yyyy"
+                              )
+                            : dataDetailNv[detail.data2[0]]
+                        }
+                      />
+                    );
+                  })}
                   <div className="title">
                     <h5>Thông tin quân sự</h5>
                   </div>
-                  <SubDetail
-                    titleLeft="Là quân nhân"
-                    itemLeft={dataDetailNv.quanNhan}
-                    titleRight="Thương binh"
-                    itemRight={dataDetailNv.thuongBinh}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Ngày nhập ngũ"
-                    itemLeft={
-                      dataDetailNv.ngayNhapNgu === null
-                        ? "-"
-                        : dateFormat(dataDetailNv.ngayNhapNgu, "dd/mm/yyyy")
-                    }
-                    titleRight="Con gia đình chính sách"
-                    itemRight={dataDetailNv.conChinhSach}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Ngày xuất ngũ"
-                    itemLeft={
-                      dataDetailNv.ngayXuatNgu === null
-                        ? "-"
-                        : dateFormat(dataDetailNv.ngayXuatNgu, "dd/mm/yyyy")
-                    }
-                    titleRight={null}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Quân hàm cao nhất"
-                    itemLeft={dataDetailNv.quanHamCaoNhat}
-                    titleRight={null}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="DH được phong tặng cao nhất"
-                    itemLeft={dataDetailNv.danhHieuCaoNhat}
-                    titleRight={null}
-                  ></SubDetail>
+                  {ttqs.map((detail, key) => {
+                    return (
+                      <SubDetail
+                        key={key}
+                        titleLeft={detail.title1}
+                        itemLeft={
+                          detail.data1[1] === true &&
+                          dataDetailNv[detail.data1[0]] !== null
+                            ? dateFormat(
+                                dataDetailNv[detail.data1[0]],
+                                "dd/mm/yyyy"
+                              )
+                            : dataDetailNv[detail.data1[0]]
+                        }
+                        titleRight={detail.title2}
+                        itemRight={dataDetailNv[detail.data2]}
+                      />
+                    );
+                  })}
                   <div className="title">
                     <h5>Thông tin y tế</h5>
                   </div>
-                  <SubDetail
-                    titleLeft="Nhóm máu"
-                    itemLeft={dataDetailNv.ytNhomMau}
-                    titleRight="Bệnh tật"
-                    itemRight={dataDetailNv.ytBenhTat}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Chiều cao(m)"
-                    itemLeft={dataDetailNv.ytChieuCao}
-                    titleRight="Lưu ý"
-                    itemRight={dataDetailNv.ytLuuY}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Cân nặng(kg)"
-                    itemLeft={dataDetailNv.ytCanNang}
-                    titleRight="Là người khuất tật"
-                    itemRight={dataDetailNv.ytKhuyetTat}
-                  ></SubDetail>
-                  <SubDetail
-                    titleLeft="Tình trạng sức khỏe"
-                    itemLeft={dataDetailNv.ytTinhTrangSucKhoe}
-                    titleRight={null}
-                  ></SubDetail>
+                  {ttyt.map((detail, key) => {
+                    return (
+                      <SubDetail
+                        key={key}
+                        titleLeft={detail.title1}
+                        itemLeft={dataDetailNv[detail.data1]}
+                        titleRight={detail.title2}
+                        itemRight={dataDetailNv[detail.data2]}
+                      />
+                    );
+                  })}
                 </>
               )}
             </div>

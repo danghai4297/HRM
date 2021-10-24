@@ -44,7 +44,7 @@ export const NVCOLUMNSHD = [
   {
     Header: "Chức Danh",
     accessor: "idChucDanh",
-    minWidth: 180,
+    minWidth: 280,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -83,7 +83,7 @@ export const NVCOLUMNSHD = [
         <img src="/Images/orangeC.png" width={20} alt="" />
       );
     },
-    minWidth: 200,
+    minWidth: 230,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,

@@ -7,19 +7,13 @@ import ProductApi from "../../../api/productApi";
 import Dialog from "../../Dialog/Dialog";
 import DeleteApi from "../../../api/deleteAPI";
 import PutApi from "../../../api/putAAPI";
+import DialogCheck from "../../Dialog/DialogCheck";
 const schema = yup.object({
   maTo: yup.string().required("Mã tổ không được bỏ trống."),
   idPhongBan: yup.number().required("Thuộc phòng ban không được bỏ trống."),
   tenTo: yup.string().required("Tổ không được bỏ trống."),
 });
 function AddNestForm(props) {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
   //dữ liệu phòng ban
   let { match, history } = props;
   let { id } = match.params;
@@ -27,6 +21,7 @@ function AddNestForm(props) {
   const [dataDetailDMT, setdataDetailDMT] = useState([]);
   const [dataDmpb, setDataDmpb] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
+  const [showCheckDialog, setShowCheckDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm danh mục tổ mới"
@@ -35,6 +30,7 @@ function AddNestForm(props) {
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
+    setShowCheckDialog(false);
   };
   useEffect(() => {
     const fetchNvList = async () => {
@@ -52,6 +48,35 @@ function AddNestForm(props) {
     };
     fetchNvList();
   }, []);
+
+  const intitalValue = {
+    maTo: `${dataDetailDMT.maTo}`,
+    tenTo: `${dataDetailDMT.tenTo}`,
+    idPhongBan: `${dataDetailDMT.idPhongBan}`,
+  };
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    getValues,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: id !== undefined ? intitalValue : null,
+  });
+
+  useEffect(() => {
+    if (dataDetailDMT && id !== undefined) {
+      reset(intitalValue);
+    }
+  }, [dataDetailDMT]);
+
+  const checkInputNestChange = () => {
+    const nestValues = getValues(["maTo", "tenTo", "idPhongBan"]);
+    const dfNestValues = [intitalValue.maTo, intitalValue.tenTo, intitalValue.idPhongBan];
+    return JSON.stringify(nestValues) === JSON.stringify(dfNestValues);
+  };
 
   const onHandleSubmit = async (data) => {
     try {
@@ -102,7 +127,11 @@ function AddNestForm(props) {
               className="btn btn-primary ml-3"
               value={dataDetailDMT.length !== 0 ? "Sửa" : "Lưu"}
               onClick={() => {
-                setShowDialog(true);
+                if (checkInputNestChange()) {
+                  setShowCheckDialog(true);
+                } else {
+                  setShowDialog(true);
+                }
               }}
             />
           </div>
@@ -110,7 +139,6 @@ function AddNestForm(props) {
         <form
           action=""
           className="profile-form"
-          // onSubmit={handleSubmit(onHandleSubmit)}
         >
           <div className="container-div-form-category">
             <h3>Thông tin chung</h3>
@@ -127,7 +155,6 @@ function AddNestForm(props) {
                     type="text"
                     {...register("maTo")}
                     id="maTo"
-                    defaultValue={dataDetailDMT.maTo}
                     className={
                       !errors.maTo
                         ? "form-control col-sm-6"
@@ -183,7 +210,6 @@ function AddNestForm(props) {
                     type="text"
                     {...register("tenTo")}
                     id="tenTo"
-                    defaultValue={dataDetailDMT.tenTo}
                     className={
                       !errors.tenTo
                         ? "form-control col-sm-6"
@@ -202,6 +228,13 @@ function AddNestForm(props) {
         title="Thông báo"
         description={description}
         confirm={handleSubmit(onHandleSubmit)}
+        cancel={cancel}
+      />
+      <DialogCheck
+        show={showCheckDialog}
+        title="Thông báo"
+        description={"Bạn chưa thay đổi gì"}
+        confirm={null}
         cancel={cancel}
       />
       <Dialog
