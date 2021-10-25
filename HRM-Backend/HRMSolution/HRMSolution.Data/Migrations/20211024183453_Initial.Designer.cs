@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HRMSolution.Data.Migrations
 {
     [DbContext(typeof(HRMDbContext))]
-    [Migration("20211014081142_Initial")]
+    [Migration("20211024183453_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -18,8 +18,125 @@ namespace HRMSolution.Data.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.10")
+                .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("HRMSolution.Data.Entities.AppRole", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ghiChu")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AppRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
+                            ConcurrencyStamp = "582e8b0f-35ed-4a2f-bec3-ad0e0b6bdeb6",
+                            Name = "admin",
+                            NormalizedName = "admin",
+                            ghiChu = "Administrator role"
+                        });
+                });
+
+            modelBuilder.Entity("HRMSolution.Data.Entities.AppUser", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("hoTen")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime>("ngaySinh")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AppUsers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "a6c641bd-b6d2-4ca4-97b4-e6af7d5a1282",
+                            Email = "hieudongtru@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "hieudongtru@gmail.com",
+                            NormalizedUserName = "admin",
+                            PasswordHash = "AQAAAAEAACcQAAAAENdfICmBuqAVjr/ikftALjmWlxqdFf94AchZzw3ibOXBvWy7FirqZaIYsuT58rteQg==",
+                            PhoneNumber = "01231243",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "admin",
+                            hoTen = "Mai Trung Hiếu",
+                            ngaySinh = new DateTime(1998, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
+                });
 
             modelBuilder.Entity("HRMSolution.Data.Entities.DanhMucChucDanh", b =>
                 {
@@ -861,7 +978,7 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0001",
-                            ngayHieuLuc = new DateTime(2021, 10, 14, 15, 11, 41, 260, DateTimeKind.Local).AddTicks(9568),
+                            ngayHieuLuc = new DateTime(2021, 10, 25, 1, 34, 51, 396, DateTimeKind.Local).AddTicks(9415),
                             to = 1,
                             trangThai = false
                         },
@@ -872,7 +989,7 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0001",
-                            ngayHieuLuc = new DateTime(2021, 10, 14, 15, 11, 41, 261, DateTimeKind.Local).AddTicks(1309),
+                            ngayHieuLuc = new DateTime(2021, 10, 25, 1, 34, 51, 397, DateTimeKind.Local).AddTicks(1579),
                             to = 2,
                             trangThai = false
                         },
@@ -883,7 +1000,7 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0001",
-                            ngayHieuLuc = new DateTime(2021, 10, 14, 15, 11, 41, 261, DateTimeKind.Local).AddTicks(1386),
+                            ngayHieuLuc = new DateTime(2021, 10, 25, 1, 34, 51, 397, DateTimeKind.Local).AddTicks(1629),
                             to = 3,
                             trangThai = true
                         });
@@ -967,7 +1084,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD01",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 14, 15, 11, 41, 259, DateTimeKind.Local).AddTicks(1253),
+                            hopDongTuNgay = new DateTime(2021, 10, 25, 1, 34, 51, 395, DateTimeKind.Local).AddTicks(1968),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0001",
@@ -977,7 +1094,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD02",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 14, 15, 11, 41, 260, DateTimeKind.Local).AddTicks(4127),
+                            hopDongTuNgay = new DateTime(2021, 10, 25, 1, 34, 51, 396, DateTimeKind.Local).AddTicks(4953),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0001",
@@ -987,7 +1104,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD03",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 14, 15, 11, 41, 260, DateTimeKind.Local).AddTicks(4211),
+                            hopDongTuNgay = new DateTime(2021, 10, 25, 1, 34, 51, 396, DateTimeKind.Local).AddTicks(5043),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0003",
@@ -997,7 +1114,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD04",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 14, 15, 11, 41, 260, DateTimeKind.Local).AddTicks(4223),
+                            hopDongTuNgay = new DateTime(2021, 10, 25, 1, 34, 51, 396, DateTimeKind.Local).AddTicks(5054),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0004",
@@ -1007,7 +1124,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD05",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 14, 15, 11, 41, 260, DateTimeKind.Local).AddTicks(4231),
+                            hopDongTuNgay = new DateTime(2021, 10, 25, 1, 34, 51, 396, DateTimeKind.Local).AddTicks(5062),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0005",
@@ -1017,7 +1134,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD06",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 14, 15, 11, 41, 260, DateTimeKind.Local).AddTicks(4239),
+                            hopDongTuNgay = new DateTime(2021, 10, 25, 1, 34, 51, 396, DateTimeKind.Local).AddTicks(5069),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0006",
@@ -1371,7 +1488,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD01",
-                            ngayHieuLuc = new DateTime(2021, 10, 14, 15, 11, 41, 260, DateTimeKind.Local).AddTicks(6956),
+                            ngayHieuLuc = new DateTime(2021, 10, 25, 1, 34, 51, 396, DateTimeKind.Local).AddTicks(7250),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = false
@@ -1382,7 +1499,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD01",
-                            ngayHieuLuc = new DateTime(2021, 10, 14, 15, 11, 41, 260, DateTimeKind.Local).AddTicks(8231),
+                            ngayHieuLuc = new DateTime(2021, 10, 25, 1, 34, 51, 396, DateTimeKind.Local).AddTicks(8312),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
@@ -1393,7 +1510,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD03",
-                            ngayHieuLuc = new DateTime(2021, 10, 14, 15, 11, 41, 260, DateTimeKind.Local).AddTicks(8289),
+                            ngayHieuLuc = new DateTime(2021, 10, 25, 1, 34, 51, 396, DateTimeKind.Local).AddTicks(8364),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
@@ -1404,7 +1521,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD04",
-                            ngayHieuLuc = new DateTime(2021, 10, 14, 15, 11, 41, 260, DateTimeKind.Local).AddTicks(8298),
+                            ngayHieuLuc = new DateTime(2021, 10, 25, 1, 34, 51, 396, DateTimeKind.Local).AddTicks(8373),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
@@ -1415,7 +1532,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD05",
-                            ngayHieuLuc = new DateTime(2021, 10, 14, 15, 11, 41, 260, DateTimeKind.Local).AddTicks(8307),
+                            ngayHieuLuc = new DateTime(2021, 10, 25, 1, 34, 51, 396, DateTimeKind.Local).AddTicks(8380),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
@@ -5520,6 +5637,108 @@ namespace HRMSolution.Data.Migrations
                             yt_maNhanVien = "NV0001",
                             yt_nhomMau = "O"
                         });
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("RoleId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AppRoleClaims");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AppUserClaims");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("AppUserLogins");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("RoleId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.ToTable("AppUserRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
+                            RoleId = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc")
+                        });
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("AppUserTokens");
                 });
 
             modelBuilder.Entity("HRMSolution.Data.Entities.DanhMucTo", b =>

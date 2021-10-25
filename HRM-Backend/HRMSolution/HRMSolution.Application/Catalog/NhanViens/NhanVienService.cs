@@ -19,7 +19,6 @@ namespace HRMSolution.Application.Catalog.NhanViens
         private readonly HRMDbContext _context;
         private readonly IStorageService _storageService;
         private const string USER_CONTENT_FOLDER_NAME = "user-content";
-        private readonly DateTime? dt = null;
         public NhanVienService(HRMDbContext context, IStorageService storageService)
         {
             _context = context;

@@ -164,3 +164,13 @@ E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Debug\netcoreapp3.1\HR
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\EntityFramework.dll
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.Core.dll
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll

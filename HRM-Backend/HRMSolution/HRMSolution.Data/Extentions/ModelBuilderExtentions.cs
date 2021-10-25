@@ -1,5 +1,6 @@
 ﻿
 using HRMSolution.Data.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,41 @@ namespace HRMSolution.Data.Extentions
     {
         public static void seed(this ModelBuilder modelbulder)
         {
+            // any guid
+            var roleId = new Guid("8D04DCE2-969A-435D-BBA4-DF3F325983DC");
+            var adminId = new Guid("69BD714F-9576-45BA-B5B7-F00649BE00DE");
+            modelbulder.Entity<AppRole>().HasData(new AppRole
+            {
+                Id = roleId,
+                Name = "admin",
+                NormalizedName = "admin",
+                ghiChu = "Administrator role"
+            });
+
+            var hasher = new PasswordHasher<AppUser>();
+            modelbulder.Entity<AppUser>().HasData(new AppUser
+            {
+                Id = adminId,
+                UserName = "admin",
+                NormalizedUserName = "admin",
+                Email = "hieudongtru@gmail.com",
+                NormalizedEmail = "hieudongtru@gmail.com",
+                EmailConfirmed = true,
+                PasswordHash = hasher.HashPassword(null, "Abcd1234$"),
+                PhoneNumber = "01231243",
+                SecurityStamp = string.Empty,
+                hoTen = "Mai Trung Hiếu",
+                ngaySinh = new DateTime(1998, 09, 08)
+            });
+
+            modelbulder.Entity<IdentityUserRole<Guid>>().HasData(new IdentityUserRole<Guid>
+            {
+                RoleId = roleId,
+                UserId = adminId
+            });
+
+
+
             modelbulder.Entity<TaiKhoan>().HasData(
                 new TaiKhoan() { tenDangNhap = "admin", matKhau = "123", vaiTro = 1 }
                 );

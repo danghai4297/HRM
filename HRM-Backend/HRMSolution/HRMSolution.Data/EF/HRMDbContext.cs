@@ -2,6 +2,8 @@
 using HRMSolution.Data.Configurations;
 using HRMSolution.Data.Entities;
 using HRMSolution.Data.Extentions;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,7 +11,7 @@ using System.Text;
 
 namespace HRMSolution.Data.EF
 {
-    public class HRMDbContext : DbContext
+    public class HRMDbContext : IdentityDbContext<AppUser, AppRole, Guid>
     {
         public HRMDbContext(DbContextOptions options) : base(options)
         {
@@ -82,6 +84,16 @@ namespace HRMSolution.Data.EF
             modelBuilder.ApplyConfiguration(new LichSuBanThanConfiguration());
             modelBuilder.ApplyConfiguration(new LichSuConfiguration());
             modelBuilder.ApplyConfiguration(new DanhMucNhomLuongConfiguration());
+            modelBuilder.ApplyConfiguration(new AppUserConfiguration());
+            modelBuilder.ApplyConfiguration(new AppRoleConfiguration());
+
+
+            modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims");
+            modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRoles").HasKey(x => new { x.UserId, x.RoleId });
+            modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("AppUserLogins").HasKey(x => x.UserId);
+
+            modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaims");
+            modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens").HasKey(x => x.UserId);
 
             modelBuilder.Entity<NhanVien>()
                 .HasOne(x => x.LichSuBanThan)
