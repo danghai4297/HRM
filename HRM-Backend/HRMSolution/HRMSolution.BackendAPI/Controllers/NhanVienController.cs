@@ -37,7 +37,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok(nhanViens);
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromForm] NhanVienCreateRequest request)
+        public async Task<IActionResult> Create([FromBody] NhanVienCreateRequest request)
         {
             var result = await _nhanVienService.Create(request);
             if (result == 0)
