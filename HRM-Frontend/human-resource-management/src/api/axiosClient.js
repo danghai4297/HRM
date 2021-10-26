@@ -11,6 +11,7 @@ const axiosClient = axios.create({
   paramsSerializer: (params) => queryString.stringify(params),
 });
 axiosClient.interceptors.request.use(async (config) => {
+  // config.headers['']
   // Handle token here ...
   return config;
 });
