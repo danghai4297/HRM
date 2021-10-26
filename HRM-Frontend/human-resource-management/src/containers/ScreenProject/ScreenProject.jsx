@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "./ScreenProject.scss";
 
 import SideBarLeft from "../../components/SideBarLeft/SideBarLeft";
@@ -39,6 +39,9 @@ import AddLanguageForm from "../../components/AddLanguageForm/AddLanguageForm";
 import AddFamilyForm from "../../components/AddFamilyForm/AddFamilyForm";
 function ScreenProject() {
   const { setAccount } = useContext(AccountContext);
+  useEffect(() => {
+    localStorage.getItem('token')
+  }, [])
   return (
     <>
       <div className="body-screen">
