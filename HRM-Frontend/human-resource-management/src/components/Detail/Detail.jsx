@@ -8,8 +8,6 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import ProductApi from "../../api/productApi";
 import TableBasic from "../TablePagination/TableBasic";
 import "./Font VietNamS-normal";
-// import ReactToPrint from "react-to-print";
-
 import {
   NVCOLUMNSDC,
   NVCOLUMNSHD,

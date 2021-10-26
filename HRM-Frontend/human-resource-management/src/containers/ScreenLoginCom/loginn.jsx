@@ -46,30 +46,29 @@ function LogIn(props) {
           <div className="logo">
             <h1>3HMD</h1>
           </div>
-          <form action="">
-            <div className="form-group">
-              <span>
-                <FontAwesomeIcon icon={["fas", "user"]} />
-              </span>
-              <input
-                type="text"
-                {...register("userName")}
-                id="userName"
-                placeholder="Tài khoản"
-              />
-            </div>
-            <div className="form-group">
-              <span>
-                <FontAwesomeIcon icon={["fas", "lock"]} />
-              </span>
-              <input
-                type="password"
-                {...register("password")}
-                id="password"
-                placeholder="Mật khẩu"
-              />
-            </div>
-            {/* <div className="form-group">
+          <div className="form-group">
+            <span>
+              <FontAwesomeIcon icon={["fas", "user"]} />
+            </span>
+            <input
+              type="text"
+              {...register("userName")}
+              id="userName"
+              placeholder="Tài khoản"
+            />
+          </div>
+          <div className="form-group">
+            <span>
+              <FontAwesomeIcon icon={["fas", "lock"]} />
+            </span>
+            <input
+              type="password"
+              {...register("password")}
+              id="password"
+              placeholder="Mật khẩu"
+            />
+          </div>
+          {/* <div className="form-group">
               <span>
                 <FontAwesomeIcon icon={["fas", "lock"]} />
               </span>
@@ -80,7 +79,6 @@ function LogIn(props) {
                 value="true"
               />
             </div> */}
-          </form>
           <input
             onClick={handleSubmit(onHandleSubmit)}
             type="submit"
