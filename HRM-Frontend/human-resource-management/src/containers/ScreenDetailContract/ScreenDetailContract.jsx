@@ -73,6 +73,11 @@ function ScreenDetailContract(props) {
                 />
               );
             })}
+            <Link to={`/profile/detail/${dataDetailHd.maNhanVien}?move=moveToContract`}>
+              <Button variant="light" className="btn-fix">
+                Chuyển
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

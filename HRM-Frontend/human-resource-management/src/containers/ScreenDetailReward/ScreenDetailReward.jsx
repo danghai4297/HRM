@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
 import "./ScreenDetailReward.scss";
 import ProductApi from "../../api/productApi";
+import { Link } from "react-router-dom";
 function ScreenDetailReward(props) {
   let { match, history } = props;
   let { id } = match.params;
@@ -62,6 +63,11 @@ function ScreenDetailReward(props) {
               titleRight="Ảnh"
               itemRight={dataDetailKt.anh}
             ></SubDetail>
+            <Link to={`/profile/detail/${dataDetailKt.maNhanVien}?move=moveToReward`}>
+              <Button variant="light" className="btn-fix">
+                Chuyển
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

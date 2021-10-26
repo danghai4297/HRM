@@ -7,7 +7,7 @@ function Header() {
   const { account, setAccount } = useContext(AccountContext);
   let history = useHistory();
   let logout = () => {
-    localStorage.removeItem("accessToken");
+    localStorage.removeItem("token");
     history.replace("/login");
   };
   return (

@@ -10,7 +10,7 @@ import DeleteApi from "../../../api/deleteAPI";
 import DialogCheck from "../../Dialog/DialogCheck";
 AddBonusForm.propTypes = {};
 const schema = yup.object({
-  tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
+  tenDanhMuc: yup.string().nullable().required("Tên danh mục không được bỏ trống."),
 });
 
 function AddBonusForm(props) {
@@ -95,7 +95,7 @@ function AddBonusForm(props) {
         <div className="Submit-button sticky-top">
           <div>
             <h2 className="">
-              {dataDetailDMKT.length !== 0 ? "Sửa" : "Thêm"} danh mục kỉ luật
+              {dataDetailDMKT.length !== 0 ? "Sửa" : "Thêm"} danh mục khen thuong
             </h2>
           </div>
           <div className="button">
@@ -119,7 +119,8 @@ function AddBonusForm(props) {
               type="submit"
               className="btn btn-primary ml-3"
               value={dataDetailDMKT.length !== 0 ? "Sửa" : "Lưu"}
-              onClick={() => {
+              onClick=
+              {() => {
                 if (checkInputBonusChange()) {
                   setShowCheckDialog(true);
                 } else {

@@ -17,7 +17,7 @@ import {
   NVCOLUMNSNT,
   NVCOLUMNSTDVH,
 } from "./NvColumns";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import jsPDF from "jspdf";
 import {
   cmndTccHC,
@@ -77,16 +77,76 @@ function Detail(props) {
   const [dropTransfer, setDropTransfer] = useState(true);
   const [dropReward, setDropReward] = useState(true);
   const [dropDiscipline, setDropDiscipline] = useState(true);
+
   const clickHandle = (e) => {
     e.preventDefault();
     const target = e.target.getAttribute("href");
     const height = document.getElementById("right");
     const location = document.querySelector(target).offsetTop;
     height.scrollTo({
-      top: location - 300,
+      top: location - 260,
       behavior: "smooth",
     });
   };
+
+  let location = useLocation();
+  let query = new URLSearchParams(location.search);
+
+  switch (query.get("move")) {
+    case "moveToContract":
+      setTimeout(() => {
+        const height = document.getElementById("right");
+        const location = document.querySelector("#contract").offsetTop;
+        height.scrollTo({
+          top: location - 260,
+          behavior: "smooth",
+        });
+      }, 50);
+      break;
+    case "moveToSalary":
+      setTimeout(() => {
+        const height = document.getElementById("right");
+        const location = document.querySelector("#salary").offsetTop;
+        height.scrollTo({
+          top: location - 260,
+          behavior: "smooth",
+        });
+      }, 50);
+      break;
+    case "moveToTransfer":
+      setTimeout(() => {
+        const height = document.getElementById("right");
+        const location = document.querySelector("#transfer").offsetTop;
+        height.scrollTo({
+          top: location - 260,
+          behavior: "smooth",
+        });
+      }, 50);
+      break;
+    case "moveToReward":
+      setTimeout(() => {
+        const height = document.getElementById("right");
+        const location = document.querySelector("#reward").offsetTop;
+        height.scrollTo({
+          top: location - 260,
+          behavior: "smooth",
+        });
+      }, 50);
+      break;
+    case "moveToDiscipline":
+      setTimeout(() => {
+        const height = document.getElementById("right");
+        const location = document.querySelector("#discipline").offsetTop;
+        height.scrollTo({
+          top: location - 260,
+          behavior: "smooth",
+        });
+      }, 50);
+      break;
+    default:
+      break;
+  }
+
   const arrowBaseClickHandle = () => {
     setDropBase(!dropBase);
   };
@@ -781,9 +841,11 @@ function Detail(props) {
                   <div className="title">
                     <div className="title-cultural"></div>
                     <div className="icon-cultural">
-                      <button className="btn-cultural">
-                        <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
-                      </button>
+                      <Link to={`/contract/add?maNhanVien=${dataDetailNv.id}`}>
+                        <button className="btn-cultural">
+                          <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                        </button>
+                      </Link>
                     </div>
                   </div>
                   <div className="table">
@@ -818,9 +880,11 @@ function Detail(props) {
                   <div className="title">
                     <div className="title-cultural"></div>
                     <div className="icon-cultural">
-                      <button className="btn-cultural">
-                        <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
-                      </button>
+                      <Link to={`/salary/add?maNhanVien=${dataDetailNv.id}`}>
+                        <button className="btn-cultural">
+                          <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                        </button>
+                      </Link>
                     </div>
                   </div>
                   <div className="table">
@@ -855,9 +919,11 @@ function Detail(props) {
                   <div className="title">
                     <div className="title-cultural"></div>
                     <div className="icon-cultural">
-                      <button className="btn-cultural">
-                        <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
-                      </button>
+                      <Link to={`/transfer/add?maNhanVien=${dataDetailNv.id}`}>
+                        <button className="btn-cultural">
+                          <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                        </button>
+                      </Link>
                     </div>
                   </div>
                   <div className="table">
@@ -892,9 +958,11 @@ function Detail(props) {
                   <div className="title">
                     <div className="title-cultural"></div>
                     <div className="icon-cultural">
-                      <button className="btn-cultural">
-                        <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
-                      </button>
+                      <Link to={`/reward/add?maNhanVien=${dataDetailNv.id}`}>
+                        <button className="btn-cultural">
+                          <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                        </button>
+                      </Link>
                     </div>
                   </div>
                   <div className="table">
@@ -929,9 +997,13 @@ function Detail(props) {
                   <div className="title">
                     <div className="title-cultural"></div>
                     <div className="icon-cultural">
-                      <button className="btn-cultural">
-                        <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
-                      </button>
+                      <Link
+                        to={`/discipline/add?maNhanVien=${dataDetailNv.id}`}
+                      >
+                        <button className="btn-cultural">
+                          <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                        </button>
+                      </Link>
                     </div>
                   </div>
                   <div className="table">
