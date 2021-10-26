@@ -13,7 +13,7 @@ import DialogCheck from "../../Dialog/DialogCheck";
 // import { Alert } from "react-alert";
 AddNationForm.propTypes = {};
 const schema = yup.object({
-  tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
+  tenDanhMuc: yup.string().nullable().required("Tên danh mục không được bỏ trống."),
 });
 function AddNationForm(props) {
   const { error, warn, info, success } = useToast();

@@ -10,7 +10,7 @@ import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
 AddLanguageForm.propTypes = {};
 const schema = yup.object({
-  tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
+  tenDanhMuc: yup.string().nullable().required("Tên danh mục không được bỏ trống."),
 });
 function AddLanguageForm(props) {
   let { match, history } = props;

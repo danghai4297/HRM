@@ -9,7 +9,7 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
 const schema = yup.object({
-  tenTrinhDo: yup.string().required("Tên danh mục không được bỏ trống."),
+  tenTrinhDo: yup.string().nullable().required("Tên danh mục không được bỏ trống."),
 });
 function AddLevelForm(props) {
   let { match, history } = props;

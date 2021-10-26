@@ -7,6 +7,7 @@ const axiosClient = axios.create({
   baseURL: "https://localhost:5001/api",
   headers: {
     "content-type": "application/json",
+    "Authorization": 'Bearer ' + localStorage.getItem('token')
   },
   paramsSerializer: (params) => queryString.stringify(params),
 });
