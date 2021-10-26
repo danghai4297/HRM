@@ -5,6 +5,7 @@ import "./Login.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LoginApi from "../../api/login";
 import { useForm } from "react-hook-form";
+import { useToast } from "../../components/Toast/Toast";
 
 LogIn.propTypes = {};
 
@@ -15,6 +16,8 @@ function LogIn(props) {
     history.replace("/home");
   };
 
+  const { error, warn, info, success } = useToast();
+
   const {
     register,
     handleSubmit,
@@ -23,14 +26,13 @@ function LogIn(props) {
     // resolver: yupResolver(schema),
   });
 
-  console.log(localStorage.getItem("token"));
   const onHandleSubmit = async (data) => {
     try {
-      console.log(data);
       await LoginApi.PostLoginAccount(data);
+      localStorage.setItem("user", data.userName);
       history.replace("/home");
-    } catch (error) {
-      alert("hahahaha thang ngu m nhap sai roi");
+    } catch (e) {
+      error("nhập sai tài khoản hoặc mật khẩu");
     }
   };
 
@@ -79,11 +81,10 @@ function LogIn(props) {
               />
             </div> */}
           </form>
-          <input onClick={login} type="submit" value="ĐĂNG NHẬP" />
           <input
             onClick={handleSubmit(onHandleSubmit)}
             type="submit"
-            value="ĐĂNG NHẬP That"
+            value="ĐĂNG NHẬP"
           />
         </div>
       </div>

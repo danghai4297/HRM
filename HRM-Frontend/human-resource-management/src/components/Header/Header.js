@@ -8,14 +8,13 @@ function Header() {
   let history = useHistory();
   let logout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("user");
     history.replace("/login");
   };
   return (
     <>
-      <div className="header-com" >
-        <div className="name" onClick={() => setAccount(false)}>
-          
-        </div>
+      <div className="header-com">
+        <div className="name" onClick={() => setAccount(false)}></div>
         <div className="account">
           <button className="button-top" onClick={() => setAccount(!account)}>
             <div className="screen-account">
@@ -26,7 +25,9 @@ function Header() {
                 />
               </div>
               <div className="account-name">
-                <h5 className="account-style">DangHai</h5>
+                <h5 className="account-style">
+                  {localStorage.getItem("user")}
+                </h5>
               </div>
             </div>
           </button>
@@ -38,7 +39,7 @@ function Header() {
                   <FontAwesomeIcon icon={["fas", "user-circle"]} />
                 </div>
                 <div>
-                  <h5>DangHai</h5>
+                  <h5>{localStorage.getItem("user")}</h5>
                 </div>
                 <div>
                   <Link to="/change" onClick={() => setAccount(false)}>
