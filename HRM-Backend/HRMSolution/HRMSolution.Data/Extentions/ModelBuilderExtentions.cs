@@ -16,12 +16,22 @@ namespace HRMSolution.Data.Extentions
             // any guid
             var roleId = new Guid("8D04DCE2-969A-435D-BBA4-DF3F325983DC");
             var adminId = new Guid("69BD714F-9576-45BA-B5B7-F00649BE00DE");
+            var roleId1 = new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec");
+            var adminId1 = new Guid("1DB26EB2-1870-4129-F60A-08D9978FF76B");
+
             modelbulder.Entity<AppRole>().HasData(new AppRole
             {
                 Id = roleId,
                 Name = "admin",
                 NormalizedName = "admin",
                 ghiChu = "Administrator role"
+            });
+            modelbulder.Entity<AppRole>().HasData(new AppRole
+            {
+                Id = roleId1,
+                Name = "user",
+                NormalizedName = "user",
+                ghiChu = "User role"
             });
 
             var hasher = new PasswordHasher<AppUser>();
@@ -39,11 +49,30 @@ namespace HRMSolution.Data.Extentions
                 hoTen = "Mai Trung Hiếu",
                 ngaySinh = new DateTime(1998, 09, 08)
             });
+            modelbulder.Entity<AppUser>().HasData(new AppUser
+            {
+                Id = adminId1,
+                UserName = "user1",
+                NormalizedUserName = "user1",
+                Email = "hieudongtru@gmail.com",
+                NormalizedEmail = "hieudongtru@gmail.com",
+                EmailConfirmed = true,
+                PasswordHash = hasher.HashPassword(null, "Abcd1234$"),
+                PhoneNumber = "01231243",
+                SecurityStamp = string.Empty,
+                hoTen = "Đào Ngọc Hưởng",
+                ngaySinh = new DateTime(1998, 09, 08)
+            });
 
             modelbulder.Entity<IdentityUserRole<Guid>>().HasData(new IdentityUserRole<Guid>
             {
                 RoleId = roleId,
                 UserId = adminId
+            });
+            modelbulder.Entity<IdentityUserRole<Guid>>().HasData(new IdentityUserRole<Guid>
+            {
+                RoleId = roleId1,
+                UserId = adminId1
             });
 
 

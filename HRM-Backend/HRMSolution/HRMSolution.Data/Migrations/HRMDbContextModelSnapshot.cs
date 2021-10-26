@@ -47,10 +47,18 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            ConcurrencyStamp = "582e8b0f-35ed-4a2f-bec3-ad0e0b6bdeb6",
+                            ConcurrencyStamp = "391d8d69-0a46-401c-b5c4-2f493d1fe6d4",
                             Name = "admin",
                             NormalizedName = "admin",
                             ghiChu = "Administrator role"
+                        },
+                        new
+                        {
+                            Id = new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec"),
+                            ConcurrencyStamp = "af5be8f8-0211-402d-ad89-c324fd965003",
+                            Name = "user",
+                            NormalizedName = "user",
+                            ghiChu = "User role"
                         });
                 });
 
@@ -119,19 +127,38 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a6c641bd-b6d2-4ca4-97b4-e6af7d5a1282",
+                            ConcurrencyStamp = "ce308986-eb30-4059-8fdf-7b84fb5ff563",
                             Email = "hieudongtru@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "hieudongtru@gmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAENdfICmBuqAVjr/ikftALjmWlxqdFf94AchZzw3ibOXBvWy7FirqZaIYsuT58rteQg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAlyLFSrvHFDw9HEo2kfNTqv+oXIwigViGj2h4febWkdZdllSJ9/TFzzX8w/11sDzA==",
                             PhoneNumber = "01231243",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
                             UserName = "admin",
                             hoTen = "Mai Trung Hiếu",
+                            ngaySinh = new DateTime(1998, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = new Guid("1db26eb2-1870-4129-f60a-08d9978ff76b"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "6aab07ec-7c96-482a-9719-b94034bab1ab",
+                            Email = "hieudongtru@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "hieudongtru@gmail.com",
+                            NormalizedUserName = "user1",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEjnyULD44ACIXOB0QbYc89enZtM0wRyprwAVo54z3J52FFGcq0DgnkccmHP1PI/Bw==",
+                            PhoneNumber = "01231243",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "user1",
+                            hoTen = "Đào Ngọc Hưởng",
                             ngaySinh = new DateTime(1998, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
@@ -976,7 +1003,7 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0001",
-                            ngayHieuLuc = new DateTime(2021, 10, 25, 1, 34, 51, 396, DateTimeKind.Local).AddTicks(9415),
+                            ngayHieuLuc = new DateTime(2021, 10, 27, 0, 9, 28, 668, DateTimeKind.Local).AddTicks(4841),
                             to = 1,
                             trangThai = false
                         },
@@ -987,7 +1014,7 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0001",
-                            ngayHieuLuc = new DateTime(2021, 10, 25, 1, 34, 51, 397, DateTimeKind.Local).AddTicks(1579),
+                            ngayHieuLuc = new DateTime(2021, 10, 27, 0, 9, 28, 668, DateTimeKind.Local).AddTicks(6679),
                             to = 2,
                             trangThai = false
                         },
@@ -998,7 +1025,7 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0001",
-                            ngayHieuLuc = new DateTime(2021, 10, 25, 1, 34, 51, 397, DateTimeKind.Local).AddTicks(1629),
+                            ngayHieuLuc = new DateTime(2021, 10, 27, 0, 9, 28, 668, DateTimeKind.Local).AddTicks(6735),
                             to = 3,
                             trangThai = true
                         });
@@ -1082,7 +1109,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD01",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 25, 1, 34, 51, 395, DateTimeKind.Local).AddTicks(1968),
+                            hopDongTuNgay = new DateTime(2021, 10, 27, 0, 9, 28, 666, DateTimeKind.Local).AddTicks(8710),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0001",
@@ -1092,7 +1119,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD02",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 25, 1, 34, 51, 396, DateTimeKind.Local).AddTicks(4953),
+                            hopDongTuNgay = new DateTime(2021, 10, 27, 0, 9, 28, 668, DateTimeKind.Local).AddTicks(516),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0001",
@@ -1102,7 +1129,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD03",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 25, 1, 34, 51, 396, DateTimeKind.Local).AddTicks(5043),
+                            hopDongTuNgay = new DateTime(2021, 10, 27, 0, 9, 28, 668, DateTimeKind.Local).AddTicks(601),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0003",
@@ -1112,7 +1139,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD04",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 25, 1, 34, 51, 396, DateTimeKind.Local).AddTicks(5054),
+                            hopDongTuNgay = new DateTime(2021, 10, 27, 0, 9, 28, 668, DateTimeKind.Local).AddTicks(613),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0004",
@@ -1122,7 +1149,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD05",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 25, 1, 34, 51, 396, DateTimeKind.Local).AddTicks(5062),
+                            hopDongTuNgay = new DateTime(2021, 10, 27, 0, 9, 28, 668, DateTimeKind.Local).AddTicks(622),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0005",
@@ -1132,7 +1159,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD06",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 10, 25, 1, 34, 51, 396, DateTimeKind.Local).AddTicks(5069),
+                            hopDongTuNgay = new DateTime(2021, 10, 27, 0, 9, 28, 668, DateTimeKind.Local).AddTicks(630),
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
                             maNhanVien = "NV0006",
@@ -1486,7 +1513,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD01",
-                            ngayHieuLuc = new DateTime(2021, 10, 25, 1, 34, 51, 396, DateTimeKind.Local).AddTicks(7250),
+                            ngayHieuLuc = new DateTime(2021, 10, 27, 0, 9, 28, 668, DateTimeKind.Local).AddTicks(2706),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = false
@@ -1497,7 +1524,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD01",
-                            ngayHieuLuc = new DateTime(2021, 10, 25, 1, 34, 51, 396, DateTimeKind.Local).AddTicks(8312),
+                            ngayHieuLuc = new DateTime(2021, 10, 27, 0, 9, 28, 668, DateTimeKind.Local).AddTicks(3746),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
@@ -1508,7 +1535,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD03",
-                            ngayHieuLuc = new DateTime(2021, 10, 25, 1, 34, 51, 396, DateTimeKind.Local).AddTicks(8364),
+                            ngayHieuLuc = new DateTime(2021, 10, 27, 0, 9, 28, 668, DateTimeKind.Local).AddTicks(3800),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
@@ -1519,7 +1546,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD04",
-                            ngayHieuLuc = new DateTime(2021, 10, 25, 1, 34, 51, 396, DateTimeKind.Local).AddTicks(8373),
+                            ngayHieuLuc = new DateTime(2021, 10, 27, 0, 9, 28, 668, DateTimeKind.Local).AddTicks(3810),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
@@ -1530,7 +1557,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD05",
-                            ngayHieuLuc = new DateTime(2021, 10, 25, 1, 34, 51, 396, DateTimeKind.Local).AddTicks(8380),
+                            ngayHieuLuc = new DateTime(2021, 10, 27, 0, 9, 28, 668, DateTimeKind.Local).AddTicks(3818),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
@@ -5716,6 +5743,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             UserId = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
                             RoleId = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc")
+                        },
+                        new
+                        {
+                            UserId = new Guid("1db26eb2-1870-4129-f60a-08d9978ff76b"),
+                            RoleId = new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec")
                         });
                 });
 
