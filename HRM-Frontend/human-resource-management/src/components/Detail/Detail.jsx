@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 import "./Detail.scss";
 import SubDetail from "./SubDetail";
 import { links } from "./ScrollData";
@@ -8,6 +9,7 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import ProductApi from "../../api/productApi";
 import TableBasic from "../TablePagination/TableBasic";
 import "./Font VietNamS-normal";
+
 import {
   NVCOLUMNSDC,
   NVCOLUMNSHD,
@@ -18,7 +20,6 @@ import {
   NVCOLUMNSTDVH,
 } from "./NvColumns";
 import { Link, useLocation } from "react-router-dom";
-import jsPDF from "jspdf";
 import {
   cmndTccHC,
   lhkc,
@@ -30,6 +31,7 @@ import {
   ttqs,
   ttyt,
 } from "./Data";
+import { Component, ComponentToPrint } from "./ComponentToPrint";
 
 function Detail(props) {
   let { match, history } = props;
@@ -64,7 +66,6 @@ function Detail(props) {
     };
     fetchNvList();
   }, []);
-  console.log(dataDetailNv);
   const [dropBase, setDropBase] = useState(true);
   const [dropContact, setDropContact] = useState(true);
   const [dropJob, setDropJob] = useState(true);
@@ -148,6 +149,10 @@ function Detail(props) {
       break;
   }
 
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
   const arrowBaseClickHandle = () => {
     setDropBase(!dropBase);
   };
@@ -187,17 +192,6 @@ function Detail(props) {
   const arrowDisciplineClickHandle = () => {
     setDropDiscipline(!dropDiscipline);
   };
-  const pdfGenerate = () => {
-    let doc = new jsPDF("l", "px", "a4");
-    doc.setFont("Font VietNamS");
-    doc.text("Anh", 25, 10);
-    doc.text(`${dataDetailNv.hoTen}`, 5, 25);
-    doc.text(`${dataDetailNv.id}`, 20, 40);
-    doc.setFontSize(10);
-    doc.text("Đơn vị công tác:", 130, 15);
-    doc.text(`${dataDetailNv.coQuanTuyenDung}`, 190, 15);
-    doc.save("profile.pdf");
-  };
 
   return (
     <>
@@ -212,8 +206,9 @@ function Detail(props) {
                 />
               </button>
             </div>
+
             <div className="avatar">
-              <div className="icon-second">
+              <div className="icon-second" style={{ width: "90px" }}>
                 <img
                   src={`https://localhost:5001/${dataDetailNv.anh}`}
                   alt=""
@@ -228,6 +223,7 @@ function Detail(props) {
             </div>
           </div>
           <div className="middle-path">
+            {/* <ComponentToPrint ref={componentRef}> */}
             <Container className="containn">
               <Row className="row-detail">
                 <Col>
@@ -319,6 +315,7 @@ function Detail(props) {
                 </Col>
               </Row>
             </Container>
+            {/* </ComponentToPrint> */}
           </div>
           <div className="right-path">
             <Button className="button-color" variant="dark">
@@ -330,7 +327,7 @@ function Detail(props) {
             <Button
               className="button-color"
               variant="light"
-              onClick={pdfGenerate}
+              onClick={handlePrint}
             >
               <FontAwesomeIcon icon={["fas", "download"]} />
             </Button>
@@ -354,669 +351,676 @@ function Detail(props) {
               </ul>
             </div>
           </div>
+
           <div className="right-information" id="right">
-            <div className="form" id="base">
-              <div className="big-title">
-                <div className="name-title">
-                  <h3>Thông tin cơ bản</h3>
-                </div>
-                <div className="arrow-button">
-                  <button
-                    className="main-arrow-button"
-                    onClick={arrowBaseClickHandle}
-                  >
-                    <FontAwesomeIcon
-                      icon={["fas", "chevron-down"]}
-                      className={!dropBase ? "iconss" : "iconsss"}
-                    />
-                  </button>
-                </div>
-              </div>
-              {dropBase && (
-                <>
-                  <div className="title">
-                    <h5>Thông tin chung</h5>
+            <ComponentToPrint ref={componentRef}>
+              <div className="form" id="base">
+                <div className="big-title">
+                  <div className="name-title">
+                    <h3>Thông tin cơ bản</h3>
                   </div>
-                  {ttc.map((detail, key) => {
-                    return (
-                      <SubDetail
-                        key={key}
-                        titleLeft={detail.title1}
-                        itemLeft={
-                          detail.data1[1] === true &&
-                          dataDetailNv[detail.data1[0]] !== null
-                            ? dateFormat(
-                                dataDetailNv[detail.data1[0]],
-                                "dd/mm/yyyy"
-                              )
-                            : dataDetailNv[detail.data1[0]]
-                        }
-                        titleRight={detail.title2}
-                        itemRight={
-                          detail.data2[1] === true &&
-                          dataDetailNv[detail.data2[0]] !== null
-                            ? dateFormat(
-                                dataDetailNv[detail.data2[0]],
-                                "dd/mm/yyyy"
-                              )
-                            : dataDetailNv[detail.data2[0]]
-                        }
+                  <div className="arrow-button">
+                    <button
+                      className="main-arrow-button"
+                      onClick={arrowBaseClickHandle}
+                    >
+                      <FontAwesomeIcon
+                        icon={["fas", "chevron-down"]}
+                        className={!dropBase ? "iconss" : "iconsss"}
                       />
-                    );
-                  })}
-                  <div className="title">
-                    <h5>CMND/Thẻ căn cước/Hộ chiếu</h5>
-                  </div>
-                  {cmndTccHC.map((detail, key) => {
-                    return (
-                      <SubDetail
-                        key={key}
-                        titleLeft={detail.title1}
-                        itemLeft={
-                          detail.data1[1] === true &&
-                          dataDetailNv[detail.data1[0]] !== null
-                            ? dateFormat(
-                                dataDetailNv[detail.data1[0]],
-                                "dd/mm/yyyy"
-                              )
-                            : dataDetailNv[detail.data1[0]]
-                        }
-                        titleRight={detail.title2}
-                        itemRight={
-                          detail.data2[1] === true &&
-                          dataDetailNv[detail.data2[0]] !== null
-                            ? dateFormat(
-                                dataDetailNv[detail.data2[0]],
-                                "dd/mm/yyyy"
-                              )
-                            : dataDetailNv[detail.data2[0]]
-                        }
-                      />
-                    );
-                  })}
-                </>
-              )}
-            </div>
-
-            <div className="form" id="contact">
-              <div className="big-title">
-                <div className="name-title">
-                  <h3>Thông tin liên hệ</h3>
-                </div>
-                <div className="arrow-button">
-                  <button
-                    className="main-arrow-button"
-                    onClick={arrowContactClickHandle}
-                  >
-                    <FontAwesomeIcon
-                      icon={["fas", "chevron-down"]}
-                      className={!dropContact ? "iconss" : "iconsss"}
-                    />
-                  </button>
-                </div>
-              </div>
-              {dropContact && (
-                <>
-                  <div className="title">
-                    <h5>Số điện thoại/Email/Khác</h5>
-                  </div>
-                  {sdtEK.map((detail, key) => {
-                    return (
-                      <SubDetail
-                        key={key}
-                        titleLeft={detail.title1}
-                        itemLeft={dataDetailNv[detail.data1]}
-                        titleRight={detail.title2}
-                        itemRight={dataDetailNv[detail.data2]}
-                      />
-                    );
-                  })}
-                  <div className="title">
-                    <h5>Liên hệ khẩn cấp</h5>
-                  </div>
-                  {lhkc.map((detail, key) => {
-                    return (
-                      <SubDetail
-                        key={key}
-                        titleLeft={detail.title1}
-                        itemLeft={dataDetailNv[detail.data1]}
-                        titleRight={detail.title2}
-                        itemRight={dataDetailNv[detail.data2]}
-                      />
-                    );
-                  })}
-                </>
-              )}
-            </div>
-            <div className="form" id="job">
-              <div className="big-title">
-                <div className="name-title">
-                  <h3>Thông tin công việc</h3>
-                </div>
-                <div className="arrow-button">
-                  <button
-                    className="main-arrow-button"
-                    onClick={arrowJobClickHandle}
-                  >
-                    <FontAwesomeIcon
-                      icon={["fas", "chevron-down"]}
-                      className={!dropJob ? "iconss" : "iconsss"}
-                    />
-                  </button>
-                </div>
-              </div>
-              {dropJob && (
-                <>
-                  <div className="title">
-                    <h5>Thông tin nhân viên</h5>
-                  </div>
-                  {ttnv.map((detail, key) => {
-                    return (
-                      <SubDetail
-                        key={key}
-                        titleLeft={detail.title1}
-                        itemLeft={dataDetailNv[detail.data1]}
-                        titleRight={detail.title2}
-                        itemRight={
-                          detail.data2[1] === true &&
-                          dataDetailNv[detail.data2[0]] !== null
-                            ? dateFormat(
-                                dataDetailNv[detail.data2[0]],
-                                "dd/mm/yyyy"
-                              )
-                            : dataDetailNv[detail.data2[0]]
-                        }
-                      />
-                    );
-                  })}
-                </>
-              )}
-            </div>
-            <div className="form" id="insurance">
-              <div className="big-title">
-                <div className="name-title">
-                  <h3>Thông tin bảo hiểm</h3>
-                </div>
-                <div className="arrow-button">
-                  <button
-                    className="main-arrow-button"
-                    onClick={arrowInsuranceClickHandle}
-                  >
-                    <FontAwesomeIcon
-                      icon={["fas", "chevron-down"]}
-                      className={!dropInsurance ? "iconss" : "iconsss"}
-                    />
-                  </button>
-                </div>
-              </div>
-              {dropInsurance && (
-                <>
-                  {ttbh.map((detail, key) => {
-                    return (
-                      <SubDetail
-                        key={key}
-                        titleLeft={detail.title1}
-                        itemLeft={dataDetailNv[detail.data1]}
-                        titleRight={detail.title2}
-                        itemRight={dataDetailNv[detail.data2]}
-                      />
-                    );
-                  })}
-                </>
-              )}
-            </div>
-            <div className="form" id="cultural">
-              <div className="big-title">
-                <div className="name-title">
-                  <div>
-                    <h3>Trình độ văn hóa</h3>
+                    </button>
                   </div>
                 </div>
-                <div className="arrow-button">
-                  <button
-                    className="main-arrow-button"
-                    onClick={arrowCulturalClickHandle}
-                  >
-                    <FontAwesomeIcon
-                      icon={["fas", "chevron-down"]}
-                      className={!dropCultural ? "iconss" : "iconsss"}
-                    />
-                  </button>
-                </div>
-              </div>
-              {dropCultural && (
-                <>
-                  <div className="title">
-                    <div className="title-cultural">
-                      <h5 className="title-name">Trình độ</h5>
+                {dropBase && (
+                  <>
+                    <div className="title">
+                      <h5>Thông tin chung</h5>
                     </div>
-                    <div className="icon-cultural">
-                      <Link
-                        to={`/profile/detail/level/add?maNhanVien=${dataDetailNv.id}`}
-                      >
-                        <button className="btn-cultural">
-                          <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
-                        </button>
-                      </Link>
+                    {ttc.map((detail, key) => {
+                      return (
+                        <SubDetail
+                          key={key}
+                          titleLeft={detail.title1}
+                          itemLeft={
+                            detail.data1[1] === true &&
+                            dataDetailNv[detail.data1[0]] !== null
+                              ? dateFormat(
+                                  dataDetailNv[detail.data1[0]],
+                                  "dd/mm/yyyy"
+                                )
+                              : dataDetailNv[detail.data1[0]]
+                          }
+                          titleRight={detail.title2}
+                          itemRight={
+                            detail.data2[1] === true &&
+                            dataDetailNv[detail.data2[0]] !== null
+                              ? dateFormat(
+                                  dataDetailNv[detail.data2[0]],
+                                  "dd/mm/yyyy"
+                                )
+                              : dataDetailNv[detail.data2[0]]
+                          }
+                        />
+                      );
+                    })}
+                    <div className="title">
+                      <h5>CMND/Thẻ căn cước/Hộ chiếu</h5>
                     </div>
-                  </div>
-                  <div className="table">
-                    <TableBasic
-                      link="/profile/detail/level/"
-                      columns={NVCOLUMNSTDVH}
-                      data={dataDetailTDVH}
-                    />
-                  </div>
-                  <div className="title">
-                    <div className="title-cultural">
-                      <h5 className="title-name">Ngoại ngữ</h5>
-                    </div>
-                    <div className="icon-cultural">
-                      <Link
-                        to={`/profile/detail/language/add?maNhanVien=${dataDetailNv.id}`}
-                      >
-                        <button className="btn-cultural">
-                          <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
-                        </button>
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="table">
-                    <TableBasic
-                      link="/profile/detail/language/"
-                      columns={NVCOLUMNSNN}
-                      data={dataDetailNgn}
-                    />
-                  </div>
-                </>
-              )}
-            </div>
-            <div className="form" id="family">
-              <div className="big-title">
-                <div className="name-title">
-                  <h3>Thông tin gia đình</h3>
-                </div>
-                <div className="arrow-button">
-                  <button
-                    className="main-arrow-button"
-                    onClick={arrowFamilyClickHandle}
-                  >
-                    <FontAwesomeIcon
-                      icon={["fas", "chevron-down"]}
-                      className={!dropFamily ? "iconss" : "iconsss"}
-                    />
-                  </button>
-                </div>
-              </div>
-              {dropFamily && (
-                <>
-                  <div className="title">
-                    <div className="title-cultural"></div>
-                    <div className="icon-cultural">
-                      <Link
-                        to={`/profile/detail/family/add?maNhanVien=${dataDetailNv.id}`}
-                      >
-                        <button className="btn-cultural">
-                          <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
-                        </button>
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="table">
-                    <TableBasic
-                      link="/profile/detail/family/"
-                      columns={NVCOLUMNSNT}
-                      data={dataDetailGd}
-                    />
-                  </div>
-                </>
-              )}
-            </div>
-            <div className="form" id="politics">
-              <div className="big-title">
-                <div className="name-title">
-                  <h3>Thông tin chính trị, quân sự, y tế</h3>
-                </div>
-                <div className="arrow-button">
-                  <button
-                    className="main-arrow-button"
-                    onClick={arrowPoliticsClickHandle}
-                  >
-                    <FontAwesomeIcon
-                      icon={["fas", "chevron-down"]}
-                      className={!dropPolitics ? "iconss" : "iconsss"}
-                    />
-                  </button>
-                </div>
-              </div>
-              {dropPolitics && (
-                <>
-                  <div className="title">
-                    <h5>Thông tin chính trị</h5>
-                  </div>
-                  {ttct.map((detail, key) => {
-                    return (
-                      <SubDetail
-                        key={key}
-                        titleLeft={detail.title1}
-                        itemLeft={
-                          detail.data1[1] === true &&
-                          dataDetailNv[detail.data1[0]] !== null
-                            ? dateFormat(
-                                dataDetailNv[detail.data1[0]],
-                                "dd/mm/yyyy"
-                              )
-                            : dataDetailNv[detail.data1[0]]
-                        }
-                        titleRight={detail.title2}
-                        itemRight={
-                          detail.data2[1] === true &&
-                          dataDetailNv[detail.data2[0]] !== null
-                            ? dateFormat(
-                                dataDetailNv[detail.data2[0]],
-                                "dd/mm/yyyy"
-                              )
-                            : dataDetailNv[detail.data2[0]]
-                        }
-                      />
-                    );
-                  })}
-                  <div className="title">
-                    <h5>Thông tin quân sự</h5>
-                  </div>
-                  {ttqs.map((detail, key) => {
-                    return (
-                      <SubDetail
-                        key={key}
-                        titleLeft={detail.title1}
-                        itemLeft={
-                          detail.data1[1] === true &&
-                          dataDetailNv[detail.data1[0]] !== null
-                            ? dateFormat(
-                                dataDetailNv[detail.data1[0]],
-                                "dd/mm/yyyy"
-                              )
-                            : dataDetailNv[detail.data1[0]]
-                        }
-                        titleRight={detail.title2}
-                        itemRight={dataDetailNv[detail.data2]}
-                      />
-                    );
-                  })}
-                  <div className="title">
-                    <h5>Thông tin y tế</h5>
-                  </div>
-                  {ttyt.map((detail, key) => {
-                    return (
-                      <SubDetail
-                        key={key}
-                        titleLeft={detail.title1}
-                        itemLeft={dataDetailNv[detail.data1]}
-                        titleRight={detail.title2}
-                        itemRight={dataDetailNv[detail.data2]}
-                      />
-                    );
-                  })}
-                </>
-              )}
-            </div>
-            <div className="form" id="history">
-              <div className="big-title">
-                <div className="name-title">
-                  <h3>Lịch sử bản thân</h3>
-                </div>
-                <div className="arrow-button">
-                  <button
-                    className="main-arrow-button"
-                    onClick={arrowHistoryClickHandle}
-                  >
-                    <FontAwesomeIcon
-                      icon={["fas", "chevron-down"]}
-                      className={!dropHistory ? "iconss" : "iconsss"}
-                    />
-                  </button>
-                </div>
+                    {cmndTccHC.map((detail, key) => {
+                      return (
+                        <SubDetail
+                          key={key}
+                          titleLeft={detail.title1}
+                          itemLeft={
+                            detail.data1[1] === true &&
+                            dataDetailNv[detail.data1[0]] !== null
+                              ? dateFormat(
+                                  dataDetailNv[detail.data1[0]],
+                                  "dd/mm/yyyy"
+                                )
+                              : dataDetailNv[detail.data1[0]]
+                          }
+                          titleRight={detail.title2}
+                          itemRight={
+                            detail.data2[1] === true &&
+                            dataDetailNv[detail.data2[0]] !== null
+                              ? dateFormat(
+                                  dataDetailNv[detail.data2[0]],
+                                  "dd/mm/yyyy"
+                                )
+                              : dataDetailNv[detail.data2[0]]
+                          }
+                        />
+                      );
+                    })}
+                  </>
+                )}
               </div>
 
-              {dropHistory && (
-                <>
-                  <div className="titles">
-                    <div className="title-history">
-                      <h5 className="title-names">
-                        Bị bắt, bị tù (thời gian và địa điểm), khai báo cho ai,
-                        những vấn đề gì?
-                      </h5>
-                    </div>
+              <div className="form" id="contact">
+                <div className="big-title">
+                  <div className="name-title">
+                    <h3>Thông tin liên hệ</h3>
                   </div>
-                  <div className="areas">
-                    <p className="area-history">{dataDetailNv.biBatDitu}</p>
+                  <div className="arrow-button">
+                    <button
+                      className="main-arrow-button"
+                      onClick={arrowContactClickHandle}
+                    >
+                      <FontAwesomeIcon
+                        icon={["fas", "chevron-down"]}
+                        className={!dropContact ? "iconss" : "iconsss"}
+                      />
+                    </button>
                   </div>
-                  <div className="titles">
-                    <div className="title-history">
-                      <h5 className="title-names">
-                        Tham gia hoặc có quan hệ với các tổ chức chính trị, kinh
-                        tế, xã hội ở nước ngoài
-                      </h5>
-                    </div>
-                  </div>
-                  <div className="areas">
-                    <p className="area-history">
-                      {dataDetailNv.thamGiaChinhTri}
-                    </p>
-                  </div>
-                  <div className="titles">
-                    <div className="title-history">
-                      <h5 className="title-names">
-                        Có Thân nhân(cha, mẹ, vợ, chồng, con, anh chị em ruột) ở
-                        nước ngoài (làm gì, địa chỉ...)?
-                      </h5>
-                    </div>
-                  </div>
-                  <div className="areas">
-                    <p className="area-history">
-                      {dataDetailNv.thanNhanNuocNgoai}
-                    </p>
-                  </div>
-                </>
-              )}
-            </div>
-            <div className="form" id="contract">
-              <div className="big-title">
-                <div className="name-title">
-                  <h3>Hợp đồng lao động</h3>
                 </div>
-                <div className="arrow-button">
-                  <button
-                    className="main-arrow-button"
-                    onClick={arrowContractClickHandle}
-                  >
-                    <FontAwesomeIcon
-                      icon={["fas", "chevron-down"]}
-                      className={!dropContract ? "iconss" : "iconsss"}
-                    />
-                  </button>
-                </div>
+                {dropContact && (
+                  <>
+                    <div className="title">
+                      <h5>Số điện thoại/Email/Khác</h5>
+                    </div>
+                    {sdtEK.map((detail, key) => {
+                      return (
+                        <SubDetail
+                          key={key}
+                          titleLeft={detail.title1}
+                          itemLeft={dataDetailNv[detail.data1]}
+                          titleRight={detail.title2}
+                          itemRight={dataDetailNv[detail.data2]}
+                        />
+                      );
+                    })}
+                    <div className="title">
+                      <h5>Liên hệ khẩn cấp</h5>
+                    </div>
+                    {lhkc.map((detail, key) => {
+                      return (
+                        <SubDetail
+                          key={key}
+                          titleLeft={detail.title1}
+                          itemLeft={dataDetailNv[detail.data1]}
+                          titleRight={detail.title2}
+                          itemRight={dataDetailNv[detail.data2]}
+                        />
+                      );
+                    })}
+                  </>
+                )}
               </div>
-              {dropContract && (
-                <>
-                  <div className="title">
-                    <div className="title-cultural"></div>
-                    <div className="icon-cultural">
-                      <Link to={`/contract/add?maNhanVien=${dataDetailNv.id}`}>
-                        <button className="btn-cultural">
-                          <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
-                        </button>
-                      </Link>
+              <div className="form" id="job">
+                <div className="big-title">
+                  <div className="name-title">
+                    <h3>Thông tin công việc</h3>
+                  </div>
+                  <div className="arrow-button">
+                    <button
+                      className="main-arrow-button"
+                      onClick={arrowJobClickHandle}
+                    >
+                      <FontAwesomeIcon
+                        icon={["fas", "chevron-down"]}
+                        className={!dropJob ? "iconss" : "iconsss"}
+                      />
+                    </button>
+                  </div>
+                </div>
+                {dropJob && (
+                  <>
+                    <div className="title">
+                      <h5>Thông tin nhân viên</h5>
                     </div>
-                  </div>
-                  <div className="table">
-                    <TableBasic
-                      link="/contract/detail/"
-                      columns={NVCOLUMNSHD}
-                      data={dataDetailHd}
-                    />
-                  </div>
-                </>
-              )}
-            </div>
-            <div className="form" id="salary">
-              <div className="big-title">
-                <div className="name-title">
-                  <h3>Hồ sơ lương</h3>
-                </div>
-                <div className="arrow-button">
-                  <button
-                    className="main-arrow-button"
-                    onClick={arrowSalaryClickHandle}
-                  >
-                    <FontAwesomeIcon
-                      icon={["fas", "chevron-down"]}
-                      className={!dropSalary ? "iconss" : "iconsss"}
-                    />
-                  </button>
-                </div>
+                    {ttnv.map((detail, key) => {
+                      return (
+                        <SubDetail
+                          key={key}
+                          titleLeft={detail.title1}
+                          itemLeft={dataDetailNv[detail.data1]}
+                          titleRight={detail.title2}
+                          itemRight={
+                            detail.data2[1] === true &&
+                            dataDetailNv[detail.data2[0]] !== null
+                              ? dateFormat(
+                                  dataDetailNv[detail.data2[0]],
+                                  "dd/mm/yyyy"
+                                )
+                              : dataDetailNv[detail.data2[0]]
+                          }
+                        />
+                      );
+                    })}
+                  </>
+                )}
               </div>
-              {dropSalary && (
-                <>
-                  <div className="title">
-                    <div className="title-cultural"></div>
-                    <div className="icon-cultural">
-                      <Link to={`/salary/add?maNhanVien=${dataDetailNv.id}`}>
-                        <button className="btn-cultural">
-                          <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
-                        </button>
-                      </Link>
-                    </div>
+              <div className="form" id="insurance">
+                <div className="big-title">
+                  <div className="name-title">
+                    <h3>Thông tin bảo hiểm</h3>
                   </div>
-                  <div className="table">
-                    <TableBasic
-                      link="/salary/detail/"
-                      columns={NVCOLUMNSL}
-                      data={dataLuong}
-                    />
+                  <div className="arrow-button">
+                    <button
+                      className="main-arrow-button"
+                      onClick={arrowInsuranceClickHandle}
+                    >
+                      <FontAwesomeIcon
+                        icon={["fas", "chevron-down"]}
+                        className={!dropInsurance ? "iconss" : "iconsss"}
+                      />
+                    </button>
                   </div>
-                </>
-              )}
-            </div>
-            <div className="form" id="transfer">
-              <div className="big-title">
-                <div className="name-title">
-                  <h3>Thuyên chuyển</h3>
                 </div>
-                <div className="arrow-button">
-                  <button
-                    className="main-arrow-button"
-                    onClick={arrowTransferClickHandle}
-                  >
-                    <FontAwesomeIcon
-                      icon={["fas", "chevron-down"]}
-                      className={!dropTransfer ? "iconss" : "iconsss"}
-                    />
-                  </button>
-                </div>
+                {dropInsurance && (
+                  <>
+                    {ttbh.map((detail, key) => {
+                      return (
+                        <SubDetail
+                          key={key}
+                          titleLeft={detail.title1}
+                          itemLeft={dataDetailNv[detail.data1]}
+                          titleRight={detail.title2}
+                          itemRight={dataDetailNv[detail.data2]}
+                        />
+                      );
+                    })}
+                  </>
+                )}
               </div>
-              {dropTransfer && (
-                <>
-                  <div className="title">
-                    <div className="title-cultural"></div>
-                    <div className="icon-cultural">
-                      <Link to={`/transfer/add?maNhanVien=${dataDetailNv.id}`}>
-                        <button className="btn-cultural">
-                          <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
-                        </button>
-                      </Link>
+              <div className="form" id="cultural">
+                <div className="big-title">
+                  <div className="name-title">
+                    <div>
+                      <h3>Trình độ văn hóa</h3>
                     </div>
                   </div>
-                  <div className="table">
-                    <TableBasic
-                      link="/transfer/detail/"
-                      columns={NVCOLUMNSDC}
-                      data={dataDetailTc}
-                    />
+                  <div className="arrow-button">
+                    <button
+                      className="main-arrow-button"
+                      onClick={arrowCulturalClickHandle}
+                    >
+                      <FontAwesomeIcon
+                        icon={["fas", "chevron-down"]}
+                        className={!dropCultural ? "iconss" : "iconsss"}
+                      />
+                    </button>
                   </div>
-                </>
-              )}
-            </div>
-            <div className="form" id="reward">
-              <div className="big-title">
-                <div className="name-title">
-                  <h3>Khen thưởng</h3>
                 </div>
-                <div className="arrow-button">
-                  <button
-                    className="main-arrow-button"
-                    onClick={arrowRewardClickHandle}
-                  >
-                    <FontAwesomeIcon
-                      icon={["fas", "chevron-down"]}
-                      className={!dropReward ? "iconss" : "iconsss"}
-                    />
-                  </button>
-                </div>
+                {dropCultural && (
+                  <>
+                    <div className="title">
+                      <div className="title-cultural">
+                        <h5 className="title-name">Trình độ</h5>
+                      </div>
+                      <div className="icon-cultural">
+                        <Link
+                          to={`/profile/detail/level/add?maNhanVien=${dataDetailNv.id}`}
+                        >
+                          <button className="btn-cultural">
+                            <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
+                    <div className="table">
+                      <TableBasic
+                        link="/profile/detail/level/"
+                        columns={NVCOLUMNSTDVH}
+                        data={dataDetailTDVH}
+                      />
+                    </div>
+                    <div className="title">
+                      <div className="title-cultural">
+                        <h5 className="title-name">Ngoại ngữ</h5>
+                      </div>
+                      <div className="icon-cultural">
+                        <Link
+                          to={`/profile/detail/language/add?maNhanVien=${dataDetailNv.id}`}
+                        >
+                          <button className="btn-cultural">
+                            <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
+                    <div className="table">
+                      <TableBasic
+                        link="/profile/detail/language/"
+                        columns={NVCOLUMNSNN}
+                        data={dataDetailNgn}
+                      />
+                    </div>
+                  </>
+                )}
               </div>
-              {dropReward && (
-                <>
-                  <div className="title">
-                    <div className="title-cultural"></div>
-                    <div className="icon-cultural">
-                      <Link to={`/reward/add?maNhanVien=${dataDetailNv.id}`}>
-                        <button className="btn-cultural">
-                          <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
-                        </button>
-                      </Link>
+              <div className="form" id="family">
+                <div className="big-title">
+                  <div className="name-title">
+                    <h3>Thông tin gia đình</h3>
+                  </div>
+                  <div className="arrow-button">
+                    <button
+                      className="main-arrow-button"
+                      onClick={arrowFamilyClickHandle}
+                    >
+                      <FontAwesomeIcon
+                        icon={["fas", "chevron-down"]}
+                        className={!dropFamily ? "iconss" : "iconsss"}
+                      />
+                    </button>
+                  </div>
+                </div>
+                {dropFamily && (
+                  <>
+                    <div className="title">
+                      <div className="title-cultural"></div>
+                      <div className="icon-cultural">
+                        <Link
+                          to={`/profile/detail/family/add?maNhanVien=${dataDetailNv.id}`}
+                        >
+                          <button className="btn-cultural">
+                            <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                          </button>
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                  <div className="table">
-                    <TableBasic
-                      link="/reward/detail/"
-                      columns={NVCOLUMNSKTvKL}
-                      data={dataDetailKt}
-                    />
-                  </div>
-                </>
-              )}
-            </div>
-            <div className="form" id="discipline">
-              <div className="big-title">
-                <div className="name-title">
-                  <h3>Kỉ luật</h3>
-                </div>
-                <div className="arrow-button">
-                  <button
-                    className="main-arrow-button"
-                    onClick={arrowDisciplineClickHandle}
-                  >
-                    <FontAwesomeIcon
-                      icon={["fas", "chevron-down"]}
-                      className={!dropDiscipline ? "iconss" : "iconsss"}
-                    />
-                  </button>
-                </div>
+                    <div className="table">
+                      <TableBasic
+                        link="/profile/detail/family/"
+                        columns={NVCOLUMNSNT}
+                        data={dataDetailGd}
+                      />
+                    </div>
+                  </>
+                )}
               </div>
-              {dropDiscipline && (
-                <>
-                  <div className="title">
-                    <div className="title-cultural"></div>
-                    <div className="icon-cultural">
-                      <Link
-                        to={`/discipline/add?maNhanVien=${dataDetailNv.id}`}
-                      >
-                        <button className="btn-cultural">
-                          <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
-                        </button>
-                      </Link>
+              <div className="form" id="politics">
+                <div className="big-title">
+                  <div className="name-title">
+                    <h3>Thông tin chính trị, quân sự, y tế</h3>
+                  </div>
+                  <div className="arrow-button">
+                    <button
+                      className="main-arrow-button"
+                      onClick={arrowPoliticsClickHandle}
+                    >
+                      <FontAwesomeIcon
+                        icon={["fas", "chevron-down"]}
+                        className={!dropPolitics ? "iconss" : "iconsss"}
+                      />
+                    </button>
+                  </div>
+                </div>
+                {dropPolitics && (
+                  <>
+                    <div className="title">
+                      <h5>Thông tin chính trị</h5>
                     </div>
+                    {ttct.map((detail, key) => {
+                      return (
+                        <SubDetail
+                          key={key}
+                          titleLeft={detail.title1}
+                          itemLeft={
+                            detail.data1[1] === true &&
+                            dataDetailNv[detail.data1[0]] !== null
+                              ? dateFormat(
+                                  dataDetailNv[detail.data1[0]],
+                                  "dd/mm/yyyy"
+                                )
+                              : dataDetailNv[detail.data1[0]]
+                          }
+                          titleRight={detail.title2}
+                          itemRight={
+                            detail.data2[1] === true &&
+                            dataDetailNv[detail.data2[0]] !== null
+                              ? dateFormat(
+                                  dataDetailNv[detail.data2[0]],
+                                  "dd/mm/yyyy"
+                                )
+                              : dataDetailNv[detail.data2[0]]
+                          }
+                        />
+                      );
+                    })}
+                    <div className="title">
+                      <h5>Thông tin quân sự</h5>
+                    </div>
+                    {ttqs.map((detail, key) => {
+                      return (
+                        <SubDetail
+                          key={key}
+                          titleLeft={detail.title1}
+                          itemLeft={
+                            detail.data1[1] === true &&
+                            dataDetailNv[detail.data1[0]] !== null
+                              ? dateFormat(
+                                  dataDetailNv[detail.data1[0]],
+                                  "dd/mm/yyyy"
+                                )
+                              : dataDetailNv[detail.data1[0]]
+                          }
+                          titleRight={detail.title2}
+                          itemRight={dataDetailNv[detail.data2]}
+                        />
+                      );
+                    })}
+                    <div className="title">
+                      <h5>Thông tin y tế</h5>
+                    </div>
+                    {ttyt.map((detail, key) => {
+                      return (
+                        <SubDetail
+                          key={key}
+                          titleLeft={detail.title1}
+                          itemLeft={dataDetailNv[detail.data1]}
+                          titleRight={detail.title2}
+                          itemRight={dataDetailNv[detail.data2]}
+                        />
+                      );
+                    })}
+                  </>
+                )}
+              </div>
+              <div className="form" id="history">
+                <div className="big-title">
+                  <div className="name-title">
+                    <h3>Lịch sử bản thân</h3>
                   </div>
-                  <div className="table">
-                    <TableBasic
-                      link="/discipline/detail/"
-                      columns={NVCOLUMNSKTvKL}
-                      data={dataDetailKl}
-                    />
+                  <div className="arrow-button">
+                    <button
+                      className="main-arrow-button"
+                      onClick={arrowHistoryClickHandle}
+                    >
+                      <FontAwesomeIcon
+                        icon={["fas", "chevron-down"]}
+                        className={!dropHistory ? "iconss" : "iconsss"}
+                      />
+                    </button>
                   </div>
-                </>
-              )}
-            </div>
+                </div>
+
+                {dropHistory && (
+                  <>
+                    <div className="titles">
+                      <div className="title-history">
+                        <h5 className="title-names">
+                          Bị bắt, bị tù (thời gian và địa điểm), khai báo cho
+                          ai, những vấn đề gì?
+                        </h5>
+                      </div>
+                    </div>
+                    <div className="areas">
+                      <p className="area-history">{dataDetailNv.biBatDitu}</p>
+                    </div>
+                    <div className="titles">
+                      <div className="title-history">
+                        <h5 className="title-names">
+                          Tham gia hoặc có quan hệ với các tổ chức chính trị,
+                          kinh tế, xã hội ở nước ngoài
+                        </h5>
+                      </div>
+                    </div>
+                    <div className="areas">
+                      <p className="area-history">
+                        {dataDetailNv.thamGiaChinhTri}
+                      </p>
+                    </div>
+                    <div className="titles">
+                      <div className="title-history">
+                        <h5 className="title-names">
+                          Có Thân nhân(cha, mẹ, vợ, chồng, con, anh chị em ruột)
+                          ở nước ngoài (làm gì, địa chỉ...)?
+                        </h5>
+                      </div>
+                    </div>
+                    <div className="areas">
+                      <p className="area-history">
+                        {dataDetailNv.thanNhanNuocNgoai}
+                      </p>
+                    </div>
+                  </>
+                )}
+              </div>
+              <div className="form" id="contract">
+                <div className="big-title">
+                  <div className="name-title">
+                    <h3>Hợp đồng lao động</h3>
+                  </div>
+                  <div className="arrow-button">
+                    <button
+                      className="main-arrow-button"
+                      onClick={arrowContractClickHandle}
+                    >
+                      <FontAwesomeIcon
+                        icon={["fas", "chevron-down"]}
+                        className={!dropContract ? "iconss" : "iconsss"}
+                      />
+                    </button>
+                  </div>
+                </div>
+                {dropContract && (
+                  <>
+                    <div className="title">
+                      <div className="title-cultural"></div>
+                      <div className="icon-cultural">
+                        <Link
+                          to={`/contract/add?maNhanVien=${dataDetailNv.id}`}
+                        >
+                          <button className="btn-cultural">
+                            <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
+                    <div className="table">
+                      <TableBasic
+                        link="/contract/detail/"
+                        columns={NVCOLUMNSHD}
+                        data={dataDetailHd}
+                      />
+                    </div>
+                  </>
+                )}
+              </div>
+              <div className="form" id="salary">
+                <div className="big-title">
+                  <div className="name-title">
+                    <h3>Hồ sơ lương</h3>
+                  </div>
+                  <div className="arrow-button">
+                    <button
+                      className="main-arrow-button"
+                      onClick={arrowSalaryClickHandle}
+                    >
+                      <FontAwesomeIcon
+                        icon={["fas", "chevron-down"]}
+                        className={!dropSalary ? "iconss" : "iconsss"}
+                      />
+                    </button>
+                  </div>
+                </div>
+                {dropSalary && (
+                  <>
+                    <div className="title">
+                      <div className="title-cultural"></div>
+                      <div className="icon-cultural">
+                        <Link to={`/salary/add?maNhanVien=${dataDetailNv.id}`}>
+                          <button className="btn-cultural">
+                            <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
+                    <div className="table">
+                      <TableBasic
+                        link="/salary/detail/"
+                        columns={NVCOLUMNSL}
+                        data={dataLuong}
+                      />
+                    </div>
+                  </>
+                )}
+              </div>
+              <div className="form" id="transfer">
+                <div className="big-title">
+                  <div className="name-title">
+                    <h3>Thuyên chuyển</h3>
+                  </div>
+                  <div className="arrow-button">
+                    <button
+                      className="main-arrow-button"
+                      onClick={arrowTransferClickHandle}
+                    >
+                      <FontAwesomeIcon
+                        icon={["fas", "chevron-down"]}
+                        className={!dropTransfer ? "iconss" : "iconsss"}
+                      />
+                    </button>
+                  </div>
+                </div>
+                {dropTransfer && (
+                  <>
+                    <div className="title">
+                      <div className="title-cultural"></div>
+                      <div className="icon-cultural">
+                        <Link
+                          to={`/transfer/add?maNhanVien=${dataDetailNv.id}`}
+                        >
+                          <button className="btn-cultural">
+                            <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
+                    <div className="table">
+                      <TableBasic
+                        link="/transfer/detail/"
+                        columns={NVCOLUMNSDC}
+                        data={dataDetailTc}
+                      />
+                    </div>
+                  </>
+                )}
+              </div>
+              <div className="form" id="reward">
+                <div className="big-title">
+                  <div className="name-title">
+                    <h3>Khen thưởng</h3>
+                  </div>
+                  <div className="arrow-button">
+                    <button
+                      className="main-arrow-button"
+                      onClick={arrowRewardClickHandle}
+                    >
+                      <FontAwesomeIcon
+                        icon={["fas", "chevron-down"]}
+                        className={!dropReward ? "iconss" : "iconsss"}
+                      />
+                    </button>
+                  </div>
+                </div>
+                {dropReward && (
+                  <>
+                    <div className="title">
+                      <div className="title-cultural"></div>
+                      <div className="icon-cultural">
+                        <Link to={`/reward/add?maNhanVien=${dataDetailNv.id}`}>
+                          <button className="btn-cultural">
+                            <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
+                    <div className="table">
+                      <TableBasic
+                        link="/reward/detail/"
+                        columns={NVCOLUMNSKTvKL}
+                        data={dataDetailKt}
+                      />
+                    </div>
+                  </>
+                )}
+              </div>
+              <div className="form" id="discipline">
+                <div className="big-title">
+                  <div className="name-title">
+                    <h3>Kỉ luật</h3>
+                  </div>
+                  <div className="arrow-button">
+                    <button
+                      className="main-arrow-button"
+                      onClick={arrowDisciplineClickHandle}
+                    >
+                      <FontAwesomeIcon
+                        icon={["fas", "chevron-down"]}
+                        className={!dropDiscipline ? "iconss" : "iconsss"}
+                      />
+                    </button>
+                  </div>
+                </div>
+                {dropDiscipline && (
+                  <>
+                    <div className="title">
+                      <div className="title-cultural"></div>
+                      <div className="icon-cultural">
+                        <Link
+                          to={`/discipline/add?maNhanVien=${dataDetailNv.id}`}
+                        >
+                          <button className="btn-cultural">
+                            <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
+                    <div className="table">
+                      <TableBasic
+                        link="/discipline/detail/"
+                        columns={NVCOLUMNSKTvKL}
+                        data={dataDetailKl}
+                      />
+                    </div>
+                  </>
+                )}
+              </div>
+            </ComponentToPrint>
           </div>
         </div>
       </div>

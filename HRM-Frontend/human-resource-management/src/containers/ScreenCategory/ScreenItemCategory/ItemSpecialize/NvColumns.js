@@ -11,7 +11,7 @@ export const NVCOLUMNS = [
     show: true,
   },
   {
-    Header: "Mã Chức Vụ",
+    Header: "Mã Chuyên môn",
     accessor: "maChuyenMon",
     sticky: "left",
     minWidth: 500,
@@ -20,7 +20,7 @@ export const NVCOLUMNS = [
     show: true,
   },
   {
-    Header: "Tên Chức Vụ",
+    Header: "Tên chuyên môn",
     accessor: "tenChuyenMon",
     sticky: "left",
     minWidth: 380,

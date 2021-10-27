@@ -12,7 +12,7 @@ const axiosClient = axios.create({
 });
 axiosClient.interceptors.request.use(async (config) => {
   // Handle token here ...
-  config.headers["Authorization"] = "Bearer " + localStorage.getItem("token");
+  config.headers["Authorization"] = "Bearer " + localStorage.getItem("resultObj");
   return config;
 });
 axiosClient.interceptors.response.use(

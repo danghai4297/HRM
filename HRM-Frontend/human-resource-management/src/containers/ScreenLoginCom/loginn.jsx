@@ -1,19 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./Login.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LoginApi from "../../api/login";
 import { useForm } from "react-hook-form";
+import jwt_decode from "jwt-decode";
 
 LogIn.propTypes = {};
 
 function LogIn(props) {
   let history = useHistory();
-  let login = () => {
-    localStorage.setItem("abc", true);
-    history.replace("/home");
-  };
 
   const {
     register,
@@ -23,13 +20,18 @@ function LogIn(props) {
     // resolver: yupResolver(schema),
   });
 
-  console.log(localStorage.getItem('token'));
   const onHandleSubmit = async (data) => {
     try {
       console.log(data);
       await LoginApi.PostLoginAccount(data);
-      history.replace("/home");
-    } catch (error) {}
+      if (jwt_decode(localStorage.getItem("resultObj")).role === "user") {
+        history.replace("/home");
+      } else if (jwt_decode(localStorage.getItem("resultObj")).role === "admin") {
+        history.replace("/category");
+      }
+    } catch (error) {
+      alert("hahahaha thang ngu m nhap sai roi");
+    }
   };
 
   return (
@@ -65,19 +67,7 @@ function LogIn(props) {
                 placeholder="Mật khẩu"
               />
             </div>
-            {/* <div className="form-group">
-              <span>
-                <FontAwesomeIcon icon={["fas", "lock"]} />
-              </span>
-              <input
-                type="text"
-                {...register("rememberMe")}
-                id="rememberMe"
-                value="true"
-              />
-            </div> */}
           </form>
-          <input onClick={login} type="submit" value="ĐĂNG NHẬP" />
           <input
             onClick={handleSubmit(onHandleSubmit)}
             type="submit"

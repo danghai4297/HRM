@@ -89,7 +89,11 @@ export const NVCOLUMNS2 = [
     disableFilters: true,
     // Cell: ({ value }) => <img src={value} width={50} />,
     Cell: (tableProps) => (
-      <img src={tableProps.row.original.anh} width={60} alt="" />
+      <img
+        src={`https://localhost:5001${tableProps.row.original.anh}`}
+        width={60}
+        alt=""
+      />
     ),
 
     show: true,
@@ -667,7 +671,7 @@ export const NVCOLUMNS2 = [
   },
   {
     Header: "Trạng Thái Lao Động",
-      accessor: "trangThaiLaoDong",
+    accessor: "trangThaiLaoDong",
     minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: false,

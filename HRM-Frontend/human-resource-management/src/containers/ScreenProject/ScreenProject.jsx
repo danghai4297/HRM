@@ -37,6 +37,8 @@ import { AccountContext } from "../../Contexts/StateContext";
 import AddLevelForm from "../../components/AddLevelForm/AddLevelForm";
 import AddLanguageForm from "../../components/AddLanguageForm/AddLanguageForm";
 import AddFamilyForm from "../../components/AddFamilyForm/AddFamilyForm";
+import ProtectedRouteAdmin from "./ProtectedRouteAdmin";
+import ScreenAccount from "../ScreenAccount/ScreenAccount";
 function ScreenProject() {
   const { setAccount } = useContext(AccountContext);
   useEffect(() => {
@@ -115,9 +117,6 @@ function ScreenProject() {
                 component={AddFamilyForm}
               />
 
-
-              
-
               <ProtectedRoute
                 exact
                 path="/contract"
@@ -156,7 +155,8 @@ function ScreenProject() {
                 component={AddSalaryForm}
               />
 
-              <ProtectedRoute path="/category" component={ScreenCategory} />
+              <ProtectedRouteAdmin path="/category" component={ScreenCategory} />
+              <ProtectedRouteAdmin path="/account" component={ScreenAccount} />
 
               <ProtectedRoute
                 exact
