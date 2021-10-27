@@ -64,6 +64,11 @@ function ScreenDetailTransfer(props) {
                 />
               );
             })}
+            <Link to={`/profile/detail/${dataDetailDC.maNhanVien}?move=moveToTransfer`}>
+              <Button variant="light" className="btn-fix">
+                Chuyển
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

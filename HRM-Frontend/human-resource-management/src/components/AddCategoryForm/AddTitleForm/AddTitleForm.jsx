@@ -12,7 +12,7 @@ AddTitleForm.propTypes = {};
 const schema = yup.object({
   maChucDanh: yup.string().required("Mã chức danh không được bỏ trống."),
   tenChucDanh: yup.string().required("Tên chức danh không được bỏ trống."),
-  phuCap: yup.number(),
+  phuCap: yup.number().typeError('Phụ cấp không được bỏ trống.'),
 });
 function AddTitleForm(props) {
   let { match, history } = props;

@@ -20,9 +20,10 @@
     }
   }
   .account {
-    width: auto;
+    width: 12%;
     .button-top {
       background: none;
+      width: 100%;
       border: none;
     }
     .screen-account {
@@ -37,8 +38,8 @@
         }
       }
       .account-name {
-        width: auto;
-        padding-top: 10%;
+        width: 100%;
+        padding-top: 8%;
         padding-left: 2%;
         .account-style {
           color: white;

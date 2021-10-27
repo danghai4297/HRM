@@ -10,7 +10,7 @@ import PutApi from "../../../api/putAAPI";
 import DialogCheck from "../../Dialog/DialogCheck";
 const schema = yup.object({
   maTo: yup.string().required("Mã tổ không được bỏ trống."),
-  idPhongBan: yup.number().required("Thuộc phòng ban không được bỏ trống."),
+  idPhongBan: yup.number().typeError('Thuộc phòng ban không được bỏ trống.'),
   tenTo: yup.string().required("Tổ không được bỏ trống."),
 });
 function AddNestForm(props) {

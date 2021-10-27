@@ -12,17 +12,34 @@ function ScreenDetailLevel(props) {
   let { id } = match.params;
   const [dataDetailTD, setdataDetailTD] = useState([]);
 
+  const [dataCM, setDataCM] = useState([]);
+  const [dataDetailTDVH, setdataDetailTDVH] = useState([]);
+
+  const cid = dataCM.filter(
+    (item) => item.tenChuyenMon === dataDetailTDVH.chuyenMon
+  );
+
+  // console.log(cid[0]);
   useEffect(() => {
     const fetchNvList = async () => {
       try {
         const responseTD = await ProductApi.getTDDetail(id);
         setdataDetailTD(responseTD);
+
+        const response = await ProductApi.getTDDetail(id);
+        setdataDetailTDVH(response);
+        const responseCM = await ProductApi.getAllDMCM();
+        setDataCM(responseCM);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
     };
     fetchNvList();
   }, []);
+
+  const setData = (id) => {
+    localStorage.setItem("ID", id);
+  };
 
   return (
     <>
@@ -41,7 +58,11 @@ function ScreenDetailLevel(props) {
           </div>
           <div className="third-path">
             <Link to={`/profile/detail/level/update/${id}`}>
-              <Button variant="light" className="btn-fix">
+              <Button
+                variant="light"
+                className="btn-fix"
+                onClick={() => setData(cid[0].id)}
+              >
                 Sửa
               </Button>
             </Link>

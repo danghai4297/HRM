@@ -3,7 +3,7 @@ import "./AddProfileForm.scss";
 import { Controller, useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../FontAwesomeIcons/index";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { DatePicker } from "antd";
 import moment from "moment/moment.js";
 import "antd/dist/antd.css";
@@ -110,44 +110,83 @@ function AddProfileForm(props) {
   const [dataReligion, setDataReligion] = useState([]);
   const [dataCRS, setDataCRS] = useState([]);
   const [dataLabor, setDataLabor] = useState([]);
-
-  console.log(checkedSoldier);
+  const [emCode,setEmCode]= useState("");
+  const intitalValue = {
+      lsbt_maNhanVien: "NV9992",
+       yt_maNhanVien: "NV9992",
+      lhkc_maNhanVien: "NV9992",
+  }
   //console.log(date);
   const {
     register,
     handleSubmit,
     control,
+    reset,
     formState: { errors },
   } = useForm({
+    defaultValues: intitalValue,
     resolver: yupResolver(schema),
   });
-      
-  
+ 
   const [file, setFile] = useState();
   const handleChange = (e) => {
     setFile(e.target.files[0]);
   };
-   
+
+  useEffect(() => {
+      reset(intitalValue);
+  }, []);
+  //get data form api
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const responseM = await ProductApi.getAllDMHN();
+        setDataMarrige(responseM);
+        const responseDT = await ProductApi.getAllDMDT();
+        setDataNation(responseDT);
+        const responseTG = await ProductApi.getAllDMTG();
+        setDataReligion(responseTG);
+        const responseCRS = await ProductApi.getAllDMNCC();
+        setDataCRS(responseCRS);
+        const responseCV = await ProductApi.getAllDMTCLD();
+        setDataLabor(responseCV);
+        // if (id !== undefined) {
+        //   // if(checkInputChange === true){
+        //   //   setDescription("Bạn chưa thay dổi");
+        //   // }
+        //   setDescription("Bạn chắc chắn muốm sửa trình độ");
+        //   const response = await ProductApi.getTDDetail(id);
+        //   setdataDetailTDVH(response);
+        // }
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
 
   //get data from form
-
   const onHandleSubmit = async (data) => {
-    try { 
-       const formData = new FormData();
-       //formData.append("anh",data.anh[0]);
-       console.log(formData);
-       for ( var key in data ) {
-        formData.append(key, data[key]);
-    }
-     // await ProductApi.postFile(formData);
-      await ProductApi.postNv(formData);
+    console.log(data);
+    
+    try {
+      //    const formData = new FormData();
+      //    //formData.append("anh",data.anh[0]);
+      //    console.log(formData);
+      //    for ( var key in data ) {
+      //     formData.append(key, data[key]);
+      // }
+      // await ProductApi.postFile(formData);
+      await ProductApi.postNv(data);
       history.goBack();
     } catch (error) {}
   };
 
+  console.log(dataMarrige);
+
   //handle image
   //const [file, setFile] = useState("/Images/userIcon.png");
- 
+
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
@@ -197,13 +236,13 @@ function AddProfileForm(props) {
               )}
             /> */}
 
-                 <input
+            {/* <input
                   type="file"
                    {...register("anh")}
                    accept="Images/*"
                   class="form-control-file"
                   onChange={handleChange}
-                ></input> 
+                ></input>  */}
 
             {/* <input
             type="text"
@@ -230,6 +269,7 @@ function AddProfileForm(props) {
                         ? "form-control col-sm-6 "
                         : "form-control col-sm-6 border-danger"
                     }
+                    onChange={(e)=> setEmCode(e.target.value)}
                   />
                   <span className="message">{errors.id?.message}</span>
                 </div>
@@ -337,9 +377,14 @@ function AddProfileForm(props) {
                     }
                   >
                     <option value=""></option>
-                    <option value="1">Độc thân</option>
+                    {dataMarrige.map((item, key) => (
+                      <option key={key} value={item.id}>
+                        {item.tenDanhMuc}
+                      </option>
+                    ))}
+                    {/* <option value="1">Độc thân</option>
                     <option value="2">Đã có gia đình</option>
-                    <option value="3">Ly dị</option>
+                    <option value="3">Ly dị</option> */}
                   </select>
                   <span className="message">
                     {errors.idDanhMucHonNhan?.message}
@@ -421,7 +466,12 @@ function AddProfileForm(props) {
                         : "form-control col-sm-6 border-danger custom-select"
                     }
                   >
-                    <option value="1">Kinh</option>
+                    <option value=""></option>
+                    {dataNation.map((item, key) => (
+                      <option key={key} value={item.id}>
+                        {item.tenDanhMuc}
+                      </option>
+                    ))}
                   </select>
                   <span className="message">{errors.idDanToc?.message}</span>
                 </div>
@@ -467,7 +517,12 @@ function AddProfileForm(props) {
                         : "form-control col-sm-6 border-danger custom-select"
                     }
                   >
-                    <option value="1">Không</option>
+                    <option value=""></option>
+                    {dataReligion.map((item, key) => (
+                      <option key={key} value={item.id}>
+                        {item.tenDanhMuc}
+                      </option>
+                    ))}
                   </select>
                   <span className="message">{errors.idTonGiao?.message}</span>
                 </div>
@@ -1018,13 +1073,13 @@ function AddProfileForm(props) {
                         : "form-control col-sm-6 border-danger"
                     }
                   />
-                  <input type="text" {...register("lsbt_maNhanVien")} />
                   <span className="message">
                     {errors.lhkc_dienThoai?.message}
                   </span>
                 </div>
               </div>
             </div>
+            <input type="text" {...register("lhkc_maNhanVien")} defaultValue={emCode}/>
           </div>
           {/* Container thông tin công việc*/}
           <div className="container-div-form">
@@ -1340,13 +1395,11 @@ function AddProfileForm(props) {
                     }
                   >
                     <option value=""></option>
-                    <option value="1">Thực tập sinh</option>
-                    <option value="2">Học việc</option>
-                    <option value="3">Thử việc</option>
-                    <option value="4">Chính thức</option>
-                    <option value="5">Tạm đình chỉ công tác</option>
-                    <option value="6">Nghỉ thai sản</option>
-                    <option value="7">Khác</option>
+                    {dataLabor.map((item, key) => (
+                      <option key={key} value={item.id}>
+                        {item.tenLaoDong}
+                      </option>
+                    ))}
                   </select>
                   <span className="message">
                     {errors.tinhChatLaoDong?.message}
@@ -1417,7 +1470,12 @@ function AddProfileForm(props) {
                         : "form-control col-sm-6 border-danger custom-select"
                     }
                   >
-                    <option value="1">A1</option>
+                    <option value=""></option>
+                    {dataCRS.map((item, key) => (
+                      <option key={key} value={item.id}>
+                        {item.tenNgach}
+                      </option>
+                    ))}
                   </select>
                   <span className="message">
                     {errors.idNgachCongChuc?.message}
@@ -1883,7 +1941,7 @@ function AddProfileForm(props) {
                     id="yt_tinhTrangSucKhoe"
                     className="form-control col-sm-6"
                   />
-                  <input type="text" {...register("yt_maNhanVien")} />
+                  <input type="text" {...register("yt_maNhanVien")} DefaultValue={emCode}/>
                 </div>
               </div>
             </div>
@@ -1963,10 +2021,11 @@ function AddProfileForm(props) {
                         : "form-control border-danger"
                     }
                   />
-                  <input type="text" {...register("lsbt_maNhanVien")} />
+                  <input type="text" {...register("lsbt_maNhanVien")} defaultValue={emCode}/>
                   <span className="message">
                     {errors.lsbt_thanNhanNuocNgoai?.message}
                   </span>
+            
                 </div>
               </div>
             </div>

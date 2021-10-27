@@ -31,7 +31,7 @@ function AddLevelForm(props) {
   //console.log(query.get("maNhanVien"));
   let eCode = query.get("maNhanVien");
   let { id } = match.params;
-    
+
   const [dataDetailTDVH, setdataDetailTDVH] = useState([]);
 
   const [dataCM, setDataCM] = useState([]);
@@ -89,8 +89,8 @@ function AddLevelForm(props) {
     tenTruong: id !== undefined?`${dataDetailTDVH.tenTruong}`:null,
   };
   //  console.log(typeof(intitalValue.tuThoiGian));
-   console.log(dataDetailTDVH.tuThoiGian);
-  
+  console.log(dataDetailTDVH.tuThoiGian);
+
   const {
     register,
     handleSubmit,
@@ -131,7 +131,7 @@ function AddLevelForm(props) {
    return JSON.stringify(values) === JSON.stringify(dfValue);
     
   };
- 
+
   const onHandleSubmit = async (data) => {
     console.log(data);
     checkInputChange();
@@ -377,7 +377,6 @@ function AddLevelForm(props) {
                   <Controller
                     name="tuThoiGian"
                     control={control}
-                    
                     render={({ field, onChange }) => (
                       <DatePicker
                         id="tuThoiGian"
@@ -429,7 +428,7 @@ function AddLevelForm(props) {
                     name="denThoiGian"
                     control={control}
                     // defaultValue={defaultValue}
-                    
+
                     render={({ field, onChange }) => (
                       <DatePicker
                         id="denThoiGian"
@@ -485,7 +484,6 @@ function AddLevelForm(props) {
         confirm={handleDelete}
         cancel={cancel}
       />
-      
     </>
   );
 }

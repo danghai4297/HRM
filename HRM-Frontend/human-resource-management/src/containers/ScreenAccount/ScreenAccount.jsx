@@ -1,24 +1,24 @@
 import React, { useContext, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-import { NVCOLUMNS } from "./NvColumns";
+import { NVCOLUMNSHD } from "./NvColumns";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ExportCSV } from "../../components/ExportFile/ExportFile";
+import TablePagination from "../../components/TablePagination/TablePagination";
+import productApi from "../../api/productApi";
 import { Link } from "react-router-dom";
-import { ExportCSV } from "../../../../components/ExportFile/ExportFile";
-import TablePagination from "../../../../components/TablePagination/TablePagination";
-import ProductApi from "../../../../api/productApi";
 
-function ItemRelation(props) {
-  const link = "/category/relation/";
-  const fileName = "Danhmucquanhe";
-  const [dataDmnt, setDataDmnt] = useState([]);
+function ScreenAccount(props) {
+  const link = "/contract/detail/";
+  const fileName = "Danhsachhopdong";
+  const [dataAllHd, setdataAllHd] = useState([]);
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const responseNv = await ProductApi.getAllDMNT();
-        setDataDmnt(responseNv);
+        const responseNv = await productApi.getAllHd();
+        // console.log(responseNv);
+        setdataAllHd(responseNv);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
@@ -31,29 +31,30 @@ function ItemRelation(props) {
       <div className="screen-table-nv">
         <div className="herder-content sticky-top">
           <div>
-            <h4 className="">Danh mục quan hệ</h4>
+            <h2 className="">Danh sách hợp đồng</h2>
           </div>
           <div className="button">
-            <Link to="/category/relation/add" className="link-item">
+            <Link to="/contract/add" className="link-item">
               <input type="submit" className="btn btn-primary" value="Thêm" />
             </Link>
             <ReactHTMLTableToExcel
               id="test-table-xls-button"
               className="download-table-xls-button"
-              table="dmqhe"
+              table="tableHd"
               filename={fileName}
               sheet="tablexls"
               buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
             />
-            <ExportCSV csvData={dataDmnt} fileName={fileName} />
+            <ExportCSV csvData={dataAllHd} fileName={fileName} />
           </div>
         </div>
         <div className="table-nv">
           <TablePagination
+            ma="maHopDong"
             link={link}
-            tid="dmqha"
-            columns={NVCOLUMNS}
-            data={dataDmnt}
+            tid="tableHd"
+            columns={NVCOLUMNSHD}
+            data={dataAllHd}
           />
         </div>
       </div>
@@ -61,4 +62,5 @@ function ItemRelation(props) {
   );
 }
 
-export default ItemRelation;
+export default ScreenAccount;
+

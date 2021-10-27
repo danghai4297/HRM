@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
 import "./ScreenDetailDiscipline.scss";
 import ProductApi from "../../api/productApi";
+import { Link } from "react-router-dom";
 function ScreenDetailDiscipline(props) {
   let { match, history } = props;
   let { id } = match.params;
@@ -61,6 +62,11 @@ function ScreenDetailDiscipline(props) {
               titleRight="Ảnh"
               itemRight={dataKLDetail.anh}
             ></SubDetail>
+            <Link to={`/profile/detail/${dataKLDetail.maNhanVien}?move=moveToDiscipline`}>
+              <Button variant="light" className="btn-fix">
+                Chuyển
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
