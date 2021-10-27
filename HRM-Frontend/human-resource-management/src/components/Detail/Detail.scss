@@ -20,7 +20,7 @@
       .avatar {
         text-align: center;
         margin-right: 3%;
-        .icon-second{
+        .icon-second {
           width: 90px;
           margin-left: 35%;
           margin-bottom: 5%;
@@ -114,6 +114,7 @@
           height: 4em;
           display: flex;
           .name-title {
+            cursor: pointer;
             width: 80%;
 
             h3 {
