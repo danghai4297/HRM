@@ -2,10 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { NVCOLUMNS } from "./NvColumns";
-import ReactHTMLTableToExcel from "react-html-to-excel";
+import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import { ListContext } from "../../../../Contexts/ListContext";
 import { ExportCSV } from "../../../../components/ExportFile/ExportFile";
 import TablePagination from "../../../../components/TablePagination/TablePagination";
 import ProductApi from "../../../../api/productApi";

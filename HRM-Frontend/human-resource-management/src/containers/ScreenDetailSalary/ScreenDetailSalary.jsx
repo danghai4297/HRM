@@ -7,6 +7,7 @@ import "./ScreenDetailSalary.scss";
 import ProductApi from "../../api/productApi";
 import dateFormat from "dateformat";
 import { ttc } from "./DataSalary";
+
 function ScreenDetailSalary(props) {
   let { match, history } = props;
   let { id } = match.params;
@@ -23,7 +24,6 @@ function ScreenDetailSalary(props) {
     };
     fetchNvList();
   }, []);
-  console.log(dataLDetail);
 
   return (
     <>
@@ -72,7 +72,9 @@ function ScreenDetailSalary(props) {
                 />
               );
             })}
-            <Link to={`/profile/detail/${dataLDetail.maNhanVien}?move=moveToSalary`}>
+            <Link
+              to={`/profile/detail/${dataLDetail.maNhanVien}?move=moveToSalary`}
+            >
               <Button variant="light" className="btn-fix">
                 Chuyển
               </Button>

@@ -6,11 +6,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LoginApi from "../../api/login";
 import { useForm } from "react-hook-form";
 import jwt_decode from "jwt-decode";
+import { useToast } from "../../components/Toast/Toast";
 
 LogIn.propTypes = {};
 
 function LogIn(props) {
   let history = useHistory();
+
+  const { error, warn, info, success } = useToast();
 
   const {
     register,
@@ -22,7 +25,6 @@ function LogIn(props) {
 
   const onHandleSubmit = async (data) => {
     try {
-      console.log(data);
       await LoginApi.PostLoginAccount(data);
       if (jwt_decode(localStorage.getItem("resultObj")).role === "user") {
         history.replace("/home");
@@ -44,34 +46,32 @@ function LogIn(props) {
           <div className="logo">
             <h1>3HMD</h1>
           </div>
-          <form action="">
-            <div className="form-group">
-              <span>
-                <FontAwesomeIcon icon={["fas", "user"]} />
-              </span>
-              <input
-                type="text"
-                {...register("userName")}
-                id="userName"
-                placeholder="Tài khoản"
-              />
-            </div>
-            <div className="form-group">
-              <span>
-                <FontAwesomeIcon icon={["fas", "lock"]} />
-              </span>
-              <input
-                type="password"
-                {...register("password")}
-                id="password"
-                placeholder="Mật khẩu"
-              />
-            </div>
-          </form>
+          <div className="form-group">
+            <span>
+              <FontAwesomeIcon icon={["fas", "user"]} />
+            </span>
+            <input
+              type="text"
+              {...register("userName")}
+              id="userName"
+              placeholder="Tài khoản"
+            />
+          </div>
+          <div className="form-group">
+            <span>
+              <FontAwesomeIcon icon={["fas", "lock"]} />
+            </span>
+            <input
+              type="password"
+              {...register("password")}
+              id="password"
+              placeholder="Mật khẩu"
+            />
+          </div>
           <input
             onClick={handleSubmit(onHandleSubmit)}
             type="submit"
-            value="ĐĂNG NHẬP That"
+            value="ĐĂNG NHẬP"
           />
         </div>
       </div>
