@@ -1,5 +1,6 @@
 ﻿using HRMSolution.Application.Catalog.DanhMucTinhChatLaoDongs;
 using HRMSolution.Application.Catalog.DanhMucTinhChatLaoDongs.DtinhChatLaoDongs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace HRMSolution.BackendAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class DanhMucTinhChatLaoDongController : ControllerBase
     {
         private readonly IDanhMucTinhChatLaoDongService _danhMucTinhChatLaoDongService;

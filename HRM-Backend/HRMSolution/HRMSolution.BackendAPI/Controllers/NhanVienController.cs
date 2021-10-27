@@ -1,5 +1,6 @@
 ﻿using HRMSolution.Application.Catalog.NhanViens;
 using HRMSolution.Application.Catalog.NhanViens.Dtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,6 +12,7 @@ namespace HRMSolution.BackendAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class NhanVienController : ControllerBase
     {
         private readonly INhanVienService _nhanVienService;

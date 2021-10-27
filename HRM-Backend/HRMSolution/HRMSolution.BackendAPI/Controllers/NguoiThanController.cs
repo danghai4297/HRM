@@ -1,5 +1,6 @@
 ﻿using HRMSolution.Application.Catalog.NguoiThans;
 using HRMSolution.Application.Catalog.NguoiThans.Dtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,6 +12,7 @@ namespace HRMSolution.BackendAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class NguoiThanController : ControllerBase
     {
         private readonly INguoiThanService _nguoiThanService;
