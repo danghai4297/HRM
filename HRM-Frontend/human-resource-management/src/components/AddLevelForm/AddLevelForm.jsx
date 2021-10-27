@@ -11,7 +11,7 @@ import { useLocation } from "react-router-dom";
 import { DatePicker } from "antd";
 import moment from "moment/moment.js";
 import { stringify } from "query-string";
-
+import DialogCheck from "../Dialog/DialogCheck";
 const schema = yup.object({
   tenTruong: yup.string().required("Tên trường không được bỏ trống."),
   idChuyenMon: yup.number().required("Chuyên môn không được bỏ trống."),
@@ -37,6 +37,8 @@ function AddLevelForm(props) {
   const [dataCM, setDataCM] = useState([]);
   const [dataHTDT, setDataHTDT] = useState([]);
   const [dataTD, setDataTD] = useState([]);
+
+  const [showCheckDialog, setShowCheckDialog] = useState(false);
 
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
@@ -78,13 +80,13 @@ function AddLevelForm(props) {
   }, []);
   //ussing react-hooks-form
   const intitalValue = {
-    maNhanVien: `${dataDetailTDVH.maNhanVien}`,
-    idChuyenMon: `${dataDetailTDVH.idChuyenMon}`,
+    maNhanVien: id !== undefined?`${dataDetailTDVH.maNhanVien}`:eCode,
+    idChuyenMon: id !== undefined?`${dataDetailTDVH.idChuyenMon}`:null,
     tuThoiGian: dataDetailTDVH.tuThoiGian,
     denThoiGian: dataDetailTDVH.denThoiGian,
-    idHinhThucDaoTao: `${dataDetailTDVH.idHinhThucDaoTao}`,
-    idTrinhDo: `${dataDetailTDVH.idTrinhDo}`,
-    tenTruong: `${dataDetailTDVH.tenTruong}`,
+    idHinhThucDaoTao: id !== undefined?`${dataDetailTDVH.idHinhThucDaoTao}`:null,
+    idTrinhDo: id !== undefined?`${dataDetailTDVH.idTrinhDo}`:null,
+    tenTruong: id !== undefined?`${dataDetailTDVH.tenTruong}`:null,
   };
   //  console.log(typeof(intitalValue.tuThoiGian));
    console.log(dataDetailTDVH.tuThoiGian);
@@ -126,10 +128,8 @@ function AddLevelForm(props) {
       intitalValue.idTrinhDo,
       intitalValue.tenTruong,
     ];
-    if (JSON.stringify(values) === JSON.stringify(dfValue)) {
-      return true;
-    }
-    return false;
+   return JSON.stringify(values) === JSON.stringify(dfValue);
+    
   };
  
   const onHandleSubmit = async (data) => {
@@ -183,10 +183,13 @@ function AddLevelForm(props) {
               type="submit"
               className="btn btn-primary ml-3"
               value={dataDetailTDVH.length !== 0 ? "Sửa" : "Lưu"}
-              onClick={handleSubmit(onHandleSubmit)}
+              onClick={()=>{
+                  setShowDialog(true);
+              }}
             />
           </div>
         </div>
+        
         <form
           action=""
           class="profile-form"
@@ -459,12 +462,20 @@ function AddLevelForm(props) {
             </div>
           </div>
         </form>
-      </div>
+        </div>
+ 
       <Dialog
         show={showDialog}
         title="Thông báo"
         description={description}
         confirm={handleSubmit(onHandleSubmit)}
+        cancel={cancel}
+      />
+       <DialogCheck
+        show={showCheckDialog}
+        title="Thông báo"
+        description={"Bạn chưa thay đổi thông tin trình độ"}
+        confirm={null}
         cancel={cancel}
       />
       <Dialog

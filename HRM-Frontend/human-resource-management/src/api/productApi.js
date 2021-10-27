@@ -19,7 +19,10 @@ const ProductApi = {
     const url = "/NhanVien";
     return axiosClient.post(url, data);
   },
-
+  postFile:(data) =>{
+    const url = "/Anh";
+    return axiosClient.post(url,data);
+  },
   //detail nhân viên
   getNvDetail: (maNv) => {
     const url = `/NhanVien/${maNv}`;

@@ -15,7 +15,7 @@ const schema = yup.object({
     .number()
     .required("Danh mục người thân không được bỏ trống."),
   tenNguoiThan: yup.string().required("Tên người thân không được bỏ trống."),
-  //gioiTinh: yup.boolean().required("Giới tính không được bỏ trống."),
+  gioiTinh: yup.boolean().required("Giới tính không được bỏ trống."),
   //ngaySinh: yup.string().required("Ngày sinh được bỏ trống."),
   maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
   quanHe: yup.string().required("Quan hệ không được bỏ trống."),
@@ -67,7 +67,7 @@ function AddFamilyForm(props) {
     idDanhMucNguoiThan:
       id !== undefined ? `${dataDetailNT.idDanhMucNguoiThan}` : null,
     tenNguoiThan: id !== undefined ? `${dataDetailNT.tenNguoiThan}` : null,
-    gioiTinh: id !== undefined ? `${dataDetailNT.gioiTinh}` : null,
+    gioiTinh: id !== undefined ? (`${dataDetailNT.gioiTinh}`==="Nam"?true:false) : true,
     ngaySinh: dataDetailNT.ngaySinh,
     quanHe: id !== undefined ? `${dataDetailNT.quanHe}` : null,
     ngheNghiep: id !== undefined ? `${dataDetailNT.ngheNghiep}` : null,
@@ -100,6 +100,7 @@ function AddFamilyForm(props) {
     }
   }, [dataDetailNT]);
  
+  console.log(gender);
   
   console.log(dataDetailNT);
   const onHandleSubmit = async (data) => {
@@ -149,7 +150,9 @@ function AddFamilyForm(props) {
               type="submit"
               className="btn btn-primary ml-3"
               value={dataDetailNT.length !== 0 ? "Sửa" : "Lưu"}
-              onClick={handleSubmit(onHandleSubmit)}
+              onClick={()=>{
+                setShowDialog(true);
+            }}
             />
           </div>
         </div>
@@ -283,27 +286,17 @@ function AddFamilyForm(props) {
                     type="text"
                     {...register("gioiTinh")}
                     id="gioiTinh"
-                    value={ id !== undefined? (gender === "Nam"?true:false):null}
                     className={
                       !errors.gioiTinh
                         ? "form-control col-sm-6 custom-select"
                         : "form-control col-sm-6 border-danger custom-select"
                     }
                   onChange={(e)=>{
-                    const selectGender = e.target.value
-                    setGender(selectGender);
+                    setGender(e.target.value);
                   }}
                   >
-                    {/* <option value={dataDetailTDVH.idTrinhDo}>{dataDetailTDVH.trinhDo}</option>
-                {dataTD.map((item,key)=>(
-                    <option key={key} value={item.id}>
-                    {item.tenTrinhDo}{" "}
-                  </option>
-                  ))} */}
-                    <option value={null}></option>
-                    <option value="Nam">Nam</option>
-                    <option value="Nữ">Nữ</option>
-                   
+                    <option value={true}>Nam</option>
+                    <option value={false}>Nữ</option>
                   </select>
                   <span className="message">{errors.gioiTinh?.message}</span>
                 </div>

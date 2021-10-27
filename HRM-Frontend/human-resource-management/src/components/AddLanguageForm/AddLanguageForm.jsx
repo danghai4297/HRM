@@ -124,7 +124,9 @@ function AddLanguageForm(props) {
               type="submit"
               className="btn btn-primary ml-3"
               value={dataDetailNN.length !== 0 ? "Sửa" : "Lưu"}
-              onClick={handleSubmit(onHandleSubmit)}
+              onClick={()=>{
+                setShowDialog(true);
+            }}
             />
           </div>
         </div>
