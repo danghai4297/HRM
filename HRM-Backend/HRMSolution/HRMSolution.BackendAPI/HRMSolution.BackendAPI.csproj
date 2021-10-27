@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\anh\" />
     <Folder Include="wwwroot\user-content\" />
   </ItemGroup>
 

@@ -50,6 +50,7 @@ namespace HRMSolution.Data.EF
         public DbSet<KhenThuongKyLuat> khenThuongKyLuats {get; set; }
         public DbSet<LichSu> lichSus { get; set; }
         public DbSet<DanhMucNhomLuong> danhMucNhomLuongs { get; set; }
+        public DbSet<Anh> anhs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -86,6 +87,7 @@ namespace HRMSolution.Data.EF
             modelBuilder.ApplyConfiguration(new DanhMucNhomLuongConfiguration());
             modelBuilder.ApplyConfiguration(new AppUserConfiguration());
             modelBuilder.ApplyConfiguration(new AppRoleConfiguration());
+            modelBuilder.ApplyConfiguration(new AnhConfiguration());
 
 
             modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims");
