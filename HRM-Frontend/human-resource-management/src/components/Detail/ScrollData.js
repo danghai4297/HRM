@@ -19,16 +19,7 @@ export const links = [
     text: "Thông tin bảo hiểm",
     url: "#insurance",
   },
-  {
-    id: 5,
-    text: "Trình độ văn hóa",
-    url: "#cultural",
-  },
-  {
-    id: 6,
-    text: "Thông tin gia đình",
-    url: "#family",
-  },
+
   {
     id: 7,
     text: "Chính trị,quân sự,y tế",
@@ -38,6 +29,16 @@ export const links = [
     id: 8,
     text: "Lịch sử bản thân",
     url: "#history",
+  },
+  {
+    id: 5,
+    text: "Trình độ văn hóa",
+    url: "#cultural",
+  },
+  {
+    id: 6,
+    text: "Thông tin gia đình",
+    url: "#family",
   },
   {
     id: 9,
