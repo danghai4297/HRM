@@ -44,10 +44,10 @@ namespace HRMSolution.Application.System.Users
             var roles = await _userManager.GetRolesAsync(user);
             var claims = new[]
             {
-                new Claim(ClaimTypes.Email,user.Email),
-                new Claim(ClaimTypes.GivenName,user.hoTen),
-                new Claim(ClaimTypes.Role, string.Join(";",roles)),
-                new Claim(ClaimTypes.Name, request.UserName)
+                new Claim("email",user.Email),
+                new Claim("givenName",user.hoTen),
+                new Claim("role", string.Join(";",roles)),
+                new Claim("userName", request.UserName)
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
