@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "E6NvF28YN6LOUZvurSqoozMQBpU+Ge8NAShFeqrbJ300oYE97hNmnjxVltmeXASNjBvwwxo6NkT96+2PuzMsZQ==",
+  "dgSpecHash": "2FP7/PzrjrKPay9XyFRfCsblPAXdYPxFohuY2d+5gRX6tNVvpmBHEyHtdN0TmXt+udW92RQRdqNyBaUAsEov3g==",
   "success": true,
-  "projectFilePath": "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Utilities\\HRMSolution.Utilities.csproj",
+  "projectFilePath": "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Utilities\\HRMSolution.Utilities.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Utilities\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

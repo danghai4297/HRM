@@ -63,6 +63,7 @@ namespace HRMSolution.BackendAPI
            
             services.AddDbContext<HRMDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Data")));
+            
 
             services.AddIdentity<AppUser, AppRole>()
                 .AddEntityFrameworkStores<HRMDbContext>()
