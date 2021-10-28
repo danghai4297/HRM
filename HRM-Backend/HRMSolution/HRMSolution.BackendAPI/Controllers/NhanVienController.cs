@@ -55,5 +55,13 @@ namespace HRMSolution.BackendAPI.Controllers
                 return BadRequest();
             return Ok();
         }
+        [HttpPut("image/{maNhanVien}")]
+        public async Task<IActionResult> UpdateImage(string maNhanVien, [FromForm]NhanVienUpdateImageRequest request)
+        {
+            var result = await _nhanVienService.UpdateImage(maNhanVien, request);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
+        }
     }
 }

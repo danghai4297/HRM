@@ -61,7 +61,7 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
         public bool trangThaiLaoDong { get; set; }
         public DateTime? ngayNghiViec { get; set; }
         public string lyDoNghiViec { get; set; }
-        public IFormFile anh { get; set; }
+        //public IFormFile anh { get; set; }
 
         public int tinhChatLaoDong { get; set; }
         public int idDanhMucHonNhan { get; set; }

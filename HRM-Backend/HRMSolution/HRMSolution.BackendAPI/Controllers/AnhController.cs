@@ -25,5 +25,13 @@ namespace HRMSolution.BackendAPI.Controllers
                 return BadRequest();
             return Ok();
         }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update( int id, [FromForm] AnhRequest request)
+        {
+            var result = await _anhService.Update(id, request);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
+        }
     }
 }
