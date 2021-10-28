@@ -1,6 +1,7 @@
 ﻿using HRMSolution.Application.Common;
 using HRMSolution.Data.EF;
 using HRMSolution.Data.Entities;
+using HRMSolution.Utilities.Exceptions;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -25,7 +26,6 @@ namespace HRMSolution.Application.Catalog.Anhs
         {
             var anh = new Anh()
             {
-
             };
             if (request.anh != null)
             {
@@ -41,6 +41,16 @@ namespace HRMSolution.Application.Catalog.Anhs
             var fileName = $"{Guid.NewGuid()}{Path.GetExtension(originalFileName)}";
             await _storageService.SaveFileAsync(file.OpenReadStream(), fileName);
             return "/" + USER_CONTENT_FOLDER_NAME + "/" + fileName;
+        }
+
+        public async Task<int> Update(int id, AnhRequest request)
+        {
+            var anh = await _context.anhs.FindAsync(id);
+            if (anh == null) throw new HRMException($"Không tìm thấy danh mục chức danh có id: {id }");
+
+            anh.url = await this.SaveFile(request.anh);
+
+            return await _context.SaveChangesAsync();
         }
     }
 }

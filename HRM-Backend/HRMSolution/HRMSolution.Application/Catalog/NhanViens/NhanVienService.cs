@@ -118,10 +118,10 @@ namespace HRMSolution.Application.Catalog.NhanViens
 
             };
             //lưu ảnh
-             if(request.anh != null)
-             {
-                nhanVien.anh = await this.SaveFile(request.anh);
-             }
+             //if(request.anh != null)
+             //{
+             //   nhanVien.anh = await this.SaveFile(request.anh);
+             //}
             _context.nhanViens.Add(nhanVien);
             return await _context.SaveChangesAsync();
         }
@@ -668,5 +668,14 @@ namespace HRMSolution.Application.Catalog.NhanViens
             return "/" + USER_CONTENT_FOLDER_NAME + "/" + fileName;
         }
 
+        public async Task<int> UpdateImage(string id, NhanVienUpdateImageRequest request)
+        {
+            var anh = await _context.nhanViens.FindAsync(id);
+            if (anh == null) throw new HRMException($"Không tìm thấy danh mục chức danh có id: {id }");
+
+            anh.anh = await this.SaveFile(request.anh);
+
+            return await _context.SaveChangesAsync();
+        }
     }
 }

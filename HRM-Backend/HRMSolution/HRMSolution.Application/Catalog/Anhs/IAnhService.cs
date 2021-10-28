@@ -8,5 +8,6 @@ namespace HRMSolution.Application.Catalog.Anhs
     public interface IAnhService
     {
         Task<int> Create(AnhRequest request);
+        Task<int> Update(int id, AnhRequest request);
     }
 }

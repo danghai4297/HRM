@@ -11,6 +11,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
     {
         Task<int> Create(NhanVienCreateRequest request);
         Task<int> Update(string id, NhanVienUpdateRequest request);
+        Task<int> UpdateImage(string id, NhanVienUpdateImageRequest request);
         Task<int> Delete(int idDanhMucDanToc);
         Task<List<NhanVienViewModel>> GetAll();
         Task<NhanVienDetailViewModel> GetByMaNV(string maNhanVien);
