@@ -37,8 +37,9 @@ import { AccountContext } from "../../Contexts/StateContext";
 import AddLevelForm from "../../components/AddLevelForm/AddLevelForm";
 import AddLanguageForm from "../../components/AddLanguageForm/AddLanguageForm";
 import AddFamilyForm from "../../components/AddFamilyForm/AddFamilyForm";
-import ProtectedRouteAdmin from "./ProtectedRouteAdmin";
 import ScreenAccount from "../ScreenAccount/ScreenAccount";
+// import PDF from "../../components/Detail/PDF";
+import ScreenAccountLog from "../ScreenAccountLog/ScreenAccountLog";
 function ScreenProject() {
   const { setAccount } = useContext(AccountContext);
   useEffect(() => {
@@ -56,159 +57,188 @@ function ScreenProject() {
           </div>
           <div className="content">
             <Switch>
-              <ProtectedRoute exact path="/home" component={DashBoard} />
-              <ProtectedRoute path="/change" component={ChangePasswordForm} />
-              <ProtectedRoute exact path="/profile" component={ScreenTableNV} />
+              <ProtectedRoute exact path="/home" component={DashBoard} roles={["user"]}/>
+              <ProtectedRoute path="/change" component={ChangePasswordForm} roles={["user"]}/>
+              <ProtectedRoute exact path="/profile" component={ScreenTableNV} roles={["user"]}/>
               <ProtectedRoute
                 exact
                 path="/profile/detail/:id"
                 component={Detail}
+                roles={["user"]}
               />
               <ProtectedRoute
                 exact
                 path="/profile/add"
                 component={AddProfileForm}
+                roles={["user"]}
               />
               <ProtectedRoute
                 exact
                 path="/profile/detail/level/add"
                 component={AddLevelForm}
+                roles={["user"]}
               />
               <ProtectedRoute
                 exact
                 path="/profile/detail/level/:id"
                 component={ScreenDetailLevel}
+                roles={["user"]}
               />
               <ProtectedRoute
                 exact
                 path="/profile/detail/level/update/:id"
                 component={AddLevelForm}
+                roles={["user"]}
               />
 
               <ProtectedRoute
                 exact
                 path="/profile/detail/language/add"
                 component={AddLanguageForm}
+                roles={["user"]}
               />
               <ProtectedRoute
                 exact
                 path="/profile/detail/language/:id"
                 component={ScreenDetailForeignLanguage}
+                roles={["user"]}
               />
               <ProtectedRoute
                 exact
                 path="/profile/detail/language/update/:id"
                 component={AddLanguageForm}
+                roles={["user"]}
               />
 
               <ProtectedRoute
                 exact
                 path="/profile/detail/family/add"
                 component={AddFamilyForm}
+                roles={["user"]}
               />
               <ProtectedRoute
                 exact
                 path="/profile/detail/family/:id"
                 component={ScreenDetailFamily}
+                roles={["user"]}
               />
               <ProtectedRoute
                 exact
                 path="/profile/detail/family/update/:id"
                 component={AddFamilyForm}
+                roles={["user"]}
               />
 
               <ProtectedRoute
                 exact
                 path="/contract"
                 component={ScreenContract}
+                roles={["user"]}
               />
               <ProtectedRoute
                 exact
                 path="/contract/detail/:id"
                 component={ScreenDetailContract}
+                roles={["user"]}
               />
               <ProtectedRoute
                 exact
                 path="/contract/add"
                 component={AddContractForm}
+                roles={["user"]}
               />
               <ProtectedRoute
                 exact
                 path="/contract/:id"
                 component={AddContractForm}
+                roles={["user"]}
               />
 
-              <ProtectedRoute exact path="/salary" component={ScreenSalary} />
+              <ProtectedRoute exact path="/salary" component={ScreenSalary} roles={["user"]}/>
               <ProtectedRoute
                 exact
                 path="/salary/detail/:id"
                 component={ScreenDetailSalary}
+                roles={["user"]}
               />
               <ProtectedRoute
                 exact
                 path="/salary/add"
                 component={AddSalaryForm}
+                roles={["user"]}
               />
               <ProtectedRoute
                 exact
                 path="/salary/:id"
                 component={AddSalaryForm}
+                roles={["user"]}
               />
 
-              <ProtectedRouteAdmin path="/category" component={ScreenCategory} />
-              <ProtectedRouteAdmin path="/account" component={ScreenAccount} />
+              <ProtectedRoute path="/category" component={ScreenCategory} roles={["admin"]}/>
+              <ProtectedRoute path="/account" component={ScreenAccount} roles={["admin"]}/>
 
               <ProtectedRoute
                 exact
                 path="/transfer"
                 component={ScreenTransfer}
+                roles={["user"]}
               />
               <ProtectedRoute
                 exact
                 path="/transfer/detail/:id"
                 component={ScreenDetailTransfer}
+                roles={["user"]}
               />
               <ProtectedRoute
                 exact
                 path="/transfer/add"
                 component={AddTransferForm}
+                roles={["user"]}
               />
               <ProtectedRoute
                 exact
                 path="/transfer/:id"
                 component={AddTransferForm}
+                roles={["user"]}
               />
 
-              <ProtectedRoute exact path="/resign" component={ScreenResign} />
+              <ProtectedRoute exact path="/resign" component={ScreenResign} roles={["user"]}/>
 
-              <ProtectedRoute exact path="/reward" component={ScreenReward} />
+              <ProtectedRoute exact path="/reward" component={ScreenReward} roles={["user"]}/>
               <ProtectedRoute
                 exact
                 path="/reward/detail/:id"
                 component={ScreenDetailReward}
+                roles={["user"]}
               />
               <ProtectedRoute
                 exact
                 path="/reward/add"
                 component={AddRewardForm}
+                roles={["user"]}
               />
 
               <ProtectedRoute
                 exact
                 path="/discipline"
                 component={ScreenDiscipline}
+                roles={["user"]}
               />
               <ProtectedRoute
                 exact
                 path="/discipline/detail/:id"
                 component={ScreenDetailDiscipline}
+                roles={["user"]}
               />
               <ProtectedRoute
                 exact
                 path="/discipline/add"
                 component={AddDisciplineForm}
+                roles={["user"]}
               />
-              <ProtectedRoute exact path="/report" component={ScreenReport} />
+              <ProtectedRoute path="/report" component={ScreenReport} roles={["user"]}/>
+              <ProtectedRoute path="/activity" component={ScreenAccountLog} roles={["user", "admin"]}/>
+              {/* <ProtectedRoute path="/pdf" component={PDF} roles="user"/> */}
             </Switch>
           </div>
         </div>

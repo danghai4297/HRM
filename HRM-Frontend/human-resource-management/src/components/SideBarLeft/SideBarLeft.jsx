@@ -2,9 +2,7 @@ import React from "react";
 import "./SideBarLeft.scss";
 import { SideBarData } from "./SideBarDate";
 import { Link, useRouteMatch } from "react-router-dom";
-import jwt_decode from "jwt-decode";
-// const token = localStorage.getItem("resultObj");
-// const decoded = jwt_decode(token);
+import jwt_decode from "jwt-decode";
 function SideBarLeft() {
   function Menu({ val }) {
     let match = useRouteMatch({
@@ -22,19 +20,19 @@ function SideBarLeft() {
 
   return (
     <div className="Sidebar">
-      <ul
-        className="SidebarList sticky-top"
-        // style={{ backgroundImage: `url("/Images/bcr.png")` }}
-      >
+      <ul className="SidebarList sticky-top">
         <li className="title-project">
           <div className="title-names">
             <h1 style={{ color: "white" }}>HRM</h1>
           </div>
         </li>
-        {SideBarData.map((val, key) => {
-          if(val.role === jwt_decode(localStorage.getItem("resultObj")).role){
-            return <Menu val={val} key={key} />;
-          }
+        {SideBarData.filter(
+          (val) =>
+            val.roles.includes(
+              jwt_decode(localStorage.getItem("resultObj")).role
+            ) === true
+        ).map((val, key) => {
+          return <Menu val={val} key={key} />;
         })}
         <img className="Side-img" src="/Images/pcr.jpg" alt="" />
       </ul>

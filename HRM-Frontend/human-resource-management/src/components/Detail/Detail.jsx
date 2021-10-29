@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import ProductApi from "../../api/productApi";
 import TableBasic from "../TablePagination/TableBasic";
-import "./Font VietNamS-normal";
+import { PDFDownloadLink, Document, Page, Text } from "@react-pdf/renderer";
 
 import {
   NVCOLUMNSDC,
@@ -193,6 +193,13 @@ function Detail(props) {
     setDropDiscipline(!dropDiscipline);
   };
 
+  const MyDoc = () => (
+    <Document>
+      <Page size="A4">
+        <Text>Nguyễn Công Minh</Text>
+      </Page>
+    </Document>
+  );
   return (
     <>
       <div className="contents">
@@ -223,7 +230,6 @@ function Detail(props) {
             </div>
           </div>
           <div className="middle-path">
-            {/* <ComponentToPrint ref={componentRef}> */}
             <Container className="containn">
               <Row className="row-detail">
                 <Col>
@@ -315,7 +321,6 @@ function Detail(props) {
                 </Col>
               </Row>
             </Container>
-            {/* </ComponentToPrint> */}
           </div>
           <div className="right-path">
             <Button className="button-color" variant="dark">
@@ -327,7 +332,13 @@ function Detail(props) {
             <Button
               className="button-color"
               variant="light"
-              onClick={handlePrint}
+              onClick={() => (
+                <PDFDownloadLink document={MyDoc} fileName="somename.pdf">
+                  {({ blob, url, loading, error }) =>
+                    loading ? "Loading document..." : "Download now!"
+                  }
+                </PDFDownloadLink>
+              )}
             >
               <FontAwesomeIcon icon={["fas", "download"]} />
             </Button>

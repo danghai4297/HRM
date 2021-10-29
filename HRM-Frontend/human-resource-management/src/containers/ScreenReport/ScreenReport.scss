@@ -1,0 +1,28 @@
+.main-all {
+  display: flex;
+  .first-main {
+    width: 20%;
+    .title-first {
+      margin-left: 8%;
+    }
+    .cate-sidebar {
+      width: 90%;
+      background: white;
+      min-height: 300px;
+      margin-left: 8%;
+      margin-top: 3.1rem;
+      box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+        0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    }
+  }
+  .second-main {
+    width: 80%;
+  }
+}
+
+.table-category {
+  // background: red;
+  height: auto;
+  // margin-top: 1%;
+  width: 100%;
+}
