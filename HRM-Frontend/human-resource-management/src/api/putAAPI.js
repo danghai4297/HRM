@@ -106,5 +106,15 @@ const PutApi = {
     const url =`/NguoiThan/${id}`;
     return axiosClient.put(url, data);
   },
+  // Sửa ảnh nhân viên
+  PutIMG:(data,id)=>{
+    const url =`/NhanVien/image/${id}`;
+    return axiosClient.put(url, data);
+  },
+  // Sửa hợp đồng
+  PutHD:(data,id)=>{
+    const url = `/HopDong/${id}`;
+    return axiosClient.put(url,data)
+  }
 };
 export default PutApi;

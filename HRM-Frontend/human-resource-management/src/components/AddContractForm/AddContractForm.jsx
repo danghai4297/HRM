@@ -7,6 +7,8 @@ import ProductApi from "../../api/productApi";
 import moment from "moment/moment.js";
 import "antd/dist/antd.css";
 import { DatePicker } from "antd";
+import PutApi from "../../api/putAAPI";
+import DeleteApi from "../../../src/api/deleteAPI";
 
 const schema = yup.object({
   trangThai:yup.boolean(),
@@ -14,15 +16,13 @@ const schema = yup.object({
   idLoaiHopDong: yup.number().required("Loại hợp đồng không được bỏ trống."),
   idChucDanh: yup.number().required("Chức danh không được bỏ trống."),
   maHopDong: yup.string().required("Lương cơ bản không được bỏ trống."),
-  ngayHetHanHopDong: yup.string().required("Ngày hết hạn không được bỏ trống."),
-  ngayHieuLucHopDong: yup
-    .string()
-    .required("Ngày có hiệu lực không được bỏ trống."),
+
 });
 function AddContractForm(props) {
   let { match, history } = props;
   let { id } = match.params;
-
+  console.log(id);
+  
   const [dataDetailHd, setdataDetailHd] = useState([]);
   const [dataHD, setDataHD] = useState([]);
   const [dataCD, setDataCD] = useState([]);
@@ -44,21 +44,52 @@ function AddContractForm(props) {
     };
     fetchNvList();
   }, []);
-  console.log(dataHD);
 
+  const intitalValue = {
+    maNhanVien: id !== undefined?dataDetailHd.maNhanVien:null,
+    idChucDanh: id !== undefined?dataDetailHd.idChucDanh:null,
+    idLoaiHopDong: id !== undefined?dataDetailHd.idLoaiHopDong:null,
+    hopDongTuNgay:dataDetailHd.hopDongTuNgay,
+    hopDongDenNgay:dataDetailHd.hopDongDenNgay,
+    ghiChu:id!== undefined?dataDetailHd.ghiChu:null,
+    maHopDong:id!== undefined?dataDetailHd.id:null,
+    trangThai: id!== undefined?(dataDetailHd.trangThai==="Kích hoạt"):true,
+  }
+    console.log(intitalValue);
+    
   const {
     register,
     handleSubmit,
     control,
+    reset,
     formState: { errors },
   } = useForm({
+    defaultValues: intitalValue,
     resolver: yupResolver(schema),
   });
+  useEffect(() => {
+    if (dataDetailHd) {
+      reset(intitalValue);
+    }
+  }, [dataDetailHd]);
   const onHandleSubmit = async (data) => {
     console.log(data);
     try {
-      await ProductApi.postHD(data);
+      if(id !== undefined){
+        await PutApi.PutHD(data,id);
+      }else{
+        await ProductApi.postHD(data);
+      }
       history.goBack();
+    } catch (error) {
+      console.log("errors",error);
+      
+    }
+  };
+  const handleDelete = async () => {
+    try {
+      await DeleteApi.deleteHD(id);
+      history.push(`/contract`);
     } catch (error) {}
   };
   return (
@@ -70,16 +101,24 @@ function AddContractForm(props) {
           </h2>
         </div>
         <div className="button">
+        <input
+              type="submit"
+              className={
+                dataDetailHd.length !== 0 ? "btn btn-danger" : "delete-button"
+              }
+              value="Xoá"
+              onClick={handleDelete}
+            />
           <input
             type="submit"
-            className="btn btn-secondary "
+            className="btn btn-secondary ml-3"
             value="Huỷ"
             onClick={history.goBack}
           />
           <input
             type="submit"
             className="btn btn-primary ml-3"
-            value="Lưu"
+            value={dataDetailHd.length !== 0 ? "Sửa" : "Lưu"}
             onClick={handleSubmit(onHandleSubmit)}
           />
         </div>
@@ -287,7 +326,7 @@ function AddContractForm(props) {
                 <input
                         type="text"
                         {...register("trangThai")}
-                        defaultValue={true}
+                        //defaultValue={true}
                         style={{ display: "none" }}                      
                       />
               </div>

@@ -86,7 +86,11 @@ const ProductApi = {
     const url = `/Luong/${id}`;
     return axiosClient.get(url);
   },
-
+  // Add lương
+  PostL: (data) => {
+    const url = "/Luong";
+    return axiosClient.post(url, data);
+  },
   //all khen thưởng nv
   getAllKTNV: () => {
     const url = "/KhenThuongKyLuat/khen-thuong";

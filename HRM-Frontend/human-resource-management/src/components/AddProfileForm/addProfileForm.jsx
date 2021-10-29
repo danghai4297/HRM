@@ -12,6 +12,7 @@ import * as yup from "yup";
 import ProductApi from "../../api/productApi";
 import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
+import PutApi from "../../api/putAAPI";
 const phoneRex = /([\|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})\b/;
 const number = /^\d+$/;
 const schema = yup.object({
@@ -89,6 +90,11 @@ const schema = yup.object({
   // lsbt_thanNhanNuocNgoai: yup
   //   .string()
   //   .required("Lịch sử bản thân không được bỏ trống."),
+  yt_chieuCao: yup.number().required("Ngạch công chức không được bỏ trống."),
+  yt_canNang: yup.number().required("Ngạch công chức không được bỏ trống."),
+  lsbt_maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
+  yt_maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
+  lhkc_maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
 });
 //.required();
 
@@ -110,12 +116,12 @@ function AddProfileForm(props) {
   const [dataReligion, setDataReligion] = useState([]);
   const [dataCRS, setDataCRS] = useState([]);
   const [dataLabor, setDataLabor] = useState([]);
-  const [emCode,setEmCode]= useState("");
-  const intitalValue = {
-      lsbt_maNhanVien: "NV9992",
-       yt_maNhanVien: "NV9992",
-      lhkc_maNhanVien: "NV9992",
-  }
+  const [emCode, setEmCode] = useState("");
+  // const intitalValue = {
+  //     lsbt_maNhanVien: emCode,
+  //      yt_maNhanVien: emCode,
+  //     lhkc_maNhanVien: emCode,
+  // }
   //console.log(date);
   const {
     register,
@@ -124,18 +130,30 @@ function AddProfileForm(props) {
     reset,
     formState: { errors },
   } = useForm({
-    defaultValues: intitalValue,
+    // defaultValues: intitalValue,
     resolver: yupResolver(schema),
   });
- 
-  const [file, setFile] = useState();
+  // const {
+  //   register2,
+  // } =  useForm({
+  //   // defaultValues: intitalValue,
+  //   resolver: yupResolver(schema),
+  // });
+  const [file, setFile] = useState({
+    file: null,
+    path: "/Images/userIcon.png"
+  });
   const handleChange = (e) => {
-    setFile(e.target.files[0]);
-  };
+    setFile({
+    file:  e.target.files[0],
+    path: URL.createObjectURL(e.target.files[0])
+    });
 
-  useEffect(() => {
-      reset(intitalValue);
-  }, []);
+  };
+  
+  // useEffect(() => {
+  //     reset(intitalValue);
+  // }, []);
   //get data form api
   useEffect(() => {
     const fetchNvList = async () => {
@@ -164,25 +182,33 @@ function AddProfileForm(props) {
     };
     fetchNvList();
   }, []);
-
+  function buildFormData(formData, data, parentKey) {
+    if (data && typeof data === 'object' && !(data instanceof Date) && !(data instanceof File)) {
+      Object.keys(data).forEach(key => {
+        buildFormData(formData, data[key], parentKey ? `${parentKey}[${key}]` : key);
+      });
+    } else {
+      const value = data == null ? '' : data;
+  
+      formData.append(parentKey, value);
+    }
+  }
   //get data from form
   const onHandleSubmit = async (data) => {
     console.log(data);
-    
+
     try {
-      //    const formData = new FormData();
-      //    //formData.append("anh",data.anh[0]);
-      //    console.log(formData);
-      //    for ( var key in data ) {
-      //     formData.append(key, data[key]);
-      // }
+      const formData = new FormData();
+      formData.append("anh",file.file);
+      formData.append("maNhanVien",data.id);
       // await ProductApi.postFile(formData);
       await ProductApi.postNv(data);
+      await PutApi.PutIMG(formData,data.id);
       history.goBack();
     } catch (error) {}
   };
 
-  console.log(dataMarrige);
+  console.log(emCode);
 
   //handle image
   //const [file, setFile] = useState("/Images/userIcon.png");
@@ -218,7 +244,7 @@ function AddProfileForm(props) {
           <div className="container-ava">
             <span>
               {" "}
-              <img src={file} className="icon" alt="" />
+              <img src={file.path} className="icon" alt="" />
             </span>
             {/* <Controller
               name="anh"
@@ -236,13 +262,13 @@ function AddProfileForm(props) {
               )}
             /> */}
 
-            {/* <input
-                  type="file"
-                   {...register("anh")}
-                   accept="Images/*"
-                  class="form-control-file"
-                  onChange={handleChange}
-                ></input>  */}
+            <input
+              type="file"
+              // {...register2("anh")}
+              accept="Images/*"
+              class="form-control-file"
+              onChange={handleChange}
+            ></input>
 
             {/* <input
             type="text"
@@ -269,7 +295,7 @@ function AddProfileForm(props) {
                         ? "form-control col-sm-6 "
                         : "form-control col-sm-6 border-danger"
                     }
-                    onChange={(e)=> setEmCode(e.target.value)}
+                    onChange={(e) => setEmCode(e.target.value)}
                   />
                   <span className="message">{errors.id?.message}</span>
                 </div>
@@ -1079,7 +1105,11 @@ function AddProfileForm(props) {
                 </div>
               </div>
             </div>
-            <input type="text" {...register("lhkc_maNhanVien")} defaultValue={emCode}/>
+            <input
+              type="text"
+              {...register("lhkc_maNhanVien")}
+              value={emCode}
+            />
           </div>
           {/* Container thông tin công việc*/}
           <div className="container-div-form">
@@ -1941,7 +1971,11 @@ function AddProfileForm(props) {
                     id="yt_tinhTrangSucKhoe"
                     className="form-control col-sm-6"
                   />
-                  <input type="text" {...register("yt_maNhanVien")} DefaultValue={emCode}/>
+                  <input
+                    type="text"
+                    {...register("yt_maNhanVien")}
+                    value={emCode}
+                  />
                 </div>
               </div>
             </div>
@@ -2021,11 +2055,14 @@ function AddProfileForm(props) {
                         : "form-control border-danger"
                     }
                   />
-                  <input type="text" {...register("lsbt_maNhanVien")} defaultValue={emCode}/>
+                  <input
+                    type="text"
+                    {...register("lsbt_maNhanVien")}
+                    value={emCode}
+                  />
                   <span className="message">
                     {errors.lsbt_thanNhanNuocNgoai?.message}
                   </span>
-            
                 </div>
               </div>
             </div>
