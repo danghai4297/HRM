@@ -78,11 +78,9 @@ function AddNationForm(props) {
     try {
       if (id !== undefined) {
         await PutApi.PutDMDT(data, id);
-        setShowDialog(false);
         success("sửa danh mục thành công");
       } else {
         await ProductApi.PostDMDT(data);
-        setShowDialog(false);
         success("Thêm danh mục thành công");
       }
       history.goBack();

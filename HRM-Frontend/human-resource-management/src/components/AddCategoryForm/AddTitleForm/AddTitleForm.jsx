@@ -12,7 +12,7 @@ AddTitleForm.propTypes = {};
 const schema = yup.object({
   maChucDanh: yup.string().required("Mã chức danh không được bỏ trống."),
   tenChucDanh: yup.string().required("Tên chức danh không được bỏ trống."),
-  phuCap: yup.number().typeError('Phụ cấp không được bỏ trống.'),
+  phuCap: yup.number().typeError("Phụ cấp không được bỏ trống."),
 });
 function AddTitleForm(props) {
   let { match, history } = props;
@@ -21,6 +21,7 @@ function AddTitleForm(props) {
   const [dataDetailDMCD, setdataDetailDMCD] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
   const [showCheckDialog, setShowCheckDialog] = useState(false);
+  const [showCheckAddDialog, setShowCheckAddDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm danh mục chức danh mới"
@@ -30,6 +31,7 @@ function AddTitleForm(props) {
     setShowDialog(false);
     setShowDeleteDialog(false);
     setShowCheckDialog(false);
+    setShowCheckAddDialog(false);
   };
 
   useEffect(() => {
@@ -79,15 +81,15 @@ function AddTitleForm(props) {
     ];
     return JSON.stringify(titleValues) === JSON.stringify(dfTitleValues);
   };
-
+  
   const onHandleSubmit = async (data) => {
     try {
+      setShowDialog(true);
       if (id !== undefined) {
         await PutApi.PutDMCD(data, id);
       } else {
         await ProductApi.PostDMCD(data);
       }
-
       history.goBack();
     } catch (error) {}
   };
@@ -98,7 +100,7 @@ function AddTitleForm(props) {
       history.goBack();
     } catch (error) {}
   };
-
+  // console.log(if(errors.maChucDanh.type !== undefined) errors.maChucDanh.type === "required")
   return (
     <>
       <div className="container-form">
@@ -133,7 +135,7 @@ function AddTitleForm(props) {
                 if (checkInputTitleChange()) {
                   setShowCheckDialog(true);
                 } else {
-                  setShowDialog(true);
+                  handleSubmit(onHandleSubmit)()
                 }
               }}
             />
@@ -155,7 +157,6 @@ function AddTitleForm(props) {
                     type="text"
                     {...register("maChucDanh")}
                     id="maChucDanh"
-                    defaultValue={dataDetailDMCD.maChucDanh}
                     className={
                       !errors.maChucDanh
                         ? "form-control col-sm-6"
@@ -177,7 +178,6 @@ function AddTitleForm(props) {
                     type="text"
                     {...register("tenChucDanh")}
                     id="tenChucDanh"
-                    defaultValue={dataDetailDMCD.tenChucDanh}
                     className={
                       !errors.tenChucDanh
                         ? "form-control col-sm-6"
@@ -226,6 +226,13 @@ function AddTitleForm(props) {
         show={showCheckDialog}
         title="Thông báo"
         description={"Bạn chưa thay đổi gì"}
+        confirm={null}
+        cancel={cancel}
+      />
+      <DialogCheck
+        show={showCheckAddDialog}
+        title="Thông báo"
+        description={"Bạn chưa nhap gì"}
         confirm={null}
         cancel={cancel}
       />

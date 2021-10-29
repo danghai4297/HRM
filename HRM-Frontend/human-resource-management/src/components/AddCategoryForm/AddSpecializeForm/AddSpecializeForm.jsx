@@ -80,6 +80,7 @@ function AddSpecializeForm(props) {
 
   const onHandleSubmit = async (data) => {
     try {
+      console.log(data)
       if (id !== undefined) {
         await PutApi.PutDMCM(data, id);
       } else {
