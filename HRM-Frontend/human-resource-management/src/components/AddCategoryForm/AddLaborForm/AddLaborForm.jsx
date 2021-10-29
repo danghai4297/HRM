@@ -8,12 +8,16 @@ import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
+import jwt_decode from "jwt-decode";
 const schema = yup.object({
   tenLaoDong: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddLaborForm(props) {
   let { match, history } = props;
   let { id } = match.params;
+
+  const token = localStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
 
   const [dataDetailDMTCLD, setdataDetailDMTCLD] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
@@ -70,11 +74,27 @@ function AddLaborForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
+    let tendm = data.tenLaoDong;
+
     try {
       if (id !== undefined) {
         await PutApi.PutDMTCLD(data, id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Sửa danh mục tính
+          chất lao động: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       } else {
         await ProductApi.PostDMTCLD(data);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Thêm danh mục tính
+          chất lao động: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       }
       history.goBack();
     } catch (error) {}
@@ -130,10 +150,7 @@ function AddLaborForm(props) {
             />
           </div>
         </div>
-        <form
-          action=""
-          className="profile-form"
-        >
+        <form action="" className="profile-form">
           <div className="container-div-form-category">
             <h3>Thông tin chung</h3>
             <div className="row">

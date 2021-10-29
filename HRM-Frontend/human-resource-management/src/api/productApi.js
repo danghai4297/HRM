@@ -19,9 +19,9 @@ const ProductApi = {
     const url = "/NhanVien";
     return axiosClient.post(url, data);
   },
-  postFile:(data) =>{
+  postFile: (data) => {
     const url = "/Anh";
-    return axiosClient.post(url,data);
+    return axiosClient.post(url, data);
   },
   //detail nhân viên
   getNvDetail: (maNv) => {
@@ -429,6 +429,18 @@ const ProductApi = {
   getDetailDMHTDT: (id) => {
     const url = `/DanhMucHinhThucDaoTao/${id}`;
     return axiosClient.get(url);
+  },
+
+  //all lịch sử
+  getAllLS: () => {
+    const url = "/LichSu";
+    return axiosClient.get(url);
+  },
+
+  //thêm ls
+  PostLS: (data) => {
+    const url = "/LichSu";
+    return axiosClient.post(url, data);
   },
 };
 

@@ -8,12 +8,19 @@ import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
+import jwt_decode from "jwt-decode";
 const schema = yup.object({
-  tenTrinhDo: yup.string().nullable().required("Tên danh mục không được bỏ trống."),
+  tenTrinhDo: yup
+    .string()
+    .nullable()
+    .required("Tên danh mục không được bỏ trống."),
 });
 function AddLevelForm(props) {
   let { match, history } = props;
   let { id } = match.params;
+
+  const token = localStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
 
   const [dataDetailDMTD, setdataDetailDMTD] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
@@ -70,11 +77,25 @@ function AddLevelForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
+    let tendm = data.tenTrinhDo;
+
     try {
       if (id !== undefined) {
         await PutApi.PutDMTD(data, id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Sửa danh mục trình độ: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       } else {
         await ProductApi.PostDMTD(data);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Thêm danh mục trình độ: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       }
       history.goBack();
     } catch (error) {}

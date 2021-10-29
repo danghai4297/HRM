@@ -5,7 +5,6 @@ export const NVCOLUMNSHD = [
   {
     Header: "Mã Nhân Viên",
     accessor: "maNhanVien",
-    sticky: "left",
     minWidth: 70,
     Filter: SelectColumnFilter,
     disableFilters: true,
@@ -15,7 +14,6 @@ export const NVCOLUMNSHD = [
   {
     Header: "Họ Và Tên",
     accessor: "tenNhanVien",
-    sticky: "left",
     minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: true,
