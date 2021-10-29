@@ -2,7 +2,7 @@ import React from "react";
 import "./SideBarLeft.scss";
 import { SideBarData } from "./SideBarDate";
 import { Link, useRouteMatch } from "react-router-dom";
-import jwt_decode from "jwt-decode";
+import jwt_decode from "jwt-decode";
 // const token = localStorage.getItem("resultObj");
 // const decoded = jwt_decode(token);
 function SideBarLeft() {
@@ -32,10 +32,11 @@ function SideBarLeft() {
           </div>
         </li>
         {SideBarData.map((val, key) => {
-          if(val.role === jwt_decode(localStorage.getItem("resultObj")).role){
+          if (val.role === jwt_decode(localStorage.getItem("resultObj")).role) {
             return <Menu val={val} key={key} />;
           }
         })}
+
         <img className="Side-img" src="/Images/pcr.jpg" alt="" />
       </ul>
     </div>
