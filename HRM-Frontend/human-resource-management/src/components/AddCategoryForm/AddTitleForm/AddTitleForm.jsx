@@ -8,15 +8,19 @@ import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
+import jwt_decode from "jwt-decode";
 AddTitleForm.propTypes = {};
 const schema = yup.object({
   maChucDanh: yup.string().required("Mã chức danh không được bỏ trống."),
   tenChucDanh: yup.string().required("Tên chức danh không được bỏ trống."),
-  phuCap: yup.number().typeError('Phụ cấp không được bỏ trống.'),
+  phuCap: yup.number().typeError("Phụ cấp không được bỏ trống."),
 });
 function AddTitleForm(props) {
   let { match, history } = props;
   let { id } = match.params;
+
+  const token = localStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
 
   const [dataDetailDMCD, setdataDetailDMCD] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
@@ -81,11 +85,25 @@ function AddTitleForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
+    let tendm = data.tenChucDanh;
+
     try {
       if (id !== undefined) {
         await PutApi.PutDMCD(data, id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Sửa danh mục chức danh: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       } else {
         await ProductApi.PostDMCD(data);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Thêm danh mục chức danh: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       }
 
       history.goBack();

@@ -20,8 +20,6 @@ export const Styles = styled.div`
       font-weight: bold;
     }
 
-    
-
     .td {
       padding: 15px;
       background-color: #fff;

@@ -8,6 +8,7 @@ import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
+import jwt_decode from "jwt-decode";
 AddDisciplineForm.propTypes = {};
 const schema = yup.object({
   tenDanhMuc: yup.string().required("Tên danh mục không được bỏ trống."),
@@ -15,6 +16,9 @@ const schema = yup.object({
 function AddDisciplineForm(props) {
   let { match, history } = props;
   let { id } = match.params;
+
+  const token = localStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
 
   const [dataDetailDMKL, setdataDetailDMKL] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
@@ -71,12 +75,25 @@ function AddDisciplineForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
+    let tendm = data.tenDanhMuc;
+
     try {
       if (id !== undefined) {
         await PutApi.PutDMKTvKL(data, id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Sửa danh mục kỉ luật: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       } else {
         await ProductApi.PostDMKTvKL(data);
-        console.log(data);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Thêm danh mục kỉ luật: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       }
       history.goBack();
     } catch (error) {}

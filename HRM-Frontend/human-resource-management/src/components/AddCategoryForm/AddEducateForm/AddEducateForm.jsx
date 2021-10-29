@@ -8,12 +8,16 @@ import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
+import jwt_decode from "jwt-decode";
 const schema = yup.object({
   tenHinhThuc: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddEducateForm(props) {
   let { match, history } = props;
   let { id } = match.params;
+
+  const token = localStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
 
   const [dataDetailDMHTDT, setdataDetailDMHTDT] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
@@ -70,11 +74,27 @@ function AddEducateForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
+    let tendm = data.tenHinhThuc;
+
     try {
       if (id !== undefined) {
         await PutApi.PutDMHTDT(data, id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Sửa danh mục hình
+          thức đào tạo: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       } else {
         await ProductApi.PostDMHTDT(data);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Thêm danh mục hình
+          thức đào tạo: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       }
       history.goBack();
     } catch (error) {}

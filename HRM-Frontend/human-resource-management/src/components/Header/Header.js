@@ -15,7 +15,6 @@ function Header() {
   const token = localStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
   console.log(decoded);
-  console.log(decoded.givenName);
   return (
     <>
       <div className="header-com">

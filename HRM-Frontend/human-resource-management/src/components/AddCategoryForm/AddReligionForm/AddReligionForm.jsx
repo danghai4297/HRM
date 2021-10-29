@@ -8,13 +8,20 @@ import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
+import jwt_decode from "jwt-decode";
 AddReligionForm.propTypes = {};
 const schema = yup.object({
-  tenDanhMuc: yup.string().nullable().required("Tên danh mục không được bỏ trống."),
+  tenDanhMuc: yup
+    .string()
+    .nullable()
+    .required("Tên danh mục không được bỏ trống."),
 });
 function AddReligionForm(props) {
   let { match, history } = props;
   let { id } = match.params;
+
+  const token = localStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
 
   const [dataDetailDMTG, setdataDetailDMTG] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
@@ -71,11 +78,25 @@ function AddReligionForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
+    let tendm = data.tenDanhMuc;
+
     try {
       if (id !== undefined) {
         await PutApi.PutDMTG(data, id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Sửa danh mục Tôn giáo: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       } else {
         await ProductApi.PostDMTG(data);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Thêm danh mục Tôn giáo: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       }
       history.goBack();
     } catch (error) {}

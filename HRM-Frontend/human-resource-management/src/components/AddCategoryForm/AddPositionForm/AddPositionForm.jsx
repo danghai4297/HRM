@@ -8,6 +8,7 @@ import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
+import jwt_decode from "jwt-decode";
 const schema = yup.object({
   maChucVu: yup.string().required("Mã chức vụ được bỏ trống."),
   tenChucVu: yup.string().required("Tên chức vụ không được bỏ trống."),
@@ -16,6 +17,9 @@ const schema = yup.object({
 function AddPositionForm(props) {
   let { match, history } = props;
   let { id } = match.params;
+
+  const token = localStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
 
   const [dataDetailDMCV, setdataDetailDMCV] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
@@ -80,11 +84,24 @@ function AddPositionForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
+    let tendm = data.tenChucVu;
     try {
       if (id !== undefined) {
         await PutApi.PutDMCV(data, id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Sửa danh mục chức vụ: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       } else {
         await ProductApi.PostDMCV(data);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Thêm danh mục chức vụ: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       }
       history.goBack();
     } catch (error) {}

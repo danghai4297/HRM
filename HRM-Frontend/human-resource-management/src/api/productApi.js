@@ -19,7 +19,10 @@ const ProductApi = {
     const url = "/NhanVien";
     return axiosClient.post(url, data);
   },
-
+  postFile: (data) => {
+    const url = "/Anh";
+    return axiosClient.post(url, data);
+  },
   //detail nhân viên
   getNvDetail: (maNv) => {
     const url = `/NhanVien/${maNv}`;
@@ -55,7 +58,11 @@ const ProductApi = {
     const url = `/NguoiThan/${id}`;
     return axiosClient.get(url);
   },
-
+  // Thêm hợp đồng
+  postHD: (data) => {
+    const url = "/HopDong";
+    return axiosClient.post(url, data);
+  },
   //tất cả hợp đồng
   getAllHd: () => {
     const url = "/HopDong";
@@ -418,6 +425,18 @@ const ProductApi = {
   getDetailDMHTDT: (id) => {
     const url = `/DanhMucHinhThucDaoTao/${id}`;
     return axiosClient.get(url);
+  },
+
+  //all lịch sử
+  getAllLS: () => {
+    const url = "/LichSu";
+    return axiosClient.get(url);
+  },
+
+  //thêm ls
+  PostLS: (data) => {
+    const url = "/LichSu";
+    return axiosClient.post(url, data);
   },
 };
 

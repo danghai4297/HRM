@@ -57,14 +57,6 @@ function ScreenCategory() {
           </div>
         </div>
         <div className="second-main">
-          {/* <div className="button-first">
-            <Button className="button-left">
-              <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
-            </Button>
-            <Button className="button-left" variant="light">
-              <FontAwesomeIcon icon={["fas", "download"]} />
-            </Button>
-          </div> */}
           <div className="table-category">
             <Switch>
               <Route exact path="/category/">
