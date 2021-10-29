@@ -97,6 +97,11 @@ namespace HRMSolution.BackendAPI.Controllers
             var products = await _userService.GetUsersPaging(request);
             return Ok(products);
         }
-
+        [HttpGet()]
+        public async Task<IActionResult> GetAll()
+        {
+            var products = await _userService.GetAll();
+            return Ok(products);
+        }
     }
 }

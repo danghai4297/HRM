@@ -198,24 +198,21 @@ namespace HRMSolution.Application.Catalog.NhanViens
             nhanVien.idDanToc = request.idDanToc;
             nhanVien.idTonGiao = request.idTonGiao;
             nhanVien.idNgachCongChuc = request.idNgachCongChuc;
-            yt.yt_nhomMau = request.YTe.yt_nhomMau;
-            yt.yt_chieuCao = request.YTe.yt_chieuCao;
-            yt.yt_canNang = request.YTe.yt_canNang;
-            yt.yt_tinhTrangSucKhoe = request.YTe.yt_tinhTrangSucKhoe;
-            yt.yt_benhTat = request.YTe.yt_benhTat;
-            yt.yt_luuY = request.YTe.yt_luuY;
-            yt.yt_khuyetTat = request.YTe.yt_khuyetTat;
-            yt.yt_maNhanVien = request.YTe.yt_maNhanVien;
-            lsbt.lsbt_biBatDiTu = request.LichSuBanThan.lsbt_biBatDiTu;
-            lsbt.lsbt_thamGiaChinhTri = request.LichSuBanThan.lsbt_thamGiaChinhTri;
-            lsbt.lsbt_thanNhanNuocNgoai = request.LichSuBanThan.lsbt_thanNhanNuocNgoai;
-            lsbt.lsbt_maNhanVien = request.LichSuBanThan.lsbt_maNhanVien;
-            lhkc.lhkc_hoTen = request.LienHeKhanCap.lhkc_hoTen;
-            lhkc.lhkc_quanHe = request.LienHeKhanCap.lhkc_quanHe;
-            lhkc.lhkc_dienThoai = request.LienHeKhanCap.lhkc_dienThoai;
-            lhkc.lhkc_email = request.LienHeKhanCap.lhkc_email;
-            lhkc.lhkc_diaChi = request.LienHeKhanCap.lhkc_diaChi;
-            lhkc.lhkc_maNhanVien = request.LienHeKhanCap.lhkc_maNhanVien;
+            yt.yt_nhomMau = request.yt_nhomMau;
+            yt.yt_chieuCao = request.yt_chieuCao;
+            yt.yt_canNang = request.yt_canNang;
+            yt.yt_tinhTrangSucKhoe = request.yt_tinhTrangSucKhoe;
+            yt.yt_benhTat = request.yt_benhTat;
+            yt.yt_luuY = request.yt_luuY;
+            yt.yt_khuyetTat = request.yt_khuyetTat;
+            lsbt.lsbt_biBatDiTu = request.lsbt_biBatDiTu;
+            lsbt.lsbt_thamGiaChinhTri = request.lsbt_thamGiaChinhTri;
+            lsbt.lsbt_thanNhanNuocNgoai = request.lsbt_thanNhanNuocNgoai;
+            lhkc.lhkc_hoTen = request.lhkc_hoTen;
+            lhkc.lhkc_quanHe = request.lhkc_quanHe;
+            lhkc.lhkc_dienThoai = request.lhkc_dienThoai;
+            lhkc.lhkc_email = request.lhkc_email;
+            lhkc.lhkc_diaChi = request.lhkc_diaChi;
 
             return await _context.SaveChangesAsync();
         }
@@ -583,9 +580,12 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 tamTru = x.nv.tamTru,
                 atm = x.nv.atm,
                 nganHang = x.nv.nganHang,
+                idDanToc = x.dt.id,
                 danToc = x.dt.tenDanhMuc,
+                idTonGiao = x.tg.id,
                 tonGiao = x.tg.tenDanhMuc,
                 maSoThue = x.nv.maSoThue,
+                idHonNhan = x.hn.id,
                 honNhan = x.hn.tenDanhMuc,
                 cccd = x.nv.cccd,
                 noiCapCCCD = x.nv.noiCapCCCD,
@@ -601,6 +601,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 email = x.nv.email,
                 facebook = x.nv.facebook,
                 skype = x.nv.skype,
+                idLhkt = x.lhkc.lhkc_id,
                 lhkcHoTen = x.lhkc.lhkc_hoTen,
                 lhkcQuanHe = x.lhkc.lhkc_quanHe,
                 lhkcDienThoai = x.lhkc.lhkc_dienThoai,
@@ -610,6 +611,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 coQuanTuyenDung = x.nv.coQuanTuyenDung,
                 chucVuHienTai = x.nv.chucVuHienTai,
                 trangThaiLaoDong = x.nv.trangThaiLaoDong == true ? "Đang làm việc" : "Đã nghỉ việc",
+                idTinhChatLaoDong = x.tc.id,
                 tinhChatLaoDong = x.tc.tenTinhChat,
                 lyDoNghiViec = x.nv.lyDoNghiViec,
                 ngayNghiViec = x.nv.ngayNghiViec,
@@ -620,6 +622,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 ngayChinhThuc = x.nv.ngayChinhThuc,
                 bhxh = x.nv.bhxh,
                 bhyt = x.nv.bhyt,
+                idNgachCongChuc = x.ncc.id,
                 ngachCongChuc = x.ncc.tenNgach,
                 ngachCongChucNoiDung = x.nv.ngachCongChucNoiDung,
                 vaoDang = x.nv.vaoDang == true ? "Có" : "Không",
@@ -634,6 +637,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 danhHieuCaoNhat = x.nv.danhHieuCaoNhat,
                 thuongBinh = x.nv.thuongBinh,
                 conChinhSach = x.nv.conChinhSach,
+                idYte = x.yt.yt_id,
                 ytNhomMau = x.yt.yt_nhomMau,
                 ytChieuCao = x.yt.yt_chieuCao,
                 ytCanNang = x.yt.yt_canNang,
@@ -641,6 +645,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 ytBenhTat = x.yt.yt_benhTat,
                 ytLuuY = x.yt.yt_luuY,
                 ytKhuyetTat = x.yt.yt_khuyetTat == true ? "Có" : "Không",
+                idLichSuBanThan = x.lsbt.lsbt_id,
                 biBatDitu = x.lsbt.lsbt_biBatDiTu,
                 thamGiaChinhTri = x.lsbt.lsbt_thamGiaChinhTri,
                 thanNhanNuocNgoai = x.lsbt.lsbt_thanNhanNuocNgoai,

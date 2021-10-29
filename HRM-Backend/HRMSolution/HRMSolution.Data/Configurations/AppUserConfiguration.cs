@@ -14,6 +14,7 @@ namespace HRMSolution.Data.Configurations
             builder.ToTable("AppUsers");
             builder.Property(x => x.hoTen).IsRequired().HasMaxLength(200);
             builder.Property(x => x.ngaySinh).IsRequired();
+            builder.Property(x => x.maNhanVien).IsRequired().HasMaxLength(200);
         }
     }
 }

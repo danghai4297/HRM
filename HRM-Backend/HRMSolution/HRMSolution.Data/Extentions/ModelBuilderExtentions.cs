@@ -47,6 +47,7 @@ namespace HRMSolution.Data.Extentions
                 PhoneNumber = "01231243",
                 SecurityStamp = string.Empty,
                 hoTen = "Mai Trung Hiếu",
+                maNhanVien = "NV0002",
                 ngaySinh = new DateTime(1998, 09, 08)
             });
             modelbulder.Entity<AppUser>().HasData(new AppUser
@@ -61,6 +62,7 @@ namespace HRMSolution.Data.Extentions
                 PhoneNumber = "01231243",
                 SecurityStamp = string.Empty,
                 hoTen = "Đào Ngọc Hưởng",
+                maNhanVien = "NV0001",
                 ngaySinh = new DateTime(1998, 09, 08)
             });
 

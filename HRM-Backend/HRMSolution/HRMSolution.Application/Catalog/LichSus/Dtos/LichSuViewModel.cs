@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace HRMSolution.Data.Entities
+namespace HRMSolution.Application.Catalog.LichSus.Dtos
 {
-    public class LichSu
+    public class LichSuViewModel
     {
         public int id { get; set; }
         public string tenTaiKhoan { get; set; }

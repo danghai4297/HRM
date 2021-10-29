@@ -10,6 +10,9 @@ namespace HRMSolution.Application.System.Users.Dtos
         [Display(Name = "Họ Tên")]
         public string FullName { get; set; }
 
+        [Display(Name = "Mã nhân viên")]
+        public string maNhanVien { get; set; }
+
         [Display(Name = "Ngày sinh")]
         [DataType(DataType.Date)]
         public DateTime Dob { get; set; }

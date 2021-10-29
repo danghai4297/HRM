@@ -67,8 +67,21 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
         public int idDanToc { get; set; }
         public int idTonGiao { get; set; }
         public int idNgachCongChuc { get; set; }
-        public YTeCreateRequest YTe { get; set; }
-        public LienHeKhanCapCreateRequest LienHeKhanCap { get; set; }
-        public LichSuBanThanCreateRequest LichSuBanThan { get; set; }
+        public string yt_nhomMau { get; set; }
+        public float? yt_chieuCao { get; set; }
+        public float? yt_canNang { get; set; }
+        public string yt_tinhTrangSucKhoe { get; set; }
+        public string yt_benhTat { get; set; }
+        public string yt_luuY { get; set; }
+        public bool? yt_khuyetTat { get; set; }
+        public string lsbt_biBatDiTu { get; set; }
+        public string lsbt_thamGiaChinhTri { get; set; }
+        public string lsbt_thanNhanNuocNgoai { get; set; }
+        public string lhkc_hoTen { get; set; }
+        public string lhkc_quanHe { get; set; }
+        public string lhkc_dienThoai { get; set; }
+        public string lhkc_email { get; set; }
+        public string lhkc_diaChi { get; set; }
+
     }
 }
