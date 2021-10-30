@@ -12,15 +12,16 @@ import { DatePicker } from "antd";
 import moment from "moment/moment.js";
 import DeleteApi from "../../../src/api/deleteAPI";
 import PutApi from "../../../src/api/putAAPI";
+
 const schema = yup.object({
   idNhomLuong: yup.number().required("Nhóm lương không được bỏ trống."),
   heSoLuong: yup.number().required("Hệ số lương không được bỏ trống."),
   bacLuong: yup.string().required("Bậc lương không được bỏ trống."),
-  ngayHetHan: yup.date().required("Ngày hết hạn không được bỏ trống."),
-  ngayCoHieuLuc: yup.date().required("Ngày có hiệu lực không được bỏ trống."),
+  // ngayHetHan: yup.date().required("Ngày hết hạn không được bỏ trống."),
+  // ngayCoHieuLuc: yup.date().required("Ngày có hiệu lực không được bỏ trống."),
   luongCoBan: yup.number().required("Lương cơ bản không được bỏ trống."),
-  // phuCapTrachNhiem:yup.number().required("Phụ cấp chức vụ không được bỏ trống."),
-  // phuCapKhac: yup.number().required("Phụ cấp khác không được bỏ trống."),
+  phuCapTrachNhiem:yup.number().required("Phụ cấp chức vụ không được bỏ trống."),
+  phuCapKhac: yup.number().required("Phụ cấp khác không được bỏ trống."),
   tongLuong: yup.number().required("Phụ cấp khác không được bỏ trống."),
   thoiHanLenLuong: yup
     .string()
@@ -36,6 +37,7 @@ function AddSalaryForm(props) {
   // });
   let { match, history } = props;
   let { id } = match.params;
+  
   // state contain data
   const [dataLDetail, setDataLDetail] = useState([]);
   const [dataNL, setDataNL] = useState([]);
@@ -45,8 +47,11 @@ function AddSalaryForm(props) {
       try {
         const responseNL = await ProductApi.getAllDMNL();
         setDataNL(responseNL);
-        const response = await ProductApi.getLDetail(id);
-        setDataLDetail(response);
+        if (id !== undefined) {
+          const response = await ProductApi.getLDetail(id);
+          setDataLDetail(response);
+        }
+     
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
@@ -55,7 +60,7 @@ function AddSalaryForm(props) {
   }, []);
 
   const intitalValue = {
-    idNhomLuong: id !== undefined ? dataLDetail.idNhomLuong : null,
+    idNhomLuong: id!== undefined?dataLDetail.idNhomLuong:null,
     heSoLuong: id !== undefined ? dataLDetail.heSoLuong : null,
     bacLuong: id !== undefined ? dataLDetail.bacLuong : null,
     luongCoBan: id !== undefined ? dataLDetail.luongCoBan : null,
@@ -66,9 +71,14 @@ function AddSalaryForm(props) {
     ngayHieuLuc: dataLDetail.ngayHieuLuc,
     ngayKetThuc: dataLDetail.ngayHieuLuc,
     ghiChu: id !== undefined ? dataLDetail.ghiChu : null,
-    trangThai: id !== undefined ? dataLDetail.trangThai : true,
+    trangThai: id !== undefined ? (dataLDetail.trangThai==="Kích hoạt"?true:false) : true,
     maHopDong: id !== undefined ? dataLDetail.maHopDong : null,
+    
   };
+  console.log((dataLDetail.idNhomLuong));
+  // console.log((dataNL[0].id));
+  
+  
   const {
     register,
     handleSubmit,
@@ -78,6 +88,7 @@ function AddSalaryForm(props) {
     reset,
     formState: { errors },
   } = useForm({
+    defaultValues: intitalValue,
     resolver: yupResolver(schema),
   });
   useEffect(() => {
@@ -85,8 +96,8 @@ function AddSalaryForm(props) {
       reset(intitalValue);
     }
   }, [dataLDetail]);
+
   const [rs, setRs] = useState();
-  console.log(rs);
   // const handleOnChange = (e) => {
   //   setSalary({
   //     ...salary,
@@ -106,10 +117,24 @@ function AddSalaryForm(props) {
   };
   const onHandleSubmit = async (data) => {
     console.log(data);
-    await ProductApi.PostL(data);
-    history.goBack();
+    try {
+      if(id !== undefined){
+        await PutApi.PutL(data,id);
+      }else{
+        await ProductApi.PostL(data);
+      }
+      history.goBack();
+    }catch(error){
+      console.log("errors: ",error);
+      
+    }
   };
-
+  const handleDelete = async () => {
+    try {
+      await DeleteApi.deleteL(id);
+      history.push(`/salary`);
+    } catch (error) {}
+  };
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
@@ -124,9 +149,7 @@ function AddSalaryForm(props) {
             className={
               dataLDetail.length !== 0 ? "btn btn-danger" : "delete-button"
             }
-            // onClick={() => {
-            //   setShowDeleteDialog(true);
-            // }}
+            onClick={handleDelete}
             value="Xoá"
           />
           <input
@@ -217,19 +240,23 @@ function AddSalaryForm(props) {
                       : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
-                  <option value={dataLDetail.idNhomLuong}>{dataLDetail.nhomLuong}</option>
-                  {/* {dataNL.map((item, key) => (
+                  {/* <option value={dataLDetail.idNhomLuong}>
+                    {dataLDetail.nhomLuong}
+                  </option> */}
+                  <option value=""></option>
+                  {dataNL.map((item, key) => (
                     <option key={key} value={item.id}>
                       {item.tenNhomLuong}
                     </option>
-                  ))} */}
-                  {
-                    dataNL.filter((item) => item.id !== dataLDetail.idNhomLuong)
+                  ))}
+                  {/* {
+                    dataNL
+                    .filter((item) => item.id !== dataLDetail.idNhomLuong)
                     .map((item, key) => (
                       <option key={key} value={item.id}>
                         {item.tenNhomLuong}{" "}
                       </option>
-                    ))}
+                    ))} */}
                 </select>
                 <span className="message">{errors.idNhomLuong?.message}</span>
               </div>
@@ -468,6 +495,7 @@ function AddSalaryForm(props) {
               <div className="form-group form-inline">
                 <label
                   className="col-sm-4 justify-content-start"
+                  style={id!== undefined? null:{display: "none"}} 
                   htmlFor="trangThai"
                 >
                   Trạng Thái
@@ -476,6 +504,7 @@ function AddSalaryForm(props) {
                   type="text"
                   {...register("trangThai")}
                   id="trangThai"
+                  style={id!== undefined? null:{display: "none"}} 
                   className={
                     !errors.trangThai
                       ? "form-control col-sm-6 custom-select"

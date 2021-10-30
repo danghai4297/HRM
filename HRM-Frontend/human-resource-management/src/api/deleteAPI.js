@@ -120,7 +120,17 @@ const DeleteApi = {
   deleteHD:(id)=>{
     const url = `/HopDong/${id}`;
     return axiosClient.delete(url);
-  }
+  },
+  //delete lương
+  deleteL:(id)=>{
+    const url = `/Luong/${id}`;
+    return axiosClient.delete(url);
+  },
+  //delete điều chuyển
+  deleteDC:(id)=>{
+    const url = `/DieuChuyen/${id}`;
+    return axiosClient.delete(url);
+  },
 };
 
 export default DeleteApi;

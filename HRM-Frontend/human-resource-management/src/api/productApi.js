@@ -119,7 +119,11 @@ const ProductApi = {
     const url = "/DieuChuyen";
     return axiosClient.get(url);
   },
-
+  //add điều chuyển
+  PostDC: (data) => {
+    const url = "/DieuChuyen";
+    return axiosClient.post(url, data);
+  },
   //detail DC
   getDCDetail: (id) => {
     const url = `/DieuChuyen/dieu-chuyen/${id}`;
