@@ -34,6 +34,7 @@ function SideBarLeft() {
         ).map((val, key) => {
           return <Menu val={val} key={key} />;
         })}
+
         <img className="Side-img" src="/Images/pcr.jpg" alt="" />
       </ul>
     </div>

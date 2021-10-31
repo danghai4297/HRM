@@ -26,9 +26,8 @@ function AddLevelForm(props) {
   let { match, history } = props;
 
   let location = useLocation();
-  // console.log(location);
   let query = new URLSearchParams(location.search);
-  //console.log(query.get("maNhanVien"));
+  // console.log(query.get("maNhanVien"));
   let eCode = query.get("maNhanVien");
   let { id } = match.params;
 

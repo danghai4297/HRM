@@ -8,6 +8,7 @@ import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
+import jwt_decode from "jwt-decode";
 AddTitleForm.propTypes = {};
 const schema = yup.object({
   maChucDanh: yup.string().required("Mã chức danh không được bỏ trống."),
@@ -17,6 +18,9 @@ const schema = yup.object({
 function AddTitleForm(props) {
   let { match, history } = props;
   let { id } = match.params;
+
+  const token = localStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
 
   const [dataDetailDMCD, setdataDetailDMCD] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
@@ -83,24 +87,39 @@ function AddTitleForm(props) {
   };
   
   const onHandleSubmit = async (data) => {
+    let tendm = data.tenChucDanh;
+
     try {
       setShowDialog(true);
       if (id !== undefined) {
         await PutApi.PutDMCD(data, id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Sửa danh mục chức danh: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       } else {
         await ProductApi.PostDMCD(data);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Thêm danh mục chức danh: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       }
       history.goBack();
     } catch (error) {}
   };
-
+  console.log(errors)
+  console.log(errors === null)
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMCD(id);
       history.goBack();
     } catch (error) {}
   };
-  // console.log(if(errors.maChucDanh.type !== undefined) errors.maChucDanh.type === "required")
+   console.log(Object.values(errors))
   return (
     <>
       <div className="container-form">
@@ -135,7 +154,7 @@ function AddTitleForm(props) {
                 if (checkInputTitleChange()) {
                   setShowCheckDialog(true);
                 } else {
-                  handleSubmit(onHandleSubmit)()
+                  setShowDialog(true);
                 }
               }}
             />
@@ -218,21 +237,14 @@ function AddTitleForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={description}
-        confirm={handleSubmit(onHandleSubmit)}
+        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
+        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
         cancel={cancel}
       />
-      <DialogCheck
+      <Dialog
         show={showCheckDialog}
         title="Thông báo"
         description={"Bạn chưa thay đổi gì"}
-        confirm={null}
-        cancel={cancel}
-      />
-      <DialogCheck
-        show={showCheckAddDialog}
-        title="Thông báo"
-        description={"Bạn chưa nhap gì"}
         confirm={null}
         cancel={cancel}
       />

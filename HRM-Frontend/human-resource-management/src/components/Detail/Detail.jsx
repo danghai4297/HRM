@@ -938,7 +938,7 @@ function Detail(props) {
                   <div className="title">
                     <div className="title-cultural"></div>
                     <div className="icon-cultural">
-                      <Link to={`/transfer/add?maNhanVien=${dataDetailNv.id}`}>
+                      <Link to={`/transfer/add?maNhanVien=${dataDetailNv.id}&hoVaTen=${dataDetailNv.hoTen}`}>
                         <button className="btn-cultural">
                           <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
                         </button>
@@ -977,7 +977,7 @@ function Detail(props) {
                   <div className="title">
                     <div className="title-cultural"></div>
                     <div className="icon-cultural">
-                      <Link to={`/reward/add?maNhanVien=${dataDetailNv.id}`}>
+                      <Link to={`/reward/add?maNhanVien=${dataDetailNv.id}&hoVaTen=${dataDetailNv.hoTen}`}>
                         <button className="btn-cultural">
                           <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
                         </button>
@@ -1020,7 +1020,7 @@ function Detail(props) {
                     <div className="title-cultural"></div>
                     <div className="icon-cultural">
                       <Link
-                        to={`/discipline/add?maNhanVien=${dataDetailNv.id}`}
+                        to={`/discipline/add?maNhanVien=${dataDetailNv.id}&hoVaTen=${dataDetailNv.hoTen}`}
                       >
                         <button className="btn-cultural">
                           <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm

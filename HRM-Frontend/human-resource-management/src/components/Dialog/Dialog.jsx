@@ -17,9 +17,13 @@ export default function Dialog({ show, title, description, confirm, cancel }) {
           <button onClick={cancel} className="dialog__cancel">
             Trở lại
           </button>
-          <button onClick={confirm} className="dialog__confirm">
-            Đồng ý
-          </button>
+          {confirm !== null && (
+            <>
+              <button onClick={confirm} className="dialog__confirm">
+                Đồng ý
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>

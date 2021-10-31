@@ -3,6 +3,7 @@ import { Controller,useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { DatePicker } from "antd";
+import { useLocation } from "react-router";
 const schema = yup.object({
   hoVaTen: yup.string().required("Họ và tên không được bỏ trống."),
   maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
@@ -12,7 +13,10 @@ const schema = yup.object({
 });
 function AddRewardForm(props) {
   const { history } = props;
-
+  let location = useLocation();
+  let query = new URLSearchParams(location.search);
+  console.log(query.get("maNhanVien"));
+  console.log(query.get("hoVaTen"));
   const {
     register,
     handleSubmit,

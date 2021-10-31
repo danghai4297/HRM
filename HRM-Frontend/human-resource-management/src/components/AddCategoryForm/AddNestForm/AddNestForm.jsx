@@ -8,15 +8,19 @@ import Dialog from "../../Dialog/Dialog";
 import DeleteApi from "../../../api/deleteAPI";
 import PutApi from "../../../api/putAAPI";
 import DialogCheck from "../../Dialog/DialogCheck";
+import jwt_decode from "jwt-decode";
 const schema = yup.object({
   maTo: yup.string().required("Mã tổ không được bỏ trống."),
-  idPhongBan: yup.number().typeError('Thuộc phòng ban không được bỏ trống.'),
+  idPhongBan: yup.number().typeError("Thuộc phòng ban không được bỏ trống."),
   tenTo: yup.string().required("Tổ không được bỏ trống."),
 });
 function AddNestForm(props) {
   //dữ liệu phòng ban
   let { match, history } = props;
   let { id } = match.params;
+
+  const token = localStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
 
   const [dataDetailDMT, setdataDetailDMT] = useState([]);
   const [dataDmpb, setDataDmpb] = useState([]);
@@ -74,16 +78,34 @@ function AddNestForm(props) {
 
   const checkInputNestChange = () => {
     const nestValues = getValues(["maTo", "tenTo", "idPhongBan"]);
-    const dfNestValues = [intitalValue.maTo, intitalValue.tenTo, intitalValue.idPhongBan];
+    const dfNestValues = [
+      intitalValue.maTo,
+      intitalValue.tenTo,
+      intitalValue.idPhongBan,
+    ];
     return JSON.stringify(nestValues) === JSON.stringify(dfNestValues);
   };
 
   const onHandleSubmit = async (data) => {
+    let tendm = data.tenTo;
+
     try {
       if (id !== undefined) {
         await PutApi.PutDMT(data, id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Sửa danh mục tổ: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       } else {
         await ProductApi.PostDMT(data);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Sửa danh mục tổ: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       }
       history.goBack();
     } catch (error) {}
@@ -136,10 +158,7 @@ function AddNestForm(props) {
             />
           </div>
         </div>
-        <form
-          action=""
-          className="profile-form"
-        >
+        <form action="" className="profile-form">
           <div className="container-div-form-category">
             <h3>Thông tin chung</h3>
             <div className="row">
@@ -226,11 +245,11 @@ function AddNestForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={description}
-        confirm={handleSubmit(onHandleSubmit)}
+        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
+        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
         cancel={cancel}
       />
-      <DialogCheck
+      <Dialog
         show={showCheckDialog}
         title="Thông báo"
         description={"Bạn chưa thay đổi gì"}

@@ -8,6 +8,7 @@ import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
+import jwt_decode from "jwt-decode";
 const schema = yup.object({
   maPhongBan: yup.string().required("Mã phòng ban không được bỏ trống."),
   tenPhongBan: yup.string().required("Tên danh mục không được bỏ trống."),
@@ -15,6 +16,9 @@ const schema = yup.object({
 function AddDepartmentForm(props) {
   let { match, history } = props;
   let { id } = match.params;
+
+  const token = localStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
 
   const [dataDetailDMPB, setdataDetailDMPB] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
@@ -79,11 +83,24 @@ function AddDepartmentForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
+    let tendm = data.tenPhongBan;
     try {
       if (id !== undefined) {
         await PutApi.PutDMPB(data, id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `sửa danh mục phòng ban: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       } else {
         await ProductApi.PostDMPB(data);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `thêm danh mục phòng ban: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       }
       history.goBack();
     } catch (error) {}
@@ -189,11 +206,11 @@ function AddDepartmentForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={description}
-        confirm={handleSubmit(onHandleSubmit)}
+        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
+        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
         cancel={cancel}
       />
-      <DialogCheck
+      <Dialog
         show={showCheckDialog}
         title="Thông báo"
         description={"Bạn chưa thay đổi gì"}

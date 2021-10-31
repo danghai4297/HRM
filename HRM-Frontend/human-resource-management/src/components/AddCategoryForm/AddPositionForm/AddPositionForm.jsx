@@ -8,14 +8,18 @@ import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
+import jwt_decode from "jwt-decode";
 const schema = yup.object({
   maChucVu: yup.string().required("Mã chức vụ được bỏ trống."),
   tenChucVu: yup.string().required("Tên chức vụ không được bỏ trống."),
-  phuCap: yup.number().required("Phụ cấp không được bỏ trống."),
+  phuCap: yup.number().typeError("Phụ cấp không được bỏ trống."),
 });
 function AddPositionForm(props) {
   let { match, history } = props;
   let { id } = match.params;
+
+  const token = localStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
 
   const [dataDetailDMCV, setdataDetailDMCV] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
@@ -80,11 +84,24 @@ function AddPositionForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
+    let tendm = data.tenChucVu;
     try {
       if (id !== undefined) {
         await PutApi.PutDMCV(data, id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Sửa danh mục chức vụ: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       } else {
         await ProductApi.PostDMCV(data);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Thêm danh mục chức vụ: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       }
       history.goBack();
     } catch (error) {}
@@ -213,11 +230,11 @@ function AddPositionForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={description}
-        confirm={handleSubmit(onHandleSubmit)}
+        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
+        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
         cancel={cancel}
       />
-      <DialogCheck
+      <Dialog
         show={showCheckDialog}
         title="Thông báo"
         description={"Bạn chưa thay đổi gì"}

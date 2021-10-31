@@ -94,7 +94,6 @@ th img {
 .select {
   display: flex;
   align-items: center;
-  
 }
 
 .select-item {
@@ -234,3 +233,11 @@ input:focus {
     }
   }
 }
+
+// [data-sticky-last-left-td] {
+//   border-right: 1px solid rgb(216, 216, 216);
+// }
+
+// [data-sticky-first-right-td] {
+//   border-right: 1px solid rgb(216, 216, 216);
+// }

@@ -8,6 +8,7 @@ import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
+import jwt_decode from "jwt-decode";
 const schema = yup.object({
   tenChuyenMon: yup.string().required("Tên danh mục không được bỏ trống."),
   maChuyenMon: yup.string().required("Mã danh mục không được bỏ trống."),
@@ -16,6 +17,9 @@ function AddSpecializeForm(props) {
   let { match, history } = props;
   let { id } = match.params;
 
+  const token = localStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
+
   const [dataDetailDMCM, setdataDetailDMCM] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
   const [showCheckDialog, setShowCheckDialog] = useState(false);
@@ -23,6 +27,7 @@ function AddSpecializeForm(props) {
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm danh mục chuyên môn mới"
   );
+
 
   const cancel = () => {
     setShowDialog(false);
@@ -37,6 +42,7 @@ function AddSpecializeForm(props) {
           setDescription("Bạn chắc chắn muốn sửa danh mục chuyên môn");
           const response = await ProductApi.getDetailDMCM(id);
           setdataDetailDMCM(response);
+
         }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -79,12 +85,27 @@ function AddSpecializeForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
+    let tendmbd = dataDetailDMCM.tenChuyenMon;
+    let tendm = data.tenChuyenMon;
+
     try {
       console.log(data)
       if (id !== undefined) {
         await PutApi.PutDMCM(data, id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Sửa danh mục chuyên môn:${tendmbd} thành ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       } else {
         await ProductApi.PostDMCM(data);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Thêm danh mục chuyên môn: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       }
       history.goBack();
     } catch (error) {}
@@ -192,11 +213,11 @@ function AddSpecializeForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={description}
-        confirm={handleSubmit(onHandleSubmit)}
+        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
+        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
         cancel={cancel}
       />
-      <DialogCheck
+      <Dialog
         show={showCheckDialog}
         title="Thông báo"
         description={"Bạn chưa thay đổi gì"}

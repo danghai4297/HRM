@@ -10,15 +10,22 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import { useToast } from "../../Toast/Toast";
 import DialogCheck from "../../Dialog/DialogCheck";
-// import { Alert } from "react-alert";
+import jwt_decode from "jwt-decode";
+
 AddNationForm.propTypes = {};
 const schema = yup.object({
-  tenDanhMuc: yup.string().nullable().required("Tên danh mục không được bỏ trống."),
+  tenDanhMuc: yup
+    .string()
+    .nullable()
+    .required("Tên danh mục không được bỏ trống."),
 });
 function AddNationForm(props) {
   const { error, warn, info, success } = useToast();
   let { match, history } = props;
   let { id } = match.params;
+
+  const token = localStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
 
   const [dataDetailDMDT, setdataDetailDMDT] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
@@ -78,9 +85,23 @@ function AddNationForm(props) {
     try {
       if (id !== undefined) {
         await PutApi.PutDMDT(data, id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `sửa danh mục dân tộc: ${data.tenDanhMuc}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        setShowDialog(false);
         success("sửa danh mục thành công");
       } else {
         await ProductApi.PostDMDT(data);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `thêm danh mục dân tộc: ${data.tenDanhMuc}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        setShowDialog(false);
         success("Thêm danh mục thành công");
       }
       history.goBack();
@@ -93,7 +114,7 @@ function AddNationForm(props) {
       history.goBack();
     } catch (error) {}
   };
-
+console.log(Object.values(errors).length === 0);
   return (
     <>
       <div className="container-form">
@@ -166,11 +187,11 @@ function AddNationForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={description}
-        confirm={handleSubmit(onHandleSubmit)}
+        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
+        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
         cancel={cancel}
       />
-      <DialogCheck
+      <Dialog
         show={showCheckDialog}
         title="Thông báo"
         description={"Bạn chưa thay đổi gì"}

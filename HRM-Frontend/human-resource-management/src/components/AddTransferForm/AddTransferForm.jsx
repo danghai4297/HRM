@@ -4,12 +4,17 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddTransferForm.scss";
 import ProductApi from "../../api/productApi";
+import { useLocation } from "react-router";
 
 const schema = yup.object({
   hoVaTen: yup.string().required("Họ và tên không được bỏ trống."),
   maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
 });
 function AddTransferForm(props) {
+  let location = useLocation();
+  let query = new URLSearchParams(location.search);
+  console.log(query.get("maNhanVien"));
+  console.log(query.get("hoVaTen"));
   const {
     register,
     handleSubmit,
@@ -49,7 +54,7 @@ function AddTransferForm(props) {
           <h2 className="">Thêm thủ tục thuyên chuyển</h2>
         </div>
         <div className="button">
-          <input type="submit" className="btn btn-secondary " value="Huỷ" />
+          <input type="submit" className="btn btn-secondary " value="Huỷ" onClick={history.goBack}/>
           <input
             type="submit"
             className="btn btn-primary ml-3"

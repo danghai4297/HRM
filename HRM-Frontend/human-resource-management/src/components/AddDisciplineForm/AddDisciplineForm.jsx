@@ -2,6 +2,7 @@ import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { useLocation } from "react-router";
 //import { DatePicker } from "antd";
 
 const regexDate = /^[0-9]{2}[\/]{1}[0-9]{2}[\/]{1}[0-9]{4}$/g;
@@ -15,7 +16,12 @@ const schema = yup.object({
 });
 
 function AddDisciplineForm(props) {
-  const { objectData } = props;
+  // const { objectData } = props;
+  const { history } = props;
+  let location = useLocation();
+  let query = new URLSearchParams(location.search);
+  console.log(query.get("maNhanVien"));
+  console.log(query.get("hoVaTen"));
   const {
     register,
     handleSubmit,
@@ -37,7 +43,7 @@ function AddDisciplineForm(props) {
           <h2 className="">Thêm thủ tục kỷ luật</h2>
         </div>
         <div className="button">
-          <input type="submit" className="btn btn-secondary " value="Huỷ" />
+          <input type="submit" className="btn btn-secondary " value="Huỷ" onClick={history.goBack}/>
           <input
             type="submit"
             className="btn btn-primary ml-3"
