@@ -115,7 +115,22 @@ const DeleteApi = {
   deleteNT:(id) =>{
     const url = `/NguoiThan/${id}`;
     return axiosClient.delete(url);
-  }
+  },
+  //delete hợp đồng
+  deleteHD:(id)=>{
+    const url = `/HopDong/${id}`;
+    return axiosClient.delete(url);
+  },
+  //delete lương
+  deleteL:(id)=>{
+    const url = `/Luong/${id}`;
+    return axiosClient.delete(url);
+  },
+  //delete điều chuyển
+  deleteDC:(id)=>{
+    const url = `/DieuChuyen/${id}`;
+    return axiosClient.delete(url);
+  },
 };
 
 export default DeleteApi;

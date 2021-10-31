@@ -86,7 +86,11 @@ const ProductApi = {
     const url = `/Luong/${id}`;
     return axiosClient.get(url);
   },
-
+  // Add lương
+  PostL: (data) => {
+    const url = "/Luong";
+    return axiosClient.post(url, data);
+  },
   //all khen thưởng nv
   getAllKTNV: () => {
     const url = "/KhenThuongKyLuat/khen-thuong";
@@ -115,7 +119,11 @@ const ProductApi = {
     const url = "/DieuChuyen";
     return axiosClient.get(url);
   },
-
+  //add điều chuyển
+  PostDC: (data) => {
+    const url = "/DieuChuyen";
+    return axiosClient.post(url, data);
+  },
   //detail DC
   getDCDetail: (id) => {
     const url = `/DieuChuyen/dieu-chuyen/${id}`;

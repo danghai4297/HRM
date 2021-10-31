@@ -49,6 +49,7 @@ function AddLevelForm(props) {
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
+    setShowCheckDialog(false);
   };
   //console.log(eCode);
 
@@ -79,16 +80,16 @@ function AddLevelForm(props) {
   }, []);
   //ussing react-hooks-form
   const intitalValue = {
-    maNhanVien: id !== undefined?`${dataDetailTDVH.maNhanVien}`:eCode,
-    idChuyenMon: id !== undefined?`${dataDetailTDVH.idChuyenMon}`:null,
+    maNhanVien: id !== undefined ? `${dataDetailTDVH.maNhanVien}` : eCode,
+    idChuyenMon: id !== undefined ? `${dataDetailTDVH.idChuyenMon}` : null,
     tuThoiGian: dataDetailTDVH.tuThoiGian,
     denThoiGian: dataDetailTDVH.denThoiGian,
-    idHinhThucDaoTao: id !== undefined?`${dataDetailTDVH.idHinhThucDaoTao}`:null,
-    idTrinhDo: id !== undefined?`${dataDetailTDVH.idTrinhDo}`:null,
-    tenTruong: id !== undefined?`${dataDetailTDVH.tenTruong}`:null,
+    idHinhThucDaoTao:
+      id !== undefined ? `${dataDetailTDVH.idHinhThucDaoTao}` : null,
+    idTrinhDo: id !== undefined ? `${dataDetailTDVH.idTrinhDo}` : null,
+    tenTruong: id !== undefined ? `${dataDetailTDVH.tenTruong}` : null,
   };
   //  console.log(typeof(intitalValue.tuThoiGian));
-  console.log(dataDetailTDVH.tuThoiGian);
 
   const {
     register,
@@ -127,13 +128,14 @@ function AddLevelForm(props) {
       intitalValue.idTrinhDo,
       intitalValue.tenTruong,
     ];
-   return JSON.stringify(values) === JSON.stringify(dfValue);
-    
+    return JSON.stringify(values) === JSON.stringify(dfValue);
   };
 
   const onHandleSubmit = async (data) => {
     console.log(data);
+    console.log(errors);
     checkInputChange();
+    
     try {
       if (id !== undefined) {
         await PutApi.PutTDVH(data, id);
@@ -144,7 +146,9 @@ function AddLevelForm(props) {
     } catch (error) {
       console.log("Có lỗi xảy ra: ", error);
     }
+   
   };
+  
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteTDVH(id);
@@ -182,13 +186,16 @@ function AddLevelForm(props) {
               type="submit"
               className="btn btn-primary ml-3"
               value={dataDetailTDVH.length !== 0 ? "Sửa" : "Lưu"}
-              onClick={()=>{
-                  setShowDialog(true);
-              }}
+              // onClick={() => {
+              //  handleSubmit(onHandleSubmit);
+              //     // setShowDialog(true);
+                
+              // }}
+              onClick={handleSubmit(onHandleSubmit)}
             />
           </div>
         </div>
-        
+
         <form
           action=""
           class="profile-form"
@@ -385,19 +392,12 @@ function AddLevelForm(props) {
                             : "form-control col-sm-6 border-danger"
                         }
                         placeholder="DD/MM/YYYY"
-                        format="DD/MM/YYYY"
-                        //defaultValue={moment(dataDetailTDVH.tuThoiGian)}
-                        // onChange={(event) => {
-                        //   handleChangeDate(event);
-                        // }}
+                        format="DD/MM/YYYY"                   
                         value={moment(field.value)}
                         onChange={(event) => {
                           field.onChange(event.toDate());
                         }}
-                        //selected={field}
                         {...field._d}
-
-                        //inputRef={dates}
                       />
                     )}
                   />
@@ -460,8 +460,8 @@ function AddLevelForm(props) {
             </div>
           </div>
         </form>
-        </div>
- 
+      </div>
+
       <Dialog
         show={showDialog}
         title="Thông báo"
@@ -469,10 +469,14 @@ function AddLevelForm(props) {
         confirm={handleSubmit(onHandleSubmit)}
         cancel={cancel}
       />
-       <DialogCheck
+      <DialogCheck
         show={showCheckDialog}
         title="Thông báo"
-        description={"Bạn chưa thay đổi thông tin trình độ"}
+        description={
+          id !== undefined
+            ? "Bạn chưa thay đổi thông tin trình độ"
+            : "Bạn chưa nhập thông tin trình độ"
+        }
         confirm={null}
         cancel={cancel}
       />

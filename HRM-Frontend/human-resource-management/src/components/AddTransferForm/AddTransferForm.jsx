@@ -1,103 +1,160 @@
 import React, { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./AddTransferForm.scss";
 import ProductApi from "../../api/productApi";
 import { useLocation } from "react-router";
+import moment from "moment/moment.js";
+import "antd/dist/antd.css";
+import { DatePicker } from "antd";
+import PutApi from "../../api/putAAPI";
+import DeleteApi from "../../../src/api/deleteAPI";
 
 const schema = yup.object({
-  hoVaTen: yup.string().required("Họ và tên không được bỏ trống."),
   maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
+  idPhongBan: yup.number().required("Phòng ban không được bỏ trống."),
+  to: yup.number().required("Tổ không được bỏ trống."),
+  idChucVu: yup.number().required("Chức vụ không được bỏ trống."),
+  trangThai: yup.boolean(),
 });
 function AddTransferForm(props) {
   let location = useLocation();
   let query = new URLSearchParams(location.search);
   console.log(query.get("maNhanVien"));
   console.log(query.get("hoVaTen"));
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
-  const onHandleSubmit = (data) => {
-    console.log(data);
-    JSON.stringify(data);
-  };
 
+  // const onHandleSubmit = (data) => {
+  //   console.log(data);
+  //   JSON.stringify(data);
+  // };
+
+  //get param from detail
   let { match, history } = props;
   let { id } = match.params;
 
+  
+  // states contain data
   const [dataDetailDC, setDataDetailDC] = useState([]);
-
+  const [dataNest, setDataNest] = useState([]);
+  const [dataDepartment, setDataDepartment] = useState([]);
+  const [dataPosition, setDataPosition] = useState([]);
+  // get data from api
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const response = await ProductApi.getDCDetail(id);
-        setDataDetailDC(response);
+        const responseNest = await ProductApi.getAllDMT();
+        setDataNest(responseNest);
+        const responseDepartment = await ProductApi.getAllDMPB();
+        setDataDepartment(responseDepartment);
+        const responsePosition = await ProductApi.getAllDMCV();
+        setDataPosition(responsePosition);
+        if (id !== undefined) {
+          const response = await ProductApi.getDCDetail(id);
+          setDataDetailDC(response);
+        }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
     };
     fetchNvList();
   }, []);
+  const [nest, setNest] = useState();
+  const intitalValue = {
+    ngayHieuLuc: dataDetailDC.ngayHieuLuc,
+    idPhongBan: id!== undefined? dataDetailDC.idPhongBan: null,
+    to:id!== undefined? dataDetailDC.to: null,
+    chiTiet:id!== undefined? dataDetailDC.chiTiet: null,
+    trangThai:id!== undefined? (dataDetailDC.trangThai==="Kích hoạt"?true:false): true,
+    maNhanVien:id!== undefined? dataDetailDC.maNhanVien: null,
+    idChucVu:id!== undefined? dataDetailDC.idChucVu: null,
 
+  }
+  //define method of react-hooks-form
+  const {
+    register,
+    handleSubmit,
+    control,
+    reset,
+    formState: { errors },
+  } = useForm({
+    defaultValues:intitalValue,
+    resolver: yupResolver(schema),
+  });
+  useEffect(() => {
+    if (dataDetailDC) {
+      setNest(dataDetailDC.idPhongBan);
+      reset(intitalValue);     
+    }
+  }, [dataDetailDC]);
+  //method handle submit
+  const onHandleSubmit = async(data) => {
+    console.log(data);
+    try {
+      if(id !== undefined){
+        await PutApi.PutDC(data,id);
+      }else{
+        await ProductApi.PostDC(data);
+      }
+      history.goBack();
+    } catch (error) {
+      console.log("errors",error);
+      
+    }
+  };
+  const handleDelete = async () => {
+    try {
+      await DeleteApi.deleteDC(id);
+      history.push(`/transfer`);
+    } catch (error) {}
+  };
 
-  const [checked, setCheked] = useState(false);
-  const handleClick = () => setCheked(!checked);
+  console.log(nest);
+  console.log(intitalValue.to);
+  
+  // const [checked, setCheked] = useState(false);
+  // const handleClick = () => setCheked(!checked);
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">Thêm thủ tục thuyên chuyển</h2>
+          <h2 className="">
+            {dataDetailDC.length !== 0 ? "Sửa" : "Thêm"} thủ tục thuyên chuyển
+          </h2>
         </div>
         <div className="button">
-          <input type="submit" className="btn btn-secondary " value="Huỷ" onClick={history.goBack}/>
+          <input
+            type="submit"
+            className={
+              dataDetailDC.length !== 0 ? "btn btn-danger" : "delete-button"
+            }
+            value="Xoá"
+            onClick={handleDelete}
+          />
+          <input
+            type="submit"
+            className="btn btn-secondary ml-3"
+            value="Huỷ"
+            onClick={history.goBack}
+          />
           <input
             type="submit"
             className="btn btn-primary ml-3"
-            value="Lưu"
+            value={dataDetailDC.length !== 0 ? "Sửa" : "Lưu"}
             onClick={handleSubmit(onHandleSubmit)}
           />
         </div>
       </div>
-      <form
-        action=""
-        class="profile-form"
-        // onSubmit={handleSubmit(onHandleSubmit)}
-      >
+      <form action="" class="profile-form">
         <div className="container-div-form">
           <div className="container-salary">
             <div>
-              <h3>Vị trí công tác hiện tại</h3>
+              <h3>Thủ tục thuyên chuyển</h3>
             </div>
           </div>
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="hoVaTen">
-                  Họ và tên
-                </label>
-                <select
-                  type="text"
-                  {...register("hoVaTen")}
-                  id="hoVaTen"
-                  className={
-                    !errors.hoVaTen
-                      ? "form-control col-sm-6 custom-select"
-                      : "form-control col-sm-6 border-danger custom-select"
-                  }
-                >
-                  <option value=""></option>
-                  <option>Hai nd</option>
-                </select>
-                <span className="message">{errors.hoVaTen?.message}</span>
-              </div>
-            </div>
-            <div className="col">
-              <div className="form-group form-inline">
                 <label
                   class="col-sm-4 justify-content-start"
                   htmlFor="maNhanVien"
@@ -117,30 +174,63 @@ function AddTransferForm(props) {
                 <span className="message">{errors.maNhanVien?.message}</span>
               </div>
             </div>
+            <div className="col">
+              <div className="form-group form-inline">
+                <label
+                  class="col-sm-4 justify-content-start"
+                  htmlFor="idChucVu"
+                >
+                  Chức vụ công tác
+                </label>
+                <select
+                  type="text"
+                  {...register("idChucVu")}
+                  id="idChucVu"
+                  className={
+                    !errors.idChucVu
+                      ? "form-control col-sm-6 custom-select"
+                      : "form-control col-sm-6 border-danger custom-select"
+                  }
+                >
+                  <option value=""></option>
+                  {dataPosition.map((item, key) => (
+                    <option key={key} value={item.id}>
+                      {item.tenChucVu}
+                    </option>
+                  ))}
+                </select>
+                <span className="message">{errors.idChucVu?.message}</span>
+              </div>
+            </div>
           </div>
           <div className="row">
             <div className="col">
               <div class="form-group form-inline ">
                 <label
                   class="col-sm-4 justify-content-start"
-                  htmlFor="phongBan"
+                  htmlFor="idPhongBan"
                 >
                   Phòng ban
                 </label>
                 <select
                   type="text"
-                  {...register("phongBan")}
-                  id="phongBan"
+                  {...register("idPhongBan")}
+                  id="idPhongBan"
+                  onChange={(e) => setNest(e.target.value)}
                   className={
-                    !errors.phongBan
+                    !errors.idPhongBan
                       ? "form-control col-sm-6 custom-select"
                       : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
                   <option value=""></option>
-                  <option>ádasdasd</option>
+                  {dataDepartment.map((item, key) => (
+                    <option key={key} value={item.id}>
+                      {item.tenPhongBan}
+                    </option>
+                  ))}
                 </select>
-                <span className="message">{errors.phongBan?.message}</span>
+                <span className="message">{errors.idPhongBan?.message}</span>
               </div>
             </div>
             <div className="col">
@@ -151,16 +241,26 @@ function AddTransferForm(props) {
                 >
                   Ngày hiệu lực
                 </label>
-                <input
-                  type="text"
-                  {...register("ngayHieuLuc")}
-                  id="ngayHieuLuc"
-                  className={
-                    !errors.ngayHieuLuc
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
-                  }
-                  placeholder="DD/MM/YYYY"
+                <Controller
+                  name="ngayHieuLuc"
+                  control={control}
+                  render={({ field, onChange }) => (
+                    <DatePicker
+                      id="ngayHieuLuc"
+                      className={
+                        !errors.ngayHieuLuc
+                          ? "form-control col-sm-6"
+                          : "form-control col-sm-6 border-danger"
+                      }
+                      placeholder="DD/MM/YYYY"
+                      format="DD/MM/YYYY"
+                      value={moment(field.value)}
+                      onChange={(event) => {
+                        field.onChange(event.toDate());
+                      }}
+                      {...field._d}
+                    />
+                  )}
                 />
                 <span className="message">{errors.ngayHieuLuc?.message}</span>
               </div>
@@ -182,7 +282,14 @@ function AddTransferForm(props) {
                       : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
-                  <option>Tổ 1</option>
+                  <option value=""></option>
+                  {dataNest
+                    .filter((item) => item.idPhongBan == nest)
+                    .map((item, key) => (
+                      <option key={key} value={item.id}>
+                        {item.tenTo}
+                      </option>
+                    ))}
                 </select>
                 <span className="message">{errors.to?.message}</span>
               </div>
@@ -212,225 +319,25 @@ function AddTransferForm(props) {
               <div class="form-group form-inline">
                 <label
                   class="col-sm-4 justify-content-start"
-                  htmlFor="chucVuCongTac"
+                  htmlFor="trangThai"
+                  style={id!== undefined? null:{display: "none"}}
                 >
-                  Chức vụ công tác
+                  Trạng thái
                 </label>
                 <select
                   type="text"
-                  {...register("chucVuCongTac")}
-                  id="chucVuCongTac"
+                  {...register("trangThai")}
+                  id="trangThai"
+                  style={id!== undefined? null:{display: "none"}}
                   className={
-                    !errors.chucVuCongTac
+                    !errors.trangThai
                       ? "form-control col-sm-6 custom-select"
                       : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
-                  <option>CEO</option>
+                  <option value={true}>Kích hoạt</option>
+                  <option value={false}>Vô hiệu</option>
                 </select>
-                <span className="message">{errors.chucVuCongTac?.message}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="container-div-form-2">
-          <div className="col-6">
-            <div class="form-check mb-4 form-inline">
-              <input
-                type="checkbox"
-                {...register("choPhepDieuChuyen")}
-                id="choPhepDieuChuyen"
-                className="form-check-input"
-                onClick={handleClick}
-                checked={checked}
-              />
-              <label
-                className="form-check-label  justify-content-start "
-                htmlFor="choPhepDieuChuyen"
-              >
-                Cho phép điều chuyển
-              </label>
-            </div>
-          </div>
-        </div>
-        <div className="container-div-form">
-          <div className="container-salary">
-            <div>
-              <h3>Vị trí công tác chuyển đến</h3>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <div class="form-group form-inline">
-                <label
-                  class="col-sm-4 justify-content-start"
-                  htmlFor="tc_hoVaTen"
-                >
-                  Họ và tên
-                </label>
-                <select
-                  type="text"
-                  {...register("tc_hoVaTen")}
-                  id="tc_hoVaTen"
-                  className={
-                    !errors.tc_hoVaTen
-                      ? "form-control col-sm-6 custom-select"
-                      : "form-control col-sm-6 border-danger custom-select"
-                  }
-                  disabled={!checked}
-                >
-                  <option value=""></option>
-                  <option>Hai nd</option>
-                </select>
-                <span className="message">{errors.tc_hoVaTen?.message}</span>
-              </div>
-            </div>
-            <div className="col">
-              <div className="form-group form-inline">
-                <label
-                  class="col-sm-4 justify-content-start"
-                  htmlFor="tc_maNhanVien"
-                >
-                  Mã nhân viên
-                </label>
-                <input
-                  type="text"
-                  {...register("tc_maNhanVien")}
-                  id="tc_maNhanVien"
-                  className={
-                    !errors.tc_maNhanVien
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
-                  }
-                  disabled={!checked}
-                />
-                <span className="message">{errors.tc_maNhanVien?.message}</span>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <div class="form-group form-inline ">
-                <label
-                  class="col-sm-4 justify-content-start"
-                  htmlFor="tc_phongBan"
-                >
-                  Phòng ban
-                </label>
-                <select
-                  type="text"
-                  {...register("tc_phongBan")}
-                  id="tc_phongBan"
-                  className={
-                    !errors.tc_phongBan
-                      ? "form-control col-sm-6 custom-select"
-                      : "form-control col-sm-6 border-danger custom-select"
-                  }
-                  disabled={!checked}
-                >
-                  <option value=""></option>
-                  <option>ádasdasd</option>
-                </select>
-                <span className="message">{errors.tc_phongBan?.message}</span>
-              </div>
-            </div>
-            <div className="col">
-              <div className="form-group form-inline">
-                <label
-                  class="col-sm-4 justify-content-start"
-                  htmlFor="tc_ngayHieuLuc"
-                >
-                  Ngày hiệu lực
-                </label>
-                <input
-                  type="text"
-                  {...register("tc_ngayHieuLuc")}
-                  id="tc_ngayHieuLuc"
-                  className={
-                    !errors.tc_ngayHieuLuc
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
-                  }
-                  placeholder="DD/MM/YYYY"
-                  disabled={!checked}
-                />
-                <span className="message">
-                  {errors.tc_ngayHieuLuc?.message}
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="tc_to">
-                  Tổ
-                </label>
-                <select
-                  type="text"
-                  {...register("tc_to")}
-                  id="tc_to"
-                  className={
-                    !errors.to
-                      ? "form-control col-sm-6 custom-select"
-                      : "form-control col-sm-6 border-danger custom-select"
-                  }
-                  disabled={!checked}
-                >
-                  <option>Tổ 1</option>
-                </select>
-                <span className="message">{errors.tc_to?.message}</span>
-              </div>
-            </div>
-            <div className="col">
-              <div className="form-group form-inline">
-                <label
-                  class="col-sm-4 justify-content-start"
-                  htmlFor="tc_chiTiet"
-                >
-                  Chi tiết
-                </label>
-                <textarea
-                  type="text"
-                  rows="1"
-                  {...register("tc_chiTiet")}
-                  id="tc_chiTiet"
-                  className={
-                    !errors.tc_chiTiet
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
-                  }
-                  disabled={!checked}
-                />
-                <span className="message">{errors.tc_chiTiet?.message}</span>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-6">
-              <div class="form-group form-inline">
-                <label
-                  class="col-sm-4 justify-content-start"
-                  htmlFor="tc_chucVuCongTac"
-                >
-                  Chức vụ công tác
-                </label>
-                <select
-                  type="text"
-                  {...register("tc_chucVuCongTac")}
-                  id="tc_chucVuCongTac"
-                  className={
-                    !errors.tc_chucVuCongTac
-                      ? "form-control col-sm-6 custom-select"
-                      : "form-control col-sm-6 border-danger custom-select"
-                  }
-                  disabled={!checked}
-                >
-                  <option>CEO</option>
-                </select>
-                <span className="message">
-                  {errors.tc_chucVuCongTac?.message}
-                </span>
               </div>
             </div>
           </div>

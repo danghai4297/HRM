@@ -39,6 +39,7 @@
   background-color: white;
   height: 6rem;
   margin: 2em;
+  padding-top: 0.17em;
   .icon {
     color: gray;
     width: 3rem;
@@ -52,4 +53,7 @@
 }
 .footer {
   height: 2em;
+}
+.delete-button {
+  display: none;
 }
