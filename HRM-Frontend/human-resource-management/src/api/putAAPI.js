@@ -126,5 +126,12 @@ const PutApi = {
     const url =`/DieuChuyen/${id}`;
     return axiosClient.put(url,data)
   },
+  // Sửa khen thưởng và kỷ luật
+  PutKTvKL:(data,id)=>{
+    const url =`/KhenThuongKyLuat/${id}`;
+    return axiosClient.put(url,data)
+  },
+  //Sửa kỷ luật
+  
 };
 export default PutApi;

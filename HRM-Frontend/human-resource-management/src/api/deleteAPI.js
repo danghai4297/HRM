@@ -131,6 +131,11 @@ const DeleteApi = {
     const url = `/DieuChuyen/${id}`;
     return axiosClient.delete(url);
   },
+  //delete khen thưởng và kỷ luật
+  deleteKTvKL:(id)=>{
+    const url = `/KhenThuongKyLuat/${id}`;
+    return axiosClient.delete(url);
+  },
 };
 
 export default DeleteApi;

@@ -96,6 +96,11 @@ const ProductApi = {
     const url = "/KhenThuongKyLuat/khen-thuong";
     return axiosClient.get(url);
   },
+  //add khen thưởng và kỷ luật
+  PostKTvKL: (data) => {
+    const url = "/KhenThuongKyLuat";
+    return axiosClient.post(url, data);
+  },
   //detail kt
   // getKTDetail: (id) => {
   //   const url = `/KhenThuongKyLuat/khen-thuong/${id}`;
