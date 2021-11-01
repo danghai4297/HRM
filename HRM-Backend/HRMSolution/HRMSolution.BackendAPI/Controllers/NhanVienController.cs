@@ -123,6 +123,13 @@ namespace HRMSolution.BackendAPI.Controllers
             var nhanViens = await _nhanVienService.GetAllByHopDongHLVaTTVaGT(tuNgay, denNgay, trangThai, gioiTinh);
             return Ok(nhanViens);
         }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-phong-ban-hop-dong-trang-thai-gioi-tinh/{id}/{tuNgay}/{denNgay}/{trangThai}/{gioiTinh}")]
+        public async Task<IActionResult> GetByAllBaoCao(int id,DateTime tuNgay, DateTime denNgay, bool trangThai, bool gioiTinh)
+        {
+            var nhanViens = await _nhanVienService.GetAllBaoCao(id,tuNgay, denNgay, trangThai, gioiTinh);
+            return Ok(nhanViens);
+        }
 
 
         [HttpPost]

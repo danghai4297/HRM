@@ -17,6 +17,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
         Task<NhanVienDetailViewModel> GetByMaNV(string maNhanVien);
         Task<List<NhanVienViewModel>> GetAllNVNghi();
         Task<List<BaoCaoViewModel>> GetAllBaoCao();
+        Task<List<BaoCaoViewModel>> GetAllBaoCao(int id, DateTime ngayBatDau, DateTime ngayKetThuc, bool trangThai, bool gioiTinh);
         Task<List<BaoCaoViewModel>> GetAllByPhongBan(int id);
         Task<List<BaoCaoViewModel>> GetAllByGioiTinh(bool gioiTinh);
         Task<List<BaoCaoViewModel>> GetAllByTrangThai(bool trangThai);
