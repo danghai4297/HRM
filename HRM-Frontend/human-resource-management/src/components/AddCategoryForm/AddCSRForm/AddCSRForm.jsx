@@ -74,7 +74,7 @@ function AddCSRForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
-    let tendm = data.tenDanhMuc;
+    let tendm = data.tenNgach;
     try {
       if (id !== undefined) {
         await PutApi.PutDMNCC(data, id);

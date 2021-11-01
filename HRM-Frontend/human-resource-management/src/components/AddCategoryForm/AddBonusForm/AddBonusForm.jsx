@@ -32,6 +32,8 @@ function AddBonusForm(props) {
     "Bạn chắc chắn muốn thêm danh mục khen thưởng mới"
   );
 
+  const [oldDm, setOldDm] = useState();
+
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
@@ -45,6 +47,7 @@ function AddBonusForm(props) {
           setDescription("Bạn chắc chắn muốn sửa danh mục khen thưởng");
           const response = await ProductApi.getDetailDMKTvKL(id);
           setdataDetailDMKT(response);
+          setOldDm(response.tenDanhMuc);
         }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -79,17 +82,19 @@ function AddBonusForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
-    let tendm = data.tenDanhMuc;
+    console.log(data);
     try {
       if (id !== undefined) {
+        let tendm = data.tenDanhMuc;
         await PutApi.PutDMKTvKL(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `sửa danh mục khen thưởng: ${tendm}`,
+          thaoTac: `sửa danh mục khen thưởng:${oldDm} ---> ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
       } else {
+        let tendm = data.tenDanhMuc;
         await ProductApi.PostDMKTvKL(data);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
@@ -105,6 +110,12 @@ function AddBonusForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMKTvKL(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa danh mục khen thưởng: ${dataDetailDMKT.tenDanhMuc}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       history.goBack();
     } catch (error) {}
   };
