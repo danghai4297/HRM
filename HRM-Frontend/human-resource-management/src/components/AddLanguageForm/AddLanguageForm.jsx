@@ -10,14 +10,25 @@ import Dialog from "../../components/Dialog/Dialog";
 import "./AddLanguageForm.scss";
 import { DatePicker } from "antd";
 import moment from "moment/moment.js";
+import DialogCheck from "../Dialog/DialogCheck";
+import { useToast } from "../Toast/Toast";
+
 const schema = yup.object({
-  idDanhMucNgoaiNgu: yup.number().required("Ngoại ngữ không được bỏ trống."),
+  idDanhMucNgoaiNgu: yup
+    .number()
+    .nullable()
+    .required("Ngoại ngữ không được bỏ trống."),
   //ngayCap: yup.string().required("Ngày cấp không được bỏ trống."),
-  trinhDo: yup.string().required("Trình độ không được bỏ trống."),
-  noiCap: yup.string().required("Nơi cấp không được bỏ trống."),
-  maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
+  trinhDo: yup.string().nullable().required("Trình độ không được bỏ trống."),
+  noiCap: yup.string().nullable().required("Nơi cấp không được bỏ trống."),
+  maNhanVien: yup
+    .string()
+    .nullable()
+    .required("Mã nhân viên không được bỏ trống."),
 });
 function AddLanguageForm(props) {
+  const { error, warn, info, success } = useToast();
+
   let { match, history } = props;
 
   let location = useLocation();
@@ -34,10 +45,12 @@ function AddLanguageForm(props) {
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm trình độ mới"
   );
+  const [showCheckDialog, setShowCheckDialog] = useState(false);
 
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
+    setShowCheckDialog(false);
   };
   useEffect(() => {
     const fetchNvList = async () => {
@@ -67,6 +80,7 @@ function AddLanguageForm(props) {
     handleSubmit,
     reset,
     control,
+    getValues,
     formState: { errors },
   } = useForm({
     defaultValues: intitalValue,
@@ -77,22 +91,54 @@ function AddLanguageForm(props) {
       reset(intitalValue);
     }
   }, [dataDetailNN]);
+
+  const checkInputChange = () => {
+    const values = getValues([
+      "ngayCap",
+      "trinhDo",
+      "noiCap",
+      "maNhanVien",
+      "idDanhMucNgoaiNgu",
+    ]);
+    const dfValue = [
+      intitalValue.ngayCap,
+      intitalValue.trinhDo,
+      intitalValue.noiCap,
+      intitalValue.maNhanVien,
+      intitalValue.idDanhMucNgoaiNgu,
+    ];
+    return JSON.stringify(values) === JSON.stringify(dfValue);
+  };
+
   const onHandleSubmit = async (data) => {
     console.log(data);
     try {
       if (id !== undefined) {
         await PutApi.PutNN(data, id);
+        success(
+          `Sửa thông tin ngoại ngữ cho nhân viên ${dataDetailNN.tenNhanVien} thành công`
+        );
       } else {
         await ProductApi.PostNN(data);
+        success(
+          `thêm thông tin ngoại ngữ cho nhân viên ${dataDetailNN.tenNhanVien} thành công`
+        );
       }
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteNN(id);
       history.push(`/profile/detail/${dataDetailNN.maNhanVien}`);
-    } catch (error) {}
+      success(
+        `Xoá thông tin trình độ cho nhân viên ${dataDetailNN.tenNhanVien} thành công`
+      );
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
   return (
     <>
@@ -124,9 +170,13 @@ function AddLanguageForm(props) {
               type="submit"
               className="btn btn-primary ml-3"
               value={dataDetailNN.length !== 0 ? "Sửa" : "Lưu"}
-              onClick={()=>{
-                setShowDialog(true);
-            }}
+              onClick={() => {
+                if (checkInputChange()) {
+                  setShowCheckDialog(true);
+                } else {
+                  setShowDialog(true);
+                }
+              }}
             />
           </div>
         </div>
@@ -322,8 +372,27 @@ function AddLanguageForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={description}
-        confirm={handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
+        cancel={cancel}
+      />
+      <DialogCheck
+        show={showCheckDialog}
+        title="Thông báo"
+        description={
+          id !== undefined
+            ? "Bạn chưa thay đổi thông tin ngoại ngữ"
+            : "Bạn chưa nhập thông tin ngoại ngữ"
+        }
+        confirm={null}
         cancel={cancel}
       />
       <Dialog

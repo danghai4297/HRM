@@ -10,20 +10,26 @@ import ProductApi from "../../../src/api/productApi";
 import Dialog from "../../components/Dialog/Dialog";
 import { DatePicker } from "antd";
 import moment from "moment/moment.js";
+import { useToast } from "../Toast/Toast";
+import DialogCheck from "../Dialog/DialogCheck";
+
 const schema = yup.object({
   idDanhMucNguoiThan: yup
     .number()
+    .nullable()
     .required("Danh mục người thân không được bỏ trống."),
-  tenNguoiThan: yup.string().required("Tên người thân không được bỏ trống."),
-  gioiTinh: yup.boolean().required("Giới tính không được bỏ trống."),
+  tenNguoiThan: yup.string().nullable().required("Tên người thân không được bỏ trống."),
+  gioiTinh: yup.boolean().nullable().required("Giới tính không được bỏ trống."),
   //ngaySinh: yup.string().required("Ngày sinh được bỏ trống."),
-  maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
-  quanHe: yup.string().required("Quan hệ không được bỏ trống."),
-  ngheNghiep: yup.string().required("Nghề nghệp không được bỏ trống."),
-  diaChi: yup.string().required("Địa chỉ không được bỏ trống."),
-  dienThoai: yup.string().required("Điện thoại không được bỏ trống."),
+  maNhanVien: yup.string().nullable().required("Mã nhân viên không được bỏ trống."),
+  quanHe: yup.string().nullable().required("Quan hệ không được bỏ trống."),
+  ngheNghiep: yup.string().nullable().required("Nghề nghệp không được bỏ trống."),
+  diaChi: yup.string().nullable().required("Địa chỉ không được bỏ trống."),
+  dienThoai: yup.string().nullable().required("Điện thoại không được bỏ trống."),
 });
 function AddFamilyForm(props) {
+  const { error, warn, info, success } = useToast();
+
   let { match, history } = props;
   let { id } = match.params;
 
@@ -40,10 +46,12 @@ function AddFamilyForm(props) {
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm thông tin gia đình mới"
   );
+  const [showCheckDialog, setShowCheckDialog] = useState(false);
 
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
+    setShowCheckDialog(false);
   };
   useEffect(() => {
     const fetchNvList = async () => {
@@ -100,6 +108,35 @@ function AddFamilyForm(props) {
     }
   }, [dataDetailNT]);
  
+  const checkInputChange = () => {
+    const values = getValues([
+      "idDanhMucNguoiThan",
+      "tenNguoiThan",
+      "gioiTinh",
+      "quanHe",
+      "ngheNghiep",
+      "diaChi",
+      "dienThoai",
+      "maNhanVien",
+      "khac",
+      "ngaySinh"
+    
+    ]);
+    const dfValue = [
+      intitalValue.idDanhMucNguoiThan,
+      intitalValue.tenNguoiThan,
+      intitalValue.gioiTinh,
+      intitalValue.quanHe,
+      intitalValue.ngheNghiep,
+      intitalValue.diaChi,
+      intitalValue.dienThoai,
+      intitalValue.maNhanVien,
+      intitalValue.khac,
+      intitalValue.ngaySinh,
+    ];
+    return JSON.stringify(values) === JSON.stringify(dfValue);
+  };
+
   console.log(gender);
   
   console.log(dataDetailNT);
@@ -108,17 +145,26 @@ function AddFamilyForm(props) {
     try {
       if (id !== undefined) {
         await PutApi.PutNT(data, id);
+        success(`Sửa thông tin gia đình cho nhân viên ${dataDetailNT.tenNhanVien} thành công`);
+
       } else {
         await ProductApi.postNT(data);
+        success(`Thêm thông tin gia đình cho nhân viên ${dataDetailNT.tenNhanVien} thành công`);
+
       }
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`)
+    }
   };
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteNT(id);
       history.push(`/profile/detail/${dataDetailNT.maNhanVien}`);
-    } catch (error) {}
+      success(`Xoá thông tin gia đình cho nhân viên ${dataDetailNT.tenNhanVien} thành công`);
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`)
+    }
   };
   return (
     <>
@@ -150,9 +196,13 @@ function AddFamilyForm(props) {
               type="submit"
               className="btn btn-primary ml-3"
               value={dataDetailNT.length !== 0 ? "Sửa" : "Lưu"}
-              onClick={()=>{
-                setShowDialog(true);
-            }}
+              onClick={() => {
+                if (checkInputChange()) {
+                  setShowCheckDialog(true);
+                } else {
+                  setShowDialog(true);
+                }
+              }}
             />
           </div>
         </div>
@@ -433,8 +483,15 @@ function AddFamilyForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={description}
-        confirm={handleSubmit(onHandleSubmit)}
+        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
+        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
+        cancel={cancel}
+      />
+      <DialogCheck
+        show={showCheckDialog}
+        title="Thông báo"
+        description={id!== undefined?"Bạn chưa thay đổi thông tin gia đình":"Bạn chưa nhập thông tin gia đình" }
+        confirm={null}
         cancel={cancel}
       />
       <Dialog

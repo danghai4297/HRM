@@ -39,6 +39,7 @@ function AddTransferForm(props) {
   const [dataNest, setDataNest] = useState([]);
   const [dataDepartment, setDataDepartment] = useState([]);
   const [dataPosition, setDataPosition] = useState([]);
+  const [nest, setNest] = useState();
   // get data from api
   useEffect(() => {
     const fetchNvList = async () => {
@@ -52,6 +53,7 @@ function AddTransferForm(props) {
         if (id !== undefined) {
           const response = await ProductApi.getDCDetail(id);
           setDataDetailDC(response);
+          setNest(response.idPhongBan);
         }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -59,11 +61,13 @@ function AddTransferForm(props) {
     };
     fetchNvList();
   }, []);
-  const [nest, setNest] = useState();
+  console.log(nest);
+  
+  
   const intitalValue = {
     ngayHieuLuc: dataDetailDC.ngayHieuLuc,
     idPhongBan: id!== undefined? dataDetailDC.idPhongBan: null,
-    to:id!== undefined? dataDetailDC.to: null,
+    to:id!== undefined? dataDetailDC.idTo: null,
     chiTiet:id!== undefined? dataDetailDC.chiTiet: null,
     trangThai:id!== undefined? (dataDetailDC.trangThai==="Kích hoạt"?true:false): true,
     maNhanVien:id!== undefined? dataDetailDC.maNhanVien: null,
@@ -83,7 +87,6 @@ function AddTransferForm(props) {
   });
   useEffect(() => {
     if (dataDetailDC) {
-      setNest(dataDetailDC.idPhongBan);
       reset(intitalValue);     
     }
   }, [dataDetailDC]);
@@ -109,11 +112,6 @@ function AddTransferForm(props) {
     } catch (error) {}
   };
 
-  console.log(nest);
-  console.log(intitalValue.to);
-  
-  // const [checked, setCheked] = useState(false);
-  // const handleClick = () => setCheked(!checked);
   return (
     <div className="container-form">
       <div className="Submit-button sticky-top">

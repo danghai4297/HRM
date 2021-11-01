@@ -105,14 +105,20 @@ function AddNationForm(props) {
         success("Thêm danh mục thành công");
       }
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
 
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMDT(id);
       history.goBack();
-    } catch (error) {}
+      success("Xoá danh mục thành công");
+
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
 console.log(Object.values(errors).length === 0);
   return (

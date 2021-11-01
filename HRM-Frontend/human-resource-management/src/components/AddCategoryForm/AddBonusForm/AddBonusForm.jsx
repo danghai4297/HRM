@@ -9,6 +9,7 @@ import Dialog from "../../Dialog/Dialog";
 import DeleteApi from "../../../api/deleteAPI";
 import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
+import { useToast } from "../../Toast/Toast";
 
 AddBonusForm.propTypes = {};
 const schema = yup.object({
@@ -19,6 +20,8 @@ const schema = yup.object({
 });
 
 function AddBonusForm(props) {
+  const { error, warn, info, success } = useToast();
+
   let { match, history } = props;
   let { id } = match.params;
   const token = localStorage.getItem("resultObj");
@@ -91,6 +94,7 @@ function AddBonusForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
+        success("sửa danh mục thành công");
       } else {
         await ProductApi.PostDMKTvKL(data);
         await ProductApi.PostLS({
@@ -99,16 +103,22 @@ function AddBonusForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
+        success("Thêm danh mục thành công");
       }
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
 
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMKTvKL(id);
+      success("Xoá danh mục thành công");
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
 
   return (
