@@ -457,9 +457,46 @@ const ProductApi = {
     const url = `/NhanVien/bao-cao-phong-ban/${id}`;
     return axiosClient.get(url);
   },
+
+  //rp pb giới tính
+  getRPPbGt: (id, gender) => {
+    const url = `/NhanVien/bao-cao-phong-ban-gioi-tinh/${id}/${gender}`;
+    return axiosClient.get(url);
+  },
+
+  //rp pb trang thai
+  getRPPbTt: (id, status) => {
+    const url = `/NhanVien/bao-cao-phong-ban-trang-thai/${id}/${status}`;
+    return axiosClient.get(url);
+  },
+
+  //rp pb gioi tinh trang thai
+  getRPPbTtGt: (id, status, gender) => {
+    const url = `/NhanVien/bao-cao-phong-ban-trang-thai-gioi-tinh/${id}/${status}/${gender}`;
+    return axiosClient.get(url);
+  },
+
   //all rp hp từ ngày đến ngày
   getRPHd: (sdate, edate) => {
     const url = `/NhanVien/bao-cao-hop-dong/${sdate}/${edate}`;
+    return axiosClient.get(url);
+  },
+
+  //all rp hp từ ngày đến ngày giới tính
+  getRPHdGt: (sdate, edate, gender) => {
+    const url = `/NhanVien/bao-cao-hop-dong-gioi-tinh/${sdate}/${edate}/${gender}`;
+    return axiosClient.get(url);
+  },
+
+  //all rp hp từ ngày đến ngày trang thai
+  getRPHdTt: (sdate, edate, status) => {
+    const url = `/NhanVien/bao-cao-hop-dong-trang-thai/${sdate}/${edate}/${status}`;
+    return axiosClient.get(url);
+  },
+
+  //all rp hp từ ngày đến ngày trang thai gioi tinh
+  getRPHdTtGt: (sdate, edate, status, gender) => {
+    const url = `/NhanVien/bao-cao-hop-dong-trang-thai-gioi-tinh/${sdate}/${edate}/${status}/${gender}`;
     return axiosClient.get(url);
   },
 };

@@ -4,6 +4,7 @@ import { format } from "date-fns";
 import React, { useEffect, useRef, useState } from "react";
 import { useReactToPrint } from "react-to-print";
 import ProductApi from "../../../../api/productApi";
+import { useToast } from "../../../../components/Toast/Toast";
 import { ComponentToPrint } from "../../../../components/ToPrint/ComponentToPrint";
 
 import "./ItemListEmployee.scss";
@@ -15,6 +16,8 @@ function ItemListEmployee() {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
+
+  const { error, warn, info, success } = useToast();
 
   const [dataDmpb, setDataDmpb] = useState([]);
   const [startDate, setStartDate] = useState(null);
@@ -48,13 +51,10 @@ function ItemListEmployee() {
       setCheck("Phòng ban");
       setCheckHd(false);
       setCheckPb(true);
-      setStartDate(null);
-      setEndDate(null);
     } else if (value === "Năm hợp đồng") {
       setCheck("Năm hợp đồng");
       setCheckPb(false);
       setCheckHd(true);
-      setDepartment("Tất cả");
     }
   }
 
@@ -64,18 +64,118 @@ function ItemListEmployee() {
       (gender === "Tất cả") &
       (status === "Tất cả")
     ) {
-      const respb = await ProductApi.getRPPb(department);
-      setDataRp(respb);
-      console.log(dataRp);
+      try {
+        const respb = await ProductApi.getRPPb(department);
+        setDataRp(respb);
+      } catch (e) {
+        error("Thực hiện không thành công");
+      }
+    } else if (
+      (check === "Phòng ban") &
+      (gender !== "Tất cả") &
+      (status === "Tất cả")
+    ) {
+      try {
+        const respb = await ProductApi.getRPPbGt(department, gender);
+        setDataRp(respb);
+      } catch (e) {
+        error("Thực hiện không thành công");
+      }
+    } else if (
+      (check === "Phòng ban") &
+      (gender === "Tất cả") &
+      (status !== "Tất cả")
+    ) {
+      try {
+        const respb = await ProductApi.getRPPbTt(department, status);
+        setDataRp(respb);
+      } catch (e) {
+        error("Thực hiện không thành công");
+      }
+    } else if (
+      (check === "Phòng ban") &
+      (gender !== "Tất cả") &
+      (status !== "Tất cả")
+    ) {
+      try {
+        const respb = await ProductApi.getRPPbTtGt(department, status, gender);
+        setDataRp(respb);
+      } catch (e) {
+        error("Thực hiện không thành công");
+      }
     } else if (
       (check === "Năm hợp đồng") &
       (gender === "Tất cả") &
       (status === "Tất cả")
     ) {
-      let sdate = format(new Date(startDate), "yyyy-MM-dd");
-      let edate = format(new Date(endDate), "yyyy-MM-dd");
-      const respb = await ProductApi.getRPHd(sdate, edate);
-      setDataRp(respb);
+      try {
+        if (startDate === null || endDate === null) {
+          error("ngày không được để trống");
+        } else {
+          let sdate = format(new Date(startDate), "yyyy-MM-dd");
+          let edate = format(new Date(endDate), "yyyy-MM-dd");
+          const respb = await ProductApi.getRPHd(sdate, edate);
+          setDataRp(respb);
+        }
+      } catch (e) {
+        error("Thực hiện không thành công");
+      }
+    } else if (
+      (check === "Năm hợp đồng") &
+      (gender !== "Tất cả") &
+      (status === "Tất cả")
+    ) {
+      try {
+        if (startDate === null || endDate === null) {
+          error("ngày không được để trống");
+        } else {
+          let sdate = format(new Date(startDate), "yyyy-MM-dd");
+          let edate = format(new Date(endDate), "yyyy-MM-dd");
+          const respb = await ProductApi.getRPHdGt(sdate, edate, gender);
+          setDataRp(respb);
+        }
+      } catch (e) {
+        error("Thực hiện không thành công");
+      }
+    } else if (
+      (check === "Năm hợp đồng") &
+      (gender === "Tất cả") &
+      (status !== "Tất cả")
+    ) {
+      try {
+        if (startDate === null || endDate === null) {
+          error("ngày không được để trống");
+        } else {
+          let sdate = format(new Date(startDate), "yyyy-MM-dd");
+          let edate = format(new Date(endDate), "yyyy-MM-dd");
+          const respb = await ProductApi.getRPHdTt(sdate, edate, status);
+          setDataRp(respb);
+        }
+      } catch (e) {
+        error("Thực hiện không thành công");
+      }
+    } else if (
+      (check === "Năm hợp đồng") &
+      (gender !== "Tất cả") &
+      (status !== "Tất cả")
+    ) {
+      try {
+        if (startDate === null || endDate === null) {
+          error("ngày không được để trống");
+        } else {
+          let sdate = format(new Date(startDate), "yyyy-MM-dd");
+          let edate = format(new Date(endDate), "yyyy-MM-dd");
+          const respb = await ProductApi.getRPHdTtGt(
+            sdate,
+            edate,
+            status,
+            gender
+          );
+          setDataRp(respb);
+        }
+      } catch (e) {
+        error("Thực hiện không thành công");
+      }
     }
   };
 
