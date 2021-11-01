@@ -9,11 +9,15 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
+import { useToast } from "../../Toast/Toast";
+
 const schema = yup.object({
   maPhongBan: yup.string().required("Mã phòng ban không được bỏ trống."),
   tenPhongBan: yup.string().required("Tên danh mục không được bỏ trống."),
 });
 function AddDepartmentForm(props) {
+  const { error, warn, info, success } = useToast();
+
   let { match, history } = props;
   let { id } = match.params;
 
@@ -83,7 +87,7 @@ function AddDepartmentForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
-    let tendm = data.tenDanhMuc;
+    let tendm = data.tenPhongBan;
     try {
       if (id !== undefined) {
         await PutApi.PutDMPB(data, id);
@@ -93,6 +97,7 @@ function AddDepartmentForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
+        success("sửa danh mục thành công");
       } else {
         await ProductApi.PostDMPB(data);
         await ProductApi.PostLS({
@@ -101,16 +106,23 @@ function AddDepartmentForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
+        success("Thêm danh mục thành công");
       }
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
 
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMPB(id);
+      success("Xoá danh mục thành công");
+
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
 
   return (
@@ -206,11 +218,19 @@ function AddDepartmentForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={description}
-        confirm={handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
         cancel={cancel}
       />
-      <DialogCheck
+      <Dialog
         show={showCheckDialog}
         title="Thông báo"
         description={"Bạn chưa thay đổi gì"}

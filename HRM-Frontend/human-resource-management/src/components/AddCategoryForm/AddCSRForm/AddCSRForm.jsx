@@ -9,12 +9,17 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
+import { useToast } from "../../Toast/Toast";
 
 AddCSRForm.propTypes = {};
 const schema = yup.object({
-  tenNgach: yup.string().required("Tên danh mục không được bỏ trống."),
+  tenNgach: yup
+    .string()
+    .nullable()
+    .required("Tên danh mục không được bỏ trống."),
 });
 function AddCSRForm(props) {
+  const { error, warn, info, success } = useToast();
   let { match, history } = props;
   let { id } = match.params;
   const token = localStorage.getItem("resultObj");
@@ -85,6 +90,7 @@ function AddCSRForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
+        success("sửa danh mục thành công");
       } else {
         await ProductApi.PostDMNCC(data);
         await ProductApi.PostLS({
@@ -94,17 +100,24 @@ function AddCSRForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
+        success("Thêm danh mục thành công");
       }
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
     console.log(data);
   };
 
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMNCC(id);
+      success("Xoá danh mục thành công");
+
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
 
   return (
@@ -182,11 +195,19 @@ function AddCSRForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={description}
-        confirm={handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
         cancel={cancel}
       />
-      <DialogCheck
+      <Dialog
         show={showCheckDialog}
         title="Thông báo"
         description={"Bạn chưa thay đổi gì"}

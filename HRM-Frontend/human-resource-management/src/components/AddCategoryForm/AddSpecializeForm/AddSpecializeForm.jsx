@@ -9,11 +9,14 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
+import { useToast } from "../../Toast/Toast";
+
 const schema = yup.object({
   tenChuyenMon: yup.string().required("Tên danh mục không được bỏ trống."),
   maChuyenMon: yup.string().required("Mã danh mục không được bỏ trống."),
 });
 function AddSpecializeForm(props) {
+  const { error, warn, info, success } = useToast();
   let { match, history } = props;
   let { id } = match.params;
 
@@ -28,6 +31,7 @@ function AddSpecializeForm(props) {
     "Bạn chắc chắn muốn thêm danh mục chuyên môn mới"
   );
 
+
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
@@ -41,6 +45,7 @@ function AddSpecializeForm(props) {
           setDescription("Bạn chắc chắn muốn sửa danh mục chuyên môn");
           const response = await ProductApi.getDetailDMCM(id);
           setdataDetailDMCM(response);
+
         }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -83,17 +88,20 @@ function AddSpecializeForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
+    let tendmbd = dataDetailDMCM.tenChuyenMon;
     let tendm = data.tenChuyenMon;
 
     try {
+      console.log(data)
       if (id !== undefined) {
         await PutApi.PutDMCM(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục chuyên môn: ${tendm}`,
+          thaoTac: `Sửa danh mục chuyên môn:${tendmbd} thành ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
+        success("sửa danh mục thành công");
       } else {
         await ProductApi.PostDMCM(data);
         await ProductApi.PostLS({
@@ -102,16 +110,22 @@ function AddSpecializeForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
+        success("Thêm danh mục thành công");
       }
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
 
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMCM(id);
+      success("Xoá danh mục thành công");
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
 
   return (
@@ -209,11 +223,11 @@ function AddSpecializeForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={description}
-        confirm={handleSubmit(onHandleSubmit)}
+        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
+        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
         cancel={cancel}
       />
-      <DialogCheck
+      <Dialog
         show={showCheckDialog}
         title="Thông báo"
         description={"Bạn chưa thay đổi gì"}

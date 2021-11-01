@@ -9,6 +9,7 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
+import { useToast } from "../../Toast/Toast";
 const schema = yup.object({
   maLoaiHopDong: yup.string().required("Mã phòng ban không được bỏ trống."),
   tenLoaiHopDong: yup.string().required("Tên danh mục không được bỏ trống."),
@@ -16,6 +17,8 @@ const schema = yup.object({
 AddTypeOfContractForm.propTypes = {};
 
 function AddTypeOfContractForm(props) {
+  const { error, warn, info, success } = useToast();
+
   let { match, history } = props;
   let { id } = match.params;
 
@@ -91,18 +94,30 @@ function AddTypeOfContractForm(props) {
     try {
       if (id !== undefined) {
         await PutApi.PutDMLHD(data, id);
+        success("sửa danh mục thành công");
+
       } else {
         await ProductApi.PostDMLHD(data);
+        success("Thêm danh mục thành công");
+
       }
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+
+    }
   };
 
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMLHD(id);
+      success("Xoá danh mục thành công");
+
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+
+    }
   };
 
   return (
@@ -205,11 +220,11 @@ function AddTypeOfContractForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={description}
-        confirm={handleSubmit(onHandleSubmit)}
+        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
+        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
         cancel={cancel}
       />
-      <DialogCheck
+      <Dialog
         show={showCheckDialog}
         title="Thông báo"
         description={"Bạn chưa thay đổi gì"}

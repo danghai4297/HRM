@@ -12,24 +12,33 @@ import { DatePicker } from "antd";
 import moment from "moment/moment.js";
 import { stringify } from "query-string";
 import DialogCheck from "../Dialog/DialogCheck";
+import { useToast } from "../Toast/Toast";
+
 const schema = yup.object({
-  tenTruong: yup.string().required("Tên trường không được bỏ trống."),
-  idChuyenMon: yup.number().required("Chuyên môn không được bỏ trống."),
+  tenTruong: yup.string().nullable().required("Tên trường không được bỏ trống."),
+  idChuyenMon: yup.number().nullable().required("Chuyên môn không được bỏ trống."),
   idHinhThucDaoTao: yup
     .number()
+    .nullable()
     .required("Hình thức đào tạo không được bỏ trống."),
   idTrinhDo: yup
     .number("Trình độ không được bỏ trống.")
+    .nullable()
     .required("Trình độ không được bỏ trống."),
 });
 function AddLevelForm(props) {
+  const { error, warn, info, success } = useToast();
+
   let { match, history } = props;
 
   let location = useLocation();
-  // console.log(location);
   let query = new URLSearchParams(location.search);
-  //console.log(query.get("maNhanVien"));
+  //  console.log(query.get("maNhanVien"));
+  //  console.log(query.get("hoTen"));
+
+
   let eCode = query.get("maNhanVien");
+  let eName =  query.get("hoVaTen");
   let { id } = match.params;
 
   const [dataDetailTDVH, setdataDetailTDVH] = useState([]);
@@ -50,6 +59,7 @@ function AddLevelForm(props) {
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
+    setShowCheckDialog(false);
   };
   //console.log(eCode);
 
@@ -80,16 +90,16 @@ function AddLevelForm(props) {
   }, []);
   //ussing react-hooks-form
   const intitalValue = {
-    maNhanVien: id !== undefined?`${dataDetailTDVH.maNhanVien}`:eCode,
-    idChuyenMon: id !== undefined?`${dataDetailTDVH.idChuyenMon}`:null,
+    maNhanVien: id !== undefined ? `${dataDetailTDVH.maNhanVien}` : eCode,
+    idChuyenMon: id !== undefined ? `${dataDetailTDVH.idChuyenMon}` : null,
     tuThoiGian: dataDetailTDVH.tuThoiGian,
     denThoiGian: dataDetailTDVH.denThoiGian,
-    idHinhThucDaoTao: id !== undefined?`${dataDetailTDVH.idHinhThucDaoTao}`:null,
-    idTrinhDo: id !== undefined?`${dataDetailTDVH.idTrinhDo}`:null,
-    tenTruong: id !== undefined?`${dataDetailTDVH.tenTruong}`:null,
+    idHinhThucDaoTao:
+      id !== undefined ? `${dataDetailTDVH.idHinhThucDaoTao}` : null,
+    idTrinhDo: id !== undefined ? `${dataDetailTDVH.idTrinhDo}` : null,
+    tenTruong: id !== undefined ? `${dataDetailTDVH.tenTruong}` : null,
   };
   //  console.log(typeof(intitalValue.tuThoiGian));
-  console.log(dataDetailTDVH.tuThoiGian);
 
   const {
     register,
@@ -128,28 +138,35 @@ function AddLevelForm(props) {
       intitalValue.idTrinhDo,
       intitalValue.tenTruong,
     ];
-   return JSON.stringify(values) === JSON.stringify(dfValue);
-    
+    return JSON.stringify(values) === JSON.stringify(dfValue);
   };
 
   const onHandleSubmit = async (data) => {
     console.log(data);
+    console.log(errors);
     checkInputChange();
+    
     try {
       if (id !== undefined) {
         await PutApi.PutTDVH(data, id);
+        success(`Sửa thông tin trình độ cho nhân viên ${dataDetailTDVH.tenNhanVien} thành công`);
       } else {
         await ProductApi.PostTDVH(data);
+        success(`Thêm thông tin trình độ cho nhân viên ${eName} thành công`);
       }
       history.goBack();
     } catch (error) {
       console.log("Có lỗi xảy ra: ", error);
+      error(`Có lỗi xảy ra ${error}`)
     }
+   
   };
+  
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteTDVH(id);
       history.push(`/profile/detail/${dataDetailTDVH.maNhanVien}`);
+      success(`Xoá thông tin trình độ cho nhân viên ${dataDetailTDVH.tenNhanVien} thành công`);
     } catch (error) {}
   };
 
@@ -183,13 +200,18 @@ function AddLevelForm(props) {
               type="submit"
               className="btn btn-primary ml-3"
               value={dataDetailTDVH.length !== 0 ? "Sửa" : "Lưu"}
-              onClick={()=>{
+              onClick={() => {
+                if (checkInputChange()) {
+                  setShowCheckDialog(true);
+                } else {
                   setShowDialog(true);
+                }
               }}
+              // onClick={handleSubmit(onHandleSubmit)}
             />
           </div>
         </div>
-        
+
         <form
           action=""
           class="profile-form"
@@ -386,19 +408,12 @@ function AddLevelForm(props) {
                             : "form-control col-sm-6 border-danger"
                         }
                         placeholder="DD/MM/YYYY"
-                        format="DD/MM/YYYY"
-                        //defaultValue={moment(dataDetailTDVH.tuThoiGian)}
-                        // onChange={(event) => {
-                        //   handleChangeDate(event);
-                        // }}
+                        format="DD/MM/YYYY"                   
                         value={moment(field.value)}
                         onChange={(event) => {
                           field.onChange(event.toDate());
                         }}
-                        //selected={field}
                         {...field._d}
-
-                        //inputRef={dates}
                       />
                     )}
                   />
@@ -461,19 +476,19 @@ function AddLevelForm(props) {
             </div>
           </div>
         </form>
-        </div>
- 
+      </div>
+
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={description}
-        confirm={handleSubmit(onHandleSubmit)}
+        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
+        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
         cancel={cancel}
       />
-       <DialogCheck
+      <DialogCheck
         show={showCheckDialog}
         title="Thông báo"
-        description={"Bạn chưa thay đổi thông tin trình độ"}
+        description={id!== undefined?"Bạn chưa thay đổi thông tin trình độ":"Bạn chưa nhập thông tin trình độ" }
         confirm={null}
         cancel={cancel}
       />

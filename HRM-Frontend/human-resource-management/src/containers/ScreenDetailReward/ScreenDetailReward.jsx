@@ -30,16 +30,21 @@ function ScreenDetailReward(props) {
         <div className="first-main">
           <div className="first-path">
             <button className="btn-back" onClick={history.goBack}>
-              <FontAwesomeIcon className="icon-btn" icon={["fas", "long-arrow-alt-left"]} />
+              <FontAwesomeIcon
+                className="icon-btn"
+                icon={["fas", "long-arrow-alt-left"]}
+              />
             </button>
           </div>
           <div className="second-path">
             <h2>Thủ tục khen thưởng</h2>
           </div>
           <div className="third-path">
-            <Button variant="light" className="btn-fix">
-              Sửa
-            </Button>
+            <Link to={`/reward/${id}`}>
+              <Button variant="light" className="btn-fix">
+                Sửa
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="second-main">
@@ -63,7 +68,9 @@ function ScreenDetailReward(props) {
               titleRight="Ảnh"
               itemRight={dataDetailKt.anh}
             ></SubDetail>
-            <Link to={`/profile/detail/${dataDetailKt.maNhanVien}?move=moveToReward`}>
+            <Link
+              to={`/profile/detail/${dataDetailKt.maNhanVien}?move=moveToReward`}
+            >
               <Button variant="light" className="btn-fix">
                 Chuyển
               </Button>

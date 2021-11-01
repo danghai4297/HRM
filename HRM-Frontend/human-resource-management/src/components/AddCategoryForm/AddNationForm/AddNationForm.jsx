@@ -105,16 +105,22 @@ function AddNationForm(props) {
         success("Thêm danh mục thành công");
       }
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
 
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMDT(id);
       history.goBack();
-    } catch (error) {}
-  };
+      success("Xoá danh mục thành công");
 
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
+  };
+console.log(Object.values(errors).length === 0);
   return (
     <>
       <div className="container-form">
@@ -187,11 +193,11 @@ function AddNationForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={description}
-        confirm={handleSubmit(onHandleSubmit)}
+        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
+        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
         cancel={cancel}
       />
-      <DialogCheck
+      <Dialog
         show={showCheckDialog}
         title="Thông báo"
         description={"Bạn chưa thay đổi gì"}

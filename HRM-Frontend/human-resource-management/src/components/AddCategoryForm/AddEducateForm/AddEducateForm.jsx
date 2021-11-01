@@ -9,10 +9,15 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
+import { useToast } from "../../Toast/Toast";
 const schema = yup.object({
-  tenHinhThuc: yup.string().required("Tên danh mục không được bỏ trống."),
+  tenHinhThuc: yup
+  .string()
+  .nullable()
+  .required("Tên danh mục không được bỏ trống."),
 });
 function AddEducateForm(props) {
+  const { error, warn, info, success } = useToast();
   let { match, history } = props;
   let { id } = match.params;
 
@@ -86,6 +91,7 @@ function AddEducateForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
+        success("sửa danh mục thành công");
       } else {
         await ProductApi.PostDMHTDT(data);
         await ProductApi.PostLS({
@@ -95,16 +101,22 @@ function AddEducateForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
+        success("Thêm danh mục thành công");
       }
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
 
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMHTDT(id);
+      success("Xoá danh mục thành công");
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
 
   console.log(dataDetailDMHTDT);
@@ -184,11 +196,11 @@ function AddEducateForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={description}
-        confirm={handleSubmit(onHandleSubmit)}
+        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
+        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
         cancel={cancel}
       />
-      <DialogCheck
+      <Dialog
         show={showCheckDialog}
         title="Thông báo"
         description={"Bạn chưa thay đổi gì"}

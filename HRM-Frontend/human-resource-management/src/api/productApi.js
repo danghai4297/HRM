@@ -86,11 +86,20 @@ const ProductApi = {
     const url = `/Luong/${id}`;
     return axiosClient.get(url);
   },
-
+  // Add lương
+  PostL: (data) => {
+    const url = "/Luong";
+    return axiosClient.post(url, data);
+  },
   //all khen thưởng nv
   getAllKTNV: () => {
     const url = "/KhenThuongKyLuat/khen-thuong";
     return axiosClient.get(url);
+  },
+  //add khen thưởng và kỷ luật
+  PostKTvKL: (data) => {
+    const url = "/KhenThuongKyLuat";
+    return axiosClient.post(url, data);
   },
   //detail kt
   // getKTDetail: (id) => {
@@ -115,7 +124,11 @@ const ProductApi = {
     const url = "/DieuChuyen";
     return axiosClient.get(url);
   },
-
+  //add điều chuyển
+  PostDC: (data) => {
+    const url = "/DieuChuyen";
+    return axiosClient.post(url, data);
+  },
   //detail DC
   getDCDetail: (id) => {
     const url = `/DieuChuyen/dieu-chuyen/${id}`;
@@ -437,6 +450,17 @@ const ProductApi = {
   PostLS: (data) => {
     const url = "/LichSu";
     return axiosClient.post(url, data);
+  },
+
+  //all rp pb
+  getRPPb: (id) => {
+    const url = `/NhanVien/bao-cao-phong-ban/${id}`;
+    return axiosClient.get(url);
+  },
+  //all rp hp từ ngày đến ngày
+  getRPHd: (sdate, edate) => {
+    const url = `/NhanVien/bao-cao-hop-dong/${sdate}/${edate}`;
+    return axiosClient.get(url);
   },
 };
 

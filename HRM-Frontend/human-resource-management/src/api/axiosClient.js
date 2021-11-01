@@ -7,7 +7,6 @@ const axiosClient = axios.create({
   baseURL: "https://localhost:5001/api",
   headers: {
     "content-type": "application/json multipart/form-data",
-    
   },
   paramsSerializer: (params) => queryString.stringify(params),
 });

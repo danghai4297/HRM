@@ -36,9 +36,11 @@ function ScreenDetailDiscipline(props) {
             <h2>Thủ tục kỷ luật</h2>
           </div>
           <div className="third-path">
+          <Link to={`/discipline/${id}`}>
             <Button variant="light" className="btn-fix">
               Sửa
             </Button>
+            </Link>
           </div>
         </div>
         <div className="second-main">

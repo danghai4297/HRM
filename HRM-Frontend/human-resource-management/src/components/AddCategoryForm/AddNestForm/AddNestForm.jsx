@@ -9,13 +9,16 @@ import DeleteApi from "../../../api/deleteAPI";
 import PutApi from "../../../api/putAAPI";
 import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
+import { useToast } from "../../Toast/Toast";
+
 const schema = yup.object({
   maTo: yup.string().required("Mã tổ không được bỏ trống."),
   idPhongBan: yup.number().typeError("Thuộc phòng ban không được bỏ trống."),
   tenTo: yup.string().required("Tổ không được bỏ trống."),
 });
 function AddNestForm(props) {
-  //dữ liệu phòng ban
+  const { error, warn, info, success } = useToast();
+
   let { match, history } = props;
   let { id } = match.params;
 
@@ -98,6 +101,8 @@ function AddNestForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
+        success("sửa danh mục thành công");
+
       } else {
         await ProductApi.PostDMT(data);
         await ProductApi.PostLS({
@@ -106,16 +111,23 @@ function AddNestForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
+        success("Thêm danh mục thành công");
+
       }
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
 
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMT(id);
+      success("Xoá danh mục thành công");
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
 
   return (
@@ -245,11 +257,11 @@ function AddNestForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={description}
-        confirm={handleSubmit(onHandleSubmit)}
+        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
+        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
         cancel={cancel}
       />
-      <DialogCheck
+      <Dialog
         show={showCheckDialog}
         title="Thông báo"
         description={"Bạn chưa thay đổi gì"}

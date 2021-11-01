@@ -9,6 +9,7 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
+import { useToast } from "../../Toast/Toast";
 AddTitleForm.propTypes = {};
 const schema = yup.object({
   maChucDanh: yup.string().required("Mã chức danh không được bỏ trống."),
@@ -16,6 +17,8 @@ const schema = yup.object({
   phuCap: yup.number().typeError("Phụ cấp không được bỏ trống."),
 });
 function AddTitleForm(props) {
+  const { error, warn, info, success } = useToast();
+
   let { match, history } = props;
   let { id } = match.params;
 
@@ -25,6 +28,7 @@ function AddTitleForm(props) {
   const [dataDetailDMCD, setdataDetailDMCD] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
   const [showCheckDialog, setShowCheckDialog] = useState(false);
+  const [showCheckAddDialog, setShowCheckAddDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm danh mục chức danh mới"
@@ -34,6 +38,7 @@ function AddTitleForm(props) {
     setShowDialog(false);
     setShowDeleteDialog(false);
     setShowCheckDialog(false);
+    setShowCheckAddDialog(false);
   };
 
   useEffect(() => {
@@ -83,11 +88,12 @@ function AddTitleForm(props) {
     ];
     return JSON.stringify(titleValues) === JSON.stringify(dfTitleValues);
   };
-
+  
   const onHandleSubmit = async (data) => {
     let tendm = data.tenChucDanh;
 
     try {
+      setShowDialog(true);
       if (id !== undefined) {
         await PutApi.PutDMCD(data, id);
         await ProductApi.PostLS({
@@ -96,6 +102,7 @@ function AddTitleForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
+        success("sửa danh mục thành công");
       } else {
         await ProductApi.PostDMCD(data);
         await ProductApi.PostLS({
@@ -104,19 +111,25 @@ function AddTitleForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
+        success("Thêm danh mục thành công");
       }
-
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
-
+  console.log(errors)
+  console.log(errors === null)
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMCD(id);
+      success("Xoá danh mục thành công");
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
-
+   console.log(Object.values(errors))
   return (
     <>
       <div className="container-form">
@@ -173,7 +186,6 @@ function AddTitleForm(props) {
                     type="text"
                     {...register("maChucDanh")}
                     id="maChucDanh"
-                    defaultValue={dataDetailDMCD.maChucDanh}
                     className={
                       !errors.maChucDanh
                         ? "form-control col-sm-6"
@@ -195,7 +207,6 @@ function AddTitleForm(props) {
                     type="text"
                     {...register("tenChucDanh")}
                     id="tenChucDanh"
-                    defaultValue={dataDetailDMCD.tenChucDanh}
                     className={
                       !errors.tenChucDanh
                         ? "form-control col-sm-6"
@@ -236,11 +247,11 @@ function AddTitleForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={description}
-        confirm={handleSubmit(onHandleSubmit)}
+        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
+        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
         cancel={cancel}
       />
-      <DialogCheck
+      <Dialog
         show={showCheckDialog}
         title="Thông báo"
         description={"Bạn chưa thay đổi gì"}
