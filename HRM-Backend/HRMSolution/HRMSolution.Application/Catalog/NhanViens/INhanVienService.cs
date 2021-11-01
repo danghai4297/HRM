@@ -16,5 +16,17 @@ namespace HRMSolution.Application.Catalog.NhanViens
         Task<List<NhanVienViewModel>> GetAll();
         Task<NhanVienDetailViewModel> GetByMaNV(string maNhanVien);
         Task<List<NhanVienViewModel>> GetAllNVNghi();
+        Task<List<BaoCaoViewModel>> GetAllBaoCao();
+        Task<List<BaoCaoViewModel>> GetAllByPhongBan(int id);
+        Task<List<BaoCaoViewModel>> GetAllByGioiTinh(bool gioiTinh);
+        Task<List<BaoCaoViewModel>> GetAllByTrangThai(bool trangThai);
+        Task<List<BaoCaoViewModel>> GetAllByPhongBanVaGioiTinh(int id, bool gioiTinh);
+        Task<List<BaoCaoViewModel>> GetAllByPhongBanVaTrangThai(int id, bool trangThai);
+        Task<List<BaoCaoViewModel>> GetAllByTrangThaiVaGioiTinh(bool trangThai, bool gioiTinh);
+        Task<List<BaoCaoViewModel>> GetAllByPhongBanVaTrangThaiVaGioiTinh(int id, bool trangThai, bool gioiTinh);
+        Task<List<BaoCaoViewModel>> GetAllByHopDongHL(DateTime ngayBatDau, DateTime ngayKetThuc);
+        Task<List<BaoCaoViewModel>> GetAllByHopDongHLVaTT(DateTime ngayBatDau, DateTime ngayKetThuc, bool trangThai);
+        Task<List<BaoCaoViewModel>> GetAllByHopDongHLVaGT(DateTime ngayBatDau, DateTime ngayKetThuc, bool gioiTinh);
+        Task<List<BaoCaoViewModel>> GetAllByHopDongHLVaTTVaGT(DateTime ngayBatDau, DateTime ngayKetThuc, bool trangThai, bool gioiTinh);
     }
 }

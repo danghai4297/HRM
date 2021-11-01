@@ -682,5 +682,356 @@ namespace HRMSolution.Application.Catalog.NhanViens
 
             return await _context.SaveChangesAsync();
         }
+
+        public async Task<List<BaoCaoViewModel>> GetAllByPhongBan(int id)
+        {
+            //Phòng Ban
+            var queryPb = from dc in _context.dieuChuyens
+                          join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
+                          where dc.trangThai == true && pb.id == id
+                          select new { dc, pb, phongBan = pb.tenPhongBan };
+
+            var query = from nv in _context.nhanViens
+                        join d in queryPb on nv.maNhanVien equals d.dc.maNhanVien 
+
+                        select new { nv, d };
+
+            var data = await query.Select(x => new BaoCaoViewModel()
+            {
+                id = x.nv.maNhanVien,
+                hoTen = x.nv.hoTen,
+                ngaySinh = x.nv.ngaySinh,
+                gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
+                dienThoai = x.nv.dienThoai,
+                trangThai = x.nv.trangThaiLaoDong == true ? "Đang làm việc" : "Đã nghỉ việc",
+                tenPhongBan = x.d.pb.tenPhongBan 
+            }).ToListAsync();
+
+            return data;
+        }
+
+        public async Task<List<BaoCaoViewModel>> GetAllByGioiTinh(bool gioiTinh)
+        {
+            var queryPb = from dc in _context.dieuChuyens
+                          join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
+                          where dc.trangThai == true 
+                          select new { dc, pb, phongBan = pb.tenPhongBan };
+
+            var query = from nv in _context.nhanViens
+                        join d in queryPb on nv.maNhanVien equals d.dc.maNhanVien into x
+                        from xx in x.DefaultIfEmpty()
+                        where nv.gioiTinh == gioiTinh
+                        select new { nv, x,xx};
+
+            var data = await query.Select(x => new BaoCaoViewModel()
+            {
+                id = x.nv.maNhanVien,
+                hoTen = x.nv.hoTen,
+                ngaySinh = x.nv.ngaySinh,
+                gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
+                dienThoai = x.nv.dienThoai,
+                trangThai = x.nv.trangThaiLaoDong == true ? "Đang làm việc" : "Đã nghỉ việc",
+                tenPhongBan = x.xx.phongBan ?? String.Empty
+            }).ToListAsync();
+
+            return data;
+        }
+
+        public async Task<List<BaoCaoViewModel>> GetAllByPhongBanVaGioiTinh(int id, bool gioiTinh)
+        {
+            var queryPb = from dc in _context.dieuChuyens
+                          join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
+                          where dc.trangThai == true && pb.id == id
+                          select new { dc, pb, phongBan = pb.tenPhongBan };
+
+            var query = from nv in _context.nhanViens
+                        join d in queryPb on nv.maNhanVien equals d.dc.maNhanVien 
+                        where nv.gioiTinh == gioiTinh
+                        select new { nv, d};
+
+            var data = await query.Select(x => new BaoCaoViewModel()
+            {
+                id = x.nv.maNhanVien,
+                hoTen = x.nv.hoTen,
+                ngaySinh = x.nv.ngaySinh,
+                gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
+                dienThoai = x.nv.dienThoai,
+                trangThai = x.nv.trangThaiLaoDong == true ? "Đang làm việc" : "Đã nghỉ việc",
+                tenPhongBan = x.d.phongBan
+            }).ToListAsync();
+
+            return data;
+        }
+
+        public async Task<List<BaoCaoViewModel>> GetAllByTrangThai(bool trangThai)
+        {
+            var queryPb = from dc in _context.dieuChuyens
+                          join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
+                          where dc.trangThai == true
+                          select new { dc, pb, phongBan = pb.tenPhongBan };
+
+            var query = from nv in _context.nhanViens
+                        join d in queryPb on nv.maNhanVien equals d.dc.maNhanVien into x
+                        from xx in x.DefaultIfEmpty()
+                        where nv.trangThaiLaoDong == trangThai
+                        select new { nv, x, xx };
+
+            var data = await query.Select(x => new BaoCaoViewModel()
+            {
+                id = x.nv.maNhanVien,
+                hoTen = x.nv.hoTen,
+                ngaySinh = x.nv.ngaySinh,
+                gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
+                dienThoai = x.nv.dienThoai,
+                trangThai = x.nv.trangThaiLaoDong == true ? "Đang làm việc" : "Đã nghỉ việc",
+                tenPhongBan = x.xx.phongBan ?? String.Empty
+            }).ToListAsync();
+
+            return data;
+        }
+
+        public async Task<List<BaoCaoViewModel>> GetAllByPhongBanVaTrangThai(int id, bool trangThai)
+        {
+            var queryPb = from dc in _context.dieuChuyens
+                          join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
+                          where dc.trangThai == true && pb.id == id
+                          select new { dc, pb, phongBan = pb.tenPhongBan };
+
+            var query = from nv in _context.nhanViens
+                        join d in queryPb on nv.maNhanVien equals d.dc.maNhanVien
+                        where nv.trangThaiLaoDong == trangThai
+                        select new { nv, d };
+
+            var data = await query.Select(x => new BaoCaoViewModel()
+            {
+                id = x.nv.maNhanVien,
+                hoTen = x.nv.hoTen,
+                ngaySinh = x.nv.ngaySinh,
+                gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
+                dienThoai = x.nv.dienThoai,
+                trangThai = x.nv.trangThaiLaoDong == true ? "Đang làm việc" : "Đã nghỉ việc",
+                tenPhongBan = x.d.phongBan
+            }).ToListAsync();
+
+            return data;
+        }
+
+        public async Task<List<BaoCaoViewModel>> GetAllByTrangThaiVaGioiTinh(bool trangThai, bool gioiTinh)
+        {
+            var queryPb = from dc in _context.dieuChuyens
+                          join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
+                          where dc.trangThai == true 
+                          select new { dc, pb, phongBan = pb.tenPhongBan };
+
+            var query = from nv in _context.nhanViens
+                        join d in queryPb on nv.maNhanVien equals d.dc.maNhanVien into x
+                        from xx in x.DefaultIfEmpty()
+                        where nv.trangThaiLaoDong == trangThai && nv.gioiTinh == gioiTinh
+                        select new { nv, x, xx};
+
+            var data = await query.Select(x => new BaoCaoViewModel()
+            {
+                id = x.nv.maNhanVien,
+                hoTen = x.nv.hoTen,
+                ngaySinh = x.nv.ngaySinh,
+                gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
+                dienThoai = x.nv.dienThoai,
+                trangThai = x.nv.trangThaiLaoDong == true ? "Đang làm việc" : "Đã nghỉ việc",
+                tenPhongBan = x.xx.phongBan ?? String.Empty
+            }).ToListAsync();
+
+            return data;
+        }
+
+        public async Task<List<BaoCaoViewModel>> GetAllBaoCao()
+        {
+            var queryPb = from dc in _context.dieuChuyens
+                          join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
+                          where dc.trangThai == true
+                          select new { dc, pb, phongBan = pb.tenPhongBan };
+
+            var queryHd = from nv in _context.nhanViens
+                          join hd in _context.hopDongs on nv.maNhanVien equals hd.maNhanVien
+                          where hd.trangThai == true
+                          select new { nv, hd };
+
+            var query = from nv in _context.nhanViens
+
+                        join d in queryHd on nv.maNhanVien equals d.hd.maNhanVien
+                        join v in queryPb on nv.maNhanVien equals v.dc.maNhanVien into x
+                        from xx in x.DefaultIfEmpty()
+                        select new { nv, d, x, xx };
+
+            var data = await query.Select(x => new BaoCaoViewModel()
+            {
+                id = x.nv.maNhanVien,
+                hoTen = x.nv.hoTen,
+                ngaySinh = x.nv.ngaySinh,
+                gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
+                dienThoai = x.nv.dienThoai,
+                trangThai = x.nv.trangThaiLaoDong == true ? "Đang làm việc" : "Đã nghỉ việc",
+                tenPhongBan = x.xx.phongBan ?? String.Empty
+            }).ToListAsync();
+
+            return data;
+        }
+
+        public async Task<List<BaoCaoViewModel>> GetAllByPhongBanVaTrangThaiVaGioiTinh(int id, bool trangThai, bool gioiTinh)
+        {
+            var queryPb = from dc in _context.dieuChuyens
+                          join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
+                          where dc.trangThai == true && pb.id == id
+                          select new { dc, pb, phongBan = pb.tenPhongBan };
+
+            var query = from nv in _context.nhanViens
+                        join d in queryPb on nv.maNhanVien equals d.dc.maNhanVien
+                        where nv.trangThaiLaoDong == trangThai && nv.gioiTinh == gioiTinh
+                        select new { nv, d };
+
+            var data = await query.Select(x => new BaoCaoViewModel()
+            {
+                id = x.nv.maNhanVien,
+                hoTen = x.nv.hoTen,
+                ngaySinh = x.nv.ngaySinh,
+                gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
+                dienThoai = x.nv.dienThoai,
+                trangThai = x.nv.trangThaiLaoDong == true ? "Đang làm việc" : "Đã nghỉ việc",
+                tenPhongBan = x.d.phongBan
+            }).ToListAsync();
+
+            return data;
+        }
+        public async Task<List<BaoCaoViewModel>> GetAllByHopDongHL(DateTime ngayBatDau, DateTime ngayKetThuc)
+        {
+            var queryPb = from dc in _context.dieuChuyens
+                          join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
+                          where dc.trangThai == true
+                          select new { dc, pb, phongBan = pb.tenPhongBan };
+
+            var queryHd = from nv in _context.nhanViens
+                          join hd in _context.hopDongs on nv.maNhanVien equals hd.maNhanVien
+                          where hd.trangThai == true
+                          select new { nv, hd };
+
+            var query = from nv in _context.nhanViens
+
+                        join d in queryHd on nv.maNhanVien equals d.hd.maNhanVien
+                        join v in queryPb on nv.maNhanVien equals v.dc.maNhanVien into x
+                        from xx in x.DefaultIfEmpty()
+                        where ngayBatDau <= d.hd.hopDongTuNgay && ngayKetThuc >= d.hd.hopDongTuNgay
+                        select new { nv, d, x, xx };
+
+            var data = await query.Select(x => new BaoCaoViewModel()
+            {
+                id = x.nv.maNhanVien,
+                hoTen = x.nv.hoTen,
+                ngaySinh = x.nv.ngaySinh,
+                gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
+                dienThoai = x.nv.dienThoai,
+                trangThai = x.nv.trangThaiLaoDong == true ? "Đang làm việc" : "Đã nghỉ việc",
+                tenPhongBan = x.xx.phongBan ?? String.Empty
+            }).ToListAsync();
+
+            return data;
+        }
+
+        public async Task<List<BaoCaoViewModel>> GetAllByHopDongHLVaTT(DateTime ngayBatDau, DateTime ngayKetThuc, bool trangThai)
+        {
+            var queryPb = from dc in _context.dieuChuyens
+                          join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
+                          where dc.trangThai == true
+                          select new { dc, pb, phongBan = pb.tenPhongBan };
+
+            var queryHd = from nv in _context.nhanViens
+                          join hd in _context.hopDongs on nv.maNhanVien equals hd.maNhanVien
+                          where hd.trangThai == true && ngayBatDau <= hd.hopDongTuNgay && ngayKetThuc >= hd.hopDongTuNgay
+                          select new { nv, hd };
+
+            var query = from nv in _context.nhanViens
+                        join d in queryHd on nv.maNhanVien equals d.hd.maNhanVien
+                        join v in queryPb on nv.maNhanVien equals v.dc.maNhanVien into x
+                        from xx in x.DefaultIfEmpty()
+                        where nv.trangThaiLaoDong == trangThai
+                        select new { nv, d, x, xx };
+
+            var data = await query.Select(x => new BaoCaoViewModel()
+            {
+                id = x.nv.maNhanVien,
+                hoTen = x.nv.hoTen,
+                ngaySinh = x.nv.ngaySinh,
+                gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
+                dienThoai = x.nv.dienThoai,
+                trangThai = x.nv.trangThaiLaoDong == true ? "Đang làm việc" : "Đã nghỉ việc",
+                tenPhongBan = x.xx.phongBan ?? String.Empty
+            }).ToListAsync();
+
+            return data;
+        }
+
+        public async Task<List<BaoCaoViewModel>> GetAllByHopDongHLVaGT(DateTime ngayBatDau, DateTime ngayKetThuc, bool gioiTinh)
+        {
+            var queryPb = from dc in _context.dieuChuyens
+                          join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
+                          where dc.trangThai == true
+                          select new { dc, pb, phongBan = pb.tenPhongBan };
+
+            var queryHd = from nv in _context.nhanViens
+                          join hd in _context.hopDongs on nv.maNhanVien equals hd.maNhanVien
+                          where hd.trangThai == true && ngayBatDau <= hd.hopDongTuNgay && ngayKetThuc >= hd.hopDongTuNgay
+                          select new { nv, hd };
+
+            var query = from nv in _context.nhanViens
+                        join d in queryHd on nv.maNhanVien equals d.hd.maNhanVien
+                        join v in queryPb on nv.maNhanVien equals v.dc.maNhanVien into x
+                        from xx in x.DefaultIfEmpty()
+                        where nv.gioiTinh == gioiTinh
+                        select new { nv, d, x, xx };
+
+            var data = await query.Select(x => new BaoCaoViewModel()
+            {
+                id = x.nv.maNhanVien,
+                hoTen = x.nv.hoTen,
+                ngaySinh = x.nv.ngaySinh,
+                gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
+                dienThoai = x.nv.dienThoai,
+                trangThai = x.nv.trangThaiLaoDong == true ? "Đang làm việc" : "Đã nghỉ việc",
+                tenPhongBan = x.xx.phongBan ?? String.Empty
+            }).ToListAsync();
+
+            return data;
+        }
+
+        public async Task<List<BaoCaoViewModel>> GetAllByHopDongHLVaTTVaGT(DateTime ngayBatDau, DateTime ngayKetThuc, bool trangThai, bool gioiTinh)
+        {
+            var queryPb = from dc in _context.dieuChuyens
+                          join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
+                          where dc.trangThai == true
+                          select new { dc, pb, phongBan = pb.tenPhongBan };
+
+            var queryHd = from nv in _context.nhanViens
+                          join hd in _context.hopDongs on nv.maNhanVien equals hd.maNhanVien
+                          where hd.trangThai == true && ngayBatDau <= hd.hopDongTuNgay && ngayKetThuc >= hd.hopDongTuNgay
+                          select new { nv, hd };
+
+            var query = from nv in _context.nhanViens
+                        join d in queryHd on nv.maNhanVien equals d.hd.maNhanVien
+                        join v in queryPb on nv.maNhanVien equals v.dc.maNhanVien into x
+                        from xx in x.DefaultIfEmpty()
+                        where nv.gioiTinh == gioiTinh && nv.trangThaiLaoDong == trangThai
+                        select new { nv, d, x, xx };
+
+            var data = await query.Select(x => new BaoCaoViewModel()
+            {
+                id = x.nv.maNhanVien,
+                hoTen = x.nv.hoTen,
+                ngaySinh = x.nv.ngaySinh,
+                gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
+                dienThoai = x.nv.dienThoai,
+                trangThai = x.nv.trangThaiLaoDong == true ? "Đang làm việc" : "Đã nghỉ việc",
+                tenPhongBan = x.xx.phongBan ?? String.Empty
+            }).ToListAsync();
+
+            return data;
+        }
     }
 }

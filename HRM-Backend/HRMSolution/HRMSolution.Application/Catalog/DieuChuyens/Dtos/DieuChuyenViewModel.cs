@@ -18,5 +18,7 @@ namespace HRMSolution.Application.Catalog.DieuChuyens.Dtos
         public int idPhongBan { get; set; }
         public int idChucVu { get; set; }
 
+        public int idTo { get; set; }
+
     }
 }
