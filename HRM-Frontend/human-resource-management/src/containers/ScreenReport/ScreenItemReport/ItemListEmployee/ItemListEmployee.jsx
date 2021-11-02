@@ -9,7 +9,7 @@ import { useToast } from "../../../../components/Toast/Toast";
 import { ComponentToPrint } from "../../../../components/ToPrint/ComponentToPrint";
 
 import "./ItemListEmployee.scss";
-import ListItems from "../ItemListSalaryUp/ListItem";
+import ListItems from "./ListItem";
 
 function ItemListEmployee() {
   var today = new Date();
@@ -278,15 +278,10 @@ function ItemListEmployee() {
         ) {
           error("Bạn mới chọn 1 ngày");
         } else if ((startDate !== null) & (endDate !== null)) {
-          // let sdate = format(new Date(startDate), "yyyy-MM-dd");
-          // let edate = format(new Date(endDate), "yyyy-MM-dd");
-          // const respb = await ProductApi.getRPHdTtGt(
-          //   sdate,
-          //   edate,
-          //   status,
-          //   gender
-          // );
-          // setDataRp(respb);
+          let sdate = format(new Date(startDate), "yyyy-MM-dd");
+          let edate = format(new Date(endDate), "yyyy-MM-dd");
+          const respb = await ProductApi.getRPPbHd(department, sdate, edate);
+          setDataRp(respb);
         }
       } catch (e) {
         error("Thực hiện không thành công");
@@ -306,15 +301,15 @@ function ItemListEmployee() {
         ) {
           error("Bạn mới chọn 1 ngày");
         } else if ((startDate !== null) & (endDate !== null)) {
-          // let sdate = format(new Date(startDate), "yyyy-MM-dd");
-          // let edate = format(new Date(endDate), "yyyy-MM-dd");
-          // const respb = await ProductApi.getRPHdTtGt(
-          //   sdate,
-          //   edate,
-          //   status,
-          //   gender
-          // );
-          // setDataRp(respb);
+          let sdate = format(new Date(startDate), "yyyy-MM-dd");
+          let edate = format(new Date(endDate), "yyyy-MM-dd");
+          const respb = await ProductApi.getRPPbHdGt(
+            department,
+            sdate,
+            edate,
+            gender
+          );
+          setDataRp(respb);
         }
       } catch (e) {
         error("Thực hiện không thành công");
@@ -334,15 +329,15 @@ function ItemListEmployee() {
         ) {
           error("Bạn mới chọn 1 ngày");
         } else if ((startDate !== null) & (endDate !== null)) {
-          // let sdate = format(new Date(startDate), "yyyy-MM-dd");
-          // let edate = format(new Date(endDate), "yyyy-MM-dd");
-          // const respb = await ProductApi.getRPHdTtGt(
-          //   sdate,
-          //   edate,
-          //   status,
-          //   gender
-          // );
-          // setDataRp(respb);
+          let sdate = format(new Date(startDate), "yyyy-MM-dd");
+          let edate = format(new Date(endDate), "yyyy-MM-dd");
+          const respb = await ProductApi.getRPPbHdTt(
+            department,
+            sdate,
+            edate,
+            status
+          );
+          setDataRp(respb);
         }
       } catch (e) {
         error("Thực hiện không thành công");

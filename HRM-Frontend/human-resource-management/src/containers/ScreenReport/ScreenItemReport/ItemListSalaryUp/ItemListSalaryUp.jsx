@@ -8,7 +8,7 @@ import { ExportCSV } from "../../../../components/ExportFile/ExportFile";
 import { useToast } from "../../../../components/Toast/Toast";
 import { ComponentToPrint } from "../../../../components/ToPrint/ComponentToPrint";
 
-import ListItems from "./ListItem";
+import ListItemSalaryup from "./ListItemSalaryup";
 
 function ItemListSalaryUp() {
   var today = new Date();
@@ -27,7 +27,7 @@ function ItemListSalaryUp() {
   const [department, setDepartment] = useState("Tất cả");
   const [check, setCheck] = useState("Tất cả");
   const [checkPb, setCheckPb] = useState(false);
-  const [dataRp, setDataRp] = useState([]);
+  const [dataRpSalaryUp, setDataRpSalaryUp] = useState([]);
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -51,7 +51,55 @@ function ItemListSalaryUp() {
     }
   }
 
-  const handelReport = async () => {};
+  const handelReport = async () => {
+    if (check === "Tất cả") {
+      try {
+        if ((startDate === null) & (endDate === null)) {
+          warn("Bạn chọn ngày hoặc chọn theo phòng ban");
+        } else if (
+          (startDate !== null) & (endDate === null) ||
+          (startDate === null) & (endDate !== null)
+        ) {
+          error("Bạn mới chọn 1 ngày");
+        } else if ((startDate !== null) & (endDate !== null)) {
+          let sdate = format(new Date(startDate), "yyyy-MM-dd");
+          let edate = format(new Date(endDate), "yyyy-MM-dd");
+          const respbSalaryUp = await ProductApi.getRpAllLg(sdate, edate);
+          setDataRpSalaryUp(respbSalaryUp);
+        }
+      } catch (e) {
+        error("Thực hiện không thành công");
+      }
+    } else if (check === "Phòng ban") {
+      try {
+        if ((startDate === null) & (endDate === null)) {
+          warn("Bạn chưa chọn ngày");
+        } else if (
+          (startDate !== null) & (endDate === null) ||
+          (startDate === null) & (endDate !== null)
+        ) {
+          error("Bạn mới chọn 1 ngày");
+        } else if (
+          (startDate !== null) &
+          (endDate !== null) &
+          (department === "Tất cả")
+        ) {
+          error("Bạn chưa chọn phòng ban hoặc bạn hãy chọn theo tất cả");
+        } else if ((startDate !== null) & (endDate !== null)) {
+          let sdate = format(new Date(startDate), "yyyy-MM-dd");
+          let edate = format(new Date(endDate), "yyyy-MM-dd");
+          const respbSalaryUp = await ProductApi.getRpAllLgPb(
+            department,
+            sdate,
+            edate
+          );
+          setDataRpSalaryUp(respbSalaryUp);
+        }
+      } catch (e) {
+        error("Thực hiện không thành công");
+      }
+    }
+  };
 
   return (
     <>
@@ -129,7 +177,10 @@ function ItemListSalaryUp() {
           <button className="button-pdf" onClick={handlePrint}>
             <FontAwesomeIcon icon={["fas", "file-pdf"]} />
           </button>
-          <ExportCSV csvData={dataRp} fileName="Báo cáo danh sách nhân viên" />
+          <ExportCSV
+            csvData={dataRpSalaryUp}
+            fileName="Báo cáo danh sách nhân viên"
+          />
         </div>
       </div>
       <div className="report-emp">
@@ -152,16 +203,17 @@ function ItemListSalaryUp() {
                 <tr>
                   <th scope="col">Mã Nhân Viên</th>
                   <th scope="col">Họ Tên</th>
-                  <th scope="col">Ngày sinh</th>
-                  <th scope="col">Giới tính</th>
-                  <th scope="col">Điện thoại</th>
-                  <th scope="col">Phòng ban</th>
-                  <th scope="col">Trạng thái</th>
+                  <th scope="col">Mã hợp đồng</th>
+                  <th scope="col">Tên hợp đồng</th>
+                  <th scope="col">Lương cơ bản</th>
+                  <th scope="col">Tổng lương</th>
+                  <th scope="col">Thời gian lên lương</th>
+                  <th scope="col">Tên phòng ban</th>
                 </tr>
               </thead>
               <tbody>
-                {dataRp.map((item) => (
-                  <ListItems user={item} key={item.id} />
+                {dataRpSalaryUp.map((item) => (
+                  <ListItemSalaryup user={item} key={item.id} />
                 ))}
               </tbody>
             </table>

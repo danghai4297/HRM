@@ -458,6 +458,24 @@ const ProductApi = {
     return axiosClient.get(url);
   },
 
+  //all rp pb hợp đồng
+  getRPPbHd: (id, sdate, edate) => {
+    const url = `/NhanVien/bao-cao-phong-ban-hop-dong/${id}/${sdate}/${edate}`;
+    return axiosClient.get(url);
+  },
+
+  //all rp pb hợp đồng giới tính
+  getRPPbHdGt: (id, sdate, edate, gender) => {
+    const url = `/NhanVien/bao-cao-phong-ban-hop-dong-gioi-tinh/${id}/${sdate}/${edate}/${gender}`;
+    return axiosClient.get(url);
+  },
+
+  //all rp pb hợp đồng trạng thái
+  getRPPbHdTt: (id, sdate, edate, status) => {
+    const url = `/NhanVien/bao-cao-phong-ban-hop-dong-trang-thai/${id}/${sdate}/${edate}/${status}`;
+    return axiosClient.get(url);
+  },
+
   //rp pb giới tính
   getRPPbGt: (id, gender) => {
     const url = `/NhanVien/bao-cao-phong-ban-gioi-tinh/${id}/${gender}`;
@@ -525,8 +543,20 @@ const ProductApi = {
   },
 
   //Rp all Nv pb và hd giới tính trang thai
-  getRpAllPbHdTtGt: (id,sdate,edate,status, gender) => {
+  getRpAllPbHdTtGt: (id, sdate, edate, status, gender) => {
     const url = `/NhanVien/bao-cao-phong-ban-hop-dong-trang-thai-gioi-tinh/${id}/${sdate}/${edate}/${status}/${gender}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all Nv lên luong từ ngày --> ngày
+  getRpAllLg: (sdate, edate) => {
+    const url = `/NhanVien/bao-cao-len-luong/${sdate}/${edate}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all Nv lên luong phong ban từ ngày --> ngày
+  getRpAllLgPb: (id, sdate, edate) => {
+    const url = `/NhanVien/bao-cao-len-luong-phong-ban/${id}/${sdate}/${edate}`;
     return axiosClient.get(url);
   },
 };
