@@ -811,8 +811,8 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName", "ghiChu" },
                 values: new object[,]
                 {
-                    { new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"), "1a11f24d-c724-4d16-9a8c-4dddd678052b", "admin", "admin", "Administrator role" },
-                    { new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec"), "e2ed78da-f4b6-4a57-8574-2bd1422ceeaa", "user", "user", "User role" }
+                    { new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"), "3d81163e-c690-49ab-bdd0-3943e20fb2db", "admin", "admin", "Administrator role" },
+                    { new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec"), "15762ced-d087-443a-a109-10fc1e1e3d97", "user", "user", "User role" }
                 });
 
             migrationBuilder.InsertData(
@@ -829,8 +829,8 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "hoTen", "maNhanVien", "ngaySinh" },
                 values: new object[,]
                 {
-                    { new Guid("1db26eb2-1870-4129-f60a-08d9978ff76b"), 0, "3c7834c6-8db4-4ac2-ade3-bf1bc624ecb2", "hieudongtru@gmail.com", true, false, null, "hieudongtru@gmail.com", "user1", "AQAAAAEAACcQAAAAEPMjaYfJpET7XODWp0AhVKNimTVnoR2f0vf8IStJf5YRJOTO8yQZfsz8zsO2C6ZofA==", "01231243", false, "", false, "user1", "Đào Ngọc Hưởng", "NV0001", new DateTime(1998, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"), 0, "212ba42e-fdbb-4321-aa1b-ee2d44948cf7", "hieudongtru@gmail.com", true, false, null, "hieudongtru@gmail.com", "admin", "AQAAAAEAACcQAAAAEK2Nk5E4XQrA7ekd5vnpcGYyuG8AoV33GuAV2m/3l8h4uHqDwoDc6Ooyh7uG+qTI6g==", "01231243", false, "", false, "admin", "Mai Trung Hiếu", "NV0002", new DateTime(1998, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { new Guid("1db26eb2-1870-4129-f60a-08d9978ff76b"), 0, "afdefd1f-65fa-442d-9860-f26d2b81f080", "hieudongtru@gmail.com", true, false, null, "hieudongtru@gmail.com", "user1", "AQAAAAEAACcQAAAAEKJhrn9yx05Mt0UCndpA0bIMEzPBdb0h6JkyUrW8MucSZIJHsTBQZu8bESZhiKHEBA==", "01231243", false, "", false, "user1", "Đào Ngọc Hưởng", "NV0001", new DateTime(1998, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"), 0, "49a7b742-468d-4c80-97b1-6f1d0bc0194f", "hieudongtru@gmail.com", true, false, null, "hieudongtru@gmail.com", "admin", "AQAAAAEAACcQAAAAEMNeGVjFJrZ+MbNiD3VFw0FL1H7aylOAvDXlEPa3qy+8GmKZnQnvmNgK1xKUu3E5Xw==", "01231243", false, "", false, "admin", "Mai Trung Hiếu", "NV0002", new DateTime(1998, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -2260,15 +2260,15 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "id", "chiTiet", "idChucVu", "idPhongBan", "maNhanVien", "ngayHieuLuc", "to", "trangThai" },
                 values: new object[,]
                 {
-                    { 1, "Không", 1, 1, "NV0001", new DateTime(2021, 11, 2, 3, 21, 48, 535, DateTimeKind.Local).AddTicks(1850), 1, false },
-                    { 9, "Ahihi", 1, 5, "NV0008", new DateTime(2021, 11, 2, 3, 21, 48, 535, DateTimeKind.Local).AddTicks(4154), 3, true },
-                    { 8, "Ahihi", 1, 4, "NV0007", new DateTime(2021, 11, 2, 3, 21, 48, 535, DateTimeKind.Local).AddTicks(4151), 2, true },
-                    { 7, "Không", 1, 5, "NV0006", new DateTime(2021, 11, 2, 3, 21, 48, 535, DateTimeKind.Local).AddTicks(4148), 1, true },
-                    { 6, "Ahihi", 1, 4, "NV0005", new DateTime(2021, 11, 2, 3, 21, 48, 535, DateTimeKind.Local).AddTicks(4145), 3, true },
-                    { 4, "Không", 1, 3, "NV0003", new DateTime(2021, 11, 2, 3, 21, 48, 535, DateTimeKind.Local).AddTicks(4139), 1, true },
-                    { 3, "Ahihi", 1, 3, "NV0002", new DateTime(2021, 11, 2, 3, 21, 48, 535, DateTimeKind.Local).AddTicks(4135), 3, true },
-                    { 5, "Ahihi", 1, 3, "NV0004", new DateTime(2021, 11, 2, 3, 21, 48, 535, DateTimeKind.Local).AddTicks(4142), 2, true },
-                    { 2, "Ahihi", 1, 3, "NV0001", new DateTime(2021, 11, 2, 3, 21, 48, 535, DateTimeKind.Local).AddTicks(4055), 2, true }
+                    { 1, "Không", 1, 1, "NV0001", new DateTime(2021, 11, 2, 15, 27, 58, 933, DateTimeKind.Local).AddTicks(9382), 1, false },
+                    { 9, "Ahihi", 1, 5, "NV0008", new DateTime(2021, 11, 2, 15, 27, 58, 934, DateTimeKind.Local).AddTicks(2132), 3, true },
+                    { 8, "Ahihi", 1, 4, "NV0007", new DateTime(2021, 11, 2, 15, 27, 58, 934, DateTimeKind.Local).AddTicks(2129), 2, true },
+                    { 7, "Không", 1, 5, "NV0006", new DateTime(2021, 11, 2, 15, 27, 58, 934, DateTimeKind.Local).AddTicks(2126), 1, true },
+                    { 6, "Ahihi", 1, 4, "NV0005", new DateTime(2021, 11, 2, 15, 27, 58, 934, DateTimeKind.Local).AddTicks(2123), 3, true },
+                    { 5, "Ahihi", 1, 3, "NV0004", new DateTime(2021, 11, 2, 15, 27, 58, 934, DateTimeKind.Local).AddTicks(2120), 2, true },
+                    { 3, "Ahihi", 1, 3, "NV0002", new DateTime(2021, 11, 2, 15, 27, 58, 934, DateTimeKind.Local).AddTicks(2111), 3, true },
+                    { 4, "Không", 1, 3, "NV0003", new DateTime(2021, 11, 2, 15, 27, 58, 934, DateTimeKind.Local).AddTicks(2116), 1, true },
+                    { 2, "Ahihi", 1, 3, "NV0001", new DateTime(2021, 11, 2, 15, 27, 58, 934, DateTimeKind.Local).AddTicks(2027), 2, true }
                 });
 
             migrationBuilder.InsertData(
@@ -2276,15 +2276,15 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "maHopDong", "ghiChu", "hopDongDenNgay", "hopDongTuNgay", "idChucDanh", "idLoaiHopDong", "maNhanVien", "trangThai" },
                 values: new object[,]
                 {
-                    { "HD02", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 11, 2, 3, 21, 48, 534, DateTimeKind.Local).AddTicks(3763), 1, 1, "NV0001", true },
-                    { "HD07", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 11, 2, 3, 21, 48, 534, DateTimeKind.Local).AddTicks(4074), 1, 1, "NV0007", true },
-                    { "HD05", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 11, 2, 3, 21, 48, 534, DateTimeKind.Local).AddTicks(4047), 1, 1, "NV0005", true },
-                    { "HD04", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 11, 2, 3, 21, 48, 534, DateTimeKind.Local).AddTicks(4033), 1, 1, "NV0004", true },
-                    { "HD08", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 11, 2, 3, 21, 48, 534, DateTimeKind.Local).AddTicks(4087), 1, 1, "NV0008", true },
-                    { "HD03", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 11, 2, 3, 21, 48, 534, DateTimeKind.Local).AddTicks(4010), 1, 1, "NV0003", true },
-                    { "HD06", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 11, 2, 3, 21, 48, 534, DateTimeKind.Local).AddTicks(4061), 1, 1, "NV0006", true },
-                    { "HD09", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 11, 2, 3, 21, 48, 534, DateTimeKind.Local).AddTicks(4100), 1, 1, "NV0002", true },
-                    { "HD01", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 11, 2, 3, 21, 48, 532, DateTimeKind.Local).AddTicks(7333), 1, 1, "NV0001", false }
+                    { "HD04", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 11, 2, 15, 27, 58, 933, DateTimeKind.Local).AddTicks(303), 1, 1, "NV0004", true },
+                    { "HD08", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 11, 2, 15, 27, 58, 933, DateTimeKind.Local).AddTicks(396), 1, 1, "NV0008", true },
+                    { "HD07", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 11, 2, 15, 27, 58, 933, DateTimeKind.Local).AddTicks(377), 1, 1, "NV0007", true },
+                    { "HD01", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 11, 2, 15, 27, 58, 931, DateTimeKind.Local).AddTicks(4526), 1, 1, "NV0001", false },
+                    { "HD09", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 11, 2, 15, 27, 58, 933, DateTimeKind.Local).AddTicks(419), 1, 1, "NV0002", true },
+                    { "HD06", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 11, 2, 15, 27, 58, 933, DateTimeKind.Local).AddTicks(358), 1, 1, "NV0006", true },
+                    { "HD02", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 11, 2, 15, 27, 58, 933, DateTimeKind.Local).AddTicks(41), 1, 1, "NV0001", true },
+                    { "HD03", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 11, 2, 15, 27, 58, 933, DateTimeKind.Local).AddTicks(271), 1, 1, "NV0003", true },
+                    { "HD05", null, new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 11, 2, 15, 27, 58, 933, DateTimeKind.Local).AddTicks(329), 1, 1, "NV0005", true }
                 });
 
             migrationBuilder.InsertData(
@@ -2292,18 +2292,18 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "id", "anh", "idDanhMucKhenThuong", "loai", "lyDo", "maNhanVien", "noiDung" },
                 values: new object[,]
                 {
-                    { 3, null, 1, true, null, "NV0009", "Thưởng nhân viên suất sắc" },
-                    { 9, null, 1, true, null, "NV0022", "Thưởng nhân viên suất sắc" },
-                    { 7, null, 1, true, null, "NV0023", "Thưởng nhân viên suất sắc" },
-                    { 5, null, 1, false, null, "NV0035", "Thưởng nhân viên suất sắc" },
-                    { 10, null, 1, false, null, "NV0056", "Thưởng nhân viên suất sắc" },
-                    { 6, null, 1, true, null, "NV0078", "Thưởng nhân viên suất sắc" },
-                    { 11, null, 1, true, null, "NV0081", "Thưởng nhân viên suất sắc" },
-                    { 4, null, 1, true, null, "NV0021", "Thưởng nhân viên suất sắc" },
-                    { 8, null, 1, false, null, "NV0099", "Thưởng nhân viên suất sắc" },
+                    { 10, null, 5, false, null, "NV0008", "Phạt nhân viên suất sắc" },
+                    { 9, null, 1, true, null, "NV0007", "Thưởng nhân viên suất sắc" },
+                    { 8, null, 5, false, null, "NV0006", "Phạt nhân viên suất sắc" },
+                    { 7, null, 1, true, null, "NV0005", "Thưởng nhân viên suất sắc" },
                     { 1, null, 1, true, null, "NV0001", "Thưởng nhân viên suất sắc" },
-                    { 12, null, 1, false, null, "NV0091", "Thưởng nhân viên suất sắc" },
-                    { 2, null, 1, false, null, "NV0001", "Thưởng nhân viên suất sắc" }
+                    { 6, null, 1, true, null, "NV0004", "Thưởng nhân viên suất sắc" },
+                    { 11, null, 1, true, null, "NV0009", "Thưởng nhân viên suất sắc" },
+                    { 2, null, 4, false, null, "NV0001", "Phạt nhân viên suất sắc" },
+                    { 5, null, 4, false, null, "NV0003", "Phạt nhân viên suất sắc" },
+                    { 3, null, 1, true, null, "NV0009", "Thưởng nhân viên suất sắc" },
+                    { 12, null, 5, false, null, "NV0002", "Phạt nhân viên suất sắc" },
+                    { 4, null, 1, true, null, "NV0002", "Thưởng nhân viên suất sắc" }
                 });
 
             migrationBuilder.InsertData(
@@ -2353,11 +2353,15 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "id", "bacLuong", "ghiChu", "heSoLuong", "idNhomLuong", "luongCoBan", "maHopDong", "ngayHieuLuc", "ngayKetThuc", "phuCapKhac", "phuCapTrachNhiem", "thoiHanLenLuong", "tongLuong", "trangThai" },
                 values: new object[,]
                 {
-                    { 1, "1", null, null, 1, null, "HD01", new DateTime(2021, 11, 2, 3, 21, 48, 534, DateTimeKind.Local).AddTicks(8173), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", null, false },
-                    { 2, "1", null, null, 1, null, "HD01", new DateTime(2021, 11, 2, 3, 21, 48, 534, DateTimeKind.Local).AddTicks(9830), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", null, true },
-                    { 3, "1", null, null, 1, null, "HD03", new DateTime(2021, 11, 2, 3, 21, 48, 534, DateTimeKind.Local).AddTicks(9920), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", null, true },
-                    { 4, "1", null, null, 1, null, "HD04", new DateTime(2021, 11, 2, 3, 21, 48, 534, DateTimeKind.Local).AddTicks(9936), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", null, true },
-                    { 5, "1", null, null, 1, null, "HD05", new DateTime(2021, 11, 2, 3, 21, 48, 534, DateTimeKind.Local).AddTicks(9950), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", null, true }
+                    { 1, "1", null, null, 1, 700000f, "HD02", new DateTime(2021, 11, 2, 15, 27, 58, 933, DateTimeKind.Local).AddTicks(4015), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", 1000000f, false },
+                    { 2, "1", null, null, 1, 750000f, "HD02", new DateTime(2021, 11, 2, 15, 27, 58, 933, DateTimeKind.Local).AddTicks(6720), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", 1120000f, true },
+                    { 9, "1", null, null, 1, 556000f, "HD09", new DateTime(2021, 11, 2, 15, 27, 58, 933, DateTimeKind.Local).AddTicks(6934), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", 2650000f, true },
+                    { 3, "1", null, null, 1, 720000f, "HD03", new DateTime(2021, 11, 2, 15, 27, 58, 933, DateTimeKind.Local).AddTicks(6838), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", 1440000f, true },
+                    { 4, "1", null, null, 1, 712000f, "HD04", new DateTime(2021, 11, 2, 15, 27, 58, 933, DateTimeKind.Local).AddTicks(6857), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", 1430000f, true },
+                    { 5, "1", null, null, 1, 756000f, "HD05", new DateTime(2021, 11, 2, 15, 27, 58, 933, DateTimeKind.Local).AddTicks(6873), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", 1650000f, true },
+                    { 6, "1", null, null, 1, 256000f, "HD06", new DateTime(2021, 11, 2, 15, 27, 58, 933, DateTimeKind.Local).AddTicks(6889), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", 3650000f, true },
+                    { 7, "1", null, null, 1, 956000f, "HD07", new DateTime(2021, 11, 2, 15, 27, 58, 933, DateTimeKind.Local).AddTicks(6904), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", 1350000f, true },
+                    { 8, "1", null, null, 1, 156000f, "HD08", new DateTime(2021, 11, 2, 15, 27, 58, 933, DateTimeKind.Local).AddTicks(6919), new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified), null, null, "một năm", 1250000f, true }
                 });
 
             migrationBuilder.CreateIndex(

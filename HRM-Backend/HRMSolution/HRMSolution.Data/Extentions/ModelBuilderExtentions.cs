@@ -32983,11 +32983,15 @@ namespace HRMSolution.Data.Extentions
                 new HopDong() { maHopDong = "HD09", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0002", trangThai = true }
                 );
             modelbulder.Entity<Luong>().HasData(
-                new Luong() { id = 1, maHopDong = "HD01",idNhomLuong=1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture) , trangThai = false },
-                new Luong() { id = 2,  maHopDong = "HD01", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true },
-                new Luong() { id = 3,  maHopDong = "HD03", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true },
-                new Luong() { id = 4,  maHopDong = "HD04", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true },
-                new Luong() { id = 5,  maHopDong = "HD05", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true }
+                new Luong() { id = 1, maHopDong = "HD02", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = false, luongCoBan = 700000, tongLuong = 1000000},
+                new Luong() { id = 2, maHopDong = "HD02", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, luongCoBan = 750000, tongLuong = 1120000 },
+                new Luong() { id = 3, maHopDong = "HD03", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, luongCoBan = 720000, tongLuong = 1440000 },
+                new Luong() { id = 4, maHopDong = "HD04", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, luongCoBan = 712000, tongLuong = 1430000 },
+                new Luong() { id = 5, maHopDong = "HD05", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, luongCoBan = 756000, tongLuong = 1650000 },
+                new Luong() { id = 6, maHopDong = "HD06", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, luongCoBan = 256000, tongLuong = 3650000 },
+                new Luong() { id = 7, maHopDong = "HD07", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, luongCoBan = 956000, tongLuong = 1350000 },
+                new Luong() { id = 8, maHopDong = "HD08", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, luongCoBan = 156000, tongLuong = 1250000 },
+                new Luong() { id = 9, maHopDong = "HD09", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, luongCoBan = 556000, tongLuong = 2650000 }
                 );
             modelbulder.Entity<DieuChuyen>().HasData(
                 new DieuChuyen() { id = 1, maNhanVien = "NV0001", ngayHieuLuc = DateTime.Now, idPhongBan = 1, to = 1, idChucVu = 1, chiTiet = "Không", trangThai = false },
@@ -33002,17 +33006,17 @@ namespace HRMSolution.Data.Extentions
                 );
             modelbulder.Entity<KhenThuongKyLuat>().HasData(
                 new KhenThuongKyLuat() { id = 1, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0001" },
-                new KhenThuongKyLuat() { id = 2, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = false, maNhanVien = "NV0001" },
+                new KhenThuongKyLuat() { id = 2, idDanhMucKhenThuong = 4, noiDung = "Phạt nhân viên suất sắc", loai = false, maNhanVien = "NV0001" },
                 new KhenThuongKyLuat() { id = 3, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0009" },
-                new KhenThuongKyLuat() { id = 4, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0021" },
-                new KhenThuongKyLuat() { id = 5, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = false, maNhanVien = "NV0035" },
-                new KhenThuongKyLuat() { id = 6, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0078" },
-                new KhenThuongKyLuat() { id = 7, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0023" },
-                new KhenThuongKyLuat() { id = 8, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = false, maNhanVien = "NV0099" },
-                new KhenThuongKyLuat() { id = 9, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0022" },
-                new KhenThuongKyLuat() { id = 10, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = false, maNhanVien = "NV0056" },
-                new KhenThuongKyLuat() { id = 11, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0081" },
-                new KhenThuongKyLuat() { id = 12, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = false, maNhanVien = "NV0091" }
+                new KhenThuongKyLuat() { id = 4, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0002" },
+                new KhenThuongKyLuat() { id = 5, idDanhMucKhenThuong = 4, noiDung = "Phạt nhân viên suất sắc", loai = false, maNhanVien = "NV0003" },
+                new KhenThuongKyLuat() { id = 6, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0004" },
+                new KhenThuongKyLuat() { id = 7, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0005" },
+                new KhenThuongKyLuat() { id = 8, idDanhMucKhenThuong = 5, noiDung = "Phạt nhân viên suất sắc", loai = false, maNhanVien = "NV0006" },
+                new KhenThuongKyLuat() { id = 9, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0007" },
+                new KhenThuongKyLuat() { id = 10, idDanhMucKhenThuong = 5, noiDung = "Phạt nhân viên suất sắc", loai = false, maNhanVien = "NV0008" },
+                new KhenThuongKyLuat() { id = 11, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0009" },
+                new KhenThuongKyLuat() { id = 12, idDanhMucKhenThuong = 5, noiDung = "Phạt nhân viên suất sắc", loai = false, maNhanVien = "NV0002" }
 
                 );
             modelbulder.Entity<LichSuBanThan>().HasData(
