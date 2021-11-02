@@ -1258,7 +1258,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
             return data;
         }
 
-        public async Task<List<BaoCaoNhomLuongViewModel>> GetAllNhomLuong(int idNhomLuong)
+        public async Task<List<BaoCaoNhomLuongViewModel>> GetAllNhomLuong()
         {
             var queryPb = from dc in _context.dieuChuyens
                           join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
@@ -1270,7 +1270,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                         join nl in _context.danhMucNhomLuongs on l.idNhomLuong equals nl.id
                         join v in queryPb on nv.maNhanVien equals v.dc.maNhanVien into x
                         from xx in x.DefaultIfEmpty()
-                        where hd.trangThai == true && l.trangThai == true && l.idNhomLuong == idNhomLuong && nv.trangThaiLaoDong == true
+                        where hd.trangThai == true && l.trangThai == true && nv.trangThaiLaoDong == true
                         select new { nv, hd, l, nl, x, xx};
             var data = await query.Select(x => new BaoCaoNhomLuongViewModel()
             {
@@ -1285,7 +1285,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
             return data;
         }
 
-        public async Task<List<BaoCaoNhomLuongViewModel>> GetAllNhomLuongPhongBan(int idPhongBan, int idNhomLuong)
+        public async Task<List<BaoCaoNhomLuongViewModel>> GetAllNhomLuongPhongBan(int idPhongBan)
         {
             var queryPb = from dc in _context.dieuChuyens
                           join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
@@ -1296,7 +1296,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                         join l in _context.luongs on hd.maHopDong equals l.maHopDong
                         join nl in _context.danhMucNhomLuongs on l.idNhomLuong equals nl.id
                         join v in queryPb on nv.maNhanVien equals v.dc.maNhanVien
-                        where hd.trangThai == true && l.trangThai == true && l.idNhomLuong == idNhomLuong && nv.trangThaiLaoDong == true
+                        where hd.trangThai == true && l.trangThai == true  && nv.trangThaiLaoDong == true
                         select new { nv, hd, l, nl, v };
             var data = await query.Select(x => new BaoCaoNhomLuongViewModel()
             {
@@ -1367,7 +1367,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
             var query = from nv in _context.nhanViens
                         join v in queryPb on nv.maNhanVien equals v.dc.maNhanVien into x
                         from xx in x.DefaultIfEmpty()
-                        where nv.trangThaiLaoDong == true
+                        where nv.trangThaiLaoDong == true && nv.bhxh != null
                         select new { nv, x, xx };
             var data = await query.Select(x => new BaoCaoBHXHViewModel()
             {
@@ -1390,7 +1390,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                           select new { dc, pb, phongBan = pb.tenPhongBan };
             var query = from nv in _context.nhanViens
                         join v in queryPb on nv.maNhanVien equals v.dc.maNhanVien
-                        where nv.trangThaiLaoDong == true
+                        where nv.trangThaiLaoDong == true && nv.bhxh != null
                         select new { nv,v };
             var data = await query.Select(x => new BaoCaoBHXHViewModel()
             {
@@ -1400,6 +1400,55 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 ngaySinh = x.nv.ngaySinh,
                 bhxh = x.nv.bhxh,
                 tenPhongBan = x.v.phongBan
+            }).ToListAsync();
+
+            return data;
+        }
+
+        public async Task<List<BaoCaoDangVienViewModel>> GetAllDangVien()
+        {
+            var queryPb = from dc in _context.dieuChuyens
+                          join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
+                          where dc.trangThai == true
+                          select new { dc, pb, phongBan = pb.tenPhongBan };
+            var query = from nv in _context.nhanViens
+                        join v in queryPb on nv.maNhanVien equals v.dc.maNhanVien into x
+                        from xx in x.DefaultIfEmpty()
+                        where nv.trangThaiLaoDong == true && nv.vaoDang == true
+                        select new { nv, x, xx };
+            var data = await query.Select(x => new BaoCaoDangVienViewModel()
+            {
+                id = x.nv.maNhanVien,
+                hoTen = x.nv.hoTen,
+                gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
+                ngaySinh = x.nv.ngaySinh,
+                dienThoai = x.nv.dienThoai,
+                ngayVaoDangChinhThuc = x.nv.ngayVaoDangChinhThuc,
+                tenPhongBan = x.xx.phongBan ?? String.Empty
+            }).ToListAsync();
+
+            return data;
+        }
+
+        public async Task<List<BaoCaoDangVienViewModel>> GetAllDangVienPhongBan(int id)
+        {
+            var queryPb = from dc in _context.dieuChuyens
+                          join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
+                          where dc.trangThai == true
+                          select new { dc, pb, phongBan = pb.tenPhongBan };
+            var query = from nv in _context.nhanViens
+                        join v in queryPb on nv.maNhanVien equals v.dc.maNhanVien
+                        where nv.trangThaiLaoDong == true && nv.vaoDang == true
+                        select new { nv, v };
+            var data = await query.Select(x => new BaoCaoDangVienViewModel()
+            {
+                id = x.nv.maNhanVien,
+                hoTen = x.nv.hoTen,
+                gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
+                ngaySinh = x.nv.ngaySinh,
+                dienThoai = x.nv.dienThoai,
+                ngayVaoDangChinhThuc = x.nv.ngayVaoDangChinhThuc,
+                tenPhongBan = x.v.phongBan 
             }).ToListAsync();
 
             return data;

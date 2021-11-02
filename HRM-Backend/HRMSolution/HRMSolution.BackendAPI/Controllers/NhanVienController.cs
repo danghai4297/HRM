@@ -186,18 +186,18 @@ namespace HRMSolution.BackendAPI.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet("bao-cao-nhom-luong/{id}")]
-        public async Task<IActionResult> GetByAllBaoCaoNhomLuong(int id)
+        [HttpGet("bao-cao-nhom-luong")]
+        public async Task<IActionResult> GetByAllBaoCaoNhomLuong()
         {
-            var nhanViens = await _nhanVienService.GetAllNhomLuong(id);
+            var nhanViens = await _nhanVienService.GetAllNhomLuong();
             return Ok(nhanViens);
         }
 
         [AllowAnonymous]
-        [HttpGet("bao-cao-nhom-luong-phong-ban/{idPhongBan}/{idNhomLuong}")]
-        public async Task<IActionResult> GetByAllBaoCaoNhomLuong(int idPhongBan, int idNhomLuong)
+        [HttpGet("bao-cao-nhom-luong-phong-ban/{idPhongBan}")]
+        public async Task<IActionResult> GetByAllBaoCaoNhomLuong(int idPhongBan)
         {
-            var nhanViens = await _nhanVienService.GetAllNhomLuongPhongBan(idPhongBan, idNhomLuong);
+            var nhanViens = await _nhanVienService.GetAllNhomLuongPhongBan(idPhongBan);
             return Ok(nhanViens);
         }
 
@@ -230,6 +230,22 @@ namespace HRMSolution.BackendAPI.Controllers
         public async Task<IActionResult> GetByAllBaoCaoBHXHPhongBan(int id)
         {
             var nhanViens = await _nhanVienService.GetAllBHXHPhongBan(id);
+            return Ok(nhanViens);
+        }
+
+        [AllowAnonymous]
+        [HttpGet("bao-cao-dang-vien")]
+        public async Task<IActionResult> GetByAllBaoCaoDangVien()
+        {
+            var nhanViens = await _nhanVienService.GetAllDangVien();
+            return Ok(nhanViens);
+        }
+
+        [AllowAnonymous]
+        [HttpGet("bao-cao-dang-vien-phong-ban/{id}")]
+        public async Task<IActionResult> GetByAllBaoCaoDangVienPhongBan(int id)
+        {
+            var nhanViens = await _nhanVienService.GetAllDangVienPhongBan(id);
             return Ok(nhanViens);
         }
 
