@@ -43,7 +43,7 @@ function AddLanguageForm(props) {
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
-    "Bạn chắc chắn muốn thêm trình độ mới"
+    "Bạn chắc chắn muốn thêm thông tin ngoại ngữ mới"
   );
   const [showCheckDialog, setShowCheckDialog] = useState(false);
 
@@ -58,7 +58,7 @@ function AddLanguageForm(props) {
         const responseNN = await ProductApi.getAllDMNN();
         setDataNN(responseNN);
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốm sửa trình độ");
+          setDescription("Bạn chắc chắn muốn sửa thông tin ngoại ngữ");
           const response = await ProductApi.getNNDetail(id);
           setdataDetailNN(response);
         }
@@ -125,8 +125,8 @@ function AddLanguageForm(props) {
         );
       }
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
   const handleDelete = async () => {
@@ -398,7 +398,7 @@ function AddLanguageForm(props) {
       <Dialog
         show={showDeleteDialog}
         title="Thông báo"
-        description={`Bạn chắc chắn muốn xóa trình độ `}
+        description={`Bạn chắc chắn muốn xóa thông tin ngoại ngữ `}
         confirm={handleDelete}
         cancel={cancel}
       />

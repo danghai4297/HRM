@@ -59,7 +59,7 @@ function AddFamilyForm(props) {
         const responseNN = await ProductApi.getAllDMNT();
         setDataNT(responseNN);
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốm sửa thông tin gia đình");
+          setDescription("Bạn chắc chắn muốn sửa thông tin gia đình");
           const response = await ProductApi.getNTDetail(id);
           setdataDetailNT(response);
           setGender(response.gioiTinh);

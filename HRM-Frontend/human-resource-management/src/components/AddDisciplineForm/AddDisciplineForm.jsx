@@ -7,18 +7,23 @@ import ProductApi from "../../api/productApi";
 import PutApi from "../../api/putAAPI";
 import DeleteApi from "../../../src/api/deleteAPI";
 //import { DatePicker } from "antd";
+import DialogCheck from "../Dialog/DialogCheck";
+import { useToast } from "../Toast/Toast";
+import Dialog from "../../components/Dialog/Dialog";
 
 const regexDate = /^[0-9]{2}[\/]{1}[0-9]{2}[\/]{1}[0-9]{4}$/g;
 const schema = yup.object({
-  idDanhMucKhenThuong: yup.number().required("Loại khen thưởng không được bỏ trống."),
-  maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
+  idDanhMucKhenThuong: yup.number().nullable().required("Loại khen thưởng không được bỏ trống."),
+  maNhanVien: yup.string().nullable().required("Mã nhân viên không được bỏ trống."),
   //thoiGian: yup.string().required("Thời gian không được bỏ trống."),
-  noiDung: yup.string().required("Nội dung không được bỏ trống."),
-  lyDo: yup.string().required("Lý do không được bỏ trống."),
+  noiDung: yup.string().nullable().required("Nội dung không được bỏ trống."),
+  lyDo: yup.string().nullable().required("Lý do không được bỏ trống."),
   loai:yup.boolean()
 });
 
 function AddDisciplineForm(props) {
+  const { error, warn, info, success } = useToast();
+
   // const { objectData } = props;
   let { match, history } = props;
   let { id } = match.params;
@@ -30,12 +35,28 @@ function AddDisciplineForm(props) {
   const [dataKL,setDataKL] = useState([]);
   console.log(id);
   
+  const [dataDetailNN, setdataDetailNN] = useState([]);
+  const [dataNN, setDataNN] = useState([]);
+  const [showDialog, setShowDialog] = useState(false);
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [description, setDescription] = useState(
+    "Bạn chắc chắn muốn thêm thông tin kỷ luật mới"
+  );
+  const [showCheckDialog, setShowCheckDialog] = useState(false);
+
+  const cancel = () => {
+    setShowDialog(false);
+    setShowDeleteDialog(false);
+    setShowCheckDialog(false);
+  };
+
   useEffect(() => {
     const fetchNvList = async () => {
       try {
         const response = await ProductApi.getAllDMKL();
         setDataKL(response);
         if (id !== undefined) {
+          setDescription("Bạn chắc chắn muốn sửa thông tin kỷ luật");
           const responseKT = await ProductApi.getKTvKLDetail(id);
           setDataKLDetail(responseKT);
         }
@@ -59,6 +80,7 @@ function AddDisciplineForm(props) {
     register,
     handleSubmit,
     control,
+    getValues,
     reset,
     formState: { errors },
   } = useForm({
@@ -71,26 +93,59 @@ function AddDisciplineForm(props) {
     }
   }, [dataKLDetail]);
 
+  const checkInputChange = () => {
+    const values = getValues([
+      "maNhanVien",
+      "idDanhMucKhenThuong",
+      "noiDung",
+      "lyDo",
+      "anh",
+      "loai",
+    ]);
+    const dfValue = [
+      intitalValue.maNhanVien,
+      intitalValue.idDanhMucKhenThuong,
+      intitalValue.noiDung,
+      intitalValue.lyDo,
+      intitalValue.anh,
+      intitalValue.loai,
+    ];
+    return JSON.stringify(values) === JSON.stringify(dfValue);
+  };
+
   const onHandleSubmit = async(data) => {
     console.log(data);
     try {
       if(id !== undefined){
         await PutApi.PutKTvKL(data,id);
+        success(
+          `Sửa thông tin ngoại ngữ cho nhân viên ${dataKLDetail.tenNhanVien} thành công`
+        );
       }else{
         await ProductApi.PostKTvKL(data);
+        success(
+          `thêm thông tin ngoại ngữ cho nhân viên ${dataKLDetail.tenNhanVien} thành công`
+        );
       }
       history.goBack();
     } catch (error) {
       console.log("errors",error);
+      error(`Có lỗi xảy ra ${error}`);
     }
   };
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteKTvKL(id);
+      success(
+        `Xoá thông tin trình độ cho nhân viên ${dataKLDetail.tenNhanVien} thành công`
+      );
       history.push(`/reward`);
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
   return (
+    <>
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
@@ -103,7 +158,9 @@ function AddDisciplineForm(props) {
                 dataKLDetail.length !== 0 ? "btn btn-danger" : "delete-button"
               }
               value="Xoá"
-               onClick={handleDelete}
+              onClick={() => {
+                setShowDeleteDialog(true);
+              }}
             />
           <input
             type="submit"
@@ -115,7 +172,13 @@ function AddDisciplineForm(props) {
             type="submit"
             className="btn btn-primary ml-3"
             value={dataKLDetail.length !== 0 ?"Sửa":"Lưu"}
-            onClick={handleSubmit(onHandleSubmit)}
+            onClick={() => {
+              if (checkInputChange()) {
+                setShowCheckDialog(true);
+              } else {
+                setShowDialog(true);
+              }
+            }}
           />
         </div>
       </div>
@@ -252,6 +315,40 @@ function AddDisciplineForm(props) {
         </div>
       </form>
     </div>
+    <Dialog
+        show={showDialog}
+        title="Thông báo"
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
+        cancel={cancel}
+      />
+      <DialogCheck
+        show={showCheckDialog}
+        title="Thông báo"
+        description={
+          id !== undefined
+            ? "Bạn chưa thay đổi thông tin kỷ luật"
+            : "Bạn chưa nhập thông tin kỷ luật"
+        }
+        confirm={null}
+        cancel={cancel}
+      />
+      <Dialog
+        show={showDeleteDialog}
+        title="Thông báo"
+        description={`Bạn chắc chắn muốn xóa thông tin kỷ luật`}
+        confirm={handleDelete}
+        cancel={cancel}
+      />
+    </>
   );
 }
 

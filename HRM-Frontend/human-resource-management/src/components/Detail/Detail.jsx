@@ -323,9 +323,12 @@ function Detail(props) {
             </Container>
           </div>
           <div className="right-path">
-            <Button className="button-color" variant="dark">
+          <Link to={`/profile/${id}`}>
+          <Button className="button-color" variant="dark">
               Sửa
             </Button>
+            </Link>
+            
             <Button className="button-color" variant="danger">
               Xóa
             </Button>

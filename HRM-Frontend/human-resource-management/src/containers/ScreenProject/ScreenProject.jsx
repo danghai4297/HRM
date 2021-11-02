@@ -74,6 +74,12 @@ function ScreenProject() {
               />
               <ProtectedRoute
                 exact
+                path="/profile/:id"
+                component={AddProfileForm}
+                roles={["user"]}
+              />
+              <ProtectedRoute
+                exact
                 path="/profile/detail/level/add"
                 component={AddLevelForm}
                 roles={["user"]}
