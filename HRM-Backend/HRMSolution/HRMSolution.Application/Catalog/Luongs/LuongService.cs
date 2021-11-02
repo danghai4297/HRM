@@ -135,5 +135,18 @@ namespace HRMSolution.Application.Catalog.Luongs
 
             return await _context.SaveChangesAsync();
         }
+
+        public async Task<int> UpdateTrangThai(string maHopDong)
+        {
+
+            var query = await _context.luongs.Where(x => x.maHopDong == maHopDong && x.trangThai == true).FirstOrDefaultAsync();
+
+            var luong = await _context.luongs.FindAsync(query.id);
+            if (luong == null) throw new HRMException($"Không tìm thấy hợp đồng có mã hợp đồng : {maHopDong}");
+
+            luong.trangThai = false;
+
+            return await _context.SaveChangesAsync();
+        }
     }
 }
