@@ -1,14 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, DatePicker } from "antd";
+import { DatePicker } from "antd";
 import { format } from "date-fns";
 import React, { useEffect, useRef, useState } from "react";
 import { useReactToPrint } from "react-to-print";
 import ProductApi from "../../../../api/productApi";
+import { ExportCSV } from "../../../../components/ExportFile/ExportFile";
 import { useToast } from "../../../../components/Toast/Toast";
 import { ComponentToPrint } from "../../../../components/ToPrint/ComponentToPrint";
 
 import "./ItemListEmployee.scss";
-import ListItems from "./ListItem";
+import ListItems from "../ItemListSalaryUp/ListItem";
 
 function ItemListEmployee() {
   var today = new Date();
@@ -19,12 +20,14 @@ function ItemListEmployee() {
 
   const { error, warn, info, success } = useToast();
 
+  const [title, settitle] = useState("");
+
   const [dataDmpb, setDataDmpb] = useState([]);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [gender, setGender] = useState("Tất cả");
   const [status, setStatus] = useState("Tất cả");
-  const [department, setDepartment] = useState(1);
+  const [department, setDepartment] = useState("Tất cả");
   const [check, setCheck] = useState("Tất cả");
   const [checkPb, setCheckPb] = useState(true);
   const [checkHd, setCheckHd] = useState(true);
@@ -176,12 +179,218 @@ function ItemListEmployee() {
       } catch (e) {
         error("Thực hiện không thành công");
       }
+    } else if (
+      (check === "Tất cả") &
+      (gender === "Tất cả") &
+      (status === "Tất cả") &
+      (department === "Tất cả")
+    ) {
+      try {
+        if ((startDate === null) & (endDate === null)) {
+          const respb = await ProductApi.getRpAll();
+          setDataRp(respb);
+        } else if (
+          (startDate !== null) & (endDate === null) ||
+          (startDate === null) & (endDate !== null)
+        ) {
+          error("Bạn mới chọn 1 ngày");
+        } else if ((startDate !== null) & (endDate !== null)) {
+          warn("Bạn chọn phòng ban hoặc chọn theo năm hợp đồng");
+        }
+      } catch (e) {
+        error("Thực hiện không thành công");
+      }
+    } else if (
+      (check === "Tất cả") &
+      (gender !== "Tất cả") &
+      (status === "Tất cả") &
+      (department === "Tất cả")
+    ) {
+      try {
+        if ((startDate === null) & (endDate === null)) {
+          const respb = await ProductApi.getRpAllGt(gender);
+          setDataRp(respb);
+        } else if (
+          (startDate !== null) & (endDate === null) ||
+          (startDate === null) & (endDate !== null)
+        ) {
+          error("Bạn mới chọn 1 ngày");
+        } else if ((startDate !== null) & (endDate !== null)) {
+          warn("Bạn chọn phòng ban hoặc chọn theo năm hợp đồng");
+        }
+      } catch (e) {
+        error("Thực hiện không thành công");
+      }
+    } else if (
+      (check === "Tất cả") &
+      (gender !== "Tất cả") &
+      (status !== "Tất cả") &
+      (department === "Tất cả")
+    ) {
+      try {
+        if ((startDate === null) & (endDate === null)) {
+          const respb = await ProductApi.getRpAllTtGt(status, gender);
+          setDataRp(respb);
+        } else if (
+          (startDate !== null) & (endDate === null) ||
+          (startDate === null) & (endDate !== null)
+        ) {
+          error("Bạn mới chọn 1 ngày");
+        } else if ((startDate !== null) & (endDate !== null)) {
+          warn("Bạn chọn phòng ban hoặc chọn theo năm hợp đồng");
+        }
+      } catch (e) {
+        error("Thực hiện không thành công");
+      }
+    } else if (
+      (check === "Tất cả") &
+      (gender === "Tất cả") &
+      (status !== "Tất cả") &
+      (department === "Tất cả")
+    ) {
+      try {
+        if ((startDate === null) & (endDate === null)) {
+          const respb = await ProductApi.getRpAllTt(status);
+          setDataRp(respb);
+        } else if (
+          (startDate !== null) & (endDate === null) ||
+          (startDate === null) & (endDate !== null)
+        ) {
+          error("Bạn mới chọn 1 ngày");
+        } else if ((startDate !== null) & (endDate !== null)) {
+          warn("Bạn chọn phòng ban hoặc chọn theo năm hợp đồng");
+        }
+      } catch (e) {
+        error("Thực hiện không thành công");
+      }
+    } else if (
+      (check === "Tất cả") &
+      (gender === "Tất cả") &
+      (status === "Tất cả") &
+      (department !== "Tất cả")
+    ) {
+      try {
+        if ((startDate === null) & (endDate === null)) {
+          warn("Bạn chọn ngày hoặc chọn theo phòng ban");
+        } else if (
+          (startDate !== null) & (endDate === null) ||
+          (startDate === null) & (endDate !== null)
+        ) {
+          error("Bạn mới chọn 1 ngày");
+        } else if ((startDate !== null) & (endDate !== null)) {
+          // let sdate = format(new Date(startDate), "yyyy-MM-dd");
+          // let edate = format(new Date(endDate), "yyyy-MM-dd");
+          // const respb = await ProductApi.getRPHdTtGt(
+          //   sdate,
+          //   edate,
+          //   status,
+          //   gender
+          // );
+          // setDataRp(respb);
+        }
+      } catch (e) {
+        error("Thực hiện không thành công");
+      }
+    } else if (
+      (check === "Tất cả") &
+      (gender !== "Tất cả") &
+      (status === "Tất cả") &
+      (department !== "Tất cả")
+    ) {
+      try {
+        if ((startDate === null) & (endDate === null)) {
+          warn("Bạn chọn ngày hoặc chọn theo phòng ban");
+        } else if (
+          (startDate !== null) & (endDate === null) ||
+          (startDate === null) & (endDate !== null)
+        ) {
+          error("Bạn mới chọn 1 ngày");
+        } else if ((startDate !== null) & (endDate !== null)) {
+          // let sdate = format(new Date(startDate), "yyyy-MM-dd");
+          // let edate = format(new Date(endDate), "yyyy-MM-dd");
+          // const respb = await ProductApi.getRPHdTtGt(
+          //   sdate,
+          //   edate,
+          //   status,
+          //   gender
+          // );
+          // setDataRp(respb);
+        }
+      } catch (e) {
+        error("Thực hiện không thành công");
+      }
+    } else if (
+      (check === "Tất cả") &
+      (gender === "Tất cả") &
+      (status !== "Tất cả") &
+      (department !== "Tất cả")
+    ) {
+      try {
+        if ((startDate === null) & (endDate === null)) {
+          warn("Bạn chọn ngày hoặc chọn theo phòng ban");
+        } else if (
+          (startDate !== null) & (endDate === null) ||
+          (startDate === null) & (endDate !== null)
+        ) {
+          error("Bạn mới chọn 1 ngày");
+        } else if ((startDate !== null) & (endDate !== null)) {
+          // let sdate = format(new Date(startDate), "yyyy-MM-dd");
+          // let edate = format(new Date(endDate), "yyyy-MM-dd");
+          // const respb = await ProductApi.getRPHdTtGt(
+          //   sdate,
+          //   edate,
+          //   status,
+          //   gender
+          // );
+          // setDataRp(respb);
+        }
+      } catch (e) {
+        error("Thực hiện không thành công");
+      }
+    } else if (
+      (check === "Tất cả") &
+      (gender !== "Tất cả") &
+      (status !== "Tất cả") &
+      (department !== "Tất cả")
+    ) {
+      try {
+        if ((startDate === null) & (endDate === null)) {
+          warn("Bạn chọn ngày hoặc chọn theo phòng ban");
+        } else if (
+          (startDate !== null) & (endDate === null) ||
+          (startDate === null) & (endDate !== null)
+        ) {
+          error("Bạn mới chọn 1 ngày");
+        } else if ((startDate !== null) & (endDate !== null)) {
+          let sdate = format(new Date(startDate), "yyyy-MM-dd");
+          let edate = format(new Date(endDate), "yyyy-MM-dd");
+          const respb = await ProductApi.getRpAllPbHdTtGt(
+            department,
+            sdate,
+            edate,
+            status,
+            gender
+          );
+          setDataRp(respb);
+        }
+      } catch (e) {
+        error("Thực hiện không thành công");
+      }
     }
   };
 
   return (
     <>
       <div className="select-info">
+        <div className="roww">
+          <input
+            type="text"
+            placeholder="Nhập tiêu đề cho báo cáo"
+            class="form-control"
+            id="title"
+            onChange={(e) => settitle(e.target.value)}
+          />
+        </div>
         <div className="roww">
           <div className="select-row2">
             <label>Theo</label>
@@ -217,6 +426,7 @@ function ItemListEmployee() {
                 onChange={(e) => setDepartment(e.target.value)}
                 disabled={checkPb === false}
               >
+                <option value="Tất cả">Tất cả</option>
                 {dataDmpb.map((item, key) => (
                   <option key={key} value={item.id}>
                     {item.tenPhongBan}{" "}
@@ -273,6 +483,7 @@ function ItemListEmployee() {
           <button className="button-pdf" onClick={handlePrint}>
             <FontAwesomeIcon icon={["fas", "file-pdf"]} />
           </button>
+          <ExportCSV csvData={dataRp} fileName="Báo cáo danh sách nhân viên" />
         </div>
       </div>
       <div className="report-emp">
@@ -280,7 +491,7 @@ function ItemListEmployee() {
           <div className="rp-herder">
             <b>HRM</b>
             <p>-------------------------</p>
-            <h2>Danh sách nhân viên</h2>
+            <h2>{title}</h2>
           </div>
           <div className="rp-herder-left">
             <h5>Phòng ban: {department}</h5>

@@ -499,6 +499,36 @@ const ProductApi = {
     const url = `/NhanVien/bao-cao-hop-dong-trang-thai-gioi-tinh/${sdate}/${edate}/${status}/${gender}`;
     return axiosClient.get(url);
   },
+
+  //Rp all Nv
+  getRpAll: () => {
+    const url = `/NhanVien/bao-cao`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all Nv giới tính
+  getRpAllGt: (gender) => {
+    const url = `/NhanVien/bao-cao-gioi-tinh/${gender}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all Nv trang thai
+  getRpAllTt: (status) => {
+    const url = `/NhanVien/bao-cao-trang-thai/${status}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all Nv trang thai giới tính
+  getRpAllTtGt: (status, gender) => {
+    const url = `/NhanVien/bao-cao-trang-thai-gioi-tinh/${status}/${gender}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all Nv pb và hd giới tính trang thai
+  getRpAllPbHdTtGt: (id,sdate,edate,status, gender) => {
+    const url = `/NhanVien/bao-cao-phong-ban-hop-dong-trang-thai-gioi-tinh/${id}/${sdate}/${edate}/${status}/${gender}`;
+    return axiosClient.get(url);
+  },
 };
 
 export default ProductApi;
