@@ -34,5 +34,13 @@ namespace HRMSolution.Application.Catalog.NhanViens
         Task<List<BaoCaoViewModel>> GetAllByPhongBanVaHDVaGioiTinh(int id, DateTime ngayBatDau, DateTime ngayKetThuc, bool gioiTinh);
         Task<List<BaoCaoLenLuongViewModel>> GetAllLenLuong(DateTime tuNgay, DateTime denNgay);
         Task<List<BaoCaoLenLuongViewModel>> GetAllLenLuongPhongBan(int id, DateTime tuNgay, DateTime denNgay);
+        Task<List<BaoCaoSinhNhatViewModel>> GetAllSinhNhat(int thang);
+        Task<List<BaoCaoSinhNhatViewModel>> GetAllSinhNhatPhongBan(int id, int thang);
+        Task<List<BaoCaoNhomLuongViewModel>> GetAllNhomLuong(int idNhomLuong);
+        Task<List<BaoCaoNhomLuongViewModel>> GetAllNhomLuongPhongBan(int idPhongBan, int idNhomLuong);
+        Task<List<BaoCaoChinhSachViewModel>> GetAllChinhSach();
+        Task<List<BaoCaoChinhSachViewModel>> GetAllChinhSachPhongBan(int id);
+        Task<List<BaoCaoBHXHViewModel>> GetAllBHXH();
+        Task<List<BaoCaoBHXHViewModel>> GetAllBHXHPhongBan(int id);
     }
 }

@@ -61,8 +61,8 @@ namespace HRMSolution.Data.Configurations
             builder.Property(x => x.noiThamGia).HasMaxLength(50);
             builder.Property(x => x.thuongBinh).HasMaxLength(50);
             builder.Property(x => x.conChinhSach).HasMaxLength(50);
-            builder.Property(x => x.bhxh).HasMaxLength(10);
-            builder.Property(x => x.bhyt).HasMaxLength(10);
+            builder.Property(x => x.bhxh).HasMaxLength(20);
+            builder.Property(x => x.bhyt).HasMaxLength(20);
             builder.Property(x => x.atm).HasMaxLength(20);
             builder.Property(x => x.nganHang).HasMaxLength(50);
             builder.Property(x => x.ngayNghiViec).HasColumnType("datetime");

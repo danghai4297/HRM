@@ -130,6 +130,30 @@ namespace HRMSolution.BackendAPI.Controllers
             var nhanViens = await _nhanVienService.GetAllBaoCao(id,tuNgay, denNgay, trangThai, gioiTinh);
             return Ok(nhanViens);
         }
+
+        [AllowAnonymous]
+        [HttpGet("bao-cao-phong-ban-hop-dong/{id}/{tuNgay}/{denNgay}")]
+        public async Task<IActionResult> GetByPBvaHD(int id, DateTime tuNgay, DateTime denNgay)
+        {
+            var nhanViens = await _nhanVienService.GetAllByPhongBanVaHD(id, tuNgay, denNgay);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-phong-ban-hop-dong-trang-thai/{id}/{tuNgay}/{denNgay}/{trangThai}")]
+        public async Task<IActionResult> GetByPBvaHDvaTT(int id, DateTime tuNgay, DateTime denNgay, bool trangThai)
+        {
+            var nhanViens = await _nhanVienService.GetAllByPhongBanVaHDVaTrangThai(id, tuNgay, denNgay, trangThai);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-phong-ban-hop-dong-gioi-tinh/{id}/{tuNgay}/{denNgay}/{gioiTinh}")]
+        public async Task<IActionResult> GetByPBvaHDvaGT(int id, DateTime tuNgay, DateTime denNgay, bool gioiTinh)
+        {
+            var nhanViens = await _nhanVienService.GetAllByPhongBanVaHDVaGioiTinh(id, tuNgay, denNgay, gioiTinh);
+            return Ok(nhanViens);
+        }
+
+
         [AllowAnonymous]
         [HttpGet("bao-cao-len-luong/{tuNgay}/{denNgay}")]
         public async Task<IActionResult> GetByAllBaoCaoLenLuong( DateTime tuNgay, DateTime denNgay)
@@ -144,6 +168,73 @@ namespace HRMSolution.BackendAPI.Controllers
             var nhanViens = await _nhanVienService.GetAllLenLuongPhongBan(id,tuNgay, denNgay);
             return Ok(nhanViens);
         }
+
+        [AllowAnonymous]
+        [HttpGet("bao-cao-sinh-nhat/{thang}")]
+        public async Task<IActionResult> GetByAllBaoCaoSinhNhat(int thang)
+        {
+            var nhanViens = await _nhanVienService.GetAllSinhNhat(thang);
+            return Ok(nhanViens);
+        }
+
+        [AllowAnonymous]
+        [HttpGet("bao-cao-sinh-nhat-phong-ban/{id}/{thang}")]
+        public async Task<IActionResult> GetByAllBaoCaoSinhNhatVaPhongBan(int id,int thang)
+        {
+            var nhanViens = await _nhanVienService.GetAllSinhNhatPhongBan(id,thang);
+            return Ok(nhanViens);
+        }
+
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nhom-luong/{id}")]
+        public async Task<IActionResult> GetByAllBaoCaoNhomLuong(int id)
+        {
+            var nhanViens = await _nhanVienService.GetAllNhomLuong(id);
+            return Ok(nhanViens);
+        }
+
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nhom-luong-phong-ban/{idPhongBan}/{idNhomLuong}")]
+        public async Task<IActionResult> GetByAllBaoCaoNhomLuong(int idPhongBan, int idNhomLuong)
+        {
+            var nhanViens = await _nhanVienService.GetAllNhomLuongPhongBan(idPhongBan, idNhomLuong);
+            return Ok(nhanViens);
+        }
+
+        [AllowAnonymous]
+        [HttpGet("bao-cao-chinh-sach")]
+        public async Task<IActionResult> GetByAllBaoCaoChinhSach()
+        {
+            var nhanViens = await _nhanVienService.GetAllChinhSach();
+            return Ok(nhanViens);
+        }
+
+        [AllowAnonymous]
+        [HttpGet("bao-cao-chinh-sach-phong-ban/{id}")]
+        public async Task<IActionResult> GetByAllBaoCaoChinhSachPhongBan(int id)
+        {
+            var nhanViens = await _nhanVienService.GetAllChinhSachPhongBan(id);
+            return Ok(nhanViens);
+        }
+
+        [AllowAnonymous]
+        [HttpGet("bao-cao-bhxh")]
+        public async Task<IActionResult> GetByAllBaoCaoBHXH()
+        {
+            var nhanViens = await _nhanVienService.GetAllBHXH();
+            return Ok(nhanViens);
+        }
+
+        [AllowAnonymous]
+        [HttpGet("bao-cao-bhxh-phong-ban/{id}")]
+        public async Task<IActionResult> GetByAllBaoCaoBHXHPhongBan(int id)
+        {
+            var nhanViens = await _nhanVienService.GetAllBHXHPhongBan(id);
+            return Ok(nhanViens);
+        }
+
+
+
 
 
         [HttpPost]

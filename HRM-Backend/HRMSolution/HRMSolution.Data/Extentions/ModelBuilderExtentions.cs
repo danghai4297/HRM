@@ -216,7 +216,8 @@ namespace HRMSolution.Data.Extentions
                     vaoDang = false,
                     quanNhan = false,
                     laThuongBinh = false,
-                    laConChinhSach = false,
+                    laConChinhSach = true,
+                    bhxh = "HS0123123423",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -250,6 +251,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
+                    bhxh = "HS0123123423",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -282,8 +284,8 @@ namespace HRMSolution.Data.Extentions
                     vaoDang = false,
                     quanNhan = false,
                     laThuongBinh = false,
-                    laConChinhSach = false,
-
+                    laConChinhSach = true,
+                    bhxh = "HS0123123423",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -316,8 +318,8 @@ namespace HRMSolution.Data.Extentions
                     vaoDang = false,
                     quanNhan = false,
                     laThuongBinh = false,
-                    laConChinhSach = false,
-
+                    laConChinhSach = true,
+                    bhxh = "HS0123123423",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -351,7 +353,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-              
+                    bhxh = "HS0123123423",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -385,7 +387,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                 
+                    bhxh = "HS0123123423",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -418,8 +420,8 @@ namespace HRMSolution.Data.Extentions
                     vaoDang = false,
                     quanNhan = false,
                     laThuongBinh = false,
-                    laConChinhSach = false,
-             
+                    laConChinhSach = true,
+                    bhxh = "HS0123123423",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -452,7 +454,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-             
+                    bhxh = "HS0123123423",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -483,8 +485,8 @@ namespace HRMSolution.Data.Extentions
                     vaoDang = false,
                     quanNhan = false,
                     laThuongBinh = false,
-                    laConChinhSach = false,
-              
+                    laConChinhSach = true,
+                    bhxh = "HS0123123423",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -517,7 +519,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-            
+                    bhxh = "HS0123123423",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -549,8 +551,8 @@ namespace HRMSolution.Data.Extentions
                     vaoDang = false,
                     quanNhan = false,
                     laThuongBinh = false,
-                    laConChinhSach = false,
-             
+                    laConChinhSach = true,
+                    bhxh = "HS0123123423",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -583,7 +585,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-               
+                    bhxh = "HS0123123423",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -615,7 +617,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-       
+                    bhxh = "HS0123123423",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -646,8 +648,8 @@ namespace HRMSolution.Data.Extentions
                     vaoDang = false,
                     quanNhan = false,
                     laThuongBinh = false,
-                    laConChinhSach = false,
-           
+                    laConChinhSach = true,
+                    bhxh = "HS0123123423",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -679,7 +681,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-            
+                    bhxh = "HS0123123423",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -710,8 +712,8 @@ namespace HRMSolution.Data.Extentions
                     vaoDang = false,
                     quanNhan = false,
                     laThuongBinh = false,
-                    laConChinhSach = false,
-              
+                    laConChinhSach = true,
+                    bhxh = "HS0123123423",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -743,7 +745,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-           
+                    bhxh = "HS0123123423",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -774,8 +776,8 @@ namespace HRMSolution.Data.Extentions
                     vaoDang = false,
                     quanNhan = false,
                     laThuongBinh = false,
-                    laConChinhSach = false,
-            
+                    laConChinhSach = true,
+                    bhxh = "HS0123123423",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -807,7 +809,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-                
+                    bhxh = "HS0123123423",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -838,8 +840,8 @@ namespace HRMSolution.Data.Extentions
                     vaoDang = false,
                     quanNhan = false,
                     laThuongBinh = false,
-                    laConChinhSach = false,
-               
+                    laConChinhSach = true,
+                    bhxh = "HS0123123423",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -871,7 +873,7 @@ namespace HRMSolution.Data.Extentions
                     quanNhan = false,
                     laThuongBinh = false,
                     laConChinhSach = false,
-            
+                    bhxh = "HS0123123423",
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
@@ -902,7 +904,7 @@ namespace HRMSolution.Data.Extentions
                     vaoDang = false,
                     quanNhan = false,
                     laThuongBinh = false,
-                    laConChinhSach = false,
+                    laConChinhSach = true,
             
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
@@ -966,7 +968,7 @@ namespace HRMSolution.Data.Extentions
                     vaoDang = false,
                     quanNhan = false,
                     laThuongBinh = false,
-                    laConChinhSach = false,
+                    laConChinhSach = true,
             
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
@@ -1030,7 +1032,7 @@ namespace HRMSolution.Data.Extentions
                     vaoDang = false,
                     quanNhan = false,
                     laThuongBinh = false,
-                    laConChinhSach = false,
+                    laConChinhSach = true,
                
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
@@ -1094,7 +1096,7 @@ namespace HRMSolution.Data.Extentions
                     vaoDang = false,
                     quanNhan = false,
                     laThuongBinh = false,
-                    laConChinhSach = false,
+                    laConChinhSach = true,
            
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
@@ -1190,7 +1192,7 @@ namespace HRMSolution.Data.Extentions
                     vaoDang = false,
                     quanNhan = false,
                     laThuongBinh = false,
-                    laConChinhSach = false,
+                    laConChinhSach = true,
          
                     tinhChatLaoDong = 1,
                     idDanhMucHonNhan = 1,
@@ -32985,12 +32987,12 @@ namespace HRMSolution.Data.Extentions
             modelbulder.Entity<Luong>().HasData(
                 new Luong() { id = 1, maHopDong = "HD02", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = false, luongCoBan = 700000, tongLuong = 1000000},
                 new Luong() { id = 2, maHopDong = "HD02", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, luongCoBan = 750000, tongLuong = 1120000 },
-                new Luong() { id = 3, maHopDong = "HD03", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, luongCoBan = 720000, tongLuong = 1440000 },
-                new Luong() { id = 4, maHopDong = "HD04", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, luongCoBan = 712000, tongLuong = 1430000 },
-                new Luong() { id = 5, maHopDong = "HD05", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, luongCoBan = 756000, tongLuong = 1650000 },
-                new Luong() { id = 6, maHopDong = "HD06", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, luongCoBan = 256000, tongLuong = 3650000 },
-                new Luong() { id = 7, maHopDong = "HD07", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, luongCoBan = 956000, tongLuong = 1350000 },
-                new Luong() { id = 8, maHopDong = "HD08", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, luongCoBan = 156000, tongLuong = 1250000 },
+                new Luong() { id = 3, maHopDong = "HD03", idNhomLuong = 2, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, luongCoBan = 720000, tongLuong = 1440000 },
+                new Luong() { id = 4, maHopDong = "HD04", idNhomLuong = 2, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, luongCoBan = 712000, tongLuong = 1430000 },
+                new Luong() { id = 5, maHopDong = "HD05", idNhomLuong = 3, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, luongCoBan = 756000, tongLuong = 1650000 },
+                new Luong() { id = 6, maHopDong = "HD06", idNhomLuong = 3, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, luongCoBan = 256000, tongLuong = 3650000 },
+                new Luong() { id = 7, maHopDong = "HD07", idNhomLuong = 3, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, luongCoBan = 956000, tongLuong = 1350000 },
+                new Luong() { id = 8, maHopDong = "HD08", idNhomLuong = 2, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, luongCoBan = 156000, tongLuong = 1250000 },
                 new Luong() { id = 9, maHopDong = "HD09", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "một năm", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, luongCoBan = 556000, tongLuong = 2650000 }
                 );
             modelbulder.Entity<DieuChuyen>().HasData(
