@@ -7,11 +7,8 @@ function ListItemSalaryup(props) {
     <tr>
       <th scope="row">{user.id}</th>
       <td>{user.hoTen}</td>
-      <td>{user.maHopDong}</td>
-      <td>{user.tenHopDong}</td>
-      <td>{user.luongCoBan}</td>
-      <td>{user.tongLuong}</td>
-      <td>{format(new Date(user.thoiGianLenLuong), "dd/MM/yyyy")}</td>
+      <td>{user.gioiTinh}</td>
+      <td>{format(new Date(user.ngaySinh), "dd/MM/yyyy")}</td>
       <td>{user.tenPhongBan}</td>
     </tr>
   );

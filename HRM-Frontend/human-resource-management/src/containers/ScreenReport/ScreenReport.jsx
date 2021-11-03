@@ -20,7 +20,7 @@ function ScreenReport() {
       <div className="main-all">
         <div className="first-main">
           <div className="title-first">
-            <h2>Báo cáo</h2>
+            <h1>Báo cáo</h1>
           </div>
           <div className="cate-sidebar">
             <SidebarLeftReport />

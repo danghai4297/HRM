@@ -559,6 +559,42 @@ const ProductApi = {
     const url = `/NhanVien/bao-cao-len-luong-phong-ban/${id}/${sdate}/${edate}`;
     return axiosClient.get(url);
   },
+
+  //Rp all Nv có sinh nhật trong tháng
+  getRpAllSn: (mmoth) => {
+    const url = `/NhanVien/bao-cao-sinh-nhat/${mmoth}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all Nv có sinh nhật trong tháng theo PB
+  getRpAllSnPb: (id, mmoth) => {
+    const url = `/NhanVien/bao-cao-sinh-nhat-phong-ban/${id}/${mmoth}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all con nhà chính sách
+  getRpAllCncs: () => {
+    const url = `/NhanVien/bao-cao-chinh-sach`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all con nhà chính sách theo PB
+  getRpAllCncsPb: (id) => {
+    const url = `/NhanVien/bao-cao-chinh-sach-phong-ban/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all BHXH
+  getRpAllBhxh: () => {
+    const url = `/NhanVien/bao-cao-bhxh`;
+    return axiosClient.get(url);
+  },
+
+   //Rp all BHXH theo PB
+   getRpAllBhxhPb: (id) => {
+    const url = `/NhanVien/bao-cao-bhxh-phong-ban/${id}`;
+    return axiosClient.get(url);
+  },
 };
 
 export default ProductApi;

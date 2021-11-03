@@ -7,11 +7,10 @@ function ListItems(props) {
     <tr>
       <th scope="row">{user.id}</th>
       <td>{user.hoTen}</td>
-      <td>{format(new Date(user.ngaySinh), "dd/MM/yyyy")}</td>
       <td>{user.gioiTinh}</td>
-      <td>{user.dienThoai}</td>
+      <td>{format(new Date(user.ngaySinh), "dd/MM/yyyy")}</td>
+      <td>{user.chinhSach}</td>
       <td>{user.tenPhongBan}</td>
-      <td>{user.trangThai}</td>
     </tr>
   );
 }
