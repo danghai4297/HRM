@@ -89,15 +89,15 @@ function AddSalaryForm(props) {
     phuCapKhac: id !== undefined ? dataLDetail.phuCapKhac : null,
     tongLuong: id !== undefined ? dataLDetail.tongLuong : null,
     thoiHanLenLuong: id !== undefined ? dataLDetail.thoiHanLenLuong : null,
-    ngayHieuLuc: dataLDetail.ngayHieuLuc,
-    ngayKetThuc: dataLDetail.ngayHieuLuc,
+    ngayHieuLuc: id !== undefined ?(moment(dataLDetail.ngayHieuLuc)._d == "Invalid Date"?dataLDetail.ngayHieuLuc:moment(dataLDetail.ngayHieuLuc)):dataLDetail.ngayHieuLuc,
+    ngayKetThuc: id !== undefined ?(moment(dataLDetail.ngayHieuLuc)._d == "Invalid Date"?dataLDetail.ngayHieuLuc:moment(dataLDetail.ngayHieuLuc)):dataLDetail.ngayHieuLuc,
     ghiChu: id !== undefined ? dataLDetail.ghiChu : null,
     trangThai: id !== undefined ? (dataLDetail.trangThai==="Kích hoạt"?true:false) : true,
     maHopDong: id !== undefined ? dataLDetail.maHopDong : null,
   };
   console.log((dataLDetail.idNhomLuong));
   // console.log((dataNL[0].id));
-
+ 
   const {
     register,
     handleSubmit,
@@ -498,9 +498,9 @@ function AddSalaryForm(props) {
                       }
                       placeholder="DD/MM/YYYY"
                       format="DD/MM/YYYY"
-                      value={moment(field.value)}
+                      value={field.value}
                       onChange={(event) => {
-                        field.onChange(event.toDate());
+                        field.onChange(event);
                       }}
                       {...field._d}
                     />
@@ -530,9 +530,9 @@ function AddSalaryForm(props) {
                       }
                       placeholder="DD/MM/YYYY"
                       format="DD/MM/YYYY"
-                      value={moment(field.value)}
+                      value={field.value}
                       onChange={(event) => {
-                        field.onChange(event.toDate());
+                        field.onChange(event);
                       }}
                       {...field._d}
                     />

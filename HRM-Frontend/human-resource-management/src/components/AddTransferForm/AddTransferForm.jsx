@@ -84,7 +84,7 @@ function AddTransferForm(props) {
   
   
   const intitalValue = {
-    ngayHieuLuc: dataDetailDC.ngayHieuLuc,
+    ngayHieuLuc: id !== undefined?(moment(dataDetailDC.ngayHieuLuc)._d == "Invalid Date"?dataDetailDC.ngayHieuLuc:moment(dataDetailDC.ngayHieuLuc)):dataDetailDC.ngayHieuLuc,
     idPhongBan: id!== undefined? dataDetailDC.idPhongBan: null,
     to:id!== undefined? dataDetailDC.idTo: null,
     chiTiet:id!== undefined? dataDetailDC.chiTiet: null,
@@ -317,9 +317,9 @@ function AddTransferForm(props) {
                       }
                       placeholder="DD/MM/YYYY"
                       format="DD/MM/YYYY"
-                      value={moment(field.value)}
+                      value={field.value}
                       onChange={(event) => {
-                        field.onChange(event.toDate());
+                        field.onChange(event);
                       }}
                       {...field._d}
                     />
