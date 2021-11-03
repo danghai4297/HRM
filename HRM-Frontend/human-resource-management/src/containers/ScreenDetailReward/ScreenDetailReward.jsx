@@ -68,15 +68,15 @@ function ScreenDetailReward(props) {
               titleRight="Ảnh"
               itemRight={dataDetailKt.anh}
             ></SubDetail>
-            <Link
-              to={`/profile/detail/${dataDetailKt.maNhanVien}?move=moveToReward`}
-            >
-              <Button variant="light" className="btn-fix">
-                Chuyển
-              </Button>
-            </Link>
           </div>
         </div>
+        <Link
+          to={`/profile/detail/${dataDetailKt.maNhanVien}?move=moveToReward`}
+        >
+          <Button variant="light" className="btn-fix">
+            Chuyển
+          </Button>
+        </Link>
       </div>
     </>
   );

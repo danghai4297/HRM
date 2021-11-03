@@ -97,7 +97,9 @@ function AddSpecializeForm(props) {
         await PutApi.PutDMCM(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục chuyên môn:${tendmbd} thành ${tendm}`,
+          thaoTac: `Sửa danh mục chuyên môn: ${
+            dataDetailDMCM.tenChuyenMon !== tendm ? `${dataDetailDMCM.tenChuyenMon} thành` : ""
+          } ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
@@ -121,6 +123,12 @@ function AddSpecializeForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMCM(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa danh mục chuyên môn: ${dataDetailDMCM.tenChuyenMon}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       success("Xoá danh mục thành công");
       history.goBack();
     } catch (error) {

@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import ProductApi from "../../api/productApi";
 import TableBasic from "../TablePagination/TableBasic";
-import { PDFDownloadLink, Document, Page, Text } from "@react-pdf/renderer";
 
 import {
   NVCOLUMNSDC,
@@ -32,6 +31,8 @@ import {
   ttyt,
 } from "./Data";
 import { ComponentToPrint } from "../ToPrint/ComponentToPrint";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import PDF from "./PDF";
 
 function Detail(props) {
   let { match, history } = props;
@@ -66,6 +67,7 @@ function Detail(props) {
     };
     fetchNvList();
   }, []);
+
   const [dropBase, setDropBase] = useState(true);
   const [dropContact, setDropContact] = useState(true);
   const [dropJob, setDropJob] = useState(true);
@@ -90,7 +92,8 @@ function Detail(props) {
       behavior: "smooth",
     });
   };
-
+  // console.log(dataLuong.filter((b) => b.trangThai === "Kích hoạt").length === 0);
+  console.log(dataDetailHd);
   let location = useLocation();
   let query = new URLSearchParams(location.search);
 
@@ -153,6 +156,7 @@ function Detail(props) {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
+
   const arrowBaseClickHandle = () => {
     setDropBase(!dropBase);
   };
@@ -193,13 +197,6 @@ function Detail(props) {
     setDropDiscipline(!dropDiscipline);
   };
 
-  const MyDoc = () => (
-    <Document>
-      <Page size="A4">
-        <Text>Nguyễn Công Minh</Text>
-      </Page>
-    </Document>
-  );
   return (
     <>
       <div className="contents">
@@ -323,28 +320,23 @@ function Detail(props) {
             </Container>
           </div>
           <div className="right-path">
-          <Link to={`/profile/${id}`}>
-          <Button className="button-color" variant="dark">
-              Sửa
-            </Button>
+            <Link to={`/profile/${id}`}>
+              <Button className="button-color" variant="dark">
+                Sửa
+              </Button>
             </Link>
-            
             <Button className="button-color" variant="danger">
               Xóa
             </Button>
-            <Button
-              className="button-color"
-              variant="light"
-              onClick={() => (
-                <PDFDownloadLink document={MyDoc} fileName="somename.pdf">
-                  {({ blob, url, loading, error }) =>
-                    loading ? "Loading document..." : "Download now!"
-                  }
-                </PDFDownloadLink>
-              )}
-            >
-              <FontAwesomeIcon icon={["fas", "download"]} />
-            </Button>
+            <Link to={`/profile/pdf/${id}`}>
+              <Button
+                className="button-color"
+                variant="light"
+                // onClick={handlePrint}
+              >
+                <FontAwesomeIcon icon={["fas", "download"]} />
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="main-information">
@@ -373,8 +365,8 @@ function Detail(props) {
                   <div className="name-title" onClick={arrowBaseClickHandle}>
                     <h3>Thông tin cơ bản</h3>
                   </div>
-                  <div className="arrow-button">
-                    {/* <button
+                  {/* <div className="arrow-button">
+                    <button
                       className="main-arrow-button"
                       onClick={arrowBaseClickHandle}
                     >
@@ -382,8 +374,8 @@ function Detail(props) {
                         icon={["fas", "chevron-down"]}
                         className={!dropBase ? "iconss" : "iconsss"}
                       />
-                    </button> */}
-                  </div>
+                    </button>
+                  </div> */}
                 </div>
                 {dropBase && (
                   <>
@@ -863,7 +855,22 @@ function Detail(props) {
                   <div className="title">
                     <div className="title-cultural"></div>
                     <div className="icon-cultural">
-                      <Link to={`/contract/add?maNhanVien=${dataDetailNv.id}`}>
+                      <Link
+                        to={`/contract/add?maNhanVien=${
+                          dataDetailNv.id
+                        }&maHopDong=${
+                          dataDetailHd.length !== 0 &&
+                          dataDetailHd.filter(
+                            (a) => a.trangThai === "Kích hoạt"
+                          ).length !== 0
+                            ? dataDetailHd.filter(
+                                (a) => a.trangThai === "Kích hoạt"
+                              )[0].id
+                            : ""
+                        }&checkMaHopDong=${dataDetailHd.filter(
+                          (a) => a.trangThai === "Kích hoạt"
+                        ).length}`}
+                      >
                         <button className="btn-cultural">
                           <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
                         </button>
@@ -902,7 +909,24 @@ function Detail(props) {
                   <div className="title">
                     <div className="title-cultural"></div>
                     <div className="icon-cultural">
-                      <Link to={`/salary/add?maNhanVien=${dataDetailNv.id}`}>
+                      <Link
+                        to={`/salary/add?maHopDong=${
+                          dataDetailHd.length !== 0 &&
+                          dataDetailHd.filter(
+                            (a) => a.trangThai === "Kích hoạt"
+                          ).length !== 0
+                            ? dataDetailHd.filter(
+                                (a) => a.trangThai === "Kích hoạt"
+                              )[0].id
+                            : ""
+                        }&checkMaLuong=${
+                          dataLuong.length !== 0
+                            ? dataLuong.filter(
+                                (b) => b.trangThai === "Kích hoạt"
+                              ).length
+                            : ""
+                        }`}
+                      >
                         <button className="btn-cultural">
                           <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
                         </button>
@@ -941,7 +965,9 @@ function Detail(props) {
                   <div className="title">
                     <div className="title-cultural"></div>
                     <div className="icon-cultural">
-                      <Link to={`/transfer/add?maNhanVien=${dataDetailNv.id}&hoVaTen=${dataDetailNv.hoTen}`}>
+                      <Link
+                        to={`/transfer/add?maNhanVien=${dataDetailNv.id}&hoVaTen=${dataDetailNv.hoTen}`}
+                      >
                         <button className="btn-cultural">
                           <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
                         </button>
@@ -980,7 +1006,9 @@ function Detail(props) {
                   <div className="title">
                     <div className="title-cultural"></div>
                     <div className="icon-cultural">
-                      <Link to={`/reward/add?maNhanVien=${dataDetailNv.id}&hoVaTen=${dataDetailNv.hoTen}`}>
+                      <Link
+                        to={`/reward/add?maNhanVien=${dataDetailNv.id}&hoVaTen=${dataDetailNv.hoTen}`}
+                      >
                         <button className="btn-cultural">
                           <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
                         </button>

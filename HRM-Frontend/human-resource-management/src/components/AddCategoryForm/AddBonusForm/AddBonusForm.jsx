@@ -45,7 +45,7 @@ function AddBonusForm(props) {
     const fetchNvList = async () => {
       try {
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốn sửa danh mục khen thưởng");
+          setDescription(`Bạn chắc chắn muốn sửa danh mục khen thưởng`);
           const response = await ProductApi.getDetailDMKTvKL(id);
           setdataDetailDMKT(response);
         }
@@ -82,15 +82,14 @@ function AddBonusForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
-    console.log(data)
-    let tendmbd = dataDetailDMKT.tenDanhMuc;
+    console.log(data);
     let tendm = data.tenDanhMuc;
     try {
       if (id !== undefined) {
         await PutApi.PutDMKTvKL(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `sửa danh mục khen thưởng:${tendmbd} thành ${tendm}`,
+          thaoTac: `Sửa danh mục khen thưởng:${dataDetailDMKT.tenDanhMuc} thành ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
@@ -99,7 +98,7 @@ function AddBonusForm(props) {
         await ProductApi.PostDMKTvKL(data);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `thêm danh mục khen thưởng: ${tendm}`,
+          thaoTac: `Thêm danh mục khen thưởng: ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
@@ -114,6 +113,12 @@ function AddBonusForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMKTvKL(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa danh mục khen thưởng: ${dataDetailDMKT.tenDanhMuc}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       success("Xoá danh mục thành công");
       history.goBack();
     } catch (error) {
@@ -215,8 +220,16 @@ function AddBonusForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
-        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
         cancel={cancel}
       />
       <Dialog

@@ -88,7 +88,7 @@ function AddDisciplineForm(props) {
         await PutApi.PutDMKTvKL(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục kỉ luật: ${tendm}`,
+          thaoTac: `Sửa danh mục kỉ luật: ${dataDetailDMKL.tenDanhMuc} thành ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
@@ -112,6 +112,12 @@ function AddDisciplineForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMKTvKL(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa danh mục kỉ luật: ${dataDetailDMKL.tenDanhMuc}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       history.goBack();
       success("Xoá danh mục thành công");
     } catch (error) {

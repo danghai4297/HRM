@@ -88,7 +88,7 @@ function AddLevelForm(props) {
         await PutApi.PutDMTD(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục trình độ: ${tendm}`,
+          thaoTac: `Sửa danh mục trình độ: ${dataDetailDMTD.tenTrinhDo} thành ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
@@ -112,6 +112,12 @@ function AddLevelForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMTD(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa danh mục trình độ: ${dataDetailDMTD.tenTrinhDo}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       success("Xoá danh mục thành công");
       history.goBack();
     } catch (error) {

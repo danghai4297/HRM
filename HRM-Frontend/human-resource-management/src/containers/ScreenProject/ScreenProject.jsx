@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import "./ScreenProject.scss";
 
 import SideBarLeft from "../../components/SideBarLeft/SideBarLeft";
-import { Switch } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import DashBoard from "../ScreenDashBoard/DashBoard";
 import ScreenTableNV from "../ScreenTableNV/ScreenTableNV";
 import Detail from "../../components/Detail/Detail";
@@ -40,11 +40,12 @@ import AddFamilyForm from "../../components/AddFamilyForm/AddFamilyForm";
 import ScreenAccount from "../ScreenAccount/ScreenAccount";
 // import PDF from "../../components/Detail/PDF";
 import ScreenAccountLog from "../ScreenAccountLog/ScreenAccountLog";
+import PDF from "../../components/Detail/PDF";
 function ScreenProject() {
   const { setAccount } = useContext(AccountContext);
   useEffect(() => {
-    localStorage.getItem('token')
-  }, [])
+    localStorage.getItem("token");
+  }, []);
   return (
     <>
       <div className="body-screen">
@@ -57,9 +58,23 @@ function ScreenProject() {
           </div>
           <div className="content">
             <Switch>
-              <ProtectedRoute exact path="/home" component={DashBoard} roles={["user"]}/>
-              <ProtectedRoute path="/change" component={ChangePasswordForm} roles={["user"]}/>
-              <ProtectedRoute exact path="/profile" component={ScreenTableNV} roles={["user"]}/>
+              <ProtectedRoute
+                exact
+                path="/home"
+                component={DashBoard}
+                roles={["user"]}
+              />
+              <ProtectedRoute
+                path="/change"
+                component={ChangePasswordForm}
+                roles={["user"]}
+              />
+              <ProtectedRoute
+                exact
+                path="/profile"
+                component={ScreenTableNV}
+                roles={["user"]}
+              />
               <ProtectedRoute
                 exact
                 path="/profile/detail/:id"
@@ -136,6 +151,12 @@ function ScreenProject() {
               />
 
               <ProtectedRoute
+                path="/profile/pdf/:id"
+                component={PDF}
+                roles={["user"]}
+              />
+
+              <ProtectedRoute
                 exact
                 path="/contract"
                 component={ScreenContract}
@@ -160,7 +181,12 @@ function ScreenProject() {
                 roles={["user"]}
               />
 
-              <ProtectedRoute exact path="/salary" component={ScreenSalary} roles={["user"]}/>
+              <ProtectedRoute
+                exact
+                path="/salary"
+                component={ScreenSalary}
+                roles={["user"]}
+              />
               <ProtectedRoute
                 exact
                 path="/salary/detail/:id"
@@ -180,8 +206,16 @@ function ScreenProject() {
                 roles={["user"]}
               />
 
-              <ProtectedRoute path="/category" component={ScreenCategory} roles={["admin"]}/>
-              <ProtectedRoute path="/account" component={ScreenAccount} roles={["admin"]}/>
+              <ProtectedRoute
+                path="/category"
+                component={ScreenCategory}
+                roles={["admin"]}
+              />
+              <ProtectedRoute
+                path="/account"
+                component={ScreenAccount}
+                roles={["admin"]}
+              />
 
               <ProtectedRoute
                 exact
@@ -208,9 +242,19 @@ function ScreenProject() {
                 roles={["user"]}
               />
 
-              <ProtectedRoute exact path="/resign" component={ScreenResign} roles={["user"]}/>
+              <ProtectedRoute
+                exact
+                path="/resign"
+                component={ScreenResign}
+                roles={["user"]}
+              />
 
-              <ProtectedRoute exact path="/reward" component={ScreenReward} roles={["user"]}/>
+              <ProtectedRoute
+                exact
+                path="/reward"
+                component={ScreenReward}
+                roles={["user"]}
+              />
               <ProtectedRoute
                 exact
                 path="/reward/detail/:id"
@@ -255,10 +299,16 @@ function ScreenProject() {
                 component={AddDisciplineForm}
                 roles={["user"]}
               />
-             
-              <ProtectedRoute path="/report" component={ScreenReport} roles={["user"]}/>
-              <ProtectedRoute path="/activity" component={ScreenAccountLog} roles={["user", "admin"]}/>
-              {/* <ProtectedRoute path="/pdf" component={PDF} roles="user"/> */}
+              <ProtectedRoute
+                path="/report"
+                component={ScreenReport}
+                roles={["user"]}
+              />
+              <ProtectedRoute
+                path="/activity"
+                component={ScreenAccountLog}
+                roles={["user", "admin"]}
+              />
             </Switch>
           </div>
         </div>

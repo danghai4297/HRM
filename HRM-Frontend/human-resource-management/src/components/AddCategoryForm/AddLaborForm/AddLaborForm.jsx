@@ -87,7 +87,7 @@ function AddLaborForm(props) {
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
           thaoTac: `Sửa danh mục tính
-          chất lao động: ${tendm}`,
+          chất lao động: ${dataDetailDMTCLD.tenLaoDong} thành ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
@@ -112,6 +112,13 @@ function AddLaborForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMTCLD(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa danh mục tính
+        chất lao động: ${dataDetailDMTCLD.tenLaoDongndm}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       history.goBack();
       success("Xoá danh mục thành công");
     } catch (error) {

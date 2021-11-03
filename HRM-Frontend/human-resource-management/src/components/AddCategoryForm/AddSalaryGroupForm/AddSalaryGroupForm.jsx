@@ -94,7 +94,9 @@ function AddSalaryGroupForm(props) {
         await PutApi.PutDMNL(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục nhóm lương: ${tendm}`,
+          thaoTac: `Sửa danh mục nhóm lương: ${
+            dataDetailDMNL.tenNhomLuong !== tendm ? `${dataDetailDMNL.tenNhomLuong} thành` : ""
+          } ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
@@ -118,6 +120,12 @@ function AddSalaryGroupForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMNL(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa danh mục nhóm lương: ${dataDetailDMNL.tenNhomLuong}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       success("Xoá danh mục thành công");
       history.goBack();
     } catch (error) {

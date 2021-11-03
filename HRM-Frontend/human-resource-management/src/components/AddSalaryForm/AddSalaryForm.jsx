@@ -12,6 +12,8 @@ import { DatePicker } from "antd";
 import moment from "moment/moment.js";
 import DeleteApi from "../../../src/api/deleteAPI";
 import PutApi from "../../../src/api/putAAPI";
+import { useLocation } from "react-router";
+
 import DialogCheck from "../Dialog/DialogCheck";
 import { useToast } from "../Toast/Toast";
 import Dialog from "../../components/Dialog/Dialog";
@@ -32,6 +34,9 @@ const schema = yup.object({
   trangThai: yup.boolean(),
 });
 function AddSalaryForm(props) {
+  let location = useLocation();
+  let query = new URLSearchParams(location.search);
+  // console.log(query.get("maLuong"));
   const { error, warn, info, success } = useToast();
 
   const [salary, setSalary] = useState();
@@ -93,7 +98,8 @@ function AddSalaryForm(props) {
     ngayKetThuc: id !== undefined ?(moment(dataLDetail.ngayHieuLuc)._d == "Invalid Date"?dataLDetail.ngayHieuLuc:moment(dataLDetail.ngayHieuLuc)):dataLDetail.ngayHieuLuc,
     ghiChu: id !== undefined ? dataLDetail.ghiChu : null,
     trangThai: id !== undefined ? (dataLDetail.trangThai==="Kích hoạt"?true:false) : true,
-    maHopDong: id !== undefined ? dataLDetail.maHopDong : null,
+    maHopDong: id !== undefined ? dataLDetail.maHopDong : query.get("maHopDong"),
+    
   };
   console.log((dataLDetail.idNhomLuong));
   // console.log((dataNL[0].id));
@@ -168,6 +174,7 @@ function AddSalaryForm(props) {
     console.log(rs);
     setValue("tongLuong", rs);
   };
+
   const onHandleSubmit = async (data) => {
     console.log(data);
     try {
@@ -177,6 +184,9 @@ function AddSalaryForm(props) {
           `Sửa thông tin lương cho nhân viên ${dataLDetail.tenNhanVien} thành công`
         );
       }else{
+        if(query.get("checkMaLuong") !== "0"){
+          await PutApi.PutTLL(query.get("maHopDong"));
+        }
         await ProductApi.PostL(data);
         success(
           `thêm thông tin lương cho nhân viên ${dataLDetail.tenNhanVien} thành công`

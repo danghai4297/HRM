@@ -91,15 +91,28 @@ function AddTypeOfContractForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
+    let tendm = data.tenLoaiHopDong;
+
     try {
       if (id !== undefined) {
         await PutApi.PutDMLHD(data, id);
-        success("sửa danh mục thành công");
-
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Sửa danh mục loại hợp đồng: ${
+            dataDetailDMLHD.tenLoaiHopDong !== tendm ? `${dataDetailDMLHD.tenLoaiHopDong} thành` : ""
+          } ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
       } else {
         await ProductApi.PostDMLHD(data);
-        success("Thêm danh mục thành công");
-
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Thêm danh mục loại hợp đồng: ${tendm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        success("sửa danh mục thành công");
       }
       history.goBack();
     } catch (error) {
@@ -111,6 +124,12 @@ function AddTypeOfContractForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMLHD(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa danh mục loại hợp đồng: ${dataDetailDMLHD.tenLoaiHopDong}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       success("Xoá danh mục thành công");
 
       history.goBack();

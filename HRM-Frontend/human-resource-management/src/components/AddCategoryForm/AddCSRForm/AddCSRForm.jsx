@@ -79,7 +79,7 @@ function AddCSRForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
-    let tendm = data.tenDanhMuc;
+    let tendm = data.tenNgach;
     try {
       if (id !== undefined) {
         await PutApi.PutDMNCC(data, id);
@@ -112,6 +112,13 @@ function AddCSRForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMNCC(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa danh mục ngạch
+        công chức: ${dataDetailDMNCC.tenNgach}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       success("Xoá danh mục thành công");
 
       history.goBack();
