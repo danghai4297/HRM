@@ -9,6 +9,7 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
+import { useToast } from "../../Toast/Toast";
 
 AddCSRForm.propTypes = {};
 const schema = yup.object({
@@ -18,6 +19,7 @@ const schema = yup.object({
     .required("Tên danh mục không được bỏ trống."),
 });
 function AddCSRForm(props) {
+  const { error, warn, info, success } = useToast();
   let { match, history } = props;
   let { id } = match.params;
   const token = localStorage.getItem("resultObj");
@@ -88,6 +90,7 @@ function AddCSRForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
+        success("sửa danh mục thành công");
       } else {
         await ProductApi.PostDMNCC(data);
         await ProductApi.PostLS({
@@ -97,9 +100,12 @@ function AddCSRForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
+        success("Thêm danh mục thành công");
       }
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
     console.log(data);
   };
 
@@ -113,8 +119,12 @@ function AddCSRForm(props) {
         maNhanVien: decoded.id,
         tenNhanVien: decoded.givenName,
       });
+      success("Xoá danh mục thành công");
+
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
 
   return (

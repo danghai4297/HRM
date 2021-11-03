@@ -12,23 +12,33 @@ import { DatePicker } from "antd";
 import moment from "moment/moment.js";
 import { stringify } from "query-string";
 import DialogCheck from "../Dialog/DialogCheck";
+import { useToast } from "../Toast/Toast";
+
 const schema = yup.object({
-  tenTruong: yup.string().required("Tên trường không được bỏ trống."),
-  idChuyenMon: yup.number().required("Chuyên môn không được bỏ trống."),
+  tenTruong: yup.string().nullable().required("Tên trường không được bỏ trống."),
+  idChuyenMon: yup.number().nullable().required("Chuyên môn không được bỏ trống."),
   idHinhThucDaoTao: yup
     .number()
+    .nullable()
     .required("Hình thức đào tạo không được bỏ trống."),
   idTrinhDo: yup
     .number("Trình độ không được bỏ trống.")
+    .nullable()
     .required("Trình độ không được bỏ trống."),
 });
 function AddLevelForm(props) {
+  const { error, warn, info, success } = useToast();
+
   let { match, history } = props;
 
   let location = useLocation();
   let query = new URLSearchParams(location.search);
-  // console.log(query.get("maNhanVien"));
+  //  console.log(query.get("maNhanVien"));
+  //  console.log(query.get("hoTen"));
+
+
   let eCode = query.get("maNhanVien");
+  let eName =  query.get("hoVaTen");
   let { id } = match.params;
 
   const [dataDetailTDVH, setdataDetailTDVH] = useState([]);
@@ -42,7 +52,7 @@ function AddLevelForm(props) {
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
-    "Bạn chắc chắn muốn thêm trình độ mới"
+    "Bạn chắc chắn muốn thêm thông tin trình độ mới"
   );
   // const [notChangeDialog,setNotChangeDialog] = useState(false);
 
@@ -68,7 +78,7 @@ function AddLevelForm(props) {
           // if(checkInputChange === true){
           //   setDescription("Bạn chưa thay dổi");
           // }
-          setDescription("Bạn chắc chắn muốm sửa trình độ");
+          setDescription("Bạn chắc chắn muốn sửa trình độ");
           const response = await ProductApi.getTDDetail(id);
           setdataDetailTDVH(response);
         }
@@ -139,12 +149,15 @@ function AddLevelForm(props) {
     try {
       if (id !== undefined) {
         await PutApi.PutTDVH(data, id);
+        success(`Sửa thông tin trình độ cho nhân viên ${dataDetailTDVH.tenNhanVien} thành công`);
       } else {
         await ProductApi.PostTDVH(data);
+        success(`Thêm thông tin trình độ cho nhân viên ${eName} thành công`);
       }
       history.goBack();
     } catch (error) {
       console.log("Có lỗi xảy ra: ", error);
+      error(`Có lỗi xảy ra ${error}`)
     }
    
   };
@@ -153,6 +166,7 @@ function AddLevelForm(props) {
     try {
       await DeleteApi.deleteTDVH(id);
       history.push(`/profile/detail/${dataDetailTDVH.maNhanVien}`);
+      success(`Xoá thông tin trình độ cho nhân viên ${dataDetailTDVH.tenNhanVien} thành công`);
     } catch (error) {}
   };
 
@@ -186,12 +200,14 @@ function AddLevelForm(props) {
               type="submit"
               className="btn btn-primary ml-3"
               value={dataDetailTDVH.length !== 0 ? "Sửa" : "Lưu"}
-              // onClick={() => {
-              //  handleSubmit(onHandleSubmit);
-              //     // setShowDialog(true);
-                
-              // }}
-              onClick={handleSubmit(onHandleSubmit)}
+              onClick={() => {
+                if (checkInputChange()) {
+                  setShowCheckDialog(true);
+                } else {
+                  setShowDialog(true);
+                }
+              }}
+              // onClick={handleSubmit(onHandleSubmit)}
             />
           </div>
         </div>
@@ -465,25 +481,21 @@ function AddLevelForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={description}
-        confirm={handleSubmit(onHandleSubmit)}
+        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
+        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
         cancel={cancel}
       />
       <DialogCheck
         show={showCheckDialog}
         title="Thông báo"
-        description={
-          id !== undefined
-            ? "Bạn chưa thay đổi thông tin trình độ"
-            : "Bạn chưa nhập thông tin trình độ"
-        }
+        description={id!== undefined?"Bạn chưa thay đổi thông tin trình độ":"Bạn chưa nhập thông tin trình độ" }
         confirm={null}
         cancel={cancel}
       />
       <Dialog
         show={showDeleteDialog}
         title="Thông báo"
-        description={`Bạn chắc chắn muốn xóa trình độ `}
+        description={`Bạn chắc chắn muốn xóa thông tin trình độ `}
         confirm={handleDelete}
         cancel={cancel}
       />

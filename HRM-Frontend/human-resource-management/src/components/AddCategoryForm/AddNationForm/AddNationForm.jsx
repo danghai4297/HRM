@@ -104,7 +104,9 @@ function AddNationForm(props) {
         success("Thêm danh mục thành công");
       }
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
 
   const handleDelete = async () => {
@@ -117,7 +119,11 @@ function AddNationForm(props) {
         tenNhanVien: decoded.givenName,
       });
       history.goBack();
-    } catch (error) {}
+      success("Xoá danh mục thành công");
+
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
 
   return (

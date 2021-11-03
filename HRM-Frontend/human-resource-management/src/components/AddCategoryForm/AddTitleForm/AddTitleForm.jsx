@@ -9,6 +9,7 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
+import { useToast } from "../../Toast/Toast";
 AddTitleForm.propTypes = {};
 const schema = yup.object({
   maChucDanh: yup.string().required("Mã chức danh không được bỏ trống."),
@@ -16,6 +17,8 @@ const schema = yup.object({
   phuCap: yup.number().typeError("Phụ cấp không được bỏ trống."),
 });
 function AddTitleForm(props) {
+  const { error, warn, info, success } = useToast();
+
   let { match, history } = props;
   let { id } = match.params;
 
@@ -101,6 +104,7 @@ function AddTitleForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
+        success("sửa danh mục thành công");
       } else {
         await ProductApi.PostDMCD(data);
         await ProductApi.PostLS({
@@ -109,9 +113,12 @@ function AddTitleForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
+        success("Thêm danh mục thành công");
       }
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
 
   const handleDelete = async () => {
@@ -123,8 +130,11 @@ function AddTitleForm(props) {
         maNhanVien: decoded.id,
         tenNhanVien: decoded.givenName,
       });
+      success("Xoá danh mục thành công");
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
    console.log(Object.values(errors))
   return (

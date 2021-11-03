@@ -10,15 +10,19 @@ import "antd/dist/antd.css";
 import { DatePicker } from "antd";
 import PutApi from "../../api/putAAPI";
 import DeleteApi from "../../../src/api/deleteAPI";
-
+import DialogCheck from "../Dialog/DialogCheck";
+import { useToast } from "../Toast/Toast";
+import Dialog from "../../components/Dialog/Dialog";
 const schema = yup.object({
-  maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
-  idPhongBan: yup.number().required("Phòng ban không được bỏ trống."),
-  to: yup.number().required("Tổ không được bỏ trống."),
-  idChucVu: yup.number().required("Chức vụ không được bỏ trống."),
+  maNhanVien: yup.string().nullable().required("Mã nhân viên không được bỏ trống."),
+  idPhongBan: yup.number().nullable().required("Phòng ban không được bỏ trống."),
+  to: yup.number().nullable().required("Tổ không được bỏ trống."),
+  idChucVu: yup.number().nullable().required("Chức vụ không được bỏ trống."),
   trangThai: yup.boolean(),
 });
 function AddTransferForm(props) {
+  const { error, warn, info, success } = useToast();
+
   let location = useLocation();
   let query = new URLSearchParams(location.search);
   console.log(query.get("maNhanVien"));
@@ -39,6 +43,21 @@ function AddTransferForm(props) {
   const [dataNest, setDataNest] = useState([]);
   const [dataDepartment, setDataDepartment] = useState([]);
   const [dataPosition, setDataPosition] = useState([]);
+  const [nest, setNest] = useState();
+  
+  const [dataDetailNN, setdataDetailNN] = useState([]);
+  const [dataNN, setDataNN] = useState([]);
+  const [showDialog, setShowDialog] = useState(false);
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [description, setDescription] = useState(
+    "Bạn chắc chắn muốn thêm thông tin thuyên chuyển mới"
+  );
+  const [showCheckDialog, setShowCheckDialog] = useState(false);
+  const cancel = () => {
+    setShowDialog(false);
+    setShowDeleteDialog(false);
+    setShowCheckDialog(false);
+  };
   // get data from api
   useEffect(() => {
     const fetchNvList = async () => {
@@ -50,8 +69,10 @@ function AddTransferForm(props) {
         const responsePosition = await ProductApi.getAllDMCV();
         setDataPosition(responsePosition);
         if (id !== undefined) {
+          setDescription("Bạn chắc chắn muốn sửa thông tin thuyên chuyển");
           const response = await ProductApi.getDCDetail(id);
           setDataDetailDC(response);
+          setNest(response.idPhongBan);
         }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -59,11 +80,13 @@ function AddTransferForm(props) {
     };
     fetchNvList();
   }, []);
-  const [nest, setNest] = useState();
+  console.log(nest);
+  
+  
   const intitalValue = {
     ngayHieuLuc: dataDetailDC.ngayHieuLuc,
     idPhongBan: id!== undefined? dataDetailDC.idPhongBan: null,
-    to:id!== undefined? dataDetailDC.to: null,
+    to:id!== undefined? dataDetailDC.idTo: null,
     chiTiet:id!== undefined? dataDetailDC.chiTiet: null,
     trangThai:id!== undefined? (dataDetailDC.trangThai==="Kích hoạt"?true:false): true,
     maNhanVien:id!== undefined? dataDetailDC.maNhanVien: null,
@@ -76,6 +99,7 @@ function AddTransferForm(props) {
     handleSubmit,
     control,
     reset,
+    getValues,
     formState: { errors },
   } = useForm({
     defaultValues:intitalValue,
@@ -83,38 +107,69 @@ function AddTransferForm(props) {
   });
   useEffect(() => {
     if (dataDetailDC) {
-      setNest(dataDetailDC.idPhongBan);
       reset(intitalValue);     
     }
   }, [dataDetailDC]);
+
+  const checkInputChange = () => {
+    const values = getValues([
+      "ngayHieuLuc",
+      "idPhongBan",
+      "to",
+      "chiTiet",
+      "trangThai",
+      "maNhanVien",
+      "idChucVu",
+    ]);
+    const dfValue = [
+      intitalValue.ngayHieuLuc,
+      intitalValue.idPhongBan,
+      intitalValue.to,
+      intitalValue.chiTiet,
+      intitalValue.trangThai,
+      intitalValue.maNhanVien,
+      intitalValue.idChucVu,
+    ];
+    return JSON.stringify(values) === JSON.stringify(dfValue);
+  };
   //method handle submit
   const onHandleSubmit = async(data) => {
     console.log(data);
     try {
       if(id !== undefined){
         await PutApi.PutDC(data,id);
+        success(
+          `Sửa thông tin thuyên chuyển cho nhân viên ${dataDetailDC.tenNhanVien} thành công`
+        );
       }else{
         await ProductApi.PostDC(data);
+        success(
+          `thêm thông tin thuyên chuyển cho nhân viên ${dataDetailDC.tenNhanVien} thành công`
+        );
       }
       history.goBack();
-    } catch (error) {
+    } catch (errors) {
       console.log("errors",error);
+      error(`Có lỗi xảy ra ${errors}`);
+
       
     }
   };
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDC(id);
+      success(
+        `Xoá thông tin thuyên chuyển cho nhân viên ${dataDetailDC.tenNhanVien} thành công`
+      );
       history.push(`/transfer`);
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${errors}`);
+
+    }
   };
 
-  console.log(nest);
-  console.log(intitalValue.to);
-  
-  // const [checked, setCheked] = useState(false);
-  // const handleClick = () => setCheked(!checked);
   return (
+    <>
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
@@ -129,7 +184,9 @@ function AddTransferForm(props) {
               dataDetailDC.length !== 0 ? "btn btn-danger" : "delete-button"
             }
             value="Xoá"
-            onClick={handleDelete}
+            onClick={() => {
+              setShowDeleteDialog(true);
+            }}
           />
           <input
             type="submit"
@@ -141,7 +198,13 @@ function AddTransferForm(props) {
             type="submit"
             className="btn btn-primary ml-3"
             value={dataDetailDC.length !== 0 ? "Sửa" : "Lưu"}
-            onClick={handleSubmit(onHandleSubmit)}
+            onClick={() => {
+              if (checkInputChange()) {
+                setShowCheckDialog(true);
+              } else {
+                setShowDialog(true);
+              }
+            }}
           />
         </div>
       </div>
@@ -344,7 +407,43 @@ function AddTransferForm(props) {
         </div>
       </form>
     </div>
+  
+    <Dialog
+        show={showDialog}
+        title="Thông báo"
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
+        cancel={cancel}
+      />
+      <DialogCheck
+        show={showCheckDialog}
+        title="Thông báo"
+        description={
+          id !== undefined
+            ? "Bạn chưa thay đổi thông tin thuyên chuyển"
+            : "Bạn chưa nhập thông tin thuyên chuyển"
+        }
+        confirm={null}
+        cancel={cancel}
+      />
+      <Dialog
+        show={showDeleteDialog}
+        title="Thông báo"
+        description={`Bạn chắc chắn muốn xóa thông tin thuyên chuyển`}
+        confirm={handleDelete}
+        cancel={cancel}
+      />
+    </>
   );
+
 }
 
 export default AddTransferForm;

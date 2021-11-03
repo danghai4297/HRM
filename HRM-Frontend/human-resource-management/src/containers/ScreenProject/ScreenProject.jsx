@@ -261,18 +261,19 @@ function ScreenProject() {
                 component={ScreenDetailReward}
                 roles={["user"]}
               />
+               <ProtectedRoute
+                exact
+                path="/reward/add"
+                component={AddRewardForm}
+                roles={["user"]}
+              />
               <ProtectedRoute
                 exact
                 path="/reward/:id"
                 component={AddRewardForm}
                 roles={["user"]}
               />
-              <ProtectedRoute
-                exact
-                path="/reward/add"
-                component={AddRewardForm}
-                roles={["user"]}
-              />
+             
 
               <ProtectedRoute
                 exact
@@ -286,15 +287,15 @@ function ScreenProject() {
                 component={ScreenDetailDiscipline}
                 roles={["user"]}
               />
-              <ProtectedRoute
+               <ProtectedRoute
                 exact
-                path="/discipline/:id"
+                path="/discipline/add"
                 component={AddDisciplineForm}
                 roles={["user"]}
               />
               <ProtectedRoute
                 exact
-                path="/discipline/add"
+                path="/discipline/:id"
                 component={AddDisciplineForm}
                 roles={["user"]}
               />

@@ -9,6 +9,7 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
+import { useToast } from "../../Toast/Toast";
 const schema = yup.object({
   maNhomLuong: yup.string().required("Mã phòng ban không được bỏ trống."),
   tenNhomLuong: yup.string().required("Tên danh mục không được bỏ trống."),
@@ -16,6 +17,7 @@ const schema = yup.object({
 AddSalaryGroupForm.propTypes = {};
 
 function AddSalaryGroupForm(props) {
+  const { error, warn, info, success } = useToast();
   let { match, history } = props;
   let { id } = match.params;
 
@@ -98,6 +100,7 @@ function AddSalaryGroupForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
+        success("sửa danh mục thành công");
       } else {
         await ProductApi.PostDMNL(data);
         await ProductApi.PostLS({
@@ -106,9 +109,12 @@ function AddSalaryGroupForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
+        success("Thêm danh mục thành công");
       }
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
 
   const handleDelete = async () => {
@@ -120,8 +126,11 @@ function AddSalaryGroupForm(props) {
         maNhanVien: decoded.id,
         tenNhanVien: decoded.givenName,
       });
+      success("Xoá danh mục thành công");
       history.goBack();
-    } catch (error) {}
+    } catch (error) {
+      error(`Có lỗi xảy ra ${error}`);
+    }
   };
 
   return (
