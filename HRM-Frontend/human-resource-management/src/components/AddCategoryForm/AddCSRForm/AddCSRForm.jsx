@@ -13,9 +13,9 @@ import jwt_decode from "jwt-decode";
 AddCSRForm.propTypes = {};
 const schema = yup.object({
   tenNgach: yup
-  .string()
-  .nullable()
-  .required("Tên danh mục không được bỏ trống."),
+    .string()
+    .nullable()
+    .required("Tên danh mục không được bỏ trống."),
 });
 function AddCSRForm(props) {
   let { match, history } = props;
@@ -77,7 +77,7 @@ function AddCSRForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
-    let tendm = data.tenDanhMuc;
+    let tendm = data.tenNgach;
     try {
       if (id !== undefined) {
         await PutApi.PutDMNCC(data, id);
@@ -106,6 +106,13 @@ function AddCSRForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMNCC(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa danh mục ngạch
+        công chức: ${dataDetailDMNCC.tenNgach}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       history.goBack();
     } catch (error) {}
   };
@@ -185,8 +192,16 @@ function AddCSRForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
-        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
         cancel={cancel}
       />
       <Dialog

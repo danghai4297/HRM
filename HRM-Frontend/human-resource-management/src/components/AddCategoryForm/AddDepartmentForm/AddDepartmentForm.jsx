@@ -89,7 +89,9 @@ function AddDepartmentForm(props) {
         await PutApi.PutDMPB(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `sửa danh mục phòng ban: ${tendm}`,
+          thaoTac: `Sửa danh mục phòng ban: ${
+            dataDetailDMPB.tenPhongBan !== tendm ? `${dataDetailDMPB.tenPhongBan} thành` : ""
+          } ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
@@ -97,7 +99,7 @@ function AddDepartmentForm(props) {
         await ProductApi.PostDMPB(data);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `thêm danh mục phòng ban: ${tendm}`,
+          thaoTac: `Thêm danh mục phòng ban: ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
@@ -109,6 +111,12 @@ function AddDepartmentForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMPB(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa danh mục phòng ban: ${dataDetailDMPB.tenPhongBan}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       history.goBack();
     } catch (error) {}
   };

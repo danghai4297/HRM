@@ -29,17 +29,20 @@ function ScreenDetailDiscipline(props) {
         <div className="first-main">
           <div className="first-path">
             <button className="btn-back" onClick={history.goBack}>
-              <FontAwesomeIcon className="icon-btn" icon={["fas", "long-arrow-alt-left"]} />
+              <FontAwesomeIcon
+                className="icon-btn"
+                icon={["fas", "long-arrow-alt-left"]}
+              />
             </button>
           </div>
           <div className="second-path">
             <h2>Thủ tục kỷ luật</h2>
           </div>
           <div className="third-path">
-          <Link to={`/discipline/${id}`}>
-            <Button variant="light" className="btn-fix">
-              Sửa
-            </Button>
+            <Link to={`/discipline/${id}`}>
+              <Button variant="light" className="btn-fix">
+                Sửa
+              </Button>
             </Link>
           </div>
         </div>
@@ -64,13 +67,15 @@ function ScreenDetailDiscipline(props) {
               titleRight="Ảnh"
               itemRight={dataKLDetail.anh}
             ></SubDetail>
-            <Link to={`/profile/detail/${dataKLDetail.maNhanVien}?move=moveToDiscipline`}>
-              <Button variant="light" className="btn-fix">
-                Chuyển
-              </Button>
-            </Link>
           </div>
         </div>
+        <Link
+          to={`/profile/detail/${dataKLDetail.maNhanVien}?move=moveToDiscipline`}
+        >
+          <Button variant="light" className="btn-fix">
+            Chuyển
+          </Button>
+        </Link>
       </div>
     </>
   );

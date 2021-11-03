@@ -12,6 +12,7 @@ import { DatePicker } from "antd";
 import moment from "moment/moment.js";
 import DeleteApi from "../../../src/api/deleteAPI";
 import PutApi from "../../../src/api/putAAPI";
+import { useLocation } from "react-router";
 
 const schema = yup.object({
   idNhomLuong: yup.number().required("Nhóm lương không được bỏ trống."),
@@ -29,6 +30,9 @@ const schema = yup.object({
   trangThai: yup.boolean(),
 });
 function AddSalaryForm(props) {
+  let location = useLocation();
+  let query = new URLSearchParams(location.search);
+  // console.log(query.get("maLuong"));
   const [salary, setSalary] = useState();
   //   heSoLuong: "",
   //   luongCoBan: "",
@@ -72,7 +76,7 @@ function AddSalaryForm(props) {
     ngayKetThuc: dataLDetail.ngayHieuLuc,
     ghiChu: id !== undefined ? dataLDetail.ghiChu : null,
     trangThai: id !== undefined ? (dataLDetail.trangThai==="Kích hoạt"?true:false) : true,
-    maHopDong: id !== undefined ? dataLDetail.maHopDong : null,
+    maHopDong: id !== undefined ? dataLDetail.maHopDong : query.get("maHopDong"),
     
   };
   console.log((dataLDetail.idNhomLuong));
@@ -115,12 +119,16 @@ function AddSalaryForm(props) {
     console.log(rs);
     setValue("tongLuong", rs);
   };
+
   const onHandleSubmit = async (data) => {
     console.log(data);
     try {
       if(id !== undefined){
         await PutApi.PutL(data,id);
       }else{
+        if(query.get("checkMaLuong") !== "0"){
+          await PutApi.PutTLL(query.get("maHopDong"));
+        }
         await ProductApi.PostL(data);
       }
       history.goBack();

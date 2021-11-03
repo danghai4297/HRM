@@ -82,26 +82,25 @@ function AddNationForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
+    let tendm = data.tenDanhMuc;
     try {
       if (id !== undefined) {
         await PutApi.PutDMDT(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `sửa danh mục dân tộc: ${data.tenDanhMuc}`,
+          thaoTac: `Sửa danh mục dân tộc: ${dataDetailDMDT.tenDanhMuc} thành ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        setShowDialog(false);
         success("sửa danh mục thành công");
       } else {
         await ProductApi.PostDMDT(data);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `thêm danh mục dân tộc: ${data.tenDanhMuc}`,
+          thaoTac: `Thêm danh mục dân tộc: ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        setShowDialog(false);
         success("Thêm danh mục thành công");
       }
       history.goBack();
@@ -111,10 +110,16 @@ function AddNationForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMDT(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa danh mục dân tộc: ${dataDetailDMDT.tenDanhMuc}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       history.goBack();
     } catch (error) {}
   };
-console.log(Object.values(errors).length === 0);
+
   return (
     <>
       <div className="container-form">

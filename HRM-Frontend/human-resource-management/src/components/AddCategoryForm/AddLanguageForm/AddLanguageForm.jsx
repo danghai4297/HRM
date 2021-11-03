@@ -85,7 +85,7 @@ function AddLanguageForm(props) {
         await PutApi.PutDMNN(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục ngoại ngữ: ${tendm}`,
+          thaoTac: `Sửa danh mục ngoại ngữ: ${dataDetailDMNN.tenDanhMuc} thành ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
@@ -105,6 +105,12 @@ function AddLanguageForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMNN(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa danh mục ngoại ngữ: ${dataDetailDMNN.tenDanhMuc}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       history.goBack();
     } catch (error) {}
   };

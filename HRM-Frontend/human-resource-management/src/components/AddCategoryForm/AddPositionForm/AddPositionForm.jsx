@@ -90,7 +90,11 @@ function AddPositionForm(props) {
         await PutApi.PutDMCV(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục chức vụ: ${tendm}`,
+          thaoTac: `Sửa danh mục chức vụ: ${
+            dataDetailDMCV.tenChucVu !== tendm
+              ? `${dataDetailDMCV.tenChucVu} thành`
+              : ""
+          } ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
@@ -110,6 +114,12 @@ function AddPositionForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMCV(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa danh mục chức vụ: ${dataDetailDMCV.tenChucVu}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       history.goBack();
     } catch (error) {}
   };
@@ -230,8 +240,16 @@ function AddPositionForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
-        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
         cancel={cancel}
       />
       <Dialog

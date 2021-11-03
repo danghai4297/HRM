@@ -9,20 +9,22 @@ import "antd/dist/antd.css";
 import { DatePicker } from "antd";
 import PutApi from "../../api/putAAPI";
 import DeleteApi from "../../../src/api/deleteAPI";
+import { useLocation } from "react-router";
 
 const schema = yup.object({
-  trangThai:yup.boolean(),
+  trangThai: yup.boolean(),
   maNhanVien: yup.string().required("Mã nhân viên không được bỏ trống."),
   idLoaiHopDong: yup.number().required("Loại hợp đồng không được bỏ trống."),
   idChucDanh: yup.number().required("Chức danh không được bỏ trống."),
   maHopDong: yup.string().required("Lương cơ bản không được bỏ trống."),
-
 });
 function AddContractForm(props) {
+  let location = useLocation();
+  let query = new URLSearchParams(location.search);
   let { match, history } = props;
   let { id } = match.params;
   console.log(id);
-  
+
   const [dataDetailHd, setdataDetailHd] = useState([]);
   const [dataHD, setDataHD] = useState([]);
   const [dataCD, setDataCD] = useState([]);
@@ -46,17 +48,17 @@ function AddContractForm(props) {
   }, []);
 
   const intitalValue = {
-    maNhanVien: id !== undefined?dataDetailHd.maNhanVien:null,
-    idChucDanh: id !== undefined?dataDetailHd.idChucDanh:null,
-    idLoaiHopDong: id !== undefined?dataDetailHd.idLoaiHopDong:null,
-    hopDongTuNgay:dataDetailHd.hopDongTuNgay,
-    hopDongDenNgay:dataDetailHd.hopDongDenNgay,
-    ghiChu:id!== undefined?dataDetailHd.ghiChu:null,
-    maHopDong:id!== undefined?dataDetailHd.id:null,
-    trangThai: id!== undefined?(dataDetailHd.trangThai==="Kích hoạt"):true,
-  }
-    console.log(intitalValue);
-    
+    maNhanVien: id !== undefined ? dataDetailHd.maNhanVien : null,
+    idChucDanh: id !== undefined ? dataDetailHd.idChucDanh : null,
+    idLoaiHopDong: id !== undefined ? dataDetailHd.idLoaiHopDong : null,
+    hopDongTuNgay: dataDetailHd.hopDongTuNgay,
+    hopDongDenNgay: dataDetailHd.hopDongDenNgay,
+    ghiChu: id !== undefined ? dataDetailHd.ghiChu : null,
+    maHopDong: id !== undefined ? dataDetailHd.id : null,
+    trangThai: id !== undefined ? dataDetailHd.trangThai === "Kích hoạt" : true,
+  };
+  console.log(intitalValue);
+
   const {
     register,
     handleSubmit,
@@ -75,15 +77,18 @@ function AddContractForm(props) {
   const onHandleSubmit = async (data) => {
     console.log(data);
     try {
-      if(id !== undefined){
-        await PutApi.PutHD(data,id);
-      }else{
+      if (id !== undefined) {
+        await PutApi.PutHD(data, id);
+      } else {
+        if (query.get("checkMaHopDong") !== "0") {
+          await PutApi.PutTLL(query.get("maHopDong"));
+          await PutApi.PutTLHD(query.get("maNhanVien"));
+        }
         await ProductApi.postHD(data);
       }
       history.goBack();
     } catch (error) {
-      console.log("errors",error);
-      
+      console.log("errors", error);
     }
   };
   const handleDelete = async () => {
@@ -101,14 +106,14 @@ function AddContractForm(props) {
           </h2>
         </div>
         <div className="button">
-        <input
-              type="submit"
-              className={
-                dataDetailHd.length !== 0 ? "btn btn-danger" : "delete-button"
-              }
-              value="Xoá"
-              onClick={handleDelete}
-            />
+          <input
+            type="submit"
+            className={
+              dataDetailHd.length !== 0 ? "btn btn-danger" : "delete-button"
+            }
+            value="Xoá"
+            onClick={handleDelete}
+          />
           <input
             type="submit"
             className="btn btn-secondary ml-3"
@@ -213,7 +218,7 @@ function AddContractForm(props) {
             </div>
             <div className="col">
               <div className="form-group form-inline">
-              <label
+                <label
                   class="col-sm-4 justify-content-start"
                   htmlFor="maHopDong"
                 >
@@ -236,7 +241,7 @@ function AddContractForm(props) {
           <div className="row">
             <div className="col">
               <div class="form-group form-inline">
-              <label
+                <label
                   class="col-sm-4 justify-content-start"
                   htmlFor="hopDongTuNgay"
                 >
@@ -263,9 +268,7 @@ function AddContractForm(props) {
                     />
                   )}
                 />
-                <span className="message">
-                  {errors.hopDongTuNgay?.message}
-                </span>
+                <span className="message">{errors.hopDongTuNgay?.message}</span>
               </div>
             </div>
             <div className="col">
@@ -306,10 +309,7 @@ function AddContractForm(props) {
           <div className="row">
             <div className="col-6">
               <div class="form-group form-inline">
-              <label
-                  class="col-sm-4 justify-content-start"
-                  htmlFor="ghiChu"
-                >
+                <label class="col-sm-4 justify-content-start" htmlFor="ghiChu">
                   Ghi chú
                 </label>
                 <input
@@ -324,11 +324,11 @@ function AddContractForm(props) {
                 />
                 <span className="message">{errors.ghiChu?.message}</span>
                 <input
-                        type="text"
-                        {...register("trangThai")}
-                        //defaultValue={true}
-                        style={{ display: "none" }}                      
-                      />
+                  type="text"
+                  {...register("trangThai")}
+                  //defaultValue={true}
+                  style={{ display: "none" }}
+                />
               </div>
             </div>
           </div>

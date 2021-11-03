@@ -126,5 +126,13 @@ const PutApi = {
     const url =`/DieuChuyen/${id}`;
     return axiosClient.put(url,data)
   },
+  PutTLL:(id) => {
+    const url = `/Luong/trang-thai/${id}`;
+    return axiosClient.put(url)
+  },
+  PutTLHD:(id) => {
+    const url = `/HopDong/trang-thai/${id}`;
+    return axiosClient.put(url)
+  }
 };
 export default PutApi;

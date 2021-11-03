@@ -13,6 +13,7 @@ const schema = yup.object({
 });
 function AddRewardForm(props) {
   const { history } = props;
+  // let { id } = match.params;
   let location = useLocation();
   let query = new URLSearchParams(location.search);
   console.log(query.get("maNhanVien"));

@@ -94,7 +94,9 @@ function AddNestForm(props) {
         await PutApi.PutDMT(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục tổ: ${tendm}`,
+          thaoTac: `Sửa danh mục tổ: ${
+            dataDetailDMT.tenTo !== tendm ? `${dataDetailDMT.tenTo} thành` : ""
+          } ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
@@ -102,7 +104,7 @@ function AddNestForm(props) {
         await ProductApi.PostDMT(data);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục tổ: ${tendm}`,
+          thaoTac: `Thêm danh mục tổ: ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
@@ -114,6 +116,12 @@ function AddNestForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMT(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa danh mục tổ: ${dataDetailDMT.tenTo}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       history.goBack();
     } catch (error) {}
   };
@@ -245,8 +253,16 @@ function AddNestForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
-        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
         cancel={cancel}
       />
       <Dialog

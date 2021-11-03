@@ -85,7 +85,7 @@ function AddReligionForm(props) {
         await PutApi.PutDMTG(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục Tôn giáo: ${tendm}`,
+          thaoTac: `Sửa danh mục Tôn giáo: ${dataDetailDMTG.tenDanhMuc} thành ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
@@ -105,6 +105,12 @@ function AddReligionForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMTG(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa danh mục Tôn giáo: ${dataDetailDMTG.tenDanhMuc}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       history.goBack();
     } catch (error) {}
   };

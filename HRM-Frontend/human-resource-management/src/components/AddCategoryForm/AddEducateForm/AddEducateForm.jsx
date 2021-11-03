@@ -85,7 +85,7 @@ function AddEducateForm(props) {
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
           thaoTac: `Sửa danh mục hình
-          thức đào tạo: ${tendm}`,
+          thức đào tạo: ${dataDetailDMHTDT.tenHinhThuc} thành ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
@@ -106,6 +106,13 @@ function AddEducateForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMHTDT(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa danh mục hình
+        thức đào tạo: ${dataDetailDMHTDT.tenHinhThuc}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       history.goBack();
     } catch (error) {}
   };
