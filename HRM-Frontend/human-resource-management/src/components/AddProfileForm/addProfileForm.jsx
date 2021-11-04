@@ -281,12 +281,15 @@ function AddProfileForm(props) {
     path: "/Images/userIcon.png",
   });
   const handleChange = (e) => {
+    console.log(e);
     setFile({
-      file: e.target.files[0],
-      path: URL.createObjectURL(e.target.files[0]),
+      file: e.file,
+      path: e.fileList.length !== 0 ? URL.createObjectURL(e.file): "/Images/userIcon.png",
+      //file: e.target.files[0],
+      //path: URL.createObjectURL(e.target.files[0]),
     });
   };
-  console.log(moment(dataDetailEmployee.ngayVaoDang)._d == "Invalid Date");
+  
   
   useEffect(() => {
     if (dataDetailEmployee) {
@@ -311,6 +314,18 @@ function AddProfileForm(props) {
           setDescription("Bạn chắc chắn muốm sửa trình độ");
           const response = await ProductApi.getNvDetail(id);
           setDataDetailEmployee(response);
+          if(response.vaoDang !== "Không"){
+            setChekedParty(true);
+          }
+          if(response.quanNhan !== "không"){
+            setCheckedSoldier(true);
+          }
+          if(response.laConChinhSach == true){
+            setPolicy(true);
+          }
+          if(response.laThuongBinh == true){
+            setVeterans(true);
+          }
         }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -324,7 +339,6 @@ function AddProfileForm(props) {
   //get data from form
   const onHandleSubmit = async (data) => {
     console.log(data);
-
     try {
       if(id!== undefined){
         await PutApi.PutNV(data,id);
@@ -334,13 +348,14 @@ function AddProfileForm(props) {
           formData.append("maNhanVien", data.id);
           await PutApi.PutIMG(formData, data.id);
         }
-      }
-      await ProductApi.postNv(data);
-      if(file.file!==null){
-        const formData = new FormData();
-        formData.append("anh", file.file);
-        formData.append("maNhanVien", data.id);
-        await PutApi.PutIMG(formData, data.id);
+      }else{
+        await ProductApi.postNv(data);
+        if(file.file!==null){
+          const formData = new FormData();
+          formData.append("anh", file.file);
+          formData.append("maNhanVien", data.id);
+          await PutApi.PutIMG(formData, data.id);
+        }
       }
       history.goBack();
     } catch (error) {}
@@ -393,37 +408,31 @@ function AddProfileForm(props) {
           <div className="container-ava">
             <span>
               {" "}
-              <img src={id!== undefined?(file.file!==null?file.path:`https://localhost:5001/${dataDetailEmployee.anh}`):file.path} className="icon" alt="" />
+              <img src={id!== undefined?(file.file!==null?file.path:(dataDetailEmployee.anh==null?file.path:`https://localhost:5001/${dataDetailEmployee.anh}`)):file.path} className="icon" alt="" />
             </span>
             {/* <Controller
               name="anh"
               control={control}
               render={({ field, onChange }) => (
-                <Upload
-                  beforeUpload={() => false}
-                  onChange={(e) => {
-                    field.onChange(e);
-                  }}
-                  {...field}
-                >
-                  <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
-                </Upload>
+                
               )}
             /> */}
 
-            <input
+<Upload
+                  beforeUpload={() => false}
+                  onChange={handleChange}
+                >
+                  <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
+                </Upload>
+            {/* <input
               type="file"
               // {...register2("anh")}
               accept="Images/*"
               class="form-control-file"
               onChange={handleChange}
-            ></input>
+            ></input> */}
 
-            {/* <input
-            type="text"
-            {...register("anh")}
-            class="form-control-file"
-          ></input> */}
+          
           </div>
           {/* Container thông tin cơ bản */}
           <div className="container-div-form">
@@ -1701,21 +1710,19 @@ function AddProfileForm(props) {
             </div>
             <div className="row">
               <div className="col">
-                <div class="form-check mb-2 form-inline">
-                  <input
-                    type="checkbox"
-                    {...register("vaoDang")}
-                    id="vaoDang"
-                    className="form-check-input"
-                    onClick={handleClickParty}
-                    checked={checkedParty}
-                  />
+              <div className="form-group form-inline">
                   <label
-                    className="form-check-label col-sm-4 justify-content-start "
-                    htmlFor="vaoDang"
+                    class="col-sm-4 justify-content-start"
+                    htmlFor="ngachCongChucNoiDung"
                   >
-                    Đã vào Đảng
+                    Ngạch công chức nội dung
                   </label>
+                  <input
+                    type="text"
+                    {...register("ngachCongChucNoiDung")}
+                    id="ngachCongChucNoiDung"
+                    className="form-control col-sm-6"
+                  />
                 </div>
               </div>
               <div className="col">
@@ -1734,6 +1741,27 @@ function AddProfileForm(props) {
                   />
                 </div>
               </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <div class="form-check mb-3 form-inline">
+                  <input
+                    type="checkbox"
+                    {...register("vaoDang")}
+                    id="vaoDang"
+                    className="form-check-input"
+                    onClick={handleClickParty}
+                    checked={checkedParty}
+                  />
+                  <label
+                    className="form-check-label col-sm-4 justify-content-start "
+                    htmlFor="vaoDang"
+                  >
+                    Đã vào Đảng
+                  </label>
+                </div>
+              </div>
+             
             </div>
             <div className="row">
               <div className="col-6">
