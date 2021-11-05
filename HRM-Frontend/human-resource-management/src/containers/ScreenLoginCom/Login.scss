@@ -118,6 +118,14 @@
         background: #328de0;
         cursor: pointer;
       }
+
+      input[type="submit"]:hover {
+        background-color: #63acf0;
+      }
+
+      input[type="submit"]:active {
+        background-color: rgb(255, 167, 66);
+      }
     }
   }
 }

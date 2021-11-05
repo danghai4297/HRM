@@ -84,7 +84,7 @@ export const NVCOLUMNSSALARY = [
     minWidth: 70,
     Filter: SelectColumnFilter,
     disableFilters: true,
-    show: true,
+    show: false,
   },
   {
     Header: "Phụ cấp khác",
@@ -92,12 +92,12 @@ export const NVCOLUMNSSALARY = [
     minWidth: 70,
     Filter: SelectColumnFilter,
     disableFilters: true,
-    show: true,
+    show: false,
   },
   {
     Header: "Thời hạn lên lương",
     accessor: "thoiHanLenLuong",
-    minWidth: 70,
+    minWidth: 120,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -128,6 +128,20 @@ export const NVCOLUMNSSALARY = [
     Header: "Ghi chú",
     accessor: "ghiChu",
     minWidth: 200,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+    show: false,
+  },
+  {
+    Header: "Trạng thái",
+    accessor: (row) => {
+      return row.trangThai === "Kích hoạt" ? (
+        <img src="/Images/greenC.png" width={20} alt="" />
+      ) : (
+        <img src="/Images/orangeC.png" width={20} alt="" />
+      );
+    },
+    minWidth: 50,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,

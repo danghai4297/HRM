@@ -21,10 +21,11 @@ th img {
   margin: 3px;
 }
 .table-sticky::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 6px;
+  height: 8px;
   border-radius: 20px;
 }
+
 .table-sticky::-webkit-scrollbar-track {
   background-color: #efefef;
   border-radius: 20px;
@@ -57,7 +58,7 @@ th img {
 }
 
 .choose-col::-webkit-scrollbar {
-  width: 5px;
+  width: 3px;
   border-radius: 20px;
 }
 .choose-col::-webkit-scrollbar-track {
@@ -138,7 +139,7 @@ th img {
   width: 0;
   border: none;
   background-color: transparent;
-  font-size: 1.5rem;
+  font-size: 1rem;
   height: 80%;
   flex-grow: 1;
   transition: 0.8s ease-in-out;

@@ -33,7 +33,7 @@ export const NVCOLUMNSHD = [
   },
   {
     Header: "Loại Hợp Đồng",
-    accessor: "idLoaiHopDong",
+    accessor: "loaiHopDong",
     minWidth: 218,
     Filter: SelectColumnFilter,
     disableFilters: true,
@@ -43,7 +43,7 @@ export const NVCOLUMNSHD = [
 
   {
     Header: "Chức Danh",
-    accessor: "idChucDanh",
+    accessor: "chucDanh",
     minWidth: 280,
     Filter: SelectColumnFilter,
     disableFilters: true,

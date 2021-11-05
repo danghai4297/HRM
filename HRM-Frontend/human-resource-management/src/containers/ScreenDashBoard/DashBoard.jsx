@@ -10,7 +10,7 @@ import { NVCOLUMNS, NVCOLUMNSHD, NVCOLUMNSSALARY } from "./NvColumns";
 DashBoard.propTypes = {};
 
 function DashBoard() {
-  let link1 = "/category/department/";
+  let link1 = "/contract/detail/";
   let link2 = "/salary/detail/";
   let fileName = "DSNV";
   let fileName2 = "DSLNV";
