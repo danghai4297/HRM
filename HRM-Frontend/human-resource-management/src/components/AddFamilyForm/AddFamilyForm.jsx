@@ -76,7 +76,7 @@ function AddFamilyForm(props) {
       id !== undefined ? `${dataDetailNT.idDanhMucNguoiThan}` : null,
     tenNguoiThan: id !== undefined ? `${dataDetailNT.tenNguoiThan}` : null,
     gioiTinh: id !== undefined ? (`${dataDetailNT.gioiTinh}`==="Nam"?true:false) : true,
-    ngaySinh: dataDetailNT.ngaySinh,
+    ngaySinh: id !== undefined ?(moment(dataDetailNT.ngaySinh)._d == "Invalid Date"?dataDetailNT.ngaySinh:moment(dataDetailNT.ngaySinh)):dataDetailNT.ngaySinh,
     quanHe: id !== undefined ? `${dataDetailNT.quanHe}` : null,
     ngheNghiep: id !== undefined ? `${dataDetailNT.ngheNghiep}` : null,
     diaChi: id !== undefined ? `${dataDetailNT.diaChi}` : null,
@@ -162,8 +162,8 @@ function AddFamilyForm(props) {
       await DeleteApi.deleteNT(id);
       history.push(`/profile/detail/${dataDetailNT.maNhanVien}`);
       success(`Xoá thông tin gia đình cho nhân viên ${dataDetailNT.tenNhanVien} thành công`);
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`)
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`)
     }
   };
   return (
@@ -376,9 +376,9 @@ function AddFamilyForm(props) {
                         // onChange={(event) => {
                         //   handleChangeDate(event);
                         // }}
-                        value={moment(field.value)}
+                        value={field.value}
                         onChange={(event) => {
-                          field.onChange(event.toDate());
+                          field.onChange(event);
                         }}
                         //selected={field}
                         {...field._d}

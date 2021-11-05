@@ -92,8 +92,8 @@ function AddLevelForm(props) {
   const intitalValue = {
     maNhanVien: id !== undefined ? `${dataDetailTDVH.maNhanVien}` : eCode,
     idChuyenMon: id !== undefined ? `${dataDetailTDVH.idChuyenMon}` : null,
-    tuThoiGian: dataDetailTDVH.tuThoiGian,
-    denThoiGian: dataDetailTDVH.denThoiGian,
+    tuThoiGian: id !== undefined?(moment(dataDetailTDVH.tuThoiGian)._d == "Invalid Date"?dataDetailTDVH.tuThoiGian:moment(dataDetailTDVH.tuThoiGian)):dataDetailTDVH.tuThoiGian,
+    denThoiGian: id !== undefined?(moment(dataDetailTDVH.denThoiGian)._d == "Invalid Date"?dataDetailTDVH.denThoiGian:moment(dataDetailTDVH.denThoiGian)):dataDetailTDVH.denThoiGian,
     idHinhThucDaoTao:
       id !== undefined ? `${dataDetailTDVH.idHinhThucDaoTao}` : null,
     idTrinhDo: id !== undefined ? `${dataDetailTDVH.idTrinhDo}` : null,
@@ -409,9 +409,9 @@ function AddLevelForm(props) {
                         }
                         placeholder="DD/MM/YYYY"
                         format="DD/MM/YYYY"                   
-                        value={moment(field.value)}
+                        value={field.value}
                         onChange={(event) => {
-                          field.onChange(event.toDate());
+                          field.onChange(event);
                         }}
                         {...field._d}
                       />
@@ -459,9 +459,9 @@ function AddLevelForm(props) {
                         // onChange={(event) => {
                         //   handleChangeDate(event);
                         // }}
-                        value={moment(field.value)}
+                        value={field.value}
                         onChange={(event) => {
-                          field.onChange(event.toDate());
+                          field.onChange(event);
                         }}
                         //selected={field}
                         {...field._d}
