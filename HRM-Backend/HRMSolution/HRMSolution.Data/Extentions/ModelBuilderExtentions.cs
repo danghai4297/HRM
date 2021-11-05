@@ -136,7 +136,9 @@ namespace HRMSolution.Data.Extentions
                 );
             modelbulder.Entity<DanhMucNguoiThan>().HasData(
                 new DanhMucNguoiThan() { id = 1, tenDanhMuc = "Bố" },
-                new DanhMucNguoiThan() { id = 2, tenDanhMuc = "Mẹ" }
+                new DanhMucNguoiThan() { id = 2, tenDanhMuc = "Mẹ" },
+                new DanhMucNguoiThan() { id = 3, tenDanhMuc = "Anh" },
+                new DanhMucNguoiThan() { id = 4, tenDanhMuc = "Chị" }
                 );
             modelbulder.Entity<DanhMucTo>().HasData(
                 new DanhMucTo() { idTo = 1, maTo = "T01", tenTo = "Tổ 1", idPhongBan = 1 },
@@ -248,7 +250,7 @@ namespace HRMSolution.Data.Extentions
                     chucVuHienTai = "Nhân Viên",
                     congViecChinh = "Nhân viên kinh doanh",
                     coQuanTuyenDung = "Phát Đạt",
-                    trangThaiLaoDong = true,
+                    trangThaiLaoDong = false,
                     vaoDang = true,
                     quanNhan = false,
                     laThuongBinh = false,
@@ -32986,7 +32988,11 @@ namespace HRMSolution.Data.Extentions
                 );
             modelbulder.Entity<NguoiThan>().HasData(
                 new NguoiThan() { id = 1, tenNguoiThan = "Nguyễn Đăng Hải", gioiTinh = true, ngaySinh = DateTime.ParseExact("1965-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), quanHe = "Bố", ngheNghiep = "kinh doanh Tại Nhà", diaChi = "điện biên", dienThoai = "0914637668", maNhanVien = "NV0001", idDanhMucNguoiThan = 1 },
-                new NguoiThan() { id = 2, tenNguoiThan = "Mai Trung Hiếu", gioiTinh = true, ngaySinh = DateTime.ParseExact("1965-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), quanHe = "Bố", ngheNghiep = "kinh doanh Tại Nhà", diaChi = "điện biên", dienThoai = "0914637668", maNhanVien = "NV0001", idDanhMucNguoiThan = 1 }
+                new NguoiThan() { id = 2, tenNguoiThan = "Mai Trung Hiếu", gioiTinh = true, ngaySinh = DateTime.ParseExact("1995-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), quanHe = "Anh", ngheNghiep = "kinh doanh Tại Nhà", diaChi = "điện biên", dienThoai = "0914637668", maNhanVien = "NV0001", idDanhMucNguoiThan = 3 }, 
+                new NguoiThan() { id = 3, tenNguoiThan = "Nguyễn Công Minh", gioiTinh = true, ngaySinh = DateTime.ParseExact("1995-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), quanHe = "Anh", ngheNghiep = "kinh doanh Tại Nhà", diaChi = "điện biên", dienThoai = "0914637668", maNhanVien = "NV0002", idDanhMucNguoiThan = 3 },
+                new NguoiThan() { id = 4, tenNguoiThan = "Úc Minh Hương", gioiTinh = false, ngaySinh = DateTime.ParseExact("1975-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), quanHe = "Mẹ", ngheNghiep = "kinh doanh Tại Nhà", diaChi = "điện biên", dienThoai = "0914637668", maNhanVien = "NV0001", idDanhMucNguoiThan = 2 },
+                new NguoiThan() { id = 5, tenNguoiThan = "Tiêu Nguyệt Ảnh", gioiTinh = false, ngaySinh = DateTime.ParseExact("2005-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), quanHe = "Chị", ngheNghiep = "kinh doanh Tại Nhà", diaChi = "điện biên", dienThoai = "0914637668", maNhanVien = "NV0002", idDanhMucNguoiThan = 4 },
+                new NguoiThan() { id = 6, tenNguoiThan = "Quất Hồng Đào", gioiTinh = false, ngaySinh = DateTime.ParseExact("2000-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), quanHe = "Chị", ngheNghiep = "kinh doanh Tại Nhà", diaChi = "điện biên", dienThoai = "0914637668", maNhanVien = "NV0002", idDanhMucNguoiThan = 4 }
                 );
             modelbulder.Entity<HopDong>().HasData(
                 new HopDong() { maHopDong = "HD01", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0001", trangThai = false },

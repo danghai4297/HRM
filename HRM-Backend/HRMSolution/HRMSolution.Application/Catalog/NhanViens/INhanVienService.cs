@@ -12,10 +12,12 @@ namespace HRMSolution.Application.Catalog.NhanViens
         Task<int> Create(NhanVienCreateRequest request);
         Task<int> Update(string id, NhanVienUpdateRequest request);
         Task<int> UpdateImage(string id, NhanVienUpdateImageRequest request);
-        Task<int> Delete(int idDanhMucDanToc);
+        Task<int> DeleteImage(string maNhanVien);
         Task<List<NhanVienViewModel>> GetAll();
+        Task<List<MaTenViewModel>> GetAllMaVaTen();
         Task<NhanVienDetailViewModel> GetByMaNV(string maNhanVien);
         Task<List<NhanVienViewModel>> GetAllNVNghi();
+
         Task<List<BaoCaoViewModel>> GetAllBaoCao();
         Task<List<BaoCaoViewModel>> GetAllBaoCao(int id, DateTime ngayBatDau, DateTime ngayKetThuc, bool trangThai, bool gioiTinh);
         Task<List<BaoCaoViewModel>> GetAllByPhongBan(int id);
@@ -44,5 +46,38 @@ namespace HRMSolution.Application.Catalog.NhanViens
         Task<List<BaoCaoBHXHViewModel>> GetAllBHXHPhongBan(int id);
         Task<List<BaoCaoDangVienViewModel>> GetAllDangVien();
         Task<List<BaoCaoDangVienViewModel>> GetAllDangVienPhongBan(int id);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThan(int tuoiTu, int den);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoDanhMuc(int tuoiTu, int den, int idDanhMuc);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoPhongBan(int tuoiTu, int den, int idPhongBan);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoMaNhanVien(int tuoiTu, int den, string maNhanVien);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoGioiTinh(int tuoiTu, int den, bool gioiTinh);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoTrangThai(int tuoiTu, int den, bool trangThai);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoDanhMucVaPhongBan(int tuoiTu, int den, int idDanhMuc, int idPhongBan);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoDanhMucVaMaNhanVien(int tuoiTu, int den, int idDanhMuc, string maNhanVien);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoDanhMucVaGioiTinh(int tuoiTu, int den, int idDanhMuc, bool gioiTinh);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoDanhMucVaTrangThai(int tuoiTu, int den, int idDanhMuc, bool trangThai);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoPhongBanVaMaNhanVien(int tuoiTu, int den, int idPhongBan, string maNhanVien);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoPhongBanVaGioiTinh(int tuoiTu, int den, int idPhongBan, bool gioiTinh);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoPhongBanVaTrangThai(int tuoiTu, int den, int idPhongBan, bool trangThai);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoMaNhanVienVaGioiTinh(int tuoiTu, int den, string maNhanVien, bool gioiTinh);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoMaNhanVienVaTrangThai(int tuoiTu, int den, string maNhanVien, bool trangThai);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoGioiTinhVaTrangThai(int tuoiTu, int den, bool gioiTinh, bool trangThai);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoDanhMucVaPhongBanVaMaNhanVien(int tuoiTu, int den, int idDanhMuc, int idPhongBan, string maNhanVien);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoDanhMucVaPhongBanVaGioiTinh(int tuoiTu, int den, int idDanhMuc, int idPhongBan, bool gioiTinh);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoDanhMucVaPhongBanVaTrangThai(int tuoiTu, int den, int idDanhMuc, int idPhongBan, bool trangThai);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoDanhMucVaMaNhanVienVaGioiTinh(int tuoiTu, int den, int idDanhMuc, string maNhanVien, bool gioiTinh);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoDanhMucVaMaNhanVienVaTrangThai(int tuoiTu, int den, int idDanhMuc, string maNhanVien, bool trangThai);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoDanhMucVaGioiTinhVaTrangThai(int tuoiTu, int den, int idDanhMuc, bool gioiTinh, bool trangThai);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoPhongBanVaMaNhanVienVaGioiTinh(int tuoiTu, int den, int idPhongBan, string maNhanVien, bool gioiTinh);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoPhongBanVaMaNhanVienVaTrangThai(int tuoiTu, int den, int idPhongBan, string maNhanVien, bool trangThai);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoPhongBanVaGioiTinhVaTrangThai(int tuoiTu, int den, int idPhongBan, bool gioiTinh, bool trangThai);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoNhanVienVaGioiTinhVaTrangThai(int tuoiTu, int den, string maNhanVien, bool gioiTinh, bool trangThai);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoDanhMucVaPhongBanVaMaNhanVienVaGioiTinh(int tuoiTu, int den, int idDanhMuc, int idPhongBan, string maNhanVien, bool gioiTinh);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoDanhMucVaPhongBanVaMaNhanVienVaTrangThai(int tuoiTu, int den, int idDanhMuc, int idPhongBan, string maNhanVien, bool trangThai);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoDanhMucVaPhongBanVaGioiTinhVaTrangThai(int tuoiTu, int den, int idDanhMuc, int idPhongBan, bool gioiTinh, bool trangThai);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoDanhMucVaMaNhanVienVaGioiTinhVaTrangThai(int tuoiTu, int den, int idDanhMuc,string maNhanVien, bool gioiTinh, bool trangThai);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanPhongBanVaMaNhanVienVaGioiTinhVaTrangThai(int tuoiTu, int den, int idPhongBan, string maNhanVien, bool gioiTinh, bool trangThai);
+        Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanDanhMucVaPhongBanVaMaNhanVienVaGioiTinhVaTrangThai(int tuoiTu, int den,int idDanhMuc, int idPhongBan, string maNhanVien, bool gioiTinh, bool trangThai);
+
     }
 }

@@ -26,6 +26,12 @@ namespace HRMSolution.BackendAPI.Controllers
             var nhanViens = await _nhanVienService.GetAll();
             return Ok(nhanViens);
         }
+        [HttpGet("ma-ten")]
+        public async Task<IActionResult> GetAllMaVaTen()
+        {
+            var nhanViens = await _nhanVienService.GetAllMaVaTen();
+            return Ok(nhanViens);
+        }
         [HttpGet("nghiviec")]
         public async Task<IActionResult> GetNVNghi()
         {
@@ -153,7 +159,6 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok(nhanViens);
         }
 
-
         [AllowAnonymous]
         [HttpGet("bao-cao-len-luong/{tuNgay}/{denNgay}")]
         public async Task<IActionResult> GetByAllBaoCaoLenLuong( DateTime tuNgay, DateTime denNgay)
@@ -249,10 +254,243 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok(nhanViens);
         }
 
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than/{tu}/{den}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThan(int tu, int den)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThan(tu,den);
+            return Ok(nhanViens);
+        }
+
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-danh-muc/{tu}/{den}/{idDanhMuc}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanDanhMuc(int tu, int den, int idDanhMuc)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoDanhMuc(tu, den, idDanhMuc);
+            return Ok(nhanViens);
+        }
+
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-phong-ban/{tu}/{den}/{idPhongBan}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanPhongBan(int tu, int den, int idPhongBan)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoPhongBan(tu, den, idPhongBan);
+            return Ok(nhanViens);
+        }
+
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-nhan-vien/{tu}/{den}/{maNhanVien}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanNhanVien(int tu, int den, string maNhanVien)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoMaNhanVien(tu, den, maNhanVien);
+            return Ok(nhanViens);
+        }
+
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-gioi-tinh/{tu}/{den}/{gioiTinh}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanGioiTinh(int tu, int den, bool gioiTinh)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoGioiTinh(tu, den, gioiTinh);
+            return Ok(nhanViens);
+        }
+
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-trang-thai/{tu}/{den}/{trangThai}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanTrangThai(int tu, int den, bool trangThai)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoGioiTinh(tu, den, trangThai);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-danh-muc-phong-ban/{tu}/{den}/{idDanhMuc}/{idPhongBan}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanDanhMucVaPhongBan(int tu, int den, int idDanhMuc, int idPhongBan)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoDanhMucVaPhongBan(tu, den, idDanhMuc, idPhongBan);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-danh-muc-nhan-vien/{tu}/{den}/{idDanhMuc}/{maNhanVien}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanDanhMucVaNhanVien(int tu, int den, int idDanhMuc, string maNhanVien)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoDanhMucVaMaNhanVien(tu, den, idDanhMuc, maNhanVien);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-danh-muc-gioi-tinh/{tu}/{den}/{idDanhMuc}/{gioiTinh}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanDanhMucVaGioiTinh(int tu, int den, int idDanhMuc, bool gioiTinh)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoDanhMucVaGioiTinh(tu, den, idDanhMuc, gioiTinh);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-danh-muc-trang-thai/{tu}/{den}/{idDanhMuc}/{trangThai}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanDanhMucVaTrangThai(int tu, int den, int idDanhMuc, bool trangThai)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoDanhMucVaTrangThai(tu, den, idDanhMuc, trangThai);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-phong-ban-nhan-vien/{tu}/{den}/{idPhongBan}/{maNhanVien}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanPhongBanVaMaNhanVien(int tu, int den, int idPhongBan, string maNhanVien)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoPhongBanVaMaNhanVien(tu, den, idPhongBan, maNhanVien);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-phong-ban-nhan-vien/{tu}/{den}/{idPhongBan}/{gioiTinh}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanPhongBanVaGioiTinh(int tu, int den, int idPhongBan, bool gioiTinh)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoPhongBanVaGioiTinh(tu, den, idPhongBan, gioiTinh);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-phong-ban-nhan-vien/{tu}/{den}/{idPhongBan}/{trangThai}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanPhongBanVaTrangThai(int tu, int den, int idPhongBan, bool trangThai)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoPhongBanVaTrangThai(tu, den, idPhongBan, trangThai);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-nhan-vien-gioi-tinh/{tu}/{den}/{maNhanVien}/{gioiTinh}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanNhanVienVaGioiTinh(int tu, int den, string maNhanVien, bool gioiTinh)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoMaNhanVienVaGioiTinh(tu, den, maNhanVien, gioiTinh);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-nhan-vien-trang-thai/{tu}/{den}/{maNhanVien}/{trangThai}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanNhanVienVaTrangThai(int tu, int den, string maNhanVien, bool trangThai)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoMaNhanVienVaTrangThai(tu, den, maNhanVien, trangThai);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-gioi-tinh-trang-thai/{tu}/{den}/{gioiTinh}/{trangThai}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanGioiTinhVaTrangThai(int tu, int den, bool gioiTinh, bool trangThai)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoGioiTinhVaTrangThai(tu, den, gioiTinh, trangThai);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-danh-muc-phong-ban-nhan-vien/{tu}/{den}/{idDanhMuc}/{idPhongBan}/{maNhanVien}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanDanhMucVaPhongBanVaMaNhanVien(int tu, int den, int idDanhMuc, int idPhongBan, string maNhanVien)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoDanhMucVaPhongBanVaMaNhanVien(tu, den, idDanhMuc, idPhongBan, maNhanVien);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-danh-muc-phong-ban-gioi-tinh/{tu}/{den}/{idDanhMuc}/{idPhongBan}/{gioiTinh}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanDanhMucVaPhongBanVaGioiTinh(int tu, int den, int idDanhMuc, int idPhongBan, bool gioiTinh)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoDanhMucVaPhongBanVaGioiTinh(tu, den, idDanhMuc, idPhongBan, gioiTinh);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-danh-muc-phong-ban-trang-thai/{tu}/{den}/{idDanhMuc}/{idPhongBan}/{trangThai}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanDanhMucVaPhongBanVaTrangThai(int tu, int den, int idDanhMuc, int idPhongBan, bool trangThai)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoDanhMucVaPhongBanVaTrangThai(tu, den, idDanhMuc, idPhongBan, trangThai);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-danh-muc-nhan-vien-gioi-tinh/{tu}/{den}/{idDanhMuc}/{maNhanVien}/{gioiTinh}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanDanhMucVaNhanVienVaGioiTinh(int tu, int den, int idDanhMuc, string maNhanVien, bool gioiTinh)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoDanhMucVaMaNhanVienVaGioiTinh(tu, den, idDanhMuc, maNhanVien, gioiTinh);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-danh-muc-nhan-vien-trang-thai/{tu}/{den}/{idDanhMuc}/{maNhanVien}/{trangThai}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanDanhMucVaNhanVienVaTrangThai(int tu, int den, int idDanhMuc, string maNhanVien, bool trangThai)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoDanhMucVaMaNhanVienVaTrangThai(tu, den, idDanhMuc, maNhanVien, trangThai);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-danh-muc-gioi-tinh-trang-thai/{tu}/{den}/{idDanhMuc}/{gioiTinh}/{trangThai}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanDanhMucVaGioiTinhVaTrangThai(int tu, int den, int idDanhMuc, bool gioiTinh, bool trangThai)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoDanhMucVaGioiTinhVaTrangThai(tu, den, idDanhMuc, gioiTinh, trangThai);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-phong-ban-nhan-vien-gioi-tinh/{tu}/{den}/{idPhongBan}/{maNhanVien}/{gioiTinh}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanPhongBanVaMaNhanVienVaGioiTinh(int tu, int den, int idPhongBan, string maNhanVien, bool gioiTinh)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoPhongBanVaMaNhanVienVaGioiTinh(tu, den, idPhongBan, maNhanVien, gioiTinh);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-phong-ban-nhan-vien-trang-thai/{tu}/{den}/{idPhongBan}/{maNhanVien}/{trangThai}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanPhongBanVaMaNhanVienVaTrangThai(int tu, int den, int idPhongBan, string maNhanVien, bool trangThai)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoPhongBanVaMaNhanVienVaTrangThai(tu, den, idPhongBan, maNhanVien, trangThai);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-phong-ban-gioi-tinh-trang-thai/{tu}/{den}/{idPhongBan}/{gioiTinh}/{trangThai}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanPhongBanVaGioiTinhVaTrangThai(int tu, int den, int idPhongBan, bool gioiTinh, bool trangThai)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoPhongBanVaGioiTinhVaTrangThai(tu, den, idPhongBan, gioiTinh, trangThai);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-nhan-vien-gioi-tinh/{tu}/{den}/{maNhanVien}/{gioiTinh}/{trangThai}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanNhanVienVaGioiTinhVaTrangThai(int tu, int den, string maNhanVien, bool gioiTinh, bool trangThai)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoNhanVienVaGioiTinhVaTrangThai(tu, den, maNhanVien, gioiTinh, trangThai);
+            return Ok(nhanViens);
+        }
 
 
 
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-danh-muc-phong-ban-nhan-vien-gioi-tinh/{tu}/{den}/{idDanhMuc}/{idPhongBan}/{maNhanVien}/{gioiTinh}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanDanhMucVaPhongBanVaNhanVienVaGioiTinh(int tu, int den, int idDanhMuc, int idPhongBan, string maNhanVien, bool gioiTinh)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoDanhMucVaPhongBanVaMaNhanVienVaGioiTinh(tu, den, idDanhMuc, idPhongBan, maNhanVien, gioiTinh);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-danh-muc-phong-ban-nhan-vien-trang-thai/{tu}/{den}/{idDanhMuc}/{idPhongBan}/{maNhanVien}/{trangThai}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanDanhMucVaPhongBanVaNhanVienVaTrangThai(int tu, int den, int idDanhMuc, int idPhongBan, string maNhanVien, bool trangThai)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoDanhMucVaPhongBanVaMaNhanVienVaTrangThai(tu, den, idDanhMuc, idPhongBan, maNhanVien, trangThai);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-danh-muc-nhan-vien-gioi-tinh-trang-thai/{tu}/{den}/{idDanhMuc}/{maNhanVien}/{gioiTinh}/{trangThai}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanDanhMucVaNhanVienVaGioiTinhVaTrangThai(int tu, int den, int idDanhMuc, string maNhanVien, bool gioiTinh, bool trangThai)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoDanhMucVaMaNhanVienVaGioiTinhVaTrangThai(tu, den, idDanhMuc, maNhanVien, gioiTinh, trangThai);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-danh-muc-phong-ban-gioi-tinh-trang-thai/{tu}/{den}/{idDanhMuc}/{idPhongBan}/{gioiTinh}/{trangThai}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanDanhMucVaPhongBanVaGioiTinhVaTrangThai(int tu, int den, int idDanhMuc, int idPhongBan, bool gioiTinh, bool trangThai)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoDanhMucVaPhongBanVaGioiTinhVaTrangThai(tu, den, idDanhMuc, idPhongBan, gioiTinh, trangThai);
+            return Ok(nhanViens);
+        }
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-phong-ban-nhan-vien-gioi-tinh-trang-thai/{tu}/{den}/{idDanhMuc}/{idPhongBan}/{gioiTinh}/{trangThai}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanPhongBanVaNhanVienVaGioiTinhVaTrangThai(int tu, int den, int idPhongBan, string maNhanVien, bool gioiTinh, bool trangThai)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanPhongBanVaMaNhanVienVaGioiTinhVaTrangThai(tu, den, idPhongBan, maNhanVien, gioiTinh, trangThai);
+            return Ok(nhanViens);
+        }
 
+        [AllowAnonymous]
+        [HttpGet("bao-cao-nguoi-than-danh-muc-phong-ban-nhan-vien-gioi-tinh-trang-thai/{tu}/{den}/{idDanhMuc}/{idPhongBan}/{maNhanVien}/{gioiTinh}/{trangThai}")]
+        public async Task<IActionResult> GetByAllBaoCaoNguoiThanDanhMucVaPhongBanVanNhanVienVaGioiTinhVaTrangThai(int tu, int den, int idDanhMuc, int idPhongBan, string maNhanVien, bool gioiTinh, bool trangThai)
+        {
+            var nhanViens = await _nhanVienService.GetAllNguoiThanDanhMucVaPhongBanVaMaNhanVienVaGioiTinhVaTrangThai(tu, den, idDanhMuc, idPhongBan, maNhanVien, gioiTinh, trangThai);
+            return Ok(nhanViens);
+        }
+
+
+
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Create([FromForm] NhanVienCreateRequest request)
         {
@@ -263,7 +501,7 @@ namespace HRMSolution.BackendAPI.Controllers
         }
 
         [HttpPut("{maNhanVien}")]
-        public async Task<IActionResult> Update(string maNhanVien, NhanVienUpdateRequest request)
+        public async Task<IActionResult> Update(string maNhanVien, [FromBody]NhanVienUpdateRequest request)
         {
             var result = await _nhanVienService.Update(maNhanVien, request);
             if (result == 0)
@@ -274,6 +512,15 @@ namespace HRMSolution.BackendAPI.Controllers
         public async Task<IActionResult> UpdateImage(string maNhanVien, [FromForm]NhanVienUpdateImageRequest request)
         {
             var result = await _nhanVienService.UpdateImage(maNhanVien, request);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
+        }
+        [AllowAnonymous]
+        [HttpDelete("image/{maNhanVien}")]
+        public async Task<IActionResult> DeleteImage(string maNhanVien)
+        {
+            var result = await _nhanVienService.DeleteImage(maNhanVien);
             if (result == 0)
                 return BadRequest();
             return Ok();
