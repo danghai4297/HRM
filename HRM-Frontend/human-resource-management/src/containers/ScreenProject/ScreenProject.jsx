@@ -41,6 +41,7 @@ import ScreenAccount from "../ScreenAccount/ScreenAccount";
 // import PDF from "../../components/Detail/PDF";
 import ScreenAccountLog from "../ScreenAccountLog/ScreenAccountLog";
 import PDF from "../../components/Detail/PDF";
+import ScreenNotFound from "./ScreenNotFound";
 function ScreenProject() {
   const { setAccount } = useContext(AccountContext);
   useEffect(() => {
@@ -309,6 +310,7 @@ function ScreenProject() {
                 component={ScreenAccountLog}
                 roles={["user", "admin"]}
               />
+              <Route component={ScreenNotFound}></Route>
             </Switch>
           </div>
         </div>
