@@ -88,7 +88,7 @@ function AddMarriageForm(props) {
         await PutApi.PutDMHN(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục hôn nhân: ${tendm}`,
+          thaoTac: `Sửa danh mục hôn nhân: ${dataDetailDMHN.tenDanhMuc} thành ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
@@ -112,6 +112,12 @@ function AddMarriageForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMHN(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa danh mục hôn nhân: ${dataDetailDMHN.tenDanhMuc}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       success("Xoá danh mục thành công");
       history.goBack();
     } catch (error) {

@@ -47,7 +47,7 @@ function AddBonusForm(props) {
     const fetchNvList = async () => {
       try {
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốn sửa danh mục khen thưởng");
+          setDescription(`Bạn chắc chắn muốn sửa danh mục khen thưởng`);
           const response = await ProductApi.getDetailDMKTvKL(id);
           setdataDetailDMKT(response);
           setOldDm(response.tenDanhMuc);
@@ -102,7 +102,7 @@ function AddBonusForm(props) {
         await ProductApi.PostDMKTvKL(data);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `thêm danh mục khen thưởng: ${tendm}`,
+          thaoTac: `Thêm danh mục khen thưởng: ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
@@ -224,8 +224,16 @@ function AddBonusForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
-        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
         cancel={cancel}
       />
       <Dialog

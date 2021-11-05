@@ -5,7 +5,7 @@ import ItemDashBoard from "../../components/ItemDashBoard/ItemDashBoard";
 import ItemExcel from "../../components/ItemExcel/ItemExcel";
 import TablePagination from "../../components/TablePagination/TablePagination";
 import ProductApi from "../../api/productApi";
-import { NVCOLUMNS, NVCOLUMNSSALARY } from "./NvColumns";
+import { NVCOLUMNS, NVCOLUMNSHD, NVCOLUMNSSALARY } from "./NvColumns";
 
 DashBoard.propTypes = {};
 
@@ -15,7 +15,7 @@ function DashBoard() {
   let fileName = "DSNV";
   let fileName2 = "DSLNV";
   const [dataAllNv, setDataAllNv] = useState([]);
-  const [dataAllPB, setDataAllPB] = useState([]);
+  const [dataAllHd, setDataAllHd] = useState([]);
   const [dataAllLNV, setDataAllLNV] = useState([]);
   const [dataAllNVnv, setDataAllNVnv] = useState([]);
 
@@ -23,11 +23,11 @@ function DashBoard() {
     const fetchNvList = async () => {
       try {
         const responseNv = await ProductApi.getAllNv();
-        const responsePB = await ProductApi.getAllDMPB();
+        const responseHd = await ProductApi.getAllHd();
         const responseLNV = await ProductApi.getAllL();
         const responseNVnv = await ProductApi.getAllNvnv();
         setDataAllNv(responseNv);
-        setDataAllPB(responsePB);
+        setDataAllHd(responseHd);
         setDataAllLNV(responseLNV);
         setDataAllNVnv(responseNVnv);
       } catch (error) {
@@ -45,7 +45,7 @@ function DashBoard() {
             <ItemDashBoard
               totalEmployees={dataAllNv.length}
               fontIcon="users"
-              title="nhan vien"
+              title="Nhân viên"
               link="/profile"
               color="rgba(27, 92, 173,1)"
               colorBot="rgba(58, 127, 213,1)"
@@ -53,10 +53,10 @@ function DashBoard() {
           </div>
           <div className="item-da">
             <ItemDashBoard
-              totalEmployees={dataAllPB.length}
-              fontIcon="building"
-              title="Phong ban"
-              link="category/department"
+              totalEmployees={dataAllHd.length}
+              fontIcon="file-signature"
+              title="hợp đồng"
+              link="/contract"
               color="rgba(34, 141, 34,1)"
               colorBot="rgba(47, 185, 47,1)"
             />
@@ -65,7 +65,7 @@ function DashBoard() {
             <ItemDashBoard
               totalEmployees={dataAllLNV.length}
               fontIcon="money-check-alt"
-              title="Luong n.vien"
+              title="lương nhân viên"
               link="/salary"
               color="rgba(255, 180, 0,1)"
               colorBot="rgba(249, 201, 86,1)"
@@ -75,7 +75,7 @@ function DashBoard() {
             <ItemDashBoard
               totalEmployees={dataAllNVnv.length}
               fontIcon="users-slash"
-              title="N.vien nghi viec"
+              title="N.viên nghỉ việc"
               link="/resign"
               color="rgba(255, 81, 20,1)"
               colorBot="rgba(253, 110, 59,1)"
@@ -87,14 +87,14 @@ function DashBoard() {
             <ItemExcel
               dataXp={dataAllNv}
               fileName={fileName}
-              title="nhan vien"
+              title="nhân viên"
             />
           </div>
           <div className="item-da">
             <ItemExcel
               dataXp={dataAllLNV}
               fileName={fileName2}
-              title="luong nhan vien"
+              title="lương nhân viên"
             />
           </div>
         </div>
@@ -103,8 +103,8 @@ function DashBoard() {
             <TablePagination
               link={link1}
               tid="tablenv"
-              columns={NVCOLUMNS}
-              data={dataAllPB}
+              columns={NVCOLUMNSHD}
+              data={dataAllHd}
             />
           </div>
           <div className="tablex table-two">

@@ -590,9 +590,33 @@ const ProductApi = {
     return axiosClient.get(url);
   },
 
-   //Rp all BHXH theo PB
-   getRpAllBhxhPb: (id) => {
+  //Rp all BHXH theo PB
+  getRpAllBhxhPb: (id) => {
     const url = `/NhanVien/bao-cao-bhxh-phong-ban/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all đảng viên
+  getRpAllDv: () => {
+    const url = `/NhanVien/bao-cao-dang-vien`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all đảng viên Pb
+  getRpAllDvPb: (id) => {
+    const url = `/NhanVien/bao-cao-dang-vien-phong-ban/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all nhóm lương nv
+  getRpAllNlg: () => {
+    const url = `/NhanVien/bao-cao-nhom-luong`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all nhóm lương theo pb
+  getRpAllNlgPb: (id) => {
+    const url = `/NhanVien/bao-cao-nhom-luong-phong-ban/${id}`;
     return axiosClient.get(url);
   },
 };

@@ -62,7 +62,9 @@ function ItemListEmployee() {
   }
 
   const handelReport = async () => {
-    if (
+    if ((check === "Phòng ban") & (department === "Tất cả")) {
+      error("Bạn chưa chọn phòng ban");
+    } else if (
       (check === "Phòng ban") &
       (gender === "Tất cả") &
       (status === "Tất cả")
@@ -372,6 +374,20 @@ function ItemListEmployee() {
         error("Thực hiện không thành công");
       }
     }
+    // try {
+    //   let sdate = format(new Date(startDate), "yyyy-MM-dd");
+    //   let edate = format(new Date(endDate), "yyyy-MM-dd");
+    //   const respb = await ProductApi.getRpAllPbHdTtGt(
+    //     department,
+    //     sdate,
+    //     edate,
+    //     status,
+    //     gender
+    //   );
+    //   setDataRp(respb);
+    // } catch (e) {
+    //   error("Thực hiện không thành công");
+    // }
   };
 
   return (

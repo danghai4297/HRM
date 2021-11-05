@@ -31,14 +31,17 @@ function ScreenDetailTransfer(props) {
         <div className="first-main">
           <div className="first-path">
             <button className="btn-back" onClick={history.goBack}>
-              <FontAwesomeIcon className="icon-btn" icon={["fas", "long-arrow-alt-left"]} />
+              <FontAwesomeIcon
+                className="icon-btn"
+                icon={["fas", "long-arrow-alt-left"]}
+              />
             </button>
           </div>
           <div className="second-path">
             <h2>Thủ tục thuyên chuyển</h2>
           </div>
           <div className="third-path">
-          <Link to={`/transfer/${id}`}>
+            <Link to={`/transfer/${id}`}>
               <Button variant="light" className="btn-fix">
                 Sửa
               </Button>
@@ -48,7 +51,7 @@ function ScreenDetailTransfer(props) {
         <div className="second-main">
           <h3 className="title-main">Vị trí công tác hiện tại</h3>
           <div className="second-main-path">
-          {vtctht.map((detail, key) => {
+            {vtctht.map((detail, key) => {
               return (
                 <SubDetail
                   key={key}
@@ -64,13 +67,15 @@ function ScreenDetailTransfer(props) {
                 />
               );
             })}
-            <Link to={`/profile/detail/${dataDetailDC.maNhanVien}?move=moveToTransfer`}>
-              <Button variant="light" className="btn-fix">
-                Chuyển
-              </Button>
-            </Link>
           </div>
         </div>
+        <Link
+          to={`/profile/detail/${dataDetailDC.maNhanVien}?move=moveToTransfer`}
+        >
+          <Button variant="light" className="btn-fix">
+            Chuyển
+          </Button>
+        </Link>
       </div>
     </>
   );

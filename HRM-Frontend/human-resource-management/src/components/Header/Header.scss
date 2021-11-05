@@ -7,7 +7,7 @@
   display: flex;
   z-index: 1050;
   .name {
-    height: 70px;
+    height: 100%;
     width: 88%;
     .title-project {
       height: 100%;
@@ -56,7 +56,7 @@
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 20px;
       text-align: center;
-      z-index: 1050;
+      z-index: 100;
       .first-information {
         height: 80%;
         .detail-second-icon {

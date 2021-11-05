@@ -12,23 +12,33 @@ import { DatePicker } from "antd";
 import moment from "moment/moment.js";
 import DeleteApi from "../../../src/api/deleteAPI";
 import PutApi from "../../../src/api/putAAPI";
+import { useLocation } from "react-router";
 
+import DialogCheck from "../Dialog/DialogCheck";
+import { useToast } from "../Toast/Toast";
+import Dialog from "../../components/Dialog/Dialog";
 const schema = yup.object({
-  idNhomLuong: yup.number().required("Nhóm lương không được bỏ trống."),
-  heSoLuong: yup.number().required("Hệ số lương không được bỏ trống."),
-  bacLuong: yup.string().required("Bậc lương không được bỏ trống."),
+  idNhomLuong: yup.number().nullable().required("Nhóm lương không được bỏ trống."),
+  heSoLuong: yup.number().nullable().required("Hệ số lương không được bỏ trống."),
+  bacLuong: yup.string().nullable().required("Bậc lương không được bỏ trống."),
   // ngayHetHan: yup.date().required("Ngày hết hạn không được bỏ trống."),
   // ngayCoHieuLuc: yup.date().required("Ngày có hiệu lực không được bỏ trống."),
-  luongCoBan: yup.number().required("Lương cơ bản không được bỏ trống."),
-  phuCapTrachNhiem:yup.number().required("Phụ cấp chức vụ không được bỏ trống."),
-  phuCapKhac: yup.number().required("Phụ cấp khác không được bỏ trống."),
-  tongLuong: yup.number().required("Phụ cấp khác không được bỏ trống."),
+  luongCoBan: yup.number().nullable().required("Lương cơ bản không được bỏ trống."),
+  phuCapTrachNhiem:yup.number().nullable().required("Phụ cấp chức vụ không được bỏ trống."),
+  phuCapKhac: yup.number().nullable().required("Phụ cấp khác không được bỏ trống."),
+  tongLuong: yup.number().nullable().required("Phụ cấp khác không được bỏ trống."),
   thoiHanLenLuong: yup
     .string()
+    .nullable()
     .required("thời hạn lên lương không được bỏ trống."),
   trangThai: yup.boolean(),
 });
 function AddSalaryForm(props) {
+  let location = useLocation();
+  let query = new URLSearchParams(location.search);
+  // console.log(query.get("maLuong"));
+  const { error, warn, info, success } = useToast();
+
   const [salary, setSalary] = useState();
   //   heSoLuong: "",
   //   luongCoBan: "",
@@ -41,6 +51,21 @@ function AddSalaryForm(props) {
   // state contain data
   const [dataLDetail, setDataLDetail] = useState([]);
   const [dataNL, setDataNL] = useState([]);
+
+  const [dataDetailNN, setdataDetailNN] = useState([]);
+  const [dataNN, setDataNN] = useState([]);
+  const [showDialog, setShowDialog] = useState(false);
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [description, setDescription] = useState(
+    "Bạn chắc chắn muốn thêm thông tin lương mới"
+  );
+  const [showCheckDialog, setShowCheckDialog] = useState(false);
+
+  const cancel = () => {
+    setShowDialog(false);
+    setShowDeleteDialog(false);
+    setShowCheckDialog(false);
+  };
   // get data from api
   useEffect(() => {
     const fetchNvList = async () => {
@@ -48,6 +73,7 @@ function AddSalaryForm(props) {
         const responseNL = await ProductApi.getAllDMNL();
         setDataNL(responseNL);
         if (id !== undefined) {
+          setDescription("Bạn chắc chắn muốn sửa thông tin lương");
           const response = await ProductApi.getLDetail(id);
           setDataLDetail(response);
         }
@@ -72,13 +98,12 @@ function AddSalaryForm(props) {
     ngayKetThuc: dataLDetail.ngayHieuLuc,
     ghiChu: id !== undefined ? dataLDetail.ghiChu : null,
     trangThai: id !== undefined ? (dataLDetail.trangThai==="Kích hoạt"?true:false) : true,
-    maHopDong: id !== undefined ? dataLDetail.maHopDong : null,
+    maHopDong: id !== undefined ? dataLDetail.maHopDong : query.get("maHopDong"),
     
   };
   console.log((dataLDetail.idNhomLuong));
   // console.log((dataNL[0].id));
-  
-  
+
   const {
     register,
     handleSubmit,
@@ -96,6 +121,40 @@ function AddSalaryForm(props) {
       reset(intitalValue);
     }
   }, [dataLDetail]);
+
+  const checkInputChange = () => {
+    const values = getValues([
+      "idNhomLuong",
+      "heSoLuong",
+      "bacLuong",
+      "luongCoBan",
+      "phuCapTrachNhiem",
+      "phuCapKhac",
+      "tongLuong",
+      "thoiHanLenLuong",
+      "ngayHieuLuc",
+      "ngayKetThuc",
+      "ghiChu",
+      "trangThai",
+      "maHopDong",
+    ]);
+    const dfValue = [
+      intitalValue.idNhomLuong,
+      intitalValue.heSoLuong,
+      intitalValue.bacLuong,
+      intitalValue.luongCoBan,
+      intitalValue.phuCapTrachNhiem,
+      intitalValue.phuCapKhac,
+      intitalValue.tongLuong,
+      intitalValue.thoiHanLenLuong,
+      intitalValue.ngayHieuLuc,
+      intitalValue.ngayKetThuc,
+      intitalValue.ghiChu,
+      intitalValue.trangThai,
+      intitalValue.maHopDong,
+    ];
+    return JSON.stringify(values) === JSON.stringify(dfValue);
+  };
 
   const [rs, setRs] = useState();
   // const handleOnChange = (e) => {
@@ -115,27 +174,43 @@ function AddSalaryForm(props) {
     console.log(rs);
     setValue("tongLuong", rs);
   };
+
   const onHandleSubmit = async (data) => {
     console.log(data);
     try {
       if(id !== undefined){
         await PutApi.PutL(data,id);
+        success(
+          `Sửa thông tin lương cho nhân viên ${dataLDetail.tenNhanVien} thành công`
+        );
       }else{
+        if(query.get("checkMaLuong") !== "0"){
+          await PutApi.PutTLL(query.get("maHopDong"));
+        }
         await ProductApi.PostL(data);
+        success(
+          `thêm thông tin lương cho nhân viên ${dataLDetail.tenNhanVien} thành công`
+        );
       }
       history.goBack();
-    }catch(error){
-      console.log("errors: ",error);
-      
+    }catch(errors){
+      console.log("errors: ",errors);
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteL(id);
+      success(
+        `Xoá thông tin lương cho nhân viên ${dataLDetail.tenNhanVien} thành công`
+      );
       history.push(`/salary`);
-    } catch (error) {}
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
+    }
   };
   return (
+    <>
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
@@ -149,7 +224,9 @@ function AddSalaryForm(props) {
             className={
               dataLDetail.length !== 0 ? "btn btn-danger" : "delete-button"
             }
-            onClick={handleDelete}
+            onClick={() => {
+              setShowDeleteDialog(true);
+            }}
             value="Xoá"
           />
           <input
@@ -162,7 +239,13 @@ function AddSalaryForm(props) {
             type="submit"
             className="btn btn-primary ml-3"
             value={dataLDetail.length !== 0 ? "Sửa" : "Lưu"}
-            onClick={handleSubmit(onHandleSubmit)}
+            onClick={() => {
+              if (checkInputChange()) {
+                setShowCheckDialog(true);
+              } else {
+                setShowDialog(true);
+              }
+            }}
           />
         </div>
       </div>
@@ -521,6 +604,40 @@ function AddSalaryForm(props) {
         </div>
       </form>
     </div>
+    <Dialog
+        show={showDialog}
+        title="Thông báo"
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
+        cancel={cancel}
+      />
+      <DialogCheck
+        show={showCheckDialog}
+        title="Thông báo"
+        description={
+          id !== undefined
+            ? "Bạn chưa thay đổi thông tin lương"
+            : "Bạn chưa nhập thông tin kỷ lương"
+        }
+        confirm={null}
+        cancel={cancel}
+      />
+      <Dialog
+        show={showDeleteDialog}
+        title="Thông báo"
+        description={`Bạn chắc chắn muốn xóa thông tin lương`}
+        confirm={handleDelete}
+        cancel={cancel}
+      />
+    </>
   );
 }
 

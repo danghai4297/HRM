@@ -39,7 +39,7 @@ function ItemDashBoard(props) {
       </div>
       <Link to={link} className="link-item">
         <div style={styleBot} className="bot bot-slide">
-          <h>Danh sach {title}</h>
+          <h>Danh sách {title}</h>
           <span className="small-icon">
             <FontAwesomeIcon icon={["fas", "chevron-circle-right"]} />
           </span>

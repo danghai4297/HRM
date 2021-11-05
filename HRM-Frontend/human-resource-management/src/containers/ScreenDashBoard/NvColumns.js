@@ -142,29 +142,109 @@ export const NVCOLUMNSSALARY = [
   },
 ];
 
-export const NVCOLUMNS = [
+export const NVCOLUMNSHD = [
   {
-    Header: "ID",
+    Header: "Mã Nhân Viên",
+    accessor: "maNhanVien",
+    sticky: "left",
+    minWidth: 70,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+
+    show: true,
+  },
+  {
+    Header: "Họ Và Tên",
+    accessor: "tenNhanVien",
+    sticky: "left",
+    minWidth: 200,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+
+    show: true,
+  },
+  {
+    Header: "Mã Hợp Đồng",
     accessor: "id",
-    minWidth: 189,
+    minWidth: 130,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+
+    show: true,
+  },
+  {
+    Header: "Loại Hợp Đồng",
+    accessor: "idLoaiHopDong",
+    minWidth: 218,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+
+    show: true,
+  },
+
+  {
+    Header: "Chức Danh",
+    accessor: "idChucDanh",
+    minWidth: 280,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+
+    show: true,
+  },
+  {
+    Header: "Từ Ngày",
+    accessor: "hopDongTuNgay",
+    minWidth: 210,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+    Cell: ({ value }) => {
+      return format(new Date(value), "dd/MM/yyyy");
+    },
+
+    show: true,
+  },
+  {
+    Header: "Đến Ngày",
+    accessor: "hopDongDenNgay",
+    minWidth: 210,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+    Cell: ({ value }) => {
+      return format(new Date(value), "dd/MM/yyyy");
+    },
+
+    show: true,
+  },
+  {
+    Header: "Trạng thái",
+    accessor: (row) => {
+      return row.trangThai === "Kích hoạt" ? (
+        <img src="/Images/greenC.png" width={20} alt="" />
+      ) : (
+        <img src="/Images/orangeC.png" width={20} alt="" />
+      );
+    },
+    minWidth: 180,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
   },
   {
-    Header: "Mã Phòng ban",
-    accessor: "maPhongBan",
-    minWidth: 300,
+    Header: "Trạng thái",
+
+    accessor: "trangThai",
+    minWidth: 200,
     Filter: SelectColumnFilter,
-    disableFilters: true,
-    show: true,
+    disableFilters: false,
+    show: false,
   },
   {
-    Header: "Phòng ban",
-    accessor: "tenPhongBan",
-    minWidth: 300,
+    Header: "Ghi chú",
+    accessor: "ghiChu",
+    minWidth: 400,
     Filter: SelectColumnFilter,
     disableFilters: true,
-    show: true,
+
+    show: false,
   },
 ];

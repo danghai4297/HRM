@@ -87,7 +87,7 @@ function AddRelationForm(props) {
         await PutApi.PutDMNT(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục người thân: ${tendm}`,
+          thaoTac: `Sửa danh mục người thân: ${dataDetailDMNT.tenDanhMuc} thành ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
@@ -111,6 +111,12 @@ function AddRelationForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMNT(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa danh mục người thân: ${dataDetailDMNT.tenDanhMuc}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       success("Xoá danh mục thành công");
       history.goBack();
     } catch (error) {

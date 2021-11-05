@@ -98,7 +98,9 @@ function AddTitleForm(props) {
         await PutApi.PutDMCD(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục chức danh: ${tendm}`,
+          thaoTac: `Sửa danh mục chức danh: ${
+            dataDetailDMCD.tenChucDanh !== tendm ? `${dataDetailDMCD.tenChucDanh} thành` : ""
+          } ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
@@ -118,11 +120,16 @@ function AddTitleForm(props) {
       error(`Có lỗi xảy ra ${error}`);
     }
   };
-  console.log(errors)
-  console.log(errors === null)
+
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDMCD(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa danh mục chức danh: ${dataDetailDMCD.tenChucDanh}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       success("Xoá danh mục thành công");
       history.goBack();
     } catch (error) {

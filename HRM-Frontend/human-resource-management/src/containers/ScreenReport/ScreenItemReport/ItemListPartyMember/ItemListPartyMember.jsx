@@ -24,7 +24,7 @@ function ItemListPartyMember() {
   const [department, setDepartment] = useState("Tất cả");
   const [check, setCheck] = useState("Tất cả");
   const [checkPb, setCheckPb] = useState(false);
-  const [dataRpSalaryUp, setDataRpSalaryUp] = useState([]);
+  const [dataRp, setDataRp] = useState([]);
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -48,7 +48,27 @@ function ItemListPartyMember() {
     }
   }
 
-  const handelReport = async () => {};
+  const handelReport = async () => {
+    if (check === "Tất cả") {
+      try {
+        const resp = await ProductApi.getRpAllDv();
+        setDataRp(resp);
+      } catch (e) {
+        error("Thực hiện không thành công");
+      }
+    } else if (check === "Phòng ban") {
+      if (department === "Tất cả") {
+        error("Bạn chưa chọn phòng ban");
+      } else {
+        try {
+          const resp = await ProductApi.getRpAllDvPb(department);
+          setDataRp(resp);
+        } catch (e) {
+          error("Thực hiện không thành công");
+        }
+      }
+    }
+  };
 
   return (
     <>
@@ -105,10 +125,7 @@ function ItemListPartyMember() {
           <button className="button-pdf" onClick={handlePrint}>
             <FontAwesomeIcon icon={["fas", "file-pdf"]} />
           </button>
-          <ExportCSV
-            csvData={dataRpSalaryUp}
-            fileName="Báo cáo danh sách nhân viên"
-          />
+          <ExportCSV csvData={dataRp} fileName="Báo cáo danh sách nhân viên" />
         </div>
       </div>
       <div className="report-emp">
@@ -131,16 +148,15 @@ function ItemListPartyMember() {
                 <tr>
                   <th scope="col">Mã Nhân Viên</th>
                   <th scope="col">Họ Tên</th>
-                  <th scope="col">Mã hợp đồng</th>
-                  <th scope="col">Tên hợp đồng</th>
-                  <th scope="col">Lương cơ bản</th>
-                  <th scope="col">Tổng lương</th>
-                  <th scope="col">Thời gian lên lương</th>
+                  <th scope="col">Giới tính</th>
+                  <th scope="col">Ngày sinh</th>
+                  <th scope="col">Điện thoại</th>
+                  <th scope="col">Ngày vào Đảng</th>
                   <th scope="col">Tên phòng ban</th>
                 </tr>
               </thead>
               <tbody>
-                {dataRpSalaryUp.map((item) => (
+                {dataRp.map((item) => (
                   <ListItems user={item} key={item.id} />
                 ))}
               </tbody>

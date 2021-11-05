@@ -52,7 +52,7 @@ function AddLevelForm(props) {
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
-    "Bạn chắc chắn muốn thêm trình độ mới"
+    "Bạn chắc chắn muốn thêm thông tin trình độ mới"
   );
   // const [notChangeDialog,setNotChangeDialog] = useState(false);
 
@@ -78,7 +78,7 @@ function AddLevelForm(props) {
           // if(checkInputChange === true){
           //   setDescription("Bạn chưa thay dổi");
           // }
-          setDescription("Bạn chắc chắn muốm sửa trình độ");
+          setDescription("Bạn chắc chắn muốn sửa trình độ");
           const response = await ProductApi.getTDDetail(id);
           setdataDetailTDVH(response);
         }
@@ -495,7 +495,7 @@ function AddLevelForm(props) {
       <Dialog
         show={showDeleteDialog}
         title="Thông báo"
-        description={`Bạn chắc chắn muốn xóa trình độ `}
+        description={`Bạn chắc chắn muốn xóa thông tin trình độ `}
         confirm={handleDelete}
         cancel={cancel}
       />
