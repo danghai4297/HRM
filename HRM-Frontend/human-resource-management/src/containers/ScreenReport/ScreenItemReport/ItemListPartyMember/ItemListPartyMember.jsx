@@ -71,7 +71,7 @@ function ItemListPartyMember() {
   };
 
   return (
-    <>
+    <div className="reportEx">
       <div className="select-info">
         <div className="roww">
           <input
@@ -164,7 +164,7 @@ function ItemListPartyMember() {
           </div>
         </ComponentToPrint>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -391,7 +391,7 @@ function ItemListEmployee() {
   };
 
   return (
-    <>
+    <div className="reportEx">
       <div className="select-info">
         <div className="roww">
           <input
@@ -533,7 +533,7 @@ function ItemListEmployee() {
           </div>
         </ComponentToPrint>
       </div>
-    </>
+    </div>
   );
 }
 

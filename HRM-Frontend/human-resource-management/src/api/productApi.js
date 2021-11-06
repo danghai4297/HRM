@@ -8,6 +8,12 @@ const ProductApi = {
     return axiosClient.get(url);
   },
 
+  //tất cả nhân viên
+  getAllNvMT: () => {
+    const url = "/NhanVien/ma-ten";
+    return axiosClient.get(url);
+  },
+
   //tất cả nhân viên nghi viec
   getAllNvnv: () => {
     const url = "/NhanVien/nghiviec";
@@ -617,6 +623,40 @@ const ProductApi = {
   //Rp all nhóm lương theo pb
   getRpAllNlgPb: (id) => {
     const url = `/NhanVien/bao-cao-nhom-luong-phong-ban/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all người thân nv
+  getRpAllNtn: (ageX, ageY) => {
+    const url = `/NhanVien/bao-cao-nguoi-than/${ageX}/${ageY}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all người thân theo quan hệ
+  getRpAllNtDm: (ageX, ageY, idDm) => {
+    const url = `/NhanVien/bao-cao-nguoi-than-danh-muc/${ageX}/${ageY}/${idDm}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all người thân theo phong ban
+  getRpAllNtPb: (ageX, ageY, idPb) => {
+    const url = `/NhanVien/bao-cao-nguoi-than-phong-ban/${ageX}/${ageY}/${idPb}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all người thân theo nhan viên
+  getRpAllNtNv: (ageX, ageY, idNv) => {
+    const url = `/NhanVien/bao-cao-nguoi-than-nhan-vien/${ageX}/${ageY}/${idNv}`;
+    return axiosClient.get(url);
+  },
+  //Rp all người thân theo gioi tính
+  getRpAllNtGt: (ageX, ageY, gender) => {
+    const url = `/NhanVien/bao-cao-nguoi-than-gioi-tinh/${ageX}/${ageY}/${gender}`;
+    return axiosClient.get(url);
+  },
+   //Rp all người thân theo trạng thái
+   getRpAllNtTt: (ageX, ageY, status) => {
+    const url = `/NhanVien/bao-cao-nguoi-than-gioi-tinh/${ageX}/${ageY}/${status}`;
     return axiosClient.get(url);
   },
 };

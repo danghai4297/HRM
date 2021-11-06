@@ -73,7 +73,7 @@ function ItemListBirthday() {
   };
 
   return (
-    <>
+    <div className="reportEx">
       <div className="select-info">
         <div className="roww">
           <input
@@ -186,7 +186,7 @@ function ItemListBirthday() {
           </div>
         </ComponentToPrint>
       </div>
-    </>
+    </div>
   );
 }
 

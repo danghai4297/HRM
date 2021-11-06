@@ -71,7 +71,7 @@ function ItemListInsuranceBook() {
   };
 
   return (
-    <>
+    <div className="reportEx">
       <div className="select-info">
         <div className="roww">
           <input
@@ -163,7 +163,7 @@ function ItemListInsuranceBook() {
           </div>
         </ComponentToPrint>
       </div>
-    </>
+    </div>
   );
 }
 
