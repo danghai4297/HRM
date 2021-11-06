@@ -107,7 +107,9 @@ namespace HRMSolution.Application.Catalog.Luongs
                 trangThai = x.l.trangThai == true ? "Kích hoạt" : "Vô hiệu",
                 maHopDong = x.hd.maHopDong,
                 maNhanVien = x.hd.maNhanVien,
-                tenNhanVien = x.nv.hoTen
+                tenNhanVien = x.nv.hoTen,
+                idNhomLuong = x.l.idNhomLuong,
+                ghiChu = x.l.ghiChu
             }).FirstAsync();
 
             return data;
@@ -130,6 +132,19 @@ namespace HRMSolution.Application.Catalog.Luongs
             luong.ngayKetThuc = request.ngayKetThuc;
             luong.ghiChu = request.ghiChu;
             luong.trangThai = request.trangThai;
+
+            return await _context.SaveChangesAsync();
+        }
+
+        public async Task<int> UpdateTrangThai(string maHopDong)
+        {
+
+            var query = await _context.luongs.Where(x => x.maHopDong == maHopDong && x.trangThai == true).FirstOrDefaultAsync();
+
+            var luong = await _context.luongs.FindAsync(query.id);
+            if (luong == null) throw new HRMException($"Không tìm thấy hợp đồng có mã hợp đồng : {maHopDong}");
+
+            luong.trangThai = false;
 
             return await _context.SaveChangesAsync();
         }

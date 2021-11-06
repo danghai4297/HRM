@@ -10,5 +10,6 @@ namespace HRMSolution.Data.Entities
     {
         public string hoTen { get; set; }
         public DateTime ngaySinh { get; set; }
+        public string maNhanVien { get; set; }
     }
 }

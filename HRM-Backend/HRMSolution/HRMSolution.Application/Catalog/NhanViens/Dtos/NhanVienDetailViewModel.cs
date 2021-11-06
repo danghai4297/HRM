@@ -17,9 +17,12 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
         public string tamTru { get; set; }
         public string atm { get; set; }
         public string nganHang { get; set; }
+        public int idHonNhan { get; set; }
         public string honNhan { get; set; }
         public int? maSoThue { get; set; }
+        public int idDanToc { get; set; }
         public string danToc { get; set; }
+        public int idTonGiao { get; set; }
         public string tonGiao { get; set; }
         public string quocTich { get; set; }
         public string cccd { get; set; }
@@ -36,6 +39,7 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
         public string email { get; set; }
         public string facebook { get; set; }
         public string skype { get; set; }
+        public int idLhkt { get; set; }
         public string lhkcHoTen { get; set; }
         public string lhkcQuanHe { get; set; }
         public string lhkcDienThoai { get; set; }
@@ -45,6 +49,7 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
         public string coQuanTuyenDung { get; set; }
         public string chucVuHienTai { get; set; }
         public string trangThaiLaoDong { get; set; }
+        public int idTinhChatLaoDong { get; set; }
         public string tinhChatLaoDong { get; set; }
         public DateTime? ngayNghiViec { get; set; }
         public string lyDoNghiViec { get; set; }
@@ -55,6 +60,7 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
         public DateTime? ngayChinhThuc { get; set; }
         public string bhxh { get; set; }
         public string bhyt { get; set; }
+        public int idNgachCongChuc { get; set; }
         public string ngachCongChuc { get; set; }
         public string ngachCongChucNoiDung { get; set; }
         public string vaoDang { get; set; }
@@ -69,6 +75,7 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
         public string danhHieuCaoNhat { get; set; }
         public string thuongBinh { get; set; }
         public string conChinhSach { get; set; }
+        public int idYte { get; set; }
         public string ytNhomMau { get; set; }
         public float? ytChieuCao { get; set; }
         public float? ytCanNang { get; set; }
@@ -76,10 +83,13 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
         public string ytBenhTat { get; set; }
         public string ytLuuY { get; set; }
         public string ytKhuyetTat { get; set; }
+        public int idLichSuBanThan { get; set; }
         public string biBatDitu { get; set; }
         public string thamGiaChinhTri { get; set; }
         public string thanNhanNuocNgoai { get; set; }
         public string anh { get; set; }
+        public bool laThuongBinh { get; set; }
+        public bool laConChinhSach { get; set; }
 
         public List<TrinhDoVanHoaViewModel> trinhDoVanHoas { get; set; }
         public List<DieuChuyenViewModel> dieuChuyens { get; set; }

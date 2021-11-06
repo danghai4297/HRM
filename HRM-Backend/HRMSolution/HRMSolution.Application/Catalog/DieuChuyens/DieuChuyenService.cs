@@ -64,7 +64,8 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                 ChucVu = x.cv.tenChucVu,
                 trangThai = x.dc.trangThai == true ? "Kích hoạt" : "Vô hiệu",
                 idChucVu = x.dc.idChucVu,
-                idPhongBan = x.dc.idPhongBan
+                idPhongBan = x.dc.idPhongBan,
+                idTo = x.dc.to
             }).ToListAsync();
             return data;
         }
@@ -88,7 +89,8 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                 ChucVu = x.cv.tenChucVu,
                 trangThai = x.dc.trangThai == true? "Kích hoạt": "Vô hiệu",
                 idChucVu = x.dc.idChucVu,
-                idPhongBan = x.dc.idPhongBan
+                idPhongBan = x.dc.idPhongBan,
+                idTo = x.dc.to
             }).FirstAsync();
 
             return data;

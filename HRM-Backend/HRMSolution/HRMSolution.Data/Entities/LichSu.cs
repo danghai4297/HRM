@@ -9,8 +9,8 @@ namespace HRMSolution.Data.Entities
         public int id { get; set; }
         public string tenTaiKhoan { get; set; }
         public string thaoTac { get; set; }
-        public string hanhDong { get; set; }
         public string maNhanVien { get; set; }
+        public string tenNhanVien { get; set; }
         public DateTime ngayThucHien { get; set; }
     }
 }

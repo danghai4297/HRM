@@ -10,7 +10,7 @@ namespace HRMSolution.Data.Entities
         public int id { get; set; }
         public string tenNguoiThan { get; set; }
         public bool? gioiTinh { get; set; }
-        public DateTime? ngaySinh { get; set; }
+        public DateTime ngaySinh { get; set; }
         public string quanHe { get; set; }
         public string ngheNghiep { get; set; }
         public string diaChi { get; set; }

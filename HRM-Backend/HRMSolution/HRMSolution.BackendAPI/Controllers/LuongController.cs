@@ -57,5 +57,14 @@ namespace HRMSolution.BackendAPI.Controllers
                 return BadRequest();
             return Ok();
         }
+        [AllowAnonymous]
+        [HttpPut("trang-thai/{maHopDong}")]
+        public async Task<IActionResult> UpdateTrangThai(string maHopDong)
+        {
+            var result = await _luongService.UpdateTrangThai(maHopDong);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
+        }
     }
 }

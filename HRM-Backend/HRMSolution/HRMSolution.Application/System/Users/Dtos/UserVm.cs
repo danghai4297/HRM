@@ -21,6 +21,9 @@ namespace HRMSolution.Application.System.Users.Dtos
         [Display(Name = "Email")]
         public string Email { get; set; }
 
+        [Display(Name = "Mã nhân viên")]
+        public string maNhanVien { get; set; }
+
         [Display(Name = "Ngày sinh")]
         public DateTime Dob { get; set; }
 

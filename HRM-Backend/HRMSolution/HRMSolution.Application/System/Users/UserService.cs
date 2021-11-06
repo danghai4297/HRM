@@ -47,7 +47,8 @@ namespace HRMSolution.Application.System.Users
                 new Claim("email",user.Email),
                 new Claim("givenName",user.hoTen),
                 new Claim("role", string.Join(";",roles)),
-                new Claim("userName", request.UserName)
+                new Claim("userName", request.UserName),
+                new Claim("id", user.maNhanVien)
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -109,6 +110,24 @@ namespace HRMSolution.Application.System.Users
             return new ApiSuccessResult<PagedResult<UserVm>>(pagedResult);
         }
 
+        public async Task<List<UserVm>> GetAll()
+        {
+            var query = from x in _userManager.Users select x;
+
+            var data = await query.Select(x => new UserVm()
+            {
+                Id = x.Id,
+                FullName = x.hoTen,
+                PhoneNumber = x.PhoneNumber,
+                UserName = x.UserName,
+                Email = x.Email,
+                maNhanVien = x.maNhanVien,
+                Dob = x.ngaySinh,
+            }).ToListAsync();
+
+            return data;
+        }
+
         public async Task<ApiResult<UserVm>> GetById(Guid id)
         {
             var user = await _userManager.FindByIdAsync(id.ToString());
@@ -125,7 +144,8 @@ namespace HRMSolution.Application.System.Users
                 Dob = user.ngaySinh,
                 Id = user.Id,
                 UserName = user.UserName,
-                Roles = roles
+                Roles = roles,
+                maNhanVien = user.maNhanVien
             };
             return new ApiSuccessResult<UserVm>(userVm);
         }
@@ -148,7 +168,8 @@ namespace HRMSolution.Application.System.Users
                 Email = request.Email,
                 hoTen = request.FullName,
                 UserName = request.UserName,
-                PhoneNumber = request.PhoneNumber
+                PhoneNumber = request.PhoneNumber,
+                maNhanVien = request.maNhanVien
             };
             var result = await _userManager.CreateAsync(user, request.Password);
             if (result.Succeeded)
@@ -198,6 +219,7 @@ namespace HRMSolution.Application.System.Users
             user.Email = request.Email;
             user.hoTen = request.FullName;
             user.PhoneNumber = request.PhoneNumber;
+            user.maNhanVien = request.maNhanVien;
 
             var result = await _userManager.UpdateAsync(user);
             if (result.Succeeded)
@@ -207,50 +229,6 @@ namespace HRMSolution.Application.System.Users
             return new ApiErrorResult<bool>("Cập nhật không thành công");
         }
 
-        //public async Task<string> Authencate(LoginRequest request)
-        //{
-        //    var user = await _userManager.FindByNameAsync(request.UserName);
-        //    if (user == null) throw new HRMException("Khoong tìm thấy tài khoản");
-        //    var result = await _signInManager.PasswordSignInAsync(user, request.Password, request.RememberMe, true);
-        //    if(!result.Succeeded)
-        //    {
-        //        return null;
-        //    }
-        //    var roles = await _userManager.GetRolesAsync(user);
-        //    var claims = new[]
-        //    {
-        //        new Claim(ClaimTypes.Email, user.Email),
-        //        new Claim(ClaimTypes.GivenName, user.hoTen),
-        //        new Claim(ClaimTypes.Role, string.Join(";", roles))
-        //    };
-        //    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:Key"]));
-        //    var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-        //    var token = new JwtSecurityToken(_config["Tokens:Issuer"],
-        //    _config["Tokens:Issuer"],
-        //    claims,
-        //    expires: DateTime.Now.AddHours(3),
-        //    signingCredentials: creds); 
-
-        //    return new JwtSecurityTokenHandler().WriteToken(token);
-        //}
-
-        //public async Task<bool> Register(RegisterRequest request)
-        //{
-        //    var user = new AppUser()
-        //    {
-        //        hoTen = request.FullName,
-        //        ngaySinh = request.Dob,
-        //        Email = request.Email,
-        //        UserName = request.UserName,
-        //        PhoneNumber = request.PhoneNumber
-        //    };
-        //    var result = await _userManager.CreateAsync(user, request.Password);
-        //    if (result.Succeeded)
-        //    {
-        //        return true;
-        //    }
-        //    return false;
-        //}
+        
     }
 }

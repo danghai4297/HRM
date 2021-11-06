@@ -34045,7 +34045,7 @@ namespace HRMSolution.Data.Extentions
                 new LichSuBanThan() { lsbt_id = 166, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0166" },
                 new LichSuBanThan() { lsbt_id = 167, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0167" },
                 new LichSuBanThan() { lsbt_id = 168, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0168" },
-                new LichSuBanThan() { lsbt_id = 169, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0169" },
+                new LichSuBanThan() { lsbt_id = 19, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0169" },
                 new LichSuBanThan() { lsbt_id = 170, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0170" },
                 new LichSuBanThan() { lsbt_id = 171, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0171" },
                 new LichSuBanThan() { lsbt_id = 172, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0172" },
