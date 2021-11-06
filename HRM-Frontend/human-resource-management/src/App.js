@@ -6,7 +6,7 @@ import { ListProvider } from "./Contexts/ListContext";
 import ScreenProject from "./containers/ScreenProject/ScreenProject";
 import LogIn from "./containers/ScreenLoginCom/loginn";
 import { AccountContext } from "./Contexts/StateContext";
-
+import jwt_decode from "jwt-decode";
 import {
   BrowserRouter as Router,
   Route,
@@ -17,6 +17,7 @@ import { useState } from "react";
 import ToastProvider from "./components/Toast/ToastProvider";
 function App() {
   const [account, setAccount] = useState(false);
+  console.log(localStorage.getItem("resultObj"));
   return (
     <ListProvider>
       <ToastProvider>
@@ -25,7 +26,21 @@ function App() {
             <Route exact path="/">
               <Redirect to="/login" />
             </Route>
-            <Route exact path="/login" component={LogIn} />
+            <Route exact path="/login">
+              {() => {
+                if (localStorage.getItem("resultObj") === null) {
+                  return <LogIn />;
+                } else if (
+                  jwt_decode(localStorage.getItem("resultObj")).role === "user"
+                ) {
+                  return <Redirect to="/home" />;
+                } else if (
+                  jwt_decode(localStorage.getItem("resultObj")).role === "admin"
+                ) {
+                  return <Redirect to="/category" />;
+                }
+              }}
+            </Route>
             <AccountContext.Provider value={{ account, setAccount }}>
               <ScreenProject />
             </AccountContext.Provider>
