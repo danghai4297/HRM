@@ -46,8 +46,9 @@ namespace HRMSolution.Data.Extentions
                 PasswordHash = hasher.HashPassword(null, "Abcd1234$"),
                 PhoneNumber = "01231243",
                 SecurityStamp = string.Empty,
-                hoTen = "Mai Trung Hiếu",
-                ngaySinh = new DateTime(1998, 09, 08)
+                hoTen = "Đào Ngọc Hưởng",
+                ngaySinh = new DateTime(1998, 09, 08),
+                maNhanVien = "NV0001"
             });
             modelbulder.Entity<AppUser>().HasData(new AppUser
             {
@@ -61,7 +62,8 @@ namespace HRMSolution.Data.Extentions
                 PhoneNumber = "01231243",
                 SecurityStamp = string.Empty,
                 hoTen = "Đào Ngọc Hưởng",
-                ngaySinh = new DateTime(1998, 09, 08)
+                ngaySinh = new DateTime(1998, 09, 08),
+                maNhanVien = "NV0002"
             });
 
             modelbulder.Entity<IdentityUserRole<Guid>>().HasData(new IdentityUserRole<Guid>
@@ -33111,14 +33113,14 @@ namespace HRMSolution.Data.Extentions
                 new NgoaiNgu() { id = 8, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV0007" },
                 new NgoaiNgu() { id = 9, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV0008" },
                 new NgoaiNgu() { id = 10, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV0009" },
-                new NgoaiNgu() { id = 11, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV00010" },
+                new NgoaiNgu() { id = 11, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV0010" },
                 new NgoaiNgu() { id = 12, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV0011" },
                 new NgoaiNgu() { id = 13, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV0012" },
                 new NgoaiNgu() { id = 14, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV0013" },
                 new NgoaiNgu() { id = 15, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV0014" },
                 new NgoaiNgu() { id = 16, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV0015" },
                 new NgoaiNgu() { id = 17, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV0016" },
-                new NgoaiNgu() { id = 18, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV0007" },
+                new NgoaiNgu() { id = 18, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV0017" },
                 new NgoaiNgu() { id = 19, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV0018" },
                 new NgoaiNgu() { id = 20, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV0019" },
                 new NgoaiNgu() { id = 21, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV0020" },
@@ -33199,7 +33201,7 @@ namespace HRMSolution.Data.Extentions
                 new NgoaiNgu() { id = 98, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV0097" },
                 new NgoaiNgu() { id = 99, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV0098" },
                 new NgoaiNgu() { id = 100, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV0099" },
-                new NgoaiNgu() { id = 101, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV00100" }
+                new NgoaiNgu() { id = 101, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV0100" }
                 );
             modelbulder.Entity<LienHeKhanCap>().HasData(
                 new LienHeKhanCap() { lhkc_id = 1, lhkc_hoTen = "Mai Trung Hiếu", lhkc_quanHe = "Bạn", lhkc_maNhanVien = "NV0001", lhkc_diaChi = "Hà Nội", lhkc_dienThoai = "0123434324" }
@@ -33896,7 +33898,7 @@ namespace HRMSolution.Data.Extentions
                 new LichSuBanThan() { lsbt_id = 17, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0017" },
                 new LichSuBanThan() { lsbt_id = 18, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0018" },
                 new LichSuBanThan() { lsbt_id = 19, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0019" },
-                new LichSuBanThan() { lsbt_id = 20, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0010" },
+                new LichSuBanThan() { lsbt_id = 20, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0020" },
                 new LichSuBanThan() { lsbt_id = 21, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0021" },
                 new LichSuBanThan() { lsbt_id = 22, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0022" },
                 new LichSuBanThan() { lsbt_id = 23, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0023" },
@@ -34045,7 +34047,7 @@ namespace HRMSolution.Data.Extentions
                 new LichSuBanThan() { lsbt_id = 166, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0166" },
                 new LichSuBanThan() { lsbt_id = 167, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0167" },
                 new LichSuBanThan() { lsbt_id = 168, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0168" },
-                new LichSuBanThan() { lsbt_id = 19, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0169" },
+                new LichSuBanThan() { lsbt_id = 169, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0169" },
                 new LichSuBanThan() { lsbt_id = 170, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0170" },
                 new LichSuBanThan() { lsbt_id = 171, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0171" },
                 new LichSuBanThan() { lsbt_id = 172, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0172" },
