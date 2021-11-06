@@ -4,20 +4,39 @@ using HRMSolution.Data.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HRMSolution.Data.Migrations
 {
     [DbContext(typeof(HRMDbContext))]
-    partial class HRMDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211106091932_xxxxxxxxxx")]
+    partial class xxxxxxxxxx
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("HRMSolution.Data.Entities.Anh", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                        .HasAnnotation("SqlServer:IdentitySeed", 1)
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("url")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Anh");
+                });
 
             modelBuilder.Entity("HRMSolution.Data.Entities.AppRole", b =>
                 {
@@ -47,11 +66,7 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-<<<<<<< HEAD
                             ConcurrencyStamp = "a524723c-2f98-4c84-8ee6-982055e04cce",
-=======
-                            ConcurrencyStamp = "5bc151b8-1982-4308-8281-95392a652379",
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                             Name = "admin",
                             NormalizedName = "admin",
                             ghiChu = "Administrator role"
@@ -59,11 +74,7 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec"),
-<<<<<<< HEAD
                             ConcurrencyStamp = "3147b9a3-ae97-4e5d-a0ac-9409783b326b",
-=======
-                            ConcurrencyStamp = "70f7d962-719c-46b5-b7a2-b95e439ac130",
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                             Name = "user",
                             NormalizedName = "user",
                             ghiChu = "User role"
@@ -123,11 +134,6 @@ namespace HRMSolution.Data.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<string>("maNhanVien")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
                     b.Property<DateTime>("ngaySinh")
                         .HasColumnType("datetime2");
 
@@ -140,56 +146,38 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
                             AccessFailedCount = 0,
-<<<<<<< HEAD
                             ConcurrencyStamp = "a2a233e0-7314-4c5b-8dcd-bb4fcd941ae7",
-=======
-                            ConcurrencyStamp = "8848f329-4263-4c05-a462-b273fec23f5f",
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                             Email = "hieudongtru@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "hieudongtru@gmail.com",
                             NormalizedUserName = "admin",
-<<<<<<< HEAD
                             PasswordHash = "AQAAAAEAACcQAAAAEATP/8jUZX69jucCSEK0fB6Td4FsgLeqDGHscV9j7uLhiLMcEybpm79seAjW/AgedA==",
-=======
-                            PasswordHash = "AQAAAAEAACcQAAAAEA/jpi2+cFx3BtWgA9eBctNW7BFbDm6ljr4yte8aYRW4uD/wMlvloA9IBH5fcVME9g==",
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                             PhoneNumber = "01231243",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
                             UserName = "admin",
                             hoTen = "Mai Trung Hiếu",
-                            maNhanVien = "NV0002",
                             ngaySinh = new DateTime(1998, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = new Guid("1db26eb2-1870-4129-f60a-08d9978ff76b"),
                             AccessFailedCount = 0,
-<<<<<<< HEAD
                             ConcurrencyStamp = "5f073822-561b-4c20-9043-0ecbf6073923",
-=======
-                            ConcurrencyStamp = "328baad6-2834-4648-93e6-42c9506fea52",
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                             Email = "hieudongtru@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "hieudongtru@gmail.com",
                             NormalizedUserName = "user1",
-<<<<<<< HEAD
                             PasswordHash = "AQAAAAEAACcQAAAAEBUep6LmOjJaZQIRwbO8h+UcwsnR2owRS0ERjLA/N4V0tAyu6R5edDDAFh4UpDpiJQ==",
-=======
-                            PasswordHash = "AQAAAAEAACcQAAAAELBJNIlXxsIf525VjVizbvPQr0eL/jofKM2DdAoXpgcIMjuXnR/thsK9AxcdgIkmpQ==",
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                             PhoneNumber = "01231243",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
                             UserName = "user1",
                             hoTen = "Đào Ngọc Hưởng",
-                            maNhanVien = "NV0001",
                             ngaySinh = new DateTime(1998, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
@@ -621,16 +609,6 @@ namespace HRMSolution.Data.Migrations
                         {
                             id = 2,
                             tenDanhMuc = "Mẹ"
-                        },
-                        new
-                        {
-                            id = 3,
-                            tenDanhMuc = "Anh"
-                        },
-                        new
-                        {
-                            id = 4,
-                            tenDanhMuc = "Chị"
                         });
                 });
 
@@ -1044,11 +1022,7 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0001",
-<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 6, 16, 19, 30, 741, DateTimeKind.Local).AddTicks(6740),
-=======
-                            ngayHieuLuc = new DateTime(2021, 11, 6, 0, 47, 37, 877, DateTimeKind.Local).AddTicks(1574),
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                             to = 1,
                             trangThai = false
                         },
@@ -1057,22 +1031,17 @@ namespace HRMSolution.Data.Migrations
                             id = 2,
                             chiTiet = "Ahihi",
                             idChucVu = 1,
-                            idPhongBan = 3,
+                            idPhongBan = 2,
                             maNhanVien = "NV0001",
-<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 6, 16, 19, 30, 742, DateTimeKind.Local).AddTicks(277),
-=======
-                            ngayHieuLuc = new DateTime(2021, 11, 6, 0, 47, 37, 877, DateTimeKind.Local).AddTicks(3227),
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                             to = 2,
-                            trangThai = true
+                            trangThai = false
                         },
                         new
                         {
                             id = 3,
                             chiTiet = "Ahihi",
                             idChucVu = 1,
-<<<<<<< HEAD
                             idPhongBan = 1,
                             maNhanVien = "NV0001",
                             ngayHieuLuc = new DateTime(2021, 11, 6, 16, 19, 30, 742, DateTimeKind.Local).AddTicks(379),
@@ -1088,190 +1057,14 @@ namespace HRMSolution.Data.Migrations
                             maNhanVien = "NV0002",
                             ngayHieuLuc = new DateTime(2021, 11, 6, 16, 19, 30, 742, DateTimeKind.Local).AddTicks(385),
                             to = 3,
-=======
-                            idPhongBan = 3,
-                            maNhanVien = "NV0002",
-                            ngayHieuLuc = new DateTime(2021, 11, 6, 0, 47, 37, 877, DateTimeKind.Local).AddTicks(3304),
-                            to = 3,
                             trangThai = true
                         },
                         new
                         {
-                            id = 4,
-                            chiTiet = "Không",
-                            idChucVu = 1,
-                            idPhongBan = 3,
-                            maNhanVien = "NV0003",
-                            ngayHieuLuc = new DateTime(2021, 11, 6, 0, 47, 37, 877, DateTimeKind.Local).AddTicks(3307),
-                            to = 1,
-                            trangThai = true
-                        },
-                        new
-                        {
-                            id = 5,
-                            chiTiet = "Ahihi",
-                            idChucVu = 1,
-                            idPhongBan = 3,
-                            maNhanVien = "NV0004",
-                            ngayHieuLuc = new DateTime(2021, 11, 6, 0, 47, 37, 877, DateTimeKind.Local).AddTicks(3310),
-                            to = 2,
-                            trangThai = true
-                        },
-                        new
-                        {
-                            id = 6,
-                            chiTiet = "Ahihi",
-                            idChucVu = 1,
-                            idPhongBan = 4,
-                            maNhanVien = "NV0005",
-                            ngayHieuLuc = new DateTime(2021, 11, 6, 0, 47, 37, 877, DateTimeKind.Local).AddTicks(3312),
-                            to = 3,
-                            trangThai = true
-                        },
-                        new
-                        {
-                            id = 7,
-                            chiTiet = "Không",
-                            idChucVu = 1,
-                            idPhongBan = 5,
-                            maNhanVien = "NV0006",
-                            ngayHieuLuc = new DateTime(2021, 11, 6, 0, 47, 37, 877, DateTimeKind.Local).AddTicks(3314),
-                            to = 1,
-                            trangThai = true
-                        },
-                        new
-                        {
-                            id = 8,
-                            chiTiet = "Ahihi",
-                            idChucVu = 1,
-                            idPhongBan = 4,
-                            maNhanVien = "NV0007",
-                            ngayHieuLuc = new DateTime(2021, 11, 6, 0, 47, 37, 877, DateTimeKind.Local).AddTicks(3317),
-                            to = 2,
-                            trangThai = true
-                        },
-                        new
-                        {
-                            id = 9,
-                            chiTiet = "Ahihi",
-                            idChucVu = 1,
-                            idPhongBan = 5,
-                            maNhanVien = "NV0008",
-                            ngayHieuLuc = new DateTime(2021, 11, 6, 0, 47, 37, 877, DateTimeKind.Local).AddTicks(3319),
-                            to = 3,
-                            trangThai = true
-                        });
-                });
-
-            modelBuilder.Entity("HRMSolution.Data.Entities.HinhThucDaoTao", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
-                        .HasAnnotation("SqlServer:IdentitySeed", 1)
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("tenHinhThuc")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("DanhMucHinhThucDaoTao");
-
-                    b.HasData(
-                        new
-                        {
-                            id = 1,
-                            tenHinhThuc = "Đại học"
-                        },
-                        new
-                        {
-                            id = 2,
-                            tenHinhThuc = "Cao đẳng"
-                        });
-                });
-
-            modelBuilder.Entity("HRMSolution.Data.Entities.HopDong", b =>
-                {
-                    b.Property<string>("maHopDong")
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
-
-                    b.Property<string>("ghiChu")
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
-
-                    b.Property<DateTime?>("hopDongDenNgay")
-                        .IsRequired()
-                        .HasColumnType("datetime");
-
-                    b.Property<DateTime?>("hopDongTuNgay")
-                        .IsRequired()
-                        .HasColumnType("datetime");
-
-                    b.Property<int>("idChucDanh")
-                        .HasColumnType("int");
-
-                    b.Property<int>("idLoaiHopDong")
-                        .HasColumnType("int");
-
-                    b.Property<string>("maNhanVien")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
-
-                    b.Property<bool>("trangThai")
-                        .HasColumnType("bit");
-
-                    b.HasKey("maHopDong");
-
-                    b.HasIndex("idChucDanh");
-
-                    b.HasIndex("idLoaiHopDong");
-
-                    b.HasIndex("maNhanVien");
-
-                    b.ToTable("HopDong");
-
-                    b.HasData(
-                        new
-                        {
-                            maHopDong = "HD01",
-                            hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 11, 6, 0, 47, 37, 875, DateTimeKind.Local).AddTicks(931),
-                            idChucDanh = 1,
-                            idLoaiHopDong = 1,
-                            maNhanVien = "NV0001",
-                            trangThai = false
-                        },
-                        new
-                        {
-                            maHopDong = "HD02",
-                            hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 11, 6, 0, 47, 37, 876, DateTimeKind.Local).AddTicks(6039),
-                            idChucDanh = 1,
-                            idLoaiHopDong = 1,
-                            maNhanVien = "NV0001",
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
-                            trangThai = true
-                        },
-                        new
-                        {
-<<<<<<< HEAD
                             id = 5,
                             chiTiet = "Ahihi",
                             idChucVu = 1,
                             idPhongBan = 1,
-=======
-                            maHopDong = "HD03",
-                            hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 11, 6, 0, 47, 37, 876, DateTimeKind.Local).AddTicks(6196),
-                            idChucDanh = 1,
-                            idLoaiHopDong = 1,
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                             maNhanVien = "NV0003",
                             ngayHieuLuc = new DateTime(2021, 11, 6, 16, 19, 30, 742, DateTimeKind.Local).AddTicks(389),
                             to = 3,
@@ -1279,18 +1072,10 @@ namespace HRMSolution.Data.Migrations
                         },
                         new
                         {
-<<<<<<< HEAD
                             id = 6,
                             chiTiet = "Ahihi",
                             idChucVu = 1,
                             idPhongBan = 1,
-=======
-                            maHopDong = "HD04",
-                            hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 11, 6, 0, 47, 37, 876, DateTimeKind.Local).AddTicks(6214),
-                            idChucDanh = 1,
-                            idLoaiHopDong = 1,
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                             maNhanVien = "NV0004",
                             ngayHieuLuc = new DateTime(2021, 11, 6, 16, 19, 30, 742, DateTimeKind.Local).AddTicks(391),
                             to = 3,
@@ -1298,18 +1083,10 @@ namespace HRMSolution.Data.Migrations
                         },
                         new
                         {
-<<<<<<< HEAD
                             id = 7,
                             chiTiet = "Ahihi",
                             idChucVu = 1,
                             idPhongBan = 1,
-=======
-                            maHopDong = "HD05",
-                            hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 11, 6, 0, 47, 37, 876, DateTimeKind.Local).AddTicks(6224),
-                            idChucDanh = 1,
-                            idLoaiHopDong = 1,
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                             maNhanVien = "NV0005",
                             ngayHieuLuc = new DateTime(2021, 11, 6, 16, 19, 30, 742, DateTimeKind.Local).AddTicks(395),
                             to = 3,
@@ -1317,97 +1094,15 @@ namespace HRMSolution.Data.Migrations
                         },
                         new
                         {
-<<<<<<< HEAD
                             id = 8,
                             chiTiet = "Ahihi",
                             idChucVu = 1,
                             idPhongBan = 1,
-=======
-                            maHopDong = "HD06",
-                            hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 11, 6, 0, 47, 37, 876, DateTimeKind.Local).AddTicks(6233),
-                            idChucDanh = 1,
-                            idLoaiHopDong = 1,
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                             maNhanVien = "NV0006",
                             ngayHieuLuc = new DateTime(2021, 11, 6, 16, 19, 30, 742, DateTimeKind.Local).AddTicks(398),
                             to = 3,
                             trangThai = true
                         },
-<<<<<<< HEAD
-=======
-                        new
-                        {
-                            maHopDong = "HD07",
-                            hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 11, 6, 0, 47, 37, 876, DateTimeKind.Local).AddTicks(6243),
-                            idChucDanh = 1,
-                            idLoaiHopDong = 1,
-                            maNhanVien = "NV0007",
-                            trangThai = true
-                        },
-                        new
-                        {
-                            maHopDong = "HD08",
-                            hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 11, 6, 0, 47, 37, 876, DateTimeKind.Local).AddTicks(6252),
-                            idChucDanh = 1,
-                            idLoaiHopDong = 1,
-                            maNhanVien = "NV0008",
-                            trangThai = true
-                        },
-                        new
-                        {
-                            maHopDong = "HD09",
-                            hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 11, 6, 0, 47, 37, 876, DateTimeKind.Local).AddTicks(6261),
-                            idChucDanh = 1,
-                            idLoaiHopDong = 1,
-                            maNhanVien = "NV0002",
-                            trangThai = true
-                        });
-                });
-
-            modelBuilder.Entity("HRMSolution.Data.Entities.KhenThuongKyLuat", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
-                        .HasAnnotation("SqlServer:IdentitySeed", 1)
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("anh")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("idDanhMucKhenThuong")
-                        .HasColumnType("int");
-
-                    b.Property<bool?>("loai")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("lyDo")
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<string>("maNhanVien")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(10)");
-
-                    b.Property<string>("noiDung")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("idDanhMucKhenThuong");
-
-                    b.HasIndex("maNhanVien");
-
-                    b.ToTable("KhenThuongKyLuat");
-
-                    b.HasData(
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                         new
                         {
                             id = 9,
@@ -1421,7 +1116,6 @@ namespace HRMSolution.Data.Migrations
                         },
                         new
                         {
-<<<<<<< HEAD
                             id = 10,
                             chiTiet = "Ahihi",
                             idChucVu = 1,
@@ -1430,13 +1124,6 @@ namespace HRMSolution.Data.Migrations
                             ngayHieuLuc = new DateTime(2021, 11, 6, 16, 19, 30, 742, DateTimeKind.Local).AddTicks(403),
                             to = 3,
                             trangThai = true
-=======
-                            id = 2,
-                            idDanhMucKhenThuong = 4,
-                            loai = false,
-                            maNhanVien = "NV0001",
-                            noiDung = "Phạt nhân viên suất sắc"
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                         },
                         new
                         {
@@ -1451,7 +1138,6 @@ namespace HRMSolution.Data.Migrations
                         },
                         new
                         {
-<<<<<<< HEAD
                             id = 12,
                             chiTiet = "Ahihi",
                             idChucVu = 1,
@@ -1626,150 +1312,6 @@ namespace HRMSolution.Data.Migrations
                             to = 1,
                             trangThai = true
                         },
-=======
-                            id = 4,
-                            idDanhMucKhenThuong = 1,
-                            loai = true,
-                            maNhanVien = "NV0002",
-                            noiDung = "Thưởng nhân viên suất sắc"
-                        },
-                        new
-                        {
-                            id = 5,
-                            idDanhMucKhenThuong = 4,
-                            loai = false,
-                            maNhanVien = "NV0003",
-                            noiDung = "Phạt nhân viên suất sắc"
-                        },
-                        new
-                        {
-                            id = 6,
-                            idDanhMucKhenThuong = 1,
-                            loai = true,
-                            maNhanVien = "NV0004",
-                            noiDung = "Thưởng nhân viên suất sắc"
-                        },
-                        new
-                        {
-                            id = 7,
-                            idDanhMucKhenThuong = 1,
-                            loai = true,
-                            maNhanVien = "NV0005",
-                            noiDung = "Thưởng nhân viên suất sắc"
-                        },
-                        new
-                        {
-                            id = 8,
-                            idDanhMucKhenThuong = 5,
-                            loai = false,
-                            maNhanVien = "NV0006",
-                            noiDung = "Phạt nhân viên suất sắc"
-                        },
-                        new
-                        {
-                            id = 9,
-                            idDanhMucKhenThuong = 1,
-                            loai = true,
-                            maNhanVien = "NV0007",
-                            noiDung = "Thưởng nhân viên suất sắc"
-                        },
-                        new
-                        {
-                            id = 10,
-                            idDanhMucKhenThuong = 5,
-                            loai = false,
-                            maNhanVien = "NV0008",
-                            noiDung = "Phạt nhân viên suất sắc"
-                        },
-                        new
-                        {
-                            id = 11,
-                            idDanhMucKhenThuong = 1,
-                            loai = true,
-                            maNhanVien = "NV0009",
-                            noiDung = "Thưởng nhân viên suất sắc"
-                        },
-                        new
-                        {
-                            id = 12,
-                            idDanhMucKhenThuong = 5,
-                            loai = false,
-                            maNhanVien = "NV0002",
-                            noiDung = "Phạt nhân viên suất sắc"
-                        });
-                });
-
-            modelBuilder.Entity("HRMSolution.Data.Entities.LichSu", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
-                        .HasAnnotation("SqlServer:IdentitySeed", 1)
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("maNhanVien")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<DateTime>("ngayThucHien")
-                        .HasColumnType("datetime");
-
-                    b.Property<string>("tenNhanVien")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("tenTaiKhoan")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("thaoTac")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("LichSu");
-                });
-
-            modelBuilder.Entity("HRMSolution.Data.Entities.LichSuBanThan", b =>
-                {
-                    b.Property<int>("lsbt_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
-                        .HasAnnotation("SqlServer:IdentitySeed", 1)
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("lsbt_biBatDiTu")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<string>("lsbt_maNhanVien")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(10)");
-
-                    b.Property<string>("lsbt_thamGiaChinhTri")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<string>("lsbt_thanNhanNuocNgoai")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.HasKey("lsbt_id");
-
-                    b.HasIndex("lsbt_maNhanVien")
-                        .IsUnique();
-
-                    b.ToTable("LichSuBanThan");
-
-                    b.HasData(
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                         new
                         {
                             id = 28,
@@ -1794,7 +1336,6 @@ namespace HRMSolution.Data.Migrations
                         },
                         new
                         {
-<<<<<<< HEAD
                             id = 30,
                             chiTiet = "Ahihi",
                             idChucVu = 1,
@@ -1813,35 +1354,10 @@ namespace HRMSolution.Data.Migrations
                             maNhanVien = "NV0029",
                             ngayHieuLuc = new DateTime(2021, 11, 6, 16, 19, 30, 742, DateTimeKind.Local).AddTicks(479),
                             to = 1,
-=======
-                            id = 1,
-                            bacLuong = "1",
-                            idNhomLuong = 1,
-                            luongCoBan = 700000f,
-                            maHopDong = "HD02",
-                            ngayHieuLuc = new DateTime(2021, 11, 6, 0, 47, 37, 876, DateTimeKind.Local).AddTicks(8475),
-                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            thoiHanLenLuong = "một năm",
-                            tongLuong = 1000000f,
-                            trangThai = false
-                        },
-                        new
-                        {
-                            id = 2,
-                            bacLuong = "1",
-                            idNhomLuong = 1,
-                            luongCoBan = 750000f,
-                            maHopDong = "HD02",
-                            ngayHieuLuc = new DateTime(2021, 11, 6, 0, 47, 37, 877, DateTimeKind.Local).AddTicks(274),
-                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            thoiHanLenLuong = "một năm",
-                            tongLuong = 1120000f,
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                             trangThai = true
                         },
                         new
                         {
-<<<<<<< HEAD
                             id = 32,
                             chiTiet = "Ahihi",
                             idChucVu = 1,
@@ -1849,22 +1365,10 @@ namespace HRMSolution.Data.Migrations
                             maNhanVien = "NV0030",
                             ngayHieuLuc = new DateTime(2021, 11, 6, 16, 19, 30, 742, DateTimeKind.Local).AddTicks(482),
                             to = 1,
-=======
-                            id = 3,
-                            bacLuong = "1",
-                            idNhomLuong = 2,
-                            luongCoBan = 720000f,
-                            maHopDong = "HD03",
-                            ngayHieuLuc = new DateTime(2021, 11, 6, 0, 47, 37, 877, DateTimeKind.Local).AddTicks(354),
-                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            thoiHanLenLuong = "một năm",
-                            tongLuong = 1440000f,
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                             trangThai = true
                         },
                         new
                         {
-<<<<<<< HEAD
                             id = 33,
                             chiTiet = "Ahihi",
                             idChucVu = 1,
@@ -1872,22 +1376,10 @@ namespace HRMSolution.Data.Migrations
                             maNhanVien = "NV0031",
                             ngayHieuLuc = new DateTime(2021, 11, 6, 16, 19, 30, 742, DateTimeKind.Local).AddTicks(484),
                             to = 1,
-=======
-                            id = 4,
-                            bacLuong = "1",
-                            idNhomLuong = 2,
-                            luongCoBan = 712000f,
-                            maHopDong = "HD04",
-                            ngayHieuLuc = new DateTime(2021, 11, 6, 0, 47, 37, 877, DateTimeKind.Local).AddTicks(369),
-                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            thoiHanLenLuong = "một năm",
-                            tongLuong = 1430000f,
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                             trangThai = true
                         },
                         new
                         {
-<<<<<<< HEAD
                             id = 34,
                             chiTiet = "Ahihi",
                             idChucVu = 1,
@@ -1895,69 +1387,6 @@ namespace HRMSolution.Data.Migrations
                             maNhanVien = "NV0032",
                             ngayHieuLuc = new DateTime(2021, 11, 6, 16, 19, 30, 742, DateTimeKind.Local).AddTicks(487),
                             to = 1,
-=======
-                            id = 5,
-                            bacLuong = "1",
-                            idNhomLuong = 3,
-                            luongCoBan = 756000f,
-                            maHopDong = "HD05",
-                            ngayHieuLuc = new DateTime(2021, 11, 6, 0, 47, 37, 877, DateTimeKind.Local).AddTicks(380),
-                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            thoiHanLenLuong = "một năm",
-                            tongLuong = 1650000f,
-                            trangThai = true
-                        },
-                        new
-                        {
-                            id = 6,
-                            bacLuong = "1",
-                            idNhomLuong = 3,
-                            luongCoBan = 256000f,
-                            maHopDong = "HD06",
-                            ngayHieuLuc = new DateTime(2021, 11, 6, 0, 47, 37, 877, DateTimeKind.Local).AddTicks(391),
-                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            thoiHanLenLuong = "một năm",
-                            tongLuong = 3650000f,
-                            trangThai = true
-                        },
-                        new
-                        {
-                            id = 7,
-                            bacLuong = "1",
-                            idNhomLuong = 3,
-                            luongCoBan = 956000f,
-                            maHopDong = "HD07",
-                            ngayHieuLuc = new DateTime(2021, 11, 6, 0, 47, 37, 877, DateTimeKind.Local).AddTicks(401),
-                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            thoiHanLenLuong = "một năm",
-                            tongLuong = 1350000f,
-                            trangThai = true
-                        },
-                        new
-                        {
-                            id = 8,
-                            bacLuong = "1",
-                            idNhomLuong = 2,
-                            luongCoBan = 156000f,
-                            maHopDong = "HD08",
-                            ngayHieuLuc = new DateTime(2021, 11, 6, 0, 47, 37, 877, DateTimeKind.Local).AddTicks(411),
-                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            thoiHanLenLuong = "một năm",
-                            tongLuong = 1250000f,
-                            trangThai = true
-                        },
-                        new
-                        {
-                            id = 9,
-                            bacLuong = "1",
-                            idNhomLuong = 1,
-                            luongCoBan = 556000f,
-                            maHopDong = "HD09",
-                            ngayHieuLuc = new DateTime(2021, 11, 6, 0, 47, 37, 877, DateTimeKind.Local).AddTicks(421),
-                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            thoiHanLenLuong = "một năm",
-                            tongLuong = 2650000f,
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                             trangThai = true
                         },
                         new
@@ -1973,7 +1402,6 @@ namespace HRMSolution.Data.Migrations
                         },
                         new
                         {
-<<<<<<< HEAD
                             id = 36,
                             chiTiet = "Ahihi",
                             idChucVu = 1,
@@ -1983,76 +1411,6 @@ namespace HRMSolution.Data.Migrations
                             to = 1,
                             trangThai = true
                         },
-=======
-                            id = 2,
-                            idDanhMucNgoaiNgu = 1,
-                            maNhanVien = "NV0001",
-                            ngayCap = new DateTime(2017, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            noiCap = "Đại học Bách Khoa",
-                            trinhDo = "khá"
-                        });
-                });
-
-            modelBuilder.Entity("HRMSolution.Data.Entities.NguoiThan", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
-                        .HasAnnotation("SqlServer:IdentitySeed", 1)
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("diaChi")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<string>("dienThoai")
-                        .IsRequired()
-                        .HasMaxLength(16)
-                        .HasColumnType("nvarchar(16)");
-
-                    b.Property<bool?>("gioiTinh")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("idDanhMucNguoiThan")
-                        .HasColumnType("int");
-
-                    b.Property<string>("khac")
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
-
-                    b.Property<string>("maNhanVien")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
-
-                    b.Property<DateTime>("ngaySinh")
-                        .HasColumnType("datetime");
-
-                    b.Property<string>("ngheNghiep")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("quanHe")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("tenNguoiThan")
-                        .IsRequired()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("idDanhMucNguoiThan");
-
-                    b.HasIndex("maNhanVien");
-
-                    b.ToTable("NguoiThan");
-
-                    b.HasData(
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                         new
                         {
                             id = 37,
@@ -2066,7 +1424,6 @@ namespace HRMSolution.Data.Migrations
                         },
                         new
                         {
-<<<<<<< HEAD
                             id = 38,
                             chiTiet = "Ahihi",
                             idChucVu = 1,
@@ -2306,1058 +1663,6 @@ namespace HRMSolution.Data.Migrations
                             ngayHieuLuc = new DateTime(2021, 11, 6, 16, 19, 30, 742, DateTimeKind.Local).AddTicks(566),
                             to = 2,
                             trangThai = true
-=======
-                            id = 2,
-                            diaChi = "điện biên",
-                            dienThoai = "0914637668",
-                            gioiTinh = true,
-                            idDanhMucNguoiThan = 3,
-                            maNhanVien = "NV0001",
-                            ngaySinh = new DateTime(1995, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "kinh doanh Tại Nhà",
-                            quanHe = "Anh",
-                            tenNguoiThan = "Mai Trung Hiếu"
-                        },
-                        new
-                        {
-                            id = 3,
-                            diaChi = "điện biên",
-                            dienThoai = "0914637668",
-                            gioiTinh = true,
-                            idDanhMucNguoiThan = 3,
-                            maNhanVien = "NV0002",
-                            ngaySinh = new DateTime(1995, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "kinh doanh Tại Nhà",
-                            quanHe = "Anh",
-                            tenNguoiThan = "Nguyễn Công Minh"
-                        },
-                        new
-                        {
-                            id = 4,
-                            diaChi = "điện biên",
-                            dienThoai = "0914637668",
-                            gioiTinh = false,
-                            idDanhMucNguoiThan = 2,
-                            maNhanVien = "NV0001",
-                            ngaySinh = new DateTime(1975, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "kinh doanh Tại Nhà",
-                            quanHe = "Mẹ",
-                            tenNguoiThan = "Úc Minh Hương"
-                        },
-                        new
-                        {
-                            id = 5,
-                            diaChi = "điện biên",
-                            dienThoai = "0914637668",
-                            gioiTinh = false,
-                            idDanhMucNguoiThan = 4,
-                            maNhanVien = "NV0002",
-                            ngaySinh = new DateTime(2005, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "kinh doanh Tại Nhà",
-                            quanHe = "Chị",
-                            tenNguoiThan = "Tiêu Nguyệt Ảnh"
-                        },
-                        new
-                        {
-                            id = 6,
-                            diaChi = "điện biên",
-                            dienThoai = "0914637668",
-                            gioiTinh = false,
-                            idDanhMucNguoiThan = 4,
-                            maNhanVien = "NV0002",
-                            ngaySinh = new DateTime(2000, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "kinh doanh Tại Nhà",
-                            quanHe = "Chị",
-                            tenNguoiThan = "Quất Hồng Đào"
-                        });
-                });
-
-            modelBuilder.Entity("HRMSolution.Data.Entities.NhanVien", b =>
-                {
-                    b.Property<string>("maNhanVien")
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
-
-                    b.Property<string>("anh")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("atm")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("bhxh")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("bhyt")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("cccd")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
-
-                    b.Property<string>("chucVuHienTai")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("coQuanTuyenDung")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("conChinhSach")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("congViecChinh")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("danhHieuCaoNhat")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("diDong")
-                        .IsRequired()
-                        .HasMaxLength(16)
-                        .HasColumnType("nvarchar(16)");
-
-                    b.Property<string>("dienThoai")
-                        .IsRequired()
-                        .HasMaxLength(16)
-                        .HasColumnType("nvarchar(16)");
-
-                    b.Property<string>("dienThoaiKhac")
-                        .HasMaxLength(16)
-                        .HasColumnType("nvarchar(16)");
-
-                    b.Property<string>("email")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("facebook")
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
-
-                    b.Property<bool>("gioiTinh")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("hoChieu")
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
-
-                    b.Property<string>("hoTen")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<int>("idDanToc")
-                        .HasColumnType("int");
-
-                    b.Property<int>("idDanhMucHonNhan")
-                        .HasColumnType("int");
-
-                    b.Property<int>("idNgachCongChuc")
-                        .HasColumnType("int");
-
-                    b.Property<int>("idTonGiao")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("laConChinhSach")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("laThuongBinh")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("lyDoNghiViec")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<int?>("maSoThue")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ngachCongChucNoiDung")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("nganHang")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<DateTime>("ngayCapCCCD")
-                        .HasColumnType("datetime");
-
-                    b.Property<DateTime?>("ngayCapHoChieu")
-                        .HasColumnType("datetime");
-
-                    b.Property<DateTime?>("ngayChinhThuc")
-                        .HasColumnType("datetime");
-
-                    b.Property<DateTime>("ngayHetHanCCCD")
-                        .HasColumnType("datetime");
-
-                    b.Property<DateTime?>("ngayHetHanHoChieu")
-                        .HasColumnType("datetime");
-
-                    b.Property<DateTime?>("ngayNghiViec")
-                        .HasColumnType("datetime");
-
-                    b.Property<DateTime?>("ngayNhapNgu")
-                        .HasColumnType("datetime");
-
-                    b.Property<DateTime>("ngaySinh")
-                        .HasColumnType("datetime");
-
-                    b.Property<DateTime?>("ngayThuViec")
-                        .HasColumnType("datetime");
-
-                    b.Property<DateTime?>("ngayTuyenDung")
-                        .HasColumnType("datetime");
-
-                    b.Property<DateTime?>("ngayVaoBan")
-                        .HasColumnType("datetime");
-
-                    b.Property<DateTime?>("ngayVaoDang")
-                        .HasColumnType("datetime");
-
-                    b.Property<DateTime?>("ngayVaoDangChinhThuc")
-                        .HasColumnType("datetime");
-
-                    b.Property<DateTime?>("ngayVaoDoan")
-                        .HasColumnType("datetime");
-
-                    b.Property<DateTime?>("ngayXuatNgu")
-                        .HasColumnType("datetime");
-
-                    b.Property<string>("ngheNghiep")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("noiCapCCCD")
-                        .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
-
-                    b.Property<string>("noiCapHoChieu")
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
-
-                    b.Property<string>("noiSinh")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<string>("noiThamGia")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("quanHamCaoNhat")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<bool>("quanNhan")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("queQuan")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<string>("quocTich")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("skype")
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
-
-                    b.Property<string>("tamTru")
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<string>("thuongBinh")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("thuongTru")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<int>("tinhChatLaoDong")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("trangThaiLaoDong")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("vaoDang")
-                        .HasColumnType("bit");
-
-                    b.HasKey("maNhanVien");
-
-                    b.HasIndex("idDanToc");
-
-                    b.HasIndex("idDanhMucHonNhan");
-
-                    b.HasIndex("idNgachCongChuc");
-
-                    b.HasIndex("idTonGiao");
-
-                    b.HasIndex("tinhChatLaoDong");
-
-                    b.ToTable("NhanVien");
-
-                    b.HasData(
-                        new
-                        {
-                            maNhanVien = "NV0001",
-                            anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg",
-                            bhxh = "HS0123123423",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = true,
-                            hoTen = "Đào Ngọc Hưởng",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = true,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayVaoDangChinhThuc = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Điện Biên",
-                            noiSinh = "Hưng Yên",
-                            quanNhan = false,
-                            queQuan = "Hưng Yên",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Điện Biên",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = true,
-                            vaoDang = false
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0002",
-                            anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg",
-                            bhxh = "HS0123123423",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = false,
-                            hoTen = "Mai Trung Hiếu",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = false,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 11, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayVaoDangChinhThuc = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = false,
-                            vaoDang = true
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0003",
-                            anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg",
-                            bhxh = "HS0123123423",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = false,
-                            hoTen = "Hà Nhật Dân",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = true,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 10, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayVaoDangChinhThuc = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = true,
-                            vaoDang = true
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0004",
-                            anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg",
-                            bhxh = "HS0123123423",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = true,
-                            hoTen = "Nguyễn Công Minh",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = true,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayVaoDangChinhThuc = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = true,
-                            vaoDang = true
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0005",
-                            anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg",
-                            bhxh = "HS0123123423",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = true,
-                            hoTen = "Nguyễn Đăng Hải",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = false,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 11, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayVaoDangChinhThuc = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = true,
-                            vaoDang = true
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0006",
-                            anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg",
-                            bhxh = "HS0123123423",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = true,
-                            hoTen = "Nguyễn Trung Hiếu",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = false,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 6, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayVaoDangChinhThuc = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = true,
-                            vaoDang = true
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0007",
-                            bhxh = "HS0123123423",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = true,
-                            hoTen = "Nguyễn Đình Chính",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = true,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 9, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayVaoDangChinhThuc = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = true,
-                            vaoDang = true
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0008",
-                            bhxh = "HS0123123423",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = false,
-                            hoTen = "Lý Trà My",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = false,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 7, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayVaoDangChinhThuc = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = true,
-                            vaoDang = true
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0009",
-                            bhxh = "HS0123123423",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = true,
-                            hoTen = "Đặng Tuấn Anh",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = true,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 8, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayVaoDangChinhThuc = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = false,
-                            vaoDang = true
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0010",
-                            bhxh = "HS0123123423",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = true,
-                            hoTen = "Hoàng Đức Anh",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = false,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 1, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayVaoDangChinhThuc = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = true,
-                            vaoDang = true
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0011",
-                            bhxh = "HS0123123423",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = false,
-                            hoTen = "Lưu Trang Anh",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = true,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 2, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayVaoDangChinhThuc = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = false,
-                            vaoDang = true
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0012",
-                            bhxh = "HS0123123423",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = true,
-                            hoTen = "Phạm Hoàng Anh",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = false,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 1, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayVaoDangChinhThuc = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = true,
-                            vaoDang = true
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0013",
-                            bhxh = "HS0123123423",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = false,
-                            hoTen = "Phạm Thị Hiền Anh",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = false,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 4, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayVaoDangChinhThuc = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = false,
-                            vaoDang = false
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0014",
-                            bhxh = "HS0123123423",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = true,
-                            hoTen = "Phạm Khắc Việt Anh",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = true,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 5, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayVaoDangChinhThuc = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = true,
-                            vaoDang = true
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0015",
-                            bhxh = "HS0123123423",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = true,
-                            hoTen = "Đỗ Hoàng Gia Bảo",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = false,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 4, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = false,
-                            vaoDang = true
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0016",
-                            bhxh = "HS0123123423",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = false,
-                            hoTen = "Trần Thị Minh Châu",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = true,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = true,
-                            vaoDang = false
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0017",
-                            bhxh = "HS0123123423",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = false,
-                            hoTen = "Tăng Phương Chi",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = false,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = false,
-                            vaoDang = false
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0018",
-                            bhxh = "HS0123123423",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = true,
-                            hoTen = "Phạm Tiến Dũng",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = true,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = true,
-                            vaoDang = false
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0019",
-                            bhxh = "HS0123123423",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = false,
-                            hoTen = "Nguyễn Thái Dương",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = false,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = false,
-                            vaoDang = false
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0020",
-                            bhxh = "HS0123123423",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = false,
-                            hoTen = "Trần An Dương",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = true,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = false,
-                            vaoDang = false
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0021",
-                            bhxh = "HS0123123423",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = true,
-                            hoTen = "Mạc Trung Đức",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = false,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = true,
-                            vaoDang = false
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0022",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = false,
-                            hoTen = "Vũ Hương Giang",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = true,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = false,
-                            vaoDang = false
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                         },
                         new
                         {
@@ -3372,7 +1677,6 @@ namespace HRMSolution.Data.Migrations
                         },
                         new
                         {
-<<<<<<< HEAD
                             id = 61,
                             chiTiet = "Ahihi",
                             idChucVu = 1,
@@ -3381,37 +1685,6 @@ namespace HRMSolution.Data.Migrations
                             ngayHieuLuc = new DateTime(2021, 11, 6, 16, 19, 30, 742, DateTimeKind.Local).AddTicks(576),
                             to = 2,
                             trangThai = true
-=======
-                            maNhanVien = "NV0024",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = true,
-                            hoTen = "Nguyễn Lê Hiếu",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = true,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = false,
-                            vaoDang = false
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                         },
                         new
                         {
@@ -3426,7 +1699,6 @@ namespace HRMSolution.Data.Migrations
                         },
                         new
                         {
-<<<<<<< HEAD
                             id = 63,
                             chiTiet = "Ahihi",
                             idChucVu = 1,
@@ -3435,37 +1707,6 @@ namespace HRMSolution.Data.Migrations
                             ngayHieuLuc = new DateTime(2021, 11, 6, 16, 19, 30, 742, DateTimeKind.Local).AddTicks(589),
                             to = 4,
                             trangThai = true
-=======
-                            maNhanVien = "NV0026",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên vận hành",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = true,
-                            hoTen = "Khoa Minh Hoàng",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = true,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = false,
-                            vaoDang = false
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                         },
                         new
                         {
@@ -3480,7 +1721,6 @@ namespace HRMSolution.Data.Migrations
                         },
                         new
                         {
-<<<<<<< HEAD
                             id = 65,
                             chiTiet = "Ahihi",
                             idChucVu = 1,
@@ -3489,37 +1729,6 @@ namespace HRMSolution.Data.Migrations
                             ngayHieuLuc = new DateTime(2021, 11, 6, 16, 19, 30, 742, DateTimeKind.Local).AddTicks(601),
                             to = 4,
                             trangThai = true
-=======
-                            maNhanVien = "NV0028",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên vận hành",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = true,
-                            hoTen = "Nguyễn Mạnh Hùng",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = true,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = false,
-                            vaoDang = false
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                         },
                         new
                         {
@@ -3545,7 +1754,6 @@ namespace HRMSolution.Data.Migrations
                         },
                         new
                         {
-<<<<<<< HEAD
                             id = 68,
                             chiTiet = "Ahihi",
                             idChucVu = 1,
@@ -3554,37 +1762,6 @@ namespace HRMSolution.Data.Migrations
                             ngayHieuLuc = new DateTime(2021, 11, 6, 16, 19, 30, 742, DateTimeKind.Local).AddTicks(618),
                             to = 4,
                             trangThai = true
-=======
-                            maNhanVien = "NV0031",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Nhân viên vận hành",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = true,
-                            hoTen = "Phạm Gia Minh",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = true,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = false,
-                            vaoDang = false
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                         },
                         new
                         {
@@ -8302,7 +6479,6 @@ namespace HRMSolution.Data.Migrations
                         },
                         new
                         {
-<<<<<<< HEAD
                             lsbt_id = 87,
                             lsbt_biBatDiTu = "Không",
                             lsbt_maNhanVien = "NV0087",
@@ -8332,133 +6508,6 @@ namespace HRMSolution.Data.Migrations
                             lsbt_maNhanVien = "NV0090",
                             lsbt_thamGiaChinhTri = "Không",
                             lsbt_thanNhanNuocNgoai = "Không"
-=======
-                            maNhanVien = "NV0493",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Chuyên viên phân tích tài chính",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = false,
-                            hoTen = "Đỗ Thùy Linh",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = false,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 11, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = false,
-                            vaoDang = true
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0494",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Chuyên viên phân tích tài chính",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = false,
-                            hoTen = "Hoàng Nhật Mai",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = false,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 4, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = true,
-                            vaoDang = true
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0495",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Chuyên viên phân tích tài chính",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = true,
-                            hoTen = "Nguyễn Trọng Minh",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = false,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 7, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = true,
-                            vaoDang = true
-                        },
-                        new
-                        {
-                            maNhanVien = "NV0496",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Chuyên viên phân tích tài chính",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = true,
-                            hoTen = "Ngô Gia Minh",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = false,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 6, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = true,
-                            vaoDang = true
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                         },
                         new
                         {
@@ -8470,43 +6519,11 @@ namespace HRMSolution.Data.Migrations
                         },
                         new
                         {
-<<<<<<< HEAD
                             lsbt_id = 92,
                             lsbt_biBatDiTu = "Không",
                             lsbt_maNhanVien = "NV0092",
                             lsbt_thamGiaChinhTri = "Không",
                             lsbt_thanNhanNuocNgoai = "Không"
-=======
-                            maNhanVien = "NV0498",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Chuyên viên phân tích tài chính",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = true,
-                            hoTen = "	Đỗ Hải Nam",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = false,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 5, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = true,
-                            vaoDang = true
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                         },
                         new
                         {
@@ -8518,43 +6535,11 @@ namespace HRMSolution.Data.Migrations
                         },
                         new
                         {
-<<<<<<< HEAD
                             lsbt_id = 94,
                             lsbt_biBatDiTu = "Không",
                             lsbt_maNhanVien = "NV0094",
                             lsbt_thamGiaChinhTri = "Không",
                             lsbt_thanNhanNuocNgoai = "Không"
-=======
-                            maNhanVien = "NV0500",
-                            cccd = "040828462",
-                            chucVuHienTai = "Nhân Viên",
-                            coQuanTuyenDung = "Phát Đạt",
-                            congViecChinh = "Chuyên viên phân tích tài chính",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
-                            gioiTinh = false,
-                            hoTen = "Trần Kim Ngân",
-                            idDanToc = 1,
-                            idDanhMucHonNhan = 1,
-                            idNgachCongChuc = 1,
-                            idTonGiao = 1,
-                            laConChinhSach = false,
-                            laThuongBinh = false,
-                            ngayCapCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngayHetHanCCCD = new DateTime(2012, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngaySinh = new DateTime(1998, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            ngheNghiep = "Sinh viên",
-                            noiCapCCCD = "Hà Nội",
-                            noiSinh = "Hà Nội",
-                            quanNhan = false,
-                            queQuan = "Hà Nội",
-                            quocTich = "Việt Nam",
-                            tamTru = "Đại học FPT",
-                            thuongTru = "Hà Nội",
-                            tinhChatLaoDong = 1,
-                            trangThaiLaoDong = true,
-                            vaoDang = true
->>>>>>> bd3532f05c67b5ff6a24f6966b486a66726f28e5
                         },
                         new
                         {
