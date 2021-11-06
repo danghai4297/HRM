@@ -69,7 +69,7 @@ function AddLanguageForm(props) {
     fetchNvList();
   }, []);
   const intitalValue = {
-    ngayCap: dataDetailNN.ngayCap,
+    ngayCap:  id !== undefined ?(moment(dataDetailNN.ngayCap)._d == "Invalid Date"?dataDetailNN.ngayCap:moment(dataDetailNN.ngayCap)):dataDetailNN.ngayCap,
     trinhDo: id !== undefined ? `${dataDetailNN.trinhDo}` : null,
     noiCap: id !== undefined ? `${dataDetailNN.noiCap}` : null,
     maNhanVien: id !== undefined ? `${dataDetailNN.maNhanVien}` : eCode,
@@ -291,9 +291,9 @@ function AddLanguageForm(props) {
                         // onChange={(event) => {
                         //   handleChangeDate(event);
                         // }}
-                        value={moment(field.value)}
+                        value={field.value}
                         onChange={(event) => {
-                          field.onChange(event.toDate());
+                          field.onChange(event);
                         }}
                         //selected={field}
                         {...field._d}

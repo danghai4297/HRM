@@ -90,21 +90,15 @@ function AddContractForm(props) {
   }, []);
 
   const intitalValue = {
-    maNhanVien: id !== undefined ? dataDetailHd.maNhanVien : null,
-    idChucDanh: id !== undefined ? dataDetailHd.idChucDanh : null,
-    idLoaiHopDong: id !== undefined ? dataDetailHd.idLoaiHopDong : null,
-    hopDongTuNgay:
-      id !== undefined
-        ? moment(dataDetailHd.hopDongTuNgay)
-        : dataDetailHd.hopDongTuNgay,
-    hopDongDenNgay:
-      id !== undefined
-        ? moment(dataDetailHd.hopDongDenNgay)
-        : dataDetailHd.hopDongDenNgay,
-    ghiChu: id !== undefined ? dataDetailHd.ghiChu : null,
-    maHopDong: id !== undefined ? dataDetailHd.id : null,
-    trangThai: id !== undefined ? dataDetailHd.trangThai === "Kích hoạt" : true,
-  };
+    maNhanVien: id !== undefined?dataDetailHd.maNhanVien:null,
+    idChucDanh: id !== undefined?dataDetailHd.idChucDanh:null,
+    idLoaiHopDong: id !== undefined?dataDetailHd.idLoaiHopDong:null,
+    hopDongTuNgay:id !== undefined?(moment(dataDetailHd.hopDongTuNgay)._d == "Invalid Date"?dataDetailHd.hopDongTuNgay:moment(dataDetailHd.hopDongTuNgay)):dataDetailHd.hopDongTuNgay,
+    hopDongDenNgay:id !== undefined?(moment(dataDetailHd.hopDongDenNgay)._d == "Invalid Date"?dataDetailHd.hopDongDenNgay:moment(dataDetailHd.hopDongDenNgay)):dataDetailHd.hopDongDenNgay,
+    ghiChu:id!== undefined?dataDetailHd.ghiChu:null,
+    maHopDong:id!== undefined?dataDetailHd.id:null,
+    trangThai: id!== undefined?(dataDetailHd.trangThai==="Kích hoạt"):true,
+  }
   //console.log(intitalValue);
 
   //console.log(date);
@@ -157,6 +151,9 @@ function AddContractForm(props) {
     try {
       if (id !== undefined) {
         await PutApi.PutHD(data, id);
+        success(
+          `Sửa thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
+        );
       } else {
         if (query.get("checkMaHopDong") !== "0") {
           await PutApi.PutTLL(query.get("maHopDong"));
@@ -164,7 +161,7 @@ function AddContractForm(props) {
         }
         await ProductApi.postHD(data);
         success(
-          `Sửa thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
+          `Thêm thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
         );
       }
       history.goBack();

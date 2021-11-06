@@ -54,6 +54,7 @@ function ToastProvider(props) {
           className="alert"
         >
           <Alert
+          className="alert"
             elevation={6}
             variant="filled"
             onClose={hide}

@@ -8,7 +8,7 @@ const ProductApi = {
     return axiosClient.get(url);
   },
 
-  //tất cả nhân viên
+  //tất cả nhân viên mã tên
   getAllNvMT: () => {
     const url = "/NhanVien/ma-ten";
     return axiosClient.get(url);
@@ -654,8 +654,8 @@ const ProductApi = {
     const url = `/NhanVien/bao-cao-nguoi-than-gioi-tinh/${ageX}/${ageY}/${gender}`;
     return axiosClient.get(url);
   },
-   //Rp all người thân theo trạng thái
-   getRpAllNtTt: (ageX, ageY, status) => {
+  //Rp all người thân theo trạng thái
+  getRpAllNtTt: (ageX, ageY, status) => {
     const url = `/NhanVien/bao-cao-nguoi-than-gioi-tinh/${ageX}/${ageY}/${status}`;
     return axiosClient.get(url);
   },

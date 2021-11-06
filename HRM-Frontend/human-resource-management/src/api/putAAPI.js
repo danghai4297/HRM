@@ -141,7 +141,10 @@ const PutApi = {
     const url =`/KhenThuongKyLuat/${id}`;
     return axiosClient.put(url,data)
   },
-  //Sửa kỷ luật
-  
+  //Sửa nhân viên
+  PutNV:(data,id)=>{
+    const url =`/NhanVien/${id}`;
+    return axiosClient.put(url,data)
+  },
 };
 export default PutApi;
