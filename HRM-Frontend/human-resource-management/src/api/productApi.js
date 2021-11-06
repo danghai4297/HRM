@@ -7,7 +7,11 @@ const ProductApi = {
     const url = "/NhanVien";
     return axiosClient.get(url);
   },
-
+  //tất cả nhân viên
+  getAllNvMT: () => {
+    const url = "/NhanVien/ma-ten";
+    return axiosClient.get(url);
+  },
   //tất cả nhân viên nghi viec
   getAllNvnv: () => {
     const url = "/NhanVien/nghiviec";

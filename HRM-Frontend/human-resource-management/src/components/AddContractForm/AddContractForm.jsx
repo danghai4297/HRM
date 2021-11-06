@@ -151,6 +151,9 @@ function AddContractForm(props) {
     try {
       if (id !== undefined) {
         await PutApi.PutHD(data, id);
+        success(
+          `Sửa thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
+        );
       } else {
         if (query.get("checkMaHopDong") !== "0") {
           await PutApi.PutTLL(query.get("maHopDong"));
@@ -158,7 +161,7 @@ function AddContractForm(props) {
         }
         await ProductApi.postHD(data);
         success(
-          `Sửa thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
+          `Thêm thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
         );
       }
       history.goBack();

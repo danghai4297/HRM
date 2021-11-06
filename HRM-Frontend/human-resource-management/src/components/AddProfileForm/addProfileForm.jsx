@@ -160,6 +160,20 @@ function AddProfileForm(props) {
   const handleClickVeteransy = () => setVeterans(!veterans);
   const [policy, setPolicy] = useState(false);
   const handleClickPolicy = () => setPolicy(!policy);
+  const [resignation, setResignation] = useState(false);
+  const handleResignation = (e) => {
+    console.log(e.target.value);
+
+    if (e.target.value == "false") {
+      setResignation(!resignation);
+    } else {
+      setResignation(false);
+    }
+  };
+  //console.log(resignation);
+
+  const [endDate, setEndDate] = useState();
+
   //const [date, setDate] = useState(new Date());
   //State contain category
   const [dataDetailEmployee, setDataDetailEmployee] = useState([]);
@@ -169,7 +183,7 @@ function AddProfileForm(props) {
   const [dataCRS, setDataCRS] = useState([]);
   const [dataLabor, setDataLabor] = useState([]);
   const [emCode, setEmCode] = useState("");
-
+  const [allIdEm, setAllIdEm] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
@@ -183,120 +197,9 @@ function AddProfileForm(props) {
     setShowCheckDialog(false);
   };
 
-   const intitalValue = {
-     id: id!==undefined?dataDetailEmployee.id:null,
-     hoTen:id!==undefined?dataDetailEmployee.hoTen:null,
-     gioiTinh:id!==undefined?(dataDetailEmployee.gioiTinh=="Nam"?true:false):true,
-     ngaySinh:id!==undefined?(moment(dataDetailEmployee.ngaySinh)._d== "Invalid Date"?dataDetailEmployee.ngaySinh:moment(dataDetailEmployee.ngaySinh)):dataDetailEmployee.ngaySinh,
-     noiSinh:id!==undefined?dataDetailEmployee.noiSinh:null,
-     queQuan:id!==undefined?dataDetailEmployee.queQuan:null,
-     thuongTru:id!==undefined?dataDetailEmployee.thuongTru:null,
-     tamTru:id!==undefined?dataDetailEmployee.tamTru:null,
-     atm:id!==undefined?dataDetailEmployee.atm:null,
-     nganHang:id!==undefined?dataDetailEmployee.nganHang:null,
-     idDanhMucHonNhan:id!==undefined?dataDetailEmployee.idHonNhan:null,
-     quocTich:id!==undefined?dataDetailEmployee.quocTich:null,
-     dienThoai:id!==undefined?dataDetailEmployee.dienThoai:null,
-     dienThoaiKhac:id!==undefined?dataDetailEmployee.dienThoaiKhac:null,
-     diDong:id!==undefined?dataDetailEmployee.diDong:null,
-     email:id!==undefined?dataDetailEmployee.email:null,
-     facebook:id!==undefined?dataDetailEmployee.facebook:null,
-     skype:id!==undefined?dataDetailEmployee.skype:null,
-     maSoThue:id!==undefined?dataDetailEmployee.maSoThue:null,
-     cccd:id!==undefined?dataDetailEmployee.cccd:null,
-     noiCapCCCD:id!==undefined?dataDetailEmployee.noiCapCCCD:null,
-     ngayCapCCCD:id!==undefined?(moment(dataDetailEmployee.ngayCapCCCD)._d == "Invalid Date"?dataDetailEmployee.ngayCapCCCD:moment(dataDetailEmployee.ngayCapCCCD)):dataDetailEmployee.ngayCapCCCD,
-     ngayHetHanCCCD:id!==undefined?(moment(dataDetailEmployee.ngayHetHanCCCD)._d == "Invalid Date"?dataDetailEmployee.ngayHetHanCCCD:moment(dataDetailEmployee.ngayHetHanCCCD)):dataDetailEmployee.ngayHetHanCCCD,
-     hoChieu:id!==undefined?dataDetailEmployee.hoChieu:null,
-     noiCapHoChieu:id!==undefined?dataDetailEmployee.noiCapHoChieu:null,
-     ngayCapHoChieu:id!==undefined?(moment(dataDetailEmployee.ngayCapHoChieu)._d == "Invalid Date"?dataDetailEmployee.ngayCapHoChieu:moment(dataDetailEmployee.ngayCapHoChieu)):dataDetailEmployee.ngayCapHoChieu,
-     ngayHetHanHoChieu:id!==undefined?(moment(dataDetailEmployee.ngayHetHanHoChieu)._d == "Invalid Date"?dataDetailEmployee.ngayHetHanHoChieu:moment(dataDetailEmployee.ngayHetHanHoChieu)):dataDetailEmployee.ngayHetHanHoChieu,
-     ngheNghiep:id!==undefined?dataDetailEmployee.ngheNghiep:null,
-     chucVuHienTai:id!==undefined?dataDetailEmployee.chucVuHienTai:null,
-     ngayTuyenDung:id!==undefined?(moment(dataDetailEmployee.ngayTuyenDung)._d == "Invalid Date"?dataDetailEmployee.ngayTuyenDung:moment(dataDetailEmployee.ngayTuyenDung)):dataDetailEmployee.ngayTuyenDung,
-     ngayThuViec:id!==undefined?(moment(dataDetailEmployee.ngayThuViec)._d == "Invalid Date"?dataDetailEmployee.ngayThuViec:moment(dataDetailEmployee.ngayThuViec)):dataDetailEmployee.ngayThuViec,
-     congViecChinh:id!==undefined?dataDetailEmployee.congViecChinh:null,
-     ngayVaoBan:id!==undefined?(moment(dataDetailEmployee.ngayVaoBan)._d == "Invalid Date"?dataDetailEmployee.ngayVaoBan:moment(dataDetailEmployee.ngayVaoBan)):dataDetailEmployee.ngayVaoBan,
-     ngayChinhThuc:id!==undefined?(moment(dataDetailEmployee.ngayChinhThuc)._d == "Invalid Date"?dataDetailEmployee.ngayChinhThuc:moment(dataDetailEmployee.ngayChinhThuc)):dataDetailEmployee.ngayChinhThuc,
-     coQuanTuyenDung:id!==undefined?dataDetailEmployee.coQuanTuyenDung:null,
-     ngachCongChucNoiDung:id!==undefined?dataDetailEmployee.ngachCongChucNoiDung:null,
-     vaoDang:id!==undefined?(dataDetailEmployee.vaoDang==="Không"?false:true):false,
-     ngayVaoDang:id!==undefined?(moment(dataDetailEmployee.ngayVaoDang)._d == "Invalid Date"?dataDetailEmployee.ngayVaoDang:moment(dataDetailEmployee.ngayVaoDang)):dataDetailEmployee.ngayVaoDang,
-     ngayVaoDangChinhThuc:id!==undefined?(moment(dataDetailEmployee.ngayVaoDangChinhThuc)._d == "Invalid Date"?dataDetailEmployee.ngayVaoDangChinhThuc:moment(dataDetailEmployee.ngayVaoDangChinhThuc)):dataDetailEmployee.ngayVaoDangChinhThuc,
-     quanNhan:id!==undefined?(dataDetailEmployee.quanNhan==="Không"?false:true):false,
-     ngayNhapNgu:id!==undefined?(moment(dataDetailEmployee.ngayNhapNgu)._d == "Invalid Date"?dataDetailEmployee.ngayNhapNgu:moment(dataDetailEmployee.ngayNhapNgu)):dataDetailEmployee.ngayNhapNgu,
-     ngayXuatNgu:id!==undefined?(moment(dataDetailEmployee.ngayXuatNgu)._d == "Invalid Date"?dataDetailEmployee.ngayXuatNgu:moment(dataDetailEmployee.ngayXuatNgu)):dataDetailEmployee.ngayXuatNgu,
-     quanHamCaoNhat:id!==undefined?dataDetailEmployee.quanHamCaoNhat:null,
-     danhHieuCaoNhat:id!==undefined?dataDetailEmployee.danhHieuCaoNhat:null,
-     ngayVaoDoan:id!==undefined?(moment(dataDetailEmployee.ngayVaoDoan)._d== "Invalid Date"?dataDetailEmployee.ngayVaoDoan:moment(dataDetailEmployee.ngayVaoDoan)):dataDetailEmployee.ngayVaoDoan,
-     noiThamGia:id!==undefined?dataDetailEmployee.noiThamGia:null,
-     laThuongBinh:id!==undefined?dataDetailEmployee.laThuongBinh:false,
-     laConChinhSach:id!==undefined?dataDetailEmployee.laConChinhSach:false,
-     thuongBinh:id!==undefined?dataDetailEmployee.thuongBinh:null,
-     conChinhSach:id!==undefined?dataDetailEmployee.conChinhSach:null,
-     bhxh:id!==undefined?dataDetailEmployee.bhxh:null,
-     bhyt:id!==undefined?dataDetailEmployee.bhyt:null,
-     trangThaiLaoDong:id!==undefined?(dataDetailEmployee.trangThaiLaoDong=="Đang làm việc"?true:false):true,
-     ngayNghiViec:id!==undefined?(moment(dataDetailEmployee.ngayNghiViec)._d== "Invalid Date"?dataDetailEmployee.ngayNghiViec:moment(dataDetailEmployee.ngayNghiViec)):dataDetailEmployee.ngayNghiViec,
-     lyDoNghiViec:id!==undefined?dataDetailEmployee.lyDoNghiViec:null,
-     tinhChatLaoDong:id!==undefined?dataDetailEmployee.idTinhChatLaoDong:null,
-     idDanToc:id!==undefined?dataDetailEmployee.idDanToc:null,
-     idTonGiao:id!==undefined?dataDetailEmployee.idTonGiao:null,
-     idNgachCongChuc:id!==undefined?dataDetailEmployee.idNgachCongChuc:null,
-     yt_nhomMau:id!==undefined?dataDetailEmployee.ytNhomMau:null,
-     yt_chieuCao:id!==undefined?dataDetailEmployee.ytChieuCao:null,
-     yt_canNang:id!==undefined?dataDetailEmployee.ytCanNang:null,
-     yt_tinhTrangSucKhoe:id!==undefined?dataDetailEmployee.ytTinhTrangSucKhoe:null,
-     yt_benhTat:id!==undefined?dataDetailEmployee.ytBenhTat:null,
-     yt_luuY:id!==undefined?dataDetailEmployee.ytLuuY:null,
-     yt_khuyetTat:id!==undefined?(dataDetailEmployee.ytKhuyetTat==="Không"?false:true):null,
-     yt_maNhanVien:id!==undefined?dataDetailEmployee.id:null,
-     lhkc_hoTen:id!==undefined?dataDetailEmployee.lhkcHoTen:null,
-     lhkc_quanHe:id!==undefined?dataDetailEmployee.lhkcQuanHe:null,
-     lhkc_dienThoai:id!==undefined?dataDetailEmployee.lhkcDienThoai:null,
-     lhkc_email:id!==undefined?dataDetailEmployee.lhkcEmail:null,
-     lhkc_diaChi:id!==undefined?dataDetailEmployee.lhkcDiaChi:null,
-     lhkc_maNhanVien:id!==undefined?dataDetailEmployee.id:null,
-     lsbt_biBatDiTu:id!==undefined?dataDetailEmployee.biBatDitu:null,
-     lsbt_thamGiaChinhTri:id!==undefined?dataDetailEmployee.thamGiaChinhTri:null,
-     lsbt_thanNhanNuocNgoai:id!==undefined?dataDetailEmployee.thanNhanNuocNgoai:null,
-     lsbt_maNhanVien:id!==undefined?dataDetailEmployee.id:null,
-    }
-    
-    
-
-  const {
-    register,
-    handleSubmit,
-    control,
-    reset,
-    formState: { errors },
-  } = useForm({
-   defaultValues: intitalValue,
-    resolver: yupResolver(schema),
-  });
- 
-  const [file, setFile] = useState({
-    file: null,
-    path: "/Images/userIcon.png",
-  });
-  const handleChange = (e) => {
-    console.log(e);
-    setFile({
-      file: e.file,
-      path: e.fileList.length !== 0 ? URL.createObjectURL(e.file): "/Images/userIcon.png",
-      //file: e.target.files[0],
-      //path: URL.createObjectURL(e.target.files[0]),
-    });
-  };
-  
-  
-  useEffect(() => {
-    if (dataDetailEmployee) {
-      reset(intitalValue);
-    }
-  }, [dataDetailEmployee]);
-  //get data form api
+  //const idCode = "NV0001";
+  const [rsId, setRsId] = useState();
+  //console.log(Number(idCode.slice(2))+1);
   useEffect(() => {
     const fetchNvList = async () => {
       try {
@@ -310,20 +213,21 @@ function AddProfileForm(props) {
         setDataCRS(responseCRS);
         const responseCV = await ProductApi.getAllDMTCLD();
         setDataLabor(responseCV);
+
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốm sửa trình độ");
           const response = await ProductApi.getNvDetail(id);
           setDataDetailEmployee(response);
-          if(response.vaoDang !== "Không"){
+          if (response.vaoDang !== "Không") {
             setChekedParty(true);
           }
-          if(response.quanNhan !== "không"){
+          if (response.quanNhan !== "không") {
             setCheckedSoldier(true);
           }
-          if(response.laConChinhSach == true){
+          if (response.laConChinhSach == true) {
             setPolicy(true);
           }
-          if(response.laThuongBinh == true){
+          if (response.laThuongBinh == true) {
             setVeterans(true);
           }
         }
@@ -333,24 +237,291 @@ function AddProfileForm(props) {
     };
     fetchNvList();
   }, []);
-  console.log(id);
 
-  
+  useEffect(() => {
+    const handleId = async () => {
+      const responseAllId = await ProductApi.getAllNv();
+      setAllIdEm(responseAllId);
+      const idIncre =
+        responseAllId !== null
+          ? responseAllId[responseAllId.length - 1].id
+          : undefined;
+      console.log(idIncre);
+      const increCode = Number(idIncre.slice(2)) + 1;
+      const rsCode = "NV";
+      if (increCode < 10) {
+        setRsId(rsCode.concat(`000${increCode}`));
+      } else if (increCode >= 10 && increCode < 100) {
+        setRsId(rsCode.concat(`00${increCode}`));
+      } else if (increCode >= 100 && increCode < 1000) {
+        setRsId(rsCode.concat(`0${increCode}`));
+      } else {
+        setRsId(rsCode.concat(`${increCode}`));
+      }
+    };
+    handleId();
+  }, []);
+  // console.log(allIdEm);
+
+  // const handleID = (id) => {
+  //   const increCode = Number(id.slice(2)) + 1;
+  //   const rsCode = "NV";
+  //   if (increCode < 10) {
+  //     setRsId(rsCode.concat(`000${increCode}`));
+  //   } else if (increCode >= 10 && increCode < 100) {
+  //     setRsId(rsCode.concat(`00${increCode}`));
+  //   } else if (increCode >= 100 && increCode < 1000) {
+  //     setRsId(rsCode.concat(`0${increCode}`));
+  //   } else {
+  //     setRsId(rsCode.concat(`${increCode}`));
+  //   }
+  // };
+
+  const intitalValue = {
+    id: id !== undefined ? dataDetailEmployee.id : rsId,
+    hoTen: id !== undefined ? dataDetailEmployee.hoTen : null,
+    gioiTinh:
+      id !== undefined
+        ? dataDetailEmployee.gioiTinh == "Nam"
+          ? true
+          : false
+        : true,
+    ngaySinh:
+      id !== undefined
+        ? moment(dataDetailEmployee.ngaySinh)._d == "Invalid Date"
+          ? dataDetailEmployee.ngaySinh
+          : moment(dataDetailEmployee.ngaySinh)
+        : dataDetailEmployee.ngaySinh,
+    noiSinh: id !== undefined ? dataDetailEmployee.noiSinh : null,
+    queQuan: id !== undefined ? dataDetailEmployee.queQuan : null,
+    thuongTru: id !== undefined ? dataDetailEmployee.thuongTru : null,
+    tamTru: id !== undefined ? dataDetailEmployee.tamTru : null,
+    atm: id !== undefined ? dataDetailEmployee.atm : null,
+    nganHang: id !== undefined ? dataDetailEmployee.nganHang : null,
+    idDanhMucHonNhan: id !== undefined ? dataDetailEmployee.idHonNhan : null,
+    quocTich: id !== undefined ? dataDetailEmployee.quocTich : null,
+    dienThoai: id !== undefined ? dataDetailEmployee.dienThoai : null,
+    dienThoaiKhac: id !== undefined ? dataDetailEmployee.dienThoaiKhac : null,
+    diDong: id !== undefined ? dataDetailEmployee.diDong : null,
+    email: id !== undefined ? dataDetailEmployee.email : null,
+    facebook: id !== undefined ? dataDetailEmployee.facebook : null,
+    skype: id !== undefined ? dataDetailEmployee.skype : null,
+    maSoThue: id !== undefined ? dataDetailEmployee.maSoThue : null,
+    cccd: id !== undefined ? dataDetailEmployee.cccd : null,
+    noiCapCCCD: id !== undefined ? dataDetailEmployee.noiCapCCCD : null,
+    ngayCapCCCD:
+      id !== undefined
+        ? moment(dataDetailEmployee.ngayCapCCCD)._d == "Invalid Date"
+          ? dataDetailEmployee.ngayCapCCCD
+          : moment(dataDetailEmployee.ngayCapCCCD)
+        : dataDetailEmployee.ngayCapCCCD,
+    ngayHetHanCCCD:
+      id !== undefined
+        ? moment(dataDetailEmployee.ngayHetHanCCCD)._d == "Invalid Date"
+          ? dataDetailEmployee.ngayHetHanCCCD
+          : moment(dataDetailEmployee.ngayHetHanCCCD)
+        : dataDetailEmployee.ngayHetHanCCCD,
+    hoChieu: id !== undefined ? dataDetailEmployee.hoChieu : null,
+    noiCapHoChieu: id !== undefined ? dataDetailEmployee.noiCapHoChieu : null,
+    ngayCapHoChieu:
+      id !== undefined
+        ? moment(dataDetailEmployee.ngayCapHoChieu)._d == "Invalid Date"
+          ? dataDetailEmployee.ngayCapHoChieu
+          : moment(dataDetailEmployee.ngayCapHoChieu)
+        : dataDetailEmployee.ngayCapHoChieu,
+    ngayHetHanHoChieu:
+      id !== undefined
+        ? moment(dataDetailEmployee.ngayHetHanHoChieu)._d == "Invalid Date"
+          ? dataDetailEmployee.ngayHetHanHoChieu
+          : moment(dataDetailEmployee.ngayHetHanHoChieu)
+        : dataDetailEmployee.ngayHetHanHoChieu,
+    ngheNghiep: id !== undefined ? dataDetailEmployee.ngheNghiep : null,
+    chucVuHienTai: id !== undefined ? dataDetailEmployee.chucVuHienTai : null,
+    ngayTuyenDung:
+      id !== undefined
+        ? moment(dataDetailEmployee.ngayTuyenDung)._d == "Invalid Date"
+          ? dataDetailEmployee.ngayTuyenDung
+          : moment(dataDetailEmployee.ngayTuyenDung)
+        : dataDetailEmployee.ngayTuyenDung,
+    ngayThuViec:
+      id !== undefined
+        ? moment(dataDetailEmployee.ngayThuViec)._d == "Invalid Date"
+          ? dataDetailEmployee.ngayThuViec
+          : moment(dataDetailEmployee.ngayThuViec)
+        : dataDetailEmployee.ngayThuViec,
+    congViecChinh: id !== undefined ? dataDetailEmployee.congViecChinh : null,
+    ngayVaoBan:
+      id !== undefined
+        ? moment(dataDetailEmployee.ngayVaoBan)._d == "Invalid Date"
+          ? dataDetailEmployee.ngayVaoBan
+          : moment(dataDetailEmployee.ngayVaoBan)
+        : dataDetailEmployee.ngayVaoBan,
+    ngayChinhThuc:
+      id !== undefined
+        ? moment(dataDetailEmployee.ngayChinhThuc)._d == "Invalid Date"
+          ? dataDetailEmployee.ngayChinhThuc
+          : moment(dataDetailEmployee.ngayChinhThuc)
+        : dataDetailEmployee.ngayChinhThuc,
+    coQuanTuyenDung:
+      id !== undefined ? dataDetailEmployee.coQuanTuyenDung : null,
+    ngachCongChucNoiDung:
+      id !== undefined ? dataDetailEmployee.ngachCongChucNoiDung : null,
+    vaoDang:
+      id !== undefined
+        ? dataDetailEmployee.vaoDang === "Không"
+          ? false
+          : true
+        : false,
+    ngayVaoDang:
+      id !== undefined
+        ? moment(dataDetailEmployee.ngayVaoDang)._d == "Invalid Date"
+          ? dataDetailEmployee.ngayVaoDang
+          : moment(dataDetailEmployee.ngayVaoDang)
+        : dataDetailEmployee.ngayVaoDang,
+    ngayVaoDangChinhThuc:
+      id !== undefined
+        ? moment(dataDetailEmployee.ngayVaoDangChinhThuc)._d == "Invalid Date"
+          ? dataDetailEmployee.ngayVaoDangChinhThuc
+          : moment(dataDetailEmployee.ngayVaoDangChinhThuc)
+        : dataDetailEmployee.ngayVaoDangChinhThuc,
+    quanNhan:
+      id !== undefined
+        ? dataDetailEmployee.quanNhan === "Không"
+          ? false
+          : true
+        : false,
+    ngayNhapNgu:
+      id !== undefined
+        ? moment(dataDetailEmployee.ngayNhapNgu)._d == "Invalid Date"
+          ? dataDetailEmployee.ngayNhapNgu
+          : moment(dataDetailEmployee.ngayNhapNgu)
+        : dataDetailEmployee.ngayNhapNgu,
+    ngayXuatNgu:
+      id !== undefined
+        ? moment(dataDetailEmployee.ngayXuatNgu)._d == "Invalid Date"
+          ? dataDetailEmployee.ngayXuatNgu
+          : moment(dataDetailEmployee.ngayXuatNgu)
+        : dataDetailEmployee.ngayXuatNgu,
+    quanHamCaoNhat: id !== undefined ? dataDetailEmployee.quanHamCaoNhat : null,
+    danhHieuCaoNhat:
+      id !== undefined ? dataDetailEmployee.danhHieuCaoNhat : null,
+    ngayVaoDoan:
+      id !== undefined
+        ? moment(dataDetailEmployee.ngayVaoDoan)._d == "Invalid Date"
+          ? dataDetailEmployee.ngayVaoDoan
+          : moment(dataDetailEmployee.ngayVaoDoan)
+        : dataDetailEmployee.ngayVaoDoan,
+    noiThamGia: id !== undefined ? dataDetailEmployee.noiThamGia : null,
+    laThuongBinh: id !== undefined ? dataDetailEmployee.laThuongBinh : false,
+    laConChinhSach:
+      id !== undefined ? dataDetailEmployee.laConChinhSach : false,
+    thuongBinh: id !== undefined ? dataDetailEmployee.thuongBinh : null,
+    conChinhSach: id !== undefined ? dataDetailEmployee.conChinhSach : null,
+    bhxh: id !== undefined ? dataDetailEmployee.bhxh : null,
+    bhyt: id !== undefined ? dataDetailEmployee.bhyt : null,
+    trangThaiLaoDong:
+      id !== undefined
+        ? dataDetailEmployee.trangThaiLaoDong == "Đang làm việc"
+          ? true
+          : false
+        : true,
+    ngayNghiViec:
+      id !== undefined
+        ? moment(dataDetailEmployee.ngayNghiViec)._d == "Invalid Date"
+          ? dataDetailEmployee.ngayNghiViec
+          : moment(dataDetailEmployee.ngayNghiViec)
+        : dataDetailEmployee.ngayNghiViec,
+    lyDoNghiViec: id !== undefined ? dataDetailEmployee.lyDoNghiViec : null,
+    tinhChatLaoDong:
+      id !== undefined ? dataDetailEmployee.idTinhChatLaoDong : null,
+    idDanToc: id !== undefined ? dataDetailEmployee.idDanToc : null,
+    idTonGiao: id !== undefined ? dataDetailEmployee.idTonGiao : null,
+    idNgachCongChuc:
+      id !== undefined ? dataDetailEmployee.idNgachCongChuc : null,
+    yt_nhomMau: id !== undefined ? dataDetailEmployee.ytNhomMau : null,
+    yt_chieuCao: id !== undefined ? dataDetailEmployee.ytChieuCao : null,
+    yt_canNang: id !== undefined ? dataDetailEmployee.ytCanNang : null,
+    yt_tinhTrangSucKhoe:
+      id !== undefined ? dataDetailEmployee.ytTinhTrangSucKhoe : null,
+    yt_benhTat: id !== undefined ? dataDetailEmployee.ytBenhTat : null,
+    yt_luuY: id !== undefined ? dataDetailEmployee.ytLuuY : null,
+    yt_khuyetTat:
+      id !== undefined
+        ? dataDetailEmployee.ytKhuyetTat === "Không"
+          ? false
+          : true
+        : null,
+    yt_maNhanVien: id !== undefined ? dataDetailEmployee.id : rsId,
+    lhkc_hoTen: id !== undefined ? dataDetailEmployee.lhkcHoTen : null,
+    lhkc_quanHe: id !== undefined ? dataDetailEmployee.lhkcQuanHe : null,
+    lhkc_dienThoai: id !== undefined ? dataDetailEmployee.lhkcDienThoai : null,
+    lhkc_email: id !== undefined ? dataDetailEmployee.lhkcEmail : null,
+    lhkc_diaChi: id !== undefined ? dataDetailEmployee.lhkcDiaChi : null,
+    lhkc_maNhanVien: id !== undefined ? dataDetailEmployee.id : rsId,
+    lsbt_biBatDiTu: id !== undefined ? dataDetailEmployee.biBatDitu : null,
+    lsbt_thamGiaChinhTri:
+      id !== undefined ? dataDetailEmployee.thamGiaChinhTri : null,
+    lsbt_thanNhanNuocNgoai:
+      id !== undefined ? dataDetailEmployee.thanNhanNuocNgoai : null,
+    lsbt_maNhanVien: id !== undefined ? dataDetailEmployee.id : rsId,
+  };
+
+  const {
+    register,
+    handleSubmit,
+    control,
+    reset,
+    formState: { errors },
+  } = useForm({
+    defaultValues: intitalValue,
+    resolver: yupResolver(schema),
+  });
+
+  const [file, setFile] = useState({
+    file: null,
+    path: "/Images/userIcon.png",
+  });
+  const handleChange = (e) => {
+    console.log(e);
+    setFile({
+      file: e.file,
+      path:
+        e.fileList.length !== 0
+          ? URL.createObjectURL(e.file)
+          : "/Images/userIcon.png",
+      //file: e.target.files[0],
+      //path: URL.createObjectURL(e.target.files[0]),
+    });
+  };
+
+  useEffect(() => {
+    if (dataDetailEmployee) {
+      reset(intitalValue);
+    }
+  }, [dataDetailEmployee]);
+
+  useEffect(() => {
+    if (allIdEm) {
+      reset(intitalValue);
+    }
+  }, [allIdEm]);
+  //get data form api
+
   //get data from form
   const onHandleSubmit = async (data) => {
     console.log(data);
     try {
-      if(id!== undefined){
-        await PutApi.PutNV(data,id);
-        if(file.file!==null){
+      if (id !== undefined) {
+        await PutApi.PutNV(data, id);
+        if (file.file !== null) {
           const formData = new FormData();
           formData.append("anh", file.file);
           formData.append("maNhanVien", data.id);
           await PutApi.PutIMG(formData, data.id);
         }
-      }else{
+      } else {
         await ProductApi.postNv(data);
-        if(file.file!==null){
+        if (file.file !== null) {
           const formData = new FormData();
           formData.append("anh", file.file);
           formData.append("maNhanVien", data.id);
@@ -363,6 +534,7 @@ function AddProfileForm(props) {
 
   //console.log(emCode);
   console.log(file.file);
+  console.log(rsId);
 
   //handle image
   //const [file, setFile] = useState("/Images/userIcon.png");
@@ -371,19 +543,23 @@ function AddProfileForm(props) {
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">{dataDetailEmployee.length !== 0 ?"Sửa":"Thêm"} hồ sơ</h2>
+          <h2 className="">
+            {dataDetailEmployee.length !== 0 ? "Sửa" : "Thêm"} hồ sơ
+          </h2>
         </div>
         <div className="button">
-        <input
-              type="submit"
-              className={
-                dataDetailEmployee.length !== 0 ? "btn btn-danger" : "delete-button"
-              }
-              value="Xoá"
-              onClick={() => {
-                setShowDeleteDialog(true);
-              }}
-            />
+          <input
+            type="submit"
+            className={
+              dataDetailEmployee.length !== 0
+                ? "btn btn-danger"
+                : "delete-button"
+            }
+            value="Xoá"
+            onClick={() => {
+              setShowDeleteDialog(true);
+            }}
+          />
           <input
             type="submit"
             className="btn btn-secondary ml-3"
@@ -393,7 +569,7 @@ function AddProfileForm(props) {
           <input
             type="submit"
             className="btn btn-primary ml-3"
-            value={dataDetailEmployee.length !== 0 ?"Sửa":"Lưu"}
+            value={dataDetailEmployee.length !== 0 ? "Sửa" : "Lưu"}
             onClick={handleSubmit(onHandleSubmit)}
           />
         </div>
@@ -408,7 +584,19 @@ function AddProfileForm(props) {
           <div className="container-ava">
             <span>
               {" "}
-              <img src={id!== undefined?(file.file!==null?file.path:(dataDetailEmployee.anh==null?file.path:`https://localhost:5001/${dataDetailEmployee.anh}`)):file.path} className="icon" alt="" />
+              <img
+                src={
+                  id !== undefined
+                    ? file.file !== null
+                      ? file.path
+                      : dataDetailEmployee.anh == null
+                      ? file.path
+                      : `https://localhost:5001/${dataDetailEmployee.anh}`
+                    : file.path
+                }
+                className="icon"
+                alt=""
+              />
             </span>
             {/* <Controller
               name="anh"
@@ -418,12 +606,9 @@ function AddProfileForm(props) {
               )}
             /> */}
 
-<Upload
-                  beforeUpload={() => false}
-                  onChange={handleChange}
-                >
-                  <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
-                </Upload>
+            <Upload beforeUpload={() => false} onChange={handleChange}>
+              <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
+            </Upload>
             {/* <input
               type="file"
               // {...register2("anh")}
@@ -431,8 +616,6 @@ function AddProfileForm(props) {
               class="form-control-file"
               onChange={handleChange}
             ></input> */}
-
-          
           </div>
           {/* Container thông tin cơ bản */}
           <div className="container-div-form">
@@ -448,12 +631,14 @@ function AddProfileForm(props) {
                     type="text"
                     {...register("id")}
                     id="id"
+                    value={rsId}
                     className={
                       !errors.id
                         ? "form-control col-sm-6 "
                         : "form-control col-sm-6 border-danger"
                     }
-                    onChange={(e) => setEmCode(e.target.value)}
+                    //onChange={(e) => setEmCode(e.target.value)}
+                    readOnly
                   />
                   <span className="message">{errors.id?.message}</span>
                 </div>
@@ -1263,11 +1448,7 @@ function AddProfileForm(props) {
                 </div>
               </div>
             </div>
-            <input
-              type="text"
-              {...register("lhkc_maNhanVien")}
-              value={emCode}
-            />
+            <input type="text" {...register("lhkc_maNhanVien")} value={rsId} />
           </div>
           {/* Container thông tin công việc*/}
           <div className="container-div-form">
@@ -1552,6 +1733,9 @@ function AddProfileForm(props) {
                         ? "form-control col-sm-6 custom-select"
                         : "form-control col-sm-6 border-danger custom-select"
                     }
+                    onChange={(e) => {
+                      handleResignation(e);
+                    }}
                   >
                     <option value=""></option>
                     <option value={true}>Đang làm việc</option>
@@ -1609,7 +1793,7 @@ function AddProfileForm(props) {
                     {...register("lyDoNghiViec")}
                     id="lyDoNghiViec"
                     className="form-control col-sm-6"
-                    disabled="true"
+                    disabled={!resignation}
                   />
                 </div>
               </div>
@@ -1629,7 +1813,7 @@ function AddProfileForm(props) {
                     id="ngayNghiViec"
                     className="form-control col-sm-6"
                     placeholder="DD/MM/YYYY"
-                    disabled="true"
+                    disabled={!resignation}
                   />
                 </div>
               </div>
@@ -1710,7 +1894,7 @@ function AddProfileForm(props) {
             </div>
             <div className="row">
               <div className="col">
-              <div className="form-group form-inline">
+                <div className="form-group form-inline">
                   <label
                     class="col-sm-4 justify-content-start"
                     htmlFor="ngachCongChucNoiDung"
@@ -1761,7 +1945,6 @@ function AddProfileForm(props) {
                   </label>
                 </div>
               </div>
-             
             </div>
             <div className="row">
               <div className="col-6">
@@ -2151,7 +2334,7 @@ function AddProfileForm(props) {
                   <input
                     type="text"
                     {...register("yt_maNhanVien")}
-                    value={emCode}
+                    value={rsId}
                   />
                 </div>
               </div>
@@ -2235,7 +2418,7 @@ function AddProfileForm(props) {
                   <input
                     type="text"
                     {...register("lsbt_maNhanVien")}
-                    value={emCode}
+                    value={rsId}
                   />
                   <span className="message">
                     {errors.lsbt_thanNhanNuocNgoai?.message}

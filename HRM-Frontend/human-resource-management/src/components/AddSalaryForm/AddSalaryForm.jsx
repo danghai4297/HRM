@@ -12,21 +12,38 @@ import { DatePicker } from "antd";
 import moment from "moment/moment.js";
 import DeleteApi from "../../../src/api/deleteAPI";
 import PutApi from "../../../src/api/putAAPI";
-import { useLocation } from "react-router";
-
+import { useLocation } from "react-router"; 
 import DialogCheck from "../Dialog/DialogCheck";
 import { useToast } from "../Toast/Toast";
 import Dialog from "../../components/Dialog/Dialog";
 const schema = yup.object({
-  idNhomLuong: yup.number().nullable().required("Nhóm lương không được bỏ trống."),
-  heSoLuong: yup.number().nullable().required("Hệ số lương không được bỏ trống."),
+  idNhomLuong: yup
+    .number()
+    .nullable()
+    .required("Nhóm lương không được bỏ trống."),
+  heSoLuong: yup
+    .number()
+    .nullable()
+    .required("Hệ số lương không được bỏ trống."),
   bacLuong: yup.string().nullable().required("Bậc lương không được bỏ trống."),
-  // ngayHetHan: yup.date().required("Ngày hết hạn không được bỏ trống."),
-  // ngayCoHieuLuc: yup.date().required("Ngày có hiệu lực không được bỏ trống."),
-  luongCoBan: yup.number().nullable().required("Lương cơ bản không được bỏ trống."),
-  phuCapTrachNhiem:yup.number().nullable().required("Phụ cấp chức vụ không được bỏ trống."),
-  phuCapKhac: yup.number().nullable().required("Phụ cấp khác không được bỏ trống."),
-  tongLuong: yup.number().nullable().required("Phụ cấp khác không được bỏ trống."),
+   ngayHieuLuc: yup.date().nullable().required("Ngày hết hạn không được bỏ trống."),
+  // ngayKetThuc: yup.date().nullable().required("Ngày có hiệu lực không được bỏ trống."),
+  luongCoBan: yup
+    .number()
+    .nullable()
+    .required("Lương cơ bản không được bỏ trống."),
+  phuCapTrachNhiem: yup
+    .number()
+    .nullable()
+    .required("Phụ cấp chức vụ không được bỏ trống."),
+  phuCapKhac: yup
+    .number()
+    .nullable()
+    .required("Phụ cấp khác không được bỏ trống."),
+  tongLuong: yup
+    .number()
+    .nullable()
+    .required("Tổng lương không được bỏ trống."),
   thoiHanLenLuong: yup
     .string()
     .nullable()
@@ -47,7 +64,7 @@ function AddSalaryForm(props) {
   // });
   let { match, history } = props;
   let { id } = match.params;
-  
+
   // state contain data
   const [dataLDetail, setDataLDetail] = useState([]);
   const [dataNL, setDataNL] = useState([]);
@@ -60,6 +77,10 @@ function AddSalaryForm(props) {
     "Bạn chắc chắn muốn thêm thông tin lương mới"
   );
   const [showCheckDialog, setShowCheckDialog] = useState(false);
+
+  const [salaryTime,setSalaryTime] = useState();
+  const [endDate,setEndDate] = useState();
+  const [endDateRs,setEndDateRs] = useState();
 
   const cancel = () => {
     setShowDialog(false);
@@ -77,7 +98,6 @@ function AddSalaryForm(props) {
           const response = await ProductApi.getLDetail(id);
           setDataLDetail(response);
         }
-     
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
@@ -86,7 +106,7 @@ function AddSalaryForm(props) {
   }, []);
 
   const intitalValue = {
-    idNhomLuong: id!== undefined?dataLDetail.idNhomLuong:null,
+    idNhomLuong: id !== undefined ? dataLDetail.idNhomLuong : null,
     heSoLuong: id !== undefined ? dataLDetail.heSoLuong : null,
     bacLuong: id !== undefined ? dataLDetail.bacLuong : null,
     luongCoBan: id !== undefined ? dataLDetail.luongCoBan : null,
@@ -94,16 +114,31 @@ function AddSalaryForm(props) {
     phuCapKhac: id !== undefined ? dataLDetail.phuCapKhac : null,
     tongLuong: id !== undefined ? dataLDetail.tongLuong : null,
     thoiHanLenLuong: id !== undefined ? dataLDetail.thoiHanLenLuong : null,
-    ngayHieuLuc: id !== undefined ?(moment(dataLDetail.ngayHieuLuc)._d == "Invalid Date"?dataLDetail.ngayHieuLuc:moment(dataLDetail.ngayHieuLuc)):dataLDetail.ngayHieuLuc,
-    ngayKetThuc: id !== undefined ?(moment(dataLDetail.ngayHieuLuc)._d == "Invalid Date"?dataLDetail.ngayHieuLuc:moment(dataLDetail.ngayHieuLuc)):dataLDetail.ngayHieuLuc,
+    ngayHieuLuc:
+      id !== undefined
+        ? moment(dataLDetail.ngayHieuLuc)._d == "Invalid Date"
+          ? dataLDetail.ngayHieuLuc
+          : moment(dataLDetail.ngayHieuLuc)
+        : dataLDetail.ngayHieuLuc,
+    ngayKetThuc:
+      id !== undefined
+        ? moment(dataLDetail.ngayHieuLuc)._d == "Invalid Date"
+          ? dataLDetail.ngayHieuLuc
+          : moment(dataLDetail.ngayHieuLuc)
+        : dataLDetail.ngayHieuLuc,
     ghiChu: id !== undefined ? dataLDetail.ghiChu : null,
-    trangThai: id !== undefined ? (dataLDetail.trangThai==="Kích hoạt"?true:false) : true,
-    maHopDong: id !== undefined ? dataLDetail.maHopDong : query.get("maHopDong"),
-    
+    trangThai:
+      id !== undefined
+        ? dataLDetail.trangThai === "Kích hoạt"
+          ? true
+          : false
+        : true,
+    maHopDong:
+      id !== undefined ? dataLDetail.maHopDong : query.get("maHopDong"),
   };
-  console.log((dataLDetail.idNhomLuong));
+  //console.log(dataLDetail.idNhomLuong);
   // console.log((dataNL[0].id));
- 
+
   const {
     register,
     handleSubmit,
@@ -177,14 +212,22 @@ function AddSalaryForm(props) {
 
   const onHandleSubmit = async (data) => {
     console.log(data);
+    // if(endDateRs !== undefined){
+    //   let obj = {ngayKetThuc: endDateRs}
+    //   Object.assign(data,obj);
+    //   console.log(Object.assign(data,obj));
+      
+    // }
+  
+    
     try {
-      if(id !== undefined){
-        await PutApi.PutL(data,id);
+      if (id !== undefined) {
+        await PutApi.PutL(data, id);
         success(
           `Sửa thông tin lương cho nhân viên ${dataLDetail.tenNhanVien} thành công`
         );
-      }else{
-        if(query.get("checkMaLuong") !== "0"){
+      } else {
+        if (query.get("checkMaLuong") !== "0") {
           await PutApi.PutTLL(query.get("maHopDong"));
         }
         await ProductApi.PostL(data);
@@ -193,8 +236,8 @@ function AddSalaryForm(props) {
         );
       }
       history.goBack();
-    }catch(errors){
-      console.log("errors: ",errors);
+    } catch (errors) {
+      console.log("errors: ", errors);
       error(`Có lỗi xảy ra ${errors}`);
     }
   };
@@ -209,130 +252,156 @@ function AddSalaryForm(props) {
       error(`Có lỗi xảy ra ${errors}`);
     }
   };
+  // console.log(Number(getValues("thoiHanLenLuong")));
+   //console.log(getValues("ngayHieuLuc"));
+  // console.log(moment(dataLDetail.ngayHieuLuc).add(3,"years"));
+ 
+   const calSalaryTime = (e)=>{
+     setEndDate(e);    
+     console.log(endDate);
+     if(salaryTime!== undefined && e!== undefined){
+      setEndDateRs(e.add(salaryTime,"years"));
+    }
+    return endDateRs;
+    }
+    const cal = () =>{
+      if(salaryTime!== undefined && getValues("ngayHieuLuc")!== undefined){
+        setEndDateRs(getValues("ngayHieuLuc").add(salaryTime,"years"));
+      }
+    return endDateRs;
+     // setValue("ngayKetThuc",endDateRs);
+    }
+  console.log(salaryTime);
+  console.log(endDate);
+  console.log(endDateRs);
+
   return (
     <>
-    <div className="container-form">
-      <div className="Submit-button sticky-top">
-        <div>
-          <h2 className="">
-            {dataLDetail.length !== 0 ? "Sửa" : "Thêm"} hồ sơ lương
-          </h2>
-        </div>
-        <div className="button">
-          <input
-            type="submit"
-            className={
-              dataLDetail.length !== 0 ? "btn btn-danger" : "delete-button"
-            }
-            onClick={() => {
-              setShowDeleteDialog(true);
-            }}
-            value="Xoá"
-          />
-          <input
-            type="submit"
-            className="btn btn-secondary ml-3"
-            value="Huỷ"
-            onClick={history.goBack}
-          />
-          <input
-            type="submit"
-            className="btn btn-primary ml-3"
-            value={dataLDetail.length !== 0 ? "Sửa" : "Lưu"}
-            onClick={() => {
-              if (checkInputChange()) {
-                setShowCheckDialog(true);
-              } else {
-                setShowDialog(true);
-              }
-            }}
-          />
-        </div>
-      </div>
-      <form
-        action=""
-        className="profile-form"
-        // onSubmit={handleSubmit(onHandleSubmit)}
-      >
-        <div className="container-div-form">
-          <div className="container-salary">
-            <div>
-              <h3>Thông tin chung</h3>
-            </div>
-            <div className="">
-              <span className="mr-3">
-                Tiền Lương:
-                <input
-                  {...register("tongLuong")}
-                  className="border-0"
-                  readOnly
-                ></input>
-              </span>
-              <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  // setValue("tongLuong", rs);
-                  calSalary();
-                }}
-              >
-                <FontAwesomeIcon
-                  className="icon"
-                  icon={["fas", "money-check-alt"]}
-                />
-              </button>
-            </div>
+      <div className="container-form">
+        <div className="Submit-button sticky-top">
+          <div>
+            <h2 className="">
+              {dataLDetail.length !== 0 ? "Sửa" : "Thêm"} hồ sơ lương
+            </h2>
           </div>
-
-          <div className="row">
-            <div className="col">
-              <div className="form-group form-inline ">
-                <label
-                  className="col-sm-4 justify-content-start"
-                  htmlFor="maHopDong"
+          <div className="button">
+            <input
+              type="submit"
+              className={
+                dataLDetail.length !== 0 ? "btn btn-danger" : "delete-button"
+              }
+              onClick={() => {
+                setShowDeleteDialog(true);
+              }}
+              value="Xoá"
+            />
+            <input
+              type="submit"
+              className="btn btn-secondary ml-3"
+              value="Huỷ"
+              onClick={history.goBack}
+            />
+            <input
+              type="submit"
+              className="btn btn-primary ml-3"
+              value={dataLDetail.length !== 0 ? "Sửa" : "Lưu"}
+              onClick={() => {
+                if (checkInputChange()) {
+                  setShowCheckDialog(true);
+                } else {
+                  setShowDialog(true);
+                }
+              }}
+            />
+          </div>
+        </div>
+        <form
+          action=""
+          className="profile-form"
+          // onSubmit={handleSubmit(onHandleSubmit)}
+        >
+          <div className="container-div-form">
+            <div className="container-salary">
+              <div>
+                <h3>Thông tin chung</h3>
+              </div>
+              <div>
+                <div className="salary-cal">
+                <span className="mr-3">
+                  Tiền Lương:
+                  <input
+                    {...register("tongLuong")}
+                    className="border-0"
+                    readOnly
+                  ></input>
+                </span>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    // setValue("tongLuong", rs);
+                    calSalary();
+                  }}
                 >
-                  Mã hợp đồng
-                </label>
-                <input
-                  type="text"
-                  {...register("maHopDong")}
-                  id="maHopDong"
-                  className={
-                    !errors.maHopDong
-                      ? "form-control col-sm-6"
-                      : "form-control col-sm-6 border-danger"
-                  }
-                />
-                <span className="message">{errors.maHopDong?.message}</span>
+                  <FontAwesomeIcon
+                    className="icon"
+                    icon={["fas", "money-check-alt"]}
+                  />
+                </button>
+                
+                </div>
+                <span className="message-1">{errors.tongLuong?.message}</span>
               </div>
             </div>
-            <div className="col">
-              <div className="form-group form-inline">
-                <label
-                  className="col-sm-4 justify-content-start"
-                  htmlFor="idNhomLuong"
-                >
-                  Nhóm lương
-                </label>
-                <select
-                  type="text"
-                  {...register("idNhomLuong")}
-                  id="idNhomLuong"
-                  className={
-                    !errors.idNhomLuong
-                      ? "form-control col-sm-6 custom-select"
-                      : "form-control col-sm-6 border-danger custom-select"
-                  }
-                >
-                  {/* <option value={dataLDetail.idNhomLuong}>
+
+            <div className="row">
+              <div className="col">
+                <div className="form-group form-inline ">
+                  <label
+                    className="col-sm-4 justify-content-start"
+                    htmlFor="maHopDong"
+                  >
+                    Mã hợp đồng
+                  </label>
+                  <input
+                    type="text"
+                    {...register("maHopDong")}
+                    id="maHopDong"
+                    className={
+                      !errors.maHopDong
+                        ? "form-control col-sm-6"
+                        : "form-control col-sm-6 border-danger"
+                    }
+                  />
+                </div>
+              </div>
+              <div className="col">
+                <div className="form-group form-inline">
+                  <label
+                    className="col-sm-4 justify-content-start"
+                    htmlFor="idNhomLuong"
+                  >
+                    Nhóm lương
+                  </label>
+                  <select
+                    type="text"
+                    {...register("idNhomLuong")}
+                    id="idNhomLuong"
+                    className={
+                      !errors.idNhomLuong
+                        ? "form-control col-sm-6 custom-select"
+                        : "form-control col-sm-6 border-danger custom-select"
+                    }
+                  >
+                    {/* <option value={dataLDetail.idNhomLuong}>
                     {dataLDetail.nhomLuong}
                   </option> */}
-                  <option value=""></option>
-                  {dataNL.map((item, key) => (
-                    <option key={key} value={item.id}>
-                      {item.tenNhomLuong}
-                    </option>
-                  ))}
-                  {/* {
+                    <option value=""></option>
+                    {dataNL.map((item, key) => (
+                      <option key={key} value={item.id}>
+                        {item.tenNhomLuong}
+                      </option>
+                    ))}
+                    {/* {
                     dataNL
                     .filter((item) => item.id !== dataLDetail.idNhomLuong)
                     .map((item, key) => (
@@ -340,271 +409,272 @@ function AddSalaryForm(props) {
                         {item.tenNhomLuong}{" "}
                       </option>
                     ))} */}
-                </select>
-                <span className="message">{errors.idNhomLuong?.message}</span>
+                  </select>
+                  <span className="message">{errors.idNhomLuong?.message}</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <div className="form-group form-inline">
-                <label
-                  className="col-sm-4 justify-content-start"
-                  htmlFor="heSoLuong"
-                >
-                  Hệ số lương
-                </label>
-                <input
-                  type="text"
-                  {...register("heSoLuong")}
-                  id="heSoLuong"
-                  // value={salary.heSoLuong}
-                  // onChange={handleOnChange}
-                  className={
-                    !errors.heSoLuong
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
-                  }
-                />
-                <span className="message">{errors.heSoLuong?.message}</span>
+            <div className="row">
+              <div className="col">
+                <div className="form-group form-inline">
+                  <label
+                    className="col-sm-4 justify-content-start"
+                    htmlFor="heSoLuong"
+                  >
+                    Hệ số lương
+                  </label>
+                  <input
+                    type="text"
+                    {...register("heSoLuong")}
+                    id="heSoLuong"
+                    // value={salary.heSoLuong}
+                    // onChange={handleOnChange}
+                    className={
+                      !errors.heSoLuong
+                        ? "form-control col-sm-6 "
+                        : "form-control col-sm-6 border-danger"
+                    }
+                  />
+                  <span className="message">{errors.heSoLuong?.message}</span>
+                </div>
+              </div>
+              <div className="col">
+                <div className="form-group form-inline">
+                  <label
+                    className="col-sm-4 justify-content-start"
+                    htmlFor="bacLuong"
+                  >
+                    Bậc lương
+                  </label>
+                  <input
+                    type="text"
+                    {...register("bacLuong")}
+                    id="bacLuong"
+                    className={
+                      !errors.bacLuong
+                        ? "form-control col-sm-6 "
+                        : "form-control col-sm-6 border-danger"
+                    }
+                  />
+                  <span className="message">{errors.bacLuong?.message}</span>
+                </div>
               </div>
             </div>
-            <div className="col">
-              <div className="form-group form-inline">
-                <label
-                  className="col-sm-4 justify-content-start"
-                  htmlFor="bacLuong"
-                >
-                  Bậc lương
-                </label>
-                <input
-                  type="text"
-                  {...register("bacLuong")}
-                  id="bacLuong"
-                  className={
-                    !errors.bacLuong
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
-                  }
-                />
-                <span className="message">{errors.bacLuong?.message}</span>
+            <div className="row">
+              <div className="col">
+                <div className="form-group form-inline">
+                  <label
+                    className="col-sm-4 justify-content-start"
+                    htmlFor="luongCoBan"
+                  >
+                    Lương cơ bản
+                  </label>
+                  <input
+                    type="text"
+                    {...register("luongCoBan")}
+                    id="luongCoBan"
+                    className={
+                      !errors.luongCoBan
+                        ? "form-control col-sm-6 "
+                        : "form-control col-sm-6 border-danger"
+                    }
+                    // value={salary.luongCoBan}
+                    // onChange={handleOnChange}
+                  />
+                  <span className="message">{errors.luongCoBan?.message}</span>
+                </div>
+              </div>
+              <div className="col">
+                <div className="form-group form-inline">
+                  <label
+                    className="col-sm-4 justify-content-start"
+                    htmlFor="thoiHanLenLuong"
+                  >
+                    Thời hạn lên lương
+                  </label>
+                  <input
+                    type="text"
+                    {...register("thoiHanLenLuong")}
+                    id="thoiHanLenLuong"
+                    onChange={(e)=>setSalaryTime(Number(e.target.value))}
+                    className={
+                      !errors.thoiHanLenLuong
+                        ? "form-control col-sm-6 "
+                        : "form-control col-sm-6 border-danger"
+                    }
+                  />
+                  <span className="message">
+                    {errors.thoiHanLenLuong?.message}
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <div className="form-group form-inline">
-                <label
-                  className="col-sm-4 justify-content-start"
-                  htmlFor="luongCoBan"
-                >
-                  Lương cơ bản
-                </label>
-                <input
-                  type="text"
-                  {...register("luongCoBan")}
-                  id="luongCoBan"
-                  className={
-                    !errors.luongCoBan
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
-                  }
-                  // value={salary.luongCoBan}
-                  // onChange={handleOnChange}
-                />
-                <span className="message">{errors.luongCoBan?.message}</span>
+            <div className="row">
+              <div className="col">
+                <div className="form-group form-inline">
+                  <label
+                    className="col-sm-4 justify-content-start"
+                    htmlFor="phuCapTrachNhiem"
+                  >
+                    Phụ cấp chức vụ
+                  </label>
+                  <input
+                    type="text"
+                    {...register("phuCapTrachNhiem")}
+                    id="phuCapTrachNhiem"
+                    className={
+                      !errors.phuCapTrachNhiem
+                        ? "form-control col-sm-6 "
+                        : "form-control col-sm-6 border-danger"
+                    }
+                  />
+                  <span className="message">
+                    {errors.phuCapTrachNhiem?.message}
+                  </span>
+                </div>
+              </div>
+              <div className="col">
+                <div className="form-group form-inline">
+                  <label
+                    className="col-sm-4 justify-content-start"
+                    htmlFor="phuCapKhac"
+                  >
+                    Phụ cấp khác
+                  </label>
+                  <input
+                    type="text"
+                    {...register("phuCapKhac")}
+                    id="phuCapKhac"
+                    className={
+                      !errors.phuCapKhac
+                        ? "form-control col-sm-6 "
+                        : "form-control col-sm-6 border-danger"
+                    }
+                  />
+                  <span className="message">{errors.phuCapKhac?.message}</span>
+                </div>
               </div>
             </div>
-            <div className="col">
-              <div className="form-group form-inline">
-                <label
-                  className="col-sm-4 justify-content-start"
-                  htmlFor="thoiHanLenLuong"
-                >
-                  Thời hạn lên lương
-                </label>
-                <input
-                  type="text"
-                  {...register("thoiHanLenLuong")}
-                  id="thoiHanLenLuong"
-                  className={
-                    !errors.thoiHanLenLuong
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
-                  }
-                />
-                <span className="message">
-                  {errors.thoiHanLenLuong?.message}
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <div className="form-group form-inline">
-                <label
-                  className="col-sm-4 justify-content-start"
-                  htmlFor="phuCapTrachNhiem"
-                >
-                  Phụ cấp chức vụ
-                </label>
-                <input
-                  type="text"
-                  {...register("phuCapTrachNhiem")}
-                  id="phuCapTrachNhiem"
-                  className={
-                    !errors.phuCapTrachNhiem
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
-                  }
-                />
-                <span className="message">
-                  {errors.phuCapTrachNhiem?.message}
-                </span>
-              </div>
-            </div>
-            <div className="col">
-              <div className="form-group form-inline">
-                <label
-                  className="col-sm-4 justify-content-start"
-                  htmlFor="phuCapKhac"
-                >
-                  Phụ cấp khác
-                </label>
-                <input
-                  type="text"
-                  {...register("phuCapKhac")}
-                  id="phuCapKhac"
-                  className={
-                    !errors.phuCapKhac
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
-                  }
-                />
-                <span className="message">{errors.phuCapKhac?.message}</span>
-              </div>
-            </div>
-          </div>
 
-          <div className="row">
-            <div className="col">
-              <div className="form-group form-inline">
-                <label
-                  className="col-sm-4 justify-content-start"
-                  htmlFor="ngayHieuLuc"
-                >
-                  Ngày có hiệu lực
-                </label>
-                <Controller
-                  name="ngayHieuLuc"
-                  control={control}
-                  render={({ field, onChange }) => (
-                    <DatePicker
-                      id="ngayHieuLuc"
-                      className={
-                        !errors.ngayHieuLuc
-                          ? "form-control col-sm-6"
-                          : "form-control col-sm-6 border-danger"
-                      }
-                      placeholder="DD/MM/YYYY"
-                      format="DD/MM/YYYY"
-                      value={field.value}
-                      onChange={(event) => {
-                        field.onChange(event);
-                      }}
-                      {...field._d}
-                    />
-                  )}
-                />
-                <span className="message">{errors.ngayHieuLuc?.message}</span>
+            <div className="row">
+              <div className="col">
+                <div className="form-group form-inline">
+                  <label
+                    className="col-sm-4 justify-content-start"
+                    htmlFor="ngayHieuLuc"
+                  >
+                    Ngày có hiệu lực
+                  </label>
+                  <Controller
+                    name="ngayHieuLuc"
+                    control={control}
+                    render={({ field, onChange }) => (
+                      <DatePicker
+                        id="ngayHieuLuc"
+                        className={
+                          !errors.ngayHieuLuc
+                            ? "form-control col-sm-6"
+                            : "form-control col-sm-6 border-danger"
+                        }
+                        placeholder="DD/MM/YYYY"
+                        format="DD/MM/YYYY"
+                        value={field.value}
+                        onChange={(event) => {
+                          field.onChange(event);
+                        }}
+                        {...field._d}
+                      />
+                    )}
+                  />
+                  <span className="message">{errors.ngayHieuLuc?.message}</span>
+                </div>
+              </div>
+              <div className="col">
+                <div className="form-group form-inline">
+                  <label
+                    className="col-sm-4 justify-content-start"
+                    htmlFor="ngayKetThuc"
+                  >
+                    Ngày hết hạn
+                  </label>
+                  <Controller
+                    name="ngayKetThuc"
+                    control={control}
+                    render={({ field, onChange }) => (
+                      <DatePicker
+                        id="ngayKetThuc"
+                        className={
+                          !errors.ngayKetThuc
+                            ? "form-control col-sm-6"
+                            : "form-control col-sm-6 border-danger"
+                        }
+                        placeholder="DD/MM/YYYY"
+                        format="DD/MM/YYYY"
+                        value={cal}
+                        onChange={(event) => {
+                          field.onChange(event);
+                        }}
+                        {...field._d}
+                      />
+                    )}
+                  />
+                  <span className="message">{errors.ngayKetThuc?.message}</span>
+                </div>
               </div>
             </div>
-            <div className="col">
-              <div className="form-group form-inline">
-                <label
-                  className="col-sm-4 justify-content-start"
-                  htmlFor="ngayKetThuc"
-                >
-                  Ngày hết hạn
-                </label>
-                <Controller
-                  name="ngayKetThuc"
-                  control={control}
-                  render={({ field, onChange }) => (
-                    <DatePicker
-                      id="tuThoiGian"
-                      className={
-                        !errors.ngayKetThuc
-                          ? "form-control col-sm-6"
-                          : "form-control col-sm-6 border-danger"
-                      }
-                      placeholder="DD/MM/YYYY"
-                      format="DD/MM/YYYY"
-                      value={field.value}
-                      onChange={(event) => {
-                        field.onChange(event);
-                      }}
-                      {...field._d}
-                    />
-                  )}
-                />
-                <span className="message">{errors.ngayKetThuc?.message}</span>
+            <div className="row">
+              <div className="col">
+                <div className="form-group form-inline">
+                  <label
+                    className="col-sm-4 justify-content-start"
+                    htmlFor="ghiChu"
+                  >
+                    Ghi chú
+                  </label>
+                  <textarea
+                    type="text"
+                    {...register("ghiChu")}
+                    id="ghiChu"
+                    className={
+                      !errors.ghiChu
+                        ? "form-control col-sm-6 "
+                        : "form-control col-sm-6 border-danger"
+                    }
+                  />
+                  <span className="message">{errors.ghiChu?.message}</span>
+                </div>
+              </div>
+              <div className="col">
+                <div className="form-group form-inline">
+                  <label
+                    className="col-sm-4 justify-content-start"
+                    style={id !== undefined ? null : { display: "none" }}
+                    htmlFor="trangThai"
+                  >
+                    Trạng Thái
+                  </label>
+                  <select
+                    type="text"
+                    {...register("trangThai")}
+                    id="trangThai"
+                    style={id !== undefined ? null : { display: "none" }}
+                    className={
+                      !errors.trangThai
+                        ? "form-control col-sm-6 custom-select"
+                        : "form-control col-sm-6 border-danger custom-select"
+                    }
+                  >
+                    <option value={true}>Kích hoạt</option>
+                    <option value={false}>Vô hiệu</option>
+                  </select>
+                  <span className="message">{errors.trangThai?.message}</span>
+                </div>
               </div>
             </div>
           </div>
-          <div className="row">
-            <div className="col">
-              <div className="form-group form-inline">
-                <label
-                  className="col-sm-4 justify-content-start"
-                  htmlFor="ghiChu"
-                >
-                  Ghi chú
-                </label>
-                <textarea
-                  type="text"
-                  {...register("ghiChu")}
-                  id="ghiChu"
-                  className={
-                    !errors.ghiChu
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
-                  }
-                />
-                <span className="message">{errors.ghiChu?.message}</span>
-              </div>
-            </div>
-            <div className="col">
-              <div className="form-group form-inline">
-                <label
-                  className="col-sm-4 justify-content-start"
-                  style={id!== undefined? null:{display: "none"}} 
-                  htmlFor="trangThai"
-                >
-                  Trạng Thái
-                </label>
-                <select
-                  type="text"
-                  {...register("trangThai")}
-                  id="trangThai"
-                  style={id!== undefined? null:{display: "none"}} 
-                  className={
-                    !errors.trangThai
-                      ? "form-control col-sm-6 custom-select"
-                      : "form-control col-sm-6 border-danger custom-select"
-                  }
-                >
-                  <option value={true}>Kích hoạt</option>
-                  <option value={false}>Vô hiệu</option>
-                </select>
-                <span className="message">{errors.trangThai?.message}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
-    <Dialog
+        </form>
+      </div>
+      <Dialog
         show={showDialog}
         title="Thông báo"
         description={
