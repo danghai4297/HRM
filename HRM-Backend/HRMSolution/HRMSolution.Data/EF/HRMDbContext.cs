@@ -43,7 +43,6 @@ namespace HRMSolution.Data.EF
         public DbSet<NhanVien> nhanViens { get; set; }
         public DbSet<TrinhDoVanHoa> trinhDoVanHoas { get; set; }
         public DbSet<YTe> yTes { get; set; }
-        public DbSet<TaiKhoan> taiKhoans { get; set; }
         public DbSet<KhenThuongKyLuat> khenThuongKyLuats {get; set; }
         public DbSet<LichSu> lichSus { get; set; }
         public DbSet<DanhMucNhomLuong> danhMucNhomLuongs { get; set; }
@@ -77,7 +76,6 @@ namespace HRMSolution.Data.EF
             modelBuilder.ApplyConfiguration(new NhanVienConfiguration());
             modelBuilder.ApplyConfiguration(new TrinhDoVanHoaConfiguration());
             modelBuilder.ApplyConfiguration(new YTeConfiguration());
-            modelBuilder.ApplyConfiguration(new TaiKhoanConfiguration());
             modelBuilder.ApplyConfiguration(new KhenThuongKyLuatConfiguration());
             modelBuilder.ApplyConfiguration(new LichSuBanThanConfiguration());
             modelBuilder.ApplyConfiguration(new LichSuConfiguration());
