@@ -18,11 +18,6 @@ function ScreenContract(props) {
   const fileName = "Danhsachhopdong";
   const [dataAllHd, setdataAllHd] = useState([]);
 
-  const componentRef = useRef();
-  const handlePrint = useReactToPrint({
-    content: () => componentRef.current,
-  });
-
   useEffect(() => {
     const fetchNvList = async () => {
       try {
@@ -47,14 +42,7 @@ function ScreenContract(props) {
             <Link to="/contract/add" className="link-item">
               <input type="submit" className="btn btn-primary" value="Thêm" />
             </Link>
-            {/* export pdf */}
-            <Button
-              className="button-pdf"
-              variant="light"
-              onClick={handlePrint}
-            >
-              <FontAwesomeIcon icon={["fas", "file-pdf"]} />
-            </Button>
+
             {/* export excel */}
             <ReactHTMLTableToExcel
               id="test-table-xls-button"
@@ -67,17 +55,15 @@ function ScreenContract(props) {
             <ExportCSV csvData={dataAllHd} fileName={fileName} />
           </div>
         </div>
-        <ComponentToPrint ref={componentRef}>
-          <div className="table-nv">
-            <TablePagination
-              ma="maHopDong"
-              link={link}
-              tid="tableHd"
-              columns={NVCOLUMNSHD}
-              data={dataAllHd}
-            />
-          </div>
-        </ComponentToPrint>
+        <div className="table-nv">
+          <TablePagination
+            ma="maHopDong"
+            link={link}
+            tid="tableHd"
+            columns={NVCOLUMNSHD}
+            data={dataAllHd}
+          />
+        </div>
       </div>
     </>
   );

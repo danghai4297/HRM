@@ -25,11 +25,9 @@ function AddRewardForm(props) {
   let { id } = match.params;
   let location = useLocation();
   let query = new URLSearchParams(location.search);
-  // console.log(query.get("maNhanVien"));
-  // console.log(query.get("hoVaTen"));
-  console.log(id);
+
   const [dataKTDetail, setDataKTDetail] = useState([]);
-  const [dataKT,setDataKT] = useState([]);
+  const [dataKT, setDataKT] = useState([]);
 
   const [dataDetailNN, setdataDetailNN] = useState([]);
   const [dataNN, setDataNN] = useState([]);
@@ -61,15 +59,16 @@ function AddRewardForm(props) {
     fetchNvList();
   }, []);
 
-  const intitalValue ={
-    maNhanVien:id!==undefined?dataKTDetail.maNhanVien:null,
-    idDanhMucKhenThuong:id!==undefined?dataKTDetail.idDanhMucKhenThuong:null,
-    noiDung:id!==undefined?dataKTDetail.noiDung:null,
-    lyDo:id!==undefined?dataKTDetail.lyDo:null,
-    anh:id!==undefined?dataKTDetail.anh:null,
-    loai:true,
-  }
-  
+  const intitalValue = {
+    maNhanVien: id !== undefined ? dataKTDetail.maNhanVien : null,
+    idDanhMucKhenThuong:
+      id !== undefined ? dataKTDetail.idDanhMucKhenThuong : null,
+    noiDung: id !== undefined ? dataKTDetail.noiDung : null,
+    lyDo: id !== undefined ? dataKTDetail.lyDo : null,
+    anh: id !== undefined ? dataKTDetail.anh : null,
+    loai: true,
+  };
+
   const {
     register,
     handleSubmit,
@@ -77,7 +76,7 @@ function AddRewardForm(props) {
     getValues,
     formState: { errors },
   } = useForm({
-    defaultValues:intitalValue,
+    defaultValues: intitalValue,
     resolver: yupResolver(schema),
   });
   useEffect(() => {
@@ -143,7 +142,9 @@ function AddRewardForm(props) {
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
-          <h2 className="">{dataKTDetail.length !== 0 ?"Sửa":"Thêm"} thủ tục khen thưởng</h2>
+          <h2 className="">
+            {dataKTDetail.length !== 0 ? "Sửa" : "Thêm"} thủ tục khen thưởng
+          </h2>
         </div>
         <div className="button">
         <input
@@ -247,13 +248,13 @@ function AddRewardForm(props) {
                       : "form-control col-sm-6 border-danger custom-select"
                   }
                 >
-                   <option value=""></option>
+                  <option value=""></option>
                   {dataKT.map((item, key) => (
                     <option key={key} value={item.id}>
                       {item.tenDanhMuc}
                     </option>
                   ))}
-                  </select>
+                </select>
                 <span className="message">
                   {errors.idDanhMucKhenThuong?.message}
                 </span>

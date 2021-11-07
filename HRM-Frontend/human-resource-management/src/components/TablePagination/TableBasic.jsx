@@ -48,7 +48,7 @@ function TableBasic(props) {
         pageSize: 5,
         hiddenColumns: columns
           .filter((col) => col.show === false)
-          .map((col) => col.accessor),
+          .map((col, key) => ((key = { key }), col.accessor)),
       },
     },
     useFilters,

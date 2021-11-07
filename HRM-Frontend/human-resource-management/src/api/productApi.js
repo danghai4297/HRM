@@ -7,11 +7,13 @@ const ProductApi = {
     const url = "/NhanVien";
     return axiosClient.get(url);
   },
-  //tất cả nhân viên
+
+  //tất cả nhân viên mã tên
   getAllNvMT: () => {
     const url = "/NhanVien/ma-ten";
     return axiosClient.get(url);
   },
+
   //tất cả nhân viên nghi viec
   getAllNvnv: () => {
     const url = "/NhanVien/nghiviec";
@@ -454,6 +456,208 @@ const ProductApi = {
   PostLS: (data) => {
     const url = "/LichSu";
     return axiosClient.post(url, data);
+  },
+
+  //all rp pb
+  getRPPb: (id) => {
+    const url = `/NhanVien/bao-cao-phong-ban/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //all rp pb hợp đồng
+  getRPPbHd: (id, sdate, edate) => {
+    const url = `/NhanVien/bao-cao-phong-ban-hop-dong/${id}/${sdate}/${edate}`;
+    return axiosClient.get(url);
+  },
+
+  //all rp pb hợp đồng giới tính
+  getRPPbHdGt: (id, sdate, edate, gender) => {
+    const url = `/NhanVien/bao-cao-phong-ban-hop-dong-gioi-tinh/${id}/${sdate}/${edate}/${gender}`;
+    return axiosClient.get(url);
+  },
+
+  //all rp pb hợp đồng trạng thái
+  getRPPbHdTt: (id, sdate, edate, status) => {
+    const url = `/NhanVien/bao-cao-phong-ban-hop-dong-trang-thai/${id}/${sdate}/${edate}/${status}`;
+    return axiosClient.get(url);
+  },
+
+  //rp pb giới tính
+  getRPPbGt: (id, gender) => {
+    const url = `/NhanVien/bao-cao-phong-ban-gioi-tinh/${id}/${gender}`;
+    return axiosClient.get(url);
+  },
+
+  //rp pb trang thai
+  getRPPbTt: (id, status) => {
+    const url = `/NhanVien/bao-cao-phong-ban-trang-thai/${id}/${status}`;
+    return axiosClient.get(url);
+  },
+
+  //rp pb gioi tinh trang thai
+  getRPPbTtGt: (id, status, gender) => {
+    const url = `/NhanVien/bao-cao-phong-ban-trang-thai-gioi-tinh/${id}/${status}/${gender}`;
+    return axiosClient.get(url);
+  },
+
+  //all rp hp từ ngày đến ngày
+  getRPHd: (sdate, edate) => {
+    const url = `/NhanVien/bao-cao-hop-dong/${sdate}/${edate}`;
+    return axiosClient.get(url);
+  },
+
+  //all rp hp từ ngày đến ngày giới tính
+  getRPHdGt: (sdate, edate, gender) => {
+    const url = `/NhanVien/bao-cao-hop-dong-gioi-tinh/${sdate}/${edate}/${gender}`;
+    return axiosClient.get(url);
+  },
+
+  //all rp hp từ ngày đến ngày trang thai
+  getRPHdTt: (sdate, edate, status) => {
+    const url = `/NhanVien/bao-cao-hop-dong-trang-thai/${sdate}/${edate}/${status}`;
+    return axiosClient.get(url);
+  },
+
+  //all rp hp từ ngày đến ngày trang thai gioi tinh
+  getRPHdTtGt: (sdate, edate, status, gender) => {
+    const url = `/NhanVien/bao-cao-hop-dong-trang-thai-gioi-tinh/${sdate}/${edate}/${status}/${gender}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all Nv
+  getRpAll: () => {
+    const url = `/NhanVien/bao-cao`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all Nv giới tính
+  getRpAllGt: (gender) => {
+    const url = `/NhanVien/bao-cao-gioi-tinh/${gender}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all Nv trang thai
+  getRpAllTt: (status) => {
+    const url = `/NhanVien/bao-cao-trang-thai/${status}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all Nv trang thai giới tính
+  getRpAllTtGt: (status, gender) => {
+    const url = `/NhanVien/bao-cao-trang-thai-gioi-tinh/${status}/${gender}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all Nv pb và hd giới tính trang thai
+  getRpAllPbHdTtGt: (id, sdate, edate, status, gender) => {
+    const url = `/NhanVien/bao-cao-phong-ban-hop-dong-trang-thai-gioi-tinh/${id}/${sdate}/${edate}/${status}/${gender}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all Nv lên luong từ ngày --> ngày
+  getRpAllLg: (sdate, edate) => {
+    const url = `/NhanVien/bao-cao-len-luong/${sdate}/${edate}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all Nv lên luong phong ban từ ngày --> ngày
+  getRpAllLgPb: (id, sdate, edate) => {
+    const url = `/NhanVien/bao-cao-len-luong-phong-ban/${id}/${sdate}/${edate}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all Nv có sinh nhật trong tháng
+  getRpAllSn: (mmoth) => {
+    const url = `/NhanVien/bao-cao-sinh-nhat/${mmoth}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all Nv có sinh nhật trong tháng theo PB
+  getRpAllSnPb: (id, mmoth) => {
+    const url = `/NhanVien/bao-cao-sinh-nhat-phong-ban/${id}/${mmoth}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all con nhà chính sách
+  getRpAllCncs: () => {
+    const url = `/NhanVien/bao-cao-chinh-sach`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all con nhà chính sách theo PB
+  getRpAllCncsPb: (id) => {
+    const url = `/NhanVien/bao-cao-chinh-sach-phong-ban/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all BHXH
+  getRpAllBhxh: () => {
+    const url = `/NhanVien/bao-cao-bhxh`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all BHXH theo PB
+  getRpAllBhxhPb: (id) => {
+    const url = `/NhanVien/bao-cao-bhxh-phong-ban/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all đảng viên
+  getRpAllDv: () => {
+    const url = `/NhanVien/bao-cao-dang-vien`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all đảng viên Pb
+  getRpAllDvPb: (id) => {
+    const url = `/NhanVien/bao-cao-dang-vien-phong-ban/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all nhóm lương nv
+  getRpAllNlg: () => {
+    const url = `/NhanVien/bao-cao-nhom-luong`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all nhóm lương theo pb
+  getRpAllNlgPb: (id) => {
+    const url = `/NhanVien/bao-cao-nhom-luong-phong-ban/${id}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all người thân nv
+  getRpAllNtn: (ageX, ageY) => {
+    const url = `/NhanVien/bao-cao-nguoi-than/${ageX}/${ageY}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all người thân theo quan hệ
+  getRpAllNtDm: (ageX, ageY, idDm) => {
+    const url = `/NhanVien/bao-cao-nguoi-than-danh-muc/${ageX}/${ageY}/${idDm}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all người thân theo phong ban
+  getRpAllNtPb: (ageX, ageY, idPb) => {
+    const url = `/NhanVien/bao-cao-nguoi-than-phong-ban/${ageX}/${ageY}/${idPb}`;
+    return axiosClient.get(url);
+  },
+
+  //Rp all người thân theo nhan viên
+  getRpAllNtNv: (ageX, ageY, idNv) => {
+    const url = `/NhanVien/bao-cao-nguoi-than-nhan-vien/${ageX}/${ageY}/${idNv}`;
+    return axiosClient.get(url);
+  },
+  //Rp all người thân theo gioi tính
+  getRpAllNtGt: (ageX, ageY, gender) => {
+    const url = `/NhanVien/bao-cao-nguoi-than-gioi-tinh/${ageX}/${ageY}/${gender}`;
+    return axiosClient.get(url);
+  },
+  //Rp all người thân theo trạng thái
+  getRpAllNtTt: (ageX, ageY, status) => {
+    const url = `/NhanVien/bao-cao-nguoi-than-gioi-tinh/${ageX}/${ageY}/${status}`;
+    return axiosClient.get(url);
   },
 };
 

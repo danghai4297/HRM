@@ -134,6 +134,20 @@ export const NVCOLUMNS = [
   },
   {
     Header: "Trạng thái",
+    accessor: (row) => {
+      return row.trangThai === "Kích hoạt" ? (
+        <img src="/Images/greenC.png" width={20} alt="" />
+      ) : (
+        <img src="/Images/orangeC.png" width={20} alt="" />
+      );
+    },
+    minWidth: 180,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+    show: true,
+  },
+  {
+    Header: "Trạng thái",
     accessor: "trangThai",
     minWidth: 200,
     Filter: SelectColumnFilter,

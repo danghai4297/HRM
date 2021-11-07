@@ -34,9 +34,9 @@
       align-items: center;
 
       img {
-        margin-top: 0.4rem;
-        width: 80%;
-        height: 80%;
+        margin: 1.5rem 0 0 1.5rem;
+        width: 70%;
+        height: 70%;
       }
     }
 
@@ -117,6 +117,14 @@
         border: none;
         background: #328de0;
         cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #63acf0;
+      }
+
+      input[type="submit"]:active {
+        background-color: rgb(255, 167, 66);
       }
     }
   }

@@ -49,7 +49,7 @@ function TableLog(props) {
         pageIndex: 0,
         hiddenColumns: columns
           .filter((col) => col.show === false)
-          .map((col) => col.accessor),
+          .map((col, key) => ((key = { key }), col.accessor)),
         filters: [
           {
             id: "trangThai",
@@ -87,8 +87,8 @@ function TableLog(props) {
               </button>
               {/* dropdownlist */}
               <div className="select">
-                {allColumns.map((column) => (
-                  <div className="select">
+                {allColumns.map((column, key) => (
+                  <div className="select" key={key}>
                     {column.canFilter && (
                       <div className="select">
                         {column.render("Header")}&nbsp;{" "}

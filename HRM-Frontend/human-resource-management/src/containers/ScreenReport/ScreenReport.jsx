@@ -20,71 +20,57 @@ function ScreenReport() {
       <div className="main-all">
         <div className="first-main">
           <div className="title-first">
-            <h2>Báo cáo</h2>
+            <h1>Báo cáo</h1>
           </div>
           <div className="cate-sidebar">
             <SidebarLeftReport />
           </div>
         </div>
         <div className="second-main">
-          <div className="table-category">
-            <Switch>
-              <Route exact path="/report/">
-                <Redirect to="/report/profileEmployee" />
-              </Route>
-              <Route
-                exact
-                path="/report/profileEmployee"
-                component={ItemListEmployee}
-              />
-              <Route
-                exact
-                path="/report/salaryUp"
-                component={ItemListSalaryUp}
-              />
-              <Route
-                exact
-                path="/report/decisionSalaryUp"
-                component={ItemDecisionSalaryUp}
-              />
-              <Route
-                exact
-                path="/report/salaryProfile"
-                component={ItemSalaryProfile}
-              />
-              <Route
-                exact
-                path="/report/birthday"
-                component={ItemListBirthday}
-              />
-              <Route
-                exact
-                path="/report/partyMember"
-                component={ItemListPartyMember}
-              />
-              <Route
-                exact
-                path="/report/cbcnv"
-                component={ItemListCBCNVLevel}
-              />
-              <Route
-                exact
-                path="/report/salaryGroup"
-                component={ItemListSalaryGroup}
-              />
-              <Route exact path="/report/family" component={ItemListFamily} />
-              <Route
-                exact
-                path="/report/policy"
-                component={ItemListPolicyFront}
-              />
-              <Route
-                exact
-                path="/report/insuranceBook"
-                component={ItemListInsuranceBook}
-              />
-            </Switch>
-          </div>
+          <Switch>
+            <Route exact path="/report/">
+              <Redirect to="/report/profileEmployee" />
+            </Route>
+            <Route
+              exact
+              path="/report/profileEmployee"
+              component={ItemListEmployee}
+            />
+            <Route exact path="/report/salaryUp" component={ItemListSalaryUp} />
+            <Route
+              exact
+              path="/report/decisionSalaryUp"
+              component={ItemDecisionSalaryUp}
+            />
+            <Route
+              exact
+              path="/report/salaryProfile"
+              component={ItemSalaryProfile}
+            />
+            <Route exact path="/report/birthday" component={ItemListBirthday} />
+            <Route
+              exact
+              path="/report/partyMember"
+              component={ItemListPartyMember}
+            />
+            <Route exact path="/report/cbcnv" component={ItemListCBCNVLevel} />
+            <Route
+              exact
+              path="/report/salaryGroup"
+              component={ItemListSalaryGroup}
+            />
+            <Route exact path="/report/family" component={ItemListFamily} />
+            <Route
+              exact
+              path="/report/policy"
+              component={ItemListPolicyFront}
+            />
+            <Route
+              exact
+              path="/report/insuranceBook"
+              component={ItemListInsuranceBook}
+            />
+          </Switch>
         </div>
       </div>
     </>

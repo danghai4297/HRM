@@ -28,11 +28,13 @@ function LogIn(props) {
       await LoginApi.PostLoginAccount(data);
       if (jwt_decode(localStorage.getItem("resultObj")).role === "user") {
         history.replace("/home");
-      } else if (jwt_decode(localStorage.getItem("resultObj")).role === "admin") {
+      } else if (
+        jwt_decode(localStorage.getItem("resultObj")).role === "admin"
+      ) {
         history.replace("/category");
       }
-    } catch (error) {
-      alert("hahahaha thang ngu m nhap sai roi");
+    } catch (e) {
+      error("Nhập sai tài khoản hoặc mật khẩu");
     }
   };
 

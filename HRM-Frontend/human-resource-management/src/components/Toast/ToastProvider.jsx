@@ -48,7 +48,7 @@ function ToastProvider(props) {
       {message && (
         <Snackbar
           open={isOpen}
-          autoHideDuration={3000}
+          autoHideDuration={10000}
           onClose={hide}
           anchorOrigin={{ vertical, horizontal }}
           className="alert"
@@ -59,6 +59,7 @@ function ToastProvider(props) {
             variant="filled"
             onClose={hide}
             severity={message.type}
+            className="alert"
           >
             {message.text}
           </Alert>

@@ -33,8 +33,8 @@ export const NVCOLUMNSHD = [
   },
   {
     Header: "Loại Hợp Đồng",
-    accessor: "idLoaiHopDong",
-    minWidth: 268,
+    accessor: "loaiHopDong",
+    minWidth: 218,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -43,7 +43,7 @@ export const NVCOLUMNSHD = [
 
   {
     Header: "Chức Danh",
-    accessor: "idChucDanh",
+    accessor: "chucDanh",
     minWidth: 280,
     Filter: SelectColumnFilter,
     disableFilters: true,
@@ -53,7 +53,7 @@ export const NVCOLUMNSHD = [
   {
     Header: "Từ Ngày",
     accessor: "hopDongTuNgay",
-    minWidth: 250,
+    minWidth: 210,
     Filter: SelectColumnFilter,
     disableFilters: true,
     Cell: ({ value }) => {
@@ -65,7 +65,7 @@ export const NVCOLUMNSHD = [
   {
     Header: "Đến Ngày",
     accessor: "hopDongDenNgay",
-    minWidth: 250,
+    minWidth: 210,
     Filter: SelectColumnFilter,
     disableFilters: true,
     Cell: ({ value }) => {
@@ -83,7 +83,7 @@ export const NVCOLUMNSHD = [
         <img src="/Images/orangeC.png" width={20} alt="" />
       );
     },
-    minWidth: 230,
+    minWidth: 180,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
