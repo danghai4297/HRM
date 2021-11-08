@@ -13,7 +13,7 @@ import { useToast } from "../../Toast/Toast";
 
 const schema = yup.object({
   maPhongBan: yup.string().required("Mã phòng ban không được bỏ trống."),
-  tenPhongBan: yup.string().required("Tên danh mục không được bỏ trống."),
+  tenPhongBan: yup.string().required("Tên phòng ban không được bỏ trống."),
 });
 function AddDepartmentForm(props) {
   const { error, warn, info, success } = useToast();
@@ -204,7 +204,7 @@ function AddDepartmentForm(props) {
                     className="col-sm-4 justify-content-start"
                     htmlFor="tenPhongBan"
                   >
-                    Tên danh mục
+                    Tên phòng ban
                   </label>
                   <input
                     type="text"

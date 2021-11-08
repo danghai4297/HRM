@@ -16,9 +16,8 @@ import { useToast } from "../Toast/Toast";
 const schema = yup.object({
   idDanhMucNgoaiNgu: yup
     .number()
-    .nullable()
-    .required("Ngoại ngữ không được bỏ trống."),
-  //ngayCap: yup.string().required("Ngày cấp không được bỏ trống."),
+    .typeError("Ngoại ngữ không được bỏ trống."),
+  ngayCap: yup.string().nullable().required("Ngày cấp không được bỏ trống."),
   trinhDo: yup.string().nullable().required("Trình độ không được bỏ trống."),
   noiCap: yup.string().nullable().required("Nơi cấp không được bỏ trống."),
   maNhanVien: yup

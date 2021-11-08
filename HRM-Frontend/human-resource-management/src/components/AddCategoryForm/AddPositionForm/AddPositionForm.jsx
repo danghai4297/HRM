@@ -14,7 +14,7 @@ import { useToast } from "../../Toast/Toast";
 const schema = yup.object({
   maChucVu: yup.string().required("Mã chức vụ được bỏ trống."),
   tenChucVu: yup.string().required("Tên chức vụ không được bỏ trống."),
-  phuCap: yup.number().typeError("Phụ cấp không được bỏ trống."),
+  phuCap: yup.number().typeError("Phụ cấp không được bỏ trống và là số."),
 });
 function AddPositionForm(props) {
   const { error, warn, info, success } = useToast();

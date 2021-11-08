@@ -11,8 +11,8 @@ import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
 const schema = yup.object({
-  maNhomLuong: yup.string().required("Mã phòng ban không được bỏ trống."),
-  tenNhomLuong: yup.string().required("Tên danh mục không được bỏ trống."),
+  maNhomLuong: yup.string().required("Mã nhóm lương không được bỏ trống."),
+  tenNhomLuong: yup.string().required("Tên nhóm lương không được bỏ trống."),
 });
 AddSalaryGroupForm.propTypes = {};
 

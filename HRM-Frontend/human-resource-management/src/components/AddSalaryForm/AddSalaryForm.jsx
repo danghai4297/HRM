@@ -23,8 +23,7 @@ const schema = yup.object({
     .required("Nhóm lương không được bỏ trống."),
   heSoLuong: yup
     .number()
-    .nullable()
-    .required("Hệ số lương không được bỏ trống."),
+    .typeError("Hệ số lương không được bỏ trống."),
   bacLuong: yup.string().nullable().required("Bậc lương không được bỏ trống."),
   ngayHieuLuc: yup
     .date()
@@ -33,20 +32,16 @@ const schema = yup.object({
   // ngayKetThuc: yup.date().nullable().required("Ngày có hiệu lực không được bỏ trống."),
   luongCoBan: yup
     .number()
-    .nullable()
-    .required("Lương cơ bản không được bỏ trống."),
+    .typeError("Lương cơ bản không được bỏ trống và phải là số."),
   phuCapTrachNhiem: yup
     .number()
-    .nullable()
-    .required("Phụ cấp chức vụ không được bỏ trống."),
+    .typeError("Phụ cấp chức vụ không được bỏ trống và phải là số."),
   phuCapKhac: yup
     .number()
-    .nullable()
-    .required("Phụ cấp khác không được bỏ trống."),
+    .typeError("Phụ cấp khác không được bỏ trống và phải là số."),
   tongLuong: yup
     .number()
-    .nullable()
-    .required("Tổng lương không được bỏ trống."),
+    .typeError("Tổng lương không được bỏ trống và phải là số."),
   thoiHanLenLuong: yup
     .string()
     .nullable()
@@ -57,13 +52,14 @@ function AddSalaryForm(props) {
   let location = useLocation();
   let query = new URLSearchParams(location.search);
   // console.log(query.get("maLuong"));
+  const contractCode = query.get("maHopDong");
   const { error, warn, info, success } = useToast();
 
   const [salary, setSalary] = useState({
     heSoLuong: "",
     luongCoBan: "",
-    phuCapTrachNhiem:"",
-    phuCapKhac:"",
+    phuCapTrachNhiem: "",
+    phuCapKhac: "",
   });
   let { match, history } = props;
   let { id } = match.params;
@@ -84,7 +80,7 @@ function AddSalaryForm(props) {
   const [salaryTime, setSalaryTime] = useState();
   const [endDate, setEndDate] = useState();
   const [endDateRs, setEndDateRs] = useState();
-
+  const [dataAllHD, setDataAllHD] = useState([]);
   const [rsSalary, setRsSalary] = useState(0);
 
   const cancel = () => {
@@ -98,6 +94,8 @@ function AddSalaryForm(props) {
       try {
         const responseNL = await ProductApi.getAllDMNL();
         setDataNL(responseNL);
+        const responseAllHD = await ProductApi.getAllHd();
+        setDataAllHD(responseAllHD);
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa thông tin lương");
           const response = await ProductApi.getLDetail(id);
@@ -197,14 +195,13 @@ function AddSalaryForm(props) {
     }
   }, [dataLDetail]);
 
- 
   const handleOnChange = (e) => {
     setSalary({
       ...salary,
       [e.target.name]: e.target.value,
     });
   };
-  
+
   useEffect(() => {
     let rss = 0;
     rss +=
@@ -275,18 +272,22 @@ function AddSalaryForm(props) {
   //   }
   //   return endDateRs;
   // };
-  useEffect(()=>{
-    if (salaryTime !== undefined && endDate !== undefined && salaryTime !== 0 && endDate !== null) {
+  useEffect(() => {
+    if (
+      salaryTime !== undefined &&
+      endDate !== undefined &&
+      salaryTime !== 0 &&
+      endDate !== null
+    ) {
       setEndDateRs(endDate.add(salaryTime, "years"));
     }
-   // return endDateRs;
+    // return endDateRs;
     // setValue("ngayKetThuc",endDateRs);
-  },[salaryTime,endDate]);
+  }, [salaryTime, endDate]);
 
   console.log(salaryTime);
   console.log(endDate);
   console.log(endDateRs);
-  
 
   return (
     <>
@@ -345,7 +346,7 @@ function AddSalaryForm(props) {
                     <input
                       {...register("tongLuong")}
                       className="border-0"
-                     // value={rsSalary}
+                      // value={rsSalary}
                       // defaultValue={calSalary()}
                       readOnly
                     ></input>
@@ -385,7 +386,18 @@ function AddSalaryForm(props) {
                         ? "form-control col-sm-6"
                         : "form-control col-sm-6 border-danger"
                     }
+                    list="contractCode"
+                    readOnly={contractCode ? true : false}
                   />
+                  <datalist id="contractCode">
+                    {dataAllHD
+                      .filter((item) => item.trangThai === "Kích hoạt")
+                      .map((item, key) => (
+                        <option key={key} value={item.id}>
+                          {item.tenNhanVien}
+                        </option>
+                      ))}
+                  </datalist>
                 </div>
               </div>
               <div className="col">
@@ -439,7 +451,9 @@ function AddSalaryForm(props) {
                   </label>
                   <input
                     type="text"
-                    {...register("heSoLuong",{onChange:(e)=> (handleOnChange(e))})}
+                    {...register("heSoLuong", {
+                      onChange: (e) => handleOnChange(e),
+                    })}
                     id="heSoLuong"
                     // value={salary.heSoLuong}
                     // onChange={handleOnChange}
@@ -485,7 +499,9 @@ function AddSalaryForm(props) {
                   </label>
                   <input
                     type="text"
-                    {...register("luongCoBan",{onChange:(e)=> (handleOnChange(e))})}
+                    {...register("luongCoBan", {
+                      onChange: (e) => handleOnChange(e),
+                    })}
                     id="luongCoBan"
                     className={
                       !errors.luongCoBan
@@ -508,7 +524,9 @@ function AddSalaryForm(props) {
                   </label>
                   <input
                     type="text"
-                    {...register("thoiHanLenLuong",{onChange:(e)=> setSalaryTime(Number(e.target.value))})}
+                    {...register("thoiHanLenLuong", {
+                      onChange: (e) => setSalaryTime(Number(e.target.value)),
+                    })}
                     id="thoiHanLenLuong"
                     // onChange={(e)=>setSalaryTime(Number(e.target.value))}
                     className={
@@ -534,7 +552,9 @@ function AddSalaryForm(props) {
                   </label>
                   <input
                     type="text"
-                    {...register("phuCapTrachNhiem",{onChange:(e)=> (handleOnChange(e))})}
+                    {...register("phuCapTrachNhiem", {
+                      onChange: (e) => handleOnChange(e),
+                    })}
                     id="phuCapTrachNhiem"
                     className={
                       !errors.phuCapTrachNhiem
@@ -557,7 +577,9 @@ function AddSalaryForm(props) {
                   </label>
                   <input
                     type="text"
-                    {...register("phuCapKhac",{onChange:(e)=> (handleOnChange(e))})}
+                    {...register("phuCapKhac", {
+                      onChange: (e) => handleOnChange(e),
+                    })}
                     id="phuCapKhac"
                     className={
                       !errors.phuCapKhac
@@ -626,7 +648,6 @@ function AddSalaryForm(props) {
                         }
                         placeholder="DD/MM/YYYY"
                         format="DD/MM/YYYY"
-                        
                         onChange={(event) => {
                           field.onChange(event);
                         }}
