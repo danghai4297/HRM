@@ -7,6 +7,7 @@ import ProductApi from "../../../../api/productApi";
 import { ExportCSV } from "../../../../components/ExportFile/ExportFile";
 import { useToast } from "../../../../components/Toast/Toast";
 import { ComponentToPrint } from "../../../../components/ToPrint/ComponentToPrint";
+import useDidMountEffect from "../../useDidMountEffect/useDidMountEffect";
 
 import "./ItemListEmployee.scss";
 import ListItems from "./ListItem";
@@ -44,6 +45,12 @@ function ItemListEmployee() {
     };
     fetchNvList();
   }, []);
+
+  useDidMountEffect(() => {
+    if (dataRp.length == 0) {
+      info("không có thông tin");
+    }
+  }, [dataRp]);
 
   function handelCheck(value) {
     if (value === "Tất cả") {
