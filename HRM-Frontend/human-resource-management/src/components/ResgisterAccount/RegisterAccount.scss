@@ -1,0 +1,53 @@
+.container-div {
+    background-color: white;
+    padding: 2em;
+    width: 60%;
+    margin: auto;
+
+    .profile-form {
+        input {
+            width: 20rem;
+        }
+    }
+}
+.setH2 {
+    width: 60%;
+    margin: auto;
+}
+.button {
+    justify-content: center;
+}
+.message-e {
+    width: 10rem !important;
+    color: red;
+    margin-left: 2%;
+    margin-top: 2% !important;
+    text-align: left;
+}
+.container-password {
+    text-align: center;
+}
+.password-toogle-icon {
+    position: absolute;
+    top: 15.5em;
+    right: 47em;
+    z-index: 1000;
+    cursor: pointer;
+}
+.password-toogle-icon-np {
+    position: absolute;
+    top: 24.3em;
+    right: 47em;
+    z-index: 1000;
+    cursor: pointer;
+}
+.password-toogle-icon-rp {
+    position: absolute;
+    top: 28.5em;
+    right: 47em;
+    z-index: 1000;
+    cursor: pointer;
+}
+.input-eyes {
+    
+}

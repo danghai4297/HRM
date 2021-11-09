@@ -51,7 +51,6 @@ const schema = yup.object({
 function AddSalaryForm(props) {
   let location = useLocation();
   let query = new URLSearchParams(location.search);
-  // console.log(query.get("maLuong"));
   const contractCode = query.get("maHopDong");
   const { error, warn, info, success } = useToast();
 
@@ -139,8 +138,7 @@ function AddSalaryForm(props) {
     maHopDong:
       id !== undefined ? dataLDetail.maHopDong : query.get("maHopDong"),
   };
-  //console.log(dataLDetail.idNhomLuong);
-  // console.log((dataNL[0].id));
+  
 
   const {
     register,
@@ -260,18 +258,7 @@ function AddSalaryForm(props) {
       error(`Có lỗi xảy ra ${errors}`);
     }
   };
-  // console.log(Number(getValues("thoiHanLenLuong")));
-  //console.log(getValues("ngayHieuLuc"));
-  // console.log(moment(dataLDetail.ngayHieuLuc).add(3,"years"));
 
-  // const calSalaryTime = (e) => {
-  //   setEndDate(e);
-  //   console.log(endDate);
-  //   if (salaryTime !== undefined && e !== undefined) {
-  //     setEndDateRs(e.add(salaryTime, "years"));
-  //   }
-  //   return endDateRs;
-  // };
   useEffect(() => {
     if (
       salaryTime !== undefined &&
@@ -279,16 +266,17 @@ function AddSalaryForm(props) {
       salaryTime !== 0 &&
       endDate !== null
     ) {
-      setEndDateRs(endDate.add(salaryTime, "years"));
+      const rs = endDate;
+      setEndDateRs(rs.add(salaryTime, "years"));
     }
     // return endDateRs;
     // setValue("ngayKetThuc",endDateRs);
   }, [salaryTime, endDate]);
-
+  
   console.log(salaryTime);
   console.log(endDate);
   console.log(endDateRs);
-
+  
   return (
     <>
       <div className="container-form">
@@ -637,7 +625,6 @@ function AddSalaryForm(props) {
                   <Controller
                     name="ngayKetThuc"
                     control={control}
-                    value={endDateRs}
                     render={({ field, onChange }) => (
                       <DatePicker
                         id="ngayKetThuc"
@@ -648,9 +635,10 @@ function AddSalaryForm(props) {
                         }
                         placeholder="DD/MM/YYYY"
                         format="DD/MM/YYYY"
-                        onChange={(event) => {
-                          field.onChange(event);
-                        }}
+                        value={endDateRs}
+                        // onChange={(event) => {
+                        //   field.onChange(event);
+                        // }}
                         {...field._d}
                       />
                     )}
