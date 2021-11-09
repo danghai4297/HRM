@@ -40,7 +40,7 @@ function App() {
                   return <Redirect to="/category" />;
                 }
               }}
-            </Route>
+              </Route>
             <AccountContext.Provider value={{ account, setAccount }}>
               <ScreenProject />
             </AccountContext.Provider>

@@ -93,7 +93,9 @@ function Detail(props) {
     });
   };
   // console.log(dataLuong.filter((b) => b.trangThai === "Kích hoạt").length === 0);
-  console.log(dataDetailHd);
+  // console.log(dataDetailHd.filter(
+  //   (a) => a.trangThai === "Kích hoạt"
+  // )[0].id);
   let location = useLocation();
   let query = new URLSearchParams(location.search);
 

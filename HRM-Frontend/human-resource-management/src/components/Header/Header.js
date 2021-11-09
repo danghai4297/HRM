@@ -12,9 +12,6 @@ function Header() {
     history.replace("/login");
     setAccount(false);
   };
-  const token = localStorage.getItem("resultObj");
-  const decoded = jwt_decode(token);
-  console.log(decoded);
   return (
     <>
       <div className="header-com">
@@ -29,7 +26,7 @@ function Header() {
                 />
               </div>
               <div className="account-name">
-                <h5 className="account-style">{decoded.givenName}</h5>
+                <h5 className="account-style">{localStorage.getItem("resultObj") && jwt_decode(localStorage.getItem("resultObj")).givenName}</h5>
               </div>
             </div>
           </button>
@@ -41,7 +38,7 @@ function Header() {
                   <FontAwesomeIcon icon={["fas", "user-circle"]} />
                 </div>
                 <div>
-                  <h5>{decoded.givenName}</h5>
+                  <h5>{localStorage.getItem("resultObj") && jwt_decode(localStorage.getItem("resultObj")).givenName}</h5>
                 </div>
                 <div>
                   <Link to="/change" onClick={() => setAccount(false)}>

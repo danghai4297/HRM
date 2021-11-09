@@ -12,7 +12,7 @@ import { DatePicker } from "antd";
 import moment from "moment/moment.js";
 import DeleteApi from "../../../src/api/deleteAPI";
 import PutApi from "../../../src/api/putAAPI";
-import { useLocation } from "react-router"; 
+import { useLocation } from "react-router";
 import DialogCheck from "../Dialog/DialogCheck";
 import { useToast } from "../Toast/Toast";
 import Dialog from "../../components/Dialog/Dialog";
@@ -26,7 +26,10 @@ const schema = yup.object({
     .nullable()
     .required("Hệ số lương không được bỏ trống."),
   bacLuong: yup.string().nullable().required("Bậc lương không được bỏ trống."),
-   ngayHieuLuc: yup.date().nullable().required("Ngày hết hạn không được bỏ trống."),
+  ngayHieuLuc: yup
+    .date()
+    .nullable()
+    .required("Ngày hết hạn không được bỏ trống."),
   // ngayKetThuc: yup.date().nullable().required("Ngày có hiệu lực không được bỏ trống."),
   luongCoBan: yup
     .number()
@@ -78,9 +81,9 @@ function AddSalaryForm(props) {
   );
   const [showCheckDialog, setShowCheckDialog] = useState(false);
 
-  const [salaryTime,setSalaryTime] = useState();
-  const [endDate,setEndDate] = useState();
-  const [endDateRs,setEndDateRs] = useState();
+  const [salaryTime, setSalaryTime] = useState();
+  const [endDate, setEndDate] = useState();
+  const [endDateRs, setEndDateRs] = useState();
 
   const cancel = () => {
     setShowDialog(false);
@@ -156,7 +159,7 @@ function AddSalaryForm(props) {
       reset(intitalValue);
     }
   }, [dataLDetail]);
-
+  console.log(getValues("tongLuong"));
   const checkInputChange = () => {
     const values = getValues([
       "idNhomLuong",
@@ -201,14 +204,36 @@ function AddSalaryForm(props) {
   // useEffect(() => {
   //   setRs(Number(salary.heSoLuong) * Number(salary.luongCoBan) + Number(salary.phuCapTrachNhiem)+ Number(salary.phuCapKhac));
   // }, [salary]);
-  const calSalary = () => {
-    const rs =
-      Number(getValues("heSoLuong")) * Number(getValues("luongCoBan")) +
-      Number(getValues("phuCapTrachNhiem")) +
-      Number(getValues("phuCapKhac"));
-    console.log(rs);
-    setValue("tongLuong", rs);
+  const [salary2, setSalary2] = useState({
+    heSoLuong: "",
+    luongCoBan: "",
+    phuCapTrachNhiem: "",
+    phuCapKhac: "",
+  });
+  const handleOnChange = (e) => {
+    setSalary2({
+      ...salary2,
+      [e.target.name]: e.target.value,
+    });
   };
+  console.log(salary2);
+  useEffect(() => {
+    let rss = 0;
+    rss +=
+      Number(salary2.heSoLuong) * Number(salary2.luongCoBan) +
+      Number(salary2.phuCapKhac) +
+      Number(salary2.phuCapTrachNhiem);
+    setValue("tongLuong", rss);
+  }, [
+    salary2.heSoLuong,
+    salary2.luongCoBan,
+    salary2.phuCapKhac,
+    salary2.phuCapTrachNhiem,
+  ]);
+
+  // useEffect(() => {
+  //   reset(intitalValue.heSoLuong);
+  // }, [intitalValue.heSoLuong]);
 
   const onHandleSubmit = async (data) => {
     console.log(data);
@@ -216,10 +241,9 @@ function AddSalaryForm(props) {
     //   let obj = {ngayKetThuc: endDateRs}
     //   Object.assign(data,obj);
     //   console.log(Object.assign(data,obj));
-      
+
     // }
-  
-    
+
     try {
       if (id !== undefined) {
         await PutApi.PutL(data, id);
@@ -253,27 +277,27 @@ function AddSalaryForm(props) {
     }
   };
   // console.log(Number(getValues("thoiHanLenLuong")));
-   //console.log(getValues("ngayHieuLuc"));
+  //console.log(getValues("ngayHieuLuc"));
   // console.log(moment(dataLDetail.ngayHieuLuc).add(3,"years"));
- 
-   const calSalaryTime = (e)=>{
-     setEndDate(e);    
-     console.log(endDate);
-     if(salaryTime!== undefined && e!== undefined){
-      setEndDateRs(e.add(salaryTime,"years"));
+
+  const calSalaryTime = (e) => {
+    setEndDate(e);
+    console.log(endDate);
+    if (salaryTime !== undefined && e !== undefined) {
+      setEndDateRs(e.add(salaryTime, "years"));
     }
     return endDateRs;
+  };
+  const cal = () => {
+    if (salaryTime !== undefined && getValues("ngayHieuLuc") !== undefined) {
+      setEndDateRs(getValues("ngayHieuLuc").add(salaryTime, "years"));
     }
-    const cal = () =>{
-      if(salaryTime!== undefined && getValues("ngayHieuLuc")!== undefined){
-        setEndDateRs(getValues("ngayHieuLuc").add(salaryTime,"years"));
-      }
     return endDateRs;
-     // setValue("ngayKetThuc",endDateRs);
-    }
-  console.log(salaryTime);
-  console.log(endDate);
-  console.log(endDateRs);
+    // setValue("ngayKetThuc",endDateRs);
+  };
+  // console.log(salaryTime);
+  // console.log(endDate);
+  // console.log(endDateRs);
 
   return (
     <>
@@ -327,27 +351,26 @@ function AddSalaryForm(props) {
               </div>
               <div>
                 <div className="salary-cal">
-                <span className="mr-3">
-                  Tiền Lương:
-                  <input
-                    {...register("tongLuong")}
-                    className="border-0"
-                    readOnly
-                  ></input>
-                </span>
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    // setValue("tongLuong", rs);
-                    calSalary();
-                  }}
-                >
-                  <FontAwesomeIcon
-                    className="icon"
-                    icon={["fas", "money-check-alt"]}
-                  />
-                </button>
-                
+                  <span className="mr-3">
+                    Tiền Lương:
+                    <input
+                      {...register("tongLuong")}
+                      className="border-0"
+                      readOnly
+                      // value={calSalary()}
+                    ></input>
+                  </span>
+                  <button
+                  // onClick={(e) => {
+                  //   e.preventDefault();
+                  //   setValue("tongLuong",calSalary());
+                  // }}
+                  >
+                    <FontAwesomeIcon
+                      className="icon"
+                      icon={["fas", "money-check-alt"]}
+                    />
+                  </button>
                 </div>
                 <span className="message-1">{errors.tongLuong?.message}</span>
               </div>
@@ -425,10 +448,9 @@ function AddSalaryForm(props) {
                   </label>
                   <input
                     type="text"
-                    {...register("heSoLuong")}
+                    {...register("heSoLuong",{onChange:(e)=> (handleOnChange(e))})}
                     id="heSoLuong"
                     // value={salary.heSoLuong}
-                    // onChange={handleOnChange}
                     className={
                       !errors.heSoLuong
                         ? "form-control col-sm-6 "
@@ -471,7 +493,7 @@ function AddSalaryForm(props) {
                   </label>
                   <input
                     type="text"
-                    {...register("luongCoBan")}
+                    {...register("luongCoBan",{onChange:(e)=> (handleOnChange(e))})}
                     id="luongCoBan"
                     className={
                       !errors.luongCoBan
@@ -479,7 +501,6 @@ function AddSalaryForm(props) {
                         : "form-control col-sm-6 border-danger"
                     }
                     // value={salary.luongCoBan}
-                    // onChange={handleOnChange}
                   />
                   <span className="message">{errors.luongCoBan?.message}</span>
                 </div>
@@ -496,7 +517,6 @@ function AddSalaryForm(props) {
                     type="text"
                     {...register("thoiHanLenLuong")}
                     id="thoiHanLenLuong"
-                    onChange={(e)=>setSalaryTime(Number(e.target.value))}
                     className={
                       !errors.thoiHanLenLuong
                         ? "form-control col-sm-6 "
@@ -520,8 +540,9 @@ function AddSalaryForm(props) {
                   </label>
                   <input
                     type="text"
-                    {...register("phuCapTrachNhiem")}
+                    {...register("phuCapTrachNhiem",{onChange:(e)=> (handleOnChange(e))})}
                     id="phuCapTrachNhiem"
+                    
                     className={
                       !errors.phuCapTrachNhiem
                         ? "form-control col-sm-6 "
@@ -543,7 +564,7 @@ function AddSalaryForm(props) {
                   </label>
                   <input
                     type="text"
-                    {...register("phuCapKhac")}
+                    {...register("phuCapKhac",{onChange:(e)=> (handleOnChange(e))})}
                     id="phuCapKhac"
                     className={
                       !errors.phuCapKhac

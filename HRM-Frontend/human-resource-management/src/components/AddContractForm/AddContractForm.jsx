@@ -155,10 +155,10 @@ function AddContractForm(props) {
           `Sửa thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
         );
       } else {
-        if (query.get("checkMaHopDong") !== "0") {
-          await PutApi.PutTLL(query.get("maHopDong"));
-          await PutApi.PutTLHD(query.get("maNhanVien"));
-        }
+        // if (query.get("checkMaHopDong") !== "0") {
+        //   await PutApi.PutTLL(query.get("maHopDong"));
+        //   await PutApi.PutTLHD(query.get("maNhanVien"));
+        // }
         await ProductApi.postHD(data);
         success(
           `Thêm thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
