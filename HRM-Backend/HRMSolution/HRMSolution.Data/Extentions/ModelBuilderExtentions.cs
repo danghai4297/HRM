@@ -422,7 +422,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 },
                 new NhanVien()
                 {
@@ -455,7 +456,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0009",
@@ -487,7 +489,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 },
                 new NhanVien()
                 {
@@ -520,7 +523,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 },
                 new NhanVien()
                 {
@@ -553,7 +557,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 },
                 new NhanVien()
                 {
@@ -586,7 +591,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0013",
@@ -618,7 +624,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0014",
@@ -650,7 +657,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0015",
@@ -682,7 +690,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0016",
@@ -714,7 +723,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0017",
@@ -747,7 +757,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0018",
@@ -782,7 +793,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0019",
@@ -814,7 +826,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0020",
@@ -848,7 +861,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0021",
@@ -880,7 +894,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0022",
@@ -912,7 +927,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0023",
@@ -944,7 +960,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0024",
@@ -976,7 +993,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0025",
@@ -1008,7 +1026,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0026",
@@ -1040,7 +1059,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0027",
@@ -1072,7 +1092,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0028",
@@ -1104,7 +1125,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0029",
@@ -1136,7 +1158,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0030",
@@ -1168,7 +1191,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0031",
@@ -1206,7 +1230,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0032",
@@ -1238,7 +1263,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0033",
@@ -1270,7 +1296,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0034",
@@ -1302,7 +1329,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0035",
@@ -1334,7 +1362,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0036",
@@ -1366,7 +1395,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0037",
@@ -1398,7 +1428,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0038",
@@ -1430,7 +1461,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0039",
@@ -1462,7 +1494,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0040",
@@ -1494,7 +1527,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0041",
@@ -1526,7 +1560,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0042",
@@ -1558,7 +1593,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0043",
@@ -1590,7 +1626,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0044",
@@ -1622,7 +1659,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0045",
@@ -1654,7 +1692,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0046",
@@ -1686,7 +1725,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0047",
@@ -1723,7 +1763,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0048",
@@ -1755,7 +1796,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0049",
@@ -1787,7 +1829,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0050",
@@ -1819,7 +1862,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0051",
@@ -1851,7 +1895,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0052",
@@ -1883,7 +1928,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0053",
@@ -1915,7 +1961,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0054",
@@ -1947,7 +1994,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0055",
@@ -1979,7 +2027,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0056",
@@ -2011,7 +2060,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0057",
@@ -2043,7 +2093,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0058",
@@ -2075,7 +2126,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0059",
@@ -2107,7 +2159,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0060",
@@ -2139,7 +2192,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0061",
@@ -2171,7 +2225,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0062",
@@ -2203,7 +2258,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0063",
@@ -2235,7 +2291,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0064",
@@ -2267,7 +2324,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0065",
@@ -2299,7 +2357,8 @@ namespace HRMSolution.Data.Extentions
                     idDanhMucHonNhan = 1,
                     idDanToc = 1,
                     idTonGiao = 1,
-                    idNgachCongChuc = 1
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0066",
@@ -33098,7 +33157,7 @@ namespace HRMSolution.Data.Extentions
                 new TrinhDoVanHoa() { id = 2, tenTruong = "Đại Học Bách Khoa", idChuyenMon = 1, idHinhThucDaoTao = 1, idTrinhDo = 1, maNhanVien = "NV0001" }
                 );
             modelbulder.Entity<YTe>().HasData(
-                new YTe() { yt_id = 1, yt_nhomMau = "O", yt_chieuCao = (float)1.73, yt_canNang = (float)56.1, yt_maNhanVien = "NV0001" }
+                new YTe() { id = 1, nhomMau = "O", chieuCao = (float)1.73, canNang = (float)56.1, maNhanVien = "NV0001" }
                 );
             modelbulder.Entity<NgoaiNgu>().HasData(
                 new NgoaiNgu() { id = 1, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV0001" },
@@ -33202,7 +33261,7 @@ namespace HRMSolution.Data.Extentions
                 new NgoaiNgu() { id = 101, idDanhMucNgoaiNgu = 1, ngayCap = DateTime.ParseExact("2017-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV0100" }
                 );
             modelbulder.Entity<LienHeKhanCap>().HasData(
-                new LienHeKhanCap() { lhkc_id = 1, lhkc_hoTen = "Mai Trung Hiếu", lhkc_quanHe = "Bạn", lhkc_maNhanVien = "NV0001", lhkc_diaChi = "Hà Nội", lhkc_dienThoai = "0123434324" }
+                new LienHeKhanCap() { id = 1, hoTen = "Mai Trung Hiếu", quanHe = "Bạn", maNhanVien = "NV0001", diaChi = "Hà Nội", dienThoai = "0123434324" }
                 );
             modelbulder.Entity<NguoiThan>().HasData(
                 new NguoiThan() { id = 1, tenNguoiThan = "Nguyễn Đăng Hải", gioiTinh = true, ngaySinh = DateTime.ParseExact("1965-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), quanHe = "Bố", ngheNghiep = "kinh doanh Tại Nhà", diaChi = "điện biên", dienThoai = "0914637668", maNhanVien = "NV0001", idDanhMucNguoiThan = 1 },
@@ -33956,215 +34015,215 @@ namespace HRMSolution.Data.Extentions
 
                 );
             modelbulder.Entity<LichSuBanThan>().HasData(
-                new LichSuBanThan() { lsbt_id = 1, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0001" },
-                new LichSuBanThan() { lsbt_id = 2, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0002" },
-                new LichSuBanThan() { lsbt_id = 3, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0003" },
-                new LichSuBanThan() { lsbt_id = 4, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0004" },
-                new LichSuBanThan() { lsbt_id = 5, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0005" },
-                new LichSuBanThan() { lsbt_id = 6, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0006" },
-                new LichSuBanThan() { lsbt_id = 7, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0007" },
-                new LichSuBanThan() { lsbt_id = 8, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0008" },
-                new LichSuBanThan() { lsbt_id = 9, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0009" },
-                new LichSuBanThan() { lsbt_id = 10, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0010" },
-                new LichSuBanThan() { lsbt_id = 11, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0011" },
-                new LichSuBanThan() { lsbt_id = 12, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0012" },
-                new LichSuBanThan() { lsbt_id = 13, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0013" },
-                new LichSuBanThan() { lsbt_id = 14, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0014" },
-                new LichSuBanThan() { lsbt_id = 15, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0015" },
-                new LichSuBanThan() { lsbt_id = 16, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0016" },
-                new LichSuBanThan() { lsbt_id = 17, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0017" },
-                new LichSuBanThan() { lsbt_id = 18, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0018" },
-                new LichSuBanThan() { lsbt_id = 19, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0019" },
-                new LichSuBanThan() { lsbt_id = 20, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0020" },
-                new LichSuBanThan() { lsbt_id = 21, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0021" },
-                new LichSuBanThan() { lsbt_id = 22, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0022" },
-                new LichSuBanThan() { lsbt_id = 23, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0023" },
-                new LichSuBanThan() { lsbt_id = 24, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0024" },
-                new LichSuBanThan() { lsbt_id = 25, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0025" },
-                new LichSuBanThan() { lsbt_id = 26, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0026" },
-                new LichSuBanThan() { lsbt_id = 27, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0027" },
-                new LichSuBanThan() { lsbt_id = 28, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0028" },
-                new LichSuBanThan() { lsbt_id = 29, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0029" },
-                new LichSuBanThan() { lsbt_id = 30, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0030" },
-                new LichSuBanThan() { lsbt_id = 31, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0031" },
-                new LichSuBanThan() { lsbt_id = 32, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0032" },
-                new LichSuBanThan() { lsbt_id = 33, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0033" },
-                new LichSuBanThan() { lsbt_id = 34, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0034" },
-                new LichSuBanThan() { lsbt_id = 35, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0035" },
-                new LichSuBanThan() { lsbt_id = 36, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0036" },
-                new LichSuBanThan() { lsbt_id = 37, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0037" },
-                new LichSuBanThan() { lsbt_id = 38, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0038" },
-                new LichSuBanThan() { lsbt_id = 39, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0039" },
-                new LichSuBanThan() { lsbt_id = 40, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0040" },
-                new LichSuBanThan() { lsbt_id = 41, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0041" },
-                new LichSuBanThan() { lsbt_id = 42, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0042" },
-                new LichSuBanThan() { lsbt_id = 43, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0043" },
-                new LichSuBanThan() { lsbt_id = 44, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0044" },
-                new LichSuBanThan() { lsbt_id = 45, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0045" },
-                new LichSuBanThan() { lsbt_id = 46, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0046" },
-                new LichSuBanThan() { lsbt_id = 47, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0047" },
-                new LichSuBanThan() { lsbt_id = 48, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0048" },
-                new LichSuBanThan() { lsbt_id = 49, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0049" },
-                new LichSuBanThan() { lsbt_id = 50, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0050" },
-                new LichSuBanThan() { lsbt_id = 51, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0051" },
-                new LichSuBanThan() { lsbt_id = 52, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0052" },
-                new LichSuBanThan() { lsbt_id = 53, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0053" },
-                new LichSuBanThan() { lsbt_id = 54, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0054" },
-                new LichSuBanThan() { lsbt_id = 55, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0055" },
-                new LichSuBanThan() { lsbt_id = 56, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0056" },
-                new LichSuBanThan() { lsbt_id = 57, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0057" },
-                new LichSuBanThan() { lsbt_id = 58, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0058" },
-                new LichSuBanThan() { lsbt_id = 59, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0059" },
-                new LichSuBanThan() { lsbt_id = 60, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0060" },
-                new LichSuBanThan() { lsbt_id = 61, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0061" },
-                new LichSuBanThan() { lsbt_id = 62, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0062" },
-                new LichSuBanThan() { lsbt_id = 63, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0063" },
-                new LichSuBanThan() { lsbt_id = 64, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0064" },
-                new LichSuBanThan() { lsbt_id = 65, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0065" },
-                new LichSuBanThan() { lsbt_id = 66, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0066" },
-                new LichSuBanThan() { lsbt_id = 67, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0067" },
-                new LichSuBanThan() { lsbt_id = 68, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0068" },
-                new LichSuBanThan() { lsbt_id = 69, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0069" },
-                new LichSuBanThan() { lsbt_id = 70, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0070" },
-                new LichSuBanThan() { lsbt_id = 71, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0071" },
-                new LichSuBanThan() { lsbt_id = 72, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0072" },
-                new LichSuBanThan() { lsbt_id = 73, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0073" },
-                new LichSuBanThan() { lsbt_id = 74, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0074" },
-                new LichSuBanThan() { lsbt_id = 75, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0075" },
-                new LichSuBanThan() { lsbt_id = 76, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0076" },
-                new LichSuBanThan() { lsbt_id = 77, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0077" },
-                new LichSuBanThan() { lsbt_id = 78, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0078" },
-                new LichSuBanThan() { lsbt_id = 79, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0079" },
-                new LichSuBanThan() { lsbt_id = 80, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0080" },
-                new LichSuBanThan() { lsbt_id = 81, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0081" },
-                new LichSuBanThan() { lsbt_id = 82, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0082" },
-                new LichSuBanThan() { lsbt_id = 83, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0083" },
-                new LichSuBanThan() { lsbt_id = 84, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0084" },
-                new LichSuBanThan() { lsbt_id = 85, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0085" },
-                new LichSuBanThan() { lsbt_id = 86, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0086" },
-                new LichSuBanThan() { lsbt_id = 87, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0087" },
-                new LichSuBanThan() { lsbt_id = 88, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0088" },
-                new LichSuBanThan() { lsbt_id = 89, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0089" },
-                new LichSuBanThan() { lsbt_id = 90, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0090" },
-                new LichSuBanThan() { lsbt_id = 91, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0091" },
-                new LichSuBanThan() { lsbt_id = 92, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0092" },
-                new LichSuBanThan() { lsbt_id = 93, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0093" },
-                new LichSuBanThan() { lsbt_id = 94, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0094" },
-                new LichSuBanThan() { lsbt_id = 95, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0095" },
-                new LichSuBanThan() { lsbt_id = 96, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0096" },
-                new LichSuBanThan() { lsbt_id = 97, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0097" },
-                new LichSuBanThan() { lsbt_id = 98, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0098" },
-                new LichSuBanThan() { lsbt_id = 99, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0099" },
-                new LichSuBanThan() { lsbt_id = 100, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0100" },
-                new LichSuBanThan() { lsbt_id = 101, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0101" },
-                new LichSuBanThan() { lsbt_id = 102, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0102" },
-                new LichSuBanThan() { lsbt_id = 103, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0103" },
-                new LichSuBanThan() { lsbt_id = 104, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0104" },
-                new LichSuBanThan() { lsbt_id = 105, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0105" },
-                new LichSuBanThan() { lsbt_id = 106, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0106" },
-                new LichSuBanThan() { lsbt_id = 107, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0107" },
-                new LichSuBanThan() { lsbt_id = 108, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0108" },
-                new LichSuBanThan() { lsbt_id = 109, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0109" },
-                new LichSuBanThan() { lsbt_id = 110, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0110" },
-                new LichSuBanThan() { lsbt_id = 111, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0111" },
-                new LichSuBanThan() { lsbt_id = 112, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0112" },
-                new LichSuBanThan() { lsbt_id = 113, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0113" },
-                new LichSuBanThan() { lsbt_id = 114, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0114" },
-                new LichSuBanThan() { lsbt_id = 115, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0115" },
-                new LichSuBanThan() { lsbt_id = 116, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0116" },
-                new LichSuBanThan() { lsbt_id = 117, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0117" },
-                new LichSuBanThan() { lsbt_id = 118, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0118" },
-                new LichSuBanThan() { lsbt_id = 119, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0119" },
-                new LichSuBanThan() { lsbt_id = 120, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0120" },
-                new LichSuBanThan() { lsbt_id = 121, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0121" },
-                new LichSuBanThan() { lsbt_id = 122, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0122" },
-                new LichSuBanThan() { lsbt_id = 123, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0123" },
-                new LichSuBanThan() { lsbt_id = 124, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0124" },
-                new LichSuBanThan() { lsbt_id = 125, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0125" },
-                new LichSuBanThan() { lsbt_id = 126, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0126" },
-                new LichSuBanThan() { lsbt_id = 127, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0127" },
-                new LichSuBanThan() { lsbt_id = 128, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0128" },
-                new LichSuBanThan() { lsbt_id = 129, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0129" },
-                new LichSuBanThan() { lsbt_id = 130, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0130" },
-                new LichSuBanThan() { lsbt_id = 131, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0131" },
-                new LichSuBanThan() { lsbt_id = 132, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0132" },
-                new LichSuBanThan() { lsbt_id = 133, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0133" },
-                new LichSuBanThan() { lsbt_id = 134, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0134" },
-                new LichSuBanThan() { lsbt_id = 135, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0135" },
-                new LichSuBanThan() { lsbt_id = 136, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0136" },
-                new LichSuBanThan() { lsbt_id = 137, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0137" },
-                new LichSuBanThan() { lsbt_id = 138, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0138" },
-                new LichSuBanThan() { lsbt_id = 139, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0139" },
-                new LichSuBanThan() { lsbt_id = 140, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0140" },
-                new LichSuBanThan() { lsbt_id = 141, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0141" },
-                new LichSuBanThan() { lsbt_id = 142, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0142" },
-                new LichSuBanThan() { lsbt_id = 143, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0143" },
-                new LichSuBanThan() { lsbt_id = 144, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0144" },
-                new LichSuBanThan() { lsbt_id = 145, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0145" },
-                new LichSuBanThan() { lsbt_id = 146, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0146" },
-                new LichSuBanThan() { lsbt_id = 147, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0147" },
-                new LichSuBanThan() { lsbt_id = 148, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0148" },
-                new LichSuBanThan() { lsbt_id = 149, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0149" },
-                new LichSuBanThan() { lsbt_id = 150, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0150" },
-                new LichSuBanThan() { lsbt_id = 151, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0151" },
-                new LichSuBanThan() { lsbt_id = 152, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0152" },
-                new LichSuBanThan() { lsbt_id = 153, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0153" },
-                new LichSuBanThan() { lsbt_id = 154, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0154" },
-                new LichSuBanThan() { lsbt_id = 155, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0155" },
-                new LichSuBanThan() { lsbt_id = 156, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0156" },
-                new LichSuBanThan() { lsbt_id = 157, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0157" },
-                new LichSuBanThan() { lsbt_id = 158, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0158" },
-                new LichSuBanThan() { lsbt_id = 159, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0159" },
-                new LichSuBanThan() { lsbt_id = 160, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0160" },
-                new LichSuBanThan() { lsbt_id = 161, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0161" },
-                new LichSuBanThan() { lsbt_id = 162, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0162" },
-                new LichSuBanThan() { lsbt_id = 163, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0163" },
-                new LichSuBanThan() { lsbt_id = 164, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0164" },
-                new LichSuBanThan() { lsbt_id = 165, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0165" },
-                new LichSuBanThan() { lsbt_id = 166, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0166" },
-                new LichSuBanThan() { lsbt_id = 167, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0167" },
-                new LichSuBanThan() { lsbt_id = 168, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0168" },
-                new LichSuBanThan() { lsbt_id = 169, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0169" },
-                new LichSuBanThan() { lsbt_id = 170, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0170" },
-                new LichSuBanThan() { lsbt_id = 171, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0171" },
-                new LichSuBanThan() { lsbt_id = 172, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0172" },
-                new LichSuBanThan() { lsbt_id = 173, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0173" },
-                new LichSuBanThan() { lsbt_id = 174, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0174" },
-                new LichSuBanThan() { lsbt_id = 175, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0175" },
-                new LichSuBanThan() { lsbt_id = 176, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0176" },
-                new LichSuBanThan() { lsbt_id = 177, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0177" },
-                new LichSuBanThan() { lsbt_id = 178, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0178" },
-                new LichSuBanThan() { lsbt_id = 179, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0179" },
-                new LichSuBanThan() { lsbt_id = 180, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0180" },
-                new LichSuBanThan() { lsbt_id = 181, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0181" },
-                new LichSuBanThan() { lsbt_id = 182, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0182" },
-                new LichSuBanThan() { lsbt_id = 183, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0183" },
-                new LichSuBanThan() { lsbt_id = 184, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0184" },
-                new LichSuBanThan() { lsbt_id = 185, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0185" },
-                new LichSuBanThan() { lsbt_id = 186, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0186" },
-                new LichSuBanThan() { lsbt_id = 187, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0187" },
-                new LichSuBanThan() { lsbt_id = 188, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0188" },
-                new LichSuBanThan() { lsbt_id = 189, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0189" },
-                new LichSuBanThan() { lsbt_id = 190, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0190" },
-                new LichSuBanThan() { lsbt_id = 191, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0191" },
-                new LichSuBanThan() { lsbt_id = 192, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0192" },
-                new LichSuBanThan() { lsbt_id = 193, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0193" },
-                new LichSuBanThan() { lsbt_id = 194, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0194" },
-                new LichSuBanThan() { lsbt_id = 195, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0195" },
-                new LichSuBanThan() { lsbt_id = 196, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0196" },
-                new LichSuBanThan() { lsbt_id = 197, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0197" },
-                new LichSuBanThan() { lsbt_id = 198, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0198" },
-                new LichSuBanThan() { lsbt_id = 199, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0199" },
-                new LichSuBanThan() { lsbt_id = 200, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0200" },
-                new LichSuBanThan() { lsbt_id = 201, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0201" },
-                new LichSuBanThan() { lsbt_id = 202, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0202" },
-                new LichSuBanThan() { lsbt_id = 203, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0203" },
-                new LichSuBanThan() { lsbt_id = 204, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0204" },
-                new LichSuBanThan() { lsbt_id = 205, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0205" },
-                new LichSuBanThan() { lsbt_id = 206, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0206" },
-                new LichSuBanThan() { lsbt_id = 207, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0207" },
-                new LichSuBanThan() { lsbt_id = 208, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0208" },
-                new LichSuBanThan() { lsbt_id = 209, lsbt_biBatDiTu = "Không", lsbt_thamGiaChinhTri = "Không", lsbt_thanNhanNuocNgoai = "Không", lsbt_maNhanVien = "NV0209" }
+                new LichSuBanThan() { id = 1, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0001" },
+                new LichSuBanThan() { id = 2, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0002" },
+                new LichSuBanThan() { id = 3, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0003" },
+                new LichSuBanThan() { id = 4, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0004" },
+                new LichSuBanThan() { id = 5, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0005" },
+                new LichSuBanThan() { id = 6, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0006" },
+                new LichSuBanThan() { id = 7, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0007" },
+                new LichSuBanThan() { id = 8, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0008" },
+                new LichSuBanThan() { id = 9, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0009" },
+                new LichSuBanThan() { id = 10, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0010" },
+                new LichSuBanThan() { id = 11, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0011" },
+                new LichSuBanThan() { id = 12, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0012" },
+                new LichSuBanThan() { id = 13, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0013" },
+                new LichSuBanThan() { id = 14, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0014" },
+                new LichSuBanThan() { id = 15, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0015" },
+                new LichSuBanThan() { id = 16, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0016" },
+                new LichSuBanThan() { id = 17, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0017" },
+                new LichSuBanThan() { id = 18, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0018" },
+                new LichSuBanThan() { id = 19, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0019" },
+                new LichSuBanThan() { id = 20, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0020" },
+                new LichSuBanThan() { id = 21, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0021" },
+                new LichSuBanThan() { id = 22, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0022" },
+                new LichSuBanThan() { id = 23, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0023" },
+                new LichSuBanThan() { id = 24, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0024" },
+                new LichSuBanThan() { id = 25, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0025" },
+                new LichSuBanThan() { id = 26, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0026" },
+                new LichSuBanThan() { id = 27, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0027" },
+                new LichSuBanThan() { id = 28, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0028" },
+                new LichSuBanThan() { id = 29, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0029" },
+                new LichSuBanThan() { id = 30, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0030" },
+                new LichSuBanThan() { id = 31, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0031" },
+                new LichSuBanThan() { id = 32, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0032" },
+                new LichSuBanThan() { id = 33, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0033" },
+                new LichSuBanThan() { id = 34, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0034" },
+                new LichSuBanThan() { id = 35, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0035" },
+                new LichSuBanThan() { id = 36, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0036" },
+                new LichSuBanThan() { id = 37, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0037" },
+                new LichSuBanThan() { id = 38, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0038" },
+                new LichSuBanThan() { id = 39, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0039" },
+                new LichSuBanThan() { id = 40, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0040" },
+                new LichSuBanThan() { id = 41, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0041" },
+                new LichSuBanThan() { id = 42, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0042" },
+                new LichSuBanThan() { id = 43, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0043" },
+                new LichSuBanThan() { id = 44, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0044" },
+                new LichSuBanThan() { id = 45, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0045" },
+                new LichSuBanThan() { id = 46, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0046" },
+                new LichSuBanThan() { id = 47, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0047" },
+                new LichSuBanThan() { id = 48, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0048" },
+                new LichSuBanThan() { id = 49, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0049" },
+                new LichSuBanThan() { id = 50, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0050" },
+                new LichSuBanThan() { id = 51, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0051" },
+                new LichSuBanThan() { id = 52, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0052" },
+                new LichSuBanThan() { id = 53, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0053" },
+                new LichSuBanThan() { id = 54, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0054" },
+                new LichSuBanThan() { id = 55, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0055" },
+                new LichSuBanThan() { id = 56, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0056" },
+                new LichSuBanThan() { id = 57, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0057" },
+                new LichSuBanThan() { id = 58, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0058" },
+                new LichSuBanThan() { id = 59, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0059" },
+                new LichSuBanThan() { id = 60, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0060" },
+                new LichSuBanThan() { id = 61, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0061" },
+                new LichSuBanThan() { id = 62, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0062" },
+                new LichSuBanThan() { id = 63, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0063" },
+                new LichSuBanThan() { id = 64, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0064" },
+                new LichSuBanThan() { id = 65, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0065" },
+                new LichSuBanThan() { id = 66, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0066" },
+                new LichSuBanThan() { id = 67, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0067" },
+                new LichSuBanThan() { id = 68, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0068" },
+                new LichSuBanThan() { id = 69, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0069" },
+                new LichSuBanThan() { id = 70, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0070" },
+                new LichSuBanThan() { id = 71, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0071" },
+                new LichSuBanThan() { id = 72, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0072" },
+                new LichSuBanThan() { id = 73, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0073" },
+                new LichSuBanThan() { id = 74, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0074" },
+                new LichSuBanThan() { id = 75, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0075" },
+                new LichSuBanThan() { id = 76, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0076" },
+                new LichSuBanThan() { id = 77, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0077" },
+                new LichSuBanThan() { id = 78, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0078" },
+                new LichSuBanThan() { id = 79, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0079" },
+                new LichSuBanThan() { id = 80, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0080" },
+                new LichSuBanThan() { id = 81, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0081" },
+                new LichSuBanThan() { id = 82, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0082" },
+                new LichSuBanThan() { id = 83, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0083" },
+                new LichSuBanThan() { id = 84, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0084" },
+                new LichSuBanThan() { id = 85, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0085" },
+                new LichSuBanThan() { id = 86, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0086" },
+                new LichSuBanThan() { id = 87, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0087" },
+                new LichSuBanThan() { id = 88, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0088" },
+                new LichSuBanThan() { id = 89, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0089" },
+                new LichSuBanThan() { id = 90, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0090" },
+                new LichSuBanThan() { id = 91, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0091" },
+                new LichSuBanThan() { id = 92, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0092" },
+                new LichSuBanThan() { id = 93, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0093" },
+                new LichSuBanThan() { id = 94, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0094" },
+                new LichSuBanThan() { id = 95, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0095" },
+                new LichSuBanThan() { id = 96, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0096" },
+                new LichSuBanThan() { id = 97, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0097" },
+                new LichSuBanThan() { id = 98, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0098" },
+                new LichSuBanThan() { id = 99, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0099" },
+                new LichSuBanThan() { id = 100, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0100" },
+                new LichSuBanThan() { id = 101, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0101" },
+                new LichSuBanThan() { id = 102, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0102" },
+                new LichSuBanThan() { id = 103, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0103" },
+                new LichSuBanThan() { id = 104, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0104" },
+                new LichSuBanThan() { id = 105, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0105" },
+                new LichSuBanThan() { id = 106, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0106" },
+                new LichSuBanThan() { id = 107, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0107" },
+                new LichSuBanThan() { id = 108, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0108" },
+                new LichSuBanThan() { id = 109, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0109" },
+                new LichSuBanThan() { id = 110, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0110" },
+                new LichSuBanThan() { id = 111, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0111" },
+                new LichSuBanThan() { id = 112, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0112" },
+                new LichSuBanThan() { id = 113, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0113" },
+                new LichSuBanThan() { id = 114, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0114" },
+                new LichSuBanThan() { id = 115, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0115" },
+                new LichSuBanThan() { id = 116, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0116" },
+                new LichSuBanThan() { id = 117, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0117" },
+                new LichSuBanThan() { id = 118, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0118" },
+                new LichSuBanThan() { id = 119, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0119" },
+                new LichSuBanThan() { id = 120, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0120" },
+                new LichSuBanThan() { id = 121, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0121" },
+                new LichSuBanThan() { id = 122, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0122" },
+                new LichSuBanThan() { id = 123, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0123" },
+                new LichSuBanThan() { id = 124, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0124" },
+                new LichSuBanThan() { id = 125, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0125" },
+                new LichSuBanThan() { id = 126, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0126" },
+                new LichSuBanThan() { id = 127, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0127" },
+                new LichSuBanThan() { id = 128, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0128" },
+                new LichSuBanThan() { id = 129, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0129" },
+                new LichSuBanThan() { id = 130, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0130" },
+                new LichSuBanThan() { id = 131, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0131" },
+                new LichSuBanThan() { id = 132, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0132" },
+                new LichSuBanThan() { id = 133, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0133" },
+                new LichSuBanThan() { id = 134, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0134" },
+                new LichSuBanThan() { id = 135, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0135" },
+                new LichSuBanThan() { id = 136, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0136" },
+                new LichSuBanThan() { id = 137, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0137" },
+                new LichSuBanThan() { id = 138, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0138" },
+                new LichSuBanThan() { id = 139, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0139" },
+                new LichSuBanThan() { id = 140, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0140" },
+                new LichSuBanThan() { id = 141, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0141" },
+                new LichSuBanThan() { id = 142, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0142" },
+                new LichSuBanThan() { id = 143, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0143" },
+                new LichSuBanThan() { id = 144, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0144" },
+                new LichSuBanThan() { id = 145, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0145" },
+                new LichSuBanThan() { id = 146, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0146" },
+                new LichSuBanThan() { id = 147, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0147" },
+                new LichSuBanThan() { id = 148, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0148" },
+                new LichSuBanThan() { id = 149, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0149" },
+                new LichSuBanThan() { id = 150, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0150" },
+                new LichSuBanThan() { id = 151, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0151" },
+                new LichSuBanThan() { id = 152, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0152" },
+                new LichSuBanThan() { id = 153, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0153" },
+                new LichSuBanThan() { id = 154, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0154" },
+                new LichSuBanThan() { id = 155, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0155" },
+                new LichSuBanThan() { id = 156, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0156" },
+                new LichSuBanThan() { id = 157, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0157" },
+                new LichSuBanThan() { id = 158, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0158" },
+                new LichSuBanThan() { id = 159, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0159" },
+                new LichSuBanThan() { id = 160, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0160" },
+                new LichSuBanThan() { id = 161, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0161" },
+                new LichSuBanThan() { id = 162, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0162" },
+                new LichSuBanThan() { id = 163, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0163" },
+                new LichSuBanThan() { id = 164, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0164" },
+                new LichSuBanThan() { id = 165, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0165" },
+                new LichSuBanThan() { id = 166, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0166" },
+                new LichSuBanThan() { id = 167, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0167" },
+                new LichSuBanThan() { id = 168, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0168" },
+                new LichSuBanThan() { id = 169, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0169" },
+                new LichSuBanThan() { id = 170, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0170" },
+                new LichSuBanThan() { id = 171, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0171" },
+                new LichSuBanThan() { id = 172, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0172" },
+                new LichSuBanThan() { id = 173, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0173" },
+                new LichSuBanThan() { id = 174, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0174" },
+                new LichSuBanThan() { id = 175, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0175" },
+                new LichSuBanThan() { id = 176, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0176" },
+                new LichSuBanThan() { id = 177, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0177" },
+                new LichSuBanThan() { id = 178, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0178" },
+                new LichSuBanThan() { id = 179, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0179" },
+                new LichSuBanThan() { id = 180, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0180" },
+                new LichSuBanThan() { id = 181, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0181" },
+                new LichSuBanThan() { id = 182, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0182" },
+                new LichSuBanThan() { id = 183, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0183" },
+                new LichSuBanThan() { id = 184, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0184" },
+                new LichSuBanThan() { id = 185, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0185" },
+                new LichSuBanThan() { id = 186, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0186" },
+                new LichSuBanThan() { id = 187, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0187" },
+                new LichSuBanThan() { id = 188, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0188" },
+                new LichSuBanThan() { id = 189, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0189" },
+                new LichSuBanThan() { id = 190, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0190" },
+                new LichSuBanThan() { id = 191, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0191" },
+                new LichSuBanThan() { id = 192, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0192" },
+                new LichSuBanThan() { id = 193, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0193" },
+                new LichSuBanThan() { id = 194, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0194" },
+                new LichSuBanThan() { id = 195, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0195" },
+                new LichSuBanThan() { id = 196, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0196" },
+                new LichSuBanThan() { id = 197, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0197" },
+                new LichSuBanThan() { id = 198, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0198" },
+                new LichSuBanThan() { id = 199, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0199" },
+                new LichSuBanThan() { id = 200, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0200" },
+                new LichSuBanThan() { id = 201, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0201" },
+                new LichSuBanThan() { id = 202, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0202" },
+                new LichSuBanThan() { id = 203, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0203" },
+                new LichSuBanThan() { id = 204, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0204" },
+                new LichSuBanThan() { id = 205, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0205" },
+                new LichSuBanThan() { id = 206, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0206" },
+                new LichSuBanThan() { id = 207, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0207" },
+                new LichSuBanThan() { id = 208, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0208" },
+                new LichSuBanThan() { id = 209, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0209" }
                 );
         }
     }

@@ -298,7 +298,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpGet("bao-cao-nguoi-than-trang-thai/{tu}/{den}/{trangThai}")]
         public async Task<IActionResult> GetByAllBaoCaoNguoiThanTrangThai(int tu, int den, bool trangThai)
         {
-            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoGioiTinh(tu, den, trangThai);
+            var nhanViens = await _nhanVienService.GetAllNguoiThanTheoTrangThai(tu, den, trangThai);
             return Ok(nhanViens);
         }
         [AllowAnonymous]
@@ -337,14 +337,14 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok(nhanViens);
         }
         [AllowAnonymous]
-        [HttpGet("bao-cao-nguoi-than-phong-ban-nhan-vien/{tu}/{den}/{idPhongBan}/{gioiTinh}")]
+        [HttpGet("bao-cao-nguoi-than-phong-ban-gioi-tinh/{tu}/{den}/{idPhongBan}/{gioiTinh}")]
         public async Task<IActionResult> GetByAllBaoCaoNguoiThanPhongBanVaGioiTinh(int tu, int den, int idPhongBan, bool gioiTinh)
         {
             var nhanViens = await _nhanVienService.GetAllNguoiThanTheoPhongBanVaGioiTinh(tu, den, idPhongBan, gioiTinh);
             return Ok(nhanViens);
         }
         [AllowAnonymous]
-        [HttpGet("bao-cao-nguoi-than-phong-ban-nhan-vien/{tu}/{den}/{idPhongBan}/{trangThai}")]
+        [HttpGet("bao-cao-nguoi-than-phong-ban-trang-thai/{tu}/{den}/{idPhongBan}/{trangThai}")]
         public async Task<IActionResult> GetByAllBaoCaoNguoiThanPhongBanVaTrangThai(int tu, int den, int idPhongBan, bool trangThai)
         {
             var nhanViens = await _nhanVienService.GetAllNguoiThanTheoPhongBanVaTrangThai(tu, den, idPhongBan, trangThai);
@@ -492,7 +492,7 @@ namespace HRMSolution.BackendAPI.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public async Task<IActionResult> Create([FromForm] NhanVienCreateRequest request)
+        public async Task<IActionResult> Create([FromBody] NhanVienCreateRequest request)
         {
             var result = await _nhanVienService.Create(request);
             if (result == 0)

@@ -12,13 +12,13 @@ namespace HRMSolution.Data.Configurations
         public void Configure(EntityTypeBuilder<YTe> builder)
         {
             builder.ToTable("YTe");
-            builder.HasKey(x => x.yt_id);
-            builder.Property(x => x.yt_id).UseIdentityColumn();
-            builder.Property(x => x.yt_nhomMau).HasMaxLength(5);
-            builder.Property(x => x.yt_tinhTrangSucKhoe).HasMaxLength(50);
-            builder.Property(x => x.yt_benhTat).HasMaxLength(50);
-            builder.Property(x => x.yt_luuY).HasMaxLength(50);
-            builder.Property(x => x.yt_maNhanVien).HasMaxLength(10).IsRequired();
+            builder.HasKey(x => x.id);
+            builder.Property(x => x.id).UseIdentityColumn();
+            builder.Property(x => x.nhomMau).HasMaxLength(5);
+            builder.Property(x => x.tinhTrangSucKhoe).HasMaxLength(50);
+            builder.Property(x => x.benhTat).HasMaxLength(50);
+            builder.Property(x => x.luuY).HasMaxLength(50);
+            builder.Property(x => x.maNhanVien).HasMaxLength(10).IsRequired();
         }
     }
 }

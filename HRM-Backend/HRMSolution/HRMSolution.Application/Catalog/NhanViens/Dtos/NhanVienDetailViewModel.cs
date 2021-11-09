@@ -19,7 +19,7 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
         public string nganHang { get; set; }
         public int idHonNhan { get; set; }
         public string honNhan { get; set; }
-        public int? maSoThue { get; set; }
+        public string maSoThue { get; set; }
         public int idDanToc { get; set; }
         public string danToc { get; set; }
         public int idTonGiao { get; set; }

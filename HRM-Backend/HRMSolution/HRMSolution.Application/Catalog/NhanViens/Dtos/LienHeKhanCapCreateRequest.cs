@@ -6,7 +6,7 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
 {
     public class LienHeKhanCapCreateRequest
     {
-        public string lhkc_hoTen { get; set; }
+        public string hoTen { get; set; }
         public string lhkc_quanHe { get; set; }
         public string lhkc_dienThoai { get; set; }
         public string lhkc_email { get; set; }

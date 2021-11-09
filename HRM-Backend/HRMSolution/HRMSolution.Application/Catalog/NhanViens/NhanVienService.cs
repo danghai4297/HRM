@@ -90,30 +90,30 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 idNgachCongChuc = request.idNgachCongChuc,
                 YTe = new YTe()
                 {
-                    yt_nhomMau = request.yt_nhomMau,
-                    yt_chieuCao = request.yt_chieuCao,
-                    yt_canNang = request.yt_canNang,
-                    yt_tinhTrangSucKhoe = request.yt_tinhTrangSucKhoe,
-                    yt_benhTat = request.yt_benhTat,
-                    yt_luuY = request.yt_luuY,
-                    yt_khuyetTat = request.yt_khuyetTat,
-                    yt_maNhanVien = request.yt_maNhanVien
+                    nhomMau = request.yt_nhomMau,
+                    chieuCao = request.yt_chieuCao,
+                    canNang = request.yt_canNang,
+                    tinhTrangSucKhoe = request.yt_tinhTrangSucKhoe,
+                    benhTat = request.yt_benhTat,
+                    luuY = request.yt_luuY,
+                    khuyetTat = request.yt_khuyetTat,
+                    maNhanVien = request.yt_maNhanVien
                 },
                 LichSuBanThan = new LichSuBanThan()
                 {
-                    lsbt_biBatDiTu = request.lsbt_biBatDiTu,
-                    lsbt_thamGiaChinhTri = request.lsbt_thamGiaChinhTri,
-                    lsbt_thanNhanNuocNgoai = request.lsbt_thanNhanNuocNgoai,
-                    lsbt_maNhanVien = request.lsbt_maNhanVien
+                    biBatDiTu = request.biBatDiTu,
+                    thamGiaChinhTri = request.thamGiaChinhTri,
+                    thanNhanNuocNgoai = request.thanNhanNuocNgoai,
+                    maNhanVien = request.maNhanVien
                 },
                 LienHeKhanCap = new LienHeKhanCap()
                 {
-                    lhkc_hoTen = request.lhkc_hoTen,
-                    lhkc_quanHe = request.lhkc_quanHe,
-                    lhkc_dienThoai = request.lhkc_dienThoai,
-                    lhkc_email = request.lhkc_email,
-                    lhkc_diaChi = request.lhkc_diaChi,
-                    lhkc_maNhanVien = request.lhkc_maNhanVien,
+                    hoTen = request.hoTen,
+                    quanHe = request.lhkc_quanHe,
+                    dienThoai = request.lhkc_dienThoai,
+                    email = request.lhkc_email,
+                    diaChi = request.lhkc_diaChi,
+                    maNhanVien = request.lhkc_maNhanVien,
                 }
 
             };
@@ -140,14 +140,14 @@ namespace HRMSolution.Application.Catalog.NhanViens
         {
             var nhanVien = await _context.nhanViens.FindAsync(id);
 
-            var id_lhkc = await _context.lienHeKhanCaps.Where(x => x.lhkc_maNhanVien == id).FirstOrDefaultAsync();
-            var lhkc = await _context.lienHeKhanCaps.FindAsync(id_lhkc.lhkc_id);
+            var id_lhkc = await _context.lienHeKhanCaps.Where(x => x.maNhanVien == id).FirstOrDefaultAsync();
+            var lhkc = await _context.lienHeKhanCaps.FindAsync(id_lhkc.id);
 
-            var id_yt = await _context.yTes.Where(x => x.yt_maNhanVien == id).FirstOrDefaultAsync();
-            var yt = await _context.yTes.FindAsync(id_yt.yt_id);
+            var id_yt = await _context.yTes.Where(x => x.maNhanVien == id).FirstOrDefaultAsync();
+            var yt = await _context.yTes.FindAsync(id_yt.id);
 
-            var id_lsbt = await _context.lichSuBanThans.Where(x => x.lsbt_maNhanVien == id).FirstOrDefaultAsync();
-            var lsbt = await _context.lichSuBanThans.FindAsync(id_lsbt.lsbt_id);
+            var id_lsbt = await _context.lichSuBanThans.Where(x => x.maNhanVien == id).FirstOrDefaultAsync();
+            var lsbt = await _context.lichSuBanThans.FindAsync(id_lsbt.id);
 
             if (nhanVien == null) throw new HRMException($"Không tìm thấy nhân viên có mã nhân viên là : {id}");
 
@@ -209,21 +209,21 @@ namespace HRMSolution.Application.Catalog.NhanViens
             nhanVien.idDanToc = request.idDanToc;
             nhanVien.idTonGiao = request.idTonGiao;
             nhanVien.idNgachCongChuc = request.idNgachCongChuc;
-            yt.yt_nhomMau = request.yt_nhomMau;
-            yt.yt_chieuCao = request.yt_chieuCao;
-            yt.yt_canNang = request.yt_canNang;
-            yt.yt_tinhTrangSucKhoe = request.yt_tinhTrangSucKhoe;
-            yt.yt_benhTat = request.yt_benhTat;
-            yt.yt_luuY = request.yt_luuY;
-            yt.yt_khuyetTat = request.yt_khuyetTat;
-            lsbt.lsbt_biBatDiTu = request.lsbt_biBatDiTu;
-            lsbt.lsbt_thamGiaChinhTri = request.lsbt_thamGiaChinhTri;
-            lsbt.lsbt_thanNhanNuocNgoai = request.lsbt_thanNhanNuocNgoai;
-            lhkc.lhkc_hoTen = request.lhkc_hoTen;
-            lhkc.lhkc_quanHe = request.lhkc_quanHe;
-            lhkc.lhkc_dienThoai = request.lhkc_dienThoai;
-            lhkc.lhkc_email = request.lhkc_email;
-            lhkc.lhkc_diaChi = request.lhkc_diaChi;
+            yt.nhomMau = request.yt_nhomMau;
+            yt.chieuCao = request.yt_chieuCao;
+            yt.canNang = request.yt_canNang;
+            yt.tinhTrangSucKhoe = request.yt_tinhTrangSucKhoe;
+            yt.benhTat = request.yt_benhTat;
+            yt.luuY = request.yt_luuY;
+            yt.khuyetTat = request.yt_khuyetTat;
+            lsbt.biBatDiTu = request.lsbt_biBatDiTu;
+            lsbt.thamGiaChinhTri = request.lsbt_thamGiaChinhTri;
+            lsbt.thanNhanNuocNgoai = request.lsbt_thanNhanNuocNgoai;
+            lhkc.hoTen = request.hoTen;
+            lhkc.quanHe = request.lhkc_quanHe;
+            lhkc.dienThoai = request.lhkc_dienThoai;
+            lhkc.email = request.lhkc_email;
+            lhkc.diaChi = request.lhkc_diaChi;
 
             return await _context.SaveChangesAsync();
         }
@@ -571,10 +571,10 @@ namespace HRMSolution.Application.Catalog.NhanViens
                         join hn in _context.danhMucHonNhans on nv.idDanhMucHonNhan equals hn.id
                         join dt in _context.danhMucDanTocs on nv.idDanToc equals dt.id
                         join tg in _context.danhMucTonGiaos on nv.idTonGiao equals tg.id
-                        join lhkc in _context.lienHeKhanCaps on nv.maNhanVien equals lhkc.lhkc_maNhanVien
+                        join lhkc in _context.lienHeKhanCaps on nv.maNhanVien equals lhkc.maNhanVien
                         join ncc in _context.danhMucNgachCongChucs on nv.idNgachCongChuc equals ncc.id
-                        join yt in _context.yTes on nv.maNhanVien equals yt.yt_maNhanVien
-                        join lsbt in _context.lichSuBanThans on nv.maNhanVien equals lsbt.lsbt_maNhanVien
+                        join yt in _context.yTes on nv.maNhanVien equals yt.maNhanVien
+                        join lsbt in _context.lichSuBanThans on nv.maNhanVien equals lsbt.maNhanVien
 
                         where nv.maNhanVien == maNhanVien
                         select new
@@ -622,12 +622,12 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 email = x.nv.email,
                 facebook = x.nv.facebook,
                 skype = x.nv.skype,
-                idLhkt = x.lhkc.lhkc_id,
-                lhkcHoTen = x.lhkc.lhkc_hoTen,
-                lhkcQuanHe = x.lhkc.lhkc_quanHe,
-                lhkcDienThoai = x.lhkc.lhkc_dienThoai,
-                lhkcEmail = x.lhkc.lhkc_email,
-                lhkcDiaChi = x.lhkc.lhkc_diaChi,
+                idLhkt = x.lhkc.id,
+                lhkcHoTen = x.lhkc.hoTen,
+                lhkcQuanHe = x.lhkc.quanHe,
+                lhkcDienThoai = x.lhkc.dienThoai,
+                lhkcEmail = x.lhkc.email,
+                lhkcDiaChi = x.lhkc.diaChi,
                 ngheNghiep = x.nv.ngheNghiep,
                 coQuanTuyenDung = x.nv.coQuanTuyenDung,
                 chucVuHienTai = x.nv.chucVuHienTai,
@@ -658,18 +658,18 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 danhHieuCaoNhat = x.nv.danhHieuCaoNhat,
                 thuongBinh = x.nv.thuongBinh,
                 conChinhSach = x.nv.conChinhSach,
-                idYte = x.yt.yt_id,
-                ytNhomMau = x.yt.yt_nhomMau,
-                ytChieuCao = x.yt.yt_chieuCao,
-                ytCanNang = x.yt.yt_canNang,
-                ytTinhTrangSucKhoe = x.yt.yt_tinhTrangSucKhoe,
-                ytBenhTat = x.yt.yt_benhTat,
-                ytLuuY = x.yt.yt_luuY,
-                ytKhuyetTat = x.yt.yt_khuyetTat == true ? "Có" : "Không",
-                idLichSuBanThan = x.lsbt.lsbt_id,
-                biBatDitu = x.lsbt.lsbt_biBatDiTu,
-                thamGiaChinhTri = x.lsbt.lsbt_thamGiaChinhTri,
-                thanNhanNuocNgoai = x.lsbt.lsbt_thanNhanNuocNgoai,
+                idYte = x.yt.id,
+                ytNhomMau = x.yt.nhomMau,
+                ytChieuCao = x.yt.chieuCao,
+                ytCanNang = x.yt.canNang,
+                ytTinhTrangSucKhoe = x.yt.tinhTrangSucKhoe,
+                ytBenhTat = x.yt.benhTat,
+                ytLuuY = x.yt.luuY,
+                ytKhuyetTat = x.yt.khuyetTat == true ? "Có" : "Không",
+                idLichSuBanThan = x.lsbt.id,
+                biBatDitu = x.lsbt.biBatDiTu,
+                thamGiaChinhTri = x.lsbt.thamGiaChinhTri,
+                thanNhanNuocNgoai = x.lsbt.thanNhanNuocNgoai,
                 anh = x.nv.anh,
                 laConChinhSach = x.nv.laConChinhSach,
                 laThuongBinh = x.nv.laThuongBinh,
@@ -699,7 +699,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
         public async Task<int> UpdateImage(string id, NhanVienUpdateImageRequest request)
         {
             var anh = await _context.nhanViens.FindAsync(id);
-            if (anh == null) throw new HRMException($"Không tìm thấy danh mục chức danh có id: {id }");
+            if (anh == null) throw new HRMException($"Không tìm thấy nhân viên có id: {id }");
 
             anh.anh = await this.SaveFile(request.anh);
 

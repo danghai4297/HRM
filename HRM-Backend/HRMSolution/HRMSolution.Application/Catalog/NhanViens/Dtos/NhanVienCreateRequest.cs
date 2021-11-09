@@ -18,7 +18,7 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
         public string email { get; set; }
         public string facebook { get; set; }
         public string skype { get; set; }
-        public int? maSoThue { get; set; }
+        public string maSoThue { get; set; }
         public string cccd { get; set; }
         public string noiCapCCCD { get; set; }
         public DateTime ngayCapCCCD { get; set; }
@@ -70,12 +70,12 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
         public int idNgachCongChuc { get; set; }
 
         public string yt_nhomMau { get; set; }
-        public float? yt_chieuCao { get; set; }
-        public float? yt_canNang { get; set; }
+        public float yt_chieuCao { get; set; }
+        public float yt_canNang { get; set; }
         public string yt_tinhTrangSucKhoe { get; set; }
         public string yt_benhTat { get; set; }
         public string yt_luuY { get; set; }
-        public bool? yt_khuyetTat { get; set; }
+        public bool yt_khuyetTat { get; set; }
         public string yt_maNhanVien { get; set; }
         public string lhkc_hoTen { get; set; }
         public string lhkc_quanHe { get; set; }
@@ -83,10 +83,10 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
         public string lhkc_email { get; set; }
         public string lhkc_diaChi { get; set; }
         public string lhkc_maNhanVien { get; set; }
-        public string lsbt_biBatDiTu { get; set; }
-        public string lsbt_thamGiaChinhTri { get; set; }
-        public string lsbt_thanNhanNuocNgoai { get; set; }
-        public string lsbt_maNhanVien { get; set; }
+        public string biBatDiTu { get; set; }
+        public string thamGiaChinhTri { get; set; }
+        public string thanNhanNuocNgoai { get; set; }
+        public string maNhanVien { get; set; }
 
         //public YTeCreateRequest YTe { get; set; }
         //public LienHeKhanCapCreateRequest LienHeKhanCap { get; set; }

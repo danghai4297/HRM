@@ -12,12 +12,12 @@ namespace HRMSolution.Data.Configurations
         public void Configure(EntityTypeBuilder<LichSuBanThan> builder)
         {
             builder.ToTable("LichSuBanThan");
-            builder.HasKey(x => x.lsbt_id);
-            builder.Property(x => x.lsbt_id).UseIdentityColumn();
-            builder.Property(x => x.lsbt_biBatDiTu).HasMaxLength(500);
-            builder.Property(x => x.lsbt_thamGiaChinhTri).HasMaxLength(500);
-            builder.Property(x => x.lsbt_thanNhanNuocNgoai).HasMaxLength(500);
-            builder.Property(x => x.lsbt_maNhanVien).IsRequired();
+            builder.HasKey(x => x.id);
+            builder.Property(x => x.id).UseIdentityColumn();
+            builder.Property(x => x.biBatDiTu).HasMaxLength(500);
+            builder.Property(x => x.thamGiaChinhTri).HasMaxLength(500);
+            builder.Property(x => x.thanNhanNuocNgoai).HasMaxLength(500);
+            builder.Property(x => x.maNhanVien).IsRequired();
         }
     }
 }

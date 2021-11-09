@@ -20,6 +20,18 @@ namespace HRMSolution.Application.Catalog.HopDongs
         }
         public async Task<int> Create(HopDongCreateRequest request)
         {
+            var queryHopDong = await _context.hopDongs.Where(x => x.maNhanVien == request.maNhanVien && x.trangThai == true).FirstOrDefaultAsync();
+
+            var hopDong_update = await _context.hopDongs.FindAsync(queryHopDong.maHopDong);
+
+            hopDong_update.trangThai = false;
+
+            var queryLuong = await _context.luongs.Where(x => x.maHopDong == queryHopDong.maHopDong && x.trangThai == true).FirstOrDefaultAsync();
+
+            var luong_update = await _context.luongs.FindAsync(queryLuong.id);
+
+            luong_update.trangThai = false;
+
             var hopDong = new HopDong()
             {
                 maHopDong = request.maHopDong,

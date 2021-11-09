@@ -94,15 +94,15 @@ namespace HRMSolution.Data.EF
             modelBuilder.Entity<NhanVien>()
                 .HasOne(x => x.LichSuBanThan)
                 .WithOne(p => p.NhanVien)
-                .HasForeignKey<LichSuBanThan>(x => x.lsbt_maNhanVien);
+                .HasForeignKey<LichSuBanThan>(x => x.maNhanVien);
             modelBuilder.Entity<NhanVien>()
                 .HasOne(x => x.LienHeKhanCap)
                 .WithOne(p => p.NhanVien)
-                .HasForeignKey<LienHeKhanCap>(x => x.lhkc_maNhanVien);
+                .HasForeignKey<LienHeKhanCap>(x => x.maNhanVien);
             modelBuilder.Entity<NhanVien>()
                 .HasOne(x => x.YTe)
                 .WithOne(p => p.NhanVien)
-                .HasForeignKey<YTe>(x => x.yt_maNhanVien);
+                .HasForeignKey<YTe>(x => x.maNhanVien);
             modelBuilder.Entity<NhanVien>()
                 .HasOne(x => x.DanhMucNgachCongChuc)
                 .WithMany(x => x.NhanViens)

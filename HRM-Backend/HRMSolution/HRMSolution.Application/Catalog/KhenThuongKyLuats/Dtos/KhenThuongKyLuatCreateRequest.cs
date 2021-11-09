@@ -9,8 +9,7 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats.Dtos
         public int idDanhMucKhenThuong { get; set; }
         public string noiDung { get; set; }
         public string lyDo { get; set; }
-        public bool? loai { get; set; }
-        public string anh { get; set; }
+        public bool loai { get; set; }
         public string maNhanVien { get; set; }
     }
 }

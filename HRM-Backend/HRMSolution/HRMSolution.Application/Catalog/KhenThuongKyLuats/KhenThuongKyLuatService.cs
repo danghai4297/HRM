@@ -8,15 +8,22 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using HRMSolution.Data.Entities;
 using HRMSolution.Utilities.Exceptions;
+using System.Net.Http.Headers;
+using HRMSolution.Application.Common;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
 {
     public class KhenThuongKyLuatService : IKhenThuongKyLuatService
     {
         private readonly HRMDbContext _context;
-        public KhenThuongKyLuatService(HRMDbContext context)
+        private readonly IStorageService _storageService;
+        private const string USER_CONTENT_FOLDER_NAME = "user-content";
+        public KhenThuongKyLuatService(HRMDbContext context, IStorageService storageService)
         {
             _context = context;
+            _storageService = storageService;
         }
         public async Task<int> Create(KhenThuongKyLuatCreateRequest request)
         {
@@ -26,12 +33,12 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                 noiDung = request.noiDung,
                 lyDo = request.lyDo,
                 loai = request.loai,
-                anh = request.anh,
                 maNhanVien = request.maNhanVien
             };
             _context.khenThuongKyLuats.Add(ktkl);
             return await _context.SaveChangesAsync();
         }
+
 
         public async Task<int> Delete(int idDanhMucKTKL)
         {
@@ -130,10 +137,26 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
             danhMucKTKL.noiDung = request.noiDung;
             danhMucKTKL.lyDo = request.lyDo;
             danhMucKTKL.loai = request.loai;
-            danhMucKTKL.anh = request.anh;
             danhMucKTKL.maNhanVien = request.maNhanVien;
 
             return await _context.SaveChangesAsync();
+        }
+
+        public async Task<int> UpdateImage(int id, KhenThuongKyLuatUpdateRequest request)
+        {
+            var anh = await _context.khenThuongKyLuats.FindAsync(id);
+            if (anh == null) throw new HRMException($"Không tìm thấy khen thưởng kỷ luật có id: {id}");
+
+            anh.anh = await this.SaveFile(request.anh);
+
+            return await _context.SaveChangesAsync();
+        }
+        private async Task<string> SaveFile(IFormFile file)
+        {
+            var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(originalFileName)}";
+            await _storageService.SaveFileAsync(file.OpenReadStream(), fileName);
+            return "/" + USER_CONTENT_FOLDER_NAME + "/" + fileName;
         }
     }
 }

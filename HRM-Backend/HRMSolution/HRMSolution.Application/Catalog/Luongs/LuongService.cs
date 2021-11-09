@@ -21,6 +21,12 @@ namespace HRMSolution.Application.Catalog.Luongs
 
         public async Task<int> Create(LuongCreateRequest request)
         {
+            var query = await _context.luongs.Where(x => x.maHopDong == request.maHopDong && x.trangThai == true).FirstOrDefaultAsync();
+
+            var luong_update = await _context.luongs.FindAsync(query.id);
+
+            luong_update.trangThai = false;
+
             var luong = new Luong()
             {
                 maHopDong = request.maHopDong,
@@ -38,6 +44,7 @@ namespace HRMSolution.Application.Catalog.Luongs
                 trangThai = true
             };
             _context.luongs.Add(luong);
+
             return await _context.SaveChangesAsync();
         }
 

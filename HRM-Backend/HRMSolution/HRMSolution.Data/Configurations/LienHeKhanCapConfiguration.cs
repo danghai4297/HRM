@@ -12,14 +12,14 @@ namespace HRMSolution.Data.Configurations
         public void Configure(EntityTypeBuilder<LienHeKhanCap> builder)
         {
             builder.ToTable("LienHeKhanCap");
-            builder.HasKey(x => x.lhkc_id);
-            builder.Property(x => x.lhkc_id).UseIdentityColumn();
-            builder.Property(x => x.lhkc_hoTen).HasMaxLength(30).IsRequired();
-            builder.Property(x => x.lhkc_quanHe).HasMaxLength(30).IsRequired();
-            builder.Property(x => x.lhkc_dienThoai).HasMaxLength(30).IsRequired();
-            builder.Property(x => x.lhkc_email).HasMaxLength(30);
-            builder.Property(x => x.lhkc_diaChi).HasMaxLength(150).IsRequired();
-            builder.Property(x => x.lhkc_maNhanVien).HasMaxLength(10).IsRequired();
+            builder.HasKey(x => x.id);
+            builder.Property(x => x.id).UseIdentityColumn();
+            builder.Property(x => x.hoTen).HasMaxLength(30).IsRequired();
+            builder.Property(x => x.quanHe).HasMaxLength(30).IsRequired();
+            builder.Property(x => x.dienThoai).HasMaxLength(30).IsRequired();
+            builder.Property(x => x.email).HasMaxLength(30);
+            builder.Property(x => x.diaChi).HasMaxLength(150).IsRequired();
+            builder.Property(x => x.maNhanVien).HasMaxLength(10).IsRequired();
         }
     }
 }

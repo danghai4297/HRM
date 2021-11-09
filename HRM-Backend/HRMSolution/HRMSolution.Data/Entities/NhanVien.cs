@@ -20,7 +20,7 @@ namespace HRMSolution.Data.Entities
         public string email { get; set; }
         public string facebook { get; set; }
         public string skype { get; set; }
-        public int? maSoThue { get; set; }
+        public string maSoThue { get; set; }
         public string cccd { get; set; }
         public string noiCapCCCD { get; set; }
         public DateTime ngayCapCCCD { get; set; }
