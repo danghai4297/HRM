@@ -233,9 +233,9 @@ function AddSalaryForm(props) {
           `Sửa thông tin lương cho nhân viên ${dataLDetail.tenNhanVien} thành công`
         );
       } else {
-        if (query.get("checkMaLuong") !== "0") {
-          await PutApi.PutTLL(query.get("maHopDong"));
-        }
+        // if (query.get("checkMaLuong") !== "0") {
+        //   await PutApi.PutTLL(query.get("maHopDong"));
+        // }
         await ProductApi.PostL(data);
         success(
           `thêm thông tin lương cho nhân viên ${dataLDetail.tenNhanVien} thành công`
@@ -605,7 +605,7 @@ function AddSalaryForm(props) {
                         value={field.value}
                         onChange={(event) => {
                           field.onChange(event);
-                          setEndDate(event);
+                         // setEndDate(event);
                         }}
                         {...field._d}
                       />
@@ -635,10 +635,12 @@ function AddSalaryForm(props) {
                         }
                         placeholder="DD/MM/YYYY"
                         format="DD/MM/YYYY"
-                        value={endDateRs}
-                        // onChange={(event) => {
-                        //   field.onChange(event);
-                        // }}
+                        //value={endDateRs}
+                        value={field.value}
+                        onChange={(event) => {
+                          field.onChange(event);
+                         // setEndDate(event);
+                        }}
                         {...field._d}
                       />
                     )}

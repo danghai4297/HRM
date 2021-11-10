@@ -101,7 +101,7 @@ function AddContractForm(props) {
           ? responseAllHD[responseAllHD.length - 1].id
           : undefined;
       console.log(idIncre);
-      const increCode = Number(idIncre.slice(2)) + 1;
+      const increCode = Number(idIncre.slice(2)) + 10000;
       const rsCode = "HD";
       if (increCode < 10) {
         setRsId(rsCode.concat(`0${increCode}`));
