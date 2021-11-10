@@ -23,6 +23,8 @@ namespace HRMSolution.Application.System.Users.Dtos
 
         [Display(Name = "Mã nhân viên")]
         public string maNhanVien { get; set; }
+        [Display(Name = "Mật Khẩu")]
+        public string password { get; set; }
 
         [Display(Name = "Ngày sinh")]
         public DateTime Dob { get; set; }

@@ -1,5 +1,6 @@
 ﻿using HRMSolution.Application.System.Users.Common;
 using HRMSolution.Application.System.Users.Dtos;
+using HRMSolution.Data.EF;
 using HRMSolution.Data.Entities;
 using HRMSolution.Utilities.Exceptions;
 using Microsoft.AspNetCore.Identity;
@@ -18,17 +19,19 @@ namespace HRMSolution.Application.System.Users
 {
     public class UserService : IUserService
     {
+        private readonly HRMDbContext _context;
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly RoleManager<AppRole> _roleManager;
         private readonly IConfiguration _config;
         public UserService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<AppRole> roleManager,
-            IConfiguration config)
+            IConfiguration config, HRMDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
             _config = config;
+            _context = context;
         }
 
         public async Task<ApiResult<string>> Authencate(LoginRequest request)
@@ -112,8 +115,8 @@ namespace HRMSolution.Application.System.Users
 
         public async Task<List<UserVm>> GetAll()
         {
-            var query = from x in _userManager.Users select x;
-
+            var query = from x in _userManager.Users
+                        select x;
             var data = await query.Select(x => new UserVm()
             {
                 Id = x.Id,
@@ -123,6 +126,7 @@ namespace HRMSolution.Application.System.Users
                 Email = x.Email,
                 maNhanVien = x.maNhanVien,
                 Dob = x.ngaySinh,
+                password = x.PasswordHash,
             }).ToListAsync();
 
             return data;
@@ -145,31 +149,29 @@ namespace HRMSolution.Application.System.Users
                 Id = user.Id,
                 UserName = user.UserName,
                 Roles = roles,
-                maNhanVien = user.maNhanVien
+                maNhanVien = user.maNhanVien,
+                password =  user.PasswordHash
             };
             return new ApiSuccessResult<UserVm>(userVm);
         }
 
-        public async Task<ApiResult<bool>> Register(RegisterRequest request)
+        public async Task<ApiResult<bool>> Register(string maNhanVien, RegisterRequest request)
         {
             var user = await _userManager.FindByNameAsync(request.UserName);
+            var nhanVien = await _context.nhanViens.FindAsync(maNhanVien);
             if (user != null)
             {
                 return new ApiErrorResult<bool>("Tài khoản đã tồn tại");
             }
-            if (await _userManager.FindByEmailAsync(request.Email) != null)
-            {
-                return new ApiErrorResult<bool>("Emai đã tồn tại");
-            }
 
             user = new AppUser()
             {
-                ngaySinh = request.Dob,
-                Email = request.Email,
-                hoTen = request.FullName,
+                ngaySinh = nhanVien.ngaySinh,
+                Email = nhanVien.email,
+                hoTen = nhanVien.hoTen,
                 UserName = request.UserName,
-                PhoneNumber = request.PhoneNumber,
-                maNhanVien = request.maNhanVien
+                PhoneNumber = nhanVien.diDong,
+                maNhanVien = maNhanVien,
             };
             var result = await _userManager.CreateAsync(user, request.Password);
             if (result.Succeeded)
@@ -220,6 +222,7 @@ namespace HRMSolution.Application.System.Users
             user.hoTen = request.FullName;
             user.PhoneNumber = request.PhoneNumber;
             user.maNhanVien = request.maNhanVien;
+            
 
             var result = await _userManager.UpdateAsync(user);
             if (result.Succeeded)

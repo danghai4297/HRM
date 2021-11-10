@@ -12,7 +12,7 @@ namespace HRMSolution.Application.System.Users
     {
         Task<ApiResult<string>> Authencate(LoginRequest request);
 
-        Task<ApiResult<bool>> Register(RegisterRequest request);
+        Task<ApiResult<bool>> Register(string maNhanVien, RegisterRequest request);
 
         Task<ApiResult<bool>> Update(Guid id, UserUpdateRequest request);
 

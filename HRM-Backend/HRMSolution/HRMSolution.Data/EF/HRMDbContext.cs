@@ -46,7 +46,9 @@ namespace HRMSolution.Data.EF
         public DbSet<KhenThuongKyLuat> khenThuongKyLuats {get; set; }
         public DbSet<LichSu> lichSus { get; set; }
         public DbSet<DanhMucNhomLuong> danhMucNhomLuongs { get; set; }
-        
+        public DbSet<AppUser> appUsers { get; set; }
+        public DbSet<AppRole> appRoles { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

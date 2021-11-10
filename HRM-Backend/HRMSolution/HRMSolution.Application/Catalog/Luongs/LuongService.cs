@@ -23,27 +23,49 @@ namespace HRMSolution.Application.Catalog.Luongs
         {
             var query = await _context.luongs.Where(x => x.maHopDong == request.maHopDong && x.trangThai == true).FirstOrDefaultAsync();
 
-            var luong_update = await _context.luongs.FindAsync(query.id);
-
-            luong_update.trangThai = false;
-
-            var luong = new Luong()
+            if(query == null)
             {
-                maHopDong = request.maHopDong,
-                idNhomLuong = request.idNhomLuong,
-                heSoLuong = request.heSoLuong,
-                bacLuong = request.bacLuong,
-                luongCoBan = request.luongCoBan,
-                phuCapTrachNhiem = request.phuCapTrachNhiem,
-                phuCapKhac = request.phuCapKhac,
-                tongLuong = request.tongLuong,
-                thoiHanLenLuong = request.thoiHanLenLuong,
-                ngayHieuLuc = request.ngayHieuLuc,
-                ngayKetThuc = request.ngayKetThuc,
-                ghiChu = request.ghiChu,
-                trangThai = true
-            };
-            _context.luongs.Add(luong);
+                var luong = new Luong()
+                {
+                    maHopDong = request.maHopDong,
+                    idNhomLuong = request.idNhomLuong,
+                    heSoLuong = request.heSoLuong,
+                    bacLuong = request.bacLuong,
+                    luongCoBan = request.luongCoBan,
+                    phuCapTrachNhiem = request.phuCapTrachNhiem,
+                    phuCapKhac = request.phuCapKhac,
+                    tongLuong = request.tongLuong,
+                    thoiHanLenLuong = request.thoiHanLenLuong,
+                    ngayHieuLuc = request.ngayHieuLuc,
+                    ngayKetThuc = request.ngayKetThuc,
+                    ghiChu = request.ghiChu,
+                    trangThai = true
+                };
+                _context.luongs.Add(luong);
+            } else
+            {
+                var luong_update = await _context.luongs.FindAsync(query.id);
+
+                luong_update.trangThai = false;
+
+                var luong = new Luong()
+                {
+                    maHopDong = request.maHopDong,
+                    idNhomLuong = request.idNhomLuong,
+                    heSoLuong = request.heSoLuong,
+                    bacLuong = request.bacLuong,
+                    luongCoBan = request.luongCoBan,
+                    phuCapTrachNhiem = request.phuCapTrachNhiem,
+                    phuCapKhac = request.phuCapKhac,
+                    tongLuong = request.tongLuong,
+                    thoiHanLenLuong = request.thoiHanLenLuong,
+                    ngayHieuLuc = request.ngayHieuLuc,
+                    ngayKetThuc = request.ngayKetThuc,
+                    ghiChu = request.ghiChu,
+                    trangThai = true
+                };
+                _context.luongs.Add(luong);
+            }
 
             return await _context.SaveChangesAsync();
         }
