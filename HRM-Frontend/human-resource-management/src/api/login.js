@@ -6,6 +6,12 @@ const LoginApi = {
       localStorage.setItem("resultObj", res.resultObj);
     });
   },
+
+  //get all tài khoản
+  getAllAcc: () => {
+    const url = "/User";
+    return axiosClient.get(url);
+  },
 };
 
 export default LoginApi;

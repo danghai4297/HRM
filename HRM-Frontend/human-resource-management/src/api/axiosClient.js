@@ -11,8 +11,8 @@ const axiosClient = axios.create({
   paramsSerializer: (params) => queryString.stringify(params),
 });
 axiosClient.interceptors.request.use(async (config) => {
-  // Handle token here ...
-  config.headers["Authorization"] = "Bearer " + localStorage.getItem("resultObj");
+  config.headers["Authorization"] =
+    "Bearer " + localStorage.getItem("resultObj");
   return config;
 });
 axiosClient.interceptors.response.use(
