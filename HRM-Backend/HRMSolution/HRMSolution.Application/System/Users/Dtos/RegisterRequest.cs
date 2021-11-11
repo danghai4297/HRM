@@ -7,7 +7,7 @@ namespace HRMSolution.Application.System.Users.Dtos
 {
     public class RegisterRequest
     {
-
+        public string maNhanVien { get; set; }
         [Display(Name = "Tài khoản")]
         public string UserName { get; set; }
 
@@ -18,5 +18,6 @@ namespace HRMSolution.Application.System.Users.Dtos
         [Display(Name = "Xác nhận mật khẩu")]
         [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
+
     }
 }

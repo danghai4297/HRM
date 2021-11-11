@@ -155,10 +155,10 @@ namespace HRMSolution.Application.System.Users
             return new ApiSuccessResult<UserVm>(userVm);
         }
 
-        public async Task<ApiResult<bool>> Register(string maNhanVien, RegisterRequest request)
+        public async Task<ApiResult<bool>> Register(RegisterRequest request)
         {
             var user = await _userManager.FindByNameAsync(request.UserName);
-            var nhanVien = await _context.nhanViens.FindAsync(maNhanVien);
+            var nhanVien = await _context.nhanViens.FindAsync(request.maNhanVien);
             if (user != null)
             {
                 return new ApiErrorResult<bool>("Tài khoản đã tồn tại");
@@ -171,7 +171,7 @@ namespace HRMSolution.Application.System.Users
                 hoTen = nhanVien.hoTen,
                 UserName = request.UserName,
                 PhoneNumber = nhanVien.diDong,
-                maNhanVien = maNhanVien,
+                maNhanVien = request.maNhanVien,
             };
             var result = await _userManager.CreateAsync(user, request.Password);
             if (result.Succeeded)

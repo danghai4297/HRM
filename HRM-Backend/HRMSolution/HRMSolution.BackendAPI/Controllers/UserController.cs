@@ -36,13 +36,13 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok(result);
         }
 
-        [HttpPost("create/{maNhanVien}")]
-        public async Task<IActionResult> Create(string maNhanVien, [FromBody] RegisterRequest request)
+        [HttpPost("create")]
+        public async Task<IActionResult> Create([FromBody] RegisterRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var result = await _userService.Register(maNhanVien, request);
+            var result = await _userService.Register(request);
             if (!result.IsSuccessed)
             {
                 return BadRequest(result);
