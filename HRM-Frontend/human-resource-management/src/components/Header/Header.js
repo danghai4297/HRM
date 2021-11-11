@@ -8,7 +8,7 @@ function Header() {
   const { account, setAccount } = useContext(AccountContext);
   let history = useHistory();
   let logout = () => {
-    localStorage.removeItem("resultObj");
+    sessionStorage.removeItem("resultObj");
     history.replace("/login");
     setAccount(false);
   };
@@ -26,7 +26,7 @@ function Header() {
                 />
               </div>
               <div className="account-name">
-                <h5 className="account-style">{localStorage.getItem("resultObj") && jwt_decode(localStorage.getItem("resultObj")).givenName}</h5>
+                <h5 className="account-style">{sessionStorage.getItem("resultObj") && jwt_decode(sessionStorage.getItem("resultObj")).givenName}</h5>
               </div>
             </div>
           </button>
@@ -38,7 +38,7 @@ function Header() {
                   <FontAwesomeIcon icon={["fas", "user-circle"]} />
                 </div>
                 <div>
-                  <h5>{localStorage.getItem("resultObj") && jwt_decode(localStorage.getItem("resultObj")).givenName}</h5>
+                  <h5>{sessionStorage.getItem("resultObj") && jwt_decode(sessionStorage.getItem("resultObj")).givenName}</h5>
                 </div>
                 <div>
                   <Link to="/change" onClick={() => setAccount(false)}>

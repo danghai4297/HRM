@@ -26,10 +26,10 @@ function LogIn(props) {
   const onHandleSubmit = async (data) => {
     try {
       await LoginApi.PostLoginAccount(data);
-      if (jwt_decode(localStorage.getItem("resultObj")).role === "user") {
+      if (jwt_decode(sessionStorage.getItem("resultObj")).role === "user") {
         history.replace("/home");
       } else if (
-        jwt_decode(localStorage.getItem("resultObj")).role === "admin"
+        jwt_decode(sessionStorage.getItem("resultObj")).role === "admin"
       ) {
         history.replace("/category");
       }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./AddSalaryForm.scss";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -21,10 +21,7 @@ const schema = yup.object({
     .number()
     .nullable()
     .required("Nhóm lương không được bỏ trống."),
-  heSoLuong: yup
-    .number()
-    .nullable()
-    .required("Hệ số lương không được bỏ trống."),
+  heSoLuong: yup.number().typeError("Hệ số lương không được bỏ trống."),
   bacLuong: yup.string().nullable().required("Bậc lương không được bỏ trống."),
   ngayHieuLuc: yup
     .date()
@@ -33,38 +30,36 @@ const schema = yup.object({
   // ngayKetThuc: yup.date().nullable().required("Ngày có hiệu lực không được bỏ trống."),
   luongCoBan: yup
     .number()
-    .nullable()
-    .required("Lương cơ bản không được bỏ trống."),
+    .typeError("Lương cơ bản không được bỏ trống và phải là số."),
   phuCapTrachNhiem: yup
     .number()
-    .nullable()
-    .required("Phụ cấp chức vụ không được bỏ trống."),
+    .typeError("Phụ cấp chức vụ không được bỏ trống và phải là số."),
   phuCapKhac: yup
     .number()
-    .nullable()
-    .required("Phụ cấp khác không được bỏ trống."),
+    .typeError("Phụ cấp khác không được bỏ trống và phải là số."),
   tongLuong: yup
     .number()
-    .nullable()
-    .required("Tổng lương không được bỏ trống."),
+    .typeError("Tổng lương không được bỏ trống và phải là số."),
   thoiHanLenLuong: yup
     .string()
     .nullable()
     .required("thời hạn lên lương không được bỏ trống."),
   trangThai: yup.boolean(),
 });
+
 function AddSalaryForm(props) {
   let location = useLocation();
   let query = new URLSearchParams(location.search);
   // console.log(query.get("maLuong"));
+  const contractCode = query.get("maHopDong");
   const { error, warn, info, success } = useToast();
 
-  const [salary, setSalary] = useState();
-  //   heSoLuong: "",
-  //   luongCoBan: "",
-  //   phuCapTrachNhiem:"",
-  //   phuCapKhac:"",
-  // });
+  const [salary, setSalary] = useState({
+    heSoLuong: "",
+    luongCoBan: "",
+    phuCapTrachNhiem: "",
+    phuCapKhac: "",
+  });
   let { match, history } = props;
   let { id } = match.params;
 
@@ -84,6 +79,8 @@ function AddSalaryForm(props) {
   const [salaryTime, setSalaryTime] = useState();
   const [endDate, setEndDate] = useState();
   const [endDateRs, setEndDateRs] = useState();
+  const [dataAllHD, setDataAllHD] = useState([]);
+  const [rsSalary, setRsSalary] = useState(0);
 
   const cancel = () => {
     setShowDialog(false);
@@ -96,6 +93,8 @@ function AddSalaryForm(props) {
       try {
         const responseNL = await ProductApi.getAllDMNL();
         setDataNL(responseNL);
+        const responseAllHD = await ProductApi.getAllHd();
+        setDataAllHD(responseAllHD);
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa thông tin lương");
           const response = await ProductApi.getLDetail(id);
@@ -115,7 +114,7 @@ function AddSalaryForm(props) {
     luongCoBan: id !== undefined ? dataLDetail.luongCoBan : null,
     phuCapTrachNhiem: id !== undefined ? dataLDetail.phuCapTrachNhiem : null,
     phuCapKhac: id !== undefined ? dataLDetail.phuCapKhac : null,
-    tongLuong: id !== undefined ? dataLDetail.tongLuong : null,
+    tongLuong: id !== undefined ? dataLDetail.tongLuong : rsSalary,
     thoiHanLenLuong: id !== undefined ? dataLDetail.thoiHanLenLuong : null,
     ngayHieuLuc:
       id !== undefined
@@ -149,17 +148,12 @@ function AddSalaryForm(props) {
     getValues,
     control,
     reset,
+    watch,
     formState: { errors },
   } = useForm({
     defaultValues: intitalValue,
     resolver: yupResolver(schema),
   });
-  useEffect(() => {
-    if (dataLDetail) {
-      reset(intitalValue);
-    }
-  }, [dataLDetail]);
-  console.log(getValues("tongLuong"));
   const checkInputChange = () => {
     const values = getValues([
       "idNhomLuong",
@@ -193,47 +187,42 @@ function AddSalaryForm(props) {
     ];
     return JSON.stringify(values) === JSON.stringify(dfValue);
   };
+  useEffect(() => {
+    if (dataLDetail) {
+      reset(intitalValue);
+    }
+  }, [dataLDetail]);
 
-  const [rs, setRs] = useState();
-  // const handleOnChange = (e) => {
-  //   setSalary({
-  //     ...salary,
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
-  // useEffect(() => {
-  //   setRs(Number(salary.heSoLuong) * Number(salary.luongCoBan) + Number(salary.phuCapTrachNhiem)+ Number(salary.phuCapKhac));
-  // }, [salary]);
-  const [salary2, setSalary2] = useState({
-    heSoLuong: "",
-    luongCoBan: "",
-    phuCapTrachNhiem: "",
-    phuCapKhac: "",
-  });
   const handleOnChange = (e) => {
-    setSalary2({
-      ...salary2,
+    setSalary({
+      ...salary,
       [e.target.name]: e.target.value,
     });
   };
-  console.log(salary2);
-  useEffect(() => {
-    let rss = 0;
-    rss +=
-      Number(salary2.heSoLuong) * Number(salary2.luongCoBan) +
-      Number(salary2.phuCapKhac) +
-      Number(salary2.phuCapTrachNhiem);
-    setValue("tongLuong", rss);
-  }, [
-    salary2.heSoLuong,
-    salary2.luongCoBan,
-    salary2.phuCapKhac,
-    salary2.phuCapTrachNhiem,
-  ]);
+  console.log(salary);
 
   // useEffect(() => {
   //   reset(intitalValue.heSoLuong);
   // }, [intitalValue.heSoLuong]);
+
+  useEffect(() => {
+    let rss = 0;
+    rss +=
+      Number(salary.heSoLuong) * Number(salary.luongCoBan) +
+      Number(salary.phuCapKhac) +
+      Number(salary.phuCapTrachNhiem);
+    setValue("tongLuong", rss);
+  }, [
+    salary.heSoLuong,
+    salary.luongCoBan,
+    salary.phuCapKhac,
+    salary.phuCapTrachNhiem,
+  ]);
+
+  console.log(getValues("tongLuong"));
+  console.log(getValues("heSoLuong"));
+  console.log(getValues("luongCoBan"));
+  console.log(getValues("phuCapKhac"));
 
   const onHandleSubmit = async (data) => {
     console.log(data);
@@ -251,9 +240,6 @@ function AddSalaryForm(props) {
           `Sửa thông tin lương cho nhân viên ${dataLDetail.tenNhanVien} thành công`
         );
       } else {
-        if (query.get("checkMaLuong") !== "0") {
-          await PutApi.PutTLL(query.get("maHopDong"));
-        }
         await ProductApi.PostL(data);
         success(
           `thêm thông tin lương cho nhân viên ${dataLDetail.tenNhanVien} thành công`
@@ -280,24 +266,31 @@ function AddSalaryForm(props) {
   //console.log(getValues("ngayHieuLuc"));
   // console.log(moment(dataLDetail.ngayHieuLuc).add(3,"years"));
 
-  const calSalaryTime = (e) => {
-    setEndDate(e);
-    console.log(endDate);
-    if (salaryTime !== undefined && e !== undefined) {
-      setEndDateRs(e.add(salaryTime, "years"));
+  // const calSalaryTime = (e) => {
+  //   setEndDate(e);
+  //   console.log(endDate);
+  //   if (salaryTime !== undefined && e !== undefined) {
+  //     setEndDateRs(e.add(salaryTime, "years"));
+  //   }
+  //   return endDateRs;
+  // };
+  useEffect(() => {
+    if (
+      salaryTime !== undefined &&
+      endDate !== undefined &&
+      salaryTime !== 0 &&
+      endDate !== null
+    ) {
+      setEndDateRs(endDate.add(salaryTime, "years"));
+      setValue("ngayKetThuc", endDateRs)
     }
-    return endDateRs;
-  };
-  const cal = () => {
-    if (salaryTime !== undefined && getValues("ngayHieuLuc") !== undefined) {
-      setEndDateRs(getValues("ngayHieuLuc").add(salaryTime, "years"));
-    }
-    return endDateRs;
+    // return endDateRs;
     // setValue("ngayKetThuc",endDateRs);
-  };
-  // console.log(salaryTime);
-  // console.log(endDate);
-  // console.log(endDateRs);
+  }, [salaryTime, endDate]);
+
+  console.log(salaryTime);
+  console.log(endDate);
+  console.log(endDateRs);
 
   return (
     <>
@@ -356,14 +349,16 @@ function AddSalaryForm(props) {
                     <input
                       {...register("tongLuong")}
                       className="border-0"
+                      // value={rsSalary}
+                      // defaultValue={calSalary()}
                       readOnly
-                      // value={calSalary()}
                     ></input>
                   </span>
                   <button
                   // onClick={(e) => {
                   //   e.preventDefault();
-                  //   setValue("tongLuong",calSalary());
+                  //   setValue("tongLuong", rsSalary);
+                  //   //calSalary();
                   // }}
                   >
                     <FontAwesomeIcon
@@ -394,7 +389,18 @@ function AddSalaryForm(props) {
                         ? "form-control col-sm-6"
                         : "form-control col-sm-6 border-danger"
                     }
+                    list="contractCode"
+                    readOnly={contractCode ? true : false}
                   />
+                  <datalist id="contractCode">
+                    {dataAllHD
+                      .filter((item) => item.trangThai === "Kích hoạt")
+                      .map((item, key) => (
+                        <option key={key} value={item.id}>
+                          {item.tenNhanVien}
+                        </option>
+                      ))}
+                  </datalist>
                 </div>
               </div>
               <div className="col">
@@ -448,7 +454,9 @@ function AddSalaryForm(props) {
                   </label>
                   <input
                     type="text"
-                    {...register("heSoLuong",{onChange:(e)=> (handleOnChange(e))})}
+                    {...register("heSoLuong", {
+                      onChange: (e) => handleOnChange(e),
+                    })}
                     id="heSoLuong"
                     // value={salary.heSoLuong}
                     className={
@@ -493,7 +501,9 @@ function AddSalaryForm(props) {
                   </label>
                   <input
                     type="text"
-                    {...register("luongCoBan",{onChange:(e)=> (handleOnChange(e))})}
+                    {...register("luongCoBan", {
+                      onChange: (e) => handleOnChange(e),
+                    })}
                     id="luongCoBan"
                     className={
                       !errors.luongCoBan
@@ -515,8 +525,11 @@ function AddSalaryForm(props) {
                   </label>
                   <input
                     type="text"
-                    {...register("thoiHanLenLuong")}
+                    {...register("thoiHanLenLuong", {
+                      onChange: (e) => setSalaryTime(Number(e.target.value)),
+                    })}
                     id="thoiHanLenLuong"
+                    // onChange={(e)=>setSalaryTime(Number(e.target.value))}
                     className={
                       !errors.thoiHanLenLuong
                         ? "form-control col-sm-6 "
@@ -540,9 +553,10 @@ function AddSalaryForm(props) {
                   </label>
                   <input
                     type="text"
-                    {...register("phuCapTrachNhiem",{onChange:(e)=> (handleOnChange(e))})}
+                    {...register("phuCapTrachNhiem", {
+                      onChange: (e) => handleOnChange(e),
+                    })}
                     id="phuCapTrachNhiem"
-                    
                     className={
                       !errors.phuCapTrachNhiem
                         ? "form-control col-sm-6 "
@@ -564,7 +578,9 @@ function AddSalaryForm(props) {
                   </label>
                   <input
                     type="text"
-                    {...register("phuCapKhac",{onChange:(e)=> (handleOnChange(e))})}
+                    {...register("phuCapKhac", {
+                      onChange: (e) => handleOnChange(e),
+                    })}
                     id="phuCapKhac"
                     className={
                       !errors.phuCapKhac
@@ -602,6 +618,7 @@ function AddSalaryForm(props) {
                         value={field.value}
                         onChange={(event) => {
                           field.onChange(event);
+                          setEndDate(event);
                         }}
                         {...field._d}
                       />
@@ -621,7 +638,7 @@ function AddSalaryForm(props) {
                   <Controller
                     name="ngayKetThuc"
                     control={control}
-                    render={({ field, onChange }) => (
+                    render={({ field }) => (
                       <DatePicker
                         id="ngayKetThuc"
                         className={
@@ -631,10 +648,11 @@ function AddSalaryForm(props) {
                         }
                         placeholder="DD/MM/YYYY"
                         format="DD/MM/YYYY"
-                        value={cal}
-                        onChange={(event) => {
-                          field.onChange(event);
-                        }}
+                        // value={endDateRs}
+                        // value={field.value}
+                        // onChange={(event) => {
+                        //   field.value(event);
+                        // }}
                         {...field._d}
                       />
                     )}

@@ -27,20 +27,21 @@ function App() {
               <Redirect to="/login" />
             </Route>
             <Route exact path="/login">
-              {() => {
-                if (localStorage.getItem("resultObj") === null) {
+              <LogIn />
+              {/* {() => {
+                if (sessionStorage.getItem("resultObj") === null) {
                   return <LogIn />;
                 } else if (
-                  jwt_decode(localStorage.getItem("resultObj")).role === "user"
+                  jwt_decode(sessionStorage.getItem("resultObj")).role === "user"
                 ) {
                   return <Redirect to="/home" />;
                 } else if (
-                  jwt_decode(localStorage.getItem("resultObj")).role === "admin"
+                  jwt_decode(sessionStorage.getItem("resultObj")).role === "admin"
                 ) {
                   return <Redirect to="/category" />;
                 }
-              }}
-              </Route>
+              }} */}
+            </Route>
             <AccountContext.Provider value={{ account, setAccount }}>
               <ScreenProject />
             </AccountContext.Provider>

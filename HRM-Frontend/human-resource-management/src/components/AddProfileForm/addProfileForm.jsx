@@ -19,19 +19,18 @@ import Dialog from "../../components/Dialog/Dialog";
 import { useToast } from "../Toast/Toast";
 const phoneRex = /([\|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})\b/;
 const number = /^\d+$/;
+const tax = /((0)([0-7])([0-9]){8})$/g;
+const cccdRegex =/((0)([0-9]){2}([0-3]){1}([0-9]){8})$/g;
 const schema = yup.object({
   id: yup.string().nullable().required("Mã nhân viên không được bỏ trống."),
   hoTen: yup.string().nullable().required("Họ và tên không được bỏ trống."),
   gioiTinh: yup.boolean().nullable().required("Giới tính không được bỏ trống."),
-  idDanhMucHonNhan: yup
-    .number()
-    .nullable()
-    .required("Hôn nhân không được bỏ trống."),
+  idDanhMucHonNhan: yup.number().typeError("Hôn nhân không được bỏ trống."),
   ngaySinh: yup.date().nullable().required("Ngày sinh không được bỏ trống."),
   noiSinh: yup.string().nullable().required("Nơi sinh không được bỏ trống."),
-  idDanToc: yup.number().nullable().required("Dân Tộc không được bỏ trống."),
+  idDanToc: yup.number().typeError("Dân Tộc không được bỏ trống."),
   queQuan: yup.string().nullable().required("Nguyên quán không được bỏ trống."),
-  idTonGiao: yup.number().nullable().required("Tôn giáo không được bỏ trống."),
+  idTonGiao: yup.number().typeError("Tôn giáo không được bỏ trống."),
   thuongTru: yup
     .string()
     .nullable()
@@ -40,9 +39,7 @@ const schema = yup.object({
   // tamTru: yup.string().required("Tạm trú không được bỏ trống."),
   cccd: yup
     .string()
-    .matches(number, "CMND/CCCD không được bỏ trống.")
-    .min(9, "CMND phải có 9 số/CCCD phải có 12 số")
-    .max(12, "CMND phải có 9 số,CCCD phải có 12 số")
+    .matches(cccdRegex, "CMND/CCCD phải dãy số có 12 chữ số.")
     .nullable()
     .required("CMND/CCCD không được bỏ trống"),
   ngayCapCCCD: yup
@@ -70,12 +67,12 @@ const schema = yup.object({
   diDong: yup
     .string()
     .nullable()
-    .matches(phoneRex, "Số điện thoại phải là số.")
+    .matches(phoneRex, "Số điện thoại phải là dãy số.")
     .required("Số điện thoại không được bỏ trống"),
   dienThoai: yup
     .string()
     .nullable()
-    .matches(phoneRex, "Số điện thoại phải là số.")
+    .matches(phoneRex, "Số điện thoại phải là dãy số.")
     .required("Số điện thoại không được bỏ trống"),
   lhkc_hoTen: yup
     .string()
@@ -111,9 +108,10 @@ const schema = yup.object({
     .nullable()
     .required("Tính chất lao động không được bỏ trống."),
   maSoThue: yup
-    .number()
+    .string()
+    .matches(tax, "Mã số thuế cá nhân phải là dãy số có 10 chữ số.")
     .nullable()
-    .required("Tính chất lao động không được bỏ trống."),
+    .required("Mã số thuế cá nhân không được bỏ trống."),
   congViecChinh: yup
     .string()
     .nullable()
@@ -830,7 +828,7 @@ function AddProfileForm(props) {
                     {...register("idDanToc")}
                     id="idDanToc"
                     className={
-                      !errors.danToc
+                      !errors.idDanToc
                         ? "form-control col-sm-6 custom-select"
                         : "form-control col-sm-6 border-danger custom-select"
                     }
@@ -1448,7 +1446,7 @@ function AddProfileForm(props) {
                 </div>
               </div>
             </div>
-            <input type="text" {...register("lhkc_maNhanVien")} value={rsId} />
+            <input style={{display:"none"}} type="text" {...register("lhkc_maNhanVien")} value={rsId} />
           </div>
           {/* Container thông tin công việc*/}
           <div className="container-div-form">
@@ -2332,6 +2330,7 @@ function AddProfileForm(props) {
                     className="form-control col-sm-6"
                   />
                   <input
+                  style={{display:"none"}}
                     type="text"
                     {...register("yt_maNhanVien")}
                     value={rsId}
@@ -2346,7 +2345,7 @@ function AddProfileForm(props) {
             <div className="row">
               <div className="col">
                 <div class="form-group">
-                  <label class="justify-content-start" htmlFor="lsbt_biBatDiTu">
+                  <label class=" justify-content-start" htmlFor="lsbt_biBatDiTu">
                     Bị bắt, bị tù (thời gian và địa điểm), khai báo cho ai,
                     những vấn đề gì?
                   </label>
@@ -2357,8 +2356,8 @@ function AddProfileForm(props) {
                     id="lsbt_biBatDiTu"
                     className={
                       !errors.lsbt_biBatDiTu
-                        ? "form-control  "
-                        : "form-control border-danger"
+                        ? "form-control  form-width"
+                        : "form-control form-width border-danger"
                     }
                   />
                   <span className="message">
@@ -2371,7 +2370,7 @@ function AddProfileForm(props) {
               <div className="col">
                 <div class="form-group">
                   <label
-                    class="justify-content-start"
+                    class=" justify-content-start"
                     htmlFor="thamGiaChinhTri"
                   >
                     Tham gia hoặc có quan hệ với các tổ chức chính trị, kinh tế,
@@ -2384,8 +2383,8 @@ function AddProfileForm(props) {
                     id="lsbt_thamGiaChinhTri"
                     className={
                       !errors.lsbt_thamGiaChinhTri
-                        ? "form-control  "
-                        : "form-control border-danger"
+                        ? "form-control  form-width"
+                        : "form-control form-width border-danger"
                     }
                   />
                   <span className="message">
@@ -2398,7 +2397,7 @@ function AddProfileForm(props) {
               <div className="col">
                 <div class="form-group">
                   <label
-                    class="justify-content-start"
+                    class=" justify-content-start"
                     htmlFor="thanNhanNuocNgoai"
                   >
                     Có Thân nhân(cha, mẹ, vợ, chồng, con, anh chị em ruột) ở
@@ -2411,11 +2410,12 @@ function AddProfileForm(props) {
                     id="lsbt_thanNhanNuocNgoai"
                     className={
                       !errors.lsbt_thanNhanNuocNgoai
-                        ? "form-control"
-                        : "form-control border-danger"
+                        ? "form-control form-width "
+                        : "form-control form-width border-danger"
                     }
                   />
                   <input
+                  style={{display:"none"}}
                     type="text"
                     {...register("lsbt_maNhanVien")}
                     value={rsId}

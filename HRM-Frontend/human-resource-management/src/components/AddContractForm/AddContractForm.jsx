@@ -22,12 +22,10 @@ const schema = yup.object({
     .required("Mã nhân viên không được bỏ trống."),
   idLoaiHopDong: yup
     .number()
-    .nullable()
-    .required("Loại hợp đồng không được bỏ trống."),
+    .typeError("Loại hợp đồng không được bỏ trống."),
   idChucDanh: yup
     .number()
-    .nullable()
-    .required("Chức danh không được bỏ trống."),
+    .typeError("Chức danh không được bỏ trống."),
   maHopDong: yup
     .string()
     .nullable()
@@ -45,7 +43,7 @@ function AddContractForm(props) {
   let location = useLocation();
   let query = new URLSearchParams(location.search);
   const { error, warn, info, success } = useToast();
-
+  const ecode = query.get("maNhanVien");
   let { match, history } = props;
   let { id } = match.params;
 
@@ -66,6 +64,9 @@ function AddContractForm(props) {
   const [dataDetailHd, setdataDetailHd] = useState([]);
   const [dataHD, setDataHD] = useState([]);
   const [dataCD, setDataCD] = useState([]);
+  const [dataAllHD, setDataAllHD] = useState([]);
+  const [rsId, setRsId] = useState();
+  const [dataIdEmployee, setDataIdEmployee] = useState([]);
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -74,6 +75,8 @@ function AddContractForm(props) {
         setDataHD(responseDMHD);
         const responseCD = await ProductApi.getAllDMCD();
         setDataCD(responseCD);
+        const responseIdEmployee = await ProductApi.getAllNvMT();
+        setDataIdEmployee(responseIdEmployee);
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa hợp đồng");
           const responseHD = await ProductApi.getHdDetail(id);
@@ -89,16 +92,46 @@ function AddContractForm(props) {
     fetchNvList();
   }, []);
 
+  useEffect(() => {
+    const handleId = async () => {
+      const responseAllHD = await ProductApi.getAllHd();
+      setDataAllHD(responseAllHD);
+      const idIncre =
+        responseAllHD !== null
+          ? responseAllHD[responseAllHD.length - 1].id
+          : undefined;
+      console.log(idIncre);
+      const increCode = Number(idIncre.slice(2)) + 1020;
+      const rsCode = "HD";
+      if (increCode < 10) {
+        setRsId(rsCode.concat(`0${increCode}`));
+      } else if (increCode >= 10) {
+        setRsId(rsCode.concat(`${increCode}`));
+      }
+    };
+    handleId();
+  }, []);
+  console.log(dataAllHD);
   const intitalValue = {
-    maNhanVien: id !== undefined?dataDetailHd.maNhanVien:null,
-    idChucDanh: id !== undefined?dataDetailHd.idChucDanh:null,
-    idLoaiHopDong: id !== undefined?dataDetailHd.idLoaiHopDong:null,
-    hopDongTuNgay:id !== undefined?(moment(dataDetailHd.hopDongTuNgay)._d == "Invalid Date"?dataDetailHd.hopDongTuNgay:moment(dataDetailHd.hopDongTuNgay)):dataDetailHd.hopDongTuNgay,
-    hopDongDenNgay:id !== undefined?(moment(dataDetailHd.hopDongDenNgay)._d == "Invalid Date"?dataDetailHd.hopDongDenNgay:moment(dataDetailHd.hopDongDenNgay)):dataDetailHd.hopDongDenNgay,
-    ghiChu:id!== undefined?dataDetailHd.ghiChu:null,
-    maHopDong:id!== undefined?dataDetailHd.id:null,
-    trangThai: id!== undefined?(dataDetailHd.trangThai==="Kích hoạt"):true,
-  }
+    maNhanVien: id !== undefined ? dataDetailHd.maNhanVien : ecode,
+    idChucDanh: id !== undefined ? dataDetailHd.idChucDanh : null,
+    idLoaiHopDong: id !== undefined ? dataDetailHd.idLoaiHopDong : null,
+    hopDongTuNgay:
+      id !== undefined
+        ? moment(dataDetailHd.hopDongTuNgay)._d == "Invalid Date"
+          ? dataDetailHd.hopDongTuNgay
+          : moment(dataDetailHd.hopDongTuNgay)
+        : dataDetailHd.hopDongTuNgay,
+    hopDongDenNgay:
+      id !== undefined
+        ? moment(dataDetailHd.hopDongDenNgay)._d == "Invalid Date"
+          ? dataDetailHd.hopDongDenNgay
+          : moment(dataDetailHd.hopDongDenNgay)
+        : dataDetailHd.hopDongDenNgay,
+    ghiChu: id !== undefined ? dataDetailHd.ghiChu : null,
+    maHopDong: id !== undefined ? dataDetailHd.id : rsId,
+    trangThai: id !== undefined ? dataDetailHd.trangThai === "Kích hoạt" : true,
+  };
   //console.log(intitalValue);
 
   //console.log(date);
@@ -121,6 +154,11 @@ function AddContractForm(props) {
     }
   }, [dataDetailHd]);
 
+  useEffect(() => {
+    if (dataAllHD) {
+      reset(intitalValue);
+    }
+  }, [dataAllHD]);
   const checkInputChange = () => {
     const values = getValues([
       "maNhanVien",
@@ -155,10 +193,6 @@ function AddContractForm(props) {
           `Sửa thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
         );
       } else {
-        // if (query.get("checkMaHopDong") !== "0") {
-        //   await PutApi.PutTLL(query.get("maHopDong"));
-        //   await PutApi.PutTLHD(query.get("maNhanVien"));
-        // }
         await ProductApi.postHD(data);
         success(
           `Thêm thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
@@ -238,7 +272,7 @@ function AddContractForm(props) {
                     Mã nhân viên
                   </label>
                   <input
-                    type="text"
+                    //type="text"
                     {...register("maNhanVien")}
                     id="maNhanVien"
                     className={
@@ -246,7 +280,16 @@ function AddContractForm(props) {
                         ? "form-control col-sm-6 "
                         : "form-control col-sm-6 border-danger"
                     }
+                    list="employees"
+                    readOnly={ ecode? true: false }
                   />
+                  <datalist id="employees">
+                    {dataIdEmployee.map((item, key) => (
+                      <option key={key} value={item.id}>
+                        {item.hoTen}
+                      </option>
+                    ))}
+                  </datalist>
 
                   <span className="message">{errors.maNhanVien?.message}</span>
                 </div>
@@ -323,11 +366,13 @@ function AddContractForm(props) {
                     type="text"
                     {...register("maHopDong")}
                     id="maHopDong"
+                    value={rsId}
                     className={
                       !errors.maHopDong
                         ? "form-control col-sm-6 "
                         : "form-control col-sm-6 border-danger"
                     }
+                    readOnly
                   />
                   <span className="message">{errors.maHopDong?.message}</span>
                 </div>
@@ -429,12 +474,32 @@ function AddContractForm(props) {
                     }
                   />
                   <span className="message">{errors.ghiChu?.message}</span>
-                  <input
+                </div>
+              </div>
+              <div className="col">
+                <div className="form-group form-inline">
+                  <label
+                    className="col-sm-4 justify-content-start"
+                    style={id !== undefined ? null : { display: "none" }}
+                    htmlFor="trangThai"
+                  >
+                    Trạng Thái
+                  </label>
+                  <select
                     type="text"
                     {...register("trangThai")}
-                    //defaultValue={true}
-                    style={{ display: "none" }}
-                  />
+                    id="trangThai"
+                    style={id !== undefined ? null : { display: "none" }}
+                    className={
+                      !errors.trangThai
+                        ? "form-control col-sm-6 custom-select"
+                        : "form-control col-sm-6 border-danger custom-select"
+                    }
+                  >
+                    <option value={true}>Kích hoạt</option>
+                    <option value={false}>Vô hiệu</option>
+                  </select>
+                  <span className="message">{errors.trangThai?.message}</span>
                 </div>
               </div>
             </div>

@@ -3,7 +3,7 @@ const LoginApi = {
   PostLoginAccount: (data) => {
     const url = "/User/authenticate";
     return axiosClient.post(url, data).then((res) => {
-      localStorage.setItem("resultObj", res.resultObj);
+      sessionStorage.setItem("resultObj", res.resultObj);
     });
   },
 };

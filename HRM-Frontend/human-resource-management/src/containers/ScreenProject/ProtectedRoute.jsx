@@ -6,7 +6,7 @@ function ProtectedRoute({ component: Component, roles, ...res }) {
     <Route
       {...res}
       render={(props) => {
-        return localStorage.getItem('resultObj') && roles.includes(jwt_decode(localStorage.getItem("resultObj")).role) ? (
+        return sessionStorage.getItem('resultObj') && roles.includes(jwt_decode(sessionStorage.getItem("resultObj")).role) ? (
           <Component {...props} />
         ) : (
           <Redirect to="/login" />

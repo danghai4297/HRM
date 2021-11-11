@@ -198,7 +198,9 @@ function Detail(props) {
   const arrowDisciplineClickHandle = () => {
     setDropDiscipline(!dropDiscipline);
   };
-
+  console.log(dataDetailHd.filter(
+    (item) => item.trangThai === "Kích hoạt"))
+  
   return (
     <>
       <div className="contents">
@@ -902,16 +904,14 @@ function Detail(props) {
                     <div className="title-cultural"></div>
                     <div className="icon-cultural">
                       <Link
-                        to={`/salary/add?maHopDong=${
-                          dataDetailHd.length !== 0 &&
+                        to={`/salary/add?maHopDong=${dataDetailHd.length !== 0 &&
                           dataDetailHd.filter(
                             (a) => a.trangThai === "Kích hoạt"
                           ).length !== 0
                             ? dataDetailHd.filter(
                                 (a) => a.trangThai === "Kích hoạt"
                               )[0].id
-                            : ""
-                        }&checkMaLuong=${
+                            : ""}&checkMaLuong=${
                           dataLuong.length !== 0
                             ? dataLuong.filter(
                                 (b) => b.trangThai === "Kích hoạt"

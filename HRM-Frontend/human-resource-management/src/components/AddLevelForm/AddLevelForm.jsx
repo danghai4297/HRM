@@ -16,15 +16,15 @@ import { useToast } from "../Toast/Toast";
 
 const schema = yup.object({
   tenTruong: yup.string().nullable().required("Tên trường không được bỏ trống."),
-  idChuyenMon: yup.number().nullable().required("Chuyên môn không được bỏ trống."),
+  idChuyenMon: yup.number().typeError("Chuyên môn không được bỏ trống."),
   idHinhThucDaoTao: yup
     .number()
-    .nullable()
-    .required("Hình thức đào tạo không được bỏ trống."),
+    .typeError("Hình thức đào tạo không được bỏ trống."),
   idTrinhDo: yup
-    .number("Trình độ không được bỏ trống.")
-    .nullable()
-    .required("Trình độ không được bỏ trống."),
+    .number()
+    .typeError("Trình độ không được bỏ trống."),
+  tuThoiGian: yup.string().nullable().required("Từ ngày không được bỏ trống"),
+  denThoiGian: yup.string().nullable().required("Đến ngày không được bỏ trống"),
 });
 function AddLevelForm(props) {
   const { error, warn, info, success } = useToast();

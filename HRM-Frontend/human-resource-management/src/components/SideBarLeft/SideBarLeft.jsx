@@ -29,7 +29,7 @@ function SideBarLeft() {
         {SideBarData.filter(
           (val) =>
             val.roles.includes(
-              localStorage.getItem("resultObj") && jwt_decode(localStorage.getItem("resultObj")).role
+              sessionStorage.getItem("resultObj") && jwt_decode(sessionStorage.getItem("resultObj")).role
             ) === true
         ).map((val, key) => {
           return <Menu val={val} key={key} />;

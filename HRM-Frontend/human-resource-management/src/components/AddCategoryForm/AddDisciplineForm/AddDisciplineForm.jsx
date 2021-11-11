@@ -131,7 +131,7 @@ function AddDisciplineForm(props) {
         <div className="Submit-button sticky-top">
           <div>
             <h2 className="">
-              {dataDetailDMKL.length !== 0 ? "Sửa" : "Thêm"} danh mục kỉ luật
+              {dataDetailDMKL.length !== 0 ? "Sửa" : "Thêm"} danh mục kỷ luật
             </h2>
           </div>
           <div className="button">
