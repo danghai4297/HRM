@@ -5,20 +5,20 @@ import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ExportCSV } from "../../components/ExportFile/ExportFile";
 import TablePagination from "../../components/TablePagination/TablePagination";
-import productApi from "../../api/productApi";
 import { Link } from "react-router-dom";
+import LoginApi from "../../api/login";
 
 function ScreenAccount(props) {
-  const link = "/contract/detail/";
+  const link = "/User/";
   const fileName = "Danhsachhopdong";
-  const [dataAllHd, setdataAllHd] = useState([]);
+  const [dataAllAcc, setdataAllAcc] = useState([]);
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const responseNv = await productApi.getAllHd();
+        const response = await LoginApi.getAllAcc();
         // console.log(responseNv);
-        setdataAllHd(responseNv);
+        setdataAllAcc(response);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
@@ -45,7 +45,7 @@ function ScreenAccount(props) {
               sheet="tablexls"
               buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
             />
-            <ExportCSV csvData={dataAllHd} fileName={fileName} />
+            <ExportCSV csvData={dataAllAcc} fileName={fileName} />
           </div>
         </div>
         <div className="table-nv">
@@ -54,7 +54,7 @@ function ScreenAccount(props) {
             link={link}
             tid="tableHd"
             columns={NVCOLUMNSHD}
-            data={dataAllHd}
+            data={dataAllAcc}
           />
         </div>
       </div>

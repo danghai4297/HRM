@@ -11,7 +11,7 @@ import "./RegisterAccount.scss";
 import PutApi from "../../api/putAAPI";
 import DeleteApi from "../../../src/api/deleteAPI";
 import ProductApi from "../../api/productApi";
-
+import LoginApi from "../../api/login.js";
 const passwordReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/g;
 const schema = yup.object({
     maNhanVien:yup
@@ -66,14 +66,15 @@ function RegisterAccount(props) {
   console.log(newPassword);
   console.log(rePassword);
 
-  const onHandleSubmit = (data) => {
+  const onHandleSubmit = async (data) => {
+    console.log(data);
     if (newPassword === rePassword) {
-      console.log(data);
+      await LoginApi.PostAcc(data);
       success("Thêm tài khoản thành công");
+      history.goBack();
     } else if (newPassword !== rePassword) {
       warn("Nhập lại mật khẩu không đúng.");
     }
-    // history.goBack();
   };
   return (
     <div className="container-form">

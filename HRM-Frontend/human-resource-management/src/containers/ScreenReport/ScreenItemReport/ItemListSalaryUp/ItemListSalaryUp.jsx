@@ -7,6 +7,7 @@ import ProductApi from "../../../../api/productApi";
 import { ExportCSV } from "../../../../components/ExportFile/ExportFile";
 import { useToast } from "../../../../components/Toast/Toast";
 import { ComponentToPrint } from "../../../../components/ToPrint/ComponentToPrint";
+import useDidMountEffect from "../../useDidMountEffect/useDidMountEffect";
 
 import ListItemSalaryup from "./ListItemSalaryup";
 
@@ -40,6 +41,12 @@ function ItemListSalaryUp() {
     };
     fetchNvList();
   }, []);
+
+  useDidMountEffect(() => {
+    if (dataRpSalaryUp.length == 0) {
+      info("không có thông tin");
+    }
+  }, [dataRpSalaryUp]);
 
   function handelCheck(value) {
     if (value === "Tất cả") {
