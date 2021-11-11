@@ -20,7 +20,7 @@ const schema = yup.object({
 });
 
 function AddBonusForm(props) {
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
 
   let { match, history } = props;
   let { id } = match.params;
@@ -109,8 +109,8 @@ function AddBonusForm(props) {
         success("Thêm danh mục thành công");
       }
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 
@@ -125,8 +125,8 @@ function AddBonusForm(props) {
       });
       success("Xoá danh mục thành công");
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 
@@ -136,8 +136,7 @@ function AddBonusForm(props) {
         <div className="Submit-button sticky-top">
           <div>
             <h2 className="">
-              {dataDetailDMKT.length !== 0 ? "Sửa" : "Thêm"} danh mục khen
-              thuong
+              {dataDetailDMKT.length !== 0 ? "Sửa" : "Thêm"} danh mục khen thưởng
             </h2>
           </div>
           <div className="button">

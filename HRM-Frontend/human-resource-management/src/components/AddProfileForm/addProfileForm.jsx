@@ -17,32 +17,75 @@ import DeleteApi from "../../../src/api/deleteAPI";
 import DialogCheck from "../Dialog/DialogCheck";
 import Dialog from "../../components/Dialog/Dialog";
 import { useToast } from "../Toast/Toast";
-const phoneRex = /([\|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})\b/;
+const phoneRex = /([\|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})$\b/;
+const phoneRex1 = /(([\|84|0]+(3|5|7|8|9|1[2|6|8|9]){2})([0-9]{8})|)$\b/;
 const number = /^\d+$/;
-const schema = yup.object({
+const tax = /((0)([0-7])([0-9]){8})$/g;
+const cccdRegex = /((0)([0-9]){2}([0-3]){1}([0-9]){8})$/g;
+const atm = /^(?:[1-9]\d*|)$/g;
+const bhyt = /^((DN|HX|CH|NN|DK|HC|XK|HT|DB|NO|CT|XB|TN|CS|QN|CA|CY|XN|MS|CC|CK|CB|KC|HD|TE|BT|HN|DT|DK|XD|TS|TC|TQ|TA|TY|HG|LS|PV|CN|HS|SV|GB|GD){1}([1-5]){1}([0-9]){2}([0-9]){10}|)$/g;
+const bhxh = /^(([0-9]){10}|)$/g;
+const hoChieu = /^(([A-Z]{1})([0-9]){7}|)$/g;
+const email = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4}|)$/g;
+const schema = yup.object().shape({
   id: yup.string().nullable().required("Mã nhân viên không được bỏ trống."),
   hoTen: yup.string().nullable().required("Họ và tên không được bỏ trống."),
   gioiTinh: yup.boolean().nullable().required("Giới tính không được bỏ trống."),
-  idDanhMucHonNhan: yup
-    .number()
-    .nullable()
-    .required("Hôn nhân không được bỏ trống."),
+  idDanhMucHonNhan: yup.number().typeError("Hôn nhân không được bỏ trống."),
   ngaySinh: yup.date().nullable().required("Ngày sinh không được bỏ trống."),
   noiSinh: yup.string().nullable().required("Nơi sinh không được bỏ trống."),
-  idDanToc: yup.number().nullable().required("Dân Tộc không được bỏ trống."),
+  idDanToc: yup.number().typeError("Dân Tộc không được bỏ trống."),
   queQuan: yup.string().nullable().required("Nguyên quán không được bỏ trống."),
-  idTonGiao: yup.number().nullable().required("Tôn giáo không được bỏ trống."),
+  idTonGiao: yup.number().typeError("Tôn giáo không được bỏ trống."),
   thuongTru: yup
     .string()
     .nullable()
     .required("HK thường trú không được bỏ trống."),
   quocTich: yup.string().nullable().required("Quốc tịch không được bỏ trống."),
   // tamTru: yup.string().required("Tạm trú không được bỏ trống."),
+  atm: yup
+    .string()
+    .matches(atm, "Tài khoản ngân hàng phải là dãy số.")
+    .nullable()
+    .notRequired(),
+  bhyt: yup
+    .string()
+    .matches(bhyt, "Bảo hiểm y tế phải đúng định dạng.")
+    .nullable()
+    .notRequired(),
+  bhxh: yup
+    .string()
+    .matches(bhxh, "Bảo hiểm xã hội phải là dãy số và đúng định dạng.")
+    .nullable()
+    .notRequired(),
+    email: yup
+    .string()
+    .matches(email, "Email cá nhân phải đúng định dạng.")
+    .nullable()
+    .notRequired(),
+    lhkc_email: yup
+    .string()
+    .matches(email, "Email phải đúng định dạng.")
+    .nullable()
+    .notRequired(),
+  hoChieu: yup
+    .string()
+    .matches(hoChieu, "Số hộ chiếu phải đúng định dạng.")
+    .nullable()
+    .notRequired(),
+  dienThoaiKhac: yup
+    .string()
+    .matches(phoneRex1, "Số điện thoại khác phải là dãy số.")
+    .nullable()
+    .notRequired(),
+  dienThoai: yup
+    .string()
+    .matches(phoneRex1, "Số điện thoại nhà riêng phải là dãy số.")
+    .nullable()
+    .notRequired(),
   cccd: yup
     .string()
-    .matches(number, "CMND/CCCD không được bỏ trống.")
-    .min(9, "CMND phải có 9 số/CCCD phải có 12 số")
-    .max(12, "CMND phải có 9 số,CCCD phải có 12 số")
+    .matches(cccdRegex, "CMND/CCCD phải dãy số có 12 chữ số.")
     .nullable()
     .required("CMND/CCCD không được bỏ trống"),
   ngayCapCCCD: yup
@@ -70,13 +113,9 @@ const schema = yup.object({
   diDong: yup
     .string()
     .nullable()
-    .matches(phoneRex, "Số điện thoại phải là số.")
+    .matches(phoneRex, "Số điện thoại phải là dãy số.")
     .required("Số điện thoại không được bỏ trống"),
-  dienThoai: yup
-    .string()
-    .nullable()
-    .matches(phoneRex, "Số điện thoại phải là số.")
-    .required("Số điện thoại không được bỏ trống"),
+ 
   lhkc_hoTen: yup
     .string()
     .nullable()
@@ -111,9 +150,10 @@ const schema = yup.object({
     .nullable()
     .required("Tính chất lao động không được bỏ trống."),
   maSoThue: yup
-    .number()
+    .string()
+    .matches(tax, "Mã số thuế cá nhân phải là dãy số có 10 chữ số.")
     .nullable()
-    .required("Tính chất lao động không được bỏ trống."),
+    .required("Mã số thuế cá nhân không được bỏ trống."),
   congViecChinh: yup
     .string()
     .nullable()
@@ -132,8 +172,8 @@ const schema = yup.object({
   // lsbt_thanNhanNuocNgoai: yup
   //   .string()
   //   .required("Lịch sử bản thân không được bỏ trống."),
-  //yt_chieuCao: yup.number().required("Ngạch công chức không được bỏ trống."),
-  //yt_canNang: yup.number().required("Ngạch công chức không được bỏ trống."),
+  yt_chieuCao: yup.number().required("Ngạch công chức không được bỏ trống."),
+  yt_canNang: yup.number().required("Ngạch công chức không được bỏ trống."),
   lsbt_maNhanVien: yup
     .string()
     .nullable()
@@ -450,7 +490,7 @@ function AddProfileForm(props) {
         ? dataDetailEmployee.ytKhuyetTat === "Không"
           ? false
           : true
-        : null,
+        : false,
     yt_maNhanVien: id !== undefined ? dataDetailEmployee.id : rsId,
     lhkc_hoTen: id !== undefined ? dataDetailEmployee.lhkcHoTen : null,
     lhkc_quanHe: id !== undefined ? dataDetailEmployee.lhkcQuanHe : null,
@@ -830,7 +870,7 @@ function AddProfileForm(props) {
                     {...register("idDanToc")}
                     id="idDanToc"
                     className={
-                      !errors.danToc
+                      !errors.idDanToc
                         ? "form-control col-sm-6 custom-select"
                         : "form-control col-sm-6 border-danger custom-select"
                     }
@@ -1056,8 +1096,13 @@ function AddProfileForm(props) {
                     type="text"
                     {...register("hoChieu")}
                     id="hoChieu"
-                    className="form-control col-sm-6"
+                    className={
+                      !hoChieu.cccd
+                        ? "form-control col-sm-6 "
+                        : "form-control col-sm-6 border-danger"
+                    }
                   />
+                  <span className="message">{errors.hoChieu?.message}</span>
                 </div>
               </div>
             </div>
@@ -1268,8 +1313,13 @@ function AddProfileForm(props) {
                     type="text"
                     {...register("email")}
                     id="email"
-                    className="form-control col-sm-6"
+                    className={
+                      !errors.email
+                        ? "form-control col-sm-6 "
+                        : "form-control col-sm-6 border-danger"
+                    }
                   />
+                   <span className="message">{errors.email?.message}</span>
                 </div>
               </div>
             </div>
@@ -1286,8 +1336,15 @@ function AddProfileForm(props) {
                     type="text"
                     {...register("dienThoaiKhac")}
                     id="dienThoaiKhac"
-                    className="form-control col-sm-6"
+                    className={
+                      !errors.dienThoaiKhac
+                        ? "form-control col-sm-6 "
+                        : "form-control col-sm-6 border-danger"
+                    }
                   />
+                  <span className="message">
+                    {errors.dienThoaiKhac?.message}
+                  </span>
                 </div>
               </div>
               <div className="col">
@@ -1320,8 +1377,13 @@ function AddProfileForm(props) {
                     type="text"
                     {...register("dienThoai")}
                     id="dienThoai"
-                    className="form-control col-sm-6"
+                    className={
+                      !errors.dienThoai
+                        ? "form-control col-sm-6 "
+                        : "form-control col-sm-6 border-danger"
+                    }
                   />
+                  <span className="message">{errors.dienThoai?.message}</span>
                 </div>
               </div>
               <div className="col">
@@ -1374,8 +1436,14 @@ function AddProfileForm(props) {
                     type="text"
                     {...register("lhkc_email")}
                     id="lhkc_email"
-                    className="form-control col-sm-6"
+                    className={
+                      !errors.lhkc_email
+                        ? "form-control col-sm-6 "
+                        : "form-control col-sm-6 border-danger"
+                    }
                   />
+                <span className="message">{errors.lhkc_email?.message}</span>
+
                 </div>
               </div>
             </div>
@@ -1448,7 +1516,12 @@ function AddProfileForm(props) {
                 </div>
               </div>
             </div>
-            <input type="text" {...register("lhkc_maNhanVien")} value={rsId} />
+            <input
+              style={{ display: "none" }}
+              type="text"
+              {...register("lhkc_maNhanVien")}
+              value={rsId}
+            />
           </div>
           {/* Container thông tin công việc*/}
           <div className="container-div-form">
@@ -2332,6 +2405,7 @@ function AddProfileForm(props) {
                     className="form-control col-sm-6"
                   />
                   <input
+                    style={{ display: "none" }}
                     type="text"
                     {...register("yt_maNhanVien")}
                     value={rsId}
@@ -2346,7 +2420,10 @@ function AddProfileForm(props) {
             <div className="row">
               <div className="col">
                 <div class="form-group">
-                  <label class="justify-content-start" htmlFor="lsbt_biBatDiTu">
+                  <label
+                    class=" justify-content-start"
+                    htmlFor="lsbt_biBatDiTu"
+                  >
                     Bị bắt, bị tù (thời gian và địa điểm), khai báo cho ai,
                     những vấn đề gì?
                   </label>
@@ -2357,8 +2434,8 @@ function AddProfileForm(props) {
                     id="lsbt_biBatDiTu"
                     className={
                       !errors.lsbt_biBatDiTu
-                        ? "form-control  "
-                        : "form-control border-danger"
+                        ? "form-control  form-width"
+                        : "form-control form-width border-danger"
                     }
                   />
                   <span className="message">
@@ -2371,7 +2448,7 @@ function AddProfileForm(props) {
               <div className="col">
                 <div class="form-group">
                   <label
-                    class="justify-content-start"
+                    class=" justify-content-start"
                     htmlFor="thamGiaChinhTri"
                   >
                     Tham gia hoặc có quan hệ với các tổ chức chính trị, kinh tế,
@@ -2384,8 +2461,8 @@ function AddProfileForm(props) {
                     id="lsbt_thamGiaChinhTri"
                     className={
                       !errors.lsbt_thamGiaChinhTri
-                        ? "form-control  "
-                        : "form-control border-danger"
+                        ? "form-control  form-width"
+                        : "form-control form-width border-danger"
                     }
                   />
                   <span className="message">
@@ -2398,7 +2475,7 @@ function AddProfileForm(props) {
               <div className="col">
                 <div class="form-group">
                   <label
-                    class="justify-content-start"
+                    class=" justify-content-start"
                     htmlFor="thanNhanNuocNgoai"
                   >
                     Có Thân nhân(cha, mẹ, vợ, chồng, con, anh chị em ruột) ở
@@ -2411,11 +2488,12 @@ function AddProfileForm(props) {
                     id="lsbt_thanNhanNuocNgoai"
                     className={
                       !errors.lsbt_thanNhanNuocNgoai
-                        ? "form-control"
-                        : "form-control border-danger"
+                        ? "form-control form-width "
+                        : "form-control form-width border-danger"
                     }
                   />
                   <input
+                    style={{ display: "none" }}
                     type="text"
                     {...register("lsbt_maNhanVien")}
                     value={rsId}

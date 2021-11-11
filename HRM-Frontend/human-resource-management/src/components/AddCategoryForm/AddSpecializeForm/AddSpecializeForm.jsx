@@ -12,8 +12,8 @@ import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
 
 const schema = yup.object({
-  tenChuyenMon: yup.string().required("Tên danh mục không được bỏ trống."),
-  maChuyenMon: yup.string().required("Mã danh mục không được bỏ trống."),
+  tenChuyenMon: yup.string().required("Tên chuyên môn không được bỏ trống."),
+  maChuyenMon: yup.string().required("Mã chuyên môn không được bỏ trống."),
 });
 function AddSpecializeForm(props) {
   const { error, warn, info, success } = useToast();

@@ -13,7 +13,7 @@ import Dialog from "../../components/Dialog/Dialog";
 
 const regexDate = /^[0-9]{2}[\/]{1}[0-9]{2}[\/]{1}[0-9]{4}$/g;
 const schema = yup.object({
-  idDanhMucKhenThuong: yup.number().nullable().required("Loại khen thưởng không được bỏ trống."),
+  idDanhMucKhenThuong: yup.number().typeError("Loại khen thưởng không được bỏ trống."),
   maNhanVien: yup.string().nullable().required("Mã nhân viên không được bỏ trống."),
   //thoiGian: yup.string().required("Thời gian không được bỏ trống."),
   noiDung: yup.string().nullable().required("Nội dung không được bỏ trống."),

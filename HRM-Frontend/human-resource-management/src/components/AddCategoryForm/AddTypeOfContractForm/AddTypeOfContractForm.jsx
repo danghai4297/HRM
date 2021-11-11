@@ -11,10 +11,9 @@ import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
 const schema = yup.object({
-  maLoaiHopDong: yup.string().required("Mã phòng ban không được bỏ trống."),
-  tenLoaiHopDong: yup.string().required("Tên danh mục không được bỏ trống."),
+  maLoaiHopDong: yup.string().required("Mã loại hợp đồng không được bỏ trống."),
+  tenLoaiHopDong: yup.string().required("Tên loại hợp đồng không được bỏ trống."),
 });
-AddTypeOfContractForm.propTypes = {};
 
 function AddTypeOfContractForm(props) {
   const { error, warn, info, success } = useToast();

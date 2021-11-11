@@ -13,19 +13,19 @@ import moment from "moment/moment.js";
 import { useToast } from "../Toast/Toast";
 import DialogCheck from "../Dialog/DialogCheck";
 
+const phoneRegex = /(([+][(]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})/g;
 const schema = yup.object({
   idDanhMucNguoiThan: yup
     .number()
-    .nullable()
-    .required("Danh mục người thân không được bỏ trống."),
+    .typeError("Danh mục người thân không được bỏ trống."),
   tenNguoiThan: yup.string().nullable().required("Tên người thân không được bỏ trống."),
   gioiTinh: yup.boolean().nullable().required("Giới tính không được bỏ trống."),
-  //ngaySinh: yup.string().required("Ngày sinh được bỏ trống."),
+  ngaySinh: yup.string().nullable().required("Ngày sinh được bỏ trống."),
   maNhanVien: yup.string().nullable().required("Mã nhân viên không được bỏ trống."),
   quanHe: yup.string().nullable().required("Quan hệ không được bỏ trống."),
   ngheNghiep: yup.string().nullable().required("Nghề nghệp không được bỏ trống."),
   diaChi: yup.string().nullable().required("Địa chỉ không được bỏ trống."),
-  dienThoai: yup.string().nullable().required("Điện thoại không được bỏ trống."),
+  dienThoai: yup.string().matches(phoneRegex,"Điện thoại phải là số").nullable().required("Điện thoại không được bỏ trống."),
 });
 function AddFamilyForm(props) {
   const { error, warn, info, success } = useToast();
@@ -277,7 +277,7 @@ function AddFamilyForm(props) {
                     class="col-sm-4 justify-content-start"
                     htmlFor="tenNguoiThan"
                   >
-                    Họ và tên
+                    Họ và tên người thân
                   </label>
                   <input
                     type="text"
