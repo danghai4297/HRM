@@ -75,7 +75,7 @@ function AddContractForm(props) {
         setDataHD(responseDMHD);
         const responseCD = await ProductApi.getAllDMCD();
         setDataCD(responseCD);
-        const responseIdEmployee = await ProductApi.getAllNvMT();
+        const responseIdEmployee = await ProductApi.getAllNv();
         setDataIdEmployee(responseIdEmployee);
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa hợp đồng");
@@ -284,7 +284,9 @@ function AddContractForm(props) {
                     readOnly={ ecode? true: false }
                   />
                   <datalist id="employees">
-                    {dataIdEmployee.map((item, key) => (
+                    {dataIdEmployee
+                    .filter((item) => item.trangThaiLaoDong === "Đang làm việc")
+                    .map((item, key) => (
                       <option key={key} value={item.id}>
                         {item.hoTen}
                       </option>

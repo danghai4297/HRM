@@ -3,9 +3,9 @@ import SelectColumnFilter from "../../components/TablePagination/SelectColumnFil
 
 export const NVCOLUMNSHD = [
   {
-    Header: "Mã Nhân Viên",
+    Header: "Mã nhân viên",
     accessor: "maNhanVien",
-    minWidth: 70,
+    minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -13,7 +13,7 @@ export const NVCOLUMNSHD = [
   },
   {
     Header: "Họ Và Tên",
-    accessor: "tenNhanVien",
+    accessor: "fullName",
     minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: true,
@@ -21,18 +21,18 @@ export const NVCOLUMNSHD = [
     show: true,
   },
   {
-    Header: "Mã Hợp Đồng",
-    accessor: "id",
-    minWidth: 130,
+    Header: "Điện thoại",
+    accessor: "phoneNumber",
+    minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
     show: true,
   },
   {
-    Header: "Loại Hợp Đồng",
-    accessor: "idLoaiHopDong",
-    minWidth: 268,
+    Header: "Tài khoản",
+    accessor: "userName",
+    minWidth: 238,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -40,8 +40,8 @@ export const NVCOLUMNSHD = [
   },
 
   {
-    Header: "Chức Danh",
-    accessor: "idChucDanh",
+    Header: "Email",
+    accessor: "email",
     minWidth: 280,
     Filter: SelectColumnFilter,
     disableFilters: true,
@@ -49,8 +49,8 @@ export const NVCOLUMNSHD = [
     show: true,
   },
   {
-    Header: "Từ Ngày",
-    accessor: "hopDongTuNgay",
+    Header: "Ngày sinh",
+    accessor: "dob",
     minWidth: 250,
     Filter: SelectColumnFilter,
     disableFilters: true,
@@ -61,47 +61,12 @@ export const NVCOLUMNSHD = [
     show: true,
   },
   {
-    Header: "Đến Ngày",
-    accessor: "hopDongDenNgay",
-    minWidth: 250,
+    Header: "Chức vụ",
+    accessor: "roles",
+    minWidth: 280,
     Filter: SelectColumnFilter,
     disableFilters: true,
-    Cell: ({ value }) => {
-      return format(new Date(value), "dd/MM/yyyy");
-    },
 
     show: true,
-  },
-  {
-    Header: "Trạng thái",
-    accessor: (row) => {
-      return row.trangThai === "Kích hoạt" ? (
-        <img src="/Images/greenC.png" width={20} alt="" />
-      ) : (
-        <img src="/Images/orangeC.png" width={20} alt="" />
-      );
-    },
-    minWidth: 230,
-    Filter: SelectColumnFilter,
-    disableFilters: true,
-    show: true,
-  },
-  {
-    Header: "Trạng thái",
-
-    accessor: "trangThai",
-    minWidth: 200,
-    Filter: SelectColumnFilter,
-    disableFilters: false,
-    show: false,
-  },
-  {
-    Header: "Ghi chú",
-    accessor: "ghiChu",
-    minWidth: 400,
-    Filter: SelectColumnFilter,
-    disableFilters: true,
-
-    show: false,
   },
 ];

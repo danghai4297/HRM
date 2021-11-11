@@ -17,11 +17,18 @@ import DeleteApi from "../../../src/api/deleteAPI";
 import DialogCheck from "../Dialog/DialogCheck";
 import Dialog from "../../components/Dialog/Dialog";
 import { useToast } from "../Toast/Toast";
-const phoneRex = /([\|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})\b/;
+const phoneRex = /([\|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})$\b/;
+const phoneRex1 = /^(([+|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})|)$/;
+const phoneRexlandline= /^((02)+([0-9]{9})|)$/g;
 const number = /^\d+$/;
 const tax = /((0)([0-7])([0-9]){8})$/g;
-const cccdRegex =/((0)([0-9]){2}([0-3]){1}([0-9]){8})$/g;
-const schema = yup.object({
+const cccdRegex = /((0)([0-9]){2}([0-3]){1}([0-9]){8})$/g;
+const atm = /^(?:[1-9]\d*|)$/g;
+const bhyt = /^((DN|HX|CH|NN|DK|HC|XK|HT|DB|NO|CT|XB|TN|CS|QN|CA|CY|XN|MS|CC|CK|CB|KC|HD|TE|BT|HN|DT|DK|XD|TS|TC|TQ|TA|TY|HG|LS|PV|CN|HS|SV|GB|GD){1}([1-5]){1}([0-9]){2}([0-9]){10}|)$/g;
+const bhxh = /^(([0-9]){10}|)$/g;
+const hoChieu = /^(([A-Z]{1})([0-9]){7}|)$/g;
+const email = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4}|)$/g;
+const schema = yup.object().shape({
   id: yup.string().nullable().required("Mã nhân viên không được bỏ trống."),
   hoTen: yup.string().nullable().required("Họ và tên không được bỏ trống."),
   gioiTinh: yup.boolean().nullable().required("Giới tính không được bỏ trống."),
@@ -37,6 +44,46 @@ const schema = yup.object({
     .required("HK thường trú không được bỏ trống."),
   quocTich: yup.string().nullable().required("Quốc tịch không được bỏ trống."),
   // tamTru: yup.string().required("Tạm trú không được bỏ trống."),
+  atm: yup
+    .string()
+    .matches(atm, "Tài khoản ngân hàng phải là dãy số.")
+    .nullable()
+    .notRequired(),
+  bhyt: yup
+    .string()
+    .matches(bhyt, "Bảo hiểm y tế phải đúng định dạng.")
+    .nullable()
+    .notRequired(),
+  bhxh: yup
+    .string()
+    .matches(bhxh, "Bảo hiểm xã hội phải là dãy số và đúng định dạng.")
+    .nullable()
+    .notRequired(),
+    email: yup
+    .string()
+    .matches(email, "Email cá nhân phải đúng định dạng.")
+    .nullable()
+    .notRequired(),
+    lhkc_email: yup
+    .string()
+    .matches(email, "Email phải đúng định dạng.")
+    .nullable()
+    .notRequired(),
+  hoChieu: yup
+    .string()
+    .matches(hoChieu, "Số hộ chiếu phải đúng định dạng.")
+    .nullable()
+    .notRequired(),
+  dienThoaiKhac: yup
+    .string()
+    .matches(phoneRex1, "Số điện thoại khác phải là dãy số.")
+    .nullable()
+    .notRequired(),
+  dienThoai: yup
+    .string()
+    .matches(phoneRexlandline, "Số điện thoại nhà riêng phải là dãy số.")
+    .nullable()
+    .notRequired(),
   cccd: yup
     .string()
     .matches(cccdRegex, "CMND/CCCD phải dãy số có 12 chữ số.")
@@ -69,11 +116,7 @@ const schema = yup.object({
     .nullable()
     .matches(phoneRex, "Số điện thoại phải là dãy số.")
     .required("Số điện thoại không được bỏ trống"),
-  dienThoai: yup
-    .string()
-    .nullable()
-    .matches(phoneRex, "Số điện thoại phải là dãy số.")
-    .required("Số điện thoại không được bỏ trống"),
+ 
   lhkc_hoTen: yup
     .string()
     .nullable()
@@ -130,8 +173,8 @@ const schema = yup.object({
   // lsbt_thanNhanNuocNgoai: yup
   //   .string()
   //   .required("Lịch sử bản thân không được bỏ trống."),
-  //yt_chieuCao: yup.number().required("Ngạch công chức không được bỏ trống."),
-  //yt_canNang: yup.number().required("Ngạch công chức không được bỏ trống."),
+  yt_chieuCao: yup.number().positive("Chiều cao không thể là số âm.").typeError("Chiều cao không được bỏ trống."),
+  yt_canNang: yup.number().positive("Cân nặng không thể là số âm").typeError("Cân nặng không được bỏ trống."),
   lsbt_maNhanVien: yup
     .string()
     .nullable()
@@ -448,7 +491,7 @@ function AddProfileForm(props) {
         ? dataDetailEmployee.ytKhuyetTat === "Không"
           ? false
           : true
-        : null,
+        : false,
     yt_maNhanVien: id !== undefined ? dataDetailEmployee.id : rsId,
     lhkc_hoTen: id !== undefined ? dataDetailEmployee.lhkcHoTen : null,
     lhkc_quanHe: id !== undefined ? dataDetailEmployee.lhkcQuanHe : null,
@@ -1054,8 +1097,13 @@ function AddProfileForm(props) {
                     type="text"
                     {...register("hoChieu")}
                     id="hoChieu"
-                    className="form-control col-sm-6"
+                    className={
+                      !hoChieu.cccd
+                        ? "form-control col-sm-6 "
+                        : "form-control col-sm-6 border-danger"
+                    }
                   />
+                  <span className="message">{errors.hoChieu?.message}</span>
                 </div>
               </div>
             </div>
@@ -1266,8 +1314,13 @@ function AddProfileForm(props) {
                     type="text"
                     {...register("email")}
                     id="email"
-                    className="form-control col-sm-6"
+                    className={
+                      !errors.email
+                        ? "form-control col-sm-6 "
+                        : "form-control col-sm-6 border-danger"
+                    }
                   />
+                   <span className="message">{errors.email?.message}</span>
                 </div>
               </div>
             </div>
@@ -1284,8 +1337,15 @@ function AddProfileForm(props) {
                     type="text"
                     {...register("dienThoaiKhac")}
                     id="dienThoaiKhac"
-                    className="form-control col-sm-6"
+                    className={
+                      !errors.dienThoaiKhac
+                        ? "form-control col-sm-6 "
+                        : "form-control col-sm-6 border-danger"
+                    }
                   />
+                  <span className="message">
+                    {errors.dienThoaiKhac?.message}
+                  </span>
                 </div>
               </div>
               <div className="col">
@@ -1318,8 +1378,13 @@ function AddProfileForm(props) {
                     type="text"
                     {...register("dienThoai")}
                     id="dienThoai"
-                    className="form-control col-sm-6"
+                    className={
+                      !errors.dienThoai
+                        ? "form-control col-sm-6 "
+                        : "form-control col-sm-6 border-danger"
+                    }
                   />
+                  <span className="message">{errors.dienThoai?.message}</span>
                 </div>
               </div>
               <div className="col">
@@ -1372,8 +1437,14 @@ function AddProfileForm(props) {
                     type="text"
                     {...register("lhkc_email")}
                     id="lhkc_email"
-                    className="form-control col-sm-6"
+                    className={
+                      !errors.lhkc_email
+                        ? "form-control col-sm-6 "
+                        : "form-control col-sm-6 border-danger"
+                    }
                   />
+                <span className="message">{errors.lhkc_email?.message}</span>
+
                 </div>
               </div>
             </div>
@@ -1446,7 +1517,12 @@ function AddProfileForm(props) {
                 </div>
               </div>
             </div>
-            <input style={{display:"none"}} type="text" {...register("lhkc_maNhanVien")} value={rsId} />
+            <input
+              style={{ display: "none" }}
+              type="text"
+              {...register("lhkc_maNhanVien")}
+              value={rsId}
+            />
           </div>
           {/* Container thông tin công việc*/}
           <div className="container-div-form">
@@ -2259,8 +2335,15 @@ function AddProfileForm(props) {
                     type="text"
                     {...register("yt_chieuCao")}
                     id="yt_chieuCao"
-                    className="form-control col-sm-6"
+                    className={
+                      !errors.yt_chieuCao
+                        ? "form-control  col-sm-6"
+                        : "form-control col-sm-6 border-danger"
+                    }
                   />
+                  <span className="message">
+                    {errors.yt_chieuCao?.message}
+                  </span>
                 </div>
               </div>
               <div className="col">
@@ -2293,8 +2376,15 @@ function AddProfileForm(props) {
                     type="text"
                     {...register("yt_canNang")}
                     id="yt_canNang"
-                    className="form-control col-sm-6"
+                    className={
+                      !errors.yt_canNang
+                        ? "form-control  col-sm-6"
+                        : "form-control col-sm-6 border-danger"
+                    }
                   />
+                  <span className="message">
+                    {errors.yt_canNang?.message}
+                  </span>
                 </div>
               </div>
               <div className="col">
@@ -2330,7 +2420,7 @@ function AddProfileForm(props) {
                     className="form-control col-sm-6"
                   />
                   <input
-                  style={{display:"none"}}
+                    style={{ display: "none" }}
                     type="text"
                     {...register("yt_maNhanVien")}
                     value={rsId}
@@ -2345,7 +2435,10 @@ function AddProfileForm(props) {
             <div className="row">
               <div className="col">
                 <div class="form-group">
-                  <label class=" justify-content-start" htmlFor="lsbt_biBatDiTu">
+                  <label
+                    class=" justify-content-start"
+                    htmlFor="lsbt_biBatDiTu"
+                  >
                     Bị bắt, bị tù (thời gian và địa điểm), khai báo cho ai,
                     những vấn đề gì?
                   </label>
@@ -2415,7 +2508,7 @@ function AddProfileForm(props) {
                     }
                   />
                   <input
-                  style={{display:"none"}}
+                    style={{ display: "none" }}
                     type="text"
                     {...register("lsbt_maNhanVien")}
                     value={rsId}

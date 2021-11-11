@@ -42,6 +42,7 @@ import ScreenAccount from "../ScreenAccount/ScreenAccount";
 import ScreenAccountLog from "../ScreenAccountLog/ScreenAccountLog";
 import PDF from "../../components/Detail/PDF";
 import ScreenNotFound from "./ScreenNotFound";
+import RegisterAccount from "../../components/ResgisterAccount/RegisterAccount";
 function ScreenProject() {
   const { setAccount } = useContext(AccountContext);
   useEffect(() => {
@@ -212,11 +213,7 @@ function ScreenProject() {
                 component={ScreenCategory}
                 roles={["admin"]}
               />
-              <ProtectedRoute
-                path="/account"
-                component={ScreenAccount}
-                roles={["admin"]}
-              />
+             
 
               <ProtectedRoute
                 exact
@@ -262,7 +259,7 @@ function ScreenProject() {
                 component={ScreenDetailReward}
                 roles={["user"]}
               />
-               <ProtectedRoute
+              <ProtectedRoute
                 exact
                 path="/reward/add"
                 component={AddRewardForm}
@@ -274,7 +271,6 @@ function ScreenProject() {
                 component={AddRewardForm}
                 roles={["user"]}
               />
-             
 
               <ProtectedRoute
                 exact
@@ -288,7 +284,7 @@ function ScreenProject() {
                 component={ScreenDetailDiscipline}
                 roles={["user"]}
               />
-               <ProtectedRoute
+              <ProtectedRoute
                 exact
                 path="/discipline/add"
                 component={AddDisciplineForm}
@@ -309,6 +305,18 @@ function ScreenProject() {
                 path="/activity"
                 component={ScreenAccountLog}
                 roles={["user", "admin"]}
+              />
+              <ProtectedRoute
+                exact
+                path="/account"
+                component={ScreenAccount}
+                roles={["admin"]}
+              />
+              <ProtectedRoute
+                exact
+                path="/account/add"
+                component={RegisterAccount}
+                roles={["admin"]}
               />
               <Route component={ScreenNotFound}></Route>
             </Switch>
