@@ -659,6 +659,7 @@ const ProductApi = {
     const url = `/NhanVien/bao-cao-nguoi-than-gioi-tinh/${ageX}/${ageY}/${status}`;
     return axiosClient.get(url);
   },
+  
 };
 
 export default ProductApi;

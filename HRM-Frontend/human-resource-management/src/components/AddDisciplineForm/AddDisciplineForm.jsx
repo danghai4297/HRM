@@ -34,7 +34,7 @@ function AddDisciplineForm(props) {
   const [dataKLDetail, setDataKLDetail] = useState([]);
   const [dataKL,setDataKL] = useState([]);
   console.log(id);
-  
+  const [dataEmployee,setDataEmployee] = useState([]);
   const [dataDetailNN, setdataDetailNN] = useState([]);
   const [dataNN, setDataNN] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
@@ -55,6 +55,8 @@ function AddDisciplineForm(props) {
       try {
         const response = await ProductApi.getAllDMKL();
         setDataKL(response);
+        const responeseEm = await ProductApi.getAllNv();
+        setDataEmployee(responeseEm);
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa thông tin kỷ luật");
           const responseKT = await ProductApi.getKTvKLDetail(id);
@@ -119,12 +121,12 @@ function AddDisciplineForm(props) {
       if(id !== undefined){
         await PutApi.PutKTvKL(data,id);
         success(
-          `Sửa thông tin ngoại ngữ cho nhân viên ${dataKLDetail.tenNhanVien} thành công`
+          `Sửa thông tin kỷ luật cho nhân viên ${dataKLDetail.tenNhanVien} thành công`
         );
       }else{
         await ProductApi.PostKTvKL(data);
         success(
-          `thêm thông tin ngoại ngữ cho nhân viên ${dataKLDetail.tenNhanVien} thành công`
+          `thêm thông tin kỷ luật cho nhân viên ${dataKLDetail.tenNhanVien} thành công`
         );
       }
       history.goBack();
@@ -137,7 +139,7 @@ function AddDisciplineForm(props) {
     try {
       await DeleteApi.deleteKTvKL(id);
       success(
-        `Xoá thông tin trình độ cho nhân viên ${dataKLDetail.tenNhanVien} thành công`
+        `Xoá thông tin kỷ luật cho nhân viên ${dataKLDetail.tenNhanVien} thành công`
       );
       history.push(`/reward`);
     } catch (error) {
@@ -211,7 +213,17 @@ function AddDisciplineForm(props) {
                       ? "form-control col-sm-6 "
                       : "form-control col-sm-6 border-danger"
                   }
+                  list = "employeeCode"
                 />
+                 <datalist id="employeeCode">
+                    {dataEmployee
+                      .filter((item) => item.trangThaiLaoDong === "Đang làm việc")
+                      .map((item, key) => (
+                        <option key={key} value={item.id}>
+                          {item.hoTen}
+                        </option>
+                      ))}
+                  </datalist>
                 <span className="message">{errors.maNhanVien?.message}</span>
               </div>
             </div>

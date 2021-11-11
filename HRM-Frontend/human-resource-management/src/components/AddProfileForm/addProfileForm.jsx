@@ -18,7 +18,8 @@ import DialogCheck from "../Dialog/DialogCheck";
 import Dialog from "../../components/Dialog/Dialog";
 import { useToast } from "../Toast/Toast";
 const phoneRex = /([\|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})$\b/;
-const phoneRex1 = /(([\|84|0]+(3|5|7|8|9|1[2|6|8|9]){2})([0-9]{8})|)$\b/;
+const phoneRex1 = /^(([+|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})|)$/;
+const phoneRexlandline= /^((02)+([0-9]{9})|)$/g;
 const number = /^\d+$/;
 const tax = /((0)([0-7])([0-9]){8})$/g;
 const cccdRegex = /((0)([0-9]){2}([0-3]){1}([0-9]){8})$/g;
@@ -80,7 +81,7 @@ const schema = yup.object().shape({
     .notRequired(),
   dienThoai: yup
     .string()
-    .matches(phoneRex1, "Số điện thoại nhà riêng phải là dãy số.")
+    .matches(phoneRexlandline, "Số điện thoại nhà riêng phải là dãy số.")
     .nullable()
     .notRequired(),
   cccd: yup
@@ -172,8 +173,8 @@ const schema = yup.object().shape({
   // lsbt_thanNhanNuocNgoai: yup
   //   .string()
   //   .required("Lịch sử bản thân không được bỏ trống."),
-  yt_chieuCao: yup.number().required("Ngạch công chức không được bỏ trống."),
-  yt_canNang: yup.number().required("Ngạch công chức không được bỏ trống."),
+  yt_chieuCao: yup.number().positive("Chiều cao không thể là số âm.").typeError("Chiều cao không được bỏ trống."),
+  yt_canNang: yup.number().positive("Cân nặng không thể là số âm").typeError("Cân nặng không được bỏ trống."),
   lsbt_maNhanVien: yup
     .string()
     .nullable()
@@ -2334,8 +2335,15 @@ function AddProfileForm(props) {
                     type="text"
                     {...register("yt_chieuCao")}
                     id="yt_chieuCao"
-                    className="form-control col-sm-6"
+                    className={
+                      !errors.yt_chieuCao
+                        ? "form-control  col-sm-6"
+                        : "form-control col-sm-6 border-danger"
+                    }
                   />
+                  <span className="message">
+                    {errors.yt_chieuCao?.message}
+                  </span>
                 </div>
               </div>
               <div className="col">
@@ -2368,8 +2376,15 @@ function AddProfileForm(props) {
                     type="text"
                     {...register("yt_canNang")}
                     id="yt_canNang"
-                    className="form-control col-sm-6"
+                    className={
+                      !errors.yt_canNang
+                        ? "form-control  col-sm-6"
+                        : "form-control col-sm-6 border-danger"
+                    }
                   />
+                  <span className="message">
+                    {errors.yt_canNang?.message}
+                  </span>
                 </div>
               </div>
               <div className="col">

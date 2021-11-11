@@ -46,6 +46,7 @@ function AddTransferForm(props) {
   const [dataDepartment, setDataDepartment] = useState([]);
   const [dataPosition, setDataPosition] = useState([]);
   const [nest, setNest] = useState();
+  const [dataEmployee,setDataEmployee] = useState([]);
 
   const [dataDetailNN, setdataDetailNN] = useState([]);
   const [dataNN, setDataNN] = useState([]);
@@ -54,6 +55,7 @@ function AddTransferForm(props) {
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm thông tin thuyên chuyển mới"
   );
+  
   const [showCheckDialog, setShowCheckDialog] = useState(false);
   const cancel = () => {
     setShowDialog(false);
@@ -70,6 +72,8 @@ function AddTransferForm(props) {
         setDataDepartment(responseDepartment);
         const responsePosition = await ProductApi.getAllDMCV();
         setDataPosition(responsePosition);
+        const responeseEm = await ProductApi.getAllNv();
+        setDataEmployee(responeseEm);
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa thông tin thuyên chuyển");
           const response = await ProductApi.getDCDetail(id);
@@ -244,7 +248,17 @@ function AddTransferForm(props) {
                         ? "form-control col-sm-6 "
                         : "form-control col-sm-6 border-danger"
                     }
+                    list = "employeeCode"
                   />
+                  <datalist id="employeeCode">
+                    {dataEmployee
+                      .filter((item) => item.trangThaiLaoDong === "Đang làm việc")
+                      .map((item, key) => (
+                        <option key={key} value={item.id}>
+                          {item.hoTen}
+                        </option>
+                      ))}
+                  </datalist>
                   <span className="message">{errors.maNhanVien?.message}</span>
                 </div>
               </div>

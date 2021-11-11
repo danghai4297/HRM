@@ -34,7 +34,7 @@ function ScreenAccount(props) {
             <h2 className="">Danh sách hợp đồng</h2>
           </div>
           <div className="button">
-            <Link to="/contract/add" className="link-item">
+            <Link to="/account/add" className="link-item">
               <input type="submit" className="btn btn-primary" value="Thêm" />
             </Link>
             <ReactHTMLTableToExcel
@@ -63,4 +63,3 @@ function ScreenAccount(props) {
 }
 
 export default ScreenAccount;
-

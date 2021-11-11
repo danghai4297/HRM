@@ -17,12 +17,14 @@ import DialogCheck from "../Dialog/DialogCheck";
 import { useToast } from "../Toast/Toast";
 import Dialog from "../../components/Dialog/Dialog";
 const schema = yup.object({
+  maHopDong: yup.string().nullable().required("Mã hợp đồng không được bỏ trống."),
   idNhomLuong: yup
     .number()
     .nullable()
     .required("Nhóm lương không được bỏ trống."),
   heSoLuong: yup
     .number()
+    .positive("Hệ số lương không thể là số âm.")
     .typeError("Hệ số lương không được bỏ trống."),
   bacLuong: yup.string().nullable().required("Bậc lương không được bỏ trống."),
   ngayHieuLuc: yup
@@ -32,16 +34,17 @@ const schema = yup.object({
   // ngayKetThuc: yup.date().nullable().required("Ngày có hiệu lực không được bỏ trống."),
   luongCoBan: yup
     .number()
+    .positive("Lương cơ bản không thể là số âm.")
     .typeError("Lương cơ bản không được bỏ trống và phải là số."),
   phuCapTrachNhiem: yup
     .number()
+    .positive("Phụ cấp chức vụ không thể là số âm.")
     .typeError("Phụ cấp chức vụ không được bỏ trống và phải là số."),
   phuCapKhac: yup
     .number()
+    .positive("Phụ cấp khác không thể là số âm.")
     .typeError("Phụ cấp khác không được bỏ trống và phải là số."),
-  tongLuong: yup
-    .number()
-    .typeError("Tổng lương không được bỏ trống và phải là số."),
+  tongLuong: yup.number(),
   thoiHanLenLuong: yup
     .string()
     .nullable()
@@ -78,6 +81,7 @@ function AddSalaryForm(props) {
 
   const [salaryTime, setSalaryTime] = useState();
   const [endDate, setEndDate] = useState();
+  const [startDate, setStartDate] = useState();
   const [endDateRs, setEndDateRs] = useState();
   const [dataAllHD, setDataAllHD] = useState([]);
   const [rsSalary, setRsSalary] = useState(0);
@@ -138,7 +142,6 @@ function AddSalaryForm(props) {
     maHopDong:
       id !== undefined ? dataLDetail.maHopDong : query.get("maHopDong"),
   };
-  
 
   const {
     register,
@@ -221,11 +224,11 @@ function AddSalaryForm(props) {
 
   const onHandleSubmit = async (data) => {
     console.log(data);
-    // if(endDateRs !== undefined){
-    //   let obj = {ngayKetThuc: endDateRs}
-    //   Object.assign(data,obj);
-    //   console.log(Object.assign(data,obj));
-    // }
+    if (endDateRs !== undefined) {
+      let obj = { ngayKetThuc: endDateRs };
+      Object.assign(data, obj);
+      console.log(Object.assign(data, obj));
+    }
     try {
       if (id !== undefined) {
         await PutApi.PutL(data, id);
@@ -266,17 +269,16 @@ function AddSalaryForm(props) {
       salaryTime !== 0 &&
       endDate !== null
     ) {
-      const rs = endDate;
+      const rs = endDate.clone();
       setEndDateRs(rs.add(salaryTime, "years"));
     }
-    // return endDateRs;
-    // setValue("ngayKetThuc",endDateRs);
   }, [salaryTime, endDate]);
-  
+
   console.log(salaryTime);
-  console.log(endDate);
+  console.log("endDate:", endDate);
+  console.log("startDate:", startDate);
   console.log(endDateRs);
-  
+
   return (
     <>
       <div className="container-form">
@@ -339,18 +341,6 @@ function AddSalaryForm(props) {
                       readOnly
                     ></input>
                   </span>
-                  <button
-                  // onClick={(e) => {
-                  //   e.preventDefault();
-                  //   setValue("tongLuong", rsSalary);
-                  //   //calSalary();
-                  // }}
-                  >
-                    <FontAwesomeIcon
-                      className="icon"
-                      icon={["fas", "money-check-alt"]}
-                    />
-                  </button>
                 </div>
                 <span className="message-1">{errors.tongLuong?.message}</span>
               </div>
@@ -386,6 +376,7 @@ function AddSalaryForm(props) {
                         </option>
                       ))}
                   </datalist>
+                  <span className="message">{errors.maHopDong?.message}</span>
                 </div>
               </div>
               <div className="col">
@@ -605,7 +596,8 @@ function AddSalaryForm(props) {
                         value={field.value}
                         onChange={(event) => {
                           field.onChange(event);
-                         // setEndDate(event);
+                          setEndDate(event);
+                          setStartDate(event);
                         }}
                         {...field._d}
                       />
@@ -635,13 +627,14 @@ function AddSalaryForm(props) {
                         }
                         placeholder="DD/MM/YYYY"
                         format="DD/MM/YYYY"
-                        //value={endDateRs}
-                        value={field.value}
-                        onChange={(event) => {
-                          field.onChange(event);
-                         // setEndDate(event);
-                        }}
+                        value={endDateRs}
+                        //value={field.value}
+                        // onChange={(event) => {
+                        //   field.onChange(event);
+                        //  // setEndDate(event);
+                        // }}
                         {...field._d}
+                        disabled={true}
                       />
                     )}
                   />

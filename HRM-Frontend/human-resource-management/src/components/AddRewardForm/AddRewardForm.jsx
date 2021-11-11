@@ -28,6 +28,7 @@ function AddRewardForm(props) {
 
   const [dataKTDetail, setDataKTDetail] = useState([]);
   const [dataKT, setDataKT] = useState([]);
+  const [dataEmployee,setDataEmployee] = useState([]);
 
   const [dataDetailNN, setdataDetailNN] = useState([]);
   const [dataNN, setDataNN] = useState([]);
@@ -47,6 +48,8 @@ function AddRewardForm(props) {
       try {
         const response = await ProductApi.getAllDMKT();
         setDataKT(response);
+        const responeseEm = await ProductApi.getAllNv();
+        setDataEmployee(responeseEm);
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa thông tin khen thưởng");
           const responseKT = await ProductApi.getKTvKLDetail(id);
@@ -206,7 +209,17 @@ function AddRewardForm(props) {
                       ? "form-control col-sm-6 "
                       : "form-control col-sm-6 border-danger"
                   }
+                  list = "employeeCode"
                 />
+                 <datalist id="employeeCode">
+                    {dataEmployee
+                      .filter((item) => item.trangThaiLaoDong === "Đang làm việc")
+                      .map((item, key) => (
+                        <option key={key} value={item.id}>
+                          {item.hoTen}
+                        </option>
+                      ))}
+                  </datalist>
                 <span className="message">{errors.maNhanVien?.message}</span>
               </div>
             </div>
