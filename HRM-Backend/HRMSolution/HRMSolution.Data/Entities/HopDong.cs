@@ -6,6 +6,7 @@ namespace HRMSolution.Data.Entities
 {
     public class HopDong
     {
+        public int id { get; set; }
         public string maHopDong { get; set; }
         public int idLoaiHopDong { get; set; }
         public int idChucDanh { get; set; }
