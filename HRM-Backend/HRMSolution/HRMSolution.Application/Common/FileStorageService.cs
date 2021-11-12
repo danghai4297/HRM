@@ -36,7 +36,7 @@ namespace HRMSolution.Application.Common
 
         public async Task DeleteFileAsync(string fileName)
         {
-            var filePath = Path.Combine(_userContentFolder, fileName);
+            var filePath = string.Concat(_userContentFolder,string.IsNullOrWhiteSpace(fileName)?string.Empty:fileName.Replace("/user-content",""));
             if (File.Exists(filePath))
             {
                 await Task.Run(() => File.Delete(filePath));

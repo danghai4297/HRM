@@ -12,8 +12,6 @@ namespace HRMSolution.Data.Configurations
         public void Configure(EntityTypeBuilder<AppUser> builder)
         {
             builder.ToTable("AppUsers");
-            builder.Property(x => x.hoTen).IsRequired().HasMaxLength(200);
-            builder.Property(x => x.ngaySinh).IsRequired();
             builder.Property(x => x.maNhanVien).IsRequired().HasMaxLength(200);
         }
     }

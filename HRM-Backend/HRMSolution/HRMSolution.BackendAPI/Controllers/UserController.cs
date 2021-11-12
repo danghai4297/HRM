@@ -12,7 +12,7 @@ namespace HRMSolution.BackendAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
@@ -21,7 +21,7 @@ namespace HRMSolution.BackendAPI.Controllers
             _userService = userService;
         }
         [HttpPost("authenticate")]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public async Task<IActionResult> Authenticate([FromBody] LoginRequest request)
         {
             if (!ModelState.IsValid)
@@ -29,11 +29,11 @@ namespace HRMSolution.BackendAPI.Controllers
 
             var result = await _userService.Authencate(request);
 
-            if (string.IsNullOrEmpty(result.ResultObj))
+            if (string.IsNullOrEmpty(result))
             {
-                return BadRequest(result);
+                return BadRequest("Tài khoản hoặc mật khẩu không đúng");
             }
-            return Ok(result);
+            return Ok(new { token = result});
         }
 
         [HttpPost("create")]
@@ -43,11 +43,11 @@ namespace HRMSolution.BackendAPI.Controllers
                 return BadRequest(ModelState);
 
             var result = await _userService.Register(request);
-            if (!result.IsSuccessed)
+            if (result == false)
             {
-                return BadRequest(result);
+                return BadRequest("Tạo tài khoảng không thành công");
             }
-            return Ok(result);
+            return Ok();
         }
 
         //PUT: http://localhost/api/users/id
@@ -58,7 +58,7 @@ namespace HRMSolution.BackendAPI.Controllers
                 return BadRequest(ModelState);
 
             var result = await _userService.Update(id, request);
-            if (!result.IsSuccessed)
+            if (result == false)
             {
                 return BadRequest(result);
             }
@@ -72,7 +72,7 @@ namespace HRMSolution.BackendAPI.Controllers
                 return BadRequest(ModelState);
 
             var result = await _userService.RoleAssign(id, request);
-            if (!result.IsSuccessed)
+            if (result == false)
             {
                 return BadRequest(result);
             }
@@ -94,14 +94,14 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpGet("paging")]
         public async Task<IActionResult> GetAllPaging([FromQuery] GetUserPagingRequest request)
         {
-            var products = await _userService.GetUsersPaging(request);
-            return Ok(products);
+            var user = await _userService.GetUsersPaging(request);
+            return Ok(user);
         }
         [HttpGet()]
         public async Task<IActionResult> GetAll()
         {
-            var products = await _userService.GetAll();
-            return Ok(products);
+            var user = await _userService.GetAll();
+            return Ok(user);
         }
     }
 }

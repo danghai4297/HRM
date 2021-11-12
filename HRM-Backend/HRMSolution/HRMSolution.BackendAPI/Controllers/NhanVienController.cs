@@ -12,7 +12,7 @@ namespace HRMSolution.BackendAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class NhanVienController : ControllerBase
     {
         private readonly INhanVienService _nhanVienService;

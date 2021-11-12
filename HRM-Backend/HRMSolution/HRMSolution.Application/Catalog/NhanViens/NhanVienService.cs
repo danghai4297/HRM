@@ -133,6 +133,9 @@ namespace HRMSolution.Application.Catalog.NhanViens
 
             await _storageService.DeleteFileAsync(nhanVien.anh);
 
+            nhanVien.anh = null;
+            _context.nhanViens.Update(nhanVien);
+
             return await _context.SaveChangesAsync();
         }
 

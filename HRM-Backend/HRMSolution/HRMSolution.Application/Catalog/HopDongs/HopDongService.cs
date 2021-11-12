@@ -123,6 +123,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
                         join dmlhd in _context.danhMucLoaiHopDongs on p.idLoaiHopDong equals dmlhd.id
                         join dmcd in _context.danhMucChucDanhs on p.idChucDanh equals dmcd.id
                         join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
+                        orderby p.id ascending
                         select new  { p, nv, dmcd, dmlhd};
 
             var data = await query.Select(x => new HopDongViewModel()

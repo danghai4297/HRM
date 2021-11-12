@@ -34,21 +34,22 @@ namespace HRMSolution.Application.System.Users
             _context = context;
         }
 
-        public async Task<ApiResult<string>> Authencate(LoginRequest request)
+        public async Task<string> Authencate(LoginRequest request)
         {
             var user = await _userManager.FindByNameAsync(request.UserName);
-            if (user == null) return new ApiErrorResult<string>("Tài khoản không tồn tại");
+            if (user == null) return null;
 
             var result = await _signInManager.PasswordSignInAsync(user, request.Password, request.RememberMe, true);
             if (!result.Succeeded)
             {
-                return new ApiErrorResult<string>("Đăng nhập không đúng");
+                return null;
             }
+            var nv = await _context.nhanViens.FindAsync(user.maNhanVien);
             var roles = await _userManager.GetRolesAsync(user);
             var claims = new[]
             {
-                new Claim("email",user.Email),
-                new Claim("givenName",user.hoTen),
+                new Claim("email",nv.email),
+                new Claim("givenName",nv.hoTen),
                 new Claim("role", string.Join(";",roles)),
                 new Claim("userName", request.UserName),
                 new Claim("id", user.maNhanVien)
@@ -62,21 +63,21 @@ namespace HRMSolution.Application.System.Users
                 expires: DateTime.Now.AddHours(3),
                 signingCredentials: creds);
 
-            return new ApiSuccessResult<string>(new JwtSecurityTokenHandler().WriteToken(token));
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        public async Task<ApiResult<bool>> Delete(Guid id)
+        public async Task<bool> Delete(Guid id)
         {
             var user = await _userManager.FindByIdAsync(id.ToString());
             if (user == null)
             {
-                return new ApiErrorResult<bool>("User không tồn tại");
+                return false;
             }
             var reult = await _userManager.DeleteAsync(user);
             if (reult.Succeeded)
-                return new ApiSuccessResult<bool>();
+                return true;
 
-            return new ApiErrorResult<bool>("Xóa không thành công");
+            return false;
         }
 
         public async Task<ApiResult<PagedResult<UserVm>>> GetUsersPaging(GetUserPagingRequest request)
@@ -99,7 +100,6 @@ namespace HRMSolution.Application.System.Users
                     PhoneNumber = x.PhoneNumber,
                     UserName = x.UserName,
                     Id = x.Id,
-                    FullName = x.hoTen
                 }).ToListAsync();
 
             //4. Select and projection
@@ -116,77 +116,92 @@ namespace HRMSolution.Application.System.Users
         public async Task<List<UserVm>> GetAll()
         {
             var query = from x in _userManager.Users
-                        select x;
+                        join nv in _context.nhanViens on x.maNhanVien equals nv.maNhanVien
+                        select new {x, nv };
             var data = await query.Select(x => new UserVm()
             {
-                Id = x.Id,
-                FullName = x.hoTen,
-                PhoneNumber = x.PhoneNumber,
-                UserName = x.UserName,
-                Email = x.Email,
-                maNhanVien = x.maNhanVien,
-                Dob = x.ngaySinh,
-                password = x.PasswordHash,
+                Id = x.x.Id,
+                FullName = x.nv.hoTen,
+                PhoneNumber = x.nv.dienThoai,
+                UserName = x.x.UserName,
+                Email = x.nv.email,
+                maNhanVien = x.x.maNhanVien,
+                Dob = x.nv.ngaySinh,
+                password = x.x.PasswordHash,
             }).ToListAsync();
 
             return data;
         }
 
-        public async Task<ApiResult<UserVm>> GetById(Guid id)
+        public async Task<UserVm> GetById(Guid id)
         {
             var user = await _userManager.FindByIdAsync(id.ToString());
-            if (user == null)
-            {
-                return new ApiErrorResult<UserVm>("User không tồn tại");
-            }
+            //if (user == null)
+            //{
+            //    return "User không tồn tại";
+            //}
             var roles = await _userManager.GetRolesAsync(user);
-            var userVm = new UserVm()
+
+            //var userVm = new UserVm()
+            //{
+            //    Email = user.Email,
+            //    PhoneNumber = user.PhoneNumber,
+            //    FullName = user.hoTen,
+            //    Dob = user.ngaySinh,
+            //    Id = user.Id,
+            //    UserName = user.UserName,
+            //    Roles = roles,
+            //    maNhanVien = user.maNhanVien,
+            //    password =  user.PasswordHash
+            //};
+            var query = from x in _userManager.Users
+                        join nv in _context.nhanViens on x.maNhanVien equals nv.maNhanVien
+                        where x.Id == id
+                        select new { x, nv };
+            var data = await query.Select(x => new UserVm()
             {
-                Email = user.Email,
-                PhoneNumber = user.PhoneNumber,
-                FullName = user.hoTen,
-                Dob = user.ngaySinh,
-                Id = user.Id,
-                UserName = user.UserName,
-                Roles = roles,
-                maNhanVien = user.maNhanVien,
-                password =  user.PasswordHash
-            };
-            return new ApiSuccessResult<UserVm>(userVm);
+                Id = x.x.Id,
+                FullName = x.nv.hoTen,
+                PhoneNumber = x.nv.dienThoai,
+                UserName = x.x.UserName,
+                Email = x.nv.email,
+                maNhanVien = x.x.maNhanVien,
+                Dob = x.nv.ngaySinh,
+                password = x.x.PasswordHash,
+                Roles = roles
+            }).FirstOrDefaultAsync();
+
+            return data;
         }
 
-        public async Task<ApiResult<bool>> Register(RegisterRequest request)
+        public async Task<bool> Register(RegisterRequest request)
         {
             var user = await _userManager.FindByNameAsync(request.UserName);
             var nhanVien = await _context.nhanViens.FindAsync(request.maNhanVien);
             if (user != null)
             {
-                return new ApiErrorResult<bool>("Tài khoản đã tồn tại");
+                return false;
             }
 
             user = new AppUser()
             {
-                ngaySinh = nhanVien.ngaySinh,
-                Email = nhanVien.email,
-                hoTen = nhanVien.hoTen,
                 UserName = request.UserName,
-                PhoneNumber = nhanVien.diDong,
                 maNhanVien = request.maNhanVien,
             };
             var result = await _userManager.CreateAsync(user, request.Password);
             if (result.Succeeded)
             {
-                return new ApiSuccessResult<bool>();
+                return true;
             }
-            return new ApiErrorResult<bool>("Đăng ký không thành công");
+            return true;
         }
 
-        public async Task<ApiResult<bool>> RoleAssign(Guid id, RoleAssignRequest request)
+        public async Task<bool> RoleAssign(Guid id, RoleAssignRequest request)
         {
             var user = await _userManager.FindByIdAsync(id.ToString());
             if (user == null)
             {
-                return new ApiErrorResult<bool>("Tài khoản không tồn tại");
+                return false;
             }
             var removedRoles = request.Roles.Where(x => x.Selected == false).Select(x => x.Name).ToList();
             foreach (var roleName in removedRoles)
@@ -207,19 +222,17 @@ namespace HRMSolution.Application.System.Users
                 }
             }
 
-            return new ApiSuccessResult<bool>();
+            return true;
         }
 
-        public async Task<ApiResult<bool>> Update(Guid id, UserUpdateRequest request)
+        public async Task<bool> Update(Guid id, UserUpdateRequest request)
         {
             if(await _userManager.Users.AnyAsync(x => x.Email == request.Email && x.Id != id))
             {
-                return new ApiErrorResult<bool>("Emai đã tồn tại");
+                return false;
             }
             var user = await _userManager.FindByIdAsync(id.ToString());
-            user.ngaySinh = request.Dob;
             user.Email = request.Email;
-            user.hoTen = request.FullName;
             user.PhoneNumber = request.PhoneNumber;
             user.maNhanVien = request.maNhanVien;
             
@@ -227,9 +240,9 @@ namespace HRMSolution.Application.System.Users
             var result = await _userManager.UpdateAsync(user);
             if (result.Succeeded)
             {
-                return new ApiSuccessResult<bool>();
+                return true;
             }
-            return new ApiErrorResult<bool>("Cập nhật không thành công");
+            return true;
         }
 
         
