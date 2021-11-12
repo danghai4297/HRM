@@ -47,7 +47,11 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
+<<<<<<< HEAD
                             ConcurrencyStamp = "777c121a-751c-4a17-8530-2feae1331db1",
+=======
+                            ConcurrencyStamp = "96273968-92b3-480f-b979-77513bc39ad9",
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             Name = "admin",
                             NormalizedName = "admin",
                             ghiChu = "Administrator role"
@@ -55,7 +59,11 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec"),
+<<<<<<< HEAD
                             ConcurrencyStamp = "6c447aef-18dc-4b09-b6f4-58318c8fd23b",
+=======
+                            ConcurrencyStamp = "1079b432-3322-4e6d-9364-e8638bb5572c",
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             Name = "user",
                             NormalizedName = "user",
                             ghiChu = "User role"
@@ -124,11 +132,21 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
                             AccessFailedCount = 0,
+<<<<<<< HEAD
                             ConcurrencyStamp = "44515bc5-fff3-4a7d-879e-67217c24092e",
+=======
+                            ConcurrencyStamp = "f8725884-6728-454f-a886-f3cd65678ea5",
+                            Email = "hieudongtru@gmail.com",
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "admin",
+<<<<<<< HEAD
                             PasswordHash = "AQAAAAEAACcQAAAAEKqyBhXDME6ugnq21ftAiVMZHm8q2eYOxftOJWlci3eRxoO/mvOVkg4OTnPUqfi/oQ==",
+=======
+                            PasswordHash = "AQAAAAEAACcQAAAAEJpQhBz9WBTTJ93xMGRJxGR3NbB3oYjI7EDzcl/g0UVjSXKF6r2FEA3WfWHReFWgvw==",
+                            PhoneNumber = "01231243",
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -139,11 +157,21 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("1db26eb2-1870-4129-f60a-08d9978ff76b"),
                             AccessFailedCount = 0,
+<<<<<<< HEAD
                             ConcurrencyStamp = "0e8aff79-6118-44a1-8049-bcc2dee254c0",
+=======
+                            ConcurrencyStamp = "eaeeefd4-2ca1-464f-9fa9-cc7eb4213b7c",
+                            Email = "hieudongtru@gmail.com",
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "user1",
+<<<<<<< HEAD
                             PasswordHash = "AQAAAAEAACcQAAAAEFMIVVA7BWOSy1HiaTEQVPAnLU6lr5TO0xbX+mKvwsD9xocWhh+UNHfUsO2VALrd/w==",
+=======
+                            PasswordHash = "AQAAAAEAACcQAAAAEALSukC6BooWceLPuvNfDM6gi5ETzaZkok9WnIwf2fQ8U6/+kQSs8EPepYdu6smDqA==",
+                            PhoneNumber = "01231243",
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -1002,7 +1030,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0001",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(4252),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(4935),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 1,
                             trangThai = false
                         },
@@ -1013,7 +1045,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0001",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7013),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6477),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 2,
                             trangThai = false
                         },
@@ -1024,7 +1060,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0001",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7099),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6529),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 3,
                             trangThai = true
                         },
@@ -1035,7 +1075,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0002",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7103),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6531),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 3,
                             trangThai = true
                         },
@@ -1046,7 +1090,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0003",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7107),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6533),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 3,
                             trangThai = true
                         },
@@ -1057,7 +1105,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0004",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7110),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6535),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 3,
                             trangThai = true
                         },
@@ -1068,7 +1120,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0005",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7113),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6537),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 3,
                             trangThai = true
                         },
@@ -1079,7 +1135,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0006",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7116),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6539),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 3,
                             trangThai = true
                         },
@@ -1090,7 +1150,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0007",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7120),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6541),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 3,
                             trangThai = true
                         },
@@ -1101,7 +1165,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0008",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7122),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6542),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 3,
                             trangThai = true
                         },
@@ -1112,7 +1180,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0009",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7125),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6544),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 3,
                             trangThai = true
                         },
@@ -1123,7 +1195,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0010",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7129),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6546),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 3,
                             trangThai = true
                         },
@@ -1134,7 +1210,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0011",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7132),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6548),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 3,
                             trangThai = true
                         },
@@ -1145,7 +1225,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0012",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7134),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6550),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 3,
                             trangThai = true
                         },
@@ -1156,7 +1240,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0013",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7137),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6551),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 3,
                             trangThai = true
                         },
@@ -1167,7 +1255,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0014",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7140),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6553),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 3,
                             trangThai = true
                         },
@@ -1178,7 +1270,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0015",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7143),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6556),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 3,
                             trangThai = true
                         },
@@ -1189,7 +1285,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0016",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7146),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6557),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 3,
                             trangThai = true
                         },
@@ -1200,7 +1300,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0017",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7151),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6559),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 3,
                             trangThai = true
                         },
@@ -1211,7 +1315,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0018",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7154),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6561),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 3,
                             trangThai = true
                         },
@@ -1222,7 +1330,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0019",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7157),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6563),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 3,
                             trangThai = true
                         },
@@ -1233,7 +1345,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0020",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7160),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6565),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 1,
                             trangThai = true
                         },
@@ -1244,7 +1360,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0021",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7162),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6566),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 1,
                             trangThai = true
                         },
@@ -1255,7 +1375,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0022",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7165),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6568),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 1,
                             trangThai = true
                         },
@@ -1266,7 +1390,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0023",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7168),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6570),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 1,
                             trangThai = true
                         },
@@ -1277,7 +1405,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0024",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7170),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6573),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 1,
                             trangThai = true
                         },
@@ -1288,7 +1420,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0025",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7173),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6574),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 1,
                             trangThai = true
                         },
@@ -1299,7 +1435,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0026",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7176),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6576),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 1,
                             trangThai = true
                         },
@@ -1310,7 +1450,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0027",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7178),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6578),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 1,
                             trangThai = true
                         },
@@ -1321,7 +1465,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0028",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7183),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6580),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 1,
                             trangThai = true
                         },
@@ -1332,7 +1480,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0029",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7186),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6581),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 1,
                             trangThai = true
                         },
@@ -1343,7 +1495,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0030",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7189),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6583),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 1,
                             trangThai = true
                         },
@@ -1354,7 +1510,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0031",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7192),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6585),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 1,
                             trangThai = true
                         },
@@ -1365,7 +1525,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0032",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7195),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6587),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 1,
                             trangThai = true
                         },
@@ -1376,7 +1540,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0033",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7198),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6588),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 1,
                             trangThai = true
                         },
@@ -1387,7 +1555,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0034",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7201),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6590),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 1,
                             trangThai = true
                         },
@@ -1398,7 +1570,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0035",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7205),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6592),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 1,
                             trangThai = true
                         },
@@ -1409,7 +1585,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0036",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7207),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6594),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 1,
                             trangThai = true
                         },
@@ -1420,7 +1600,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0037",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7210),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6596),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 1,
                             trangThai = true
                         },
@@ -1431,7 +1615,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0038",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7213),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6598),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 1,
                             trangThai = true
                         },
@@ -1442,7 +1630,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0039",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7216),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6600),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 1,
                             trangThai = true
                         },
@@ -1453,7 +1645,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0040",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7219),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6602),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 2,
                             trangThai = true
                         },
@@ -1464,7 +1660,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0041",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7222),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6604),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 2,
                             trangThai = true
                         },
@@ -1475,7 +1675,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0042",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7225),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6605),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 2,
                             trangThai = true
                         },
@@ -1486,7 +1690,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0043",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7227),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6607),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 2,
                             trangThai = true
                         },
@@ -1497,7 +1705,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0044",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7231),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6609),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 2,
                             trangThai = true
                         },
@@ -1508,7 +1720,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0045",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7233),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6611),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 2,
                             trangThai = true
                         },
@@ -1519,7 +1735,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0046",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7236),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6612),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 2,
                             trangThai = true
                         },
@@ -1530,7 +1750,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0047",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7249),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6614),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 2,
                             trangThai = true
                         },
@@ -1541,7 +1765,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0048",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7252),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6616),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 2,
                             trangThai = true
                         },
@@ -1552,7 +1780,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0049",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7255),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6617),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 2,
                             trangThai = true
                         },
@@ -1563,7 +1795,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0050",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7258),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6620),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 2,
                             trangThai = true
                         },
@@ -1574,7 +1810,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0051",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7261),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6622),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 2,
                             trangThai = true
                         },
@@ -1585,7 +1825,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0052",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7264),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6623),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 2,
                             trangThai = true
                         },
@@ -1596,7 +1840,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0053",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7267),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6625),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 2,
                             trangThai = true
                         },
@@ -1607,7 +1855,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0054",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7270),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6627),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 2,
                             trangThai = true
                         },
@@ -1618,7 +1870,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0055",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7273),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6629),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 2,
                             trangThai = true
                         },
@@ -1629,7 +1885,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0056",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7275),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6630),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 2,
                             trangThai = true
                         },
@@ -1640,7 +1900,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0057",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7279),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6632),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 2,
                             trangThai = true
                         },
@@ -1651,7 +1915,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0058",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7281),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6634),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 2,
                             trangThai = true
                         },
@@ -1662,7 +1930,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0059",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7284),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6636),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 2,
                             trangThai = true
                         },
@@ -1673,7 +1945,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0060",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7287),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6637),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 4,
                             trangThai = true
                         },
@@ -1684,7 +1960,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0061",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7289),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6639),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 4,
                             trangThai = true
                         },
@@ -1695,7 +1975,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0062",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7293),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6642),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 4,
                             trangThai = true
                         },
@@ -1706,7 +1990,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0063",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7296),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6644),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 4,
                             trangThai = true
                         },
@@ -1717,7 +2005,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0064",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7299),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6646),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 4,
                             trangThai = true
                         },
@@ -1728,7 +2020,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0065",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7302),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6648),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 4,
                             trangThai = true
                         },
@@ -1739,7 +2035,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0066",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7305),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6650),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 4,
                             trangThai = true
                         },
@@ -1750,7 +2050,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0067",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7307),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6652),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 4,
                             trangThai = true
                         },
@@ -1761,7 +2065,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0068",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7310),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6653),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 4,
                             trangThai = true
                         },
@@ -1772,7 +2080,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0069",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7313),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6655),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 4,
                             trangThai = true
                         },
@@ -1783,7 +2095,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0070",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7316),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6657),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 4,
                             trangThai = true
                         },
@@ -1794,7 +2110,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0071",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7319),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6659),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 4,
                             trangThai = true
                         },
@@ -1805,7 +2125,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0072",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7321),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6661),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 4,
                             trangThai = true
                         },
@@ -1816,7 +2140,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0073",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7324),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6663),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 4,
                             trangThai = true
                         },
@@ -1827,7 +2155,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0074",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7327),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6665),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 4,
                             trangThai = true
                         },
@@ -1838,7 +2170,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0075",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7330),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6675),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 4,
                             trangThai = true
                         },
@@ -1849,7 +2185,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0076",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7333),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6677),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 4,
                             trangThai = true
                         },
@@ -1860,7 +2200,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0077",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7335),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6678),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 4,
                             trangThai = true
                         },
@@ -1871,7 +2215,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0078",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7340),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6680),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 4,
                             trangThai = true
                         },
@@ -1882,7 +2230,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 1,
                             maNhanVien = "NV0079",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7342),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6683),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 4,
                             trangThai = true
                         },
@@ -1893,7 +2245,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0080",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7345),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6685),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 5,
                             trangThai = true
                         },
@@ -1904,7 +2260,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0081",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7348),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6687),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 5,
                             trangThai = true
                         },
@@ -1915,7 +2275,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0082",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7351),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6688),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 5,
                             trangThai = true
                         },
@@ -1926,7 +2290,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0083",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7353),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6690),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 5,
                             trangThai = true
                         },
@@ -1937,7 +2305,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0084",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7356),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6692),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 5,
                             trangThai = true
                         },
@@ -1948,7 +2320,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0085",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7359),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6694),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 5,
                             trangThai = true
                         },
@@ -1959,7 +2335,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0086",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7361),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6696),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 5,
                             trangThai = true
                         },
@@ -1970,7 +2350,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0087",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7365),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6698),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 5,
                             trangThai = true
                         },
@@ -1981,7 +2365,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0088",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7368),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6700),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 5,
                             trangThai = true
                         },
@@ -1992,7 +2380,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0089",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7371),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6701),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 5,
                             trangThai = true
                         },
@@ -2003,7 +2395,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0090",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7374),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6703),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 5,
                             trangThai = true
                         },
@@ -2014,7 +2410,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0091",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7377),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6705),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 5,
                             trangThai = true
                         },
@@ -2025,7 +2425,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0092",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7379),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6707),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 5,
                             trangThai = true
                         },
@@ -2036,7 +2440,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0093",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7383),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6708),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 5,
                             trangThai = true
                         },
@@ -2047,7 +2455,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0094",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7386),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6710),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 5,
                             trangThai = true
                         },
@@ -2058,7 +2470,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0095",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7389),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6712),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 5,
                             trangThai = true
                         },
@@ -2069,7 +2485,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0096",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7392),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6714),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 5,
                             trangThai = true
                         },
@@ -2080,7 +2500,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0097",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7395),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6717),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 5,
                             trangThai = true
                         },
@@ -2091,7 +2515,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0098",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7397),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6718),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 5,
                             trangThai = true
                         },
@@ -2102,7 +2530,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0099",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7400),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6720),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 5,
                             trangThai = true
                         },
@@ -2113,7 +2545,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0100",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7403),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6722),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 6,
                             trangThai = true
                         },
@@ -2124,7 +2560,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0101",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7406),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6724),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 6,
                             trangThai = true
                         },
@@ -2135,7 +2575,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0102",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7409),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6725),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 6,
                             trangThai = true
                         },
@@ -2146,7 +2590,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0103",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7412),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6727),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 6,
                             trangThai = true
                         },
@@ -2157,7 +2605,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0104",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7415),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6729),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 6,
                             trangThai = true
                         },
@@ -2168,7 +2620,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0105",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7418),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6731),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 6,
                             trangThai = true
                         },
@@ -2179,7 +2635,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0106",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7421),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6733),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 6,
                             trangThai = true
                         },
@@ -2190,7 +2650,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0107",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7424),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6734),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 6,
                             trangThai = true
                         },
@@ -2201,7 +2665,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0108",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7426),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6737),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 6,
                             trangThai = true
                         },
@@ -2212,7 +2680,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0109",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7429),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6739),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 6,
                             trangThai = true
                         },
@@ -2223,7 +2695,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0110",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7433),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6740),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 6,
                             trangThai = true
                         },
@@ -2234,7 +2710,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0111",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7436),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6742),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 6,
                             trangThai = true
                         },
@@ -2245,7 +2725,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0112",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7438),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6744),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 6,
                             trangThai = true
                         },
@@ -2256,7 +2740,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0113",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7440),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6746),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 6,
                             trangThai = true
                         },
@@ -2267,7 +2755,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0114",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7443),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6749),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 6,
                             trangThai = true
                         },
@@ -2278,7 +2770,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0115",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7446),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6751),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 6,
                             trangThai = true
                         },
@@ -2289,7 +2785,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0116",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7448),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6753),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 6,
                             trangThai = true
                         },
@@ -2300,7 +2800,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0117",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7451),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6755),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 6,
                             trangThai = true
                         },
@@ -2311,7 +2815,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0118",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7454),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6756),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 6,
                             trangThai = true
                         },
@@ -2322,7 +2830,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0119",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7456),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6758),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 6,
                             trangThai = true
                         },
@@ -2333,7 +2845,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0120",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7459),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6761),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 7,
                             trangThai = true
                         },
@@ -2344,7 +2860,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0121",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7462),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6762),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 7,
                             trangThai = true
                         },
@@ -2355,7 +2875,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0122",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7465),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6764),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 7,
                             trangThai = true
                         },
@@ -2366,7 +2890,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0123",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7468),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6766),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 7,
                             trangThai = true
                         },
@@ -2377,7 +2905,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0124",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7471),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6768),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 7,
                             trangThai = true
                         },
@@ -2388,7 +2920,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0125",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7473),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6769),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 7,
                             trangThai = true
                         },
@@ -2399,7 +2935,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0126",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7476),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6771),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 7,
                             trangThai = true
                         },
@@ -2410,7 +2950,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0127",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7479),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6773),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 7,
                             trangThai = true
                         },
@@ -2421,7 +2965,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0128",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7482),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6775),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 7,
                             trangThai = true
                         },
@@ -2432,7 +2980,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0129",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7484),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6777),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 7,
                             trangThai = true
                         },
@@ -2443,7 +2995,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0130",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7488),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6778),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 7,
                             trangThai = true
                         },
@@ -2454,7 +3010,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0131",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7490),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6780),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 7,
                             trangThai = true
                         },
@@ -2465,7 +3025,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0132",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7500),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6783),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 7,
                             trangThai = true
                         },
@@ -2476,7 +3040,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0133",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7503),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6785),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 7,
                             trangThai = true
                         },
@@ -2487,7 +3055,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0134",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7506),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6787),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 7,
                             trangThai = true
                         },
@@ -2498,7 +3070,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0135",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7509),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6789),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 7,
                             trangThai = true
                         },
@@ -2509,7 +3085,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0136",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7512),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6790),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 7,
                             trangThai = true
                         },
@@ -2520,7 +3100,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0137",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7515),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6792),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 7,
                             trangThai = true
                         },
@@ -2531,7 +3115,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0138",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7517),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6794),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 7,
                             trangThai = true
                         },
@@ -2542,7 +3130,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0139",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7520),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6796),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 7,
                             trangThai = true
                         },
@@ -2553,7 +3145,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0140",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7523),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6797),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 8,
                             trangThai = true
                         },
@@ -2564,7 +3160,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0141",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7526),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6799),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 8,
                             trangThai = true
                         },
@@ -2575,7 +3175,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0142",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7528),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6801),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 8,
                             trangThai = true
                         },
@@ -2586,7 +3190,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0143",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7530),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6804),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 8,
                             trangThai = true
                         },
@@ -2597,7 +3205,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0144",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7534),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6805),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 8,
                             trangThai = true
                         },
@@ -2608,7 +3220,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0145",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7536),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6807),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 8,
                             trangThai = true
                         },
@@ -2619,7 +3235,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0146",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7539),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6809),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 8,
                             trangThai = true
                         },
@@ -2630,7 +3250,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0147",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7542),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6811),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 8,
                             trangThai = true
                         },
@@ -2641,7 +3265,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0148",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7545),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6813),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 8,
                             trangThai = true
                         },
@@ -2652,7 +3280,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0149",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7548),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6814),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 8,
                             trangThai = true
                         },
@@ -2663,7 +3295,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0150",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7551),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6816),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 8,
                             trangThai = true
                         },
@@ -2674,7 +3310,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0151",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7553),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6818),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 8,
                             trangThai = true
                         },
@@ -2685,7 +3325,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0152",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7557),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6820),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 8,
                             trangThai = true
                         },
@@ -2696,7 +3340,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0153",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7560),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6821),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 8,
                             trangThai = true
                         },
@@ -2707,7 +3355,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0154",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7562),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6823),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 8,
                             trangThai = true
                         },
@@ -2718,7 +3370,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0155",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7565),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6826),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 8,
                             trangThai = true
                         },
@@ -2729,7 +3385,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0156",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7568),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6828),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 8,
                             trangThai = true
                         },
@@ -2740,7 +3400,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0157",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7574),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6830),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 8,
                             trangThai = true
                         },
@@ -2751,7 +3415,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0158",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7577),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6831),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 8,
                             trangThai = true
                         },
@@ -2762,7 +3430,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0159",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7580),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6833),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 8,
                             trangThai = true
                         },
@@ -2773,7 +3445,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0160",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7582),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6839),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 9,
                             trangThai = true
                         },
@@ -2784,7 +3460,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0161",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7585),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6841),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 9,
                             trangThai = true
                         },
@@ -2795,7 +3475,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0162",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7587),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6843),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 9,
                             trangThai = true
                         },
@@ -2806,7 +3490,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0163",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7590),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6845),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 9,
                             trangThai = true
                         },
@@ -2817,7 +3505,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0164",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7593),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6847),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 9,
                             trangThai = true
                         },
@@ -2828,7 +3520,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0165",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7596),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6849),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 9,
                             trangThai = true
                         },
@@ -2839,7 +3535,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0166",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7599),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6851),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 9,
                             trangThai = true
                         },
@@ -2850,7 +3550,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0167",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7602),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6853),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 9,
                             trangThai = true
                         },
@@ -2861,7 +3565,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0168",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7605),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6855),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 9,
                             trangThai = true
                         },
@@ -2872,7 +3580,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0169",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7608),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6857),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 9,
                             trangThai = true
                         },
@@ -2883,7 +3595,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0170",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7611),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6858),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 9,
                             trangThai = true
                         },
@@ -2894,7 +3610,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0171",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7614),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6860),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 9,
                             trangThai = true
                         },
@@ -2905,7 +3625,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0172",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7617),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6862),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 9,
                             trangThai = true
                         },
@@ -2916,7 +3640,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0173",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7619),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6864),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 9,
                             trangThai = true
                         },
@@ -2927,7 +3655,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0174",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7622),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6865),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 9,
                             trangThai = true
                         },
@@ -2938,7 +3670,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0175",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7625),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6867),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 9,
                             trangThai = true
                         },
@@ -2949,7 +3685,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0176",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7628),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6869),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 9,
                             trangThai = true
                         },
@@ -2960,7 +3700,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0177",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7631),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6871),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 9,
                             trangThai = true
                         },
@@ -2971,7 +3715,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0178",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7633),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6873),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 9,
                             trangThai = true
                         },
@@ -2982,7 +3730,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 2,
                             maNhanVien = "NV0179",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7636),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6875),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 9,
                             trangThai = true
                         },
@@ -2993,7 +3745,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0180",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7640),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6877),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 10,
                             trangThai = true
                         },
@@ -3004,7 +3760,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0181",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7642),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6878),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 10,
                             trangThai = true
                         },
@@ -3015,7 +3775,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0182",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7645),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6880),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 10,
                             trangThai = true
                         },
@@ -3026,7 +3790,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0183",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7648),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6882),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 10,
                             trangThai = true
                         },
@@ -3037,7 +3805,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0184",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7651),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6884),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 10,
                             trangThai = true
                         },
@@ -3048,7 +3820,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0185",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7653),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6886),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 10,
                             trangThai = true
                         },
@@ -3059,7 +3835,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0186",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7656),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6889),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 10,
                             trangThai = true
                         },
@@ -3070,7 +3850,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0187",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7659),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6891),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 10,
                             trangThai = true
                         },
@@ -3081,7 +3865,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0188",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7662),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6893),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 10,
                             trangThai = true
                         },
@@ -3092,7 +3880,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0189",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7664),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6894),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 10,
                             trangThai = true
                         },
@@ -3103,7 +3895,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0190",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7667),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6897),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 10,
                             trangThai = true
                         },
@@ -3114,7 +3910,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0191",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7670),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6899),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 10,
                             trangThai = true
                         },
@@ -3125,7 +3925,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0192",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7674),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6900),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 10,
                             trangThai = true
                         },
@@ -3136,7 +3940,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0193",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7676),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6902),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 10,
                             trangThai = true
                         },
@@ -3147,7 +3955,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0194",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7679),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6906),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 10,
                             trangThai = true
                         },
@@ -3158,7 +3970,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0195",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7682),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6908),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 10,
                             trangThai = true
                         },
@@ -3169,7 +3985,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0196",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7685),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6909),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 10,
                             trangThai = true
                         },
@@ -3180,7 +4000,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0197",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7688),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6911),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 10,
                             trangThai = true
                         },
@@ -3191,7 +4015,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0198",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7691),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6913),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 10,
                             trangThai = true
                         },
@@ -3202,7 +4030,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0199",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7694),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6915),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 10,
                             trangThai = true
                         },
@@ -3213,7 +4045,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0200",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7697),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6916),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 11,
                             trangThai = true
                         },
@@ -3224,7 +4060,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0201",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7700),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6918),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 11,
                             trangThai = true
                         },
@@ -3235,7 +4075,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0202",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7703),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6921),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 11,
                             trangThai = true
                         },
@@ -3246,7 +4090,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0203",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7707),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6922),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 11,
                             trangThai = true
                         },
@@ -3257,7 +4105,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0204",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7709),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6924),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 11,
                             trangThai = true
                         },
@@ -3268,7 +4120,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0205",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7712),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6926),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 11,
                             trangThai = true
                         },
@@ -3279,7 +4135,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0206",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7715),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6928),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 11,
                             trangThai = true
                         },
@@ -3290,7 +4150,11 @@ namespace HRMSolution.Data.Migrations
                             idChucVu = 1,
                             idPhongBan = 3,
                             maNhanVien = "NV0207",
+<<<<<<< HEAD
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(7718),
+=======
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(6929),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             to = 11,
                             trangThai = true
                         });
@@ -3381,7 +4245,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD01",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 278, DateTimeKind.Local).AddTicks(8511),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 897, DateTimeKind.Local).AddTicks(6948),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 1,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3392,7 +4260,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD02",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(5650),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7636),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 2,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3403,7 +4275,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD03",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(5780),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7711),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 3,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3414,7 +4290,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD04",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(5799),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7722),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 4,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3425,7 +4305,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD05",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(5813),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7730),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 5,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3436,7 +4320,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD06",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(5826),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7740),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 6,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3447,7 +4335,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD07",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(5842),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7747),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 7,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3458,7 +4350,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD08",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(5854),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7753),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 8,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3469,7 +4365,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD09",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(5867),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7760),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 9,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3480,7 +4380,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD10",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(5881),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7767),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 10,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3491,7 +4395,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD11",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(5894),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7774),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 11,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3502,7 +4410,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD12",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(5906),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7780),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 12,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3513,7 +4425,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD13",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(5916),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7786),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 13,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3524,7 +4440,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD14",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(5926),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7794),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 14,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3535,7 +4455,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD15",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(5940),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7800),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 15,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3546,7 +4470,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD16",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(5953),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7807),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 16,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3557,7 +4485,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD17",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(5966),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7813),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 17,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3568,7 +4500,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD18",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(5979),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7820),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 18,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3579,7 +4515,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD19",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(5991),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7827),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 19,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3590,7 +4530,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD20",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6004),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7834),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 20,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3601,7 +4545,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD21",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6016),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7840),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 21,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3612,7 +4560,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD22",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6029),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7847),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 22,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3623,7 +4575,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD23",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6042),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7853),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 23,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3634,7 +4590,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD24",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6054),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7859),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 24,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3645,7 +4605,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD25",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6067),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7866),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 25,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3656,7 +4620,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD26",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6081),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7873),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 26,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3667,7 +4635,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD27",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6091),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7880),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 27,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3678,7 +4650,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD28",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6118),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7886),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 28,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3689,7 +4665,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD29",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6130),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7893),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 29,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3700,7 +4680,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD30",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6141),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7899),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 30,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3711,7 +4695,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD31",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6154),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7906),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 31,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3722,7 +4710,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD32",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6165),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7914),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 32,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3733,7 +4725,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD33",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6176),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7921),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 33,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3744,7 +4740,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD34",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6188),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7928),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 34,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3755,7 +4755,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD35",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6201),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7935),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 35,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3766,7 +4770,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD36",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6214),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7942),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 36,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3777,7 +4785,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD37",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6223),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7948),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 37,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3788,7 +4800,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD38",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6234),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7955),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 38,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3799,7 +4815,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD39",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6247),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7962),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 39,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3810,7 +4830,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD40",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6258),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7969),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 40,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3821,7 +4845,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD41",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6270),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7975),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 41,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3832,7 +4860,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD42",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6283),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7982),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 42,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3843,7 +4875,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD43",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6296),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7988),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 43,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3854,7 +4890,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD44",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6310),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(7995),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 44,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3865,7 +4905,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD45",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6323),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8002),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 45,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3876,7 +4920,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD46",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6336),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8009),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 46,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3887,7 +4935,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD47",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6350),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8015),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 47,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3898,7 +4950,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD48",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6363),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8022),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 48,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3909,7 +4965,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD49",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6379),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8029),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 49,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3920,7 +4980,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD50",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6393),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8035),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 50,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3931,7 +4995,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD51",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6406),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8050),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 51,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3942,7 +5010,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD52",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6419),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8058),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 52,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3953,7 +5025,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD53",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6430),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8064),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 53,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3964,7 +5040,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD54",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6441),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8070),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 54,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3975,7 +5055,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD55",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6454),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8077),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 55,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3986,7 +5070,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD56",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6467),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8083),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 56,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -3997,7 +5085,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD57",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6480),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8090),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 57,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4008,7 +5100,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD58",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6494),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8097),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 58,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4019,7 +5115,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD59",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6507),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8103),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 59,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4030,7 +5130,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD60",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6520),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8110),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 60,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4041,7 +5145,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD61",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6533),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8116),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 61,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4052,7 +5160,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD62",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6547),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8123),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 62,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4063,7 +5175,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD63",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6559),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8129),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 63,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4074,7 +5190,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD64",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6572),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8136),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 64,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4085,7 +5205,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD65",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6585),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8143),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 65,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4096,7 +5220,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD66",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6596),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8149),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 66,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4107,7 +5235,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD67",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6606),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8155),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 67,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4118,7 +5250,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD68",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6616),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8162),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 68,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4129,7 +5265,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD69",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6626),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8169),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 69,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4140,7 +5280,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD70",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6637),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8175),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 70,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4151,7 +5295,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD71",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6650),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8182),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 71,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4162,7 +5310,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD72",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6663),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8188),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 72,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4173,7 +5325,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD73",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6677),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8195),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 73,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4184,7 +5340,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD74",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6692),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8201),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 74,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4195,7 +5355,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD75",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6705),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8208),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 75,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4206,7 +5370,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD76",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6718),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8214),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 76,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4217,7 +5385,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD77",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6730),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8221),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 77,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4228,7 +5400,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD78",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6744),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8227),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 78,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4239,7 +5415,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD79",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6757),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8233),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 79,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4250,7 +5430,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD80",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6769),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8240),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 80,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4261,7 +5445,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD81",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6782),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8247),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 81,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4272,7 +5460,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD82",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6796),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8254),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 82,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4283,7 +5475,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD83",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6809),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8261),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 83,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4294,7 +5490,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD84",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6821),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8267),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 84,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4305,7 +5505,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD85",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6835),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8273),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 85,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4316,7 +5520,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD86",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6847),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8280),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 86,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4327,7 +5535,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD87",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6860),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8286),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 87,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4338,7 +5550,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD88",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6870),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8293),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 88,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4349,7 +5565,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD89",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 280, DateTimeKind.Local).AddTicks(6880),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8301),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 89,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4360,7 +5580,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD90",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(5746),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8307),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 90,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4371,7 +5595,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD91",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(5856),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8314),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 91,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4382,7 +5610,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD92",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(5876),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8320),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 92,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4393,7 +5625,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD93",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(5891),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8326),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 93,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4404,7 +5640,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD94",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(5906),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8333),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 94,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4415,7 +5655,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD95",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(5922),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8339),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 95,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4426,7 +5670,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD96",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(5954),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8345),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 96,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4437,7 +5685,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD97",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(5969),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8352),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 97,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4448,7 +5700,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD98",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(5985),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8358),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 98,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4459,7 +5715,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD99",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(5998),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8365),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 99,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4470,7 +5730,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD100",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6012),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8371),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 100,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4481,7 +5745,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD101",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6027),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8378),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 101,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4492,7 +5760,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD102",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6041),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8384),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 102,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4503,7 +5775,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD103",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6055),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8390),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 103,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4514,7 +5790,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD104",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6069),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8397),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 104,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4525,7 +5805,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD105",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6084),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8403),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 105,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4536,7 +5820,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD106",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6098),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8410),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 106,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4547,7 +5835,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD107",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6112),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8416),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 107,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4558,7 +5850,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD108",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6127),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8423),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 108,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4569,7 +5865,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD109",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6142),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8429),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 109,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4580,7 +5880,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD110",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6156),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8436),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 110,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4591,7 +5895,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD111",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6171),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8442),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 111,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4602,7 +5910,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD112",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6185),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8449),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 112,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4613,7 +5925,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD113",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6200),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8456),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 113,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4624,7 +5940,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD114",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6214),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8462),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 114,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4635,7 +5955,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD115",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6229),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8469),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 115,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4646,7 +5970,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD116",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6245),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8475),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 116,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4657,7 +5985,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD117",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6259),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8482),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 117,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4668,7 +6000,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD118",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6272),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8489),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 118,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4679,7 +6015,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD119",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6287),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8500),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 119,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4690,7 +6030,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD120",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6300),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8507),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 120,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4701,7 +6045,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD121",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6316),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8513),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 121,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4712,7 +6060,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD122",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6330),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8520),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 122,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4723,7 +6075,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD123",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6344),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8528),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 123,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4734,7 +6090,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD124",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6359),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8534),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 124,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4745,7 +6105,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD125",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6373),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8541),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 125,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4756,7 +6120,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD126",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 281, DateTimeKind.Local).AddTicks(6388),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8547),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 126,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4767,7 +6135,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD127",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1641),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8554),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 127,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4778,7 +6150,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD128",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1669),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8561),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 128,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4789,7 +6165,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD129",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1682),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8567),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 129,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4800,7 +6180,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD130",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1697),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8574),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 130,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4811,7 +6195,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD131",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1709),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8580),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 131,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4822,7 +6210,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD132",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1719),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8587),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 132,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4833,7 +6225,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD133",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1730),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8593),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 133,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4844,7 +6240,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD134",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1745),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8599),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 134,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4855,7 +6255,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD135",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1757),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8606),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 135,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4866,7 +6270,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD136",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1768),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8612),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 136,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4877,7 +6285,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD137",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1782),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8619),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 137,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4888,7 +6300,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD138",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1796),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8625),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 138,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4899,7 +6315,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD139",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1810),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8632),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 139,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4910,7 +6330,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD140",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1822),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8638),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 140,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4921,7 +6345,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD141",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1833),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8645),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 141,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4932,7 +6360,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD142",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1845),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8651),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 142,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4943,7 +6375,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD143",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1859),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8658),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 143,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4954,7 +6390,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD144",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1871),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8664),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 144,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4965,7 +6405,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD145",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1885),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8671),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 145,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4976,7 +6420,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD146",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1895),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8677),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 146,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4987,7 +6435,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD147",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1906),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8684),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 147,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -4998,7 +6450,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD148",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1916),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8690),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 148,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5009,7 +6465,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD149",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1928),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8696),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 149,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5020,7 +6480,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD150",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1941),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8703),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 150,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5031,7 +6495,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD151",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1955),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8709),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 151,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5042,7 +6510,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD152",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1968),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8716),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 152,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5053,7 +6525,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD153",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1983),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8722),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 153,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5064,7 +6540,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD154",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(1996),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8729),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 154,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5075,7 +6555,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD155",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2008),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8736),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 155,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5086,7 +6570,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD156",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2022),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8742),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 156,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5097,7 +6585,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD157",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2035),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8748),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 157,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5108,7 +6600,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD158",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2050),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8755),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 158,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5119,7 +6615,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD159",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2063),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8761),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 159,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5130,7 +6630,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD160",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2076),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8768),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 160,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5141,7 +6645,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD161",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2089),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8774),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 161,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5152,7 +6660,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD162",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2102),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8781),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 162,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5163,7 +6675,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD163",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2116),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8788),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 163,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5174,7 +6690,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD164",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2144),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8794),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 164,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5185,7 +6705,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD165",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2159),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8801),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 165,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5196,7 +6720,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD166",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2173),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8807),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 166,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5207,7 +6735,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD167",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2186),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8813),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 167,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5218,7 +6750,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD168",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2199),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8820),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 168,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5229,7 +6765,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD169",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2212),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8826),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 169,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5240,7 +6780,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD170",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2225),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8833),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 170,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5251,7 +6795,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD171",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2238),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8839),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 171,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5262,7 +6810,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD172",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2251),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8846),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 172,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5273,7 +6825,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD173",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2265),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8852),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 173,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5284,7 +6840,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD174",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2278),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8859),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 174,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5295,7 +6855,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD175",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2292),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8865),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 175,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5306,7 +6870,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD176",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2305),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8871),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 176,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5317,7 +6885,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD177",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2320),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8878),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 177,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5328,7 +6900,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD178",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2331),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8884),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 178,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5339,7 +6915,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD179",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2343),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8891),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 179,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5350,7 +6930,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD180",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2355),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8897),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 180,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5361,7 +6945,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD181",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2367),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8904),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 181,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5372,7 +6960,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD182",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2379),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8910),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 182,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5383,7 +6975,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD183",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2392),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8916),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 183,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5394,7 +6990,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD184",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2404),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8924),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 184,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5405,7 +7005,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD185",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2418),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8930),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 185,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5416,7 +7020,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD186",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2432),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8936),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 186,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5427,7 +7035,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD187",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2445),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8948),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 187,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5438,7 +7050,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD188",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2457),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8955),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 188,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5449,7 +7065,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD189",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2469),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8961),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 189,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5460,7 +7080,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD190",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2483),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8968),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 190,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5471,7 +7095,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD191",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2497),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8974),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 191,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5482,7 +7110,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD192",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2511),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8981),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 192,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5493,7 +7125,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD193",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2525),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8987),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 193,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5504,7 +7140,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD194",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2538),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(8994),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 194,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5515,7 +7155,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD195",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2551),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9000),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 195,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5526,7 +7170,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD196",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2564),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9007),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 196,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5537,7 +7185,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD197",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2578),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9013),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 197,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5548,7 +7200,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD198",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2591),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9020),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 198,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5559,7 +7215,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD199",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2604),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9026),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 199,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5570,7 +7230,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD200",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2618),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9033),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 200,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5581,7 +7245,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD201",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2631),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9040),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 201,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5592,7 +7260,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD202",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2643),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9046),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 202,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5603,7 +7275,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD203",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2655),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9053),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 203,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5614,7 +7290,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD204",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2667),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9060),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 204,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5625,7 +7305,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD205",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2679),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9066),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 205,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5636,7 +7320,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD206",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2693),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9073),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 206,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5647,7 +7335,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD207",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2707),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9080),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 207,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5658,7 +7350,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD208",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2720),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9087),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 208,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5669,7 +7365,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD209",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2733),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9094),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 209,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5680,7 +7380,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD210",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2745),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9100),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 210,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5691,7 +7395,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD211",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2757),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9107),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 211,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5702,7 +7410,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD212",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2771),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9113),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 212,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5713,7 +7425,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD213",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2784),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9120),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 213,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5724,7 +7440,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD214",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2799),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9126),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 214,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5735,7 +7455,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD215",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2813),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9132),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 215,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5746,7 +7470,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD216",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2827),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9139),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 216,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5757,7 +7485,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD217",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2841),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9146),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 217,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5768,7 +7500,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD218",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2854),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9152),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 218,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -5779,7 +7515,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD219",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+<<<<<<< HEAD
                             hopDongTuNgay = new DateTime(2021, 11, 12, 3, 35, 29, 282, DateTimeKind.Local).AddTicks(2867),
+=======
+                            hopDongTuNgay = new DateTime(2021, 11, 12, 2, 36, 41, 898, DateTimeKind.Local).AddTicks(9159),
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                             id = 219,
                             idChucDanh = 1,
                             idLoaiHopDong = 1,
@@ -7723,6 +9463,7 @@ namespace HRMSolution.Data.Migrations
                             hoTen = "Mai Trung Hiếu",
                             maNhanVien = "NV0001",
                             quanHe = "Bạn"
+<<<<<<< HEAD
                         });
                 });
 
@@ -7802,10 +9543,13 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = false
+=======
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 2,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD01",
@@ -7813,10 +9557,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Mai Lân Thắng",
+                            maNhanVien = "NV0002",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 3,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD03",
@@ -7824,10 +9576,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Hà Thái Sơn",
+                            maNhanVien = "NV0003",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 4,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD04",
@@ -7835,10 +9595,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Hoàng Khang",
+                            maNhanVien = "NV0004",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 5,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD05",
@@ -7846,10 +9614,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Ðinh Lộc",
+                            maNhanVien = "NV0005",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 6,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD06",
@@ -7857,10 +9633,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Tiến Võ",
+                            maNhanVien = "NV0006",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 7,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD07",
@@ -7868,10 +9652,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Hưng Ðạo",
+                            maNhanVien = "NV0007",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 8,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD08",
@@ -7879,10 +9671,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Lý Gia Bình",
+                            maNhanVien = "NV0008",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 9,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD09",
@@ -7890,10 +9690,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đặng Gia Anh",
+                            maNhanVien = "NV0009",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 10,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD10",
@@ -7901,10 +9709,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Hoàng Gia Bảo",
+                            maNhanVien = "NV0010",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 11,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD11",
@@ -7912,10 +9728,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Lưu Việt Thanh",
+                            maNhanVien = "NV0011",
+                            quanHe = "Bạn"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 12,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD12",
@@ -7923,10 +9747,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Phạm Đình Chiến",
+                            maNhanVien = "NV0012",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 13,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD13",
@@ -7934,10 +9766,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Phạm Ðức Kiên",
+                            maNhanVien = "NV0013",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 14,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD14",
@@ -7945,10 +9785,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Phạm Ðức Hòa",
+                            maNhanVien = "NV0014",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 15,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD15",
@@ -7956,10 +9804,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đỗ Việt Dương",
+                            maNhanVien = "NV0015",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 16,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD16",
@@ -7967,10 +9823,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Trần Hiếu Liêm",
+                            maNhanVien = "NV0016",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 17,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD17",
@@ -7978,10 +9842,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Tăng Hữu Cường",
+                            maNhanVien = "NV0017",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 18,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD18",
@@ -7989,10 +9861,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Phạm Huy Hoàng",
+                            maNhanVien = "NV0018",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 19,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD19",
@@ -8000,10 +9880,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Chiêu Quân",
+                            maNhanVien = "NV0019",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 20,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD20",
@@ -8011,10 +9899,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Trần Thành Ðạt",
+                            maNhanVien = "NV0020",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 21,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD21",
@@ -8022,10 +9918,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Mạc Nam An",
+                            maNhanVien = "NV0021",
+                            quanHe = "Bạn"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 22,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD22",
@@ -8033,10 +9937,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Vũ Tuấn Dũng",
+                            maNhanVien = "NV0022",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 23,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD23",
@@ -8044,10 +9956,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Ðăng Minh",
+                            maNhanVien = "NV0023",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 24,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD24",
@@ -8055,10 +9975,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Hoàng Dương",
+                            maNhanVien = "NV0024",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 25,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD25",
@@ -8066,10 +9994,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Phạm Minh Đạt",
+                            maNhanVien = "NV0025",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 26,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD26",
@@ -8077,10 +10013,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Khoa Gia Hưng",
+                            maNhanVien = "NV0026",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 27,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD27",
@@ -8088,10 +10032,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Danh Sơn",
+                            maNhanVien = "NV0027",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 28,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD28",
@@ -8099,10 +10051,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Kiến Ðức",
+                            maNhanVien = "NV0028",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 29,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD29",
@@ -8110,10 +10070,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Ðắc Thành",
+                            maNhanVien = "NV0029",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 30,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD30",
@@ -8121,10 +10089,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Trần Ðức Bảo",
+                            maNhanVien = "NV0030",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 31,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD31",
@@ -8132,10 +10108,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Phạm Hoài Thanh",
+                            maNhanVien = "NV0031",
+                            quanHe = "Bạn"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 32,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD32",
@@ -8143,10 +10127,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đỗ Duy Thông",
+                            maNhanVien = "NV0032",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 33,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD33",
@@ -8154,10 +10146,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đỗ Ngọc Ẩn",
+                            maNhanVien = "NV0033",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 34,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD34",
@@ -8165,10 +10165,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đàm Minh Quý",
+                            maNhanVien = "NV0034",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 35,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD35",
@@ -8176,10 +10184,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đoàn Nam Phương",
+                            maNhanVien = "NV0035",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 36,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD36",
@@ -8187,10 +10203,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Bình Quân",
+                            maNhanVien = "NV0036",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 37,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD37",
@@ -8198,10 +10222,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Bùi Thiện Thanh",
+                            maNhanVien = "NV0037",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 38,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD38",
@@ -8209,10 +10241,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Duy Hùng",
+                            maNhanVien = "NV0038",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 39,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD39",
@@ -8220,10 +10260,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Tô Ðức Khiêm",
+                            maNhanVien = "NV0039",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 40,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD40",
@@ -8231,10 +10279,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Vũ Quốc Quân",
+                            maNhanVien = "NV0040",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 41,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD41",
@@ -8242,10 +10298,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đặng Hữu Từ",
+                            maNhanVien = "NV0041",
+                            quanHe = "Bạn"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 42,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD42",
@@ -8253,10 +10317,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đặng Thống Nhất",
+                            maNhanVien = "NV0042",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 43,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD43",
@@ -8264,10 +10336,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Trịnh Quang Huy",
+                            maNhanVien = "NV0043",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 44,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD44",
@@ -8275,10 +10355,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Lê Minh Đăng",
+                            maNhanVien = "NV0044",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 45,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD45",
@@ -8286,10 +10374,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Phạm Duy Khiêm",
+                            maNhanVien = "NV0045",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 46,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD46",
@@ -8297,10 +10393,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Trần Quang Khải",
+                            maNhanVien = "NV0046",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 47,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD47",
@@ -8308,10 +10412,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Công Sơn",
+                            maNhanVien = "NV0047",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 48,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD48",
@@ -8319,10 +10431,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Phạm Nhật Khương",
+                            maNhanVien = "NV0048",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 49,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD49",
@@ -8330,10 +10450,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đinh Sơn Hải",
+                            maNhanVien = "NV0049",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 50,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD50",
@@ -8341,10 +10469,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Nguyên Bảo",
+                            maNhanVien = "NV0050",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 51,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD51",
@@ -8352,10 +10488,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đỗ Trung Ðức",
+                            maNhanVien = "NV0051",
+                            quanHe = "Bạn"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 52,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD52",
@@ -8363,10 +10507,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Vũ Cao Phong",
+                            maNhanVien = "NV0052",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 53,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD53",
@@ -8374,10 +10526,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đỗ Khánh Giang",
+                            maNhanVien = "NV0053",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 54,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD54",
@@ -8385,10 +10545,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Hoàng Quang Thạch",
+                            maNhanVien = "NV0054",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 55,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD55",
@@ -8396,10 +10564,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Quốc Hiển",
+                            maNhanVien = "NV0055",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 56,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD56",
@@ -8407,10 +10583,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Ngô Quang Anh",
+                            maNhanVien = "NV0056",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 57,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD57",
@@ -8418,10 +10602,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Mai Trung Hoàng",
+                            maNhanVien = "NV0057",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 58,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD58",
@@ -8429,10 +10621,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đỗ Lân Vũ",
+                            maNhanVien = "NV0058",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 59,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD59",
@@ -8440,10 +10640,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Trần Tân Phước",
+                            maNhanVien = "NV0059",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 60,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD60",
@@ -8451,10 +10659,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Trần Hữu Bình",
+                            maNhanVien = "NV0060",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 61,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD61",
@@ -8462,10 +10678,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đỗ Xuân Quý",
+                            maNhanVien = "NV0061",
+                            quanHe = "Bạn"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 62,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD62",
@@ -8473,10 +10697,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Bùi Vĩnh Thụy",
+                            maNhanVien = "NV0062",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 63,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD63",
@@ -8484,10 +10716,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Trần Bảo Duy",
+                            maNhanVien = "NV0063",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 64,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD64",
@@ -8495,10 +10735,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Phạm Tường Lĩnh",
+                            maNhanVien = "NV0064",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 65,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD65",
@@ -8506,10 +10754,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Lê Hiếu Thông",
+                            maNhanVien = "NV0065",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 66,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD66",
@@ -8517,10 +10773,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đào Lam Phương",
+                            maNhanVien = "NV0066",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 67,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD67",
@@ -8528,10 +10792,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Việt Thông",
+                            maNhanVien = "NV0067",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 68,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD68",
@@ -8539,10 +10811,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Trần Minh Thông",
+                            maNhanVien = "NV0068",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 69,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD69",
@@ -8550,10 +10830,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Bùi Nhật Duy",
+                            maNhanVien = "NV0069",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 70,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD70",
@@ -8561,10 +10849,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đặng Tấn Dũng",
+                            maNhanVien = "NV0070",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 71,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD71",
@@ -8572,10 +10868,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Trí Hữu",
+                            maNhanVien = "NV0071",
+                            quanHe = "Bạn"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 72,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD72",
@@ -8583,10 +10887,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Dương Bảo Phúc",
+                            maNhanVien = "NV0072",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 73,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD73",
@@ -8594,10 +10906,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Ðình Hợp",
+                            maNhanVien = "NV0073",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 74,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD74",
@@ -8605,10 +10925,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Bùi Ðại Thống",
+                            maNhanVien = "NV0074",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 75,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD75",
@@ -8616,10 +10944,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Hoàng Xuân Bình",
+                            maNhanVien = "NV0075",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 76,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD76",
@@ -8627,10 +10963,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Vũ Quang Thiên",
+                            maNhanVien = "NV0076",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 77,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD77",
@@ -8638,10 +10982,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Lê Thế Dũng",
+                            maNhanVien = "NV0077",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 78,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD78",
@@ -8649,10 +11001,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Công Hiếu",
+                            maNhanVien = "NV0078",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 79,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD79",
@@ -8660,10 +11020,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Trung Kiên",
+                            maNhanVien = "NV0079",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 80,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD80",
@@ -8671,10 +11039,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Mai Tùng Hiếu",
+                            maNhanVien = "NV0080",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 81,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD81",
@@ -8682,10 +11058,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Lưu Duy Châu",
+                            maNhanVien = "NV0081",
+                            quanHe = "Bạn"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 82,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD82",
@@ -8693,10 +11077,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Chí Bảo",
+                            maNhanVien = "NV0082",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 83,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD83",
@@ -8704,10 +11096,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Vũ Sơn Quân",
+                            maNhanVien = "NV0083",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 84,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD84",
@@ -8715,10 +11115,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Phạm Hữu Long",
+                            maNhanVien = "NV0084",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 85,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD85",
@@ -8726,10 +11134,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Hoàng Minh Khôi",
+                            maNhanVien = "NV0085",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 86,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD86",
@@ -8737,10 +11153,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Vũ Minh Kỳ",
+                            maNhanVien = "NV0086",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 87,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD87",
@@ -8748,10 +11172,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Phí Ðình Thắng",
+                            maNhanVien = "NV0087",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 88,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD88",
@@ -8759,10 +11191,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đặng Hoàng Dũng",
+                            maNhanVien = "NV0088",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 89,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD89",
@@ -8770,10 +11210,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Lưu Hồng Đức",
+                            maNhanVien = "NV0089",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 90,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD90",
@@ -8781,10 +11229,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Phạm Tùng Quang",
+                            maNhanVien = "NV0090",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 91,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD91",
@@ -8792,10 +11248,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Phạm Ðình Chương",
+                            maNhanVien = "NV0091",
+                            quanHe = "Bạn"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 92,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD92",
@@ -8803,10 +11267,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Phạm Quang Ninh",
+                            maNhanVien = "NV0092",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 93,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD93",
@@ -8814,10 +11286,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Vũ Quang Triệu",
+                            maNhanVien = "NV0093",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 94,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD94",
@@ -8825,10 +11305,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Phạm Tấn Nam",
+                            maNhanVien = "NV0094",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 95,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD95",
@@ -8836,10 +11324,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Hồng Thịnh",
+                            maNhanVien = "NV0095",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 96,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD96",
@@ -8847,10 +11343,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Trần Trung Nguyên",
+                            maNhanVien = "NV0096",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 97,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD97",
@@ -8858,10 +11362,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Khắc Triệu",
+                            maNhanVien = "NV0097",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 98,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD98",
@@ -8869,10 +11381,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Lê Công Luận",
+                            maNhanVien = "NV0098",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 99,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD99",
@@ -8880,10 +11400,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nguyễn Phi Cường",
+                            maNhanVien = "NV0099",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 100,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD100",
@@ -8891,10 +11419,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Bùi Đình Phong",
+                            maNhanVien = "NV0100",
+                            quanHe = "Bố"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 101,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD101",
@@ -8902,10 +11438,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Cà Bảo Phương",
+                            maNhanVien = "NV0101",
+                            quanHe = "Bạn"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 102,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD102",
@@ -8913,10 +11457,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Cai Bích Lam",
+                            maNhanVien = "NV0102",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 103,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD103",
@@ -8924,10 +11476,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Lý Hồng Mai",
+                            maNhanVien = "NV0103",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 104,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD104",
@@ -8935,10 +11495,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Ca Lộc Uyên",
+                            maNhanVien = "NV0104",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 105,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD105",
@@ -8946,10 +11514,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nông Mỹ Thuần",
+                            maNhanVien = "NV0105",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 106,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD106",
@@ -8957,10 +11533,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Chu Thu Nhiên",
+                            maNhanVien = "NV0106",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 107,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD107",
@@ -8968,10 +11552,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Tuấn Thúy Loan",
+                            maNhanVien = "NV0107",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 108,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD108",
@@ -8979,10 +11571,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Trác Thy Oanh",
+                            maNhanVien = "NV0108",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 109,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD109",
@@ -8990,10 +11590,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Phù Bảo Tiên",
+                            maNhanVien = "NV0109",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 110,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD110",
@@ -9001,10 +11609,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Chiêm Bích Lam",
+                            maNhanVien = "NV0110",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 111,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD111",
@@ -9012,10 +11628,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Khai Kim Cương",
+                            maNhanVien = "NV0111",
+                            quanHe = "Bạn"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 112,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD112",
@@ -9023,10 +11647,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Vương Minh Thương",
+                            maNhanVien = "NV0112",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 113,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD113",
@@ -9034,10 +11666,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Lường Quế Linh",
+                            maNhanVien = "NV0113",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 114,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD114",
@@ -9045,10 +11685,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Xa Thu Phượng",
+                            maNhanVien = "NV0114",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 115,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD115",
@@ -9056,10 +11704,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Luyện Thụy Nương",
+                            maNhanVien = "NV0115",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 116,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD116",
@@ -9067,10 +11723,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Liên Triệu Mẫn",
+                            maNhanVien = "NV0116",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 117,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD117",
@@ -9078,10 +11742,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đăng An Bình",
+                            maNhanVien = "NV0117",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 118,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD118",
@@ -9089,10 +11761,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đới Bảo Châu",
+                            maNhanVien = "NV0118",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 119,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD119",
@@ -9100,10 +11780,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Duy Linh Trang",
+                            maNhanVien = "NV0119",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 120,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD120",
@@ -9111,10 +11799,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Bá Minh Nguyệt",
+                            maNhanVien = "NV0120",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 121,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD121",
@@ -9122,10 +11818,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Lô Phương Châu",
+                            maNhanVien = "NV0121",
+                            quanHe = "Bạn"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 122,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD122",
@@ -9133,10 +11837,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Mâu Thảo My",
+                            maNhanVien = "NV0122",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 123,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD123",
@@ -9144,10 +11856,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Điền Thiên Lan",
+                            maNhanVien = "NV0123",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 124,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD124",
@@ -9155,10 +11875,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Trà Trang Nhã",
+                            maNhanVien = "NV0124",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 125,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD125",
@@ -9166,10 +11894,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Hạ Ánh Mai",
+                            maNhanVien = "NV0125",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 126,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD126",
@@ -9177,10 +11913,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Từ Khánh Giao",
+                            maNhanVien = "NV0126",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 127,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD127",
@@ -9188,10 +11932,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Hứa Mai Thanh",
+                            maNhanVien = "NV0127",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 128,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD128",
@@ -9199,10 +11951,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Ông Minh Trang",
+                            maNhanVien = "NV0128",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 129,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD129",
@@ -9210,10 +11970,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Trang Quỳnh Thanh",
+                            maNhanVien = "NV0129",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 130,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD130",
@@ -9221,10 +11989,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Tề Thiên Khánh",
+                            maNhanVien = "NV0130",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 131,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD131",
@@ -9232,10 +12008,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Khiếu Thúy Liên",
+                            maNhanVien = "NV0131",
+                            quanHe = "Bạn"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 132,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD132",
@@ -9243,10 +12027,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Lư Tuyết Vân",
+                            maNhanVien = "NV0132",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 133,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD133",
@@ -9254,10 +12046,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Liễu Bạch Kim",
+                            maNhanVien = "NV0133",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 134,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD134",
@@ -9265,10 +12065,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Khà Hồng Diễm",
+                            maNhanVien = "NV0134",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 135,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD135",
@@ -9276,10 +12084,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Trà Kim Loan",
+                            maNhanVien = "NV0135",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 136,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD136",
@@ -9287,10 +12103,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "La Mộng Thu",
+                            maNhanVien = "NV0136",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 137,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD137",
@@ -9298,10 +12122,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Quàng Mỹ Hoàn",
+                            maNhanVien = "NV0137",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 138,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD138",
@@ -9309,10 +12141,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Dã Thanh Lâm",
+                            maNhanVien = "NV0138",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 139,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD139",
@@ -9320,10 +12160,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đào Thùy Mi",
+                            maNhanVien = "NV0139",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 140,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD140",
@@ -9331,10 +12179,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Phong Xuân Lan",
+                            maNhanVien = "NV0140",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 141,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD141",
@@ -9342,10 +12198,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Lãnh Hạ Phương",
+                            maNhanVien = "NV0141",
+                            quanHe = "Bạn"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 142,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD142",
@@ -9353,10 +12217,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Hứa Hải Uyên",
+                            maNhanVien = "NV0142",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 143,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD143",
@@ -9364,10 +12236,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Doãn Hải Yến",
+                            maNhanVien = "NV0143",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 144,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD144",
@@ -9375,10 +12255,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Thi Hải Yến",
+                            maNhanVien = "NV0144",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 145,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD145",
@@ -9386,10 +12274,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Hồ Huyền Ngọc",
+                            maNhanVien = "NV0145",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 146,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD146",
@@ -9397,10 +12293,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Tăng Khánh Quỳnh",
+                            maNhanVien = "NV0146",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 147,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD147",
@@ -9408,10 +12312,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Tinh Kim Chi",
+                            maNhanVien = "NV0147",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 148,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD148",
@@ -9419,10 +12331,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Hứa Kim Mai",
+                            maNhanVien = "NV0148",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 149,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD149",
@@ -9430,10 +12350,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Cai Kim Yến",
+                            maNhanVien = "NV0149",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 150,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD150",
@@ -9441,10 +12369,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Sử Lệ Quyên",
+                            maNhanVien = "NV0150",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 151,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD151",
@@ -9452,10 +12388,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Thân Lệ Quyên",
+                            maNhanVien = "NV0151",
+                            quanHe = "Bạn"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 152,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD152",
@@ -9463,10 +12407,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Tạ Mai Thanh",
+                            maNhanVien = "NV0152",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 153,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD153",
@@ -9474,10 +12426,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Thân Minh Khuê",
+                            maNhanVien = "NV0153",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 154,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD154",
@@ -9485,10 +12445,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Khương Minh Phương",
+                            maNhanVien = "NV0154",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 155,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD155",
@@ -9496,10 +12464,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Mạch Minh Phương",
+                            maNhanVien = "NV0155",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 156,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD156",
@@ -9507,10 +12483,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Mã Thanh Kiều",
+                            maNhanVien = "NV0156",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 157,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD157",
@@ -9518,10 +12502,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Khà Thi Cầm",
+                            maNhanVien = "NV0157",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 158,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD158",
@@ -9529,10 +12521,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Tinh Thiên Lan",
+                            maNhanVien = "NV0158",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 159,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD159",
@@ -9540,10 +12540,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Liễu Trúc Vân",
+                            maNhanVien = "NV0159",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 160,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD160",
@@ -9551,10 +12559,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Liễu Trúc Vân",
+                            maNhanVien = "NV0160",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 161,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD161",
@@ -9562,10 +12578,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đới Bích Hạnh",
+                            maNhanVien = "NV0161",
+                            quanHe = "Bạn"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 162,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD162",
@@ -9573,10 +12597,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Hi Bích San",
+                            maNhanVien = "NV0162",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 163,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD163",
@@ -9584,10 +12616,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Duy Bích Thảo",
+                            maNhanVien = "NV0163",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 164,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD164",
@@ -9595,10 +12635,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Quán Duyên Nương",
+                            maNhanVien = "NV0164",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 165,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD165",
@@ -9606,10 +12654,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đặng Hải My",
+                            maNhanVien = "NV0165",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 166,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD166",
@@ -9617,10 +12673,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Bế Hoài Trang",
+                            maNhanVien = "NV0166",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 167,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD167",
@@ -9628,10 +12692,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Văn Khánh Mai",
+                            maNhanVien = "NV0167",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 168,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD168",
@@ -9639,10 +12711,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Điều Mai Linh",
+                            maNhanVien = "NV0168",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 169,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD169",
@@ -9650,10 +12730,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Cống Minh Thu",
+                            maNhanVien = "NV0169",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 170,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD170",
@@ -9661,10 +12749,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Điều Nhất Thương",
+                            maNhanVien = "NV0170",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 171,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD171",
@@ -9672,10 +12768,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Từ Thái Lâm",
+                            maNhanVien = "NV0171",
+                            quanHe = "Bạn"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 172,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD172",
@@ -9683,10 +12787,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Lô Thu Hà",
+                            maNhanVien = "NV0172",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 173,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD173",
@@ -9694,10 +12806,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Luyện Thu Hồng",
+                            maNhanVien = "NV0173",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 174,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD174",
@@ -9705,10 +12825,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Lãnh Thục Tâm",
+                            maNhanVien = "NV0174",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 175,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD175",
@@ -9716,10 +12844,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Ty Trâm Oanh",
+                            maNhanVien = "NV0175",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 176,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD176",
@@ -9727,10 +12863,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Cự Tuyết Vân",
+                            maNhanVien = "NV0176",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 177,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD177",
@@ -9738,10 +12882,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Phong Vy Lam",
+                            maNhanVien = "NV0177",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 178,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD178",
@@ -9749,10 +12901,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Dương Xuân Thanh",
+                            maNhanVien = "NV0178",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 179,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD179",
@@ -9760,10 +12920,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Dương Xuân Thanh",
+                            maNhanVien = "NV0179",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 180,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD180",
@@ -9771,10 +12939,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Trang Xuân Thu",
+                            maNhanVien = "NV0180",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 181,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD181",
@@ -9782,10 +12958,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Lỗ Anh Phương",
+                            maNhanVien = "NV0181",
+                            quanHe = "Bạn"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 182,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD182",
@@ -9793,10 +12977,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Cam Bảo Quỳnh",
+                            maNhanVien = "NV0182",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 183,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD183",
@@ -9804,10 +12996,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Hướng Bích Hà",
+                            maNhanVien = "NV0183",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 184,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD184",
@@ -9815,10 +13015,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Tán Bích Quyên",
+                            maNhanVien = "NV0184",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 185,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD185",
@@ -9826,10 +13034,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Liên Diệp Anh",
+                            maNhanVien = "NV0185",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 186,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD186",
@@ -9837,10 +13053,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nhâm Hải Phượng",
+                            maNhanVien = "NV0186",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 187,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD187",
@@ -9848,10 +13072,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Duy Hoài Giang",
+                            maNhanVien = "NV0187",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 188,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD188",
@@ -9859,10 +13091,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đặng Hồng Linh",
+                            maNhanVien = "NV0188",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 189,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD189",
@@ -9870,10 +13110,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Bảo Khả Ái",
+                            maNhanVien = "NV0189",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 190,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD190",
@@ -9881,10 +13129,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Mục Kiều Mỹ",
+                            maNhanVien = "NV0190",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 191,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD191",
@@ -9892,10 +13148,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Đồng Liên Như",
+                            maNhanVien = "NV0191",
+                            quanHe = "Bạn"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 192,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD192",
@@ -9903,10 +13167,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Chiêm Ngọc Ðàn",
+                            maNhanVien = "NV0192",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 193,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD193",
@@ -9914,10 +13186,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nghiêm Nguyên Thảo",
+                            maNhanVien = "NV0193",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 194,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD194",
@@ -9925,10 +13205,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Tăng Phương Trang",
+                            maNhanVien = "NV0194",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 195,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD195",
@@ -9936,10 +13224,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Vưu Thu Phong",
+                            maNhanVien = "NV0195",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 196,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD196",
@@ -9947,10 +13243,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Vưu Thu Phong",
+                            maNhanVien = "NV0196",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 197,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD197",
@@ -9958,10 +13262,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Trang Cẩm Hiền",
+                            maNhanVien = "NV0197",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 198,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD198",
@@ -9969,10 +13281,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Tinh Cẩm Vân",
+                            maNhanVien = "NV0198",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 199,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD199",
@@ -9980,10 +13300,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Bì Diễm Trinh",
+                            maNhanVien = "NV0199",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 200,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD200",
@@ -9991,10 +13319,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Phạm Diệu Ngà",
+                            maNhanVien = "NV0200",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 201,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD201",
@@ -10002,10 +13338,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Tiêu Hồng Liên",
+                            maNhanVien = "NV0201",
+                            quanHe = "Bạn"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 202,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD202",
@@ -10013,10 +13357,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Nhan Hồng Thúy",
+                            maNhanVien = "NV0202",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 203,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD203",
@@ -10024,10 +13376,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Khoa Hương Giang",
+                            maNhanVien = "NV0203",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 204,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD204",
@@ -10035,10 +13395,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Cống Hương Trang",
+                            maNhanVien = "NV0204",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 205,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD205",
@@ -10046,10 +13414,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Lèng Kim Hương",
+                            maNhanVien = "NV0205",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 206,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD206",
@@ -10057,10 +13433,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Tấn Mỹ Thuần",
+                            maNhanVien = "NV0206",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 207,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD207",
@@ -10068,10 +13452,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Ngọc Nguyệt Anh",
+                            maNhanVien = "NV0207",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 208,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD208",
@@ -10079,10 +13471,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Khu Nhã Hồng",
+                            maNhanVien = "NV0208",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 209,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD209",
@@ -10090,10 +13490,18 @@ namespace HRMSolution.Data.Migrations
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
                             trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Ao Thương Nga",
+                            maNhanVien = "NV0209",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                         },
                         new
                         {
                             id = 210,
+<<<<<<< HEAD
                             bacLuong = "1",
                             idNhomLuong = 1,
                             maHopDong = "HD210",
@@ -10199,6 +13607,2490 @@ namespace HRMSolution.Data.Migrations
                             ngayHieuLuc = new DateTime(2021, 11, 12, 3, 35, 29, 283, DateTimeKind.Local).AddTicks(2315),
                             ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             thoiHanLenLuong = "một năm",
+                            trangThai = true
+=======
+                            diaChi = "Hà Nội",
+                            dienThoai = "0123434324",
+                            hoTen = "Hoàng Trâm Anh",
+                            maNhanVien = "NV0210",
+                            quanHe = "Mẹ"
+>>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
+                        });
+                });
+
+            modelBuilder.Entity("HRMSolution.Data.Entities.Luong", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                        .HasAnnotation("SqlServer:IdentitySeed", 1)
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("bacLuong")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("ghiChu")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<float?>("heSoLuong")
+                        .HasColumnType("real");
+
+                    b.Property<int>("idNhomLuong")
+                        .HasColumnType("int");
+
+                    b.Property<float?>("luongCoBan")
+                        .HasColumnType("real");
+
+                    b.Property<string>("maHopDong")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<DateTime?>("ngayHieuLuc")
+                        .IsRequired()
+                        .HasColumnType("datetime");
+
+                    b.Property<DateTime?>("ngayKetThuc")
+                        .IsRequired()
+                        .HasColumnType("datetime");
+
+                    b.Property<float?>("phuCapKhac")
+                        .HasColumnType("real");
+
+                    b.Property<float?>("phuCapTrachNhiem")
+                        .HasColumnType("real");
+
+                    b.Property<string>("thoiHanLenLuong")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<float?>("tongLuong")
+                        .HasColumnType("real");
+
+                    b.Property<bool>("trangThai")
+                        .HasColumnType("bit");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("idNhomLuong");
+
+                    b.HasIndex("maHopDong");
+
+                    b.ToTable("Luong");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD01",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(1123),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = false
+                        },
+                        new
+                        {
+                            id = 2,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD01",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2199),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 3,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD03",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2253),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 4,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD04",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2263),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 5,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD05",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2270),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 6,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD06",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2277),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 7,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD07",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2284),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 8,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD08",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2291),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 9,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD09",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2297),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 10,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD10",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2304),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 11,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD11",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2311),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 12,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD12",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2319),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 13,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD13",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2326),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 14,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD14",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2332),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 15,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD15",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2339),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 16,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD16",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2346),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 17,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD17",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2353),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 18,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD18",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2359),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 19,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD19",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2366),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 20,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD20",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2374),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 21,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD21",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2381),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 22,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD22",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2388),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 23,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD23",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2394),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 24,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD24",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2401),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 25,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD25",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2408),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 26,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD26",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2414),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 27,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD27",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2421),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 28,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD28",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2428),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 29,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD29",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2434),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 30,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD30",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2441),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 31,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD31",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2448),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 32,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD32",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2455),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 33,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD33",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2461),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 34,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD34",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2468),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 35,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD35",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2475),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 36,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD36",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2482),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 37,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD37",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2488),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 38,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD38",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2495),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 39,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD39",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2502),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 40,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD40",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2508),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 41,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD41",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2524),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 42,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD42",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2531),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 43,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD43",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2538),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 44,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD44",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2545),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 45,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD45",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2552),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 46,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD46",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2558),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 47,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD47",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2565),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 48,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD48",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2572),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 49,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD49",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2578),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 50,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD50",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2585),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 51,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD51",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2592),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 52,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD52",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2599),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 53,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD53",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2606),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 54,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD54",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2613),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 55,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD55",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2619),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 56,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD56",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2626),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 57,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD57",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2633),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 58,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD58",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2639),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 59,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD59",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2646),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 60,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD60",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2653),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 61,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD61",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2660),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 62,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD62",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2667),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 63,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD63",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2673),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 64,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD64",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2680),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 65,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD65",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2687),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 66,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD66",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2693),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 67,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD67",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2700),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 68,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD68",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2707),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 69,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD69",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2714),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 70,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD70",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2720),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 71,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD71",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2727),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 72,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD72",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2734),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 73,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD73",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2740),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 74,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD74",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2747),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 75,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD75",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2753),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 76,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD76",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2760),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 77,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD77",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2767),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 78,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD78",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2773),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 79,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD79",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2780),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 80,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD80",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2787),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 81,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD81",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2793),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 82,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD82",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2800),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 83,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD83",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2807),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 84,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD84",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2814),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 85,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD85",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2820),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 86,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD86",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2827),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 87,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD87",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2834),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 88,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD88",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2840),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 89,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD89",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2847),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 90,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD90",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2854),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 91,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD91",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2861),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 92,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD92",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2868),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 93,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD93",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2874),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 94,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD94",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2886),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 95,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD95",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2893),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 96,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD96",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2899),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 97,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD97",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2906),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 98,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD98",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2913),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 99,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD99",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2920),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 100,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD100",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2927),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 101,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD101",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2934),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 102,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD102",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2941),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 103,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD103",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2948),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 104,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD104",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2954),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 105,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD105",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2961),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 106,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD106",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2968),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 107,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD107",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2975),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 108,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD108",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2982),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 109,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD109",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2988),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 110,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD110",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(2996),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 111,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD111",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3002),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 112,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD112",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3009),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 113,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD113",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3016),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 114,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD114",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3023),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 115,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD115",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3029),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 116,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD116",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3036),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 117,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD117",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3043),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 118,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD118",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3049),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 119,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD119",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3056),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 120,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD120",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3063),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 121,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD121",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3070),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 122,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD122",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3077),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 123,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD123",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3083),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 124,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD124",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3090),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 125,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD125",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3097),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 126,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD126",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3104),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 127,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD127",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3111),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 128,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD128",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3117),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 129,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD129",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3124),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 130,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD130",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3131),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 131,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD131",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3138),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 132,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD132",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3144),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 133,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD133",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3151),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 134,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD134",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3157),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 135,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD135",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3164),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 136,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD136",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3170),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 137,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD137",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3178),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 138,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD138",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3184),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 139,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD139",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3191),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 140,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD140",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3198),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 141,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD141",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3205),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 142,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD142",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3211),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 143,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD143",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3218),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 144,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD144",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3225),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 145,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD145",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3232),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 146,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD146",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3238),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 147,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD147",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3245),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 148,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD148",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3256),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 149,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD149",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3263),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 150,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD150",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3270),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 151,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD151",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3276),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 152,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD152",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3283),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 153,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD153",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3292),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 154,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD154",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3299),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 155,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD155",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3306),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 156,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD156",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3313),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 157,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD157",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3319),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 158,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD158",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3326),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 159,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD159",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3333),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 160,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD160",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3339),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 161,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD161",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3346),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 162,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD162",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3353),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 163,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD163",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3360),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 164,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD164",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3366),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 165,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD165",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3373),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 166,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD166",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3380),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 167,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD167",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3386),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 168,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD168",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3393),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 169,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD169",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3400),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 170,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD170",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3406),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 171,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD171",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3413),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 172,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD172",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3420),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 173,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD173",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3426),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 174,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD174",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3433),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 175,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD175",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3440),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 176,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD176",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3447),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 177,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD177",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3454),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 178,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD178",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3460),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 179,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD179",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3467),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 180,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD180",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3474),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 181,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD181",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3481),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 182,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD182",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3487),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 183,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD183",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3494),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 184,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD184",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3502),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 185,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD185",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3509),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 186,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD186",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3515),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 187,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD187",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3522),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 188,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD188",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3529),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 189,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD189",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3535),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 190,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD190",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3542),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 191,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD191",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3548),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 192,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD192",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3556),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 193,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD193",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3563),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 194,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD194",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3569),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 195,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD195",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3576),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 196,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD196",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3582),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 197,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD197",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3589),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 198,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD198",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3596),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 199,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD199",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3602),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 200,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD200",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3609),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 201,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD201",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3616),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 202,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD202",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3627),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 203,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD203",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3634),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 204,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD204",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3641),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 205,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD205",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3648),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 206,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD206",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3654),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 207,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD207",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3662),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 208,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD208",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3669),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 209,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD209",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3676),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 210,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD210",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3683),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 211,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD211",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3690),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 212,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD212",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3696),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 213,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD213",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3705),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 214,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD214",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3712),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 215,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD215",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3719),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 216,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD216",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3725),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 217,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD217",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3732),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 218,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD218",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3739),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            id = 219,
+                            bacLuong = "1",
+                            idNhomLuong = 1,
+                            maHopDong = "HD219",
+                            ngayHieuLuc = new DateTime(2021, 11, 12, 2, 36, 41, 899, DateTimeKind.Local).AddTicks(3745),
+                            ngayKetThuc = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            thoiHanLenLuong = "1",
                             trangThai = true
                         });
                 });
@@ -12516,7 +18408,6 @@ namespace HRMSolution.Data.Migrations
                             congViecChinh = "Nhân viên kinh doanh",
                             diDong = "0961441404",
                             dienThoai = "02466666",
-                            email = "huongdn@gmail.com",
                             gioiTinh = true,
                             hoTen = "Đào Ngọc Hưởng",
                             idDanToc = 1,
@@ -12548,8 +18439,8 @@ namespace HRMSolution.Data.Migrations
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
                             congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
+                            diDong = "0961321872",
+                            dienThoai = "024666661",
                             gioiTinh = true,
                             hoTen = "Mai Trung Hiếu",
                             idDanToc = 1,
@@ -12614,8 +18505,8 @@ namespace HRMSolution.Data.Migrations
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
                             congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
+                            diDong = "0961678934",
+                            dienThoai = "024666678",
                             gioiTinh = true,
                             hoTen = "Nguyễn Công Minh",
                             idDanToc = 1,
@@ -12647,8 +18538,8 @@ namespace HRMSolution.Data.Migrations
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
                             congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
+                            diDong = "0961760123",
+                            dienThoai = "02466689",
                             gioiTinh = true,
                             hoTen = "Nguyễn Đăng Hải",
                             idDanToc = 1,
@@ -12680,8 +18571,8 @@ namespace HRMSolution.Data.Migrations
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
                             congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
+                            diDong = "0961281563",
+                            dienThoai = "02464790",
                             gioiTinh = true,
                             hoTen = "Nguyễn Trung Hiếu",
                             idDanToc = 1,
@@ -12713,8 +18604,8 @@ namespace HRMSolution.Data.Migrations
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
                             congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
+                            diDong = "0961308520",
+                            dienThoai = "024012879",
                             gioiTinh = true,
                             hoTen = "Nguyễn Đình Chính",
                             idDanToc = 1,
@@ -12746,8 +18637,8 @@ namespace HRMSolution.Data.Migrations
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
                             congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
+                            diDong = "0961457891",
+                            dienThoai = "02406328",
                             gioiTinh = false,
                             hoTen = "Lý Trà My",
                             idDanToc = 1,
@@ -12779,8 +18670,8 @@ namespace HRMSolution.Data.Migrations
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
                             congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
+                            diDong = "0961493761",
+                            dienThoai = "024423723",
                             gioiTinh = true,
                             hoTen = "Đặng Tuấn Anh",
                             idDanToc = 1,
@@ -12812,8 +18703,8 @@ namespace HRMSolution.Data.Migrations
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
                             congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
+                            diDong = "096102186",
+                            dienThoai = "02407621",
                             gioiTinh = true,
                             hoTen = "Hoàng Đức Anh",
                             idDanToc = 1,
@@ -12845,8 +18736,8 @@ namespace HRMSolution.Data.Migrations
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
                             congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
+                            diDong = "096182710",
+                            dienThoai = "02410297",
                             gioiTinh = false,
                             hoTen = "Lưu Trang Anh",
                             idDanToc = 1,
@@ -12878,8 +18769,8 @@ namespace HRMSolution.Data.Migrations
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
                             congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
+                            diDong = "0961410000",
+                            dienThoai = "02476123",
                             gioiTinh = true,
                             hoTen = "Phạm Hoàng Anh",
                             idDanToc = 1,
@@ -12911,8 +18802,8 @@ namespace HRMSolution.Data.Migrations
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
                             congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
+                            diDong = "0961111111",
+                            dienThoai = "02466555",
                             gioiTinh = false,
                             hoTen = "Phạm Thị Hiền Anh",
                             idDanToc = 1,
@@ -12944,8 +18835,8 @@ namespace HRMSolution.Data.Migrations
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
                             congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "0961441404",
-                            dienThoai = "02466666",
+                            diDong = "0961441321",
+                            dienThoai = "02466777",
                             gioiTinh = true,
                             hoTen = "Phạm Khắc Việt Anh",
                             idDanToc = 1,
@@ -18652,6 +24543,7 @@ namespace HRMSolution.Data.Migrations
                             congViecChinh = "Nhân viên vận hành",
                             diDong = "0961441404",
                             dienThoai = "02466666",
+                            email = "huongdn@gmail.com",
                             gioiTinh = true,
                             hoTen = "Phan Thiện Sinh",
                             idDanToc = 1,
@@ -28840,16 +34732,898 @@ namespace HRMSolution.Data.Migrations
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0001",
-                            tenTruong = "Hà Nội"
+                            tenTruong = "Đại Học Bách Khoa"
                         },
                         new
                         {
                             id = 2,
+                            idChuyenMon = 2,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0002",
+                            tenTruong = "Đại Học Kinh Tế Quốc Dân"
+                        },
+                        new
+                        {
+                            id = 3,
+                            idChuyenMon = 3,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0003",
+                            tenTruong = "Đại Học Kinh Doanh và Công Nghệ"
+                        },
+                        new
+                        {
+                            id = 4,
+                            idChuyenMon = 4,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0004",
+                            tenTruong = "Đại Học Mở"
+                        },
+                        new
+                        {
+                            id = 5,
+                            idChuyenMon = 5,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0005",
+                            tenTruong = "Học Viện Ngân Hàng"
+                        },
+                        new
+                        {
+                            id = 6,
+                            idChuyenMon = 1,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0006",
+                            tenTruong = "Học Viện Phụ Nữ"
+                        },
+                        new
+                        {
+                            id = 7,
+                            idChuyenMon = 2,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0007",
+                            tenTruong = "Đại Học Ngoại Thương"
+                        },
+                        new
+                        {
+                            id = 8,
+                            idChuyenMon = 3,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0008",
+                            tenTruong = "Đại Học Thăng Long"
+                        },
+                        new
+                        {
+                            id = 9,
+                            idChuyenMon = 4,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0009",
+                            tenTruong = "Học Viện Tài Chính"
+                        },
+                        new
+                        {
+                            id = 10,
+                            idChuyenMon = 5,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0010",
+                            tenTruong = "Đại Học Thủy Lợi"
+                        },
+                        new
+                        {
+                            id = 11,
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
-                            maNhanVien = "NV0001",
+                            maNhanVien = "NV0011",
                             tenTruong = "Đại Học Bách Khoa"
+                        },
+                        new
+                        {
+                            id = 12,
+                            idChuyenMon = 2,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0012",
+                            tenTruong = "Đại Học Kinh Tế Quốc Dân"
+                        },
+                        new
+                        {
+                            id = 13,
+                            idChuyenMon = 3,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0013",
+                            tenTruong = "Đại Học Kinh Doanh và Công Nghệ"
+                        },
+                        new
+                        {
+                            id = 14,
+                            idChuyenMon = 4,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0014",
+                            tenTruong = "Đại Học Mở"
+                        },
+                        new
+                        {
+                            id = 15,
+                            idChuyenMon = 5,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0015",
+                            tenTruong = "Học Viện Ngân Hàng"
+                        },
+                        new
+                        {
+                            id = 16,
+                            idChuyenMon = 1,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0016",
+                            tenTruong = "Học Viện Phụ Nữ"
+                        },
+                        new
+                        {
+                            id = 17,
+                            idChuyenMon = 2,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0017",
+                            tenTruong = "Đại Học Ngoại Thương"
+                        },
+                        new
+                        {
+                            id = 18,
+                            idChuyenMon = 3,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0018",
+                            tenTruong = "Đại Học Thăng Long"
+                        },
+                        new
+                        {
+                            id = 19,
+                            idChuyenMon = 4,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0019",
+                            tenTruong = "Học Viện Tài Chính"
+                        },
+                        new
+                        {
+                            id = 20,
+                            idChuyenMon = 5,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0020",
+                            tenTruong = "Đại Học Thủy Lợi"
+                        },
+                        new
+                        {
+                            id = 21,
+                            idChuyenMon = 1,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0021",
+                            tenTruong = "Đại Học Bách Khoa"
+                        },
+                        new
+                        {
+                            id = 22,
+                            idChuyenMon = 2,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0022",
+                            tenTruong = "Đại Học Kinh Tế Quốc Dân"
+                        },
+                        new
+                        {
+                            id = 23,
+                            idChuyenMon = 3,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0023",
+                            tenTruong = "Đại Học Kinh Doanh và Công Nghệ"
+                        },
+                        new
+                        {
+                            id = 24,
+                            idChuyenMon = 4,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0024",
+                            tenTruong = "Đại Học Mở"
+                        },
+                        new
+                        {
+                            id = 25,
+                            idChuyenMon = 5,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0025",
+                            tenTruong = "Học Viện Ngân Hàng"
+                        },
+                        new
+                        {
+                            id = 26,
+                            idChuyenMon = 1,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0026",
+                            tenTruong = "Học Viện Phụ Nữ"
+                        },
+                        new
+                        {
+                            id = 27,
+                            idChuyenMon = 2,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0027",
+                            tenTruong = "Đại Học Ngoại Thương"
+                        },
+                        new
+                        {
+                            id = 28,
+                            idChuyenMon = 3,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0028",
+                            tenTruong = "Đại Học Thăng Long"
+                        },
+                        new
+                        {
+                            id = 29,
+                            idChuyenMon = 4,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0029",
+                            tenTruong = "Học Viện Tài Chính"
+                        },
+                        new
+                        {
+                            id = 30,
+                            idChuyenMon = 5,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0030",
+                            tenTruong = "Đại Học Thủy Lợi"
+                        },
+                        new
+                        {
+                            id = 31,
+                            idChuyenMon = 1,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0031",
+                            tenTruong = "Đại Học Bách Khoa"
+                        },
+                        new
+                        {
+                            id = 32,
+                            idChuyenMon = 2,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0032",
+                            tenTruong = "Đại Học Kinh Tế Quốc Dân"
+                        },
+                        new
+                        {
+                            id = 33,
+                            idChuyenMon = 3,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0033",
+                            tenTruong = "Đại Học Kinh Doanh và Công Nghệ"
+                        },
+                        new
+                        {
+                            id = 34,
+                            idChuyenMon = 4,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0034",
+                            tenTruong = "Đại Học Mở"
+                        },
+                        new
+                        {
+                            id = 35,
+                            idChuyenMon = 5,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0035",
+                            tenTruong = "Học Viện Ngân Hàng"
+                        },
+                        new
+                        {
+                            id = 36,
+                            idChuyenMon = 1,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0036",
+                            tenTruong = "Học Viện Phụ Nữ"
+                        },
+                        new
+                        {
+                            id = 37,
+                            idChuyenMon = 2,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0037",
+                            tenTruong = "Đại Học Ngoại Thương"
+                        },
+                        new
+                        {
+                            id = 38,
+                            idChuyenMon = 3,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0038",
+                            tenTruong = "Đại Học Thăng Long"
+                        },
+                        new
+                        {
+                            id = 39,
+                            idChuyenMon = 4,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0039",
+                            tenTruong = "Học Viện Tài Chính"
+                        },
+                        new
+                        {
+                            id = 40,
+                            idChuyenMon = 5,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0040",
+                            tenTruong = "Đại Học Thủy Lợi"
+                        },
+                        new
+                        {
+                            id = 41,
+                            idChuyenMon = 1,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0041",
+                            tenTruong = "Đại Học Bách Khoa"
+                        },
+                        new
+                        {
+                            id = 42,
+                            idChuyenMon = 2,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0042",
+                            tenTruong = "Đại Học Kinh Tế Quốc Dân"
+                        },
+                        new
+                        {
+                            id = 43,
+                            idChuyenMon = 3,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0043",
+                            tenTruong = "Đại Học Kinh Doanh và Công Nghệ"
+                        },
+                        new
+                        {
+                            id = 44,
+                            idChuyenMon = 4,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0044",
+                            tenTruong = "Đại Học Mở"
+                        },
+                        new
+                        {
+                            id = 45,
+                            idChuyenMon = 5,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0045",
+                            tenTruong = "Học Viện Ngân Hàng"
+                        },
+                        new
+                        {
+                            id = 46,
+                            idChuyenMon = 1,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0046",
+                            tenTruong = "Học Viện Phụ Nữ"
+                        },
+                        new
+                        {
+                            id = 47,
+                            idChuyenMon = 2,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0047",
+                            tenTruong = "Đại Học Ngoại Thương"
+                        },
+                        new
+                        {
+                            id = 48,
+                            idChuyenMon = 3,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0048",
+                            tenTruong = "Đại Học Thăng Long"
+                        },
+                        new
+                        {
+                            id = 49,
+                            idChuyenMon = 4,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0049",
+                            tenTruong = "Học Viện Tài Chính"
+                        },
+                        new
+                        {
+                            id = 50,
+                            idChuyenMon = 5,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0050",
+                            tenTruong = "Đại Học Thủy Lợi"
+                        },
+                        new
+                        {
+                            id = 51,
+                            idChuyenMon = 1,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0051",
+                            tenTruong = "Đại Học Bách Khoa"
+                        },
+                        new
+                        {
+                            id = 52,
+                            idChuyenMon = 2,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0052",
+                            tenTruong = "Đại Học Kinh Tế Quốc Dân"
+                        },
+                        new
+                        {
+                            id = 53,
+                            idChuyenMon = 3,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0053",
+                            tenTruong = "Đại Học Kinh Doanh và Công Nghệ"
+                        },
+                        new
+                        {
+                            id = 54,
+                            idChuyenMon = 4,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0054",
+                            tenTruong = "Đại Học Mở"
+                        },
+                        new
+                        {
+                            id = 55,
+                            idChuyenMon = 5,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0055",
+                            tenTruong = "Học Viện Ngân Hàng"
+                        },
+                        new
+                        {
+                            id = 56,
+                            idChuyenMon = 1,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0056",
+                            tenTruong = "Học Viện Phụ Nữ"
+                        },
+                        new
+                        {
+                            id = 57,
+                            idChuyenMon = 2,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0057",
+                            tenTruong = "Đại Học Ngoại Thương"
+                        },
+                        new
+                        {
+                            id = 58,
+                            idChuyenMon = 3,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0058",
+                            tenTruong = "Đại Học Thăng Long"
+                        },
+                        new
+                        {
+                            id = 59,
+                            idChuyenMon = 4,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0059",
+                            tenTruong = "Học Viện Tài Chính"
+                        },
+                        new
+                        {
+                            id = 60,
+                            idChuyenMon = 5,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0060",
+                            tenTruong = "Đại Học Thủy Lợi"
+                        },
+                        new
+                        {
+                            id = 61,
+                            idChuyenMon = 1,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0061",
+                            tenTruong = "Đại Học Bách Khoa"
+                        },
+                        new
+                        {
+                            id = 62,
+                            idChuyenMon = 2,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0062",
+                            tenTruong = "Đại Học Kinh Tế Quốc Dân"
+                        },
+                        new
+                        {
+                            id = 63,
+                            idChuyenMon = 3,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0063",
+                            tenTruong = "Đại Học Kinh Doanh và Công Nghệ"
+                        },
+                        new
+                        {
+                            id = 64,
+                            idChuyenMon = 4,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0064",
+                            tenTruong = "Đại Học Mở"
+                        },
+                        new
+                        {
+                            id = 65,
+                            idChuyenMon = 5,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0065",
+                            tenTruong = "Học Viện Ngân Hàng"
+                        },
+                        new
+                        {
+                            id = 66,
+                            idChuyenMon = 1,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0066",
+                            tenTruong = "Học Viện Phụ Nữ"
+                        },
+                        new
+                        {
+                            id = 67,
+                            idChuyenMon = 2,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0067",
+                            tenTruong = "Đại Học Ngoại Thương"
+                        },
+                        new
+                        {
+                            id = 68,
+                            idChuyenMon = 3,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0068",
+                            tenTruong = "Đại Học Thăng Long"
+                        },
+                        new
+                        {
+                            id = 69,
+                            idChuyenMon = 4,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0069",
+                            tenTruong = "Học Viện Tài Chính"
+                        },
+                        new
+                        {
+                            id = 70,
+                            idChuyenMon = 5,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0070",
+                            tenTruong = "Đại Học Thủy Lợi"
+                        },
+                        new
+                        {
+                            id = 71,
+                            idChuyenMon = 1,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0071",
+                            tenTruong = "Đại Học Bách Khoa"
+                        },
+                        new
+                        {
+                            id = 72,
+                            idChuyenMon = 2,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0072",
+                            tenTruong = "Đại Học Kinh Tế Quốc Dân"
+                        },
+                        new
+                        {
+                            id = 73,
+                            idChuyenMon = 3,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0073",
+                            tenTruong = "Đại Học Kinh Doanh và Công Nghệ"
+                        },
+                        new
+                        {
+                            id = 74,
+                            idChuyenMon = 4,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0074",
+                            tenTruong = "Đại Học Mở"
+                        },
+                        new
+                        {
+                            id = 75,
+                            idChuyenMon = 5,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0075",
+                            tenTruong = "Học Viện Ngân Hàng"
+                        },
+                        new
+                        {
+                            id = 76,
+                            idChuyenMon = 1,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0076",
+                            tenTruong = "Học Viện Phụ Nữ"
+                        },
+                        new
+                        {
+                            id = 77,
+                            idChuyenMon = 2,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0077",
+                            tenTruong = "Đại Học Ngoại Thương"
+                        },
+                        new
+                        {
+                            id = 78,
+                            idChuyenMon = 3,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0078",
+                            tenTruong = "Đại Học Thăng Long"
+                        },
+                        new
+                        {
+                            id = 79,
+                            idChuyenMon = 4,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0079",
+                            tenTruong = "Học Viện Tài Chính"
+                        },
+                        new
+                        {
+                            id = 80,
+                            idChuyenMon = 5,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0080",
+                            tenTruong = "Đại Học Thủy Lợi"
+                        },
+                        new
+                        {
+                            id = 81,
+                            idChuyenMon = 1,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0081",
+                            tenTruong = "Đại Học Bách Khoa"
+                        },
+                        new
+                        {
+                            id = 82,
+                            idChuyenMon = 2,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0082",
+                            tenTruong = "Đại Học Kinh Tế Quốc Dân"
+                        },
+                        new
+                        {
+                            id = 83,
+                            idChuyenMon = 3,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0083",
+                            tenTruong = "Đại Học Kinh Doanh và Công Nghệ"
+                        },
+                        new
+                        {
+                            id = 84,
+                            idChuyenMon = 4,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0084",
+                            tenTruong = "Đại Học Mở"
+                        },
+                        new
+                        {
+                            id = 85,
+                            idChuyenMon = 5,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0085",
+                            tenTruong = "Học Viện Ngân Hàng"
+                        },
+                        new
+                        {
+                            id = 86,
+                            idChuyenMon = 1,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0086",
+                            tenTruong = "Học Viện Phụ Nữ"
+                        },
+                        new
+                        {
+                            id = 87,
+                            idChuyenMon = 2,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0087",
+                            tenTruong = "Đại Học Ngoại Thương"
+                        },
+                        new
+                        {
+                            id = 88,
+                            idChuyenMon = 3,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0088",
+                            tenTruong = "Đại Học Thăng Long"
+                        },
+                        new
+                        {
+                            id = 89,
+                            idChuyenMon = 4,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0089",
+                            tenTruong = "Học Viện Tài Chính"
+                        },
+                        new
+                        {
+                            id = 90,
+                            idChuyenMon = 5,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0090",
+                            tenTruong = "Đại Học Thủy Lợi"
+                        },
+                        new
+                        {
+                            id = 91,
+                            idChuyenMon = 1,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0091",
+                            tenTruong = "Đại Học Bách Khoa"
+                        },
+                        new
+                        {
+                            id = 92,
+                            idChuyenMon = 2,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0092",
+                            tenTruong = "Đại Học Kinh Tế Quốc Dân"
+                        },
+                        new
+                        {
+                            id = 93,
+                            idChuyenMon = 3,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0093",
+                            tenTruong = "Đại Học Kinh Doanh và Công Nghệ"
+                        },
+                        new
+                        {
+                            id = 94,
+                            idChuyenMon = 4,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0094",
+                            tenTruong = "Đại Học Mở"
+                        },
+                        new
+                        {
+                            id = 95,
+                            idChuyenMon = 5,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0095",
+                            tenTruong = "Học Viện Ngân Hàng"
+                        },
+                        new
+                        {
+                            id = 96,
+                            idChuyenMon = 1,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0096",
+                            tenTruong = "Học Viện Phụ Nữ"
+                        },
+                        new
+                        {
+                            id = 97,
+                            idChuyenMon = 2,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0097",
+                            tenTruong = "Đại Học Ngoại Thương"
+                        },
+                        new
+                        {
+                            id = 98,
+                            idChuyenMon = 3,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0098",
+                            tenTruong = "Đại Học Thăng Long"
+                        },
+                        new
+                        {
+                            id = 99,
+                            idChuyenMon = 4,
+                            idHinhThucDaoTao = 1,
+                            idTrinhDo = 2,
+                            maNhanVien = "NV0099",
+                            tenTruong = "Học Viện Tài Chính"
+                        },
+                        new
+                        {
+                            id = 100,
+                            idChuyenMon = 5,
+                            idHinhThucDaoTao = 2,
+                            idTrinhDo = 1,
+                            maNhanVien = "NV0100",
+                            tenTruong = "Đại Học Thủy Lợi"
                         });
                 });
 
@@ -28903,11 +35677,1802 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 1,
-                            canNang = 56.1f,
-                            chieuCao = 1.73f,
+                            canNang = 50.1f,
+                            chieuCao = 1.7f,
                             khuyetTat = false,
                             maNhanVien = "NV0001",
                             nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 2,
+                            canNang = 66.1f,
+                            chieuCao = 1.71f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0002",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 3,
+                            canNang = 57.1f,
+                            chieuCao = 1.72f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0003",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 4,
+                            canNang = 58.1f,
+                            chieuCao = 1.73f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0004",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 5,
+                            canNang = 59.1f,
+                            chieuCao = 1.74f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0005",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 6,
+                            canNang = 56.1f,
+                            chieuCao = 1.75f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0006",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 7,
+                            canNang = 60.1f,
+                            chieuCao = 1.76f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0007",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 8,
+                            canNang = 61.1f,
+                            chieuCao = 1.77f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0008",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 9,
+                            canNang = 57.1f,
+                            chieuCao = 1.78f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0009",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 10,
+                            canNang = 58.1f,
+                            chieuCao = 1.79f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0010",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 11,
+                            canNang = 50.1f,
+                            chieuCao = 1.7f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0011",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 12,
+                            canNang = 66.1f,
+                            chieuCao = 1.71f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0012",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 13,
+                            canNang = 57.1f,
+                            chieuCao = 1.72f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0013",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 14,
+                            canNang = 58.1f,
+                            chieuCao = 1.73f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0014",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 15,
+                            canNang = 59.1f,
+                            chieuCao = 1.74f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0015",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 16,
+                            canNang = 56.1f,
+                            chieuCao = 1.75f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0016",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 17,
+                            canNang = 60.1f,
+                            chieuCao = 1.76f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0017",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 18,
+                            canNang = 61.1f,
+                            chieuCao = 1.77f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0018",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 19,
+                            canNang = 57.1f,
+                            chieuCao = 1.78f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0019",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 20,
+                            canNang = 58.1f,
+                            chieuCao = 1.79f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0020",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 21,
+                            canNang = 50.1f,
+                            chieuCao = 1.7f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0021",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 22,
+                            canNang = 66.1f,
+                            chieuCao = 1.71f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0022",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 23,
+                            canNang = 57.1f,
+                            chieuCao = 1.72f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0023",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 24,
+                            canNang = 58.1f,
+                            chieuCao = 1.73f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0024",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 25,
+                            canNang = 59.1f,
+                            chieuCao = 1.74f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0025",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 26,
+                            canNang = 56.1f,
+                            chieuCao = 1.75f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0026",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 27,
+                            canNang = 60.1f,
+                            chieuCao = 1.76f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0027",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 28,
+                            canNang = 61.1f,
+                            chieuCao = 1.77f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0028",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 29,
+                            canNang = 57.1f,
+                            chieuCao = 1.78f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0029",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 30,
+                            canNang = 58.1f,
+                            chieuCao = 1.79f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0030",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 31,
+                            canNang = 50.1f,
+                            chieuCao = 1.7f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0031",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 32,
+                            canNang = 66.1f,
+                            chieuCao = 1.71f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0032",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 33,
+                            canNang = 57.1f,
+                            chieuCao = 1.72f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0033",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 34,
+                            canNang = 58.1f,
+                            chieuCao = 1.73f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0034",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 35,
+                            canNang = 59.1f,
+                            chieuCao = 1.74f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0035",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 36,
+                            canNang = 56.1f,
+                            chieuCao = 1.75f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0036",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 37,
+                            canNang = 60.1f,
+                            chieuCao = 1.76f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0037",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 38,
+                            canNang = 61.1f,
+                            chieuCao = 1.77f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0038",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 39,
+                            canNang = 57.1f,
+                            chieuCao = 1.78f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0039",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 40,
+                            canNang = 58.1f,
+                            chieuCao = 1.79f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0040",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 41,
+                            canNang = 50.1f,
+                            chieuCao = 1.7f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0041",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 42,
+                            canNang = 66.1f,
+                            chieuCao = 1.71f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0042",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 43,
+                            canNang = 57.1f,
+                            chieuCao = 1.72f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0043",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 44,
+                            canNang = 58.1f,
+                            chieuCao = 1.73f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0044",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 45,
+                            canNang = 59.1f,
+                            chieuCao = 1.74f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0045",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 46,
+                            canNang = 56.1f,
+                            chieuCao = 1.75f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0046",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 47,
+                            canNang = 60.1f,
+                            chieuCao = 1.76f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0047",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 48,
+                            canNang = 61.1f,
+                            chieuCao = 1.77f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0048",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 49,
+                            canNang = 57.1f,
+                            chieuCao = 1.78f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0049",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 50,
+                            canNang = 58.1f,
+                            chieuCao = 1.79f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0050",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 51,
+                            canNang = 50.1f,
+                            chieuCao = 1.7f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0051",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 52,
+                            canNang = 66.1f,
+                            chieuCao = 1.71f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0052",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 53,
+                            canNang = 57.1f,
+                            chieuCao = 1.72f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0053",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 54,
+                            canNang = 58.1f,
+                            chieuCao = 1.73f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0054",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 55,
+                            canNang = 59.1f,
+                            chieuCao = 1.74f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0055",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 56,
+                            canNang = 56.1f,
+                            chieuCao = 1.75f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0056",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 57,
+                            canNang = 60.1f,
+                            chieuCao = 1.76f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0057",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 58,
+                            canNang = 61.1f,
+                            chieuCao = 1.77f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0058",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 59,
+                            canNang = 57.1f,
+                            chieuCao = 1.78f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0059",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 60,
+                            canNang = 58.1f,
+                            chieuCao = 1.79f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0060",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 61,
+                            canNang = 50.1f,
+                            chieuCao = 1.7f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0061",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 62,
+                            canNang = 66.1f,
+                            chieuCao = 1.71f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0062",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 63,
+                            canNang = 57.1f,
+                            chieuCao = 1.72f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0063",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 64,
+                            canNang = 58.1f,
+                            chieuCao = 1.73f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0064",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 65,
+                            canNang = 59.1f,
+                            chieuCao = 1.74f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0065",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 66,
+                            canNang = 56.1f,
+                            chieuCao = 1.75f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0066",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 67,
+                            canNang = 60.1f,
+                            chieuCao = 1.76f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0067",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 68,
+                            canNang = 61.1f,
+                            chieuCao = 1.77f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0068",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 69,
+                            canNang = 57.1f,
+                            chieuCao = 1.78f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0069",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 70,
+                            canNang = 58.1f,
+                            chieuCao = 1.79f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0070",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 71,
+                            canNang = 50.1f,
+                            chieuCao = 1.7f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0071",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 72,
+                            canNang = 66.1f,
+                            chieuCao = 1.71f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0072",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 73,
+                            canNang = 57.1f,
+                            chieuCao = 1.72f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0073",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 74,
+                            canNang = 58.1f,
+                            chieuCao = 1.73f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0074",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 75,
+                            canNang = 59.1f,
+                            chieuCao = 1.74f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0075",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 76,
+                            canNang = 56.1f,
+                            chieuCao = 1.75f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0076",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 77,
+                            canNang = 60.1f,
+                            chieuCao = 1.76f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0077",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 78,
+                            canNang = 61.1f,
+                            chieuCao = 1.77f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0078",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 79,
+                            canNang = 57.1f,
+                            chieuCao = 1.78f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0079",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 80,
+                            canNang = 58.1f,
+                            chieuCao = 1.79f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0080",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 81,
+                            canNang = 50.1f,
+                            chieuCao = 1.7f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0081",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 82,
+                            canNang = 66.1f,
+                            chieuCao = 1.71f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0082",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 83,
+                            canNang = 57.1f,
+                            chieuCao = 1.72f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0083",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 84,
+                            canNang = 58.1f,
+                            chieuCao = 1.73f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0084",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 85,
+                            canNang = 59.1f,
+                            chieuCao = 1.74f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0085",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 86,
+                            canNang = 56.1f,
+                            chieuCao = 1.75f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0086",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 87,
+                            canNang = 60.1f,
+                            chieuCao = 1.76f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0087",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 88,
+                            canNang = 61.1f,
+                            chieuCao = 1.77f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0088",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 89,
+                            canNang = 57.1f,
+                            chieuCao = 1.78f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0089",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 90,
+                            canNang = 58.1f,
+                            chieuCao = 1.79f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0090",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 91,
+                            canNang = 50.1f,
+                            chieuCao = 1.7f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0091",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 92,
+                            canNang = 66.1f,
+                            chieuCao = 1.71f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0092",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 93,
+                            canNang = 57.1f,
+                            chieuCao = 1.72f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0093",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 94,
+                            canNang = 58.1f,
+                            chieuCao = 1.73f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0094",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 95,
+                            canNang = 59.1f,
+                            chieuCao = 1.74f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0095",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 96,
+                            canNang = 56.1f,
+                            chieuCao = 1.75f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0096",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 97,
+                            canNang = 60.1f,
+                            chieuCao = 1.76f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0097",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 98,
+                            canNang = 61.1f,
+                            chieuCao = 1.77f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0098",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 99,
+                            canNang = 57.1f,
+                            chieuCao = 1.78f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0099",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 100,
+                            canNang = 58.1f,
+                            chieuCao = 1.79f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0100",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 101,
+                            canNang = 50.1f,
+                            chieuCao = 1.7f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0101",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 102,
+                            canNang = 66.1f,
+                            chieuCao = 1.71f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0102",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 103,
+                            canNang = 57.1f,
+                            chieuCao = 1.72f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0103",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 104,
+                            canNang = 58.1f,
+                            chieuCao = 1.73f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0104",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 105,
+                            canNang = 59.1f,
+                            chieuCao = 1.74f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0105",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 106,
+                            canNang = 56.1f,
+                            chieuCao = 1.75f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0106",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 107,
+                            canNang = 60.1f,
+                            chieuCao = 1.76f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0107",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 108,
+                            canNang = 61.1f,
+                            chieuCao = 1.77f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0108",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 109,
+                            canNang = 57.1f,
+                            chieuCao = 1.78f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0109",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 110,
+                            canNang = 58.1f,
+                            chieuCao = 1.79f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0110",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 111,
+                            canNang = 50.1f,
+                            chieuCao = 1.7f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0111",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 112,
+                            canNang = 66.1f,
+                            chieuCao = 1.71f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0112",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 113,
+                            canNang = 57.1f,
+                            chieuCao = 1.72f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0113",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 114,
+                            canNang = 58.1f,
+                            chieuCao = 1.73f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0114",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 115,
+                            canNang = 59.1f,
+                            chieuCao = 1.74f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0115",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 116,
+                            canNang = 56.1f,
+                            chieuCao = 1.75f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0116",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 117,
+                            canNang = 60.1f,
+                            chieuCao = 1.76f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0117",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 118,
+                            canNang = 61.1f,
+                            chieuCao = 1.77f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0118",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 119,
+                            canNang = 57.1f,
+                            chieuCao = 1.78f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0119",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 120,
+                            canNang = 58.1f,
+                            chieuCao = 1.79f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0120",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 121,
+                            canNang = 50.1f,
+                            chieuCao = 1.7f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0121",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 122,
+                            canNang = 66.1f,
+                            chieuCao = 1.71f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0122",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 123,
+                            canNang = 57.1f,
+                            chieuCao = 1.72f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0123",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 124,
+                            canNang = 58.1f,
+                            chieuCao = 1.73f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0124",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 125,
+                            canNang = 59.1f,
+                            chieuCao = 1.74f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0125",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 126,
+                            canNang = 56.1f,
+                            chieuCao = 1.75f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0126",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 127,
+                            canNang = 60.1f,
+                            chieuCao = 1.76f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0127",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 128,
+                            canNang = 61.1f,
+                            chieuCao = 1.77f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0128",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 129,
+                            canNang = 57.1f,
+                            chieuCao = 1.78f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0129",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 130,
+                            canNang = 58.1f,
+                            chieuCao = 1.79f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0130",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 131,
+                            canNang = 50.1f,
+                            chieuCao = 1.7f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0131",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 132,
+                            canNang = 66.1f,
+                            chieuCao = 1.71f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0132",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 133,
+                            canNang = 57.1f,
+                            chieuCao = 1.72f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0133",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 134,
+                            canNang = 58.1f,
+                            chieuCao = 1.73f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0134",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 135,
+                            canNang = 59.1f,
+                            chieuCao = 1.74f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0135",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 136,
+                            canNang = 56.1f,
+                            chieuCao = 1.75f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0136",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 137,
+                            canNang = 60.1f,
+                            chieuCao = 1.76f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0137",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 138,
+                            canNang = 61.1f,
+                            chieuCao = 1.77f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0138",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 139,
+                            canNang = 57.1f,
+                            chieuCao = 1.78f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0139",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 140,
+                            canNang = 58.1f,
+                            chieuCao = 1.79f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0140",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 141,
+                            canNang = 50.1f,
+                            chieuCao = 1.7f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0141",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 142,
+                            canNang = 66.1f,
+                            chieuCao = 1.71f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0142",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 143,
+                            canNang = 57.1f,
+                            chieuCao = 1.72f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0143",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 144,
+                            canNang = 58.1f,
+                            chieuCao = 1.73f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0144",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 145,
+                            canNang = 59.1f,
+                            chieuCao = 1.74f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0145",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 146,
+                            canNang = 56.1f,
+                            chieuCao = 1.75f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0146",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 147,
+                            canNang = 60.1f,
+                            chieuCao = 1.76f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0147",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 148,
+                            canNang = 61.1f,
+                            chieuCao = 1.77f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0148",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 149,
+                            canNang = 57.1f,
+                            chieuCao = 1.78f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0149",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 150,
+                            canNang = 58.1f,
+                            chieuCao = 1.79f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0150",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 151,
+                            canNang = 50.1f,
+                            chieuCao = 1.7f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0151",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 152,
+                            canNang = 66.1f,
+                            chieuCao = 1.71f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0152",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 153,
+                            canNang = 57.1f,
+                            chieuCao = 1.72f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0153",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 154,
+                            canNang = 58.1f,
+                            chieuCao = 1.73f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0154",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 155,
+                            canNang = 59.1f,
+                            chieuCao = 1.74f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0155",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 156,
+                            canNang = 56.1f,
+                            chieuCao = 1.75f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0156",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 157,
+                            canNang = 60.1f,
+                            chieuCao = 1.76f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0157",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 158,
+                            canNang = 61.1f,
+                            chieuCao = 1.77f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0158",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 159,
+                            canNang = 57.1f,
+                            chieuCao = 1.78f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0159",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 160,
+                            canNang = 58.1f,
+                            chieuCao = 1.79f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0160",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 161,
+                            canNang = 50.1f,
+                            chieuCao = 1.7f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0161",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 162,
+                            canNang = 66.1f,
+                            chieuCao = 1.71f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0162",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 163,
+                            canNang = 57.1f,
+                            chieuCao = 1.72f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0163",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 164,
+                            canNang = 58.1f,
+                            chieuCao = 1.73f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0164",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 165,
+                            canNang = 59.1f,
+                            chieuCao = 1.74f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0165",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 166,
+                            canNang = 56.1f,
+                            chieuCao = 1.75f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0166",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 167,
+                            canNang = 60.1f,
+                            chieuCao = 1.76f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0167",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 168,
+                            canNang = 61.1f,
+                            chieuCao = 1.77f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0168",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 169,
+                            canNang = 57.1f,
+                            chieuCao = 1.78f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0169",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 170,
+                            canNang = 58.1f,
+                            chieuCao = 1.79f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0170",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 171,
+                            canNang = 50.1f,
+                            chieuCao = 1.7f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0171",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 172,
+                            canNang = 66.1f,
+                            chieuCao = 1.71f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0172",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 173,
+                            canNang = 57.1f,
+                            chieuCao = 1.72f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0173",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 174,
+                            canNang = 58.1f,
+                            chieuCao = 1.73f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0174",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 175,
+                            canNang = 59.1f,
+                            chieuCao = 1.74f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0175",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 176,
+                            canNang = 56.1f,
+                            chieuCao = 1.75f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0176",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 177,
+                            canNang = 60.1f,
+                            chieuCao = 1.76f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0177",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 178,
+                            canNang = 61.1f,
+                            chieuCao = 1.77f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0178",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 179,
+                            canNang = 57.1f,
+                            chieuCao = 1.78f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0179",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 180,
+                            canNang = 58.1f,
+                            chieuCao = 1.79f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0180",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 181,
+                            canNang = 50.1f,
+                            chieuCao = 1.7f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0181",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 182,
+                            canNang = 66.1f,
+                            chieuCao = 1.71f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0182",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 183,
+                            canNang = 57.1f,
+                            chieuCao = 1.72f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0183",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 184,
+                            canNang = 58.1f,
+                            chieuCao = 1.73f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0184",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 185,
+                            canNang = 59.1f,
+                            chieuCao = 1.74f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0185",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 186,
+                            canNang = 56.1f,
+                            chieuCao = 1.75f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0186",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 187,
+                            canNang = 60.1f,
+                            chieuCao = 1.76f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0187",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 188,
+                            canNang = 61.1f,
+                            chieuCao = 1.77f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0188",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 189,
+                            canNang = 57.1f,
+                            chieuCao = 1.78f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0189",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 190,
+                            canNang = 58.1f,
+                            chieuCao = 1.79f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0190",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 191,
+                            canNang = 50.1f,
+                            chieuCao = 1.7f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0191",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 192,
+                            canNang = 66.1f,
+                            chieuCao = 1.71f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0192",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 193,
+                            canNang = 57.1f,
+                            chieuCao = 1.72f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0193",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 194,
+                            canNang = 58.1f,
+                            chieuCao = 1.73f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0194",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 195,
+                            canNang = 59.1f,
+                            chieuCao = 1.74f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0195",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 196,
+                            canNang = 56.1f,
+                            chieuCao = 1.75f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0196",
+                            nhomMau = "O"
+                        },
+                        new
+                        {
+                            id = 197,
+                            canNang = 60.1f,
+                            chieuCao = 1.76f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0197",
+                            nhomMau = "A"
+                        },
+                        new
+                        {
+                            id = 198,
+                            canNang = 61.1f,
+                            chieuCao = 1.77f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0198",
+                            nhomMau = "B"
+                        },
+                        new
+                        {
+                            id = 199,
+                            canNang = 57.1f,
+                            chieuCao = 1.78f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0199",
+                            nhomMau = "AB"
+                        },
+                        new
+                        {
+                            id = 200,
+                            canNang = 58.1f,
+                            chieuCao = 1.79f,
+                            khuyetTat = false,
+                            maNhanVien = "NV0200",
+                            nhomMau = "AB"
                         });
                 });
 
