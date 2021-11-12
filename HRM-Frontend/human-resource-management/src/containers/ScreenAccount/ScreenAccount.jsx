@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import LoginApi from "../../api/login";
 
 function ScreenAccount(props) {
-  const link = "/User/";
+  const link = "/account/detail/";
   const fileName = "Danhsachhopdong";
   const [dataAllAcc, setdataAllAcc] = useState([]);
 

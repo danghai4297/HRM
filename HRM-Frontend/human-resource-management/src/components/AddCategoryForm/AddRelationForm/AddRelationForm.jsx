@@ -24,7 +24,7 @@ function AddRelationForm(props) {
   let { match, history } = props;
   let { id } = match.params;
 
-  const token = localStorage.getItem("resultObj");
+  const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
 
   const [dataDetailDMNT, setdataDetailDMNT] = useState([]);

@@ -22,7 +22,7 @@ function AddCSRForm(props) {
   const { error, success } = useToast();
   let { match, history } = props;
   let { id } = match.params;
-  const token = localStorage.getItem("resultObj");
+  const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
 
   const [dataDetailDMNCC, setdataDetailDMNCC] = useState([]);
