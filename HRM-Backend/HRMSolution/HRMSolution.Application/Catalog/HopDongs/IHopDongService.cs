@@ -14,6 +14,8 @@ namespace HRMSolution.Application.Catalog.HopDongs
         Task<List<HopDongViewModel>> GetAll();
         Task<List<HopDongViewModel>> GetAll(string maNhanVien);
         Task<HopDongViewModel> GetHopDong(string maHopDong);
-        Task<int> UpdateTrangThai(string maNhanVien);
+        Task<int> UpdateBangChung(string maHopDong, HopDongUpdateBangChungRequest request);
+        Task<int> DeleteBangChung(string maHopDong);
+
     }
 }

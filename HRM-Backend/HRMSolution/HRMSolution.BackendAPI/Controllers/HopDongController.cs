@@ -55,6 +55,14 @@ namespace HRMSolution.BackendAPI.Controllers
                 return BadRequest();
             return Ok();
         }
+        [HttpDelete("bangChung/{maHopDong}")]
+        public async Task<IActionResult> DeleteBangChung(string maHopDong)
+        {
+            var result = await _hopDongService.DeleteBangChung(maHopDong);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
+        }
         [HttpPut("{maHopDong}")]
         public async Task<IActionResult> Update(string maHopDong, HopDongUpdateRequest request)
         {
@@ -63,14 +71,14 @@ namespace HRMSolution.BackendAPI.Controllers
                 return BadRequest();
             return Ok();
         }
-        [AllowAnonymous]
-        [HttpPut("trang-thai/{maNhanVien}")]
-        public async Task<IActionResult> UpdateTrangThai(string maNhanVien)
+        [HttpPut("bangChung/{maHopDong}")]
+        public async Task<IActionResult> UpdateBangChung(string maHopDong, [FromForm] HopDongUpdateBangChungRequest request)
         {
-            var result = await _hopDongService.UpdateTrangThai(maNhanVien);
+            var result = await _hopDongService.UpdateBangChung(maHopDong, request);
             if (result == 0)
                 return BadRequest();
             return Ok();
         }
+
     }
 }

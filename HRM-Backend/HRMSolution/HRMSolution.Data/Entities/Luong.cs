@@ -20,6 +20,7 @@ namespace HRMSolution.Data.Entities
         public DateTime? ngayKetThuc { get; set; }
         public string ghiChu { get; set; }
         public bool trangThai { get; set; }
+        public string bangChung { get; set; }
 
         public HopDong HopDong { get; set; }
         public DanhMucNhomLuong DanhMucNhomLuong { get; set; }

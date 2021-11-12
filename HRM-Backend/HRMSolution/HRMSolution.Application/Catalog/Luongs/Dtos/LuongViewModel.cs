@@ -20,6 +20,7 @@ namespace HRMSolution.Application.Catalog.Luongs.Dtos
         public DateTime? ngayKetThuc { get; set; }
         public string ghiChu { get; set; }
         public string trangThai { get; set; }
+        public string bangChung { get; set; }
         public string maNhanVien { get; set; }
         public string tenNhanVien { get; set; }
         public int idNhomLuong { get; set; }

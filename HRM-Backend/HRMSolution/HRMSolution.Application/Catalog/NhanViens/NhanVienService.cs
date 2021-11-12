@@ -101,10 +101,10 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 },
                 LichSuBanThan = new LichSuBanThan()
                 {
-                    biBatDiTu = request.biBatDiTu,
-                    thamGiaChinhTri = request.thamGiaChinhTri,
-                    thanNhanNuocNgoai = request.thanNhanNuocNgoai,
-                    maNhanVien = request.maNhanVien
+                    biBatDiTu = request.lsbt_biBatDiTu,
+                    thamGiaChinhTri = request.lsbt_thamGiaChinhTri,
+                    thanNhanNuocNgoai = request.lsbt_thanNhanNuocNgoai,
+                    maNhanVien = request.lsbt_maNhanVien
                 },
                 LienHeKhanCap = new LienHeKhanCap()
                 {
@@ -117,11 +117,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 }
 
             };
-            //lưu ảnh
-             //if(request.anh != null)
-             //{
-             //   nhanVien.anh = await this.SaveFile(request.anh);
-             //}
+
             _context.nhanViens.Add(nhanVien);
             return await _context.SaveChangesAsync();
         }

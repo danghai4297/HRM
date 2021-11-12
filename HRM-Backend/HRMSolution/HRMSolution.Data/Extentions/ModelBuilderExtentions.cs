@@ -210,7 +210,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg",
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg",
                     email = "huongdn@gmail.com"
                 },
                 new NhanVien()
@@ -244,7 +244,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -278,7 +278,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -312,7 +312,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -346,7 +346,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -380,7 +380,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -414,7 +414,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -448,7 +448,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0009",
@@ -481,7 +481,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -515,7 +515,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -549,7 +549,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -583,7 +583,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0013",
@@ -616,7 +616,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0014",
@@ -649,7 +649,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0015",
@@ -682,7 +682,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0016",
@@ -715,7 +715,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0017",
@@ -749,7 +749,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0018",
@@ -785,7 +785,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0019",
@@ -818,7 +818,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0020",
@@ -853,7 +853,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0021",
@@ -886,7 +886,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0022",
@@ -919,7 +919,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0023",
@@ -952,7 +952,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0024",
@@ -985,7 +985,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0025",
@@ -1018,7 +1018,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0026",
@@ -1051,7 +1051,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0027",
@@ -1084,7 +1084,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0028",
@@ -1117,7 +1117,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0029",
@@ -1150,7 +1150,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0030",
@@ -1183,7 +1183,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0031",
@@ -1222,7 +1222,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0032",
@@ -1255,7 +1255,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0033",
@@ -1288,7 +1288,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0034",
@@ -1321,7 +1321,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0035",
@@ -1354,7 +1354,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0036",
@@ -1387,7 +1387,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0037",
@@ -1420,7 +1420,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0038",
@@ -1453,7 +1453,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0039",
@@ -1486,7 +1486,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0040",
@@ -1519,7 +1519,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0041",
@@ -1552,7 +1552,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0042",
@@ -1585,7 +1585,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0043",
@@ -1618,7 +1618,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0044",
@@ -1651,7 +1651,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0045",
@@ -1684,7 +1684,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0046",
@@ -1717,7 +1717,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0047",
@@ -1755,7 +1755,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0048",
@@ -1788,7 +1788,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0049",
@@ -1821,7 +1821,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0050",
@@ -1854,7 +1854,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0051",
@@ -1887,7 +1887,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0052",
@@ -1920,7 +1920,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0053",
@@ -1953,7 +1953,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0054",
@@ -1986,7 +1986,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0055",
@@ -2019,7 +2019,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0056",
@@ -2052,7 +2052,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0057",
@@ -2085,7 +2085,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0058",
@@ -2118,7 +2118,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0059",
@@ -2151,7 +2151,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0060",
@@ -2184,7 +2184,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0061",
@@ -2217,7 +2217,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0062",
@@ -2250,7 +2250,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0063",
@@ -2283,7 +2283,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0064",
@@ -2316,7 +2316,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0065",
@@ -2349,7 +2349,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 }, new NhanVien()
                 {
                     maNhanVien = "NV0066",
@@ -3864,7 +3864,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -3897,7 +3897,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -3931,7 +3931,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -3965,7 +3965,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -3999,7 +3999,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -4033,7 +4033,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -7425,7 +7425,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -7459,7 +7459,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -7493,7 +7493,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -7527,7 +7527,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -7561,7 +7561,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -11016,7 +11016,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -11049,7 +11049,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -11083,7 +11083,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -11117,7 +11117,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -11151,7 +11151,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -11185,7 +11185,7 @@ namespace HRMSolution.Data.Extentions
                     idDanToc = 1,
                     idTonGiao = 1,
                     idNgachCongChuc = 1,
-                    anh = "/user-content/87b55866-cc4f-48a9-8a94-010d7c9197ce.jpg"
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg"
                 },
                 new NhanVien()
                 {
@@ -33840,11 +33840,11 @@ namespace HRMSolution.Data.Extentions
                 new NguoiThan() { id = 77, tenNguoiThan = "Dương Tuấn Kiệt", gioiTinh = true, ngaySinh = DateTime.ParseExact("1975-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), quanHe = "Bố", ngheNghiep = "kinh doanh Tại Nhà", diaChi = "điện biên", dienThoai = "0914637668", maNhanVien = "NV0038", idDanhMucNguoiThan = 1 },
                 new NguoiThan() { id = 78, tenNguoiThan = "Úc Minh Hương", gioiTinh = false, ngaySinh = DateTime.ParseExact("1985-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), quanHe = "Mẹ", ngheNghiep = "kinh doanh Tại Nhà", diaChi = "điện biên", dienThoai = "0914637668", maNhanVien = "NV0038", idDanhMucNguoiThan = 2 },
                 new NguoiThan() { id = 79, tenNguoiThan = "Dương Tuấn Kiệt", gioiTinh = true, ngaySinh = DateTime.ParseExact("1975-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), quanHe = "Bố", ngheNghiep = "kinh doanh Tại Nhà", diaChi = "điện biên", dienThoai = "0914637668", maNhanVien = "NV0039", idDanhMucNguoiThan = 1 },
-                new NguoiThan() { id = 80, tenNguoiThan = "Úc Minh Hương", gioiTinh = false, ngaySinh = DateTime.ParseExact("1985-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), quanHe = "Mẹ", ngheNghiep = "kinh doanh Tại Nhà", diaChi = "điện biên", dienThoai = "0914637668", maNhanVien = "NV0039", idDanhMucNguoiThan = 2 },                 new NguoiThan() { id = 81, tenNguoiThan = "Dương Tuấn Kiệt", gioiTinh = true, ngaySinh = DateTime.ParseExact("1975-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), quanHe = "Bố", ngheNghiep = "kinh doanh Tại Nhà", diaChi = "điện biên", dienThoai = "0914637668", maNhanVien = "NV0040", idDanhMucNguoiThan = 1 },
+                new NguoiThan() { id = 80, tenNguoiThan = "Úc Minh Hương", gioiTinh = false, ngaySinh = DateTime.ParseExact("1985-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), quanHe = "Mẹ", ngheNghiep = "kinh doanh Tại Nhà", diaChi = "điện biên", dienThoai = "0914637668", maNhanVien = "NV0039", idDanhMucNguoiThan = 2 },                 
+                new NguoiThan() { id = 81, tenNguoiThan = "Dương Tuấn Kiệt", gioiTinh = true, ngaySinh = DateTime.ParseExact("1975-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), quanHe = "Bố", ngheNghiep = "kinh doanh Tại Nhà", diaChi = "điện biên", dienThoai = "0914637668", maNhanVien = "NV0040", idDanhMucNguoiThan = 1 },
                 new NguoiThan() { id = 82, tenNguoiThan = "Úc Minh Hương", gioiTinh = false, ngaySinh = DateTime.ParseExact("1985-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), quanHe = "Mẹ", ngheNghiep = "kinh doanh Tại Nhà", diaChi = "điện biên", dienThoai = "0914637668", maNhanVien = "NV0040", idDanhMucNguoiThan = 2 }
                 );
             modelbulder.Entity<HopDong>().HasData(
-<<<<<<< HEAD
                 new HopDong() {id = 1, maHopDong = "HD01", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0001", trangThai = false },
                 new HopDong() {id = 2, maHopDong = "HD02", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0001", trangThai = true },
                 new HopDong() {id = 3, maHopDong = "HD03", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0003" , trangThai = true },
@@ -34064,227 +34064,6 @@ namespace HRMSolution.Data.Extentions
                 new HopDong() {id = 217, maHopDong = "HD217", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0217", trangThai = true },
                 new HopDong() {id = 218, maHopDong = "HD218", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0218", trangThai = true },
                 new HopDong() {id = 219, maHopDong = "HD219", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0219", trangThai = true }
-=======
-                new HopDong() { id = 1, maHopDong = "HD01", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0001", trangThai = false },
-                new HopDong() { id = 2, maHopDong = "HD02", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0001", trangThai = true },
-                new HopDong() { id = 3, maHopDong = "HD03", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0003", trangThai = true },
-                new HopDong() { id = 4, maHopDong = "HD04", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0004", trangThai = true },
-                new HopDong() { id = 5, maHopDong = "HD05", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0005", trangThai = true },
-                new HopDong() { id = 6, maHopDong = "HD06", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0006", trangThai = true },
-                new HopDong() { id = 7, maHopDong = "HD07", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0007", trangThai = true },
-                new HopDong() { id = 8, maHopDong = "HD08", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0008", trangThai = true },
-                new HopDong() { id = 9, maHopDong = "HD09", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0008", trangThai = true },
-                new HopDong() { id = 10, maHopDong = "HD10", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0010", trangThai = true },
-                new HopDong() { id = 11, maHopDong = "HD11", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0011", trangThai = true },
-                new HopDong() { id = 12, maHopDong = "HD12", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0012", trangThai = true },
-                new HopDong() { id = 13, maHopDong = "HD13", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0013", trangThai = true },
-                new HopDong() { id = 14, maHopDong = "HD14", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0014", trangThai = true },
-                new HopDong() { id = 15, maHopDong = "HD15", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0015", trangThai = true },
-                new HopDong() { id = 16, maHopDong = "HD16", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0016", trangThai = true },
-                new HopDong() { id = 17, maHopDong = "HD17", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0017", trangThai = true },
-                new HopDong() { id = 18, maHopDong = "HD18", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0018", trangThai = true },
-                new HopDong() { id = 19, maHopDong = "HD19", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0019", trangThai = true },
-                new HopDong() { id = 20, maHopDong = "HD20", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0020", trangThai = true },
-                new HopDong() { id = 21, maHopDong = "HD21", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0021", trangThai = true },
-                new HopDong() { id = 22, maHopDong = "HD22", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0022", trangThai = true },
-                new HopDong() { id = 23, maHopDong = "HD23", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0023", trangThai = true },
-                new HopDong() { id = 24, maHopDong = "HD24", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0024", trangThai = true },
-                new HopDong() { id = 25, maHopDong = "HD25", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0025", trangThai = true },
-                new HopDong() { id = 26, maHopDong = "HD26", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0026", trangThai = true },
-                new HopDong() { id = 27, maHopDong = "HD27", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0027", trangThai = true },
-                new HopDong() { id = 28, maHopDong = "HD28", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0028", trangThai = true },
-                new HopDong() { id = 29, maHopDong = "HD29", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0029", trangThai = true },
-                new HopDong() { id = 30, maHopDong = "HD30", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0030", trangThai = true },
-                new HopDong() { id = 31, maHopDong = "HD31", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0031", trangThai = true },
-                new HopDong() { id = 32, maHopDong = "HD32", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0032", trangThai = true },
-                new HopDong() { id = 33, maHopDong = "HD33", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0033", trangThai = true },
-                new HopDong() { id = 34, maHopDong = "HD34", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0034", trangThai = true },
-                new HopDong() { id = 35, maHopDong = "HD35", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0035", trangThai = true },
-                new HopDong() { id = 36, maHopDong = "HD36", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0036", trangThai = true },
-                new HopDong() { id = 37, maHopDong = "HD37", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0037", trangThai = true },
-                new HopDong() { id = 38, maHopDong = "HD38", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0038", trangThai = true },
-                new HopDong() { id = 39, maHopDong = "HD39", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0039", trangThai = true },
-                new HopDong() { id = 40, maHopDong = "HD40", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0040", trangThai = true },
-                new HopDong() { id = 41, maHopDong = "HD41", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0041", trangThai = true },
-                new HopDong() { id = 42, maHopDong = "HD42", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0042", trangThai = true },
-                new HopDong() { id = 43, maHopDong = "HD43", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0043", trangThai = true },
-                new HopDong() { id = 44, maHopDong = "HD44", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0044", trangThai = true },
-                new HopDong() { id = 45, maHopDong = "HD45", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0045", trangThai = true },
-                new HopDong() { id = 46, maHopDong = "HD46", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0046", trangThai = true },
-                new HopDong() { id = 47, maHopDong = "HD47", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0047", trangThai = true },
-                new HopDong() { id = 48, maHopDong = "HD48", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0048", trangThai = true },
-                new HopDong() { id = 49, maHopDong = "HD49", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0049", trangThai = true },
-                new HopDong() { id = 50, maHopDong = "HD50", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0050", trangThai = true },
-                new HopDong() { id = 51, maHopDong = "HD51", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0051", trangThai = true },
-                new HopDong() { id = 52, maHopDong = "HD52", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0052", trangThai = true },
-                new HopDong() { id = 53, maHopDong = "HD53", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0053", trangThai = true },
-                new HopDong() { id = 54, maHopDong = "HD54", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0054", trangThai = true },
-                new HopDong() { id = 55, maHopDong = "HD55", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0055", trangThai = true },
-                new HopDong() { id = 56, maHopDong = "HD56", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0056", trangThai = true },
-                new HopDong() { id = 57, maHopDong = "HD57", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0057", trangThai = true },
-                new HopDong() { id = 58, maHopDong = "HD58", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0058", trangThai = true },
-                new HopDong() { id = 59, maHopDong = "HD59", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0059", trangThai = true },
-                new HopDong() { id = 60, maHopDong = "HD60", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0060", trangThai = true },
-                new HopDong() { id = 61, maHopDong = "HD61", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0061", trangThai = true },
-                new HopDong() { id = 62, maHopDong = "HD62", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0062", trangThai = true },
-                new HopDong() { id = 63, maHopDong = "HD63", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0063", trangThai = true },
-                new HopDong() { id = 64, maHopDong = "HD64", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0064", trangThai = true },
-                new HopDong() { id = 65, maHopDong = "HD65", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0065", trangThai = true },
-                new HopDong() { id = 66, maHopDong = "HD66", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0066", trangThai = true },
-                new HopDong() { id = 67, maHopDong = "HD67", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0067", trangThai = true },
-                new HopDong() { id = 68, maHopDong = "HD68", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0068", trangThai = true },
-                new HopDong() { id = 69, maHopDong = "HD69", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0069", trangThai = true },
-                new HopDong() { id = 70, maHopDong = "HD70", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0070", trangThai = true },
-                new HopDong() { id = 71, maHopDong = "HD71", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0071", trangThai = true },
-                new HopDong() { id = 72, maHopDong = "HD72", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0072", trangThai = true },
-                new HopDong() { id = 73, maHopDong = "HD73", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0073", trangThai = true },
-                new HopDong() { id = 74, maHopDong = "HD74", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0074", trangThai = true },
-                new HopDong() { id = 75, maHopDong = "HD75", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0075", trangThai = true },
-                new HopDong() { id = 76, maHopDong = "HD76", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0076", trangThai = true },
-                new HopDong() { id = 77, maHopDong = "HD77", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0077", trangThai = true },
-                new HopDong() { id = 78, maHopDong = "HD78", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0078", trangThai = true },
-                new HopDong() { id = 79, maHopDong = "HD79", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0079", trangThai = true },
-                new HopDong() { id = 80, maHopDong = "HD80", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0080", trangThai = true },
-                new HopDong() { id = 81, maHopDong = "HD81", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0081", trangThai = true },
-                new HopDong() { id = 82, maHopDong = "HD82", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0082", trangThai = true },
-                new HopDong() { id = 83, maHopDong = "HD83", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0083", trangThai = true },
-                new HopDong() { id = 84, maHopDong = "HD84", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0084", trangThai = true },
-                new HopDong() { id = 85, maHopDong = "HD85", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0085", trangThai = true },
-                new HopDong() { id = 86, maHopDong = "HD86", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0086", trangThai = true },
-                new HopDong() { id = 87, maHopDong = "HD87", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0087", trangThai = true },
-                new HopDong() { id = 88, maHopDong = "HD88", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0088", trangThai = true },
-                new HopDong() { id = 89, maHopDong = "HD89", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0089", trangThai = true },
-                new HopDong() { id = 90, maHopDong = "HD90", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0090", trangThai = true },
-                new HopDong() { id = 91, maHopDong = "HD91", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0091", trangThai = true },
-                new HopDong() { id = 92, maHopDong = "HD92", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0092", trangThai = true },
-                new HopDong() { id = 93, maHopDong = "HD93", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0093", trangThai = true },
-                new HopDong() { id = 94, maHopDong = "HD94", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0094", trangThai = true },
-                new HopDong() { id = 95, maHopDong = "HD95", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0095", trangThai = true },
-                new HopDong() { id = 96, maHopDong = "HD96", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0096", trangThai = true },
-                new HopDong() { id = 97, maHopDong = "HD97", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0097", trangThai = true },
-                new HopDong() { id = 98, maHopDong = "HD98", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0098", trangThai = true },
-                new HopDong() { id = 99, maHopDong = "HD99", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0099", trangThai = true },
-                new HopDong() { id = 100, maHopDong = "HD100", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0100", trangThai = true },
-                new HopDong() { id = 101, maHopDong = "HD101", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0101", trangThai = true },
-                new HopDong() { id = 102, maHopDong = "HD102", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0102", trangThai = true },
-                new HopDong() { id = 103, maHopDong = "HD103", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0103", trangThai = true },
-                new HopDong() { id = 104, maHopDong = "HD104", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0104", trangThai = true },
-                new HopDong() { id = 105, maHopDong = "HD105", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0105", trangThai = true },
-                new HopDong() { id = 106, maHopDong = "HD106", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0106", trangThai = true },
-                new HopDong() { id = 107, maHopDong = "HD107", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0107", trangThai = true },
-                new HopDong() { id = 108, maHopDong = "HD108", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0108", trangThai = true },
-                new HopDong() { id = 109, maHopDong = "HD109", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0109", trangThai = true },
-                new HopDong() { id = 110, maHopDong = "HD110", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0110", trangThai = true },
-                new HopDong() { id = 111, maHopDong = "HD111", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0111", trangThai = true },
-                new HopDong() { id = 112, maHopDong = "HD112", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0112", trangThai = true },
-                new HopDong() { id = 113, maHopDong = "HD113", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0113", trangThai = true },
-                new HopDong() { id = 114, maHopDong = "HD114", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0114", trangThai = true },
-                new HopDong() { id = 115, maHopDong = "HD115", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0115", trangThai = true },
-                new HopDong() { id = 116, maHopDong = "HD116", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0116", trangThai = true },
-                new HopDong() { id = 117, maHopDong = "HD117", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0117", trangThai = true },
-                new HopDong() { id = 118, maHopDong = "HD118", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0118", trangThai = true },
-                new HopDong() { id = 119, maHopDong = "HD119", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0119", trangThai = true },
-                new HopDong() { id = 120, maHopDong = "HD120", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0120", trangThai = true },
-                new HopDong() { id = 121, maHopDong = "HD121", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0121", trangThai = true },
-                new HopDong() { id = 122, maHopDong = "HD122", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0122", trangThai = true },
-                new HopDong() { id = 123, maHopDong = "HD123", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0123", trangThai = true },
-                new HopDong() { id = 124, maHopDong = "HD124", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0124", trangThai = true },
-                new HopDong() { id = 125, maHopDong = "HD125", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0125", trangThai = true },
-                new HopDong() { id = 126, maHopDong = "HD126", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0126", trangThai = true },
-                new HopDong() { id = 127, maHopDong = "HD127", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0127", trangThai = true },
-                new HopDong() { id = 128, maHopDong = "HD128", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0128", trangThai = true },
-                new HopDong() { id = 129, maHopDong = "HD129", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0129", trangThai = true },
-                new HopDong() { id = 130, maHopDong = "HD130", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0130", trangThai = true },
-                new HopDong() { id = 131, maHopDong = "HD131", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0131", trangThai = true },
-                new HopDong() { id = 132, maHopDong = "HD132", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0132", trangThai = true },
-                new HopDong() { id = 133, maHopDong = "HD133", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0133", trangThai = true },
-                new HopDong() { id = 134, maHopDong = "HD134", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0134", trangThai = true },
-                new HopDong() { id = 135, maHopDong = "HD135", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0135", trangThai = true },
-                new HopDong() { id = 136, maHopDong = "HD136", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0136", trangThai = true },
-                new HopDong() { id = 137, maHopDong = "HD137", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0137", trangThai = true },
-                new HopDong() { id = 138, maHopDong = "HD138", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0138", trangThai = true },
-                new HopDong() { id = 139, maHopDong = "HD139", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0139", trangThai = true },
-                new HopDong() { id = 140, maHopDong = "HD140", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0140", trangThai = true },
-                new HopDong() { id = 141, maHopDong = "HD141", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0141", trangThai = true },
-                new HopDong() { id = 142, maHopDong = "HD142", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0142", trangThai = true },
-                new HopDong() { id = 143, maHopDong = "HD143", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0143", trangThai = true },
-                new HopDong() { id = 144, maHopDong = "HD144", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0144", trangThai = true },
-                new HopDong() { id = 145, maHopDong = "HD145", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0145", trangThai = true },
-                new HopDong() { id = 146, maHopDong = "HD146", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0146", trangThai = true },
-                new HopDong() { id = 147, maHopDong = "HD147", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0147", trangThai = true },
-                new HopDong() { id = 148, maHopDong = "HD148", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0148", trangThai = true },
-                new HopDong() { id = 149, maHopDong = "HD149", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0149", trangThai = true },
-                new HopDong() { id = 150, maHopDong = "HD150", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0150", trangThai = true },
-                new HopDong() { id = 151, maHopDong = "HD151", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0151", trangThai = true },
-                new HopDong() { id = 152, maHopDong = "HD152", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0152", trangThai = true },
-                new HopDong() { id = 153, maHopDong = "HD153", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0153", trangThai = true },
-                new HopDong() { id = 154, maHopDong = "HD154", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0154", trangThai = true },
-                new HopDong() { id = 155, maHopDong = "HD155", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0155", trangThai = true },
-                new HopDong() { id = 156, maHopDong = "HD156", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0156", trangThai = true },
-                new HopDong() { id = 157, maHopDong = "HD157", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0157", trangThai = true },
-                new HopDong() { id = 158, maHopDong = "HD158", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0158", trangThai = true },
-                new HopDong() { id = 159, maHopDong = "HD159", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0159", trangThai = true },
-                new HopDong() { id = 160, maHopDong = "HD160", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0160", trangThai = true },
-                new HopDong() { id = 161, maHopDong = "HD161", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0161", trangThai = true },
-                new HopDong() { id = 162, maHopDong = "HD162", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0162", trangThai = true },
-                new HopDong() { id = 163, maHopDong = "HD163", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0163", trangThai = true },
-                new HopDong() { id = 164, maHopDong = "HD164", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0164", trangThai = true },
-                new HopDong() { id = 165, maHopDong = "HD165", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0165", trangThai = true },
-                new HopDong() { id = 166, maHopDong = "HD166", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0166", trangThai = true },
-                new HopDong() { id = 167, maHopDong = "HD167", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0167", trangThai = true },
-                new HopDong() { id = 168, maHopDong = "HD168", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0168", trangThai = true },
-                new HopDong() { id = 169, maHopDong = "HD169", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0169", trangThai = true },
-                new HopDong() { id = 170, maHopDong = "HD170", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0170", trangThai = true },
-                new HopDong() { id = 171, maHopDong = "HD171", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0171", trangThai = true },
-                new HopDong() { id = 172, maHopDong = "HD172", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0172", trangThai = true },
-                new HopDong() { id = 173, maHopDong = "HD173", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0173", trangThai = true },
-                new HopDong() { id = 174, maHopDong = "HD174", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0174", trangThai = true },
-                new HopDong() { id = 175, maHopDong = "HD175", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0175", trangThai = true },
-                new HopDong() { id = 176, maHopDong = "HD176", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0176", trangThai = true },
-                new HopDong() { id = 177, maHopDong = "HD177", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0177", trangThai = true },
-                new HopDong() { id = 178, maHopDong = "HD178", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0178", trangThai = true },
-                new HopDong() { id = 179, maHopDong = "HD179", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0179", trangThai = true },
-                new HopDong() { id = 180, maHopDong = "HD180", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0180", trangThai = true },
-                new HopDong() { id = 181, maHopDong = "HD181", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0181", trangThai = true },
-                new HopDong() { id = 182, maHopDong = "HD182", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0182", trangThai = true },
-                new HopDong() { id = 183, maHopDong = "HD183", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0183", trangThai = true },
-                new HopDong() { id = 184, maHopDong = "HD184", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0184", trangThai = true },
-                new HopDong() { id = 185, maHopDong = "HD185", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0185", trangThai = true },
-                new HopDong() { id = 186, maHopDong = "HD186", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0186", trangThai = true },
-                new HopDong() { id = 187, maHopDong = "HD187", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0187", trangThai = true },
-                new HopDong() { id = 188, maHopDong = "HD188", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0188", trangThai = true },
-                new HopDong() { id = 189, maHopDong = "HD189", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0189", trangThai = true },
-                new HopDong() { id = 190, maHopDong = "HD190", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0190", trangThai = true },
-                new HopDong() { id = 191, maHopDong = "HD191", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0191", trangThai = true },
-                new HopDong() { id = 192, maHopDong = "HD192", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0192", trangThai = true },
-                new HopDong() { id = 193, maHopDong = "HD193", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0193", trangThai = true },
-                new HopDong() { id = 194, maHopDong = "HD194", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0194", trangThai = true },
-                new HopDong() { id = 195, maHopDong = "HD195", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0195", trangThai = true },
-                new HopDong() { id = 196, maHopDong = "HD196", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0196", trangThai = true },
-                new HopDong() { id = 197, maHopDong = "HD197", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0197", trangThai = true },
-                new HopDong() { id = 198, maHopDong = "HD198", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0198", trangThai = true },
-                new HopDong() { id = 199, maHopDong = "HD199", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0199", trangThai = true },
-                new HopDong() { id = 200, maHopDong = "HD200", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0200", trangThai = true },
-                new HopDong() { id = 201, maHopDong = "HD201", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0201", trangThai = true },
-                new HopDong() { id = 202, maHopDong = "HD202", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0202", trangThai = true },
-                new HopDong() { id = 203, maHopDong = "HD203", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0203", trangThai = true },
-                new HopDong() { id = 204, maHopDong = "HD204", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0204", trangThai = true },
-                new HopDong() { id = 205, maHopDong = "HD205", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0205", trangThai = true },
-                new HopDong() { id = 206, maHopDong = "HD206", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0206", trangThai = true },
-                new HopDong() { id = 207, maHopDong = "HD207", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0207", trangThai = true },
-                new HopDong() { id = 208, maHopDong = "HD208", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0208", trangThai = true },
-                new HopDong() { id = 209, maHopDong = "HD209", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0209", trangThai = true },
-                new HopDong() { id = 210, maHopDong = "HD210", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0210", trangThai = true },
-                new HopDong() { id = 211, maHopDong = "HD211", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0211", trangThai = true },
-                new HopDong() { id = 212, maHopDong = "HD212", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0212", trangThai = true },
-                new HopDong() { id = 213, maHopDong = "HD213", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0213", trangThai = true },
-                new HopDong() { id = 214, maHopDong = "HD214", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0214", trangThai = true },
-                new HopDong() { id = 215, maHopDong = "HD215", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0215", trangThai = true },
-                new HopDong() { id = 216, maHopDong = "HD216", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0216", trangThai = true },
-                new HopDong() { id = 217, maHopDong = "HD217", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0217", trangThai = true },
-                new HopDong() { id = 218, maHopDong = "HD218", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0218", trangThai = true },
-                new HopDong() { id = 219, maHopDong = "HD219", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), maNhanVien = "NV0219", trangThai = true }
->>>>>>> 34c0dc458f5f3a82acef7c36dff76417b0a5668a
                 );
             modelbulder.Entity<Luong>().HasData(
                 new Luong() { id = 1, maHopDong = "HD01",idNhomLuong=1, bacLuong = "1", thoiHanLenLuong = "1", ngayHieuLuc = DateTime.Now, ngayKetThuc = DateTime.ParseExact("2022-03-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture) , trangThai = false },
