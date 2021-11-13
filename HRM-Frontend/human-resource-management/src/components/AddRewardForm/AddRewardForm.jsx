@@ -10,6 +10,8 @@ import DeleteApi from "../../../src/api/deleteAPI";
 import DialogCheck from "../Dialog/DialogCheck";
 import { useToast } from "../Toast/Toast";
 import Dialog from "../../components/Dialog/Dialog";
+import jwt_decode from "jwt-decode";
+
 const schema = yup.object({
   idDanhMucKhenThuong: yup.number().nullable().required("Loại khen thưởng không được bỏ trống."),
   maNhanVien: yup.string().nullable().required("Mã nhân viên không được bỏ trống."),
@@ -25,6 +27,8 @@ function AddRewardForm(props) {
   let { id } = match.params;
   let location = useLocation();
   let query = new URLSearchParams(location.search);
+  const token = sessionStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
 
   const [dataKTDetail, setDataKTDetail] = useState([]);
   const [dataKT, setDataKT] = useState([]);
@@ -113,13 +117,25 @@ function AddRewardForm(props) {
     try {
       if(id !== undefined){
         await PutApi.PutKTvKL(data,id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Sửa thông tin khen thưởng của nhân viên ${dataKTDetail.hoTen}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
         success(
-          `Sửa thông tin khen thưởng cho nhân viên ${dataKTDetail.tenNhanVien} thành công`
+          `Sửa thông tin khen thưởng cho nhân viên ${dataKTDetail.hoTen} thành công`
         );
       }else{
         await ProductApi.PostKTvKL(data);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Thêm khen thưởng mới cho nhân viên ${dataKTDetail.hoTen}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
         success(
-          `thêm thông tin khen thưởng cho nhân viên ${dataKTDetail.tenNhanVien} thành công`
+          `thêm thông tin khen thưởng cho nhân viên ${dataKTDetail.hoTen} thành công`
         );
       }
       history.goBack();
@@ -132,9 +148,15 @@ function AddRewardForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteKTvKL(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa khen thưởng của nhân viên ${dataKTDetail.hoTen}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       history.push(`/reward`);
       success(
-        `Xoá thông tin khen thưởng cho nhân viên ${dataKTDetail.tenNhanVien} thành công`
+        `Xoá thông tin khen thưởng cho nhân viên ${dataKTDetail.hoTen} thành công`
       );
     } catch (errors) {
       error(`Có lỗi xảy ra ${errors}`);

@@ -10,6 +10,7 @@ import DeleteApi from "../../../src/api/deleteAPI";
 import DialogCheck from "../Dialog/DialogCheck";
 import { useToast } from "../Toast/Toast";
 import Dialog from "../../components/Dialog/Dialog";
+import jwt_decode from "jwt-decode";
 
 const regexDate = /^[0-9]{2}[\/]{1}[0-9]{2}[\/]{1}[0-9]{4}$/g;
 const schema = yup.object({
@@ -29,8 +30,9 @@ function AddDisciplineForm(props) {
   let { id } = match.params;
   let location = useLocation();
   let query = new URLSearchParams(location.search);
-  console.log(query.get("maNhanVien"));
-  console.log(query.get("hoVaTen"));
+  const token = sessionStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
+
   const [dataKLDetail, setDataKLDetail] = useState([]);
   const [dataKL,setDataKL] = useState([]);
   console.log(id);
@@ -120,13 +122,25 @@ function AddDisciplineForm(props) {
     try {
       if(id !== undefined){
         await PutApi.PutKTvKL(data,id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Sửa thông tin kỷ luật của nhân viên ${dataKLDetail.hoTen}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
         success(
-          `Sửa thông tin kỷ luật cho nhân viên ${dataKLDetail.tenNhanVien} thành công`
+          `Sửa thông tin kỷ luật cho nhân viên ${dataKLDetail.hoTen} thành công`
         );
       }else{
         await ProductApi.PostKTvKL(data);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Thêm kỷ luật mới cho nhân viên ${dataKLDetail.hoTen}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
         success(
-          `thêm thông tin kỷ luật cho nhân viên ${dataKLDetail.tenNhanVien} thành công`
+          `thêm thông tin kỷ luật cho nhân viên ${dataKLDetail.hoTen} thành công`
         );
       }
       history.goBack();
@@ -138,8 +152,14 @@ function AddDisciplineForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteKTvKL(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa kỷ luật của nhân viên ${dataKLDetail.hoTen}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       success(
-        `Xoá thông tin kỷ luật cho nhân viên ${dataKLDetail.tenNhanVien} thành công`
+        `Xoá thông tin kỷ luật cho nhân viên ${dataKLDetail.hoTen} thành công`
       );
       history.push(`/reward`);
     } catch (error) {

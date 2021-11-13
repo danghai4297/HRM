@@ -13,6 +13,7 @@ import { useLocation } from "react-router";
 import DialogCheck from "../Dialog/DialogCheck";
 import Dialog from "../../components/Dialog/Dialog";
 import { useToast } from "../Toast/Toast";
+import jwt_decode from "jwt-decode";
 
 const schema = yup.object({
   trangThai: yup.boolean(),
@@ -46,6 +47,8 @@ function AddContractForm(props) {
   const ecode = query.get("maNhanVien");
   let { match, history } = props;
   let { id } = match.params;
+  const token = sessionStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
 
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
@@ -101,7 +104,7 @@ function AddContractForm(props) {
           ? responseAllHD[responseAllHD.length - 1].id
           : undefined;
       console.log(idIncre);
-      const increCode = Number(idIncre.slice(2)) + 1020;
+      const increCode = Number(idIncre.slice(2)) + 6050;
       const rsCode = "HD";
       if (increCode < 10) {
         setRsId(rsCode.concat(`0${increCode}`));
@@ -132,9 +135,6 @@ function AddContractForm(props) {
     maHopDong: id !== undefined ? dataDetailHd.id : rsId,
     trangThai: id !== undefined ? dataDetailHd.trangThai === "Kích hoạt" : true,
   };
-  //console.log(intitalValue);
-
-  //console.log(date);
 
   const {
     register,
@@ -182,18 +182,29 @@ function AddContractForm(props) {
     ];
     return JSON.stringify(values) === JSON.stringify(dfValue);
   };
-  console.log(dataDetailHd);
 
   const onHandleSubmit = async (data) => {
-    console.log(data);
+    let maHopDong = data.maHopDong;
     try {
       if (id !== undefined) {
         await PutApi.PutHD(data, id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Sửa thông tin hợp đồng ${maHopDong} của nhân viên ${dataDetailHd.tenNhanVien}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
         success(
           `Sửa thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
         );
       } else {
         await ProductApi.postHD(data);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Thêm hợp đồng mới ${maHopDong} cho nhân viên ${dataDetailHd.tenNhanVien}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
         success(
           `Thêm thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
         );
@@ -207,8 +218,14 @@ function AddContractForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteHD(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa hợp đồng ${dataDetailHd.maHopDong} của nhân viên ${dataDetailHd.tenNhanVien}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       success(
-        `Xoá thông tin trình độ cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
+        `Xoá thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
       );
       history.push(`/contract`);
     } catch (error) {

@@ -7,7 +7,6 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
-import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
 
@@ -19,7 +18,7 @@ const schema = yup.object({
     .required("Tên danh mục không được bỏ trống."),
 });
 function AddLanguageForm(props) {
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
   let { match, history } = props;
   let { id } = match.params;
 
@@ -88,24 +87,24 @@ function AddLanguageForm(props) {
         await PutApi.PutDMNN(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục ngoại ngữ: ${dataDetailDMNN.tenDanhMuc} thành ${tendm}`,
+          thaoTac: `Sửa danh mục ngoại ngữ: ${dataDetailDMNN.tenDanhMuc} --> ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("sửa danh mục thành công");
+        success("Sửa danh mục ngoại ngữ thành công");
       } else {
         await ProductApi.PostDMNN(data);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm danh mục ngoại ngữ: ${tendm}`,
+          thaoTac: `Thêm danh mục ngoại ngữ mới: ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("Thêm danh mục thành công");
+        success("Thêm danh mục ngoại ngữ thành công");
       }
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 
@@ -120,8 +119,8 @@ function AddLanguageForm(props) {
       });
       success("Xoá danh mục thành công");
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 

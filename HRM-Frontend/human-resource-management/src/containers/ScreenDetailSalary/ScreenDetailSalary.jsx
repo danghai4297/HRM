@@ -74,13 +74,19 @@ function ScreenDetailSalary(props) {
             })}
           </div>
         </div>
-        <Link
-          to={`/profile/detail/${dataLDetail.maNhanVien}?move=moveToSalary`}
-        >
-          <Button variant="light" className="btn-fix">
-            Chuyển
-          </Button>
-        </Link>
+        <div className="all-salary">
+          <div className="name-move-salary">
+            <h3>Tất cả lương</h3>
+          </div>
+          <Link
+            to={`/profile/detail/${dataLDetail.maNhanVien}?move=moveToSalary`}
+            className="btn-move-salary"
+          >
+              <button className="btn-fix">
+                <FontAwesomeIcon icon={["fas", "arrow-right"]} style={{fontSize: "50px"}}/>
+              </button>
+          </Link>
+        </div>
       </div>
     </>
   );

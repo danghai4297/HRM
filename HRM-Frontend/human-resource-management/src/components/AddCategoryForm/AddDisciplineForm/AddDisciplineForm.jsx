@@ -19,7 +19,7 @@ const schema = yup.object({
   .required("Tên danh mục không được bỏ trống."),
 });
 function AddDisciplineForm(props) {
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
   let { match, history } = props;
   let { id } = match.params;
 
@@ -88,24 +88,24 @@ function AddDisciplineForm(props) {
         await PutApi.PutDMKTvKL(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục kỉ luật: ${dataDetailDMKL.tenDanhMuc} thành ${tendm}`,
+          thaoTac: `Sửa danh mục kỉ luật: ${dataDetailDMKL.tenDanhMuc} --> ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("sửa danh mục thành công");
+        success("Sửa danh mục kỉ luật thành công");
       } else {
         await ProductApi.PostDMKTvKL(data);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm danh mục kỉ luật: ${tendm}`,
+          thaoTac: `Thêm danh mục kỉ luật mới: ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("Thêm danh mục thành công");
+        success("Thêm danh mục kỉ luật thành công");
       }
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 
@@ -119,9 +119,9 @@ function AddDisciplineForm(props) {
         tenNhanVien: decoded.givenName,
       });
       history.goBack();
-      success("Xoá danh mục thành công");
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+      success("Xoá danh mục kỉ luật thành công");
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 

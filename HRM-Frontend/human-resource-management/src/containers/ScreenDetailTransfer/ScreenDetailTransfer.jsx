@@ -69,13 +69,19 @@ function ScreenDetailTransfer(props) {
             })}
           </div>
         </div>
-        <Link
-          to={`/profile/detail/${dataDetailDC.maNhanVien}?move=moveToTransfer`}
-        >
-          <Button variant="light" className="btn-fix">
-            Chuyển
-          </Button>
-        </Link>
+        <div className="all-transfer">
+          <div className="name-move-transfer">
+            <h3>Tất cả lần thuyên chuyển</h3>
+          </div>
+          <Link
+            to={`/profile/detail/${dataDetailDC.maNhanVien}?move=moveToTransfer`}
+            className="btn-move-transfer"
+          >
+              <button className="btn-fix">
+                <FontAwesomeIcon icon={["fas", "arrow-right"]} style={{fontSize: "50px"}}/>
+              </button>
+          </Link>
+        </div>
       </div>
     </>
   );

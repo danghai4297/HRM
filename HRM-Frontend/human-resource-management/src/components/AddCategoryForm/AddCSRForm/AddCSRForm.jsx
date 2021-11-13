@@ -7,17 +7,16 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
-import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
 
-AddCSRForm.propTypes = {};
 const schema = yup.object({
   tenNgach: yup
     .string()
     .nullable()
-    .required("Tên danh mục không được bỏ trống."),
+    .required("Tên ngạch công chức không được bỏ trống."),
 });
+
 function AddCSRForm(props) {
   const { error, success } = useToast();
   let { match, history } = props;
@@ -85,22 +84,22 @@ function AddCSRForm(props) {
         await PutApi.PutDMNCC(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục ngạch
-          công chức: ${tendm}`,
+          thaoTac: `Sửa ngạch
+          công chức: ${dataDetailDMNCC.tenNgach} --> ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("sửa danh mục thành công");
+        success("Sửa ngạch công chức thành công");
       } else {
         await ProductApi.PostDMNCC(data);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm danh mục ngạch
-          công chức: ${tendm}`,
+          thaoTac: `Thêm ngạch
+          công chức mới: ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("Thêm danh mục thành công");
+        success("Thêm ngạch công chức thành công");
       }
       history.goBack();
     } catch (errors) {
@@ -114,12 +113,12 @@ function AddCSRForm(props) {
       await DeleteApi.deleteDMNCC(id);
       await ProductApi.PostLS({
         tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa danh mục ngạch
+        thaoTac: `Xóa ngạch
         công chức: ${dataDetailDMNCC.tenNgach}`,
         maNhanVien: decoded.id,
         tenNhanVien: decoded.givenName,
       });
-      success("Xoá danh mục thành công");
+      success("Xoá ngạch công chức thành công");
 
       history.goBack();
     } catch (errors) {
@@ -180,7 +179,7 @@ function AddCSRForm(props) {
                     className="col-sm-4 justify-content-start"
                     htmlFor="tenNgach"
                   >
-                    Tên danh mục
+                    Tên ngạch
                   </label>
                   <input
                     type="text"

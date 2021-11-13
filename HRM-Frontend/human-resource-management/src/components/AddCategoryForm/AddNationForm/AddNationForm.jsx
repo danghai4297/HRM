@@ -9,7 +9,6 @@ import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import { useToast } from "../../Toast/Toast";
-import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
 
 AddNationForm.propTypes = {};
@@ -20,7 +19,7 @@ const schema = yup.object({
     .required("Tên danh mục không được bỏ trống."),
 });
 function AddNationForm(props) {
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
   let { match, history } = props;
   let { id } = match.params;
 
@@ -88,24 +87,24 @@ function AddNationForm(props) {
         await PutApi.PutDMDT(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục dân tộc: ${dataDetailDMDT.tenDanhMuc} thành ${tendm}`,
+          thaoTac: `Sửa danh mục dân tộc: ${dataDetailDMDT.tenDanhMuc} --> ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("sửa danh mục thành công");
+        success("Sửa danh mục dân tộc thành công");
       } else {
         await ProductApi.PostDMDT(data);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm danh mục dân tộc: ${tendm}`,
+          thaoTac: `Thêm danh mục dân tộc mới: ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("Thêm danh mục thành công");
+        success("Thêm danh mục dân tộc thành công");
       }
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 
@@ -119,10 +118,10 @@ function AddNationForm(props) {
         tenNhanVien: decoded.givenName,
       });
       history.goBack();
-      success("Xoá danh mục thành công");
+      success("Xoá danh mục dân tộc thành công");
 
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 
