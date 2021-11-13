@@ -18,8 +18,13 @@ import { useToast } from "../Toast/Toast";
 import Dialog from "../../components/Dialog/Dialog";
 import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
+import jwt_decode from "jwt-decode";
+
 const schema = yup.object({
-  maHopDong: yup.string().nullable().required("Mã hợp đồng không được bỏ trống."),
+  maHopDong: yup
+    .string()
+    .nullable()
+    .required("Mã hợp đồng không được bỏ trống."),
   idNhomLuong: yup
     .number()
     .nullable()
@@ -59,6 +64,8 @@ function AddSalaryForm(props) {
   let query = new URLSearchParams(location.search);
   const contractCode = query.get("maHopDong");
   const { error, warn, info, success } = useToast();
+  const token = sessionStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
 
   const [salary, setSalary] = useState({
     heSoLuong: "",
@@ -249,7 +256,7 @@ function AddSalaryForm(props) {
   console.log(getValues("phuCapKhac"));
 
   const onHandleSubmit = async (data) => {
-    console.log(data);
+    let maHopDong = data.maHopDong;
     if (endDateRs !== undefined) {
       let obj = { ngayKetThuc: endDateRs };
       Object.assign(data, obj);
@@ -258,6 +265,12 @@ function AddSalaryForm(props) {
     try {
       if (id !== undefined) {
         await PutApi.PutL(data, id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Sửa thông tin lương trong hợp đồng ${maHopDong} của nhân viên ${dataLDetail.tenNhanVien}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
         success(
           `Sửa thông tin lương cho nhân viên ${dataLDetail.tenNhanVien} thành công`
         );
@@ -269,6 +282,12 @@ function AddSalaryForm(props) {
         //   //formData.append("maHopDong", data.id);
         //   await PutApi.PutAL(formData, id);
         // }
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Thêm lương mới trong hợp đồng ${maHopDong} của nhân viên ${dataLDetail.tenNhanVien}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
         success(
           `thêm thông tin lương cho nhân viên ${dataLDetail.tenNhanVien} thành công`
         );
@@ -282,6 +301,12 @@ function AddSalaryForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteL(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa lương trong hợp đồng ${dataLDetail.maHopDong} của nhân viên ${dataLDetail.tenNhanVien}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       success(
         `Xoá thông tin lương cho nhân viên ${dataLDetail.tenNhanVien} thành công`
       );

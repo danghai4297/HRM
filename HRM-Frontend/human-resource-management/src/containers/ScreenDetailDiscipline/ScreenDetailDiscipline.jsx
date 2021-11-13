@@ -69,13 +69,19 @@ function ScreenDetailDiscipline(props) {
             ></SubDetail>
           </div>
         </div>
-        <Link
-          to={`/profile/detail/${dataKLDetail.maNhanVien}?move=moveToDiscipline`}
-        >
-          <Button variant="light" className="btn-fix">
-            Chuyển
-          </Button>
-        </Link>
+        <div className="all-discipline">
+          <div className="name-move-discipline">
+            <h3>Tất cả lần kỷ luật</h3>
+          </div>
+          <Link
+            to={`/profile/detail/${dataKLDetail.maNhanVien}?move=moveToDiscipline`}
+            className="btn-move-discipline"
+          >
+              <button className="btn-fix">
+                <FontAwesomeIcon icon={["fas", "arrow-right"]} style={{fontSize: "50px"}}/>
+              </button>
+          </Link>
+        </div>
       </div>
     </>
   );

@@ -7,7 +7,6 @@ import ProductApi from "../../../api/productApi";
 import Dialog from "../../Dialog/Dialog";
 import DeleteApi from "../../../api/deleteAPI";
 import PutApi from "../../../api/putAAPI";
-import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
 
@@ -17,12 +16,12 @@ const schema = yup.object({
   tenTo: yup.string().required("Tổ không được bỏ trống."),
 });
 function AddNestForm(props) {
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
 
   let { match, history } = props;
   let { id } = match.params;
 
-  const token = localStorage.getItem("resultObj");
+  const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
 
   const [dataDetailDMT, setdataDetailDMT] = useState([]);
@@ -98,27 +97,27 @@ function AddNestForm(props) {
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
           thaoTac: `Sửa danh mục tổ: ${
-            dataDetailDMT.tenTo !== tendm ? `${dataDetailDMT.tenTo} thành` : ""
+            dataDetailDMT.tenTo !== tendm ? `${dataDetailDMT.tenTo} -->` : ""
           } ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("sửa danh mục thành công");
+        success("Sửa danh mục tổ thành công");
 
       } else {
         await ProductApi.PostDMT(data);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm danh mục tổ: ${tendm}`,
+          thaoTac: `Thêm danh mục tổ mới: ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("Thêm danh mục thành công");
+        success("Thêm danh mục tổ thành công");
 
       }
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 
@@ -131,10 +130,10 @@ function AddNestForm(props) {
         maNhanVien: decoded.id,
         tenNhanVien: decoded.givenName,
       });
-      success("Xoá danh mục thành công");
+      success("Xoá danh mục tổ thành công");
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 

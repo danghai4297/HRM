@@ -18,12 +18,12 @@ const schema = yup.object({
     .required("Tên danh mục không được bỏ trống."),
 });
 function AddLevelForm(props) {
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
 
   let { match, history } = props;
   let { id } = match.params;
 
-  const token = localStorage.getItem("resultObj");
+  const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
 
   const [dataDetailDMTD, setdataDetailDMTD] = useState([]);
@@ -88,24 +88,24 @@ function AddLevelForm(props) {
         await PutApi.PutDMTD(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục trình độ: ${dataDetailDMTD.tenTrinhDo} thành ${tendm}`,
+          thaoTac: `Sửa danh mục trình độ: ${dataDetailDMTD.tenTrinhDo} --> ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("sửa danh mục thành công");
+        success("Sửa trình độ thành công");
       } else {
         await ProductApi.PostDMTD(data);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm danh mục trình độ: ${tendm}`,
+          thaoTac: `Thêm danh mục trình độ mới: ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("Thêm danh mục thành công");
+        success("Thêm trình độ thành công");
       }
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 
@@ -118,10 +118,10 @@ function AddLevelForm(props) {
         maNhanVien: decoded.id,
         tenNhanVien: decoded.givenName,
       });
-      success("Xoá danh mục thành công");
+      success("Xoá trình độ thành công");
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 

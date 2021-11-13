@@ -7,7 +7,6 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
-import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
 const schema = yup.object({
@@ -17,11 +16,11 @@ const schema = yup.object({
   .required("Tên danh mục không được bỏ trống."),
 });
 function AddLaborForm(props) {
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
   let { match, history } = props;
   let { id } = match.params;
 
-  const token = localStorage.getItem("resultObj");
+  const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
 
   const [dataDetailDMTCLD, setdataDetailDMTCLD] = useState([]);
@@ -86,26 +85,26 @@ function AddLaborForm(props) {
         await PutApi.PutDMTCLD(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục tính
-          chất lao động: ${dataDetailDMTCLD.tenLaoDong} thành ${tendm}`,
+          thaoTac: `Sửa tính
+          chất lao động: ${dataDetailDMTCLD.tenLaoDong} --> ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("sửa danh mục thành công");
+        success("Sửa tính chất lao động thành công");
       } else {
         await ProductApi.PostDMTCLD(data);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm danh mục tính
-          chất lao động: ${tendm}`,
+          thaoTac: `Thêm tính
+          chất lao động mới: ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("Thêm danh mục thành công");
+        success("Thêm tính chất lao động thành công");
       }
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 
@@ -114,15 +113,15 @@ function AddLaborForm(props) {
       await DeleteApi.deleteDMTCLD(id);
       await ProductApi.PostLS({
         tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa danh mục tính
+        thaoTac: `Xóa tính
         chất lao động: ${dataDetailDMTCLD.tenLaoDongndm}`,
         maNhanVien: decoded.id,
         tenNhanVien: decoded.givenName,
       });
       history.goBack();
-      success("Xoá danh mục thành công");
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+      success("Xoá tính chất lao động thành công");
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 

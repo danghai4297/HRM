@@ -70,13 +70,19 @@ function ScreenDetailReward(props) {
             ></SubDetail>
           </div>
         </div>
-        <Link
-          to={`/profile/detail/${dataDetailKt.maNhanVien}?move=moveToReward`}
-        >
-          <Button variant="light" className="btn-fix">
-            Chuyển
-          </Button>
-        </Link>
+        <div className="all-reward">
+          <div className="name-move-reward">
+            <h3>Tất cả lần khen thưởng</h3>
+          </div>
+          <Link
+            to={`/profile/detail/${dataDetailKt.maNhanVien}?move=moveToReward`}
+            className="btn-move-reward"
+          >
+              <button className="btn-fix">
+                <FontAwesomeIcon icon={["fas", "arrow-right"]} style={{fontSize: "50px"}}/>
+              </button>
+          </Link>
+        </div>
       </div>
     </>
   );

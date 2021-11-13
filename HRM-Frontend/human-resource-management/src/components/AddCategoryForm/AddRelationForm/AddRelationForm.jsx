@@ -7,7 +7,6 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
-import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
 const schema = yup.object({
@@ -19,12 +18,12 @@ const schema = yup.object({
 AddRelationForm.propTypes = {};
 
 function AddRelationForm(props) {
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
 
   let { match, history } = props;
   let { id } = match.params;
 
-  const token = localStorage.getItem("resultObj");
+  const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
 
   const [dataDetailDMNT, setdataDetailDMNT] = useState([]);
@@ -87,24 +86,24 @@ function AddRelationForm(props) {
         await PutApi.PutDMNT(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục người thân: ${dataDetailDMNT.tenDanhMuc} thành ${tendm}`,
+          thaoTac: `Sửa danh mục người thân: ${dataDetailDMNT.tenDanhMuc} --> ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("sửa danh mục thành công");
+        success("Sửa danh mục người thân thành công");
       } else {
         await ProductApi.PostDMNT(data);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm danh mục người thân: ${tendm}`,
+          thaoTac: `Thêm danh mục người thân mới: ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("Thêm danh mục thành công");
+        success("Thêm danh mục người thân thành công");
       }
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 
@@ -119,8 +118,8 @@ function AddRelationForm(props) {
       });
       success("Xoá danh mục thành công");
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 

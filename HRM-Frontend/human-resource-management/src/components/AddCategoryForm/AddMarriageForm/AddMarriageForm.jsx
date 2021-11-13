@@ -7,23 +7,22 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
-import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
+
 const schema = yup.object({
   tenDanhMuc: yup
   .string()
   .nullable()
   .required("Tên danh mục không được bỏ trống."),
 });
-AddMarriageForm.propTypes = {};
 
 function AddMarriageForm(props) {
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
   let { match, history } = props;
   let { id } = match.params;
 
-  const token = localStorage.getItem("resultObj");
+  const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
 
   const [dataDetailDMHN, setdataDetailDMHN] = useState([]);
@@ -88,24 +87,24 @@ function AddMarriageForm(props) {
         await PutApi.PutDMHN(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục hôn nhân: ${dataDetailDMHN.tenDanhMuc} thành ${tendm}`,
+          thaoTac: `Sửa danh mục hôn nhân: ${dataDetailDMHN.tenDanhMuc} --> ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("sửa danh mục thành công");
+        success("Sửa danh mục hôn nhân thành công");
       } else {
         await ProductApi.PostDMHN(data);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm danh mục hôn nhân: ${tendm}`,
+          thaoTac: `Thêm danh mục hôn nhân mới: ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("Thêm danh mục thành công");
+        success("Thêm danh mục hôn nhân thành công");
       }
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 
@@ -118,10 +117,10 @@ function AddMarriageForm(props) {
         maNhanVien: decoded.id,
         tenNhanVien: decoded.givenName,
       });
-      success("Xoá danh mục thành công");
+      success("Xoá danh mục hôn nhân thành công");
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 

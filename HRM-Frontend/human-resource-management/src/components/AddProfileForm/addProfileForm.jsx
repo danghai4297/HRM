@@ -17,6 +17,7 @@ import DeleteApi from "../../../src/api/deleteAPI";
 import DialogCheck from "../Dialog/DialogCheck";
 import Dialog from "../../components/Dialog/Dialog";
 import { useToast } from "../Toast/Toast";
+import jwt_decode from "jwt-decode";
 const phoneRex = /([\|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})$\b/;
 const phoneRex1 = /^(([+|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})|)$/;
 const phoneRexlandline= /^((02)+([0-9]{9})|)$/g;
@@ -193,6 +194,8 @@ function AddProfileForm(props) {
   const { error, warn, info, success } = useToast();
   const { match, history } = props;
   let { id } = match.params;
+  const token = sessionStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
   //handle checkbox
   const [checkedSoldier, setCheckedSoldier] = useState(false);
   const handleClick = () => setCheckedSoldier(!checkedSoldier);
@@ -666,6 +669,12 @@ function AddProfileForm(props) {
     try {
       if (id !== undefined) {
         await PutApi.PutNV(data, id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Sửa thông tin của nhân viên ${dataDetailEmployee.hoTen}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
         if (file.file !== null) {
           await DeleteApi.deleteANV(data.id);
           const formData = new FormData();
@@ -675,6 +684,12 @@ function AddProfileForm(props) {
         }
       } else {
         await ProductApi.postNv(data);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Thêm nhân viên mới${data.hoTen}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
         if (file.file !== null) {
           const formData = new FormData();
           formData.append("anh", file.file);

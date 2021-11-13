@@ -75,13 +75,19 @@ function ScreenDetailContract(props) {
             })}
           </div>
         </div>
-        <Link
-          to={`/profile/detail/${dataDetailHd.maNhanVien}?move=moveToContract`}
-        >
-          <Button variant="light" className="btn-fix">
-            Chuyển
-          </Button>
-        </Link>
+        <div className="all-contract">
+          <div className="name-move">
+            <h3>Tất cả hợp đồng</h3>
+          </div>
+          <Link
+            to={`/profile/detail/${dataDetailHd.maNhanVien}?move=moveToContract`}
+            className="btn-move"
+          >
+              <button className="btn-fix">
+                <FontAwesomeIcon icon={["fas", "arrow-right"]} style={{fontSize: "50px"}}/>
+              </button>
+          </Link>
+        </div>
       </div>
     </>
   );

@@ -17,6 +17,10 @@ const LoginApi = {
     const url = "/User/create";
     return axiosClient.post(url, data);
   },
+  getTkDetail: (id) => {
+    const url = `/User/${id}`;
+    return axiosClient.get(url);
+  },
 };
 
 export default LoginApi;

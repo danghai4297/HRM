@@ -13,6 +13,8 @@ import DeleteApi from "../../../src/api/deleteAPI";
 import DialogCheck from "../Dialog/DialogCheck";
 import { useToast } from "../Toast/Toast";
 import Dialog from "../../components/Dialog/Dialog";
+import jwt_decode from "jwt-decode";
+
 const schema = yup.object({
   maNhanVien: yup
     .string()
@@ -28,8 +30,8 @@ function AddTransferForm(props) {
 
   let location = useLocation();
   let query = new URLSearchParams(location.search);
-  console.log(query.get("maNhanVien"));
-  console.log(query.get("hoVaTen"));
+  const token = sessionStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
 
   // const onHandleSubmit = (data) => {
   //   console.log(data);
@@ -86,7 +88,6 @@ function AddTransferForm(props) {
     };
     fetchNvList();
   }, []);
-  console.log(nest);
 
   const intitalValue = {
     ngayHieuLuc:
@@ -152,13 +153,25 @@ function AddTransferForm(props) {
     try {
       if (id !== undefined) {
         await PutApi.PutDC(data, id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Sửa thông tin thuyên chuyển của nhân viên ${dataDetailDC.tenNhanVien}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
         success(
           `Sửa thông tin thuyên chuyển cho nhân viên ${dataDetailDC.tenNhanVien} thành công`
         );
       } else {
         await ProductApi.PostDC(data);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Thêm thuyên chuyển mới cho nhân viên ${dataDetailDC.tenNhanVien}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
         success(
-          `thêm thông tin thuyên chuyển cho nhân viên ${dataDetailDC.tenNhanVien} thành công`
+          `Thêm thông tin thuyên chuyển cho nhân viên ${dataDetailDC.tenNhanVien} thành công`
         );
       }
       history.goBack();
@@ -170,6 +183,12 @@ function AddTransferForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDC(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa thuyên chuyển của nhân viên ${dataDetailDC.tenNhanVien}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       success(
         `Xoá thông tin thuyên chuyển cho nhân viên ${dataDetailDC.tenNhanVien} thành công`
       );

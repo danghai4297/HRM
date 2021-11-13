@@ -43,6 +43,7 @@ import ScreenAccountLog from "../ScreenAccountLog/ScreenAccountLog";
 import PDF from "../../components/Detail/PDF";
 import ScreenNotFound from "./ScreenNotFound";
 import RegisterAccount from "../../components/ResgisterAccount/RegisterAccount";
+import ScreenDetailAccount from "../ScreenDetailAccount/ScreenDetailAccount";
 function ScreenProject() {
   const { setAccount } = useContext(AccountContext);
   useEffect(() => {
@@ -214,7 +215,6 @@ function ScreenProject() {
                 roles={["admin"]}
               />
              
-
               <ProtectedRoute
                 exact
                 path="/transfer"
@@ -318,7 +318,19 @@ function ScreenProject() {
                 component={RegisterAccount}
                 roles={["admin"]}
               />
-              <Route component={ScreenNotFound}></Route>
+              <ProtectedRoute
+                exact
+                path="/account/:id"
+                component={RegisterAccount}
+                roles={["admin"]}
+              />
+              <ProtectedRoute
+                exact
+                path="/account/detail/:id"
+                component={ScreenDetailAccount}
+                roles={["admin"]}
+              />
+              {/* <Route component={ScreenNotFound}></Route> */}
             </Switch>
           </div>
         </div>

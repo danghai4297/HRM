@@ -7,7 +7,6 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
-import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
 
@@ -16,11 +15,11 @@ const schema = yup.object({
   maChuyenMon: yup.string().required("Mã chuyên môn không được bỏ trống."),
 });
 function AddSpecializeForm(props) {
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
   let { match, history } = props;
   let { id } = match.params;
 
-  const token = localStorage.getItem("resultObj");
+  const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
 
   const [dataDetailDMCM, setdataDetailDMCM] = useState([]);
@@ -88,7 +87,6 @@ function AddSpecializeForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
-    let tendmbd = dataDetailDMCM.tenChuyenMon;
     let tendm = data.tenChuyenMon;
 
     try {
@@ -98,12 +96,12 @@ function AddSpecializeForm(props) {
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
           thaoTac: `Sửa danh mục chuyên môn: ${
-            dataDetailDMCM.tenChuyenMon !== tendm ? `${dataDetailDMCM.tenChuyenMon} thành` : ""
+            dataDetailDMCM.tenChuyenMon !== tendm ? `${dataDetailDMCM.tenChuyenMon} -->` : ""
           } ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("sửa danh mục thành công");
+        success("Sửa danh mục chuyên môn thành công");
       } else {
         await ProductApi.PostDMCM(data);
         await ProductApi.PostLS({
@@ -112,11 +110,11 @@ function AddSpecializeForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("Thêm danh mục thành công");
+        success("Thêm danh mục chuyên môn thành công");
       }
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 
@@ -129,10 +127,10 @@ function AddSpecializeForm(props) {
         maNhanVien: decoded.id,
         tenNhanVien: decoded.givenName,
       });
-      success("Xoá danh mục thành công");
+      success("Xoá danh mục chuyên môn thành công");
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 

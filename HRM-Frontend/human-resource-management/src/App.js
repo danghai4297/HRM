@@ -18,7 +18,6 @@ import { useState } from "react";
 import ToastProvider from "./components/Toast/ToastProvider";
 function App() {
   const [account, setAccount] = useState(false);
-  console.log(localStorage.getItem("resultObj"));
   return (
     <ListProvider>
       <ToastProvider>

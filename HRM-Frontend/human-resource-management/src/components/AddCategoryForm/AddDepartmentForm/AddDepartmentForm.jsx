@@ -7,7 +7,6 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
-import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
 
@@ -16,12 +15,12 @@ const schema = yup.object({
   tenPhongBan: yup.string().required("Tên phòng ban không được bỏ trống."),
 });
 function AddDepartmentForm(props) {
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
 
   let { match, history } = props;
   let { id } = match.params;
 
-  const token = localStorage.getItem("resultObj");
+  const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
 
   const [dataDetailDMPB, setdataDetailDMPB] = useState([]);
@@ -93,26 +92,28 @@ function AddDepartmentForm(props) {
         await PutApi.PutDMPB(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục phòng ban: ${
-            dataDetailDMPB.tenPhongBan !== tendm ? `${dataDetailDMPB.tenPhongBan} thành` : ""
+          thaoTac: `Sửa phòng ban: ${
+            dataDetailDMPB.tenPhongBan !== tendm
+              ? `${dataDetailDMPB.tenPhongBan} -->`
+              : ""
           } ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("sửa danh mục thành công");
+        success("sửa phòng ban thành công");
       } else {
         await ProductApi.PostDMPB(data);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm danh mục phòng ban: ${tendm}`,
+          thaoTac: `Thêm phòng ban mới: ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("Thêm danh mục thành công");
+        success("Thêm phòng ban thành công");
       }
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 
@@ -121,15 +122,15 @@ function AddDepartmentForm(props) {
       await DeleteApi.deleteDMPB(id);
       await ProductApi.PostLS({
         tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa danh mục phòng ban: ${dataDetailDMPB.tenPhongBan}`,
+        thaoTac: `Xóa phòng ban: ${dataDetailDMPB.tenPhongBan}`,
         maNhanVien: decoded.id,
         tenNhanVien: decoded.givenName,
       });
-      success("Xoá danh mục thành công");
+      success("Xoá phòng ban thành công");
 
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 
