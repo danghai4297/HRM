@@ -116,9 +116,19 @@ const PutApi = {
     const url = `/HopDong/${id}`;
     return axiosClient.put(url,data)
   },
+  //Sửa bằng chứng hợp đồng
+  PutAHD:(data,id)=>{
+    const url = `/HopDong/bangChung/${id}`;
+    return axiosClient.put(url,data)
+  },
   // Sửa lương
   PutL:(data,id)=>{
-    const url =`/luong/${id}`;
+    const url =`/Luong/${id}`;
+    return axiosClient.put(url,data)
+  },
+  // Sửa bằng chứng lương
+  PutAL:(data,id)=>{
+    const url =`/Luong/bangChung/${id}`;
     return axiosClient.put(url,data)
   },
   // Sửa điều chuyển
@@ -139,6 +149,11 @@ const PutApi = {
   // Sửa khen thưởng và kỷ luật
   PutKTvKL:(data,id)=>{
     const url =`/KhenThuongKyLuat/${id}`;
+    return axiosClient.put(url,data)
+  },
+  // Sửa bằng chứng khen thưởng và kỷ luật
+  PutKTvKL:(data,id)=>{
+    const url =`/KhenThuongKyLuat/image/${id}`;
     return axiosClient.put(url,data)
   },
   //Sửa nhân viên

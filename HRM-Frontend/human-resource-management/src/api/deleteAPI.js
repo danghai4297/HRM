@@ -121,9 +121,19 @@ const DeleteApi = {
     const url = `/HopDong/${id}`;
     return axiosClient.delete(url);
   },
+    //delete bằng chứng hợp đồng
+    deleteAHD:(id)=>{
+      const url = `/HopDong/bangChung/${id}`;
+      return axiosClient.delete(url);
+    },
   //delete lương
   deleteL:(id)=>{
     const url = `/Luong/${id}`;
+    return axiosClient.delete(url);
+  },
+  //delete bằng chứng lương
+  deleteAL:(id)=>{
+    const url = `/Luong/bangChung/${id}`;
     return axiosClient.delete(url);
   },
   //delete điều chuyển
@@ -134,6 +144,16 @@ const DeleteApi = {
   //delete khen thưởng và kỷ luật
   deleteKTvKL:(id)=>{
     const url = `/KhenThuongKyLuat/${id}`;
+    return axiosClient.delete(url);
+  },
+   //delete bằng chứng khen thưởng kỷ luật
+   deleteAKTvKL:(id)=>{
+    const url = `/KhenThuongKyLuat/image/${id}`;
+    return axiosClient.delete(url);
+  },
+  //delete ảnh nhân viên
+  deleteANV:(id)=>{
+    const url = `/NhanVien/image/${id}`;
     return axiosClient.delete(url);
   },
 };

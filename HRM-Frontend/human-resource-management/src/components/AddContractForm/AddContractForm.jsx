@@ -13,7 +13,8 @@ import { useLocation } from "react-router";
 import DialogCheck from "../Dialog/DialogCheck";
 import Dialog from "../../components/Dialog/Dialog";
 import { useToast } from "../Toast/Toast";
-
+import { Upload, Button } from "antd";
+import { UploadOutlined } from "@ant-design/icons";
 const schema = yup.object({
   trangThai: yup.boolean(),
   maNhanVien: yup
@@ -111,7 +112,25 @@ function AddContractForm(props) {
     };
     handleId();
   }, []);
-  console.log(dataAllHD);
+
+  const [file, setFile] = useState({
+    file: null,
+    path: "/Images/userIcon.png",
+  });
+  const handleChange = (e) => {
+    console.log(e);
+    setFile({
+      file: e.file,
+      path:
+        e.fileList.length !== 0
+          ? URL.createObjectURL(e.file)
+          : "/Images/userIcon.png",
+      //file: e.target.files[0],
+      //path: URL.createObjectURL(e.target.files[0]),
+    });
+  };
+
+ // console.log(dataAllHD);
   const intitalValue = {
     maNhanVien: id !== undefined ? dataDetailHd.maNhanVien : ecode,
     idChucDanh: id !== undefined ? dataDetailHd.idChucDanh : null,
@@ -194,6 +213,12 @@ function AddContractForm(props) {
         );
       } else {
         await ProductApi.postHD(data);
+        if (file.file !== null) {
+          const formData = new FormData();
+          formData.append("bangChung", file.file);
+          //formData.append("maHopDong", data.id);
+          await PutApi.PutAHD(formData, data.maHopDong);
+        }
         success(
           `Thêm thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
         );
@@ -479,6 +504,21 @@ function AddContractForm(props) {
                 </div>
               </div>
               <div className="col">
+                <div className="form-group form-inline">
+                  <label
+                    className="col-sm-4 justify-content-start"
+                    htmlFor="bangChung"
+                  >
+                    Bằng chứng
+                  </label>
+                  <Upload beforeUpload={() => false} onChange={handleChange}>
+              <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
+            </Upload>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-6">
                 <div className="form-group form-inline">
                   <label
                     className="col-sm-4 justify-content-start"

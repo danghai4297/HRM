@@ -16,6 +16,8 @@ import { useLocation } from "react-router";
 import DialogCheck from "../Dialog/DialogCheck";
 import { useToast } from "../Toast/Toast";
 import Dialog from "../../components/Dialog/Dialog";
+import { Upload, Button } from "antd";
+import { UploadOutlined } from "@ant-design/icons";
 const schema = yup.object({
   maHopDong: yup.string().nullable().required("Mã hợp đồng không được bỏ trống."),
   idNhomLuong: yup
@@ -104,6 +106,7 @@ function AddSalaryForm(props) {
           setDescription("Bạn chắc chắn muốn sửa thông tin lương");
           const response = await ProductApi.getLDetail(id);
           setDataLDetail(response);
+         // setRsSalary(moment(response.ngayKetThuc));
         }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -111,6 +114,24 @@ function AddSalaryForm(props) {
     };
     fetchNvList(dataLDetail);
   }, []);
+
+  const [file, setFile] = useState({
+    file: null,
+    path: "/Images/userIcon.png",
+  });
+  const handleChange = (e) => {
+    console.log(e);
+    setFile({
+      file: e.file,
+      path:
+        e.fileList.length !== 0
+          ? URL.createObjectURL(e.file)
+          : "/Images/userIcon.png",
+      //file: e.target.files[0],
+      //path: URL.createObjectURL(e.target.files[0]),
+    });
+  };
+
 
   const intitalValue = {
     idNhomLuong: id !== undefined ? dataLDetail.idNhomLuong : null,
@@ -242,6 +263,12 @@ function AddSalaryForm(props) {
         );
       } else {
         await ProductApi.PostL(data);
+        // if (file.file !== null) {
+        //   const formData = new FormData();
+        //   formData.append("bangChung", file.file);
+        //   //formData.append("maHopDong", data.id);
+        //   await PutApi.PutAL(formData, id);
+        // }
         success(
           `thêm thông tin lương cho nhân viên ${dataLDetail.tenNhanVien} thành công`
         );
@@ -660,6 +687,21 @@ function AddSalaryForm(props) {
                 </div>
               </div>
               <div className="col">
+                <div className="form-group form-inline">
+                  <label
+                    className="col-sm-4 justify-content-start"
+                    htmlFor="bangChung"
+                  >
+                    Bằng chứng
+                  </label>
+                  <Upload beforeUpload={() => false} onChange={handleChange}>
+              <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
+            </Upload>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-6">
                 <div className="form-group form-inline">
                   <label
                     className="col-sm-4 justify-content-start"
