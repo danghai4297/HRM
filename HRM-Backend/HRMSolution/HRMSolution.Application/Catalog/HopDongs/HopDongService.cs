@@ -189,6 +189,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
             var hopDong = await _context.hopDongs.FindAsync(maHopDong);
             if (hopDong == null) throw new HRMException($"Không tìm thấy hợp đồng có id : {maHopDong}");
 
+            hopDong.id = request.idCre;
             hopDong.maHopDong = request.maHopDong;
             hopDong.idLoaiHopDong = request.idLoaiHopDong;
             hopDong.idChucDanh = request.idChucDanh;

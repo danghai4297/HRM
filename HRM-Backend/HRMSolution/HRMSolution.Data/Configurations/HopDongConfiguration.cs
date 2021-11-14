@@ -13,7 +13,8 @@ namespace HRMSolution.Data.Configurations
         {
             builder.ToTable("HopDong");
             builder.HasKey(x => x.maHopDong);
-            builder.Property(x => x.maHopDong).HasMaxLength(30);
+            builder.Property(x => x.maHopDong).HasMaxLength(30).IsRequired();
+            builder.Property(x => x.id).IsRequired();
             builder.Property(x => x.idChucDanh).IsRequired();
             builder.Property(x => x.idLoaiHopDong).IsRequired();
             builder.Property(x => x.hopDongTuNgay).HasColumnType("datetime").IsRequired();

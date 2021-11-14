@@ -12,7 +12,7 @@ namespace HRMSolution.Data.Configurations
             
             builder.ToTable("NhanVien");
             builder.HasKey(x => x.maNhanVien);
-            builder.Property(x => x.maNhanVien).HasMaxLength(10);
+            builder.Property(x => x.maNhanVien).HasMaxLength(10).IsRequired();
             builder.Property(x => x.hoTen).HasMaxLength(50).IsRequired();
             
             builder.Property(x => x.quocTich).IsRequired().HasMaxLength(50);
