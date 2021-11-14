@@ -43,8 +43,8 @@ namespace HRMSolution.Application.Catalog.Luongs
                     phuCapKhac = request.phuCapKhac,
                     tongLuong = request.tongLuong,
                     thoiHanLenLuong = request.thoiHanLenLuong,
-                    ngayHieuLuc = request.ngayHieuLuc,
-                    ngayKetThuc = request.ngayKetThuc,
+                    ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
+                    ngayKetThuc = DateTime.Parse(request.ngayKetThuc),
                     ghiChu = request.ghiChu,
                     trangThai = true,
                     bangChung = await this.SaveFile(request.bangChung)
@@ -67,8 +67,8 @@ namespace HRMSolution.Application.Catalog.Luongs
                     phuCapKhac = request.phuCapKhac,
                     tongLuong = request.tongLuong,
                     thoiHanLenLuong = request.thoiHanLenLuong,
-                    ngayHieuLuc = request.ngayHieuLuc,
-                    ngayKetThuc = request.ngayKetThuc,
+                    ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
+                    ngayKetThuc = DateTime.Parse(request.ngayKetThuc),
                     ghiChu = request.ghiChu,
                     trangThai = true,
                     bangChung = await this.SaveFile(request.bangChung)
@@ -182,8 +182,8 @@ namespace HRMSolution.Application.Catalog.Luongs
             luong.phuCapKhac = request.phuCapKhac;
             luong.tongLuong = request.tongLuong;
             luong.thoiHanLenLuong = request.thoiHanLenLuong;
-            luong.ngayHieuLuc = request.ngayHieuLuc;
-            luong.ngayKetThuc = request.ngayKetThuc;
+            luong.ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc);
+            luong.ngayKetThuc = DateTime.Parse(request.ngayKetThuc);
             luong.ghiChu = request.ghiChu;
             luong.trangThai = request.trangThai;
 

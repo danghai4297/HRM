@@ -16,8 +16,8 @@ namespace HRMSolution.Data.Entities
         public float? phuCapKhac { get; set; }
         public float? tongLuong { get; set; }
         public string thoiHanLenLuong { get; set; }
-        public DateTime? ngayHieuLuc { get; set; }
-        public DateTime? ngayKetThuc { get; set; }
+        public DateTime ngayHieuLuc { get; set; }
+        public DateTime ngayKetThuc { get; set; }
         public string ghiChu { get; set; }
         public bool trangThai { get; set; }
         public string bangChung { get; set; }

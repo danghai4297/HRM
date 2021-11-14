@@ -16,8 +16,8 @@ namespace HRMSolution.Application.Catalog.Luongs.Dtos
         public float? phuCapKhac { get; set; }
         public float? tongLuong { get; set; }
         public string thoiHanLenLuong { get; set; }
-        public DateTime? ngayHieuLuc { get; set; }
-        public DateTime? ngayKetThuc { get; set; }
+        public string ngayHieuLuc { get; set; }
+        public string ngayKetThuc { get; set; }
         public string ghiChu { get; set; }
         public bool trangThai { get; set; }
         public IFormFile bangChung { get; set; }
