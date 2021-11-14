@@ -10,7 +10,6 @@ import { ttc } from "./DataContract";
 function ScreenDetailContract(props) {
   let { match, history } = props;
   let { id } = match.params;
-  console.log(id);
 
   const [dataDetailHd, setdataDetailHd] = useState([]);
 
@@ -25,7 +24,7 @@ function ScreenDetailContract(props) {
     };
     fetchNvList();
   }, []);
-
+  console.log(dataDetailHd);
   return (
     <>
       <div className="main-screen">
@@ -47,6 +46,16 @@ function ScreenDetailContract(props) {
                 Sửa
               </Button>
             </Link>
+            <a
+              class="btn btn-fix btn-light"
+              href={`https://localhost:5001${dataDetailHd.bangChung}`}
+              role="button"
+            >
+              <FontAwesomeIcon
+                className="icon-btn"
+                icon={["fas", "file-word"]}
+              />
+            </a>
           </div>
         </div>
         <div className="second-main">
@@ -83,9 +92,12 @@ function ScreenDetailContract(props) {
             to={`/profile/detail/${dataDetailHd.maNhanVien}?move=moveToContract`}
             className="btn-move"
           >
-              <button className="btn-fix">
-                <FontAwesomeIcon icon={["fas", "arrow-right"]} style={{fontSize: "50px"}}/>
-              </button>
+            <button className="btn-fix">
+              <FontAwesomeIcon
+                icon={["fas", "arrow-right"]}
+                style={{ fontSize: "50px" }}
+              />
+            </button>
           </Link>
         </div>
       </div>

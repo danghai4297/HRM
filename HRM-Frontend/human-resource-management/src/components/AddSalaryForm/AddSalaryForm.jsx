@@ -113,7 +113,7 @@ function AddSalaryForm(props) {
           setDescription("Bạn chắc chắn muốn sửa thông tin lương");
           const response = await ProductApi.getLDetail(id);
           setDataLDetail(response);
-         // setRsSalary(moment(response.ngayKetThuc));
+          // setRsSalary(moment(response.ngayKetThuc));
         }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -138,7 +138,6 @@ function AddSalaryForm(props) {
       //path: URL.createObjectURL(e.target.files[0]),
     });
   };
-
 
   const intitalValue = {
     idNhomLuong: id !== undefined ? dataLDetail.idNhomLuong : null,
@@ -257,11 +256,13 @@ function AddSalaryForm(props) {
 
   const onHandleSubmit = async (data) => {
     let maHopDong = data.maHopDong;
-    if (endDateRs !== undefined) {
-      let obj = { ngayKetThuc: endDateRs };
-      Object.assign(data, obj);
-      console.log(Object.assign(data, obj));
-    }
+    console.log(data);
+
+    // if (endDateRs !== undefined) {
+    //   let obj = { ngayKetThuc: endDateRs };
+    //   Object.assign(data, obj);
+    //   console.log(Object.assign(data, obj));
+    // }
     try {
       if (id !== undefined) {
         await PutApi.PutL(data, id);
@@ -275,22 +276,22 @@ function AddSalaryForm(props) {
           `Sửa thông tin lương cho nhân viên ${dataLDetail.tenNhanVien} thành công`
         );
       } else {
-          const formData = new FormData();
-          formData.append("bangChung", file.file);
-          formData.append("maHopDong", data.maHopDong);
-          formData.append("idNhomLuong", data.idNhomLuong);
-          formData.append("heSoLuong", data.heSoLuong);
-          formData.append("bacLuong", data.bacLuong);
-          formData.append("luongCoBan", data.luongCoBan);
-          formData.append("phuCapTrachNhiem", data.maHopDong);
-          formData.append("PhuCapKhac", data.PhuCapKhac);
-          formData.append("tongLuong", data.tongLuong);
-          formData.append("thoiHanLenLuong", data.thoiHanLenLuong);
-          formData.append("ngayHieuLuc", data.ngayHieuLuc);
-          formData.append("ngayKetThuc", endDateRs);
-          formData.append("ghiChu", data.ghiChu);
-          formData.append("trangThai", data.trangThai);
-          await ProductApi.PostL(formData);
+        const formData = new FormData();
+        formData.append("bangChung", file.file);
+        formData.append("maHopDong", data.maHopDong);
+        formData.append("idNhomLuong", data.idNhomLuong);
+        formData.append("heSoLuong", data.heSoLuong);
+        formData.append("bacLuong", data.bacLuong);
+        formData.append("luongCoBan", data.luongCoBan);
+        formData.append("phuCapTrachNhiem", data.phuCapTrachNhiem);
+        formData.append("phuCapKhac", data.phuCapKhac);
+        formData.append("tongLuong", data.tongLuong);
+        formData.append("thoiHanLenLuong", data.thoiHanLenLuong);
+        formData.append("ngayHieuLuc", endDate.format("DD/MM/YYYY"));
+        formData.append("ngayKetThuc", endDateRs.format("DD/MM/YYYY"));
+        formData.append("ghiChu", data.ghiChu);
+        formData.append("trangThai", data.trangThai);
+        await ProductApi.PostL(formData);
 
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
@@ -730,8 +731,8 @@ function AddSalaryForm(props) {
                     Bằng chứng
                   </label>
                   <Upload beforeUpload={() => false} onChange={handleChange}>
-              <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
-            </Upload>
+                    <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
+                  </Upload>
                 </div>
               </div>
             </div>
