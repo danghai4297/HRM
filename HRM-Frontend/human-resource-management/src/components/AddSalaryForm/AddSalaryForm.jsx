@@ -275,13 +275,23 @@ function AddSalaryForm(props) {
           `Sửa thông tin lương cho nhân viên ${dataLDetail.tenNhanVien} thành công`
         );
       } else {
-        await ProductApi.PostL(data);
-        // if (file.file !== null) {
-        //   const formData = new FormData();
-        //   formData.append("bangChung", file.file);
-        //   //formData.append("maHopDong", data.id);
-        //   await PutApi.PutAL(formData, id);
-        // }
+          const formData = new FormData();
+          formData.append("bangChung", file.file);
+          formData.append("maHopDong", data.maHopDong);
+          formData.append("idNhomLuong", data.idNhomLuong);
+          formData.append("heSoLuong", data.heSoLuong);
+          formData.append("bacLuong", data.bacLuong);
+          formData.append("luongCoBan", data.luongCoBan);
+          formData.append("phuCapTrachNhiem", data.maHopDong);
+          formData.append("PhuCapKhac", data.PhuCapKhac);
+          formData.append("tongLuong", data.tongLuong);
+          formData.append("thoiHanLenLuong", data.thoiHanLenLuong);
+          formData.append("ngayHieuLuc", data.ngayHieuLuc);
+          formData.append("ngayKetThuc", endDateRs);
+          formData.append("ghiChu", data.ghiChu);
+          formData.append("trangThai", data.trangThai);
+          await ProductApi.PostL(formData);
+
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
           thaoTac: `Thêm lương mới trong hợp đồng ${maHopDong} của nhân viên ${dataLDetail.tenNhanVien}`,

@@ -11,7 +11,8 @@ import DialogCheck from "../Dialog/DialogCheck";
 import { useToast } from "../Toast/Toast";
 import Dialog from "../../components/Dialog/Dialog";
 import jwt_decode from "jwt-decode";
-
+import { Upload, Button } from "antd";
+import { UploadOutlined } from "@ant-design/icons";
 const schema = yup.object({
   idDanhMucKhenThuong: yup.number().nullable().required("Loại khen thưởng không được bỏ trống."),
   maNhanVien: yup.string().nullable().required("Mã nhân viên không được bỏ trống."),
@@ -66,13 +67,30 @@ function AddRewardForm(props) {
     fetchNvList();
   }, []);
 
+  const [file, setFile] = useState({
+    file: null,
+    path: "/Images/userIcon.png",
+  });
+  const handleChange = (e) => {
+    console.log(e);
+    setFile({
+      file: e.file,
+      path:
+        e.fileList.length !== 0
+          ? URL.createObjectURL(e.file)
+          : "/Images/userIcon.png",
+      //file: e.target.files[0],
+      //path: URL.createObjectURL(e.target.files[0]),
+    });
+  };
+
   const intitalValue = {
     maNhanVien: id !== undefined ? dataKTDetail.maNhanVien : null,
     idDanhMucKhenThuong:
       id !== undefined ? dataKTDetail.idDanhMucKhenThuong : null,
     noiDung: id !== undefined ? dataKTDetail.noiDung : null,
     lyDo: id !== undefined ? dataKTDetail.lyDo : null,
-    anh: id !== undefined ? dataKTDetail.anh : null,
+   // anh: id !== undefined ? dataKTDetail.anh : null,
     loai: true,
   };
 
@@ -98,7 +116,7 @@ function AddRewardForm(props) {
       "idDanhMucKhenThuong",
       "noiDung",
       "lyDo",
-      "anh",
+     // "anh",
       "loai",
     ]);
     const dfValue = [
@@ -106,7 +124,7 @@ function AddRewardForm(props) {
       intitalValue.idDanhMucKhenThuong,
       intitalValue.noiDung,
       intitalValue.lyDo,
-      intitalValue.anh,
+     // intitalValue.anh,
       intitalValue.loai,
     ];
     return JSON.stringify(values) === JSON.stringify(dfValue);
@@ -127,7 +145,15 @@ function AddRewardForm(props) {
           `Sửa thông tin khen thưởng cho nhân viên ${dataKTDetail.hoTen} thành công`
         );
       }else{
-        await ProductApi.PostKTvKL(data);
+          const formData = new FormData();
+          formData.append("anh", file.file);
+          formData.append("idDanhMucKhenThuong", data.idDanhMucKhenThuong);
+          formData.append("noiDung", data.noiDung);
+          formData.append("lyDo", data.lyDo);
+          formData.append("loai", data.loai);
+          formData.append("maNhanVien", data.maNhanVien);
+         await ProductApi.PostKTvKL(formData);
+
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
           thaoTac: `Thêm khen thưởng mới cho nhân viên ${dataKTDetail.hoTen}`,
@@ -246,23 +272,18 @@ function AddRewardForm(props) {
               </div>
             </div>
             <div className="col">
-              <div className="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="anh">
-                  Ảnh
-                </label>
-                <input
-                  type="text"
-                  {...register("anh")}
-                  id="anh"
-                  className={
-                    !errors.anh
-                      ? "form-control col-sm-6 "
-                      : "form-control col-sm-6 border-danger"
-                  }
-                />
-                <span className="message">{errors.anh?.message}</span>
+                <div className="form-group form-inline">
+                  <label
+                    className="col-sm-4 justify-content-start"
+                    htmlFor="bangChung"
+                  >
+                    Bằng chứng
+                  </label>
+                  <Upload beforeUpload={() => false} onChange={handleChange}>
+              <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
+            </Upload>
+                </div>
               </div>
-            </div>
           </div>
           <div className="row">
             <div className="col-6">

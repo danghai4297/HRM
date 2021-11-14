@@ -23,16 +23,12 @@ const schema = yup.object({
     .string()
     .nullable()
     .required("Mã nhân viên không được bỏ trống."),
-  idLoaiHopDong: yup
-    .number()
-    .typeError("Loại hợp đồng không được bỏ trống."),
-  idChucDanh: yup
-    .number()
-    .typeError("Chức danh không được bỏ trống."),
-  maHopDong: yup
-    .string()
-    .nullable()
-    .required("Lương cơ bản không được bỏ trống."),
+  idLoaiHopDong: yup.number().typeError("Loại hợp đồng không được bỏ trống."),
+  idChucDanh: yup.number().typeError("Chức danh không được bỏ trống."),
+  // maHopDong: yup
+  //   .string()
+  //   .nullable()
+  //   .required("Lương cơ bản không được bỏ trống."),
   hopDongTuNgay: yup
     .date()
     .nullable()
@@ -41,6 +37,7 @@ const schema = yup.object({
     .date()
     .nullable()
     .required("Ngày hết hạn không được bỏ trống"),
+  idCre: yup.number(),
 });
 function AddContractForm(props) {
   let location = useLocation();
@@ -51,6 +48,7 @@ function AddContractForm(props) {
   let { id } = match.params;
   const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
+  console.log(id);
 
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
@@ -71,6 +69,7 @@ function AddContractForm(props) {
   const [dataCD, setDataCD] = useState([]);
   const [dataAllHD, setDataAllHD] = useState([]);
   const [rsId, setRsId] = useState();
+  const [rsIdCre, setRsIdCre] = useState();
   const [dataIdEmployee, setDataIdEmployee] = useState([]);
 
   useEffect(() => {
@@ -99,19 +98,24 @@ function AddContractForm(props) {
 
   useEffect(() => {
     const handleId = async () => {
-      const responseAllHD = await ProductApi.getAllHd();
-      setDataAllHD(responseAllHD);
-      const idIncre =
-        responseAllHD !== null
-          ? responseAllHD[responseAllHD.length - 1].id
-          : undefined;
-      console.log(idIncre);
-      const increCode = Number(idIncre.slice(2)) + 6050;
-      const rsCode = "HD";
-      if (increCode < 10) {
-        setRsId(rsCode.concat(`0${increCode}`));
-      } else if (increCode >= 10) {
-        setRsId(rsCode.concat(`${increCode}`));
+      if (id === undefined) {
+        const responseAllHD = await ProductApi.getAllHd();
+        setDataAllHD(responseAllHD);
+        const idCree =
+          responseAllHD !== null ? responseAllHD[0].idCre : undefined;
+        setRsIdCre(idCree + 1);
+        const idIncre =
+          responseAllHD !== null ? responseAllHD[0].id : undefined;
+        console.log(idIncre);
+        const increCode = Number(idIncre.slice(2)) + 1;
+        const rsCode = "HD";
+        if (increCode < 10) {
+         // setRsId(rsCode.concat(`0${increCode}`));
+          setValue("maHopDong",rsCode.concat(`0${increCode}`))
+        } else if (increCode >= 10) {
+          //setRsId(rsCode.concat(`${increCode}`));
+          setValue("maHopDong",rsCode.concat(`${increCode}`))
+        }        
       }
     };
     handleId();
@@ -134,7 +138,7 @@ function AddContractForm(props) {
     });
   };
 
- // console.log(dataAllHD);
+  // console.log(dataAllHD);
   const intitalValue = {
     maNhanVien: id !== undefined ? dataDetailHd.maNhanVien : ecode,
     idChucDanh: id !== undefined ? dataDetailHd.idChucDanh : null,
@@ -154,6 +158,7 @@ function AddContractForm(props) {
     ghiChu: id !== undefined ? dataDetailHd.ghiChu : null,
     maHopDong: id !== undefined ? dataDetailHd.id : rsId,
     trangThai: id !== undefined ? dataDetailHd.trangThai === "Kích hoạt" : true,
+    idCre: id !== undefined ? dataDetailHd.idCre : rsIdCre,
   };
 
   const {
@@ -204,6 +209,8 @@ function AddContractForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
+    console.log(data);
+
     let maHopDong = data.maHopDong;
     try {
       if (id !== undefined) {
@@ -324,16 +331,18 @@ function AddContractForm(props) {
                         : "form-control col-sm-6 border-danger"
                     }
                     list="employees"
-                    readOnly={ ecode? true: false }
+                    readOnly={ecode ? true : false}
                   />
                   <datalist id="employees">
                     {dataIdEmployee
-                    .filter((item) => item.trangThaiLaoDong === "Đang làm việc")
-                    .map((item, key) => (
-                      <option key={key} value={item.id}>
-                        {item.hoTen}
-                      </option>
-                    ))}
+                      .filter(
+                        (item) => item.trangThaiLaoDong === "Đang làm việc"
+                      )
+                      .map((item, key) => (
+                        <option key={key} value={item.id}>
+                          {item.hoTen}
+                        </option>
+                      ))}
                   </datalist>
 
                   <span className="message">{errors.maNhanVien?.message}</span>
@@ -411,7 +420,7 @@ function AddContractForm(props) {
                     type="text"
                     {...register("maHopDong")}
                     id="maHopDong"
-                    value={rsId}
+                    //value={rsId}
                     className={
                       !errors.maHopDong
                         ? "form-control col-sm-6 "
@@ -530,8 +539,8 @@ function AddContractForm(props) {
                     Bằng chứng
                   </label>
                   <Upload beforeUpload={() => false} onChange={handleChange}>
-              <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
-            </Upload>
+                    <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
+                  </Upload>
                 </div>
               </div>
             </div>
@@ -561,6 +570,7 @@ function AddContractForm(props) {
                   </select>
                   <span className="message">{errors.trangThai?.message}</span>
                 </div>
+                <input {...register("idCre")} type="text" value={rsIdCre} />
               </div>
             </div>
           </div>
