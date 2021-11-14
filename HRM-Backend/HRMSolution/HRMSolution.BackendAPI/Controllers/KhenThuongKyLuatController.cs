@@ -43,7 +43,7 @@ namespace HRMSolution.BackendAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] KhenThuongKyLuatCreateRequest request)
+        public async Task<IActionResult> Create([FromForm] KhenThuongKyLuatCreateRequest request)
         {
             var result = await _khenThuongKyLuatService.Create(request);
             if (result == 0)

@@ -76,12 +76,14 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                         join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
                         join to in _context.danhMucTos on dc.to equals to.idTo
                         join cv in _context.danhMucChucVus on dc.idChucVu equals cv.id
+                        join nv in _context.nhanViens on dc.maNhanVien equals nv.maNhanVien
                         where dc.id == id
-                        select new { dc, pb, to, cv };
+                        select new { dc, pb, to, cv, nv };
             var data = await query.Select(x => new DieuChuyenViewModel()
             {
                 id = x.dc.id,
                 maNhanVien = x.dc.maNhanVien,
+                tenNhanVien = x.nv.hoTen,
                 ngayHieuLuc = x.dc.ngayHieuLuc,
                 PhongBan = x.pb.tenPhongBan,
                 to = x.to.tenTo,

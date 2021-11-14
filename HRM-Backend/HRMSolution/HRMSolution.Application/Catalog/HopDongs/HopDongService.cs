@@ -33,6 +33,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
             {
                 var hopDong = new HopDong()
                 {
+                    id = request.idCre,
                     maHopDong = request.maHopDong,
                     idLoaiHopDong = request.idLoaiHopDong,
                     idChucDanh = request.idChucDanh,
@@ -54,6 +55,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
                 {
                     var hopDong = new HopDong()
                     {
+                        id = request.idCre,
                         maHopDong = request.maHopDong,
                         idLoaiHopDong = request.idLoaiHopDong,
                         idChucDanh = request.idChucDanh,
@@ -72,6 +74,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
 
                     var hopDong = new HopDong()
                     {
+                        id = request.idCre,
                         maHopDong = request.maHopDong,
                         idLoaiHopDong = request.idLoaiHopDong,
                         idChucDanh = request.idChucDanh,
@@ -108,6 +111,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
 
             var data = await query.Select(x => new HopDongViewModel()
             {
+                idCre = x.p.id,
                 id = x.p.maHopDong,
                 loaiHopDong = x.dmlhd.tenLoaiHopDong,
                 chucDanh = x.dmcd.tenChucDanh,
@@ -136,6 +140,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
 
             var data = await query.Select(x => new HopDongViewModel()
             {
+                idCre = x.p.id,
                 id = x.p.maHopDong,
                 loaiHopDong = x.dmlhd.tenLoaiHopDong,
                 chucDanh = x.dmcd.tenChucDanh,
@@ -163,6 +168,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
 
             var data = await query.Select(x => new HopDongViewModel()
             {
+                idCre = x.p.id,
                 id = x.p.maHopDong,
                 loaiHopDong = x.dmlhd.tenLoaiHopDong,
                 chucDanh = x.dmcd.tenChucDanh,

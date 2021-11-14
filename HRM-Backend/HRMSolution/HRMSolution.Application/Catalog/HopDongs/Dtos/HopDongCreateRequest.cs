@@ -6,6 +6,7 @@ namespace HRMSolution.Application.Catalog.HopDongs.Dtos
 {
     public class HopDongCreateRequest
     {
+        public int idCre { get; set; }
         public string maHopDong { get; set; }
         public int idLoaiHopDong { get; set; }
         public int idChucDanh { get; set; }

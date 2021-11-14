@@ -33,8 +33,10 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                 noiDung = request.noiDung,
                 lyDo = request.lyDo,
                 loai = request.loai,
-                maNhanVien = request.maNhanVien
+                maNhanVien = request.maNhanVien,
+                anh = await this.SaveFile(request.anh)
             };
+            
             _context.khenThuongKyLuats.Add(ktkl);
             return await _context.SaveChangesAsync();
         }

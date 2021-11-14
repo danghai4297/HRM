@@ -34,7 +34,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok(luong);
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] LuongCreateRequest request)
+        public async Task<IActionResult> Create([FromForm] LuongCreateRequest request)
         {
             var result = await _luongService.Create(request);
             if (result == 0)

@@ -46,7 +46,8 @@ namespace HRMSolution.Application.Catalog.Luongs
                     ngayHieuLuc = request.ngayHieuLuc,
                     ngayKetThuc = request.ngayKetThuc,
                     ghiChu = request.ghiChu,
-                    trangThai = true
+                    trangThai = true,
+                    bangChung = await this.SaveFile(request.bangChung)
                 };
                 _context.luongs.Add(luong);
             } else
@@ -69,7 +70,8 @@ namespace HRMSolution.Application.Catalog.Luongs
                     ngayHieuLuc = request.ngayHieuLuc,
                     ngayKetThuc = request.ngayKetThuc,
                     ghiChu = request.ghiChu,
-                    trangThai = true
+                    trangThai = true,
+                    bangChung = await this.SaveFile(request.bangChung)
                 };
                 _context.luongs.Add(luong);
             }

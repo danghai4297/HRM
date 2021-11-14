@@ -19,6 +19,9 @@ namespace HRMSolution.Data.Extentions
             var roleId1 = new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec");
             var adminId1 = new Guid("1DB26EB2-1870-4129-F60A-08D9978FF76B");
 
+            var userId3 = new Guid("CCF28057-5BE9-4405-957B-460E0CE106A7");
+            
+
             modelbulder.Entity<AppRole>().HasData(new AppRole
             {
                 Id = roleId,
@@ -55,6 +58,16 @@ namespace HRMSolution.Data.Extentions
                 SecurityStamp = string.Empty,
                 maNhanVien = "NV0002"
             });
+            modelbulder.Entity<AppUser>().HasData(new AppUser
+            {
+                Id = userId3,
+                UserName = "user3",
+                NormalizedUserName = "user3",
+                EmailConfirmed = true,
+                PasswordHash = hasher.HashPassword(null, "Abcd1234$"),
+                SecurityStamp = string.Empty,
+                maNhanVien = "NV0003"
+            });
 
             modelbulder.Entity<IdentityUserRole<Guid>>().HasData(new IdentityUserRole<Guid>
             {
@@ -65,6 +78,16 @@ namespace HRMSolution.Data.Extentions
             {
                 RoleId = roleId1,
                 UserId = adminId1
+            });
+            modelbulder.Entity<IdentityUserRole<Guid>>().HasData(new IdentityUserRole<Guid>
+            {
+                RoleId = roleId1,
+                UserId = userId3
+            });
+            modelbulder.Entity<IdentityUserRole<Guid>>().HasData(new IdentityUserRole<Guid>
+            {
+                RoleId = roleId,
+                UserId = userId3
             });
 
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,6 +11,7 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats.Dtos
         public string noiDung { get; set; }
         public string lyDo { get; set; }
         public bool loai { get; set; }
+        public IFormFile anh { get; set; }
         public string maNhanVien { get; set; }
     }
 }

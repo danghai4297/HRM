@@ -105,7 +105,7 @@ namespace HRMSolution.BackendAPI
 
             services.AddSwaggerGen(x =>
             {
-                x.SwaggerDoc("v1", new OpenApiInfo { Title = "Swagger HRM Sholution", Version = "v1" });
+                x.SwaggerDoc("v1", new OpenApiInfo { Title = "Swagger HRM Solution", Version = "v1" });
 
                 x.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
