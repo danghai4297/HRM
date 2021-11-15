@@ -20,7 +20,7 @@ namespace HRMSolution.Data.Configurations
             builder.Property(x => x.ngaySinh).HasColumnType("datetime").IsRequired();
 
             builder.Property(x => x.gioiTinh).IsRequired();
-            builder.Property(x => x.dienThoai).HasMaxLength(16).IsRequired();
+            builder.Property(x => x.dienThoai).HasMaxLength(16);
             builder.Property(x => x.dienThoaiKhac).HasMaxLength(16);
             builder.Property(x => x.diDong).HasMaxLength(16).IsRequired();
             builder.Property(x => x.email).HasMaxLength(50);

@@ -144,7 +144,7 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
             return await _context.SaveChangesAsync();
         }
 
-        public async Task<int> UpdateImage(int id, KhenThuongKyLuatUpdateRequest request)
+        public async Task<int> UpdateImage(int id, KhenThuongKyLuatUpdateImageRequest request)
         {
             var anh = await _context.khenThuongKyLuats.FindAsync(id);
             if (anh == null) throw new HRMException($"Không tìm thấy khen thưởng kỷ luật có id: {id}");

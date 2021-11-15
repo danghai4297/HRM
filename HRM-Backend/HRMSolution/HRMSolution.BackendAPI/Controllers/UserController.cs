@@ -52,12 +52,12 @@ namespace HRMSolution.BackendAPI.Controllers
 
         //PUT: http://localhost/api/users/id
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(Guid id, [FromBody] UserUpdateRequest request)
+        public async Task<IActionResult> ChangPassword(Guid id, [FromBody] UserUpdateRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var result = await _userService.Update(id, request);
+            var result = await _userService.ChangePassword(id, request);
             if (result == false)
             {
                 return BadRequest(result);
