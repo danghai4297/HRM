@@ -13,6 +13,7 @@ import Dialog from "../../components/Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
+
 const regexDate = /^[0-9]{2}[\/]{1}[0-9]{2}[\/]{1}[0-9]{4}$/g;
 const schema = yup.object({
   idDanhMucKhenThuong: yup
@@ -144,6 +145,13 @@ function AddDisciplineForm(props) {
     console.log(data);
     try {
       if (id !== undefined) {
+        if (file.file !== null) {
+         // await DeleteApi.deleteAKTvKL(id);
+          const formData = new FormData();
+          formData.append("anh", file.file);
+          //formData.append("maHopDong", data.id);
+          await PutApi.PutAKTvKL(formData, id);
+        }
         await PutApi.PutKTvKL(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,

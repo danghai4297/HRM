@@ -8,18 +8,20 @@ import { useState } from "react";
 import DialogCheck from "../Dialog/DialogCheck";
 import Dialog from "../../components/Dialog/Dialog";
 import { useToast } from "../Toast/Toast";
+import jwt_decode from "jwt-decode";
+import LoginApi from "../../api/login";
 
 const passwordReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/g;
 const schema = yup.object({
-  matKhauHienTai: yup
+  oldPassword: yup
     .string()
     .matches(passwordReg, "Mật khẩu hiện tại không đúng định dạng.")
     .required("Mật khẩu hiện tại không được bỏ trống."),
-  matKhauMoi: yup
+    newPassword: yup
     .string()
     .matches(passwordReg, "Mật khẩu hiện tại không đúng định dạng.")
     .required("Mật khẩu mới không được bỏ trống."),
-  xacNhanMatKhau: yup
+    confirmPassword: yup
     .string()
     .matches(passwordReg, "Mật khẩu hiện tại không đúng định dạng.")
     .required("Xác nhận mật khẩu mới không được bỏ trống."),
@@ -45,11 +47,16 @@ function ChangePasswordForm(props) {
   console.log(currentPassword);
   console.log(newPassword);
   console.log(rePassword);
-  
-  const onHandleSubmit = (data) => {
+  const idAccount = jwt_decode(sessionStorage.getItem("resultObj")).idAccount;
+  const onHandleSubmit = async(data) => {
     if(currentPassword !== newPassword && newPassword === rePassword){
       console.log(data);
-      success("Đổi mật khẩu thành công.")
+      try {
+        await LoginApi.PutChangePassword(data,idAccount);
+        success("Đổi mật khẩu thành công.")
+      } catch (errors) {
+        error("Đổi mật khẩu không thành công!");
+      }
     }else if(currentPassword === newPassword){
       warn("Mật khẩu mới trùng với mật khẩu cũ.");
     }else if(newPassword !== rePassword){
@@ -86,10 +93,10 @@ function ChangePasswordForm(props) {
                 <div className="input-eyes">
                   <input
                     type={passwordInputTypeOP}
-                    {...register("matKhauHienTai",{onChange : (e)=>setCurrentPassword(e.target.value)})}
-                    id="matKhauHienTai"
+                    {...register("oldPassword",{onChange : (e)=>setCurrentPassword(e.target.value)})}
+                    id="oldPassword"
                     className={
-                      !errors.matKhauHienTai
+                      !errors.oldPassword
                         ? "form-control  "
                         : "form-control border-danger "
                     }
@@ -98,7 +105,7 @@ function ChangePasswordForm(props) {
                   <span className="password-toogle-icon">{IconOP}</span>
                 </div>
                 <span className="message-e">
-                  {errors.matKhauHienTai?.message}
+                  {errors.oldPassword?.message}
                 </span>
               </div>
             </div>
@@ -107,18 +114,18 @@ function ChangePasswordForm(props) {
                 <div className="input-eyes">
                   <input
                     type={passwordInputTypeNP}
-                    {...register("matKhauMoi",{onChange : (e)=>setNewPassword(e.target.value)})}
-                    id="matKhauMoi"
+                    {...register("newPassword",{onChange : (e)=>setNewPassword(e.target.value)})}
+                    id="newPassword"
                     className={
-                      !errors.matKhauMoi
+                      !errors.newPassword
                         ? "form-control  "
                         : "form-control border-danger "
                     }
                     placeholder="Thêm mật khẩu mới"
                   />
-                  <span className="password-toogle-icon-np">{IconNP}</span>
+                  <span className="password-toogle-icon-np1">{IconNP}</span>
                 </div>
-                <span className="message-e">{errors.matKhauMoi?.message}</span>
+                <span className="message-e">{errors.newPassword?.message}</span>
               </div>
             </div>
             <div className="row justify-content-center">
@@ -145,19 +152,19 @@ function ChangePasswordForm(props) {
                 <div className="input-eyes">
                   <input
                     type={passwordInputTypeRP}
-                    {...register("xacNhanMatKhau",{onChange : (e)=>setRePassword(e.target.value)})}
-                    id="xacNhanMatKhau"
+                    {...register("confirmPassword",{onChange : (e)=>setRePassword(e.target.value)})}
+                    id="confirmPassword"
                     className={
-                      !errors.xacNhanMatKhau
+                      !errors.confirmPassword
                         ? "form-control  "
                         : "form-control border-danger "
                     }
                     placeholder="Xác nhận mật khẩu mới"
                   />
-                  <span className="password-toogle-icon-rp">{IconRP}</span>
+                  <span className="password-toogle-icon-rp1">{IconRP}</span>
                 </div>
                 <span className="message-e">
-                  {errors.xacNhanMatKhau?.message}
+                  {errors.confirmPassword?.message}
                 </span>
               </div>
             </div>

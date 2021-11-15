@@ -21,6 +21,11 @@ const LoginApi = {
     const url = `/User/${id}`;
     return axiosClient.get(url);
   },
+   //Change password
+   PutChangePassword:(data,id)=>{
+    const url =`/User/${id}`;
+    return axiosClient.put(url,data)
+  },
 };
 
 export default LoginApi;

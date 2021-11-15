@@ -152,7 +152,7 @@ const PutApi = {
     return axiosClient.put(url,data)
   },
   // Sửa bằng chứng khen thưởng và kỷ luật
-  PutKTvKL:(data,id)=>{
+  PutAKTvKL:(data,id)=>{
     const url =`/KhenThuongKyLuat/image/${id}`;
     return axiosClient.put(url,data)
   },

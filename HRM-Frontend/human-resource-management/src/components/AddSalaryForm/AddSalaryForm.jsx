@@ -113,7 +113,7 @@ function AddSalaryForm(props) {
           setDescription("Bạn chắc chắn muốn sửa thông tin lương");
           const response = await ProductApi.getLDetail(id);
           setDataLDetail(response);
-          // setRsSalary(moment(response.ngayKetThuc));
+          setEndDateRs(moment(response.ngayKetThuc));
         }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -236,6 +236,14 @@ function AddSalaryForm(props) {
   // }, [intitalValue.heSoLuong]);
 
   useEffect(() => {
+    if (id !== undefined) {
+      setSalary({
+        heSoLuong: getValues("heSoLuong"),
+        luongCoBan: getValues("luongCoBan"),
+        phuCapKhac: getValues("phuCapKhac"),
+        phuCapTrachNhiem: getValues("phuCapTrachNhiem"),
+      });
+    }
     let rss = 0;
     rss +=
       Number(salary.heSoLuong) * Number(salary.luongCoBan) +
@@ -248,23 +256,25 @@ function AddSalaryForm(props) {
     salary.phuCapKhac,
     salary.phuCapTrachNhiem,
   ]);
-
-  console.log(getValues("tongLuong"));
-  console.log(getValues("heSoLuong"));
-  console.log(getValues("luongCoBan"));
-  console.log(getValues("phuCapKhac"));
+  console.log(file);
 
   const onHandleSubmit = async (data) => {
     let maHopDong = data.maHopDong;
     console.log(data);
-
-    // if (endDateRs !== undefined) {
-    //   let obj = { ngayKetThuc: endDateRs };
-    //   Object.assign(data, obj);
-    //   console.log(Object.assign(data, obj));
-    // }
+    if (endDateRs !== undefined) {
+      let obj = { ngayKetThuc: endDateRs };
+      Object.assign(data, obj);
+      console.log(Object.assign(data, obj));
+    }
     try {
       if (id !== undefined) {
+        if (file.file !== null) {
+          await DeleteApi.deleteAL(id);
+          const formData = new FormData();
+          formData.append("bangChung", file.file);
+          //formData.append("maHopDong", data.id);
+          await PutApi.PutAL(formData, id);
+        }
         await PutApi.PutL(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
@@ -338,11 +348,6 @@ function AddSalaryForm(props) {
       setEndDateRs(rs.add(salaryTime, "years"));
     }
   }, [salaryTime, endDate]);
-
-  console.log(salaryTime);
-  console.log("endDate:", endDate);
-  console.log("startDate:", startDate);
-  console.log(endDateRs);
 
   return (
     <>

@@ -140,6 +140,13 @@ function AddRewardForm(props) {
     console.log(data);
     try {
       if (id !== undefined) {
+        if (file.file !== null) {
+          //await DeleteApi.deleteAKTvKL(id);
+          const formData = new FormData();
+          formData.append("anh", file.file);
+          //formData.append("maHopDong", data.id);
+          await PutApi.PutAKTvKL(formData, id);
+        }
         await PutApi.PutKTvKL(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
