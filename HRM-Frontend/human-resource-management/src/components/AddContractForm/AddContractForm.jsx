@@ -214,6 +214,13 @@ function AddContractForm(props) {
     let maHopDong = data.maHopDong;
     try {
       if (id !== undefined) {
+        if (file.file !== null) {
+          await DeleteApi.deleteAHD(data.maHopDong);
+          const formData = new FormData();
+          formData.append("bangChung", file.file);
+          //formData.append("maHopDong", data.id);
+          await PutApi.PutAHD(formData, data.maHopDong);
+        }
         await PutApi.PutHD(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
