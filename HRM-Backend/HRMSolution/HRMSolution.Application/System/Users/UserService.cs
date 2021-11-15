@@ -52,7 +52,8 @@ namespace HRMSolution.Application.System.Users
                 new Claim("givenName",nv.hoTen),
                 new Claim("role", string.Join(";",roles)),
                 new Claim("userName", request.UserName),
-                new Claim("id", user.maNhanVien)
+                new Claim("id", user.maNhanVien),
+                new Claim("idAccount", user.Id.ToString()),
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -231,19 +232,18 @@ namespace HRMSolution.Application.System.Users
         public async Task<bool> ChangePassword(Guid id, UserUpdateRequest request)
         {
             var hasher = new PasswordHasher<AppUser>();
-            if (await _userManager.Users.AnyAsync(x => x.PasswordHash == hasher.HashPassword(null, request.oldPassword) && x.Id == id))
-            {
-                return false;
-            }
             var user = await _userManager.FindByIdAsync(id.ToString());
-            user.PasswordHash = hasher.HashPassword(null, request.newPassword);            
-
-            var result = await _userManager.UpdateAsync(user);
-            if (result.Succeeded)
+            var changePassword = await _userManager.ChangePasswordAsync(user, request.oldPassword, request.newPassword);        
+            if (changePassword.Succeeded)
             {
-                return true;
+                user.PasswordHash = hasher.HashPassword(null, request.newPassword);
+                var result = await _userManager.UpdateAsync(user);
+                if (result.Succeeded)
+                {
+                    return true;
+                }
             }
-            return true;
+            return false;
         }
     }
 }

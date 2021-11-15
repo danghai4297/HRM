@@ -7,7 +7,6 @@ namespace HRMSolution.Application.System.Users.Dtos
 {
     public class UserUpdateRequest
     {
-        public Guid Id { get; set; }
         public string oldPassword { get; set; }
         public string newPassword { get; set; }
         public string confirmPassword { get; set; }
