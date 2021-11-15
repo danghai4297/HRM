@@ -36,6 +36,10 @@ function LogIn(props) {
     } catch (e) {
       error("Nhập sai tài khoản hoặc mật khẩu");
     }
+    const listRole = jwt_decode(sessionStorage.getItem("resultObj")).role.split(
+      ","
+    );
+    console.log(listRole);
   };
 
   return (
