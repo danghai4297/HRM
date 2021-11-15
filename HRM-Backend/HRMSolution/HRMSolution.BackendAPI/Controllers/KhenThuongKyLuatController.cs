@@ -67,7 +67,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpPut("image/{id}")]
-        public async Task<IActionResult> UpdateImage(int id, KhenThuongKyLuatUpdateImageRequest request)
+        public async Task<IActionResult> UpdateImage(int id, [FromForm] KhenThuongKyLuatUpdateImageRequest request)
         {
             var result = await _khenThuongKyLuatService.UpdateImage(id, request);
             if (result == 0)
