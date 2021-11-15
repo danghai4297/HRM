@@ -7,7 +7,6 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
-import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
 AddTitleForm.propTypes = {};
@@ -17,7 +16,7 @@ const schema = yup.object({
   phuCap: yup.number().typeError("Phụ cấp không được bỏ trống và là số."),
 });
 function AddTitleForm(props) {
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
 
   let { match, history } = props;
   let { id } = match.params;
@@ -28,7 +27,6 @@ function AddTitleForm(props) {
   const [dataDetailDMCD, setdataDetailDMCD] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
   const [showCheckDialog, setShowCheckDialog] = useState(false);
-  const [showCheckAddDialog, setShowCheckAddDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm danh mục chức danh mới"
@@ -38,7 +36,6 @@ function AddTitleForm(props) {
     setShowDialog(false);
     setShowDeleteDialog(false);
     setShowCheckDialog(false);
-    setShowCheckAddDialog(false);
   };
 
   useEffect(() => {
@@ -104,20 +101,20 @@ function AddTitleForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("sửa danh mục thành công");
+        success("Sửa danh mục chức danh thành công");
       } else {
         await ProductApi.PostDMCD(data);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm danh mục chức danh: ${tendm}`,
+          thaoTac: `Thêm danh mục chức danh mới: ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("Thêm danh mục thành công");
+        success("Thêm danh mục chức danh thành công");
       }
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 
@@ -130,13 +127,13 @@ function AddTitleForm(props) {
         maNhanVien: decoded.id,
         tenNhanVien: decoded.givenName,
       });
-      success("Xoá danh mục thành công");
+      success("Xoá danh mục chức danh thành công");
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
-   console.log(Object.values(errors))
+
   return (
     <>
       <div className="container-form">

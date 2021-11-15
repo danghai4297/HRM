@@ -13,6 +13,9 @@ import { useLocation } from "react-router";
 import DialogCheck from "../Dialog/DialogCheck";
 import Dialog from "../../components/Dialog/Dialog";
 import { useToast } from "../Toast/Toast";
+import { Upload, Button } from "antd";
+import { UploadOutlined } from "@ant-design/icons";
+import jwt_decode from "jwt-decode";
 
 const schema = yup.object({
   trangThai: yup.boolean(),
@@ -20,16 +23,12 @@ const schema = yup.object({
     .string()
     .nullable()
     .required("Mã nhân viên không được bỏ trống."),
-  idLoaiHopDong: yup
-    .number()
-    .typeError("Loại hợp đồng không được bỏ trống."),
-  idChucDanh: yup
-    .number()
-    .typeError("Chức danh không được bỏ trống."),
-  maHopDong: yup
-    .string()
-    .nullable()
-    .required("Lương cơ bản không được bỏ trống."),
+  idLoaiHopDong: yup.number().typeError("Loại hợp đồng không được bỏ trống."),
+  idChucDanh: yup.number().typeError("Chức danh không được bỏ trống."),
+  // maHopDong: yup
+  //   .string()
+  //   .nullable()
+  //   .required("Lương cơ bản không được bỏ trống."),
   hopDongTuNgay: yup
     .date()
     .nullable()
@@ -38,6 +37,7 @@ const schema = yup.object({
     .date()
     .nullable()
     .required("Ngày hết hạn không được bỏ trống"),
+  idCre: yup.number(),
 });
 function AddContractForm(props) {
   let location = useLocation();
@@ -46,6 +46,9 @@ function AddContractForm(props) {
   const ecode = query.get("maNhanVien");
   let { match, history } = props;
   let { id } = match.params;
+  const token = sessionStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
+  console.log(id);
 
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
@@ -66,6 +69,7 @@ function AddContractForm(props) {
   const [dataCD, setDataCD] = useState([]);
   const [dataAllHD, setDataAllHD] = useState([]);
   const [rsId, setRsId] = useState();
+  const [rsIdCre, setRsIdCre] = useState();
   const [dataIdEmployee, setDataIdEmployee] = useState([]);
 
   useEffect(() => {
@@ -94,24 +98,47 @@ function AddContractForm(props) {
 
   useEffect(() => {
     const handleId = async () => {
-      const responseAllHD = await ProductApi.getAllHd();
-      setDataAllHD(responseAllHD);
-      const idIncre =
-        responseAllHD !== null
-          ? responseAllHD[responseAllHD.length - 1].id
-          : undefined;
-      console.log(idIncre);
-      const increCode = Number(idIncre.slice(2)) + 1020;
-      const rsCode = "HD";
-      if (increCode < 10) {
-        setRsId(rsCode.concat(`0${increCode}`));
-      } else if (increCode >= 10) {
-        setRsId(rsCode.concat(`${increCode}`));
+      if (id === undefined) {
+        const responseAllHD = await ProductApi.getAllHd();
+        setDataAllHD(responseAllHD);
+        const idCree =
+          responseAllHD !== null ? responseAllHD[0].idCre : undefined;
+        setRsIdCre(idCree + 1);
+        const idIncre =
+          responseAllHD !== null ? responseAllHD[0].id : undefined;
+        console.log(idIncre);
+        const increCode = Number(idIncre.slice(2)) + 1;
+        const rsCode = "HD";
+        if (increCode < 10) {
+         // setRsId(rsCode.concat(`0${increCode}`));
+          setValue("maHopDong",rsCode.concat(`0${increCode}`))
+        } else if (increCode >= 10) {
+          //setRsId(rsCode.concat(`${increCode}`));
+          setValue("maHopDong",rsCode.concat(`${increCode}`))
+        }        
       }
     };
     handleId();
   }, []);
-  console.log(dataAllHD);
+
+  const [file, setFile] = useState({
+    file: null,
+    path: "/Images/userIcon.png",
+  });
+  const handleChange = (e) => {
+    console.log(e);
+    setFile({
+      file: e.file,
+      path:
+        e.fileList.length !== 0
+          ? URL.createObjectURL(e.file)
+          : "/Images/userIcon.png",
+      //file: e.target.files[0],
+      //path: URL.createObjectURL(e.target.files[0]),
+    });
+  };
+
+  // console.log(dataAllHD);
   const intitalValue = {
     maNhanVien: id !== undefined ? dataDetailHd.maNhanVien : ecode,
     idChucDanh: id !== undefined ? dataDetailHd.idChucDanh : null,
@@ -131,10 +158,8 @@ function AddContractForm(props) {
     ghiChu: id !== undefined ? dataDetailHd.ghiChu : null,
     maHopDong: id !== undefined ? dataDetailHd.id : rsId,
     trangThai: id !== undefined ? dataDetailHd.trangThai === "Kích hoạt" : true,
+    idCre: id !== undefined ? dataDetailHd.idCre : rsIdCre,
   };
-  //console.log(intitalValue);
-
-  //console.log(date);
 
   const {
     register,
@@ -182,18 +207,37 @@ function AddContractForm(props) {
     ];
     return JSON.stringify(values) === JSON.stringify(dfValue);
   };
-  console.log(dataDetailHd);
 
   const onHandleSubmit = async (data) => {
     console.log(data);
+
+    let maHopDong = data.maHopDong;
     try {
       if (id !== undefined) {
         await PutApi.PutHD(data, id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Sửa thông tin hợp đồng ${maHopDong} của nhân viên ${dataDetailHd.tenNhanVien}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
         success(
           `Sửa thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
         );
       } else {
         await ProductApi.postHD(data);
+        if (file.file !== null) {
+          const formData = new FormData();
+          formData.append("bangChung", file.file);
+          //formData.append("maHopDong", data.id);
+          await PutApi.PutAHD(formData, data.maHopDong);
+        }
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Thêm hợp đồng mới ${maHopDong} cho nhân viên ${dataDetailHd.tenNhanVien}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
         success(
           `Thêm thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
         );
@@ -207,8 +251,14 @@ function AddContractForm(props) {
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteHD(id);
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Xóa hợp đồng ${dataDetailHd.maHopDong} của nhân viên ${dataDetailHd.tenNhanVien}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       success(
-        `Xoá thông tin trình độ cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
+        `Xoá thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
       );
       history.push(`/contract`);
     } catch (error) {
@@ -281,16 +331,18 @@ function AddContractForm(props) {
                         : "form-control col-sm-6 border-danger"
                     }
                     list="employees"
-                    readOnly={ ecode? true: false }
+                    readOnly={ecode ? true : false}
                   />
                   <datalist id="employees">
                     {dataIdEmployee
-                    .filter((item) => item.trangThaiLaoDong === "Đang làm việc")
-                    .map((item, key) => (
-                      <option key={key} value={item.id}>
-                        {item.hoTen}
-                      </option>
-                    ))}
+                      .filter(
+                        (item) => item.trangThaiLaoDong === "Đang làm việc"
+                      )
+                      .map((item, key) => (
+                        <option key={key} value={item.id}>
+                          {item.hoTen}
+                        </option>
+                      ))}
                   </datalist>
 
                   <span className="message">{errors.maNhanVien?.message}</span>
@@ -368,7 +420,7 @@ function AddContractForm(props) {
                     type="text"
                     {...register("maHopDong")}
                     id="maHopDong"
-                    value={rsId}
+                    //value={rsId}
                     className={
                       !errors.maHopDong
                         ? "form-control col-sm-6 "
@@ -482,6 +534,21 @@ function AddContractForm(props) {
                 <div className="form-group form-inline">
                   <label
                     className="col-sm-4 justify-content-start"
+                    htmlFor="bangChung"
+                  >
+                    Bằng chứng
+                  </label>
+                  <Upload beforeUpload={() => false} onChange={handleChange}>
+                    <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
+                  </Upload>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-6">
+                <div className="form-group form-inline">
+                  <label
+                    className="col-sm-4 justify-content-start"
                     style={id !== undefined ? null : { display: "none" }}
                     htmlFor="trangThai"
                   >
@@ -503,6 +570,7 @@ function AddContractForm(props) {
                   </select>
                   <span className="message">{errors.trangThai?.message}</span>
                 </div>
+                <input {...register("idCre")} type="text" value={rsIdCre} />
               </div>
             </div>
           </div>

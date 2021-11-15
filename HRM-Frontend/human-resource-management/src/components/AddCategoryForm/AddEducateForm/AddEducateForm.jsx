@@ -7,17 +7,18 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
-import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
+
 const schema = yup.object({
   tenHinhThuc: yup
   .string()
   .nullable()
-  .required("Tên danh mục không được bỏ trống."),
+  .required("Tên hình thức không được bỏ trống."),
 });
+
 function AddEducateForm(props) {
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
   let { match, history } = props;
   let { id } = match.params;
 
@@ -86,26 +87,26 @@ function AddEducateForm(props) {
         await PutApi.PutDMHTDT(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục hình
+          thaoTac: `Sửa hình
           thức đào tạo: ${dataDetailDMHTDT.tenHinhThuc} thành ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("sửa danh mục thành công");
+        success("Sửa hình thức đào tạo thành công");
       } else {
         await ProductApi.PostDMHTDT(data);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm danh mục hình
-          thức đào tạo: ${tendm}`,
+          thaoTac: `Thêm hình
+          thức đào tạo mới: ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("Thêm danh mục thành công");
+        success("Thêm hình thức đào tạo thành công");
       }
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 
@@ -114,19 +115,17 @@ function AddEducateForm(props) {
       await DeleteApi.deleteDMHTDT(id);
       await ProductApi.PostLS({
         tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa danh mục hình
+        thaoTac: `Xóa hình
         thức đào tạo: ${dataDetailDMHTDT.tenHinhThuc}`,
         maNhanVien: decoded.id,
         tenNhanVien: decoded.givenName,
       });
-      success("Xoá danh mục thành công");
+      success("Xoá hình thức đào tạo thành công");
       history.goBack();
     } catch (error) {
       error(`Có lỗi xảy ra ${error}`);
     }
   };
-
-  console.log(dataDetailDMHTDT);
 
   return (
     <>

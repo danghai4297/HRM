@@ -17,6 +17,7 @@ import DeleteApi from "../../../src/api/deleteAPI";
 import DialogCheck from "../Dialog/DialogCheck";
 import Dialog from "../../components/Dialog/Dialog";
 import { useToast } from "../Toast/Toast";
+import jwt_decode from "jwt-decode";
 const phoneRex = /([\|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})$\b/;
 const phoneRex1 = /^(([+|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})|)$/;
 const phoneRexlandline= /^((02)+([0-9]{9})|)$/g;
@@ -190,8 +191,11 @@ const schema = yup.object().shape({
 });
 
 function AddProfileForm(props) {
+  const { error, warn, info, success } = useToast();
   const { match, history } = props;
   let { id } = match.params;
+  const token = sessionStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
   //handle checkbox
   const [checkedSoldier, setCheckedSoldier] = useState(false);
   const handleClick = () => setCheckedSoldier(!checkedSoldier);
@@ -211,8 +215,7 @@ function AddProfileForm(props) {
       setResignation(false);
     }
   };
-  //console.log(resignation);
-
+ 
   const [endDate, setEndDate] = useState();
 
   //const [date, setDate] = useState(new Date());
@@ -228,7 +231,7 @@ function AddProfileForm(props) {
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
-    "Bạn chắc chắn muốn thêm hợp đồng mới"
+    "Bạn chắc chắn muốn thêm nhân viên"
   );
   const [showCheckDialog, setShowCheckDialog] = useState(false);
 
@@ -256,7 +259,7 @@ function AddProfileForm(props) {
         setDataLabor(responseCV);
 
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốm sửa trình độ");
+          setDescription("Bạn chắc chắn muốn sửa trình độ");
           const response = await ProductApi.getNvDetail(id);
           setDataDetailEmployee(response);
           if (response.vaoDang !== "Không") {
@@ -302,21 +305,7 @@ function AddProfileForm(props) {
     };
     handleId();
   }, []);
-  // console.log(allIdEm);
-
-  // const handleID = (id) => {
-  //   const increCode = Number(id.slice(2)) + 1;
-  //   const rsCode = "NV";
-  //   if (increCode < 10) {
-  //     setRsId(rsCode.concat(`000${increCode}`));
-  //   } else if (increCode >= 10 && increCode < 100) {
-  //     setRsId(rsCode.concat(`00${increCode}`));
-  //   } else if (increCode >= 100 && increCode < 1000) {
-  //     setRsId(rsCode.concat(`0${increCode}`));
-  //   } else {
-  //     setRsId(rsCode.concat(`${increCode}`));
-  //   }
-  // };
+ 
 
   const intitalValue = {
     id: id !== undefined ? dataDetailEmployee.id : rsId,
@@ -512,6 +501,7 @@ function AddProfileForm(props) {
     handleSubmit,
     control,
     reset,
+    getValues,
     formState: { errors },
   } = useForm({
     defaultValues: intitalValue,
@@ -534,7 +524,7 @@ function AddProfileForm(props) {
       //path: URL.createObjectURL(e.target.files[0]),
     });
   };
-
+  
   useEffect(() => {
     if (dataDetailEmployee) {
       reset(intitalValue);
@@ -546,7 +536,132 @@ function AddProfileForm(props) {
       reset(intitalValue);
     }
   }, [allIdEm]);
-  //get data form api
+  //check update
+  const checkInputChange = () => {
+    const values = getValues([
+      "id",
+      "hoTen",
+      "quocTich",
+      "gioiTinh",
+      "dienThoai",
+      "dienThoaiKhac",
+      "diDong",
+      "email",
+      "facebook",
+      "skype",
+      "maSoThue",
+      "cccd",
+      "noiCapCCCD",
+      "hoChieu",
+      "noiCapHoChieu",
+      "noiSinh",
+      "queQuan",
+      "thuongTru",
+      "tamTru",
+      "ngheNghiep",
+      "chucVuHienTai",
+      "congViecChinh",
+      "coQuanTuyenDung",
+      "ngachCongChucNoiDung",
+      "vaoDang",
+      "quanNhan",
+      "quanHamCaoNhat",
+      "danhHieuCaoNhat",
+      "noiThamGia",
+      "laThuongBinh",
+      "laConChinhSach",
+      "thuongBinh",
+      "conChinhSach",
+      "bhxh",
+      "bhyt",
+      "atm",
+      "nganHang",
+      "trangThaiLaoDong",
+      "tinhChatLaoDong",
+      "idDanhMucHonNhan",
+      "idDanToc",
+      "idTonGiao",
+      "idNgachCongChuc",
+      "yt_nhomMau",
+      "yt_chieuCao",
+      "yt_canNang",
+      "yt_tinhTrangSucKhoe",
+      "yt_benhTat",
+      "yt_luuY",
+      "yt_khuyetTat",
+      "lhkc_hoTen",
+      "lhkc_quanHe",
+      "lhkc_dienThoai",
+      "lhkc_email",
+      "lhkc_diaChi",
+      "lsbt_biBatDiTu",
+      "lsbt_thamGiaChinhTri",
+      "lsbt_thanNhanNuocNgoai",
+    ]);
+    const dfValue = [
+      intitalValue.id,
+      intitalValue.hoTen,
+      intitalValue.quocTich,
+      intitalValue.gioiTinh,
+      intitalValue.dienThoai,
+      intitalValue.dienThoaiKhac,
+      intitalValue.diDong,
+      intitalValue.email,
+      intitalValue.facebook,
+      intitalValue.skype,
+      intitalValue.maSoThue,
+      intitalValue.cccd,
+      intitalValue.noiCapCCCD,
+      intitalValue.hoChieu,
+      intitalValue.noiCapHoChieu,
+      intitalValue.noiSinh,
+      intitalValue.queQuan,
+      intitalValue.thuongTru,
+      intitalValue.tamTru,
+      intitalValue.ngheNghiep,
+      intitalValue.chucVuHienTai,
+      intitalValue.congViecChinh,
+      intitalValue.coQuanTuyenDung,
+      intitalValue.ngachCongChucNoiDung,
+      intitalValue.vaoDang,
+      intitalValue.quanNhan,
+      intitalValue.quanHamCaoNhat,
+      intitalValue.danhHieuCaoNhat,
+      intitalValue.noiThamGia,
+      intitalValue.laThuongBinh,
+      intitalValue.laConChinhSach,
+      intitalValue.thuongBinh,
+      intitalValue.conChinhSach,
+      intitalValue.bhxh,
+      intitalValue.bhyt,
+      intitalValue.atm,
+      intitalValue.nganHang,
+      intitalValue.trangThaiLaoDong,
+      intitalValue.tinhChatLaoDong,
+      intitalValue.idDanhMucHonNhan,
+      intitalValue.idDanToc,
+      intitalValue.idTonGiao,
+      intitalValue.idNgachCongChuc,
+      intitalValue.yt_nhomMau,
+      intitalValue.yt_chieuCao,
+      intitalValue.yt_canNang,
+      intitalValue.yt_tinhTrangSucKhoe,
+      intitalValue.yt_benhTat,
+      intitalValue.yt_luuY,
+      intitalValue.yt_khuyetTat,
+      intitalValue.lhkc_hoTen,
+      intitalValue.lhkc_quanHe,
+      intitalValue.lhkc_dienThoai,
+      intitalValue.lhkc_email,
+      intitalValue.lhkc_diaChi,
+      intitalValue.lsbt_biBatDiTu,
+      intitalValue.lsbt_thamGiaChinhTri,
+      intitalValue.lsbt_thanNhanNuocNgoai,
+    ];
+    return JSON.stringify(values) === JSON.stringify(dfValue);
+  };
+
+
 
   //get data from form
   const onHandleSubmit = async (data) => {
@@ -554,7 +669,14 @@ function AddProfileForm(props) {
     try {
       if (id !== undefined) {
         await PutApi.PutNV(data, id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Sửa thông tin của nhân viên ${dataDetailEmployee.hoTen}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
         if (file.file !== null) {
+          await DeleteApi.deleteANV(data.id);
           const formData = new FormData();
           formData.append("anh", file.file);
           formData.append("maNhanVien", data.id);
@@ -562,6 +684,12 @@ function AddProfileForm(props) {
         }
       } else {
         await ProductApi.postNv(data);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Thêm nhân viên mới${data.hoTen}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
         if (file.file !== null) {
           const formData = new FormData();
           formData.append("anh", file.file);
@@ -581,6 +709,7 @@ function AddProfileForm(props) {
   //const [file, setFile] = useState("/Images/userIcon.png");
 
   return (
+    <>
     <div className="container-form">
       <div className="Submit-button sticky-top">
         <div>
@@ -589,7 +718,7 @@ function AddProfileForm(props) {
           </h2>
         </div>
         <div className="button">
-          <input
+          {/* <input
             type="submit"
             className={
               dataDetailEmployee.length !== 0
@@ -600,7 +729,7 @@ function AddProfileForm(props) {
             onClick={() => {
               setShowDeleteDialog(true);
             }}
-          />
+          /> */}
           <input
             type="submit"
             className="btn btn-secondary ml-3"
@@ -611,7 +740,13 @@ function AddProfileForm(props) {
             type="submit"
             className="btn btn-primary ml-3"
             value={dataDetailEmployee.length !== 0 ? "Sửa" : "Lưu"}
-            onClick={handleSubmit(onHandleSubmit)}
+            onClick={() => {
+              if (checkInputChange()) {
+                setShowCheckDialog(true);
+              } else {
+                setShowDialog(true);
+              }
+            }}
           />
         </div>
       </div>
@@ -2524,6 +2659,28 @@ function AddProfileForm(props) {
       </div>
       <div className="footer"></div>
     </div>
+    <Dialog
+        show={showDialog}
+        title="Thông báo"
+        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
+        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
+        cancel={cancel}
+      />
+      <DialogCheck
+        show={showCheckDialog}
+        title="Thông báo"
+        description={id!== undefined?"Bạn chưa thay đổi thông tin nhân viên":"Bạn chưa nhập thông tin nhân viên" }
+        confirm={null}
+        cancel={cancel}
+      />
+      {/* <Dialog
+        show={showDeleteDialog}
+        title="Thông báo"
+        description={`Bạn chắc chắn muốn xóa thông tin trình độ `}
+        confirm={handleDelete}
+        cancel={cancel}
+      /> */}
+    </>
   );
 }
 

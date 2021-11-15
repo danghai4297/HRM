@@ -7,7 +7,6 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
-import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
 
@@ -17,7 +16,7 @@ const schema = yup.object({
   phuCap: yup.number().typeError("Phụ cấp không được bỏ trống và là số."),
 });
 function AddPositionForm(props) {
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
 
   let { match, history } = props;
   let { id } = match.params;
@@ -96,26 +95,26 @@ function AddPositionForm(props) {
           tenTaiKhoan: decoded.userName,
           thaoTac: `Sửa danh mục chức vụ: ${
             dataDetailDMCV.tenChucVu !== tendm
-              ? `${dataDetailDMCV.tenChucVu} thành`
+              ? `${dataDetailDMCV.tenChucVu} -->`
               : ""
           } ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("sửa danh mục thành công");
+        success("Sửa danh mục chức vụ thành công");
       } else {
         await ProductApi.PostDMCV(data);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm danh mục chức vụ: ${tendm}`,
+          thaoTac: `Thêm danh mục chức vụ mới: ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("Thêm danh mục thành công");
+        success("Thêm danh mục chức vụ thành công");
       }
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 
@@ -128,10 +127,10 @@ function AddPositionForm(props) {
         maNhanVien: decoded.id,
         tenNhanVien: decoded.givenName,
       });
-      success("Xoá danh mục thành công");
+      success("Xoá danh mục chức vụ thành công");
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
 

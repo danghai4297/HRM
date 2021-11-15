@@ -29,7 +29,7 @@ const schema = yup.object({
 function AddLevelForm(props) {
   const { error, warn, info, success } = useToast();
 
-  let { match, history } = props;
+  let { match, history } = props; 
 
   let location = useLocation();
   let query = new URLSearchParams(location.search);

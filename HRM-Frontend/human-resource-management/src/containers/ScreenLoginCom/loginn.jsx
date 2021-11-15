@@ -26,20 +26,23 @@ function LogIn(props) {
   const onHandleSubmit = async (data) => {
     try {
       await LoginApi.PostLoginAccount(data);
-      if (jwt_decode(sessionStorage.getItem("resultObj")).role === "user") {
+      if (
+        jwt_decode(sessionStorage.getItem("resultObj"))
+          .role.split(";")
+          .includes("user")
+      ) {
         history.replace("/home");
       } else if (
-        jwt_decode(sessionStorage.getItem("resultObj")).role === "admin"
+        jwt_decode(sessionStorage.getItem("resultObj"))
+          .role.split(";")
+          .includes("admin")
       ) {
         history.replace("/category");
       }
     } catch (e) {
       error("Nhập sai tài khoản hoặc mật khẩu");
     }
-    const listRole = jwt_decode(sessionStorage.getItem("resultObj")).role.split(
-      ","
-    );
-    console.log(listRole);
+    console.log(jwt_decode(sessionStorage.getItem("resultObj")));
   };
 
   return (
