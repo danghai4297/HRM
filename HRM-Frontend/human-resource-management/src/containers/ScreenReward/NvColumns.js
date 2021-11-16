@@ -3,11 +3,19 @@ import SelectColumnFilter from "../../components/TablePagination/SelectColumnFil
 export const NVCOLUMNS = [
   {
     Header: "Ảnh",
-    accessor: "anh",
+    accessor: (row) => {
+      return row.anh === null ? (
+        <img src="/Images/loginImage.png" width={60} alt="" />
+      ) : (
+        <img src={`https://localhost:5001${row.anh}`} width={60} alt="" />
+      );
+    },
     sticky: "left",
-    minWidth: 100,
+    minWidth: 50,
     Filter: SelectColumnFilter,
     disableFilters: true,
+    // Cell: ({ value }) => <img src={value} width={50} />,
+
     show: true,
   },
   {
