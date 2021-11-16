@@ -20,7 +20,7 @@ import { useToast } from "../Toast/Toast";
 import jwt_decode from "jwt-decode";
 const phoneRex = /([\|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})$\b/;
 const phoneRex1 = /^(([+|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})|)$/;
-const phoneRexlandline= /^((02)+([0-9]{9})|)$/g;
+const phoneRexlandline = /^((02)+([0-9]{9})|)$/g;
 const number = /^\d+$/;
 const tax = /((0)([0-7])([0-9]){8})$/g;
 const cccdRegex = /((0)([0-9]){2}([0-3]){1}([0-9]){8})$/g;
@@ -60,12 +60,12 @@ const schema = yup.object().shape({
     .matches(bhxh, "Bảo hiểm xã hội phải là dãy số và đúng định dạng.")
     .nullable()
     .notRequired(),
-    email: yup
+  email: yup
     .string()
     .matches(email, "Email cá nhân phải đúng định dạng.")
     .nullable()
     .notRequired(),
-    lhkc_email: yup
+  lhkc_email: yup
     .string()
     .matches(email, "Email phải đúng định dạng.")
     .nullable()
@@ -117,7 +117,7 @@ const schema = yup.object().shape({
     .nullable()
     .matches(phoneRex, "Số điện thoại phải là dãy số.")
     .required("Số điện thoại không được bỏ trống"),
- 
+
   lhkc_hoTen: yup
     .string()
     .nullable()
@@ -174,8 +174,14 @@ const schema = yup.object().shape({
   // lsbt_thanNhanNuocNgoai: yup
   //   .string()
   //   .required("Lịch sử bản thân không được bỏ trống."),
-  yt_chieuCao: yup.number().positive("Chiều cao không thể là số âm.").typeError("Chiều cao không được bỏ trống."),
-  yt_canNang: yup.number().positive("Cân nặng không thể là số âm").typeError("Cân nặng không được bỏ trống."),
+  yt_chieuCao: yup
+    .number()
+    .positive("Chiều cao không thể là số âm.")
+    .typeError("Chiều cao không được bỏ trống."),
+  yt_canNang: yup
+    .number()
+    .positive("Cân nặng không thể là số âm")
+    .typeError("Cân nặng không được bỏ trống."),
   lsbt_maNhanVien: yup
     .string()
     .nullable()
@@ -215,7 +221,7 @@ function AddProfileForm(props) {
       setResignation(false);
     }
   };
- 
+
   const [endDate, setEndDate] = useState();
 
   //const [date, setDate] = useState(new Date());
@@ -305,7 +311,6 @@ function AddProfileForm(props) {
     };
     handleId();
   }, []);
- 
 
   const intitalValue = {
     id: id !== undefined ? dataDetailEmployee.id : rsId,
@@ -507,7 +512,6 @@ function AddProfileForm(props) {
     defaultValues: intitalValue,
     resolver: yupResolver(schema),
   });
-
   const [file, setFile] = useState({
     file: null,
     path: "/Images/userIcon.png",
@@ -515,7 +519,7 @@ function AddProfileForm(props) {
   const handleChange = (e) => {
     console.log(e);
     setFile({
-      file: e.file,
+      file: e.fileList.length !== 0 ? e.file : null,
       path:
         e.fileList.length !== 0
           ? URL.createObjectURL(e.file)
@@ -524,7 +528,7 @@ function AddProfileForm(props) {
       //path: URL.createObjectURL(e.target.files[0]),
     });
   };
-  
+
   useEffect(() => {
     if (dataDetailEmployee) {
       reset(intitalValue);
@@ -658,10 +662,15 @@ function AddProfileForm(props) {
       intitalValue.lsbt_thamGiaChinhTri,
       intitalValue.lsbt_thanNhanNuocNgoai,
     ];
-    return JSON.stringify(values) === JSON.stringify(dfValue);
+    //return JSON.stringify(values) === JSON.stringify(dfValue);
+    if (
+      JSON.stringify(values) === JSON.stringify(dfValue) &&
+      file.file === null
+    ) {
+      return true;
+    }
+    return false;
   };
-
-
 
   //get data from form
   const onHandleSubmit = async (data) => {
@@ -710,15 +719,15 @@ function AddProfileForm(props) {
 
   return (
     <>
-    <div className="container-form">
-      <div className="Submit-button sticky-top">
-        <div>
-          <h2 className="">
-            {dataDetailEmployee.length !== 0 ? "Sửa" : "Thêm"} hồ sơ
-          </h2>
-        </div>
-        <div className="button">
-          {/* <input
+      <div className="container-form">
+        <div className="Submit-button sticky-top">
+          <div>
+            <h2 className="">
+              {dataDetailEmployee.length !== 0 ? "Sửa" : "Thêm"} hồ sơ
+            </h2>
+          </div>
+          <div className="button">
+            {/* <input
             type="submit"
             className={
               dataDetailEmployee.length !== 0
@@ -730,51 +739,51 @@ function AddProfileForm(props) {
               setShowDeleteDialog(true);
             }}
           /> */}
-          <input
-            type="submit"
-            className="btn btn-secondary ml-3"
-            value="Huỷ"
-            onClick={history.goBack}
-          />
-          <input
-            type="submit"
-            className="btn btn-primary ml-3"
-            value={dataDetailEmployee.length !== 0 ? "Sửa" : "Lưu"}
-            onClick={() => {
-              if (checkInputChange()) {
-                setShowCheckDialog(true);
-              } else {
-                setShowDialog(true);
-              }
-            }}
-          />
-        </div>
-      </div>
-      <div className="scroll-form">
-        <form
-          action=""
-          class="profile-form"
-          // onSubmit={handleSubmit(onHandleSubmit)}
-        >
-          {/* container import image */}
-          <div className="container-ava">
-            <span>
-              {" "}
-              <img
-                src={
-                  id !== undefined
-                    ? file.file !== null
-                      ? file.path
-                      : dataDetailEmployee.anh == null
-                      ? file.path
-                      : `https://localhost:5001/${dataDetailEmployee.anh}`
-                    : file.path
+            <input
+              type="submit"
+              className="btn btn-secondary ml-3"
+              value="Huỷ"
+              onClick={history.goBack}
+            />
+            <input
+              type="submit"
+              className="btn btn-primary ml-3"
+              value={dataDetailEmployee.length !== 0 ? "Sửa" : "Lưu"}
+              onClick={() => {
+                if (checkInputChange()) {
+                  setShowCheckDialog(true);
+                } else {
+                  setShowDialog(true);
                 }
-                className="icon"
-                alt=""
-              />
-            </span>
-            {/* <Controller
+              }}
+            />
+          </div>
+        </div>
+        <div className="scroll-form">
+          <form
+            action=""
+            class="profile-form"
+            // onSubmit={handleSubmit(onHandleSubmit)}
+          >
+            {/* container import image */}
+            <div className="container-ava">
+              <span>
+                {" "}
+                <img
+                  src={
+                    id !== undefined
+                      ? file.file !== null
+                        ? file.path
+                        : dataDetailEmployee.anh == null
+                        ? file.path
+                        : `https://localhost:5001/${dataDetailEmployee.anh}`
+                      : file.path
+                  }
+                  className="icon"
+                  alt=""
+                />
+              </span>
+              {/* <Controller
               name="anh"
               control={control}
               render={({ field, onChange }) => (
@@ -782,1089 +791,1117 @@ function AddProfileForm(props) {
               )}
             /> */}
 
-            <Upload beforeUpload={() => false} onChange={handleChange}>
-              <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
-            </Upload>
-            {/* <input
+              <Upload beforeUpload={() => false} onChange={handleChange}  maxCount={1} accept=".jpg,.png">
+                <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
+              </Upload>
+              {/* <input
               type="file"
               // {...register2("anh")}
               accept="Images/*"
               class="form-control-file"
               onChange={handleChange}
             ></input> */}
-          </div>
-          {/* Container thông tin cơ bản */}
-          <div className="container-div-form">
-            <h3>Thông tin cơ bản</h3>
-            <h5>Thông tin chung</h5>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label class="col-sm-4 justify-content-start" htmlFor="id">
-                    Mã Nhân Viên
-                  </label>
-                  <input
-                    type="text"
-                    {...register("id")}
-                    id="id"
-                    value={rsId}
-                    className={
-                      !errors.id
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                    //onChange={(e) => setEmCode(e.target.value)}
-                    readOnly
-                  />
-                  <span className="message">{errors.id?.message}</span>
-                </div>
-              </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label class="col-sm-4 justify-content-start" htmlFor="atm">
-                    TK ngân hàng
-                  </label>
-                  <input
-                    type="text"
-                    {...register("atm")}
-                    id="atm"
-                    className={
-                      !errors.atm
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">{errors.atm?.message}</span>
-                </div>
-              </div>
             </div>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline ">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="hoVaTen"
-                  >
-                    Họ và tên
-                  </label>
-                  <input
-                    type="text"
-                    {...register("hoTen")}
-                    id="hoTen"
-                    className={
-                      !errors.hoTen
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">{errors.hoTen?.message}</span>
+            {/* Container thông tin cơ bản */}
+            <div className="container-div-form">
+              <h3>Thông tin cơ bản</h3>
+              <h5>Thông tin chung</h5>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label class="col-sm-4 justify-content-start" htmlFor="id">
+                      Mã Nhân Viên
+                    </label>
+                    <input
+                      type="text"
+                      {...register("id")}
+                      id="id"
+                      value={rsId}
+                      className={
+                        !errors.id
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                      //onChange={(e) => setEmCode(e.target.value)}
+                      readOnly
+                    />
+                    <span className="message">{errors.id?.message}</span>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label class="col-sm-4 justify-content-start" htmlFor="atm">
+                      TK ngân hàng
+                    </label>
+                    <input
+                      type="text"
+                      {...register("atm")}
+                      id="atm"
+                      className={
+                        !errors.atm
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">{errors.atm?.message}</span>
+                  </div>
                 </div>
               </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="nganHang"
-                  >
-                    Ngân Hàng
-                  </label>
-                  <input
-                    type="text"
-                    {...register("nganHang")}
-                    id="nganHang"
-                    className="form-control col-sm-6"
-                  />
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline ">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="hoVaTen"
+                    >
+                      Họ và tên
+                    </label>
+                    <input
+                      type="text"
+                      {...register("hoTen")}
+                      id="hoTen"
+                      className={
+                        !errors.hoTen
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">{errors.hoTen?.message}</span>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="nganHang"
+                    >
+                      Ngân Hàng
+                    </label>
+                    <input
+                      type="text"
+                      {...register("nganHang")}
+                      id="nganHang"
+                      className="form-control col-sm-6"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="gioiTinh"
-                  >
-                    Giới tính
-                  </label>
-                  <select
-                    type="text"
-                    {...register("gioiTinh")}
-                    id="gioiTinh"
-                    className={
-                      !errors.gioiTinh
-                        ? "form-control col-sm-6 custom-select"
-                        : "form-control col-sm-6 border-danger custom-select"
-                    }
-                  >
-                    <option value=""></option>
-                    <option value={true}>Nam</option>
-                    <option value={false}>Nữ</option>
-                  </select>
-                  <span className="message">{errors.gioiTinh?.message}</span>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="gioiTinh"
+                    >
+                      Giới tính
+                    </label>
+                    <select
+                      type="text"
+                      {...register("gioiTinh")}
+                      id="gioiTinh"
+                      className={
+                        !errors.gioiTinh
+                          ? "form-control col-sm-6 custom-select"
+                          : "form-control col-sm-6 border-danger custom-select"
+                      }
+                    >
+                      <option value=""></option>
+                      <option value={true}>Nam</option>
+                      <option value={false}>Nữ</option>
+                    </select>
+                    <span className="message">{errors.gioiTinh?.message}</span>
+                  </div>
                 </div>
-              </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="idDanhMucHonNhan"
-                  >
-                    Tình trạng hôn nhân
-                  </label>
-                  <select
-                    type="text"
-                    {...register("idDanhMucHonNhan")}
-                    id="idDanhMucHonNhan"
-                    className={
-                      !errors.idDanhMucHonNhan
-                        ? "form-control col-sm-6 custom-select"
-                        : "form-control col-sm-6 border-danger custom-select"
-                    }
-                  >
-                    <option value=""></option>
-                    {dataMarrige.map((item, key) => (
-                      <option key={key} value={item.id}>
-                        {item.tenDanhMuc}
-                      </option>
-                    ))}
-                    {/* <option value="1">Độc thân</option>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="idDanhMucHonNhan"
+                    >
+                      Tình trạng hôn nhân
+                    </label>
+                    <select
+                      type="text"
+                      {...register("idDanhMucHonNhan")}
+                      id="idDanhMucHonNhan"
+                      className={
+                        !errors.idDanhMucHonNhan
+                          ? "form-control col-sm-6 custom-select"
+                          : "form-control col-sm-6 border-danger custom-select"
+                      }
+                    >
+                      <option value=""></option>
+                      {dataMarrige.map((item, key) => (
+                        <option key={key} value={item.id}>
+                          {item.tenDanhMuc}
+                        </option>
+                      ))}
+                      {/* <option value="1">Độc thân</option>
                     <option value="2">Đã có gia đình</option>
                     <option value="3">Ly dị</option> */}
-                  </select>
-                  <span className="message">
-                    {errors.idDanhMucHonNhan?.message}
-                  </span>
+                    </select>
+                    <span className="message">
+                      {errors.idDanhMucHonNhan?.message}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="ngaySinh"
-                  >
-                    Ngày sinh
-                  </label>
-                  <Controller
-                    name="ngaySinh"
-                    control={control}
-                    render={({ field, onChange }) => (
-                      <DatePicker
-                        id="ngaySinh"
-                        className={
-                          !errors.ngaySinh
-                            ? "form-control col-sm-6"
-                            : "form-control col-sm-6 border-danger"
-                        }
-                        placeholder="DD/MM/YYYY"
-                        format="DD/MM/YYYY"
-                        value={field.value}
-                        onChange={(event) => {
-                          field.onChange(event);
-                        }}
-                        {...field._d}
-                      />
-                    )}
-                  />
-                  <span className="message">{errors.ngaySinh?.message}</span>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="ngaySinh"
+                    >
+                      Ngày sinh
+                    </label>
+                    <Controller
+                      name="ngaySinh"
+                      control={control}
+                      render={({ field, onChange }) => (
+                        <DatePicker
+                          id="ngaySinh"
+                          className={
+                            !errors.ngaySinh
+                              ? "form-control col-sm-6"
+                              : "form-control col-sm-6 border-danger"
+                          }
+                          placeholder="DD/MM/YYYY"
+                          format="DD/MM/YYYY"
+                          value={field.value}
+                          onChange={(event) => {
+                            field.onChange(event);
+                          }}
+                          {...field._d}
+                        />
+                      )}
+                    />
+                    <span className="message">{errors.ngaySinh?.message}</span>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="noiSinh"
+                    >
+                      Nơi sinh
+                    </label>
+                    <input
+                      type="text"
+                      {...register("noiSinh")}
+                      id="noiSinh"
+                      className={
+                        !errors.noiSinh
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">{errors.noiSinh?.message}</span>
+                  </div>
                 </div>
               </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="noiSinh"
-                  >
-                    Nơi sinh
-                  </label>
-                  <input
-                    type="text"
-                    {...register("noiSinh")}
-                    id="noiSinh"
-                    className={
-                      !errors.noiSinh
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">{errors.noiSinh?.message}</span>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="idDanToc"
+                    >
+                      Dân tộc
+                    </label>
+                    <select
+                      type="text"
+                      {...register("idDanToc")}
+                      id="idDanToc"
+                      className={
+                        !errors.idDanToc
+                          ? "form-control col-sm-6 custom-select"
+                          : "form-control col-sm-6 border-danger custom-select"
+                      }
+                    >
+                      <option value=""></option>
+                      {dataNation.map((item, key) => (
+                        <option key={key} value={item.id}>
+                          {item.tenDanhMuc}
+                        </option>
+                      ))}
+                    </select>
+                    <span className="message">{errors.idDanToc?.message}</span>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="queQuan"
+                    >
+                      Nguyên quán
+                    </label>
+                    <input
+                      type="text"
+                      {...register("queQuan")}
+                      id="queQuan"
+                      className={
+                        !errors.queQuan
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">{errors.queQuan?.message}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="idDanToc"
-                  >
-                    Dân tộc
-                  </label>
-                  <select
-                    type="text"
-                    {...register("idDanToc")}
-                    id="idDanToc"
-                    className={
-                      !errors.idDanToc
-                        ? "form-control col-sm-6 custom-select"
-                        : "form-control col-sm-6 border-danger custom-select"
-                    }
-                  >
-                    <option value=""></option>
-                    {dataNation.map((item, key) => (
-                      <option key={key} value={item.id}>
-                        {item.tenDanhMuc}
-                      </option>
-                    ))}
-                  </select>
-                  <span className="message">{errors.idDanToc?.message}</span>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="idTonGiao"
+                    >
+                      Tôn giáo
+                    </label>
+                    <select
+                      type="text"
+                      {...register("idTonGiao")}
+                      id="idTonGiao"
+                      className={
+                        !errors.idTonGiao
+                          ? "form-control col-sm-6 custom-select"
+                          : "form-control col-sm-6 border-danger custom-select"
+                      }
+                    >
+                      <option value=""></option>
+                      {dataReligion.map((item, key) => (
+                        <option key={key} value={item.id}>
+                          {item.tenDanhMuc}
+                        </option>
+                      ))}
+                    </select>
+                    <span className="message">{errors.idTonGiao?.message}</span>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="thuongTru"
+                    >
+                      HK thường trú
+                    </label>
+                    <input
+                      type="text"
+                      {...register("thuongTru")}
+                      id="thuongTru"
+                      className={
+                        !errors.thuongTru
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">{errors.thuongTru?.message}</span>
+                  </div>
                 </div>
               </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="queQuan"
-                  >
-                    Nguyên quán
-                  </label>
-                  <input
-                    type="text"
-                    {...register("queQuan")}
-                    id="queQuan"
-                    className={
-                      !errors.queQuan
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">{errors.queQuan?.message}</span>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="quocTich"
+                    >
+                      Quốc tịch
+                    </label>
+                    <input
+                      type="text"
+                      {...register("quocTich")}
+                      id="quocTich"
+                      className={
+                        !errors.quocTich
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">{errors.quocTich?.message}</span>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="tamTru"
+                    >
+                      Tạm trú
+                    </label>
+                    <input
+                      type="text"
+                      {...register("tamTru")}
+                      id="tamTru"
+                      className={
+                        !errors.tamTru
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">{errors.tamTru?.message}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="idTonGiao"
-                  >
-                    Tôn giáo
-                  </label>
-                  <select
-                    type="text"
-                    {...register("idTonGiao")}
-                    id="idTonGiao"
-                    className={
-                      !errors.idTonGiao
-                        ? "form-control col-sm-6 custom-select"
-                        : "form-control col-sm-6 border-danger custom-select"
-                    }
-                  >
-                    <option value=""></option>
-                    {dataReligion.map((item, key) => (
-                      <option key={key} value={item.id}>
-                        {item.tenDanhMuc}
-                      </option>
-                    ))}
-                  </select>
-                  <span className="message">{errors.idTonGiao?.message}</span>
-                </div>
-              </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="thuongTru"
-                  >
-                    HK thường trú
-                  </label>
-                  <input
-                    type="text"
-                    {...register("thuongTru")}
-                    id="thuongTru"
-                    className={
-                      !errors.thuongTru
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">{errors.thuongTru?.message}</span>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="quocTich"
-                  >
-                    Quốc tịch
-                  </label>
-                  <input
-                    type="text"
-                    {...register("quocTich")}
-                    id="quocTich"
-                    className={
-                      !errors.quocTich
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">{errors.quocTich?.message}</span>
-                </div>
-              </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="tamTru"
-                  >
-                    Tạm trú
-                  </label>
-                  <input
-                    type="text"
-                    {...register("tamTru")}
-                    id="tamTru"
-                    className={
-                      !errors.tamTru
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">{errors.tamTru?.message}</span>
-                </div>
-              </div>
-            </div>
 
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label class="col-sm-4 justify-content-start" htmlFor="bhyt">
-                    Bảo hiểm y tế
-                  </label>
-                  <input
-                    type="text"
-                    {...register("bhyt")}
-                    id="bhyt"
-                    className={
-                      !errors.bhyt
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">{errors.bhyt?.message}</span>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="bhyt"
+                    >
+                      Bảo hiểm y tế
+                    </label>
+                    <input
+                      type="text"
+                      {...register("bhyt")}
+                      id="bhyt"
+                      className={
+                        !errors.bhyt
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">{errors.bhyt?.message}</span>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="bhxh"
+                    >
+                      Bảo hiểm xã hội
+                    </label>
+                    <input
+                      type="text"
+                      {...register("bhxh")}
+                      id="bhxh"
+                      className={
+                        !errors.bhxh
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">{errors.bhxh?.message}</span>
+                  </div>
                 </div>
               </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label class="col-sm-4 justify-content-start" htmlFor="bhxh">
-                    Bảo hiểm xã hội
-                  </label>
-                  <input
-                    type="text"
-                    {...register("bhxh")}
-                    id="bhxh"
-                    className={
-                      !errors.bhxh
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">{errors.bhxh?.message}</span>
+              <div className="row">
+                <div className="col-6">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="maSoThue"
+                    >
+                      Mã số thuế cá nhân
+                    </label>
+                    <input
+                      type="text"
+                      {...register("maSoThue")}
+                      id="maSoThue"
+                      className={
+                        !errors.maSoThue
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">{errors.maSoThue?.message}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-6">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="maSoThue"
-                  >
-                    Mã số thuế cá nhân
-                  </label>
-                  <input
-                    type="text"
-                    {...register("maSoThue")}
-                    id="maSoThue"
-                    className={
-                      !errors.maSoThue
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">{errors.maSoThue?.message}</span>
+              <h5>CMND/Thẻ căn cước/Hộ chiếu</h5>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="cccd"
+                    >
+                      Số CMND/CCCD
+                    </label>
+                    <input
+                      type="text"
+                      {...register("cccd")}
+                      id="cccd"
+                      className={
+                        !errors.cccd
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">{errors.cccd?.message}</span>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="hoChieu"
+                    >
+                      Số Hộ chiếu
+                    </label>
+                    <input
+                      type="text"
+                      {...register("hoChieu")}
+                      id="hoChieu"
+                      className={
+                        !hoChieu.cccd
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">{errors.hoChieu?.message}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <h5>CMND/Thẻ căn cước/Hộ chiếu</h5>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label class="col-sm-4 justify-content-start" htmlFor="cccd">
-                    Số CMND/CCCD
-                  </label>
-                  <input
-                    type="text"
-                    {...register("cccd")}
-                    id="cccd"
-                    className={
-                      !errors.cccd
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">{errors.cccd?.message}</span>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="ngayCapCCCD"
+                    >
+                      Ngày cấp(CMNN/CCCD)
+                    </label>
+                    <Controller
+                      name="ngayCapCCCD"
+                      control={control}
+                      render={({ field, onChange }) => (
+                        <DatePicker
+                          id="ngayCapCCCD"
+                          className={
+                            !errors.ngayCapCCCD
+                              ? "form-control col-sm-6"
+                              : "form-control col-sm-6 border-danger"
+                          }
+                          placeholder="DD/MM/YYYY"
+                          format="DD/MM/YYYY"
+                          value={field.value}
+                          onChange={(event) => {
+                            field.onChange(event);
+                          }}
+                          {...field._d}
+                        />
+                      )}
+                    />
+                    <span className="message">
+                      {errors.ngayCapCCCD?.message}
+                    </span>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="ngayCapHoChieu"
+                    >
+                      Ngày cấp Hộ chiếu
+                    </label>
+                    <Controller
+                      name="ngayCapHoChieu"
+                      control={control}
+                      render={({ field, onChange }) => (
+                        <DatePicker
+                          id="ngayCapHoChieu"
+                          className={
+                            !errors.ngayCapHoChieu
+                              ? "form-control col-sm-6"
+                              : "form-control col-sm-6 border-danger"
+                          }
+                          placeholder="DD/MM/YYYY"
+                          format="DD/MM/YYYY"
+                          value={field.value}
+                          onChange={(event) => {
+                            field.onChange(event);
+                          }}
+                          {...field._d}
+                        />
+                      )}
+                    />
+                  </div>
                 </div>
               </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="hoChieu"
-                  >
-                    Số Hộ chiếu
-                  </label>
-                  <input
-                    type="text"
-                    {...register("hoChieu")}
-                    id="hoChieu"
-                    className={
-                      !hoChieu.cccd
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">{errors.hoChieu?.message}</span>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="noiCapCCCD"
+                    >
+                      Nơi cấp(CMND/CCCD)
+                    </label>
+                    <input
+                      type="text"
+                      {...register("noiCapCCCD")}
+                      id="noiCapCCCD"
+                      className={
+                        !errors.noiCapCCCD
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">
+                      {errors.noiCapCCCD?.message}
+                    </span>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="NoiCapHoChieu"
+                    >
+                      Nơi cấp hộ chiếu
+                    </label>
+                    <input
+                      type="text"
+                      {...register("NoiCapHoChieu")}
+                      id="NoiCapHoChieu"
+                      className="form-control col-sm-6"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="ngayCapCCCD"
-                  >
-                    Ngày cấp(CMNN/CCCD)
-                  </label>
-                  <Controller
-                    name="ngayCapCCCD"
-                    control={control}
-                    render={({ field, onChange }) => (
-                      <DatePicker
-                        id="ngayCapCCCD"
-                        className={
-                          !errors.ngayCapCCCD
-                            ? "form-control col-sm-6"
-                            : "form-control col-sm-6 border-danger"
-                        }
-                        placeholder="DD/MM/YYYY"
-                        format="DD/MM/YYYY"
-                        value={field.value}
-                        onChange={(event) => {
-                          field.onChange(event);
-                        }}
-                        {...field._d}
-                      />
-                    )}
-                  />
-                  <span className="message">{errors.ngayCapCCCD?.message}</span>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="ngayHetHanCCCD"
+                    >
+                      Ngày hết hạn
+                    </label>
+                    <Controller
+                      name="ngayHetHanCCCD"
+                      control={control}
+                      render={({ field, onChange }) => (
+                        <DatePicker
+                          id="ngayHetHanCCCD"
+                          className={
+                            !errors.ngayHetHanCCCD
+                              ? "form-control col-sm-6"
+                              : "form-control col-sm-6 border-danger"
+                          }
+                          placeholder="DD/MM/YYYY"
+                          format="DD/MM/YYYY"
+                          value={field.value}
+                          onChange={(event) => {
+                            field.onChange(event);
+                          }}
+                          {...field._d}
+                        />
+                      )}
+                    />
+                    <span className="message">
+                      {errors.ngayHetHanCCCD?.message}
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="ngayCapHoChieu"
-                  >
-                    Ngày cấp Hộ chiếu
-                  </label>
-                  <Controller
-                    name="ngayCapHoChieu"
-                    control={control}
-                    render={({ field, onChange }) => (
-                      <DatePicker
-                        id="ngayCapHoChieu"
-                        className={
-                          !errors.ngayCapHoChieu
-                            ? "form-control col-sm-6"
-                            : "form-control col-sm-6 border-danger"
-                        }
-                        placeholder="DD/MM/YYYY"
-                        format="DD/MM/YYYY"
-                        value={field.value}
-                        onChange={(event) => {
-                          field.onChange(event);
-                        }}
-                        {...field._d}
-                      />
-                    )}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="noiCapCCCD"
-                  >
-                    Nơi cấp(CMND/CCCD)
-                  </label>
-                  <input
-                    type="text"
-                    {...register("noiCapCCCD")}
-                    id="noiCapCCCD"
-                    className={
-                      !errors.noiCapCCCD
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">{errors.noiCapCCCD?.message}</span>
-                </div>
-              </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="NoiCapHoChieu"
-                  >
-                    Nơi cấp hộ chiếu
-                  </label>
-                  <input
-                    type="text"
-                    {...register("NoiCapHoChieu")}
-                    id="NoiCapHoChieu"
-                    className="form-control col-sm-6"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="ngayHetHanCCCD"
-                  >
-                    Ngày hết hạn
-                  </label>
-                  <Controller
-                    name="ngayHetHanCCCD"
-                    control={control}
-                    render={({ field, onChange }) => (
-                      <DatePicker
-                        id="ngayHetHanCCCD"
-                        className={
-                          !errors.ngayHetHanCCCD
-                            ? "form-control col-sm-6"
-                            : "form-control col-sm-6 border-danger"
-                        }
-                        placeholder="DD/MM/YYYY"
-                        format="DD/MM/YYYY"
-                        value={field.value}
-                        onChange={(event) => {
-                          field.onChange(event);
-                        }}
-                        {...field._d}
-                      />
-                    )}
-                  />
-                  <span className="message">
-                    {errors.ngayHetHanCCCD?.message}
-                  </span>
-                </div>
-              </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="ngayHetHanHoChieu"
-                  >
-                    Ngày hết hạn hộ chiếu
-                  </label>
-                  <Controller
-                    name="ngayHetHanHoChieu"
-                    control={control}
-                    render={({ field, onChange }) => (
-                      <DatePicker
-                        id="ngayHetHanHoChieu"
-                        className={
-                          !errors.ngayHetHanHoChieu
-                            ? "form-control col-sm-6"
-                            : "form-control col-sm-6 border-danger"
-                        }
-                        placeholder="DD/MM/YYYY"
-                        format="DD/MM/YYYY"
-                        value={field.value}
-                        onChange={(event) => {
-                          field.onChange(event);
-                        }}
-                        {...field._d}
-                      />
-                    )}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* Container Thông tin liên hệ */}
-          <div className="container-div-form">
-            <h3>Thông tin liên hệ</h3>
-            <h5>Số điện thoại/Email/Khác</h5>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="diDong"
-                  >
-                    ĐT di động
-                  </label>
-                  <input
-                    type="text"
-                    {...register("diDong")}
-                    id="diDong"
-                    className={
-                      !errors.diDong
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">{errors.diDong?.message}</span>
-                </div>
-              </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label class="col-sm-4 justify-content-start" htmlFor="email">
-                    Email cá nhân
-                  </label>
-                  <input
-                    type="text"
-                    {...register("email")}
-                    id="email"
-                    className={
-                      !errors.email
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                   <span className="message">{errors.email?.message}</span>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="ngayHetHanHoChieu"
+                    >
+                      Ngày hết hạn hộ chiếu
+                    </label>
+                    <Controller
+                      name="ngayHetHanHoChieu"
+                      control={control}
+                      render={({ field, onChange }) => (
+                        <DatePicker
+                          id="ngayHetHanHoChieu"
+                          className={
+                            !errors.ngayHetHanHoChieu
+                              ? "form-control col-sm-6"
+                              : "form-control col-sm-6 border-danger"
+                          }
+                          placeholder="DD/MM/YYYY"
+                          format="DD/MM/YYYY"
+                          value={field.value}
+                          onChange={(event) => {
+                            field.onChange(event);
+                          }}
+                          {...field._d}
+                        />
+                      )}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="dienThoaiKhac"
-                  >
-                    ĐT khác
-                  </label>
-                  <input
-                    type="text"
-                    {...register("dienThoaiKhac")}
-                    id="dienThoaiKhac"
-                    className={
-                      !errors.dienThoaiKhac
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">
-                    {errors.dienThoaiKhac?.message}
-                  </span>
+            {/* Container Thông tin liên hệ */}
+            <div className="container-div-form">
+              <h3>Thông tin liên hệ</h3>
+              <h5>Số điện thoại/Email/Khác</h5>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="diDong"
+                    >
+                      ĐT di động
+                    </label>
+                    <input
+                      type="text"
+                      {...register("diDong")}
+                      id="diDong"
+                      className={
+                        !errors.diDong
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">{errors.diDong?.message}</span>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="email"
+                    >
+                      Email cá nhân
+                    </label>
+                    <input
+                      type="text"
+                      {...register("email")}
+                      id="email"
+                      className={
+                        !errors.email
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">{errors.email?.message}</span>
+                  </div>
                 </div>
               </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="facebook"
-                  >
-                    Facebook
-                  </label>
-                  <input
-                    type="text"
-                    {...register("facebook")}
-                    id="facebook"
-                    className="form-control col-sm-6"
-                  />
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="dienThoaiKhac"
+                    >
+                      ĐT khác
+                    </label>
+                    <input
+                      type="text"
+                      {...register("dienThoaiKhac")}
+                      id="dienThoaiKhac"
+                      className={
+                        !errors.dienThoaiKhac
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">
+                      {errors.dienThoaiKhac?.message}
+                    </span>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="facebook"
+                    >
+                      Facebook
+                    </label>
+                    <input
+                      type="text"
+                      {...register("facebook")}
+                      id="facebook"
+                      className="form-control col-sm-6"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="dienThoai"
-                  >
-                    ĐT nhà riêng
-                  </label>
-                  <input
-                    type="text"
-                    {...register("dienThoai")}
-                    id="dienThoai"
-                    className={
-                      !errors.dienThoai
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">{errors.dienThoai?.message}</span>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="dienThoai"
+                    >
+                      ĐT nhà riêng
+                    </label>
+                    <input
+                      type="text"
+                      {...register("dienThoai")}
+                      id="dienThoai"
+                      className={
+                        !errors.dienThoai
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">{errors.dienThoai?.message}</span>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="skype"
+                    >
+                      Skype
+                    </label>
+                    <input
+                      type="text"
+                      {...register("skype")}
+                      id="skype"
+                      className="form-control col-sm-6"
+                    />
+                  </div>
                 </div>
               </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label class="col-sm-4 justify-content-start" htmlFor="skype">
-                    Skype
-                  </label>
-                  <input
-                    type="text"
-                    {...register("skype")}
-                    id="skype"
-                    className="form-control col-sm-6"
-                  />
-                </div>
-              </div>
-            </div>
 
-            <h5>Liên hệ khẩn cấp</h5>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="lhkc_hoTen"
-                  >
-                    Họ và tên
-                  </label>
-                  <input
-                    type="text"
-                    {...register("lhkc_hoTen")}
-                    id="lhkc_hoTen"
-                    className={
-                      !errors.lhkc_hoTen
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">{errors.lhkc_hoTen?.message}</span>
+              <h5>Liên hệ khẩn cấp</h5>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="lhkc_hoTen"
+                    >
+                      Họ và tên
+                    </label>
+                    <input
+                      type="text"
+                      {...register("lhkc_hoTen")}
+                      id="lhkc_hoTen"
+                      className={
+                        !errors.lhkc_hoTen
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">
+                      {errors.lhkc_hoTen?.message}
+                    </span>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="lhkc_email"
+                    >
+                      Email
+                    </label>
+                    <input
+                      type="text"
+                      {...register("lhkc_email")}
+                      id="lhkc_email"
+                      className={
+                        !errors.lhkc_email
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">
+                      {errors.lhkc_email?.message}
+                    </span>
+                  </div>
                 </div>
               </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="lhkc_email"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="text"
-                    {...register("lhkc_email")}
-                    id="lhkc_email"
-                    className={
-                      !errors.lhkc_email
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                <span className="message">{errors.lhkc_email?.message}</span>
-
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="lhkc_quanHe"
+                    >
+                      Quan hệ
+                    </label>
+                    <input
+                      type="text"
+                      {...register("lhkc_quanHe")}
+                      id="lhkc_quanHe"
+                      className={
+                        !errors.lhkc_quanHe
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">
+                      {errors.lhkc_quanHe?.message}
+                    </span>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="lhkc_diaChi"
+                    >
+                      Địa chỉ
+                    </label>
+                    <input
+                      type="text"
+                      {...register("lhkc_diaChi")}
+                      id="lhkc_diaChi"
+                      className={
+                        !errors.lhkc_diaChi
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">
+                      {errors.lhkc_diaChi?.message}
+                    </span>
+                  </div>
                 </div>
               </div>
+              <div className="row">
+                <div className="col-6">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="lhkc_dienThoai"
+                    >
+                      ĐT di động
+                    </label>
+                    <input
+                      type="text"
+                      {...register("lhkc_dienThoai")}
+                      id="lhkc_dienThoai"
+                      className={
+                        !errors.lhkc_dienThoai
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">
+                      {errors.lhkc_dienThoai?.message}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <input
+                style={{ display: "none" }}
+                type="text"
+                {...register("lhkc_maNhanVien")}
+                value={rsId}
+              />
             </div>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="lhkc_quanHe"
-                  >
-                    Quan hệ
-                  </label>
-                  <input
-                    type="text"
-                    {...register("lhkc_quanHe")}
-                    id="lhkc_quanHe"
-                    className={
-                      !errors.lhkc_quanHe
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">{errors.lhkc_quanHe?.message}</span>
+            {/* Container thông tin công việc*/}
+            <div className="container-div-form">
+              <h3>Thông tin công việc</h3>
+              <h5>Thông tin nhân viên</h5>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="ngheNghiep"
+                    >
+                      Nghề nghiệp
+                    </label>
+                    <input
+                      type="text"
+                      {...register("ngheNghiep")}
+                      id="ngheNghiep"
+                      className={
+                        !errors.ngheNghiep
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">
+                      {errors.ngheNghiep?.message}
+                    </span>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="congViecChinh"
+                    >
+                      Công việc chính
+                    </label>
+                    <input
+                      type="text"
+                      {...register("congViecChinh")}
+                      id="congViecChinh"
+                      className={
+                        !errors.congViecChinh
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">
+                      {errors.congViecChinh?.message}
+                    </span>
+                  </div>
                 </div>
               </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="lhkc_diaChi"
-                  >
-                    Địa chỉ
-                  </label>
-                  <input
-                    type="text"
-                    {...register("lhkc_diaChi")}
-                    id="lhkc_diaChi"
-                    className={
-                      !errors.lhkc_diaChi
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">{errors.lhkc_diaChi?.message}</span>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="ngayThuViec"
+                    >
+                      Ngày thử việc
+                    </label>
+                    <Controller
+                      name="ngayThuViec"
+                      control={control}
+                      render={({ field, onChange }) => (
+                        <DatePicker
+                          id="ngayThuViec"
+                          className={
+                            !errors.ngayThuViec
+                              ? "form-control col-sm-6"
+                              : "form-control col-sm-6 border-danger"
+                          }
+                          placeholder="DD/MM/YYYY"
+                          format="DD/MM/YYYY"
+                          value={field.value}
+                          onChange={(event) => {
+                            field.onChange(event);
+                          }}
+                          {...field._d}
+                        />
+                      )}
+                    />
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="ngayChinhThuc"
+                    >
+                      Ngày chính thức
+                    </label>
+                    <Controller
+                      name="ngayChinhThuc"
+                      control={control}
+                      render={({ field, onChange }) => (
+                        <DatePicker
+                          id="ngayChinhThuc"
+                          className={
+                            !errors.ngayChinhThuc
+                              ? "form-control col-sm-6"
+                              : "form-control col-sm-6 border-danger"
+                          }
+                          placeholder="DD/MM/YYYY"
+                          format="DD/MM/YYYY"
+                          value={field.value}
+                          onChange={(event) => {
+                            field.onChange(event);
+                          }}
+                          {...field._d}
+                        />
+                      )}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-6">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="lhkc_dienThoai"
-                  >
-                    ĐT di động
-                  </label>
-                  <input
-                    type="text"
-                    {...register("lhkc_dienThoai")}
-                    id="lhkc_dienThoai"
-                    className={
-                      !errors.lhkc_dienThoai
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">
-                    {errors.lhkc_dienThoai?.message}
-                  </span>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="ngayTuyenDung"
+                    >
+                      Ngày tuyển dụng
+                    </label>
+                    <Controller
+                      name="ngayTuyenDung"
+                      control={control}
+                      render={({ field, onChange }) => (
+                        <DatePicker
+                          id="ngayTuyenDung"
+                          className={
+                            !errors.ngayTuyenDung
+                              ? "form-control col-sm-6"
+                              : "form-control col-sm-6 border-danger"
+                          }
+                          placeholder="DD/MM/YYYY"
+                          format="DD/MM/YYYY"
+                          value={field.value}
+                          onChange={(event) => {
+                            field.onChange(event);
+                          }}
+                          {...field._d}
+                        />
+                      )}
+                    />
+                    <span className="message">
+                      {errors.ngayTuyenDung?.message}
+                    </span>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="ngayVaoBan"
+                    >
+                      Ngày vào ban
+                    </label>
+                    <Controller
+                      name="ngayVaoBan"
+                      control={control}
+                      render={({ field, onChange }) => (
+                        <DatePicker
+                          id="ngayTuyenDung"
+                          className={
+                            !errors.ngayTuyenDung
+                              ? "form-control col-sm-6"
+                              : "form-control col-sm-6 border-danger"
+                          }
+                          placeholder="DD/MM/YYYY"
+                          format="DD/MM/YYYY"
+                          value={field.value}
+                          onChange={(event) => {
+                            field.onChange(event);
+                          }}
+                          {...field._d}
+                        />
+                      )}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-            <input
-              style={{ display: "none" }}
-              type="text"
-              {...register("lhkc_maNhanVien")}
-              value={rsId}
-            />
-          </div>
-          {/* Container thông tin công việc*/}
-          <div className="container-div-form">
-            <h3>Thông tin công việc</h3>
-            <h5>Thông tin nhân viên</h5>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="ngheNghiep"
-                  >
-                    Nghề nghiệp
-                  </label>
-                  <input
-                    type="text"
-                    {...register("ngheNghiep")}
-                    id="ngheNghiep"
-                    className={
-                      !errors.ngheNghiep
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">{errors.ngheNghiep?.message}</span>
+              <div className="row">
+                <div className="col-6">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="coQuanTuyenDung"
+                    >
+                      Cơ quan tuyển dụng
+                    </label>
+                    <input
+                      type="text"
+                      {...register("coQuanTuyenDung")}
+                      id="coQuanTuyenDung"
+                      className={
+                        !errors.coQuanTuyenDung
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">
+                      {errors.coQuanTuyenDung?.message}
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="congViecChinh"
-                  >
-                    Công việc chính
-                  </label>
-                  <input
-                    type="text"
-                    {...register("congViecChinh")}
-                    id="congViecChinh"
-                    className={
-                      !errors.congViecChinh
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">
-                    {errors.congViecChinh?.message}
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="ngayThuViec"
-                  >
-                    Ngày thử việc
-                  </label>
-                  <Controller
-                    name="ngayThuViec"
-                    control={control}
-                    render={({ field, onChange }) => (
-                      <DatePicker
-                        id="ngayThuViec"
-                        className={
-                          !errors.ngayThuViec
-                            ? "form-control col-sm-6"
-                            : "form-control col-sm-6 border-danger"
-                        }
-                        placeholder="DD/MM/YYYY"
-                        format="DD/MM/YYYY"
-                        value={field.value}
-                        onChange={(event) => {
-                          field.onChange(event);
-                        }}
-                        {...field._d}
-                      />
-                    )}
-                  />
-                </div>
-              </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="ngayChinhThuc"
-                  >
-                    Ngày chính thức
-                  </label>
-                  <Controller
-                    name="ngayChinhThuc"
-                    control={control}
-                    render={({ field, onChange }) => (
-                      <DatePicker
-                        id="ngayChinhThuc"
-                        className={
-                          !errors.ngayChinhThuc
-                            ? "form-control col-sm-6"
-                            : "form-control col-sm-6 border-danger"
-                        }
-                        placeholder="DD/MM/YYYY"
-                        format="DD/MM/YYYY"
-                        value={field.value}
-                        onChange={(event) => {
-                          field.onChange(event);
-                        }}
-                        {...field._d}
-                      />
-                    )}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="ngayTuyenDung"
-                  >
-                    Ngày tuyển dụng
-                  </label>
-                  <Controller
-                    name="ngayTuyenDung"
-                    control={control}
-                    render={({ field, onChange }) => (
-                      <DatePicker
-                        id="ngayTuyenDung"
-                        className={
-                          !errors.ngayTuyenDung
-                            ? "form-control col-sm-6"
-                            : "form-control col-sm-6 border-danger"
-                        }
-                        placeholder="DD/MM/YYYY"
-                        format="DD/MM/YYYY"
-                        value={field.value}
-                        onChange={(event) => {
-                          field.onChange(event);
-                        }}
-                        {...field._d}
-                      />
-                    )}
-                  />
-                  <span className="message">
-                    {errors.ngayTuyenDung?.message}
-                  </span>
-                </div>
-              </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="ngayVaoBan"
-                  >
-                    Ngày vào ban
-                  </label>
-                  <Controller
-                    name="ngayVaoBan"
-                    control={control}
-                    render={({ field, onChange }) => (
-                      <DatePicker
-                        id="ngayTuyenDung"
-                        className={
-                          !errors.ngayTuyenDung
-                            ? "form-control col-sm-6"
-                            : "form-control col-sm-6 border-danger"
-                        }
-                        placeholder="DD/MM/YYYY"
-                        format="DD/MM/YYYY"
-                        value={field.value}
-                        onChange={(event) => {
-                          field.onChange(event);
-                        }}
-                        {...field._d}
-                      />
-                    )}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-6">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="coQuanTuyenDung"
-                  >
-                    Cơ quan tuyển dụng
-                  </label>
-                  <input
-                    type="text"
-                    {...register("coQuanTuyenDung")}
-                    id="coQuanTuyenDung"
-                    className={
-                      !errors.coQuanTuyenDung
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">
-                    {errors.coQuanTuyenDung?.message}
-                  </span>
-                </div>
-              </div>
-              {/* <div className="col">
+                {/* <div className="col">
               <div className="form-group form-inline">
                 <label
                   class="col-sm-4 justify-content-start"
@@ -1885,32 +1922,32 @@ function AddProfileForm(props) {
                 <span className="message">{errors.phongBan?.message}</span>
               </div>
             </div> */}
-            </div>
-            <div className="row">
-              <div className="col-6">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="chucVuHienTai"
-                  >
-                    Chức vụ hiện tại
-                  </label>
-                  <input
-                    type="text"
-                    {...register("chucVuHienTai")}
-                    id="chucVuHienTai"
-                    className={
-                      !errors.chucVuHienTai
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">
-                    {errors.chucVuHienTai?.message}
-                  </span>
-                </div>
               </div>
-              {/* <div className="col">
+              <div className="row">
+                <div className="col-6">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="chucVuHienTai"
+                    >
+                      Chức vụ hiện tại
+                    </label>
+                    <input
+                      type="text"
+                      {...register("chucVuHienTai")}
+                      id="chucVuHienTai"
+                      className={
+                        !errors.chucVuHienTai
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">
+                      {errors.chucVuHienTai?.message}
+                    </span>
+                  </div>
+                </div>
+                {/* <div className="col">
               <div class="form-group form-inline">
                 <label class="col-sm-4 justify-content-start" htmlFor="to">
                   Tổ
@@ -1923,753 +1960,765 @@ function AddProfileForm(props) {
                 ></select>
               </div>
             </div> */}
-            </div>
-            <div className="row">
-              <div className="col-6">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="trangThaiLaoDong"
-                  >
-                    Trạng thái lao động
-                  </label>
-                  <select
-                    type="text"
-                    {...register("trangThaiLaoDong")}
-                    id="trangThaiLaoDong"
-                    className={
-                      !errors.trangThaiLaoDong
-                        ? "form-control col-sm-6 custom-select"
-                        : "form-control col-sm-6 border-danger custom-select"
-                    }
-                    onChange={(e) => {
-                      handleResignation(e);
-                    }}
-                  >
-                    <option value=""></option>
-                    <option value={true}>Đang làm việc</option>
-                    <option value={false}>Đã nghỉ việc</option>
-                  </select>
-                  <span className="message">
-                    {errors.trangThaiLaoDong?.message}
-                  </span>
+              </div>
+              <div className="row">
+                <div className="col-6">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="trangThaiLaoDong"
+                    >
+                      Trạng thái lao động
+                    </label>
+                    <select
+                      type="text"
+                      {...register("trangThaiLaoDong")}
+                      id="trangThaiLaoDong"
+                      className={
+                        !errors.trangThaiLaoDong
+                          ? "form-control col-sm-6 custom-select"
+                          : "form-control col-sm-6 border-danger custom-select"
+                      }
+                      onChange={(e) => {
+                        handleResignation(e);
+                      }}
+                    >
+                      <option value=""></option>
+                      <option value={true}>Đang làm việc</option>
+                      <option value={false}>Đã nghỉ việc</option>
+                    </select>
+                    <span className="message">
+                      {errors.trangThaiLaoDong?.message}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-6">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="tinhChatLaoDong"
+                    >
+                      Tính chất lao động
+                    </label>
+                    <select
+                      type="text"
+                      {...register("tinhChatLaoDong")}
+                      id="tinhChatLaoDong"
+                      className={
+                        !errors.tinhChatLaoDong
+                          ? "form-control col-sm-6 custom-select"
+                          : "form-control col-sm-6 border-danger custom-select"
+                      }
+                    >
+                      <option value=""></option>
+                      {dataLabor.map((item, key) => (
+                        <option key={key} value={item.id}>
+                          {item.tenLaoDong}
+                        </option>
+                      ))}
+                    </select>
+                    <span className="message">
+                      {errors.tinhChatLaoDong?.message}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-6">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="lyDoNghiViec"
+                    >
+                      Lý do nghỉ
+                    </label>
+                    <input
+                      type="text"
+                      {...register("lyDoNghiViec")}
+                      id="lyDoNghiViec"
+                      className="form-control col-sm-6"
+                      disabled={!resignation}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-6">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="ngayNghiViec"
+                    >
+                      Ngày nghỉ việc
+                    </label>
+                    <input
+                      type="text"
+                      {...register("ngayNghiViec")}
+                      id="ngayNghiViec"
+                      className="form-control col-sm-6"
+                      placeholder="DD/MM/YYYY"
+                      disabled={!resignation}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="row">
-              <div className="col-6">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="tinhChatLaoDong"
-                  >
-                    Tính chất lao động
-                  </label>
-                  <select
-                    type="text"
-                    {...register("tinhChatLaoDong")}
-                    id="tinhChatLaoDong"
-                    className={
-                      !errors.tinhChatLaoDong
-                        ? "form-control col-sm-6 custom-select"
-                        : "form-control col-sm-6 border-danger custom-select"
-                    }
-                  >
-                    <option value=""></option>
-                    {dataLabor.map((item, key) => (
-                      <option key={key} value={item.id}>
-                        {item.tenLaoDong}
-                      </option>
-                    ))}
-                  </select>
-                  <span className="message">
-                    {errors.tinhChatLaoDong?.message}
-                  </span>
+            {/* Container thông tin chính trị quân sự y tế */}
+            <div className="container-div-form2">
+              <h3>Thông tin chính trị, quân sự, y tế</h3>
+              <h5>Thông tin chính trị</h5>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="idNgachCongChuc"
+                    >
+                      Ngạch công chức
+                    </label>
+                    <select
+                      type="text"
+                      {...register("idNgachCongChuc")}
+                      id="idNgachCongChuc"
+                      className={
+                        !errors.idNgachCongChuc
+                          ? "form-control col-sm-6 custom-select"
+                          : "form-control col-sm-6 border-danger custom-select"
+                      }
+                    >
+                      <option value=""></option>
+                      {dataCRS.map((item, key) => (
+                        <option key={key} value={item.id}>
+                          {item.tenNgach}
+                        </option>
+                      ))}
+                    </select>
+                    <span className="message">
+                      {errors.idNgachCongChuc?.message}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-6">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="lyDoNghiViec"
-                  >
-                    Lý do nghỉ
-                  </label>
-                  <input
-                    type="text"
-                    {...register("lyDoNghiViec")}
-                    id="lyDoNghiViec"
-                    className="form-control col-sm-6"
-                    disabled={!resignation}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-6">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="ngayNghiViec"
-                  >
-                    Ngày nghỉ việc
-                  </label>
-                  <input
-                    type="text"
-                    {...register("ngayNghiViec")}
-                    id="ngayNghiViec"
-                    className="form-control col-sm-6"
-                    placeholder="DD/MM/YYYY"
-                    disabled={!resignation}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* Container thông tin chính trị quân sự y tế */}
-          <div className="container-div-form2">
-            <h3>Thông tin chính trị, quân sự, y tế</h3>
-            <h5>Thông tin chính trị</h5>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="idNgachCongChuc"
-                  >
-                    Ngạch công chức
-                  </label>
-                  <select
-                    type="text"
-                    {...register("idNgachCongChuc")}
-                    id="idNgachCongChuc"
-                    className={
-                      !errors.idNgachCongChuc
-                        ? "form-control col-sm-6 custom-select"
-                        : "form-control col-sm-6 border-danger custom-select"
-                    }
-                  >
-                    <option value=""></option>
-                    {dataCRS.map((item, key) => (
-                      <option key={key} value={item.id}>
-                        {item.tenNgach}
-                      </option>
-                    ))}
-                  </select>
-                  <span className="message">
-                    {errors.idNgachCongChuc?.message}
-                  </span>
-                </div>
-              </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="ngayVaoDoan"
-                  >
-                    Ngày vào Đoàn
-                  </label>
-                  {/* <input
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="ngayVaoDoan"
+                    >
+                      Ngày vào Đoàn
+                    </label>
+                    {/* <input
                     type="text"
                     {...register("ngayVaoDoan")}
                     id="ngayVaoDoan"
                     className="form-control col-sm-6"
                   /> */}
-                  <Controller
-                    name="ngayVaoDoan"
-                    control={control}
-                    render={({ field, onChange }) => (
-                      <DatePicker
-                        id="ngayVaoDoan"
-                        className={
-                          !errors.ngayVaoDoan
-                            ? "form-control col-sm-6"
-                            : "form-control col-sm-6 border-danger"
-                        }
-                        placeholder="DD/MM/YYYY"
-                        format="DD/MM/YYYY"
-                        value={field.value}
-                        onChange={(event) => {
-                          field.onChange(event);
-                        }}
-                        {...field._d}
-                      />
-                    )}
-                  />
+                    <Controller
+                      name="ngayVaoDoan"
+                      control={control}
+                      render={({ field, onChange }) => (
+                        <DatePicker
+                          id="ngayVaoDoan"
+                          className={
+                            !errors.ngayVaoDoan
+                              ? "form-control col-sm-6"
+                              : "form-control col-sm-6 border-danger"
+                          }
+                          placeholder="DD/MM/YYYY"
+                          format="DD/MM/YYYY"
+                          value={field.value}
+                          onChange={(event) => {
+                            field.onChange(event);
+                          }}
+                          {...field._d}
+                        />
+                      )}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="ngachCongChucNoiDung"
-                  >
-                    Ngạch công chức nội dung
-                  </label>
-                  <input
-                    type="text"
-                    {...register("ngachCongChucNoiDung")}
-                    id="ngachCongChucNoiDung"
-                    className="form-control col-sm-6"
-                  />
+              <div className="row">
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="ngachCongChucNoiDung"
+                    >
+                      Ngạch công chức nội dung
+                    </label>
+                    <input
+                      type="text"
+                      {...register("ngachCongChucNoiDung")}
+                      id="ngachCongChucNoiDung"
+                      className="form-control col-sm-6"
+                    />
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="NoiThamGia"
+                    >
+                      Nơi tham gia
+                    </label>
+                    <input
+                      type="text"
+                      {...register("NoiThamGia")}
+                      id="NoiThamGia"
+                      className="form-control col-sm-6"
+                    />
+                  </div>
                 </div>
               </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="NoiThamGia"
-                  >
-                    Nơi tham gia
-                  </label>
-                  <input
-                    type="text"
-                    {...register("NoiThamGia")}
-                    id="NoiThamGia"
-                    className="form-control col-sm-6"
-                  />
+              <div className="row">
+                <div className="col">
+                  <div class="form-check mb-3 form-inline">
+                    <input
+                      type="checkbox"
+                      {...register("vaoDang")}
+                      id="vaoDang"
+                      className="form-check-input"
+                      onClick={handleClickParty}
+                      checked={checkedParty}
+                    />
+                    <label
+                      className="form-check-label col-sm-4 justify-content-start "
+                      htmlFor="vaoDang"
+                    >
+                      Đã vào Đảng
+                    </label>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                <div class="form-check mb-3 form-inline">
-                  <input
-                    type="checkbox"
-                    {...register("vaoDang")}
-                    id="vaoDang"
-                    className="form-check-input"
-                    onClick={handleClickParty}
-                    checked={checkedParty}
-                  />
-                  <label
-                    className="form-check-label col-sm-4 justify-content-start "
-                    htmlFor="vaoDang"
-                  >
-                    Đã vào Đảng
-                  </label>
+              <div className="row">
+                <div className="col-6">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="ngayVaoDang"
+                    >
+                      Ngày vào Đảng
+                    </label>
+                    <Controller
+                      name="ngayVaoDang"
+                      control={control}
+                      render={({ field, onChange }) => (
+                        <DatePicker
+                          id="ngayVaoDang"
+                          className={
+                            !errors.ngayVaoDang
+                              ? "form-control col-sm-6"
+                              : "form-control col-sm-6 border-danger"
+                          }
+                          placeholder="DD/MM/YYYY"
+                          format="DD/MM/YYYY"
+                          disabled={!checkedParty}
+                          value={field.value}
+                          onChange={(event) => {
+                            field.onChange(event);
+                          }}
+                          {...field._d}
+                        />
+                      )}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-6">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="ngayVaoDang"
-                  >
-                    Ngày vào Đảng
-                  </label>
-                  <Controller
-                    name="ngayVaoDang"
-                    control={control}
-                    render={({ field, onChange }) => (
-                      <DatePicker
-                        id="ngayVaoDang"
-                        className={
-                          !errors.ngayVaoDang
-                            ? "form-control col-sm-6"
-                            : "form-control col-sm-6 border-danger"
-                        }
-                        placeholder="DD/MM/YYYY"
-                        format="DD/MM/YYYY"
-                        disabled={!checkedParty}
-                        value={field.value}
-                        onChange={(event) => {
-                          field.onChange(event);
-                        }}
-                        {...field._d}
-                      />
-                    )}
-                  />
-                </div>
-              </div>
-            </div>
 
-            <div className="row">
-              <div className="col-6">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="ngayVaoDangChinhThuc"
-                  >
-                    Ngày chính thức
-                  </label>
-                  <Controller
-                    name="ngayVaoDangChinhThuc"
-                    control={control}
-                    render={({ field, onChange }) => (
-                      <DatePicker
-                        id="ngayVaoDangChinhThuc"
-                        className={
-                          !errors.ngayVaoDangChinhThuc
-                            ? "form-control col-sm-6"
-                            : "form-control col-sm-6 border-danger"
-                        }
-                        placeholder="DD/MM/YYYY"
-                        format="DD/MM/YYYY"
-                        disabled={!checkedParty}
-                        value={field.value}
-                        onChange={(event) => {
-                          field.onChange(event);
-                        }}
-                        {...field._d}
-                      />
-                    )}
-                  />
+              <div className="row">
+                <div className="col-6">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="ngayVaoDangChinhThuc"
+                    >
+                      Ngày chính thức
+                    </label>
+                    <Controller
+                      name="ngayVaoDangChinhThuc"
+                      control={control}
+                      render={({ field, onChange }) => (
+                        <DatePicker
+                          id="ngayVaoDangChinhThuc"
+                          className={
+                            !errors.ngayVaoDangChinhThuc
+                              ? "form-control col-sm-6"
+                              : "form-control col-sm-6 border-danger"
+                          }
+                          placeholder="DD/MM/YYYY"
+                          format="DD/MM/YYYY"
+                          disabled={!checkedParty}
+                          value={field.value}
+                          onChange={(event) => {
+                            field.onChange(event);
+                          }}
+                          {...field._d}
+                        />
+                      )}
+                    />
+                  </div>
+                </div>
+              </div>
+              <h5>Thông tin quân sự</h5>
+              <div className="row">
+                <div className="col">
+                  <div class="form-check mb-2 form-inline">
+                    <input
+                      type="checkbox"
+                      {...register("quanNhan")}
+                      id="quanNhan"
+                      className="form-check-input"
+                      onClick={handleClick}
+                      checked={checkedSoldier}
+                    />
+                    <label
+                      className="form-check-label col-sm-4 justify-content-start "
+                      htmlFor="quanNhan"
+                    >
+                      Là quân nhân
+                    </label>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-check form-inline">
+                    <input
+                      type="checkbox"
+                      {...register("laThuongBinh")}
+                      id="laThuongBinh"
+                      className="form-check-input"
+                      onClick={handleClickVeteransy}
+                      checked={veterans}
+                    />
+                    <label
+                      className="form-check-label col-sm-4 justify-content-start"
+                      htmlFor="laThuongBinh"
+                    >
+                      Là thương binh
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="ngayNhapNgu"
+                    >
+                      Ngày nhập ngũ
+                    </label>
+                    <Controller
+                      name="ngayNhapNgu"
+                      control={control}
+                      render={({ field, onChange }) => (
+                        <DatePicker
+                          id="ngayNhapNgu"
+                          className={
+                            !errors.ngayNhapNgu
+                              ? "form-control col-sm-6"
+                              : "form-control col-sm-6 border-danger"
+                          }
+                          placeholder="DD/MM/YYYY"
+                          format="DD/MM/YYYY"
+                          disabled={!checkedSoldier}
+                          value={field.value}
+                          onChange={(event) => {
+                            field.onChange(event);
+                          }}
+                          {...field._d}
+                        />
+                      )}
+                    />
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="thuongBinh"
+                    >
+                      Là thương binh hạng
+                    </label>
+                    <input
+                      type="text"
+                      {...register("thuongBinh")}
+                      id="thuongBinh"
+                      className="form-control col-sm-6"
+                      disabled={!veterans}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="ngayXuatNgu"
+                    >
+                      Ngày xuất ngũ
+                    </label>
+                    <Controller
+                      name="ngayXuatNgu"
+                      control={control}
+                      render={({ field, onChange }) => (
+                        <DatePicker
+                          id="ngayXuatNgu"
+                          className={
+                            !errors.ngayXuatNgu
+                              ? "form-control col-sm-6"
+                              : "form-control col-sm-6 border-danger"
+                          }
+                          placeholder="DD/MM/YYYY"
+                          format="DD/MM/YYYY"
+                          disabled={!checkedSoldier}
+                          value={field.value}
+                          onChange={(event) => {
+                            field.onChange(event);
+                          }}
+                          {...field._d}
+                        />
+                      )}
+                    />
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-check form-inline">
+                    <input
+                      type="checkbox"
+                      {...register("laConChinhSach")}
+                      id="laConChinhSach"
+                      className="form-check-input"
+                      onClick={handleClickPolicy}
+                      checked={policy}
+                    />
+                    <label
+                      className="form-check-label col-sm-4 justify-content-start"
+                      htmlFor="laConChinhSach"
+                    >
+                      Là con gia đình chính sách
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="quanHamCaoNhat"
+                    >
+                      Quân hàm cao nhất
+                    </label>
+                    <input
+                      type="text"
+                      {...register("quanHamCaoNhat")}
+                      id="quanHamCaoNhat"
+                      className="form-control col-sm-6"
+                      disabled={!checkedSoldier}
+                    />
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="conChinhSach"
+                    >
+                      Là con gia đình chính sách
+                    </label>
+                    <input
+                      type="text"
+                      {...register("conChinhSach")}
+                      id="conChinhSach"
+                      className="form-control col-sm-6"
+                      disabled={!policy}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-6">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="danhHieuCaoNhat"
+                    >
+                      DH được phong tặng cao nhất
+                    </label>
+                    <input
+                      type="text"
+                      {...register("danhHieuCaoNhat")}
+                      id="danhHieuCaoNhat"
+                      className="form-control col-sm-6"
+                      disabled={!checkedSoldier}
+                    />
+                  </div>
+                </div>
+              </div>
+              {/* Container thông tin y tế */}
+              <h5>Thông tin y tế</h5>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="yt_nhomMau"
+                    >
+                      Nhóm máu
+                    </label>
+                    <input
+                      type="text"
+                      {...register("yt_nhomMau")}
+                      id="yt_nhomMau"
+                      className="form-control col-sm-6"
+                    />
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="yt_benhTat"
+                    >
+                      Bệnh tật
+                    </label>
+                    <input
+                      type="text"
+                      {...register("yt_benhTat")}
+                      id="yt_benhTat"
+                      className="form-control col-sm-6"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="yt_chieuCao"
+                    >
+                      Chiều cao(cm)
+                    </label>
+                    <input
+                      type="text"
+                      {...register("yt_chieuCao")}
+                      id="yt_chieuCao"
+                      className={
+                        !errors.yt_chieuCao
+                          ? "form-control  col-sm-6"
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">
+                      {errors.yt_chieuCao?.message}
+                    </span>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="yt_luuY"
+                    >
+                      Lưu ý
+                    </label>
+                    <input
+                      type="text"
+                      {...register("yt_luuY")}
+                      id="yt_luuY"
+                      className="form-control col-sm-6"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="yt_canNang"
+                    >
+                      Cân nặng(kg)
+                    </label>
+                    <input
+                      type="text"
+                      {...register("yt_canNang")}
+                      id="yt_canNang"
+                      className={
+                        !errors.yt_canNang
+                          ? "form-control  col-sm-6"
+                          : "form-control col-sm-6 border-danger"
+                      }
+                    />
+                    <span className="message">
+                      {errors.yt_canNang?.message}
+                    </span>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-check form-inline">
+                    <input
+                      type="checkbox"
+                      {...register("yt_khuyetTat")}
+                      id="yt_khuyetTat"
+                      className="form-check-input"
+                    />
+                    <label
+                      className="form-check-label col-sm-4 justify-content-start"
+                      htmlFor="yt_khuyetTat"
+                    >
+                      Là người khuyết tật
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-6">
+                  <div class="form-group form-inline">
+                    <label
+                      class="col-sm-4 justify-content-start"
+                      htmlFor="yt_tinhTrangSucKhoe"
+                    >
+                      Tình trạng sức khoẻ
+                    </label>
+                    <input
+                      type="text"
+                      {...register("yt_tinhTrangSucKhoe")}
+                      id="yt_tinhTrangSucKhoe"
+                      className="form-control col-sm-6"
+                    />
+                    <input
+                      style={{ display: "none" }}
+                      type="text"
+                      {...register("yt_maNhanVien")}
+                      value={rsId}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-            <h5>Thông tin quân sự</h5>
-            <div className="row">
-              <div className="col">
-                <div class="form-check mb-2 form-inline">
-                  <input
-                    type="checkbox"
-                    {...register("quanNhan")}
-                    id="quanNhan"
-                    className="form-check-input"
-                    onClick={handleClick}
-                    checked={checkedSoldier}
-                  />
-                  <label
-                    className="form-check-label col-sm-4 justify-content-start "
-                    htmlFor="quanNhan"
-                  >
-                    Là quân nhân
-                  </label>
+            <div className="container-div-form">
+              <h3>Lịch sử bản thân</h3>
+              <h5>Thông tin chung</h5>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group">
+                    <label
+                      class=" justify-content-start"
+                      htmlFor="lsbt_biBatDiTu"
+                    >
+                      Bị bắt, bị tù (thời gian và địa điểm), khai báo cho ai,
+                      những vấn đề gì?
+                    </label>
+                    <textarea
+                      type="text"
+                      {...register("lsbt_biBatDiTu")}
+                      rows="4"
+                      id="lsbt_biBatDiTu"
+                      className={
+                        !errors.lsbt_biBatDiTu
+                          ? "form-control  form-width"
+                          : "form-control form-width border-danger"
+                      }
+                    />
+                    <span className="message">
+                      {errors.lsbt_biBatDiTu?.message}
+                    </span>
+                  </div>
                 </div>
               </div>
-              <div className="col">
-                <div className="form-check form-inline">
-                  <input
-                    type="checkbox"
-                    {...register("laThuongBinh")}
-                    id="laThuongBinh"
-                    className="form-check-input"
-                    onClick={handleClickVeteransy}
-                    checked={veterans}
-                  />
-                  <label
-                    className="form-check-label col-sm-4 justify-content-start"
-                    htmlFor="laThuongBinh"
-                  >
-                    Là thương binh
-                  </label>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group">
+                    <label
+                      class=" justify-content-start"
+                      htmlFor="thamGiaChinhTri"
+                    >
+                      Tham gia hoặc có quan hệ với các tổ chức chính trị, kinh
+                      tế, xã hội ở nước ngoài
+                    </label>
+                    <textarea
+                      type="text"
+                      rows="4"
+                      {...register("lsbt_thamGiaChinhTri")}
+                      id="lsbt_thamGiaChinhTri"
+                      className={
+                        !errors.lsbt_thamGiaChinhTri
+                          ? "form-control  form-width"
+                          : "form-control form-width border-danger"
+                      }
+                    />
+                    <span className="message">
+                      {errors.lsbt_thamGiaChinhTri?.message}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="ngayNhapNgu"
-                  >
-                    Ngày nhập ngũ
-                  </label>
-                  <Controller
-                    name="ngayNhapNgu"
-                    control={control}
-                    render={({ field, onChange }) => (
-                      <DatePicker
-                        id="ngayNhapNgu"
-                        className={
-                          !errors.ngayNhapNgu
-                            ? "form-control col-sm-6"
-                            : "form-control col-sm-6 border-danger"
-                        }
-                        placeholder="DD/MM/YYYY"
-                        format="DD/MM/YYYY"
-                        disabled={!checkedSoldier}
-                        value={field.value}
-                        onChange={(event) => {
-                          field.onChange(event);
-                        }}
-                        {...field._d}
-                      />
-                    )}
-                  />
-                </div>
-              </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="thuongBinh"
-                  >
-                    Là thương binh hạng
-                  </label>
-                  <input
-                    type="text"
-                    {...register("thuongBinh")}
-                    id="thuongBinh"
-                    className="form-control col-sm-6"
-                    disabled={!veterans}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="ngayXuatNgu"
-                  >
-                    Ngày xuất ngũ
-                  </label>
-                  <Controller
-                    name="ngayXuatNgu"
-                    control={control}
-                    render={({ field, onChange }) => (
-                      <DatePicker
-                        id="ngayXuatNgu"
-                        className={
-                          !errors.ngayXuatNgu
-                            ? "form-control col-sm-6"
-                            : "form-control col-sm-6 border-danger"
-                        }
-                        placeholder="DD/MM/YYYY"
-                        format="DD/MM/YYYY"
-                        disabled={!checkedSoldier}
-                        value={field.value}
-                        onChange={(event) => {
-                          field.onChange(event);
-                        }}
-                        {...field._d}
-                      />
-                    )}
-                  />
-                </div>
-              </div>
-              <div className="col">
-                <div className="form-check form-inline">
-                  <input
-                    type="checkbox"
-                    {...register("laConChinhSach")}
-                    id="laConChinhSach"
-                    className="form-check-input"
-                    onClick={handleClickPolicy}
-                    checked={policy}
-                  />
-                  <label
-                    className="form-check-label col-sm-4 justify-content-start"
-                    htmlFor="laConChinhSach"
-                  >
-                    Là con gia đình chính sách
-                  </label>
+              <div className="row">
+                <div className="col">
+                  <div class="form-group">
+                    <label
+                      class=" justify-content-start"
+                      htmlFor="thanNhanNuocNgoai"
+                    >
+                      Có Thân nhân(cha, mẹ, vợ, chồng, con, anh chị em ruột) ở
+                      nước ngoài (làm gì, địa chỉ...)?
+                    </label>
+                    <textarea
+                      type="text"
+                      rows="4"
+                      {...register("lsbt_thanNhanNuocNgoai")}
+                      id="lsbt_thanNhanNuocNgoai"
+                      className={
+                        !errors.lsbt_thanNhanNuocNgoai
+                          ? "form-control form-width "
+                          : "form-control form-width border-danger"
+                      }
+                    />
+                    <input
+                      style={{ display: "none" }}
+                      type="text"
+                      {...register("lsbt_maNhanVien")}
+                      value={rsId}
+                    />
+                    <span className="message">
+                      {errors.lsbt_thanNhanNuocNgoai?.message}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="quanHamCaoNhat"
-                  >
-                    Quân hàm cao nhất
-                  </label>
-                  <input
-                    type="text"
-                    {...register("quanHamCaoNhat")}
-                    id="quanHamCaoNhat"
-                    className="form-control col-sm-6"
-                    disabled={!checkedSoldier}
-                  />
-                </div>
-              </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="conChinhSach"
-                  >
-                    Là con gia đình chính sách
-                  </label>
-                  <input
-                    type="text"
-                    {...register("conChinhSach")}
-                    id="conChinhSach"
-                    className="form-control col-sm-6"
-                    disabled={!policy}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-6">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="danhHieuCaoNhat"
-                  >
-                    DH được phong tặng cao nhất
-                  </label>
-                  <input
-                    type="text"
-                    {...register("danhHieuCaoNhat")}
-                    id="danhHieuCaoNhat"
-                    className="form-control col-sm-6"
-                    disabled={!checkedSoldier}
-                  />
-                </div>
-              </div>
-            </div>
-            {/* Container thông tin y tế */}
-            <h5>Thông tin y tế</h5>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="yt_nhomMau"
-                  >
-                    Nhóm máu
-                  </label>
-                  <input
-                    type="text"
-                    {...register("yt_nhomMau")}
-                    id="yt_nhomMau"
-                    className="form-control col-sm-6"
-                  />
-                </div>
-              </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="yt_benhTat"
-                  >
-                    Bệnh tật
-                  </label>
-                  <input
-                    type="text"
-                    {...register("yt_benhTat")}
-                    id="yt_benhTat"
-                    className="form-control col-sm-6"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="yt_chieuCao"
-                  >
-                    Chiều cao(cm)
-                  </label>
-                  <input
-                    type="text"
-                    {...register("yt_chieuCao")}
-                    id="yt_chieuCao"
-                    className={
-                      !errors.yt_chieuCao
-                        ? "form-control  col-sm-6"
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">
-                    {errors.yt_chieuCao?.message}
-                  </span>
-                </div>
-              </div>
-              <div className="col">
-                <div className="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="yt_luuY"
-                  >
-                    Lưu ý
-                  </label>
-                  <input
-                    type="text"
-                    {...register("yt_luuY")}
-                    id="yt_luuY"
-                    className="form-control col-sm-6"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="yt_canNang"
-                  >
-                    Cân nặng(kg)
-                  </label>
-                  <input
-                    type="text"
-                    {...register("yt_canNang")}
-                    id="yt_canNang"
-                    className={
-                      !errors.yt_canNang
-                        ? "form-control  col-sm-6"
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">
-                    {errors.yt_canNang?.message}
-                  </span>
-                </div>
-              </div>
-              <div className="col">
-                <div className="form-check form-inline">
-                  <input
-                    type="checkbox"
-                    {...register("yt_khuyetTat")}
-                    id="yt_khuyetTat"
-                    className="form-check-input"
-                  />
-                  <label
-                    className="form-check-label col-sm-4 justify-content-start"
-                    htmlFor="yt_khuyetTat"
-                  >
-                    Là người khuyết tật
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-6">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="yt_tinhTrangSucKhoe"
-                  >
-                    Tình trạng sức khoẻ
-                  </label>
-                  <input
-                    type="text"
-                    {...register("yt_tinhTrangSucKhoe")}
-                    id="yt_tinhTrangSucKhoe"
-                    className="form-control col-sm-6"
-                  />
-                  <input
-                    style={{ display: "none" }}
-                    type="text"
-                    {...register("yt_maNhanVien")}
-                    value={rsId}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="container-div-form">
-            <h3>Lịch sử bản thân</h3>
-            <h5>Thông tin chung</h5>
-            <div className="row">
-              <div className="col">
-                <div class="form-group">
-                  <label
-                    class=" justify-content-start"
-                    htmlFor="lsbt_biBatDiTu"
-                  >
-                    Bị bắt, bị tù (thời gian và địa điểm), khai báo cho ai,
-                    những vấn đề gì?
-                  </label>
-                  <textarea
-                    type="text"
-                    {...register("lsbt_biBatDiTu")}
-                    rows="4"
-                    id="lsbt_biBatDiTu"
-                    className={
-                      !errors.lsbt_biBatDiTu
-                        ? "form-control  form-width"
-                        : "form-control form-width border-danger"
-                    }
-                  />
-                  <span className="message">
-                    {errors.lsbt_biBatDiTu?.message}
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                <div class="form-group">
-                  <label
-                    class=" justify-content-start"
-                    htmlFor="thamGiaChinhTri"
-                  >
-                    Tham gia hoặc có quan hệ với các tổ chức chính trị, kinh tế,
-                    xã hội ở nước ngoài
-                  </label>
-                  <textarea
-                    type="text"
-                    rows="4"
-                    {...register("lsbt_thamGiaChinhTri")}
-                    id="lsbt_thamGiaChinhTri"
-                    className={
-                      !errors.lsbt_thamGiaChinhTri
-                        ? "form-control  form-width"
-                        : "form-control form-width border-danger"
-                    }
-                  />
-                  <span className="message">
-                    {errors.lsbt_thamGiaChinhTri?.message}
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                <div class="form-group">
-                  <label
-                    class=" justify-content-start"
-                    htmlFor="thanNhanNuocNgoai"
-                  >
-                    Có Thân nhân(cha, mẹ, vợ, chồng, con, anh chị em ruột) ở
-                    nước ngoài (làm gì, địa chỉ...)?
-                  </label>
-                  <textarea
-                    type="text"
-                    rows="4"
-                    {...register("lsbt_thanNhanNuocNgoai")}
-                    id="lsbt_thanNhanNuocNgoai"
-                    className={
-                      !errors.lsbt_thanNhanNuocNgoai
-                        ? "form-control form-width "
-                        : "form-control form-width border-danger"
-                    }
-                  />
-                  <input
-                    style={{ display: "none" }}
-                    type="text"
-                    {...register("lsbt_maNhanVien")}
-                    value={rsId}
-                  />
-                  <span className="message">
-                    {errors.lsbt_thanNhanNuocNgoai?.message}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
+        <div className="footer"></div>
       </div>
-      <div className="footer"></div>
-    </div>
-    <Dialog
+      <Dialog
         show={showDialog}
         title="Thông báo"
-        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
-        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
         cancel={cancel}
       />
       <DialogCheck
         show={showCheckDialog}
         title="Thông báo"
-        description={id!== undefined?"Bạn chưa thay đổi thông tin nhân viên":"Bạn chưa nhập thông tin nhân viên" }
+        description={
+          id !== undefined
+            ? "Bạn chưa thay đổi thông tin nhân viên"
+            : "Bạn chưa nhập thông tin nhân viên"
+        }
         confirm={null}
         cancel={cancel}
       />

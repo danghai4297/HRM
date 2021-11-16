@@ -80,7 +80,7 @@ function AddRewardForm(props) {
   const handleChange = (e) => {
     console.log(e);
     setFile({
-      file: e.file,
+      file: e.fileList.length !== 0 ? e.file : null,
       path:
         e.fileList.length !== 0
           ? URL.createObjectURL(e.file)
@@ -133,21 +133,32 @@ function AddRewardForm(props) {
       // intitalValue.anh,
       intitalValue.loai,
     ];
-    return JSON.stringify(values) === JSON.stringify(dfValue);
+    // return JSON.stringify(values) === JSON.stringify(dfValue);
+    if (
+      JSON.stringify(values) === JSON.stringify(dfValue) &&
+      file.file === null
+    ) {
+      return true;
+    }
+    return false;
   };
 
   const onHandleSubmit = async (data) => {
     console.log(data);
     try {
       if (id !== undefined) {
-        if (file.file !== null) {
-          //await DeleteApi.deleteAKTvKL(id);
-          const formData = new FormData();
-          formData.append("anh", file.file);
-          //formData.append("maHopDong", data.id);
-          await PutApi.PutAKTvKL(formData, id);
-        }
-        await PutApi.PutKTvKL(data, id);
+       try {
+        const formData = new FormData();
+        formData.append("anh", file.file);
+        formData.append("idDanhMucKhenThuong", data.idDanhMucKhenThuong);
+        formData.append("noiDung", data.noiDung);
+        formData.append("lyDo", data.lyDo);
+        formData.append("loai", data.loai);
+        formData.append("maNhanVien", data.maNhanVien);
+        await PutApi.PutKTvKL(formData, id);
+       } catch (errors) {
+        error(`Lỗi${errors}`);
+       }
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
           thaoTac: `Sửa thông tin khen thưởng của nhân viên ${dataKTDetail.hoTen}`,
@@ -293,7 +304,11 @@ function AddRewardForm(props) {
                   >
                     Bằng chứng
                   </label>
-                  <Upload beforeUpload={() => false} onChange={handleChange}>
+                  <Upload
+                    beforeUpload={() => false}
+                    onChange={handleChange}
+                    maxCount={1}
+                  >
                     <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
                   </Upload>
                 </div>
