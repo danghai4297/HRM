@@ -9,7 +9,14 @@ export const NVCOLUMNS2 = [
     minWidth: 50,
     Filter: SelectColumnFilter,
     disableFilters: true,
-    Cell: ({ value }) => <img src={value} width={50} />,
+    // Cell: ({ value }) => <img src={value} width={50} />,
+    Cell: (tableProps) => (
+      <img
+        src={`https://localhost:5001${tableProps.row.original.anh}`}
+        width={60}
+        alt=""
+      />
+    ),
 
     show: true,
   },

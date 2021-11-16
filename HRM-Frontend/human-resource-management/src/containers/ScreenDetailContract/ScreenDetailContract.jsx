@@ -50,6 +50,7 @@ function ScreenDetailContract(props) {
               class="btn btn-fix btn-light"
               href={`https://localhost:5001${dataDetailHd.bangChung}`}
               role="button"
+              target="_blank"
             >
               <FontAwesomeIcon
                 className="icon-btn"
