@@ -113,7 +113,7 @@ function AddSalaryForm(props) {
           setDescription("Bạn chắc chắn muốn sửa thông tin lương");
           const response = await ProductApi.getLDetail(id);
           setDataLDetail(response);
-         // setRsSalary(moment(response.ngayKetThuc));
+          setEndDateRs(moment(response.ngayKetThuc));
         }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -138,7 +138,6 @@ function AddSalaryForm(props) {
       //path: URL.createObjectURL(e.target.files[0]),
     });
   };
-
 
   const intitalValue = {
     idNhomLuong: id !== undefined ? dataLDetail.idNhomLuong : null,
@@ -237,6 +236,14 @@ function AddSalaryForm(props) {
   // }, [intitalValue.heSoLuong]);
 
   useEffect(() => {
+    if (id !== undefined) {
+      setSalary({
+        heSoLuong: getValues("heSoLuong"),
+        luongCoBan: getValues("luongCoBan"),
+        phuCapKhac: getValues("phuCapKhac"),
+        phuCapTrachNhiem: getValues("phuCapTrachNhiem"),
+      });
+    }
     let rss = 0;
     rss +=
       Number(salary.heSoLuong) * Number(salary.luongCoBan) +
@@ -249,14 +256,11 @@ function AddSalaryForm(props) {
     salary.phuCapKhac,
     salary.phuCapTrachNhiem,
   ]);
-
-  console.log(getValues("tongLuong"));
-  console.log(getValues("heSoLuong"));
-  console.log(getValues("luongCoBan"));
-  console.log(getValues("phuCapKhac"));
+  console.log(file);
 
   const onHandleSubmit = async (data) => {
     let maHopDong = data.maHopDong;
+    console.log(data);
     if (endDateRs !== undefined) {
       let obj = { ngayKetThuc: endDateRs };
       Object.assign(data, obj);
@@ -264,6 +268,13 @@ function AddSalaryForm(props) {
     }
     try {
       if (id !== undefined) {
+        if (file.file !== null) {
+          await DeleteApi.deleteAL(id);
+          const formData = new FormData();
+          formData.append("bangChung", file.file);
+          //formData.append("maHopDong", data.id);
+          await PutApi.PutAL(formData, id);
+        }
         await PutApi.PutL(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
@@ -275,13 +286,23 @@ function AddSalaryForm(props) {
           `Sửa thông tin lương cho nhân viên ${dataLDetail.tenNhanVien} thành công`
         );
       } else {
-        await ProductApi.PostL(data);
-        // if (file.file !== null) {
-        //   const formData = new FormData();
-        //   formData.append("bangChung", file.file);
-        //   //formData.append("maHopDong", data.id);
-        //   await PutApi.PutAL(formData, id);
-        // }
+        const formData = new FormData();
+        formData.append("bangChung", file.file);
+        formData.append("maHopDong", data.maHopDong);
+        formData.append("idNhomLuong", data.idNhomLuong);
+        formData.append("heSoLuong", data.heSoLuong);
+        formData.append("bacLuong", data.bacLuong);
+        formData.append("luongCoBan", data.luongCoBan);
+        formData.append("phuCapTrachNhiem", data.phuCapTrachNhiem);
+        formData.append("phuCapKhac", data.phuCapKhac);
+        formData.append("tongLuong", data.tongLuong);
+        formData.append("thoiHanLenLuong", data.thoiHanLenLuong);
+        formData.append("ngayHieuLuc", endDate.format("DD/MM/YYYY"));
+        formData.append("ngayKetThuc", endDateRs.format("DD/MM/YYYY"));
+        formData.append("ghiChu", data.ghiChu);
+        formData.append("trangThai", data.trangThai);
+        await ProductApi.PostL(formData);
+
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
           thaoTac: `Thêm lương mới trong hợp đồng ${maHopDong} của nhân viên ${dataLDetail.tenNhanVien}`,
@@ -327,11 +348,6 @@ function AddSalaryForm(props) {
       setEndDateRs(rs.add(salaryTime, "years"));
     }
   }, [salaryTime, endDate]);
-
-  console.log(salaryTime);
-  console.log("endDate:", endDate);
-  console.log("startDate:", startDate);
-  console.log(endDateRs);
 
   return (
     <>
@@ -720,8 +736,8 @@ function AddSalaryForm(props) {
                     Bằng chứng
                   </label>
                   <Upload beforeUpload={() => false} onChange={handleChange}>
-              <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
-            </Upload>
+                    <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
+                  </Upload>
                 </div>
               </div>
             </div>
