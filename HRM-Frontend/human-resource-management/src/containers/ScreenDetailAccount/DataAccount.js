@@ -17,10 +17,10 @@ export const ttc = [
     title2: "Quyền tài khoản",
     data2: "roles",
   },
-  {
-    title1: "Tên tài khoản",
-    data1: ["userName", false],
-    title2: "Mật khẩu",
-    data2: "password",
-  },
+  // {
+  //   title1: "Tên tài khoản",
+  //   data1: ["userName", false],
+  //   title2: "Mật khẩu",
+  //   data2: "password",
+  // },
 ];
