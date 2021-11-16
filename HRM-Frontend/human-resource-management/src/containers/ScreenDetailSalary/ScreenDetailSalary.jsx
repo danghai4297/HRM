@@ -41,21 +41,27 @@ function ScreenDetailSalary(props) {
             <h2>Chi tiết hồ sơ lương</h2>
           </div>
           <div className="third-path">
-            <Link to={`/salary/${id}`}>
-              <Button variant="light" className="btn-fix">
-                Sửa
+            {dataLDetail.trangThai === "Kích hoạt" && (
+              <Link to={`/salary/${id}`}>
+                <Button variant="light" className="btn-fix">
+                  Sửa
+                </Button>
+              </Link>
+            )}
+            {dataLDetail.bangChung !== null && (
+              <Button
+                variant="light"
+                className="btn-fix"
+                onClick={() => {
+                  window.open(`https://localhost:5001${dataLDetail.bangChung}`);
+                }}
+              >
+                <FontAwesomeIcon
+                  className="icon-btn"
+                  icon={["fas", "download"]}
+                />
               </Button>
-            </Link>
-            <a
-              class="btn btn-fix btn-light"
-              href={`https://localhost:5001${dataLDetail.bangChung}`}
-              role="button"
-            >
-              <FontAwesomeIcon
-                className="icon-btn"
-                icon={["fas", "file-word"]}
-              />
-            </a>
+            )}
           </div>
         </div>
         <div className="second-mains">

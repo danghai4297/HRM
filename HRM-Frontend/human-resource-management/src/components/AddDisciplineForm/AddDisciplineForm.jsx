@@ -154,7 +154,7 @@ function AddDisciplineForm(props) {
       if (id !== undefined) {
         try {
           const formData = new FormData();
-          formData.append("anh", file.file);
+          formData.append("bangChung", file.file);
           formData.append("idDanhMucKhenThuong", data.idDanhMucKhenThuong);
           formData.append("noiDung", data.noiDung);
           formData.append("lyDo", data.lyDo);

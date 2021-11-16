@@ -1,4 +1,4 @@
-export const ttkt = [
+export const ttkl = [
   {
     title1: "Họ và tên",
     data1: "hoTen",

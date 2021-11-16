@@ -12,6 +12,7 @@ function Header() {
     history.replace("/login");
     setAccount(false);
   };
+  console.log(jwt_decode(sessionStorage.getItem("resultObj")));
   return (
     <>
       <div className="header-com">
@@ -20,13 +21,27 @@ function Header() {
           <button className="button-top" onClick={() => setAccount(!account)}>
             <div className="screen-account">
               <div className="header-icon">
-                <FontAwesomeIcon
-                  icon={["fas", "user-circle"]}
-                  className="detail-icon"
-                />
+                {sessionStorage.getItem("resultObj") &&
+                jwt_decode(sessionStorage.getItem("resultObj")).anh !== null ? (
+                  <img
+                    className="picture-account"
+                    src={`https://localhost:5001/${
+                      jwt_decode(sessionStorage.getItem("resultObj")).anh
+                    }`}
+                    alt=""
+                  />
+                ) : (
+                  <FontAwesomeIcon
+                    icon={["fas", "user-circle"]}
+                    className="detail-icon"
+                  />
+                )}
               </div>
               <div className="account-name">
-                <h5 className="account-style">{sessionStorage.getItem("resultObj") && jwt_decode(sessionStorage.getItem("resultObj")).givenName}</h5>
+                <h5 className="account-style">
+                  {sessionStorage.getItem("resultObj") &&
+                    jwt_decode(sessionStorage.getItem("resultObj")).givenName}
+                </h5>
               </div>
             </div>
           </button>
@@ -35,10 +50,28 @@ function Header() {
             <div className="detail-information">
               <div className="first-information">
                 <div className="detail-second-icon">
-                  <FontAwesomeIcon icon={["fas", "user-circle"]} />
+                  {sessionStorage.getItem("resultObj") &&
+                  jwt_decode(sessionStorage.getItem("resultObj")).anh !==
+                    null ? (
+                    <img
+                      className="picture-account-2"
+                      src={`https://localhost:5001/${
+                        jwt_decode(sessionStorage.getItem("resultObj")).anh
+                      }`}
+                      alt=""
+                    />
+                  ) : (
+                    <FontAwesomeIcon
+                      icon={["fas", "user-circle"]}
+                      className="detail-icon"
+                    />
+                  )}
                 </div>
                 <div>
-                  <h5>{sessionStorage.getItem("resultObj") && jwt_decode(sessionStorage.getItem("resultObj")).givenName}</h5>
+                  <h5>
+                    {sessionStorage.getItem("resultObj") &&
+                      jwt_decode(sessionStorage.getItem("resultObj")).givenName}
+                  </h5>
                 </div>
                 <div>
                   <Link to="/change" onClick={() => setAccount(false)}>

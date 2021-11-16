@@ -7,7 +7,7 @@ export const vtctht = [
   },
   {
     title1: "Phòng ban",
-    data1: "idPhongBan",
+    data1: "phongBan",
     title2: "Ngày hiệu lực",
     data2: ["ngayHieuLuc", true],
   },
@@ -15,7 +15,7 @@ export const vtctht = [
     title1: "Tổ",
     data1: "to",
     title2: "Chức vụ",
-    data2: ["idChucVu", false],
+    data2: ["chucVu", false],
   },
   {
     title1: "Trạng thái",
