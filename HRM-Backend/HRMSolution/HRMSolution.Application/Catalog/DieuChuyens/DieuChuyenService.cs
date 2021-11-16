@@ -8,15 +8,22 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using HRMSolution.Data.Entities;
 using HRMSolution.Utilities.Exceptions;
+using HRMSolution.Application.Common;
+using Microsoft.AspNetCore.Http;
+using System.Net.Http.Headers;
+using System.IO;
 
 namespace HRMSolution.Application.Catalog.DieuChuyens
 {
     public class DieuChuyenService : IDieuChuyenService
     {
         private readonly HRMDbContext _context;
-        public DieuChuyenService(HRMDbContext context)
+        private readonly IStorageService _storageService;
+        private const string USER_CONTENT_FOLDER_NAME = "user-content";
+        public DieuChuyenService(HRMDbContext context, IStorageService storageService)
         {
             _context = context;
+            _storageService = storageService;
         }
 
         public async Task<int> Create(DieuChuyenCreateRequest request)
@@ -24,13 +31,20 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
             var dieuChuyen = new DieuChuyen()
             {
                 maNhanVien = request.maNhanVien,
-                ngayHieuLuc = request.ngayHieuLuc,
+                ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
                 idPhongBan = request.idPhongBan,
                 to = request.to,
                 chiTiet = request.chiTiet,
                 idChucVu = request.idChucVu,
                 trangThai = true
             };
+            if(request.bangChung is null)
+            {
+                dieuChuyen.bangChung = "";
+            } else
+            {
+                dieuChuyen.bangChung = await this.SaveFile(request.bangChung);
+            }
             _context.dieuChuyens.Add(dieuChuyen);
             return await _context.SaveChangesAsync();
         }
@@ -65,7 +79,8 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                 trangThai = x.dc.trangThai == true ? "Kích hoạt" : "Vô hiệu",
                 idChucVu = x.dc.idChucVu,
                 idPhongBan = x.dc.idPhongBan,
-                idTo = x.dc.to
+                idTo = x.dc.to,
+                bangChung = x.dc.bangChung
             }).ToListAsync();
             return data;
         }
@@ -92,7 +107,8 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                 trangThai = x.dc.trangThai == true? "Kích hoạt": "Vô hiệu",
                 idChucVu = x.dc.idChucVu,
                 idPhongBan = x.dc.idPhongBan,
-                idTo = x.dc.to
+                idTo = x.dc.to,
+                bangChung = x.dc.bangChung
             }).FirstAsync();
 
             return data;
@@ -112,6 +128,13 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
             dieuChuyen.trangThai = request.trangThai;
 
             return await _context.SaveChangesAsync();
+        }
+        private async Task<string> SaveFile(IFormFile file)
+        {
+            var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(originalFileName)}";
+            await _storageService.SaveFileAsync(file.OpenReadStream(), fileName);
+            return "/" + USER_CONTENT_FOLDER_NAME + "/" + fileName;
         }
     }
 }

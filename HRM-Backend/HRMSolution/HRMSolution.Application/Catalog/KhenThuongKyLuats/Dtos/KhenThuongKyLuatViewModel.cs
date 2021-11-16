@@ -11,9 +11,11 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats.Dtos
         public string noiDung { get; set; }
         public string lyDo { get; set; }
         public string loai { get; set; }
-        public string anh { get; set; }
+        public string bangChung { get; set; }
         public string maNhanVien { get; set; }
         public string hoTen { get; set; }
         public int idDanhMucKhenThuong { get; set; }
+        public string anh { get; set; }
+
     }
 }

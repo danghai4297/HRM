@@ -47,8 +47,14 @@ namespace HRMSolution.Application.Catalog.Luongs
                     ngayKetThuc = DateTime.Parse(request.ngayKetThuc),
                     ghiChu = request.ghiChu,
                     trangThai = true,
-                    bangChung = await this.SaveFile(request.bangChung)
                 };
+                if(request.bangChung is null)
+                {
+                    luong.bangChung = "";
+                } else
+                {
+                    luong.bangChung = await this.SaveFile(request.bangChung);
+                }
                 _context.luongs.Add(luong);
             } else
             {
@@ -71,8 +77,15 @@ namespace HRMSolution.Application.Catalog.Luongs
                     ngayKetThuc = DateTime.Parse(request.ngayKetThuc),
                     ghiChu = request.ghiChu,
                     trangThai = true,
-                    bangChung = await this.SaveFile(request.bangChung)
                 };
+                if (request.bangChung is null)
+                {
+                    luong.bangChung = "";
+                }
+                else
+                {
+                    luong.bangChung = await this.SaveFile(request.bangChung);
+                }
                 _context.luongs.Add(luong);
             }
 

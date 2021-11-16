@@ -48,7 +48,7 @@ namespace HRMSolution.Application.System.Users
             var roles = await _userManager.GetRolesAsync(user);
             var claims = new[]
             {
-                //new Claim("email",nv.email),
+                new Claim("anh",nv.anh),
                 new Claim("givenName",nv.hoTen),
                 new Claim("role", string.Join(";",roles)),
                 new Claim("userName", request.UserName),

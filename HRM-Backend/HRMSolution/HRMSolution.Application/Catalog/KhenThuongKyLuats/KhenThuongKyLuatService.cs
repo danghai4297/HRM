@@ -34,9 +34,15 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                 lyDo = request.lyDo,
                 loai = request.loai,
                 maNhanVien = request.maNhanVien,
-                anh = await this.SaveFile(request.anh)
             };
-            
+            if(request.anh is null)
+            {
+                ktkl.anh = "";
+            } else
+            {
+                ktkl.anh = await this.SaveFile(request.anh);
+            }
+
             _context.khenThuongKyLuats.Add(ktkl);
             return await _context.SaveChangesAsync();
         }
@@ -68,10 +74,11 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                 noiDung = x.p.noiDung,
                 lyDo = x.p.lyDo,
                 loai = x.p.loai == true ? "Khen Thưởng" : "Kỷ Luật",
-                anh = x.p.anh,
+                anh = x.nv.anh,
                 maNhanVien = x.p.maNhanVien,
                 hoTen = x.nv.hoTen,
-                idDanhMucKhenThuong = x.p.idDanhMucKhenThuong
+                idDanhMucKhenThuong = x.p.idDanhMucKhenThuong,
+                bangChung = x.p.anh
             }).ToListAsync();
 
 
@@ -94,10 +101,11 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                 noiDung = x.p.noiDung,
                 lyDo = x.p.lyDo,
                 loai = x.p.loai == true ? "Khen Thưởng" : "Kỷ Luật",
-                anh = x.p.anh,
+                anh = x.nv.anh,
                 maNhanVien = x.p.maNhanVien,
                 hoTen = x.nv.hoTen,
-                idDanhMucKhenThuong = x.p.idDanhMucKhenThuong
+                idDanhMucKhenThuong = x.p.idDanhMucKhenThuong,
+                bangChung = x.p.anh
             }).FirstAsync();
 
 
@@ -120,10 +128,11 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                 noiDung = x.p.noiDung,
                 lyDo = x.p.lyDo,
                 loai = x.p.loai == true ? "Khen Thưởng" : "Kỷ Luật",
-                anh = x.p.anh,
+                anh = x.nv.anh,
                 maNhanVien = x.p.maNhanVien,
                 hoTen = x.nv.hoTen,
-                idDanhMucKhenThuong = x.p.idDanhMucKhenThuong
+                idDanhMucKhenThuong = x.p.idDanhMucKhenThuong,
+                bangChung = x.p.anh
             }).ToListAsync();
 
 
