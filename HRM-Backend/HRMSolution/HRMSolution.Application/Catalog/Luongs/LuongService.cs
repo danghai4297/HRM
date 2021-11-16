@@ -199,16 +199,14 @@ namespace HRMSolution.Application.Catalog.Luongs
             luong.ngayKetThuc = DateTime.Parse(request.ngayKetThuc);
             luong.ghiChu = request.ghiChu;
             luong.trangThai = request.trangThai;
-
-            return await _context.SaveChangesAsync();
-        }
-
-        public async Task<int> UpdateBangChung(int id, LuongUpdateBangChungRequest request)
-        {
-            var luong = await _context.luongs.FindAsync(id);
-            if (luong == null) throw new HRMException($"Không tìm thấy lương có id: {id}");
-
-            luong.bangChung = await this.SaveFile(request.bangChung);
+            if (request.bangChung is null)
+            {
+                luong.bangChung = "";
+            }
+            else
+            {
+                luong.bangChung = await this.SaveFile(request.bangChung);
+            }
 
             return await _context.SaveChangesAsync();
         }

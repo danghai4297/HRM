@@ -141,27 +141,26 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
 
         public async Task<int> Update(int id, KhenThuongKyLuatUpdateRequest request)
         {
-            var danhMucKTKL = await _context.khenThuongKyLuats.FindAsync(id);
-            if (danhMucKTKL == null) throw new HRMException($"Không tìm thấy khen thưởng kỷ luật : {id}");
+            var ktkl = await _context.khenThuongKyLuats.FindAsync(id);
+            if (ktkl == null) throw new HRMException($"Không tìm thấy khen thưởng kỷ luật : {id}");
 
-            danhMucKTKL.idDanhMucKhenThuong = request.idDanhMucKhenThuong;
-            danhMucKTKL.noiDung = request.noiDung;
-            danhMucKTKL.lyDo = request.lyDo;
-            danhMucKTKL.loai = request.loai;
-            danhMucKTKL.maNhanVien = request.maNhanVien;
-
-            return await _context.SaveChangesAsync();
-        }
-
-        public async Task<int> UpdateImage(int id, KhenThuongKyLuatUpdateImageRequest request)
-        {
-            var anh = await _context.khenThuongKyLuats.FindAsync(id);
-            if (anh == null) throw new HRMException($"Không tìm thấy khen thưởng kỷ luật có id: {id}");
-
-            anh.anh = await this.SaveFile(request.anh);
+            ktkl.idDanhMucKhenThuong = request.idDanhMucKhenThuong;
+            ktkl.noiDung = request.noiDung;
+            ktkl.lyDo = request.lyDo;
+            ktkl.loai = request.loai;
+            ktkl.maNhanVien = request.maNhanVien;
+            if (request.bangChung is null)
+            {
+                ktkl.anh = "";
+            }
+            else
+            {
+                ktkl.anh = await this.SaveFile(request.bangChung);
+            }
 
             return await _context.SaveChangesAsync();
         }
+
         private async Task<string> SaveFile(IFormFile file)
         {
             var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');

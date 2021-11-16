@@ -51,7 +51,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, DieuChuyenUpdateRequest request)
+        public async Task<IActionResult> Update(int id, [FromForm] DieuChuyenUpdateRequest request)
         {
             var result = await _dieuChuyenService.Update(id, request);
             if (result == 0)

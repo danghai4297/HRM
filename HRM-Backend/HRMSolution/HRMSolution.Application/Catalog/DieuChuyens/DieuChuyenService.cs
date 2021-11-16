@@ -120,12 +120,19 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
             if (dieuChuyen == null) throw new HRMException($"Không tìm thấy điều chuyển có id: {id}");
 
             dieuChuyen.maNhanVien = request.maNhanVien;
-            dieuChuyen.ngayHieuLuc = request.ngayHieuLuc;
+            dieuChuyen.ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc);
             dieuChuyen.idPhongBan = request.idPhongBan;
             dieuChuyen.to = request.to;
             dieuChuyen.chiTiet = request.chiTiet;
             dieuChuyen.idChucVu = request.idChucVu;
             dieuChuyen.trangThai = request.trangThai;
+            if(request.bangChung is null)
+            {
+                dieuChuyen.bangChung = "";
+            } else
+            {
+                dieuChuyen.bangChung = await this.SaveFile(request.bangChung);
+            }
 
             return await _context.SaveChangesAsync();
         }
