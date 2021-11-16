@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import "./ScreenDetailReward.scss";
 import ProductApi from "../../api/productApi";
 import { Link } from "react-router-dom";
+import { ttkt } from "./DataReward";
 function ScreenDetailReward(props) {
   let { match, history } = props;
   let { id } = match.params;
@@ -45,39 +46,38 @@ function ScreenDetailReward(props) {
                 Sửa
               </Button>
             </Link>
-            <a
-              class="btn btn-fix btn-light"
-              href={`https://localhost:5001${dataDetailKt.anh}`}
-              role="button"
-            >
-              <FontAwesomeIcon
-                className="icon-btn"
-                icon={["fas", "file-word"]}
-              />
-            </a>
+            {dataDetailKt.bangChung !== null && (
+              <Button
+                variant="light"
+                className="btn-fix"
+                onClick={() => {
+                  window.open(
+                    `https://localhost:5001${dataDetailKt.bangChung}`
+                  );
+                }}
+              >
+                <FontAwesomeIcon
+                  className="icon-btn"
+                  icon={["fas", "download"]}
+                />
+              </Button>
+            )}
           </div>
         </div>
         <div className="second-main">
           <h3 className="title-main">Thông tin khen thưởng</h3>
           <div className="second-main-path">
-            <SubDetail
-              titleLeft="Họ và tên"
-              itemLeft={dataDetailKt.hoTen}
-              titleRight="Mã nhân viên"
-              itemRight={dataDetailKt.maNhanVien}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Danh mục"
-              itemLeft={dataDetailKt.idDanhMucKhenThuong}
-              titleRight="Lý do"
-              itemRight={dataDetailKt.lyDo}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Nội dung"
-              itemLeft={dataDetailKt.noiDung}
-              titleRight="Ảnh"
-              itemRight={dataDetailKt.anh}
-            ></SubDetail>
+            {ttkt.map((detail, key) => {
+              return (
+                <SubDetail
+                  key={key}
+                  titleLeft={detail.title1}
+                  itemLeft={dataDetailKt[detail.data1]}
+                  titleRight={detail.title2}
+                  itemRight={dataDetailKt[detail.data2]}
+                />
+              );
+            })}
           </div>
         </div>
         <div className="all-reward">

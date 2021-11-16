@@ -46,6 +46,22 @@ function ScreenDetailTransfer(props) {
                 Sửa
               </Button>
             </Link>
+            {dataDetailDC.bangChung !== null && (
+              <Button
+                variant="light"
+                className="btn-fix"
+                onClick={() => {
+                  window.open(
+                    `https://localhost:5001${dataDetailDC.bangChung}`
+                  );
+                }}
+              >
+                <FontAwesomeIcon
+                  className="icon-btn"
+                  icon={["fas", "download"]}
+                />
+              </Button>
+            )}
           </div>
         </div>
         <div className="second-main">
@@ -77,9 +93,12 @@ function ScreenDetailTransfer(props) {
             to={`/profile/detail/${dataDetailDC.maNhanVien}?move=moveToTransfer`}
             className="btn-move-transfer"
           >
-              <button className="btn-fix">
-                <FontAwesomeIcon icon={["fas", "arrow-right"]} style={{fontSize: "50px"}}/>
-              </button>
+            <button className="btn-fix">
+              <FontAwesomeIcon
+                icon={["fas", "arrow-right"]}
+                style={{ fontSize: "50px" }}
+              />
+            </button>
           </Link>
         </div>
       </div>
