@@ -37,6 +37,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
                     maHopDong = request.maHopDong,
                     idLoaiHopDong = request.idLoaiHopDong,
                     idChucDanh = request.idChucDanh,
+                    idChucVu = request.idChucVu,
                     hopDongTuNgay = request.hopDongTuNgay,
                     hopDongDenNgay = request.hopDongDenNgay,
                     ghiChu = request.ghiChu,
@@ -59,6 +60,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
                         maHopDong = request.maHopDong,
                         idLoaiHopDong = request.idLoaiHopDong,
                         idChucDanh = request.idChucDanh,
+                        idChucVu = request.idChucVu,
                         hopDongTuNgay = request.hopDongTuNgay,
                         hopDongDenNgay = request.hopDongDenNgay,
                         ghiChu = request.ghiChu,
@@ -78,6 +80,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
                         maHopDong = request.maHopDong,
                         idLoaiHopDong = request.idLoaiHopDong,
                         idChucDanh = request.idChucDanh,
+                        idChucVu = request.idChucVu,
                         hopDongTuNgay = request.hopDongTuNgay,
                         hopDongDenNgay = request.hopDongDenNgay,
                         ghiChu = request.ghiChu,
@@ -106,8 +109,9 @@ namespace HRMSolution.Application.Catalog.HopDongs
                         join dmlhd in _context.danhMucLoaiHopDongs on p.idLoaiHopDong equals dmlhd.id
                         join dmcd in _context.danhMucChucDanhs on p.idChucDanh equals dmcd.id
                         join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
+                        join dmcv in _context.danhMucChucVus on p.idChucVu equals dmcv.id
                         where p.maHopDong == maHopDong
-                        select new { p, nv, dmcd, dmlhd };
+                        select new { p, nv, dmcd, dmlhd, dmcv };
 
             var data = await query.Select(x => new HopDongViewModel()
             {
@@ -115,6 +119,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
                 id = x.p.maHopDong,
                 loaiHopDong = x.dmlhd.tenLoaiHopDong,
                 chucDanh = x.dmcd.tenChucDanh,
+                chucVu = x.dmcv.tenChucVu,
                 hopDongTuNgay = x.p.hopDongTuNgay,
                 hopDongDenNgay = x.p.hopDongDenNgay,
                 ghiChu = x.p.ghiChu,
@@ -123,7 +128,10 @@ namespace HRMSolution.Application.Catalog.HopDongs
                 maNhanVien = x.p.maNhanVien,
                 tenNhanVien = x.nv.hoTen,
                 idChucDanh = x.p.idChucDanh,
-                idLoaiHopDong = x.p.idLoaiHopDong
+                idChucVu = x.p.idChucVu,
+                idLoaiHopDong = x.p.idLoaiHopDong,
+                phuCapChucDanh = x.dmcd.phuCap,
+                phuCapChucVu = x.dmcv.phuCap
             }).FirstAsync();
 
             return data;
@@ -135,8 +143,9 @@ namespace HRMSolution.Application.Catalog.HopDongs
                         join dmlhd in _context.danhMucLoaiHopDongs on p.idLoaiHopDong equals dmlhd.id
                         join dmcd in _context.danhMucChucDanhs on p.idChucDanh equals dmcd.id
                         join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
+                        join dmcv in _context.danhMucChucVus on p.idChucVu equals dmcv.id
                         orderby p.id descending
-                        select new  { p, nv, dmcd, dmlhd};
+                        select new  { p, nv, dmcd, dmlhd, dmcv};
 
             var data = await query.Select(x => new HopDongViewModel()
             {
@@ -144,13 +153,19 @@ namespace HRMSolution.Application.Catalog.HopDongs
                 id = x.p.maHopDong,
                 loaiHopDong = x.dmlhd.tenLoaiHopDong,
                 chucDanh = x.dmcd.tenChucDanh,
+                chucVu = x.dmcv.tenChucVu,
                 hopDongTuNgay = x.p.hopDongTuNgay,
                 hopDongDenNgay = x.p.hopDongDenNgay,
                 ghiChu = x.p.ghiChu,
-                trangThai = x.p.trangThai ==true? "Kích hoạt": "Vô hiệu",
+                trangThai = x.p.trangThai == true ? "Kích hoạt" : "Vô hiệu",
                 bangChung = x.p.bangChung,
                 maNhanVien = x.p.maNhanVien,
-                tenNhanVien = x.nv.hoTen
+                tenNhanVien = x.nv.hoTen,
+                idChucDanh = x.p.idChucDanh,
+                idChucVu = x.p.idChucVu,
+                idLoaiHopDong = x.p.idLoaiHopDong,
+                phuCapChucDanh = x.dmcd.phuCap,
+                phuCapChucVu = x.dmcv.phuCap
             }).ToListAsync();
 
             return data;
@@ -162,9 +177,10 @@ namespace HRMSolution.Application.Catalog.HopDongs
                         join dmlhd in _context.danhMucLoaiHopDongs on p.idLoaiHopDong equals dmlhd.id
                         join dmcd in _context.danhMucChucDanhs on p.idChucDanh equals dmcd.id
                         join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
+                        join dmcv in _context.danhMucChucVus on p.idChucVu equals dmcv.id
                         orderby p.id descending
                         where p.maNhanVien == maNhanVien
-                        select new { p, nv, dmcd, dmlhd };
+                        select new { p, nv, dmcd, dmlhd, dmcv };
 
             var data = await query.Select(x => new HopDongViewModel()
             {
@@ -172,13 +188,19 @@ namespace HRMSolution.Application.Catalog.HopDongs
                 id = x.p.maHopDong,
                 loaiHopDong = x.dmlhd.tenLoaiHopDong,
                 chucDanh = x.dmcd.tenChucDanh,
+                chucVu = x.dmcv.tenChucVu,
                 hopDongTuNgay = x.p.hopDongTuNgay,
                 hopDongDenNgay = x.p.hopDongDenNgay,
                 ghiChu = x.p.ghiChu,
                 trangThai = x.p.trangThai == true ? "Kích hoạt" : "Vô hiệu",
                 bangChung = x.p.bangChung,
                 maNhanVien = x.p.maNhanVien,
-                tenNhanVien = x.nv.hoTen
+                tenNhanVien = x.nv.hoTen,
+                idChucDanh = x.p.idChucDanh,
+                idChucVu = x.p.idChucVu,
+                idLoaiHopDong = x.p.idLoaiHopDong,
+                phuCapChucDanh = x.dmcd.phuCap,
+                phuCapChucVu = x.dmcv.phuCap
             }).ToListAsync();
 
             return data;
@@ -193,6 +215,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
             hopDong.maHopDong = request.maHopDong;
             hopDong.idLoaiHopDong = request.idLoaiHopDong;
             hopDong.idChucDanh = request.idChucDanh;
+            hopDong.idChucVu = request.idChucVu;
             hopDong.hopDongTuNgay = request.hopDongTuNgay;
             hopDong.hopDongDenNgay = request.hopDongDenNgay;
             hopDong.ghiChu = request.ghiChu;

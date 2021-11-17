@@ -50,7 +50,7 @@ namespace HRMSolution.Application.Catalog.Luongs
                 };
                 if(request.bangChung is null)
                 {
-                    luong.bangChung = "";
+                    luong.bangChung = null;
                 } else
                 {
                     luong.bangChung = await this.SaveFile(request.bangChung);
@@ -80,7 +80,7 @@ namespace HRMSolution.Application.Catalog.Luongs
                 };
                 if (request.bangChung is null)
                 {
-                    luong.bangChung = "";
+                    luong.bangChung = null;
                 }
                 else
                 {
@@ -201,7 +201,7 @@ namespace HRMSolution.Application.Catalog.Luongs
             luong.trangThai = request.trangThai;
             if (request.bangChung is null)
             {
-                luong.bangChung = "";
+                luong.bangChung = null;
             }
             else
             {

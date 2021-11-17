@@ -446,11 +446,11 @@ namespace HRMSolution.Application.Catalog.NhanViens
             //List Điều Chuyển
             var queryDc = from nv in _context.nhanViens
                           join dc in _context.dieuChuyens on nv.maNhanVien equals dc.maNhanVien
-                          join dmcv in _context.danhMucChucVus on dc.idChucVu equals dmcv.id
+                          
                           join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
                           join to in _context.danhMucTos on dc.to equals to.idTo
                           where dc.maNhanVien == maNhanVien
-                          select new { dc, dmcv, pb, to };
+                          select new { dc, pb, to };
 
             var dataDc = await queryDc.Select(x => new DieuChuyenViewModel()
             {
@@ -458,8 +458,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 dcNgayHieuLuc = x.dc.ngayHieuLuc,
                 dcPhong = x.pb.tenPhongBan,
                 dcTo = x.to.tenTo,
-                dcChiTiet = x.dc.chiTiet,
-                dcChucVu = x.dmcv.tenChucVu
+                dcChiTiet = x.dc.chiTiet
             }).ToListAsync();
 
             //List Lương
@@ -492,15 +491,17 @@ namespace HRMSolution.Application.Catalog.NhanViens
             var queryHd = from nv in _context.nhanViens
                           join hd in _context.hopDongs on nv.maNhanVien equals hd.maNhanVien
                           join lhd in _context.danhMucLoaiHopDongs on hd.idLoaiHopDong equals lhd.id
-                          join dmcd in _context.danhMucChucDanhs on hd.idChucDanh equals dmcd.id              
+                          join dmcd in _context.danhMucChucDanhs on hd.idChucDanh equals dmcd.id
+                          join dmcv in _context.danhMucChucVus on hd.idChucVu equals dmcv.id
                           where nv.maNhanVien == maNhanVien 
-                          select new { hd, lhd, dmcd };
+                          select new { hd, lhd, dmcd, dmcv };
 
             var dataHd = await queryHd.Select(x => new HopDongViewModel()
             {
                 id = x.hd.maHopDong,
                 idLoaiHopDong = x.lhd.tenLoaiHopDong,
                 idChucDanh = x.dmcd.tenChucDanh,
+                idChucVu = x.dmcv.tenChucVu,
                 hdHopDongTuNgay = x.hd.hopDongTuNgay,
                 hdHopDongDenNgay = x.hd.hopDongDenNgay,
                 hdGhiChu = x.hd.ghiChu,

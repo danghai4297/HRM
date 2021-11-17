@@ -10,7 +10,7 @@ namespace HRMSolution.Application.Catalog.HopDongs.Dtos
         public string id { get; set; }
         public string loaiHopDong { get; set; }
         public string chucDanh { get; set; }
-
+        public string chucVu { get; set; }
         public DateTime? hopDongTuNgay { get; set; }
         public DateTime? hopDongDenNgay { get; set; }
         public string ghiChu { get; set; }
@@ -20,5 +20,8 @@ namespace HRMSolution.Application.Catalog.HopDongs.Dtos
         public string tenNhanVien { get; set; }
         public int idLoaiHopDong { get; set; }
         public int idChucDanh { get; set; }
+        public int idChucVu { get; set; }
+        public float phuCapChucDanh { get; set; }
+        public float phuCapChucVu { get; set; }
     }
 }

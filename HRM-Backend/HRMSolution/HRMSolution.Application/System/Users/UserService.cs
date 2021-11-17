@@ -166,7 +166,7 @@ namespace HRMSolution.Application.System.Users
         public async Task<bool> Register(RegisterRequest request)
         {
             var user = await _userManager.FindByNameAsync(request.UserName);
-            var nhanVien = await _context.nhanViens.FindAsync(request.maNhanVien);
+
             if (user != null)
             {
                 return false;
@@ -262,7 +262,7 @@ namespace HRMSolution.Application.System.Users
             "abcdefghijkmnopqrstuvwxyz",    // lowercase
             "0123456789",                   // digits
             "!@$?_-"                        // non-alphanumeric
-        };
+            };
 
             Random rand = new Random(Environment.TickCount);
             List<char> chars = new List<char>();

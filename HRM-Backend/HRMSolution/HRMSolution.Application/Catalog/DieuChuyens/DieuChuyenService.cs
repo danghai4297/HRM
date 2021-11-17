@@ -35,12 +35,11 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                 idPhongBan = request.idPhongBan,
                 to = request.to,
                 chiTiet = request.chiTiet,
-                idChucVu = request.idChucVu,
                 trangThai = true
             };
             if(request.bangChung is null)
             {
-                dieuChuyen.bangChung = "";
+                dieuChuyen.bangChung = null;
             } else
             {
                 dieuChuyen.bangChung = await this.SaveFile(request.bangChung);
@@ -64,9 +63,8 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
             var query = from dc in _context.dieuChuyens
                         join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
                         join to in _context.danhMucTos on dc.to equals to.idTo
-                        join cv in _context.danhMucChucVus on dc.idChucVu equals cv.id
                         join nv in _context.nhanViens on dc.maNhanVien equals nv.maNhanVien
-                        select new { dc, pb, to, cv, nv };
+                        select new { dc, pb, to, nv };
             var data = await query.Select(x => new DieuChuyenViewModel()
             {
                 id = x.dc.id,
@@ -76,9 +74,7 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                 PhongBan = x.pb.tenPhongBan,
                 to = x.to.tenTo,
                 chiTiet = x.dc.chiTiet,
-                ChucVu = x.cv.tenChucVu,
                 trangThai = x.dc.trangThai == true ? "Kích hoạt" : "Vô hiệu",
-                idChucVu = x.dc.idChucVu,
                 idPhongBan = x.dc.idPhongBan,
                 idTo = x.dc.to,
                 bangChung = x.dc.bangChung
@@ -91,10 +87,9 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
             var query = from dc in _context.dieuChuyens
                         join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
                         join to in _context.danhMucTos on dc.to equals to.idTo
-                        join cv in _context.danhMucChucVus on dc.idChucVu equals cv.id
                         join nv in _context.nhanViens on dc.maNhanVien equals nv.maNhanVien
                         where dc.id == id
-                        select new { dc, pb, to, cv, nv };
+                        select new { dc, pb, to, nv };
             var data = await query.Select(x => new DieuChuyenViewModel()
             {
                 id = x.dc.id,
@@ -104,9 +99,7 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                 PhongBan = x.pb.tenPhongBan,
                 to = x.to.tenTo,
                 chiTiet = x.dc.chiTiet,
-                ChucVu = x.cv.tenChucVu,
                 trangThai = x.dc.trangThai == true? "Kích hoạt": "Vô hiệu",
-                idChucVu = x.dc.idChucVu,
                 idPhongBan = x.dc.idPhongBan,
                 idTo = x.dc.to,
                 bangChung = x.dc.bangChung
@@ -125,11 +118,10 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
             dieuChuyen.idPhongBan = request.idPhongBan;
             dieuChuyen.to = request.to;
             dieuChuyen.chiTiet = request.chiTiet;
-            dieuChuyen.idChucVu = request.idChucVu;
             dieuChuyen.trangThai = request.trangThai;
             if(request.bangChung is null)
             {
-                dieuChuyen.bangChung = "";
+                dieuChuyen.bangChung = null;
             } else
             {
                 await _storageService.DeleteFileAsync(dieuChuyen.bangChung);
