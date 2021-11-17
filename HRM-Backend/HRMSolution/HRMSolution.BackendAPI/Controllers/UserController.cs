@@ -51,7 +51,7 @@ namespace HRMSolution.BackendAPI.Controllers
         }
 
         //PUT: http://localhost/api/users/id
-        [HttpPut("{id}")]
+        [HttpPut("change-password{id}")]
         public async Task<IActionResult> ChangePassword(Guid id, [FromBody] UserUpdateRequest request)
         {
             if (!ModelState.IsValid)
@@ -59,6 +59,19 @@ namespace HRMSolution.BackendAPI.Controllers
 
             var result = await _userService.ChangePassword(id, request);
             if (result == false)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
+        }
+        [HttpPut("reset-password/{id}")]
+        public async Task<IActionResult> ResetPassword(Guid id)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var result = await _userService.ResetPassword(id);
+            if (result == null)
             {
                 return BadRequest(result);
             }

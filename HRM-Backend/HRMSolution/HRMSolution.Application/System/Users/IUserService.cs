@@ -24,6 +24,7 @@ namespace HRMSolution.Application.System.Users
 
         Task<bool> RoleAssign(Guid id, RoleAssignRequest request);
         Task<List<UserVm>> GetAll();
+        Task<string> ResetPassword(Guid id);
 
     }
 }

@@ -50,10 +50,11 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
 
         public async Task<int> Delete(int idDanhMucKTKL)
         {
-            var danhMucKTKL = await _context.khenThuongKyLuats.FindAsync(idDanhMucKTKL);
-            if (danhMucKTKL == null) throw new HRMException($"Không tìm thấy khen thưởng kỷ luật có id: {idDanhMucKTKL}");
+            var ktkl = await _context.khenThuongKyLuats.FindAsync(idDanhMucKTKL);
+            if (ktkl == null) throw new HRMException($"Không tìm thấy khen thưởng kỷ luật có id: {idDanhMucKTKL}");
 
-            _context.khenThuongKyLuats.Remove(danhMucKTKL);
+            await _storageService.DeleteFileAsync(ktkl.anh);
+            _context.khenThuongKyLuats.Remove(ktkl);
             return await _context.SaveChangesAsync();
         }
 
@@ -155,6 +156,7 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
             }
             else
             {
+                await _storageService.DeleteFileAsync(ktkl.anh);
                 ktkl.anh = await this.SaveFile(request.bangChung);
             }
 
