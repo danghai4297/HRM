@@ -48,11 +48,12 @@ namespace HRMSolution.Application.System.Users
             var roles = await _userManager.GetRolesAsync(user);
             var claims = new[]
             {
-                //new Claim("email",nv.email),
+                new Claim("anh",nv.anh),
                 new Claim("givenName",nv.hoTen),
                 new Claim("role", string.Join(";",roles)),
                 new Claim("userName", request.UserName),
-                new Claim("id", user.maNhanVien)
+                new Claim("id", user.maNhanVien),
+                new Claim("idAccount", user.Id.ToString()),
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -100,6 +101,7 @@ namespace HRMSolution.Application.System.Users
                     PhoneNumber = x.PhoneNumber,
                     UserName = x.UserName,
                     Id = x.Id,
+                    
                 }).ToListAsync();
 
             //4. Select and projection
@@ -115,6 +117,7 @@ namespace HRMSolution.Application.System.Users
 
         public async Task<List<UserVm>> GetAll()
         {
+            
             var query = from x in _userManager.Users
                         join nv in _context.nhanViens on x.maNhanVien equals nv.maNhanVien
                         select new {x, nv };
@@ -198,6 +201,7 @@ namespace HRMSolution.Application.System.Users
 
         public async Task<bool> RoleAssign(Guid id, RoleAssignRequest request)
         {
+
             var user = await _userManager.FindByIdAsync(id.ToString());
             if (user == null)
             {
@@ -225,26 +229,21 @@ namespace HRMSolution.Application.System.Users
             return true;
         }
 
-        public async Task<bool> Update(Guid id, UserUpdateRequest request)
+        public async Task<bool> ChangePassword(Guid id, UserUpdateRequest request)
         {
-            if(await _userManager.Users.AnyAsync(x => x.Email == request.Email && x.Id != id))
-            {
-                return false;
-            }
+            var hasher = new PasswordHasher<AppUser>();
             var user = await _userManager.FindByIdAsync(id.ToString());
-            user.Email = request.Email;
-            user.PhoneNumber = request.PhoneNumber;
-            user.maNhanVien = request.maNhanVien;
-            
-
-            var result = await _userManager.UpdateAsync(user);
-            if (result.Succeeded)
+            var changePassword = await _userManager.ChangePasswordAsync(user, request.oldPassword, request.newPassword);        
+            if (changePassword.Succeeded)
             {
-                return true;
+                user.PasswordHash = hasher.HashPassword(null, request.newPassword);
+                var result = await _userManager.UpdateAsync(user);
+                if (result.Succeeded)
+                {
+                    return true;
+                }
             }
-            return true;
+            return false;
         }
-
-        
     }
 }

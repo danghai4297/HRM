@@ -7,21 +7,8 @@ namespace HRMSolution.Application.System.Users.Dtos
 {
     public class UserUpdateRequest
     {
-        public Guid Id { get; set; }
-
-        [Display(Name = "Họ Tên")]
-        public string FullName { get; set; }
-
-        [Display(Name = "Ngày sinh")]
-        [DataType(DataType.Date)]
-        public DateTime Dob { get; set; }
-
-        [Display(Name = "Hòm thư")]
-        public string Email { get; set; }
-        [Display(Name = "Mã nhân viên")]
-        public string maNhanVien { get; set; }
-
-        [Display(Name = "Số điện thoại")]
-        public string PhoneNumber { get; set; }
+        public string oldPassword { get; set; }
+        public string newPassword { get; set; }
+        public string confirmPassword { get; set; }
     }
 }

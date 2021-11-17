@@ -58,17 +58,9 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, LuongUpdateRequest request)
+        public async Task<IActionResult> Update(int id, [FromForm] LuongUpdateRequest request)
         {
             var result = await _luongService.Update(id, request);
-            if (result == 0)
-                return BadRequest();
-            return Ok();
-        }
-        [HttpPut("bangChung/{id}")]
-        public async Task<IActionResult> UpdateBangChung(int id, [FromForm] LuongUpdateBangChungRequest request)
-        {
-            var result = await _luongService.UpdateBangChung(id, request);
             if (result == 0)
                 return BadRequest();
             return Ok();

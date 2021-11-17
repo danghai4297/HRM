@@ -19,6 +19,6 @@ namespace HRMSolution.Application.Catalog.DieuChuyens.Dtos
         public int idChucVu { get; set; }
 
         public int idTo { get; set; }
-
+        public string bangChung { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace HRMSolution.Data.Configurations
             builder.Property(x => x.chiTiet).HasMaxLength(300);
             builder.Property(x => x.idPhongBan).IsRequired();
             builder.Property(x => x.trangThai).IsRequired();
-
+            builder.Property(x => x.bangChung).HasMaxLength(100);
         }
     }
 }
