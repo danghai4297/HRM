@@ -205,6 +205,7 @@ namespace HRMSolution.Application.Catalog.Luongs
             }
             else
             {
+                await _storageService.DeleteFileAsync(luong.bangChung);
                 luong.bangChung = await this.SaveFile(request.bangChung);
             }
 

@@ -54,6 +54,7 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
             var dieuChuyen = await _context.dieuChuyens.FindAsync(idDieuChuyen);
             if (dieuChuyen == null) throw new HRMException($"Không tìm thấy điều chuyển có id: {idDieuChuyen}");
 
+            await _storageService.DeleteFileAsync(dieuChuyen.bangChung);
             _context.dieuChuyens.Remove(dieuChuyen);
             return await _context.SaveChangesAsync();
         }
@@ -131,6 +132,7 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                 dieuChuyen.bangChung = "";
             } else
             {
+                await _storageService.DeleteFileAsync(dieuChuyen.bangChung);
                 dieuChuyen.bangChung = await this.SaveFile(request.bangChung);
             }
 
