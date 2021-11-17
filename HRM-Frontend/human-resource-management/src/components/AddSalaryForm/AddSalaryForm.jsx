@@ -113,6 +113,7 @@ function AddSalaryForm(props) {
           setDescription("Bạn chắc chắn muốn sửa thông tin lương");
           const response = await ProductApi.getLDetail(id);
           setDataLDetail(response);
+          setEndDate(moment(response.ngayHieuLuc));
           setEndDateRs(moment(response.ngayKetThuc));
         }
       } catch (error) {
@@ -129,7 +130,7 @@ function AddSalaryForm(props) {
   const handleChange = (e) => {
     console.log(e);
     setFile({
-      file: e.file,
+      file: e.fileList.length !== 0 ? e.file : null,
       path:
         e.fileList.length !== 0
           ? URL.createObjectURL(e.file)
@@ -215,7 +216,14 @@ function AddSalaryForm(props) {
       intitalValue.trangThai,
       intitalValue.maHopDong,
     ];
-    return JSON.stringify(values) === JSON.stringify(dfValue);
+    // return JSON.stringify(values) === JSON.stringify(dfValue);
+    if (
+      JSON.stringify(values) === JSON.stringify(dfValue) &&
+      file.file === null
+    ) {
+      return true;
+    }
+    return false;
   };
   useEffect(() => {
     if (dataLDetail) {
@@ -234,7 +242,10 @@ function AddSalaryForm(props) {
   // useEffect(() => {
   //   reset(intitalValue.heSoLuong);
   // }, [intitalValue.heSoLuong]);
-
+ 
+  console.log(endDate);
+  console.log(endDateRs);
+  
   useEffect(() => {
     if (id !== undefined) {
       setSalary({
@@ -256,26 +267,39 @@ function AddSalaryForm(props) {
     salary.phuCapKhac,
     salary.phuCapTrachNhiem,
   ]);
-  console.log(file);
 
   const onHandleSubmit = async (data) => {
     let maHopDong = data.maHopDong;
     console.log(data);
-    if (endDateRs !== undefined) {
-      let obj = { ngayKetThuc: endDateRs };
-      Object.assign(data, obj);
-      console.log(Object.assign(data, obj));
-    }
+    
+    // if (endDateRs !== undefined) {
+    //   let obj = { ngayKetThuc: endDateRs };
+    //   Object.assign(data, obj);
+    //   console.log(Object.assign(data, obj));
+    // }
     try {
       if (id !== undefined) {
-        if (file.file !== null) {
-          await DeleteApi.deleteAL(id);
+        try {
           const formData = new FormData();
           formData.append("bangChung", file.file);
-          //formData.append("maHopDong", data.id);
-          await PutApi.PutAL(formData, id);
+         // formData.append("maHopDong", data.maHopDong);
+          formData.append("idNhomLuong", data.idNhomLuong);
+          formData.append("heSoLuong", data.heSoLuong);
+          formData.append("bacLuong", data.bacLuong);
+          formData.append("luongCoBan", data.luongCoBan);
+          formData.append("phuCapTrachNhiem", data.phuCapTrachNhiem);
+          formData.append("phuCapKhac", data.phuCapKhac);
+          formData.append("tongLuong", data.tongLuong);
+          formData.append("thoiHanLenLuong", data.thoiHanLenLuong);
+          formData.append("ngayHieuLuc", endDate.format("DD/MM/YYYY"));
+          formData.append("ngayKetThuc", endDateRs.format("DD/MM/YYYY"));
+          formData.append("ghiChu", data.ghiChu);
+          formData.append("trangThai", data.trangThai);          
+          await PutApi.PutL(formData, id);
+        } catch (errors) {
+          error(`Lỗi:${errors}`);
         }
-        await PutApi.PutL(data, id);
+       
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
           thaoTac: `Sửa thông tin lương trong hợp đồng ${maHopDong} của nhân viên ${dataLDetail.tenNhanVien}`,
@@ -300,9 +324,8 @@ function AddSalaryForm(props) {
         formData.append("ngayHieuLuc", endDate.format("DD/MM/YYYY"));
         formData.append("ngayKetThuc", endDateRs.format("DD/MM/YYYY"));
         formData.append("ghiChu", data.ghiChu);
-        formData.append("trangThai", data.trangThai);
+        formData.append("trangThai", data.trangThai);        
         await ProductApi.PostL(formData);
-
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
           thaoTac: `Thêm lương mới trong hợp đồng ${maHopDong} của nhân viên ${dataLDetail.tenNhanVien}`,
@@ -338,6 +361,9 @@ function AddSalaryForm(props) {
   };
 
   useEffect(() => {
+    if(id!== undefined){
+      setSalaryTime(Number(getValues("thoiHanLenLuong")));
+    }
     if (
       salaryTime !== undefined &&
       endDate !== undefined &&
@@ -735,7 +761,11 @@ function AddSalaryForm(props) {
                   >
                     Bằng chứng
                   </label>
-                  <Upload beforeUpload={() => false} onChange={handleChange}>
+                  <Upload
+                    beforeUpload={() => false}
+                    onChange={handleChange}
+                    maxCount={1}
+                  >
                     <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
                   </Upload>
                 </div>

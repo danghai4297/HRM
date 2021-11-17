@@ -53,7 +53,7 @@ function ChangePasswordForm(props) {
       console.log(data);
       try {
         await LoginApi.PutChangePassword(data,idAccount);
-        success("Đổi mật khẩu thành công.")
+        success("Đổi mật khẩu thành công.");
       } catch (errors) {
         error("Đổi mật khẩu không thành công!");
       }

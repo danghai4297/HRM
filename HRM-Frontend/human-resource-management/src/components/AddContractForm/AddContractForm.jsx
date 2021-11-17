@@ -110,12 +110,12 @@ function AddContractForm(props) {
         const increCode = Number(idIncre.slice(2)) + 1;
         const rsCode = "HD";
         if (increCode < 10) {
-         // setRsId(rsCode.concat(`0${increCode}`));
-          setValue("maHopDong",rsCode.concat(`0${increCode}`))
+          // setRsId(rsCode.concat(`0${increCode}`));
+          setValue("maHopDong", rsCode.concat(`0${increCode}`));
         } else if (increCode >= 10) {
           //setRsId(rsCode.concat(`${increCode}`));
-          setValue("maHopDong",rsCode.concat(`${increCode}`))
-        }        
+          setValue("maHopDong", rsCode.concat(`${increCode}`));
+        }
       }
     };
     handleId();
@@ -128,7 +128,7 @@ function AddContractForm(props) {
   const handleChange = (e) => {
     console.log(e);
     setFile({
-      file: e.file,
+      file: e.fileList.length !== 0 ? e.file : null,
       path:
         e.fileList.length !== 0
           ? URL.createObjectURL(e.file)
@@ -205,7 +205,14 @@ function AddContractForm(props) {
       intitalValue.maHopDong,
       intitalValue.trangThai,
     ];
-    return JSON.stringify(values) === JSON.stringify(dfValue);
+    //return JSON.stringify(values) === JSON.stringify(dfValue);
+    if (
+      JSON.stringify(values) === JSON.stringify(dfValue) &&
+      file.file === null
+    ) {
+      return true;
+    }
+    return false;
   };
 
   const onHandleSubmit = async (data) => {
@@ -545,7 +552,11 @@ function AddContractForm(props) {
                   >
                     Bằng chứng
                   </label>
-                  <Upload beforeUpload={() => false} onChange={handleChange}>
+                  <Upload
+                    beforeUpload={() => false}
+                    onChange={handleChange}
+                    maxCount={1}
+                  >
                     <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
                   </Upload>
                 </div>

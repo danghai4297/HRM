@@ -216,10 +216,14 @@ function Detail(props) {
 
             <div className="avatar">
               <div className="icon-second" style={{ width: "90px" }}>
-                <img
-                  src={`https://localhost:5001/${dataDetailNv.anh}`}
-                  alt=""
-                />
+                {dataDetailNv.anh !== null ? (
+                  <img
+                    src={`https://localhost:5001/${dataDetailNv.anh}`}
+                    alt=""
+                  />
+                ) : (
+                  <img src="/Images/loginImage.png" alt="" />
+                )}
               </div>
               <div className="names">
                 <h5>{dataDetailNv.hoTen}</h5>

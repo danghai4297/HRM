@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import "./ScreenDetailDiscipline.scss";
 import ProductApi from "../../api/productApi";
 import { Link } from "react-router-dom";
+import { ttkl } from "./DataDiscipline";
 function ScreenDetailDiscipline(props) {
   let { match, history } = props;
   let { id } = match.params;
@@ -44,39 +45,38 @@ function ScreenDetailDiscipline(props) {
                 Sửa
               </Button>
             </Link>
-            <a
-              class="btn btn-fix btn-light"
-              href={`https://localhost:5001${dataKLDetail.anh}`}
-              role="button"
-            >
-              <FontAwesomeIcon
-                className="icon-btn"
-                icon={["fas", "file-word"]}
-              />
-            </a>
+            {dataKLDetail.bangChung !== null && (
+              <Button
+                variant="light"
+                className="btn-fix"
+                onClick={() => {
+                  window.open(
+                    `https://localhost:5001${dataKLDetail.bangChung}`
+                  );
+                }}
+              >
+                <FontAwesomeIcon
+                  className="icon-btn"
+                  icon={["fas", "download"]}
+                />
+              </Button>
+            )}
           </div>
         </div>
         <div className="second-main">
           <h3 className="title-main">Thông tin kỷ luật</h3>
           <div className="second-main-path">
-            <SubDetail
-              titleLeft="Họ và tên"
-              itemLeft={dataKLDetail.hoTen}
-              titleRight="Mã nhân viên"
-              itemRight={dataKLDetail.maNhanVien}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Danh mục"
-              itemLeft={dataKLDetail.idDanhMucKhenThuong}
-              titleRight="Lý do"
-              itemRight={dataKLDetail.lyDo}
-            ></SubDetail>
-            <SubDetail
-              titleLeft="Nội dung"
-              itemLeft={dataKLDetail.noiDung}
-              titleRight="Ảnh"
-              itemRight={dataKLDetail.anh}
-            ></SubDetail>
+            {ttkl.map((detail, key) => {
+              return (
+                <SubDetail
+                  key={key}
+                  titleLeft={detail.title1}
+                  itemLeft={dataKLDetail[detail.data1]}
+                  titleRight={detail.title2}
+                  itemRight={dataKLDetail[detail.data2]}
+                />
+              );
+            })}
           </div>
         </div>
         <div className="all-discipline">

@@ -41,22 +41,29 @@ function ScreenDetailContract(props) {
             <h2>Chi tiết hợp đồng</h2>
           </div>
           <div className="third-path">
-            <Link to={`/contract/${id}`}>
-              <Button variant="light" className="btn-fix">
-                Sửa
+            {dataDetailHd.trangThai === "Kích hoạt" && (
+              <Link to={`/contract/${id}`}>
+                <Button variant="light" className="btn-fix">
+                  Sửa
+                </Button>
+              </Link>
+            )}
+            {dataDetailHd.bangChung !== null && (
+              <Button
+                variant="light"
+                className="btn-fix"
+                onClick={() => {
+                  window.open(
+                    `https://localhost:5001${dataDetailHd.bangChung}`
+                  );
+                }}
+              >
+                <FontAwesomeIcon
+                  className="icon-btn"
+                  icon={["fas", "download"]}
+                />
               </Button>
-            </Link>
-            <a
-              class="btn btn-fix btn-light"
-              href={`https://localhost:5001${dataDetailHd.bangChung}`}
-              role="button"
-              target="_blank"
-            >
-              <FontAwesomeIcon
-                className="icon-btn"
-                icon={["fas", "file-word"]}
-              />
-            </a>
+            )}
           </div>
         </div>
         <div className="second-main">
