@@ -113,8 +113,8 @@ function AddSalaryForm(props) {
           setDescription("Bạn chắc chắn muốn sửa thông tin lương");
           const response = await ProductApi.getLDetail(id);
           setDataLDetail(response);
-          setEndDate(moment(response.ngayHieuLuc));
-          setEndDateRs(moment(response.ngayKetThuc));
+          setStartDate(moment(response.ngayHieuLuc));
+          setEndDate(moment(response.ngayKetThuc));
         }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -157,10 +157,10 @@ function AddSalaryForm(props) {
         : dataLDetail.ngayHieuLuc,
     ngayKetThuc:
       id !== undefined
-        ? moment(dataLDetail.ngayHieuLuc)._d == "Invalid Date"
-          ? dataLDetail.ngayHieuLuc
-          : moment(dataLDetail.ngayHieuLuc)
-        : dataLDetail.ngayHieuLuc,
+        ? moment(dataLDetail.ngayKetThuc)._d == "Invalid Date"
+          ? dataLDetail.ngayKetThuc
+          : moment(dataLDetail.ngayKetThuc)
+        : dataLDetail.ngayKetThuc,
     ghiChu: id !== undefined ? dataLDetail.ghiChu : null,
     trangThai:
       id !== undefined
@@ -237,14 +237,14 @@ function AddSalaryForm(props) {
       [e.target.name]: e.target.value,
     });
   };
-  console.log(salary);
+  //console.log(salary);
 
   // useEffect(() => {
   //   reset(intitalValue.heSoLuong);
   // }, [intitalValue.heSoLuong]);
  
+  console.log(startDate);
   console.log(endDate);
-  console.log(endDateRs);
   
   useEffect(() => {
     if (id !== undefined) {
@@ -271,7 +271,6 @@ function AddSalaryForm(props) {
   const onHandleSubmit = async (data) => {
     let maHopDong = data.maHopDong;
     console.log(data);
-    
     // if (endDateRs !== undefined) {
     //   let obj = { ngayKetThuc: endDateRs };
     //   Object.assign(data, obj);
@@ -291,15 +290,15 @@ function AddSalaryForm(props) {
           formData.append("phuCapKhac", data.phuCapKhac);
           formData.append("tongLuong", data.tongLuong);
           formData.append("thoiHanLenLuong", data.thoiHanLenLuong);
-          formData.append("ngayHieuLuc", endDate.format("DD/MM/YYYY"));
-          formData.append("ngayKetThuc", endDateRs.format("DD/MM/YYYY"));
+          formData.append("ngayHieuLuc", startDate.format("MM/DD/YYYY"));
+          formData.append("ngayKetThuc", endDate.format("MM/DD/YYYY"));
           formData.append("ghiChu", data.ghiChu);
           formData.append("trangThai", data.trangThai);          
           await PutApi.PutL(formData, id);
         } catch (errors) {
           error(`Lỗi:${errors}`);
         }
-       
+
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
           thaoTac: `Sửa thông tin lương trong hợp đồng ${maHopDong} của nhân viên ${dataLDetail.tenNhanVien}`,
@@ -321,8 +320,8 @@ function AddSalaryForm(props) {
         formData.append("phuCapKhac", data.phuCapKhac);
         formData.append("tongLuong", data.tongLuong);
         formData.append("thoiHanLenLuong", data.thoiHanLenLuong);
-        formData.append("ngayHieuLuc", endDate.format("DD/MM/YYYY"));
-        formData.append("ngayKetThuc", endDateRs.format("DD/MM/YYYY"));
+        formData.append("ngayHieuLuc", startDate.format("MM/DD/YYYY"));
+        formData.append("ngayKetThuc", endDate.format("MM/DD/YYYY"));
         formData.append("ghiChu", data.ghiChu);
         formData.append("trangThai", data.trangThai);        
         await ProductApi.PostL(formData);
@@ -360,20 +359,20 @@ function AddSalaryForm(props) {
     }
   };
 
-  useEffect(() => {
-    if(id!== undefined){
-      setSalaryTime(Number(getValues("thoiHanLenLuong")));
-    }
-    if (
-      salaryTime !== undefined &&
-      endDate !== undefined &&
-      salaryTime !== 0 &&
-      endDate !== null
-    ) {
-      const rs = endDate.clone();
-      setEndDateRs(rs.add(salaryTime, "years"));
-    }
-  }, [salaryTime, endDate]);
+  // useEffect(() => {
+  //   if(id!== undefined){
+  //     setSalaryTime(Number(getValues("thoiHanLenLuong")));
+  //   }
+  //   if (
+  //     salaryTime !== undefined &&
+  //     endDate !== undefined &&
+  //     salaryTime !== 0 &&
+  //     endDate !== null
+  //   ) {
+  //     const rs = endDate.clone();
+  //     setEndDateRs(rs.add(salaryTime, "years"));
+  //   }
+  // }, [salaryTime, endDate]);
 
   return (
     <>
@@ -690,7 +689,6 @@ function AddSalaryForm(props) {
                         value={field.value}
                         onChange={(event) => {
                           field.onChange(event);
-                          setEndDate(event);
                           setStartDate(event);
                         }}
                         {...field._d}
@@ -721,9 +719,15 @@ function AddSalaryForm(props) {
                         }
                         placeholder="DD/MM/YYYY"
                         format="DD/MM/YYYY"
-                        value={endDateRs}
+                        // value={endDateRs}
+                        // {...field._d}
+                        // disabled={true}
+                        value={field.value}
+                        onChange={(event) => {
+                          field.onChange(event);
+                          setEndDate(event);
+                        }}
                         {...field._d}
-                        disabled={true}
                       />
                     )}
                   />

@@ -66,7 +66,7 @@ function AddContractForm(props) {
 
   const [dataDetailHd, setdataDetailHd] = useState([]);
   const [dataHD, setDataHD] = useState([]);
-  const [dataCD, setDataCD] = useState([]);
+  const [dataCV, setDataCV] = useState([]);
   const [dataAllHD, setDataAllHD] = useState([]);
   const [rsId, setRsId] = useState();
   const [rsIdCre, setRsIdCre] = useState();
@@ -77,8 +77,8 @@ function AddContractForm(props) {
       try {
         const responseDMHD = await ProductApi.getAllDMLHD();
         setDataHD(responseDMHD);
-        const responseCD = await ProductApi.getAllDMCD();
-        setDataCD(responseCD);
+        const responseCV = await ProductApi.getAllDMCV();
+        setDataCV(responseCV);
         const responseIdEmployee = await ProductApi.getAllNv();
         setDataIdEmployee(responseIdEmployee);
         if (id !== undefined) {
@@ -368,7 +368,7 @@ function AddContractForm(props) {
                     class="col-sm-4 justify-content-start"
                     htmlFor="idChucDanh"
                   >
-                    Chức danh công việc
+                    Chức vụ
                   </label>
                   <select
                     type="text"
@@ -381,9 +381,9 @@ function AddContractForm(props) {
                     }
                   >
                     <option value=""></option>
-                    {dataCD.map((item, key) => (
+                    {dataCV.map((item, key) => (
                       <option key={key} value={item.id}>
-                        {item.tenChucDanh}
+                        {item.tenChucVu}
                       </option>
                     ))}
                   </select>
