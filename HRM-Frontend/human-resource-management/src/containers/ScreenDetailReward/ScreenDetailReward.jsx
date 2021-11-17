@@ -46,7 +46,7 @@ function ScreenDetailReward(props) {
                 Sửa
               </Button>
             </Link>
-            {dataDetailKt.bangChung !== null  && (
+            {dataDetailKt.bangChung !== null && (
               <Button
                 variant="light"
                 className="btn-fix"
