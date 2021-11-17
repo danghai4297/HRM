@@ -129,8 +129,7 @@ namespace HRMSolution.Application.System.Users
                 UserName = x.x.UserName,
                 Email = x.nv.email,
                 maNhanVien = x.x.maNhanVien,
-                Dob = x.nv.ngaySinh,
-                password = x.x.PasswordHash,
+                Dob = x.nv.ngaySinh
             }).ToListAsync();
 
             return data;
@@ -145,18 +144,6 @@ namespace HRMSolution.Application.System.Users
             //}
             var roles = await _userManager.GetRolesAsync(user);
 
-            //var userVm = new UserVm()
-            //{
-            //    Email = user.Email,
-            //    PhoneNumber = user.PhoneNumber,
-            //    FullName = user.hoTen,
-            //    Dob = user.ngaySinh,
-            //    Id = user.Id,
-            //    UserName = user.UserName,
-            //    Roles = roles,
-            //    maNhanVien = user.maNhanVien,
-            //    password =  user.PasswordHash
-            //};
             var query = from x in _userManager.Users
                         join nv in _context.nhanViens on x.maNhanVien equals nv.maNhanVien
                         where x.Id == id
@@ -170,7 +157,6 @@ namespace HRMSolution.Application.System.Users
                 Email = x.nv.email,
                 maNhanVien = x.x.maNhanVien,
                 Dob = x.nv.ngaySinh,
-                password = x.x.PasswordHash,
                 Roles = roles
             }).FirstOrDefaultAsync();
 
