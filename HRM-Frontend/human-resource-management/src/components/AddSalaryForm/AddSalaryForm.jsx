@@ -95,6 +95,7 @@ function AddSalaryForm(props) {
   const [endDateRs, setEndDateRs] = useState();
   const [dataAllHD, setDataAllHD] = useState([]);
   const [rsSalary, setRsSalary] = useState(0);
+  const[contractCodes,setContractCodes] = useState();
 
   const cancel = () => {
     setShowDialog(false);
@@ -123,6 +124,24 @@ function AddSalaryForm(props) {
     fetchNvList(dataLDetail);
   }, []);
 
+  useEffect(() => {
+    const getContractCode = async () => {
+      try {
+        if(contractCodes !== undefined){
+          const responseDetailHD = await ProductApi.getHdDetail(contractCodes);
+          setValue("phuCapTrachNhiem",responseDetailHD.phuCapChucVu);
+          console.log(responseDetailHD);
+          
+        }
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    getContractCode();
+  }, [contractCodes]);
+
+  console.log(contractCodes);
+  
   const [file, setFile] = useState({
     file: null,
     path: "/Images/userIcon.png",
@@ -259,13 +278,13 @@ function AddSalaryForm(props) {
     rss +=
       Number(salary.heSoLuong) * Number(salary.luongCoBan) +
       Number(salary.phuCapKhac) +
-      Number(salary.phuCapTrachNhiem);
+      Number(getValues("phuCapTrachNhiem"));
     setValue("tongLuong", rss);
   }, [
     salary.heSoLuong,
     salary.luongCoBan,
     salary.phuCapKhac,
-    salary.phuCapTrachNhiem,
+  //  salary.phuCapTrachNhiem,
   ]);
 
   const onHandleSubmit = async (data) => {
@@ -452,7 +471,9 @@ function AddSalaryForm(props) {
                   </label>
                   <input
                     type="text"
-                    {...register("maHopDong")}
+                    {...register("maHopDong", {
+                      onChange: (e) => setContractCodes(e.target.value),
+                    })}
                     id="maHopDong"
                     className={
                       !errors.maHopDong

@@ -2,17 +2,44 @@ import { format } from "date-fns";
 import SelectColumnFilter from "../../components/TablePagination/SelectColumnFilter";
 
 export const NVCOLUMNS2 = [
+  // {
+  //   Header: "Ảnh",
+  //   accessor: "anh",
+  //   sticky: "left",
+  //   minWidth: 50,
+  //   Filter: SelectColumnFilter,
+  //   disableFilters: true,
+  //   // Cell: ({ value }) => <img src={value} width={50} />,
+  //   Cell: (tableProps) =>
+  //     tableProps.row.original.anh === "null" ? (
+  //       <img src="/Images/loginImage.png" width={60} alt="" />
+  //     ) : (
+  //       <img
+  //         src={`https://localhost:5001${tableProps.row.original.anh}`}
+  //         width={60}
+  //         alt=""
+  //       />
+  //     ),
+  //   show: true,
+  // },
   {
     Header: "Ảnh",
-    accessor: "anh",
+    accessor: (row) => {
+      return row.anh === null ? (
+        <img src="/Images/loginImage.png" width={60} alt="" />
+      ) : (
+        <img src={`https://localhost:5001${row.anh}`} width={60} alt="" />
+      );
+    },
     sticky: "left",
     minWidth: 50,
     Filter: SelectColumnFilter,
     disableFilters: true,
-    Cell: ({ value }) => <img src={value} width={50} />,
+    // Cell: ({ value }) => <img src={value} width={50} />,
 
     show: true,
   },
+
   {
     Header: "Mã Nhân Viên",
     accessor: "id",

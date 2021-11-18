@@ -18,6 +18,10 @@ function SideBarLeft() {
     );
   }
 
+  // const listRole = jwt_decode(sessionStorage.getItem("resultObj")).role.split(
+  //   ","
+  // );
+
   return (
     <div className="Sidebar">
       <ul className="SidebarList sticky-top">
@@ -26,6 +30,7 @@ function SideBarLeft() {
             <h1 style={{ color: "white" }}>HRM</h1>
           </div>
         </li>
+
         {SideBarData.filter(
           (val) =>
             val.roles.filter((element) =>

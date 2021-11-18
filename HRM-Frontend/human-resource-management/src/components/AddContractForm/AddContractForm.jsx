@@ -25,6 +25,7 @@ const schema = yup.object({
     .required("Mã nhân viên không được bỏ trống."),
   idLoaiHopDong: yup.number().typeError("Loại hợp đồng không được bỏ trống."),
   idChucDanh: yup.number().typeError("Chức danh không được bỏ trống."),
+  idChucVu: yup.number().typeError("Chức vụ không được bỏ trống."),
   // maHopDong: yup
   //   .string()
   //   .nullable()
@@ -67,11 +68,12 @@ function AddContractForm(props) {
   const [dataDetailHd, setdataDetailHd] = useState([]);
   const [dataHD, setDataHD] = useState([]);
   const [dataCV, setDataCV] = useState([]);
+  const [dataCD, setDataCD] = useState([]);
   const [dataAllHD, setDataAllHD] = useState([]);
   const [rsId, setRsId] = useState();
   const [rsIdCre, setRsIdCre] = useState();
   const [dataIdEmployee, setDataIdEmployee] = useState([]);
-
+ 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
@@ -79,6 +81,8 @@ function AddContractForm(props) {
         setDataHD(responseDMHD);
         const responseCV = await ProductApi.getAllDMCV();
         setDataCV(responseCV);
+        const responseCD = await ProductApi.getAllDMCD();
+        setDataCD(responseCD);
         const responseIdEmployee = await ProductApi.getAllNv();
         setDataIdEmployee(responseIdEmployee);
         if (id !== undefined) {
@@ -95,6 +99,8 @@ function AddContractForm(props) {
     };
     fetchNvList();
   }, []);
+
+  
 
   useEffect(() => {
     const handleId = async () => {
@@ -142,6 +148,7 @@ function AddContractForm(props) {
   const intitalValue = {
     maNhanVien: id !== undefined ? dataDetailHd.maNhanVien : ecode,
     idChucDanh: id !== undefined ? dataDetailHd.idChucDanh : null,
+    idChucVu: id !== undefined ? dataDetailHd.idChucVu : null,
     idLoaiHopDong: id !== undefined ? dataDetailHd.idLoaiHopDong : null,
     hopDongTuNgay:
       id !== undefined
@@ -188,6 +195,7 @@ function AddContractForm(props) {
     const values = getValues([
       "maNhanVien",
       "idChucDanh",
+      "idChucVu",
       "idLoaiHopDong",
       "hopDongTuNgay",
       "hopDongDenNgay",
@@ -198,6 +206,7 @@ function AddContractForm(props) {
     const dfValue = [
       intitalValue.maNhanVien,
       intitalValue.idChucDanh,
+      intitalValue.idChucVu,
       intitalValue.idLoaiHopDong,
       intitalValue.hopDongTuNgay,
       intitalValue.hopDongDenNgay,
@@ -366,9 +375,62 @@ function AddContractForm(props) {
                 <div className="form-group form-inline">
                   <label
                     class="col-sm-4 justify-content-start"
-                    htmlFor="idChucDanh"
+                    htmlFor="idChucVu"
                   >
                     Chức vụ
+                  </label>
+                  <select
+                    type="text"
+                    {...register("idChucVu")}
+                    id="idChucVu"
+                    className={
+                      !errors.idChucVu
+                        ? "form-control col-sm-6 custom-select"
+                        : "form-control col-sm-6 border-danger custom-select"
+                    }
+                  >
+                    <option value=""></option>
+                    {dataCV.map((item, key) => (
+                      <option key={key} value={item.id}>
+                        {item.tenChucVu}
+                      </option>
+                    ))}
+                  </select>
+                  <span className="message">{errors.idChucVu?.message}</span>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <div class="form-group form-inline ">
+                <label
+                    class="col-sm-4 justify-content-start"
+                    htmlFor="maHopDong"
+                  >
+                    Mã hợp đồng
+                  </label>
+                  <input
+                    type="text"
+                    {...register("maHopDong")}
+                    id="maHopDong"
+                    //value={rsId}
+                    className={
+                      !errors.maHopDong
+                        ? "form-control col-sm-6 "
+                        : "form-control col-sm-6 border-danger"
+                    }
+                    readOnly
+                  />
+                  <span className="message">{errors.maHopDong?.message}</span>
+                </div>
+              </div>
+              <div className="col">
+                <div className="form-group form-inline">
+                <label
+                    class="col-sm-4 justify-content-start"
+                    htmlFor="idChucDanh"
+                  >
+                    Chức danh
                   </label>
                   <select
                     type="text"
@@ -381,9 +443,9 @@ function AddContractForm(props) {
                     }
                   >
                     <option value=""></option>
-                    {dataCV.map((item, key) => (
+                    {dataCD.map((item, key) => (
                       <option key={key} value={item.id}>
-                        {item.tenChucVu}
+                        {item.tenChucDanh}
                       </option>
                     ))}
                   </select>
@@ -424,25 +486,23 @@ function AddContractForm(props) {
               </div>
               <div className="col">
                 <div className="form-group form-inline">
-                  <label
+                <label
                     class="col-sm-4 justify-content-start"
-                    htmlFor="maHopDong"
+                    htmlFor="ghiChu"
                   >
-                    Mã hợp đồng
+                    Ghi chú
                   </label>
                   <input
                     type="text"
-                    {...register("maHopDong")}
-                    id="maHopDong"
-                    //value={rsId}
+                    {...register("ghiChu")}
+                    id="ghiChu"
                     className={
-                      !errors.maHopDong
+                      !errors.ghiChu
                         ? "form-control col-sm-6 "
                         : "form-control col-sm-6 border-danger"
                     }
-                    readOnly
                   />
-                  <span className="message">{errors.maHopDong?.message}</span>
+                  <span className="message">{errors.ghiChu?.message}</span>
                 </div>
               </div>
             </div>
@@ -487,7 +547,26 @@ function AddContractForm(props) {
               </div>
               <div className="col">
                 <div className="form-group form-inline">
-                  <label
+                <label
+                    className="col-sm-4 justify-content-start"
+                    htmlFor="bangChung"
+                  >
+                    Bằng chứng
+                  </label>
+                  <Upload
+                    beforeUpload={() => false}
+                    onChange={handleChange}
+                    maxCount={1}
+                  >
+                    <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
+                  </Upload>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-6">
+                <div class="form-group form-inline">
+                <label
                     class="col-sm-4 justify-content-start"
                     htmlFor="ngayHetHanHopDong"
                   >
@@ -521,51 +600,9 @@ function AddContractForm(props) {
                   </span>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-6">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="ghiChu"
-                  >
-                    Ghi chú
-                  </label>
-                  <input
-                    type="text"
-                    {...register("ghiChu")}
-                    id="ghiChu"
-                    className={
-                      !errors.ghiChu
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">{errors.ghiChu?.message}</span>
-                </div>
-              </div>
               <div className="col">
                 <div className="form-group form-inline">
-                  <label
-                    className="col-sm-4 justify-content-start"
-                    htmlFor="bangChung"
-                  >
-                    Bằng chứng
-                  </label>
-                  <Upload
-                    beforeUpload={() => false}
-                    onChange={handleChange}
-                    maxCount={1}
-                  >
-                    <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
-                  </Upload>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-6">
-                <div className="form-group form-inline">
-                  <label
+                <label
                     className="col-sm-4 justify-content-start"
                     style={id !== undefined ? null : { display: "none" }}
                     htmlFor="trangThai"
@@ -588,7 +625,7 @@ function AddContractForm(props) {
                   </select>
                   <span className="message">{errors.trangThai?.message}</span>
                 </div>
-                <input {...register("idCre")} type="text" value={rsIdCre} />
+                <input   style={ {display: "none"} } {...register("idCre")} type="text" value={rsIdCre} />
               </div>
             </div>
           </div>

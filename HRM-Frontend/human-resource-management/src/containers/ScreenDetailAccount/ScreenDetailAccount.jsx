@@ -18,7 +18,7 @@ function ScreenDetailAccount(props) {
     const fetchNvList = async () => {
       try {
         const responseKT = await LoginApi.getTkDetail(id);
-        setdataDetailTk(responseKT.resultObj);
+        setdataDetailTk(responseKT);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
