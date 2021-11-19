@@ -97,7 +97,7 @@ export const NVCOLUMNSSALARY = [
   {
     Header: "Thời hạn lên lương",
     accessor: "thoiHanLenLuong",
-    minWidth: 120,
+    minWidth: 180,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,

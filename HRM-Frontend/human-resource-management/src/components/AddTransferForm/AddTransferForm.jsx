@@ -14,7 +14,8 @@ import DialogCheck from "../Dialog/DialogCheck";
 import { useToast } from "../Toast/Toast";
 import Dialog from "../../components/Dialog/Dialog";
 import jwt_decode from "jwt-decode";
-
+import { Upload, Button } from "antd";
+import { UploadOutlined } from "@ant-design/icons";
 const schema = yup.object({
   maNhanVien: yup
     .string()
@@ -22,7 +23,7 @@ const schema = yup.object({
     .required("Mã nhân viên không được bỏ trống."),
   idPhongBan: yup.number().typeError("Phòng ban không được bỏ trống."),
   to: yup.number().nullable().required("Tổ không được bỏ trống."),
-  idChucVu: yup.number().nullable().required("Chức vụ không được bỏ trống."),
+ // idChucVu: yup.number().nullable().required("Chức vụ không được bỏ trống."),
   trangThai: yup.boolean(),
 });
 function AddTransferForm(props) {
@@ -43,12 +44,13 @@ function AddTransferForm(props) {
   let { id } = match.params;
 
   // states contain data
+  const[startDate,setStartDate] = useState();
   const [dataDetailDC, setDataDetailDC] = useState([]);
   const [dataNest, setDataNest] = useState([]);
   const [dataDepartment, setDataDepartment] = useState([]);
   const [dataPosition, setDataPosition] = useState([]);
   const [nest, setNest] = useState();
-  const [dataEmployee,setDataEmployee] = useState([]);
+  const [dataEmployee, setDataEmployee] = useState([]);
 
   const [dataDetailNN, setdataDetailNN] = useState([]);
   const [dataNN, setDataNN] = useState([]);
@@ -57,7 +59,7 @@ function AddTransferForm(props) {
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm thông tin thuyên chuyển mới"
   );
-  
+
   const [showCheckDialog, setShowCheckDialog] = useState(false);
   const cancel = () => {
     setShowDialog(false);
@@ -81,6 +83,7 @@ function AddTransferForm(props) {
           const response = await ProductApi.getDCDetail(id);
           setDataDetailDC(response);
           setNest(response.idPhongBan);
+          setStartDate(moment(response.ngayHieuLuc));
         }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -88,6 +91,23 @@ function AddTransferForm(props) {
     };
     fetchNvList();
   }, []);
+
+  const [file, setFile] = useState({
+    file: null,
+    path: "/Images/userIcon.png",
+  });
+  const handleChange = (e) => {
+    console.log(e);
+    setFile({
+      file: e.fileList.length !== 0 ? e.file : null,
+      path:
+        e.fileList.length !== 0
+          ? URL.createObjectURL(e.file)
+          : "/Images/userIcon.png",
+      //file: e.target.files[0],
+      //path: URL.createObjectURL(e.target.files[0]),
+    });
+  };
 
   const intitalValue = {
     ngayHieuLuc:
@@ -106,7 +126,7 @@ function AddTransferForm(props) {
           : false
         : true,
     maNhanVien: id !== undefined ? dataDetailDC.maNhanVien : null,
-    idChucVu: id !== undefined ? dataDetailDC.idChucVu : null,
+    //idChucVu: id !== undefined ? dataDetailDC.idChucVu : null,
   };
   //define method of react-hooks-form
   const {
@@ -134,7 +154,6 @@ function AddTransferForm(props) {
       "chiTiet",
       "trangThai",
       "maNhanVien",
-      "idChucVu",
     ]);
     const dfValue = [
       intitalValue.ngayHieuLuc,
@@ -143,16 +162,35 @@ function AddTransferForm(props) {
       intitalValue.chiTiet,
       intitalValue.trangThai,
       intitalValue.maNhanVien,
-      intitalValue.idChucVu,
     ];
-    return JSON.stringify(values) === JSON.stringify(dfValue);
+    //return JSON.stringify(values) === JSON.stringify(dfValue);
+    if (
+      JSON.stringify(values) === JSON.stringify(dfValue) &&
+      file.file === null
+    ) {
+      return true;
+    }
+    return false;
   };
   //method handle submit
   const onHandleSubmit = async (data) => {
     console.log(data);
     try {
       if (id !== undefined) {
-        await PutApi.PutDC(data, id);
+        try {
+          const formData = new FormData();
+        formData.append("bangChung", file.file);
+        formData.append("ngayHieuLuc", startDate.format("MM/DD/YYYY"));
+        formData.append("idPhongBan", data.idPhongBan);
+        formData.append("to", data.to);
+        formData.append("chiTiet", data.chiTiet);
+        formData.append("trangThai", data.trangThai);
+        formData.append("maNhanVien", data.maNhanVien);
+        await PutApi.PutDC(formData, id);
+        } catch (errors) {
+          errors("Không thể sửa thông tin thuyên chuyển")
+        }
+       
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
           thaoTac: `Sửa thông tin thuyên chuyển của nhân viên ${dataDetailDC.tenNhanVien}`,
@@ -163,7 +201,20 @@ function AddTransferForm(props) {
           `Sửa thông tin thuyên chuyển cho nhân viên ${dataDetailDC.tenNhanVien} thành công`
         );
       } else {
-        await ProductApi.PostDC(data);
+        try {
+          const formData = new FormData();
+          formData.append("bangChung", file.file);
+          formData.append("ngayHieuLuc", startDate.format("MM/DD/YYYY"));
+          formData.append("idPhongBan", data.idPhongBan);
+          formData.append("to", data.to);
+          formData.append("chiTiet", data.chiTiet);
+          formData.append("trangThai", data.trangThai);
+          formData.append("maNhanVien", data.maNhanVien);
+          await ProductApi.PostDC(formData);
+        } catch (errors) {
+          errors("Không thể thêm thông tin thuyên chuyển")
+        }
+       
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
           thaoTac: `Thêm thuyên chuyển mới cho nhân viên ${dataDetailDC.tenNhanVien}`,
@@ -267,11 +318,13 @@ function AddTransferForm(props) {
                         ? "form-control col-sm-6 "
                         : "form-control col-sm-6 border-danger"
                     }
-                    list = "employeeCode"
+                    list="employeeCode"
                   />
                   <datalist id="employeeCode">
                     {dataEmployee
-                      .filter((item) => item.trangThaiLaoDong === "Đang làm việc")
+                      .filter(
+                        (item) => item.trangThaiLaoDong === "Đang làm việc"
+                      )
                       .map((item, key) => (
                         <option key={key} value={item.id}>
                           {item.hoTen}
@@ -284,29 +337,18 @@ function AddTransferForm(props) {
               <div className="col">
                 <div className="form-group form-inline">
                   <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="idChucVu"
+                    className="col-sm-4 justify-content-start"
+                    htmlFor="bangChung"
                   >
-                    Chức vụ công tác
+                    Bằng chứng
                   </label>
-                  <select
-                    type="text"
-                    {...register("idChucVu")}
-                    id="idChucVu"
-                    className={
-                      !errors.idChucVu
-                        ? "form-control col-sm-6 custom-select"
-                        : "form-control col-sm-6 border-danger custom-select"
-                    }
+                  <Upload
+                    beforeUpload={() => false}
+                    onChange={handleChange}
+                    maxCount={1}
                   >
-                    <option value=""></option>
-                    {dataPosition.map((item, key) => (
-                      <option key={key} value={item.id}>
-                        {item.tenChucVu}
-                      </option>
-                    ))}
-                  </select>
-                  <span className="message">{errors.idChucVu?.message}</span>
+                    <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
+                  </Upload>
                 </div>
               </div>
             </div>
@@ -366,6 +408,7 @@ function AddTransferForm(props) {
                         value={field.value}
                         onChange={(event) => {
                           field.onChange(event);
+                          setStartDate(event)
                         }}
                         {...field._d}
                       />

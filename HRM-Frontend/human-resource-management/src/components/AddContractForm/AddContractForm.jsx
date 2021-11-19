@@ -25,6 +25,7 @@ const schema = yup.object({
     .required("Mã nhân viên không được bỏ trống."),
   idLoaiHopDong: yup.number().typeError("Loại hợp đồng không được bỏ trống."),
   idChucDanh: yup.number().typeError("Chức danh không được bỏ trống."),
+  idChucVu: yup.number().typeError("Chức vụ không được bỏ trống."),
   // maHopDong: yup
   //   .string()
   //   .nullable()
@@ -66,17 +67,20 @@ function AddContractForm(props) {
 
   const [dataDetailHd, setdataDetailHd] = useState([]);
   const [dataHD, setDataHD] = useState([]);
+  const [dataCV, setDataCV] = useState([]);
   const [dataCD, setDataCD] = useState([]);
   const [dataAllHD, setDataAllHD] = useState([]);
   const [rsId, setRsId] = useState();
   const [rsIdCre, setRsIdCre] = useState();
   const [dataIdEmployee, setDataIdEmployee] = useState([]);
-
+ 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
         const responseDMHD = await ProductApi.getAllDMLHD();
         setDataHD(responseDMHD);
+        const responseCV = await ProductApi.getAllDMCV();
+        setDataCV(responseCV);
         const responseCD = await ProductApi.getAllDMCD();
         setDataCD(responseCD);
         const responseIdEmployee = await ProductApi.getAllNv();
@@ -96,6 +100,8 @@ function AddContractForm(props) {
     fetchNvList();
   }, []);
 
+  
+
   useEffect(() => {
     const handleId = async () => {
       if (id === undefined) {
@@ -110,12 +116,12 @@ function AddContractForm(props) {
         const increCode = Number(idIncre.slice(2)) + 1;
         const rsCode = "HD";
         if (increCode < 10) {
-         // setRsId(rsCode.concat(`0${increCode}`));
-          setValue("maHopDong",rsCode.concat(`0${increCode}`))
+          // setRsId(rsCode.concat(`0${increCode}`));
+          setValue("maHopDong", rsCode.concat(`0${increCode}`));
         } else if (increCode >= 10) {
           //setRsId(rsCode.concat(`${increCode}`));
-          setValue("maHopDong",rsCode.concat(`${increCode}`))
-        }        
+          setValue("maHopDong", rsCode.concat(`${increCode}`));
+        }
       }
     };
     handleId();
@@ -128,7 +134,7 @@ function AddContractForm(props) {
   const handleChange = (e) => {
     console.log(e);
     setFile({
-      file: e.file,
+      file: e.fileList.length !== 0 ? e.file : null,
       path:
         e.fileList.length !== 0
           ? URL.createObjectURL(e.file)
@@ -142,6 +148,7 @@ function AddContractForm(props) {
   const intitalValue = {
     maNhanVien: id !== undefined ? dataDetailHd.maNhanVien : ecode,
     idChucDanh: id !== undefined ? dataDetailHd.idChucDanh : null,
+    idChucVu: id !== undefined ? dataDetailHd.idChucVu : null,
     idLoaiHopDong: id !== undefined ? dataDetailHd.idLoaiHopDong : null,
     hopDongTuNgay:
       id !== undefined
@@ -188,6 +195,7 @@ function AddContractForm(props) {
     const values = getValues([
       "maNhanVien",
       "idChucDanh",
+      "idChucVu",
       "idLoaiHopDong",
       "hopDongTuNgay",
       "hopDongDenNgay",
@@ -198,6 +206,7 @@ function AddContractForm(props) {
     const dfValue = [
       intitalValue.maNhanVien,
       intitalValue.idChucDanh,
+      intitalValue.idChucVu,
       intitalValue.idLoaiHopDong,
       intitalValue.hopDongTuNgay,
       intitalValue.hopDongDenNgay,
@@ -205,7 +214,14 @@ function AddContractForm(props) {
       intitalValue.maHopDong,
       intitalValue.trangThai,
     ];
-    return JSON.stringify(values) === JSON.stringify(dfValue);
+    //return JSON.stringify(values) === JSON.stringify(dfValue);
+    if (
+      JSON.stringify(values) === JSON.stringify(dfValue) &&
+      file.file === null
+    ) {
+      return true;
+    }
+    return false;
   };
 
   const onHandleSubmit = async (data) => {
@@ -359,9 +375,62 @@ function AddContractForm(props) {
                 <div className="form-group form-inline">
                   <label
                     class="col-sm-4 justify-content-start"
+                    htmlFor="idChucVu"
+                  >
+                    Chức vụ
+                  </label>
+                  <select
+                    type="text"
+                    {...register("idChucVu")}
+                    id="idChucVu"
+                    className={
+                      !errors.idChucVu
+                        ? "form-control col-sm-6 custom-select"
+                        : "form-control col-sm-6 border-danger custom-select"
+                    }
+                  >
+                    <option value=""></option>
+                    {dataCV.map((item, key) => (
+                      <option key={key} value={item.id}>
+                        {item.tenChucVu}
+                      </option>
+                    ))}
+                  </select>
+                  <span className="message">{errors.idChucVu?.message}</span>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <div class="form-group form-inline ">
+                <label
+                    class="col-sm-4 justify-content-start"
+                    htmlFor="maHopDong"
+                  >
+                    Mã hợp đồng
+                  </label>
+                  <input
+                    type="text"
+                    {...register("maHopDong")}
+                    id="maHopDong"
+                    //value={rsId}
+                    className={
+                      !errors.maHopDong
+                        ? "form-control col-sm-6 "
+                        : "form-control col-sm-6 border-danger"
+                    }
+                    readOnly
+                  />
+                  <span className="message">{errors.maHopDong?.message}</span>
+                </div>
+              </div>
+              <div className="col">
+                <div className="form-group form-inline">
+                <label
+                    class="col-sm-4 justify-content-start"
                     htmlFor="idChucDanh"
                   >
-                    Chức danh công việc
+                    Chức danh
                   </label>
                   <select
                     type="text"
@@ -417,25 +486,23 @@ function AddContractForm(props) {
               </div>
               <div className="col">
                 <div className="form-group form-inline">
-                  <label
+                <label
                     class="col-sm-4 justify-content-start"
-                    htmlFor="maHopDong"
+                    htmlFor="ghiChu"
                   >
-                    Mã hợp đồng
+                    Ghi chú
                   </label>
                   <input
                     type="text"
-                    {...register("maHopDong")}
-                    id="maHopDong"
-                    //value={rsId}
+                    {...register("ghiChu")}
+                    id="ghiChu"
                     className={
-                      !errors.maHopDong
+                      !errors.ghiChu
                         ? "form-control col-sm-6 "
                         : "form-control col-sm-6 border-danger"
                     }
-                    readOnly
                   />
-                  <span className="message">{errors.maHopDong?.message}</span>
+                  <span className="message">{errors.ghiChu?.message}</span>
                 </div>
               </div>
             </div>
@@ -480,7 +547,26 @@ function AddContractForm(props) {
               </div>
               <div className="col">
                 <div className="form-group form-inline">
-                  <label
+                <label
+                    className="col-sm-4 justify-content-start"
+                    htmlFor="bangChung"
+                  >
+                    Bằng chứng
+                  </label>
+                  <Upload
+                    beforeUpload={() => false}
+                    onChange={handleChange}
+                    maxCount={1}
+                  >
+                    <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
+                  </Upload>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-6">
+                <div class="form-group form-inline">
+                <label
                     class="col-sm-4 justify-content-start"
                     htmlFor="ngayHetHanHopDong"
                   >
@@ -514,47 +600,9 @@ function AddContractForm(props) {
                   </span>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-6">
-                <div class="form-group form-inline">
-                  <label
-                    class="col-sm-4 justify-content-start"
-                    htmlFor="ghiChu"
-                  >
-                    Ghi chú
-                  </label>
-                  <input
-                    type="text"
-                    {...register("ghiChu")}
-                    id="ghiChu"
-                    className={
-                      !errors.ghiChu
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                  />
-                  <span className="message">{errors.ghiChu?.message}</span>
-                </div>
-              </div>
               <div className="col">
                 <div className="form-group form-inline">
-                  <label
-                    className="col-sm-4 justify-content-start"
-                    htmlFor="bangChung"
-                  >
-                    Bằng chứng
-                  </label>
-                  <Upload beforeUpload={() => false} onChange={handleChange}>
-                    <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
-                  </Upload>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-6">
-                <div className="form-group form-inline">
-                  <label
+                <label
                     className="col-sm-4 justify-content-start"
                     style={id !== undefined ? null : { display: "none" }}
                     htmlFor="trangThai"
@@ -577,7 +625,7 @@ function AddContractForm(props) {
                   </select>
                   <span className="message">{errors.trangThai?.message}</span>
                 </div>
-                <input {...register("idCre")} type="text" value={rsIdCre} />
+                <input   style={ {display: "none"} } {...register("idCre")} type="text" value={rsIdCre} />
               </div>
             </div>
           </div>

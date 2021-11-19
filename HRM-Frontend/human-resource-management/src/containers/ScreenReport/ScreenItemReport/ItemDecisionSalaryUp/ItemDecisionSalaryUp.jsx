@@ -1,21 +1,129 @@
-import React, { useRef } from "react";
-import { Button } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { DatePicker } from "antd";
+import { format } from "date-fns";
+import { da } from "date-fns/locale";
+import React, { useEffect, useRef, useState } from "react";
 import { useReactToPrint } from "react-to-print";
+import { useToast } from "../../../../components/Toast/Toast";
 import { ComponentToPrint } from "../../../../components/ToPrint/ComponentToPrint";
 import "./ItemDecisionSalaryUp.scss";
+
 function ItemDecisionSalaryUp() {
+  var today = new Date();
   const componentRef = useRef();
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
+
+  const [title, settitle] = useState("Quyết định");
+  const [name, setName] = useState("...");
+  const [workplace, setWorkplace] = useState("...");
+  const [salary, setSalary] = useState(0);
+  const [newSalary, setNewSalary] = useState(0);
+  const [dateX, setDateX] = useState(today);
+
+  let dayX = format(new Date(dateX), "dd");
+  let monthX = format(new Date(dateX), "MM");
+  let yearX = format(new Date(dateX), "yyyy");
+
+  // useEffect(() => {
+  //   const fetchNvList = async () => {
+  //     try {
+  //       const response = await ProductApi.getAllDMPB();
+  //       setDataDmpb(response);
+  //     } catch (error) {
+  //       console.log("false to fetch nv list: ", error);
+  //     }
+  //   };
+  //   fetchNvList();
+  // }, []);
+
   return (
-    <>
-      <div>
-        <Button variant="light" onClick={handlePrint}>
-          Print
-        </Button>
+    <div className="reportEx">
+      <div className="select-info">
+        <div className="roww">
+          <input
+            type="text"
+            placeholder="Nhập tiêu đề cho báo cáo"
+            class="form-control"
+            id="title"
+            onChange={(e) => settitle(e.target.value)}
+          />
+        </div>
+        <div className="roww">
+          <div className="select-row3">
+            <label>Tên nhân viên</label>
+            <div>
+              <input
+                type="text"
+                placeholder="Nhập tên nhân viên"
+                class="form-control i-put"
+                id="title"
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+          </div>
+
+          <div className="select-row3">
+            <label>Vị trí công tác</label>
+            <div>
+              <input
+                type="text"
+                placeholder="Nhập vị trí công tác"
+                class="form-control i-put"
+                id="title"
+                onChange={(e) => setWorkplace(e.target.value)}
+              />
+            </div>
+          </div>
+        </div>
+        <div className="roww">
+          <div className="select-row2">
+            <label>Mức lương cũ</label>
+            <div>
+              <input
+                type="number"
+                min="0"
+                defaultValue={0}
+                class="form-control"
+                id="title"
+                onChange={(e) => setSalary(e.target.value)}
+              />
+            </div>
+          </div>
+
+          <div className="select-row2">
+            <label>Mức lương mới</label>
+            <div>
+              <input
+                type="number"
+                min="0"
+                class="form-control"
+                defaultValue={0}
+                id="title"
+                onChange={(e) => setNewSalary(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className="select-row2">
+            <label>Đến ngày</label>
+            <div>
+              <DatePicker
+                placeholder="DD/MM/YYYY"
+                selected={dateX}
+                onChange={(date) => setDateX(date)}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="roww row-btn">
+          <button className="button-pdf" onClick={handlePrint}>
+            <FontAwesomeIcon icon={["fas", "file-pdf"]} />
+          </button>
+        </div>
       </div>
-      <div className="contain-decision">
+      <div className="report-emp">
         <ComponentToPrint ref={componentRef}>
           <div>
             <div className="header-decision">
@@ -30,10 +138,14 @@ function ItemDecisionSalaryUp() {
               </div>
             </div>
             <div className="date-decision">
-              <p>..., ngày ... tháng ... năm ...</p>
+              <p>
+                {" "}
+                Hà Nội Ngày: {today.getDate()} Tháng: {today.getMonth() + 1}{" "}
+                Năm: {today.getFullYear()}
+              </p>
             </div>
             <div className="title-decision">
-              <h4>QUYẾT ĐỊNH</h4>
+              <h4>{title}</h4>
             </div>
             <div className="title-decision-ps">
               <p>(V/v: Nâng lương)</p>
@@ -53,28 +165,29 @@ function ItemDecisionSalaryUp() {
                 </li>
                 <li>
                   <p>
-                    Căn cứ vào năng lực và kết quả làm việc của{" "}
-                    <b>Ông/Bà ...</b>
+                    Căn cứ vào năng lực và kết quả làm việc của Anh/Chị:{" "}
+                    <b> {name}</b>
                   </p>
                 </li>
               </ul>
             </div>
             <div className="medium-text">
               <p>
-                <b>Điều 1</b>: Năng lương của <b>Ông/Bà ...</b>
+                <b>Điều 1</b>: Năng lương của Anh/Chị:<b> {name}</b>
               </p>
               <p>
-                <span className="color">Vị trí công tác:</span> ...
+                <span className="color">Vị trí công tác:</span> {workplace}
               </p>
               <p>
-                <span className="color">Mức lương có:</span> ... /tháng
+                <span className="color">Mức lương có:</span> {salary} đ/tháng
               </p>
               <p>
-                <span className="color">Mức lương mới:</span> ... /tháng
+                <span className="color">Mức lương mới:</span> {newSalary}{" "}
+                d/tháng
               </p>
               <p>
                 <span className="color">Thời điểm áp dụng mức lương mới:</span>{" "}
-                tháng ... năm ...
+                Ngày: {dayX} Tháng: {monthX} Năm: {yearX}
               </p>
             </div>
             <div className="medium-text">
@@ -100,13 +213,12 @@ function ItemDecisionSalaryUp() {
                   <b>Giám đốc</b>
                 </p>
                 <p>(Ký tên)</p>
-                <p>Minh</p>
               </div>
             </div>
           </div>
         </ComponentToPrint>
       </div>
-    </>
+    </div>
   );
 }
 

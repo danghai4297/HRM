@@ -22,6 +22,10 @@ function SideBarLeft() {
     );
   }
 
+  // const listRole = jwt_decode(sessionStorage.getItem("resultObj")).role.split(
+  //   ","
+  // );
+
   return (
     <>
       <ul
@@ -44,6 +48,7 @@ function SideBarLeft() {
             <FontAwesomeIcon icon={["fas", "bars"]} />
           </button>
         </li>
+
         {SideBarData.filter(
           (val) =>
             val.roles.filter((element) =>
