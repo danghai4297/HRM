@@ -16,7 +16,7 @@
 }
 
 .body-screen {
-  background-color: #312B57;
+  background-color: #312b57;
   min-height: 100vh;
 }
 
@@ -31,6 +31,9 @@
     min-height: 100%;
     width: 15%;
   }
+  .menu-bar2 {
+    width: 3.7%;
+  }
 
   .content {
     width: 85%;
@@ -38,6 +41,10 @@
     margin-top: 1px;
     margin-bottom: 1px;
     z-index: 10000;
+    // transition: width 0.3s ease;
+  }
+  .content2 {
+    width: 96.3%;
   }
 }
 .btn:hover {

@@ -30,7 +30,7 @@ body {
   width: 100%;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
-  background-color: #5F5490;
+  background-color: #5f5490;
 }
 
 .sticky-top {
@@ -38,7 +38,7 @@ body {
 }
 .SidebarList .row {
   position: relative;
-  width: auto;
+  width: 100%;
   height: 50px;
   list-style-type: none;
   margin: 0;
@@ -50,57 +50,66 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
-  margin-left: 20px;
-
-  position: relative;
   z-index: 10;
 }
-.SidebarList .link-item:hover .row,
-.SidebarList .link-item#actived .row {
+.SidebarList :hover .row,
+.SidebarList #actived .row {
   background-color: #f4f1f6;
+  background-size: 50% auto;
   color: black;
 }
 
-.link-item:hover .row::before,
-.link-item#actived .row::before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  right: 0;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: transparent;
-  box-shadow: 35px 35px 0 10px #f4f1f6;
-  pointer-events: none;
-}
-.link-item:hover .row::after,
-.link-item#actived .row::after {
-  content: "";
-  position: absolute;
-  bottom: -50px;
-  right: 0;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: transparent;
-  box-shadow: 35px -35px 0 10px #f4f1f6;
-  pointer-events: none;
-}
 .link-item:hover {
   text-decoration: none;
 }
 .row #icon {
   flex: 10%;
-  display: grid;
-  place-items: end;
+  padding-left: 30px;
 }
-.row #title {
+.row .title {
   flex: 70%;
-  padding-left: 20px;
+  padding-left: 10px;
+  opacity: 1;
 }
 .title-project {
   height: 100px;
   padding-left: 30%;
   padding-top: 10%;
+}
+.btnmenu {
+  position: absolute;
+  color: #f4f1f6;
+  left: 90%;
+  top: 30px;
+  font-size: 20px;
+  // height: 50px;
+  // width: 50px;
+  z-index: 6;
+  text-align: center;
+  line-height: 50px;
+  transform: translateX(-50%);
+  pointer-events: all;
+}
+.change {
+  width: 70px;
+}
+.btnmenu-change {
+  position: absolute;
+  color: #f4f1f6;
+  left: 54%;
+  top: 30px;
+  font-size: 20px;
+  // height: 50px;
+  // width: 50px;
+  z-index: 6;
+  text-align: center;
+  line-height: 50px;
+  transform: translateX(-50%);
+  pointer-events: all;
+}
+.title-names {
+  color: white;
+}
+.title-name2 {
+  opacity: 0;
 }
