@@ -12,11 +12,9 @@ namespace HRMSolution.Data.Entities
         public int idPhongBan { get; set; }
         public int to { get; set; }
         public string chiTiet { get; set; }
-        public int idChucVu { get; set; }
         public bool trangThai { get; set; }
         public string bangChung { get; set; }
 
-        public DanhMucChucVu DanhMucChucVu { get; set; }
         public NhanVien NhanVien { get; set; }
         public DanhMucPhongBan DanhMucPhongBan { get; set; }
     }

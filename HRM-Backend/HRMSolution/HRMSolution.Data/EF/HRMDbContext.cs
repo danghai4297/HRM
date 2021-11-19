@@ -158,6 +158,10 @@ namespace HRMSolution.Data.EF
                 .WithMany(x => x.HopDongs)
                 .HasForeignKey(x => x.idChucDanh);
             modelBuilder.Entity<HopDong>()
+                .HasOne(x => x.DanhMucChucVu)
+                .WithMany(x => x.HopDongs)
+                .HasForeignKey(x => x.idChucVu);
+            modelBuilder.Entity<HopDong>()
                 .HasOne(x => x.NhanVien)
                 .WithMany(x => x.HopDongs)
                 .HasForeignKey(x => x.maNhanVien);
@@ -177,10 +181,6 @@ namespace HRMSolution.Data.EF
                 .HasOne(x => x.NhanVien)
                 .WithMany(x => x.NguoiThans)
                 .HasForeignKey(x => x.maNhanVien);
-            modelBuilder.Entity<DieuChuyen>()
-                .HasOne(x => x.DanhMucChucVu)
-                .WithMany(x => x.DieuChuyens)
-                .HasForeignKey(x => x.idChucVu);
             modelBuilder.Entity<DieuChuyen>()
                 .HasOne(x => x.NhanVien)
                 .WithMany(x => x.DieuChuyens)

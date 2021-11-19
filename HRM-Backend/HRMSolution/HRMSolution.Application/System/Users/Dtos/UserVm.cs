@@ -19,7 +19,6 @@ namespace HRMSolution.Application.System.Users.Dtos
 
         public string maNhanVien { get; set; }
 
-        public string password { get; set; }
 
         public DateTime Dob { get; set; }
 

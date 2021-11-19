@@ -9,6 +9,7 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
         public string id { get; set; }
         public string idLoaiHopDong { get; set; }
         public string idChucDanh { get; set; }
+        public string idChucVu { get; set; }
         public DateTime? hdHopDongTuNgay { get; set; }
         public DateTime? hdHopDongDenNgay { get; set; }
         public string hdGhiChu { get; set; }

@@ -1,9 +1,10 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.UnitTest\\HRMSolution.UnitTest.csproj": {}
+    "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.UnitTest\\HRMSolution.UnitTest.csproj": {}
   },
   "projects": {
+<<<<<<< HEAD
     "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Application\\HRMSolution.Application.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -248,16 +249,19 @@
       }
     },
     "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.UnitTest\\HRMSolution.UnitTest.csproj": {
+=======
+    "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.UnitTest\\HRMSolution.UnitTest.csproj": {
+>>>>>>> 579f2641e15be8c58e908462687543b08baf388b
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.UnitTest\\HRMSolution.UnitTest.csproj",
+        "projectUniqueName": "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.UnitTest\\HRMSolution.UnitTest.csproj",
         "projectName": "HRMSolution.UnitTest",
-        "projectPath": "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.UnitTest\\HRMSolution.UnitTest.csproj",
-        "packagesPath": "C:\\Users\\Ngoc Huong\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.UnitTest\\obj\\",
+        "projectPath": "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.UnitTest\\HRMSolution.UnitTest.csproj",
+        "packagesPath": "C:\\Users\\Mina\\.nuget\\packages\\",
+        "outputPath": "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.UnitTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Ngoc Huong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mina\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

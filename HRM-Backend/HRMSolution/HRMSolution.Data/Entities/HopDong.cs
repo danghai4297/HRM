@@ -10,7 +10,8 @@ namespace HRMSolution.Data.Entities
         public string maHopDong { get; set; }
         public int idLoaiHopDong { get; set; }
         public int idChucDanh { get; set; }
-        
+        public int idChucVu { get; set; }
+
         public DateTime? hopDongTuNgay { get; set; }
         public DateTime? hopDongDenNgay { get; set; }
         public string ghiChu { get; set; }
@@ -22,5 +23,6 @@ namespace HRMSolution.Data.Entities
         public List<Luong> Luongs { get; set; }
         public DanhMucLoaiHopDong DanhMucLoaiHopDong { get; set; }
         public DanhMucChucDanh DanhMucChucDanh { get; set; }
+        public DanhMucChucVu DanhMucChucVu { get; set; }
     }
 }
