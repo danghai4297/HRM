@@ -18,16 +18,16 @@ function ScreenDetailAccount(props) {
     const fetchNvList = async () => {
       try {
         const responseKT = await LoginApi.getTkDetail(id);
-        setdataDetailTk(responseKT.resultObj);
+        setdataDetailTk(responseKT);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
     };
     fetchNvList();
   }, []);
-  
-console.log(dataDetailTk);
-// console.log(dataDetailTk.resultObj.roles);
+
+  console.log(dataDetailTk);
+  // console.log(dataDetailTk.resultObj.roles);
   return (
     <>
       <div className="main-screen">
@@ -60,13 +60,17 @@ console.log(dataDetailTk);
                   key={key}
                   titleLeft={detail.title1}
                   itemLeft={
-                    detail.data1[1] === true && 
+                    detail.data1[1] === true &&
                     dataDetailTk[detail.data1[0]] !== null
                       ? dateFormat(dataDetailTk[detail.data1[0]], "dd/mm/yyyy")
                       : dataDetailTk[detail.data1[0]]
                   }
                   titleRight={detail.title2}
-                  itemRight={dataDetailTk[detail.data2 === [] ? detail.data2[0] : detail.data2]}
+                  itemRight={
+                    dataDetailTk[
+                      detail.data2 === [] ? detail.data2[0] : detail.data2
+                    ]
+                  }
                 />
               );
             })}

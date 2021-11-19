@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./SideBarLeft.scss";
 import { SideBarData } from "./SideBarDate";
 import { Link, useRouteMatch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { SideBarContext } from "../../Contexts/StateContext";
 function SideBarLeft() {
+  // const [changeForm, setChangeForm] = useState(true);
+  const { sideBar, setSiderBar } = useContext(SideBarContext);
   function Menu({ val }) {
     let match = useRouteMatch({
       path: val.link,
@@ -12,19 +16,33 @@ function SideBarLeft() {
       <Link to={val.link} className="link-item" id={match ? "actived" : ""}>
         <li className="row" id={match ? "active" : ""}>
           <div id="icon">{val.icon}</div>
-          <div id="title">{val.title}</div>
+          {sideBar !== false && <div className="title">{val.title}</div>}
         </li>
       </Link>
     );
   }
 
   return (
-    <div className="Sidebar">
-      <ul className="SidebarList sticky-top">
+    <>
+      <ul
+        className={
+          sideBar === false
+            ? "SidebarList sticky-top change"
+            : "SidebarList sticky-top"
+        }
+      >
         <li className="title-project">
-          <div className="title-names">
-            <h1 style={{ color: "white" }}>HRM</h1>
+          <div>
+            <h1 className={sideBar === false ? "title-name2" : "title-names"}>
+              HRM
+            </h1>
           </div>
+          <button
+            className={sideBar === false ? "btnmenu-change" : "btnmenu"}
+            onClick={() => setSiderBar(!sideBar)}
+          >
+            <FontAwesomeIcon icon={["fas", "bars"]} />
+          </button>
         </li>
         {SideBarData.filter(
           (val) =>
@@ -39,7 +57,7 @@ function SideBarLeft() {
 
         <img className="Side-img" src="/Images/pcr.jpg" alt="" />
       </ul>
-    </div>
+    </>
   );
 }
 

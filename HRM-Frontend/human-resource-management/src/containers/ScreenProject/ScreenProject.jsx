@@ -33,7 +33,7 @@ import ChangePasswordForm from "../../components/ChangePasswordForm/ChangePasswo
 
 import ProtectedRoute from "./ProtectedRoute";
 import Header from "../../components/Header/Header";
-import { AccountContext } from "../../Contexts/StateContext";
+import { AccountContext, SideBarContext } from "../../Contexts/StateContext";
 import AddLevelForm from "../../components/AddLevelForm/AddLevelForm";
 import AddLanguageForm from "../../components/AddLanguageForm/AddLanguageForm";
 import AddFamilyForm from "../../components/AddFamilyForm/AddFamilyForm";
@@ -46,6 +46,7 @@ import RegisterAccount from "../../components/ResgisterAccount/RegisterAccount";
 import ScreenDetailAccount from "../ScreenDetailAccount/ScreenDetailAccount";
 function ScreenProject() {
   const { setAccount } = useContext(AccountContext);
+  const { sideBar, setSiderBar } = useContext(SideBarContext);
   useEffect(() => {
     localStorage.getItem("token");
   }, []);
@@ -56,10 +57,12 @@ function ScreenProject() {
           <Header />
         </div>
         <div className="body-contents" onClick={() => setAccount(false)}>
-          <div className="menu-bar">
+          <div
+            className={sideBar !== false ? "menu-bar" : "menu-bar menu-bar2"}
+          >
             <SideBarLeft />
           </div>
-          <div className="content">
+          <div className={sideBar !== false ? "content" : "content content2"}>
             <Switch>
               <ProtectedRoute
                 exact
@@ -214,7 +217,7 @@ function ScreenProject() {
                 component={ScreenCategory}
                 roles={["admin"]}
               />
-             
+
               <ProtectedRoute
                 exact
                 path="/transfer"
