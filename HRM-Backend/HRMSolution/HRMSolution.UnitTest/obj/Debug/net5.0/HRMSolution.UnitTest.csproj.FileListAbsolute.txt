@@ -98,6 +98,67 @@ C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\o
 C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\obj\Debug\net5.0\ref\HRMSolution.UnitTest.dll
 C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\obj\Debug\net5.0\HRMSolution.UnitTest.pdb
 C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\obj\Debug\net5.0\HRMSolution.UnitTest.genruntimeconfig.cache
+<<<<<<< HEAD
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\CoverletSourceRootsMapping
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\HRMSolution.BackendAPI.deps.json
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\HRMSolution.BackendAPI.runtimeconfig.json
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\HRMSolution.BackendAPI.runtimeconfig.dev.json
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\appsettings.json
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\HRMSolution.BackendAPI.exe
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\System.IO.Pipelines.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\System.Runtime.Caching.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\HRMSolution.Application.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\HRMSolution.BackendAPI.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\HRMSolution.Data.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\HRMSolution.Utilities.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\HRMSolution.Application.pdb
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\HRMSolution.BackendAPI.pdb
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\HRMSolution.Data.pdb
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\HRMSolution.Utilities.pdb
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\Moq.dll
+=======
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\testhost.exe
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\testhost.dll
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\bin\Debug\net5.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
@@ -198,3 +259,4 @@ E:\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\obj\Debug\net5.0\HRMSolution
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\obj\Debug\net5.0\ref\HRMSolution.UnitTest.dll
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\obj\Debug\net5.0\HRMSolution.UnitTest.pdb
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.UnitTest\obj\Debug\net5.0\HRMSolution.UnitTest.genruntimeconfig.cache
+>>>>>>> 579f2641e15be8c58e908462687543b08baf388b
