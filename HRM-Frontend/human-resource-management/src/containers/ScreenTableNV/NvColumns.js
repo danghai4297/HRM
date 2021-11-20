@@ -377,7 +377,7 @@ export const NVCOLUMNS2 = [
     Filter: SelectColumnFilter,
     disableFilters: true,
 
-    show: true,
+    show: false,
   },
   {
     Header: "Ngày Tuyển Dụng",
@@ -419,7 +419,7 @@ export const NVCOLUMNS2 = [
     Cell: ({ value }) => {
       return format(new Date(value), "dd/MM/yyyy");
     },
-    show: true,
+    show: false,
   },
   {
     Header: "Ngày Chính Thức",

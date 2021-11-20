@@ -34,7 +34,7 @@ export const NVCOLUMNS = [
     accessor: "idPhongBan",
     minWidth: 250,
     Filter: SelectColumnFilter,
-
+    disableFilters: true,
     show: true,
   },
   {
@@ -42,7 +42,6 @@ export const NVCOLUMNS = [
     accessor: "tenPhongBan",
     minWidth: 300,
     Filter: SelectColumnFilter,
-    disableFilters: true,
     show: true,
   },
 ];
