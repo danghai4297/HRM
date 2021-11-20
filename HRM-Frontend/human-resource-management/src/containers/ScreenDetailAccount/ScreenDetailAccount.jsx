@@ -7,12 +7,15 @@ import { Link } from "react-router-dom";
 import dateFormat from "dateformat";
 import { ttc } from "./DataAccount";
 import LoginApi from "../../api/login";
+import { useToast } from "../../components/Toast/Toast";
+import jwt_decode from "jwt-decode";
 function ScreenDetailAccount(props) {
   let { match, history } = props;
   let { id } = match.params;
-  console.log(id);
+  const { success, warn } = useToast();
 
   const [dataDetailTk, setdataDetailTk] = useState([]);
+  const [resetPassword, setResetPassword] = useState();
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -26,8 +29,6 @@ function ScreenDetailAccount(props) {
     fetchNvList();
   }, []);
 
-  console.log(dataDetailTk);
-  // console.log(dataDetailTk.resultObj.roles);
   return (
     <>
       <div className="main-screen">
@@ -46,9 +47,29 @@ function ScreenDetailAccount(props) {
           <div className="third-path">
             <Link to={`/account/addRole/${id}`}>
               <Button variant="light" className="btn-fix">
-                Thêm quyền
+                Role
               </Button>
             </Link>
+            <Button
+              variant="light"
+              className="btn-fix"
+              onClick={async () => {
+                if (
+                  sessionStorage.getItem("resultObj") &&
+                  jwt_decode(sessionStorage.getItem("resultObj")).userName ===
+                    dataDetailTk.userName
+                ) {
+                  warn(`Không được tự reset tài khoản này`);
+                } else {
+                  setResetPassword(await LoginApi.getResetPassword(id));
+                  success(
+                    `Reset mật khẩu tài khoản ${dataDetailTk.userName} thành công`
+                  );
+                }
+              }}
+            >
+              Reset
+            </Button>
           </div>
         </div>
         <div className="second-main">
@@ -70,6 +91,16 @@ function ScreenDetailAccount(props) {
                 />
               );
             })}
+            <SubDetail
+              titleLeft="Quyền tài khoản"
+              itemLeft={
+                dataDetailTk.roles && dataDetailTk.roles.length === 2
+                  ? `${dataDetailTk.roles[0]}, ${dataDetailTk.roles[1]}`
+                  : dataDetailTk.roles
+              }
+              titleRight={resetPassword ? "Mật khẩu mới" : null}
+              itemRight={resetPassword}
+            />
           </div>
         </div>
       </div>

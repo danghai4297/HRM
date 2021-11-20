@@ -12,7 +12,6 @@ function Header() {
     history.replace("/login");
     setAccount(false);
   };
-  console.log(jwt_decode(sessionStorage.getItem("resultObj")));
   return (
     <>
       <div className="header-com">

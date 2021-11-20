@@ -27,12 +27,14 @@ function LogIn(props) {
     try {
       await LoginApi.PostLoginAccount(data);
       if (
+        sessionStorage.getItem("resultObj") &&
         jwt_decode(sessionStorage.getItem("resultObj"))
           .role.split(";")
           .includes("user")
       ) {
         history.replace("/home");
       } else if (
+        sessionStorage.getItem("resultObj") &&
         jwt_decode(sessionStorage.getItem("resultObj"))
           .role.split(";")
           .includes("admin")
@@ -42,7 +44,6 @@ function LogIn(props) {
     } catch (e) {
       error("Nhập sai tài khoản hoặc mật khẩu");
     }
-    console.log(jwt_decode(sessionStorage.getItem("resultObj")));
   };
 
   return (

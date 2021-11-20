@@ -12,15 +12,9 @@ export const ttc = [
     data2: "email",
   },
   {
-    title1: "Số điện thoại",
-    data1: ["phoneNumber", false],
-    title2: "Quyền tài khoản",
-    data2: "roles",
-  },
-  {
     title1: "Tên tài khoản",
     data1: ["userName", false],
-    title2: null,
-    data2: null,
+    title2: "Số điện thoại",
+    data2: "phoneNumber",
   },
 ];
