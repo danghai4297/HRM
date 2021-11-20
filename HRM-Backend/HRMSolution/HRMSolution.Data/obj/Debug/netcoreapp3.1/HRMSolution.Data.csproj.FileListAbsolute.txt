@@ -16,7 +16,6 @@ E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Data\bin\Debug\netcoreapp3.1\HRMSolut
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Data\bin\Debug\netcoreapp3.1\HRMSolution.Data.runtimeconfig.dev.json
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Data\bin\Debug\netcoreapp3.1\HRMSolution.Data.dll
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Data\bin\Debug\netcoreapp3.1\HRMSolution.Data.pdb
-E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Data\obj\Debug\netcoreapp3.1\HRMSolution.Data.csproj.AssemblyReference.cache
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Data\obj\Debug\netcoreapp3.1\HRMSolution.Data.GeneratedMSBuildEditorConfig.editorconfig
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Data\obj\Debug\netcoreapp3.1\HRMSolution.Data.AssemblyInfoInputs.cache
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Data\obj\Debug\netcoreapp3.1\HRMSolution.Data.AssemblyInfo.cs
@@ -24,3 +23,4 @@ E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Data\obj\Debug\netcoreapp3.1\HRMSolut
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Data\obj\Debug\netcoreapp3.1\HRMSolution.Data.dll
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Data\obj\Debug\netcoreapp3.1\HRMSolution.Data.pdb
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Data\obj\Debug\netcoreapp3.1\HRMSolution.Data.genruntimeconfig.cache
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Data\obj\Debug\netcoreapp3.1\HRMSolution.Data.csproj.AssemblyReference.cache

@@ -21,20 +21,20 @@ namespace HRMSolution.BackendAPI.Controllers
             _danhMucKhenThuongKyLuatService = danhMucKhenThuongKyLuatService;
         }
         [HttpGet("khen-thuong")]
-        public async Task<IActionResult> GetKhenThuong()
+        public async Task<IActionResult> GetKhenThuongAll()
         {
             var danhMucKTKL = await _danhMucKhenThuongKyLuatService.GetAllKhenThuong();
             return Ok(danhMucKTKL);
         }
         [HttpGet("ky-luat")]
-        public async Task<IActionResult> GetKyLuat()
+        public async Task<IActionResult> GetKyLuatAll()
         {
             var danhMucKTKL = await _danhMucKhenThuongKyLuatService.GetAllKyLuat();
             return Ok(danhMucKTKL);
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetCategoryById(int id)
         {
             var result = await _danhMucKhenThuongKyLuatService.GetById(id);
             if (result == null)
@@ -43,7 +43,7 @@ namespace HRMSolution.BackendAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] DanhMucKhenThuongKyLuatCreateRequest request)
+        public async Task<IActionResult> CreateCategory([FromBody] DanhMucKhenThuongKyLuatCreateRequest request)
         {
             var result = await _danhMucKhenThuongKyLuatService.Create(request);
             if (result == 0)
@@ -51,7 +51,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteCategory(int id)
         {
             var result = await _danhMucKhenThuongKyLuatService.Delete(id);
             if (result == 0)
@@ -59,7 +59,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, DanhMucKhenThuongKyLuatUpdateRequest request)
+        public async Task<IActionResult> UpdateCategory(int id, DanhMucKhenThuongKyLuatUpdateRequest request)
         {
             var result = await _danhMucKhenThuongKyLuatService.Update(id, request);
             if (result == 0)

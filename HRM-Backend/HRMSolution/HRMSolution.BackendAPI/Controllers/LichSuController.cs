@@ -21,13 +21,13 @@ namespace HRMSolution.BackendAPI.Controllers
             _lichSuService = lichSuService;
         }
         [HttpGet()]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> GetAllHistory()
         {
             var lichSu = await _lichSuService.GetAll();
             return Ok(lichSu);
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] LichSuCreateRequest request)
+        public async Task<IActionResult> CreateHistory([FromBody] LichSuCreateRequest request)
         {
             var result = await _lichSuService.Create(request);
             if (result == 0)

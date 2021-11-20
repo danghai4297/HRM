@@ -13,6 +13,5 @@ namespace HRMSolution.Application.Catalog.Luongs
         Task<int> Create(LuongCreateRequest request);
         Task<int> Update(int id, LuongUpdateRequest request);
         Task<int> Delete(int id);
-        Task<int> DeleteBangChung(int id);
     }
 }

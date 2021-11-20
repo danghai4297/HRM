@@ -21,13 +21,13 @@ namespace HRMSolution.BackendAPI.Controllers
             _danhMucLoaiHopDongService = danhMucLoaiHopDongService;
         }
         [HttpGet()]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> GetAllCategory()
         {
             var danhMucLHD = await _danhMucLoaiHopDongService.GetAll();
             return Ok(danhMucLHD);
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] DanhMucLoaiHopDongCreateRequest request)
+        public async Task<IActionResult> CreateCategory([FromBody] DanhMucLoaiHopDongCreateRequest request)
         {
             var result = await _danhMucLoaiHopDongService.Create(request);
             if (result == 0)
@@ -35,7 +35,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteCategory(int id)
         {
             var result = await _danhMucLoaiHopDongService.Delete(id);
             if (result == 0)
@@ -43,7 +43,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetCategoryById(int id)
         {
             var result = await _danhMucLoaiHopDongService.GetById(id);
             if (result == null)
@@ -51,7 +51,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok(result);
         }
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, DanhMucLoaiHopDongUpdateRequest request)
+        public async Task<IActionResult> UpdateCategory(int id, DanhMucLoaiHopDongUpdateRequest request)
         {
             var result = await _danhMucLoaiHopDongService.Update(id, request);
             if (result == 0)

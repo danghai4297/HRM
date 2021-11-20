@@ -234,7 +234,6 @@ namespace HRMSolution.Application.System.Users
 
         public async Task<string> ResetPassword(Guid id)
         {
-            var pw = "o!eGa!4Q";
             var password = GenerateRandomPassword();
             var user = await _userManager.FindByIdAsync(id.ToString());
             string resetToken = await _userManager.GeneratePasswordResetTokenAsync(user);

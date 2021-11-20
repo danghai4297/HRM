@@ -21,26 +21,26 @@ namespace HRMSolution.BackendAPI.Controllers
             _hopDongService = hopDongService;
         }
         [HttpGet()]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAllContract()
         {
             var nhanViens = await _hopDongService.GetAll();
             return Ok(nhanViens);
         }
         [HttpGet("{maNhanVien}")]
-        public async Task<IActionResult> Get(string maNhanVien)
+        public async Task<IActionResult> GetContractByEmployee(string maNhanVien)
         {
             var nhanViens = await _hopDongService.GetAll(maNhanVien);
             return Ok(nhanViens);
         }
 
         [HttpGet("detail/{maHopDong}")]
-        public async Task<IActionResult> GetHopDong(string maHopDong)
+        public async Task<IActionResult> GetContractById(string maHopDong)
         {
             var hopDong = await _hopDongService.GetHopDong(maHopDong);
             return Ok(hopDong);
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] HopDongCreateRequest request)
+        public async Task<IActionResult> CreateContract([FromBody] HopDongCreateRequest request)
         {
             var result = await _hopDongService.Create(request);
             if (result == 0)
@@ -48,7 +48,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpDelete("{maHopDong}")]
-        public async Task<IActionResult> Delete(string maHopDong)
+        public async Task<IActionResult> DeleteContract(string maHopDong)
         {
             var result = await _hopDongService.Delete(maHopDong);
             if (result == 0)
@@ -56,7 +56,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpDelete("bangChung/{maHopDong}")]
-        public async Task<IActionResult> DeleteBangChung(string maHopDong)
+        public async Task<IActionResult> DeleteAttachments(string maHopDong)
         {
             var result = await _hopDongService.DeleteBangChung(maHopDong);
             if (result == 0)
@@ -64,7 +64,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpPut("{maHopDong}")]
-        public async Task<IActionResult> Update(string maHopDong, HopDongUpdateRequest request)
+        public async Task<IActionResult> UpdateContract(string maHopDong, HopDongUpdateRequest request)
         {
             var result = await _hopDongService.Update(maHopDong, request);
             if (result == 0)
@@ -72,7 +72,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpPut("bangChung/{maHopDong}")]
-        public async Task<IActionResult> UpdateBangChung(string maHopDong, [FromForm] HopDongUpdateBangChungRequest request)
+        public async Task<IActionResult> UpdateAttachments(string maHopDong, [FromForm] HopDongUpdateBangChungRequest request)
         {
             var result = await _hopDongService.UpdateBangChung(maHopDong, request);
             if (result == 0)

@@ -22,28 +22,28 @@ namespace HRMSolution.BackendAPI.Controllers
         }
 
         [HttpGet("khen-thuong")]
-        public async Task<IActionResult> GetAllKhenThuong()
+        public async Task<IActionResult> GetAllReward()
         {
             var khenThuongKyLuats = await _khenThuongKyLuatService.GetAllKhenThuong();
             return Ok(khenThuongKyLuats);
         }
 
         [HttpGet("detail/{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetRewardDisciplineById(int id)
         {
             var khenThuongKyLuats = await _khenThuongKyLuatService.GetById(id);
             return Ok(khenThuongKyLuats);
         }
 
         [HttpGet("ky-luat")]
-        public async Task<IActionResult> GetAllKyLuat()
+        public async Task<IActionResult> GetAllDiscipline()
         {
             var khenThuongKyLuats = await _khenThuongKyLuatService.GetAllKyLuat();
             return Ok(khenThuongKyLuats);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromForm] KhenThuongKyLuatCreateRequest request)
+        public async Task<IActionResult> CreateRewardDiscipline([FromForm] KhenThuongKyLuatCreateRequest request)
         {
             var result = await _khenThuongKyLuatService.Create(request);
             if (result == 0)
@@ -51,7 +51,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteRewardDiscipline(int id)
         {
             var result = await _khenThuongKyLuatService.Delete(id);
             if (result == 0)
@@ -59,7 +59,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromForm] KhenThuongKyLuatUpdateRequest request)
+        public async Task<IActionResult> UpdateRewardDiscipline(int id, [FromForm] KhenThuongKyLuatUpdateRequest request)
         {
             var result = await _khenThuongKyLuatService.Update(id, request);
             if (result == 0)

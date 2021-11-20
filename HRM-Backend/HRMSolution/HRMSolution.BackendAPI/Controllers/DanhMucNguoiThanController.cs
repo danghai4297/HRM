@@ -21,13 +21,13 @@ namespace HRMSolution.BackendAPI.Controllers
             _danhMucNguoiThanService = danhMucNguoiThanService;
         }
         [HttpGet()]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> GetAllCategory()
         {
             var danhMucNguoiThan = await _danhMucNguoiThanService.GetAll();
             return Ok(danhMucNguoiThan);
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] DanhMucNguoiThanCreateRequest request)
+        public async Task<IActionResult> CreateCategory([FromBody] DanhMucNguoiThanCreateRequest request)
         {
             var result = await _danhMucNguoiThanService.Create(request);
             if (result == 0)
@@ -35,7 +35,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteCategory(int id)
         {
             var result = await _danhMucNguoiThanService.Delete(id);
             if (result == 0)
@@ -44,7 +44,7 @@ namespace HRMSolution.BackendAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, DanhMucNguoiThanUpdateRequest request)
+        public async Task<IActionResult> UpdateCategory(int id, DanhMucNguoiThanUpdateRequest request)
         {
             var result = await _danhMucNguoiThanService.Update(id,request);
             if (result == 0)
@@ -52,7 +52,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetCategoryById(int id)
         {
             var result = await _danhMucNguoiThanService.GetById(id);
             if (result == null)

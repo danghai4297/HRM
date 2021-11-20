@@ -121,7 +121,7 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
             dieuChuyen.trangThai = request.trangThai;
             if(request.bangChung is null)
             {
-                dieuChuyen.bangChung = null;
+               //dieuChuyen.bangChung = null;
             } else
             {
                 await _storageService.DeleteFileAsync(dieuChuyen.bangChung);

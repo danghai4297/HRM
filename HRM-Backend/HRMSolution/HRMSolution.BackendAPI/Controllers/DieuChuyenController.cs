@@ -22,20 +22,20 @@ namespace HRMSolution.BackendAPI.Controllers
         }
 
         [HttpGet()]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAllTransfer()
         {
             var danhMucChucDanh = await _dieuChuyenService.GetAll();
             return Ok(danhMucChucDanh);
         }
 
         [HttpGet("dieu-chuyen/{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetTransferById(int id)
         {
             var danhMucChucDanh = await _dieuChuyenService.GetById(id);
             return Ok(danhMucChucDanh);
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromForm] DieuChuyenCreateRequest request)
+        public async Task<IActionResult> CreateTransfer([FromForm] DieuChuyenCreateRequest request)
         {
             var result = await _dieuChuyenService.Create(request);
             if (result == 0)
@@ -43,7 +43,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteTransfer(int id)
         {
             var result = await _dieuChuyenService.Delete(id);
             if (result == 0)
@@ -51,7 +51,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromForm] DieuChuyenUpdateRequest request)
+        public async Task<IActionResult> UpdateTransfer(int id, [FromForm] DieuChuyenUpdateRequest request)
         {
             var result = await _dieuChuyenService.Update(id, request);
             if (result == 0)

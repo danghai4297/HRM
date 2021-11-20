@@ -152,7 +152,7 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
             ktkl.maNhanVien = request.maNhanVien;
             if (request.bangChung is null)
             {
-                ktkl.anh = "";
+                //ktkl.anh = "";
             }
             else
             {

@@ -22,13 +22,13 @@ namespace HRMSolution.BackendAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetLanguageById(int id)
         {
             var ngoaiNgu = await _ngoaiNguService.GetById(id);
             return Ok(ngoaiNgu);
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] NgoaiNguCreateRequest request)
+        public async Task<IActionResult> CreateLanguage([FromBody] NgoaiNguCreateRequest request)
         {
             var result = await _ngoaiNguService.Create(request);
             if (result == 0)
@@ -36,7 +36,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteLanguage(int id)
         {
             var result = await _ngoaiNguService.Delete(id);
             if (result == 0)
@@ -44,7 +44,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, NgoaiNguUpdateRequest request)
+        public async Task<IActionResult> UpdateLanguage(int id, NgoaiNguUpdateRequest request)
         {
             var result = await _ngoaiNguService.Update(id, request);
             if (result == 0)

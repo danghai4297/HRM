@@ -101,19 +101,6 @@ namespace HRMSolution.Application.Catalog.Luongs
             return await _context.SaveChangesAsync();
         }
 
-        public async Task<int> DeleteBangChung(int id)
-        {
-            var luong = await _context.luongs.FindAsync(id);
-            if (luong == null) throw new HRMException($"Không tìm thấy lương: {id}");
-
-            await _storageService.DeleteFileAsync(luong.bangChung);
-
-            luong.bangChung = null;
-            _context.luongs.Update(luong);
-
-            return await _context.SaveChangesAsync();
-        }
-
         public async Task<List<LuongViewModel>> GetAll()
         {
             var query = from nv in _context.nhanViens
@@ -201,7 +188,7 @@ namespace HRMSolution.Application.Catalog.Luongs
             luong.trangThai = request.trangThai;
             if (request.bangChung is null)
             {
-                luong.bangChung = null;
+                //luong.bangChung = luong.bangChung;
             }
             else
             {

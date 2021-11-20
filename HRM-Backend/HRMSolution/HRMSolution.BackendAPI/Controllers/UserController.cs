@@ -37,7 +37,7 @@ namespace HRMSolution.BackendAPI.Controllers
         }
 
         [HttpPost("create")]
-        public async Task<IActionResult> Create([FromBody] RegisterRequest request)
+        public async Task<IActionResult> CreateAccount([FromBody] RegisterRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -79,7 +79,7 @@ namespace HRMSolution.BackendAPI.Controllers
         }
 
         [HttpPut("{id}/roles")]
-        public async Task<IActionResult> RoleAssign(Guid id, [FromBody] RoleAssignRequest request)
+        public async Task<IActionResult> SetRoleAssign(Guid id, [FromBody] RoleAssignRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -93,13 +93,13 @@ namespace HRMSolution.BackendAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(Guid id)
+        public async Task<IActionResult> DeleteAccount(Guid id)
         {
             var result = await _userService.Delete(id);
             return Ok(result);
         }
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(Guid id)
+        public async Task<IActionResult> GetAccountById(Guid id)
         {
             var user = await _userService.GetById(id);
             return Ok(user);
@@ -111,7 +111,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok(user);
         }
         [HttpGet()]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAllAccount()
         {
             var user = await _userService.GetAll();
             return Ok(user);

@@ -22,13 +22,13 @@ namespace HRMSolution.BackendAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetFamilyById(int id)
         {
             var danhMucChucDanh = await _nguoiThanService.GetById(id);
             return Ok(danhMucChucDanh);
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] NguoiThanCreateRequest request)
+        public async Task<IActionResult> CreateFamily([FromBody] NguoiThanCreateRequest request)
         {
             var result = await _nguoiThanService.Create(request);
             if (result == 0)
@@ -36,7 +36,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteFamily(int id)
         {
             var result = await _nguoiThanService.Delete(id);
             if (result == 0)
@@ -44,7 +44,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, NguoiThanUpdateRequest request)
+        public async Task<IActionResult> UpdateFamily(int id, NguoiThanUpdateRequest request)
         {
             var result = await _nguoiThanService.Update(id, request);
             if (result == 0)
