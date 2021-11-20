@@ -18,19 +18,29 @@
       }
     }
   }
-  .second-main {
+  .second-main2 {
     background: white;
     min-height: 420px !important;
-    width: 90%;
+    width: 50%;
     margin: 3%;
-    margin-left: 4%;
+    margin-left: 25%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     .title-main {
-      padding: 2%;
+      text-align: center;
+      padding-top: 2%;
     }
-    .second-main-path {
-      margin-left: 2%;
+    .second-main-path2 {
+      text-align: center;
+      h4 {
+        padding-top: 5%;
+      }
+      p {
+        font-size: medium;
+      }
+      input {
+        margin: 2%;
+      }
     }
   }
 }

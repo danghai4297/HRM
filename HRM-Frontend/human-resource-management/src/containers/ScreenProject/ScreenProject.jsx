@@ -44,9 +44,10 @@ import PDF from "../../components/Detail/PDF";
 import ScreenNotFound from "./ScreenNotFound";
 import RegisterAccount from "../../components/ResgisterAccount/RegisterAccount";
 import ScreenDetailAccount from "../ScreenDetailAccount/ScreenDetailAccount";
+import ScreenAddRole from "../ScreenAddRole/ScreenAddRole";
 function ScreenProject() {
   const { setAccount } = useContext(AccountContext);
-  const { sideBar, setSiderBar } = useContext(SideBarContext);
+  const { sideBar } = useContext(SideBarContext);
   useEffect(() => {
     localStorage.getItem("token");
   }, []);
@@ -58,7 +59,9 @@ function ScreenProject() {
         </div>
         <div className="body-contents" onClick={() => setAccount(false)}>
           <div
-            className={sideBar !== false ? "menu-bar" : "menu-bar menu-bar2"}
+            className={
+              sideBar !== false ? "menu-barss" : "menu-barss menu-bar2"
+            }
           >
             <SideBarLeft />
           </div>
@@ -323,8 +326,8 @@ function ScreenProject() {
               />
               <ProtectedRoute
                 exact
-                path="/account/:id"
-                component={RegisterAccount}
+                path="/account/addRole/:id"
+                component={ScreenAddRole}
                 roles={["admin"]}
               />
               <ProtectedRoute

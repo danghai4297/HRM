@@ -44,9 +44,9 @@ function ScreenDetailAccount(props) {
             <h2>Chi tiết tài khoản</h2>
           </div>
           <div className="third-path">
-            <Link to={`/account/${id}`}>
+            <Link to={`/account/addRole/${id}`}>
               <Button variant="light" className="btn-fix">
-                Sửa
+                Thêm quyền
               </Button>
             </Link>
           </div>
@@ -66,11 +66,7 @@ function ScreenDetailAccount(props) {
                       : dataDetailTk[detail.data1[0]]
                   }
                   titleRight={detail.title2}
-                  itemRight={
-                    dataDetailTk[
-                      detail.data2 === [] ? detail.data2[0] : detail.data2
-                    ]
-                  }
+                  itemRight={dataDetailTk[detail.data2]}
                 />
               );
             })}

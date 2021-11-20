@@ -14,17 +14,17 @@ function SideBarLeft() {
     });
     return (
       <Link to={val.link} className="link-item" id={match ? "actived" : ""}>
-        <li className="row" id={match ? "active" : ""}>
+        <li
+          className={sideBar !== false ? "row" : "row changes"}
+          id={match ? "active" : ""}
+        >
           <div id="icon">{val.icon}</div>
           {sideBar !== false && <div className="title">{val.title}</div>}
+          {/* <span className="tooltip">{val.title}</span> */}
         </li>
       </Link>
     );
   }
-
-  // const listRole = jwt_decode(sessionStorage.getItem("resultObj")).role.split(
-  //   ","
-  // );
 
   return (
     <>

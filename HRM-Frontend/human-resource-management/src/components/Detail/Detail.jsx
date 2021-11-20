@@ -154,11 +154,6 @@ function Detail(props) {
       break;
   }
 
-  const componentRef = useRef();
-  const handlePrint = useReactToPrint({
-    content: () => componentRef.current,
-  });
-
   const arrowBaseClickHandle = () => {
     setDropBase(!dropBase);
   };
@@ -332,9 +327,6 @@ function Detail(props) {
                 Sửa
               </Button>
             </Link>
-            <Button className="button-color" variant="danger">
-              Xóa
-            </Button>
             <Link to={`/profile/pdf/${id}`}>
               <Button className="button-color" variant="light">
                 <FontAwesomeIcon icon={["fas", "download"]} />
