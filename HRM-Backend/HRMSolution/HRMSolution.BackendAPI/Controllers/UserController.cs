@@ -64,7 +64,7 @@ namespace HRMSolution.BackendAPI.Controllers
             }
             return Ok(result);
         }
-        [HttpPut("reset-password/{id}")]
+        [HttpGet("reset-password/{id}")]
         public async Task<IActionResult> ResetPassword(Guid id)
         {
             if (!ModelState.IsValid)
