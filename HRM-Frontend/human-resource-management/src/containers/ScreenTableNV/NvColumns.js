@@ -342,7 +342,7 @@ export const NVCOLUMNS2 = [
     Filter: SelectColumnFilter,
     disableFilters: true,
 
-    show: false,
+    show: true,
   },
   {
     Header: "Thường Trú",
@@ -368,7 +368,7 @@ export const NVCOLUMNS2 = [
     Filter: SelectColumnFilter,
     disableFilters: true,
 
-    show: false,
+    show: true,
   },
   {
     Header: "Chức Vụ Hiện Tại",
@@ -377,7 +377,7 @@ export const NVCOLUMNS2 = [
     Filter: SelectColumnFilter,
     disableFilters: true,
 
-    show: false,
+    show: true,
   },
   {
     Header: "Ngày Tuyển Dụng",
@@ -408,7 +408,7 @@ export const NVCOLUMNS2 = [
     Filter: SelectColumnFilter,
     disableFilters: true,
 
-    show: false,
+    show: true,
   },
   {
     Header: "Ngày Vào Ban",

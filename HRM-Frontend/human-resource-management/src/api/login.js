@@ -21,10 +21,16 @@ const LoginApi = {
     const url = `/User/${id}`;
     return axiosClient.get(url);
   },
-   //Change password
-   PutChangePassword:(data,id)=>{
-    const url =`/User/${id}`;
-    return axiosClient.put(url,data)
+  //Change password
+  PutChangePassword: (data, id) => {
+    const url = `/User/${id}`;
+    return axiosClient.put(url, data);
+  },
+
+  //update role
+  PutRole: (data, id) => {
+    const url = `/User/${id}/roles`;
+    return axiosClient.put(url, data);
   },
 };
 
