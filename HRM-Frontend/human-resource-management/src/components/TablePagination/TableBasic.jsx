@@ -147,7 +147,7 @@ function TableBasic(props) {
             value={pageSize}
             onChange={(e) => setPageSize(Number(e.target.value))}
           >
-            {[5, 10, rows.length].map((pageSize, index) => (
+            {[5, 10, 20, 50, rows.length].map((pageSize, index) => (
               <option key={pageSize} value={pageSize} key={index}>
                 {pageSize}
               </option>

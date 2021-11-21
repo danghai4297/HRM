@@ -217,7 +217,7 @@ function TablePagination(props) {
             value={pageSize}
             onChange={(e) => setPageSize(Number(e.target.value))}
           >
-            {[10, 25, 50, rows.length].map((pageSize, index) => (
+            {[10, 25, 50, 100, rows.length].map((pageSize, index) => (
               <option key={pageSize} value={pageSize} key={index}>
                 {pageSize}
               </option>
