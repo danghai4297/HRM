@@ -49,16 +49,17 @@ function SideBarLeft() {
           </button>
         </li>
 
-        {SideBarData.filter(
-          (val) =>
-            val.roles.filter((element) =>
-              jwt_decode(sessionStorage.getItem("resultObj"))
-                .role.split(";")
-                .includes(element)
-            ).length !== 0
-        ).map((val, key) => {
-          return <Menu val={val} key={key} />;
-        })}
+        {sessionStorage.getItem("resultObj") &&
+          SideBarData.filter(
+            (val) =>
+              val.roles.filter((element) =>
+                jwt_decode(sessionStorage.getItem("resultObj"))
+                  .role.split(";")
+                  .includes(element)
+              ).length !== 0
+          ).map((val, key) => {
+            return <Menu val={val} key={key} />;
+          })}
 
         <img className="Side-img" src="/Images/pcr.jpg" alt="" />
       </ul>

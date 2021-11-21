@@ -32,6 +32,11 @@ const LoginApi = {
     const url = `/User/${id}/roles`;
     return axiosClient.put(url, data);
   },
+  //Reset password
+  getResetPassword: (id) => {
+    const url = `/User/reset-password/${id}`;
+    return axiosClient.get(url);
+  },
 };
 
 export default LoginApi;
