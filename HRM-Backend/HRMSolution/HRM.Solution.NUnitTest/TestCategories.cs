@@ -11,9 +11,23 @@ namespace HRM.Solution.NUnitTest
 {
     public class TestCategories : BaseTest
     {
+        DanhMucChucDanhCreateRequest danhMucChucDanh1;
+        DanhMucChucDanhCreateRequest danhMucChucDanh2;
         [OneTimeSetUp]
         public void Setup()
         {
+            danhMucChucDanh1 = new DanhMucChucDanhCreateRequest()
+            {
+                maChucDanh = "CD04",
+                tenChucDanh = "Bác Học",
+                phuCap = (float)100000.0
+            };
+            danhMucChucDanh2 = new DanhMucChucDanhCreateRequest()
+            {
+                maChucDanh = null,
+                tenChucDanh = null,
+                phuCap = (float)100000.0
+            };
             SeedingData.SeedData(_context);
         }
 
@@ -31,25 +45,15 @@ namespace HRM.Solution.NUnitTest
         [Test, Order(2)]
         public void Cat_Create_1()
         {
-            DanhMucChucDanhCreateRequest titleCreating = new DanhMucChucDanhCreateRequest()
-            {
-                maChucDanh = "CD04",
-                tenChucDanh = "Bác Học",
-                phuCap = (float)100000.0
-            };
-            var result = danhMucChucDanhService.Create(titleCreating);
-            Assert.That(result.IsCompletedSuccessfully, Is.EqualTo(true));
+            
+            var result = danhMucChucDanhService.Create(danhMucChucDanh1);
+            Assert.That(result.Result, Is.EqualTo(1));
         }
         [Test, Order(3)]
         public void Cat_Create_2()
         {
-            DanhMucChucDanhCreateRequest titleCreating = new DanhMucChucDanhCreateRequest()
-            {
-                maChucDanh = null,
-                tenChucDanh = null,
-                phuCap = (float)100000.0
-            };
-            var result = danhMucChucDanhService.Create(titleCreating);
+            
+            var result = danhMucChucDanhService.Create(danhMucChucDanh2);
             Assert.That(result.Result, Is.EqualTo(0));
         }
         //[Test, Order(3)]
