@@ -20,6 +20,9 @@ function SideBarLeft() {
         >
           <div id="icon">{val.icon}</div>
           {sideBar !== false && <div className="title">{val.title}</div>}
+          {/* <div className={sideBar !== false ? "title" : "titless"}>
+            {val.title}
+          </div> */}
           {/* <span className="tooltip">{val.title}</span> */}
         </li>
       </Link>
@@ -30,9 +33,9 @@ function SideBarLeft() {
     <>
       <ul
         className={
-          sideBar === false
-            ? "SidebarList sticky-top change"
-            : "SidebarList sticky-top"
+          sideBar !== false
+            ? "SidebarList sticky-top"
+            : "SidebarList sticky-top change"
         }
       >
         <li className="title-project">
