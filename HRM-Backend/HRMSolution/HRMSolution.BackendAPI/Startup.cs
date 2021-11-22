@@ -1,3 +1,4 @@
+using HRMSolution.Application.Catalog.BaoCaos;
 using HRMSolution.Application.Catalog.DanhMucChucDanhs;
 using HRMSolution.Application.Catalog.DanhMucChucVus;
 using HRMSolution.Application.Catalog.DanhMucChuyenMons;
@@ -100,6 +101,7 @@ namespace HRMSolution.BackendAPI
             services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<ILichSuService, LichSuService>();
+            services.AddTransient<IBaoCaoService, BaoCaoService>();
             services.AddControllers();
 
 
