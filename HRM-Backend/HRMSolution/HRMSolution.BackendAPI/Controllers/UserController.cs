@@ -12,7 +12,7 @@ namespace HRMSolution.BackendAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
@@ -21,7 +21,7 @@ namespace HRMSolution.BackendAPI.Controllers
             _userService = userService;
         }
         [HttpPost("authenticate")]
-        //[AllowAnonymous]
+        [AllowAnonymous]
         public async Task<IActionResult> Authenticate([FromBody] LoginRequest request)
         {
             if (!ModelState.IsValid)
@@ -49,8 +49,6 @@ namespace HRMSolution.BackendAPI.Controllers
             }
             return Ok();
         }
-
-        //PUT: http://localhost/api/users/id
         [HttpPut("change-password{id}")]
         public async Task<IActionResult> ChangePassword(Guid id, [FromBody] UserUpdateRequest request)
         {
@@ -64,7 +62,7 @@ namespace HRMSolution.BackendAPI.Controllers
             }
             return Ok(result);
         }
-        [HttpPut("reset-password/{id}")]
+        [HttpGet("reset-password/{id}")]
         public async Task<IActionResult> ResetPassword(Guid id)
         {
             if (!ModelState.IsValid)
