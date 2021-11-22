@@ -193,7 +193,6 @@ function Detail(props) {
   const arrowDisciplineClickHandle = () => {
     setDropDiscipline(!dropDiscipline);
   };
-  console.log(dataDetailHd.filter((item) => item.trangThai === "Kích hoạt"));
 
   return (
     <>

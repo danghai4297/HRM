@@ -26,6 +26,12 @@ const LoginApi = {
     const url = `/User/${id}`;
     return axiosClient.put(url, data);
   },
+
+  //update role
+  PutRole: (data, id) => {
+    const url = `/User/${id}/roles`;
+    return axiosClient.put(url, data);
+  },
   //Reset password
   getResetPassword: (id) => {
     const url = `/User/reset-password/${id}`;

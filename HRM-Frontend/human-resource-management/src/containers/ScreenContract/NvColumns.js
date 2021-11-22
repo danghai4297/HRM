@@ -29,7 +29,7 @@ export const NVCOLUMNSHD = [
     Filter: SelectColumnFilter,
     disableFilters: true,
 
-    show: true,
+    show: false,
   },
   {
     Header: "Loại Hợp Đồng",
@@ -44,11 +44,37 @@ export const NVCOLUMNSHD = [
   {
     Header: "Chức Danh",
     accessor: "chucDanh",
-    minWidth: 280,
+    minWidth: 215,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
     show: true,
+  },
+  {
+    Header: "Phụ Cấp Chức Danh",
+    accessor: "phuCapChucDanh",
+    minWidth: 280,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+
+    show: false,
+  },
+  {
+    Header: "Chức Vụ",
+    accessor: "chucVu",
+    minWidth: 215,
+    disableFilters: true,
+
+    show: true,
+  },
+  {
+    Header: "Phụ Cấp Chức Vụ",
+    accessor: "phuCapChucVu",
+    minWidth: 280,
+    Filter: SelectColumnFilter,
+    disableFilters: true,
+
+    show: false,
   },
   {
     Header: "Từ Ngày",

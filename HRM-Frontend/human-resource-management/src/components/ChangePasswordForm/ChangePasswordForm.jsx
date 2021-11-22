@@ -50,7 +50,6 @@ function ChangePasswordForm(props) {
   const idAccount = jwt_decode(sessionStorage.getItem("resultObj")).idAccount;
   const onHandleSubmit = async(data) => {
     if(currentPassword !== newPassword && newPassword === rePassword){
-      console.log(data);
       try {
         await LoginApi.PutChangePassword(data,idAccount);
         success("Đổi mật khẩu thành công.");

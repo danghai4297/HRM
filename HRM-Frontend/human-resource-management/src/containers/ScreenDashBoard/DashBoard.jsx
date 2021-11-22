@@ -3,9 +3,9 @@ import "./DashBoard.scss";
 
 import ItemDashBoard from "../../components/ItemDashBoard/ItemDashBoard";
 import ItemExcel from "../../components/ItemExcel/ItemExcel";
-import TablePagination from "../../components/TablePagination/TablePagination";
+import TableBasic from "../../components/TablePagination/TableBasic";
 import ProductApi from "../../api/productApi";
-import { NVCOLUMNS, NVCOLUMNSHD, NVCOLUMNSSALARY } from "./NvColumns";
+import { NVCOLUMNSHD, NVCOLUMNSSALARY } from "./NvColumns";
 
 DashBoard.propTypes = {};
 
@@ -100,7 +100,8 @@ function DashBoard() {
         </div>
         <div className="two-table">
           <div className="tablex table-one">
-            <TablePagination
+            <h3>Danh sách hợp đồng</h3>
+            <TableBasic
               link={link1}
               tid="tablenv"
               columns={NVCOLUMNSHD}
@@ -108,7 +109,8 @@ function DashBoard() {
             />
           </div>
           <div className="tablex table-two">
-            <TablePagination
+            <h3>Danh sách lương</h3>
+            <TableBasic
               link={link2}
               tid="tablenv"
               columns={NVCOLUMNSSALARY}
