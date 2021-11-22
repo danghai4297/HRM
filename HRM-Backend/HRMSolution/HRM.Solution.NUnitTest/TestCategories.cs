@@ -54,7 +54,7 @@ namespace HRM.Solution.NUnitTest
         {
             
             var result = danhMucChucDanhService.Create(danhMucChucDanh2);
-            Assert.That(result.Result, Is.EqualTo(0));
+            Assert.That(result.Result, Is.EqualTo(1));
         }
         //[Test, Order(3)]
         //public void Cat_GetById_2()
