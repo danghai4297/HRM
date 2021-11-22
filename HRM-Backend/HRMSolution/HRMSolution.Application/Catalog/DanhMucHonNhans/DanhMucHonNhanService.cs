@@ -22,59 +22,79 @@ namespace HRMSolution.Application.Catalog.DanhMucHonNhans
 
         public async Task<int> Create(DanhMucHonNhanCreateRequest request)
         {
-            var danhMucHonNhan = new DanhMucHonNhan()
+            if(request.tenDanhMuc == null)
             {
-                tenDanhMuc = request.tenDanhMuc
-               
-            };
-            _context.danhMucHonNhans.Add(danhMucHonNhan);
-            return await _context.SaveChangesAsync();
+                return 0;
+            } else
+            {
+                var danhMucHonNhan = new DanhMucHonNhan()
+                {
+                    tenDanhMuc = request.tenDanhMuc
+
+                };
+                _context.danhMucHonNhans.Add(danhMucHonNhan);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<int> Delete(int idDanhMucHonNhan)
         {
             var danhMucHonNhan = await _context.danhMucHonNhans.FindAsync(idDanhMucHonNhan);
-            if (danhMucHonNhan == null) throw new HRMException($"Không tìm thấy danh mục hôn nhân : {idDanhMucHonNhan}");
-
-            _context.danhMucHonNhans.Remove(danhMucHonNhan);
-            return await _context.SaveChangesAsync();
+            if (danhMucHonNhan == null)
+            {
+                return 0;
+            } else
+            {
+                _context.danhMucHonNhans.Remove(danhMucHonNhan);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<List<DanhMucHonNhanViewModel>> GetALL()
         {
             var query = from p in _context.danhMucHonNhans select p;
-
-            var data = await query.Select(x => new DanhMucHonNhanViewModel()
+            if(query == null)
             {
-                id = x.id,
-                tenDanhMuc = x.tenDanhMuc
-            }).ToListAsync();
-
-
-            return data;
+                return null;
+            } else
+            {
+                var data = await query.Select(x => new DanhMucHonNhanViewModel()
+                {
+                    id = x.id,
+                    tenDanhMuc = x.tenDanhMuc
+                }).ToListAsync();
+                return data;
+            }
         }
 
         public async Task<DanhMucHonNhanViewModel> GetById(int id)
         {
             var query = from p in _context.danhMucHonNhans where p.id == id select p;
-
-            var data = await query.Select(x => new DanhMucHonNhanViewModel()
+            if(query == null)
             {
-                id = x.id,
-                tenDanhMuc = x.tenDanhMuc
-            }).FirstAsync();
-
-
-            return data;
+                return null;
+            } else
+            {
+                var data = await query.Select(x => new DanhMucHonNhanViewModel()
+                {
+                    id = x.id,
+                    tenDanhMuc = x.tenDanhMuc
+                }).FirstAsync();
+                return data;
+            }
         }
 
         public async Task<int> Update(int id,DanhMucHonNhanUpdateRequest request)
         {
             var danhMucHonNhan = await _context.danhMucHonNhans.FindAsync(id);
-            if (danhMucHonNhan == null) throw new HRMException($"Không tìm thấy danh mục hôn nhân có id: {id }");
-
-            danhMucHonNhan.tenDanhMuc = request.tenDanhMuc;
-            return await _context.SaveChangesAsync();
+            if (danhMucHonNhan == null || request.tenDanhMuc == null)
+            {
+                return 0;
+            } else
+            {
+                danhMucHonNhan.tenDanhMuc = request.tenDanhMuc;
+                return await _context.SaveChangesAsync();
+            }
         }
     }
 }

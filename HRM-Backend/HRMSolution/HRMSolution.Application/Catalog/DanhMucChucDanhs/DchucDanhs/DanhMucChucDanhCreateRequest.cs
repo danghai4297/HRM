@@ -8,9 +8,7 @@ namespace HRMSolution.Application.Catalog.DanhMucChucDanhs.DchucDanhs
     public class DanhMucChucDanhCreateRequest
     {
 
-        [Required]
         public string maChucDanh { get; set; }
-        [Required]
         public string tenChucDanh { get; set; }
         public float phuCap { get; set; }
     }

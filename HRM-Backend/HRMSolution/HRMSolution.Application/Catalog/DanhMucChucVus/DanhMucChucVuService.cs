@@ -24,66 +24,88 @@ namespace HRMSolution.Application.Catalog.DanhMucChucDanhs
 
         public async Task<int> Create(DanhMucChucVuCreateRequest request)
         {
-            var danhMucChucVu = new DanhMucChucVu()
+            if(request.maChucVu == null || request.tenChucVu == null)
             {
-                tenChucVu = request.tenChucVu,
-                maChucVu = request.maChucVu,
-                phuCap = request.phuCap
-            };
-            _context.danhMucChucVus.Add(danhMucChucVu);
-            return await _context.SaveChangesAsync();
+                return 0;
+            } else
+            {
+                var danhMucChucVu = new DanhMucChucVu()
+                {
+                    tenChucVu = request.tenChucVu,
+                    maChucVu = request.maChucVu,
+                    phuCap = request.phuCap
+                };
+                _context.danhMucChucVus.Add(danhMucChucVu);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<int> Delete(int idDanhMucChucVu)
         {
             var danhMucChucVu = await _context.danhMucChucVus.FindAsync(idDanhMucChucVu);
-            if (danhMucChucVu == null) throw new HRMException($"Không tìm thấy danh mục chức vụ : {idDanhMucChucVu}");
-
-            _context.danhMucChucVus.Remove(danhMucChucVu);
-            return await _context.SaveChangesAsync();
+            if (danhMucChucVu == null)
+            {
+                return 0;
+            } else
+            {
+                _context.danhMucChucVus.Remove(danhMucChucVu);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<List<DanhMucChucVuViewModel>> GetAll()
         {
             var query = from p in _context.danhMucChucVus select p;
-
-            var data = await query.Select(x => new DanhMucChucVuViewModel()
+            if(query == null)
             {
-                id = x.id,
-                maChucVu = x.maChucVu,
-                tenChucVu = x.tenChucVu,
-                phuCap = x.phuCap
-            }).ToListAsync();
-
-
-            return data;
+                return null;
+            } else
+            {
+                var data = await query.Select(x => new DanhMucChucVuViewModel()
+                {
+                    id = x.id,
+                    maChucVu = x.maChucVu,
+                    tenChucVu = x.tenChucVu,
+                    phuCap = x.phuCap
+                }).ToListAsync();
+                return data;
+            }
         }
 
         public async Task<DanhMucChucVuViewModel> GetById(int id)
         {
             var query = from p in _context.danhMucChucVus where p.id == id select p;
-
-            var data = await query.Select(x => new DanhMucChucVuViewModel()
+            if (query == null)
             {
-                id = x.id,
-                maChucVu = x.maChucVu,
-                tenChucVu = x.tenChucVu,
-                phuCap = x.phuCap
-            }).FirstAsync();
-
-
-            return data;
+                return null;
+            }
+            else
+            {
+                var data = await query.Select(x => new DanhMucChucVuViewModel()
+                {
+                    id = x.id,
+                    maChucVu = x.maChucVu,
+                    tenChucVu = x.tenChucVu,
+                    phuCap = x.phuCap
+                }).FirstAsync();
+                return data;
+            }
         }
 
         public async Task<int> Update(int id,DanhMucChucVuUpdateRequest request)
         {
             var danhMucChucVu = await _context.danhMucChucVus.FindAsync(id);
-            if (danhMucChucVu == null) throw new HRMException($"Không tìm thấy danh mục chức vụ có id: {id }");
-
-            danhMucChucVu.maChucVu = request.maChucVu;
-            danhMucChucVu.tenChucVu = request.tenChucVu;
-            danhMucChucVu.phuCap = request.phuCap;
-            return await _context.SaveChangesAsync();
+            if (danhMucChucVu == null || request.maChucVu == null || request.tenChucVu == null)
+            {
+                return 0;
+            }
+            else
+            {
+                danhMucChucVu.maChucVu = request.maChucVu;
+                danhMucChucVu.tenChucVu = request.tenChucVu;
+                danhMucChucVu.phuCap = request.phuCap;
+                return await _context.SaveChangesAsync();
+            }
         }
     }
 }

@@ -22,63 +22,83 @@ namespace HRMSolution.Application.Catalog.DanhMucPhongBans
 
         public async Task<int> Create(DanhMucPhongBanCreateRequest request)
         {
-            var danhMucPhongBan = new DanhMucPhongBan()
+            if(request.maPhongBan == null || request.tenPhongBan == null) 
             {
-                maPhongBan = request.maPhongBan,
-                tenPhongBan = request.tenPhongBan
-
-            };
-            _context.danhMucPhongBans.Add(danhMucPhongBan);
-            return await _context.SaveChangesAsync();
+                return 0;
+            } else
+            {
+                var danhMucPhongBan = new DanhMucPhongBan()
+                {
+                    maPhongBan = request.maPhongBan,
+                    tenPhongBan = request.tenPhongBan
+                };
+                _context.danhMucPhongBans.Add(danhMucPhongBan);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<int> Delete(int idDanhMucPhongBan)
         {
             var danhMucPhongBan = await _context.danhMucPhongBans.FindAsync(idDanhMucPhongBan);
-            if (danhMucPhongBan == null) throw new HRMException($"Không tìm thấy danh mục phòng ban : {idDanhMucPhongBan}");
-
-            _context.danhMucPhongBans.Remove(danhMucPhongBan);
-            return await _context.SaveChangesAsync();
+            if (danhMucPhongBan == null)
+            {
+                return 0;
+            } else
+            {
+                _context.danhMucPhongBans.Remove(danhMucPhongBan);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<List<DanhMucPhongBanViewModel>> GetAll()
         {
             var query = from p in _context.danhMucPhongBans select p;
-
-            var data = await query.Select(x => new DanhMucPhongBanViewModel()
+            if(query == null)
             {
-                id = x.id,
-                maPhongBan = x.maPhongBan,
-                tenPhongBan = x.tenPhongBan
-            }).ToListAsync();
-
-
-            return data;
+                return null;
+            } else
+            {
+                var data = await query.Select(x => new DanhMucPhongBanViewModel()
+                {
+                    id = x.id,
+                    maPhongBan = x.maPhongBan,
+                    tenPhongBan = x.tenPhongBan
+                }).ToListAsync();
+                return data;
+            }
         }
 
         public async Task<DanhMucPhongBanViewModel> GetById(int id)
         {
             var query = from p in _context.danhMucPhongBans where p.id == id select p;
-
-            var data = await query.Select(x => new DanhMucPhongBanViewModel()
+            if (query == null)
             {
-                id = x.id,
-                maPhongBan = x.maPhongBan,
-                tenPhongBan = x.tenPhongBan
-            }).FirstAsync();
-
-
-            return data;
+                return null;
+            }
+            else
+            {
+                var data = await query.Select(x => new DanhMucPhongBanViewModel()
+                {
+                    id = x.id,
+                    maPhongBan = x.maPhongBan,
+                    tenPhongBan = x.tenPhongBan
+                }).FirstAsync();
+                return data;
+            }
         }
 
         public async Task<int> Update(int id,DanhMucPhongBanUpdateRequest request)
         {
             var danhMucPhongBan = await _context.danhMucPhongBans.FindAsync(id);
-            if (danhMucPhongBan == null) throw new HRMException($"Không tìm thấy danh mục phòng ban có id: {id }");
-
-            danhMucPhongBan.maPhongBan = request.maPhongBan;
-            danhMucPhongBan.tenPhongBan = request.tenPhongBan;
-            return await _context.SaveChangesAsync();
+            if (danhMucPhongBan == null || request.maPhongBan == null || request.tenPhongBan == null)
+            {
+                return 0;
+            } else
+            {
+                danhMucPhongBan.maPhongBan = request.maPhongBan;
+                danhMucPhongBan.tenPhongBan = request.tenPhongBan;
+                return await _context.SaveChangesAsync();
+            }
         }
     }
 }

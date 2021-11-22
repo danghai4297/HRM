@@ -22,58 +22,79 @@ namespace HRMSolution.Application.Catalog.DanhMucHinhThucDaoTaos
         }
         public async Task<int> Create(DanhMucHinhThucDaoTaoCreateRequest request)
         {
-            var danhMucHinhThucDaoTao = new HinhThucDaoTao()
+            if(request.tenHinhThuc == null)
             {
-                tenHinhThuc = request.tenHinhThuc
-            };
-            _context.hinhThucDaoTaos.Add(danhMucHinhThucDaoTao);
-            return await _context.SaveChangesAsync();
+                return 0;
+            } else
+            {
+                var danhMucHinhThucDaoTao = new HinhThucDaoTao()
+                {
+                    tenHinhThuc = request.tenHinhThuc
+                };
+                _context.hinhThucDaoTaos.Add(danhMucHinhThucDaoTao);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<int> Delete(int idDanhMucHinhThucDaoTao)
         {
             var danhMucHinhThucDaoTao = await _context.hinhThucDaoTaos.FindAsync(idDanhMucHinhThucDaoTao);
-            if (danhMucHinhThucDaoTao == null) throw new HRMException($"Không tìm thấy danh mục hình thức đào tạo : {idDanhMucHinhThucDaoTao}");
-
-            _context.hinhThucDaoTaos.Remove(danhMucHinhThucDaoTao);
-            return await _context.SaveChangesAsync();
+            if (danhMucHinhThucDaoTao == null)
+            {
+                return 0;
+            } else
+            {
+                _context.hinhThucDaoTaos.Remove(danhMucHinhThucDaoTao);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<List<DanhMucHinhThucDaoTaoViewModel>> GetAll()
         {
             var query = from p in _context.hinhThucDaoTaos select p;
-
-            var data = await query.Select(x => new DanhMucHinhThucDaoTaoViewModel()
+            if(query == null)
             {
-                id = x.id,
-                tenHinhThuc = x.tenHinhThuc
-            }).ToListAsync();
-
-
-            return data;
+                return null;
+            } else
+            {
+                var data = await query.Select(x => new DanhMucHinhThucDaoTaoViewModel()
+                {
+                    id = x.id,
+                    tenHinhThuc = x.tenHinhThuc
+                }).ToListAsync();
+                return data;
+            }
         }
 
         public async Task<DanhMucHinhThucDaoTaoViewModel> GetById(int id)
         {
             var query = from p in _context.hinhThucDaoTaos where p.id == id select p;
-
-            var data = await query.Select(x => new DanhMucHinhThucDaoTaoViewModel()
+            if (query == null)
             {
-                id = x.id,
-                tenHinhThuc = x.tenHinhThuc
-            }).FirstAsync();
-
-
-            return data;
+                return null;
+            }
+            else
+            {
+                var data = await query.Select(x => new DanhMucHinhThucDaoTaoViewModel()
+                {
+                    id = x.id,
+                    tenHinhThuc = x.tenHinhThuc
+                }).FirstAsync();
+                return data;
+            }
         }
 
         public async Task<int> Update(int id,DanhMucHinhThucDaoTaoUpdateRequest request)
         {
             var danhMucHinhThucDaoTao = await _context.hinhThucDaoTaos.FindAsync(id);
-            if (danhMucHinhThucDaoTao == null) throw new HRMException($"Không tìm thấy danh mục hình thức đào tạo có id: {id }");
-
-            danhMucHinhThucDaoTao.tenHinhThuc = request.tenHinhThuc;
-            return await _context.SaveChangesAsync();
+            if (danhMucHinhThucDaoTao == null || request.tenHinhThuc == null)
+            {
+                return 0;
+            } else
+            {
+                danhMucHinhThucDaoTao.tenHinhThuc = request.tenHinhThuc;
+                return await _context.SaveChangesAsync();
+            }
         }
     }
 }

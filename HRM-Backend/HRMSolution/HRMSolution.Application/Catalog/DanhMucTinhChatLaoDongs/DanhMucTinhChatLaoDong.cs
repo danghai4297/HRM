@@ -22,57 +22,79 @@ namespace HRMSolution.Application.Catalog.DanhMucTinhChatLaoDongs
 
         public async Task<int> Create(DanhMucTinhChatLaoDongCreateRequest request)
         {
-            var danhMucTinhChatLaoDong = new DanhMucTinhChatLaoDong()
+            if(request.tenLaoDong == null)
             {
-                
-                tenTinhChat = request.tenLaoDong
-
-            };
-            _context.danhMucTinhChatLaoDongs.Add(danhMucTinhChatLaoDong);
-            return await _context.SaveChangesAsync();
+                return 0;
+            } else
+            {
+                var danhMucTinhChatLaoDong = new DanhMucTinhChatLaoDong()
+                {
+                    tenTinhChat = request.tenLaoDong
+                };
+                _context.danhMucTinhChatLaoDongs.Add(danhMucTinhChatLaoDong);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<int> Delete(int idDanhMucTinhChatLaoDong)
         {
             var danhMucTinhChatLaoDong = await _context.danhMucTinhChatLaoDongs.FindAsync(idDanhMucTinhChatLaoDong);
-            if (danhMucTinhChatLaoDong == null) throw new HRMException($"Không tìm thấy danh mục tính chất lao động : {idDanhMucTinhChatLaoDong}");
-
-            _context.danhMucTinhChatLaoDongs.Remove(danhMucTinhChatLaoDong);
-            return await _context.SaveChangesAsync();
+            if (danhMucTinhChatLaoDong == null)
+            {
+                return 0;
+            } else
+            {
+                _context.danhMucTinhChatLaoDongs.Remove(danhMucTinhChatLaoDong);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<List<DanhMucTinhChatLaoDongViewModel>> GetAll()
         {
             var query = from p in _context.danhMucTinhChatLaoDongs select p;
-
-            var data = await query.Select(x => new DanhMucTinhChatLaoDongViewModel()
+            if(query == null)
             {
-                id = x.id,
-                tenLaoDong = x.tenTinhChat
-            }).ToListAsync();
-            return data;
+                return null;
+            } else
+            {
+                var data = await query.Select(x => new DanhMucTinhChatLaoDongViewModel()
+                {
+                    id = x.id,
+                    tenLaoDong = x.tenTinhChat
+                }).ToListAsync();
+                return data;
+            }
         }
 
         public async Task<DanhMucTinhChatLaoDongViewModel> GetById(int id)
         {
             var query = from p in _context.danhMucTinhChatLaoDongs where p.id == id select p;
-
-            var data = await query.Select(x => new DanhMucTinhChatLaoDongViewModel()
+            if (query == null)
             {
-                id = x.id,
-                tenLaoDong = x.tenTinhChat
-            }).FirstAsync();
-            return data;
+                return null;
+            }
+            else
+            {
+                var data = await query.Select(x => new DanhMucTinhChatLaoDongViewModel()
+                {
+                    id = x.id,
+                    tenLaoDong = x.tenTinhChat
+                }).FirstAsync();
+                return data;
+            }
         }
 
         public async Task<int> Update(int id,DanhMucTinhChatLaoDongUpdateRequest request)
         {
             var danhMucTinhChatLaoDong = await _context.danhMucTinhChatLaoDongs.FindAsync(id);
-            if (danhMucTinhChatLaoDong == null) throw new HRMException($"Không tìm thấy danh mục phòng ban có id: {id }");
-
-            danhMucTinhChatLaoDong.tenTinhChat = request.tenLaoDong;
-            
-            return await _context.SaveChangesAsync();
+            if (danhMucTinhChatLaoDong == null || request.tenLaoDong == null)
+            {
+                return 0;
+            } else
+            {
+                danhMucTinhChatLaoDong.tenTinhChat = request.tenLaoDong;
+                return await _context.SaveChangesAsync();
+            }
         }
     }
 }
