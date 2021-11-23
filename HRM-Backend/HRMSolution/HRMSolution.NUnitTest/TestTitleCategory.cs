@@ -47,7 +47,7 @@ namespace HRMSolution.NUnitTest
             Assert.That(result.Result, Is.EqualTo(1));
         }
         [Test, Order(4)]
-        public void Title_Create_Failure()
+        public void Title_Create_Failure1()
         {
             DanhMucChucDanhCreateRequest titleCreating = new DanhMucChucDanhCreateRequest()
             {
@@ -59,6 +59,30 @@ namespace HRMSolution.NUnitTest
             Assert.That(result.Result, Is.EqualTo(0));
         }
         [Test, Order(5)]
+        public void Title_Create_Failure2()
+        {
+            DanhMucChucDanhCreateRequest titleCreating = new DanhMucChucDanhCreateRequest()
+            {
+                maChucDanh = "CD04",
+                tenChucDanh = null,
+                phuCap = (float)100000.0
+            };
+            var result = danhMucChucDanhService.Create(titleCreating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(6)]
+        public void Title_Create_Failure3()
+        {
+            DanhMucChucDanhCreateRequest titleCreating = new DanhMucChucDanhCreateRequest()
+            {
+                maChucDanh = null,
+                tenChucDanh = null,
+                phuCap = (float)100000.0
+            };
+            var result = danhMucChucDanhService.Create(titleCreating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(7)]
         public void Title_Update_Success()
         {
             DanhMucChucDanhUpdateRequest titleUpdating = new DanhMucChucDanhUpdateRequest()
@@ -71,8 +95,47 @@ namespace HRMSolution.NUnitTest
             var result = danhMucChucDanhService.Update(1, titleUpdating);
             Assert.That(result.Result, Is.EqualTo(1));
         }
-        [Test, Order(6)]
-        public void Title_Update_Failure()
+        [Test, Order(8)]
+        public void Title_Update_Failure1()
+        {
+            DanhMucChucDanhUpdateRequest titleUpdating = new DanhMucChucDanhUpdateRequest()
+            {
+
+                maChucDanh = null,
+                tenChucDanh = "Bác Học 2",
+                phuCap = (float)100000.0
+            };
+            var result = danhMucChucDanhService.Update(1, titleUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(9)]
+        public void Title_Update_Failure2()
+        {
+            DanhMucChucDanhUpdateRequest titleUpdating = new DanhMucChucDanhUpdateRequest()
+            {
+
+                maChucDanh = "CD01",
+                tenChucDanh = null,
+                phuCap = (float)100000.0
+            };
+            var result = danhMucChucDanhService.Update(1, titleUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(10)]
+        public void Title_Update_Failure3()
+        {
+            DanhMucChucDanhUpdateRequest titleUpdating = new DanhMucChucDanhUpdateRequest()
+            {
+
+                maChucDanh = null,
+                tenChucDanh = null,
+                phuCap = (float)100000.0
+            };
+            var result = danhMucChucDanhService.Update(1, titleUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(11)]
+        public void Title_Update_Failure4()
         {
             DanhMucChucDanhUpdateRequest titleUpdating = new DanhMucChucDanhUpdateRequest()
             {
@@ -81,22 +144,23 @@ namespace HRMSolution.NUnitTest
                 tenChucDanh = "Bác Học 2",
                 phuCap = (float)100000.0
             };
-            var result = danhMucChucDanhService.Update(6, titleUpdating);
+            var result = danhMucChucDanhService.Update(5, titleUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
-        [Test, Order(7)]
+
+        [Test, Order(12)]
         public void Title_Delete_Success()
         {
 
             var result = danhMucChucDanhService.Delete(1);
             Assert.That(result.Result, Is.EqualTo(1));
         }
-        [Test, Order(8)]
+        [Test, Order(13)]
         public void Title_Delete_Failure()
         {
 
-            var result = danhMucChucDanhService.Delete(2);
-            Assert.That(result.Result, Is.EqualTo(1));
+            var result = danhMucChucDanhService.Delete(6);
+            Assert.That(result.Result, Is.EqualTo(0));
         }
 
 
