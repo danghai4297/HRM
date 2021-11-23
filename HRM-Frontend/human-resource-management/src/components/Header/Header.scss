@@ -91,3 +91,195 @@
     border-radius: 50%;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .header-com {
+    width: 100%;
+    height: 100%;
+    background: #302c54;
+    position: sticky;
+    top: 0;
+    display: flex;
+    z-index: 1050;
+    .name {
+      height: 100%;
+      width: 88%;
+      .title-project {
+        height: 100%;
+      }
+      h1 {
+        margin: 0;
+        padding-left: 5%;
+        padding-top: 0.5%;
+        color: white;
+      }
+    }
+    .account {
+      width: 20%;
+      .button-top {
+        background: none;
+        width: 100%;
+        border: none;
+      }
+      .screen-account {
+        display: flex;
+        .header-icon {
+          width: auto;
+          font-size: 250%;
+          color: white;
+          padding-top: 2%;
+          .detail-icon {
+            float: right;
+          }
+        }
+        .account-name {
+          width: 100%;
+          padding-top: 8%;
+          padding-left: 5%;
+          text-align: left;
+          .account-style {
+            color: white;
+            font-size: 15px;
+          }
+        }
+      }
+      .detail-information {
+        width: 175px;
+        height: 190px;
+        background: #e9e8e8;
+        position: absolute;
+        left: 70%;
+        top: 90%;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        text-align: center;
+        z-index: 100;
+        .first-information {
+          height: 80%;
+          .detail-second-icon {
+            font-size: 300%;
+            height: 56px;
+          }
+        }
+        .button-account {
+          border: none;
+          background: #e9e8e8;
+          font-size: medium;
+        }
+        .button-account:hover {
+          font-size: 15px;
+        }
+      }
+    }
+    .last {
+      width: 5%;
+    }
+    .picture-account {
+      width: 50px;
+      height: 40px;
+      border-radius: 50%;
+    }
+    .picture-account-2 {
+      width: 50px;
+      height: 50px;
+      margin-left: 35%;
+      margin-top: 2%;
+      border-radius: 50%;
+    }
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .header-com {
+    width: 100%;
+    height: 100%;
+    background: #302c54;
+    position: sticky;
+    top: 0;
+    display: flex;
+    z-index: 1050;
+    .name {
+      height: 100%;
+      width: 88%;
+      .title-project {
+        height: 100%;
+      }
+      h1 {
+        margin: 0;
+        padding-left: 5%;
+        padding-top: 0.5%;
+        color: white;
+      }
+    }
+    .account {
+      width: 20%;
+      .button-top {
+        background: none;
+        width: 100%;
+        border: none;
+      }
+      .screen-account {
+        display: flex;
+        .header-icon {
+          width: auto;
+          font-size: 250%;
+          color: white;
+          padding-top: 2%;
+          .detail-icon {
+            float: right;
+          }
+        }
+        .account-name {
+          width: 100%;
+          padding-top: 8%;
+          padding-left: 5%;
+          text-align: left;
+          .account-style {
+            color: white;
+            font-size: 15px;
+          }
+        }
+      }
+      .detail-information {
+        width: 175px;
+        height: 190px;
+        background: #e9e8e8;
+        position: absolute;
+        left: 70%;
+        top: 90%;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        text-align: center;
+        z-index: 100;
+        .first-information {
+          height: 80%;
+          .detail-second-icon {
+            font-size: 300%;
+            height: 56px;
+          }
+        }
+        .button-account {
+          border: none;
+          background: #e9e8e8;
+          font-size: medium;
+        }
+        .button-account:hover {
+          font-size: 15px;
+        }
+      }
+    }
+    .last {
+      width: 5%;
+    }
+    .picture-account {
+      width: 50px;
+      height: 40px;
+      border-radius: 50%;
+    }
+    .picture-account-2 {
+      width: 50px;
+      height: 50px;
+      margin-left: 35%;
+      margin-top: 2%;
+      border-radius: 50%;
+    }
+  }
+}

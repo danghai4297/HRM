@@ -47,10 +47,19 @@ import ScreenDetailAccount from "../ScreenDetailAccount/ScreenDetailAccount";
 import ScreenAddRole from "../ScreenAddRole/ScreenAddRole";
 function ScreenProject() {
   const { setAccount } = useContext(AccountContext);
-  const { sideBar } = useContext(SideBarContext);
-  useEffect(() => {
-    localStorage.getItem("token");
-  }, []);
+  const { sideBar, setSiderBar } = useContext(SideBarContext);
+
+  window.onresize = resize;
+
+  function resize() {
+    let w = window.innerWidth;
+    if (w < 1024) {
+      setSiderBar(false);
+    } else {
+      setSiderBar(true);
+    }
+  }
+
   return (
     <>
       <div className="body-screen">

@@ -1,11 +1,10 @@
-import React, { useEffect, useState, useRef } from "react";
-import { useReactToPrint } from "react-to-print";
+import React, { useEffect, useState } from "react";
 import "./Detail.scss";
 import SubDetail from "./SubDetail";
 import { links } from "./ScrollData";
 import dateFormat from "dateformat";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 import ProductApi from "../../api/productApi";
 import TableBasic from "../TablePagination/TableBasic";
 
@@ -30,9 +29,6 @@ import {
   ttqs,
   ttyt,
 } from "./Data";
-import { ComponentToPrint } from "../ToPrint/ComponentToPrint";
-import { PDFDownloadLink } from "@react-pdf/renderer";
-import PDF from "./PDF";
 
 function Detail(props) {
   let { match, history } = props;
@@ -98,7 +94,7 @@ function Detail(props) {
   // )[0].id);
   let location = useLocation();
   let query = new URLSearchParams(location.search);
-  console.log(dataDetailNv);
+
   switch (query.get("move")) {
     case "moveToContract":
       setTimeout(() => {
@@ -209,7 +205,7 @@ function Detail(props) {
             </div>
 
             <div className="avatar">
-              <div className="icon-second" style={{ width: "90px" }}>
+              <div className="icon-second">
                 {dataDetailNv.anh !== null ? (
                   <img
                     src={`https://localhost:5001/${dataDetailNv.anh}`}
@@ -228,106 +224,99 @@ function Detail(props) {
             </div>
           </div>
           <div className="middle-path">
-            <Container className="containn">
-              <Row className="row-detail">
-                <Col>
-                  <Row>
-                    <Col xs lg="5">
-                      <p className="fast-information">Đơn vị công tác</p>
-                    </Col>
-                    <Col>
-                      <p className="fast-information">
-                        {dataDetailNv.coQuanTuyenDung === null
-                          ? "-"
-                          : dataDetailNv.coQuanTuyenDung}
-                      </p>
-                    </Col>
-                  </Row>
-                </Col>
-                <Col>
-                  <Row>
-                    <Col xs lg="5">
-                      <p className="fast-information">Ngày thử việc</p>
-                    </Col>
-                    <Col>
-                      <p className="fast-information">
-                        {dataDetailNv.ngayThuViec === null
-                          ? "-"
-                          : dateFormat(dataDetailNv.ngayThuViec, "dd/mm/yyyy")}
-                      </p>
-                    </Col>
-                  </Row>
-                </Col>
-                <Col>
-                  <Row>
-                    <Col xs lg="5" id="dee">
-                      <p className="fast-information">Ngày chính thức</p>
-                    </Col>
-                    <Col>
-                      <p className="fast-information">
-                        {dataDetailNv.ngayChinhThuc === null
-                          ? "-"
-                          : dateFormat(
-                              dataDetailNv.ngayChinhThuc,
-                              "dd/mm/yyyy"
-                            )}
-                      </p>
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-              <Row className="row-detail">
-                <Col>
-                  <Row>
-                    <Col xs lg="5">
-                      <p className="fast-information"> Ngày sinh</p>
-                    </Col>
-                    <Col>
-                      <p className="fast-information">
-                        {dataDetailNv.ngaySinh === null
-                          ? "-"
-                          : dateFormat(dataDetailNv.ngaySinh, "dd/mm/yyyy")}
-                      </p>
-                    </Col>
-                  </Row>
-                </Col>
-                <Col>
-                  <Row>
-                    <Col xs lg="5">
-                      <p className="fast-information">ĐT di động</p>
-                    </Col>
-                    <Col>
-                      <p className="fast-information">
-                        {dataDetailNv.diDong === null
-                          ? "-"
-                          : dataDetailNv.diDong}
-                      </p>
-                    </Col>
-                  </Row>
-                </Col>
-                <Col>
-                  <Row>
-                    <Col xs lg="5">
-                      <p className="fast-information">Email</p>
-                    </Col>
-                    <Col>
-                      <p className="fast-information">
-                        {dataDetailNv.email === null ? "-" : dataDetailNv.email}
-                      </p>
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-            </Container>
+            {/* <Container className="containn"> */}
+            <Row className="row-detail">
+              <Col>
+                <Row>
+                  <Col xs lg="5">
+                    <p className="fast-information">Đơn vị công tác</p>
+                  </Col>
+                  <Col>
+                    <p className="fast-information">
+                      {dataDetailNv.coQuanTuyenDung === null
+                        ? "-"
+                        : dataDetailNv.coQuanTuyenDung}
+                    </p>
+                  </Col>
+                </Row>
+              </Col>
+              <Col>
+                <Row>
+                  <Col xs lg="5">
+                    <p className="fast-information">Ngày thử việc</p>
+                  </Col>
+                  <Col>
+                    <p className="fast-information">
+                      {dataDetailNv.ngayThuViec === null
+                        ? "-"
+                        : dateFormat(dataDetailNv.ngayThuViec, "dd/mm/yyyy")}
+                    </p>
+                  </Col>
+                </Row>
+              </Col>
+              <Col>
+                <Row>
+                  <Col xs lg="5" id="dee">
+                    <p className="fast-information">Ngày chính thức</p>
+                  </Col>
+                  <Col>
+                    <p className="fast-information">
+                      {dataDetailNv.ngayChinhThuc === null
+                        ? "-"
+                        : dateFormat(dataDetailNv.ngayChinhThuc, "dd/mm/yyyy")}
+                    </p>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+            <Row className="row-detail">
+              <Col>
+                <Row>
+                  <Col xs lg="5">
+                    <p className="fast-information"> Ngày sinh</p>
+                  </Col>
+                  <Col>
+                    <p className="fast-information">
+                      {dataDetailNv.ngaySinh === null
+                        ? "-"
+                        : dateFormat(dataDetailNv.ngaySinh, "dd/mm/yyyy")}
+                    </p>
+                  </Col>
+                </Row>
+              </Col>
+              <Col>
+                <Row>
+                  <Col xs lg="5">
+                    <p className="fast-information">ĐT di động</p>
+                  </Col>
+                  <Col>
+                    <p className="fast-information">
+                      {dataDetailNv.diDong === null ? "-" : dataDetailNv.diDong}
+                    </p>
+                  </Col>
+                </Row>
+              </Col>
+              <Col>
+                <Row>
+                  <Col xs lg="5">
+                    <p className="fast-information">Email</p>
+                  </Col>
+                  <Col>
+                    <p className="fast-information">
+                      {dataDetailNv.email === null ? "-" : dataDetailNv.email}
+                    </p>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+            {/* </Container> */}
           </div>
           <div className="right-path">
             <Link to={`/profile/${id}`}>
-              <Button className="button-color" variant="dark">
-                Sửa
-              </Button>
+              <Button variant="dark">Sửa</Button>
             </Link>
             <Link to={`/profile/pdf/${id}`}>
-              <Button className="button-color" variant="light">
+              <Button variant="light">
                 <FontAwesomeIcon icon={["fas", "download"]} />
               </Button>
             </Link>
@@ -335,21 +324,21 @@ function Detail(props) {
         </div>
         <div className="main-information">
           <div className="left-header-information" id="abcccc">
-            <div className="sticky-top">
-              <ul className="list-left">
-                {links.map((link) => {
-                  return (
-                    <li className="row-left">
-                      <h5>
-                        <a href={link.url} key={link.id} onClick={clickHandle}>
-                          {link.text}
-                        </a>
-                      </h5>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
+            {/* <div className="sticky-top"> */}
+            <ul className="list-left">
+              {links.map((link) => {
+                return (
+                  <li className="row-left">
+                    <h5>
+                      <a href={link.url} key={link.id} onClick={clickHandle}>
+                        {link.text}
+                      </a>
+                    </h5>
+                  </li>
+                );
+              })}
+            </ul>
+            {/* </div> */}
           </div>
 
           <div className="right-information" id="right">
