@@ -28,35 +28,46 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
 
         public async Task<int> Create(DieuChuyenCreateRequest request)
         {
-            var dieuChuyen = new DieuChuyen()
+            if (request.maNhanVien == null || request.ngayHieuLuc == null || request.idPhongBan == 0 || request.to == 0)
             {
-                maNhanVien = request.maNhanVien,
-                ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
-                idPhongBan = request.idPhongBan,
-                to = request.to,
-                chiTiet = request.chiTiet,
-                trangThai = true
-            };
-            if(request.bangChung is null)
-            {
-                dieuChuyen.bangChung = null;
+                return 0;
             } else
             {
-                dieuChuyen.bangChung = await this.SaveFile(request.bangChung);
+                var dieuChuyen = new DieuChuyen()
+                {
+                    maNhanVien = request.maNhanVien,
+                    ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
+                    idPhongBan = request.idPhongBan,
+                    to = request.to,
+                    chiTiet = request.chiTiet,
+                    trangThai = true
+                };
+                if (request.bangChung is null)
+                {
+                    dieuChuyen.bangChung = null;
+                }
+                else
+                {
+                    dieuChuyen.bangChung = await this.SaveFile(request.bangChung);
+                }
+                _context.dieuChuyens.Add(dieuChuyen);
+                return await _context.SaveChangesAsync();
             }
-            _context.dieuChuyens.Add(dieuChuyen);
-            return await _context.SaveChangesAsync();
+            
         }
 
         public async Task<int> Delete(int idDieuChuyen)
         {
             var dieuChuyen = await _context.dieuChuyens.FindAsync(idDieuChuyen);
-            if (dieuChuyen == null) throw new HRMException($"Không tìm thấy điều chuyển có id: {idDieuChuyen}");
-
-            await _storageService.DeleteFileAsync(dieuChuyen.bangChung);
-            _context.dieuChuyens.Remove(dieuChuyen);
-            return await _context.SaveChangesAsync();
-        }
+            if (dieuChuyen == null)
+            {
+                return 0;
+            } else
+            {
+                await _storageService.DeleteFileAsync(dieuChuyen.bangChung);
+                _context.dieuChuyens.Remove(dieuChuyen);
+                return await _context.SaveChangesAsync();
+            }        }
 
         public async Task<List<DieuChuyenViewModel>> GetAll()
         {
@@ -65,21 +76,27 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                         join to in _context.danhMucTos on dc.to equals to.idTo
                         join nv in _context.nhanViens on dc.maNhanVien equals nv.maNhanVien
                         select new { dc, pb, to, nv };
-            var data = await query.Select(x => new DieuChuyenViewModel()
+            if(query == null)
             {
-                id = x.dc.id,
-                maNhanVien = x.dc.maNhanVien,
-                tenNhanVien = x.nv.hoTen,
-                ngayHieuLuc = x.dc.ngayHieuLuc,
-                PhongBan = x.pb.tenPhongBan,
-                to = x.to.tenTo,
-                chiTiet = x.dc.chiTiet,
-                trangThai = x.dc.trangThai == true ? "Kích hoạt" : "Vô hiệu",
-                idPhongBan = x.dc.idPhongBan,
-                idTo = x.dc.to,
-                bangChung = x.dc.bangChung
-            }).ToListAsync();
-            return data;
+                return null;
+            } else
+            {
+                var data = await query.Select(x => new DieuChuyenViewModel()
+                {
+                    id = x.dc.id,
+                    maNhanVien = x.dc.maNhanVien,
+                    tenNhanVien = x.nv.hoTen,
+                    ngayHieuLuc = x.dc.ngayHieuLuc,
+                    PhongBan = x.pb.tenPhongBan,
+                    to = x.to.tenTo,
+                    chiTiet = x.dc.chiTiet,
+                    trangThai = x.dc.trangThai == true ? "Kích hoạt" : "Vô hiệu",
+                    idPhongBan = x.dc.idPhongBan,
+                    idTo = x.dc.to,
+                    bangChung = x.dc.bangChung
+                }).ToListAsync();
+                return data;
+            }
         }
 
         public async Task<DieuChuyenViewModel> GetById(int id)
@@ -90,45 +107,56 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                         join nv in _context.nhanViens on dc.maNhanVien equals nv.maNhanVien
                         where dc.id == id
                         select new { dc, pb, to, nv };
-            var data = await query.Select(x => new DieuChuyenViewModel()
+            if (query == null)
             {
-                id = x.dc.id,
-                maNhanVien = x.dc.maNhanVien,
-                tenNhanVien = x.nv.hoTen,
-                ngayHieuLuc = x.dc.ngayHieuLuc,
-                PhongBan = x.pb.tenPhongBan,
-                to = x.to.tenTo,
-                chiTiet = x.dc.chiTiet,
-                trangThai = x.dc.trangThai == true? "Kích hoạt": "Vô hiệu",
-                idPhongBan = x.dc.idPhongBan,
-                idTo = x.dc.to,
-                bangChung = x.dc.bangChung
-            }).FirstAsync();
+                return null;
+            }
+            else
+            {
+                var data = await query.Select(x => new DieuChuyenViewModel()
+                {
+                    id = x.dc.id,
+                    maNhanVien = x.dc.maNhanVien,
+                    tenNhanVien = x.nv.hoTen,
+                    ngayHieuLuc = x.dc.ngayHieuLuc,
+                    PhongBan = x.pb.tenPhongBan,
+                    to = x.to.tenTo,
+                    chiTiet = x.dc.chiTiet,
+                    trangThai = x.dc.trangThai == true ? "Kích hoạt" : "Vô hiệu",
+                    idPhongBan = x.dc.idPhongBan,
+                    idTo = x.dc.to,
+                    bangChung = x.dc.bangChung
+                }).FirstAsync();
 
-            return data;
+                return data;
+            }
         }
 
         public async Task<int> Update(int id, DieuChuyenUpdateRequest request)
         {
             var dieuChuyen = await _context.dieuChuyens.FindAsync(id);
-            if (dieuChuyen == null) throw new HRMException($"Không tìm thấy điều chuyển có id: {id}");
-
-            dieuChuyen.maNhanVien = request.maNhanVien;
-            dieuChuyen.ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc);
-            dieuChuyen.idPhongBan = request.idPhongBan;
-            dieuChuyen.to = request.to;
-            dieuChuyen.chiTiet = request.chiTiet;
-            dieuChuyen.trangThai = request.trangThai;
-            if(request.bangChung is null)
+            if (dieuChuyen == null || request.maNhanVien == null || request.ngayHieuLuc == null || request.idPhongBan == 0 || request.to == 0)
             {
-               //dieuChuyen.bangChung = null;
+                return 0;
             } else
             {
-                await _storageService.DeleteFileAsync(dieuChuyen.bangChung);
-                dieuChuyen.bangChung = await this.SaveFile(request.bangChung);
+                dieuChuyen.maNhanVien = request.maNhanVien;
+                dieuChuyen.ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc);
+                dieuChuyen.idPhongBan = request.idPhongBan;
+                dieuChuyen.to = request.to;
+                dieuChuyen.chiTiet = request.chiTiet;
+                dieuChuyen.trangThai = request.trangThai;
+                if (request.bangChung is null)
+                {
+                    //dieuChuyen.bangChung = null;
+                }
+                else
+                {
+                    await _storageService.DeleteFileAsync(dieuChuyen.bangChung);
+                    dieuChuyen.bangChung = await this.SaveFile(request.bangChung);
+                }
+                return await _context.SaveChangesAsync();
             }
-
-            return await _context.SaveChangesAsync();
         }
         private async Task<string> SaveFile(IFormFile file)
         {

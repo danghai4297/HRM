@@ -27,112 +27,129 @@ namespace HRMSolution.Application.Catalog.NhanViens
 
         public async Task<int> Create(NhanVienCreateRequest request)
         {
-            var nhanVien = new NhanVien()
+            if (request.id == null || request.hoTen == null || request.quocTich == null || request.ngaySinh == null || request.diDong == null || request.cccd == null || request.noiCapCCCD == null
+                || request.ngayCapCCCD == null || request.ngayHetHanCCCD == null || request.noiSinh == null || request.queQuan == null || request.thuongTru == null || request.ngheNghiep == null
+                || request.chucVuHienTai == null || request.congViecChinh == null || request.coQuanTuyenDung == null || request.idDanhMucHonNhan == 0 || request.idDanToc <= 0 || request.idNgachCongChuc <= 0
+                || request.idTonGiao <= 0 || request.lhkc_hoTen == null || request.lhkc_quanHe == null || request.lhkc_dienThoai == null || request.lhkc_diaChi == null || request.lhkc_maNhanVien == null
+                || request.yt_maNhanVien == null || request.lsbt_maNhanVien == null)
             {
-                maNhanVien = request.id,
-                hoTen = request.hoTen,
-                quocTich = request.quocTich,
-                ngaySinh = request.ngaySinh,
-                gioiTinh = request.gioiTinh,
-                dienThoai = request.dienThoai,
-                dienThoaiKhac = request.dienThoaiKhac,
-                diDong = request.diDong,
-                email = request.email,
-                facebook = request.facebook,
-                skype = request.skype,
-                maSoThue = request.maSoThue,
-                cccd = request.cccd,
-                noiCapCCCD = request.noiCapCCCD,
-                ngayCapCCCD = request.ngayCapCCCD,
-                ngayHetHanCCCD = request.ngayHetHanCCCD,
-                hoChieu = request.hoChieu,
-                noiCapHoChieu = request.noiCapHoChieu,
-                ngayCapHoChieu = request.ngayCapHoChieu,
-                ngayHetHanHoChieu = request.ngayHetHanHoChieu,
-                noiSinh =request.noiSinh,
-                queQuan = request.queQuan,
-                thuongTru = request.thuongTru,
-                tamTru = request.tamTru,
-                ngheNghiep = request.ngheNghiep,
-                chucVuHienTai = request.chucVuHienTai,
-                ngayTuyenDung = request.ngayTuyenDung,
-                ngayThuViec = request.ngayThuViec,
-                congViecChinh = request.congViecChinh,
-                ngayVaoBan = request.ngayVaoBan,
-                ngayChinhThuc = request.ngayChinhThuc,
-                coQuanTuyenDung  = request.coQuanTuyenDung,
-                ngachCongChucNoiDung = request.ngachCongChucNoiDung,
-                vaoDang = request.vaoDang,
-                ngayVaoDang = request.ngayVaoDang,
-                ngayVaoDangChinhThuc = request.ngayVaoDangChinhThuc,
-                quanNhan = request.quanNhan,
-                ngayNhapNgu = request.ngayNhapNgu,
-                ngayXuatNgu = request.ngayXuatNgu,
-                quanHamCaoNhat = request.quanHamCaoNhat,
-                danhHieuCaoNhat = request.danhHieuCaoNhat,
-                ngayVaoDoan = request.ngayVaoDoan,
-                noiThamGia = request.noiThamGia,
-                laThuongBinh = request.laThuongBinh,
-                laConChinhSach = request.laConChinhSach,
-                thuongBinh = request.thuongBinh,
-                conChinhSach = request.conChinhSach,
-                bhxh = request.bhxh,
-                bhyt = request.bhyt,
-                atm = request.atm,
-                nganHang = request.nganHang,
-                trangThaiLaoDong = request.trangThaiLaoDong,
-                ngayNghiViec = request.ngayNghiViec,
-                lyDoNghiViec = request.lyDoNghiViec,
-                tinhChatLaoDong = request.tinhChatLaoDong,
-                idDanhMucHonNhan = request.idDanhMucHonNhan,
-                idDanToc = request.idDanToc,
-                idTonGiao = request.idTonGiao,
-                idNgachCongChuc = request.idNgachCongChuc,
-                YTe = new YTe()
+                return 0;
+            } else
+            {
+                var nhanVien = new NhanVien()
                 {
-                    nhomMau = request.yt_nhomMau,
-                    chieuCao = request.yt_chieuCao,
-                    canNang = request.yt_canNang,
-                    tinhTrangSucKhoe = request.yt_tinhTrangSucKhoe,
-                    benhTat = request.yt_benhTat,
-                    luuY = request.yt_luuY,
-                    khuyetTat = request.yt_khuyetTat,
-                    maNhanVien = request.yt_maNhanVien
-                },
-                LichSuBanThan = new LichSuBanThan()
-                {
-                    biBatDiTu = request.lsbt_biBatDiTu,
-                    thamGiaChinhTri = request.lsbt_thamGiaChinhTri,
-                    thanNhanNuocNgoai = request.lsbt_thanNhanNuocNgoai,
-                    maNhanVien = request.lsbt_maNhanVien
-                },
-                LienHeKhanCap = new LienHeKhanCap()
-                {
+                    maNhanVien = request.id,
                     hoTen = request.hoTen,
-                    quanHe = request.lhkc_quanHe,
-                    dienThoai = request.lhkc_dienThoai,
-                    email = request.lhkc_email,
-                    diaChi = request.lhkc_diaChi,
-                    maNhanVien = request.lhkc_maNhanVien,
-                }
+                    quocTich = request.quocTich,
+                    ngaySinh = request.ngaySinh,
+                    gioiTinh = request.gioiTinh,
+                    dienThoai = request.dienThoai,
+                    dienThoaiKhac = request.dienThoaiKhac,
+                    diDong = request.diDong,
+                    email = request.email,
+                    facebook = request.facebook,
+                    skype = request.skype,
+                    maSoThue = request.maSoThue,
+                    cccd = request.cccd,
+                    noiCapCCCD = request.noiCapCCCD,
+                    ngayCapCCCD = request.ngayCapCCCD,
+                    ngayHetHanCCCD = request.ngayHetHanCCCD,
+                    hoChieu = request.hoChieu,
+                    noiCapHoChieu = request.noiCapHoChieu,
+                    ngayCapHoChieu = request.ngayCapHoChieu,
+                    ngayHetHanHoChieu = request.ngayHetHanHoChieu,
+                    noiSinh = request.noiSinh,
+                    queQuan = request.queQuan,
+                    thuongTru = request.thuongTru,
+                    tamTru = request.tamTru,
+                    ngheNghiep = request.ngheNghiep,
+                    chucVuHienTai = request.chucVuHienTai,
+                    ngayTuyenDung = request.ngayTuyenDung,
+                    ngayThuViec = request.ngayThuViec,
+                    congViecChinh = request.congViecChinh,
+                    ngayVaoBan = request.ngayVaoBan,
+                    ngayChinhThuc = request.ngayChinhThuc,
+                    coQuanTuyenDung = request.coQuanTuyenDung,
+                    ngachCongChucNoiDung = request.ngachCongChucNoiDung,
+                    vaoDang = request.vaoDang,
+                    ngayVaoDang = request.ngayVaoDang,
+                    ngayVaoDangChinhThuc = request.ngayVaoDangChinhThuc,
+                    quanNhan = request.quanNhan,
+                    ngayNhapNgu = request.ngayNhapNgu,
+                    ngayXuatNgu = request.ngayXuatNgu,
+                    quanHamCaoNhat = request.quanHamCaoNhat,
+                    danhHieuCaoNhat = request.danhHieuCaoNhat,
+                    ngayVaoDoan = request.ngayVaoDoan,
+                    noiThamGia = request.noiThamGia,
+                    laThuongBinh = request.laThuongBinh,
+                    laConChinhSach = request.laConChinhSach,
+                    thuongBinh = request.thuongBinh,
+                    conChinhSach = request.conChinhSach,
+                    bhxh = request.bhxh,
+                    bhyt = request.bhyt,
+                    atm = request.atm,
+                    nganHang = request.nganHang,
+                    trangThaiLaoDong = request.trangThaiLaoDong,
+                    ngayNghiViec = request.ngayNghiViec,
+                    lyDoNghiViec = request.lyDoNghiViec,
+                    tinhChatLaoDong = request.tinhChatLaoDong,
+                    idDanhMucHonNhan = request.idDanhMucHonNhan,
+                    idDanToc = request.idDanToc,
+                    idTonGiao = request.idTonGiao,
+                    idNgachCongChuc = request.idNgachCongChuc,
+                    YTe = new YTe()
+                    {
+                        nhomMau = request.yt_nhomMau,
+                        chieuCao = request.yt_chieuCao,
+                        canNang = request.yt_canNang,
+                        tinhTrangSucKhoe = request.yt_tinhTrangSucKhoe,
+                        benhTat = request.yt_benhTat,
+                        luuY = request.yt_luuY,
+                        khuyetTat = request.yt_khuyetTat,
+                        maNhanVien = request.yt_maNhanVien
+                    },
+                    LichSuBanThan = new LichSuBanThan()
+                    {
+                        biBatDiTu = request.lsbt_biBatDiTu,
+                        thamGiaChinhTri = request.lsbt_thamGiaChinhTri,
+                        thanNhanNuocNgoai = request.lsbt_thanNhanNuocNgoai,
+                        maNhanVien = request.lsbt_maNhanVien
+                    },
+                    LienHeKhanCap = new LienHeKhanCap()
+                    {
+                        hoTen = request.hoTen,
+                        quanHe = request.lhkc_quanHe,
+                        dienThoai = request.lhkc_dienThoai,
+                        email = request.lhkc_email,
+                        diaChi = request.lhkc_diaChi,
+                        maNhanVien = request.lhkc_maNhanVien,
+                    }
 
-            };
+                };
 
-            _context.nhanViens.Add(nhanVien);
-            return await _context.SaveChangesAsync();
+                _context.nhanViens.Add(nhanVien);
+                return await _context.SaveChangesAsync();
+            }
+            
         }
 
         public async Task<int> DeleteImage(string maNhanVien)
         {
             var nhanVien = await _context.nhanViens.FindAsync(maNhanVien);
-            if (nhanVien == null) throw new HRMException($"Không tìm thấy nhân viên: {maNhanVien}");
+            if (nhanVien == null)
+            {
+                return 0;
+            } else
+            {
+                await _storageService.DeleteFileAsync(nhanVien.anh);
 
-            await _storageService.DeleteFileAsync(nhanVien.anh);
+                nhanVien.anh = null;
+                _context.nhanViens.Update(nhanVien);
 
-            nhanVien.anh = null;
-            _context.nhanViens.Update(nhanVien);
+                return await _context.SaveChangesAsync();
+            }
 
-            return await _context.SaveChangesAsync();
+            
         }
 
         public async Task<int> Update(string id, NhanVienUpdateRequest request)
@@ -148,93 +165,96 @@ namespace HRMSolution.Application.Catalog.NhanViens
             var id_lsbt = await _context.lichSuBanThans.Where(x => x.maNhanVien == id).FirstOrDefaultAsync();
             var lsbt = await _context.lichSuBanThans.FindAsync(id_lsbt.id);
 
-            if (nhanVien == null) throw new HRMException($"Không tìm thấy nhân viên có mã nhân viên là : {id}");
+            if (nhanVien == null || request.hoTen == null || request.quocTich == null || request.ngaySinh == null || request.diDong == null || request.cccd == null || request.noiCapCCCD == null
+                || request.ngayCapCCCD == null || request.ngayHetHanCCCD == null || request.noiSinh == null || request.queQuan == null || request.thuongTru == null || request.ngheNghiep == null
+                || request.chucVuHienTai == null || request.congViecChinh == null || request.coQuanTuyenDung == null || request.idDanhMucHonNhan == 0 || request.idDanToc <= 0 || request.idNgachCongChuc <= 0
+                || request.idTonGiao <= 0 || request.lhkc_hoTen == null || request.lhkc_quanHe == null || request.lhkc_dienThoai == null || request.lhkc_diaChi == null )
+            {
+                return 0;
+            } else
+            {
+                nhanVien.hoTen = request.hoTen;
+                nhanVien.quocTich = request.quocTich;
+                nhanVien.ngaySinh = request.ngaySinh;
+                nhanVien.gioiTinh = request.gioiTinh;
+                nhanVien.dienThoai = request.dienThoai;
+                nhanVien.dienThoaiKhac = request.dienThoaiKhac;
+                nhanVien.diDong = request.diDong;
+                nhanVien.email = request.email;
+                nhanVien.facebook = request.facebook;
+                nhanVien.skype = request.skype;
+                nhanVien.maSoThue = request.maSoThue;
+                nhanVien.cccd = request.cccd;
+                nhanVien.noiCapCCCD = request.noiCapCCCD;
+                nhanVien.ngayCapCCCD = request.ngayCapCCCD;
+                nhanVien.ngayHetHanCCCD = request.ngayHetHanCCCD;
+                nhanVien.hoChieu = request.hoChieu;
+                nhanVien.noiCapHoChieu = request.noiCapHoChieu;
+                nhanVien.ngayCapHoChieu = request.ngayCapHoChieu;
+                nhanVien.ngayHetHanHoChieu = request.ngayHetHanHoChieu;
+                nhanVien.noiSinh = request.noiSinh;
+                nhanVien.queQuan = request.queQuan;
+                nhanVien.thuongTru = request.thuongTru;
+                nhanVien.tamTru = request.tamTru;
+                nhanVien.ngheNghiep = request.ngheNghiep;
+                nhanVien.chucVuHienTai = request.chucVuHienTai;
+                nhanVien.ngayTuyenDung = request.ngayTuyenDung;
+                nhanVien.ngayThuViec = request.ngayThuViec;
+                nhanVien.congViecChinh = request.congViecChinh;
+                nhanVien.ngayVaoBan = request.ngayVaoBan;
+                nhanVien.ngayChinhThuc = request.ngayChinhThuc;
+                nhanVien.coQuanTuyenDung = request.coQuanTuyenDung;
+                nhanVien.ngachCongChucNoiDung = request.ngachCongChucNoiDung;
+                nhanVien.vaoDang = request.vaoDang;
+                nhanVien.ngayVaoDang = request.ngayVaoDang;
+                nhanVien.ngayVaoDangChinhThuc = request.ngayVaoDangChinhThuc;
+                nhanVien.quanNhan = request.quanNhan;
+                nhanVien.ngayNhapNgu = request.ngayNhapNgu;
+                nhanVien.ngayXuatNgu = request.ngayXuatNgu;
+                nhanVien.quanHamCaoNhat = request.quanHamCaoNhat;
+                nhanVien.danhHieuCaoNhat = request.danhHieuCaoNhat;
+                nhanVien.ngayVaoDoan = request.ngayVaoDoan;
+                nhanVien.noiThamGia = request.noiThamGia;
+                nhanVien.laThuongBinh = request.laThuongBinh;
+                nhanVien.laConChinhSach = request.laConChinhSach;
+                nhanVien.thuongBinh = request.thuongBinh;
+                nhanVien.conChinhSach = request.conChinhSach;
+                nhanVien.bhxh = request.bhxh;
+                nhanVien.bhyt = request.bhyt;
+                nhanVien.atm = request.atm;
+                nhanVien.nganHang = request.nganHang;
+                nhanVien.trangThaiLaoDong = request.trangThaiLaoDong;
+                nhanVien.ngayNghiViec = request.ngayNghiViec;
+                nhanVien.lyDoNghiViec = request.lyDoNghiViec;
+                nhanVien.tinhChatLaoDong = request.tinhChatLaoDong;
+                nhanVien.idDanhMucHonNhan = request.idDanhMucHonNhan;
+                nhanVien.idDanToc = request.idDanToc;
+                nhanVien.idTonGiao = request.idTonGiao;
+                nhanVien.idNgachCongChuc = request.idNgachCongChuc;
+                yt.nhomMau = request.yt_nhomMau;
+                yt.chieuCao = request.yt_chieuCao;
+                yt.canNang = request.yt_canNang;
+                yt.tinhTrangSucKhoe = request.yt_tinhTrangSucKhoe;
+                yt.benhTat = request.yt_benhTat;
+                yt.luuY = request.yt_luuY;
+                yt.khuyetTat = request.yt_khuyetTat;
+                lsbt.biBatDiTu = request.lsbt_biBatDiTu;
+                lsbt.thamGiaChinhTri = request.lsbt_thamGiaChinhTri;
+                lsbt.thanNhanNuocNgoai = request.lsbt_thanNhanNuocNgoai;
+                lhkc.hoTen = request.hoTen;
+                lhkc.quanHe = request.lhkc_quanHe;
+                lhkc.dienThoai = request.lhkc_dienThoai;
+                lhkc.email = request.lhkc_email;
+                lhkc.diaChi = request.lhkc_diaChi;
 
-            nhanVien.hoTen = request.hoTen;
-            nhanVien.quocTich = request.quocTich;
-            nhanVien.ngaySinh = request.ngaySinh;
-            nhanVien.gioiTinh = request.gioiTinh;
-            nhanVien.dienThoai = request.dienThoai;
-            nhanVien.dienThoaiKhac = request.dienThoaiKhac;
-            nhanVien.diDong = request.diDong;
-            nhanVien.email = request.email;
-            nhanVien.facebook = request.facebook;
-            nhanVien.skype = request.skype;
-            nhanVien.maSoThue = request.maSoThue;
-            nhanVien.cccd = request.cccd;
-            nhanVien.noiCapCCCD = request.noiCapCCCD;
-            nhanVien.ngayCapCCCD = request.ngayCapCCCD;
-            nhanVien.ngayHetHanCCCD = request.ngayHetHanCCCD;
-            nhanVien.hoChieu = request.hoChieu;
-            nhanVien.noiCapHoChieu = request.noiCapHoChieu;
-            nhanVien.ngayCapHoChieu = request.ngayCapHoChieu;
-            nhanVien.ngayHetHanHoChieu = request.ngayHetHanHoChieu;
-            nhanVien.noiSinh = request.noiSinh;
-            nhanVien.queQuan = request.queQuan;
-            nhanVien.thuongTru = request.thuongTru;
-            nhanVien.tamTru = request.tamTru;
-            nhanVien.ngheNghiep = request.ngheNghiep;
-            nhanVien.chucVuHienTai = request.chucVuHienTai;
-            nhanVien.ngayTuyenDung = request.ngayTuyenDung;
-            nhanVien.ngayThuViec = request.ngayThuViec;
-            nhanVien.congViecChinh = request.congViecChinh;
-            nhanVien.ngayVaoBan = request.ngayVaoBan;
-            nhanVien.ngayChinhThuc = request.ngayChinhThuc;
-            nhanVien.coQuanTuyenDung = request.coQuanTuyenDung;
-            nhanVien.ngachCongChucNoiDung = request.ngachCongChucNoiDung;
-            nhanVien.vaoDang = request.vaoDang;
-            nhanVien.ngayVaoDang = request.ngayVaoDang;
-            nhanVien.ngayVaoDangChinhThuc = request.ngayVaoDangChinhThuc;
-            nhanVien.quanNhan = request.quanNhan;
-            nhanVien.ngayNhapNgu = request.ngayNhapNgu;
-            nhanVien.ngayXuatNgu = request.ngayXuatNgu;
-            nhanVien.quanHamCaoNhat = request.quanHamCaoNhat;
-            nhanVien.danhHieuCaoNhat = request.danhHieuCaoNhat;
-            nhanVien.ngayVaoDoan = request.ngayVaoDoan;
-            nhanVien.noiThamGia = request.noiThamGia;
-            nhanVien.laThuongBinh = request.laThuongBinh;
-            nhanVien.laConChinhSach = request.laConChinhSach;
-            nhanVien.thuongBinh = request.thuongBinh;
-            nhanVien.conChinhSach = request.conChinhSach;
-            nhanVien.bhxh = request.bhxh;
-            nhanVien.bhyt = request.bhyt;
-            nhanVien.atm = request.atm;
-            nhanVien.nganHang = request.nganHang;
-            nhanVien.trangThaiLaoDong = request.trangThaiLaoDong;
-            nhanVien.ngayNghiViec = request.ngayNghiViec;
-            nhanVien.lyDoNghiViec = request.lyDoNghiViec;
-            nhanVien.tinhChatLaoDong = request.tinhChatLaoDong;
-            nhanVien.idDanhMucHonNhan = request.idDanhMucHonNhan;
-            nhanVien.idDanToc = request.idDanToc;
-            nhanVien.idTonGiao = request.idTonGiao;
-            nhanVien.idNgachCongChuc = request.idNgachCongChuc;
-            yt.nhomMau = request.yt_nhomMau;
-            yt.chieuCao = request.yt_chieuCao;
-            yt.canNang = request.yt_canNang;
-            yt.tinhTrangSucKhoe = request.yt_tinhTrangSucKhoe;
-            yt.benhTat = request.yt_benhTat;
-            yt.luuY = request.yt_luuY;
-            yt.khuyetTat = request.yt_khuyetTat;
-            lsbt.biBatDiTu = request.lsbt_biBatDiTu;
-            lsbt.thamGiaChinhTri = request.lsbt_thamGiaChinhTri;
-            lsbt.thanNhanNuocNgoai = request.lsbt_thanNhanNuocNgoai;
-            lhkc.hoTen = request.hoTen;
-            lhkc.quanHe = request.lhkc_quanHe;
-            lhkc.dienThoai = request.lhkc_dienThoai;
-            lhkc.email = request.lhkc_email;
-            lhkc.diaChi = request.lhkc_diaChi;
+                return await _context.SaveChangesAsync();
+            }
 
-            return await _context.SaveChangesAsync();
+            
         }
 
         public async Task<List<NhanVienViewModel>> GetAll()
         {
-
-            //select * from dbo.NhanVien nv  left join 
-            //(select * from dbo.DieuChuyen dc where dc.trangThai = 1)
-            //as a on nv.maNhanVien = a.maNhanVien
-
-
             //Phòng Ban
             var queryPb = from dc in _context.dieuChuyens
                           join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
@@ -253,78 +273,84 @@ namespace HRMSolution.Application.Catalog.NhanViens
                         //join q in queryPb on nv.maNhanVien equals q.dc.maNhanVien
 
                         select new { nv, tc,dt,  hn, tg, ncc, x, xx };
-
-            var data = await query.Select(x => new NhanVienViewModel()
+            if(query == null)
             {
-                id = x.nv.maNhanVien,
-                hoTen = x.nv.hoTen,
-                quocTich = x.nv.quocTich,
-                ngaySinh = x.nv.ngaySinh,
-                gioiTinh = x.nv.gioiTinh == true ?"Nam": "Nữ",
-                dienThoai = x.nv.dienThoai,
-                dienThoaiKhac = x.nv.dienThoaiKhac,
-                diDong = x.nv.diDong,
-                email = x.nv.email,
-                facebook = x.nv.facebook,
-                skype = x.nv.skype,
-                maSoThue = x.nv.maSoThue,
-                cccd = x.nv.cccd,
-                noiCapCCCD = x.nv.noiCapCCCD,
-                ngayCapCCCD = x.nv.ngayCapCCCD,
-                ngayHetHanCCCD = x.nv.ngayHetHanCCCD,
-                hoChieu = x.nv.hoChieu,
-                noiCapHoChieu = x.nv.noiCapHoChieu,
-                ngayCapHoChieu = x.nv.ngayCapHoChieu,
-                ngayHetHanHoChieu = x.nv.ngayHetHanHoChieu,
-                noiSinh = x.nv.noiSinh,
-                queQuan = x.nv.queQuan,
-                thuongTru = x.nv.thuongTru,
-                tamTru = x.nv.tamTru,
-                ngheNghiep = x.nv.ngheNghiep,
-                chucVuHienTai = x.nv.chucVuHienTai,
-                ngayTuyenDung = x.nv.ngayTuyenDung,
-                ngayThuViec = x.nv.ngayThuViec,
-                congViecChinh = x.nv.congViecChinh,
-                ngayVaoBan = x.nv.ngayVaoBan,
-                ngayChinhThuc = x.nv.ngayChinhThuc,
-                coQuanTuyenDung = x.nv.coQuanTuyenDung,
-                ngachCongChucNoiDung = x.nv.ngachCongChucNoiDung,
-                ngayVaoDang = x.nv.ngayVaoDang,
-                ngayVaoDangChinhThuc = x.nv.ngayVaoDangChinhThuc,
-                ngayNhapNgu = x.nv.ngayNhapNgu,
-                ngayXuatNgu = x.nv.ngayXuatNgu,
-                quanHamCaoNhat = x.nv.quanHamCaoNhat,
-                danhHieuCaoNhat = x.nv.danhHieuCaoNhat,
-                ngayVaoDoan = x.nv.ngayVaoDoan,
-                noiThamGia = x.nv.noiThamGia,
-                laThuongBinh = x.nv.laThuongBinh,
-                laConChinhSach = x.nv.laConChinhSach,
-                bhxh = x.nv.bhxh,
-                bhyt = x.nv.bhyt,
-                atm = x.nv.atm,
-                nganHang = x.nv.nganHang,
-                trangThaiLaoDong = x.nv.trangThaiLaoDong == true ? "Đang làm việc": "Đã nghỉ việc",
-                ngayNghiViec = x.nv.ngayNghiViec,
-                tinhChatLaoDong = x.tc.tenTinhChat,
-                DanhMucHonNhan = x.hn.tenDanhMuc,
-                DanToc= x.dt.tenDanhMuc,
-                TonGiao = x.tg.tenDanhMuc,
-                NgachCongChuc = x.ncc.tenNgach,
-                lyDoNghiViec = x.nv.lyDoNghiViec,
-                anh = x.nv.anh,
-                phongBan = x.xx.phongBan ?? String.Empty
-            }).ToListAsync();
-
-
-            return data;
+                return null;
+            } else
+            {
+                var data = await query.Select(x => new NhanVienViewModel()
+                {
+                    id = x.nv.maNhanVien,
+                    hoTen = x.nv.hoTen,
+                    quocTich = x.nv.quocTich,
+                    ngaySinh = x.nv.ngaySinh,
+                    gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
+                    dienThoai = x.nv.dienThoai,
+                    dienThoaiKhac = x.nv.dienThoaiKhac,
+                    diDong = x.nv.diDong,
+                    email = x.nv.email,
+                    facebook = x.nv.facebook,
+                    skype = x.nv.skype,
+                    maSoThue = x.nv.maSoThue,
+                    cccd = x.nv.cccd,
+                    noiCapCCCD = x.nv.noiCapCCCD,
+                    ngayCapCCCD = x.nv.ngayCapCCCD,
+                    ngayHetHanCCCD = x.nv.ngayHetHanCCCD,
+                    hoChieu = x.nv.hoChieu,
+                    noiCapHoChieu = x.nv.noiCapHoChieu,
+                    ngayCapHoChieu = x.nv.ngayCapHoChieu,
+                    ngayHetHanHoChieu = x.nv.ngayHetHanHoChieu,
+                    noiSinh = x.nv.noiSinh,
+                    queQuan = x.nv.queQuan,
+                    thuongTru = x.nv.thuongTru,
+                    tamTru = x.nv.tamTru,
+                    ngheNghiep = x.nv.ngheNghiep,
+                    chucVuHienTai = x.nv.chucVuHienTai,
+                    ngayTuyenDung = x.nv.ngayTuyenDung,
+                    ngayThuViec = x.nv.ngayThuViec,
+                    congViecChinh = x.nv.congViecChinh,
+                    ngayVaoBan = x.nv.ngayVaoBan,
+                    ngayChinhThuc = x.nv.ngayChinhThuc,
+                    coQuanTuyenDung = x.nv.coQuanTuyenDung,
+                    ngachCongChucNoiDung = x.nv.ngachCongChucNoiDung,
+                    ngayVaoDang = x.nv.ngayVaoDang,
+                    ngayVaoDangChinhThuc = x.nv.ngayVaoDangChinhThuc,
+                    ngayNhapNgu = x.nv.ngayNhapNgu,
+                    ngayXuatNgu = x.nv.ngayXuatNgu,
+                    quanHamCaoNhat = x.nv.quanHamCaoNhat,
+                    danhHieuCaoNhat = x.nv.danhHieuCaoNhat,
+                    ngayVaoDoan = x.nv.ngayVaoDoan,
+                    noiThamGia = x.nv.noiThamGia,
+                    laThuongBinh = x.nv.laThuongBinh,
+                    laConChinhSach = x.nv.laConChinhSach,
+                    bhxh = x.nv.bhxh,
+                    bhyt = x.nv.bhyt,
+                    atm = x.nv.atm,
+                    nganHang = x.nv.nganHang,
+                    trangThaiLaoDong = x.nv.trangThaiLaoDong == true ? "Đang làm việc" : "Đã nghỉ việc",
+                    ngayNghiViec = x.nv.ngayNghiViec,
+                    tinhChatLaoDong = x.tc.tenTinhChat,
+                    DanhMucHonNhan = x.hn.tenDanhMuc,
+                    DanToc = x.dt.tenDanhMuc,
+                    TonGiao = x.tg.tenDanhMuc,
+                    NgachCongChuc = x.ncc.tenNgach,
+                    lyDoNghiViec = x.nv.lyDoNghiViec,
+                    anh = x.nv.anh,
+                    phongBan = x.xx.phongBan ?? String.Empty
+                }).ToListAsync();
+                return data;
+            }
         }
         public async Task<List<MaTenViewModel>> GetAllMaVaTen()
         {
-            var query = from nv in _context.nhanViens select nv;
+            var query = from nv in _context.nhanViens 
+                        join dc in _context.dieuChuyens on nv.maNhanVien equals dc.maNhanVien
+                        where dc.trangThai == true && dc.idPhongBan == 1
+                        select new {nv, dc };
             var data = await query.Select(x => new MaTenViewModel()
             {
-                id = x.maNhanVien,
-                hoTen = x.hoTen
+                id = x.nv.maNhanVien,
+                hoTen = x.nv.hoTen
             }).ToListAsync();
             return data;
         }
@@ -339,71 +365,74 @@ namespace HRMSolution.Application.Catalog.NhanViens
                         join ncc in _context.danhMucNgachCongChucs on nv.idNgachCongChuc equals ncc.id
                         where nv.trangThaiLaoDong == false
                         select new { nv, tc, dt, hn, tg, ncc };
-
-
-            var data = await query.Select(x => new NhanVienViewModel()
+            if (query == null)
             {
-                id = x.nv.maNhanVien,
-                hoTen = x.nv.hoTen,
-                quocTich = x.nv.quocTich,
-                ngaySinh = x.nv.ngaySinh,
-                gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
-                dienThoai = x.nv.dienThoai,
-                dienThoaiKhac = x.nv.dienThoaiKhac,
-                diDong = x.nv.diDong,
-                email = x.nv.email,
-                facebook = x.nv.facebook,
-                skype = x.nv.skype,
-                maSoThue = x.nv.maSoThue,
-                cccd = x.nv.cccd,
-                noiCapCCCD = x.nv.noiCapCCCD,
-                ngayCapCCCD = x.nv.ngayCapCCCD,
-                ngayHetHanCCCD = x.nv.ngayHetHanCCCD,
-                hoChieu = x.nv.hoChieu,
-                noiCapHoChieu = x.nv.noiCapHoChieu,
-                ngayCapHoChieu = x.nv.ngayCapHoChieu,
-                ngayHetHanHoChieu = x.nv.ngayHetHanHoChieu,
-                noiSinh = x.nv.noiSinh,
-                queQuan = x.nv.queQuan,
-                thuongTru = x.nv.thuongTru,
-                tamTru = x.nv.tamTru,
-                ngheNghiep = x.nv.ngheNghiep,
-                chucVuHienTai = x.nv.chucVuHienTai,
-                ngayTuyenDung = x.nv.ngayTuyenDung,
-                ngayThuViec = x.nv.ngayThuViec,
-                congViecChinh = x.nv.congViecChinh,
-                ngayVaoBan = x.nv.ngayVaoBan,
-                ngayChinhThuc = x.nv.ngayChinhThuc,
-                coQuanTuyenDung = x.nv.coQuanTuyenDung,
-                ngachCongChucNoiDung = x.nv.ngachCongChucNoiDung,
-                ngayVaoDang = x.nv.ngayVaoDang,
-                ngayVaoDangChinhThuc = x.nv.ngayVaoDangChinhThuc,
-                ngayNhapNgu = x.nv.ngayNhapNgu,
-                ngayXuatNgu = x.nv.ngayXuatNgu,
-                quanHamCaoNhat = x.nv.quanHamCaoNhat,
-                danhHieuCaoNhat = x.nv.danhHieuCaoNhat,
-                ngayVaoDoan = x.nv.ngayVaoDoan,
-                noiThamGia = x.nv.noiThamGia,
-                laThuongBinh = x.nv.laThuongBinh,
-                laConChinhSach = x.nv.laConChinhSach,
-                bhxh = x.nv.bhxh,
-                bhyt = x.nv.bhyt,
-                atm = x.nv.atm,
-                nganHang = x.nv.nganHang,
-                trangThaiLaoDong = x.nv.trangThaiLaoDong == true ? "Đang làm việc" : "Đã nghỉ việc",
-                ngayNghiViec = x.nv.ngayNghiViec,
-                anh = x.nv.anh,
-                tinhChatLaoDong = x.tc.tenTinhChat,
-                DanhMucHonNhan = x.hn.tenDanhMuc,
-                DanToc = x.dt.tenDanhMuc,
-                TonGiao = x.tg.tenDanhMuc,
-                NgachCongChuc = x.ncc.tenNgach,
-                lyDoNghiViec = x.nv.lyDoNghiViec
+                return null;
+            }
+            else
+            {
+                var data = await query.Select(x => new NhanVienViewModel()
+                {
+                    id = x.nv.maNhanVien,
+                    hoTen = x.nv.hoTen,
+                    quocTich = x.nv.quocTich,
+                    ngaySinh = x.nv.ngaySinh,
+                    gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
+                    dienThoai = x.nv.dienThoai,
+                    dienThoaiKhac = x.nv.dienThoaiKhac,
+                    diDong = x.nv.diDong,
+                    email = x.nv.email,
+                    facebook = x.nv.facebook,
+                    skype = x.nv.skype,
+                    maSoThue = x.nv.maSoThue,
+                    cccd = x.nv.cccd,
+                    noiCapCCCD = x.nv.noiCapCCCD,
+                    ngayCapCCCD = x.nv.ngayCapCCCD,
+                    ngayHetHanCCCD = x.nv.ngayHetHanCCCD,
+                    hoChieu = x.nv.hoChieu,
+                    noiCapHoChieu = x.nv.noiCapHoChieu,
+                    ngayCapHoChieu = x.nv.ngayCapHoChieu,
+                    ngayHetHanHoChieu = x.nv.ngayHetHanHoChieu,
+                    noiSinh = x.nv.noiSinh,
+                    queQuan = x.nv.queQuan,
+                    thuongTru = x.nv.thuongTru,
+                    tamTru = x.nv.tamTru,
+                    ngheNghiep = x.nv.ngheNghiep,
+                    chucVuHienTai = x.nv.chucVuHienTai,
+                    ngayTuyenDung = x.nv.ngayTuyenDung,
+                    ngayThuViec = x.nv.ngayThuViec,
+                    congViecChinh = x.nv.congViecChinh,
+                    ngayVaoBan = x.nv.ngayVaoBan,
+                    ngayChinhThuc = x.nv.ngayChinhThuc,
+                    coQuanTuyenDung = x.nv.coQuanTuyenDung,
+                    ngachCongChucNoiDung = x.nv.ngachCongChucNoiDung,
+                    ngayVaoDang = x.nv.ngayVaoDang,
+                    ngayVaoDangChinhThuc = x.nv.ngayVaoDangChinhThuc,
+                    ngayNhapNgu = x.nv.ngayNhapNgu,
+                    ngayXuatNgu = x.nv.ngayXuatNgu,
+                    quanHamCaoNhat = x.nv.quanHamCaoNhat,
+                    danhHieuCaoNhat = x.nv.danhHieuCaoNhat,
+                    ngayVaoDoan = x.nv.ngayVaoDoan,
+                    noiThamGia = x.nv.noiThamGia,
+                    laThuongBinh = x.nv.laThuongBinh,
+                    laConChinhSach = x.nv.laConChinhSach,
+                    bhxh = x.nv.bhxh,
+                    bhyt = x.nv.bhyt,
+                    atm = x.nv.atm,
+                    nganHang = x.nv.nganHang,
+                    trangThaiLaoDong = x.nv.trangThaiLaoDong == true ? "Đang làm việc" : "Đã nghỉ việc",
+                    ngayNghiViec = x.nv.ngayNghiViec,
+                    anh = x.nv.anh,
+                    tinhChatLaoDong = x.tc.tenTinhChat,
+                    DanhMucHonNhan = x.hn.tenDanhMuc,
+                    DanToc = x.dt.tenDanhMuc,
+                    TonGiao = x.tg.tenDanhMuc,
+                    NgachCongChuc = x.ncc.tenNgach,
+                    lyDoNghiViec = x.nv.lyDoNghiViec
 
-            }).ToListAsync();
-
-
-            return data;
+                }).ToListAsync();
+                return data;
+            }
         }
 
 
@@ -588,104 +617,111 @@ namespace HRMSolution.Application.Catalog.NhanViens
                             lhkc,
                             yt, lsbt
                         };
-            var data = await query.Select(x => new NhanVienDetailViewModel()
+            if(query == null)
             {
-                id = x.nv.maNhanVien,
-                hoTen = x.nv.hoTen,
-                quocTich = x.nv.quocTich,
-                ngaySinh = x.nv.ngaySinh,
-                gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
-                noiSinh = x.nv.noiSinh,
-                queQuan = x.nv.queQuan,
-                thuongTru = x.nv.thuongTru,
-                tamTru = x.nv.tamTru,
-                atm = x.nv.atm,
-                nganHang = x.nv.nganHang,
-                idDanToc = x.dt.id,
-                danToc = x.dt.tenDanhMuc,
-                idTonGiao = x.tg.id,
-                tonGiao = x.tg.tenDanhMuc,
-                maSoThue = x.nv.maSoThue,
-                idHonNhan = x.hn.id,
-                honNhan = x.hn.tenDanhMuc,
-                cccd = x.nv.cccd,
-                noiCapCCCD = x.nv.noiCapCCCD,
-                ngayCapCCCD = x.nv.ngayCapCCCD,
-                ngayHetHanCCCD = x.nv.ngayHetHanCCCD,
-                hoChieu = x.nv.hoChieu,
-                noiCapHoChieu = x.nv.noiCapHoChieu,
-                ngayCapHoChieu = x.nv.ngayCapHoChieu,
-                ngayHetHanHoChieu = x.nv.ngayHetHanHoChieu,
-                dienThoai = x.nv.dienThoai,
-                dienThoaiKhac = x.nv.dienThoaiKhac,
-                diDong = x.nv.diDong,
-                email = x.nv.email,
-                facebook = x.nv.facebook,
-                skype = x.nv.skype,
-                idLhkt = x.lhkc.id,
-                lhkcHoTen = x.lhkc.hoTen,
-                lhkcQuanHe = x.lhkc.quanHe,
-                lhkcDienThoai = x.lhkc.dienThoai,
-                lhkcEmail = x.lhkc.email,
-                lhkcDiaChi = x.lhkc.diaChi,
-                ngheNghiep = x.nv.ngheNghiep,
-                coQuanTuyenDung = x.nv.coQuanTuyenDung,
-                chucVuHienTai = x.nv.chucVuHienTai,
-                trangThaiLaoDong = x.nv.trangThaiLaoDong == true ? "Đang làm việc" : "Đã nghỉ việc",
-                idTinhChatLaoDong = x.tc.id,
-                tinhChatLaoDong = x.tc.tenTinhChat,
-                lyDoNghiViec = x.nv.lyDoNghiViec,
-                ngayNghiViec = x.nv.ngayNghiViec,
-                ngayTuyenDung = x.nv.ngayTuyenDung,
-                ngayThuViec = x.nv.ngayThuViec,
-                congViecChinh = x.nv.congViecChinh,
-                ngayVaoBan = x.nv.ngayVaoBan,
-                ngayChinhThuc = x.nv.ngayChinhThuc,
-                bhxh = x.nv.bhxh,
-                bhyt = x.nv.bhyt,
-                idNgachCongChuc = x.ncc.id,
-                ngachCongChuc = x.ncc.tenNgach,
-                ngachCongChucNoiDung = x.nv.ngachCongChucNoiDung,
-                vaoDang = x.nv.vaoDang == true ? "Có" : "Không",
-                ngayVaoDang = x.nv.ngayVaoDang,
-                ngayVaoDangChinhThuc = x.nv.ngayVaoDangChinhThuc,
-                ngayVaoDoan = x.nv.ngayVaoDoan,
-                noiThamGia = x.nv.noiThamGia,
-                quanNhan = x.nv.quanNhan == true ? "Có" : "Không",
-                ngayNhapNgu = x.nv.ngayNhapNgu,
-                ngayXuatNgu = x.nv.ngayXuatNgu,
-                quanHamCaoNhat = x.nv.quanHamCaoNhat,
-                danhHieuCaoNhat = x.nv.danhHieuCaoNhat,
-                thuongBinh = x.nv.thuongBinh,
-                conChinhSach = x.nv.conChinhSach,
-                idYte = x.yt.id,
-                ytNhomMau = x.yt.nhomMau,
-                ytChieuCao = x.yt.chieuCao,
-                ytCanNang = x.yt.canNang,
-                ytTinhTrangSucKhoe = x.yt.tinhTrangSucKhoe,
-                ytBenhTat = x.yt.benhTat,
-                ytLuuY = x.yt.luuY,
-                ytKhuyetTat = x.yt.khuyetTat == true ? "Có" : "Không",
-                idLichSuBanThan = x.lsbt.id,
-                biBatDitu = x.lsbt.biBatDiTu,
-                thamGiaChinhTri = x.lsbt.thamGiaChinhTri,
-                thanNhanNuocNgoai = x.lsbt.thanNhanNuocNgoai,
-                anh = x.nv.anh,
-                laConChinhSach = x.nv.laConChinhSach,
-                laThuongBinh = x.nv.laThuongBinh,
-                trinhDoVanHoas = dataTdvh,
-                hopDongs = dataHd,
-                luongs = dataL,
-                dieuChuyens = dataDc,
-                khenThuongs = dataKt,
-                ngoaiNgus = dataNn,
-                nguoiThans = dataNt,
-                kyLuats = dataKl
+                return null;
+            } else
+            {
+                var data = await query.Select(x => new NhanVienDetailViewModel()
+                {
+                    id = x.nv.maNhanVien,
+                    hoTen = x.nv.hoTen,
+                    quocTich = x.nv.quocTich,
+                    ngaySinh = x.nv.ngaySinh,
+                    gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
+                    noiSinh = x.nv.noiSinh,
+                    queQuan = x.nv.queQuan,
+                    thuongTru = x.nv.thuongTru,
+                    tamTru = x.nv.tamTru,
+                    atm = x.nv.atm,
+                    nganHang = x.nv.nganHang,
+                    idDanToc = x.dt.id,
+                    danToc = x.dt.tenDanhMuc,
+                    idTonGiao = x.tg.id,
+                    tonGiao = x.tg.tenDanhMuc,
+                    maSoThue = x.nv.maSoThue,
+                    idHonNhan = x.hn.id,
+                    honNhan = x.hn.tenDanhMuc,
+                    cccd = x.nv.cccd,
+                    noiCapCCCD = x.nv.noiCapCCCD,
+                    ngayCapCCCD = x.nv.ngayCapCCCD,
+                    ngayHetHanCCCD = x.nv.ngayHetHanCCCD,
+                    hoChieu = x.nv.hoChieu,
+                    noiCapHoChieu = x.nv.noiCapHoChieu,
+                    ngayCapHoChieu = x.nv.ngayCapHoChieu,
+                    ngayHetHanHoChieu = x.nv.ngayHetHanHoChieu,
+                    dienThoai = x.nv.dienThoai,
+                    dienThoaiKhac = x.nv.dienThoaiKhac,
+                    diDong = x.nv.diDong,
+                    email = x.nv.email,
+                    facebook = x.nv.facebook,
+                    skype = x.nv.skype,
+                    idLhkt = x.lhkc.id,
+                    lhkcHoTen = x.lhkc.hoTen,
+                    lhkcQuanHe = x.lhkc.quanHe,
+                    lhkcDienThoai = x.lhkc.dienThoai,
+                    lhkcEmail = x.lhkc.email,
+                    lhkcDiaChi = x.lhkc.diaChi,
+                    ngheNghiep = x.nv.ngheNghiep,
+                    coQuanTuyenDung = x.nv.coQuanTuyenDung,
+                    chucVuHienTai = x.nv.chucVuHienTai,
+                    trangThaiLaoDong = x.nv.trangThaiLaoDong == true ? "Đang làm việc" : "Đã nghỉ việc",
+                    idTinhChatLaoDong = x.tc.id,
+                    tinhChatLaoDong = x.tc.tenTinhChat,
+                    lyDoNghiViec = x.nv.lyDoNghiViec,
+                    ngayNghiViec = x.nv.ngayNghiViec,
+                    ngayTuyenDung = x.nv.ngayTuyenDung,
+                    ngayThuViec = x.nv.ngayThuViec,
+                    congViecChinh = x.nv.congViecChinh,
+                    ngayVaoBan = x.nv.ngayVaoBan,
+                    ngayChinhThuc = x.nv.ngayChinhThuc,
+                    bhxh = x.nv.bhxh,
+                    bhyt = x.nv.bhyt,
+                    idNgachCongChuc = x.ncc.id,
+                    ngachCongChuc = x.ncc.tenNgach,
+                    ngachCongChucNoiDung = x.nv.ngachCongChucNoiDung,
+                    vaoDang = x.nv.vaoDang == true ? "Có" : "Không",
+                    ngayVaoDang = x.nv.ngayVaoDang,
+                    ngayVaoDangChinhThuc = x.nv.ngayVaoDangChinhThuc,
+                    ngayVaoDoan = x.nv.ngayVaoDoan,
+                    noiThamGia = x.nv.noiThamGia,
+                    quanNhan = x.nv.quanNhan == true ? "Có" : "Không",
+                    ngayNhapNgu = x.nv.ngayNhapNgu,
+                    ngayXuatNgu = x.nv.ngayXuatNgu,
+                    quanHamCaoNhat = x.nv.quanHamCaoNhat,
+                    danhHieuCaoNhat = x.nv.danhHieuCaoNhat,
+                    thuongBinh = x.nv.thuongBinh,
+                    conChinhSach = x.nv.conChinhSach,
+                    idYte = x.yt.id,
+                    ytNhomMau = x.yt.nhomMau,
+                    ytChieuCao = x.yt.chieuCao,
+                    ytCanNang = x.yt.canNang,
+                    ytTinhTrangSucKhoe = x.yt.tinhTrangSucKhoe,
+                    ytBenhTat = x.yt.benhTat,
+                    ytLuuY = x.yt.luuY,
+                    ytKhuyetTat = x.yt.khuyetTat == true ? "Có" : "Không",
+                    idLichSuBanThan = x.lsbt.id,
+                    biBatDitu = x.lsbt.biBatDiTu,
+                    thamGiaChinhTri = x.lsbt.thamGiaChinhTri,
+                    thanNhanNuocNgoai = x.lsbt.thanNhanNuocNgoai,
+                    anh = x.nv.anh,
+                    laConChinhSach = x.nv.laConChinhSach,
+                    laThuongBinh = x.nv.laThuongBinh,
+                    trinhDoVanHoas = dataTdvh,
+                    hopDongs = dataHd,
+                    luongs = dataL,
+                    dieuChuyens = dataDc,
+                    khenThuongs = dataKt,
+                    ngoaiNgus = dataNn,
+                    nguoiThans = dataNt,
+                    kyLuats = dataKl
 
-            }).Distinct().FirstAsync();
+                }).Distinct().FirstAsync();
 
 
-            return data;
+                return data;
+            }
+            
         }
 
         private async Task<string> SaveFile(IFormFile file)
@@ -699,11 +735,16 @@ namespace HRMSolution.Application.Catalog.NhanViens
         public async Task<int> UpdateImage(string id, NhanVienUpdateImageRequest request)
         {
             var anh = await _context.nhanViens.FindAsync(id);
-            if (anh == null) throw new HRMException($"Không tìm thấy nhân viên có id: {id }");
+            if (anh == null)
+            {
+                return 0;
+            } else
+            {
+                anh.anh = await this.SaveFile(request.anh);
+                return await _context.SaveChangesAsync();
+            }
 
-            anh.anh = await this.SaveFile(request.anh);
-
-            return await _context.SaveChangesAsync();
+            
         }
     }
 }

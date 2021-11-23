@@ -19,16 +19,22 @@ namespace HRMSolution.Application.Catalog.LichSus
         }
         public async Task<int> Create(LichSuCreateRequest request)
         {
-            var lichSu = new LichSu()
+            if(request.tenNhanVien == null || request.tenTaiKhoan == null || request.thaoTac == null || request.maNhanVien == null)
             {
-                tenTaiKhoan = request.tenTaiKhoan,
-                thaoTac = request.thaoTac,
-                tenNhanVien = request.tenNhanVien,
-                ngayThucHien = DateTime.Now,
-                maNhanVien = request.maNhanVien
-            };
-            _context.lichSus.Add(lichSu);
-            return await _context.SaveChangesAsync();
+                return 0;
+            } else
+            {
+                var lichSu = new LichSu()
+                {
+                    tenTaiKhoan = request.tenTaiKhoan,
+                    thaoTac = request.thaoTac,
+                    tenNhanVien = request.tenNhanVien,
+                    ngayThucHien = DateTime.Now,
+                    maNhanVien = request.maNhanVien
+                };
+                _context.lichSus.Add(lichSu);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<List<LichSuViewModel>> GetAll()
@@ -37,18 +43,23 @@ namespace HRMSolution.Application.Catalog.LichSus
                         orderby p.id descending
                         select p;
 
-
-            var data = await query.Select(x => new LichSuViewModel()
+            if(query == null)
             {
-                id = x.id,
-                tenTaiKhoan = x.tenTaiKhoan,
-                thaoTac = x.thaoTac,
-                tenNhanVien = x.tenNhanVien,
-                ngayThucHien = x.ngayThucHien,
-                maNhanVien = x.maNhanVien
-            }).ToListAsync();
+                return null;
+            } else
+            {
+                var data = await query.Select(x => new LichSuViewModel()
+                {
+                    id = x.id,
+                    tenTaiKhoan = x.tenTaiKhoan,
+                    thaoTac = x.thaoTac,
+                    tenNhanVien = x.tenNhanVien,
+                    ngayThucHien = x.ngayThucHien,
+                    maNhanVien = x.maNhanVien
+                }).ToListAsync();
 
-            return data;
+                return data;
+            }
         }
     }
 }

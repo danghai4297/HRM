@@ -21,24 +21,35 @@ namespace HRMSolution.Application.Catalog.NgoaiNgus
 
         public async Task<int> Create(NgoaiNguCreateRequest request)
         {
-            var ngoaiNgu = new NgoaiNgu()
+            if(request.idDanhMucNgoaiNgu == 0 || request.ngayCap == null || request.noiCap == null || request.trinhDo == null || request.maNhanVien == null)
             {
-                idDanhMucNgoaiNgu = request.idDanhMucNgoaiNgu,
-                ngayCap = request.ngayCap,
-                noiCap = request.noiCap,
-                trinhDo = request.trinhDo,
-                maNhanVien = request.maNhanVien
-            };
-            _context.ngoaiNgus.Add(ngoaiNgu);
-            return await _context.SaveChangesAsync();
+                return 0;
+            } else
+            {
+                var ngoaiNgu = new NgoaiNgu()
+                {
+                    idDanhMucNgoaiNgu = request.idDanhMucNgoaiNgu,
+                    ngayCap = request.ngayCap,
+                    noiCap = request.noiCap,
+                    trinhDo = request.trinhDo,
+                    maNhanVien = request.maNhanVien
+                };
+                _context.ngoaiNgus.Add(ngoaiNgu);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<int> Delete(int idNgoaiNgu)
         {
             var ngoaiNgu = await _context.ngoaiNgus.FindAsync(idNgoaiNgu);
-            if (ngoaiNgu == null) throw new HRMException($"Không tìm thấy ngoại ngữ có id : {idNgoaiNgu}");
-            _context.ngoaiNgus.Remove(ngoaiNgu);
-            return await _context.SaveChangesAsync();
+            if (ngoaiNgu == null)
+            {
+                return 0;
+            } else
+            {
+                _context.ngoaiNgus.Remove(ngoaiNgu);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<NgoaiNguViewModel> GetById(int id)
@@ -49,34 +60,43 @@ namespace HRMSolution.Application.Catalog.NgoaiNgus
                         where p.id == id
                         select new { p, dmnn, nv };
 
-
-            var data = await query.Select(x => new NgoaiNguViewModel()
+            if(query == null)
             {
-                id = x.p.id,
-                danhMucNgoaiNgu = x.dmnn.tenDanhMuc,
-                ngayCap = x.p.ngayCap,
-                trinhDo = x.p.trinhDo,
-                noiCap = x.p.noiCap,
-                maNhanVien = x.p.maNhanVien,
-                tenNhanVien = x.nv.hoTen,
-                idDanhMucNgoaiNgu = x.p.idDanhMucNgoaiNgu
-            }).FirstAsync();
+                return null;
+            } else
+            {
+                var data = await query.Select(x => new NgoaiNguViewModel()
+                {
+                    id = x.p.id,
+                    danhMucNgoaiNgu = x.dmnn.tenDanhMuc,
+                    ngayCap = x.p.ngayCap,
+                    trinhDo = x.p.trinhDo,
+                    noiCap = x.p.noiCap,
+                    maNhanVien = x.p.maNhanVien,
+                    tenNhanVien = x.nv.hoTen,
+                    idDanhMucNgoaiNgu = x.p.idDanhMucNgoaiNgu
+                }).FirstAsync();
 
-            return data;
+                return data;
+            }
         }
 
         public async Task<int> Update(int id, NgoaiNguUpdateRequest request)
         {
             var ngoaiNgu = await _context.ngoaiNgus.FindAsync(id);
-            if (ngoaiNgu == null) throw new HRMException($"Không tìm thấy ngoại ngữ có id : {id}");
+            if (ngoaiNgu == null || request.idDanhMucNgoaiNgu == 0 || request.ngayCap == null || request.noiCap == null || request.trinhDo == null || request.maNhanVien == null)
+            {
+                return 0;
+            } else
+            {
+                ngoaiNgu.idDanhMucNgoaiNgu = request.idDanhMucNgoaiNgu;
+                ngoaiNgu.ngayCap = request.ngayCap;
+                ngoaiNgu.trinhDo = request.trinhDo;
+                ngoaiNgu.noiCap = request.noiCap;
+                ngoaiNgu.maNhanVien = request.maNhanVien;
 
-            ngoaiNgu.idDanhMucNgoaiNgu = request.idDanhMucNgoaiNgu;
-            ngoaiNgu.ngayCap = request.ngayCap;
-            ngoaiNgu.trinhDo = request.trinhDo;
-            ngoaiNgu.noiCap = request.noiCap;
-            ngoaiNgu.maNhanVien = request.maNhanVien;
-
-            return await _context.SaveChangesAsync();
+                return await _context.SaveChangesAsync();
+            }
         }
     }
 }

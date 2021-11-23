@@ -27,35 +27,45 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
         }
         public async Task<int> Create(KhenThuongKyLuatCreateRequest request)
         {
-            var ktkl = new KhenThuongKyLuat()
+            if (request.idDanhMucKhenThuong == 0 || request.noiDung == null || request.lyDo == null || request.maNhanVien == null)
             {
-                idDanhMucKhenThuong = request.idDanhMucKhenThuong,
-                noiDung = request.noiDung,
-                lyDo = request.lyDo,
-                loai = request.loai,
-                maNhanVien = request.maNhanVien,
-            };
-            if(request.anh is null)
-            {
-                ktkl.anh = "";
+                return 0;
             } else
             {
-                ktkl.anh = await this.SaveFile(request.anh);
+                var ktkl = new KhenThuongKyLuat()
+                {
+                    idDanhMucKhenThuong = request.idDanhMucKhenThuong,
+                    noiDung = request.noiDung,
+                    lyDo = request.lyDo,
+                    loai = request.loai,
+                    maNhanVien = request.maNhanVien,
+                };
+                if (request.anh is null)
+                {
+                    ktkl.anh = "";
+                }
+                else
+                {
+                    ktkl.anh = await this.SaveFile(request.anh);
+                }
+                _context.khenThuongKyLuats.Add(ktkl);
+                return await _context.SaveChangesAsync();
             }
-
-            _context.khenThuongKyLuats.Add(ktkl);
-            return await _context.SaveChangesAsync();
         }
 
 
         public async Task<int> Delete(int idDanhMucKTKL)
         {
             var ktkl = await _context.khenThuongKyLuats.FindAsync(idDanhMucKTKL);
-            if (ktkl == null) throw new HRMException($"Không tìm thấy khen thưởng kỷ luật có id: {idDanhMucKTKL}");
-
-            await _storageService.DeleteFileAsync(ktkl.anh);
-            _context.khenThuongKyLuats.Remove(ktkl);
-            return await _context.SaveChangesAsync();
+            if (ktkl == null)
+            {
+                return 0;
+            } else
+            {
+                await _storageService.DeleteFileAsync(ktkl.anh);
+                _context.khenThuongKyLuats.Remove(ktkl);
+                return await _context.SaveChangesAsync();
+            }
         }
 
 
@@ -67,23 +77,26 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                         where p.loai == true
                         select new { p, dmktkl, nv };
 
-
-            var data = await query.Select(x => new KhenThuongKyLuatViewModel()
+            if(query == null)
             {
-                id = x.p.id,
-                DanhMucKhenThuong = x.dmktkl.tenDanhMuc,
-                noiDung = x.p.noiDung,
-                lyDo = x.p.lyDo,
-                loai = x.p.loai == true ? "Khen Thưởng" : "Kỷ Luật",
-                anh = x.nv.anh,
-                maNhanVien = x.p.maNhanVien,
-                hoTen = x.nv.hoTen,
-                idDanhMucKhenThuong = x.p.idDanhMucKhenThuong,
-                bangChung = x.p.anh
-            }).ToListAsync();
-
-
-            return data;
+                return null;
+            } else
+            {
+                var data = await query.Select(x => new KhenThuongKyLuatViewModel()
+                {
+                    id = x.p.id,
+                    DanhMucKhenThuong = x.dmktkl.tenDanhMuc,
+                    noiDung = x.p.noiDung,
+                    lyDo = x.p.lyDo,
+                    loai = x.p.loai == true ? "Khen Thưởng" : "Kỷ Luật",
+                    anh = x.nv.anh,
+                    maNhanVien = x.p.maNhanVien,
+                    hoTen = x.nv.hoTen,
+                    idDanhMucKhenThuong = x.p.idDanhMucKhenThuong,
+                    bangChung = x.p.anh
+                }).ToListAsync();
+                return data;
+            }
         }
 
         public async Task<KhenThuongKyLuatViewModel> GetById(int id)
@@ -94,23 +107,27 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                         where p.id == id
                         select new { p, dmktkl, nv };
 
-
-            var data = await query.Select(x => new KhenThuongKyLuatViewModel()
+            if (query == null)
             {
-                id = x.p.id,
-                DanhMucKhenThuong = x.dmktkl.tenDanhMuc,
-                noiDung = x.p.noiDung,
-                lyDo = x.p.lyDo,
-                loai = x.p.loai == true ? "Khen Thưởng" : "Kỷ Luật",
-                anh = x.nv.anh,
-                maNhanVien = x.p.maNhanVien,
-                hoTen = x.nv.hoTen,
-                idDanhMucKhenThuong = x.p.idDanhMucKhenThuong,
-                bangChung = x.p.anh
-            }).FirstAsync();
-
-
-            return data;
+                return null;
+            }
+            else
+            {
+                var data = await query.Select(x => new KhenThuongKyLuatViewModel()
+                {
+                    id = x.p.id,
+                    DanhMucKhenThuong = x.dmktkl.tenDanhMuc,
+                    noiDung = x.p.noiDung,
+                    lyDo = x.p.lyDo,
+                    loai = x.p.loai == true ? "Khen Thưởng" : "Kỷ Luật",
+                    anh = x.nv.anh,
+                    maNhanVien = x.p.maNhanVien,
+                    hoTen = x.nv.hoTen,
+                    idDanhMucKhenThuong = x.p.idDanhMucKhenThuong,
+                    bangChung = x.p.anh
+                }).FirstAsync();
+                return data;
+            }
         }
 
         public async Task<List<KhenThuongKyLuatViewModel>> GetAllKyLuat()
@@ -120,47 +137,54 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                         join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
                         where p.loai == false
                         select new { p, dmktkl, nv };
-
-
-            var data = await query.Select(x => new KhenThuongKyLuatViewModel()
+            if (query == null)
             {
-                id = x.p.id,
-                DanhMucKhenThuong = x.dmktkl.tenDanhMuc,
-                noiDung = x.p.noiDung,
-                lyDo = x.p.lyDo,
-                loai = x.p.loai == true ? "Khen Thưởng" : "Kỷ Luật",
-                anh = x.nv.anh,
-                maNhanVien = x.p.maNhanVien,
-                hoTen = x.nv.hoTen,
-                idDanhMucKhenThuong = x.p.idDanhMucKhenThuong,
-                bangChung = x.p.anh
-            }).ToListAsync();
-
-
-            return data;
+                return null;
+            }
+            else
+            {
+                var data = await query.Select(x => new KhenThuongKyLuatViewModel()
+                {
+                    id = x.p.id,
+                    DanhMucKhenThuong = x.dmktkl.tenDanhMuc,
+                    noiDung = x.p.noiDung,
+                    lyDo = x.p.lyDo,
+                    loai = x.p.loai == true ? "Khen Thưởng" : "Kỷ Luật",
+                    anh = x.nv.anh,
+                    maNhanVien = x.p.maNhanVien,
+                    hoTen = x.nv.hoTen,
+                    idDanhMucKhenThuong = x.p.idDanhMucKhenThuong,
+                    bangChung = x.p.anh
+                }).ToListAsync();
+                return data;
+            }
         }
 
         public async Task<int> Update(int id, KhenThuongKyLuatUpdateRequest request)
         {
             var ktkl = await _context.khenThuongKyLuats.FindAsync(id);
-            if (ktkl == null) throw new HRMException($"Không tìm thấy khen thưởng kỷ luật : {id}");
-
-            ktkl.idDanhMucKhenThuong = request.idDanhMucKhenThuong;
-            ktkl.noiDung = request.noiDung;
-            ktkl.lyDo = request.lyDo;
-            ktkl.loai = request.loai;
-            ktkl.maNhanVien = request.maNhanVien;
-            if (request.bangChung is null)
+            if (ktkl == null || request.idDanhMucKhenThuong == 0 || request.noiDung == null || request.lyDo == null || request.maNhanVien == null)
             {
-                //ktkl.anh = "";
-            }
-            else
+                return 0;
+            } else
             {
-                await _storageService.DeleteFileAsync(ktkl.anh);
-                ktkl.anh = await this.SaveFile(request.bangChung);
-            }
+                ktkl.idDanhMucKhenThuong = request.idDanhMucKhenThuong;
+                ktkl.noiDung = request.noiDung;
+                ktkl.lyDo = request.lyDo;
+                ktkl.loai = request.loai;
+                ktkl.maNhanVien = request.maNhanVien;
+                if (request.bangChung is null)
+                {
+                    //ktkl.anh = "";
+                }
+                else
+                {
+                    await _storageService.DeleteFileAsync(ktkl.anh);
+                    ktkl.anh = await this.SaveFile(request.bangChung);
+                }
 
-            return await _context.SaveChangesAsync();
+                return await _context.SaveChangesAsync();
+            }
         }
 
         private async Task<string> SaveFile(IFormFile file)
