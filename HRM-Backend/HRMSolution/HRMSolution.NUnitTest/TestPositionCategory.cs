@@ -47,6 +47,42 @@ namespace HRMSolution.NUnitTest
             Assert.That(result.Result, Is.EqualTo(1));
         }
         [Test, Order(4)]
+        public void Position_Create_Failure1()
+        {
+            DanhMucChucVuCreateRequest PositionCreating = new DanhMucChucVuCreateRequest()
+            {
+                maChucVu = null,
+                tenChucVu = "Chuyên Viên",
+                phuCap = (float)100000.0
+            };
+            var result = danhMucChucVuService.Create(PositionCreating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(5)]
+        public void Position_Create_Failure2()
+        {
+            DanhMucChucVuCreateRequest PositionCreating = new DanhMucChucVuCreateRequest()
+            {
+                maChucVu = "CV08",
+                tenChucVu = null,
+                phuCap = (float)100000.0
+            };
+            var result = danhMucChucVuService.Create(PositionCreating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(6)]
+        public void Position_Create_Failure3()
+        {
+            DanhMucChucVuCreateRequest titleCreating = new DanhMucChucVuCreateRequest()
+            {
+                maChucVu = null,
+                tenChucVu = null,
+                phuCap = (float)100000.0
+            };
+            var result = danhMucChucVuService.Create(titleCreating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(7)]
         public void Position_Update_Success()
         {
             DanhMucChucVuUpdateRequest PositionUpdating = new DanhMucChucVuUpdateRequest()
@@ -59,7 +95,7 @@ namespace HRMSolution.NUnitTest
             var result = danhMucChucVuService.Update(1, PositionUpdating);
             Assert.That(result.Result, Is.EqualTo(1));
         }
-        [Test, Order(5)]
+        [Test, Order(8)]
         public void Position_Update_Failure()
         {
             DanhMucChucVuUpdateRequest PositionUpdating = new DanhMucChucVuUpdateRequest()
@@ -69,22 +105,22 @@ namespace HRMSolution.NUnitTest
                 tenChucVu = "Bảo vệ",
                 phuCap = (float)100000.0
             };
-            var result = danhMucChucVuService.Update(9, PositionUpdating);
-            Assert.That(result.IsCompletedSuccessfully, Is.EqualTo(false));
+            var result = danhMucChucVuService.Update(10, PositionUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
         }
-        [Test, Order(6)]
+        [Test, Order(9)]
         public void Position_Delete_Success()
         {
 
             var result = danhMucChucVuService.Delete(1);
             Assert.That(result.Result, Is.EqualTo(1));
         }
-        [Test, Order(7)]
+        [Test, Order(10)]
         public void Position_Delete_Failure()
         {
 
             var result = danhMucChucVuService.Delete(10);
-            Assert.That(result.IsCompletedSuccessfully, Is.EqualTo(false));
+            Assert.That(result.Result, Is.EqualTo(0));
         }
     }
 }
