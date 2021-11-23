@@ -20,60 +20,82 @@ namespace HRMSolution.Application.Catalog.DanhMucDanTocs
         }
         public async Task<int> Create(DanhMucDanTocCreateRequest request)
         {
-            var danhMucDanToc = new DanhMucDanToc()
+            if(request.tenDanhMuc == null)
             {
-                tenDanhMuc = request.tenDanhMuc
-            };
-            _context.danhMucDanTocs.Add(danhMucDanToc);
-            return await _context.SaveChangesAsync();
+                return 0;
+            } else
+            {
+                var danhMucDanToc = new DanhMucDanToc()
+                {
+                    tenDanhMuc = request.tenDanhMuc
+                };
+                _context.danhMucDanTocs.Add(danhMucDanToc);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<int> Delete(int idDanhMucDanToc)
         {
             var danhMucDanToc = await _context.danhMucDanTocs.FindAsync(idDanhMucDanToc);
-            if (danhMucDanToc == null) throw new HRMException($"Không tìm thấy danh mục Dân Tộc : {idDanhMucDanToc}");
-             
-            _context.danhMucDanTocs.Remove(danhMucDanToc);
-            return await _context.SaveChangesAsync();
+            if (danhMucDanToc == null)
+            {
+                return 0;
+            } else
+            {
+                _context.danhMucDanTocs.Remove(danhMucDanToc);
+                return await _context.SaveChangesAsync();
+            }
         }
 
 
         public async Task<int> Update(int id, DanhMucDanTocUpdateRequest request)
         {
             var danhMucDanToc = await _context.danhMucDanTocs.FindAsync(id);
-            if (danhMucDanToc == null) throw new HRMException($"Không tìm thấy danh mục Dân Tộc có id: {id}");
-
-            danhMucDanToc.tenDanhMuc = request.tenDanhMuc;
-            return await _context.SaveChangesAsync(); 
+            if (danhMucDanToc == null || request.tenDanhMuc == null)
+            {
+                return 0;
+            }
+            else
+            {
+                danhMucDanToc.tenDanhMuc = request.tenDanhMuc;
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<List<DanhMucDanTocViewModel>> GetAll()
         {
             
             var query = from p in _context.danhMucDanTocs select p;
-            
-            var data = await query.Select(x => new DanhMucDanTocViewModel()
+            if(query == null)
             {
-                id = x.id,
-                tenDanhMuc = x.tenDanhMuc
-            }).ToListAsync();
-            
-
-            return data;
+                return null;
+            } else
+            {
+                var data = await query.Select(x => new DanhMucDanTocViewModel()
+                {
+                    id = x.id,
+                    tenDanhMuc = x.tenDanhMuc
+                }).ToListAsync();
+                return data;
+            }
         }
 
         public async Task<DanhMucDanTocViewModel> GetById(int id)
         {
             var query = from p in _context.danhMucDanTocs where p.id == id select p;
-
-            var data = await query.Select(x => new DanhMucDanTocViewModel()
+            if (query == null)
             {
-                id = x.id,
-                tenDanhMuc = x.tenDanhMuc
-            }).FirstAsync();
-
-
-            return data;
+                return null;
+            }
+            else
+            {
+                var data = await query.Select(x => new DanhMucDanTocViewModel()
+                {
+                    id = x.id,
+                    tenDanhMuc = x.tenDanhMuc
+                }).FirstAsync();
+                return data;
+            }
         }
     }
 }

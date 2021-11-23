@@ -22,59 +22,78 @@ namespace HRMSolution.Application.Catalog.DanhMucNgoaiNgus
 
         public async Task<int> Create(DanhMucNgoaiNguCreateRequest request)
         {
-            var danhMucNgoaiNgu = new DanhMucNgoaiNgu()
+            if(request.tenDanhMuc == null)
             {
-                tenDanhMuc = request.tenDanhMuc
-
-            };
-            _context.danhMucNgoaiNgus.Add(danhMucNgoaiNgu);
-            return await _context.SaveChangesAsync();
+                return 0;
+            } else
+            {
+                var danhMucNgoaiNgu = new DanhMucNgoaiNgu()
+                {
+                    tenDanhMuc = request.tenDanhMuc
+                };
+                _context.danhMucNgoaiNgus.Add(danhMucNgoaiNgu);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<int> Delete(int idDanhMucNgoaiNgu)
         {
             var danhMucNgoaiNgu = await _context.danhMucNgoaiNgus.FindAsync(idDanhMucNgoaiNgu);
-            if (danhMucNgoaiNgu == null) throw new HRMException($"Không tìm thấy danh mục ngoại ngữ : {idDanhMucNgoaiNgu}");
-
-            _context.danhMucNgoaiNgus.Remove(danhMucNgoaiNgu);
-            return await _context.SaveChangesAsync();
-        }
+            if (danhMucNgoaiNgu == null)
+            {
+                return 0;
+            } else
+            {
+                _context.danhMucNgoaiNgus.Remove(danhMucNgoaiNgu);
+                return await _context.SaveChangesAsync();
+            }        }
 
         public async Task<List<DanhMucNgoaiNguViewModel>> GetAll()
         {
             var query = from p in _context.danhMucNgoaiNgus select p;
-
-            var data = await query.Select(x => new DanhMucNgoaiNguViewModel()
+            if(query == null)
             {
-                id = x.id,
-                tenDanhMuc = x.tenDanhMuc
-            }).ToListAsync();
-
-
-            return data;
+                return null;
+            } else
+            {
+                var data = await query.Select(x => new DanhMucNgoaiNguViewModel()
+                {
+                    id = x.id,
+                    tenDanhMuc = x.tenDanhMuc
+                }).ToListAsync();
+                return data;
+            }
         }
 
         public async Task<DanhMucNgoaiNguViewModel> GetById(int id)
         {
             var query = from p in _context.danhMucNgoaiNgus where p.id == id select p;
-
-            var data = await query.Select(x => new DanhMucNgoaiNguViewModel()
+            if (query == null)
             {
-                id = x.id,
-                tenDanhMuc = x.tenDanhMuc
-            }).FirstAsync();
-
-
-            return data;
+                return null;
+            }
+            else
+            {
+                var data = await query.Select(x => new DanhMucNgoaiNguViewModel()
+                {
+                    id = x.id,
+                    tenDanhMuc = x.tenDanhMuc
+                }).FirstAsync();
+                return data;
+            }
         }
 
         public async Task<int> Update(int id,DanhMucNgoaiNguUpdateRequest request)
         {
             var danhMucNgoaiNgu = await _context.danhMucNgoaiNgus.FindAsync(id);
-            if (danhMucNgoaiNgu == null) throw new HRMException($"Không tìm thấy danh mục ngoại ngữ có id: {id }");
-
-            danhMucNgoaiNgu.tenDanhMuc = request.tenDanhMuc;
-            return await _context.SaveChangesAsync();
+            if (danhMucNgoaiNgu == null || request.tenDanhMuc == null)
+            {
+                return 0;
+            } else
+            {
+                danhMucNgoaiNgu.tenDanhMuc = request.tenDanhMuc;
+                return await _context.SaveChangesAsync();
+            }
         }
     }
 }

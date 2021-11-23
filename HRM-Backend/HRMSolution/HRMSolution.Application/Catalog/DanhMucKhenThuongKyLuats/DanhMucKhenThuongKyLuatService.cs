@@ -21,22 +21,32 @@ namespace HRMSolution.Application.Catalog.DanhMucKhenThuongKyLuats
 
         public async Task<int> Create(DanhMucKhenThuongKyLuatCreateRequest request)
         {
-            var danhMucKTKL = new DanhMucKhenThuongKyLuat()
+            if(request.tenDanhMuc == null)
             {
-                tenDanhMuc = request.tenDanhMuc,
-                tieuDe = request.tieuDe
-            };
-            _context.danhMucKhenThuongKyLuats.Add(danhMucKTKL);
-            return await _context.SaveChangesAsync();
+                return 0;
+            } else
+            {
+                var danhMucKTKL = new DanhMucKhenThuongKyLuat()
+                {
+                    tenDanhMuc = request.tenDanhMuc,
+                    tieuDe = request.tieuDe
+                };
+                _context.danhMucKhenThuongKyLuats.Add(danhMucKTKL);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<int> Delete(int idDanhMucKTKL)
         {
             var danhMucKTKL = await _context.danhMucKhenThuongKyLuats.FindAsync(idDanhMucKTKL);
-            if (danhMucKTKL == null) throw new HRMException($"Không tìm thấy danh mục khen thưởng kỉ luật : {idDanhMucKTKL}");
-
-            _context.danhMucKhenThuongKyLuats.Remove(danhMucKTKL);
-            return await _context.SaveChangesAsync();
+            if (danhMucKTKL == null)
+            {
+                return 0;
+            } else
+            {
+                _context.danhMucKhenThuongKyLuats.Remove(danhMucKTKL);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<List<DanhMucKhenThuongKyLuatViewModel>> GetAllKhenThuong()
@@ -44,16 +54,19 @@ namespace HRMSolution.Application.Catalog.DanhMucKhenThuongKyLuats
             var query = from p in _context.danhMucKhenThuongKyLuats
                         where p.tieuDe == "Khen thưởng"
                         select p;
-
-            var data = await query.Select(x => new DanhMucKhenThuongKyLuatViewModel()
+            if(query == null)
             {
-                id = x.id,
-                tenDanhMuc = x.tenDanhMuc,
-                tieuDe = x.tieuDe
-            }).ToListAsync();
-
-
-            return data;
+                return null;
+            } else
+            {
+                var data = await query.Select(x => new DanhMucKhenThuongKyLuatViewModel()
+                {
+                    id = x.id,
+                    tenDanhMuc = x.tenDanhMuc,
+                    tieuDe = x.tieuDe
+                }).ToListAsync();
+                return data;
+            }
         }
 
         public async Task<List<DanhMucKhenThuongKyLuatViewModel>> GetAllKyLuat()
@@ -61,16 +74,20 @@ namespace HRMSolution.Application.Catalog.DanhMucKhenThuongKyLuats
             var query = from p in _context.danhMucKhenThuongKyLuats
                         where p.tieuDe == "Kỷ luật"
                         select p;
-
-            var data = await query.Select(x => new DanhMucKhenThuongKyLuatViewModel()
+            if (query == null)
             {
-                id = x.id,
-                tenDanhMuc = x.tenDanhMuc,
-                tieuDe = x.tieuDe
-            }).ToListAsync();
-
-
-            return data;
+                return null;
+            }
+            else
+            {
+                var data = await query.Select(x => new DanhMucKhenThuongKyLuatViewModel()
+                {
+                    id = x.id,
+                    tenDanhMuc = x.tenDanhMuc,
+                    tieuDe = x.tieuDe
+                }).ToListAsync();
+                return data;
+            }
         }
 
         public async Task<DanhMucKhenThuongKyLuatViewModel> GetById(int id)
@@ -78,25 +95,33 @@ namespace HRMSolution.Application.Catalog.DanhMucKhenThuongKyLuats
             var query = from p in _context.danhMucKhenThuongKyLuats
                         where p.id == id
                         select p;
-
-            var data = await query.Select(x => new DanhMucKhenThuongKyLuatViewModel()
+            if (query == null)
             {
-                id = x.id,
-                tenDanhMuc = x.tenDanhMuc,
-                tieuDe = x.tieuDe
-            }).FirstAsync();
-
-
-            return data;
+                return null;
+            }
+            else
+            {
+                var data = await query.Select(x => new DanhMucKhenThuongKyLuatViewModel()
+                {
+                    id = x.id,
+                    tenDanhMuc = x.tenDanhMuc,
+                    tieuDe = x.tieuDe
+                }).FirstAsync();
+                return data;
+            }
         }
 
         public async Task<int> Update(int id, DanhMucKhenThuongKyLuatUpdateRequest request)
         {
             var danhMucKTKL = await _context.danhMucKhenThuongKyLuats.FindAsync(id);
-            if (danhMucKTKL == null) throw new HRMException($"Không tìm thấy danh mục khen thưởng kỉ luật có id: {id}");
-
-            danhMucKTKL.tenDanhMuc = request.tenDanhMuc;
-            return await _context.SaveChangesAsync();
+            if (danhMucKTKL == null || request.tenDanhMuc == null)
+            {
+                return 0;
+            } else
+            {
+                danhMucKTKL.tenDanhMuc = request.tenDanhMuc;
+                return await _context.SaveChangesAsync();
+            } 
         }
     }
 }

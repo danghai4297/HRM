@@ -67,8 +67,6 @@ namespace HRMSolution.Application.Catalog.DanhMucChucDanhs
                     tenChucDanh = x.tenChucDanh,
                     phuCap = x.phuCap
                 }).ToListAsync();
-
-
                 return data;
             }
         }
@@ -89,8 +87,6 @@ namespace HRMSolution.Application.Catalog.DanhMucChucDanhs
                     tenChucDanh = x.tenChucDanh,
                     phuCap = x.phuCap
                 }).FirstAsync();
-
-
                 return data;
             }
         }
@@ -98,7 +94,7 @@ namespace HRMSolution.Application.Catalog.DanhMucChucDanhs
         public async Task<int> Update(int id,DanhMucChucDanhUpdateRequest request)
         {
             var danhMucChucDanh = await _context.danhMucChucDanhs.FindAsync(id);
-            if (danhMucChucDanh == null)
+            if (danhMucChucDanh == null || request.maChucDanh == null || request.tenChucDanh == null)
             {
                 return 0;
             } else

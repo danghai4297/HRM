@@ -22,57 +22,79 @@ namespace HRMSolution.Application.Catalog.DanhMucTrinhDos
 
         public async Task<int> Create(DanhMucTrinhDoCreateRequest request)
         {
-            var danhMucTrinhDo = new DanhMucTrinhDo()
+            if(request.tenTrinhDo == null)
             {
-
-                tenTrinhDo = request.tenTrinhDo
-
-            };
-            _context.danhMucTrinhDos.Add(danhMucTrinhDo);
-            return await _context.SaveChangesAsync();
+                return 0;
+            } else
+            {
+                var danhMucTrinhDo = new DanhMucTrinhDo()
+                {
+                    tenTrinhDo = request.tenTrinhDo
+                };
+                _context.danhMucTrinhDos.Add(danhMucTrinhDo);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<int> Delete(int idDanhMucTrinhDo)
         {
             var danhMucTrinhDo = await _context.danhMucTrinhDos.FindAsync(idDanhMucTrinhDo);
-            if (danhMucTrinhDo == null) throw new HRMException($"Không tìm thấy danh mục trình độ : {idDanhMucTrinhDo}");
-
-            _context.danhMucTrinhDos.Remove(danhMucTrinhDo);
-            return await _context.SaveChangesAsync();
+            if (danhMucTrinhDo == null)
+            {
+                return 0;
+            } else
+            {
+                _context.danhMucTrinhDos.Remove(danhMucTrinhDo);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<List<DanhMucTrinhDoViewModel>> GetAll()
         {
             var query = from p in _context.danhMucTrinhDos select p;
-
-            var data = await query.Select(x => new DanhMucTrinhDoViewModel()
+            if(query == null)
             {
-                id = x.id,
-                tenTrinhDo=x.tenTrinhDo
-            }).ToListAsync();
-            return data;
+                return null;
+            } else
+            {
+                var data = await query.Select(x => new DanhMucTrinhDoViewModel()
+                {
+                    id = x.id,
+                    tenTrinhDo = x.tenTrinhDo
+                }).ToListAsync();
+                return data;
+            }
         }
 
         public async Task<DanhMucTrinhDoViewModel> GetById(int id)
         {
             var query = from p in _context.danhMucTrinhDos where p.id == id select p;
-
-            var data = await query.Select(x => new DanhMucTrinhDoViewModel()
+            if (query == null)
             {
-                id = x.id,
-                tenTrinhDo = x.tenTrinhDo
-            }).FirstAsync();
-            return data;
+                return null;
+            }
+            else
+            {
+                var data = await query.Select(x => new DanhMucTrinhDoViewModel()
+                {
+                    id = x.id,
+                    tenTrinhDo = x.tenTrinhDo
+                }).FirstAsync();
+                return data;
+            }
         }
 
         public async Task<int> Update(int id,DanhMucTrinhDoUpdateRequest request)
         {
             var danhMucTrinhDo = await _context.danhMucTrinhDos.FindAsync(id);
-            if (danhMucTrinhDo == null) throw new HRMException($"Không tìm thấy danh mục trình độ có id: {id }");
-
-            danhMucTrinhDo.tenTrinhDo = request.tenTrinhDo;
-
-            return await _context.SaveChangesAsync();
+            if (danhMucTrinhDo == null || request.tenTrinhDo == null)
+            {
+                return 0;
+            } else
+            {
+                danhMucTrinhDo.tenTrinhDo = request.tenTrinhDo;
+                return await _context.SaveChangesAsync();
+            }
         }
     }
 }

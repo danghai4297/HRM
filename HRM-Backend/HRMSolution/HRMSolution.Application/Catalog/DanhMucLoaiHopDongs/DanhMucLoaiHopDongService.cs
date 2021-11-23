@@ -21,62 +21,86 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
 
         public async Task<int> Create(DanhMucLoaiHopDongCreateRequest request)
         {
-            var danhMucLoaiHopDong = new DanhMucLoaiHopDong()
+            if(request.maLoaiHopDong == null || request.tenLoaiHopDong == null)
             {
-                maLoaiHopDong=request.maLoaiHopDong,
-                tenLoaiHopDong = request.tenLoaiHopDong
+                return 0;
+            } else
+            {
+                var danhMucLoaiHopDong = new DanhMucLoaiHopDong()
+                {
+                    maLoaiHopDong = request.maLoaiHopDong,
+                    tenLoaiHopDong = request.tenLoaiHopDong
 
-            };
-            _context.danhMucLoaiHopDongs.Add(danhMucLoaiHopDong);
-            return await _context.SaveChangesAsync();
+                };
+                _context.danhMucLoaiHopDongs.Add(danhMucLoaiHopDong);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<int> Delete(int idDanhMucLoaiHopDong)
         {
             var danhMucLoaiHopDong = await _context.danhMucLoaiHopDongs.FindAsync(idDanhMucLoaiHopDong);
-            if (danhMucLoaiHopDong == null) throw new HRMException($"Không tìm thấy danh mục hôn nhân : {idDanhMucLoaiHopDong}");
-
-            _context.danhMucLoaiHopDongs.Remove(danhMucLoaiHopDong);
-            return await _context.SaveChangesAsync();
+            if (danhMucLoaiHopDong == null)
+            {
+                return 0;
+            } else
+            {
+                _context.danhMucLoaiHopDongs.Remove(danhMucLoaiHopDong);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<List<DanhMucLoaiHopDongViewModel>> GetAll()
         {
             var query = from p in _context.danhMucLoaiHopDongs
                         select p;
-            var data = await query.Select(x => new DanhMucLoaiHopDongViewModel()
+            if(query == null)
             {
-                id = x.id,
-                maLoaiHopDong = x.maLoaiHopDong,
-                tenLoaiHopDong = x.tenLoaiHopDong
-            }).ToListAsync();
+                return null;
+            } else
+            {
+                var data = await query.Select(x => new DanhMucLoaiHopDongViewModel()
+                {
+                    id = x.id,
+                    maLoaiHopDong = x.maLoaiHopDong,
+                    tenLoaiHopDong = x.tenLoaiHopDong
+                }).ToListAsync();
 
-            return data;
+                return data;
+            }
         }
 
         public async Task<DanhMucLoaiHopDongViewModel> GetById(int id)
         {
             var query = from p in _context.danhMucLoaiHopDongs where p.id == id select p;
-
-            var data = await query.Select(x => new DanhMucLoaiHopDongViewModel()
+            if (query == null)
             {
-                id = x.id,
-                maLoaiHopDong = x.maLoaiHopDong,
-                tenLoaiHopDong = x.tenLoaiHopDong
-            }).FirstAsync();
-
-
-            return data;
+                return null;
+            }
+            else
+            {
+                var data = await query.Select(x => new DanhMucLoaiHopDongViewModel()
+                {
+                    id = x.id,
+                    maLoaiHopDong = x.maLoaiHopDong,
+                    tenLoaiHopDong = x.tenLoaiHopDong
+                }).FirstAsync();
+                return data;
+            }
         }
 
         public async Task<int> Update(int id,DanhMucLoaiHopDongUpdateRequest request)
         {
             var danhMucLoaiHopDong = await _context.danhMucLoaiHopDongs.FindAsync(id);
-            if (danhMucLoaiHopDong == null) throw new HRMException($"Không tìm thấy danh mục hôn nhân có id: {id }");
-
-            danhMucLoaiHopDong.maLoaiHopDong = request.maLoaiHopDong;
-            danhMucLoaiHopDong.tenLoaiHopDong = request.tenLoaiHopDong;
-            return await _context.SaveChangesAsync();
+            if (danhMucLoaiHopDong == null || request.maLoaiHopDong == null || request.tenLoaiHopDong == null)
+            {
+                return 0;
+            } else
+            {
+                danhMucLoaiHopDong.maLoaiHopDong = request.maLoaiHopDong;
+                danhMucLoaiHopDong.tenLoaiHopDong = request.tenLoaiHopDong;
+                return await _context.SaveChangesAsync();
+            }
         }
     }
 }

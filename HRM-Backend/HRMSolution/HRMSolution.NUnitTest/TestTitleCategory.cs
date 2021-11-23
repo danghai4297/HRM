@@ -96,7 +96,46 @@ namespace HRMSolution.NUnitTest
             Assert.That(result.Result, Is.EqualTo(1));
         }
         [Test, Order(8)]
-        public void Title_Update_Failure()
+        public void Title_Update_Failure1()
+        {
+            DanhMucChucDanhUpdateRequest titleUpdating = new DanhMucChucDanhUpdateRequest()
+            {
+
+                maChucDanh = null,
+                tenChucDanh = "Bác Học 2",
+                phuCap = (float)100000.0
+            };
+            var result = danhMucChucDanhService.Update(1, titleUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(9)]
+        public void Title_Update_Failure2()
+        {
+            DanhMucChucDanhUpdateRequest titleUpdating = new DanhMucChucDanhUpdateRequest()
+            {
+
+                maChucDanh = "CD01",
+                tenChucDanh = null,
+                phuCap = (float)100000.0
+            };
+            var result = danhMucChucDanhService.Update(1, titleUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(10)]
+        public void Title_Update_Failure3()
+        {
+            DanhMucChucDanhUpdateRequest titleUpdating = new DanhMucChucDanhUpdateRequest()
+            {
+
+                maChucDanh = null,
+                tenChucDanh = null,
+                phuCap = (float)100000.0
+            };
+            var result = danhMucChucDanhService.Update(1, titleUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(11)]
+        public void Title_Update_Failure4()
         {
             DanhMucChucDanhUpdateRequest titleUpdating = new DanhMucChucDanhUpdateRequest()
             {
@@ -109,14 +148,14 @@ namespace HRMSolution.NUnitTest
             Assert.That(result.Result, Is.EqualTo(0));
         }
 
-        [Test, Order(9)]
+        [Test, Order(12)]
         public void Title_Delete_Success()
         {
 
             var result = danhMucChucDanhService.Delete(1);
             Assert.That(result.Result, Is.EqualTo(1));
         }
-        [Test, Order(10)]
+        [Test, Order(13)]
         public void Title_Delete_Failure()
         {
 

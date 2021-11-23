@@ -22,63 +22,83 @@ namespace HRMSolution.Application.Catalog.DanhMucNhomLuongs
 
         public async Task<int> Create(DanhMucNhomLuongCreateRequest request)
         {
-            var danhMucNhomLuong = new DanhMucNhomLuong()
+            if(request.maNhomLuong == null || request.tenNhomLuong == null)
             {
-                maNhomLuong=request.maNhomLuong,
-                tenNhomLuong = request.tenNhomLuong
-
-            };
-            _context.danhMucNhomLuongs.Add(danhMucNhomLuong);
-            return await _context.SaveChangesAsync();
+                return 0;
+            } else
+            {
+                var danhMucNhomLuong = new DanhMucNhomLuong()
+                {
+                    maNhomLuong = request.maNhomLuong,
+                    tenNhomLuong = request.tenNhomLuong
+                };
+                _context.danhMucNhomLuongs.Add(danhMucNhomLuong);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<int> Delete(int idDanhMucNhomLuong)
         {
             var danhMucNhomLuong = await _context.danhMucNhomLuongs.FindAsync(idDanhMucNhomLuong);
-            if (danhMucNhomLuong == null) throw new HRMException($"Không tìm thấy danh mục nhóm lương : {idDanhMucNhomLuong}");
-
-            _context.danhMucNhomLuongs.Remove(danhMucNhomLuong);
-            return await _context.SaveChangesAsync();
+            if (danhMucNhomLuong == null)
+            {
+                return 0;
+            } else
+            {
+                _context.danhMucNhomLuongs.Remove(danhMucNhomLuong);
+                return await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<List<DanhMucNhomLuongViewModel>> GetAll()
         {
             var query = from p in _context.danhMucNhomLuongs select p;
-
-            var data = await query.Select(x => new DanhMucNhomLuongViewModel()
+            if(query == null)
             {
-                id = x.id,
-                maNhomLuong = x.maNhomLuong,
-                tenNhomLuong= x.tenNhomLuong
-            }).ToListAsync();
-
-
-            return data;
+                return null;
+            } else
+            {
+                var data = await query.Select(x => new DanhMucNhomLuongViewModel()
+                {
+                    id = x.id,
+                    maNhomLuong = x.maNhomLuong,
+                    tenNhomLuong = x.tenNhomLuong
+                }).ToListAsync();
+                return data;
+            }
         }
 
         public async Task<DanhMucNhomLuongViewModel> GetById(int id)
         {
             var query = from p in _context.danhMucNhomLuongs where p.id == id select p;
-
-            var data = await query.Select(x => new DanhMucNhomLuongViewModel()
+            if (query == null)
             {
-                id = x.id,
-                maNhomLuong = x.maNhomLuong,
-                tenNhomLuong = x.tenNhomLuong
-            }).FirstAsync();
-
-
-            return data;
+                return null;
+            }
+            else
+            {
+                var data = await query.Select(x => new DanhMucNhomLuongViewModel()
+                {
+                    id = x.id,
+                    maNhomLuong = x.maNhomLuong,
+                    tenNhomLuong = x.tenNhomLuong
+                }).FirstAsync();
+                return data;
+            }
         }
 
         public async Task<int> Update(int id,DanhMucNhomLuongUpdateRequest request)
         {
             var danhMucNhomLuong = await _context.danhMucNhomLuongs.FindAsync(id);
-            if (danhMucNhomLuong == null) throw new HRMException($"Không tìm thấy danh mục nhóm lương có id: {id }");
-
-            danhMucNhomLuong.maNhomLuong = request.maNhomLuong;
-            danhMucNhomLuong.tenNhomLuong = request.tenNhomLuong;
-            return await _context.SaveChangesAsync();
+            if (danhMucNhomLuong == null || request.maNhomLuong == null || request.tenNhomLuong == null)
+            {
+                return 0;
+            } else
+            {
+                danhMucNhomLuong.maNhomLuong = request.maNhomLuong;
+                danhMucNhomLuong.tenNhomLuong = request.tenNhomLuong;
+                return await _context.SaveChangesAsync();
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HRMSolution.NUnitTest
 {
-    class TestPositionCategory : BaseTest
+    public class TestPositionCategory : BaseTest
     {
         [OneTimeSetUp]
         public void Setup()
@@ -96,7 +96,7 @@ namespace HRMSolution.NUnitTest
             Assert.That(result.Result, Is.EqualTo(1));
         }
         [Test, Order(8)]
-        public void Position_Update_Failure()
+        public void Position_Update_Failure1()
         {
             DanhMucChucVuUpdateRequest PositionUpdating = new DanhMucChucVuUpdateRequest()
             {
@@ -109,13 +109,52 @@ namespace HRMSolution.NUnitTest
             Assert.That(result.Result, Is.EqualTo(0));
         }
         [Test, Order(9)]
+        public void Position_Update_Failure2()
+        {
+            DanhMucChucVuUpdateRequest PositionUpdating = new DanhMucChucVuUpdateRequest()
+            {
+
+                maChucVu = null,
+                tenChucVu = "Giám đốc",
+                phuCap = (float)100000.0
+            };
+            var result = danhMucChucVuService.Update(1, PositionUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(10)]
+        public void Position_Update_Failure3()
+        {
+            DanhMucChucVuUpdateRequest PositionUpdating = new DanhMucChucVuUpdateRequest()
+            {
+
+                maChucVu = "CV01",
+                tenChucVu = null,
+                phuCap = (float)100000.0
+            };
+            var result = danhMucChucVuService.Update(1, PositionUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(11)]
+        public void Position_Update_Failure4()
+        {
+            DanhMucChucVuUpdateRequest PositionUpdating = new DanhMucChucVuUpdateRequest()
+            {
+
+                maChucVu = null,
+                tenChucVu = null,
+                phuCap = (float)100000.0
+            };
+            var result = danhMucChucVuService.Update(1, PositionUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(12)]
         public void Position_Delete_Success()
         {
 
             var result = danhMucChucVuService.Delete(1);
             Assert.That(result.Result, Is.EqualTo(1));
         }
-        [Test, Order(10)]
+        [Test, Order(13)]
         public void Position_Delete_Failure()
         {
 
