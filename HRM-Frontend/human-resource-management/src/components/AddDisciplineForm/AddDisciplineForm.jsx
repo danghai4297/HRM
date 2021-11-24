@@ -18,7 +18,7 @@ const regexDate = /^[0-9]{2}[\/]{1}[0-9]{2}[\/]{1}[0-9]{4}$/g;
 const schema = yup.object({
   idDanhMucKhenThuong: yup
     .number()
-    .typeError("Loại khen thưởng không được bỏ trống."),
+    .typeError("Loại kỷ luật không được bỏ trống."),
   maNhanVien: yup
     .string()
     .nullable()
@@ -306,7 +306,7 @@ function AddDisciplineForm(props) {
                     className="col-sm-4 justify-content-start"
                     htmlFor="bangChung"
                   >
-                    Bằng chứng
+                    Tài liệu đính kèm
                   </label>
                   <Upload
                     beforeUpload={() => false}

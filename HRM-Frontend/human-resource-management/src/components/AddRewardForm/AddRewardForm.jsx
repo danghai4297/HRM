@@ -302,7 +302,7 @@ function AddRewardForm(props) {
                     className="col-sm-4 justify-content-start"
                     htmlFor="bangChung"
                   >
-                    Bằng chứng
+                    Tài liệu đính kèm
                   </label>
                   <Upload
                     beforeUpload={() => false}

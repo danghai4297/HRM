@@ -73,7 +73,7 @@ function AddContractForm(props) {
   const [rsId, setRsId] = useState();
   const [rsIdCre, setRsIdCre] = useState();
   const [dataIdEmployee, setDataIdEmployee] = useState([]);
- 
+
   useEffect(() => {
     const fetchNvList = async () => {
       try {
@@ -99,8 +99,6 @@ function AddContractForm(props) {
     };
     fetchNvList();
   }, []);
-
-  
 
   useEffect(() => {
     const handleId = async () => {
@@ -403,7 +401,7 @@ function AddContractForm(props) {
             <div className="row">
               <div className="col">
                 <div class="form-group form-inline ">
-                <label
+                  <label
                     class="col-sm-4 justify-content-start"
                     htmlFor="maHopDong"
                   >
@@ -426,7 +424,7 @@ function AddContractForm(props) {
               </div>
               <div className="col">
                 <div className="form-group form-inline">
-                <label
+                  <label
                     class="col-sm-4 justify-content-start"
                     htmlFor="idChucDanh"
                   >
@@ -486,7 +484,7 @@ function AddContractForm(props) {
               </div>
               <div className="col">
                 <div className="form-group form-inline">
-                <label
+                  <label
                     class="col-sm-4 justify-content-start"
                     htmlFor="ghiChu"
                   >
@@ -547,11 +545,11 @@ function AddContractForm(props) {
               </div>
               <div className="col">
                 <div className="form-group form-inline">
-                <label
+                  <label
                     className="col-sm-4 justify-content-start"
                     htmlFor="bangChung"
                   >
-                    Bằng chứng
+                    Tài liệu đính kèm
                   </label>
                   <Upload
                     beforeUpload={() => false}
@@ -566,7 +564,7 @@ function AddContractForm(props) {
             <div className="row">
               <div className="col-6">
                 <div class="form-group form-inline">
-                <label
+                  <label
                     class="col-sm-4 justify-content-start"
                     htmlFor="ngayHetHanHopDong"
                   >
@@ -602,7 +600,7 @@ function AddContractForm(props) {
               </div>
               <div className="col">
                 <div className="form-group form-inline">
-                <label
+                  <label
                     className="col-sm-4 justify-content-start"
                     style={id !== undefined ? null : { display: "none" }}
                     htmlFor="trangThai"
@@ -625,7 +623,12 @@ function AddContractForm(props) {
                   </select>
                   <span className="message">{errors.trangThai?.message}</span>
                 </div>
-                <input   style={ {display: "none"} } {...register("idCre")} type="text" value={rsIdCre} />
+                <input
+                  style={{ display: "none" }}
+                  {...register("idCre")}
+                  type="text"
+                  value={rsIdCre}
+                />
               </div>
             </div>
           </div>

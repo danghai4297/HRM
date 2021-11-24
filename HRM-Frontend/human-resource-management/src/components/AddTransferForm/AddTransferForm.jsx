@@ -23,7 +23,7 @@ const schema = yup.object({
     .required("Mã nhân viên không được bỏ trống."),
   idPhongBan: yup.number().typeError("Phòng ban không được bỏ trống."),
   to: yup.number().nullable().required("Tổ không được bỏ trống."),
- // idChucVu: yup.number().nullable().required("Chức vụ không được bỏ trống."),
+  // idChucVu: yup.number().nullable().required("Chức vụ không được bỏ trống."),
   trangThai: yup.boolean(),
 });
 function AddTransferForm(props) {
@@ -44,7 +44,7 @@ function AddTransferForm(props) {
   let { id } = match.params;
 
   // states contain data
-  const[startDate,setStartDate] = useState();
+  const [startDate, setStartDate] = useState();
   const [dataDetailDC, setDataDetailDC] = useState([]);
   const [dataNest, setDataNest] = useState([]);
   const [dataDepartment, setDataDepartment] = useState([]);
@@ -179,18 +179,18 @@ function AddTransferForm(props) {
       if (id !== undefined) {
         try {
           const formData = new FormData();
-        formData.append("bangChung", file.file);
-        formData.append("ngayHieuLuc", startDate.format("MM/DD/YYYY"));
-        formData.append("idPhongBan", data.idPhongBan);
-        formData.append("to", data.to);
-        formData.append("chiTiet", data.chiTiet);
-        formData.append("trangThai", data.trangThai);
-        formData.append("maNhanVien", data.maNhanVien);
-        await PutApi.PutDC(formData, id);
+          formData.append("bangChung", file.file);
+          formData.append("ngayHieuLuc", startDate.format("MM/DD/YYYY"));
+          formData.append("idPhongBan", data.idPhongBan);
+          formData.append("to", data.to);
+          formData.append("chiTiet", data.chiTiet);
+          formData.append("trangThai", data.trangThai);
+          formData.append("maNhanVien", data.maNhanVien);
+          await PutApi.PutDC(formData, id);
         } catch (errors) {
-          errors("Không thể sửa thông tin thuyên chuyển")
+          errors("Không thể sửa thông tin thuyên chuyển");
         }
-       
+
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
           thaoTac: `Sửa thông tin thuyên chuyển của nhân viên ${dataDetailDC.tenNhanVien}`,
@@ -212,9 +212,9 @@ function AddTransferForm(props) {
           formData.append("maNhanVien", data.maNhanVien);
           await ProductApi.PostDC(formData);
         } catch (errors) {
-          errors("Không thể thêm thông tin thuyên chuyển")
+          errors("Không thể thêm thông tin thuyên chuyển");
         }
-       
+
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
           thaoTac: `Thêm thuyên chuyển mới cho nhân viên ${dataDetailDC.tenNhanVien}`,
@@ -340,7 +340,7 @@ function AddTransferForm(props) {
                     className="col-sm-4 justify-content-start"
                     htmlFor="bangChung"
                   >
-                    Bằng chứng
+                    Tài liệu đính kèm
                   </label>
                   <Upload
                     beforeUpload={() => false}
@@ -408,7 +408,7 @@ function AddTransferForm(props) {
                         value={field.value}
                         onChange={(event) => {
                           field.onChange(event);
-                          setStartDate(event)
+                          setStartDate(event);
                         }}
                         {...field._d}
                       />
