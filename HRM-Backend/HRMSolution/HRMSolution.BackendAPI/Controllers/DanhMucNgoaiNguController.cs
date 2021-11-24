@@ -56,7 +56,7 @@ namespace HRMSolution.BackendAPI.Controllers
         {
             var result = await _danhMucNgoaiNguService.GetById(id);
             if (result == null)
-                return BadRequest("Không tìm thấy Danh mục ngoại ngữ");
+                return BadRequest();
             return Ok(result);
         }
     }

@@ -30,6 +30,8 @@ namespace HRMSolution.BackendAPI.Controllers
         public async Task<IActionResult> GetEducationLevelById(int id)
         {
             var trinhDoVanHoa = await _trinhDoVanHoaService.GetById(id);
+            if (trinhDoVanHoa == null)
+                return BadRequest();
             return Ok(trinhDoVanHoa);
         }
         [HttpPost]

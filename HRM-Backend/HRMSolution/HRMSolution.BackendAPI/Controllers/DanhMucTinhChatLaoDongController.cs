@@ -45,7 +45,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCategory(int id, DanhMucTinhChatLaoDongUpdateRequest request)
         {
-            var result = await _danhMucTinhChatLaoDongService.Update(id,request);
+            var result = await _danhMucTinhChatLaoDongService.Update(id, request);
             if (result == 0)
                 return BadRequest();
             return Ok();
@@ -55,7 +55,7 @@ namespace HRMSolution.BackendAPI.Controllers
         {
             var result = await _danhMucTinhChatLaoDongService.GetById(id);
             if (result == null)
-                return BadRequest("Không tìm thấy Danh mục tính chất lao động");
+                return BadRequest();
             return Ok(result);
         }
     }

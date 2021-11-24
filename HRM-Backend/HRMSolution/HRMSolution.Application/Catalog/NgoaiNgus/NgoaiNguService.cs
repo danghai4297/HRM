@@ -21,10 +21,11 @@ namespace HRMSolution.Application.Catalog.NgoaiNgus
 
         public async Task<int> Create(NgoaiNguCreateRequest request)
         {
-            if(request.idDanhMucNgoaiNgu == 0 || request.ngayCap == null || request.noiCap == null || request.trinhDo == null || request.maNhanVien == null)
+            if (request.idDanhMucNgoaiNgu == 0 || request.ngayCap == null || request.noiCap == null || request.trinhDo == null || request.maNhanVien == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 var ngoaiNgu = new NgoaiNgu()
                 {
@@ -35,7 +36,11 @@ namespace HRMSolution.Application.Catalog.NgoaiNgus
                     maNhanVien = request.maNhanVien
                 };
                 _context.ngoaiNgus.Add(ngoaiNgu);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 
@@ -45,26 +50,32 @@ namespace HRMSolution.Application.Catalog.NgoaiNgus
             if (ngoaiNgu == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 _context.ngoaiNgus.Remove(ngoaiNgu);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 
         public async Task<NgoaiNguViewModel> GetById(int id)
         {
-            var query = from p in _context.ngoaiNgus
-                        join dmnn in _context.danhMucNgoaiNgus on p.idDanhMucNgoaiNgu equals dmnn.id
-                        join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
-                        where p.id == id
-                        select new { p, dmnn, nv };
-
-            if(query == null)
+            var ngoaiNgu = await _context.ngoaiNgus.FindAsync(id);
+            if (ngoaiNgu == null)
             {
                 return null;
-            } else
+            }
+            else
             {
+                var query = from p in _context.ngoaiNgus
+                            join dmnn in _context.danhMucNgoaiNgus on p.idDanhMucNgoaiNgu equals dmnn.id
+                            join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
+                            where p.id == id
+                            select new { p, dmnn, nv };
                 var data = await query.Select(x => new NgoaiNguViewModel()
                 {
                     id = x.p.id,
@@ -87,7 +98,8 @@ namespace HRMSolution.Application.Catalog.NgoaiNgus
             if (ngoaiNgu == null || request.idDanhMucNgoaiNgu == 0 || request.ngayCap == null || request.noiCap == null || request.trinhDo == null || request.maNhanVien == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 ngoaiNgu.idDanhMucNgoaiNgu = request.idDanhMucNgoaiNgu;
                 ngoaiNgu.ngayCap = request.ngayCap;
@@ -95,7 +107,11 @@ namespace HRMSolution.Application.Catalog.NgoaiNgus
                 ngoaiNgu.noiCap = request.noiCap;
                 ngoaiNgu.maNhanVien = request.maNhanVien;
 
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
     }

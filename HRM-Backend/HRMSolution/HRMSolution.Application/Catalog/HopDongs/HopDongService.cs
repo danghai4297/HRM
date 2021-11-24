@@ -30,7 +30,8 @@ namespace HRMSolution.Application.Catalog.HopDongs
             if (request.maHopDong == null || request.idLoaiHopDong == 0 || request.idChucDanh == 0 || request.idChucVu == 0 || request.maNhanVien == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 var queryHopDong = await _context.hopDongs.Where(x => x.maNhanVien == request.maNhanVien && x.trangThai == true).FirstOrDefaultAsync();
                 if (queryHopDong == null)
@@ -94,7 +95,11 @@ namespace HRMSolution.Application.Catalog.HopDongs
                         _context.hopDongs.Add(hopDong);
                     }
                 }
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 
@@ -104,28 +109,36 @@ namespace HRMSolution.Application.Catalog.HopDongs
             if (hopDong == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 await _storageService.DeleteFileAsync(hopDong.bangChung);
                 _context.hopDongs.Remove(hopDong);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 
         public async Task<HopDongViewModel> GetHopDong(string maHopDong)
         {
-            var query = from p in _context.hopDongs
-                        join dmlhd in _context.danhMucLoaiHopDongs on p.idLoaiHopDong equals dmlhd.id
-                        join dmcd in _context.danhMucChucDanhs on p.idChucDanh equals dmcd.id
-                        join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
-                        join dmcv in _context.danhMucChucVus on p.idChucVu equals dmcv.id
-                        where p.maHopDong == maHopDong
-                        select new { p, nv, dmcd, dmlhd, dmcv };
-            if(query == null)
+            var hopDong = await _context.hopDongs.FindAsync(maHopDong);
+
+            if (hopDong == null)
             {
                 return null;
-            } else
+            }
+            else
             {
+                var query = from p in _context.hopDongs
+                            join dmlhd in _context.danhMucLoaiHopDongs on p.idLoaiHopDong equals dmlhd.id
+                            join dmcd in _context.danhMucChucDanhs on p.idChucDanh equals dmcd.id
+                            join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
+                            join dmcv in _context.danhMucChucVus on p.idChucVu equals dmcv.id
+                            where p.maHopDong == maHopDong
+                            select new { p, nv, dmcd, dmlhd, dmcv };
                 var data = await query.Select(x => new HopDongViewModel()
                 {
                     idCre = x.p.id,
@@ -153,13 +166,13 @@ namespace HRMSolution.Application.Catalog.HopDongs
 
         public async Task<List<HopDongViewModel>> GetAll()
         {
-            var query = from p in _context.hopDongs 
+            var query = from p in _context.hopDongs
                         join dmlhd in _context.danhMucLoaiHopDongs on p.idLoaiHopDong equals dmlhd.id
                         join dmcd in _context.danhMucChucDanhs on p.idChucDanh equals dmcd.id
                         join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
                         join dmcv in _context.danhMucChucVus on p.idChucVu equals dmcv.id
                         orderby p.id descending
-                        select new  { p, nv, dmcd, dmlhd, dmcv};
+                        select new { p, nv, dmcd, dmlhd, dmcv };
             if (query == null)
             {
                 return null;
@@ -192,20 +205,22 @@ namespace HRMSolution.Application.Catalog.HopDongs
 
         public async Task<List<HopDongViewModel>> GetAll(string maNhanVien)
         {
-            var query = from p in _context.hopDongs
-                        join dmlhd in _context.danhMucLoaiHopDongs on p.idLoaiHopDong equals dmlhd.id
-                        join dmcd in _context.danhMucChucDanhs on p.idChucDanh equals dmcd.id
-                        join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
-                        join dmcv in _context.danhMucChucVus on p.idChucVu equals dmcv.id
-                        orderby p.id descending
-                        where p.maNhanVien == maNhanVien
-                        select new { p, nv, dmcd, dmlhd, dmcv };
-            if (query == null)
+            var hopDong = await _context.hopDongs.FindAsync(maNhanVien);
+
+            if (hopDong == null)
             {
                 return null;
             }
             else
             {
+                var query = from p in _context.hopDongs
+                            join dmlhd in _context.danhMucLoaiHopDongs on p.idLoaiHopDong equals dmlhd.id
+                            join dmcd in _context.danhMucChucDanhs on p.idChucDanh equals dmcd.id
+                            join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
+                            join dmcv in _context.danhMucChucVus on p.idChucVu equals dmcv.id
+                            orderby p.id descending
+                            where p.maNhanVien == maNhanVien
+                            select new { p, nv, dmcd, dmlhd, dmcv };
                 var data = await query.Select(x => new HopDongViewModel()
                 {
                     idCre = x.p.id,
@@ -237,7 +252,8 @@ namespace HRMSolution.Application.Catalog.HopDongs
             if (hopDong == null || request.idLoaiHopDong == 0 || request.idChucDanh == 0 || request.idChucVu == 0 || request.maNhanVien == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 hopDong.id = request.idCre;
                 hopDong.maHopDong = request.maHopDong;
@@ -250,7 +266,11 @@ namespace HRMSolution.Application.Catalog.HopDongs
                 hopDong.trangThai = request.trangThai;
                 hopDong.maNhanVien = request.maNhanVien;
 
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 
@@ -260,11 +280,16 @@ namespace HRMSolution.Application.Catalog.HopDongs
             if (hopDong == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 hopDong.bangChung = await this.SaveFile(request.bangChung);
 
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 
@@ -274,14 +299,19 @@ namespace HRMSolution.Application.Catalog.HopDongs
             if (hopDong == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 await _storageService.DeleteFileAsync(hopDong.bangChung);
 
                 hopDong.bangChung = null;
                 _context.hopDongs.Update(hopDong);
 
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
         private async Task<string> SaveFile(IFormFile file)

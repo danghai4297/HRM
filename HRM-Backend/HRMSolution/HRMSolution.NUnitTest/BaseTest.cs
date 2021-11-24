@@ -96,6 +96,7 @@ namespace HRMSolution.NUnitTest
             danhMucTonGiaoService = new DanhMucTonGiaoService(_context);
             danhMucToService = new DanhMucToService(_context);
             danhMucTrinhDoService = new DanhMucTrinhDoService(_context);
+            TrinhDoVanHoaService = new TrinhDoVanHoaService(_context);
         }
     }
 }

@@ -32,6 +32,8 @@ namespace HRMSolution.BackendAPI.Controllers
         public async Task<IActionResult> GetTransferById(int id)
         {
             var danhMucChucDanh = await _dieuChuyenService.GetById(id);
+            if (danhMucChucDanh == null)
+                return BadRequest();
             return Ok(danhMucChucDanh);
         }
         [HttpPost]

@@ -25,6 +25,8 @@ namespace HRMSolution.BackendAPI.Controllers
         public async Task<IActionResult> GetLanguageById(int id)
         {
             var ngoaiNgu = await _ngoaiNguService.GetById(id);
+            if (ngoaiNgu == null)
+                return BadRequest();
             return Ok(ngoaiNgu);
         }
         [HttpPost]

@@ -25,13 +25,13 @@ namespace HRMSolution.NUnitTest
         public void Position_GetById_Success()
         {
             var result = danhMucChucVuService.GetById(1);
-            Assert.That(result.IsCompletedSuccessfully, Is.EqualTo(true));
+            Assert.That(result.Result.id, Is.EqualTo(1));
         }
         [Test, Order(2)]
         public void Position_GetById_Failure()
         {
             var result = danhMucChucVuService.GetById(8);
-            Assert.That(result.IsCompletedSuccessfully, Is.EqualTo(false));
+            Assert.That(result.Result, Is.EqualTo(null));
         }
 
         [Test, Order(3)]

@@ -24,7 +24,8 @@ namespace HRMSolution.Application.Catalog.DanhMucNguoiThans
             if (request.tenDanhMuc == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 var danhMucNguoiThan = new DanhMucNguoiThan()
                 {
@@ -32,7 +33,11 @@ namespace HRMSolution.Application.Catalog.DanhMucNguoiThans
 
                 };
                 _context.danhMucNguoiThans.Add(danhMucNguoiThan);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 
@@ -42,20 +47,26 @@ namespace HRMSolution.Application.Catalog.DanhMucNguoiThans
             if (danhMucNguoiThan == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 _context.danhMucNguoiThans.Remove(danhMucNguoiThan);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 
         public async Task<List<DanhMucNguoiThanViewModel>> GetAll()
         {
             var query = from p in _context.danhMucNguoiThans select p;
-            if(query == null)
+            if (query == null)
             {
                 return null;
-            } else
+            }
+            else
             {
                 var data = await query.Select(x => new DanhMucNguoiThanViewModel()
                 {
@@ -68,13 +79,14 @@ namespace HRMSolution.Application.Catalog.DanhMucNguoiThans
 
         public async Task<DanhMucNguoiThanViewModel> GetById(int id)
         {
-            var query = from p in _context.danhMucNguoiThans where p.id == id select p;
-            if (query == null)
+            var danhMucNguoiThan = await _context.danhMucNguoiThans.FindAsync(id);
+            if (danhMucNguoiThan == null)
             {
                 return null;
             }
             else
             {
+                var query = from p in _context.danhMucNguoiThans where p.id == id select p;
                 var data = await query.Select(x => new DanhMucNguoiThanViewModel()
                 {
                     id = x.id,
@@ -84,16 +96,21 @@ namespace HRMSolution.Application.Catalog.DanhMucNguoiThans
             }
         }
 
-        public async Task<int> Update(int id,DanhMucNguoiThanUpdateRequest request)
+        public async Task<int> Update(int id, DanhMucNguoiThanUpdateRequest request)
         {
             var danhMucNguoiThan = await _context.danhMucNguoiThans.FindAsync(id);
             if (danhMucNguoiThan == null || request.tenDanhMuc == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 danhMucNguoiThan.tenDanhMuc = request.tenDanhMuc;
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
     }

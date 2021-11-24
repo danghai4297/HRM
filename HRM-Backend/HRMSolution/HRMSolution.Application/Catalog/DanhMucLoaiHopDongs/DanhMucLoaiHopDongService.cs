@@ -21,10 +21,11 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
 
         public async Task<int> Create(DanhMucLoaiHopDongCreateRequest request)
         {
-            if(request.maLoaiHopDong == null || request.tenLoaiHopDong == null)
+            if (request.maLoaiHopDong == null || request.tenLoaiHopDong == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 var danhMucLoaiHopDong = new DanhMucLoaiHopDong()
                 {
@@ -33,7 +34,11 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
 
                 };
                 _context.danhMucLoaiHopDongs.Add(danhMucLoaiHopDong);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 
@@ -43,10 +48,15 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
             if (danhMucLoaiHopDong == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 _context.danhMucLoaiHopDongs.Remove(danhMucLoaiHopDong);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 
@@ -54,10 +64,11 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
         {
             var query = from p in _context.danhMucLoaiHopDongs
                         select p;
-            if(query == null)
+            if (query == null)
             {
                 return null;
-            } else
+            }
+            else
             {
                 var data = await query.Select(x => new DanhMucLoaiHopDongViewModel()
                 {
@@ -72,13 +83,14 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
 
         public async Task<DanhMucLoaiHopDongViewModel> GetById(int id)
         {
-            var query = from p in _context.danhMucLoaiHopDongs where p.id == id select p;
-            if (query == null)
+            var danhMucLoaiHopDong = await _context.danhMucLoaiHopDongs.FindAsync(id);
+            if (danhMucLoaiHopDong == null)
             {
                 return null;
             }
             else
             {
+                var query = from p in _context.danhMucLoaiHopDongs where p.id == id select p;
                 var data = await query.Select(x => new DanhMucLoaiHopDongViewModel()
                 {
                     id = x.id,
@@ -89,17 +101,22 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
             }
         }
 
-        public async Task<int> Update(int id,DanhMucLoaiHopDongUpdateRequest request)
+        public async Task<int> Update(int id, DanhMucLoaiHopDongUpdateRequest request)
         {
             var danhMucLoaiHopDong = await _context.danhMucLoaiHopDongs.FindAsync(id);
             if (danhMucLoaiHopDong == null || request.maLoaiHopDong == null || request.tenLoaiHopDong == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 danhMucLoaiHopDong.maLoaiHopDong = request.maLoaiHopDong;
                 danhMucLoaiHopDong.tenLoaiHopDong = request.tenLoaiHopDong;
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
     }

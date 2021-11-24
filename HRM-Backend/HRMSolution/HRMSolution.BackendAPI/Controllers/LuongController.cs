@@ -31,6 +31,8 @@ namespace HRMSolution.BackendAPI.Controllers
         public async Task<IActionResult> GetSalaryById(int id)
         {
             var luong = await _luongService.GetById(id);
+            if (luong == null)
+                return BadRequest();
             return Ok(luong);
         }
         [HttpPost]

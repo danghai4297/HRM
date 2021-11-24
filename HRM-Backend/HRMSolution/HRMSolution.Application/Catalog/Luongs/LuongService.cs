@@ -28,10 +28,11 @@ namespace HRMSolution.Application.Catalog.Luongs
 
         public async Task<int> Create(LuongCreateRequest request)
         {
-            if(request.maHopDong == null || request.idNhomLuong == 0 || request.thoiHanLenLuong == null || request.ngayHieuLuc == null || request.ngayKetThuc == null)
+            if (request.maHopDong == null || request.idNhomLuong == 0 || request.thoiHanLenLuong == null || request.ngayHieuLuc == null || request.ngayKetThuc == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 var query = await _context.luongs.Where(x => x.maHopDong == request.maHopDong && x.trangThai == true).FirstOrDefaultAsync();
 
@@ -96,7 +97,11 @@ namespace HRMSolution.Application.Catalog.Luongs
                     _context.luongs.Add(luong);
                 }
 
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 
@@ -106,27 +111,33 @@ namespace HRMSolution.Application.Catalog.Luongs
             if (luong == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 await _storageService.DeleteFileAsync(luong.bangChung);
                 _context.luongs.Remove(luong);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 
         public async Task<List<LuongViewModel>> GetAll()
         {
             var query = from nv in _context.nhanViens
-                         join hd in _context.hopDongs on nv.maNhanVien equals hd.maNhanVien
-                         join l in _context.luongs on hd.maHopDong equals l.maHopDong
-                         join dml in _context.danhMucNhomLuongs on l.idNhomLuong equals dml.id
-                         orderby l.id descending
-                         where hd.maHopDong == l.maHopDong && hd.trangThai == true && l.trangThai == true
+                        join hd in _context.hopDongs on nv.maNhanVien equals hd.maNhanVien
+                        join l in _context.luongs on hd.maHopDong equals l.maHopDong
+                        join dml in _context.danhMucNhomLuongs on l.idNhomLuong equals dml.id
+                        orderby l.id descending
+                        where hd.maHopDong == l.maHopDong && hd.trangThai == true && l.trangThai == true
                         select new { hd, l, dml, nv };
-            if(query == null)
+            if (query == null)
             {
                 return null;
-            } else
+            }
+            else
             {
                 var data = await query.Select(x => new LuongViewModel()
                 {
@@ -155,18 +166,20 @@ namespace HRMSolution.Application.Catalog.Luongs
 
         public async Task<LuongViewModel> GetById(int id)
         {
-            var query = from nv in _context.nhanViens
-                        join hd in _context.hopDongs on nv.maNhanVien equals hd.maNhanVien
-                        join l in _context.luongs on hd.maHopDong equals l.maHopDong
-                        join dml in _context.danhMucNhomLuongs on l.idNhomLuong equals dml.id
-                        where hd.maHopDong == l.maHopDong && l.id == id
-                        select new { hd, l, dml, nv };
-            if (query == null)
+            var luong = await _context.luongs.FindAsync(id);
+
+            if (luong == null)
             {
                 return null;
             }
             else
             {
+                var query = from nv in _context.nhanViens
+                            join hd in _context.hopDongs on nv.maNhanVien equals hd.maNhanVien
+                            join l in _context.luongs on hd.maHopDong equals l.maHopDong
+                            join dml in _context.danhMucNhomLuongs on l.idNhomLuong equals dml.id
+                            where hd.maHopDong == l.maHopDong && l.id == id
+                            select new { hd, l, dml, nv };
                 var data = await query.Select(x => new LuongViewModel()
                 {
                     id = x.l.id,
@@ -199,7 +212,8 @@ namespace HRMSolution.Application.Catalog.Luongs
             if (luong == null || request.idNhomLuong == 0 || request.thoiHanLenLuong == null || request.ngayHieuLuc == null || request.ngayKetThuc == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 luong.idNhomLuong = request.idNhomLuong;
                 luong.heSoLuong = request.heSoLuong;
@@ -223,7 +237,11 @@ namespace HRMSolution.Application.Catalog.Luongs
                     luong.bangChung = await this.SaveFile(request.bangChung);
                 }
 
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
         private async Task<string> SaveFile(IFormFile file)

@@ -29,14 +29,18 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpGet("{maNhanVien}")]
         public async Task<IActionResult> GetContractByEmployee(string maNhanVien)
         {
-            var nhanViens = await _hopDongService.GetAll(maNhanVien);
-            return Ok(nhanViens);
+            var hopDong = await _hopDongService.GetAll(maNhanVien);
+            if (hopDong == null)
+                return BadRequest();
+            return Ok(hopDong);
         }
 
         [HttpGet("detail/{maHopDong}")]
         public async Task<IActionResult> GetContractById(string maHopDong)
         {
             var hopDong = await _hopDongService.GetHopDong(maHopDong);
+            if (hopDong == null)
+                return BadRequest();
             return Ok(hopDong);
         }
         [HttpPost]

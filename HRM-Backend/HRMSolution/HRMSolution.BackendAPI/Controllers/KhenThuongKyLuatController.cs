@@ -39,6 +39,8 @@ namespace HRMSolution.BackendAPI.Controllers
         public async Task<IActionResult> GetAllDiscipline()
         {
             var khenThuongKyLuats = await _khenThuongKyLuatService.GetAllKyLuat();
+            if (khenThuongKyLuats == null)
+                return BadRequest();
             return Ok(khenThuongKyLuats);
         }
 

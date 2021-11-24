@@ -31,9 +31,9 @@ namespace HRMSolution.BackendAPI.Controllers
 
             if (string.IsNullOrEmpty(result))
             {
-                return BadRequest("Tài khoản hoặc mật khẩu không đúng");
+                return BadRequest();
             }
-            return Ok(new { token = result});
+            return Ok(new { token = result });
         }
 
         [HttpPost("create")]
@@ -45,7 +45,7 @@ namespace HRMSolution.BackendAPI.Controllers
             var result = await _userService.Register(request);
             if (result == false)
             {
-                return BadRequest("Tạo tài khoảng không thành công");
+                return BadRequest();
             }
             return Ok();
         }

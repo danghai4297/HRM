@@ -38,7 +38,7 @@ namespace HRMSolution.BackendAPI.Controllers
         {
             var result = await _danhMucHonNhanService.GetById(id);
             if (result == null)
-                return BadRequest("Không tìm thấy Danh mục hôn nhân");
+                return BadRequest();
             return Ok(result);
         }
         [HttpDelete("{id}")]

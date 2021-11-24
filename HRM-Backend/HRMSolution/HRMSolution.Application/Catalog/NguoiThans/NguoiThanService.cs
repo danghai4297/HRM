@@ -25,7 +25,8 @@ namespace HRMSolution.Application.Catalog.NguoiThans
             if (request.tenNguoiThan == null || request.ngaySinh == null || request.ngheNghiep == null || request.diaChi == null || request.dienThoai == null || request.idDanhMucNguoiThan == 0 || request.maNhanVien == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 var nguoiThan = new NguoiThan()
                 {
@@ -41,7 +42,11 @@ namespace HRMSolution.Application.Catalog.NguoiThans
                     maNhanVien = request.maNhanVien
                 };
                 _context.nguoiThans.Add(nguoiThan);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 
@@ -51,26 +56,32 @@ namespace HRMSolution.Application.Catalog.NguoiThans
             if (nguoiThan == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 _context.nguoiThans.Remove(nguoiThan);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 
         public async Task<NguoiThanViewModel> GetById(int id)
         {
-            var query = from p in _context.nguoiThans
-                        join dmnt in _context.danhMucNguoiThans on p.idDanhMucNguoiThan equals dmnt.id
-                        join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
-                        where p.id == id
-                        select new { p, dmnt, nv };
-
-            if(query == null)
+            var nguoiThan = await _context.nguoiThans.FindAsync(id);
+            if (nguoiThan == null)
             {
                 return null;
-            } else
+            }
+            else
             {
+                var query = from p in _context.nguoiThans
+                            join dmnt in _context.danhMucNguoiThans on p.idDanhMucNguoiThan equals dmnt.id
+                            join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
+                            where p.id == id
+                            select new { p, dmnt, nv };
                 var data = await query.Select(x => new NguoiThanViewModel()
                 {
                     id = x.p.id,
@@ -97,7 +108,8 @@ namespace HRMSolution.Application.Catalog.NguoiThans
             if (nguoiThan == null || request.tenNguoiThan == null || request.ngaySinh == null || request.ngheNghiep == null || request.diaChi == null || request.dienThoai == null || request.idDanhMucNguoiThan == 0 || request.maNhanVien == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 nguoiThan.tenNguoiThan = request.tenNguoiThan;
                 nguoiThan.gioiTinh = request.gioiTinh;
@@ -110,7 +122,11 @@ namespace HRMSolution.Application.Catalog.NguoiThans
                 nguoiThan.idDanhMucNguoiThan = request.idDanhMucNguoiThan;
                 nguoiThan.maNhanVien = request.maNhanVien;
 
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
     }

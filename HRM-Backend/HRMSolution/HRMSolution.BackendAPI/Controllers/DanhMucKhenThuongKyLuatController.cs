@@ -38,7 +38,7 @@ namespace HRMSolution.BackendAPI.Controllers
         {
             var result = await _danhMucKhenThuongKyLuatService.GetById(id);
             if (result == null)
-                return BadRequest("Không tìm thấy Danh mục khen thưởng kỷ luật");
+                return BadRequest();
             return Ok(result);
         }
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HRMSolution.NUnitTest
 {
-    public class TestNatureCategory :BaseTest
+    public class TestNatureCategory : BaseTest
     {
         [OneTimeSetUp]
         public void Setup()
@@ -25,13 +25,13 @@ namespace HRMSolution.NUnitTest
         public void Nature_GetById_Success()
         {
             var result = danhMucTinhChatLaoDongService.GetById(1);
-            Assert.That(result.IsCompletedSuccessfully, Is.EqualTo(true));
+            Assert.That(result.Result.id, Is.EqualTo(1));
         }
         [Test, Order(2)]
         public void Nature_GetById_Failure()
         {
             var result = danhMucTinhChatLaoDongService.GetById(6);
-            Assert.That(result.IsCompletedSuccessfully, Is.EqualTo(false));
+            Assert.That(result.Result, Is.EqualTo(null));
         }
 
         [Test, Order(3)]

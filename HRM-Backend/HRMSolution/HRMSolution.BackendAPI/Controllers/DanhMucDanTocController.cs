@@ -16,7 +16,8 @@ namespace HRMSolution.BackendAPI.Controllers
     public class DanhMucDanTocController : ControllerBase
     {
         private readonly IDanhMucDanTocService _danhMucDanTocService;
-        public DanhMucDanTocController(IDanhMucDanTocService danhMucDanTocService) {
+        public DanhMucDanTocController(IDanhMucDanTocService danhMucDanTocService)
+        {
             _danhMucDanTocService = danhMucDanTocService;
         }
         [HttpGet()]
@@ -31,15 +32,15 @@ namespace HRMSolution.BackendAPI.Controllers
         {
             var danhMucDanToc = await _danhMucDanTocService.GetById(id);
             if (danhMucDanToc == null)
-                return BadRequest("Không tìm thấy Danh mục dân tộc");
+                return BadRequest();
             return Ok(danhMucDanToc);
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateCategory([FromBody]DanhMucDanTocCreateRequest request)
+        public async Task<IActionResult> CreateCategory([FromBody] DanhMucDanTocCreateRequest request)
         {
             var dmdt = await _danhMucDanTocService.Create(request);
-            if(dmdt == 0)
+            if (dmdt == 0)
                 return BadRequest();
             return Ok();
 
@@ -56,9 +57,9 @@ namespace HRMSolution.BackendAPI.Controllers
 
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateCategory(int id,DanhMucDanTocUpdateRequest request)
+        public async Task<IActionResult> UpdateCategory(int id, DanhMucDanTocUpdateRequest request)
         {
-            var result = await _danhMucDanTocService.Update(id,request);
+            var result = await _danhMucDanTocService.Update(id, request);
             if (result == 0)
                 return BadRequest();
             return Ok();

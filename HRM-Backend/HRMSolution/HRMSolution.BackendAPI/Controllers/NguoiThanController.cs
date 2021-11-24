@@ -24,8 +24,10 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetFamilyById(int id)
         {
-            var danhMucChucDanh = await _nguoiThanService.GetById(id);
-            return Ok(danhMucChucDanh);
+            var nguoiThan = await _nguoiThanService.GetById(id);
+            if (nguoiThan == null)
+                return BadRequest();
+            return Ok(nguoiThan);
         }
         [HttpPost]
         public async Task<IActionResult> CreateFamily([FromBody] NguoiThanCreateRequest request)

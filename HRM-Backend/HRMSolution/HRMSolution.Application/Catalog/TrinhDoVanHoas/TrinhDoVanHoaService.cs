@@ -21,10 +21,11 @@ namespace HRMSolution.Application.Catalog.TrinhDoVanHoas
 
         public async Task<int> Create(TrinhDoVanHoaCreateRequest request)
         {
-            if (request.tenTruong == null || request.idChuyenMon <= 0 || request.idHinhThucDaoTao <= 0 || request.idTrinhDo <=0 || request.maNhanVien == null)
+            if (request.tenTruong == null || request.idChuyenMon <= 0 || request.idHinhThucDaoTao <= 0 || request.idTrinhDo <= 0 || request.maNhanVien == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 var tdvh = new TrinhDoVanHoa()
                 {
@@ -37,9 +38,13 @@ namespace HRMSolution.Application.Catalog.TrinhDoVanHoas
                     maNhanVien = request.maNhanVien
                 };
                 _context.trinhDoVanHoas.Add(tdvh);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
-            
+
         }
 
         public async Task<int> Delete(int id)
@@ -48,10 +53,15 @@ namespace HRMSolution.Application.Catalog.TrinhDoVanHoas
             if (trinhDoVanHoa == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 _context.trinhDoVanHoas.Remove(trinhDoVanHoa);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 
@@ -64,10 +74,11 @@ namespace HRMSolution.Application.Catalog.TrinhDoVanHoas
                         join dmcm in _context.danhMucChuyenMons on p.idChuyenMon equals dmcm.id
                         select new { p, dmtd, nv, htdt, dmcm };
 
-            if(query == null)
+            if (query == null)
             {
                 return null;
-            } else
+            }
+            else
             {
                 var data = await query.Select(x => new TrinhDoVanHoaViewModel()
                 {
@@ -89,20 +100,20 @@ namespace HRMSolution.Application.Catalog.TrinhDoVanHoas
 
         public async Task<TrinhDoVanHoaViewModel> GetById(int id)
         {
-            var query = from p in _context.trinhDoVanHoas
-                        join dmtd in _context.danhMucTrinhDos on p.idTrinhDo equals dmtd.id
-                        join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
-                        join htdt in _context.hinhThucDaoTaos on p.idHinhThucDaoTao equals htdt.id
-                        join dmcm in _context.danhMucChuyenMons on p.idChuyenMon equals dmcm.id
-                        where p.id == id
-                        select new { p, dmtd, nv, htdt, dmcm };
-
-            if (query == null)
+            var trinhDoVanHoa = await _context.trinhDoVanHoas.FindAsync(id);
+            if (trinhDoVanHoa == null)
             {
                 return null;
             }
             else
             {
+                var query = from p in _context.trinhDoVanHoas
+                            join dmtd in _context.danhMucTrinhDos on p.idTrinhDo equals dmtd.id
+                            join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
+                            join htdt in _context.hinhThucDaoTaos on p.idHinhThucDaoTao equals htdt.id
+                            join dmcm in _context.danhMucChuyenMons on p.idChuyenMon equals dmcm.id
+                            where p.id == id
+                            select new { p, dmtd, nv, htdt, dmcm };
                 var data = await query.Select(x => new TrinhDoVanHoaViewModel()
                 {
                     id = x.p.id,
@@ -129,7 +140,8 @@ namespace HRMSolution.Application.Catalog.TrinhDoVanHoas
             if (trinhDoVanHoa == null || request.tenTruong == null || request.idChuyenMon <= 0 || request.idHinhThucDaoTao <= 0 || request.idTrinhDo <= 0 || request.maNhanVien == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 trinhDoVanHoa.tenTruong = request.tenTruong;
                 trinhDoVanHoa.idChuyenMon = request.idChuyenMon;
@@ -139,10 +151,14 @@ namespace HRMSolution.Application.Catalog.TrinhDoVanHoas
                 trinhDoVanHoa.idTrinhDo = request.idTrinhDo;
                 trinhDoVanHoa.maNhanVien = request.maNhanVien;
 
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
 
-            
+
         }
     }
 }

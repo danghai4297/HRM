@@ -12,7 +12,7 @@ namespace HRMSolution.BackendAPI.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    public class DanhMucChucDanhController: ControllerBase
+    public class DanhMucChucDanhController : ControllerBase
     {
         private readonly IDanhMucChucDanhService _danhMucChucDanhService;
         public DanhMucChucDanhController(IDanhMucChucDanhService danhMucChucDanhService)
@@ -27,7 +27,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok(danhMucChucDanh);
         }
         [HttpPost]
-        public async Task<IActionResult> CreateCategory([FromBody]DanhMucChucDanhCreateRequest request)
+        public async Task<IActionResult> CreateCategory([FromBody] DanhMucChucDanhCreateRequest request)
         {
             var result = await _danhMucChucDanhService.Create(request);
             if (result == 0)
@@ -46,7 +46,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCategory(int id, DanhMucChucDanhUpdateRequest request)
         {
-            var result = await _danhMucChucDanhService.Update(id,request);
+            var result = await _danhMucChucDanhService.Update(id, request);
             if (result == 0)
                 return BadRequest();
             return Ok();
@@ -56,7 +56,7 @@ namespace HRMSolution.BackendAPI.Controllers
         {
             var danhMucChucDanh = await _danhMucChucDanhService.GetById(id);
             if (danhMucChucDanh == null)
-                return BadRequest("Không tìm thấy Danh mục chức danh");
+                return BadRequest();
             return Ok(danhMucChucDanh);
         }
     }

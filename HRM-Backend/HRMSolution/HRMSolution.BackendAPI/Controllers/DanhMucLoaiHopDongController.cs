@@ -47,7 +47,7 @@ namespace HRMSolution.BackendAPI.Controllers
         {
             var result = await _danhMucLoaiHopDongService.GetById(id);
             if (result == null)
-                return BadRequest("Không tìm thấy Danh mục loại hợp đồng");
+                return BadRequest();
             return Ok(result);
         }
         [HttpPut("{id}")]

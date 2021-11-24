@@ -26,6 +26,11 @@ namespace HRMSolution.NUnitTest
             _context.AddRange(GetAllReligionCategory());
             _context.AddRange(GetAllContractCategory());
             _context.AddRange(GetAllSalaryCategory());
+            _context.AddRange(GetAllTrinhDoVanHoas());
+            _context.AddRange(GetAllNhanViens());
+            _context.AddRange(GetAllLichSuBanThans());
+            _context.AddRange(GetAllLienHeKhanCaps());
+            _context.AddRange(GetAllYTes());
             _context.SaveChanges();
         }
         private static List<DanhMucChucDanh> GetAllTitleCategory()
@@ -58,7 +63,7 @@ namespace HRMSolution.NUnitTest
                 new DanhMucChuyenMon() { id = 2, maChuyenMon = "CM02", tenChuyenMon = "Hành chính văn phòng" },
                 new DanhMucChuyenMon() { id = 3, maChuyenMon = "CM03", tenChuyenMon = "Quản tị kinh doanh" },
                 new DanhMucChuyenMon() { id = 4, maChuyenMon = "CM04", tenChuyenMon = "Kế toán – kiểm toán" }
-                
+
         };
         }
         private static List<DanhMucDanToc> GetAllNationCategory()
@@ -150,6 +155,81 @@ namespace HRMSolution.NUnitTest
             new DanhMucNhomLuong() { id = 1, maNhomLuong = "MNL01", tenNhomLuong = "Nhóm 1" },
                 new DanhMucNhomLuong() { id = 2, maNhomLuong = "MNL02", tenNhomLuong = "Nhóm 2" }
         };
+        }
+        private static List<TrinhDoVanHoa> GetAllTrinhDoVanHoas()
+        {
+            return new List<TrinhDoVanHoa>
+            {
+                new TrinhDoVanHoa() { id = 1, tenTruong = "Đại Học Bách Khoa", idChuyenMon = 1, idHinhThucDaoTao = 1, idTrinhDo = 1, maNhanVien = "NV0001" ,tuThoiGian = DateTime.Now, denThoiGian = DateTime.Now }
+            };
+        }
+        private static List<NhanVien> GetAllNhanViens()
+        {
+            return new List<NhanVien>
+            {
+                new NhanVien()
+                {
+                    maNhanVien = "NV0001",
+                    hoTen = "Đào Ngọc Hưởng",
+                    quocTich = "Việt Nam",
+                    ngaySinh = new DateTime(1998,4,14),
+                    gioiTinh = true,
+                    dienThoai = "0246668866",
+                    diDong = "0961441404",
+                    cccd = "033098006441",
+                    ngayCapCCCD =new DateTime(2016,4,14),
+                    ngayHetHanCCCD = new DateTime(2022,4,14),
+                    noiCapCCCD = "Điện Biên",
+                    noiSinh = "Hưng Yên",
+                    queQuan = "Hưng Yên",
+                    thuongTru = "Điện Biên",
+                    tamTru = "Hà Nội",
+                    ngheNghiep = "Sinh viên",
+                    chucVuHienTai = "Nhân Viên",
+                    congViecChinh = "Nhân viên kinh doanh",
+                    coQuanTuyenDung = "Phát Đạt",
+                    trangThaiLaoDong = true,
+                    vaoDang = false,
+                    quanNhan = false,
+                    laThuongBinh = false,
+                    laConChinhSach = false,
+                    tinhChatLaoDong = 1,
+                    idDanhMucHonNhan = 1,
+                    idDanToc = 1,
+                    idTonGiao = 1,
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg",
+                    email = "huongdn@gmail.com",
+                    facebook = "fb.com/thongtin",
+                    skype = "skype@skype.com",
+                    maSoThue = "1234567890",
+                    bhxh = "9876543210",
+                    bhyt = "HN2229876543210",
+                    atm = "16333",
+                    nganHang = "Vpbank"
+                }
+            };
+        }
+        private static List<LichSuBanThan> GetAllLichSuBanThans()
+        {
+            return new List<LichSuBanThan>
+            {
+                new LichSuBanThan() { id = 1, biBatDiTu = "Không", thamGiaChinhTri = "Không", thanNhanNuocNgoai = "Không", maNhanVien = "NV0001" }
+            };
+        }
+        private static List<YTe> GetAllYTes()
+        {
+            return new List<YTe>
+            {
+                new YTe() { id = 1, nhomMau = "O", chieuCao = (float)1.70, canNang = (float)50.1, maNhanVien = "NV0001" ,tinhTrangSucKhoe="Bình thường",benhTat="Không",luuY="Không"}
+            };
+        }
+        private static List<LienHeKhanCap> GetAllLienHeKhanCaps()
+        {
+            return new List<LienHeKhanCap>
+            {
+                new LienHeKhanCap() { id = 1, hoTen = "Mai Trung Hiếu", quanHe = "Bạn", maNhanVien = "NV0001", diaChi = "Hà Nội", dienThoai = "0123434324" ,email="LienHeKhanCap@gmai.com"}
+            };
         }
     }
 }

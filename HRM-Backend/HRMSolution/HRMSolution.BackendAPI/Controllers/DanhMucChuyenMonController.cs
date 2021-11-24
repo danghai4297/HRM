@@ -12,7 +12,7 @@ namespace HRMSolution.BackendAPI.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    public class DanhMucChuyenMonController:ControllerBase
+    public class DanhMucChuyenMonController : ControllerBase
     {
         private readonly IDanhMucChuyenMonService _danhMucChuyenMonService;
         public DanhMucChuyenMonController(IDanhMucChuyenMonService danhMucChuyenMonService)
@@ -46,13 +46,13 @@ namespace HRMSolution.BackendAPI.Controllers
         {
             var result = await _danhMucChuyenMonService.GetById(id);
             if (result == null)
-                return BadRequest("Không tìm thấy Danh mục chuyên môn");
+                return BadRequest();
             return Ok(result);
         }
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCategory(int id, DanhMucChuyenMonUpdateRequest request)
         {
-            var result = await _danhMucChuyenMonService.Update(id,request);
+            var result = await _danhMucChuyenMonService.Update(id, request);
             if (result == 0)
                 return BadRequest();
             return Ok();

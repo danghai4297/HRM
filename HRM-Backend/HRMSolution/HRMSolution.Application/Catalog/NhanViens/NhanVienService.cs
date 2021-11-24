@@ -34,7 +34,8 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 || request.yt_maNhanVien == null || request.lsbt_maNhanVien == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 var nhanVien = new NhanVien()
                 {
@@ -128,9 +129,13 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 };
 
                 _context.nhanViens.Add(nhanVien);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
-            
+
         }
 
         public async Task<int> DeleteImage(string maNhanVien)
@@ -139,17 +144,22 @@ namespace HRMSolution.Application.Catalog.NhanViens
             if (nhanVien == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 await _storageService.DeleteFileAsync(nhanVien.anh);
 
                 nhanVien.anh = null;
                 _context.nhanViens.Update(nhanVien);
 
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
 
-            
+
         }
 
         public async Task<int> Update(string id, NhanVienUpdateRequest request)
@@ -168,10 +178,11 @@ namespace HRMSolution.Application.Catalog.NhanViens
             if (nhanVien == null || request.hoTen == null || request.quocTich == null || request.ngaySinh == null || request.diDong == null || request.cccd == null || request.noiCapCCCD == null
                 || request.ngayCapCCCD == null || request.ngayHetHanCCCD == null || request.noiSinh == null || request.queQuan == null || request.thuongTru == null || request.ngheNghiep == null
                 || request.chucVuHienTai == null || request.congViecChinh == null || request.coQuanTuyenDung == null || request.idDanhMucHonNhan == 0 || request.idDanToc <= 0 || request.idNgachCongChuc <= 0
-                || request.idTonGiao <= 0 || request.lhkc_hoTen == null || request.lhkc_quanHe == null || request.lhkc_dienThoai == null || request.lhkc_diaChi == null )
+                || request.idTonGiao <= 0 || request.lhkc_hoTen == null || request.lhkc_quanHe == null || request.lhkc_dienThoai == null || request.lhkc_diaChi == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 nhanVien.hoTen = request.hoTen;
                 nhanVien.quocTich = request.quocTich;
@@ -247,10 +258,14 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 lhkc.email = request.lhkc_email;
                 lhkc.diaChi = request.lhkc_diaChi;
 
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
 
-            
+
         }
 
         public async Task<List<NhanVienViewModel>> GetAll()
@@ -259,10 +274,10 @@ namespace HRMSolution.Application.Catalog.NhanViens
             var queryPb = from dc in _context.dieuChuyens
                           join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
                           where dc.trangThai == true
-                          select new {dc, pb, phongBan = pb.tenPhongBan };
+                          select new { dc, pb, phongBan = pb.tenPhongBan };
 
             var query = from nv in _context.nhanViens
-                        
+
                         join tc in _context.danhMucTinhChatLaoDongs on nv.tinhChatLaoDong equals tc.id
                         join hn in _context.danhMucHonNhans on nv.idDanhMucHonNhan equals hn.id
                         join dt in _context.danhMucDanTocs on nv.idDanToc equals dt.id
@@ -270,13 +285,14 @@ namespace HRMSolution.Application.Catalog.NhanViens
                         join ncc in _context.danhMucNgachCongChucs on nv.idNgachCongChuc equals ncc.id
                         join d in queryPb on nv.maNhanVien equals d.dc.maNhanVien into x
                         from xx in x.DefaultIfEmpty()
-                        //join q in queryPb on nv.maNhanVien equals q.dc.maNhanVien
+                            //join q in queryPb on nv.maNhanVien equals q.dc.maNhanVien
 
-                        select new { nv, tc,dt,  hn, tg, ncc, x, xx };
-            if(query == null)
+                        select new { nv, tc, dt, hn, tg, ncc, x, xx };
+            if (query == null)
             {
                 return null;
-            } else
+            }
+            else
             {
                 var data = await query.Select(x => new NhanVienViewModel()
                 {
@@ -343,10 +359,10 @@ namespace HRMSolution.Application.Catalog.NhanViens
         }
         public async Task<List<MaTenViewModel>> GetAllMaVaTen()
         {
-            var query = from nv in _context.nhanViens 
+            var query = from nv in _context.nhanViens
                         join dc in _context.dieuChuyens on nv.maNhanVien equals dc.maNhanVien
                         where dc.trangThai == true && dc.idPhongBan == 1
-                        select new {nv, dc };
+                        select new { nv, dc };
             var data = await query.Select(x => new MaTenViewModel()
             {
                 id = x.nv.maNhanVien,
@@ -438,190 +454,190 @@ namespace HRMSolution.Application.Catalog.NhanViens
 
         public async Task<NhanVienDetailViewModel> GetByMaNV(string maNhanVien)
         {
-           
-
-            //List Khen Thưởng
-            var queryKt = from nv in _context.nhanViens
-                            join ktkl in _context.khenThuongKyLuats on nv.maNhanVien equals ktkl.maNhanVien
-                            join dmktkl in _context.danhMucKhenThuongKyLuats on ktkl.idDanhMucKhenThuong equals dmktkl.id
-                            where ktkl.maNhanVien == maNhanVien && ktkl.loai == true
-                            select new { ktkl, dmktkl };
-
-            var dataKt = await queryKt.Select(x => new KhenThuongViewModel()
-            {
-                id = x.ktkl.id,
-                ktklDanhMucKhenThuong = x.dmktkl.tenDanhMuc,
-                ktklLyDo = x.ktkl.lyDo,
-                ktklNoiDung = x.ktkl.noiDung,
-                ktklloai = x.ktkl.loai == true ? "Khen Thưởng" : "Kỷ Luật"
-            }).ToListAsync();
-
-            //List Kỷ Luật
-            var queryKl = from nv in _context.nhanViens
-                            join ktkl in _context.khenThuongKyLuats on nv.maNhanVien equals ktkl.maNhanVien
-                            join dmktkl in _context.danhMucKhenThuongKyLuats on ktkl.idDanhMucKhenThuong equals dmktkl.id
-                            where ktkl.maNhanVien == maNhanVien && ktkl.loai == false
-                            select new { ktkl, dmktkl };
-
-            var dataKl = await queryKl.Select(x => new KyLuatViewModel()
-            {
-                id = x.ktkl.id,
-                ktklDanhMucKhenThuong = x.dmktkl.tenDanhMuc,
-                ktklLyDo = x.ktkl.lyDo,
-                ktklNoiDung = x.ktkl.noiDung,
-                ktklloai = x.ktkl.loai == true ? "Khen Thưởng" : "Kỷ Luật"
-            }).ToListAsync();
-
-            //List Điều Chuyển
-            var queryDc = from nv in _context.nhanViens
-                          join dc in _context.dieuChuyens on nv.maNhanVien equals dc.maNhanVien
-                          
-                          join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
-                          join to in _context.danhMucTos on dc.to equals to.idTo
-                          where dc.maNhanVien == maNhanVien
-                          select new { dc, pb, to };
-
-            var dataDc = await queryDc.Select(x => new DieuChuyenViewModel()
-            {
-                id = x.dc.id,
-                dcNgayHieuLuc = x.dc.ngayHieuLuc,
-                dcPhong = x.pb.tenPhongBan,
-                dcTo = x.to.tenTo,
-                dcChiTiet = x.dc.chiTiet
-            }).ToListAsync();
-
-            //List Lương
-            var queryL = from nv in _context.nhanViens
-                         join hd in _context.hopDongs on nv.maNhanVien equals hd.maNhanVien
-                         join l in _context.luongs on hd.maHopDong equals l.maHopDong
-                         join dmnl in _context.danhMucNhomLuongs on l.idNhomLuong equals dmnl.id
-                         where hd.maHopDong == l.maHopDong && nv.maNhanVien == maNhanVien
-                          select new { hd, l, dmnl };
-
-            var dataL = await queryL.Select(x => new LuongViewModel()
-            {
-                id = x.l.id,
-                maHopDong = x.l.maHopDong,
-                nhomLuong = x.dmnl.tenNhomLuong,
-                heSoLuong = x.l.heSoLuong,
-                bacLuong = x.l.bacLuong,
-                luongCoBan = x.l.luongCoBan,
-                phuCapTrachNhiem = x.l.phuCapTrachNhiem,
-                phuCapKhac = x.l.phuCapKhac,
-                tongLuong = x.l.tongLuong,
-                thoiHanLenLuong = x.l.thoiHanLenLuong,
-                ngayHieuLuc = x.l.ngayHieuLuc,
-                ngayKetThuc = x.l.ngayKetThuc,
-                trangThai = x.l.trangThai == true? "Kích hoạt" : "Vô hiệu"
-            }).Distinct().ToListAsync();
-
-
-            //List Hợp Đồng
-            var queryHd = from nv in _context.nhanViens
-                          join hd in _context.hopDongs on nv.maNhanVien equals hd.maNhanVien
-                          join lhd in _context.danhMucLoaiHopDongs on hd.idLoaiHopDong equals lhd.id
-                          join dmcd in _context.danhMucChucDanhs on hd.idChucDanh equals dmcd.id
-                          join dmcv in _context.danhMucChucVus on hd.idChucVu equals dmcv.id
-                          where nv.maNhanVien == maNhanVien 
-                          select new { hd, lhd, dmcd, dmcv };
-
-            var dataHd = await queryHd.Select(x => new HopDongViewModel()
-            {
-                id = x.hd.maHopDong,
-                idLoaiHopDong = x.lhd.tenLoaiHopDong,
-                idChucDanh = x.dmcd.tenChucDanh,
-                idChucVu = x.dmcv.tenChucVu,
-                hdHopDongTuNgay = x.hd.hopDongTuNgay,
-                hdHopDongDenNgay = x.hd.hopDongDenNgay,
-                hdGhiChu = x.hd.ghiChu,
-                trangThai = x.hd.trangThai == true? "Kích hoạt": "Vô hiệu",
-                
-            }).Distinct().ToListAsync();
-
-            //List Trình Độ Văn Hóa
-            var queryTdvh = from nv in _context.nhanViens
-                            join tdvh in _context.trinhDoVanHoas on nv.maNhanVien equals tdvh.maNhanVien
-                            join dmcm in _context.danhMucChuyenMons on tdvh.idChuyenMon equals dmcm.id
-                            join dmtd in _context.danhMucTrinhDos on tdvh.idTrinhDo equals dmtd.id
-                            join htdt in _context.hinhThucDaoTaos on tdvh.idHinhThucDaoTao equals htdt.id
-                            where tdvh.maNhanVien == maNhanVien
-                            select new { tdvh, dmcm, dmtd, htdt };
-
-            var dataTdvh = await queryTdvh.Select(x => new TrinhDoVanHoaViewModel()
-            {
-                id = x.tdvh.id,
-                tdvhTenTruong = x.tdvh.tenTruong,
-                tdvhChuyenMon = x.dmcm.tenChuyenMon,
-                tdvhTrinhDo = x.dmtd.tenTrinhDo,
-                tdvhtuThoiGian = x.tdvh.tuThoiGian,
-                tdvhdenThoiGian = x.tdvh.denThoiGian,
-                tdvhHinhThucDaoTao = x.htdt.tenHinhThuc
-            }).ToListAsync();
-
-            //List Ngoại Ngữ
-            var queryNn = from nv in _context.nhanViens
-                          join nn in _context.ngoaiNgus on nv.maNhanVien equals nn.maNhanVien
-                          join dmnn in _context.danhMucNgoaiNgus on nn.idDanhMucNgoaiNgu equals dmnn.id
-                          where nv.maNhanVien == maNhanVien
-                          select new { nn, dmnn };
-
-            var dataNn = await queryNn.Select(x => new NgoaiNguViewModel()
-            {
-                id = x.nn.id,
-                nnDanhMucNgoaiNgu = x.dmnn.tenDanhMuc,
-                nnNgayCap = x.nn.ngayCap,
-                nnNoiCap = x.nn.noiCap,
-                nnTrinhDo = x.nn.trinhDo
-            }).ToListAsync();
-
-            //List Người Thân
-            var queryNt = from nv in _context.nhanViens
-                          join nt in _context.nguoiThans on nv.maNhanVien equals nt.maNhanVien
-                          join dmnt in _context.danhMucNguoiThans on nt.idDanhMucNguoiThan equals dmnt.id
-                          where nt.maNhanVien == maNhanVien
-                          select new { nt, dmnt };
-
-            var dataNt = await queryNt.Select(x => new NguoiThanViewModel()
-            {
-                id = x.nt.id,
-                ntTenNguoiThan = x.nt.tenNguoiThan,
-                ntGioiTinh = x.nt.gioiTinh == true ? "Nam" : "Nữ",
-                ntNgaySinh = x.nt.ngaySinh,
-                ntQuanHe = x.nt.quanHe,
-                ntNgheNghiep = x.nt.ngheNghiep,
-                ntDiaChi = x.nt.diaChi,
-                ntDienThoai = x.nt.dienThoai,
-                ntKhac = x.nt.khac
-            }).ToListAsync();
-
-            //List Detail Nhân Viên
-            var query = from nv in _context.nhanViens
-                        join tc in _context.danhMucTinhChatLaoDongs on nv.tinhChatLaoDong equals tc.id
-                        join hn in _context.danhMucHonNhans on nv.idDanhMucHonNhan equals hn.id
-                        join dt in _context.danhMucDanTocs on nv.idDanToc equals dt.id
-                        join tg in _context.danhMucTonGiaos on nv.idTonGiao equals tg.id
-                        join lhkc in _context.lienHeKhanCaps on nv.maNhanVien equals lhkc.maNhanVien
-                        join ncc in _context.danhMucNgachCongChucs on nv.idNgachCongChuc equals ncc.id
-                        join yt in _context.yTes on nv.maNhanVien equals yt.maNhanVien
-                        join lsbt in _context.lichSuBanThans on nv.maNhanVien equals lsbt.maNhanVien
-
-                        where nv.maNhanVien == maNhanVien
-                        select new
-                        {
-                            nv,
-                            tc,
-                            dt,
-                            hn,
-                            tg,
-                            ncc,
-                            lhkc,
-                            yt, lsbt
-                        };
-            if(query == null)
+            var nhanVien = await _context.nhanViens.FindAsync(maNhanVien);
+            if (nhanVien == null)
             {
                 return null;
-            } else
+            }
+            else
             {
+                //List Khen Thưởng
+                var queryKt = from nv in _context.nhanViens
+                              join ktkl in _context.khenThuongKyLuats on nv.maNhanVien equals ktkl.maNhanVien
+                              join dmktkl in _context.danhMucKhenThuongKyLuats on ktkl.idDanhMucKhenThuong equals dmktkl.id
+                              where ktkl.maNhanVien == maNhanVien && ktkl.loai == true
+                              select new { ktkl, dmktkl };
+
+                var dataKt = await queryKt.Select(x => new KhenThuongViewModel()
+                {
+                    id = x.ktkl.id,
+                    ktklDanhMucKhenThuong = x.dmktkl.tenDanhMuc,
+                    ktklLyDo = x.ktkl.lyDo,
+                    ktklNoiDung = x.ktkl.noiDung,
+                    ktklloai = x.ktkl.loai == true ? "Khen Thưởng" : "Kỷ Luật"
+                }).ToListAsync();
+
+                //List Kỷ Luật
+                var queryKl = from nv in _context.nhanViens
+                              join ktkl in _context.khenThuongKyLuats on nv.maNhanVien equals ktkl.maNhanVien
+                              join dmktkl in _context.danhMucKhenThuongKyLuats on ktkl.idDanhMucKhenThuong equals dmktkl.id
+                              where ktkl.maNhanVien == maNhanVien && ktkl.loai == false
+                              select new { ktkl, dmktkl };
+
+                var dataKl = await queryKl.Select(x => new KyLuatViewModel()
+                {
+                    id = x.ktkl.id,
+                    ktklDanhMucKhenThuong = x.dmktkl.tenDanhMuc,
+                    ktklLyDo = x.ktkl.lyDo,
+                    ktklNoiDung = x.ktkl.noiDung,
+                    ktklloai = x.ktkl.loai == true ? "Khen Thưởng" : "Kỷ Luật"
+                }).ToListAsync();
+
+                //List Điều Chuyển
+                var queryDc = from nv in _context.nhanViens
+                              join dc in _context.dieuChuyens on nv.maNhanVien equals dc.maNhanVien
+
+                              join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
+                              join to in _context.danhMucTos on dc.to equals to.idTo
+                              where dc.maNhanVien == maNhanVien
+                              select new { dc, pb, to };
+
+                var dataDc = await queryDc.Select(x => new DieuChuyenViewModel()
+                {
+                    id = x.dc.id,
+                    dcNgayHieuLuc = x.dc.ngayHieuLuc,
+                    dcPhong = x.pb.tenPhongBan,
+                    dcTo = x.to.tenTo,
+                    dcChiTiet = x.dc.chiTiet
+                }).ToListAsync();
+
+                //List Lương
+                var queryL = from nv in _context.nhanViens
+                             join hd in _context.hopDongs on nv.maNhanVien equals hd.maNhanVien
+                             join l in _context.luongs on hd.maHopDong equals l.maHopDong
+                             join dmnl in _context.danhMucNhomLuongs on l.idNhomLuong equals dmnl.id
+                             where hd.maHopDong == l.maHopDong && nv.maNhanVien == maNhanVien
+                             select new { hd, l, dmnl };
+
+                var dataL = await queryL.Select(x => new LuongViewModel()
+                {
+                    id = x.l.id,
+                    maHopDong = x.l.maHopDong,
+                    nhomLuong = x.dmnl.tenNhomLuong,
+                    heSoLuong = x.l.heSoLuong,
+                    bacLuong = x.l.bacLuong,
+                    luongCoBan = x.l.luongCoBan,
+                    phuCapTrachNhiem = x.l.phuCapTrachNhiem,
+                    phuCapKhac = x.l.phuCapKhac,
+                    tongLuong = x.l.tongLuong,
+                    thoiHanLenLuong = x.l.thoiHanLenLuong,
+                    ngayHieuLuc = x.l.ngayHieuLuc,
+                    ngayKetThuc = x.l.ngayKetThuc,
+                    trangThai = x.l.trangThai == true ? "Kích hoạt" : "Vô hiệu"
+                }).Distinct().ToListAsync();
+
+
+                //List Hợp Đồng
+                var queryHd = from nv in _context.nhanViens
+                              join hd in _context.hopDongs on nv.maNhanVien equals hd.maNhanVien
+                              join lhd in _context.danhMucLoaiHopDongs on hd.idLoaiHopDong equals lhd.id
+                              join dmcd in _context.danhMucChucDanhs on hd.idChucDanh equals dmcd.id
+                              join dmcv in _context.danhMucChucVus on hd.idChucVu equals dmcv.id
+                              where nv.maNhanVien == maNhanVien
+                              select new { hd, lhd, dmcd, dmcv };
+
+                var dataHd = await queryHd.Select(x => new HopDongViewModel()
+                {
+                    id = x.hd.maHopDong,
+                    idLoaiHopDong = x.lhd.tenLoaiHopDong,
+                    idChucDanh = x.dmcd.tenChucDanh,
+                    idChucVu = x.dmcv.tenChucVu,
+                    hdHopDongTuNgay = x.hd.hopDongTuNgay,
+                    hdHopDongDenNgay = x.hd.hopDongDenNgay,
+                    hdGhiChu = x.hd.ghiChu,
+                    trangThai = x.hd.trangThai == true ? "Kích hoạt" : "Vô hiệu",
+
+                }).Distinct().ToListAsync();
+
+                //List Trình Độ Văn Hóa
+                var queryTdvh = from nv in _context.nhanViens
+                                join tdvh in _context.trinhDoVanHoas on nv.maNhanVien equals tdvh.maNhanVien
+                                join dmcm in _context.danhMucChuyenMons on tdvh.idChuyenMon equals dmcm.id
+                                join dmtd in _context.danhMucTrinhDos on tdvh.idTrinhDo equals dmtd.id
+                                join htdt in _context.hinhThucDaoTaos on tdvh.idHinhThucDaoTao equals htdt.id
+                                where tdvh.maNhanVien == maNhanVien
+                                select new { tdvh, dmcm, dmtd, htdt };
+
+                var dataTdvh = await queryTdvh.Select(x => new TrinhDoVanHoaViewModel()
+                {
+                    id = x.tdvh.id,
+                    tdvhTenTruong = x.tdvh.tenTruong,
+                    tdvhChuyenMon = x.dmcm.tenChuyenMon,
+                    tdvhTrinhDo = x.dmtd.tenTrinhDo,
+                    tdvhtuThoiGian = x.tdvh.tuThoiGian,
+                    tdvhdenThoiGian = x.tdvh.denThoiGian,
+                    tdvhHinhThucDaoTao = x.htdt.tenHinhThuc
+                }).ToListAsync();
+
+                //List Ngoại Ngữ
+                var queryNn = from nv in _context.nhanViens
+                              join nn in _context.ngoaiNgus on nv.maNhanVien equals nn.maNhanVien
+                              join dmnn in _context.danhMucNgoaiNgus on nn.idDanhMucNgoaiNgu equals dmnn.id
+                              where nv.maNhanVien == maNhanVien
+                              select new { nn, dmnn };
+
+                var dataNn = await queryNn.Select(x => new NgoaiNguViewModel()
+                {
+                    id = x.nn.id,
+                    nnDanhMucNgoaiNgu = x.dmnn.tenDanhMuc,
+                    nnNgayCap = x.nn.ngayCap,
+                    nnNoiCap = x.nn.noiCap,
+                    nnTrinhDo = x.nn.trinhDo
+                }).ToListAsync();
+
+                //List Người Thân
+                var queryNt = from nv in _context.nhanViens
+                              join nt in _context.nguoiThans on nv.maNhanVien equals nt.maNhanVien
+                              join dmnt in _context.danhMucNguoiThans on nt.idDanhMucNguoiThan equals dmnt.id
+                              where nt.maNhanVien == maNhanVien
+                              select new { nt, dmnt };
+
+                var dataNt = await queryNt.Select(x => new NguoiThanViewModel()
+                {
+                    id = x.nt.id,
+                    ntTenNguoiThan = x.nt.tenNguoiThan,
+                    ntGioiTinh = x.nt.gioiTinh == true ? "Nam" : "Nữ",
+                    ntNgaySinh = x.nt.ngaySinh,
+                    ntQuanHe = x.nt.quanHe,
+                    ntNgheNghiep = x.nt.ngheNghiep,
+                    ntDiaChi = x.nt.diaChi,
+                    ntDienThoai = x.nt.dienThoai,
+                    ntKhac = x.nt.khac
+                }).ToListAsync();
+                //List Detail Nhân Viên
+                var query = from nv in _context.nhanViens
+                            join tc in _context.danhMucTinhChatLaoDongs on nv.tinhChatLaoDong equals tc.id
+                            join hn in _context.danhMucHonNhans on nv.idDanhMucHonNhan equals hn.id
+                            join dt in _context.danhMucDanTocs on nv.idDanToc equals dt.id
+                            join tg in _context.danhMucTonGiaos on nv.idTonGiao equals tg.id
+                            join lhkc in _context.lienHeKhanCaps on nv.maNhanVien equals lhkc.maNhanVien
+                            join ncc in _context.danhMucNgachCongChucs on nv.idNgachCongChuc equals ncc.id
+                            join yt in _context.yTes on nv.maNhanVien equals yt.maNhanVien
+                            join lsbt in _context.lichSuBanThans on nv.maNhanVien equals lsbt.maNhanVien
+
+                            where nv.maNhanVien == maNhanVien
+                            select new
+                            {
+                                nv,
+                                tc,
+                                dt,
+                                hn,
+                                tg,
+                                ncc,
+                                lhkc,
+                                yt,
+                                lsbt
+                            };
                 var data = await query.Select(x => new NhanVienDetailViewModel()
                 {
                     id = x.nv.maNhanVien,
@@ -721,7 +737,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
 
                 return data;
             }
-            
+
         }
 
         private async Task<string> SaveFile(IFormFile file)
@@ -738,13 +754,18 @@ namespace HRMSolution.Application.Catalog.NhanViens
             if (anh == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 anh.anh = await this.SaveFile(request.anh);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
 
-            
+
         }
     }
 }

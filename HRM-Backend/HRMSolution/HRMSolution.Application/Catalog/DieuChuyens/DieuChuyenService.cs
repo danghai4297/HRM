@@ -31,7 +31,8 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
             if (request.maNhanVien == null || request.ngayHieuLuc == null || request.idPhongBan == 0 || request.to == 0)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 var dieuChuyen = new DieuChuyen()
                 {
@@ -51,9 +52,13 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                     dieuChuyen.bangChung = await this.SaveFile(request.bangChung);
                 }
                 _context.dieuChuyens.Add(dieuChuyen);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
-            
+
         }
 
         public async Task<int> Delete(int idDieuChuyen)
@@ -62,12 +67,18 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
             if (dieuChuyen == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 await _storageService.DeleteFileAsync(dieuChuyen.bangChung);
                 _context.dieuChuyens.Remove(dieuChuyen);
-                return await _context.SaveChangesAsync();
-            }        }
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
+            }
+        }
 
         public async Task<List<DieuChuyenViewModel>> GetAll()
         {
@@ -76,10 +87,11 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                         join to in _context.danhMucTos on dc.to equals to.idTo
                         join nv in _context.nhanViens on dc.maNhanVien equals nv.maNhanVien
                         select new { dc, pb, to, nv };
-            if(query == null)
+            if (query == null)
             {
                 return null;
-            } else
+            }
+            else
             {
                 var data = await query.Select(x => new DieuChuyenViewModel()
                 {
@@ -101,18 +113,19 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
 
         public async Task<DieuChuyenViewModel> GetById(int id)
         {
-            var query = from dc in _context.dieuChuyens
-                        join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
-                        join to in _context.danhMucTos on dc.to equals to.idTo
-                        join nv in _context.nhanViens on dc.maNhanVien equals nv.maNhanVien
-                        where dc.id == id
-                        select new { dc, pb, to, nv };
-            if (query == null)
+            var dieuChuyen = await _context.dieuChuyens.FindAsync(id);
+            if (dieuChuyen == null)
             {
                 return null;
             }
             else
             {
+                var query = from dc in _context.dieuChuyens
+                            join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
+                            join to in _context.danhMucTos on dc.to equals to.idTo
+                            join nv in _context.nhanViens on dc.maNhanVien equals nv.maNhanVien
+                            where dc.id == id
+                            select new { dc, pb, to, nv };
                 var data = await query.Select(x => new DieuChuyenViewModel()
                 {
                     id = x.dc.id,
@@ -138,7 +151,8 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
             if (dieuChuyen == null || request.maNhanVien == null || request.ngayHieuLuc == null || request.idPhongBan == 0 || request.to == 0)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 dieuChuyen.maNhanVien = request.maNhanVien;
                 dieuChuyen.ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc);
@@ -155,7 +169,11 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                     await _storageService.DeleteFileAsync(dieuChuyen.bangChung);
                     dieuChuyen.bangChung = await this.SaveFile(request.bangChung);
                 }
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
         private async Task<string> SaveFile(IFormFile file)

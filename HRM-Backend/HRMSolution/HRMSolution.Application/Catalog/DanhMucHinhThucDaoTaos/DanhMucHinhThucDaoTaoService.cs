@@ -22,17 +22,22 @@ namespace HRMSolution.Application.Catalog.DanhMucHinhThucDaoTaos
         }
         public async Task<int> Create(DanhMucHinhThucDaoTaoCreateRequest request)
         {
-            if(request.tenHinhThuc == null)
+            if (request.tenHinhThuc == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 var danhMucHinhThucDaoTao = new HinhThucDaoTao()
                 {
                     tenHinhThuc = request.tenHinhThuc
                 };
                 _context.hinhThucDaoTaos.Add(danhMucHinhThucDaoTao);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 
@@ -42,20 +47,26 @@ namespace HRMSolution.Application.Catalog.DanhMucHinhThucDaoTaos
             if (danhMucHinhThucDaoTao == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 _context.hinhThucDaoTaos.Remove(danhMucHinhThucDaoTao);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 
         public async Task<List<DanhMucHinhThucDaoTaoViewModel>> GetAll()
         {
             var query = from p in _context.hinhThucDaoTaos select p;
-            if(query == null)
+            if (query == null)
             {
                 return null;
-            } else
+            }
+            else
             {
                 var data = await query.Select(x => new DanhMucHinhThucDaoTaoViewModel()
                 {
@@ -68,13 +79,14 @@ namespace HRMSolution.Application.Catalog.DanhMucHinhThucDaoTaos
 
         public async Task<DanhMucHinhThucDaoTaoViewModel> GetById(int id)
         {
-            var query = from p in _context.hinhThucDaoTaos where p.id == id select p;
-            if (query == null)
+            var danhMucHinhThucDaoTao = await _context.hinhThucDaoTaos.FindAsync(id);
+            if (danhMucHinhThucDaoTao == null)
             {
                 return null;
             }
             else
             {
+                var query = from p in _context.hinhThucDaoTaos where p.id == id select p;
                 var data = await query.Select(x => new DanhMucHinhThucDaoTaoViewModel()
                 {
                     id = x.id,
@@ -84,16 +96,21 @@ namespace HRMSolution.Application.Catalog.DanhMucHinhThucDaoTaos
             }
         }
 
-        public async Task<int> Update(int id,DanhMucHinhThucDaoTaoUpdateRequest request)
+        public async Task<int> Update(int id, DanhMucHinhThucDaoTaoUpdateRequest request)
         {
             var danhMucHinhThucDaoTao = await _context.hinhThucDaoTaos.FindAsync(id);
             if (danhMucHinhThucDaoTao == null || request.tenHinhThuc == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 danhMucHinhThucDaoTao.tenHinhThuc = request.tenHinhThuc;
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
     }

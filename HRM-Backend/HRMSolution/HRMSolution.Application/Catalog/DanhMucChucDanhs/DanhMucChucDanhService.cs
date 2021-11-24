@@ -23,10 +23,11 @@ namespace HRMSolution.Application.Catalog.DanhMucChucDanhs
 
         public async Task<int> Create(DanhMucChucDanhCreateRequest request)
         {
-            if(request.maChucDanh == null || request.tenChucDanh == null)
+            if (request.maChucDanh == null || request.tenChucDanh == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 var danhMucChucDanh = new DanhMucChucDanh()
                 {
@@ -35,30 +36,49 @@ namespace HRMSolution.Application.Catalog.DanhMucChucDanhs
                     phuCap = request.phuCap
                 };
                 _context.danhMucChucDanhs.Add(danhMucChucDanh);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return 1;
+                }
             }
-             
+
         }
 
         public async Task<int> Delete(int idDanhMucChucDanh)
         {
             var danhMucChucDanh = await _context.danhMucChucDanhs.FindAsync(idDanhMucChucDanh);
-            if (danhMucChucDanh == null) { 
+            if (danhMucChucDanh == null)
+            {
                 return 0;
-            } else
+            }
+            else
             {
                 _context.danhMucChucDanhs.Remove(danhMucChucDanh);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return 1;
+                }
             }
         }
 
         public async Task<List<DanhMucChucDanhViewModel>> GetAll()
         {
             var query = from p in _context.danhMucChucDanhs select p;
-            if(query == null)
+            if (query == null)
             {
                 return null;
-            } else
+            }
+            else
             {
                 var data = await query.Select(x => new DanhMucChucDanhViewModel()
                 {
@@ -73,13 +93,14 @@ namespace HRMSolution.Application.Catalog.DanhMucChucDanhs
 
         public async Task<DanhMucChucDanhViewModel> GetById(int id)
         {
-            var query = from p in _context.danhMucChucDanhs where p.id == id select p;
-            if (query == null)
+            var dmcd = await _context.danhMucChucDanhs.FindAsync(id);
+            if (dmcd == null)
             {
                 return null;
             }
             else
             {
+                var query = from p in _context.danhMucChucDanhs where p.id == id select p;
                 var data = await query.Select(x => new DanhMucChucDanhViewModel()
                 {
                     id = x.id,
@@ -91,18 +112,27 @@ namespace HRMSolution.Application.Catalog.DanhMucChucDanhs
             }
         }
 
-        public async Task<int> Update(int id,DanhMucChucDanhUpdateRequest request)
+        public async Task<int> Update(int id, DanhMucChucDanhUpdateRequest request)
         {
             var danhMucChucDanh = await _context.danhMucChucDanhs.FindAsync(id);
             if (danhMucChucDanh == null || request.maChucDanh == null || request.tenChucDanh == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 danhMucChucDanh.maChucDanh = request.maChucDanh;
                 danhMucChucDanh.tenChucDanh = request.tenChucDanh;
                 danhMucChucDanh.phuCap = request.phuCap;
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return 1;
+                }
             }
         }
     }

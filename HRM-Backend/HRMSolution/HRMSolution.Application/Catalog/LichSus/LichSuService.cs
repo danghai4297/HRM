@@ -19,10 +19,11 @@ namespace HRMSolution.Application.Catalog.LichSus
         }
         public async Task<int> Create(LichSuCreateRequest request)
         {
-            if(request.tenNhanVien == null || request.tenTaiKhoan == null || request.thaoTac == null || request.maNhanVien == null)
+            if (request.tenNhanVien == null || request.tenTaiKhoan == null || request.thaoTac == null || request.maNhanVien == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 var lichSu = new LichSu()
                 {
@@ -33,7 +34,11 @@ namespace HRMSolution.Application.Catalog.LichSus
                     maNhanVien = request.maNhanVien
                 };
                 _context.lichSus.Add(lichSu);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 
@@ -43,10 +48,11 @@ namespace HRMSolution.Application.Catalog.LichSus
                         orderby p.id descending
                         select p;
 
-            if(query == null)
+            if (query == null)
             {
                 return null;
-            } else
+            }
+            else
             {
                 var data = await query.Select(x => new LichSuViewModel()
                 {

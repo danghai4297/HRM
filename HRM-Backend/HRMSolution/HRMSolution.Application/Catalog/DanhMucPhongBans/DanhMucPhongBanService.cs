@@ -22,10 +22,11 @@ namespace HRMSolution.Application.Catalog.DanhMucPhongBans
 
         public async Task<int> Create(DanhMucPhongBanCreateRequest request)
         {
-            if(request.maPhongBan == null || request.tenPhongBan == null) 
+            if (request.maPhongBan == null || request.tenPhongBan == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 var danhMucPhongBan = new DanhMucPhongBan()
                 {
@@ -33,7 +34,11 @@ namespace HRMSolution.Application.Catalog.DanhMucPhongBans
                     tenPhongBan = request.tenPhongBan
                 };
                 _context.danhMucPhongBans.Add(danhMucPhongBan);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 
@@ -43,20 +48,26 @@ namespace HRMSolution.Application.Catalog.DanhMucPhongBans
             if (danhMucPhongBan == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 _context.danhMucPhongBans.Remove(danhMucPhongBan);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 
         public async Task<List<DanhMucPhongBanViewModel>> GetAll()
         {
             var query = from p in _context.danhMucPhongBans select p;
-            if(query == null)
+            if (query == null)
             {
                 return null;
-            } else
+            }
+            else
             {
                 var data = await query.Select(x => new DanhMucPhongBanViewModel()
                 {
@@ -70,13 +81,14 @@ namespace HRMSolution.Application.Catalog.DanhMucPhongBans
 
         public async Task<DanhMucPhongBanViewModel> GetById(int id)
         {
-            var query = from p in _context.danhMucPhongBans where p.id == id select p;
-            if (query == null)
+            var danhMucPhongBan = await _context.danhMucPhongBans.FindAsync(id);
+            if (danhMucPhongBan == null)
             {
                 return null;
             }
             else
             {
+                var query = from p in _context.danhMucPhongBans where p.id == id select p;
                 var data = await query.Select(x => new DanhMucPhongBanViewModel()
                 {
                     id = x.id,
@@ -87,17 +99,22 @@ namespace HRMSolution.Application.Catalog.DanhMucPhongBans
             }
         }
 
-        public async Task<int> Update(int id,DanhMucPhongBanUpdateRequest request)
+        public async Task<int> Update(int id, DanhMucPhongBanUpdateRequest request)
         {
             var danhMucPhongBan = await _context.danhMucPhongBans.FindAsync(id);
             if (danhMucPhongBan == null || request.maPhongBan == null || request.tenPhongBan == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 danhMucPhongBan.maPhongBan = request.maPhongBan;
                 danhMucPhongBan.tenPhongBan = request.tenPhongBan;
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
     }

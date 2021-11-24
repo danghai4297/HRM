@@ -30,7 +30,8 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
             if (request.idDanhMucKhenThuong == 0 || request.noiDung == null || request.lyDo == null || request.maNhanVien == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 var ktkl = new KhenThuongKyLuat()
                 {
@@ -49,7 +50,11 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                     ktkl.anh = await this.SaveFile(request.anh);
                 }
                 _context.khenThuongKyLuats.Add(ktkl);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 
@@ -60,11 +65,16 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
             if (ktkl == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 await _storageService.DeleteFileAsync(ktkl.anh);
                 _context.khenThuongKyLuats.Remove(ktkl);
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 
@@ -77,10 +87,11 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                         where p.loai == true
                         select new { p, dmktkl, nv };
 
-            if(query == null)
+            if (query == null)
             {
                 return null;
-            } else
+            }
+            else
             {
                 var data = await query.Select(x => new KhenThuongKyLuatViewModel()
                 {
@@ -101,18 +112,20 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
 
         public async Task<KhenThuongKyLuatViewModel> GetById(int id)
         {
-            var query = from p in _context.khenThuongKyLuats
-                        join dmktkl in _context.danhMucKhenThuongKyLuats on p.idDanhMucKhenThuong equals dmktkl.id
-                        join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
-                        where p.id == id
-                        select new { p, dmktkl, nv };
+            var ktkl = await _context.khenThuongKyLuats.FindAsync(id);
 
-            if (query == null)
+
+            if (ktkl == null)
             {
                 return null;
             }
             else
             {
+                var query = from p in _context.khenThuongKyLuats
+                            join dmktkl in _context.danhMucKhenThuongKyLuats on p.idDanhMucKhenThuong equals dmktkl.id
+                            join nv in _context.nhanViens on p.maNhanVien equals nv.maNhanVien
+                            where p.id == id
+                            select new { p, dmktkl, nv };
                 var data = await query.Select(x => new KhenThuongKyLuatViewModel()
                 {
                     id = x.p.id,
@@ -166,7 +179,8 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
             if (ktkl == null || request.idDanhMucKhenThuong == 0 || request.noiDung == null || request.lyDo == null || request.maNhanVien == null)
             {
                 return 0;
-            } else
+            }
+            else
             {
                 ktkl.idDanhMucKhenThuong = request.idDanhMucKhenThuong;
                 ktkl.noiDung = request.noiDung;
@@ -183,7 +197,11 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                     ktkl.anh = await this.SaveFile(request.bangChung);
                 }
 
-                return await _context.SaveChangesAsync();
+                var result = await _context.SaveChangesAsync();
+                if (result == 0)
+                    return 0;
+                else
+                    return 1;
             }
         }
 

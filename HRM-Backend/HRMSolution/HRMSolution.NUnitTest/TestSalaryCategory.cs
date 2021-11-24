@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HRMSolution.NUnitTest
 {
-    public class TestSalaryCategory: BaseTest
+    public class TestSalaryCategory : BaseTest
     {
         [OneTimeSetUp]
         public void Setup()
@@ -25,13 +25,13 @@ namespace HRMSolution.NUnitTest
         public void SalaryGr_GetById_Success()
         {
             var result = danhMucNhomLuongService.GetById(1);
-            Assert.That(result.IsCompletedSuccessfully, Is.EqualTo(true));
+            Assert.That(result.Result.id, Is.EqualTo(1));
         }
         [Test, Order(2)]
         public void SalaryGr_GetById_Failure()
         {
             var result = danhMucNhomLuongService.GetById(6);
-            Assert.That(result.IsCompletedSuccessfully, Is.EqualTo(false));
+            Assert.That(result.Result, Is.EqualTo(null));
         }
 
         [Test, Order(3)]

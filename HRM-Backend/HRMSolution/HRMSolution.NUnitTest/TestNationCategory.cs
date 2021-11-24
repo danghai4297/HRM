@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HRMSolution.NUnitTest
 {
-    public class TestNationCategory :BaseTest
+    public class TestNationCategory : BaseTest
     {
         [OneTimeSetUp]
         public void Setup()
@@ -25,13 +25,13 @@ namespace HRMSolution.NUnitTest
         public void Nation_GetById_Success()
         {
             var result = danhMucDanTocService.GetById(1);
-            Assert.That(result.IsCompletedSuccessfully, Is.EqualTo(true));
+            Assert.That(result.Result.id, Is.EqualTo(1));
         }
         [Test, Order(2)]
         public void Nation_GetById_Failure()
         {
             var result = danhMucDanTocService.GetById(6);
-            Assert.That(result.IsCompletedSuccessfully, Is.EqualTo(false));
+            Assert.That(result.Result, Is.EqualTo(null));
         }
 
         [Test, Order(3)]
@@ -39,7 +39,7 @@ namespace HRMSolution.NUnitTest
         {
             DanhMucDanTocCreateRequest NationCreating = new DanhMucDanTocCreateRequest()
             {
-                
+
                 tenDanhMuc = "Mường"
 
             };
@@ -51,15 +51,15 @@ namespace HRMSolution.NUnitTest
         {
             DanhMucDanTocCreateRequest NationCreating = new DanhMucDanTocCreateRequest()
             {
-               
+
                 tenDanhMuc = null
 
             };
             var result = danhMucDanTocService.Create(NationCreating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
-        
-        
+
+
         [Test, Order(5)]
         public void Nation_Update_Success()
         {
@@ -79,15 +79,15 @@ namespace HRMSolution.NUnitTest
             DanhMucDanTocUpdateRequest NationUpdating = new DanhMucDanTocUpdateRequest()
             {
 
-                
+
                 tenDanhMuc = null
 
             };
             var result = danhMucDanTocService.Update(1, NationUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
-        
-        
+
+
         [Test, Order(7)]
         public void Nation_Update_Failure2()
         {

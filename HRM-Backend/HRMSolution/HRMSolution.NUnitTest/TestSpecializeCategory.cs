@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HRMSolution.NUnitTest
 {
-    public class TestSpecializeCategory: BaseTest
+    public class TestSpecializeCategory : BaseTest
     {
         [OneTimeSetUp]
         public void Setup()
@@ -25,13 +25,13 @@ namespace HRMSolution.NUnitTest
         public void Specialize_GetById_Success()
         {
             var result = danhMucChuyenMonService.GetById(1);
-            Assert.That(result.IsCompletedSuccessfully, Is.EqualTo(true));
+            Assert.That(result.Result.id, Is.EqualTo(1));
         }
         [Test, Order(2)]
         public void Specialize_GetById_Failure()
         {
             var result = danhMucChuyenMonService.GetById(6);
-            Assert.That(result.IsCompletedSuccessfully, Is.EqualTo(false));
+            Assert.That(result.Result, Is.EqualTo(null));
         }
 
         [Test, Order(3)]
@@ -41,7 +41,7 @@ namespace HRMSolution.NUnitTest
             {
                 maChuyenMon = "CM05",
                 tenChuyenMon = "Kinh tế"
-                
+
             };
             var result = danhMucChuyenMonService.Create(SpecializeCreating);
             Assert.That(result.Result, Is.EqualTo(1));
@@ -65,7 +65,7 @@ namespace HRMSolution.NUnitTest
             {
                 maChuyenMon = "CM05",
                 tenChuyenMon = null
-                
+
             };
             var result = danhMucChuyenMonService.Create(SpecializeCreating);
             Assert.That(result.Result, Is.EqualTo(0));
@@ -77,7 +77,7 @@ namespace HRMSolution.NUnitTest
             {
                 maChuyenMon = null,
                 tenChuyenMon = null
-                
+
             };
             var result = danhMucChuyenMonService.Create(SpecializeCreating);
             Assert.That(result.Result, Is.EqualTo(0));
@@ -116,7 +116,7 @@ namespace HRMSolution.NUnitTest
 
                 maChuyenMon = "CM01",
                 tenChuyenMon = null
-                
+
             };
             var result = danhMucChuyenMonService.Update(1, SpecializeUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
@@ -129,7 +129,7 @@ namespace HRMSolution.NUnitTest
 
                 maChuyenMon = null,
                 tenChuyenMon = null
-                
+
             };
             var result = danhMucChuyenMonService.Update(1, SpecializeUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
