@@ -1,12 +1,12 @@
 import React from "react";
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import "./SubDetail.scss";
 
 function SubDetail(props) {
   const { titleLeft, itemLeft, titleRight, itemRight } = props;
+
   return (
     <div className="containss">
-      {/* <Container> */}
       <Row className="item">
         <Col xl>
           <Row className="row-replace">
@@ -32,7 +32,6 @@ function SubDetail(props) {
           </Row>
         </Col>
       </Row>
-      {/* </Container> */}
     </div>
   );
 }

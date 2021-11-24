@@ -1,8 +1,8 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import "./ScreenProject.scss";
 
 import SideBarLeft from "../../components/SideBarLeft/SideBarLeft";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import DashBoard from "../ScreenDashBoard/DashBoard";
 import ScreenTableNV from "../ScreenTableNV/ScreenTableNV";
 import Detail from "../../components/Detail/Detail";
@@ -38,10 +38,8 @@ import AddLevelForm from "../../components/AddLevelForm/AddLevelForm";
 import AddLanguageForm from "../../components/AddLanguageForm/AddLanguageForm";
 import AddFamilyForm from "../../components/AddFamilyForm/AddFamilyForm";
 import ScreenAccount from "../ScreenAccount/ScreenAccount";
-// import PDF from "../../components/Detail/PDF";
 import ScreenAccountLog from "../ScreenAccountLog/ScreenAccountLog";
 import PDF from "../../components/Detail/PDF";
-import ScreenNotFound from "./ScreenNotFound";
 import RegisterAccount from "../../components/ResgisterAccount/RegisterAccount";
 import ScreenDetailAccount from "../ScreenDetailAccount/ScreenDetailAccount";
 import ScreenAddRole from "../ScreenAddRole/ScreenAddRole";
@@ -345,7 +343,9 @@ function ScreenProject() {
                 component={ScreenDetailAccount}
                 roles={["admin"]}
               />
-              {/* <Route component={ScreenNotFound}></Route> */}
+              <Route path="*">
+                <Redirect to="/login"></Redirect>
+              </Route>
             </Switch>
           </div>
         </div>

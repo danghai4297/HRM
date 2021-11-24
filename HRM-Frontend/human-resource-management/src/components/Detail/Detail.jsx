@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Row, Col, Button } from "react-bootstrap";
 import ProductApi from "../../api/productApi";
 import TableBasic from "../TablePagination/TableBasic";
-
 import {
   NVCOLUMNSDC,
   NVCOLUMNSHD,
@@ -78,7 +77,8 @@ function Detail(props) {
   const [dropReward, setDropReward] = useState(true);
   const [dropDiscipline, setDropDiscipline] = useState(true);
 
-  const clickHandle = (e) => {
+  //Hàm tự động chuyển đến tiêu đề
+  const clickHandleScroll = (e) => {
     e.preventDefault();
     const target = e.target.getAttribute("href");
     const height = document.getElementById("right");
@@ -88,107 +88,64 @@ function Detail(props) {
       behavior: "smooth",
     });
   };
-  // console.log(dataLuong.filter((b) => b.trangThai === "Kích hoạt").length === 0);
-  // console.log(dataDetailHd.filter(
-  //   (a) => a.trangThai === "Kích hoạt"
-  // )[0].id);
+
+  //Lấy param truyền từ trang khác
   let location = useLocation();
   let query = new URLSearchParams(location.search);
 
-  switch (query.get("move")) {
-    case "moveToContract":
-      setTimeout(() => {
-        const height = document.getElementById("right");
-        const location = document.querySelector("#contract").offsetTop;
-        height.scrollTo({
-          top: location - 260,
+  //Hàm setTimeout để tự di chuyển đến tiêu đề
+  setTimeout(() => {
+    switch (query.get("move")) {
+      case "moveToContract":
+        const heightContract = document.getElementById("right");
+        const locationContract = document.querySelector("#contract").offsetTop;
+        heightContract.scrollTo({
+          top: locationContract - 260,
           behavior: "smooth",
         });
-      }, 50);
-      break;
-    case "moveToSalary":
-      setTimeout(() => {
-        const height = document.getElementById("right");
-        const location = document.querySelector("#salary").offsetTop;
-        height.scrollTo({
-          top: location - 260,
-          behavior: "smooth",
-        });
-      }, 50);
-      break;
-    case "moveToTransfer":
-      setTimeout(() => {
-        const height = document.getElementById("right");
-        const location = document.querySelector("#transfer").offsetTop;
-        height.scrollTo({
-          top: location - 260,
-          behavior: "smooth",
-        });
-      }, 50);
-      break;
-    case "moveToReward":
-      setTimeout(() => {
-        const height = document.getElementById("right");
-        const location = document.querySelector("#reward").offsetTop;
-        height.scrollTo({
-          top: location - 260,
-          behavior: "smooth",
-        });
-      }, 50);
-      break;
-    case "moveToDiscipline":
-      setTimeout(() => {
-        const height = document.getElementById("right");
-        const location = document.querySelector("#discipline").offsetTop;
-        height.scrollTo({
-          top: location - 260,
-          behavior: "smooth",
-        });
-      }, 50);
-      break;
-    default:
-      break;
-  }
 
-  const arrowBaseClickHandle = () => {
-    setDropBase(!dropBase);
-  };
-  const arrowContactClickHandle = () => {
-    setDropContact(!dropContact);
-  };
-  const arrowJobClickHandle = () => {
-    setDropJob(!dropJob);
-  };
-  const arrowInsuranceClickHandle = () => {
-    setDropInsurance(!dropInsurance);
-  };
-  const arrowCulturalClickHandle = () => {
-    setDropCultural(!dropCultural);
-  };
-  const arrowFamilyClickHandle = () => {
-    setDropFamily(!dropFamily);
-  };
-  const arrowPoliticsClickHandle = () => {
-    setDropPolitics(!dropPolitics);
-  };
-  const arrowHistoryClickHandle = () => {
-    setDropHistory(!dropHistory);
-  };
-  const arrowContractClickHandle = () => {
-    setDropContract(!dropContract);
-  };
-  const arrowSalaryClickHandle = () => {
-    setDropSalary(!dropSalary);
-  };
-  const arrowTransferClickHandle = () => {
-    setDropTransfer(!dropTransfer);
-  };
-  const arrowRewardClickHandle = () => {
-    setDropReward(!dropReward);
-  };
-  const arrowDisciplineClickHandle = () => {
-    setDropDiscipline(!dropDiscipline);
-  };
+        break;
+      case "moveToSalary":
+        const heightSalary = document.getElementById("right");
+        const locationSalary = document.querySelector("#salary").offsetTop;
+        heightSalary.scrollTo({
+          top: locationSalary - 260,
+          behavior: "smooth",
+        });
+
+        break;
+      case "moveToTransfer":
+        const heightTransfer = document.getElementById("right");
+        const locationTransfer = document.querySelector("#transfer").offsetTop;
+        heightTransfer.scrollTo({
+          top: locationTransfer - 260,
+          behavior: "smooth",
+        });
+
+        break;
+      case "moveToReward":
+        const heightReward = document.getElementById("right");
+        const locationReward = document.querySelector("#reward").offsetTop;
+        heightReward.scrollTo({
+          top: locationReward - 260,
+          behavior: "smooth",
+        });
+
+        break;
+      case "moveToDiscipline":
+        const heightDiscipline = document.getElementById("right");
+        const locationDiscipline =
+          document.querySelector("#discipline").offsetTop;
+        heightDiscipline.scrollTo({
+          top: locationDiscipline - 260,
+          behavior: "smooth",
+        });
+
+        break;
+      default:
+        break;
+    }
+  }, 50);
 
   return (
     <>
@@ -224,7 +181,6 @@ function Detail(props) {
             </div>
           </div>
           <div className="middle-path">
-            {/* <Container className="containn"> */}
             <Row className="row-detail">
               <Col>
                 <Row>
@@ -309,7 +265,6 @@ function Detail(props) {
                 </Row>
               </Col>
             </Row>
-            {/* </Container> */}
           </div>
           <div className="right-path">
             <Link to={`/profile/${id}`}>
@@ -324,13 +279,16 @@ function Detail(props) {
         </div>
         <div className="main-information">
           <div className="left-header-information" id="abcccc">
-            {/* <div className="sticky-top"> */}
             <ul className="list-left">
               {links.map((link) => {
                 return (
                   <li className="row-left">
                     <h5>
-                      <a href={link.url} key={link.id} onClick={clickHandle}>
+                      <a
+                        href={link.url}
+                        key={link.id}
+                        onClick={clickHandleScroll}
+                      >
                         {link.text}
                       </a>
                     </h5>
@@ -338,7 +296,6 @@ function Detail(props) {
                 );
               })}
             </ul>
-            {/* </div> */}
           </div>
 
           <div className="right-information" id="right">
@@ -350,7 +307,9 @@ function Detail(props) {
                 <div className="arrow-button">
                   <button
                     className="main-arrow-button"
-                    onClick={arrowBaseClickHandle}
+                    onClick={() => {
+                      setDropBase(!dropBase);
+                    }}
                   >
                     <FontAwesomeIcon
                       icon={["fas", "chevron-down"]}
@@ -433,7 +392,9 @@ function Detail(props) {
                 <div className="arrow-button">
                   <button
                     className="main-arrow-button"
-                    onClick={arrowContactClickHandle}
+                    onClick={() => {
+                      setDropContact(!dropContact);
+                    }}
                   >
                     <FontAwesomeIcon
                       icon={["fas", "chevron-down"]}
@@ -483,7 +444,9 @@ function Detail(props) {
                 <div className="arrow-button">
                   <button
                     className="main-arrow-button"
-                    onClick={arrowJobClickHandle}
+                    onClick={() => {
+                      setDropJob(!dropJob);
+                    }}
                   >
                     <FontAwesomeIcon
                       icon={["fas", "chevron-down"]}
@@ -527,7 +490,9 @@ function Detail(props) {
                 <div className="arrow-button">
                   <button
                     className="main-arrow-button"
-                    onClick={arrowInsuranceClickHandle}
+                    onClick={() => {
+                      setDropInsurance(!dropInsurance);
+                    }}
                   >
                     <FontAwesomeIcon
                       icon={["fas", "chevron-down"]}
@@ -561,7 +526,9 @@ function Detail(props) {
                 <div className="arrow-button">
                   <button
                     className="main-arrow-button"
-                    onClick={arrowPoliticsClickHandle}
+                    onClick={() => {
+                      setDropPolitics(!dropPolitics);
+                    }}
                   >
                     <FontAwesomeIcon
                       icon={["fas", "chevron-down"]}
@@ -649,7 +616,9 @@ function Detail(props) {
                 <div className="arrow-button">
                   <button
                     className="main-arrow-button"
-                    onClick={arrowHistoryClickHandle}
+                    onClick={() => {
+                      setDropHistory(!dropHistory);
+                    }}
                   >
                     <FontAwesomeIcon
                       icon={["fas", "chevron-down"]}
@@ -711,7 +680,9 @@ function Detail(props) {
                 <div className="arrow-button">
                   <button
                     className="main-arrow-button"
-                    onClick={arrowCulturalClickHandle}
+                    onClick={() => {
+                      setDropCultural(!dropCultural);
+                    }}
                   >
                     <FontAwesomeIcon
                       icon={["fas", "chevron-down"]}
@@ -775,7 +746,9 @@ function Detail(props) {
                 <div className="arrow-button">
                   <button
                     className="main-arrow-button"
-                    onClick={arrowFamilyClickHandle}
+                    onClick={() => {
+                      setDropFamily(!dropFamily);
+                    }}
                   >
                     <FontAwesomeIcon
                       icon={["fas", "chevron-down"]}
@@ -816,7 +789,9 @@ function Detail(props) {
                 <div className="arrow-button">
                   <button
                     className="main-arrow-button"
-                    onClick={arrowContractClickHandle}
+                    onClick={() => {
+                      setDropContract(!dropContract);
+                    }}
                   >
                     <FontAwesomeIcon
                       icon={["fas", "chevron-down"]}
@@ -872,7 +847,9 @@ function Detail(props) {
                 <div className="arrow-button">
                   <button
                     className="main-arrow-button"
-                    onClick={arrowSalaryClickHandle}
+                    onClick={() => {
+                      setDropSalary(!dropSalary);
+                    }}
                   >
                     <FontAwesomeIcon
                       icon={["fas", "chevron-down"]}
@@ -928,7 +905,9 @@ function Detail(props) {
                 <div className="arrow-button">
                   <button
                     className="main-arrow-button"
-                    onClick={arrowTransferClickHandle}
+                    onClick={() => {
+                      setDropTransfer(!dropTransfer);
+                    }}
                   >
                     <FontAwesomeIcon
                       icon={["fas", "chevron-down"]}
@@ -969,7 +948,9 @@ function Detail(props) {
                 <div className="arrow-button">
                   <button
                     className="main-arrow-button"
-                    onClick={arrowRewardClickHandle}
+                    onClick={() => {
+                      setDropReward(!dropReward);
+                    }}
                   >
                     <FontAwesomeIcon
                       icon={["fas", "chevron-down"]}
@@ -1005,12 +986,14 @@ function Detail(props) {
             <div className="form" id="discipline">
               <div className="big-title">
                 <div className="name-title">
-                  <h3>Kỉ luật</h3>
+                  <h3>Kỷ luật</h3>
                 </div>
                 <div className="arrow-button">
                   <button
                     className="main-arrow-button"
-                    onClick={arrowDisciplineClickHandle}
+                    onClick={() => {
+                      setDropDiscipline(!dropDiscipline);
+                    }}
                   >
                     <FontAwesomeIcon
                       icon={["fas", "chevron-down"]}

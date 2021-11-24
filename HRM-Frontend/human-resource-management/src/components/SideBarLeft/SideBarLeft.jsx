@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SideBarContext } from "../../Contexts/StateContext";
 function SideBarLeft() {
   const { sideBar, setSiderBar } = useContext(SideBarContext);
+
   function Menu({ val }) {
     let match = useRouteMatch({
       path: val.link,
