@@ -1,5 +1,6 @@
 ﻿using HRMSolution.Data.EF;
 using HRMSolution.Data.Entities;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,10 @@ namespace HRMSolution.NUnitTest
             _context.AddRange(GetAllLichSuBanThans());
             _context.AddRange(GetAllLienHeKhanCaps());
             _context.AddRange(GetAllYTes());
+            _context.AddRange(GetAllNguoiThans());
+            _context.AddRange(GetAllNgoaiNgus());
+            _context.AddRange(GetAllLichSus());
+            _context.AddRange(GetAllUsers());
             _context.SaveChanges();
         }
         private static List<DanhMucChucDanh> GetAllTitleCategory()
@@ -229,6 +234,45 @@ namespace HRMSolution.NUnitTest
             return new List<LienHeKhanCap>
             {
                 new LienHeKhanCap() { id = 1, hoTen = "Mai Trung Hiếu", quanHe = "Bạn", maNhanVien = "NV0001", diaChi = "Hà Nội", dienThoai = "0123434324" ,email="LienHeKhanCap@gmai.com"}
+            };
+        }
+        private static List<NguoiThan> GetAllNguoiThans()
+        {
+            return new List<NguoiThan>
+            {
+                new NguoiThan() { id = 1, tenNguoiThan = "Nguyễn Đăng Hải", gioiTinh = true, ngaySinh = new DateTime(1965,03,21), quanHe = "Bố", ngheNghiep = "kinh doanh Tại Nhà", diaChi = "Hà Nội", dienThoai = "0914637668", maNhanVien = "NV0001", idDanhMucNguoiThan = 1 },
+            };
+        }
+        private static List<NgoaiNgu> GetAllNgoaiNgus()
+        {
+            return new List<NgoaiNgu>
+            {
+                new NgoaiNgu() { id = 1, idDanhMucNgoaiNgu = 1, ngayCap = new DateTime(2017,03,21), trinhDo = "khá", noiCap = "Hà Nội", maNhanVien = "NV0001" },
+            };
+        }
+        private static List<LichSu> GetAllLichSus()
+        {
+            return new List<LichSu>
+            {
+                new LichSu() { id = 1, tenTaiKhoan = "user1", tenNhanVien = "Đào Ngọc Hưởng", thaoTac = "Delete nhân viên NV0002", ngayThucHien = new DateTime(2017,03,21), maNhanVien = "NV0001" },
+            };
+        }
+        private static List<AppUser> GetAllUsers()
+        {
+            var hasher = new PasswordHasher<AppUser>();
+            return new List<AppUser>
+            {
+
+                new AppUser()
+                {
+                Id = new Guid("69BD714F-9576-45BA-B5B7-F00649BE00DE"),
+                UserName = "user1",
+                NormalizedUserName = "user1",
+                EmailConfirmed = true,
+                PasswordHash = hasher.HashPassword(null, "Abcd1234$"),
+                SecurityStamp = string.Empty,
+                maNhanVien = "NV0001"
+                }
             };
         }
     }

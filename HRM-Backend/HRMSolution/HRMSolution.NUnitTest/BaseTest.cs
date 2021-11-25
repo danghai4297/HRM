@@ -24,8 +24,12 @@ using HRMSolution.Application.Catalog.NgoaiNgus;
 using HRMSolution.Application.Catalog.NguoiThans;
 using HRMSolution.Application.Catalog.NhanViens;
 using HRMSolution.Application.Catalog.TrinhDoVanHoas;
+using HRMSolution.Application.System.Users;
 using HRMSolution.Data.EF;
+using HRMSolution.Data.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +41,9 @@ namespace HRMSolution.NUnitTest
     public class BaseTest
     {
         protected HRMDbContext _context;
+        protected UserManager<AppUser> _userManager;
+        protected SignInManager<AppUser> _signInManager;
+        protected IConfiguration _config;
         //IService Category
         protected IDanhMucChucDanhService danhMucChucDanhService;
         protected IDanhMucChucVuService danhMucChucVuService;
@@ -65,14 +72,16 @@ namespace HRMSolution.NUnitTest
         protected ILichSuService LichSuService;
         //IService Salary
         protected ILuongService LuongService;
-        //IService 
+        //IService Language
         protected INgoaiNguService NgoaiNguService;
-        //IService 
+        //IService Family
         protected INguoiThanService NguoiThanService;
-
+        //IService Employee
         protected INhanVienService NhanVienService;
-
+        //IService EducationLevel
         protected ITrinhDoVanHoaService TrinhDoVanHoaService;
+        //IService User
+        protected IUserService UserService;
         public BaseTest()
         {
             DbContextOptions<HRMDbContext> dbContextOptions = new DbContextOptionsBuilder<HRMDbContext>()
@@ -97,6 +106,10 @@ namespace HRMSolution.NUnitTest
             danhMucToService = new DanhMucToService(_context);
             danhMucTrinhDoService = new DanhMucTrinhDoService(_context);
             TrinhDoVanHoaService = new TrinhDoVanHoaService(_context);
+            NguoiThanService = new NguoiThanService(_context);
+            NgoaiNguService = new NgoaiNguService(_context);
+            LichSuService = new LichSuService(_context);
+            UserService = new UserService(_userManager, _signInManager, _config, _context);
         }
     }
 }

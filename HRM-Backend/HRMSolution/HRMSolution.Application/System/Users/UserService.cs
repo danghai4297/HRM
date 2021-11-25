@@ -22,14 +22,12 @@ namespace HRMSolution.Application.System.Users
         private readonly HRMDbContext _context;
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
-        private readonly RoleManager<AppRole> _roleManager;
         private readonly IConfiguration _config;
-        public UserService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<AppRole> roleManager,
+        public UserService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager,
             IConfiguration config, HRMDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            _roleManager = roleManager;
             _config = config;
             _context = context;
         }
@@ -81,46 +79,13 @@ namespace HRMSolution.Application.System.Users
             return false;
         }
 
-        public async Task<ApiResult<PagedResult<UserVm>>> GetUsersPaging(GetUserPagingRequest request)
-        {
-            var query = _userManager.Users;
-            if (!string.IsNullOrEmpty(request.Keyword))
-            {
-                query = query.Where(x => x.UserName.Contains(request.Keyword)
-                 || x.PhoneNumber.Contains(request.Keyword));
-            }
-
-            //3. Paging
-            int totalRow = await query.CountAsync();
-
-            var data = await query.Skip((request.PageIndex - 1) * request.PageSize)
-                .Take(request.PageSize)
-                .Select(x => new UserVm()
-                {
-                    Email = x.Email,
-                    PhoneNumber = x.PhoneNumber,
-                    UserName = x.UserName,
-                    Id = x.Id,
-                    
-                }).ToListAsync();
-
-            //4. Select and projection
-            var pagedResult = new PagedResult<UserVm>()
-            {
-                TotalRecords = totalRow,
-                PageIndex = request.PageIndex,
-                PageSize = request.PageSize,
-                Items = data
-            };
-            return new ApiSuccessResult<PagedResult<UserVm>>(pagedResult);
-        }
 
         public async Task<List<UserVm>> GetAll()
         {
-            
+
             var query = from x in _userManager.Users
                         join nv in _context.nhanViens on x.maNhanVien equals nv.maNhanVien
-                        select new {x, nv };
+                        select new { x, nv };
             var data = await query.Select(x => new UserVm()
             {
                 Id = x.x.Id,
@@ -138,10 +103,9 @@ namespace HRMSolution.Application.System.Users
         public async Task<UserVm> GetById(Guid id)
         {
             var user = await _userManager.FindByIdAsync(id.ToString());
-            //if (user == null)
-            //{
-            //    return "User không tồn tại";
-            //}
+            if (user == null)
+                return null;
+
             var roles = await _userManager.GetRolesAsync(user);
 
             var query = from x in _userManager.Users
@@ -217,9 +181,11 @@ namespace HRMSolution.Application.System.Users
 
         public async Task<bool> ChangePassword(Guid id, UserUpdateRequest request)
         {
-            var hasher = new PasswordHasher<AppUser>();
             var user = await _userManager.FindByIdAsync(id.ToString());
-            var changePassword = await _userManager.ChangePasswordAsync(user, request.oldPassword, request.newPassword);        
+            if (user == null)
+                return false;
+            var hasher = new PasswordHasher<AppUser>();
+            var changePassword = await _userManager.ChangePasswordAsync(user, request.oldPassword, request.newPassword);
             if (changePassword.Succeeded)
             {
                 user.PasswordHash = hasher.HashPassword(null, request.newPassword);
@@ -234,8 +200,10 @@ namespace HRMSolution.Application.System.Users
 
         public async Task<string> ResetPassword(Guid id)
         {
-            var password = GenerateRandomPassword();
             var user = await _userManager.FindByIdAsync(id.ToString());
+            if (user == null)
+                return null;
+            var password = GenerateRandomPassword();
             string resetToken = await _userManager.GeneratePasswordResetTokenAsync(user);
             IdentityResult passwordChangeResult = await _userManager.ResetPasswordAsync(user, resetToken, password);
             if (passwordChangeResult.Succeeded)

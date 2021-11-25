@@ -16,8 +16,6 @@ namespace HRMSolution.Application.System.Users
 
         Task<bool> ChangePassword(Guid id, UserUpdateRequest request);
 
-        Task<ApiResult<PagedResult<UserVm>>> GetUsersPaging(GetUserPagingRequest request);
-
         Task<UserVm> GetById(Guid id);
 
         Task<bool> Delete(Guid id);

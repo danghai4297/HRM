@@ -102,12 +102,6 @@ namespace HRMSolution.BackendAPI.Controllers
             var user = await _userService.GetById(id);
             return Ok(user);
         }
-        [HttpGet("paging")]
-        public async Task<IActionResult> GetAllPaging([FromQuery] GetUserPagingRequest request)
-        {
-            var user = await _userService.GetUsersPaging(request);
-            return Ok(user);
-        }
         [HttpGet()]
         public async Task<IActionResult> GetAllAccount()
         {
