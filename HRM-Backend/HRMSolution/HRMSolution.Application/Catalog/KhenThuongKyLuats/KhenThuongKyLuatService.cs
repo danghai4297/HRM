@@ -41,13 +41,13 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                     loai = request.loai,
                     maNhanVien = request.maNhanVien,
                 };
-                if (request.anh is null)
+                if (request.bangChung is null)
                 {
                     ktkl.anh = "";
                 }
                 else
                 {
-                    ktkl.anh = await this.SaveFile(request.anh);
+                    ktkl.anh = await this.SaveFile(request.bangChung);
                 }
                 _context.khenThuongKyLuats.Add(ktkl);
                 var result = await _context.SaveChangesAsync();

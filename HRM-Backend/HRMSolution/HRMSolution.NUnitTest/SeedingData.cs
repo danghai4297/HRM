@@ -44,6 +44,7 @@ namespace HRMSolution.NUnitTest
             _context.AddRange(GetRoleUser());
             _context.AddRange(GetAppRoles());
             _context.AddRange(GetAllContract());
+            _context.AddRange(GetAllRewardDiscipline());
             _context.SaveChanges();
         }
         private static List<DanhMucKhenThuongKyLuat> GetAllRewardDisciplineCategory()
@@ -353,5 +354,13 @@ namespace HRMSolution.NUnitTest
                 new HopDong() {id = 1, maHopDong = "HD01", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = new DateTime(2022,03,21), maNhanVien = "NV0001", trangThai = true, idChucVu = 1 }
             };
         }
+        private static List<KhenThuongKyLuat> GetAllRewardDiscipline()
+        {
+            return new List<KhenThuongKyLuat>
+            {
+                new KhenThuongKyLuat() { id = 1, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0001" }
+            };
+        }
+
     }
 }
