@@ -114,12 +114,9 @@ namespace HRMSolution.NUnitTest
             UserService = new UserService(_userManager, _signInManager, _config, _context);
             LuongService = new LuongService(_context, storageService);
             DieuChuyenService = new DieuChuyenService(_context, storageService);
-<<<<<<< HEAD
             KhenThuongKyLuatService = new KhenThuongKyLuatService(_context, storageService);
-=======
             HopDongService = new HopDongService(_context, storageService);
             NhanVienService = new NhanVienService(_context, storageService);
->>>>>>> 2c80f0a55e6d11645340ed04cf0181957c2c9866
         }
     }
 }

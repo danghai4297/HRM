@@ -124,5 +124,113 @@ namespace HRMSolution.NUnitTest
             var result = KhenThuongKyLuatService.Update(1, update);
             Assert.That(result.Result, Is.EqualTo(1));
         }
+        [Test, Order(9)]
+        public void RewardDiscipline_Update_Failure1()
+        {
+            KhenThuongKyLuatUpdateRequest update = new KhenThuongKyLuatUpdateRequest()
+            {
+                idDanhMucKhenThuong = 2,
+                loai = true,
+                lyDo = "Không đi làm muộn",
+                noiDung = "Thưởng nhân viên tốt",
+                maNhanVien = "NV0001",
+                bangChung = null
+            };
+            var result = KhenThuongKyLuatService.Update(9, update);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(10)]
+        public void RewardDiscipline_Update_Failure2()
+        {
+            KhenThuongKyLuatUpdateRequest update = new KhenThuongKyLuatUpdateRequest()
+            {
+                idDanhMucKhenThuong = 0,
+                loai = true,
+                lyDo = "Không đi làm muộn",
+                noiDung = "Thưởng nhân viên tốt",
+                maNhanVien = "NV0001",
+                bangChung = null
+            };
+            var result = KhenThuongKyLuatService.Update(1, update);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(11)]
+        public void RewardDiscipline_Update_Failure3()
+        {
+            KhenThuongKyLuatUpdateRequest update = new KhenThuongKyLuatUpdateRequest()
+            {
+                idDanhMucKhenThuong = 1,
+                loai = true,
+                lyDo = null,
+                noiDung = "Thưởng nhân viên tốt",
+                maNhanVien = "NV0001",
+                bangChung = null
+            };
+            var result = KhenThuongKyLuatService.Update(1, update);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(12)]
+        public void RewardDiscipline_Update_Failure4()
+        {
+            KhenThuongKyLuatUpdateRequest update = new KhenThuongKyLuatUpdateRequest()
+            {
+                idDanhMucKhenThuong = 1,
+                loai = true,
+                lyDo = "Không đi làm muộn",
+                noiDung = null,
+                maNhanVien = "NV0001",
+                bangChung = null
+            };
+            var result = KhenThuongKyLuatService.Update(1, update);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(13)]
+        public void RewardDiscipline_Update_Failure5()
+        {
+            KhenThuongKyLuatUpdateRequest update = new KhenThuongKyLuatUpdateRequest()
+            {
+                idDanhMucKhenThuong = 1,
+                loai = true,
+                lyDo = "Không đi làm muộn",
+                noiDung = null,
+                maNhanVien = "NV0001",
+                bangChung = null
+            };
+            var result = KhenThuongKyLuatService.Update(1, update);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(14)]
+        public void RewardDiscipline_Update_Failure6()
+        {
+            KhenThuongKyLuatUpdateRequest update = new KhenThuongKyLuatUpdateRequest()
+            {
+                idDanhMucKhenThuong = 1,
+                loai = true,
+                lyDo = "Không đi làm muộn",
+                noiDung = "Thưởng nhân viên tốt",
+                maNhanVien = null,
+                bangChung = null
+            };
+            var result = KhenThuongKyLuatService.Update(1, update);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(15)]
+        public void RewardDiscipline_Delete_Failure()
+        {
+            var result = KhenThuongKyLuatService.Delete(8);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(1)]
+        public void RewardDiscipline_GetAllReward_Success()
+        {
+            var result = KhenThuongKyLuatService.GetAllKhenThuong();
+            Assert.That(result.Result.Count, Is.EqualTo(1));
+        }
+        [Test, Order(1)]
+        public void RewardDiscipline_GetAllDiscipline_Success()
+        {
+            var result = KhenThuongKyLuatService.GetAllKyLuat();
+            Assert.That(result.Result.Count, Is.EqualTo(1));
+        }
     }
 }

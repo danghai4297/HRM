@@ -355,17 +355,14 @@ namespace HRMSolution.NUnitTest
                 new HopDong() {id = 1, maHopDong = "HD01", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = new DateTime(2022,03,21), maNhanVien = "NV0001", trangThai = true, idChucVu = 1 }
             };
         }
-<<<<<<< HEAD
         private static List<KhenThuongKyLuat> GetAllRewardDiscipline()
         {
             return new List<KhenThuongKyLuat>
             {
-                new KhenThuongKyLuat() { id = 1, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0001" }
+                new KhenThuongKyLuat() { id = 1, idDanhMucKhenThuong = 1, noiDung = "Thưởng nhân viên suất sắc", loai = true, maNhanVien = "NV0001" },
+                new KhenThuongKyLuat() { id = 2, idDanhMucKhenThuong = 2, noiDung = "Thưởng nhân viên suất sắc", loai = false, maNhanVien = "NV0001" }
             };
         }
 
-=======
-        
->>>>>>> 2c80f0a55e6d11645340ed04cf0181957c2c9866
     }
 }
