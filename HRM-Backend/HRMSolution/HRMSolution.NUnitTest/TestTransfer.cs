@@ -1,4 +1,5 @@
 ﻿using HRMSolution.Application.Catalog.DieuChuyens.Dtos;
+using HRMSolution.Application.Common;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -198,13 +199,13 @@ namespace HRMSolution.NUnitTest
             var result = DieuChuyenService.Update(6, transferUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
-        [Test, Order(12)]
-        public void Transfer_Delete_Success()
-        {
+        //[Test, Order(12)]
+        //public void Transfer_Delete_Success()
+        //{
 
-            var result = DieuChuyenService.Delete(1);
-            Assert.That(result.Result, Is.EqualTo(1));
-        }
+        //    var result = DieuChuyenService.Delete(1);
+        //    Assert.That(result.Result, Is.EqualTo(1));
+        //}
         [Test, Order(13)]
         public void Transfer_Delete_Failure()
         {

@@ -256,7 +256,6 @@ namespace HRMSolution.Application.Catalog.HopDongs
             else
             {
                 hopDong.id = request.idCre;
-                hopDong.maHopDong = request.maHopDong;
                 hopDong.idLoaiHopDong = request.idLoaiHopDong;
                 hopDong.idChucDanh = request.idChucDanh;
                 hopDong.idChucVu = request.idChucVu;

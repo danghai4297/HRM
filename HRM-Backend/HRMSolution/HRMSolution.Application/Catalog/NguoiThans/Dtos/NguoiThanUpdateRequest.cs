@@ -8,7 +8,7 @@ namespace HRMSolution.Application.Catalog.NguoiThans.Dtos
     {
         public int idDanhMucNguoiThan { get; set; }
         public string tenNguoiThan { get; set; }
-        public bool? gioiTinh { get; set; }
+        public bool gioiTinh { get; set; }
         public DateTime ngaySinh { get; set; }
         public string quanHe { get; set; }
         public string ngheNghiep { get; set; }
