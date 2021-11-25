@@ -40,6 +40,7 @@ namespace HRMSolution.NUnitTest
             _context.AddRange(GetAllNestCategory());
             _context.AddRange(GetAllRewardDisciplineCategory());
             _context.AddRange(GetAllUsers());
+            _context.AddRange(GetAllContract());
             _context.SaveChanges();
         }
         private static List<DanhMucKhenThuongKyLuat> GetAllRewardDisciplineCategory()
@@ -330,6 +331,13 @@ namespace HRMSolution.NUnitTest
             return new List<Luong>
             {
                 new Luong() { id = 1, maHopDong = "HD01",idNhomLuong=1, bacLuong = "1", thoiHanLenLuong = "1", ngayHieuLuc = DateTime.Now, ngayKetThuc = new DateTime(2023,11,17) , trangThai = false,heSoLuong = (float)1.0, luongCoBan= (float)1000000.0, phuCapKhac= (float)100000.0,phuCapTrachNhiem= (float)100000.0,tongLuong= (float)1200000.0 }
+            };
+        }
+        private static List<HopDong> GetAllContract()
+        {
+            return new List<HopDong>
+            {
+                new HopDong() {id = 1, maHopDong = "HD01", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = new DateTime(2022,03,21), maNhanVien = "NV0001", trangThai = true, idChucVu = 1 }
             };
         }
     }
