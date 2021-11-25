@@ -24,6 +24,7 @@ using HRMSolution.Application.Catalog.NgoaiNgus;
 using HRMSolution.Application.Catalog.NguoiThans;
 using HRMSolution.Application.Catalog.NhanViens;
 using HRMSolution.Application.Catalog.TrinhDoVanHoas;
+using HRMSolution.Application.Common;
 using HRMSolution.Application.System.Users;
 using HRMSolution.Data.EF;
 using HRMSolution.Data.Entities;
@@ -82,6 +83,7 @@ namespace HRMSolution.NUnitTest
         protected ITrinhDoVanHoaService TrinhDoVanHoaService;
         //IService User
         protected IUserService UserService;
+        protected IStorageService storageService;
         public BaseTest()
         {
             DbContextOptions<HRMDbContext> dbContextOptions = new DbContextOptionsBuilder<HRMDbContext>()
@@ -110,6 +112,8 @@ namespace HRMSolution.NUnitTest
             NgoaiNguService = new NgoaiNguService(_context);
             LichSuService = new LichSuService(_context);
             UserService = new UserService(_userManager, _signInManager, _config, _context);
+            LuongService = new LuongService(_context, storageService);
+            DieuChuyenService = new DieuChuyenService(_context, storageService);
         }
     }
 }

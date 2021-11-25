@@ -35,8 +35,44 @@ namespace HRMSolution.NUnitTest
             _context.AddRange(GetAllNguoiThans());
             _context.AddRange(GetAllNgoaiNgus());
             _context.AddRange(GetAllLichSus());
+            _context.AddRange(GetAllTransfer());
+            _context.AddRange(GetAllDepartmentCategory());
+            _context.AddRange(GetAllNestCategory());
+            _context.AddRange(GetAllRewardDisciplineCategory());
             _context.AddRange(GetAllUsers());
             _context.SaveChanges();
+        }
+        private static List<DanhMucKhenThuongKyLuat> GetAllRewardDisciplineCategory()
+        {
+            return new List<DanhMucKhenThuongKyLuat>
+            {
+                new DanhMucKhenThuongKyLuat() { id = 1, tenDanhMuc = "Thưởng Nhân viên suất xác tháng", tieuDe = "Khen thưởng" },
+                new DanhMucKhenThuongKyLuat() { id = 2, tenDanhMuc = "Phạt Nhân viên kém nhất tháng", tieuDe = "Kỷ luật" }
+            };
+        }
+        private static List<DieuChuyen> GetAllTransfer()
+        {
+            return new List<DieuChuyen>
+            {
+               new DieuChuyen() { id = 1, maNhanVien = "NV0001", ngayHieuLuc = DateTime.Now, idPhongBan = 1, to = 2, chiTiet = "Ahihi", trangThai = true, bangChung = "xxxx" }
+
+            };
+        }
+        private static List<DanhMucTo> GetAllNestCategory()
+        {
+            return new List<DanhMucTo>
+            {
+                new DanhMucTo() { idTo = 1, maTo = "T01", tenTo = "Tổ hành chính", idPhongBan = 1 },
+                new DanhMucTo() { idTo = 2, maTo = "T02", tenTo = "Tổ nhân sự", idPhongBan = 1 }
+            };
+        }
+        private static List<DanhMucPhongBan> GetAllDepartmentCategory()
+        {
+            return new List<DanhMucPhongBan>
+            {
+                new DanhMucPhongBan() { id = 1, maPhongBan = "PB01", tenPhongBan = "Phòng hành chính-nhân sự" },
+                new DanhMucPhongBan() { id = 2, maPhongBan = "PB02", tenPhongBan = "Phòng pháp chế" }
+            };
         }
         private static List<DanhMucChucDanh> GetAllTitleCategory()
         {
@@ -273,6 +309,27 @@ namespace HRMSolution.NUnitTest
                 SecurityStamp = string.Empty,
                 maNhanVien = "NV0001"
                 }
+            };
+        }
+        private static List<AppRole> GetAppRoles()
+        {
+            return new List<AppRole>
+            {
+                new AppRole
+                {
+                    Id = new Guid("8D04DCE2-969A-435D-BBA4-DF3F325983DC"),
+                    Name = "user",
+                    NormalizedName = "user",
+                    ghiChu = "User role"
+                }
+            };
+        }
+
+        private static List<Luong> GetAllLuongs()
+        {
+            return new List<Luong>
+            {
+                new Luong() { id = 1, maHopDong = "HD01",idNhomLuong=1, bacLuong = "1", thoiHanLenLuong = "1", ngayHieuLuc = DateTime.Now, ngayKetThuc = new DateTime(2023,11,17) , trangThai = false,heSoLuong = (float)1.0, luongCoBan= (float)1000000.0, phuCapKhac= (float)100000.0,phuCapTrachNhiem= (float)100000.0,tongLuong= (float)1200000.0 }
             };
         }
     }
