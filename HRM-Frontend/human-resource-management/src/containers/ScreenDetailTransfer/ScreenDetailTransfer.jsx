@@ -24,12 +24,12 @@ function ScreenDetailTransfer(props) {
     };
     fetchNvList();
   }, []);
-  console.log(dataDetailDC);
+
   return (
     <>
-      <div className="main-screen">
-        <div className="first-main">
-          <div className="first-path">
+      <div className="main-screen-transfer">
+        <div className="first-main-transfer">
+          <div className="first-path-transfer">
             <button className="btn-back" onClick={history.goBack}>
               <FontAwesomeIcon
                 className="icon-btn"
@@ -37,19 +37,19 @@ function ScreenDetailTransfer(props) {
               />
             </button>
           </div>
-          <div className="second-path">
+          <div className="second-path-transfer">
             <h2>Thủ tục thuyên chuyển</h2>
           </div>
-          <div className="third-path">
+          <div className="third-path-transfer">
             <Link to={`/transfer/${id}`}>
-              <Button variant="light" className="btn-fix">
+              <Button variant="light" className="btn-fix-transfer">
                 Sửa
               </Button>
             </Link>
             {dataDetailDC.bangChung !== null && (
               <Button
                 variant="light"
-                className="btn-fix"
+                className="btn-fix-transfer"
                 onClick={() => {
                   window.open(
                     `https://localhost:5001${dataDetailDC.bangChung}`
@@ -64,9 +64,9 @@ function ScreenDetailTransfer(props) {
             )}
           </div>
         </div>
-        <div className="second-main">
-          <h3 className="title-main">Vị trí công tác hiện tại</h3>
-          <div className="second-main-path">
+        <div className="second-main-transfer">
+          <h3 className="title-main-transfer">Vị trí công tác hiện tại</h3>
+          <div className="second-main-path-transfer">
             {vtctht.map((detail, key) => {
               return (
                 <SubDetail
@@ -83,6 +83,11 @@ function ScreenDetailTransfer(props) {
                 />
               );
             })}
+            <SubDetail
+              titleLeft="Tệp đính kèm"
+              itemLeft={dataDetailDC.bangChung === null ? "Không" : "Có"}
+              titleRight={null}
+            />
           </div>
         </div>
         <div className="all-transfer">
@@ -93,7 +98,7 @@ function ScreenDetailTransfer(props) {
             to={`/profile/detail/${dataDetailDC.maNhanVien}?move=moveToTransfer`}
             className="btn-move-transfer"
           >
-            <button className="btn-fix">
+            <button className="btn-fix-transfer">
               <FontAwesomeIcon
                 icon={["fas", "arrow-right"]}
                 style={{ fontSize: "50px" }}

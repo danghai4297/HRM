@@ -11,6 +11,7 @@ function ScreenDetailDiscipline(props) {
   let { id } = match.params;
 
   const [dataKLDetail, setDataKLDetail] = useState([]);
+
   useEffect(() => {
     const fetchNvList = async () => {
       try {
@@ -22,33 +23,32 @@ function ScreenDetailDiscipline(props) {
     };
     fetchNvList();
   }, []);
-  console.log(dataKLDetail);
 
   return (
     <>
-      <div className="main-screen">
-        <div className="first-main">
-          <div className="first-path">
-            <button className="btn-back" onClick={history.goBack}>
+      <div className="main-screen-discipline">
+        <div className="first-main-discipline">
+          <div className="first-path-discipline">
+            <button className="btn-back-discipline" onClick={history.goBack}>
               <FontAwesomeIcon
                 className="icon-btn"
                 icon={["fas", "long-arrow-alt-left"]}
               />
             </button>
           </div>
-          <div className="second-path">
+          <div className="second-path-discipline">
             <h2>Thủ tục kỷ luật</h2>
           </div>
-          <div className="third-path">
+          <div className="third-path-discipline">
             <Link to={`/discipline/${id}`}>
-              <Button variant="light" className="btn-fix">
+              <Button variant="light" className="btn-fix-discipline">
                 Sửa
               </Button>
             </Link>
             {dataKLDetail.bangChung !== null && (
               <Button
                 variant="light"
-                className="btn-fix"
+                className="btn-fix-discipline"
                 onClick={() => {
                   window.open(
                     `https://localhost:5001${dataKLDetail.bangChung}`
@@ -63,9 +63,9 @@ function ScreenDetailDiscipline(props) {
             )}
           </div>
         </div>
-        <div className="second-main">
-          <h3 className="title-main">Thông tin kỷ luật</h3>
-          <div className="second-main-path">
+        <div className="second-main-discipline">
+          <h3 className="title-main-discipline">Thông tin kỷ luật</h3>
+          <div className="second-main-path-discipline">
             {ttkl.map((detail, key) => {
               return (
                 <SubDetail
@@ -77,6 +77,11 @@ function ScreenDetailDiscipline(props) {
                 />
               );
             })}
+            <SubDetail
+              titleLeft="Tệp đính kèm"
+              itemLeft={dataKLDetail.bangChung === null ? "Không" : "Có"}
+              titleRight={null}
+            />
           </div>
         </div>
         <div className="all-discipline">
@@ -87,7 +92,7 @@ function ScreenDetailDiscipline(props) {
             to={`/profile/detail/${dataKLDetail.maNhanVien}?move=moveToDiscipline`}
             className="btn-move-discipline"
           >
-            <button className="btn-fix">
+            <button className="btn-fix-discipline">
               <FontAwesomeIcon
                 icon={["fas", "arrow-right"]}
                 style={{ fontSize: "50px" }}

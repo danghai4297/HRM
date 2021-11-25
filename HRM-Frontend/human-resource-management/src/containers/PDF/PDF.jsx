@@ -10,11 +10,11 @@ import {
   ttnv,
   ttqs,
   ttyt,
-} from "./Data";
-import SubDetail from "./SubDetail";
+} from "../../components/Detail/Data";
+import SubDetail from "../../components/Detail/SubDetail";
 import dateFormat from "dateformat";
 import { useReactToPrint } from "react-to-print";
-import { ComponentToPrint } from "../ToPrint/ComponentToPrint";
+import { ComponentToPrint } from "../../components/ToPrint/ComponentToPrint";
 import "./PDF.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function PDF(props) {

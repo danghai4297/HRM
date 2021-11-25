@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import jwt_decode from "jwt-decode";
+
 function ProtectedRoute({ component: Component, roles, ...res }) {
   return (
     <Route

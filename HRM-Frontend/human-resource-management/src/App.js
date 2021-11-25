@@ -15,16 +15,40 @@ import {
 } from "react-router-dom";
 import { useState } from "react";
 import ToastProvider from "./components/Toast/ToastProvider";
+import ScreenNotFound from "./containers/ScreenProject/ScreenNotFound";
+import jwt_decode from "jwt-decode";
+
 function App() {
   const [account, setAccount] = useState(false);
   const [sideBar, setSiderBar] = useState(true);
+
+  const changePage = () => {
+    const returnHome =
+      sessionStorage.getItem("resultObj") &&
+      jwt_decode(sessionStorage.getItem("resultObj"))
+        .role.split(";")
+        .includes("user");
+    const returnCategory =
+      sessionStorage.getItem("resultObj") &&
+      jwt_decode(sessionStorage.getItem("resultObj"))
+        .role.split(";")
+        .includes("admin");
+    if (returnHome) {
+      return <Redirect to="/home" />;
+    } else if (returnCategory) {
+      return <Redirect to="/category" />;
+    } else {
+      return <Redirect to="/login" />;
+    }
+  };
+
   return (
     <ListProvider>
       <ToastProvider>
         <Router>
           <Switch>
             <Route exact path="/">
-              <Redirect to="/login" />
+              {changePage}
             </Route>
             <Route exact path="/login">
               <LogIn />

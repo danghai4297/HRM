@@ -27,9 +27,9 @@ function ScreenDetailContract(props) {
   console.log(dataDetailHd);
   return (
     <>
-      <div className="main-screen">
-        <div className="first-main">
-          <div className="first-path">
+      <div className="main-screen-contract">
+        <div className="first-main-contract">
+          <div className="first-path-contract">
             <button className="btn-back" onClick={history.goBack}>
               <FontAwesomeIcon
                 className="icon-btn"
@@ -37,13 +37,13 @@ function ScreenDetailContract(props) {
               />
             </button>
           </div>
-          <div className="second-path">
+          <div className="second-path-contract">
             <h2>Chi tiết hợp đồng</h2>
           </div>
-          <div className="third-path">
+          <div className="third-path-contract">
             {dataDetailHd.trangThai === "Kích hoạt" && (
               <Link to={`/contract/${id}`}>
-                <Button variant="light" className="btn-fix">
+                <Button variant="light" className="btn-fix-contract">
                   Sửa
                 </Button>
               </Link>
@@ -51,7 +51,7 @@ function ScreenDetailContract(props) {
             {dataDetailHd.bangChung !== null && (
               <Button
                 variant="light"
-                className="btn-fix"
+                className="btn-fix-contract"
                 onClick={() => {
                   window.open(
                     `https://localhost:5001${dataDetailHd.bangChung}`
@@ -66,9 +66,9 @@ function ScreenDetailContract(props) {
             )}
           </div>
         </div>
-        <div className="second-main">
-          <h3 className="title-main">Thông tin chung</h3>
-          <div className="second-main-path">
+        <div className="second-main-contract">
+          <h3 className="title-main-contract">Thông tin chung</h3>
+          <div className="second-main-path-contract">
             {ttc.map((detail, key) => {
               return (
                 <SubDetail
@@ -90,17 +90,22 @@ function ScreenDetailContract(props) {
                 />
               );
             })}
+            <SubDetail
+              titleLeft="Tệp đính kèm"
+              itemLeft={dataDetailHd.bangChung === null ? "Không" : "Có"}
+              titleRight={null}
+            />
           </div>
         </div>
-        <div className="all-contract">
-          <div className="name-move">
+        <div className="all-contract-contract">
+          <div className="name-move-contract">
             <h3>Tất cả hợp đồng</h3>
           </div>
           <Link
             to={`/profile/detail/${dataDetailHd.maNhanVien}?move=moveToContract`}
-            className="btn-move"
+            className="btn-move-contract"
           >
-            <button className="btn-fix">
+            <button className="btn-fix-contract">
               <FontAwesomeIcon
                 icon={["fas", "arrow-right"]}
                 style={{ fontSize: "50px" }}

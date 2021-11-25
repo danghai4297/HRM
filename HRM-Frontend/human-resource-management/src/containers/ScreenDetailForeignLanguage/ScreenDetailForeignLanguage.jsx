@@ -24,33 +24,32 @@ function ScreenDetailForeignLanguage(props) {
     fetchNvList();
   }, []);
 
-  console.log(dataDetailNN);
   return (
     <>
-      <div className="main-screen">
-        <div className="first-main">
-          <div className="first-path">
-            <button className="btn-back" onClick={history.goBack}>
+      <div className="main-screen-language">
+        <div className="first-main-language">
+          <div className="first-path-language">
+            <button className="btn-back-language" onClick={history.goBack}>
               <FontAwesomeIcon
                 className="icon-btn"
                 icon={["fas", "long-arrow-alt-left"]}
               />
             </button>
           </div>
-          <div className="second-path">
+          <div className="second-path-language">
             <h2>Ngoại ngữ</h2>
           </div>
-          <div className="third-path">
+          <div className="third-path-language">
             <Link to={`/profile/detail/language/update/${id}`}>
-              <Button variant="light" className="btn-fix">
+              <Button variant="light" className="btn-fix-language">
                 Sửa
               </Button>
             </Link>
           </div>
         </div>
-        <div className="second-main">
-          <h3 className="title-main">Thông tin chung</h3>
-          <div className="second-main-path">
+        <div className="second-main-language">
+          <h3 className="title-main-language">Thông tin chung</h3>
+          <div className="second-main-path-language">
             {ttc.map((detail, key) => {
               return (
                 <SubDetail
