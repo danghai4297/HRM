@@ -215,13 +215,13 @@ namespace HRMSolution.NUnitTest
             var result = HopDongService.Update("HD08", ContractUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
-        [Test, Order(16)]
-        public void Contract_Delete_Success()
-        {
+        //[Test, Order(16)]
+        //public void Contract_Delete_Success()
+        //{
 
-            var result = HopDongService.Delete("HD01");
-            Assert.That(result.Result, Is.EqualTo(1));
-        }
+        //    var result = HopDongService.Delete("HD01");
+        //    Assert.That(result.Result, Is.EqualTo(1));
+        //}
         [Test, Order(17)]
         public void Contract_Delete_Failure()
         {

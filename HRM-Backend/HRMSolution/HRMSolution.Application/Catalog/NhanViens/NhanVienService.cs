@@ -166,14 +166,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
         {
             var nhanVien = await _context.nhanViens.FindAsync(id);
 
-            var id_lhkc = await _context.lienHeKhanCaps.Where(x => x.maNhanVien == id).FirstOrDefaultAsync();
-            var lhkc = await _context.lienHeKhanCaps.FindAsync(id_lhkc.id);
-
-            var id_yt = await _context.yTes.Where(x => x.maNhanVien == id).FirstOrDefaultAsync();
-            var yt = await _context.yTes.FindAsync(id_yt.id);
-
-            var id_lsbt = await _context.lichSuBanThans.Where(x => x.maNhanVien == id).FirstOrDefaultAsync();
-            var lsbt = await _context.lichSuBanThans.FindAsync(id_lsbt.id);
+            
 
             if (nhanVien == null || request.hoTen == null || request.quocTich == null || request.ngaySinh == null || request.diDong == null || request.cccd == null || request.noiCapCCCD == null
                 || request.ngayCapCCCD == null || request.ngayHetHanCCCD == null || request.noiSinh == null || request.queQuan == null || request.thuongTru == null || request.ngheNghiep == null
@@ -184,6 +177,14 @@ namespace HRMSolution.Application.Catalog.NhanViens
             }
             else
             {
+                var id_lhkc = await _context.lienHeKhanCaps.Where(x => x.maNhanVien == id).FirstOrDefaultAsync();
+                var lhkc = await _context.lienHeKhanCaps.FindAsync(id_lhkc.id);
+
+                var id_yt = await _context.yTes.Where(x => x.maNhanVien == id).FirstOrDefaultAsync();
+                var yt = await _context.yTes.FindAsync(id_yt.id);
+
+                var id_lsbt = await _context.lichSuBanThans.Where(x => x.maNhanVien == id).FirstOrDefaultAsync();
+                var lsbt = await _context.lichSuBanThans.FindAsync(id_lsbt.id);
                 nhanVien.hoTen = request.hoTen;
                 nhanVien.quocTich = request.quocTich;
                 nhanVien.ngaySinh = request.ngaySinh;

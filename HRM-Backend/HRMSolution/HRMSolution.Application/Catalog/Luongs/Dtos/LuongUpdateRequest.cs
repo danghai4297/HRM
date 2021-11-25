@@ -8,12 +8,12 @@ namespace HRMSolution.Application.Catalog.Luongs.Dtos
     public class LuongUpdateRequest
     {
         public int idNhomLuong { get; set; }
-        public float? heSoLuong { get; set; }
+        public float heSoLuong { get; set; }
         public string bacLuong { get; set; }
-        public float? luongCoBan { get; set; }
-        public float? phuCapTrachNhiem { get; set; }
-        public float? phuCapKhac { get; set; }
-        public float? tongLuong { get; set; }
+        public float luongCoBan { get; set; }
+        public float phuCapTrachNhiem { get; set; }
+        public float phuCapKhac { get; set; }
+        public float tongLuong { get; set; }
         public string thoiHanLenLuong { get; set; }
         public string ngayHieuLuc { get; set; }
         public string ngayKetThuc { get; set; }

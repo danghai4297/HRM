@@ -40,6 +40,10 @@ namespace HRMSolution.NUnitTest
             _context.AddRange(GetAllNestCategory());
             _context.AddRange(GetAllRewardDisciplineCategory());
             _context.AddRange(GetAllUsers());
+
+            _context.AddRange(GetAllSalarys());
+            _context.AddRange(GetRoleUser());
+            _context.AddRange(GetAppRoles());
             _context.AddRange(GetAllContract());
             _context.SaveChanges();
         }
@@ -294,6 +298,7 @@ namespace HRMSolution.NUnitTest
                 new LichSu() { id = 1, tenTaiKhoan = "user1", tenNhanVien = "Đào Ngọc Hưởng", thaoTac = "Delete nhân viên NV0002", ngayThucHien = new DateTime(2017,03,21), maNhanVien = "NV0001" },
             };
         }
+
         private static List<AppUser> GetAllUsers()
         {
             var hasher = new PasswordHasher<AppUser>();
@@ -314,6 +319,7 @@ namespace HRMSolution.NUnitTest
         }
         private static List<AppRole> GetAppRoles()
         {
+
             return new List<AppRole>
             {
                 new AppRole
@@ -325,12 +331,20 @@ namespace HRMSolution.NUnitTest
                 }
             };
         }
+        private static IdentityUserRole<Guid> GetRoleUser()
+        {
+            return new IdentityUserRole<Guid>
+            {
+                RoleId = new Guid("8D04DCE2-969A-435D-BBA4-DF3F325983DC"),
+                UserId = new Guid("69BD714F-9576-45BA-B5B7-F00649BE00DE")
+            };
+        }
 
-        private static List<Luong> GetAllLuongs()
+        private static List<Luong> GetAllSalarys()
         {
             return new List<Luong>
             {
-                new Luong() { id = 1, maHopDong = "HD01",idNhomLuong=1, bacLuong = "1", thoiHanLenLuong = "1", ngayHieuLuc = DateTime.Now, ngayKetThuc = new DateTime(2023,11,17) , trangThai = false,heSoLuong = (float)1.0, luongCoBan= (float)1000000.0, phuCapKhac= (float)100000.0,phuCapTrachNhiem= (float)100000.0,tongLuong= (float)1200000.0 }
+                new Luong() { id = 1, maHopDong = "HD01",idNhomLuong=1, bacLuong = "1", thoiHanLenLuong = "1", ngayHieuLuc = DateTime.Now, ngayKetThuc = new DateTime(2023,11,17) , trangThai = true,heSoLuong = (float)1.0, luongCoBan= (float)1000000.0, phuCapKhac= (float)100000.0,phuCapTrachNhiem= (float)100000.0,tongLuong= (float)1200000.0 }
             };
         }
         private static List<HopDong> GetAllContract()
@@ -340,5 +354,6 @@ namespace HRMSolution.NUnitTest
                 new HopDong() {id = 1, maHopDong = "HD01", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = new DateTime(2022,03,21), maNhanVien = "NV0001", trangThai = true, idChucVu = 1 }
             };
         }
+        
     }
 }

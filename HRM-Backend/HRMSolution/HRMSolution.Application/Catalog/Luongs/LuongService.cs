@@ -28,7 +28,8 @@ namespace HRMSolution.Application.Catalog.Luongs
 
         public async Task<int> Create(LuongCreateRequest request)
         {
-            if (request.maHopDong == null || request.idNhomLuong == 0 || request.thoiHanLenLuong == null || request.ngayHieuLuc == null || request.ngayKetThuc == null)
+            if (request.maHopDong == null || request.idNhomLuong == 0 || request.thoiHanLenLuong == null || request.ngayHieuLuc == null || request.ngayKetThuc == null || request.bacLuong == null
+                || request.thoiHanLenLuong == null)
             {
                 return 0;
             }
@@ -209,7 +210,8 @@ namespace HRMSolution.Application.Catalog.Luongs
         public async Task<int> Update(int id, LuongUpdateRequest request)
         {
             var luong = await _context.luongs.FindAsync(id);
-            if (luong == null || request.idNhomLuong == 0 || request.thoiHanLenLuong == null || request.ngayHieuLuc == null || request.ngayKetThuc == null)
+            if (luong == null || request.idNhomLuong == 0 || request.thoiHanLenLuong == null || request.ngayHieuLuc == null || request.ngayKetThuc == null || request.bacLuong == null
+                || request.thoiHanLenLuong == null)
             {
                 return 0;
             }
