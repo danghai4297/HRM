@@ -40,6 +40,7 @@ namespace HRMSolution.NUnitTest
             _context.AddRange(GetAllNestCategory());
             _context.AddRange(GetAllRewardDisciplineCategory());
             _context.AddRange(GetAllUsers());
+
             _context.AddRange(GetAllSalarys());
             _context.AddRange(GetRoleUser());
             _context.AddRange(GetAppRoles());
@@ -354,6 +355,7 @@ namespace HRMSolution.NUnitTest
                 new HopDong() {id = 1, maHopDong = "HD01", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = new DateTime(2022,03,21), maNhanVien = "NV0001", trangThai = true, idChucVu = 1 }
             };
         }
+<<<<<<< HEAD
         private static List<KhenThuongKyLuat> GetAllRewardDiscipline()
         {
             return new List<KhenThuongKyLuat>
@@ -362,5 +364,8 @@ namespace HRMSolution.NUnitTest
             };
         }
 
+=======
+        
+>>>>>>> 2c80f0a55e6d11645340ed04cf0181957c2c9866
     }
 }

@@ -162,5 +162,13 @@ namespace HRMSolution.NUnitTest
             var result = danhMucPhongBanService.Delete(6);
             Assert.That(result.Result, Is.EqualTo(0));
         }
+        [Test, Order(1)]
+        public void Department_GetAll_Success()
+        {
+
+            var result = danhMucPhongBanService.GetAll();
+            Assert.That(result.Result.Count, Is.EqualTo(2));
+        }
+        
     }
 }
