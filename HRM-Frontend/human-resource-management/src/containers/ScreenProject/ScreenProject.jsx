@@ -59,6 +59,14 @@ function ScreenProject() {
     }
   }
 
+  const notFoundPage = () => {
+    if (sessionStorage.getItem("resultObj")) {
+      return <ScreenNotFound />;
+    } else {
+      return <Redirect to="/login" />;
+    }
+  };
+
   return (
     <>
       <div className="body-screen">
@@ -344,9 +352,7 @@ function ScreenProject() {
                 component={ScreenDetailAccount}
                 roles={["admin"]}
               />
-              <Route path="*">
-                <Redirect to="/login"></Redirect>
-              </Route>
+              <Route path="*">{notFoundPage}</Route>
             </Switch>
           </div>
         </div>

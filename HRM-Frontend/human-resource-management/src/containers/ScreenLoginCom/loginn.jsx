@@ -7,21 +7,16 @@ import LoginApi from "../../api/login";
 import { useForm } from "react-hook-form";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../components/Toast/Toast";
+import { Button, Col, Row } from "react-bootstrap";
 
 LogIn.propTypes = {};
 
 function LogIn(props) {
   let history = useHistory();
 
-  const { error, warn, info, success } = useToast();
+  const { error } = useToast();
 
-  const {
-    register,
-    handleSubmit,
-    // formState: { errors },
-  } = useForm({
-    // resolver: yupResolver(schema),
-  });
+  const { register, handleSubmit } = useForm({});
 
   const onHandleSubmit = async (data) => {
     try {
@@ -53,36 +48,106 @@ function LogIn(props) {
           <img src="/Images/loginImage.png" alt="" />
         </div>
         <div className="right-login">
-          <div className="logo">
-            <h1>3HMD</h1>
-          </div>
-          <div className="form-group">
-            <span>
-              <FontAwesomeIcon icon={["fas", "user"]} />
-            </span>
-            <input
-              type="text"
-              {...register("userName")}
-              id="userName"
-              placeholder="Tài khoản"
-            />
-          </div>
-          <div className="form-group">
-            <span>
-              <FontAwesomeIcon icon={["fas", "lock"]} />
-            </span>
-            <input
-              type="password"
-              {...register("password")}
-              id="password"
-              placeholder="Mật khẩu"
-            />
-          </div>
-          <input
-            onClick={handleSubmit(onHandleSubmit)}
-            type="submit"
-            value="ĐĂNG NHẬP"
-          />
+          {sessionStorage.getItem("resultObj") ? (
+            <>
+              <div>
+                {sessionStorage.getItem("resultObj") && (
+                  <img
+                    className="picture-account-login"
+                    src={`https://localhost:5001/${
+                      jwt_decode(sessionStorage.getItem("resultObj")).anh
+                    }`}
+                    alt=""
+                  />
+                )}
+              </div>
+              <div>
+                <h4 className="text-login">
+                  {sessionStorage.getItem("resultObj") &&
+                    jwt_decode(sessionStorage.getItem("resultObj")).givenName}
+                </h4>
+              </div>
+              <div>
+                <h5>
+                  Tài khoản:{" "}
+                  {sessionStorage.getItem("resultObj") &&
+                    jwt_decode(sessionStorage.getItem("resultObj")).userName}
+                </h5>
+              </div>
+              <div>
+                <h5>
+                  Mã nhân viên:{" "}
+                  {sessionStorage.getItem("resultObj") &&
+                    jwt_decode(sessionStorage.getItem("resultObj")).id}
+                </h5>
+              </div>
+              <Row className="btn-of-login">
+                <Col>
+                  <Button
+                    variant="light"
+                    onClick={() => {
+                      if (
+                        sessionStorage.getItem("resultObj") &&
+                        jwt_decode(sessionStorage.getItem("resultObj"))
+                          .role.split(";")
+                          .includes("user")
+                      ) {
+                        history.replace("/home");
+                      } else {
+                        history.replace("/category");
+                      }
+                    }}
+                  >
+                    Quay lại
+                  </Button>
+                </Col>
+                <Col>
+                  <Button
+                    variant="light"
+                    onClick={() => {
+                      sessionStorage.removeItem("resultObj");
+                      history.go("/login");
+                    }}
+                  >
+                    Thoát tài khoản
+                  </Button>
+                </Col>
+              </Row>
+            </>
+          ) : (
+            <>
+              <div className="logo">
+                <h1>3HMD</h1>
+              </div>
+              <div className="form-group">
+                <span>
+                  <FontAwesomeIcon icon={["fas", "user"]} />
+                </span>
+                <input
+                  type="text"
+                  {...register("userName")}
+                  id="userName"
+                  placeholder="Tài khoản"
+                />
+              </div>
+              <div className="form-group">
+                <span>
+                  <FontAwesomeIcon icon={["fas", "lock"]} />
+                </span>
+                <input
+                  type="password"
+                  {...register("password")}
+                  id="password"
+                  placeholder="Mật khẩu"
+                />
+              </div>
+              <input
+                onClick={handleSubmit(onHandleSubmit)}
+                type="submit"
+                value="ĐĂNG NHẬP"
+              />
+            </>
+          )}
         </div>
       </div>
     </div>

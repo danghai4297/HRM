@@ -1,6 +1,10 @@
 .loginn {
   text-align: center;
-  background-image: linear-gradient(201.75deg, rgba(2, 27, 251, 0.6) 32.47%, rgba(248, 95, 9, 0.34) 85.74%);
+  background-image: linear-gradient(
+    201.75deg,
+    rgba(2, 27, 251, 0.6) 32.47%,
+    rgba(248, 95, 9, 0.34) 85.74%
+  );
   width: 100vw;
   height: 100vh;
 
@@ -128,4 +132,19 @@
       }
     }
   }
+}
+.picture-account-login {
+  width: 60px;
+  height: 60px;
+  margin-left: 140px;
+  margin-top: 30px;
+  border-radius: 50%;
+}
+.text-login {
+  color: white;
+  font-size: xx-large;
+  margin-top: 20px;
+}
+.btn-of-login {
+  margin-top: 30px;
 }
