@@ -23,6 +23,12 @@ namespace HRMSolution.NUnitTest
             _context.Database.EnsureDeleted();
         }
         [Test, Order(1)]
+        public void Language_GetAll_Success()
+        {
+            var result = LichSuService.GetAll();
+            Assert.That(result.Result.Count, Is.EqualTo(1));
+        }
+        [Test, Order(2)]
         public void Language_Create_Success()
         {
             LichSuCreateRequest create = new LichSuCreateRequest()

@@ -33,7 +33,12 @@ namespace HRMSolution.NUnitTest
             var result = danhMucLoaiHopDongService.GetById(6);
             Assert.That(result.Result, Is.EqualTo(null));
         }
-
+        [Test, Order(1)]
+        public void TyContract_GetAll_Success()
+        {
+            var result = danhMucLoaiHopDongService.GetAll();
+            Assert.That(result.Result.Count, Is.EqualTo(2));
+        }
         [Test, Order(3)]
         public void TyContract_Create_Success()
         {

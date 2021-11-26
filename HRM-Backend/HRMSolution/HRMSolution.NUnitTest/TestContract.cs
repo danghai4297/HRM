@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HRMSolution.NUnitTest
 {
-    public class TestContract  : BaseTest
+    public class TestContract : BaseTest
     {
         [OneTimeSetUp]
         public void Setup()
@@ -39,6 +39,12 @@ namespace HRMSolution.NUnitTest
             var result = HopDongService.GetHopDong("HD07");
             Assert.That(result.Result, Is.EqualTo(null));
         }
+        [Test, Order(3)]
+        public void Contract_GetAll_Success()
+        {
+            var result = HopDongService.GetAll();
+            Assert.That(result.Result.Count, Is.EqualTo(2));
+        }
         [Test, Order(4)]
         public void Contract_Create_Success()
         {
@@ -46,8 +52,8 @@ namespace HRMSolution.NUnitTest
             {
                 maHopDong = "HD02",
                 idLoaiHopDong = 1,
-                idChucDanh=1,
-                idChucVu=1,
+                idChucDanh = 1,
+                idChucVu = 1,
                 maNhanVien = "NV0002"
             };
             var result = HopDongService.Create(ContractCreating);
@@ -128,14 +134,14 @@ namespace HRMSolution.NUnitTest
         {
             HopDongUpdateRequest ContractUpdating = new HopDongUpdateRequest()
             {
-                
+
                 idLoaiHopDong = 1,
                 idChucDanh = 2,
                 idChucVu = 1,
-                hopDongTuNgay= new DateTime(2021,11,21),
+                hopDongTuNgay = new DateTime(2021, 11, 21),
                 hopDongDenNgay = new DateTime(2022, 11, 21),
                 maNhanVien = "NV0001",
-                trangThai=true
+                trangThai = true
             };
             var result = HopDongService.Update("HD01", ContractUpdating);
             Assert.That(result.Result, Is.EqualTo(1));
@@ -145,7 +151,7 @@ namespace HRMSolution.NUnitTest
         {
             HopDongUpdateRequest ContractUpdating = new HopDongUpdateRequest()
             {
-                
+
                 idLoaiHopDong = 0,
                 idChucDanh = 1,
                 idChucVu = 1,
@@ -160,7 +166,7 @@ namespace HRMSolution.NUnitTest
         {
             HopDongUpdateRequest ContractUpdating = new HopDongUpdateRequest()
             {
-                
+
                 idLoaiHopDong = 1,
                 idChucDanh = 0,
                 idChucVu = 1,
@@ -175,7 +181,7 @@ namespace HRMSolution.NUnitTest
         {
             HopDongUpdateRequest ContractUpdating = new HopDongUpdateRequest()
             {
-                
+
                 idLoaiHopDong = 1,
                 idChucDanh = 1,
                 idChucVu = 0,
@@ -190,7 +196,7 @@ namespace HRMSolution.NUnitTest
         {
             HopDongUpdateRequest ContractUpdating = new HopDongUpdateRequest()
             {
-                
+
                 idLoaiHopDong = 1,
                 idChucDanh = 1,
                 idChucVu = 1,
@@ -205,7 +211,7 @@ namespace HRMSolution.NUnitTest
         {
             HopDongUpdateRequest ContractUpdating = new HopDongUpdateRequest()
             {
-                
+
                 idLoaiHopDong = 1,
                 idChucDanh = 1,
                 idChucVu = 1,

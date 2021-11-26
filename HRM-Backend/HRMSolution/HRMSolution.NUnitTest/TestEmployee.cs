@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HRMSolution.NUnitTest
 {
-    public class TestEmployee: BaseTest
+    public class TestEmployee : BaseTest
     {
         [OneTimeSetUp]
         public void Setup()
@@ -39,43 +39,61 @@ namespace HRMSolution.NUnitTest
             var result = NhanVienService.GetByMaNV("NV0007");
             Assert.That(result.Result, Is.EqualTo(null));
         }
+        [Test, Order(3)]
+        public void Employee_GetAll_Success1()
+        {
+            var result = NhanVienService.GetAll();
+            Assert.That(result.Result.Count, Is.EqualTo(2));
+        }
+        [Test, Order(3)]
+        public void Employee_GetAll_Success2()
+        {
+            var result = NhanVienService.GetAllMaVaTen();
+            Assert.That(result.Result.Count, Is.EqualTo(1));
+        }
+        [Test, Order(3)]
+        public void Employee_GetAll_Success3()
+        {
+            var result = NhanVienService.GetAllNVNghi();
+            Assert.That(result.Result.Count, Is.EqualTo(1));
+        }
         [Test, Order(4)]
         public void Employee_Create_Success()
         {
             NhanVienCreateRequest EmpCreating = new NhanVienCreateRequest()
             {
-                 id = "NV0002",
-                 hoTen = "Mai Trung Hiếu",
-                 quocTich = "Việt Nam",
-                 ngaySinh = new DateTime(1998,12,21),
+                id = "NV0002",
+                hoTen = "Mai Trung Hiếu",
+                quocTich = "Việt Nam",
+                ngaySinh = new DateTime(1998, 12, 21),
                 gioiTinh = true,
                 dienThoai = "02466688661",
-                 diDong = "0961321872",
-                 cccd = "033098006441",
-                 ngayCapCCCD = new DateTime(2016,12,21),
-                 ngayHetHanCCCD = new DateTime(2022,12,21),
-                 noiCapCCCD = "Hà Nội",
-                 noiSinh = "Hà Nội",
-                 queQuan = "Hà Nội",
-                 thuongTru = "Hà Nội",
+                diDong = "0961321872",
+                cccd = "033098006441",
+                ngayCapCCCD = new DateTime(2016, 12, 21),
+                ngayHetHanCCCD = new DateTime(2022, 12, 21),
+                noiCapCCCD = "Hà Nội",
+                noiSinh = "Hà Nội",
+                queQuan = "Hà Nội",
+                thuongTru = "Hà Nội",
                 tamTru = "Hà Nội",
-                 ngheNghiep = "Sinh viên",
-                 chucVuHienTai = "Nhân Viên",
-                 congViecChinh = "Nhân viên kinh doanh",
-                 coQuanTuyenDung = "Phát Đạt",
+                ngheNghiep = "Sinh viên",
+                chucVuHienTai = "Nhân Viên",
+                congViecChinh = "Nhân viên kinh doanh",
+                coQuanTuyenDung = "Phát Đạt",
                 trangThaiLaoDong = true,
-                 tinhChatLaoDong = 1,
-                 idDanhMucHonNhan = 1,
-                 idDanToc = 1,
-                 idTonGiao = 1,
-                 idNgachCongChuc = 1,
-                 lhkc_hoTen = "Mai Tiến Dũng",
-                 lhkc_quanHe = "Em",
-                 lhkc_dienThoai="0912345678",
-                 lhkc_diaChi="Hà Nội",
-                 lhkc_maNhanVien="NV0002",
-                 yt_maNhanVien= "NV0002",
-                 lsbt_maNhanVien= "NV0002",
+                tinhChatLaoDong = 1,
+                idDanhMucHonNhan = 1,
+                idDanToc = 1,
+                idTonGiao = 1,
+                idNgachCongChuc = 1,
+                lhkc_hoTen = "Mai Tiến Dũng",
+                lhkc_quanHe = "Em",
+                lhkc_dienThoai = "0912345678",
+                lhkc_diaChi = "Hà Nội",
+                lhkc_maNhanVien = "NV0002",
+                yt_maNhanVien = "NV0002",
+                lsbt_maNhanVien = "NV0002",
             };
             var result = NhanVienService.Create(EmpCreating);
             Assert.That(result.Result, Is.EqualTo(1));
@@ -613,7 +631,7 @@ namespace HRMSolution.NUnitTest
             var result = NhanVienService.Create(EmpCreating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
-        
+
         [Test, Order(19)]
         public void Employee_Create_Failure15()
         {
@@ -1111,7 +1129,7 @@ namespace HRMSolution.NUnitTest
         {
             NhanVienUpdateRequest EmpUpdating = new NhanVienUpdateRequest()
             {
-                
+
                 hoTen = "Mai Trung Hiếu",
                 quocTich = "Việt Nam",
                 ngaySinh = new DateTime(1998, 12, 21),
@@ -1140,9 +1158,9 @@ namespace HRMSolution.NUnitTest
                 lhkc_quanHe = "Em",
                 lhkc_dienThoai = "0912345678",
                 lhkc_diaChi = "Hà Nội",
-                
+
             };
-            var result = NhanVienService.Update("NV0001",EmpUpdating);
+            var result = NhanVienService.Update("NV0001", EmpUpdating);
             Assert.That(result.Result, Is.EqualTo(1));
         }
         [Test, Order(5)]
@@ -1187,7 +1205,7 @@ namespace HRMSolution.NUnitTest
         {
             NhanVienUpdateRequest EmpUpdating = new NhanVienUpdateRequest()
             {
-                
+
                 hoTen = null,
                 quocTich = "Việt Nam",
                 ngaySinh = new DateTime(1998, 12, 21),
@@ -1216,7 +1234,7 @@ namespace HRMSolution.NUnitTest
                 lhkc_quanHe = "Em",
                 lhkc_dienThoai = "0912345678",
                 lhkc_diaChi = "Hà Nội",
-                
+
             };
             var result = NhanVienService.Update("NV0001", EmpUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
@@ -1226,7 +1244,7 @@ namespace HRMSolution.NUnitTest
         {
             NhanVienUpdateRequest EmpUpdating = new NhanVienUpdateRequest()
             {
-                
+
                 hoTen = "Mai Trung Hiếu",
                 quocTich = null,
                 ngaySinh = new DateTime(1998, 12, 21),
@@ -1255,7 +1273,7 @@ namespace HRMSolution.NUnitTest
                 lhkc_quanHe = "Em",
                 lhkc_dienThoai = "0912345678",
                 lhkc_diaChi = "Hà Nội",
-                
+
             };
             var result = NhanVienService.Update("NV0001", EmpUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
@@ -1265,7 +1283,7 @@ namespace HRMSolution.NUnitTest
         {
             NhanVienUpdateRequest EmpUpdating = new NhanVienUpdateRequest()
             {
-                
+
                 hoTen = "Mai Trung Hiếu",
                 quocTich = "Việt Nam",
                 ngaySinh = new DateTime(1998, 12, 21),
@@ -1294,7 +1312,7 @@ namespace HRMSolution.NUnitTest
                 lhkc_quanHe = "Em",
                 lhkc_dienThoai = "0912345678",
                 lhkc_diaChi = "Hà Nội",
-                
+
             };
             var result = NhanVienService.Update("NV0001", EmpUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
@@ -1304,7 +1322,7 @@ namespace HRMSolution.NUnitTest
         {
             NhanVienUpdateRequest EmpUpdating = new NhanVienUpdateRequest()
             {
-              
+
                 hoTen = "Mai Trung Hiếu",
                 quocTich = "Việt Nam",
                 ngaySinh = new DateTime(1998, 12, 21),
@@ -1333,7 +1351,7 @@ namespace HRMSolution.NUnitTest
                 lhkc_quanHe = "Em",
                 lhkc_dienThoai = "0912345678",
                 lhkc_diaChi = "Hà Nội",
-                
+
             };
             var result = NhanVienService.Update("NV0001", EmpUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
@@ -1343,7 +1361,7 @@ namespace HRMSolution.NUnitTest
         {
             NhanVienUpdateRequest EmpUpdating = new NhanVienUpdateRequest()
             {
-                
+
                 hoTen = "Mai Trung Hiếu",
                 quocTich = "Việt Nam",
                 ngaySinh = new DateTime(1998, 12, 21),
@@ -1372,7 +1390,7 @@ namespace HRMSolution.NUnitTest
                 lhkc_quanHe = "Em",
                 lhkc_dienThoai = "0912345678",
                 lhkc_diaChi = "Hà Nội",
-                
+
             };
             var result = NhanVienService.Update("NV0001", EmpUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
@@ -1382,7 +1400,7 @@ namespace HRMSolution.NUnitTest
         {
             NhanVienUpdateRequest EmpUpdating = new NhanVienUpdateRequest()
             {
-               
+
                 hoTen = "Mai Trung Hiếu",
                 quocTich = "Việt Nam",
                 ngaySinh = new DateTime(1998, 12, 21),
@@ -1411,7 +1429,7 @@ namespace HRMSolution.NUnitTest
                 lhkc_quanHe = "Em",
                 lhkc_dienThoai = "0912345678",
                 lhkc_diaChi = "Hà Nội",
-                
+
             };
             var result = NhanVienService.Update("NV0001", EmpUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
@@ -1421,7 +1439,7 @@ namespace HRMSolution.NUnitTest
         {
             NhanVienUpdateRequest EmpUpdating = new NhanVienUpdateRequest()
             {
-                
+
                 hoTen = "Mai Trung Hiếu",
                 quocTich = "Việt Nam",
                 ngaySinh = new DateTime(1998, 12, 21),
@@ -1450,7 +1468,7 @@ namespace HRMSolution.NUnitTest
                 lhkc_quanHe = "Em",
                 lhkc_dienThoai = "0912345678",
                 lhkc_diaChi = "Hà Nội",
-                
+
             };
             var result = NhanVienService.Update("NV0001", EmpUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
@@ -1460,7 +1478,7 @@ namespace HRMSolution.NUnitTest
         {
             NhanVienUpdateRequest EmpUpdating = new NhanVienUpdateRequest()
             {
-                
+
                 hoTen = "Mai Trung Hiếu",
                 quocTich = "Việt Nam",
                 ngaySinh = new DateTime(1998, 12, 21),
@@ -1489,7 +1507,7 @@ namespace HRMSolution.NUnitTest
                 lhkc_quanHe = "Em",
                 lhkc_dienThoai = "0912345678",
                 lhkc_diaChi = "Hà Nội",
-                
+
             };
             var result = NhanVienService.Update("NV0001", EmpUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
@@ -1499,7 +1517,7 @@ namespace HRMSolution.NUnitTest
         {
             NhanVienUpdateRequest EmpUpdating = new NhanVienUpdateRequest()
             {
-               
+
                 hoTen = "Mai Trung Hiếu",
                 quocTich = "Việt Nam",
                 ngaySinh = new DateTime(1998, 12, 21),
@@ -1528,7 +1546,7 @@ namespace HRMSolution.NUnitTest
                 lhkc_quanHe = "Em",
                 lhkc_dienThoai = "0912345678",
                 lhkc_diaChi = "Hà Nội",
-               
+
             };
             var result = NhanVienService.Update("NV0001", EmpUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
@@ -1538,7 +1556,7 @@ namespace HRMSolution.NUnitTest
         {
             NhanVienUpdateRequest EmpUpdating = new NhanVienUpdateRequest()
             {
-                
+
                 hoTen = "Mai Trung Hiếu",
                 quocTich = "Việt Nam",
                 ngaySinh = new DateTime(1998, 12, 21),
@@ -1567,7 +1585,7 @@ namespace HRMSolution.NUnitTest
                 lhkc_quanHe = "Em",
                 lhkc_dienThoai = "0912345678",
                 lhkc_diaChi = "Hà Nội",
-                
+
             };
             var result = NhanVienService.Update("NV0001", EmpUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
@@ -1577,7 +1595,7 @@ namespace HRMSolution.NUnitTest
         {
             NhanVienUpdateRequest EmpUpdating = new NhanVienUpdateRequest()
             {
-               
+
                 hoTen = "Mai Trung Hiếu",
                 quocTich = "Việt Nam",
                 ngaySinh = new DateTime(1998, 12, 21),
@@ -1606,7 +1624,7 @@ namespace HRMSolution.NUnitTest
                 lhkc_quanHe = "Em",
                 lhkc_dienThoai = "0912345678",
                 lhkc_diaChi = "Hà Nội",
-                
+
             };
             var result = NhanVienService.Update("NV0001", EmpUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
@@ -1616,7 +1634,7 @@ namespace HRMSolution.NUnitTest
         {
             NhanVienUpdateRequest EmpUpdating = new NhanVienUpdateRequest()
             {
-                
+
                 hoTen = "Mai Trung Hiếu",
                 quocTich = "Việt Nam",
                 ngaySinh = new DateTime(1998, 12, 21),
@@ -1645,7 +1663,7 @@ namespace HRMSolution.NUnitTest
                 lhkc_quanHe = "Em",
                 lhkc_dienThoai = "0912345678",
                 lhkc_diaChi = "Hà Nội",
-                
+
             };
             var result = NhanVienService.Update("NV0001", EmpUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
@@ -1656,7 +1674,7 @@ namespace HRMSolution.NUnitTest
         {
             NhanVienUpdateRequest EmpUpdating = new NhanVienUpdateRequest()
             {
-                
+
                 hoTen = "Mai Trung Hiếu",
                 quocTich = "Việt Nam",
                 ngaySinh = new DateTime(1998, 12, 21),
@@ -1685,7 +1703,7 @@ namespace HRMSolution.NUnitTest
                 lhkc_quanHe = "Em",
                 lhkc_dienThoai = "0912345678",
                 lhkc_diaChi = "Hà Nội",
-               
+
             };
             var result = NhanVienService.Update("NV0001", EmpUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
@@ -1695,7 +1713,7 @@ namespace HRMSolution.NUnitTest
         {
             NhanVienUpdateRequest EmpUpdating = new NhanVienUpdateRequest()
             {
-                
+
                 hoTen = "Mai Trung Hiếu",
                 quocTich = "Việt Nam",
                 ngaySinh = new DateTime(1998, 12, 21),
@@ -1724,7 +1742,7 @@ namespace HRMSolution.NUnitTest
                 lhkc_quanHe = "Em",
                 lhkc_dienThoai = "0912345678",
                 lhkc_diaChi = "Hà Nội",
-                
+
             };
             var result = NhanVienService.Update("NV0001", EmpUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
@@ -1734,7 +1752,7 @@ namespace HRMSolution.NUnitTest
         {
             NhanVienUpdateRequest EmpUpdating = new NhanVienUpdateRequest()
             {
-                
+
                 hoTen = "Mai Trung Hiếu",
                 quocTich = "Việt Nam",
                 ngaySinh = new DateTime(1998, 12, 21),
@@ -1763,7 +1781,7 @@ namespace HRMSolution.NUnitTest
                 lhkc_quanHe = "Em",
                 lhkc_dienThoai = "0912345678",
                 lhkc_diaChi = "Hà Nội",
-                
+
             };
             var result = NhanVienService.Update("NV0001", EmpUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
@@ -1773,7 +1791,7 @@ namespace HRMSolution.NUnitTest
         {
             NhanVienUpdateRequest EmpUpdating = new NhanVienUpdateRequest()
             {
-                
+
                 hoTen = "Mai Trung Hiếu",
                 quocTich = "Việt Nam",
                 ngaySinh = new DateTime(1998, 12, 21),
@@ -1802,7 +1820,7 @@ namespace HRMSolution.NUnitTest
                 lhkc_quanHe = "Em",
                 lhkc_dienThoai = "0912345678",
                 lhkc_diaChi = "Hà Nội",
-                
+
             };
             var result = NhanVienService.Update("NV0001", EmpUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
@@ -1812,7 +1830,7 @@ namespace HRMSolution.NUnitTest
         {
             NhanVienUpdateRequest EmpUpdating = new NhanVienUpdateRequest()
             {
-                
+
                 hoTen = "Mai Trung Hiếu",
                 quocTich = "Việt Nam",
                 ngaySinh = new DateTime(1998, 12, 21),
@@ -1841,7 +1859,7 @@ namespace HRMSolution.NUnitTest
                 lhkc_quanHe = "Em",
                 lhkc_dienThoai = "0912345678",
                 lhkc_diaChi = "Hà Nội",
-                
+
             };
             var result = NhanVienService.Update("NV0001", EmpUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
@@ -1851,7 +1869,7 @@ namespace HRMSolution.NUnitTest
         {
             NhanVienUpdateRequest EmpUpdating = new NhanVienUpdateRequest()
             {
-                
+
                 hoTen = "Mai Trung Hiếu",
                 quocTich = "Việt Nam",
                 ngaySinh = new DateTime(1998, 12, 21),
@@ -1880,7 +1898,7 @@ namespace HRMSolution.NUnitTest
                 lhkc_quanHe = null,
                 lhkc_dienThoai = "0912345678",
                 lhkc_diaChi = "Hà Nội",
-                
+
             };
             var result = NhanVienService.Update("NV0001", EmpUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
@@ -1890,7 +1908,7 @@ namespace HRMSolution.NUnitTest
         {
             NhanVienUpdateRequest EmpUpdating = new NhanVienUpdateRequest()
             {
-                
+
                 hoTen = "Mai Trung Hiếu",
                 quocTich = "Việt Nam",
                 ngaySinh = new DateTime(1998, 12, 21),
@@ -1919,7 +1937,7 @@ namespace HRMSolution.NUnitTest
                 lhkc_quanHe = "Em",
                 lhkc_dienThoai = null,
                 lhkc_diaChi = "Hà Nội",
-                
+
             };
             var result = NhanVienService.Update("NV0001", EmpUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
@@ -1929,7 +1947,7 @@ namespace HRMSolution.NUnitTest
         {
             NhanVienUpdateRequest EmpUpdating = new NhanVienUpdateRequest()
             {
-                
+
                 hoTen = "Mai Trung Hiếu",
                 quocTich = "Việt Nam",
                 ngaySinh = new DateTime(1998, 12, 21),
@@ -1958,18 +1976,18 @@ namespace HRMSolution.NUnitTest
                 lhkc_quanHe = "Em",
                 lhkc_dienThoai = "0912345678",
                 lhkc_diaChi = null,
-                
+
             };
             var result = NhanVienService.Update("NV0001", EmpUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
-        
+
         [Test, Order(37)]
         public void Employee_Update_Failure26()
         {
             NhanVienUpdateRequest EmpUpdating = new NhanVienUpdateRequest()
             {
-               
+
                 hoTen = null,
                 quocTich = null,
                 ngaySinh = new DateTime(1998, 12, 21),
@@ -1998,11 +2016,11 @@ namespace HRMSolution.NUnitTest
                 lhkc_quanHe = null,
                 lhkc_dienThoai = null,
                 lhkc_diaChi = null,
-                
+
             };
             var result = NhanVienService.Update("NV0001", EmpUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
-        
+
     }
 }

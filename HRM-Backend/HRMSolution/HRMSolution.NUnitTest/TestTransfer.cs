@@ -34,6 +34,12 @@ namespace HRMSolution.NUnitTest
             var result = DieuChuyenService.GetById(4);
             Assert.That(result.Result, Is.EqualTo(null));
         }
+        [Test, Order(1)]
+        public void Transfer_GetAll_Success()
+        {
+            var result = DieuChuyenService.GetAll();
+            Assert.That(result.Result.Count, Is.EqualTo(1));
+        }
         [Test, Order(3)]
         public void Transfer_Create_Success()
         {

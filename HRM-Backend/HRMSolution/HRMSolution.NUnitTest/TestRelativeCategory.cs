@@ -33,7 +33,12 @@ namespace HRMSolution.NUnitTest
             var result = danhMucNguoiThanService.GetById(6);
             Assert.That(result.Result, Is.EqualTo(null));
         }
-
+        [Test, Order(1)]
+        public void Relative_GetAll_Success()
+        {
+            var result = danhMucNguoiThanService.GetAll();
+            Assert.That(result.Result.Count, Is.EqualTo(2));
+        }
         [Test, Order(3)]
         public void Relative_Create_Success()
         {

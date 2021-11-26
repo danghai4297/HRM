@@ -33,7 +33,12 @@ namespace HRMSolution.NUnitTest
             var result = danhMucHonNhanService.GetById(6);
             Assert.That(result.Result, Is.EqualTo(null));
         }
-
+        [Test, Order(1)]
+        public void Marriage_GetAll_Success()
+        {
+            var result = danhMucHonNhanService.GetALL();
+            Assert.That(result.Result.Count, Is.EqualTo(2));
+        }
         [Test, Order(3)]
         public void Marriage_Create_Success()
         {

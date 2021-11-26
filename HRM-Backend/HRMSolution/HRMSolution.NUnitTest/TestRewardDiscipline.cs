@@ -25,13 +25,13 @@ namespace HRMSolution.NUnitTest
         [Test, Order(1)]
         public void RewardDiscipline_GetById_Success()
         {
-            var result = LuongService.GetById(1);
+            var result = KhenThuongKyLuatService.GetById(1);
             Assert.That(result.Result.id, Is.EqualTo(1));
         }
         [Test, Order(2)]
         public void RewardDiscipline_GetById_Failure()
         {
-            var result = LuongService.GetById(5);
+            var result = KhenThuongKyLuatService.GetById(5);
             Assert.That(result.Result, Is.EqualTo(null));
         }
         [Test, Order(3)]

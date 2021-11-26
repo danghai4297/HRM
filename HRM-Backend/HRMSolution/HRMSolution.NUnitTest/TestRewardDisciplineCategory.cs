@@ -33,7 +33,18 @@ namespace HRMSolution.NUnitTest
             var result = danhMucKhenThuongKyLuatService.GetById(6);
             Assert.That(result.Result, Is.EqualTo(null));
         }
-
+        [Test, Order(1)]
+        public void RewardDiscipline_GetAll_Success1()
+        {
+            var result = danhMucKhenThuongKyLuatService.GetAllKhenThuong();
+            Assert.That(result.Result.Count, Is.EqualTo(1));
+        }
+        [Test, Order(1)]
+        public void RewardDiscipline_GetAll_Success2()
+        {
+            var result = danhMucKhenThuongKyLuatService.GetAllKyLuat();
+            Assert.That(result.Result.Count, Is.EqualTo(1));
+        }
         [Test, Order(3)]
         public void RewardDiscipline_Create_Success()
         {

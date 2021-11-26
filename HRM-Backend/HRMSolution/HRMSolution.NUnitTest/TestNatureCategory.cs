@@ -33,7 +33,12 @@ namespace HRMSolution.NUnitTest
             var result = danhMucTinhChatLaoDongService.GetById(6);
             Assert.That(result.Result, Is.EqualTo(null));
         }
-
+        [Test, Order(1)]
+        public void Nature_GetAll_Success()
+        {
+            var result = danhMucTinhChatLaoDongService.GetAll();
+            Assert.That(result.Result.Count, Is.EqualTo(2));
+        }
         [Test, Order(3)]
         public void Nature_Create_Success()
         {

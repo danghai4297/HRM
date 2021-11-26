@@ -32,8 +32,14 @@ namespace HRMSolution.NUnitTest
         [Test, Order(2)]
         public void EducationLevel_GetById_Failure()
         {
-            var result = TrinhDoVanHoaService.GetById(2);
+            var result = TrinhDoVanHoaService.GetById(7);
             Assert.That(result.Result, Is.EqualTo(null));
+        }
+        [Test, Order(2)]
+        public void EducationLevel_GetAll_Success()
+        {
+            var result = TrinhDoVanHoaService.GetAll();
+            Assert.That(result.Result.Count, Is.EqualTo(2));
         }
         [Test, Order(3)]
         public void EducationLevel_Create_Success()

@@ -182,10 +182,10 @@ namespace HRMSolution.NUnitTest
         private static List<HinhThucDaoTao> GetAllEducateCategory()
         {
             return new List<HinhThucDaoTao>
-        {
-            new HinhThucDaoTao() { id = 1, tenHinhThuc = "Đại học" },
+            {
+                new HinhThucDaoTao() { id = 1, tenHinhThuc = "Đại học" },
                 new HinhThucDaoTao() { id = 2, tenHinhThuc = "Cao đẳng" }
-        };
+            };
         }
         private static List<DanhMucLoaiHopDong> GetAllContractCategory()
         {
@@ -207,7 +207,8 @@ namespace HRMSolution.NUnitTest
         {
             return new List<TrinhDoVanHoa>
             {
-                new TrinhDoVanHoa() { id = 1, tenTruong = "Đại Học Bách Khoa", idChuyenMon = 1, idHinhThucDaoTao = 1, idTrinhDo = 1, maNhanVien = "NV0001" ,tuThoiGian = DateTime.Now, denThoiGian = DateTime.Now }
+                new TrinhDoVanHoa() { id = 1, tenTruong = "Đại Học Bách Khoa", idChuyenMon = 1, idHinhThucDaoTao = 1, idTrinhDo = 1, maNhanVien = "NV0001" ,tuThoiGian = DateTime.Now, denThoiGian = DateTime.Now },
+                new TrinhDoVanHoa() { id = 2, tenTruong = "Đại Học FPT", idChuyenMon = 1, idHinhThucDaoTao = 1, idTrinhDo = 1, maNhanVien = "NV0001" ,tuThoiGian = DateTime.Now, denThoiGian = DateTime.Now }
             };
         }
         private static List<NhanVien> GetAllNhanViens()
@@ -236,6 +237,47 @@ namespace HRMSolution.NUnitTest
                     congViecChinh = "Nhân viên kinh doanh",
                     coQuanTuyenDung = "Phát Đạt",
                     trangThaiLaoDong = true,
+                    vaoDang = false,
+                    quanNhan = false,
+                    laThuongBinh = false,
+                    laConChinhSach = false,
+                    tinhChatLaoDong = 1,
+                    idDanhMucHonNhan = 1,
+                    idDanToc = 1,
+                    idTonGiao = 1,
+                    idNgachCongChuc = 1,
+                    anh = "/user-content/068ba015-df62-4e5c-ae57-f267bc88b167.jpg",
+                    email = "huongdn@gmail.com",
+                    facebook = "fb.com/thongtin",
+                    skype = "skype@skype.com",
+                    maSoThue = "1234567890",
+                    bhxh = "9876543210",
+                    bhyt = "HN2229876543210",
+                    atm = "16333",
+                    nganHang = "Vpbank"
+                },
+                new NhanVien()
+                {
+                    maNhanVien = "NV0005",
+                    hoTen = "Mai Trung Hiếu",
+                    quocTich = "Việt Nam",
+                    ngaySinh = new DateTime(1998,9,8),
+                    gioiTinh = true,
+                    dienThoai = "0246668866",
+                    diDong = "0961441404",
+                    cccd = "033098006441",
+                    ngayCapCCCD =new DateTime(2016,4,14),
+                    ngayHetHanCCCD = new DateTime(2022,4,14),
+                    noiCapCCCD = "Hà Nội",
+                    noiSinh = "Hà Nội",
+                    queQuan = "Hà Nội",
+                    thuongTru = "Hà Nội",
+                    tamTru = "Hà Nội",
+                    ngheNghiep = "Sinh viên",
+                    chucVuHienTai = "Nhân Viên",
+                    congViecChinh = "Nhân viên kinh doanh",
+                    coQuanTuyenDung = "Phát Đạt",
+                    trangThaiLaoDong = false,
                     vaoDang = false,
                     quanNhan = false,
                     laThuongBinh = false,
@@ -345,14 +387,16 @@ namespace HRMSolution.NUnitTest
         {
             return new List<Luong>
             {
-                new Luong() { id = 1, maHopDong = "HD01",idNhomLuong=1, bacLuong = "1", thoiHanLenLuong = "1", ngayHieuLuc = DateTime.Now, ngayKetThuc = new DateTime(2023,11,17) , trangThai = true,heSoLuong = (float)1.0, luongCoBan= (float)1000000.0, phuCapKhac= (float)100000.0,phuCapTrachNhiem= (float)100000.0,tongLuong= (float)1200000.0 }
+                new Luong() { id = 1, maHopDong = "HD01",idNhomLuong=1, bacLuong = "1", thoiHanLenLuong = "1", ngayHieuLuc = DateTime.Now, ngayKetThuc = new DateTime(2023,11,17) , trangThai = false,heSoLuong = (float)1.0, luongCoBan= (float)1000000.0, phuCapKhac= (float)100000.0,phuCapTrachNhiem= (float)100000.0,tongLuong= (float)1200000.0 },
+                new Luong() { id = 2, maHopDong = "HD01",idNhomLuong=1, bacLuong = "1", thoiHanLenLuong = "1", ngayHieuLuc = DateTime.Now, ngayKetThuc = new DateTime(2023,11,17) , trangThai = true,heSoLuong = (float)1.0, luongCoBan= (float)1000000.0, phuCapKhac= (float)100000.0,phuCapTrachNhiem= (float)100000.0,tongLuong= (float)1200000.0 }
             };
         }
         private static List<HopDong> GetAllContract()
         {
             return new List<HopDong>
             {
-                new HopDong() {id = 1, maHopDong = "HD01", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = new DateTime(2022,03,21), maNhanVien = "NV0001", trangThai = true, idChucVu = 1 }
+                new HopDong() {id = 1, maHopDong = "HD01", idLoaiHopDong = 1, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = new DateTime(2022,03,21), maNhanVien = "NV0001", trangThai = true, idChucVu = 1 },
+                new HopDong() {id = 2, maHopDong = "HD03", idLoaiHopDong = 2, idChucDanh = 1, hopDongTuNgay = DateTime.Now, hopDongDenNgay = new DateTime(2022,03,21), maNhanVien = "NV0001", trangThai = true, idChucVu = 2 }
             };
         }
         private static List<KhenThuongKyLuat> GetAllRewardDiscipline()

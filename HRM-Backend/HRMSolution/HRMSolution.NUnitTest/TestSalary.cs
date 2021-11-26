@@ -34,6 +34,12 @@ namespace HRMSolution.NUnitTest
             var result = LuongService.GetById(5);
             Assert.That(result.Result, Is.EqualTo(null));
         }
+        [Test, Order(1)]
+        public void Salary_GetAll_Success()
+        {
+            var result = LuongService.GetAll();
+            Assert.That(result.Result.Count, Is.EqualTo(1));
+        }
         [Test, Order(3)]
         public void Salary_Create_Success()
         {
