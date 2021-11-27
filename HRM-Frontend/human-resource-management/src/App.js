@@ -28,19 +28,6 @@ function App() {
             </Route>
             <Route exact path="/login">
               <LogIn />
-              {/* {() => {
-                if (sessionStorage.getItem("resultObj") === null) {
-                  return <LogIn />;
-                } else if (
-                  jwt_decode(sessionStorage.getItem("resultObj")).role === "user"
-                ) {
-                  return <Redirect to="/home" />;
-                } else if (
-                  jwt_decode(sessionStorage.getItem("resultObj")).role === "admin"
-                ) {
-                  return <Redirect to="/category" />;
-                }
-              }} */}
             </Route>
             <AccountContext.Provider value={{ account, setAccount }}>
               <SideBarContext.Provider value={{ sideBar, setSiderBar }}>

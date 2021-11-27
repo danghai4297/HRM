@@ -4,10 +4,11 @@ import "./SubDetail.scss";
 
 function SubDetail(props) {
   const { titleLeft, itemLeft, titleRight, itemRight } = props;
+
   return (
     <div className="containss">
       <Row className="item">
-        <Col>
+        <Col xl>
           <Row className="row-replace">
             <Col>
               <p>{titleLeft}</p>
@@ -22,7 +23,10 @@ function SubDetail(props) {
             <Col>
               <p>{titleRight}</p>
             </Col>
-            <Col className={titleRight === null ? "" : "border-bottom rows"} xs={6}>
+            <Col
+              className={titleRight === null ? "" : "border-bottom rows"}
+              xs={6}
+            >
               <p>{itemRight === null ? "-" : itemRight}</p>
             </Col>
           </Row>

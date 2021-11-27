@@ -1,8 +1,8 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import "./ScreenProject.scss";
 
 import SideBarLeft from "../../components/SideBarLeft/SideBarLeft";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import DashBoard from "../ScreenDashBoard/DashBoard";
 import ScreenTableNV from "../ScreenTableNV/ScreenTableNV";
 import Detail from "../../components/Detail/Detail";
@@ -38,19 +38,26 @@ import AddLevelForm from "../../components/AddLevelForm/AddLevelForm";
 import AddLanguageForm from "../../components/AddLanguageForm/AddLanguageForm";
 import AddFamilyForm from "../../components/AddFamilyForm/AddFamilyForm";
 import ScreenAccount from "../ScreenAccount/ScreenAccount";
-// import PDF from "../../components/Detail/PDF";
 import ScreenAccountLog from "../ScreenAccountLog/ScreenAccountLog";
 import PDF from "../../components/Detail/PDF";
-import ScreenNotFound from "./ScreenNotFound";
 import RegisterAccount from "../../components/ResgisterAccount/RegisterAccount";
 import ScreenDetailAccount from "../ScreenDetailAccount/ScreenDetailAccount";
 import ScreenAddRole from "../ScreenAddRole/ScreenAddRole";
 function ScreenProject() {
   const { setAccount } = useContext(AccountContext);
-  const { sideBar } = useContext(SideBarContext);
-  useEffect(() => {
-    localStorage.getItem("token");
-  }, []);
+  const { sideBar, setSiderBar } = useContext(SideBarContext);
+
+  window.onresize = resize;
+
+  function resize() {
+    let w = window.innerWidth;
+    if (w < 1024) {
+      setSiderBar(false);
+    } else {
+      setSiderBar(true);
+    }
+  }
+
   return (
     <>
       <div className="body-screen">
@@ -336,7 +343,9 @@ function ScreenProject() {
                 component={ScreenDetailAccount}
                 roles={["admin"]}
               />
-              {/* <Route component={ScreenNotFound}></Route> */}
+              <Route path="*">
+                <Redirect to="/login"></Redirect>
+              </Route>
             </Switch>
           </div>
         </div>

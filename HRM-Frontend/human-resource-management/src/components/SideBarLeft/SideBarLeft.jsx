@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import "./SideBarLeft.scss";
 import { SideBarData } from "./SideBarDate";
 import { Link, useRouteMatch } from "react-router-dom";
@@ -6,8 +6,8 @@ import jwt_decode from "jwt-decode";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SideBarContext } from "../../Contexts/StateContext";
 function SideBarLeft() {
-  // const [changeForm, setChangeForm] = useState(true);
   const { sideBar, setSiderBar } = useContext(SideBarContext);
+
   function Menu({ val }) {
     let match = useRouteMatch({
       path: val.link,
@@ -19,8 +19,7 @@ function SideBarLeft() {
           id={match ? "active" : ""}
         >
           <div id="icon">{val.icon}</div>
-          {sideBar !== false && <div className="title">{val.title}</div>}
-          {/* <span className="tooltip">{val.title}</span> */}
+          {sideBar !== false && <div className="title-bar">{val.title}</div>}
         </li>
       </Link>
     );
@@ -30,9 +29,9 @@ function SideBarLeft() {
     <>
       <ul
         className={
-          sideBar === false
-            ? "SidebarList sticky-top change"
-            : "SidebarList sticky-top"
+          sideBar !== false
+            ? "SidebarList sticky-top"
+            : "SidebarList sticky-top change"
         }
       >
         <li className="title-project">

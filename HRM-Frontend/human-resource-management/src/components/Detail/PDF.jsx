@@ -16,12 +16,18 @@ import dateFormat from "dateformat";
 import { useReactToPrint } from "react-to-print";
 import { ComponentToPrint } from "../ToPrint/ComponentToPrint";
 import "./PDF.scss";
-import { Button } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function PDF(props) {
   let { match, history } = props;
   let { id } = match.params;
+
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
   const [dataDetailNv, setdataDetailNv] = useState([]);
-  console.log(id);
+
   useEffect(() => {
     const fetchNvList = async () => {
       try {
@@ -33,16 +39,19 @@ function PDF(props) {
     };
     fetchNvList();
   }, []);
-  const componentRef = useRef();
-  const handlePrint = useReactToPrint({
-    content: () => componentRef.current,
-  });
+
   return (
     <>
       <div>
-        <Button variant="light" onClick={handlePrint}>
-          Print
-        </Button>
+        <button className="btn-back" onClick={history.goBack}>
+          <FontAwesomeIcon
+            className="icon-btn"
+            icon={["fas", "long-arrow-alt-left"]}
+          />
+        </button>
+        <button className="button-pdf" onClick={handlePrint}>
+          <FontAwesomeIcon icon={["fas", "file-pdf"]} />
+        </button>
       </div>
 
       <div className="right-information-pdf" id="right">
