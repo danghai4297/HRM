@@ -51,3 +51,42 @@
 .sticky-top {
     z-index: 0 !important;
 }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .herder-content {
+        width: 95%;
+        max-height: 7%;
+        background-color: white;
+        padding: 0 0.5rem 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 1rem;
+        margin: 1rem;
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+    .herder-content {
+        width: 97%;
+        max-height: 7%;
+        background-color: white;
+        padding: 0 0.5rem 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 1rem;
+        margin: 1rem;
+    }
+}
+@media screen and (min-width: 1440px) and (max-width: 1600px) {
+    .herder-content {
+        width: 97%;
+        max-height: 7%;
+        background-color: white;
+        padding: 0 0.5rem 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 1rem;
+        margin: 1rem;
+    }
+}

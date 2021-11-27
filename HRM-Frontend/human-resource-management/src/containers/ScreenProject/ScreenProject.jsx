@@ -51,7 +51,7 @@ function ScreenProject() {
 
   function resize() {
     let w = window.innerWidth;
-    if (w < 1024) {
+    if (w < 1440) {
       setSiderBar(false);
     } else {
       setSiderBar(true);
