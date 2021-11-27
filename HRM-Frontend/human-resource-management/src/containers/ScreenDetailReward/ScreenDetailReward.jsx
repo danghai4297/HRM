@@ -24,32 +24,31 @@ function ScreenDetailReward(props) {
     fetchNvList();
   }, []);
 
-  console.log(dataDetailKt);
   return (
     <>
-      <div className="main-screen">
-        <div className="first-main">
-          <div className="first-path">
-            <button className="btn-back" onClick={history.goBack}>
+      <div className="main-screen-reward">
+        <div className="first-main-reward">
+          <div className="first-path-reward">
+            <button className="btn-back-reward" onClick={history.goBack}>
               <FontAwesomeIcon
                 className="icon-btn"
                 icon={["fas", "long-arrow-alt-left"]}
               />
             </button>
           </div>
-          <div className="second-path">
+          <div className="second-path-reward">
             <h2>Thủ tục khen thưởng</h2>
           </div>
-          <div className="third-path">
+          <div className="third-path-reward">
             <Link to={`/reward/${id}`}>
-              <Button variant="light" className="btn-fix">
+              <Button variant="light" className="btn-fix-reward">
                 Sửa
               </Button>
             </Link>
             {dataDetailKt.bangChung !== null && (
               <Button
                 variant="light"
-                className="btn-fix"
+                className="btn-fix-reward"
                 onClick={() => {
                   window.open(
                     `https://localhost:5001${dataDetailKt.bangChung}`
@@ -64,9 +63,9 @@ function ScreenDetailReward(props) {
             )}
           </div>
         </div>
-        <div className="second-main">
-          <h3 className="title-main">Thông tin khen thưởng</h3>
-          <div className="second-main-path">
+        <div className="second-main-reward">
+          <h3 className="title-main-reward">Thông tin khen thưởng</h3>
+          <div className="second-main-path-reward">
             {ttkt.map((detail, key) => {
               return (
                 <SubDetail
@@ -78,6 +77,11 @@ function ScreenDetailReward(props) {
                 />
               );
             })}
+            <SubDetail
+              titleLeft="Tệp đính kèm"
+              itemLeft={dataDetailKt.bangChung === null ? "Không" : "Có"}
+              titleRight={null}
+            />
           </div>
         </div>
         <div className="all-reward">
@@ -88,7 +92,7 @@ function ScreenDetailReward(props) {
             to={`/profile/detail/${dataDetailKt.maNhanVien}?move=moveToReward`}
             className="btn-move-reward"
           >
-            <button className="btn-fix">
+            <button className="btn-fix-reward">
               <FontAwesomeIcon
                 icon={["fas", "arrow-right"]}
                 style={{ fontSize: "50px" }}

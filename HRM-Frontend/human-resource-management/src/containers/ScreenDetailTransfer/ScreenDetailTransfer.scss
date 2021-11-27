@@ -1,35 +1,113 @@
-.main-screen {
+.main-screen-transfer {
+  width: 100%;
+  .first-main-transfer {
     width: 100%;
-    .first-main {
+    display: flex;
+    .first-path-transfer {
+      width: 4%;
+      font-size: 200%;
+      padding-left: 0.5%;
+    }
+    .second-path-transfer {
+      width: 80%;
+    }
+    .third-path-transfer {
+      width: 15%;
+      .btn-fix-transfer {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+  .second-main-transfer {
+    background: white;
+    height: 450px;
+    width: 90%;
+    margin: 3%;
+    margin-left: 4%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    .title-main-transfer {
+      padding: 2%;
+    }
+    .second-main-path-transfer {
+      margin-left: 2%;
+    }
+  }
+}
+.btn-back {
+  width: 2.3rem;
+  height: 2.3rem;
+  margin: 0 0.3rem 0.3rem 0.3rem;
+  background-color: transparent;
+
+  opacity: 0.6;
+
+  border: none;
+  border-radius: 4px;
+  .icon-btn:hover {
+    font-size: large;
+  }
+}
+.all-transfer {
+  background: white;
+  height: 100px !important;
+  width: 90%;
+  margin: 3%;
+  margin-top: 1%;
+  margin-left: 4%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  display: flex;
+}
+.name-move-transfer {
+  width: 90%;
+  padding: 2%;
+}
+.btn-move-transfer {
+  width: 10%;
+  padding: 4%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: black;
+}
+.btn-move-transfer:hover {
+  background: #f5f5f0;
+  padding-left: 4.5%;
+}
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .main-screen-transfer {
+    width: 100%;
+    .first-main-transfer {
       width: 100%;
       display: flex;
-      .first-path {
+      .first-path-transfer {
         width: 4%;
         font-size: 200%;
         padding-left: 0.5%;
       }
-      .second-path {
+      .second-path-transfer {
         width: 80%;
+        margin-left: 20px;
       }
-      .third-path {
+      .third-path-transfer {
         width: 15%;
-        .btn-fix {
+        .btn-fix-transfer {
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         }
       }
     }
-    .second-main {
+    .second-main-transfer {
       background: white;
-      min-height: 350px;
+      height: 400px;
       width: 90%;
       margin: 3%;
       margin-left: 4%;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 5px;
-      .title-main {
+      .title-main-transfer {
         padding: 2%;
       }
-      .second-main-path {
+      .second-main-path-transfer {
         margin-left: 2%;
       }
     }
@@ -39,9 +117,9 @@
     height: 2.3rem;
     margin: 0 0.3rem 0.3rem 0.3rem;
     background-color: transparent;
-  
+
     opacity: 0.6;
-  
+
     border: none;
     border-radius: 4px;
     .icon-btn:hover {
@@ -59,18 +137,19 @@
     border-radius: 5px;
     display: flex;
   }
-  .name-move-transfer{
+  .name-move-transfer {
     width: 90%;
-    padding: 2%;
+    padding: 4%;
   }
   .btn-move-transfer {
     width: 10%;
-    padding: 4%;
-    padding-top: 2%;
+    padding: 0;
+    padding-top: 4%;
     padding-bottom: 2%;
     color: black;
   }
-  .btn-move-transfer:hover{
+  .btn-move-transfer:hover {
     background: #f5f5f0;
     padding-left: 4.5%;
   }
+}

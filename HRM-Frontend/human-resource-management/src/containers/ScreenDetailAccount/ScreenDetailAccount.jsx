@@ -31,28 +31,28 @@ function ScreenDetailAccount(props) {
 
   return (
     <>
-      <div className="main-screen">
-        <div className="first-main">
-          <div className="first-path">
-            <button className="btn-back" onClick={history.goBack}>
+      <div className="main-screen-account">
+        <div className="first-main-account">
+          <div className="first-path-account">
+            <button className="btn-back-account" onClick={history.goBack}>
               <FontAwesomeIcon
                 className="icon-btn"
                 icon={["fas", "long-arrow-alt-left"]}
               />
             </button>
           </div>
-          <div className="second-path">
+          <div className="second-path-account">
             <h2>Chi tiết tài khoản</h2>
           </div>
-          <div className="third-path">
+          <div className="third-path-account">
             <Link to={`/account/addRole/${id}`}>
-              <Button variant="light" className="btn-fix">
+              <Button variant="light" className="btn-fix-account">
                 Role
               </Button>
             </Link>
             <Button
               variant="light"
-              className="btn-fix"
+              className="btn-fix-account"
               onClick={async () => {
                 if (
                   sessionStorage.getItem("resultObj") &&
@@ -72,9 +72,9 @@ function ScreenDetailAccount(props) {
             </Button>
           </div>
         </div>
-        <div className="second-main">
-          <h3 className="title-main">Thông tin chung</h3>
-          <div className="second-main-path">
+        <div className="second-main-account">
+          <h3 className="title-main-account">Thông tin chung</h3>
+          <div className="second-main-path-account">
             {ttc.map((detail, key) => {
               return (
                 <SubDetail
