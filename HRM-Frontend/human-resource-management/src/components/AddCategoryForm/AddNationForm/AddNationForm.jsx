@@ -11,13 +11,15 @@ import Dialog from "../../Dialog/Dialog";
 import { useToast } from "../../Toast/Toast";
 import jwt_decode from "jwt-decode";
 
-AddNationForm.propTypes = {};
+const dontAllowOnlySpace = /^\s*\S.*$/g;
 const schema = yup.object({
   tenDanhMuc: yup
     .string()
     .nullable()
+    .matches(dontAllowOnlySpace, "Tên danh mục không được chỉ là khoảng trống")
     .required("Tên danh mục không được bỏ trống."),
 });
+
 function AddNationForm(props) {
   const { error, success } = useToast();
   let { match, history } = props;
@@ -119,7 +121,6 @@ function AddNationForm(props) {
       });
       history.goBack();
       success("Xoá danh mục dân tộc thành công");
-
     } catch (errors) {
       error(`Có lỗi xảy ra ${errors}`);
     }
@@ -197,8 +198,16 @@ function AddNationForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
-        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
         cancel={cancel}
       />
       <Dialog

@@ -11,12 +11,15 @@ import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
 
+const dontAllowOnlySpace = /^\s*\S.*$/g;
 const schema = yup.object({
   tenTrinhDo: yup
     .string()
     .nullable()
-    .required("Tên danh mục không được bỏ trống."),
+    .matches(dontAllowOnlySpace, "Tên trình độ không được chỉ là khoảng trống")
+    .required("Tên trình độ không được bỏ trống."),
 });
+
 function AddLevelForm(props) {
   const { error, success } = useToast();
 
@@ -41,7 +44,7 @@ function AddLevelForm(props) {
   };
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchLevelCategory = async () => {
       try {
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa danh mục trình độ");
@@ -52,7 +55,7 @@ function AddLevelForm(props) {
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList();
+    fetchLevelCategory();
   }, []);
 
   const {
@@ -175,7 +178,7 @@ function AddLevelForm(props) {
                     className="col-sm-4 justify-content-start"
                     htmlFor="tenTrinhDo"
                   >
-                    Tên danh mục
+                    Tên trình độ
                   </label>
                   <input
                     type="text"

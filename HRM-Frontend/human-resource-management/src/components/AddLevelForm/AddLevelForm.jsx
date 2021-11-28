@@ -154,8 +154,6 @@ function AddLevelForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
-    console.log(data);
-    console.log(errors);
     checkInputChange();
 
     try {

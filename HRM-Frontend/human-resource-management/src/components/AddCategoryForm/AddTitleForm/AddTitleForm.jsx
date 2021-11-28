@@ -9,12 +9,16 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
-AddTitleForm.propTypes = {};
+
+const dontAllowOnlySpace = /^\s*\S.*$/g;
 const schema = yup.object({
-  maChucDanh: yup.string().required("Mã chức danh không được bỏ trống."),
-  tenChucDanh: yup.string().required("Tên chức danh không được bỏ trống."),
+  tenChucDanh: yup
+    .string()
+    .matches(dontAllowOnlySpace, "Tên chức danh không được chỉ là khoảng trống")
+    .required("Tên chức danh không được bỏ trống."),
   phuCap: yup.number().typeError("Phụ cấp không được bỏ trống và là số."),
 });
+
 function AddTitleForm(props) {
   const { error, success } = useToast();
 
@@ -39,7 +43,7 @@ function AddTitleForm(props) {
   };
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchTitleCategory = async () => {
       try {
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa danh mục chức danh");
@@ -50,7 +54,26 @@ function AddTitleForm(props) {
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList();
+    fetchTitleCategory();
+  }, []);
+
+  useEffect(() => {
+    const handleTitleId = async () => {
+      if (id === undefined) {
+        const responseTitle = await ProductApi.getAllDMCD();
+        const codeIncre =
+          responseTitle !== null &&
+          responseTitle[responseTitle.length - 1].maChucDanh;
+        const autoCodeIncre = Number(codeIncre.slice(3)) + 1;
+        const codeTitle = "CD";
+        if (autoCodeIncre < 10) {
+          setValue("maChucDanh", codeTitle.concat(`0${autoCodeIncre}`));
+        } else if (autoCodeIncre >= 10) {
+          setValue("maChucDanh", codeTitle.concat(`${autoCodeIncre}`));
+        }
+      }
+    };
+    handleTitleId();
   }, []);
 
   const intitalValue = {
@@ -64,6 +87,7 @@ function AddTitleForm(props) {
     handleSubmit,
     formState: { errors },
     reset,
+    setValue,
     getValues,
   } = useForm({
     resolver: yupResolver(schema),
@@ -85,7 +109,7 @@ function AddTitleForm(props) {
     ];
     return JSON.stringify(titleValues) === JSON.stringify(dfTitleValues);
   };
-  
+
   const onHandleSubmit = async (data) => {
     let tendm = data.tenChucDanh;
 
@@ -96,7 +120,9 @@ function AddTitleForm(props) {
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
           thaoTac: `Sửa danh mục chức danh: ${
-            dataDetailDMCD.tenChucDanh !== tendm ? `${dataDetailDMCD.tenChucDanh} thành` : ""
+            dataDetailDMCD.tenChucDanh !== tendm
+              ? `${dataDetailDMCD.tenChucDanh} thành`
+              : ""
           } ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
@@ -195,6 +221,7 @@ function AddTitleForm(props) {
                         ? "form-control col-sm-6"
                         : "form-control col-sm-6 border-danger "
                     }
+                    readOnly
                   />
                   <span className="message">{errors.maChucDanh?.message}</span>
                 </div>
@@ -251,8 +278,16 @@ function AddTitleForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
-        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
         cancel={cancel}
       />
       <Dialog

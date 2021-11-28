@@ -10,10 +10,13 @@ import PutApi from "../../../api/putAAPI";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
 
+const dontAllowOnlySpace = /^\s*\S.*$/g;
 const schema = yup.object({
-  maTo: yup.string().required("Mã tổ không được bỏ trống."),
   idPhongBan: yup.number().typeError("Thuộc phòng ban không được bỏ trống."),
-  tenTo: yup.string().required("Tổ không được bỏ trống."),
+  tenTo: yup
+    .string()
+    .matches(dontAllowOnlySpace, "Tổ không được chỉ là khoảng trống")
+    .required("Tổ không được bỏ trống."),
 });
 function AddNestForm(props) {
   const { error, success } = useToast();
@@ -38,13 +41,14 @@ function AddNestForm(props) {
     setShowDeleteDialog(false);
     setShowCheckDialog(false);
   };
+
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchNestCategory = async () => {
       try {
         const responseNv = await ProductApi.getAllDMPB();
         setDataDmpb(responseNv);
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốm sửa danh mục tổ");
+          setDescription("Bạn chắc chắn muốn sửa danh mục tổ");
           const response = await ProductApi.getDetailDMT(id);
           setdataDetailDMT(response);
         }
@@ -52,7 +56,25 @@ function AddNestForm(props) {
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList();
+    fetchNestCategory();
+  }, []);
+
+  useEffect(() => {
+    const handleNestId = async () => {
+      if (id === undefined) {
+        const responseNest = await ProductApi.getAllDMT();
+        const codeIncre =
+          responseNest !== null && responseNest[responseNest.length - 1].maTo;
+        const autoCodeIncre = Number(codeIncre.slice(1)) + 1;
+        const codeNest = "T";
+        if (autoCodeIncre < 10) {
+          setValue("maTo", codeNest.concat(`0${autoCodeIncre}`));
+        } else if (autoCodeIncre >= 10) {
+          setValue("maTo", codeNest.concat(`${autoCodeIncre}`));
+        }
+      }
+    };
+    handleNestId();
   }, []);
 
   const intitalValue = {
@@ -65,6 +87,7 @@ function AddNestForm(props) {
     register,
     handleSubmit,
     reset,
+    setValue,
     getValues,
     formState: { errors },
   } = useForm({
@@ -103,7 +126,6 @@ function AddNestForm(props) {
           tenNhanVien: decoded.givenName,
         });
         success("Sửa danh mục tổ thành công");
-
       } else {
         await ProductApi.PostDMT(data);
         await ProductApi.PostLS({
@@ -113,7 +135,6 @@ function AddNestForm(props) {
           tenNhanVien: decoded.givenName,
         });
         success("Thêm danh mục tổ thành công");
-
       }
       history.goBack();
     } catch (errors) {
@@ -198,6 +219,7 @@ function AddNestForm(props) {
                         ? "form-control col-sm-6"
                         : "form-control col-sm-6 border-danger "
                     }
+                    readOnly
                   />
                   <span className="message">{errors.maTo?.message}</span>
                 </div>

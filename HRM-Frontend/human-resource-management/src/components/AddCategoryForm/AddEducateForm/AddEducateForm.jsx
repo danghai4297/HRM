@@ -10,11 +10,13 @@ import Dialog from "../../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
 
+const dontAllowOnlySpace = /^\s*\S.*$/g;
 const schema = yup.object({
   tenHinhThuc: yup
-  .string()
-  .nullable()
-  .required("Tên hình thức không được bỏ trống."),
+    .string()
+    .nullable()
+    .matches(dontAllowOnlySpace, "Tên hình thức không được chỉ là khoảng trống")
+    .required("Tên hình thức không được bỏ trống."),
 });
 
 function AddEducateForm(props) {
@@ -40,7 +42,7 @@ function AddEducateForm(props) {
   };
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchEducateCategory = async () => {
       try {
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa hình thức đào tạo");
@@ -51,7 +53,7 @@ function AddEducateForm(props) {
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList();
+    fetchEducateCategory();
   }, []);
 
   const {
@@ -180,7 +182,7 @@ function AddEducateForm(props) {
                     className="col-sm-4 justify-content-start"
                     htmlFor="tenHinhThuc"
                   >
-                    Tên danh mục
+                    Tên hình thức
                   </label>
                   <input
                     type="text"
@@ -202,8 +204,16 @@ function AddEducateForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
-        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
         cancel={cancel}
       />
       <Dialog

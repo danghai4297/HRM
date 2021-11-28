@@ -10,11 +10,12 @@ import DeleteApi from "../../../api/deleteAPI";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
 
-AddBonusForm.propTypes = {};
+const dontAllowOnlySpace = /^\s*\S.*$/g;
 const schema = yup.object({
   tenDanhMuc: yup
     .string()
     .nullable()
+    .matches(dontAllowOnlySpace, "Tên danh mục không được chỉ là khoảng trống")
     .required("Tên danh mục không được bỏ trống."),
 });
 
@@ -41,7 +42,7 @@ function AddBonusForm(props) {
   };
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchBonusCategory = async () => {
       try {
         if (id !== undefined) {
           setDescription(`Bạn chắc chắn muốn sửa danh mục khen thưởng`);
@@ -52,7 +53,7 @@ function AddBonusForm(props) {
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList();
+    fetchBonusCategory();
   }, []);
 
   const {

@@ -24,9 +24,9 @@ export const ttc = [
     data2: ["hopDongDenNgay", true],
   },
   {
-    title1: "Ghi chú",
-    data1: ["ghiChu", false],
-    title2: null,
-    data2: [null, false],
+    title1: "Chức vụ",
+    data1: ["chucVu", false],
+    title2: "Ghi chú",
+    data2: ["ghiChu", false],
   },
 ];

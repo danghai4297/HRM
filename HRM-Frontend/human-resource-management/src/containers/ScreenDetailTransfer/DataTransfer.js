@@ -14,13 +14,13 @@ export const vtctht = [
   {
     title1: "Tổ",
     data1: "to",
-    title2: "Chức vụ",
-    data2: ["chucVu", false],
+    title2: "Chi tiết",
+    data2: ["chiTiet", false],
   },
   {
     title1: "Trạng thái",
     data1: "trangThai",
-    title2: "Chi tiết",
-    data2: ["chiTiet", false],
+    title2: null,
+    data2: [null, false],
   },
 ];
