@@ -23,7 +23,7 @@ const LoginApi = {
   },
   //Change password
   PutChangePassword: (data, id) => {
-    const url = `/User/${id}`;
+    const url = `/User/change-password${id}`;
     return axiosClient.put(url, data);
   },
 

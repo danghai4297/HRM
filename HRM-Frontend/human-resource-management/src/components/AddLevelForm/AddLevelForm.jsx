@@ -23,9 +23,11 @@ const schema = yup.object({
   idHinhThucDaoTao: yup
     .number()
     .typeError("Hình thức đào tạo không được bỏ trống."),
-  idTrinhDo: yup.number().typeError("Trình độ không được bỏ trống."),
-  tuThoiGian: yup.string().nullable().required("Từ ngày không được bỏ trống"),
-  denThoiGian: yup.string().nullable().required("Đến ngày không được bỏ trống"),
+  idTrinhDo: yup
+    .number()
+    .typeError("Trình độ không được bỏ trống."),
+  tuThoiGian: yup.date().nullable().required("Từ ngày không được bỏ trống"),
+  denThoiGian: yup.date().nullable().required("Đến ngày không được bỏ trống"),
 });
 function AddLevelForm(props) {
   const { error, warn, info, success } = useToast();
@@ -166,7 +168,8 @@ function AddLevelForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra`);
+      console.log("Có lỗi xảy ra: ", error);
+      error(`Có lỗi xảy ra ${errors}`)
     }
   };
 

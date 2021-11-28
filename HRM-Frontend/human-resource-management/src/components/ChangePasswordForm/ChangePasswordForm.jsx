@@ -19,11 +19,11 @@ const schema = yup.object({
     .required("Mật khẩu hiện tại không được bỏ trống."),
     newPassword: yup
     .string()
-    .matches(passwordReg, "Mật khẩu hiện tại không đúng định dạng.")
+    .matches(passwordReg, "Mật khẩu mới không đúng định dạng.")
     .required("Mật khẩu mới không được bỏ trống."),
     confirmPassword: yup
     .string()
-    .matches(passwordReg, "Mật khẩu hiện tại không đúng định dạng.")
+    .matches(passwordReg, "Xác nhận mật khẩu mới không đúng định dạng.")
     .required("Xác nhận mật khẩu mới không được bỏ trống."),
 });
 
@@ -53,6 +53,7 @@ function ChangePasswordForm(props) {
       try {
         await LoginApi.PutChangePassword(data,idAccount);
         success("Đổi mật khẩu thành công.");
+        history.goBack();
       } catch (errors) {
         error("Đổi mật khẩu không thành công!");
       }
@@ -61,7 +62,6 @@ function ChangePasswordForm(props) {
     }else if(newPassword !== rePassword){
       warn("Nhập lại mật khẩu không đúng.")
     }
-   // history.goBack();
   };
   return (
     <div className="container-form">

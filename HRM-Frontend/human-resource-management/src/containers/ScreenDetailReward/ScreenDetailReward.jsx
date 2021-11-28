@@ -23,7 +23,8 @@ function ScreenDetailReward(props) {
     };
     fetchNvList();
   }, []);
-
+  console.log(dataDetailKt);
+  
   return (
     <>
       <div className="main-screen-reward">

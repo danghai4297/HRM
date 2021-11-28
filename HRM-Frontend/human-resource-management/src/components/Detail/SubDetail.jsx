@@ -8,7 +8,7 @@ function SubDetail(props) {
   return (
     <div className="containss">
       <Row className="item">
-        <Col xl>
+        <Col >
           <Row className="row-replace">
             <Col>
               <p>{titleLeft}</p>
