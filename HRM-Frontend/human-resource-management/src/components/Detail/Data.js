@@ -1,4 +1,3 @@
-
 export const ttc = [
   {
     title1: "Mã nhân viên",
@@ -48,7 +47,7 @@ export const ttc = [
     title2: null,
     data2: [null, false],
   },
-]
+];
 
 export const cmndTccHC = [
   {
@@ -75,7 +74,7 @@ export const cmndTccHC = [
     title2: "Ngày hết hạn hộ chiếu",
     data2: ["ngayHetHanHoChieu", true],
   },
-]
+];
 
 export const sdtEK = [
   {
@@ -96,7 +95,7 @@ export const sdtEK = [
     title2: "Skype",
     data2: "skype",
   },
-]
+];
 
 export const lhkc = [
   {
@@ -156,7 +155,7 @@ export const ttnv = [
     title2: "Ngày nghỉ việc",
     data2: ["ngayNghiViec", true],
   },
-]
+];
 
 export const ttbh = [
   {
@@ -165,7 +164,7 @@ export const ttbh = [
     title2: "Số thẻ BHYT",
     data2: "bhyt",
   },
-]
+];
 
 export const ttct = [
   {
@@ -187,12 +186,12 @@ export const ttct = [
     data2: ["noiThamGia", false],
   },
   {
-    title1: "Ngày chính thức",
-    data1: ["ngayChinhThuc", true],
+    title1: "Ngày vào Đảng chính thức",
+    data1: ["ngayVaoDangChinhThuc", true],
     title2: null,
     data2: [null, false],
   },
-]
+];
 
 export const ttqs = [
   {
@@ -225,7 +224,7 @@ export const ttqs = [
     title2: null,
     data2: null,
   },
-]
+];
 
 export const ttyt = [
   {
@@ -252,4 +251,4 @@ export const ttyt = [
     title2: null,
     data2: null,
   },
-]
+];

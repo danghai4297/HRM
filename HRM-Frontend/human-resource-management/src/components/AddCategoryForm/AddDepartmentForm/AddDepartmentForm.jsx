@@ -10,9 +10,12 @@ import Dialog from "../../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
 
+const dontAllowOnlySpace = /^\s*\S.*$/g;
 const schema = yup.object({
-  maPhongBan: yup.string().required("Mã phòng ban không được bỏ trống."),
-  tenPhongBan: yup.string().required("Tên phòng ban không được bỏ trống."),
+  tenPhongBan: yup
+    .string()
+    .matches(dontAllowOnlySpace, "Tên phòng ban không được chỉ là khoảng trống")
+    .required("Tên phòng ban không được bỏ trống."),
 });
 function AddDepartmentForm(props) {
   const { error, success } = useToast();
@@ -38,7 +41,7 @@ function AddDepartmentForm(props) {
   };
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchDepartmentCategory = async () => {
       try {
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa phòng ban");
@@ -49,7 +52,26 @@ function AddDepartmentForm(props) {
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList();
+    fetchDepartmentCategory();
+  }, []);
+
+  useEffect(() => {
+    const handleDepartmentId = async () => {
+      if (id === undefined) {
+        const responseDepartment = await ProductApi.getAllDMPB();
+        const codeIncre =
+          responseDepartment !== null &&
+          responseDepartment[responseDepartment.length - 1].maPhongBan;
+        const autoCodeIncre = Number(codeIncre.slice(2)) + 1;
+        const codeDepartment = "PB";
+        if (autoCodeIncre < 10) {
+          setValue("maPhongBan", codeDepartment.concat(`0${autoCodeIncre}`));
+        } else if (autoCodeIncre >= 10) {
+          setValue("maPhongBan", codeDepartment.concat(`${autoCodeIncre}`));
+        }
+      }
+    };
+    handleDepartmentId();
   }, []);
 
   const intitalValue = {
@@ -62,6 +84,7 @@ function AddDepartmentForm(props) {
     handleSubmit,
     formState: { errors },
     reset,
+    setValue,
     getValues,
   } = useForm({
     resolver: yupResolver(schema),
@@ -195,6 +218,7 @@ function AddDepartmentForm(props) {
                         ? "form-control col-sm-6"
                         : "form-control col-sm-6 border-danger "
                     }
+                    readOnly
                   />
                   <span className="message">{errors.maPhongBan?.message}</span>
                 </div>

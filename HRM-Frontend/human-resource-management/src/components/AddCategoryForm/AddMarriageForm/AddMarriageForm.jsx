@@ -10,11 +10,13 @@ import Dialog from "../../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
 
+const dontAllowOnlySpace = /^\s*\S.*$/g;
 const schema = yup.object({
   tenDanhMuc: yup
-  .string()
-  .nullable()
-  .required("Tên danh mục không được bỏ trống."),
+    .string()
+    .nullable()
+    .matches(dontAllowOnlySpace, "Tên danh mục không được chỉ là khoảng trống")
+    .required("Tên danh mục không được bỏ trống."),
 });
 
 function AddMarriageForm(props) {
@@ -40,7 +42,7 @@ function AddMarriageForm(props) {
   };
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchMarriageCategory = async () => {
       try {
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa danh mục hôn nhân");
@@ -51,7 +53,7 @@ function AddMarriageForm(props) {
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList();
+    fetchMarriageCategory();
   }, []);
 
   const {
@@ -196,8 +198,16 @@ function AddMarriageForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
-        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
         cancel={cancel}
       />
       <Dialog

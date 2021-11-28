@@ -32,7 +32,7 @@ export const SideBarLeftCategoryData = [
     link: "/category/bonus",
   },
   {
-    title: "Danh mục kỉ luật",
+    title: "Danh mục kỷ luật",
     link: "/category/punish",
   },
   {

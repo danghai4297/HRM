@@ -9,12 +9,16 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
+
+const dontAllowOnlySpace = /^\s*\S.*$/g;
 const schema = yup.object({
   tenLaoDong: yup
-  .string()
-  .nullable()
-  .required("Tên danh mục không được bỏ trống."),
+    .string()
+    .nullable()
+    .matches(dontAllowOnlySpace, "Tên lao động không được chỉ là khoảng trống")
+    .required("Tên lao động không được bỏ trống."),
 });
+
 function AddLaborForm(props) {
   const { error, success } = useToast();
   let { match, history } = props;
@@ -38,7 +42,7 @@ function AddLaborForm(props) {
   };
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchLaborCategory = async () => {
       try {
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa tính chất lao động");
@@ -49,7 +53,7 @@ function AddLaborForm(props) {
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList();
+    fetchLaborCategory();
   }, []);
 
   const {
@@ -200,8 +204,16 @@ function AddLaborForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
-        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
         cancel={cancel}
       />
       <Dialog

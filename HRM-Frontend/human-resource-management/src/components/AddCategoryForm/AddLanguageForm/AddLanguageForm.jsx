@@ -10,13 +10,15 @@ import Dialog from "../../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
 
-AddLanguageForm.propTypes = {};
+const dontAllowOnlySpace = /^\s*\S.*$/g;
 const schema = yup.object({
   tenDanhMuc: yup
     .string()
     .nullable()
+    .matches(dontAllowOnlySpace, "Tên danh mục không được chỉ là khoảng trống")
     .required("Tên danh mục không được bỏ trống."),
 });
+
 function AddLanguageForm(props) {
   const { error, success } = useToast();
   let { match, history } = props;
@@ -40,7 +42,7 @@ function AddLanguageForm(props) {
   };
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchLanguageCategory = async () => {
       try {
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa danh mục ngoại ngữ");
@@ -51,7 +53,7 @@ function AddLanguageForm(props) {
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList();
+    fetchLanguageCategory();
   }, []);
 
   const {

@@ -7,16 +7,16 @@ import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
-import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
 
-AddDisciplineForm.propTypes = {};
+const dontAllowOnlySpace = /^\s*\S.*$/g;
 const schema = yup.object({
   tenDanhMuc: yup
-  .string()
-  .nullable()
-  .required("Tên danh mục không được bỏ trống."),
+    .string()
+    .nullable()
+    .matches(dontAllowOnlySpace, "Tên danh mục không được chỉ là khoảng trống")
+    .required("Tên danh mục không được bỏ trống."),
 });
 function AddDisciplineForm(props) {
   const { error, success } = useToast();
@@ -41,7 +41,7 @@ function AddDisciplineForm(props) {
   };
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchDisciplineCategory = async () => {
       try {
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa danh mục kỉ luật");
@@ -52,7 +52,7 @@ function AddDisciplineForm(props) {
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList();
+    fetchDisciplineCategory();
   }, []);
 
   const {
@@ -218,8 +218,16 @@ function AddDisciplineForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
-        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
         cancel={cancel}
       />
       <Dialog

@@ -9,11 +9,17 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
+
+const dontAllowOnlySpace = /^\s*\S.*$/g;
 const schema = yup.object({
-  maNhomLuong: yup.string().required("Mã nhóm lương không được bỏ trống."),
-  tenNhomLuong: yup.string().required("Tên nhóm lương không được bỏ trống."),
+  tenNhomLuong: yup
+    .string()
+    .matches(
+      dontAllowOnlySpace,
+      "Tên nhóm lương không được chỉ là khoảng trống"
+    )
+    .required("Tên nhóm lương không được bỏ trống."),
 });
-AddSalaryGroupForm.propTypes = {};
 
 function AddSalaryGroupForm(props) {
   const { error, success } = useToast();
@@ -38,7 +44,7 @@ function AddSalaryGroupForm(props) {
   };
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchSalaryGroupCategory = async () => {
       try {
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa danh mục nhóm lương");
@@ -49,7 +55,26 @@ function AddSalaryGroupForm(props) {
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList();
+    fetchSalaryGroupCategory();
+  }, []);
+
+  useEffect(() => {
+    const handleSalaryGroupId = async () => {
+      if (id === undefined) {
+        const responseSalaryGroup = await ProductApi.getAllDMNL();
+        const codeIncre =
+          responseSalaryGroup !== null &&
+          responseSalaryGroup[responseSalaryGroup.length - 1].maNhomLuong;
+        const autoCodeIncre = Number(codeIncre.slice(3)) + 1;
+        const codeSalaryGroup = "NL";
+        if (autoCodeIncre < 10) {
+          setValue("maNhomLuong", codeSalaryGroup.concat(`0${autoCodeIncre}`));
+        } else if (autoCodeIncre >= 10) {
+          setValue("maNhomLuong", codeSalaryGroup.concat(`${autoCodeIncre}`));
+        }
+      }
+    };
+    handleSalaryGroupId();
   }, []);
 
   const intitalValue = {
@@ -61,6 +86,7 @@ function AddSalaryGroupForm(props) {
     register,
     handleSubmit,
     reset,
+    setValue,
     getValues,
     formState: { errors },
   } = useForm({
@@ -94,7 +120,9 @@ function AddSalaryGroupForm(props) {
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
           thaoTac: `Sửa danh mục nhóm lương: ${
-            dataDetailDMNL.tenNhomLuong !== tendm ? `${dataDetailDMNL.tenNhomLuong} -->` : ""
+            dataDetailDMNL.tenNhomLuong !== tendm
+              ? `${dataDetailDMNL.tenNhomLuong} -->`
+              : ""
           } ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
@@ -193,6 +221,7 @@ function AddSalaryGroupForm(props) {
                         ? "form-control col-sm-6"
                         : "form-control col-sm-6 border-danger "
                     }
+                    readOnly
                   />
                   <span className="message">{errors.maNhomLuong?.message}</span>
                 </div>
@@ -227,8 +256,16 @@ function AddSalaryGroupForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
-        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
         cancel={cancel}
       />
       <Dialog

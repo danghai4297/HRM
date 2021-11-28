@@ -10,10 +10,12 @@ import Dialog from "../../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
 
+const dontAllowOnlySpace = /^\s*\S.*$/g;
 const schema = yup.object({
   tenNgach: yup
     .string()
     .nullable()
+    .matches(dontAllowOnlySpace, "Tên danh mục không được chỉ là khoảng trống")
     .required("Tên ngạch công chức không được bỏ trống."),
 });
 
@@ -38,7 +40,7 @@ function AddCSRForm(props) {
   };
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchCSRCategory = async () => {
       try {
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa ngạch công chức");
@@ -49,7 +51,7 @@ function AddCSRForm(props) {
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList();
+    fetchCSRCategory();
   }, []);
 
   const {
