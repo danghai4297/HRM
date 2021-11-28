@@ -62,6 +62,7 @@ namespace HRMSolution.Application.Catalog.DanhMucTonGiaos
         public async Task<List<DanhMucTonGiaoViewModel>> GetAll()
         {
             var query = from p in _context.danhMucTonGiaos select p;
+
             if (query == null)
             {
                 return null;
@@ -87,10 +88,12 @@ namespace HRMSolution.Application.Catalog.DanhMucTonGiaos
             else
             {
                 var query = from p in _context.danhMucTonGiaos where p.id == id select p;
+                var check = await _context.nhanViens.Where(x => x.idTonGiao == id).FirstOrDefaultAsync();
                 var data = await query.Select(x => new DanhMucTonGiaoViewModel()
                 {
                     id = x.id,
-                    tenDanhMuc = x.tenDanhMuc
+                    tenDanhMuc = x.tenDanhMuc,
+                    trangThai = check == null ? "Chưa sử dụng" : "Đang sử dụng"
                 }).FirstAsync();
                 return data;
             }

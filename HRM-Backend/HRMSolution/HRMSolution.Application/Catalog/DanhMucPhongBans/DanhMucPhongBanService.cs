@@ -89,11 +89,14 @@ namespace HRMSolution.Application.Catalog.DanhMucPhongBans
             else
             {
                 var query = from p in _context.danhMucPhongBans where p.id == id select p;
+                var check = await _context.dieuChuyens.Where(x => x.idPhongBan == id).FirstOrDefaultAsync();
+                var check1 = await _context.danhMucTos.Where(x => x.idPhongBan == id).FirstOrDefaultAsync();
                 var data = await query.Select(x => new DanhMucPhongBanViewModel()
                 {
                     id = x.id,
                     maPhongBan = x.maPhongBan,
-                    tenPhongBan = x.tenPhongBan
+                    tenPhongBan = x.tenPhongBan,
+                    trangThai = check == null && check1 == null ? "Chưa sử dụng" : "Đang sử dụng"
                 }).FirstAsync();
                 return data;
             }

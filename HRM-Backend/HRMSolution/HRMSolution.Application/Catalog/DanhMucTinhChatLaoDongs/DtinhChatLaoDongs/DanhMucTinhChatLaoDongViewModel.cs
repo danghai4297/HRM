@@ -11,5 +11,6 @@ namespace HRMSolution.Application.Catalog.DanhMucTinhChatLaoDongs.DtinhChatLaoDo
     {
         public int id { get; set; }
         public string tenLaoDong { get; set; }
+        public string trangThai { get; set; }
     }
 }

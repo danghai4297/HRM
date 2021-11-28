@@ -10,5 +10,6 @@ namespace HRMSolution.Application.Catalog.DanhMucChucDanhs.DchucDanhs
         public string maChucDanh { get; set; }
         public string tenChucDanh { get; set; }
         public float phuCap { get; set; }
+        public string trangThai { get; set; }
     }
 }

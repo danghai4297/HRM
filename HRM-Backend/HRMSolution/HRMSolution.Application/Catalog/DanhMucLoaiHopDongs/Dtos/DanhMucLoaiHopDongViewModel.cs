@@ -9,5 +9,6 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs.Dtos
         public int id { get; set; }
         public string maLoaiHopDong { get; set; }
         public string tenLoaiHopDong { get; set; }
+        public string trangThai { get; set; }
     }
 }

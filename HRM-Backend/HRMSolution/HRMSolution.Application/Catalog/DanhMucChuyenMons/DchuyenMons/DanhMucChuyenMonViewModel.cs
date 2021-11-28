@@ -9,5 +9,6 @@ namespace HRMSolution.Application.Catalog.DanhMucChuyenMons.DchuyenMons
         public int id { get; set; }
         public string tenChuyenMon { get; set; }
         public string maChuyenMon { get; set; }
+        public string trangThai { get; set; }
     }
 }

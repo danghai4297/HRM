@@ -9,5 +9,6 @@ namespace HRMSolution.Application.Catalog.DanhMucNhomLuongs.DnhomLuongs
         public int id { get; set; }
         public string maNhomLuong { get; set; }
         public string tenNhomLuong { get; set; }
+        public string trangThai { get; set; }
     }
 }
