@@ -170,7 +170,7 @@ function AddRewardForm(props) {
         );
       } else {
         const formData = new FormData();
-        formData.append("anh", file.file);
+        formData.append("bangChung", file.file);
         formData.append("idDanhMucKhenThuong", data.idDanhMucKhenThuong);
         formData.append("noiDung", data.noiDung);
         formData.append("lyDo", data.lyDo);
@@ -307,6 +307,7 @@ function AddRewardForm(props) {
                   <Upload
                     beforeUpload={() => false}
                     onChange={handleChange}
+                    //accept=".docx,.xlsx,.pdf"
                     maxCount={1}
                   >
                     <Button icon={<UploadOutlined />}>Chọn thư mục</Button>

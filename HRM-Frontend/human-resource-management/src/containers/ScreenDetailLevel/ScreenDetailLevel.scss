@@ -1,50 +1,103 @@
-.main-screen {
+.main-screen-level {
+  width: 100%;
+  .first-main-level {
     width: 100%;
-    .first-main {
+    display: flex;
+    .first-path-level {
+      width: 4%;
+      font-size: 200%;
+      padding-left: 0.5%;
+    }
+    .second-path-level {
+      width: 80%;
+    }
+    .third-path-level {
+      width: 15%;
+      .btn-fix {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+  .second-main-level {
+    background: white;
+    height: 350px;
+    width: 90%;
+    margin: 3%;
+    margin-left: 4%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    .title-main-level {
+      padding: 2%;
+    }
+    .second-main-path-level {
+      margin-left: 2%;
+    }
+  }
+}
+.btn-back-level {
+  width: 2.3rem;
+  height: 2.3rem;
+  margin: 0 0.3rem 0.3rem 0.3rem;
+  background-color: transparent;
+
+  opacity: 0.6;
+
+  border: none;
+  border-radius: 4px;
+  .icon-btn:hover {
+    font-size: x-large;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .main-screen-level {
+    width: 100%;
+    .first-main-level {
       width: 100%;
       display: flex;
-      .first-path {
+      .first-path-level {
         width: 4%;
         font-size: 200%;
         padding-left: 0.5%;
       }
-      .second-path {
+      .second-path-level {
         width: 80%;
+        margin-left: 20px;
       }
-      .third-path {
+      .third-path-level {
         width: 15%;
         .btn-fix {
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         }
       }
     }
-    .second-main {
+    .second-main-level {
       background: white;
-      min-height: 350px;
+      height: 400px;
       width: 90%;
       margin: 3%;
       margin-left: 4%;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 5px;
-      .title-main {
+      .title-main-level {
         padding: 2%;
       }
-      .second-main-path {
+      .second-main-path-level {
         margin-left: 2%;
       }
     }
   }
-  .btn-back {
+  .btn-back-level {
     width: 2.3rem;
     height: 2.3rem;
     margin: 0 0.3rem 0.3rem 0.3rem;
     background-color: transparent;
-  
+
     opacity: 0.6;
-  
+
     border: none;
     border-radius: 4px;
     .icon-btn:hover {
       font-size: x-large;
     }
   }
+}

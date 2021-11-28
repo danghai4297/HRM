@@ -24,12 +24,12 @@ function ScreenDetailSalary(props) {
     };
     fetchNvList();
   }, []);
-  console.log(dataLDetail);
+
   return (
     <>
-      <div className="main-screen">
-        <div className="first-main">
-          <div className="first-path">
+      <div className="main-screen-salary">
+        <div className="first-main-salary">
+          <div className="first-path-salary">
             <button className="btn-back" onClick={history.goBack}>
               <FontAwesomeIcon
                 className="icon-btn"
@@ -37,13 +37,13 @@ function ScreenDetailSalary(props) {
               />
             </button>
           </div>
-          <div className="second-path">
+          <div className="second-path-salary">
             <h2>Chi tiết hồ sơ lương</h2>
           </div>
-          <div className="third-path">
+          <div className="third-path-salary">
             {dataLDetail.trangThai === "Kích hoạt" && (
               <Link to={`/salary/${id}`}>
-                <Button variant="light" className="btn-fix">
+                <Button variant="light" className="btn-fix-salary">
                   Sửa
                 </Button>
               </Link>
@@ -51,7 +51,7 @@ function ScreenDetailSalary(props) {
             {dataLDetail.bangChung !== null && (
               <Button
                 variant="light"
-                className="btn-fix"
+                className="btn-fix-salary"
                 onClick={() => {
                   window.open(`https://localhost:5001${dataLDetail.bangChung}`);
                 }}
@@ -64,9 +64,9 @@ function ScreenDetailSalary(props) {
             )}
           </div>
         </div>
-        <div className="second-mains">
-          <h3 className="title-main">Thông tin chung</h3>
-          <div className="second-main-path">
+        <div className="second-mains-salary">
+          <h3 className="title-main-salary">Thông tin chung</h3>
+          <div className="second-main-path-salary">
             {ttc.map((detail, key) => {
               return (
                 <SubDetail
@@ -88,6 +88,11 @@ function ScreenDetailSalary(props) {
                 />
               );
             })}
+            <SubDetail
+              titleLeft="Tệp đính kèm"
+              itemLeft={dataLDetail.bangChung === null ? "Không" : "Có"}
+              titleRight={null}
+            />
           </div>
         </div>
         <div className="all-salary">
@@ -98,7 +103,7 @@ function ScreenDetailSalary(props) {
             to={`/profile/detail/${dataLDetail.maNhanVien}?move=moveToSalary`}
             className="btn-move-salary"
           >
-            <button className="btn-fix">
+            <button className="btn-fix-salary">
               <FontAwesomeIcon
                 icon={["fas", "arrow-right"]}
                 style={{ fontSize: "50px" }}

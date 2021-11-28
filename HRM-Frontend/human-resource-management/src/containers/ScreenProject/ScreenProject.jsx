@@ -39,10 +39,11 @@ import AddLanguageForm from "../../components/AddLanguageForm/AddLanguageForm";
 import AddFamilyForm from "../../components/AddFamilyForm/AddFamilyForm";
 import ScreenAccount from "../ScreenAccount/ScreenAccount";
 import ScreenAccountLog from "../ScreenAccountLog/ScreenAccountLog";
-import PDF from "../../components/Detail/PDF";
+import PDF from "../PDF/PDF";
 import RegisterAccount from "../../components/ResgisterAccount/RegisterAccount";
 import ScreenDetailAccount from "../ScreenDetailAccount/ScreenDetailAccount";
 import ScreenAddRole from "../ScreenAddRole/ScreenAddRole";
+import ScreenNotFound from "./ScreenNotFound";
 function ScreenProject() {
   const { setAccount } = useContext(AccountContext);
   const { sideBar, setSiderBar } = useContext(SideBarContext);
@@ -57,6 +58,14 @@ function ScreenProject() {
       setSiderBar(true);
     }
   }
+
+  const notFoundPage = () => {
+    if (sessionStorage.getItem("resultObj")) {
+      return <ScreenNotFound />;
+    } else {
+      return <Redirect to="/login" />;
+    }
+  };
 
   return (
     <>
@@ -343,9 +352,7 @@ function ScreenProject() {
                 component={ScreenDetailAccount}
                 roles={["admin"]}
               />
-              <Route path="*">
-                <Redirect to="/login"></Redirect>
-              </Route>
+              <Route path="*">{notFoundPage}</Route>
             </Switch>
           </div>
         </div>

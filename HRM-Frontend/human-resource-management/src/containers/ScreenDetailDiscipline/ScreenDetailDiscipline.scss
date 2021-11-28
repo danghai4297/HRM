@@ -1,35 +1,99 @@
-.main-screen {
+.main-screen-discipline {
+  width: 100%;
+  .first-main-discipline {
     width: 100%;
-    .first-main {
+    display: flex;
+    .first-path-discipline {
+      width: 4%;
+      font-size: 200%;
+      padding-left: 0.5%;
+    }
+    .second-path-discipline {
+      width: 80%;
+    }
+    .third-path-discipline {
+      width: 15%;
+      .btn-fix-discipline {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+  .second-main-discipline {
+    background: white;
+    min-height: 350px;
+    width: 90%;
+    margin: 3%;
+    margin-left: 4%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    .title-main-discipline {
+      padding: 2%;
+    }
+    .second-main-path-discipline {
+      margin-left: 2%;
+    }
+  }
+}
+.all-discipline {
+  background: white;
+  height: 100px !important;
+  width: 90%;
+  margin: 3%;
+  margin-top: 1%;
+  margin-left: 4%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  display: flex;
+}
+.name-move-discipline {
+  width: 90%;
+  padding: 2%;
+}
+.btn-move-discipline {
+  width: 10%;
+  padding: 4%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: black;
+}
+.btn-move-discipline:hover {
+  background: #f5f5f0;
+  padding-left: 4.5%;
+}
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .main-screen-discipline {
+    width: 100%;
+    .first-main-discipline {
       width: 100%;
       display: flex;
-      .first-path {
+      .first-path-discipline {
         width: 4%;
         font-size: 200%;
         padding-left: 0.5%;
       }
-      .second-path {
+      .second-path-discipline {
         width: 80%;
+        margin-left: 20px;
       }
-      .third-path {
+      .third-path-discipline {
         width: 15%;
-        .btn-fix {
+        .btn-fix-discipline {
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         }
       }
     }
-    .second-main {
+    .second-main-discipline {
       background: white;
-      min-height: 350px;
+      min-height: 250px;
       width: 90%;
       margin: 3%;
       margin-left: 4%;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 5px;
-      .title-main {
+      .title-main-discipline {
         padding: 2%;
       }
-      .second-main-path {
+      .second-main-path-discipline {
         margin-left: 2%;
       }
     }
@@ -45,19 +109,20 @@
     border-radius: 5px;
     display: flex;
   }
-  .name-move-discipline{
+  .name-move-discipline {
     width: 90%;
     padding: 2%;
+    padding-top: 4%;
   }
   .btn-move-discipline {
     width: 10%;
-    padding: 4%;
-    padding-top: 2%;
+    padding: 0;
+    padding-top: 4%;
     padding-bottom: 2%;
-    color: black;
+    color: rgb(100, 91, 91);
   }
-  .btn-move-discipline:hover{
+  .btn-move-discipline:hover {
     background: #f5f5f0;
     padding-left: 4.5%;
   }
-  
+}

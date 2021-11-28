@@ -24,34 +24,32 @@ function ScreenDetailFamily(props) {
     fetchNvList();
   }, []);
 
-  console.log(dataDetailNT);
-
   return (
     <>
-      <div className="main-screen">
-        <div className="first-main">
-          <div className="first-path">
-            <button className="btn-back" onClick={history.goBack}>
+      <div className="main-screen-family">
+        <div className="first-main-family">
+          <div className="first-path-family">
+            <button className="btn-back-family" onClick={history.goBack}>
               <FontAwesomeIcon
                 className="icon-btn"
                 icon={["fas", "long-arrow-alt-left"]}
               />
             </button>
           </div>
-          <div className="second-path">
+          <div className="second-path-family">
             <h2>Thông tin gia đình</h2>
           </div>
-          <div className="third-path">
+          <div className="third-path-family">
             <Link to={`/profile/detail/family/update/${id}`}>
-              <Button variant="light" className="btn-fix">
+              <Button variant="light" className="btn-fix-family">
                 Sửa
               </Button>
             </Link>
           </div>
         </div>
-        <div className="second-main">
-          <h3 className="title-main">Thông tin chung</h3>
-          <div className="second-main-path">
+        <div className="second-main-family">
+          <h3 className="title-main-family">Thông tin chung</h3>
+          <div className="second-main-path-family">
             {ttc.map((detail, key) => {
               return (
                 <SubDetail

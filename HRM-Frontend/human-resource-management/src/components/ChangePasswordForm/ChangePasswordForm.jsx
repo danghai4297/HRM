@@ -53,6 +53,7 @@ function ChangePasswordForm(props) {
       try {
         await LoginApi.PutChangePassword(data,idAccount);
         success("Đổi mật khẩu thành công.");
+        history.goBack();
       } catch (errors) {
         error("Đổi mật khẩu không thành công!");
       }
@@ -61,7 +62,6 @@ function ChangePasswordForm(props) {
     }else if(newPassword !== rePassword){
       warn("Nhập lại mật khẩu không đúng.")
     }
-   // history.goBack();
   };
   return (
     <div className="container-form">
