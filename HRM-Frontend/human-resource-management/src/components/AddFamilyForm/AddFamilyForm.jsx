@@ -12,20 +12,49 @@ import { DatePicker } from "antd";
 import moment from "moment/moment.js";
 import { useToast } from "../Toast/Toast";
 import DialogCheck from "../Dialog/DialogCheck";
-
+const notAllowNull = /^\s*\S.*$/g;
+const allNull = /^(?!\s+$).*/g;
 const phoneRegex = /(([+][(]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})/g;
 const schema = yup.object({
   idDanhMucNguoiThan: yup
     .number()
     .typeError("Danh mục người thân không được bỏ trống."),
-  tenNguoiThan: yup.string().nullable().required("Tên người thân không được bỏ trống."),
+  tenNguoiThan: yup
+    .string()
+    .matches(notAllowNull, "Tên người thân không được là khoảng trống.")
+    .nullable()
+    .required("Tên người thân không được bỏ trống."),
   gioiTinh: yup.boolean().nullable().required("Giới tính không được bỏ trống."),
   ngaySinh: yup.date().nullable().required("Ngày sinh được bỏ trống."),
-  maNhanVien: yup.string().nullable().required("Mã nhân viên không được bỏ trống."),
-  quanHe: yup.string().nullable().required("Quan hệ không được bỏ trống."),
-  ngheNghiep: yup.string().nullable().required("Nghề nghệp không được bỏ trống."),
-  diaChi: yup.string().nullable().required("Địa chỉ không được bỏ trống."),
-  dienThoai: yup.string().matches(phoneRegex,"Điện thoại phải là số").nullable().required("Điện thoại không được bỏ trống."),
+  maNhanVien: yup
+    .string()
+    .nullable()
+    .required("Mã nhân viên không được bỏ trống."),
+  quanHe: yup
+    .string()
+    .matches(notAllowNull, "Quan hệ không được là khoảng trống.")
+    .nullable()
+    .required("Quan hệ không được bỏ trống."),
+  ngheNghiep: yup
+    .string()
+    .matches(notAllowNull, "Nghề nghiệp không được là khoảng trống.")
+    .nullable()
+    .required("Nghề nghệp không được bỏ trống."),
+  diaChi: yup
+    .string()
+    .matches(notAllowNull, "Địa chỉ không được là khoảng trống.")
+    .nullable()
+    .required("Địa chỉ không được bỏ trống."),
+  dienThoai: yup
+    .string()
+    .matches(phoneRegex, "Điện thoại phải là số")
+    .nullable()
+    .required("Điện thoại không được bỏ trống."),
+    khac:yup
+    .string()
+    .matches(allNull, "Thông tin khác không thể là khoảng trống.")
+    .nullable()
+    .notRequired(),
 });
 function AddFamilyForm(props) {
   const { error, warn, info, success } = useToast();
@@ -40,7 +69,7 @@ function AddFamilyForm(props) {
   const eCode = query.get("maNhanVien");
   const [dataDetailNT, setdataDetailNT] = useState([]);
   const [dataNT, setDataNT] = useState([]);
-  const [gender,setGender] = useState();
+  const [gender, setGender] = useState();
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
@@ -70,13 +99,23 @@ function AddFamilyForm(props) {
     };
     fetchNvList();
   }, []);
-  
+
   const intitalValue = {
     idDanhMucNguoiThan:
       id !== undefined ? `${dataDetailNT.idDanhMucNguoiThan}` : null,
     tenNguoiThan: id !== undefined ? `${dataDetailNT.tenNguoiThan}` : null,
-    gioiTinh: id !== undefined ? (`${dataDetailNT.gioiTinh}`==="Nam"?true:false) : true,
-    ngaySinh: id !== undefined ?(moment(dataDetailNT.ngaySinh)._d == "Invalid Date"?dataDetailNT.ngaySinh:moment(dataDetailNT.ngaySinh)):dataDetailNT.ngaySinh,
+    gioiTinh:
+      id !== undefined
+        ? `${dataDetailNT.gioiTinh}` === "Nam"
+          ? true
+          : false
+        : true,
+    ngaySinh:
+      id !== undefined
+        ? moment(dataDetailNT.ngaySinh)._d == "Invalid Date"
+          ? dataDetailNT.ngaySinh
+          : moment(dataDetailNT.ngaySinh)
+        : dataDetailNT.ngaySinh,
     quanHe: id !== undefined ? `${dataDetailNT.quanHe}` : null,
     ngheNghiep: id !== undefined ? `${dataDetailNT.ngheNghiep}` : null,
     diaChi: id !== undefined ? `${dataDetailNT.diaChi}` : null,
@@ -90,7 +129,6 @@ function AddFamilyForm(props) {
     maNhanVien: id !== undefined ? `${dataDetailNT.maNhanVien}` : eCode,
   };
 
-  
   const {
     register,
     handleSubmit,
@@ -107,7 +145,7 @@ function AddFamilyForm(props) {
       reset(intitalValue);
     }
   }, [dataDetailNT]);
- 
+
   const checkInputChange = () => {
     const values = getValues([
       "idDanhMucNguoiThan",
@@ -119,8 +157,7 @@ function AddFamilyForm(props) {
       "dienThoai",
       "maNhanVien",
       "khac",
-      "ngaySinh"
-    
+      "ngaySinh",
     ]);
     const dfValue = [
       intitalValue.idDanhMucNguoiThan,
@@ -138,32 +175,36 @@ function AddFamilyForm(props) {
   };
 
   console.log(gender);
-  
+
   console.log(dataDetailNT);
   const onHandleSubmit = async (data) => {
     console.log(data);
     try {
       if (id !== undefined) {
         await PutApi.PutNT(data, id);
-        success(`Sửa thông tin gia đình cho nhân viên ${dataDetailNT.tenNhanVien} thành công`);
-
+        success(
+          `Sửa thông tin gia đình cho nhân viên ${dataDetailNT.tenNhanVien} thành công`
+        );
       } else {
         await ProductApi.postNT(data);
-        success(`Thêm thông tin gia đình cho nhân viên ${dataDetailNT.tenNhanVien} thành công`);
-
+        success(
+          `Thêm thông tin gia đình cho nhân viên ${dataDetailNT.tenNhanVien} thành công`
+        );
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`)
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteNT(id);
       history.push(`/profile/detail/${dataDetailNT.maNhanVien}`);
-      success(`Xoá thông tin gia đình cho nhân viên ${dataDetailNT.tenNhanVien} thành công`);
+      success(
+        `Xoá thông tin gia đình cho nhân viên ${dataDetailNT.tenNhanVien} thành công`
+      );
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`)
+      error(`Có lỗi xảy ra ${errors}`);
     }
   };
   return (
@@ -341,9 +382,9 @@ function AddFamilyForm(props) {
                         ? "form-control col-sm-6 custom-select"
                         : "form-control col-sm-6 border-danger custom-select"
                     }
-                  onChange={(e)=>{
-                    setGender(e.target.value);
-                  }}
+                    onChange={(e) => {
+                      setGender(e.target.value);
+                    }}
                   >
                     <option value={true}>Nam</option>
                     <option value={false}>Nữ</option>
@@ -483,14 +524,26 @@ function AddFamilyForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
-        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
         cancel={cancel}
       />
       <DialogCheck
         show={showCheckDialog}
         title="Thông báo"
-        description={id!== undefined?"Bạn chưa thay đổi thông tin gia đình":"Bạn chưa nhập thông tin gia đình" }
+        description={
+          id !== undefined
+            ? "Bạn chưa thay đổi thông tin gia đình"
+            : "Bạn chưa nhập thông tin gia đình"
+        }
         confirm={null}
         cancel={cancel}
       />

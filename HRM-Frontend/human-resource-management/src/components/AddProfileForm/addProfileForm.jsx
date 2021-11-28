@@ -29,21 +29,40 @@ const bhyt = /^((DN|HX|CH|NN|DK|HC|XK|HT|DB|NO|CT|XB|TN|CS|QN|CA|CY|XN|MS|CC|CK|
 const bhxh = /^(([0-9]){10}|)$/g;
 const hoChieu = /^(([A-Z]{1})([0-9]){7}|)$/g;
 const email = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4}|)$/g;
+const notAllowNull = /^\s*\S.*$/g;
+const allNull = /^(?!\s+$).*/g;
 const schema = yup.object().shape({
   id: yup.string().nullable().required("Mã nhân viên không được bỏ trống."),
-  hoTen: yup.string().nullable().required("Họ và tên không được bỏ trống."),
+  hoTen: yup
+    .string()
+    .matches(notAllowNull, "Họ và tên không được là khoảng trống.")
+    .nullable()
+    .required("Họ và tên không được bỏ trống."),
   gioiTinh: yup.boolean().nullable().required("Giới tính không được bỏ trống."),
   idDanhMucHonNhan: yup.number().typeError("Hôn nhân không được bỏ trống."),
   ngaySinh: yup.date().nullable().required("Ngày sinh không được bỏ trống."),
-  noiSinh: yup.string().nullable().required("Nơi sinh không được bỏ trống."),
+  noiSinh: yup
+    .string()
+    .matches(notAllowNull, "Nơi sinh không được là khoảng trống.")
+    .nullable()
+    .required("Nơi sinh không được bỏ trống."),
   idDanToc: yup.number().typeError("Dân Tộc không được bỏ trống."),
-  queQuan: yup.string().nullable().required("Nguyên quán không được bỏ trống."),
+  queQuan: yup
+    .string()
+    .matches(notAllowNull, "Quê quán không được là khoảng trống.")
+    .nullable()
+    .required("Nguyên quán không được bỏ trống."),
   idTonGiao: yup.number().typeError("Tôn giáo không được bỏ trống."),
   thuongTru: yup
     .string()
+    .matches(notAllowNull, "HK thường trú không được là khoảng trống.")
     .nullable()
     .required("HK thường trú không được bỏ trống."),
-  quocTich: yup.string().nullable().required("Quốc tịch không được bỏ trống."),
+  quocTich: yup
+    .string()
+    .matches(notAllowNull, "Quốc tịch không được là khoảng trống.")
+    .nullable()
+    .required("Quốc tịch không được bỏ trống."),
   // tamTru: yup.string().required("Tạm trú không được bỏ trống."),
   atm: yup
     .string()
@@ -104,6 +123,7 @@ const schema = yup.object().shape({
   // ngayXuatNgu: yup.date().required("Ngày cấp CMND/CCCD không được bỏ trống."),
   noiCapCCCD: yup
     .string()
+    .matches(notAllowNull, "Nơi cấp không được là khoảng trống.")
     .nullable()
     .required("Nơi cấp CMND/CCCD không được bỏ trống."),
   // ngayNhapNgu: yup.date().required("Nơi cấp CMND/CCCD không được bỏ trống."),
@@ -120,26 +140,38 @@ const schema = yup.object().shape({
 
   lhkc_hoTen: yup
     .string()
+    .matches(notAllowNull, "Họ và tên không được là khoảng trống.")
     .nullable()
     .required("Họ và tên không được bỏ trống."),
-  lhkc_quanHe: yup.string().nullable().required("Quan hệ không được bỏ trống."),
+  lhkc_quanHe: yup
+    .string()
+    .matches(notAllowNull, "Quan hệ không được là khoảng trống.")
+    .nullable()
+    .required("Quan hệ không được bỏ trống."),
   lhkc_dienThoai: yup
     .string()
     .nullable()
     .matches(phoneRex, "Số điện thoại phải là số và đúng định dạng.")
     .required("Số điện thoại không được bỏ trống"),
-  lhkc_diaChi: yup.string().nullable().required("Địa chỉ không được bỏ trống."),
+  lhkc_diaChi: yup
+    .string()
+    .matches(notAllowNull, "Địa chỉ không được là khoảng trống.")
+    .nullable()
+    .required("Địa chỉ không được bỏ trống."),
   ngheNghiep: yup
     .string()
+    .matches(notAllowNull, "Nghề nghiệp không được là khoảng trống.")
     .nullable()
     .required("Nghề nghiệp không được bỏ trống."),
   // ngayTuyenDung: yup.date().required("Ngày tuyển dụng không được bỏ trống."),
   coQuanTuyenDung: yup
     .string()
+    .matches(notAllowNull, "Cơ quan tuyển dụng không được là khoảng trống.")
     .nullable()
     .required("Cơ quan tuyển dụng không được bỏ trống."),
   chucVuHienTai: yup
     .string()
+    .matches(notAllowNull, "Chức vụ không được là khoảng trống.")
     .nullable()
     .required("Chức vụ hiện tại không được bỏ trống."),
   trangThaiLaoDong: yup
@@ -158,6 +190,7 @@ const schema = yup.object().shape({
     .required("Mã số thuế cá nhân không được bỏ trống."),
   congViecChinh: yup
     .string()
+    .matches(notAllowNull, "Công việc chính không được là khoảng trống.")
     .nullable()
     .required("Công việc chính không được bỏ trống."),
   // //phongBan: yup.string().required("Phòng Ban động không được bỏ trống."),
@@ -194,6 +227,76 @@ const schema = yup.object().shape({
     .string()
     .nullable()
     .required("Mã nhân viên không được bỏ trống."),
+  nganHang: yup
+    .string()
+    .matches(allNull, "Ngân hàng không thể là khoảng trống.")
+    .nullable()
+    .notRequired(),
+  tamTru: yup
+    .string()
+    .matches(allNull, "Tạm trú không thể là khoảng trống.")
+    .nullable()
+    .notRequired(),
+  NoiCapHoChieu: yup
+    .string()
+    .matches(allNull, "Nơi cấp hộ chiếu không thể là khoảng trống.")
+    .nullable()
+    .notRequired(),
+  facebook: yup
+    .string()
+    .matches(allNull, "Facebook không thể là khoảng trống.")
+    .nullable()
+    .notRequired(),
+  skype: yup
+    .string()
+    .matches(allNull, "Skype không thể là khoảng trống.")
+    .nullable()
+    .notRequired(),
+  noiThamGia: yup
+    .string()
+    .matches(allNull, "Nơi tham gia không thể là khoảng trống.")
+    .nullable()
+    .notRequired(),
+  ngachCongChucNoiDung: yup
+    .string()
+    .matches(allNull, "NCCND không thể là khoảng trống.")
+    .nullable()
+    .notRequired(),
+    yt_nhomMau: yup
+    .string()
+    .matches(allNull, "Nhóm máu không thể là khoảng trống.")
+    .nullable()
+    .notRequired(),
+    yt_benhTat:yup
+    .string()
+    .matches(allNull, "Bệnh tật không thể là khoảng trống.")
+    .nullable()
+    .notRequired(),
+    yt_luuY:yup
+    .string()
+    .matches(allNull, "Lưu ý không thể là khoảng trống.")
+    .nullable()
+    .notRequired(),
+    yt_tinhTrangSucKhoe:yup
+    .string()
+    .matches(allNull, "Tình trạng sức khoẻ không thể là khoảng trống.")
+    .nullable()
+    .notRequired(),
+    lsbt_biBatDiTu:yup
+    .string()
+    .matches(allNull, "Lịch sử bản thân không thể là khoảng trống.")
+    .nullable()
+    .notRequired(),
+    lsbt_thamGiaChinhTri:yup
+    .string()
+    .matches(allNull, "Lịch sử bản thân không thể là khoảng trống.")
+    .nullable()
+    .notRequired(),
+    lsbt_thanNhanNuocNgoai:yup
+    .string()
+    .matches(allNull, "Lịch sử bản thân không thể là khoảng trống.")
+    .nullable()
+    .notRequired(),
 });
 
 function AddProfileForm(props) {
@@ -601,6 +704,21 @@ function AddProfileForm(props) {
       "lsbt_biBatDiTu",
       "lsbt_thamGiaChinhTri",
       "lsbt_thanNhanNuocNgoai",
+      "ngaySinh",
+      "ngayCapCCCD",
+      "ngayHetHanCCCD",
+      "ngayCapHoChieu",
+      "ngayHetHanHoChieu",
+      "ngayTuyenDung",
+      "ngayThuViec",
+      "ngayVaoBan",
+      "ngayChinhThuc",
+      "ngayVaoDang",
+      "ngayVaoDangChinhThuc",
+      "ngayNhapNgu",
+      "ngayXuatNgu",
+      "ngayVaoDoan",
+      "ngayNghiViec",
     ]);
     const dfValue = [
       intitalValue.id,
@@ -661,6 +779,21 @@ function AddProfileForm(props) {
       intitalValue.lsbt_biBatDiTu,
       intitalValue.lsbt_thamGiaChinhTri,
       intitalValue.lsbt_thanNhanNuocNgoai,
+      intitalValue.ngaySinh,
+      intitalValue.ngayCapCCCD,
+      intitalValue.ngayHetHanCCCD,
+      intitalValue.ngayCapHoChieu,
+      intitalValue.ngayHetHanHoChieu,
+      intitalValue.ngayTuyenDung,
+      intitalValue.ngayThuViec,
+      intitalValue.ngayVaoBan,
+      intitalValue.ngayChinhThuc,
+      intitalValue.ngayVaoDang,
+      intitalValue.ngayVaoDangChinhThuc,
+      intitalValue.ngayNhapNgu,
+      intitalValue.ngayXuatNgu,
+      intitalValue.ngayVaoDoan,
+      intitalValue.ngayNghiViec,
     ];
     //return JSON.stringify(values) === JSON.stringify(dfValue);
     if (
@@ -792,7 +925,12 @@ function AddProfileForm(props) {
               )}
             /> */}
 
-              <Upload beforeUpload={() => false} onChange={handleChange}  maxCount={1} accept=".jpg,.png">
+              <Upload
+                beforeUpload={() => false}
+                onChange={handleChange}
+                maxCount={1}
+                accept=".jpg,.png"
+              >
                 <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
               </Upload>
               {/* <input
@@ -882,8 +1020,13 @@ function AddProfileForm(props) {
                       type="text"
                       {...register("nganHang")}
                       id="nganHang"
-                      className="form-control col-sm-6"
+                      className={
+                        !errors.nganHang
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
                     />
+                    <span className="message">{errors.nganHang?.message}</span>
                   </div>
                 </div>
               </div>
@@ -1364,8 +1507,15 @@ function AddProfileForm(props) {
                       type="text"
                       {...register("NoiCapHoChieu")}
                       id="NoiCapHoChieu"
-                      className="form-control col-sm-6"
+                      className={
+                        !errors.NoiCapHoChieu
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
                     />
+                    <span className="message">
+                      {errors.NoiCapHoChieu?.message}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -1521,8 +1671,13 @@ function AddProfileForm(props) {
                       type="text"
                       {...register("facebook")}
                       id="facebook"
-                      className="form-control col-sm-6"
+                      className={
+                        !errors.facebook
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
                     />
+                    <span className="message">{errors.facebook?.message}</span>
                   </div>
                 </div>
               </div>
@@ -1560,8 +1715,13 @@ function AddProfileForm(props) {
                       type="text"
                       {...register("skype")}
                       id="skype"
-                      className="form-control col-sm-6"
+                      className={
+                        !errors.skype
+                          ? "form-control col-sm-6 "
+                          : "form-control col-sm-6 border-danger"
+                      }
                     />
+                    <span className="message">{errors.skype?.message}</span>
                   </div>
                 </div>
               </div>
@@ -2061,14 +2221,13 @@ function AddProfileForm(props) {
                         <DatePicker
                           id="ngayNghiViec"
                           className={
-                            !errors.ngaySinh
+                            !errors.ngayNghiViec
                               ? "form-control col-sm-6"
                               : "form-control col-sm-6 border-danger"
                           }
                           placeholder="DD/MM/YYYY"
                           format="DD/MM/YYYY"
                           value={field.value}
-
                           onChange={(event) => {
                             field.onChange(event);
                           }}
@@ -2167,8 +2326,15 @@ function AddProfileForm(props) {
                       type="text"
                       {...register("ngachCongChucNoiDung")}
                       id="ngachCongChucNoiDung"
-                      className="form-control col-sm-6"
+                      className={
+                        !errors.ngachCongChucNoiDung
+                          ? "form-control col-sm-6"
+                          : "form-control col-sm-6 border-danger"
+                      }
                     />
+                    <span className="message">
+                      {errors.ngachCongChucNoiDung?.message}
+                    </span>
                   </div>
                 </div>
                 <div className="col">
@@ -2181,10 +2347,17 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("NoiThamGia")}
-                      id="NoiThamGia"
-                      className="form-control col-sm-6"
+                      {...register("noiThamGia")}
+                      id="noiThamGia"
+                      className={
+                        !errors.noiThamGia
+                          ? "form-control col-sm-6"
+                          : "form-control col-sm-6 border-danger"
+                      }
                     />
+                    <span className="message">
+                      {errors.noiThamGia?.message}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -2239,7 +2412,6 @@ function AddProfileForm(props) {
                         />
                       )}
                     />
-                     
                   </div>
                 </div>
               </div>
@@ -2490,8 +2662,15 @@ function AddProfileForm(props) {
                       type="text"
                       {...register("yt_nhomMau")}
                       id="yt_nhomMau"
-                      className="form-control col-sm-6"
+                      className={
+                        !errors.yt_nhomMau
+                          ? "form-control  col-sm-6"
+                          : "form-control col-sm-6 border-danger"
+                      }
                     />
+                      <span className="message">
+                      {errors.yt_nhomMau?.message}
+                    </span>
                   </div>
                 </div>
                 <div className="col">
@@ -2506,8 +2685,15 @@ function AddProfileForm(props) {
                       type="text"
                       {...register("yt_benhTat")}
                       id="yt_benhTat"
-                      className="form-control col-sm-6"
+                      className={
+                        !errors.yt_benhTat
+                          ? "form-control  col-sm-6"
+                          : "form-control col-sm-6 border-danger"
+                      }
                     />
+                    <span className="message">
+                      {errors.yt_benhTat?.message}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -2547,8 +2733,15 @@ function AddProfileForm(props) {
                       type="text"
                       {...register("yt_luuY")}
                       id="yt_luuY"
-                      className="form-control col-sm-6"
+                      className={
+                        !errors.yt_luuY
+                          ? "form-control  col-sm-6"
+                          : "form-control col-sm-6 border-danger"
+                      }
                     />
+                     <span className="message">
+                      {errors.yt_luuY?.message}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -2606,8 +2799,15 @@ function AddProfileForm(props) {
                       type="text"
                       {...register("yt_tinhTrangSucKhoe")}
                       id="yt_tinhTrangSucKhoe"
-                      className="form-control col-sm-6"
+                      className={
+                        !errors.yt_tinhTrangSucKhoe
+                          ? "form-control  col-sm-6"
+                          : "form-control col-sm-6 border-danger"
+                      }
                     />
+                    <span className="message">
+                      {errors.yt_tinhTrangSucKhoe?.message}
+                    </span>
                     <input
                       style={{ display: "none" }}
                       type="text"

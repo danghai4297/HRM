@@ -19,10 +19,12 @@ import Dialog from "../../components/Dialog/Dialog";
 import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import jwt_decode from "jwt-decode";
-
+const notAllowNull = /^\s*\S.*$/g;
+const allNull = /^(?!\s+$).*/g;
 const schema = yup.object({
   maHopDong: yup
     .string()
+    .matches(notAllowNull, "Mã hợp đồng không được là khoảng trống.")
     .nullable()
     .required("Mã hợp đồng không được bỏ trống."),
   idNhomLuong: yup
@@ -33,7 +35,7 @@ const schema = yup.object({
     .number()
     .positive("Hệ số lương không thể là số âm.")
     .typeError("Hệ số lương không được bỏ trống."),
-  bacLuong: yup.string().nullable().required("Bậc lương không được bỏ trống."),
+  bacLuong: yup.string().matches(notAllowNull, "Bậc lương không được là khoảng trống.").nullable().required("Bậc lương không được bỏ trống."),
   ngayHieuLuc: yup
     .date()
     .nullable()
@@ -43,10 +45,10 @@ const schema = yup.object({
     .number()
     .positive("Lương cơ bản không thể là số âm.")
     .typeError("Lương cơ bản không được bỏ trống và phải là số."),
-  phuCapTrachNhiem: yup
-    .number()
-    .positive("Phụ cấp chức vụ không thể là số âm.")
-    .typeError("Phụ cấp chức vụ không được bỏ trống và phải là số."),
+  // phuCapTrachNhiem: yup
+  //   .number()
+  //   .positive("Phụ cấp chức vụ không thể là số âm.")
+  //   .typeError("Phụ cấp chức vụ không được bỏ trống và phải là số."),
   phuCapKhac: yup
     .number()
     .positive("Phụ cấp khác không thể là số âm.")
@@ -54,9 +56,15 @@ const schema = yup.object({
   tongLuong: yup.number(),
   thoiHanLenLuong: yup
     .string()
+    .matches(notAllowNull, "Thời hạn lên lương không được là khoảng trống.")
     .nullable()
     .required("thời hạn lên lương không được bỏ trống."),
   trangThai: yup.boolean(),
+  ghiChu:yup
+  .string()
+  .matches(allNull, "Ghi chú không thể là khoảng trống.")
+  .nullable()
+  .notRequired(),
 });
 
 function AddSalaryForm(props) {
@@ -653,6 +661,7 @@ function AddSalaryForm(props) {
                         ? "form-control col-sm-6 "
                         : "form-control col-sm-6 border-danger"
                     }
+                    readOnly
                   />
                   <span className="message">
                     {errors.phuCapTrachNhiem?.message}

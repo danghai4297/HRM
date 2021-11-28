@@ -16,11 +16,13 @@ import { useToast } from "../Toast/Toast";
 import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import jwt_decode from "jwt-decode";
-
+const notAllowNull = /^\s*\S.*$/g;
+const allNull = /^(?!\s+$).*/g;
 const schema = yup.object({
   trangThai: yup.boolean(),
   maNhanVien: yup
     .string()
+    .matches(notAllowNull, "Mã nhân viên không được là khoảng trống.")
     .nullable()
     .required("Mã nhân viên không được bỏ trống."),
   idLoaiHopDong: yup.number().typeError("Loại hợp đồng không được bỏ trống."),
@@ -39,6 +41,11 @@ const schema = yup.object({
     .nullable()
     .required("Ngày hết hạn không được bỏ trống"),
   idCre: yup.number(),
+  ghiChu:yup
+  .string()
+  .matches(allNull, "Ghi chú không thể là khoảng trống.")
+  .nullable()
+  .notRequired(),
 });
 function AddContractForm(props) {
   let location = useLocation();
@@ -125,6 +132,7 @@ function AddContractForm(props) {
     handleId();
   }, []);
 
+  
   const [file, setFile] = useState({
     file: null,
     path: "/Images/userIcon.png",

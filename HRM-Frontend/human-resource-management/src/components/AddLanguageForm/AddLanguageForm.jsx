@@ -12,14 +12,21 @@ import { DatePicker } from "antd";
 import moment from "moment/moment.js";
 import DialogCheck from "../Dialog/DialogCheck";
 import { useToast } from "../Toast/Toast";
-
+const notAllowNull = /^\s*\S.*$/g;
+const allNull = /^(?!\s+$).*/g;
 const schema = yup.object({
-  idDanhMucNgoaiNgu: yup
-    .number()
-    .typeError("Ngoại ngữ không được bỏ trống."),
+  idDanhMucNgoaiNgu: yup.number().typeError("Ngoại ngữ không được bỏ trống."),
   ngayCap: yup.date().nullable().required("Ngày cấp không được bỏ trống."),
-  trinhDo: yup.string().nullable().required("Trình độ không được bỏ trống."),
-  noiCap: yup.string().nullable().required("Nơi cấp không được bỏ trống."),
+  trinhDo: yup
+    .string()
+    .matches(notAllowNull, "Trình độ không thể là khoảng trống.")
+    .nullable()
+    .required("Trình độ không được bỏ trống."),
+  noiCap: yup
+    .string()
+    .matches(notAllowNull, "Nơi cấp không thể là khoảng trống.")
+    .nullable()
+    .required("Nơi cấp không được bỏ trống."),
   maNhanVien: yup
     .string()
     .nullable()
@@ -68,7 +75,12 @@ function AddLanguageForm(props) {
     fetchNvList();
   }, []);
   const intitalValue = {
-    ngayCap:  id !== undefined ?(moment(dataDetailNN.ngayCap)._d == "Invalid Date"?dataDetailNN.ngayCap:moment(dataDetailNN.ngayCap)):dataDetailNN.ngayCap,
+    ngayCap:
+      id !== undefined
+        ? moment(dataDetailNN.ngayCap)._d == "Invalid Date"
+          ? dataDetailNN.ngayCap
+          : moment(dataDetailNN.ngayCap)
+        : dataDetailNN.ngayCap,
     trinhDo: id !== undefined ? `${dataDetailNN.trinhDo}` : null,
     noiCap: id !== undefined ? `${dataDetailNN.noiCap}` : null,
     maNhanVien: id !== undefined ? `${dataDetailNN.maNhanVien}` : eCode,

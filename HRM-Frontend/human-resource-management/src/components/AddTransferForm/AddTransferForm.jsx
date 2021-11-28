@@ -16,15 +16,23 @@ import Dialog from "../../components/Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
+const notAllowNull = /^\s*\S.*$/g;
+const allNull = /^(?!\s+$).*/g;
 const schema = yup.object({
   maNhanVien: yup
     .string()
+    .matches(notAllowNull, "Mã nhân viên không được là khoảng trống.")
     .nullable()
     .required("Mã nhân viên không được bỏ trống."),
   idPhongBan: yup.number().typeError("Phòng ban không được bỏ trống."),
   to: yup.number().nullable().required("Tổ không được bỏ trống."),
   // idChucVu: yup.number().nullable().required("Chức vụ không được bỏ trống."),
   trangThai: yup.boolean(),
+  chiTiet: yup
+  .string()
+  .matches(allNull, "Chi tiết không thể là khoảng trống.")
+  .nullable()
+  .notRequired(),
 });
 function AddTransferForm(props) {
   const { error, warn, info, success } = useToast();
