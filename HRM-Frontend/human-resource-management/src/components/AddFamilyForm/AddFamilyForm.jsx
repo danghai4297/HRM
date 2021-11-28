@@ -20,7 +20,7 @@ const schema = yup.object({
     .typeError("Danh mục người thân không được bỏ trống."),
   tenNguoiThan: yup.string().nullable().required("Tên người thân không được bỏ trống."),
   gioiTinh: yup.boolean().nullable().required("Giới tính không được bỏ trống."),
-  ngaySinh: yup.string().nullable().required("Ngày sinh được bỏ trống."),
+  ngaySinh: yup.date().nullable().required("Ngày sinh được bỏ trống."),
   maNhanVien: yup.string().nullable().required("Mã nhân viên không được bỏ trống."),
   quanHe: yup.string().nullable().required("Quan hệ không được bỏ trống."),
   ngheNghiep: yup.string().nullable().required("Nghề nghệp không được bỏ trống."),
@@ -153,8 +153,8 @@ function AddFamilyForm(props) {
 
       }
       history.goBack();
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`)
+    } catch (errors) {
+      error(`Có lỗi xảy ra ${errors}`)
     }
   };
   const handleDelete = async () => {

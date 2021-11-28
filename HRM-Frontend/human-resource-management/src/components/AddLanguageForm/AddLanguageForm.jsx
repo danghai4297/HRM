@@ -17,7 +17,7 @@ const schema = yup.object({
   idDanhMucNgoaiNgu: yup
     .number()
     .typeError("Ngoại ngữ không được bỏ trống."),
-  ngayCap: yup.string().nullable().required("Ngày cấp không được bỏ trống."),
+  ngayCap: yup.date().nullable().required("Ngày cấp không được bỏ trống."),
   trinhDo: yup.string().nullable().required("Trình độ không được bỏ trống."),
   noiCap: yup.string().nullable().required("Nơi cấp không được bỏ trống."),
   maNhanVien: yup

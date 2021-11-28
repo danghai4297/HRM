@@ -15,7 +15,10 @@ import DialogCheck from "../Dialog/DialogCheck";
 import { useToast } from "../Toast/Toast";
 
 const schema = yup.object({
-  tenTruong: yup.string().nullable().required("Tên trường không được bỏ trống."),
+  tenTruong: yup
+    .string()
+    .nullable()
+    .required("Tên trường không được bỏ trống."),
   idChuyenMon: yup.number().typeError("Chuyên môn không được bỏ trống."),
   idHinhThucDaoTao: yup
     .number()
@@ -23,22 +26,21 @@ const schema = yup.object({
   idTrinhDo: yup
     .number()
     .typeError("Trình độ không được bỏ trống."),
-  tuThoiGian: yup.string().nullable().required("Từ ngày không được bỏ trống"),
-  denThoiGian: yup.string().nullable().required("Đến ngày không được bỏ trống"),
+  tuThoiGian: yup.date().nullable().required("Từ ngày không được bỏ trống"),
+  denThoiGian: yup.date().nullable().required("Đến ngày không được bỏ trống"),
 });
 function AddLevelForm(props) {
   const { error, warn, info, success } = useToast();
 
-  let { match, history } = props; 
+  let { match, history } = props;
 
   let location = useLocation();
   let query = new URLSearchParams(location.search);
   //  console.log(query.get("maNhanVien"));
   //  console.log(query.get("hoTen"));
 
-
   let eCode = query.get("maNhanVien");
-  let eName =  query.get("hoVaTen");
+  let eName = query.get("hoVaTen");
   let { id } = match.params;
 
   const [dataDetailTDVH, setdataDetailTDVH] = useState([]);
@@ -92,8 +94,18 @@ function AddLevelForm(props) {
   const intitalValue = {
     maNhanVien: id !== undefined ? `${dataDetailTDVH.maNhanVien}` : eCode,
     idChuyenMon: id !== undefined ? `${dataDetailTDVH.idChuyenMon}` : null,
-    tuThoiGian: id !== undefined?(moment(dataDetailTDVH.tuThoiGian)._d == "Invalid Date"?dataDetailTDVH.tuThoiGian:moment(dataDetailTDVH.tuThoiGian)):dataDetailTDVH.tuThoiGian,
-    denThoiGian: id !== undefined?(moment(dataDetailTDVH.denThoiGian)._d == "Invalid Date"?dataDetailTDVH.denThoiGian:moment(dataDetailTDVH.denThoiGian)):dataDetailTDVH.denThoiGian,
+    tuThoiGian:
+      id !== undefined
+        ? moment(dataDetailTDVH.tuThoiGian)._d == "Invalid Date"
+          ? dataDetailTDVH.tuThoiGian
+          : moment(dataDetailTDVH.tuThoiGian)
+        : dataDetailTDVH.tuThoiGian,
+    denThoiGian:
+      id !== undefined
+        ? moment(dataDetailTDVH.denThoiGian)._d == "Invalid Date"
+          ? dataDetailTDVH.denThoiGian
+          : moment(dataDetailTDVH.denThoiGian)
+        : dataDetailTDVH.denThoiGian,
     idHinhThucDaoTao:
       id !== undefined ? `${dataDetailTDVH.idHinhThucDaoTao}` : null,
     idTrinhDo: id !== undefined ? `${dataDetailTDVH.idTrinhDo}` : null,
@@ -142,31 +154,32 @@ function AddLevelForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
-    console.log(data);
-    console.log(errors);
     checkInputChange();
-    
+
     try {
       if (id !== undefined) {
         await PutApi.PutTDVH(data, id);
-        success(`Sửa thông tin trình độ cho nhân viên ${dataDetailTDVH.tenNhanVien} thành công`);
+        success(
+          `Sửa thông tin trình độ cho nhân viên ${dataDetailTDVH.tenNhanVien} thành công`
+        );
       } else {
         await ProductApi.PostTDVH(data);
         success(`Thêm thông tin trình độ cho nhân viên ${eName} thành công`);
       }
       history.goBack();
-    } catch (error) {
+    } catch (errors) {
       console.log("Có lỗi xảy ra: ", error);
-      error(`Có lỗi xảy ra ${error}`)
+      error(`Có lỗi xảy ra ${errors}`)
     }
-   
   };
-  
+
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteTDVH(id);
       history.push(`/profile/detail/${dataDetailTDVH.maNhanVien}`);
-      success(`Xoá thông tin trình độ cho nhân viên ${dataDetailTDVH.tenNhanVien} thành công`);
+      success(
+        `Xoá thông tin trình độ cho nhân viên ${dataDetailTDVH.tenNhanVien} thành công`
+      );
     } catch (error) {}
   };
 
@@ -408,7 +421,7 @@ function AddLevelForm(props) {
                             : "form-control col-sm-6 border-danger"
                         }
                         placeholder="DD/MM/YYYY"
-                        format="DD/MM/YYYY"                   
+                        format="DD/MM/YYYY"
                         value={field.value}
                         onChange={(event) => {
                           field.onChange(event);
@@ -481,14 +494,26 @@ function AddLevelForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
-        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
         cancel={cancel}
       />
       <DialogCheck
         show={showCheckDialog}
         title="Thông báo"
-        description={id!== undefined?"Bạn chưa thay đổi thông tin trình độ":"Bạn chưa nhập thông tin trình độ" }
+        description={
+          id !== undefined
+            ? "Bạn chưa thay đổi thông tin trình độ"
+            : "Bạn chưa nhập thông tin trình độ"
+        }
         confirm={null}
         cancel={cancel}
       />

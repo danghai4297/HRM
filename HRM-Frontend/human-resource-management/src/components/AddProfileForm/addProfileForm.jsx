@@ -126,7 +126,7 @@ const schema = yup.object().shape({
   lhkc_dienThoai: yup
     .string()
     .nullable()
-    .matches(phoneRex, "Số điện thoại phải là số.")
+    .matches(phoneRex, "Số điện thoại phải là số và đúng định dạng.")
     .required("Số điện thoại không được bỏ trống"),
   lhkc_diaChi: yup.string().nullable().required("Địa chỉ không được bỏ trống."),
   ngheNghiep: yup
@@ -705,6 +705,7 @@ function AddProfileForm(props) {
           formData.append("maNhanVien", data.id);
           await PutApi.PutIMG(formData, data.id);
         }
+        success(`Thêm hồ sơ nhân viên ${data.hoTen} thành công`);
       }
       history.goBack();
     } catch (error) {}
@@ -2053,13 +2054,28 @@ function AddProfileForm(props) {
                     >
                       Ngày nghỉ việc
                     </label>
-                    <input
-                      type="text"
-                      {...register("ngayNghiViec")}
-                      id="ngayNghiViec"
-                      className="form-control col-sm-6"
-                      placeholder="DD/MM/YYYY"
-                      disabled={!resignation}
+                    <Controller
+                      name="ngayNghiViec"
+                      control={control}
+                      render={({ field, onChange }) => (
+                        <DatePicker
+                          id="ngayNghiViec"
+                          className={
+                            !errors.ngaySinh
+                              ? "form-control col-sm-6"
+                              : "form-control col-sm-6 border-danger"
+                          }
+                          placeholder="DD/MM/YYYY"
+                          format="DD/MM/YYYY"
+                          value={field.value}
+
+                          onChange={(event) => {
+                            field.onChange(event);
+                          }}
+                          {...field._d}
+                          disabled={!resignation}
+                        />
+                      )}
                     />
                   </div>
                 </div>
@@ -2223,6 +2239,7 @@ function AddProfileForm(props) {
                         />
                       )}
                     />
+                     
                   </div>
                 </div>
               </div>
