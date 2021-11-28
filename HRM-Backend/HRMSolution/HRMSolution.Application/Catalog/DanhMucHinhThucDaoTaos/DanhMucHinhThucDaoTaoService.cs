@@ -87,10 +87,12 @@ namespace HRMSolution.Application.Catalog.DanhMucHinhThucDaoTaos
             else
             {
                 var query = from p in _context.hinhThucDaoTaos where p.id == id select p;
+                var check = await _context.trinhDoVanHoas.Where(x => x.idHinhThucDaoTao == id).FirstOrDefaultAsync();
                 var data = await query.Select(x => new DanhMucHinhThucDaoTaoViewModel()
                 {
                     id = x.id,
-                    tenHinhThuc = x.tenHinhThuc
+                    tenHinhThuc = x.tenHinhThuc,
+                    trangThai = check == null ? "Chưa sử dụng" : "Đang sử dụng"
                 }).FirstAsync();
                 return data;
             }

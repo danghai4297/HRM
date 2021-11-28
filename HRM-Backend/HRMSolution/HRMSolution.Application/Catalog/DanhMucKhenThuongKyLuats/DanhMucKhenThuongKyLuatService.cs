@@ -114,11 +114,13 @@ namespace HRMSolution.Application.Catalog.DanhMucKhenThuongKyLuats
                 var query = from p in _context.danhMucKhenThuongKyLuats
                             where p.id == id
                             select p;
+                var check = await _context.khenThuongKyLuats.Where(x => x.idDanhMucKhenThuong == id).FirstOrDefaultAsync();
                 var data = await query.Select(x => new DanhMucKhenThuongKyLuatViewModel()
                 {
                     id = x.id,
                     tenDanhMuc = x.tenDanhMuc,
-                    tieuDe = x.tieuDe
+                    tieuDe = x.tieuDe,
+                    trangThai = check == null ? "Chưa sử dụng" : "Đang sử dụng"
                 }).FirstAsync();
                 return data;
             }

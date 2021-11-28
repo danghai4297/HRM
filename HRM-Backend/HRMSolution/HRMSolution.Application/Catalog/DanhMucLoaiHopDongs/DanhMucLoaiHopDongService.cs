@@ -91,11 +91,13 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
             else
             {
                 var query = from p in _context.danhMucLoaiHopDongs where p.id == id select p;
+                var check = await _context.hopDongs.Where(x => x.idLoaiHopDong == id).FirstOrDefaultAsync();
                 var data = await query.Select(x => new DanhMucLoaiHopDongViewModel()
                 {
                     id = x.id,
                     maLoaiHopDong = x.maLoaiHopDong,
-                    tenLoaiHopDong = x.tenLoaiHopDong
+                    tenLoaiHopDong = x.tenLoaiHopDong,
+                    trangThai = check == null ? "Chưa sử dụng" : "Đang sử dụng"
                 }).FirstAsync();
                 return data;
             }

@@ -7,15 +7,14 @@ using System.Text;
 
 namespace HRMSolution.Data.Configurations
 {
-    class DanhMucTinhChatLaoDongConfiguration : IEntityTypeConfiguration<DanhMucPhongBan>
+    class DanhMucTinhChatLaoDongConfiguration : IEntityTypeConfiguration<DanhMucTinhChatLaoDong>
     {
-        public void Configure(EntityTypeBuilder<DanhMucPhongBan> builder)
+        public void Configure(EntityTypeBuilder<DanhMucTinhChatLaoDong> builder)
         {
             builder.ToTable("DanhMucTinhChatLaoDong");
             builder.HasKey(x => x.id);
             builder.Property(x => x.id).UseIdentityColumn();
-            builder.Property(x => x.maPhongBan).HasMaxLength(10).IsRequired();
-            builder.Property(x => x.tenPhongBan).HasMaxLength(50).IsRequired();
+            builder.Property(x => x.tenTinhChat).HasMaxLength(50).IsRequired();
         }
     }
 }

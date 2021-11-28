@@ -89,11 +89,13 @@ namespace HRMSolution.Application.Catalog.DanhMucNhomLuongs
             else
             {
                 var query = from p in _context.danhMucNhomLuongs where p.id == id select p;
+                var check = await _context.luongs.Where(x => x.idNhomLuong == id).FirstOrDefaultAsync();
                 var data = await query.Select(x => new DanhMucNhomLuongViewModel()
                 {
                     id = x.id,
                     maNhomLuong = x.maNhomLuong,
-                    tenNhomLuong = x.tenNhomLuong
+                    tenNhomLuong = x.tenNhomLuong,
+                    trangThai = check == null ? "Chưa sử dụng" : "Đang sử dụng"
                 }).FirstAsync();
                 return data;
             }

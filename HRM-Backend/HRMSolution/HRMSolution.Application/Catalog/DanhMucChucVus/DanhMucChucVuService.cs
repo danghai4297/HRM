@@ -102,12 +102,14 @@ namespace HRMSolution.Application.Catalog.DanhMucChucDanhs
             else
             {
                 var query = from p in _context.danhMucChucVus where p.id == id select p;
+                var check = await _context.hopDongs.Where(x => x.idChucVu == id).FirstOrDefaultAsync();
                 var data = await query.Select(x => new DanhMucChucVuViewModel()
                 {
                     id = x.id,
                     maChucVu = x.maChucVu,
                     tenChucVu = x.tenChucVu,
-                    phuCap = x.phuCap
+                    phuCap = x.phuCap,
+                    trangThai = check == null ? "Chưa sử dụng" : "Đang sử dụng"
                 }).FirstAsync();
                 return data;
             }

@@ -34,24 +34,53 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
             }
             else
             {
-                var dieuChuyen = new DieuChuyen()
+                var query = await _context.luongs.Where(x => x.trangThai == true).FirstOrDefaultAsync();
+                if (query == null)
                 {
-                    maNhanVien = request.maNhanVien,
-                    ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
-                    idPhongBan = request.idPhongBan,
-                    to = request.to,
-                    chiTiet = request.chiTiet,
-                    trangThai = true
-                };
-                if (request.bangChung is null)
-                {
-                    dieuChuyen.bangChung = null;
+                    var dieuChuyen = new DieuChuyen()
+                    {
+                        maNhanVien = request.maNhanVien,
+                        ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
+                        idPhongBan = request.idPhongBan,
+                        to = request.to,
+                        chiTiet = request.chiTiet,
+                        trangThai = true
+                    };
+                    if (request.bangChung is null)
+                    {
+                        dieuChuyen.bangChung = null;
+                    }
+                    else
+                    {
+                        dieuChuyen.bangChung = await this.SaveFile(request.bangChung);
+                    }
+                    _context.dieuChuyens.Add(dieuChuyen);
+
                 }
                 else
                 {
-                    dieuChuyen.bangChung = await this.SaveFile(request.bangChung);
+                    var dc_update = await _context.dieuChuyens.FindAsync(query.id);
+                    dc_update.trangThai = false;
+
+                    var dieuChuyen = new DieuChuyen()
+                    {
+                        maNhanVien = request.maNhanVien,
+                        ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
+                        idPhongBan = request.idPhongBan,
+                        to = request.to,
+                        chiTiet = request.chiTiet,
+                        trangThai = true
+                    };
+                    if (request.bangChung is null)
+                    {
+                        dieuChuyen.bangChung = null;
+                    }
+                    else
+                    {
+                        dieuChuyen.bangChung = await this.SaveFile(request.bangChung);
+                    }
+                    _context.dieuChuyens.Add(dieuChuyen);
                 }
-                _context.dieuChuyens.Add(dieuChuyen);
                 var result = await _context.SaveChangesAsync();
                 if (result == 0)
                     return 0;
