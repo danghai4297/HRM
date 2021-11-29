@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HRMSolution.NUnitTest
 {
-    public class TestContract : BaseTest
+    public class TestContract : BaseTest()
     {
         [OneTimeSetUp]
         public void Setup()

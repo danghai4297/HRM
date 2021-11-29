@@ -13,12 +13,6 @@ namespace HRMSolution.Application.Common
         private const string USER_CONTENT_FOLDER_NAME = "user-content";
         public FileStorageService(IWebHostEnvironment webHostEnvironment)
         {
-
-            //if (string.IsNullOrWhiteSpace(webHostEnvironment.WebRootPath))
-            //{
-            //    webHostEnvironment.WebRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
-            //}
-
             _userContentFolder = Path.Combine(webHostEnvironment.WebRootPath, USER_CONTENT_FOLDER_NAME);
         }
 
@@ -36,7 +30,7 @@ namespace HRMSolution.Application.Common
 
         public async Task DeleteFileAsync(string fileName)
         {
-            var filePath = string.Concat(_userContentFolder,string.IsNullOrWhiteSpace(fileName)?string.Empty:fileName.Replace("/user-content",""));
+            var filePath = string.Concat(_userContentFolder, string.IsNullOrWhiteSpace(fileName) ? string.Empty : fileName.Replace("/user-content", ""));
             if (File.Exists(filePath))
             {
                 await Task.Run(() => File.Delete(filePath));

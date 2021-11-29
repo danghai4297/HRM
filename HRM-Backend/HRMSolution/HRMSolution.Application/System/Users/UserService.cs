@@ -129,8 +129,7 @@ namespace HRMSolution.Application.System.Users
 
         public async Task<bool> Register(RegisterRequest request)
         {
-            var x = request.UserName;
-            var user = await _userManager.FindByNameAsync(x);
+            var user = await _userManager.FindByNameAsync(request.UserName);
 
             if (user != null)
             {

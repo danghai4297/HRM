@@ -28,11 +28,13 @@ using HRMSolution.Application.Common;
 using HRMSolution.Application.System.Users;
 using HRMSolution.Data.EF;
 using HRMSolution.Data.Entities;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -84,13 +86,15 @@ namespace HRMSolution.NUnitTest
         //IService User
         protected IUserService UserService;
         protected IStorageService storageService;
+        protected IWebHostEnvironment webHostEnvironment;
+        protected string _userContentFolder;
         public BaseTest()
         {
             DbContextOptions<HRMDbContext> dbContextOptions = new DbContextOptionsBuilder<HRMDbContext>()
                                     .UseInMemoryDatabase(databaseName: "HRM")
                                     .Options;
             _context = new HRMDbContext(dbContextOptions);
-
+            storageService = new FileStorageService(webHostEnvironment);
             danhMucChucDanhService = new DanhMucChucDanhService(_context);
             danhMucChucVuService = new DanhMucChucVuService(_context);
             danhMucChuyenMonService = new DanhMucChuyenMonService(_context);
