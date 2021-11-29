@@ -34,7 +34,7 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
             }
             else
             {
-                var query = await _context.luongs.Where(x => x.trangThai == true).FirstOrDefaultAsync();
+                var query = await _context.dieuChuyens.Where(x => x.trangThai == true && x.maNhanVien == request.maNhanVien).FirstOrDefaultAsync();
                 if (query == null)
                 {
                     var dieuChuyen = new DieuChuyen()

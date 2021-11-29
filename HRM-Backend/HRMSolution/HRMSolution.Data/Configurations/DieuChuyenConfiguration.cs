@@ -11,7 +11,7 @@ namespace HRMSolution.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<DieuChuyen> builder)
         {
-            builder.ToTable("DieuChuyen");
+            builder.ToTable("QuaTrinhCongTac");
             builder.HasKey(x => x.id);
             builder.Property(x => x.id).UseIdentityColumn();
             builder.Property(x => x.maNhanVien).HasMaxLength(10).IsRequired();
