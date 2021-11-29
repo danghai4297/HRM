@@ -16,37 +16,8 @@ import { useToast } from "../Toast/Toast";
 import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import jwt_decode from "jwt-decode";
-const notAllowNull = /^\s*\S.*$/g;
-const allNull = /^(?!\s+$).*/g;
-const schema = yup.object({
-  trangThai: yup.boolean(),
-  maNhanVien: yup
-    .string()
-    .matches(notAllowNull, "Mã nhân viên không được là khoảng trống.")
-    .nullable()
-    .required("Mã nhân viên không được bỏ trống."),
-  idLoaiHopDong: yup.number().typeError("Loại hợp đồng không được bỏ trống."),
-  idChucDanh: yup.number().typeError("Chức danh không được bỏ trống."),
-  idChucVu: yup.number().typeError("Chức vụ không được bỏ trống."),
-  // maHopDong: yup
-  //   .string()
-  //   .nullable()
-  //   .required("Lương cơ bản không được bỏ trống."),
-  hopDongTuNgay: yup
-    .date()
-    .nullable()
-    .required("Ngày hiệu lực không được bỏ trống"),
-  hopDongDenNgay: yup
-    .date()
-    .nullable()
-    .required("Ngày hết hạn không được bỏ trống"),
-  idCre: yup.number(),
-  ghiChu:yup
-  .string()
-  .matches(allNull, "Ghi chú không thể là khoảng trống.")
-  .nullable()
-  .notRequired(),
-});
+import {schema} from "../../ultis/ContractValidation";
+
 function AddContractForm(props) {
   let location = useLocation();
   let query = new URLSearchParams(location.search);

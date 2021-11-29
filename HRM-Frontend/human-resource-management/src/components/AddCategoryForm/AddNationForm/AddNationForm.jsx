@@ -10,15 +10,9 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import { useToast } from "../../Toast/Toast";
 import jwt_decode from "jwt-decode";
+import {schema} from "../../../ultis/CategoryValidation";
 
-const dontAllowOnlySpace = /^\s*\S.*$/g;
-const schema = yup.object({
-  tenDanhMuc: yup
-    .string()
-    .nullable()
-    .matches(dontAllowOnlySpace, "Tên danh mục không được chỉ là khoảng trống")
-    .required("Tên danh mục không được bỏ trống."),
-});
+
 
 function AddNationForm(props) {
   const { error, success } = useToast();

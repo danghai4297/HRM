@@ -9,17 +9,9 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
+import {schema} from "../../../ultis/CategoryValidation";
 
-const dontAllowOnlySpace = /^\s*\S.*$/g;
-const schema = yup.object({
-  tenChuyenMon: yup
-    .string()
-    .matches(
-      dontAllowOnlySpace,
-      "Tên chuyên môn không được chỉ là khoảng trống"
-    )
-    .required("Tên chuyên môn không được bỏ trống."),
-});
+
 
 function AddSpecializeForm(props) {
   const { error, success } = useToast();
