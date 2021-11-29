@@ -265,7 +265,7 @@ function AddDisciplineForm(props) {
           <div className="container-div-form">
             <div className="container-salary">
               <div>
-                <h3>Thông tin khen thưởng</h3>
+                <h3>Thông tin kỷ luật</h3>
               </div>
             </div>
             <div className="row">
@@ -327,7 +327,7 @@ function AddDisciplineForm(props) {
                     class="col-sm-4 justify-content-start"
                     htmlFor="idDanhMucKhenThuong"
                   >
-                    Loại khen thưởng
+                    Loại kỷ luật
                   </label>
                   <select
                     type="text"
