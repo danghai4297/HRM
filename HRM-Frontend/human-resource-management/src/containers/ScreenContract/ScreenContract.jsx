@@ -12,11 +12,13 @@ import { Link } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
 import { ComponentToPrint } from "../../components/ToPrint/ComponentToPrint";
 import { Button } from "react-bootstrap";
+import { useDocumentTitle } from "../../hook/TitleDocument";
 
 function ScreenContract(props) {
   const link = "/contract/detail/";
   const fileName = "Danhsachhopdong";
   const [dataAllHd, setdataAllHd] = useState([]);
+  useDocumentTitle("Hợp đồng");
 
   useEffect(() => {
     const fetchNvList = async () => {

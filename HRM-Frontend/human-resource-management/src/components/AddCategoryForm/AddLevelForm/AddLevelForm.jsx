@@ -15,7 +15,7 @@ import {schema} from "../../../ultis/CategoryValidation";
 
 
 function AddLevelForm(props) {
-  const { error, success } = useToast();
+  const { error, success, warn } = useToast();
 
   let { match, history } = props;
   let { id } = match.params;
@@ -51,6 +51,18 @@ function AddLevelForm(props) {
     };
     fetchLevelCategory();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDMTD.length !== 0) {
+        document.title = `Thay đổi danh mục ${dataDetailDMTD.tenTrinhDo}`;
+      } else if (id === undefined) {
+        document.title = `Tạo danh mục trình độ mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDMTD]);
 
   const {
     register,
@@ -102,23 +114,27 @@ function AddLevelForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }
   };
 
   const handleDelete = async () => {
     try {
-      await DeleteApi.deleteDMTD(id);
-      await ProductApi.PostLS({
-        tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa danh mục trình độ: ${dataDetailDMTD.tenTrinhDo}`,
-        maNhanVien: decoded.id,
-        tenNhanVien: decoded.givenName,
-      });
-      success("Xoá trình độ thành công");
-      history.goBack();
+      if (dataDetailDMTD.trangThai === "Chưa sử dụng") {
+        await DeleteApi.deleteDMTD(id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Xóa danh mục trình độ: ${dataDetailDMTD.tenTrinhDo}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        success("Xoá trình độ thành công");
+        history.goBack();
+      } else {
+        warn(`Danh mục đang được sử dụng`);
+      }
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không xóa được danh mục ${errors}`);
     }
   };
 

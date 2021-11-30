@@ -12,8 +12,7 @@ import { DatePicker } from "antd";
 import moment from "moment/moment.js";
 import { useToast } from "../Toast/Toast";
 import DialogCheck from "../Dialog/DialogCheck";
-import {schema} from "../../ultis/FamilyValidation";
-
+import { schema } from "../../ultis/FamilyValidation";
 
 function AddFamilyForm(props) {
   const { error, warn, info, success } = useToast();
@@ -26,6 +25,7 @@ function AddFamilyForm(props) {
   let query = new URLSearchParams(location.search);
   console.log(query.get("maNhanVien"));
   const eCode = query.get("maNhanVien");
+  let eName = query.get("hoTen");
   const [dataDetailNT, setdataDetailNT] = useState([]);
   const [dataNT, setDataNT] = useState([]);
   const [gender, setGender] = useState();
@@ -52,12 +52,24 @@ function AddFamilyForm(props) {
           setdataDetailNT(response);
           setGender(response.gioiTinh);
         }
-      } catch (error) {
-        console.log("false to fetch nv list: ", error);
+      } catch (errors) {
+        error("Có lỗi xảy ra.");
       }
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailNT.length !== 0) {
+        document.title = `Thay đổi thông tin người thân cho nhân viên ${dataDetailNT.tenNhanVien}`;
+      } else if (id === undefined) {
+        document.title = `Tạo thông tin người thân của nhân viên ${eName}`;
+      }
+    };
+    titlePage();
+  }, [dataDetailNT]);
 
   const intitalValue = {
     idDanhMucNguoiThan:
@@ -152,7 +164,7 @@ function AddFamilyForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Có lỗi xảy ra.`);
     }
   };
   const handleDelete = async () => {
@@ -163,7 +175,7 @@ function AddFamilyForm(props) {
         `Xoá thông tin gia đình cho nhân viên ${dataDetailNT.tenNhanVien} thành công`
       );
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Có lỗi xảy ra.`);
     }
   };
   return (

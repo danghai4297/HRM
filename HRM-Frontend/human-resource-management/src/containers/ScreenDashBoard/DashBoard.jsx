@@ -6,6 +6,7 @@ import ItemExcel from "../../components/ItemExcel/ItemExcel";
 import TableBasic from "../../components/TablePagination/TableBasic";
 import ProductApi from "../../api/productApi";
 import { NVCOLUMNSHD, NVCOLUMNSSALARY } from "./NvColumns";
+import { useDocumentTitle } from "../../hook/TitleDocument";
 
 DashBoard.propTypes = {};
 
@@ -18,6 +19,7 @@ function DashBoard() {
   const [dataAllHd, setDataAllHd] = useState([]);
   const [dataAllLNV, setDataAllLNV] = useState([]);
   const [dataAllNVnv, setDataAllNVnv] = useState([]);
+  useDocumentTitle("Tổng quan");
 
   useEffect(() => {
     const fetchNvList = async () => {

@@ -7,6 +7,7 @@ import "./ScreenDetailSalary.scss";
 import ProductApi from "../../api/productApi";
 import dateFormat from "dateformat";
 import { ttc } from "./DataSalary";
+import NumberFormat from "react-number-format";
 
 function ScreenDetailSalary(props) {
   let { match, history } = props;
@@ -24,6 +25,15 @@ function ScreenDetailSalary(props) {
     };
     fetchNvList();
   }, []);
+  console.log(dataLDetail);
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataLDetail.length !== 0)
+        document.title = `Chi tiết lương hiện tại của nhân viên ${dataLDetail.tenNhanVien}`;
+    };
+    titlePage();
+  }, [dataLDetail]);
 
   return (
     <>
@@ -74,16 +84,36 @@ function ScreenDetailSalary(props) {
                   titleLeft={detail.title1}
                   itemLeft={
                     detail.data1[1] === true &&
-                    dataLDetail[detail.data1[0]] !== null
-                      ? dateFormat(dataLDetail[detail.data1[0]], "dd/mm/yyyy")
-                      : dataLDetail[detail.data1[0]]
+                    dataLDetail[detail.data1[0]] !== null ? (
+                      dateFormat(dataLDetail[detail.data1[0]], "dd/mm/yyyy")
+                    ) : detail.data1[2] === true &&
+                      dataLDetail[detail.data1[0]] !== null ? (
+                      <NumberFormat
+                        value={dataLDetail[detail.data1[0]]}
+                        displayType={"text"}
+                        thousandSeparator={true}
+                        suffix={" VND"}
+                      />
+                    ) : (
+                      dataLDetail[detail.data1[0]]
+                    )
                   }
                   titleRight={detail.title2}
                   itemRight={
                     detail.data2[1] === true &&
-                    dataLDetail[detail.data2[0]] !== null
-                      ? dateFormat(dataLDetail[detail.data2[0]], "dd/mm/yyyy")
-                      : dataLDetail[detail.data2[0]]
+                    dataLDetail[detail.data2[0]] !== null ? (
+                      dateFormat(dataLDetail[detail.data2[0]], "dd/mm/yyyy")
+                    ) : detail.data2[2] === true &&
+                      dataLDetail[detail.data2[0]] !== null ? (
+                      <NumberFormat
+                        value={dataLDetail[detail.data2[0]]}
+                        displayType={"text"}
+                        thousandSeparator={true}
+                        suffix={" VND"}
+                      />
+                    ) : (
+                      dataLDetail[detail.data2[0]]
+                    )
                   }
                 />
               );
@@ -91,7 +121,8 @@ function ScreenDetailSalary(props) {
             <SubDetail
               titleLeft="Tệp đính kèm"
               itemLeft={dataLDetail.bangChung === null ? "Không" : "Có"}
-              titleRight={null}
+              titleRight="Ghi chú"
+              itemRight={dataLDetail.ghiChu}
             />
           </div>
         </div>

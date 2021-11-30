@@ -13,8 +13,7 @@ import Dialog from "../../components/Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
-import {schema} from "../../ultis/RewardAndDisciplineValidation";
-
+import { schema } from "../../ultis/RewardAndDisciplineValidation";
 
 function AddDisciplineForm(props) {
   const { error, warn, info, success } = useToast();
@@ -24,6 +23,7 @@ function AddDisciplineForm(props) {
   let { id } = match.params;
   let location = useLocation();
   let query = new URLSearchParams(location.search);
+  let eName = query.get("hoTen");
   const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
   const eCode = query.get("maNhanVien");
@@ -60,11 +60,25 @@ function AddDisciplineForm(props) {
           setDataKLDetail(responseKT);
         }
       } catch (error) {
-        console.log("false to fetch nv list: ", error);
+        error("Có lỗi xảy ra.");
       }
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataKLDetail.length !== 0) {
+        document.title = `Thay đổi thông tin kỷ luật của nhân viên ${dataKLDetail.hoTen}`;
+      } else if (id === undefined && eName) {
+        document.title = `Tạo kỷ luật cho nhân viên ${eName}`;
+      } else if (id === undefined) {
+        document.title = `Tạo kỷ luật`;
+      }
+    };
+    titlePage();
+  }, [dataKLDetail]);
 
   const [file, setFile] = useState({
     file: null,
@@ -137,6 +151,7 @@ function AddDisciplineForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
+    const nameEm = dataEmployee.filter((item) => item.id === data.maNhanVien);
     console.log(data);
     try {
       if (id !== undefined) {
@@ -172,18 +187,17 @@ function AddDisciplineForm(props) {
         await ProductApi.PostKTvKL(formData);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm kỷ luật mới cho nhân viên ${dataKLDetail.hoTen}`,
+          thaoTac: `Thêm kỷ luật mới cho nhân viên ${nameEm[0].hoTen}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
         success(
-          `thêm thông tin kỷ luật cho nhân viên ${dataKLDetail.hoTen} thành công`
+          `Thêm thông tin kỷ luật cho nhân viên ${nameEm[0].hoTen} thành công`
         );
       }
       history.goBack();
-    } catch (error) {
-      console.log("errors", error);
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra.`);
     }
   };
   const handleDelete = async () => {
@@ -199,8 +213,8 @@ function AddDisciplineForm(props) {
         `Xoá thông tin kỷ luật cho nhân viên ${dataKLDetail.hoTen} thành công`
       );
       history.push(`/reward`);
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra`);
     }
   };
   return (

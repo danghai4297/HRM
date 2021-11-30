@@ -14,7 +14,7 @@ import {schema} from "../../../ultis/CategoryValidation";
 
 
 function AddEducateForm(props) {
-  const { error, success } = useToast();
+  const { error, success, warn } = useToast();
   let { match, history } = props;
   let { id } = match.params;
 
@@ -49,6 +49,18 @@ function AddEducateForm(props) {
     };
     fetchEducateCategory();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDMHTDT.length !== 0) {
+        document.title = `Thay đổi danh mục ${dataDetailDMHTDT.tenHinhThuc}`;
+      } else if (id === undefined) {
+        document.title = `Tạo danh mục hình thức đào tạo mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDMHTDT]);
 
   const {
     register,
@@ -102,24 +114,28 @@ function AddEducateForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }
   };
 
   const handleDelete = async () => {
     try {
-      await DeleteApi.deleteDMHTDT(id);
-      await ProductApi.PostLS({
-        tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa hình
+      if (dataDetailDMHTDT.trangThai === "Chưa sử dụng") {
+        await DeleteApi.deleteDMHTDT(id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Xóa hình
         thức đào tạo: ${dataDetailDMHTDT.tenHinhThuc}`,
-        maNhanVien: decoded.id,
-        tenNhanVien: decoded.givenName,
-      });
-      success("Xoá hình thức đào tạo thành công");
-      history.goBack();
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        success("Xoá hình thức đào tạo thành công");
+        history.goBack();
+      } else {
+        warn(`Danh mục đang được sử dụng`);
+      }
     } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+      error(`Không xóa được danh mục ${error}`);
     }
   };
 

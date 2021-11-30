@@ -5,13 +5,12 @@ import * as yup from "yup";
 import "./ChangePasswordForm.scss";
 import usePasswordToggle from "./usePasswordToggle";
 import { useState } from "react";
-import DialogCheck from "../Dialog/DialogCheck";
 import Dialog from "../../components/Dialog/Dialog";
 import { useToast } from "../Toast/Toast";
 import jwt_decode from "jwt-decode";
 import LoginApi from "../../api/login";
-import {schema} from "../../ultis/ChangePasswordValidation";
-
+import { useDocumentTitle } from "../../hook/TitleDocument";
+import { schema } from "../../ultis/ChangePasswordValidation";
 
 function ChangePasswordForm(props) {
   const { error, warn, info, success } = useToast();
@@ -20,9 +19,9 @@ function ChangePasswordForm(props) {
   const [passwordInputTypeOP, IconOP] = usePasswordToggle();
   const [passwordInputTypeNP, IconNP] = usePasswordToggle();
   const [passwordInputTypeRP, IconRP] = usePasswordToggle();
-  const [currentPassword,setCurrentPassword]= useState();
-  const [newPassword,setNewPassword]= useState();
-  const [rePassword,setRePassword]= useState();
+  const [currentPassword, setCurrentPassword] = useState();
+  const [newPassword, setNewPassword] = useState();
+  const [rePassword, setRePassword] = useState();
   const {
     register,
     handleSubmit,
@@ -30,23 +29,24 @@ function ChangePasswordForm(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
+  useDocumentTitle("Đổi mật khẩu");
   console.log(currentPassword);
   console.log(newPassword);
   console.log(rePassword);
   const idAccount = jwt_decode(sessionStorage.getItem("resultObj")).idAccount;
-  const onHandleSubmit = async(data) => {
-    if(currentPassword !== newPassword && newPassword === rePassword){
+  const onHandleSubmit = async (data) => {
+    if (currentPassword !== newPassword && newPassword === rePassword) {
       try {
-        await LoginApi.PutChangePassword(data,idAccount);
+        await LoginApi.PutChangePassword(data, idAccount);
         success("Đổi mật khẩu thành công.");
         history.goBack();
       } catch (errors) {
         error("Đổi mật khẩu không thành công!");
       }
-    }else if(currentPassword === newPassword){
+    } else if (currentPassword === newPassword) {
       warn("Mật khẩu mới trùng với mật khẩu cũ.");
-    }else if(newPassword !== rePassword){
-      warn("Nhập lại mật khẩu không đúng.")
+    } else if (newPassword !== rePassword) {
+      warn("Nhập lại mật khẩu không đúng.");
     }
   };
   return (
@@ -68,8 +68,8 @@ function ChangePasswordForm(props) {
               <div className="">
                 <h3>Thay đổi mật khẩu</h3>
                 <p>
-                  Nhập mật khẩu có tối thiểu 8 - 16 kí tự bao gồm số, chữ hoa, chữ
-                  thường và kí tự đặc biệt.
+                  Nhập mật khẩu có tối thiểu 8 - 16 kí tự bao gồm số, chữ hoa,
+                  chữ thường và kí tự đặc biệt.
                 </p>
               </div>
             </div>
@@ -78,7 +78,9 @@ function ChangePasswordForm(props) {
                 <div className="input-eyes">
                   <input
                     type={passwordInputTypeOP}
-                    {...register("oldPassword",{onChange : (e)=>setCurrentPassword(e.target.value)})}
+                    {...register("oldPassword", {
+                      onChange: (e) => setCurrentPassword(e.target.value),
+                    })}
                     id="oldPassword"
                     className={
                       !errors.oldPassword
@@ -89,9 +91,7 @@ function ChangePasswordForm(props) {
                   />
                   <span className="password-toogle-icon">{IconOP}</span>
                 </div>
-                <span className="message-e">
-                  {errors.oldPassword?.message}
-                </span>
+                <span className="message-e">{errors.oldPassword?.message}</span>
               </div>
             </div>
             <div className="row justify-content-center">
@@ -99,7 +99,9 @@ function ChangePasswordForm(props) {
                 <div className="input-eyes">
                   <input
                     type={passwordInputTypeNP}
-                    {...register("newPassword",{onChange : (e)=>setNewPassword(e.target.value)})}
+                    {...register("newPassword", {
+                      onChange: (e) => setNewPassword(e.target.value),
+                    })}
                     id="newPassword"
                     className={
                       !errors.newPassword
@@ -137,7 +139,9 @@ function ChangePasswordForm(props) {
                 <div className="input-eyes">
                   <input
                     type={passwordInputTypeRP}
-                    {...register("confirmPassword",{onChange : (e)=>setRePassword(e.target.value)})}
+                    {...register("confirmPassword", {
+                      onChange: (e) => setRePassword(e.target.value),
+                    })}
                     id="confirmPassword"
                     className={
                       !errors.confirmPassword

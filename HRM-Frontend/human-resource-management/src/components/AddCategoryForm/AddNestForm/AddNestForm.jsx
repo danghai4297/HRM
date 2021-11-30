@@ -9,11 +9,10 @@ import DeleteApi from "../../../api/deleteAPI";
 import PutApi from "../../../api/putAAPI";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
-import {schema} from "../../../ultis/CategoryValidation";
-
+import { schema } from "../../../ultis/CategoryValidation";
 
 function AddNestForm(props) {
-  const { error, success } = useToast();
+  const { error, success, warn } = useToast();
 
   let { match, history } = props;
   let { id } = match.params;
@@ -52,6 +51,18 @@ function AddNestForm(props) {
     };
     fetchNestCategory();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDMT.length !== 0) {
+        document.title = `Thay đổi danh mục ${dataDetailDMT.tenTo}`;
+      } else if (id === undefined) {
+        document.title = `Tạo danh mục tổ mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDMT]);
 
   useEffect(() => {
     const handleNestId = async () => {
@@ -132,23 +143,27 @@ function AddNestForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }
   };
 
   const handleDelete = async () => {
     try {
-      await DeleteApi.deleteDMT(id);
-      await ProductApi.PostLS({
-        tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa danh mục tổ: ${dataDetailDMT.tenTo}`,
-        maNhanVien: decoded.id,
-        tenNhanVien: decoded.givenName,
-      });
-      success("Xoá danh mục tổ thành công");
-      history.goBack();
+      if (dataDetailDMT.trangThai === "Chưa sử dụng") {
+        await DeleteApi.deleteDMT(id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Xóa danh mục tổ: ${dataDetailDMT.tenTo}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        success("Xoá danh mục tổ thành công");
+        history.goBack();
+      } else {
+        warn(`Danh mục đang được sử dụng`);
+      }
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không xóa được danh mục ${errors}`);
     }
   };
 

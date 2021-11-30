@@ -6,8 +6,8 @@ export const ttkt = [
     data2: "maNhanVien",
   },
   {
-    title1: "Nội dung",
-    data1: "noiDung",
+    title1: "Loại khen thưởng",
+    data1: "danhMucKhenThuong",
     title2: "Lý do",
     data2: "lyDo",
   },

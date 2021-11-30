@@ -14,7 +14,7 @@ import {schema} from "../../../ultis/CategoryValidation";
 
 
 function AddTitleForm(props) {
-  const { error, success } = useToast();
+  const { error, success, warn } = useToast();
 
   let { match, history } = props;
   let { id } = match.params;
@@ -50,6 +50,18 @@ function AddTitleForm(props) {
     };
     fetchTitleCategory();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDMCD.length !== 0) {
+        document.title = `Thay đổi danh mục ${dataDetailDMCD.tenChucDanh}`;
+      } else if (id === undefined) {
+        document.title = `Tạo danh mục chức danh mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDMCD]);
 
   useEffect(() => {
     const handleTitleId = async () => {
@@ -134,23 +146,27 @@ function AddTitleForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }
   };
 
   const handleDelete = async () => {
     try {
-      await DeleteApi.deleteDMCD(id);
-      await ProductApi.PostLS({
-        tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa danh mục chức danh: ${dataDetailDMCD.tenChucDanh}`,
-        maNhanVien: decoded.id,
-        tenNhanVien: decoded.givenName,
-      });
-      success("Xoá danh mục chức danh thành công");
-      history.goBack();
+      if (dataDetailDMCD.trangThai === "Chưa sử dụng") {
+        await DeleteApi.deleteDMCD(id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Xóa danh mục chức danh: ${dataDetailDMCD.tenChucDanh}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        success("Xoá danh mục chức danh thành công");
+        history.goBack();
+      } else {
+        warn(`Danh mục đang được sử dụng`);
+      }
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không xóa được danh mục ${errors}`);
     }
   };
 

@@ -24,6 +24,15 @@ function ScreenDetailDiscipline(props) {
     fetchNvList();
   }, []);
 
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataKLDetail.length !== 0)
+        document.title = `Chi tiết kỷ luật của nhân viên ${dataKLDetail.hoTen}`;
+    };
+    titlePage();
+  }, [dataKLDetail]);
+
   return (
     <>
       <div className="main-screen-discipline">
@@ -80,7 +89,8 @@ function ScreenDetailDiscipline(props) {
             <SubDetail
               titleLeft="Tệp đính kèm"
               itemLeft={dataKLDetail.bangChung === null ? "Không" : "Có"}
-              titleRight={null}
+              titleRight="Nội dung"
+              itemRight={dataKLDetail.noiDung}
             />
           </div>
         </div>

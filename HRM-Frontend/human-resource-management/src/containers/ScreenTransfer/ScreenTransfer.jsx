@@ -8,11 +8,13 @@ import { ExportCSV } from "../../components/ExportFile/ExportFile";
 import TablePagination from "../../components/TablePagination/TablePagination";
 import productApi from "../../api/productApi";
 import { Link } from "react-router-dom";
+import { useDocumentTitle } from "../../hook/TitleDocument";
 
 function ScreenTransfer(props) {
   const link = "/transfer/detail/";
   let fileName = "danhsachdieuchuyen";
   const [dataDCAll, setDataDCAll] = useState([]);
+  useDocumentTitle("Quá trình công tác");
 
   useEffect(() => {
     const fetchNvList = async () => {

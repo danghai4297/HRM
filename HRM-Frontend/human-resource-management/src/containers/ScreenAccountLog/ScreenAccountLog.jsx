@@ -7,10 +7,12 @@ import { ExportCSV } from "../../components/ExportFile/ExportFile";
 import productApi from "../../api/productApi";
 import { Link } from "react-router-dom";
 import TableLog from "../../components/TablePagination/TableLog";
+import { useDocumentTitle } from "../../hook/TitleDocument";
 
 function ScreenAccountLog(props) {
   const fileName = "Lịch sử làm việc";
   const [dataAllLS, setdataAllLS] = useState([]);
+  useDocumentTitle("Lịch sử làm việc");
 
   useEffect(() => {
     const fetchNvList = async () => {

@@ -13,7 +13,7 @@ import {schema} from "../../../ultis/CategoryValidation";
 
 
 function AddDepartmentForm(props) {
-  const { error, success } = useToast();
+  const { error, success, warn } = useToast();
 
   let { match, history } = props;
   let { id } = match.params;
@@ -49,6 +49,18 @@ function AddDepartmentForm(props) {
     };
     fetchDepartmentCategory();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDMPB.length !== 0) {
+        document.title = `Thay đổi danh mục ${dataDetailDMPB.tenPhongBan}`;
+      } else if (id === undefined) {
+        document.title = `Tạo danh mục phòng ban mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDMPB]);
 
   useEffect(() => {
     const handleDepartmentId = async () => {
@@ -131,24 +143,27 @@ function AddDepartmentForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }
   };
 
   const handleDelete = async () => {
     try {
-      await DeleteApi.deleteDMPB(id);
-      await ProductApi.PostLS({
-        tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa phòng ban: ${dataDetailDMPB.tenPhongBan}`,
-        maNhanVien: decoded.id,
-        tenNhanVien: decoded.givenName,
-      });
-      success("Xoá phòng ban thành công");
-
-      history.goBack();
+      if (dataDetailDMPB.trangThai === "Chưa sử dụng") {
+        await DeleteApi.deleteDMPB(id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Xóa phòng ban: ${dataDetailDMPB.tenPhongBan}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        success("Xoá phòng ban thành công");
+        history.goBack();
+      } else {
+        warn(`Danh mục đang được sử dụng`);
+      }
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không xóa được danh mục ${errors}`);
     }
   };
 

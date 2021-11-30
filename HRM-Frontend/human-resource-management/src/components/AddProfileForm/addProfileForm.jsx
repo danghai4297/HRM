@@ -18,8 +18,7 @@ import DialogCheck from "../Dialog/DialogCheck";
 import Dialog from "../../components/Dialog/Dialog";
 import { useToast } from "../Toast/Toast";
 import jwt_decode from "jwt-decode";
-import {schema} from "../../ultis/ProfileValidation";
-
+import { schema } from "../../ultis/ProfileValidation";
 
 function AddProfileForm(props) {
   const { error, warn, info, success } = useToast();
@@ -112,6 +111,18 @@ function AddProfileForm(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailEmployee.length !== 0) {
+        document.title = `Thay đổi hồ sơ nhân viên ${dataDetailEmployee.hoTen}`;
+      } else if (id === undefined) {
+        document.title = `Tạo hồ sơ nhân viên`;
+      }
+    };
+    titlePage();
+  }, [dataDetailEmployee]);
 
   useEffect(() => {
     const handleId = async () => {
@@ -2390,7 +2401,7 @@ function AddProfileForm(props) {
                           : "form-control col-sm-6 border-danger"
                       }
                     />
-                      <span className="message">
+                    <span className="message">
                       {errors.yt_nhomMau?.message}
                     </span>
                   </div>
@@ -2461,9 +2472,7 @@ function AddProfileForm(props) {
                           : "form-control col-sm-6 border-danger"
                       }
                     />
-                     <span className="message">
-                      {errors.yt_luuY?.message}
-                    </span>
+                    <span className="message">{errors.yt_luuY?.message}</span>
                   </div>
                 </div>
               </div>

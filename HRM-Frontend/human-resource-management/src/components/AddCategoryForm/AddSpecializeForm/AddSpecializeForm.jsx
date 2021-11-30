@@ -14,7 +14,7 @@ import {schema} from "../../../ultis/CategoryValidation";
 
 
 function AddSpecializeForm(props) {
-  const { error, success } = useToast();
+  const { error, success, warn } = useToast();
   let { match, history } = props;
   let { id } = match.params;
 
@@ -49,6 +49,18 @@ function AddSpecializeForm(props) {
     };
     fetchSpecializeCategory();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDMCM.length !== 0) {
+        document.title = `Thay đổi danh mục ${dataDetailDMCM.tenChuyenMon}`;
+      } else if (id === undefined) {
+        document.title = `Tạo danh mục chuyên môn mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDMCM]);
 
   useEffect(() => {
     const handleSpecializeId = async () => {
@@ -133,23 +145,27 @@ function AddSpecializeForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }
   };
 
   const handleDelete = async () => {
     try {
-      await DeleteApi.deleteDMCM(id);
-      await ProductApi.PostLS({
-        tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa danh mục chuyên môn: ${dataDetailDMCM.tenChuyenMon}`,
-        maNhanVien: decoded.id,
-        tenNhanVien: decoded.givenName,
-      });
-      success("Xoá danh mục chuyên môn thành công");
-      history.goBack();
+      if (dataDetailDMCM.trangThai === "Chưa sử dụng") {
+        await DeleteApi.deleteDMCM(id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Xóa danh mục chuyên môn: ${dataDetailDMCM.tenChuyenMon}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        success("Xoá danh mục chuyên môn thành công");
+        history.goBack();
+      } else {
+        warn(`Danh mục đang được sử dụng`);
+      }
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không xóa được danh mục ${errors}`);
     }
   };
 

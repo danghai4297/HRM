@@ -27,7 +27,7 @@ function AddLevelForm(props) {
   //  console.log(query.get("hoTen"));
 
   let eCode = query.get("maNhanVien");
-  let eName = query.get("hoVaTen");
+  let eName = query.get("hoTen");
   let { id } = match.params;
 
   const [dataDetailTDVH, setdataDetailTDVH] = useState([]);
@@ -71,12 +71,25 @@ function AddLevelForm(props) {
           const response = await ProductApi.getTDDetail(id);
           setdataDetailTDVH(response);
         }
-      } catch (error) {
-        console.log("false to fetch nv list: ", error);
+      } catch (errors) {
+        error("Có lỗi xảy ra.")
       }
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailTDVH.length !== 0) {
+        document.title = `Thay đổi trình độ nhân viên ${dataDetailTDVH.tenNhanVien}`;
+      } else if (id === undefined) {
+        document.title = `Tạo trình độ nhân viên ${eName}`;
+      }
+    };
+    titlePage();
+  }, [dataDetailTDVH]);
+
   //ussing react-hooks-form
   const intitalValue = {
     maNhanVien: id !== undefined ? `${dataDetailTDVH.maNhanVien}` : eCode,
@@ -155,8 +168,7 @@ function AddLevelForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      console.log("Có lỗi xảy ra: ", error);
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Có lỗi xảy ra.`);
     }
   };
 
@@ -165,9 +177,11 @@ function AddLevelForm(props) {
       await DeleteApi.deleteTDVH(id);
       history.push(`/profile/detail/${dataDetailTDVH.maNhanVien}`);
       success(
-        `Xoá thông tin trình độ cho nhân viên ${dataDetailTDVH.tenNhanVien} thành công`
+        `Xoá thông tin trình độ cho nhân viên ${dataDetailTDVH.tenNhanVien} thành công.`
       );
-    } catch (error) {}
+    } catch (errors) {
+      error(`Xoá thông tin trình độ cho nhân viên ${dataDetailTDVH.tenNhanVien} không thành công.`)
+    }
   };
 
   return (

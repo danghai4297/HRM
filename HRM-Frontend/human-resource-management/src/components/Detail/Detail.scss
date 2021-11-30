@@ -23,8 +23,12 @@
         margin-right: 3%;
         .icon-second {
           width: 90px;
+          height: 90px;
           margin-left: 35%;
-          margin-bottom: 5%;
+          img {
+            width: 90px;
+            height: 90px;
+          }
         }
         .names {
           padding-right: 2%;
@@ -267,8 +271,12 @@
           margin-right: 3%;
           .icon-second {
             width: 50px;
-            margin-left: 27%;
-            margin-bottom: 5%;
+            height: 50px;
+            margin-left: 45px;
+            img {
+              width: 50px;
+              height: 50px;
+            }
           }
           .names {
             padding-right: 2%;
@@ -487,8 +495,12 @@
           margin-right: 3%;
           .icon-second {
             width: 50px;
-            margin-left: 27%;
-            margin-bottom: 5%;
+            height: 50px;
+            margin-left: 65px;
+            img {
+              width: 50px;
+              height: 50px;
+            }
           }
           .names {
             padding-right: 2%;
@@ -706,8 +718,7 @@
           margin-right: 3%;
           .icon-second {
             width: 90px;
-            margin-left: 35%;
-            margin-bottom: 5%;
+            margin-left: 70px;
           }
           .names {
             padding-right: 2%;

@@ -13,7 +13,7 @@ import Dialog from "../../components/Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
-import {schema} from "../../ultis/RewardAndDisciplineValidation";
+import { schema } from "../../ultis/RewardAndDisciplineValidation";
 
 function AddRewardForm(props) {
   const { error, warn, info, success } = useToast();
@@ -22,6 +22,7 @@ function AddRewardForm(props) {
   let { id } = match.params;
   let location = useLocation();
   let query = new URLSearchParams(location.search);
+  let eName = query.get("hoTen");
   const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
   const eCode = query.get("maNhanVien");
@@ -60,6 +61,20 @@ function AddRewardForm(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataKTDetail.length !== 0) {
+        document.title = `Thay đổi thông tin khen thưởng của nhân viên ${dataKTDetail.hoTen}`;
+      } else if (id === undefined && eName) {
+        document.title = `Tạo khen thưởng cho nhân viên ${eName}`;
+      } else if (id === undefined) {
+        document.title = `Tạo khen thưởng`;
+      }
+    };
+    titlePage();
+  }, [dataKTDetail]);
 
   const [file, setFile] = useState({
     file: null,
@@ -132,21 +147,22 @@ function AddRewardForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
+    const nameEm = dataEmployee.filter((item) => item.id === data.maNhanVien);
     console.log(data);
     try {
       if (id !== undefined) {
-       try {
-        const formData = new FormData();
-        formData.append("bangChung", file.file);
-        formData.append("idDanhMucKhenThuong", data.idDanhMucKhenThuong);
-        formData.append("noiDung", data.noiDung);
-        formData.append("lyDo", data.lyDo);
-        formData.append("loai", data.loai);
-        formData.append("maNhanVien", data.maNhanVien);
-        await PutApi.PutKTvKL(formData, id);
-       } catch (errors) {
-        error(`Lỗi${errors}`);
-       }
+        try {
+          const formData = new FormData();
+          formData.append("bangChung", file.file);
+          formData.append("idDanhMucKhenThuong", data.idDanhMucKhenThuong);
+          formData.append("noiDung", data.noiDung);
+          formData.append("lyDo", data.lyDo);
+          formData.append("loai", data.loai);
+          formData.append("maNhanVien", data.maNhanVien);
+          await PutApi.PutKTvKL(formData, id);
+        } catch (errors) {
+          error(`Có lỗi xảy ra.`);
+        }
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
           thaoTac: `Sửa thông tin khen thưởng của nhân viên ${dataKTDetail.hoTen}`,
@@ -168,20 +184,20 @@ function AddRewardForm(props) {
 
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm khen thưởng mới cho nhân viên ${dataKTDetail.hoTen}`,
+          thaoTac: `Thêm khen thưởng mới cho nhân viên ${nameEm[0].hoTen}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
         success(
-          `thêm thông tin khen thưởng cho nhân viên ${dataKTDetail.hoTen} thành công`
+          `Thêm thông tin khen thưởng cho nhân viên ${nameEm[0].hoTen} thành công`
         );
       }
       history.goBack();
     } catch (errors) {
-      console.log("errors", errors);
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Có lỗi xảy ra.`);
     }
   };
+  console.log(dataKTDetail);
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteKTvKL(id);
@@ -196,7 +212,7 @@ function AddRewardForm(props) {
         `Xoá thông tin khen thưởng cho nhân viên ${dataKTDetail.hoTen} thành công`
       );
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Có lỗi xảy ra.`);
     }
   };
   return (
