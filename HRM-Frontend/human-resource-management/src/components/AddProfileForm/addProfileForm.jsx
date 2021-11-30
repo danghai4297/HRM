@@ -25,7 +25,8 @@ const number = /^\d+$/;
 const tax = /((0)([0-7])([0-9]){8})$/g;
 const cccdRegex = /((0)([0-9]){2}([0-3]){1}([0-9]){8})$/g;
 const atm = /^(?:[1-9]\d*|)$/g;
-const bhyt = /^((DN|HX|CH|NN|DK|HC|XK|HT|DB|NO|CT|XB|TN|CS|QN|CA|CY|XN|MS|CC|CK|CB|KC|HD|TE|BT|HN|DT|DK|XD|TS|TC|TQ|TA|TY|HG|LS|PV|CN|HS|SV|GB|GD){1}([1-5]){1}([0-9]){2}([0-9]){10}|)$/g;
+const bhyt =
+  /^((DN|HX|CH|NN|DK|HC|XK|HT|DB|NO|CT|XB|TN|CS|QN|CA|CY|XN|MS|CC|CK|CB|KC|HD|TE|BT|HN|DT|DK|XD|TS|TC|TQ|TA|TY|HG|LS|PV|CN|HS|SV|GB|GD){1}([1-5]){1}([0-9]){2}([0-9]){10}|)$/g;
 const bhxh = /^(([0-9]){10}|)$/g;
 const hoChieu = /^(([A-Z]{1})([0-9]){7}|)$/g;
 const email = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4}|)$/g;
@@ -262,37 +263,37 @@ const schema = yup.object().shape({
     .matches(allNull, "NCCND không thể là khoảng trống.")
     .nullable()
     .notRequired(),
-    yt_nhomMau: yup
+  yt_nhomMau: yup
     .string()
     .matches(allNull, "Nhóm máu không thể là khoảng trống.")
     .nullable()
     .notRequired(),
-    yt_benhTat:yup
+  yt_benhTat: yup
     .string()
     .matches(allNull, "Bệnh tật không thể là khoảng trống.")
     .nullable()
     .notRequired(),
-    yt_luuY:yup
+  yt_luuY: yup
     .string()
     .matches(allNull, "Lưu ý không thể là khoảng trống.")
     .nullable()
     .notRequired(),
-    yt_tinhTrangSucKhoe:yup
+  yt_tinhTrangSucKhoe: yup
     .string()
     .matches(allNull, "Tình trạng sức khoẻ không thể là khoảng trống.")
     .nullable()
     .notRequired(),
-    lsbt_biBatDiTu:yup
+  lsbt_biBatDiTu: yup
     .string()
     .matches(allNull, "Lịch sử bản thân không thể là khoảng trống.")
     .nullable()
     .notRequired(),
-    lsbt_thamGiaChinhTri:yup
+  lsbt_thamGiaChinhTri: yup
     .string()
     .matches(allNull, "Lịch sử bản thân không thể là khoảng trống.")
     .nullable()
     .notRequired(),
-    lsbt_thanNhanNuocNgoai:yup
+  lsbt_thanNhanNuocNgoai: yup
     .string()
     .matches(allNull, "Lịch sử bản thân không thể là khoảng trống.")
     .nullable()
@@ -390,6 +391,18 @@ function AddProfileForm(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailEmployee.length !== 0) {
+        document.title = `Thay đổi hồ sơ nhân viên ${dataDetailEmployee.hoTen}`;
+      } else if (id === undefined) {
+        document.title = `Tạo hồ sơ nhân viên`;
+      }
+    };
+    titlePage();
+  }, [dataDetailEmployee]);
 
   useEffect(() => {
     const handleId = async () => {
@@ -2668,7 +2681,7 @@ function AddProfileForm(props) {
                           : "form-control col-sm-6 border-danger"
                       }
                     />
-                      <span className="message">
+                    <span className="message">
                       {errors.yt_nhomMau?.message}
                     </span>
                   </div>
@@ -2739,9 +2752,7 @@ function AddProfileForm(props) {
                           : "form-control col-sm-6 border-danger"
                       }
                     />
-                     <span className="message">
-                      {errors.yt_luuY?.message}
-                    </span>
+                    <span className="message">{errors.yt_luuY?.message}</span>
                   </div>
                 </div>
               </div>

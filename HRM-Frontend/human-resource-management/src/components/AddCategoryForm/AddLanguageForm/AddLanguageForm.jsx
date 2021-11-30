@@ -20,7 +20,7 @@ const schema = yup.object({
 });
 
 function AddLanguageForm(props) {
-  const { error, success } = useToast();
+  const { error, success, warn } = useToast();
   let { match, history } = props;
   let { id } = match.params;
 
@@ -55,6 +55,18 @@ function AddLanguageForm(props) {
     };
     fetchLanguageCategory();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDMNN.length !== 0) {
+        document.title = `Thay đổi danh mục ${dataDetailDMNN.tenDanhMuc}`;
+      } else if (id === undefined) {
+        document.title = `Tạo danh mục ngoại ngữ mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDMNN]);
 
   const {
     register,
@@ -106,23 +118,27 @@ function AddLanguageForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }
   };
 
   const handleDelete = async () => {
     try {
-      await DeleteApi.deleteDMNN(id);
-      await ProductApi.PostLS({
-        tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa danh mục ngoại ngữ: ${dataDetailDMNN.tenDanhMuc}`,
-        maNhanVien: decoded.id,
-        tenNhanVien: decoded.givenName,
-      });
-      success("Xoá danh mục thành công");
-      history.goBack();
+      if (dataDetailDMNN.trangThai === "Chưa sử dụng") {
+        await DeleteApi.deleteDMNN(id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Xóa danh mục ngoại ngữ: ${dataDetailDMNN.tenDanhMuc}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        success("Xoá danh mục thành công");
+        history.goBack();
+      } else {
+        warn(`Danh mục đang được sử dụng`);
+      }
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không xóa được danh mục ${errors}`);
     }
   };
 

@@ -33,7 +33,7 @@ export const SideBarData = [
     roles: ["admin"],
   },
   {
-    title: "Thuyên chuyển",
+    title: "Quá trình công tác",
     icon: <FontAwesomeIcon icon={["fas", "exchange-alt"]} />,
     link: "/transfer",
     roles: ["user"],
@@ -69,7 +69,7 @@ export const SideBarData = [
     roles: ["admin"],
   },
   {
-    title: "Hoạt động của tài khoản",
+    title: "Lịch sử làm việc",
     icon: <FontAwesomeIcon icon={["fas", "file-alt"]} />,
     link: "/activity",
     roles: ["user", "admin"],

@@ -52,7 +52,7 @@ export const links = [
   },
   {
     id: 11,
-    text: "Thuyên chuyển",
+    text: "Quá trình công tác",
     url: "#transfer",
   },
   {

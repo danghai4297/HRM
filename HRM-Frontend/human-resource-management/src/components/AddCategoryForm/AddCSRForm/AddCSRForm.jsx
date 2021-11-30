@@ -20,7 +20,7 @@ const schema = yup.object({
 });
 
 function AddCSRForm(props) {
-  const { error, success } = useToast();
+  const { error, success, warn } = useToast();
   let { match, history } = props;
   let { id } = match.params;
   const token = sessionStorage.getItem("resultObj");
@@ -53,6 +53,18 @@ function AddCSRForm(props) {
     };
     fetchCSRCategory();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDMNCC.length !== 0) {
+        document.title = `Thay đổi danh mục ${dataDetailDMNCC.tenNgach}`;
+      } else if (id === undefined) {
+        document.title = `Tạo danh mục ngạch công chức mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDMNCC]);
 
   const {
     register,
@@ -105,26 +117,28 @@ function AddCSRForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }
-    console.log(data);
   };
 
   const handleDelete = async () => {
     try {
-      await DeleteApi.deleteDMNCC(id);
-      await ProductApi.PostLS({
-        tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa ngạch
-        công chức: ${dataDetailDMNCC.tenNgach}`,
-        maNhanVien: decoded.id,
-        tenNhanVien: decoded.givenName,
-      });
-      success("Xoá ngạch công chức thành công");
-
-      history.goBack();
+      if (dataDetailDMNCC.trangThai === "Chưa sử dụng") {
+        await DeleteApi.deleteDMNCC(id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Xóa ngạch
+          công chức: ${dataDetailDMNCC.tenNgach}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        success("Xoá ngạch công chức thành công");
+        history.goBack();
+      } else {
+        warn(`Danh mục đang được sử dụng`);
+      }
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không xóa được danh mục ${errors}`);
     }
   };
 

@@ -20,7 +20,7 @@ const schema = yup.object({
 });
 
 function AddLaborForm(props) {
-  const { error, success } = useToast();
+  const { error, success, warn } = useToast();
   let { match, history } = props;
   let { id } = match.params;
 
@@ -55,6 +55,18 @@ function AddLaborForm(props) {
     };
     fetchLaborCategory();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDMTCLD.length !== 0) {
+        document.title = `Thay đổi danh mục ${dataDetailDMTCLD.tenLaoDong}`;
+      } else if (id === undefined) {
+        document.title = `Tạo danh mục tính chất lao động mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDMTCLD]);
 
   const {
     register,
@@ -108,24 +120,28 @@ function AddLaborForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }
   };
 
   const handleDelete = async () => {
     try {
-      await DeleteApi.deleteDMTCLD(id);
-      await ProductApi.PostLS({
-        tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa tính
-        chất lao động: ${dataDetailDMTCLD.tenLaoDongndm}`,
-        maNhanVien: decoded.id,
-        tenNhanVien: decoded.givenName,
-      });
-      history.goBack();
-      success("Xoá tính chất lao động thành công");
+      if (dataDetailDMTCLD.trangThai === "Chưa sử dụng") {
+        await DeleteApi.deleteDMTCLD(id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Xóa tính
+          chất lao động: ${dataDetailDMTCLD.tenLaoDongndm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        history.goBack();
+        success("Xoá tính chất lao động thành công");
+      } else {
+        warn(`Danh mục đang được sử dụng`);
+      }
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không xóa được danh mục ${errors}`);
     }
   };
 

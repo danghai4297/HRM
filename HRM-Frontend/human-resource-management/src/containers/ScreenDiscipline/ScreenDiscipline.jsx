@@ -8,11 +8,13 @@ import { ExportCSV } from "../../components/ExportFile/ExportFile";
 import TablePagination from "../../components/TablePagination/TablePagination";
 import ProductApi from "../../api/productApi";
 import { Link } from "react-router-dom";
+import { useDocumentTitle } from "../../hook/TitleDocument";
 
 function ScreenDiscipline(props) {
   const link = "/discipline/detail/";
   const fileName = "DSkyluat";
   const [dataAllkl, setDataAllKl] = useState([]);
+  useDocumentTitle("Kỷ luật");
 
   useEffect(() => {
     const fetchNvList = async () => {

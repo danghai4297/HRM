@@ -25,6 +25,15 @@ function ScreenDetailLevel(props) {
     fetchNvList();
   }, []);
 
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailTD.length !== 0)
+        document.title = `Chi tiết trình độ nhân viên ${dataDetailTD.tenNhanVien}`;
+    };
+    titlePage();
+  }, [dataDetailTD]);
+
   return (
     <>
       <div className="main-screen-level">

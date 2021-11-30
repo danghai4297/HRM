@@ -20,7 +20,7 @@ const schema = yup.object({
 });
 
 function AddMarriageForm(props) {
-  const { error, success } = useToast();
+  const { error, success, warn } = useToast();
   let { match, history } = props;
   let { id } = match.params;
 
@@ -55,6 +55,18 @@ function AddMarriageForm(props) {
     };
     fetchMarriageCategory();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDMHN.length !== 0) {
+        document.title = `Thay đổi danh mục ${dataDetailDMHN.tenDanhMuc}`;
+      } else if (id === undefined) {
+        document.title = `Tạo danh mục hôn nhân mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDMHN]);
 
   const {
     register,
@@ -106,23 +118,27 @@ function AddMarriageForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }
   };
 
   const handleDelete = async () => {
     try {
-      await DeleteApi.deleteDMHN(id);
-      await ProductApi.PostLS({
-        tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa danh mục hôn nhân: ${dataDetailDMHN.tenDanhMuc}`,
-        maNhanVien: decoded.id,
-        tenNhanVien: decoded.givenName,
-      });
-      success("Xoá danh mục hôn nhân thành công");
-      history.goBack();
+      if (dataDetailDMHN.trangThai === "Chưa sử dụng") {
+        await DeleteApi.deleteDMHN(id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Xóa danh mục hôn nhân: ${dataDetailDMHN.tenDanhMuc}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        success("Xoá danh mục hôn nhân thành công");
+        history.goBack();
+      } else {
+        warn(`Danh mục đang được sử dụng`);
+      }
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không xóa được danh mục ${errors}`);
     }
   };
 

@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 import "./Login.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,8 +7,7 @@ import { useForm } from "react-hook-form";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../components/Toast/Toast";
 import { Button, Col, Row } from "react-bootstrap";
-
-LogIn.propTypes = {};
+import { useDocumentTitle } from "../../hook/TitleDocument";
 
 function LogIn(props) {
   let history = useHistory();
@@ -17,6 +15,8 @@ function LogIn(props) {
   const { error } = useToast();
 
   const { register, handleSubmit } = useForm({});
+
+  useDocumentTitle("HRM Project");
 
   const onHandleSubmit = async (data) => {
     try {

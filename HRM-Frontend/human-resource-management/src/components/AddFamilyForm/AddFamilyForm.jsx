@@ -14,7 +14,8 @@ import { useToast } from "../Toast/Toast";
 import DialogCheck from "../Dialog/DialogCheck";
 const notAllowNull = /^\s*\S.*$/g;
 const allNull = /^(?!\s+$).*/g;
-const phoneRegex = /(([+][(]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})/g;
+const phoneRegex =
+  /(([+][(]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})/g;
 const schema = yup.object({
   idDanhMucNguoiThan: yup
     .number()
@@ -50,7 +51,7 @@ const schema = yup.object({
     .matches(phoneRegex, "Điện thoại phải là số")
     .nullable()
     .required("Điện thoại không được bỏ trống."),
-    khac:yup
+  khac: yup
     .string()
     .matches(allNull, "Thông tin khác không thể là khoảng trống.")
     .nullable()
@@ -67,6 +68,7 @@ function AddFamilyForm(props) {
   let query = new URLSearchParams(location.search);
   console.log(query.get("maNhanVien"));
   const eCode = query.get("maNhanVien");
+  let eName = query.get("hoTen");
   const [dataDetailNT, setdataDetailNT] = useState([]);
   const [dataNT, setDataNT] = useState([]);
   const [gender, setGender] = useState();
@@ -99,6 +101,18 @@ function AddFamilyForm(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailNT.length !== 0) {
+        document.title = `Thay đổi thông tin người thân cho nhân viên ${dataDetailNT.tenNhanVien}`;
+      } else if (id === undefined) {
+        document.title = `Tạo thông tin người thân của nhân viên ${eName}`;
+      }
+    };
+    titlePage();
+  }, [dataDetailNT]);
 
   const intitalValue = {
     idDanhMucNguoiThan:

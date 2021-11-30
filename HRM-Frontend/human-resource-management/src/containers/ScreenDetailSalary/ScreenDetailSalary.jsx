@@ -25,6 +25,15 @@ function ScreenDetailSalary(props) {
     fetchNvList();
   }, []);
 
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataLDetail.length !== 0)
+        document.title = `Chi tiết lương hiện tại của nhân viên ${dataLDetail.tenNhanVien}`;
+    };
+    titlePage();
+  }, [dataLDetail]);
+
   return (
     <>
       <div className="main-screen-salary">

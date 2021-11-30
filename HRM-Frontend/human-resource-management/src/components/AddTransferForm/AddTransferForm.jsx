@@ -29,16 +29,17 @@ const schema = yup.object({
   // idChucVu: yup.number().nullable().required("Chức vụ không được bỏ trống."),
   trangThai: yup.boolean(),
   chiTiet: yup
-  .string()
-  .matches(allNull, "Chi tiết không thể là khoảng trống.")
-  .nullable()
-  .notRequired(),
+    .string()
+    .matches(allNull, "Chi tiết không thể là khoảng trống.")
+    .nullable()
+    .notRequired(),
 });
 function AddTransferForm(props) {
   const { error, warn, info, success } = useToast();
 
   let location = useLocation();
   let query = new URLSearchParams(location.search);
+  let eName = query.get("hoTen");
   const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
 
@@ -99,6 +100,20 @@ function AddTransferForm(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDC.length !== 0) {
+        document.title = `Thay đổi thông tin vị trí công tác của nhân viên ${dataDetailDC.tenNhanVien}`;
+      } else if (id === undefined && eName) {
+        document.title = `Tạo hoặc điều chuyển vị trí công tác cho nhân viên ${eName}`;
+      } else if (id === undefined) {
+        document.title = `Tạo hoặc điều chuyển vị trí công tác`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDC]);
 
   const [file, setFile] = useState({
     file: null,
@@ -182,6 +197,7 @@ function AddTransferForm(props) {
   };
   //method handle submit
   const onHandleSubmit = async (data) => {
+    const nameEm = dataEmployee.filter((item) => item.id === data.maNhanVien);
     console.log(data);
     try {
       if (id !== undefined) {
@@ -225,12 +241,12 @@ function AddTransferForm(props) {
 
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm thuyên chuyển mới cho nhân viên ${dataDetailDC.tenNhanVien}`,
+          thaoTac: `Thêm thuyên chuyển mới cho nhân viên ${nameEm[0].hoTen}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
         success(
-          `Thêm thông tin thuyên chuyển cho nhân viên ${dataDetailDC.tenNhanVien} thành công`
+          `Thêm thông tin thuyên chuyển cho nhân viên ${nameEm[0].hoTen} thành công`
         );
       }
       history.goBack();
@@ -239,6 +255,7 @@ function AddTransferForm(props) {
       error(`Có lỗi xảy ra ${errors}`);
     }
   };
+  console.log(dataDetailDC);
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDC(id);

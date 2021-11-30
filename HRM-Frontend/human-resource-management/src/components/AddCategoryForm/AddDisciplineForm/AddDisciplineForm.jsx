@@ -18,8 +18,9 @@ const schema = yup.object({
     .matches(dontAllowOnlySpace, "Tên danh mục không được chỉ là khoảng trống")
     .required("Tên danh mục không được bỏ trống."),
 });
+
 function AddDisciplineForm(props) {
-  const { error, success } = useToast();
+  const { error, success, warn } = useToast();
   let { match, history } = props;
   let { id } = match.params;
 
@@ -31,7 +32,7 @@ function AddDisciplineForm(props) {
   const [showCheckDialog, setShowCheckDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
-    "Bạn chắc chắn muốn thêm danh mục kỉ luật mới"
+    "Bạn chắc chắn muốn thêm danh mục kỷ luật mới"
   );
 
   const cancel = () => {
@@ -44,7 +45,7 @@ function AddDisciplineForm(props) {
     const fetchDisciplineCategory = async () => {
       try {
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốn sửa danh mục kỉ luật");
+          setDescription("Bạn chắc chắn muốn sửa danh mục kỷ luật");
           const response = await ProductApi.getDetailDMKTvKL(id);
           setdataDetailDMKL(response);
         }
@@ -54,6 +55,18 @@ function AddDisciplineForm(props) {
     };
     fetchDisciplineCategory();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDMKL.length !== 0) {
+        document.title = `Thay đổi danh mục ${dataDetailDMKL.tenDanhMuc}`;
+      } else if (id === undefined) {
+        document.title = `Tạo danh mục kỷ luật mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDMKL]);
 
   const {
     register,
@@ -88,40 +101,44 @@ function AddDisciplineForm(props) {
         await PutApi.PutDMKTvKL(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục kỉ luật: ${dataDetailDMKL.tenDanhMuc} --> ${tendm}`,
+          thaoTac: `Sửa danh mục kỷ luật: ${dataDetailDMKL.tenDanhMuc} --> ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("Sửa danh mục kỉ luật thành công");
+        success("Sửa danh mục kỷ luật thành công");
       } else {
         await ProductApi.PostDMKTvKL(data);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm danh mục kỉ luật mới: ${tendm}`,
+          thaoTac: `Thêm danh mục kỷ luật mới: ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success("Thêm danh mục kỉ luật thành công");
+        success("Thêm danh mục kỷ luật thành công");
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }
   };
 
   const handleDelete = async () => {
     try {
-      await DeleteApi.deleteDMKTvKL(id);
-      await ProductApi.PostLS({
-        tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa danh mục kỉ luật: ${dataDetailDMKL.tenDanhMuc}`,
-        maNhanVien: decoded.id,
-        tenNhanVien: decoded.givenName,
-      });
-      history.goBack();
-      success("Xoá danh mục kỉ luật thành công");
+      if (dataDetailDMKL.trangThai === "Chưa sử dụng") {
+        await DeleteApi.deleteDMKTvKL(id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Xóa danh mục kỷ luật: ${dataDetailDMKL.tenDanhMuc}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        history.goBack();
+        success("Xoá danh mục kỷ luật thành công");
+      } else {
+        warn(`Danh mục đang được sử dụng`);
+      }
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không xóa được danh mục ${errors}`);
     }
   };
 
@@ -240,7 +257,7 @@ function AddDisciplineForm(props) {
       <Dialog
         show={showDeleteDialog}
         title="Thông báo"
-        description={`Bạn chắc chắn muốn xóa danh mục kỉ luật ${dataDetailDMKL.tenDanhMuc}`}
+        description={`Bạn chắc chắn muốn xóa danh mục kỷ luật ${dataDetailDMKL.tenDanhMuc}`}
         confirm={handleDelete}
         cancel={cancel}
       />

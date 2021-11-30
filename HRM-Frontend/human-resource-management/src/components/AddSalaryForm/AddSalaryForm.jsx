@@ -35,7 +35,11 @@ const schema = yup.object({
     .number()
     .positive("Hệ số lương không thể là số âm.")
     .typeError("Hệ số lương không được bỏ trống."),
-  bacLuong: yup.string().matches(notAllowNull, "Bậc lương không được là khoảng trống.").nullable().required("Bậc lương không được bỏ trống."),
+  bacLuong: yup
+    .string()
+    .matches(notAllowNull, "Bậc lương không được là khoảng trống.")
+    .nullable()
+    .required("Bậc lương không được bỏ trống."),
   ngayHieuLuc: yup
     .date()
     .nullable()
@@ -60,17 +64,18 @@ const schema = yup.object({
     .nullable()
     .required("thời hạn lên lương không được bỏ trống."),
   trangThai: yup.boolean(),
-  ghiChu:yup
-  .string()
-  .matches(allNull, "Ghi chú không thể là khoảng trống.")
-  .nullable()
-  .notRequired(),
+  ghiChu: yup
+    .string()
+    .matches(allNull, "Ghi chú không thể là khoảng trống.")
+    .nullable()
+    .notRequired(),
 });
 
 function AddSalaryForm(props) {
   let location = useLocation();
   let query = new URLSearchParams(location.search);
   const contractCode = query.get("maHopDong");
+  let eName = query.get("hoTen");
   const { error, warn, info, success } = useToast();
   const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
@@ -131,6 +136,20 @@ function AddSalaryForm(props) {
     };
     fetchNvList(dataLDetail);
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataLDetail.length !== 0) {
+        document.title = `Thay đổi thông tin lương của nhân viên ${dataLDetail.tenNhanVien}`;
+      } else if (id === undefined && eName) {
+        document.title = `Tạo lương mới cho nhân viên ${eName}`;
+      } else if (id === undefined) {
+        document.title = `Tạo lương mới`;
+      }
+    };
+    titlePage();
+  }, [dataLDetail]);
 
   useEffect(() => {
     const getContractCode = async () => {
@@ -293,10 +312,11 @@ function AddSalaryForm(props) {
     salary.phuCapKhac,
     //  salary.phuCapTrachNhiem,
   ]);
-
+  console.log(dataAllHD);
   const onHandleSubmit = async (data) => {
+    const nameCon = dataAllHD.filter((item) => item.id === data.maHopDong);
     let maHopDong = data.maHopDong;
-    console.log(data);
+
     // if (endDateRs !== undefined) {
     //   let obj = { ngayKetThuc: endDateRs };
     //   Object.assign(data, obj);
@@ -353,12 +373,12 @@ function AddSalaryForm(props) {
         await ProductApi.PostL(formData);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm lương mới trong hợp đồng ${maHopDong} của nhân viên ${dataLDetail.tenNhanVien}`,
+          thaoTac: `Thêm lương mới trong hợp đồng ${maHopDong} của nhân viên ${nameCon[0].tenNhanVien}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
         success(
-          `thêm thông tin lương cho nhân viên ${dataLDetail.tenNhanVien} thành công`
+          `Thêm lương mới trong hợp đồng ${maHopDong} của nhân viên ${nameCon[0].tenNhanVien} thành công`
         );
       }
       history.goBack();
@@ -367,6 +387,7 @@ function AddSalaryForm(props) {
       error(`Có lỗi xảy ra ${errors}`);
     }
   };
+
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteL(id);

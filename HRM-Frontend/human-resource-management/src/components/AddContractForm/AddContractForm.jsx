@@ -41,17 +41,18 @@ const schema = yup.object({
     .nullable()
     .required("Ngày hết hạn không được bỏ trống"),
   idCre: yup.number(),
-  ghiChu:yup
-  .string()
-  .matches(allNull, "Ghi chú không thể là khoảng trống.")
-  .nullable()
-  .notRequired(),
+  ghiChu: yup
+    .string()
+    .matches(allNull, "Ghi chú không thể là khoảng trống.")
+    .nullable()
+    .notRequired(),
 });
 function AddContractForm(props) {
   let location = useLocation();
   let query = new URLSearchParams(location.search);
   const { error, warn, info, success } = useToast();
   const ecode = query.get("maNhanVien");
+  let eName = query.get("hoTen");
   let { match, history } = props;
   let { id } = match.params;
   const token = sessionStorage.getItem("resultObj");
@@ -108,6 +109,20 @@ function AddContractForm(props) {
   }, []);
 
   useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailHd.length !== 0) {
+        document.title = `Thay đổi thông tin hợp đồng của nhân viên ${dataDetailHd.tenNhanVien}`;
+      } else if (id === undefined && eName) {
+        document.title = `Tạo hợp đồng mới cho nhân viên ${eName}`;
+      } else if (id === undefined) {
+        document.title = `Tạo hợp đồng mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailHd]);
+
+  useEffect(() => {
     const handleId = async () => {
       if (id === undefined) {
         const responseAllHD = await ProductApi.getAllHd();
@@ -132,7 +147,6 @@ function AddContractForm(props) {
     handleId();
   }, []);
 
-  
   const [file, setFile] = useState({
     file: null,
     path: "/Images/userIcon.png",
@@ -231,9 +245,9 @@ function AddContractForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
-    console.log(data);
-
+    const nameEm = dataIdEmployee.filter((item) => item.id === data.maNhanVien);
     let maHopDong = data.maHopDong;
+
     try {
       if (id !== undefined) {
         if (file.file !== null) {
@@ -263,12 +277,12 @@ function AddContractForm(props) {
         }
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm hợp đồng mới ${maHopDong} cho nhân viên ${dataDetailHd.tenNhanVien}`,
+          thaoTac: `Thêm hợp đồng mới ${maHopDong} cho nhân viên ${nameEm[0].hoTen}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
         success(
-          `Thêm thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
+          `Thêm hợp đồng mới ${maHopDong} cho nhân viên ${nameEm[0].hoTen} thành công`
         );
       }
       history.goBack();
@@ -277,6 +291,7 @@ function AddContractForm(props) {
       error(`Có lỗi xảy ra ${errors}`);
     }
   };
+
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteHD(id);
@@ -294,6 +309,7 @@ function AddContractForm(props) {
       error(`Có lỗi xảy ra ${error}`);
     }
   };
+  console.log(dataDetailHd);
   return (
     <>
       <div className="container-form">

@@ -8,11 +8,13 @@ import { ExportCSV } from "../../components/ExportFile/ExportFile";
 import TablePagination from "../../components/TablePagination/TablePagination";
 import { Link } from "react-router-dom";
 import ProductApi from "../../api/productApi";
+import { useDocumentTitle } from "../../hook/TitleDocument";
 
 function ScreenReward(props) {
   const link = "/reward/detail/";
   const fileName = "DSkhenthuong";
   const [dataDskt, setDataDskt] = useState([]);
+  useDocumentTitle("Khen thưởng");
 
   useEffect(() => {
     const fetchNvList = async () => {

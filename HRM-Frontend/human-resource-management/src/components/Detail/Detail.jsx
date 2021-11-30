@@ -28,6 +28,7 @@ import {
   ttqs,
   ttyt,
 } from "./Data";
+import { useDocumentTitle } from "../../hook/TitleDocument";
 
 function Detail(props) {
   let { match, history } = props;
@@ -77,6 +78,15 @@ function Detail(props) {
   const [dropReward, setDropReward] = useState(true);
   const [dropDiscipline, setDropDiscipline] = useState(true);
 
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailNv.length !== 0)
+        document.title = `Chi tiết hồ sơ nhân viên ${dataDetailNv.hoTen}`;
+    };
+    titlePage();
+  }, [dataDetailNv]);
+
   //Hàm tự động chuyển đến tiêu đề
   const clickHandleScroll = (e) => {
     e.preventDefault();
@@ -103,7 +113,6 @@ function Detail(props) {
           top: locationContract - 260,
           behavior: "smooth",
         });
-
         break;
       case "moveToSalary":
         const heightSalary = document.getElementById("right");
@@ -112,7 +121,6 @@ function Detail(props) {
           top: locationSalary - 260,
           behavior: "smooth",
         });
-
         break;
       case "moveToTransfer":
         const heightTransfer = document.getElementById("right");
@@ -121,7 +129,6 @@ function Detail(props) {
           top: locationTransfer - 260,
           behavior: "smooth",
         });
-
         break;
       case "moveToReward":
         const heightReward = document.getElementById("right");
@@ -130,7 +137,6 @@ function Detail(props) {
           top: locationReward - 260,
           behavior: "smooth",
         });
-
         break;
       case "moveToDiscipline":
         const heightDiscipline = document.getElementById("right");
@@ -140,12 +146,11 @@ function Detail(props) {
           top: locationDiscipline - 260,
           behavior: "smooth",
         });
-
         break;
       default:
         break;
     }
-  }, 50);
+  }, 100);
 
   return (
     <>
@@ -699,7 +704,7 @@ function Detail(props) {
                     </div>
                     <div className="icon-cultural">
                       <Link
-                        to={`/profile/detail/level/add?maNhanVien=${dataDetailNv.id}`}
+                        to={`/profile/detail/level/add?maNhanVien=${dataDetailNv.id}&hoTen=${dataDetailNv.hoTen}`}
                       >
                         <button className="btn-cultural">
                           <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
@@ -720,7 +725,7 @@ function Detail(props) {
                     </div>
                     <div className="icon-cultural">
                       <Link
-                        to={`/profile/detail/language/add?maNhanVien=${dataDetailNv.id}`}
+                        to={`/profile/detail/language/add?maNhanVien=${dataDetailNv.id}&hoTen=${dataDetailNv.hoTen}`}
                       >
                         <button className="btn-cultural">
                           <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
@@ -763,7 +768,7 @@ function Detail(props) {
                     <div className="title-cultural"></div>
                     <div className="icon-cultural">
                       <Link
-                        to={`/profile/detail/family/add?maNhanVien=${dataDetailNv.id}`}
+                        to={`/profile/detail/family/add?maNhanVien=${dataDetailNv.id}&hoTen=${dataDetailNv.hoTen}`}
                       >
                         <button className="btn-cultural">
                           <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
@@ -806,22 +811,7 @@ function Detail(props) {
                     <div className="title-cultural"></div>
                     <div className="icon-cultural">
                       <Link
-                        to={`/contract/add?maNhanVien=${
-                          dataDetailNv.id
-                        }&maHopDong=${
-                          dataDetailHd.length !== 0 &&
-                          dataDetailHd.filter(
-                            (a) => a.trangThai === "Kích hoạt"
-                          ).length !== 0
-                            ? dataDetailHd.filter(
-                                (a) => a.trangThai === "Kích hoạt"
-                              )[0].id
-                            : ""
-                        }&checkMaHopDong=${
-                          dataDetailHd.filter(
-                            (a) => a.trangThai === "Kích hoạt"
-                          ).length
-                        }`}
+                        to={`/contract/add?maNhanVien=${dataDetailNv.id}&hoTen=${dataDetailNv.hoTen}`}
                       >
                         <button className="btn-cultural">
                           <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
@@ -873,13 +863,7 @@ function Detail(props) {
                                 (a) => a.trangThai === "Kích hoạt"
                               )[0].id
                             : ""
-                        }&checkMaLuong=${
-                          dataLuong.length !== 0
-                            ? dataLuong.filter(
-                                (b) => b.trangThai === "Kích hoạt"
-                              ).length
-                            : ""
-                        }`}
+                        }&hoTen=${dataDetailNv.hoTen}`}
                       >
                         <button className="btn-cultural">
                           <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
@@ -900,7 +884,7 @@ function Detail(props) {
             <div className="form" id="transfer">
               <div className="big-title">
                 <div className="name-title">
-                  <h3>Thuyên chuyển</h3>
+                  <h3>Quá trình công tác</h3>
                 </div>
                 <div className="arrow-button">
                   <button
@@ -922,7 +906,7 @@ function Detail(props) {
                     <div className="title-cultural"></div>
                     <div className="icon-cultural">
                       <Link
-                        to={`/transfer/add?maNhanVien=${dataDetailNv.id}&hoVaTen=${dataDetailNv.hoTen}`}
+                        to={`/transfer/add?maNhanVien=${dataDetailNv.id}&hoTen=${dataDetailNv.hoTen}`}
                       >
                         <button className="btn-cultural">
                           <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
@@ -965,7 +949,7 @@ function Detail(props) {
                     <div className="title-cultural"></div>
                     <div className="icon-cultural">
                       <Link
-                        to={`/reward/add?maNhanVien=${dataDetailNv.id}&hoVaTen=${dataDetailNv.hoTen}`}
+                        to={`/reward/add?maNhanVien=${dataDetailNv.id}&hoTen=${dataDetailNv.hoTen}`}
                       >
                         <button className="btn-cultural">
                           <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
@@ -1008,7 +992,7 @@ function Detail(props) {
                     <div className="title-cultural"></div>
                     <div className="icon-cultural">
                       <Link
-                        to={`/discipline/add?maNhanVien=${dataDetailNv.id}&hoVaTen=${dataDetailNv.hoTen}`}
+                        to={`/discipline/add?maNhanVien=${dataDetailNv.id}&hoTen=${dataDetailNv.hoTen}`}
                       >
                         <button className="btn-cultural">
                           <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm

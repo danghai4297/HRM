@@ -25,6 +25,15 @@ function ScreenDetailTransfer(props) {
     fetchNvList();
   }, []);
 
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDC.length !== 0)
+        document.title = `Chi tiết vị trí công tác hiện tại của nhân viên ${dataDetailDC.tenNhanVien}`;
+    };
+    titlePage();
+  }, [dataDetailDC]);
+
   return (
     <>
       <div className="main-screen-transfer">
@@ -38,7 +47,7 @@ function ScreenDetailTransfer(props) {
             </button>
           </div>
           <div className="second-path-transfer">
-            <h2>Thủ tục thuyên chuyển</h2>
+            <h2>Quá trình công tác</h2>
           </div>
           <div className="third-path-transfer">
             <Link to={`/transfer/${id}`}>
@@ -92,7 +101,7 @@ function ScreenDetailTransfer(props) {
         </div>
         <div className="all-transfer">
           <div className="name-move-transfer">
-            <h3>Tất cả lần thuyên chuyển</h3>
+            <h3>Tất cả quá trình công tác</h3>
           </div>
           <Link
             to={`/profile/detail/${dataDetailDC.maNhanVien}?move=moveToTransfer`}

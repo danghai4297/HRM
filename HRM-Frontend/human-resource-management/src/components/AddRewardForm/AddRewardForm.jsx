@@ -26,8 +26,16 @@ const schema = yup.object({
     .nullable()
     .required("Mã nhân viên không được bỏ trống."),
   //thoiGian: yup.string().required("Thời gian không được bỏ trống."),
-  noiDung: yup.string().matches(notAllowNull, "Nội dung không được là khoảng trống.").nullable().required("Nội dung không được bỏ trống."),
-  lyDo: yup.string().matches(notAllowNull, "Lý do không được là khoảng trống.").nullable().required("Lý do không được bỏ trống."),
+  noiDung: yup
+    .string()
+    .matches(notAllowNull, "Nội dung không được là khoảng trống.")
+    .nullable()
+    .required("Nội dung không được bỏ trống."),
+  lyDo: yup
+    .string()
+    .matches(notAllowNull, "Lý do không được là khoảng trống.")
+    .nullable()
+    .required("Lý do không được bỏ trống."),
   loai: yup.boolean(),
 });
 function AddRewardForm(props) {
@@ -37,6 +45,7 @@ function AddRewardForm(props) {
   let { id } = match.params;
   let location = useLocation();
   let query = new URLSearchParams(location.search);
+  let eName = query.get("hoTen");
   const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
 
@@ -75,6 +84,20 @@ function AddRewardForm(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataKTDetail.length !== 0) {
+        document.title = `Thay đổi thông tin khen thưởng của nhân viên ${dataKTDetail.hoTen}`;
+      } else if (id === undefined && eName) {
+        document.title = `Tạo khen thưởng cho nhân viên ${eName}`;
+      } else if (id === undefined) {
+        document.title = `Tạo khen thưởng`;
+      }
+    };
+    titlePage();
+  }, [dataKTDetail]);
 
   const [file, setFile] = useState({
     file: null,
@@ -147,21 +170,22 @@ function AddRewardForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
+    const nameEm = dataEmployee.filter((item) => item.id === data.maNhanVien);
     console.log(data);
     try {
       if (id !== undefined) {
-       try {
-        const formData = new FormData();
-        formData.append("bangChung", file.file);
-        formData.append("idDanhMucKhenThuong", data.idDanhMucKhenThuong);
-        formData.append("noiDung", data.noiDung);
-        formData.append("lyDo", data.lyDo);
-        formData.append("loai", data.loai);
-        formData.append("maNhanVien", data.maNhanVien);
-        await PutApi.PutKTvKL(formData, id);
-       } catch (errors) {
-        error(`Lỗi${errors}`);
-       }
+        try {
+          const formData = new FormData();
+          formData.append("bangChung", file.file);
+          formData.append("idDanhMucKhenThuong", data.idDanhMucKhenThuong);
+          formData.append("noiDung", data.noiDung);
+          formData.append("lyDo", data.lyDo);
+          formData.append("loai", data.loai);
+          formData.append("maNhanVien", data.maNhanVien);
+          await PutApi.PutKTvKL(formData, id);
+        } catch (errors) {
+          error(`Lỗi${errors}`);
+        }
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
           thaoTac: `Sửa thông tin khen thưởng của nhân viên ${dataKTDetail.hoTen}`,
@@ -183,12 +207,12 @@ function AddRewardForm(props) {
 
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm khen thưởng mới cho nhân viên ${dataKTDetail.hoTen}`,
+          thaoTac: `Thêm khen thưởng mới cho nhân viên ${nameEm[0].hoTen}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
         success(
-          `thêm thông tin khen thưởng cho nhân viên ${dataKTDetail.hoTen} thành công`
+          `Thêm thông tin khen thưởng cho nhân viên ${nameEm[0].hoTen} thành công`
         );
       }
       history.goBack();
@@ -197,6 +221,7 @@ function AddRewardForm(props) {
       error(`Có lỗi xảy ra ${errors}`);
     }
   };
+  console.log(dataKTDetail);
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteKTvKL(id);

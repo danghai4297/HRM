@@ -24,13 +24,27 @@ function ScreenDetailContract(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailHd.length !== 0)
+        document.title = `Chi tiết hợp đồng của nhân viên ${dataDetailHd.tenNhanVien}`;
+    };
+    titlePage();
+  }, [dataDetailHd]);
+
+  const btnBack = () => {
+    history.goBack();
+    // setDocumentTitle("Hợp đồng");
+  };
   console.log(dataDetailHd);
   return (
     <>
       <div className="main-screen-contract">
         <div className="first-main-contract">
           <div className="first-path-contract">
-            <button className="btn-back" onClick={history.goBack}>
+            <button className="btn-back" onClick={btnBack}>
               <FontAwesomeIcon
                 className="icon-btn"
                 icon={["fas", "long-arrow-alt-left"]}

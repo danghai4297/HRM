@@ -40,7 +40,7 @@ function AddLevelForm(props) {
   //  console.log(query.get("hoTen"));
 
   let eCode = query.get("maNhanVien");
-  let eName = query.get("hoVaTen");
+  let eName = query.get("hoTen");
   let { id } = match.params;
 
   const [dataDetailTDVH, setdataDetailTDVH] = useState([]);
@@ -90,6 +90,19 @@ function AddLevelForm(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailTDVH.length !== 0) {
+        document.title = `Thay đổi trình độ nhân viên ${dataDetailTDVH.tenNhanVien}`;
+      } else if (id === undefined) {
+        document.title = `Tạo trình độ nhân viên ${eName}`;
+      }
+    };
+    titlePage();
+  }, [dataDetailTDVH]);
+
   //ussing react-hooks-form
   const intitalValue = {
     maNhanVien: id !== undefined ? `${dataDetailTDVH.maNhanVien}` : eCode,

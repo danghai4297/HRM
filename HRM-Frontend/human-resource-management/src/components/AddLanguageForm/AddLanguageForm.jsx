@@ -42,6 +42,7 @@ function AddLanguageForm(props) {
   let query = new URLSearchParams(location.search);
   console.log(query.get("maNhanVien"));
   const eCode = query.get("maNhanVien");
+  let eName = query.get("hoTen");
   let { id } = match.params;
 
   const [dataDetailNN, setdataDetailNN] = useState([]);
@@ -74,6 +75,19 @@ function AddLanguageForm(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailNN.length !== 0) {
+        document.title = `Thay đổi ngoại ngữ cho nhân viên ${dataDetailNN.tenNhanVien}`;
+      } else if (id === undefined) {
+        document.title = `Tạo ngoại ngữ của nhân viên ${eName}`;
+      }
+    };
+    titlePage();
+  }, [dataDetailNN]);
+
   const intitalValue = {
     ngayCap:
       id !== undefined

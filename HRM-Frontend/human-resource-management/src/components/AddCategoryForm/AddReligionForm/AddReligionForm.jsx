@@ -20,7 +20,7 @@ const schema = yup.object({
 });
 
 function AddReligionForm(props) {
-  const { error, success } = useToast();
+  const { error, success, warn } = useToast();
 
   let { match, history } = props;
   let { id } = match.params;
@@ -56,6 +56,18 @@ function AddReligionForm(props) {
     };
     fetchReligionCategory();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDMTG.length !== 0) {
+        document.title = `Thay đổi danh mục ${dataDetailDMTG.tenDanhMuc}`;
+      } else if (id === undefined) {
+        document.title = `Tạo danh mục tôn giáo mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDMTG]);
 
   const {
     register,
@@ -107,23 +119,27 @@ function AddReligionForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }
   };
 
   const handleDelete = async () => {
     try {
-      await DeleteApi.deleteDMTG(id);
-      await ProductApi.PostLS({
-        tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa danh mục Tôn giáo: ${dataDetailDMTG.tenDanhMuc}`,
-        maNhanVien: decoded.id,
-        tenNhanVien: decoded.givenName,
-      });
-      success("Xoá danh mục Tôn giáo thành công");
-      history.goBack();
+      if (dataDetailDMTG.trangThai === "Chưa sử dụng") {
+        await DeleteApi.deleteDMTG(id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Xóa danh mục Tôn giáo: ${dataDetailDMTG.tenDanhMuc}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        success("Xoá danh mục Tôn giáo thành công");
+        history.goBack();
+      } else {
+        warn(`Danh mục đang được sử dụng`);
+      }
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không xóa được danh mục ${errors}`);
     }
   };
 

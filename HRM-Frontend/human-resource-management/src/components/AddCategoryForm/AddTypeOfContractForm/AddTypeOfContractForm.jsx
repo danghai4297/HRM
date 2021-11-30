@@ -22,7 +22,7 @@ const schema = yup.object({
 });
 
 function AddTypeOfContractForm(props) {
-  const { error, success } = useToast();
+  const { error, success, warn } = useToast();
 
   let { match, history } = props;
   let { id } = match.params;
@@ -58,6 +58,18 @@ function AddTypeOfContractForm(props) {
     };
     fetchTypeOfContractCategory();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDMLHD.length !== 0) {
+        document.title = `Thay đổi danh mục ${dataDetailDMLHD.tenLoaiHopDong}`;
+      } else if (id === undefined) {
+        document.title = `Tạo danh mục loại hợp đồng mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDMLHD]);
 
   useEffect(() => {
     const handleTypeOfContractId = async () => {
@@ -151,22 +163,25 @@ function AddTypeOfContractForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }
   };
 
   const handleDelete = async () => {
     try {
-      await DeleteApi.deleteDMLHD(id);
-      await ProductApi.PostLS({
-        tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa danh mục loại hợp đồng: ${dataDetailDMLHD.tenLoaiHopDong}`,
-        maNhanVien: decoded.id,
-        tenNhanVien: decoded.givenName,
-      });
-      success("Xoá danh mục loại hợp đồng thành công");
-
-      history.goBack();
+      if (dataDetailDMLHD.trangThai === "Chưa sử dụng") {
+        await DeleteApi.deleteDMLHD(id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Xóa danh mục loại hợp đồng: ${dataDetailDMLHD.tenLoaiHopDong}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        success("Xoá danh mục loại hợp đồng thành công");
+        history.goBack();
+      } else {
+        warn(`Danh mục đang được sử dụng`);
+      }
     } catch (errors) {
       error(`Có lỗi xảy ra ${errors}`);
     }
