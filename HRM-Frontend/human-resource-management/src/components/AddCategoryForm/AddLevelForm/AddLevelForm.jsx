@@ -10,15 +10,9 @@ import Dialog from "../../Dialog/Dialog";
 import DialogCheck from "../../Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
+import {schema} from "../../../ultis/CategoryValidation";
 
-const dontAllowOnlySpace = /^\s*\S.*$/g;
-const schema = yup.object({
-  tenTrinhDo: yup
-    .string()
-    .nullable()
-    .matches(dontAllowOnlySpace, "Tên trình độ không được chỉ là khoảng trống")
-    .required("Tên trình độ không được bỏ trống."),
-});
+
 
 function AddLevelForm(props) {
   const { error, success, warn } = useToast();

@@ -9,14 +9,9 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
+import {schema} from "../../../ultis/CategoryValidation";
 
-const dontAllowOnlySpace = /^\s*\S.*$/g;
-const schema = yup.object({
-  tenPhongBan: yup
-    .string()
-    .matches(dontAllowOnlySpace, "Tên phòng ban không được chỉ là khoảng trống")
-    .required("Tên phòng ban không được bỏ trống."),
-});
+
 function AddDepartmentForm(props) {
   const { error, success, warn } = useToast();
 

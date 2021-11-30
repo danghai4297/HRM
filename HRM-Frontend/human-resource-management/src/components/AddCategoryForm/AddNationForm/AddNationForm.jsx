@@ -11,15 +11,7 @@ import Dialog from "../../Dialog/Dialog";
 import { useToast } from "../../Toast/Toast";
 import jwt_decode from "jwt-decode";
 import { useDocumentTitle } from "../../../hook/TitleDocument";
-
-const dontAllowOnlySpace = /^\s*\S.*$/g;
-const schema = yup.object({
-  tenDanhMuc: yup
-    .string()
-    .nullable()
-    .matches(dontAllowOnlySpace, "Tên danh mục không được chỉ là khoảng trống")
-    .required("Tên danh mục không được bỏ trống."),
-});
+import { schema } from "../../../ultis/CategoryValidation";
 
 function AddNationForm(props) {
   const { error, success, warn } = useToast();

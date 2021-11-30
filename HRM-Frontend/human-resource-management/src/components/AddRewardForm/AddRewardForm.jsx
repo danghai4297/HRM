@@ -13,31 +13,8 @@ import Dialog from "../../components/Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
-const notAllowNull = /^\s*\S.*$/g;
-const allNull = /^(?!\s+$).*/g;
-const schema = yup.object({
-  idDanhMucKhenThuong: yup
-    .number()
-    .nullable()
-    .required("Loại khen thưởng không được bỏ trống."),
-  maNhanVien: yup
-    .string()
-    .matches(notAllowNull, "Mã nhân viên không được là khoảng trống.")
-    .nullable()
-    .required("Mã nhân viên không được bỏ trống."),
-  //thoiGian: yup.string().required("Thời gian không được bỏ trống."),
-  noiDung: yup
-    .string()
-    .matches(notAllowNull, "Nội dung không được là khoảng trống.")
-    .nullable()
-    .required("Nội dung không được bỏ trống."),
-  lyDo: yup
-    .string()
-    .matches(notAllowNull, "Lý do không được là khoảng trống.")
-    .nullable()
-    .required("Lý do không được bỏ trống."),
-  loai: yup.boolean(),
-});
+import { schema } from "../../ultis/RewardAndDisciplineValidation";
+
 function AddRewardForm(props) {
   const { error, warn, info, success } = useToast();
 
@@ -48,7 +25,7 @@ function AddRewardForm(props) {
   let eName = query.get("hoTen");
   const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
-
+  const eCode = query.get("maNhanVien");
   const [dataKTDetail, setDataKTDetail] = useState([]);
   const [dataKT, setDataKT] = useState([]);
   const [dataEmployee, setDataEmployee] = useState([]);
@@ -117,7 +94,7 @@ function AddRewardForm(props) {
   };
 
   const intitalValue = {
-    maNhanVien: id !== undefined ? dataKTDetail.maNhanVien : null,
+    maNhanVien: id !== undefined ? dataKTDetail.maNhanVien : eCode,
     idDanhMucKhenThuong:
       id !== undefined ? dataKTDetail.idDanhMucKhenThuong : null,
     noiDung: id !== undefined ? dataKTDetail.noiDung : null,
@@ -309,6 +286,7 @@ function AddRewardForm(props) {
                         : "form-control col-sm-6 border-danger"
                     }
                     list="employeeCode"
+                    readOnly={eCode ? true : false}
                   />
                   <datalist id="employeeCode">
                     {dataEmployee

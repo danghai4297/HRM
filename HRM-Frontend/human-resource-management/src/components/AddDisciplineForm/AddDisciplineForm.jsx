@@ -13,31 +13,7 @@ import Dialog from "../../components/Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
-const notAllowNull = /^\s*\S.*$/g;
-const allNull = /^(?!\s+$).*/g;
-const regexDate = /^[0-9]{2}[\/]{1}[0-9]{2}[\/]{1}[0-9]{4}$/g;
-const schema = yup.object({
-  idDanhMucKhenThuong: yup
-    .number()
-    .typeError("Loại kỷ luật không được bỏ trống."),
-  maNhanVien: yup
-    .string()
-    .matches(notAllowNull, "Mã nhân viên không được là khoảng trống.")
-    .nullable()
-    .required("Mã nhân viên không được bỏ trống."),
-  //thoiGian: yup.string().required("Thời gian không được bỏ trống."),
-  noiDung: yup
-    .string()
-    .matches(notAllowNull, "Nội dung không được là khoảng trống.")
-    .nullable()
-    .required("Nội dung không được bỏ trống."),
-  lyDo: yup
-    .string()
-    .matches(notAllowNull, "Lý do không được là khoảng trống.")
-    .nullable()
-    .required("Lý do không được bỏ trống."),
-  loai: yup.boolean(),
-});
+import { schema } from "../../ultis/RewardAndDisciplineValidation";
 
 function AddDisciplineForm(props) {
   const { error, warn, info, success } = useToast();
@@ -50,6 +26,7 @@ function AddDisciplineForm(props) {
   let eName = query.get("hoTen");
   const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
+  const eCode = query.get("maNhanVien");
 
   const [dataKLDetail, setDataKLDetail] = useState([]);
   const [dataKL, setDataKL] = useState([]);
@@ -120,7 +97,7 @@ function AddDisciplineForm(props) {
     });
   };
   const intitalValue = {
-    maNhanVien: id !== undefined ? dataKLDetail.maNhanVien : null,
+    maNhanVien: id !== undefined ? dataKLDetail.maNhanVien : eCode,
     idDanhMucKhenThuong:
       id !== undefined ? dataKLDetail.idDanhMucKhenThuong : null,
     noiDung: id !== undefined ? dataKLDetail.noiDung : null,
@@ -289,7 +266,7 @@ function AddDisciplineForm(props) {
           <div className="container-div-form">
             <div className="container-salary">
               <div>
-                <h3>Thông tin khen thưởng</h3>
+                <h3>Thông tin kỷ luật</h3>
               </div>
             </div>
             <div className="row">
@@ -311,6 +288,7 @@ function AddDisciplineForm(props) {
                         : "form-control col-sm-6 border-danger"
                     }
                     list="employeeCode"
+                    readOnly={eCode ? true : false}
                   />
                   <datalist id="employeeCode">
                     {dataEmployee
@@ -351,7 +329,7 @@ function AddDisciplineForm(props) {
                     class="col-sm-4 justify-content-start"
                     htmlFor="idDanhMucKhenThuong"
                   >
-                    Loại khen thưởng
+                    Loại kỷ luật
                   </label>
                   <select
                     type="text"

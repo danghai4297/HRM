@@ -9,17 +9,9 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
+import {schema} from "../../../ultis/CategoryValidation";
 
-const dontAllowOnlySpace = /^\s*\S.*$/g;
-const schema = yup.object({
-  tenLoaiHopDong: yup
-    .string()
-    .matches(
-      dontAllowOnlySpace,
-      "Tên loại hợp đồng không được chỉ là khoảng trống"
-    )
-    .required("Tên loại hợp đồng không được bỏ trống."),
-});
+
 
 function AddTypeOfContractForm(props) {
   const { error, success, warn } = useToast();

@@ -9,15 +9,7 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
-
-const dontAllowOnlySpace = /^\s*\S.*$/g;
-const schema = yup.object({
-  tenDanhMuc: yup
-    .string()
-    .nullable()
-    .matches(dontAllowOnlySpace, "Tên danh mục không được chỉ là khoảng trống")
-    .required("Tên danh mục không được bỏ trống."),
-});
+import { schema } from "../../../ultis/CategoryValidation";
 
 function AddDisciplineForm(props) {
   const { error, success, warn } = useToast();

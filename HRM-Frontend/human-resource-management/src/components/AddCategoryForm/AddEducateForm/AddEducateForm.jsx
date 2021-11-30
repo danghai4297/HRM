@@ -9,15 +9,9 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
+import {schema} from "../../../ultis/CategoryValidation";
 
-const dontAllowOnlySpace = /^\s*\S.*$/g;
-const schema = yup.object({
-  tenHinhThuc: yup
-    .string()
-    .nullable()
-    .matches(dontAllowOnlySpace, "Tên hình thức không được chỉ là khoảng trống")
-    .required("Tên hình thức không được bỏ trống."),
-});
+
 
 function AddEducateForm(props) {
   const { error, success, warn } = useToast();

@@ -9,15 +9,7 @@ import DeleteApi from "../../../api/deleteAPI";
 import PutApi from "../../../api/putAAPI";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
-
-const dontAllowOnlySpace = /^\s*\S.*$/g;
-const schema = yup.object({
-  idPhongBan: yup.number().typeError("Thuộc phòng ban không được bỏ trống."),
-  tenTo: yup
-    .string()
-    .matches(dontAllowOnlySpace, "Tổ không được chỉ là khoảng trống")
-    .required("Tổ không được bỏ trống."),
-});
+import { schema } from "../../../ultis/CategoryValidation";
 
 function AddNestForm(props) {
   const { error, success, warn } = useToast();

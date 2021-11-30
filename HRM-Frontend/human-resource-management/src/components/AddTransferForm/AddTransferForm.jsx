@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import "./AddTransferForm.scss";
 import ProductApi from "../../api/productApi";
 import { useLocation } from "react-router";
@@ -16,24 +15,8 @@ import Dialog from "../../components/Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
-const notAllowNull = /^\s*\S.*$/g;
-const allNull = /^(?!\s+$).*/g;
-const schema = yup.object({
-  maNhanVien: yup
-    .string()
-    .matches(notAllowNull, "Mã nhân viên không được là khoảng trống.")
-    .nullable()
-    .required("Mã nhân viên không được bỏ trống."),
-  idPhongBan: yup.number().typeError("Phòng ban không được bỏ trống."),
-  to: yup.number().nullable().required("Tổ không được bỏ trống."),
-  // idChucVu: yup.number().nullable().required("Chức vụ không được bỏ trống."),
-  trangThai: yup.boolean(),
-  chiTiet: yup
-    .string()
-    .matches(allNull, "Chi tiết không thể là khoảng trống.")
-    .nullable()
-    .notRequired(),
-});
+import { schema } from "../../ultis/TransferValidation";
+
 function AddTransferForm(props) {
   const { error, warn, info, success } = useToast();
 
@@ -42,7 +25,7 @@ function AddTransferForm(props) {
   let eName = query.get("hoTen");
   const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
-
+  const eCode = query.get("maNhanVien");
   // const onHandleSubmit = (data) => {
   //   console.log(data);
   //   JSON.stringify(data);
@@ -51,6 +34,7 @@ function AddTransferForm(props) {
   //get param from detail
   let { match, history } = props;
   let { id } = match.params;
+  console.log(id);
 
   // states contain data
   const [startDate, setStartDate] = useState();
@@ -148,7 +132,7 @@ function AddTransferForm(props) {
           ? true
           : false
         : true,
-    maNhanVien: id !== undefined ? dataDetailDC.maNhanVien : null,
+    maNhanVien: id !== undefined ? dataDetailDC.maNhanVien : eCode,
     //idChucVu: id !== undefined ? dataDetailDC.idChucVu : null,
   };
   //define method of react-hooks-form
@@ -344,6 +328,7 @@ function AddTransferForm(props) {
                         : "form-control col-sm-6 border-danger"
                     }
                     list="employeeCode"
+                    readOnly={eCode ? true : false}
                   />
                   <datalist id="employeeCode">
                     {dataEmployee

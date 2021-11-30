@@ -13,22 +13,9 @@ import moment from "moment/moment.js";
 import { stringify } from "query-string";
 import DialogCheck from "../Dialog/DialogCheck";
 import { useToast } from "../Toast/Toast";
-const notAllowNull = /^\s*\S.*$/g;
-const allNull = /^(?!\s+$).*/g;
-const schema = yup.object({
-  tenTruong: yup
-    .string()
-    .matches(notAllowNull, "Tên trường không được là khoảng trống.")
-    .nullable()
-    .required("Tên trường không được bỏ trống."),
-  idChuyenMon: yup.number().typeError("Chuyên môn không được bỏ trống."),
-  idHinhThucDaoTao: yup
-    .number()
-    .typeError("Hình thức đào tạo không được bỏ trống."),
-  idTrinhDo: yup.number().typeError("Trình độ không được bỏ trống."),
-  tuThoiGian: yup.date().nullable().required("Từ ngày không được bỏ trống"),
-  denThoiGian: yup.date().nullable().required("Đến ngày không được bỏ trống"),
-});
+import {schema} from "../../ultis/LevelValidation";
+
+
 function AddLevelForm(props) {
   const { error, warn, info, success } = useToast();
 

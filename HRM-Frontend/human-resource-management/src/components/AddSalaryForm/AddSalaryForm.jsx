@@ -19,57 +19,8 @@ import Dialog from "../../components/Dialog/Dialog";
 import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import jwt_decode from "jwt-decode";
-const notAllowNull = /^\s*\S.*$/g;
-const allNull = /^(?!\s+$).*/g;
-const schema = yup.object({
-  maHopDong: yup
-    .string()
-    .matches(notAllowNull, "Mã hợp đồng không được là khoảng trống.")
-    .nullable()
-    .required("Mã hợp đồng không được bỏ trống."),
-  idNhomLuong: yup
-    .number()
-    .nullable()
-    .required("Nhóm lương không được bỏ trống."),
-  heSoLuong: yup
-    .number()
-    .positive("Hệ số lương không thể là số âm.")
-    .typeError("Hệ số lương không được bỏ trống."),
-  bacLuong: yup
-    .string()
-    .matches(notAllowNull, "Bậc lương không được là khoảng trống.")
-    .nullable()
-    .required("Bậc lương không được bỏ trống."),
-  ngayHieuLuc: yup
-    .date()
-    .nullable()
-    .required("Ngày hết hạn không được bỏ trống."),
-  // ngayKetThuc: yup.date().nullable().required("Ngày có hiệu lực không được bỏ trống."),
-  luongCoBan: yup
-    .number()
-    .positive("Lương cơ bản không thể là số âm.")
-    .typeError("Lương cơ bản không được bỏ trống và phải là số."),
-  // phuCapTrachNhiem: yup
-  //   .number()
-  //   .positive("Phụ cấp chức vụ không thể là số âm.")
-  //   .typeError("Phụ cấp chức vụ không được bỏ trống và phải là số."),
-  phuCapKhac: yup
-    .number()
-    .positive("Phụ cấp khác không thể là số âm.")
-    .typeError("Phụ cấp khác không được bỏ trống và phải là số."),
-  tongLuong: yup.number(),
-  thoiHanLenLuong: yup
-    .string()
-    .matches(notAllowNull, "Thời hạn lên lương không được là khoảng trống.")
-    .nullable()
-    .required("thời hạn lên lương không được bỏ trống."),
-  trangThai: yup.boolean(),
-  ghiChu: yup
-    .string()
-    .matches(allNull, "Ghi chú không thể là khoảng trống.")
-    .nullable()
-    .notRequired(),
-});
+import { schema } from "../../ultis/SalaryValidation";
+import NumberFormat from "react-number-format";
 
 function AddSalaryForm(props) {
   let location = useLocation();
@@ -109,6 +60,7 @@ function AddSalaryForm(props) {
   const [dataAllHD, setDataAllHD] = useState([]);
   const [rsSalary, setRsSalary] = useState(0);
   const [contractCodes, setContractCodes] = useState();
+  const [DemoSalary, setDemoSalary] = useState(0);
 
   const cancel = () => {
     setShowDialog(false);
@@ -166,7 +118,7 @@ function AddSalaryForm(props) {
     getContractCode();
   }, [contractCodes]);
 
-  console.log(contractCodes);
+  //console.log(contractCodes);
 
   const [file, setFile] = useState({
     file: null,
@@ -288,8 +240,8 @@ function AddSalaryForm(props) {
   //   reset(intitalValue.heSoLuong);
   // }, [intitalValue.heSoLuong]);
 
-  console.log(startDate);
-  console.log(endDate);
+  //console.log(startDate);
+  //console.log(endDate);
 
   useEffect(() => {
     if (id !== undefined) {
@@ -301,14 +253,20 @@ function AddSalaryForm(props) {
       });
     }
     let rss = 0;
+    // rss +=
+    //   Number(salary.heSoLuong) * Number(salary.luongCoBan) +
+    //   Number(salary.phuCapKhac) +
+    //   Number(getValues("phuCapTrachNhiem"));
+    // setValue("tongLuong", rss);
     rss +=
-      Number(salary.heSoLuong) * Number(salary.luongCoBan) +
+      Number(salary.heSoLuong) * DemoSalary +
       Number(salary.phuCapKhac) +
       Number(getValues("phuCapTrachNhiem"));
     setValue("tongLuong", rss);
   }, [
     salary.heSoLuong,
-    salary.luongCoBan,
+    //  salary.luongCoBan,
+    DemoSalary,
     salary.phuCapKhac,
     //  salary.phuCapTrachNhiem,
   ]);
@@ -420,6 +378,7 @@ function AddSalaryForm(props) {
   //     setEndDateRs(rs.add(salaryTime, "years"));
   //   }
   // }, [salaryTime, endDate]);
+  console.log(DemoSalary);
 
   return (
     <>
@@ -619,7 +578,7 @@ function AddSalaryForm(props) {
                   >
                     Lương cơ bản
                   </label>
-                  <input
+                  {/* <input
                     type="text"
                     {...register("luongCoBan", {
                       onChange: (e) => handleOnChange(e),
@@ -631,6 +590,28 @@ function AddSalaryForm(props) {
                         : "form-control col-sm-6 border-danger"
                     }
                     // value={salary.luongCoBan}
+                  /> */}
+                  <Controller
+                    control={control}
+                    name="luongCoBan"
+                    render={({ field }) => (
+                      <NumberFormat
+                        onValueChange={(values) => {
+                          // const { formattedValue, value } = values;
+                          field.onChange(values.value);
+                          setDemoSalary(values.value);
+                        }}
+                        id="luongCoBan"
+                        thousandSeparator={true}
+                        value={field.value}
+                        className={
+                          !errors.luongCoBan
+                            ? "form-control col-sm-6 "
+                            : "form-control col-sm-6 border-danger"
+                        }
+                        {...field.value}
+                      />
+                    )}
                   />
                   <span className="message">{errors.luongCoBan?.message}</span>
                 </div>
