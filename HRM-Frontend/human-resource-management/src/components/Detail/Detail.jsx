@@ -28,7 +28,6 @@ import {
   ttqs,
   ttyt,
 } from "./Data";
-import { useDocumentTitle } from "../../hook/TitleDocument";
 
 function Detail(props) {
   let { match, history } = props;
