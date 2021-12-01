@@ -16,35 +16,14 @@ import { useToast } from "../Toast/Toast";
 import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import jwt_decode from "jwt-decode";
+import { schema } from "../../ultis/ContractValidation";
 
-const schema = yup.object({
-  trangThai: yup.boolean(),
-  maNhanVien: yup
-    .string()
-    .nullable()
-    .required("Mã nhân viên không được bỏ trống."),
-  idLoaiHopDong: yup.number().typeError("Loại hợp đồng không được bỏ trống."),
-  idChucDanh: yup.number().typeError("Chức danh không được bỏ trống."),
-  idChucVu: yup.number().typeError("Chức vụ không được bỏ trống."),
-  // maHopDong: yup
-  //   .string()
-  //   .nullable()
-  //   .required("Lương cơ bản không được bỏ trống."),
-  hopDongTuNgay: yup
-    .date()
-    .nullable()
-    .required("Ngày hiệu lực không được bỏ trống"),
-  hopDongDenNgay: yup
-    .date()
-    .nullable()
-    .required("Ngày hết hạn không được bỏ trống"),
-  idCre: yup.number(),
-});
 function AddContractForm(props) {
   let location = useLocation();
   let query = new URLSearchParams(location.search);
   const { error, warn, info, success } = useToast();
   const ecode = query.get("maNhanVien");
+  let eName = query.get("hoTen");
   let { match, history } = props;
   let { id } = match.params;
   const token = sessionStorage.getItem("resultObj");
@@ -93,34 +72,53 @@ function AddContractForm(props) {
           // setEndDate(moment(responseHD.hopDongDenNgay));
           setStartDate(moment(responseHD.hopDongTuNgay));
         }
-      } catch (error) {
-        console.log("false to fetch nv list: ", error);
+      } catch (errors) {
+       error("Có lỗi xảy ra");
       }
     };
     fetchNvList();
   }, []);
 
   useEffect(() => {
-    const handleId = async () => {
-      if (id === undefined) {
-        const responseAllHD = await ProductApi.getAllHd();
-        setDataAllHD(responseAllHD);
-        const idCree =
-          responseAllHD !== null ? responseAllHD[0].idCre : undefined;
-        setRsIdCre(idCree + 1);
-        const idIncre =
-          responseAllHD !== null ? responseAllHD[0].id : undefined;
-        console.log(idIncre);
-        const increCode = Number(idIncre.slice(2)) + 1;
-        const rsCode = "HD";
-        if (increCode < 10) {
-          // setRsId(rsCode.concat(`0${increCode}`));
-          setValue("maHopDong", rsCode.concat(`0${increCode}`));
-        } else if (increCode >= 10) {
-          //setRsId(rsCode.concat(`${increCode}`));
-          setValue("maHopDong", rsCode.concat(`${increCode}`));
-        }
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailHd.length !== 0) {
+        document.title = `Thay đổi thông tin hợp đồng của nhân viên ${dataDetailHd.tenNhanVien}`;
+      } else if (id === undefined && eName) {
+        document.title = `Tạo hợp đồng mới cho nhân viên ${eName}`;
+      } else if (id === undefined) {
+        document.title = `Tạo hợp đồng mới`;
       }
+    };
+    titlePage();
+  }, [dataDetailHd]);
+
+  useEffect(() => {
+    const handleId = async () => {
+      try {
+        if (id === undefined) {
+          const responseAllHD = await ProductApi.getAllHd();
+          setDataAllHD(responseAllHD);
+          const idCree =
+            responseAllHD !== null ? responseAllHD[0].idCre : undefined;
+          setRsIdCre(idCree + 1);
+          const idIncre =
+            responseAllHD !== null ? responseAllHD[0].id : undefined;
+          console.log(idIncre);
+          const increCode = Number(idIncre.slice(2)) + 1;
+          const rsCode = "HD";
+          if (increCode < 10) {
+            // setRsId(rsCode.concat(`0${increCode}`));
+            setValue("maHopDong", rsCode.concat(`0${increCode}`));
+          } else if (increCode >= 10) {
+            //setRsId(rsCode.concat(`${increCode}`));
+            setValue("maHopDong", rsCode.concat(`${increCode}`));
+          }
+        }
+      } catch (errors) {
+        error("Có lỗi xảy ra");
+      }
+      
     };
     handleId();
   }, []);
@@ -223,9 +221,9 @@ function AddContractForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
-    console.log(data);
-
+    const nameEm = dataIdEmployee.filter((item) => item.id === data.maNhanVien);
     let maHopDong = data.maHopDong;
+
     try {
       if (id !== undefined) {
         if (file.file !== null) {
@@ -246,29 +244,34 @@ function AddContractForm(props) {
           `Sửa thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
         );
       } else {
-        await ProductApi.postHD(data);
-        if (file.file !== null) {
-          const formData = new FormData();
-          formData.append("bangChung", file.file);
-          //formData.append("maHopDong", data.id);
-          await PutApi.PutAHD(formData, data.maHopDong);
+        try {
+          await ProductApi.postHD(data);
+          if (file.file !== null) {
+            const formData = new FormData();
+            formData.append("bangChung", file.file);
+            //formData.append("maHopDong", data.id);
+            await PutApi.PutAHD(formData, data.maHopDong);
+            success(
+              `Thêm hợp đồng mới ${maHopDong} cho nhân viên ${nameEm[0].hoTen} thành công`
+            );
+          }
+        } catch (errors) {
+          error("Không thể thêm hợp đồng mới");
         }
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm hợp đồng mới ${maHopDong} cho nhân viên ${dataDetailHd.tenNhanVien}`,
+          thaoTac: `Thêm hợp đồng mới ${maHopDong} cho nhân viên ${nameEm[0].hoTen}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success(
-          `Thêm thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
-        );
+      
       }
       history.goBack();
     } catch (errors) {
-      console.log("errors", error);
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Có lỗi xảy ra`);
     }
   };
+
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteHD(id);
@@ -282,8 +285,8 @@ function AddContractForm(props) {
         `Xoá thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
       );
       history.push(`/contract`);
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra`);
     }
   };
   return (

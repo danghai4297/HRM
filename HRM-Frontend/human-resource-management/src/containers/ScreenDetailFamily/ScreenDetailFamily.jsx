@@ -24,6 +24,15 @@ function ScreenDetailFamily(props) {
     fetchNvList();
   }, []);
 
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailNT.length !== 0)
+        document.title = `Chi tiết thông tin người thân của nhân viên ${dataDetailNT.tenNhanVien}`;
+    };
+    titlePage();
+  }, [dataDetailNT]);
+
   return (
     <>
       <div className="main-screen-family">

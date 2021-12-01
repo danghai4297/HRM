@@ -8,11 +8,13 @@ import { ExportCSV } from "../../components/ExportFile/ExportFile";
 import TablePagination from "../../components/TablePagination/TablePagination";
 import productApi from "../../api/productApi";
 import { Link } from "react-router-dom";
+import { useDocumentTitle } from "../../hook/TitleDocument";
 
 function ScreenSalary(props) {
   const link = "/salary/detail/";
   let fileName = "Danhsachluong";
   const [dataAllL, setDataAllL] = useState([]);
+  useDocumentTitle("Danh sách lương");
 
   useEffect(() => {
     const fetchNvList = async () => {

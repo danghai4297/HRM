@@ -9,17 +9,11 @@ import Dialog from "../../Dialog/Dialog";
 import DeleteApi from "../../../api/deleteAPI";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
+import {schema} from "../../../ultis/CategoryValidation";
 
-AddBonusForm.propTypes = {};
-const schema = yup.object({
-  tenDanhMuc: yup
-    .string()
-    .nullable()
-    .required("Tên danh mục không được bỏ trống."),
-});
 
 function AddBonusForm(props) {
-  const { error, success } = useToast();
+  const { error, success, warn } = useToast();
 
   let { match, history } = props;
   let { id } = match.params;
@@ -41,7 +35,7 @@ function AddBonusForm(props) {
   };
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchBonusCategory = async () => {
       try {
         if (id !== undefined) {
           setDescription(`Bạn chắc chắn muốn sửa danh mục khen thưởng`);
@@ -52,8 +46,20 @@ function AddBonusForm(props) {
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList();
+    fetchBonusCategory();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDMKT.length !== 0) {
+        document.title = `Thay đổi danh mục ${dataDetailDMKT.tenDanhMuc}`;
+      } else if (id === undefined) {
+        document.title = `Tạo danh mục khen thưởng mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDMKT]);
 
   const {
     register,
@@ -104,23 +110,27 @@ function AddBonusForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }
   };
 
   const handleDelete = async () => {
     try {
-      await DeleteApi.deleteDMKTvKL(id);
-      await ProductApi.PostLS({
-        tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa danh mục khen thưởng: ${dataDetailDMKT.tenDanhMuc}`,
-        maNhanVien: decoded.id,
-        tenNhanVien: decoded.givenName,
-      });
-      success("Xoá danh mục khen thưởng thành công");
-      history.goBack();
+      if (dataDetailDMKT.trangThai === "Chưa sử dụng") {
+        await DeleteApi.deleteDMKTvKL(id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Xóa danh mục khen thưởng: ${dataDetailDMKT.tenDanhMuc}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        success("Xoá danh mục khen thưởng thành công");
+        history.goBack();
+      } else {
+        warn(`Danh mục đang được sử dụng`);
+      }
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không xóa được danh mục ${errors}`);
     }
   };
 

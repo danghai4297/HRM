@@ -9,13 +9,12 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
-const schema = yup.object({
-  maLoaiHopDong: yup.string().required("Mã loại hợp đồng không được bỏ trống."),
-  tenLoaiHopDong: yup.string().required("Tên loại hợp đồng không được bỏ trống."),
-});
+import {schema} from "../../../ultis/CategoryValidation";
+
+
 
 function AddTypeOfContractForm(props) {
-  const { error, success } = useToast();
+  const { error, success, warn } = useToast();
 
   let { match, history } = props;
   let { id } = match.params;
@@ -38,7 +37,7 @@ function AddTypeOfContractForm(props) {
   };
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchTypeOfContractCategory = async () => {
       try {
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa loại hợp đồng");
@@ -49,7 +48,45 @@ function AddTypeOfContractForm(props) {
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList();
+    fetchTypeOfContractCategory();
+  }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDMLHD.length !== 0) {
+        document.title = `Thay đổi danh mục ${dataDetailDMLHD.tenLoaiHopDong}`;
+      } else if (id === undefined) {
+        document.title = `Tạo danh mục loại hợp đồng mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDMLHD]);
+
+  useEffect(() => {
+    const handleTypeOfContractId = async () => {
+      if (id === undefined) {
+        const responseTypeOfContract = await ProductApi.getAllDMLHD();
+        const codeIncre =
+          responseTypeOfContract !== null &&
+          responseTypeOfContract[responseTypeOfContract.length - 1]
+            .maLoaiHopDong;
+        const autoCodeIncre = Number(codeIncre.slice(3)) + 1;
+        const codeTypeOfContract = "LHD";
+        if (autoCodeIncre < 10) {
+          setValue(
+            "maLoaiHopDong",
+            codeTypeOfContract.concat(`0${autoCodeIncre}`)
+          );
+        } else if (autoCodeIncre >= 10) {
+          setValue(
+            "maLoaiHopDong",
+            codeTypeOfContract.concat(`${autoCodeIncre}`)
+          );
+        }
+      }
+    };
+    handleTypeOfContractId();
   }, []);
 
   const intitalValue = {
@@ -62,6 +99,7 @@ function AddTypeOfContractForm(props) {
     handleSubmit,
     formState: { errors },
     reset,
+    setValue,
     getValues,
   } = useForm({
     resolver: yupResolver(schema),
@@ -97,7 +135,9 @@ function AddTypeOfContractForm(props) {
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
           thaoTac: `Sửa danh mục loại hợp đồng: ${
-            dataDetailDMLHD.tenLoaiHopDong !== tendm ? `${dataDetailDMLHD.tenLoaiHopDong} thành` : ""
+            dataDetailDMLHD.tenLoaiHopDong !== tendm
+              ? `${dataDetailDMLHD.tenLoaiHopDong} thành`
+              : ""
           } ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
@@ -115,26 +155,27 @@ function AddTypeOfContractForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
-
+      error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }
   };
 
   const handleDelete = async () => {
     try {
-      await DeleteApi.deleteDMLHD(id);
-      await ProductApi.PostLS({
-        tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa danh mục loại hợp đồng: ${dataDetailDMLHD.tenLoaiHopDong}`,
-        maNhanVien: decoded.id,
-        tenNhanVien: decoded.givenName,
-      });
-      success("Xoá danh mục loại hợp đồng thành công");
-
-      history.goBack();
+      if (dataDetailDMLHD.trangThai === "Chưa sử dụng") {
+        await DeleteApi.deleteDMLHD(id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Xóa danh mục loại hợp đồng: ${dataDetailDMLHD.tenLoaiHopDong}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        success("Xoá danh mục loại hợp đồng thành công");
+        history.goBack();
+      } else {
+        warn(`Danh mục đang được sử dụng`);
+      }
     } catch (errors) {
       error(`Có lỗi xảy ra ${errors}`);
-
     }
   };
 
@@ -202,6 +243,7 @@ function AddTypeOfContractForm(props) {
                         ? "form-control col-sm-6"
                         : "form-control col-sm-6 border-danger "
                     }
+                    readOnly
                   />
                   <span className="message">
                     {errors.maLoaiHopDong?.message}
@@ -238,8 +280,16 @@ function AddTypeOfContractForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
-        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
         cancel={cancel}
       />
       <Dialog

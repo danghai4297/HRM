@@ -7,11 +7,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ExportCSV } from "../../components/ExportFile/ExportFile";
 import TablePagination from "../../components/TablePagination/TablePagination";
 import productApi from "../../api/productApi";
+import { useDocumentTitle } from "../../hook/TitleDocument";
 
 function ScreenResign(props) {
   const link = "/profile/detail/";
   const fileName = "DSnhanviennguviec";
   const [dataAllNvnv, setDataAllNvnv] = useState([]);
+  useDocumentTitle("Nghỉ việc");
 
   useEffect(() => {
     const fetchNvList = async () => {

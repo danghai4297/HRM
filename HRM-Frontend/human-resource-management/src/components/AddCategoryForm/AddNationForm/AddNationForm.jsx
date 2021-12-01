@@ -10,21 +10,18 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import { useToast } from "../../Toast/Toast";
 import jwt_decode from "jwt-decode";
+import { useDocumentTitle } from "../../../hook/TitleDocument";
+import { schema } from "../../../ultis/CategoryValidation";
 
-AddNationForm.propTypes = {};
-const schema = yup.object({
-  tenDanhMuc: yup
-    .string()
-    .nullable()
-    .required("Tên danh mục không được bỏ trống."),
-});
 function AddNationForm(props) {
-  const { error, success } = useToast();
+  const { error, success, warn } = useToast();
   let { match, history } = props;
   let { id } = match.params;
 
   const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
+
+  useDocumentTitle("Danh mục dân tộc");
 
   const [dataDetailDMDT, setdataDetailDMDT] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
@@ -41,7 +38,7 @@ function AddNationForm(props) {
   };
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchNationCategory = async () => {
       try {
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa danh mục dân tộc");
@@ -52,8 +49,20 @@ function AddNationForm(props) {
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList();
+    fetchNationCategory();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDMDT.length !== 0) {
+        document.title = `Thay đổi danh mục ${dataDetailDMDT.tenDanhMuc}`;
+      } else if (id === undefined) {
+        document.title = `Tạo danh mục dân tộc mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDMDT]);
 
   const {
     register,
@@ -104,24 +113,27 @@ function AddNationForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }
   };
 
   const handleDelete = async () => {
     try {
-      await DeleteApi.deleteDMDT(id);
-      await ProductApi.PostLS({
-        tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa danh mục dân tộc: ${dataDetailDMDT.tenDanhMuc}`,
-        maNhanVien: decoded.id,
-        tenNhanVien: decoded.givenName,
-      });
-      history.goBack();
-      success("Xoá danh mục dân tộc thành công");
-
+      if (dataDetailDMDT.trangThai === "Chưa sử dụng") {
+        await DeleteApi.deleteDMDT(id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Xóa danh mục dân tộc: ${dataDetailDMDT.tenDanhMuc}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        history.goBack();
+        success("Xoá danh mục dân tộc thành công");
+      } else {
+        warn(`Danh mục đang được sử dụng`);
+      }
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không xóa được danh mục ${errors}`);
     }
   };
 
@@ -197,8 +209,16 @@ function AddNationForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
-        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
         cancel={cancel}
       />
       <Dialog

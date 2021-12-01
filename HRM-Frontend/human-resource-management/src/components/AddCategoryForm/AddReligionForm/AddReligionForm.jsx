@@ -9,16 +9,12 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
+import {schema} from "../../../ultis/CategoryValidation";
 
-AddReligionForm.propTypes = {};
-const schema = yup.object({
-  tenDanhMuc: yup
-    .string()
-    .nullable()
-    .required("Tên danh mục không được bỏ trống."),
-});
+
+
 function AddReligionForm(props) {
-  const { error, success } = useToast();
+  const { error, success, warn } = useToast();
 
   let { match, history } = props;
   let { id } = match.params;
@@ -41,7 +37,7 @@ function AddReligionForm(props) {
   };
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchReligionCategory = async () => {
       try {
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa danh mục tôn giáo");
@@ -52,8 +48,20 @@ function AddReligionForm(props) {
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList();
+    fetchReligionCategory();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDMTG.length !== 0) {
+        document.title = `Thay đổi danh mục ${dataDetailDMTG.tenDanhMuc}`;
+      } else if (id === undefined) {
+        document.title = `Tạo danh mục tôn giáo mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDMTG]);
 
   const {
     register,
@@ -105,23 +113,27 @@ function AddReligionForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }
   };
 
   const handleDelete = async () => {
     try {
-      await DeleteApi.deleteDMTG(id);
-      await ProductApi.PostLS({
-        tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa danh mục Tôn giáo: ${dataDetailDMTG.tenDanhMuc}`,
-        maNhanVien: decoded.id,
-        tenNhanVien: decoded.givenName,
-      });
-      success("Xoá danh mục Tôn giáo thành công");
-      history.goBack();
+      if (dataDetailDMTG.trangThai === "Chưa sử dụng") {
+        await DeleteApi.deleteDMTG(id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Xóa danh mục Tôn giáo: ${dataDetailDMTG.tenDanhMuc}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        success("Xoá danh mục Tôn giáo thành công");
+        history.goBack();
+      } else {
+        warn(`Danh mục đang được sử dụng`);
+      }
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không xóa được danh mục ${errors}`);
     }
   };
 
@@ -198,8 +210,16 @@ function AddReligionForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
-        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
         cancel={cancel}
       />
       <Dialog

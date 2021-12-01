@@ -9,14 +9,12 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
-const schema = yup.object({
-  tenLaoDong: yup
-  .string()
-  .nullable()
-  .required("Tên danh mục không được bỏ trống."),
-});
+import {schema} from "../../../ultis/CategoryValidation";
+
+
+
 function AddLaborForm(props) {
-  const { error, success } = useToast();
+  const { error, success, warn } = useToast();
   let { match, history } = props;
   let { id } = match.params;
 
@@ -38,7 +36,7 @@ function AddLaborForm(props) {
   };
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchLaborCategory = async () => {
       try {
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa tính chất lao động");
@@ -49,8 +47,20 @@ function AddLaborForm(props) {
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList();
+    fetchLaborCategory();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDMTCLD.length !== 0) {
+        document.title = `Thay đổi danh mục ${dataDetailDMTCLD.tenLaoDong}`;
+      } else if (id === undefined) {
+        document.title = `Tạo danh mục tính chất lao động mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDMTCLD]);
 
   const {
     register,
@@ -104,24 +114,28 @@ function AddLaborForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }
   };
 
   const handleDelete = async () => {
     try {
-      await DeleteApi.deleteDMTCLD(id);
-      await ProductApi.PostLS({
-        tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa tính
-        chất lao động: ${dataDetailDMTCLD.tenLaoDongndm}`,
-        maNhanVien: decoded.id,
-        tenNhanVien: decoded.givenName,
-      });
-      history.goBack();
-      success("Xoá tính chất lao động thành công");
+      if (dataDetailDMTCLD.trangThai === "Chưa sử dụng") {
+        await DeleteApi.deleteDMTCLD(id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Xóa tính
+          chất lao động: ${dataDetailDMTCLD.tenLaoDongndm}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        history.goBack();
+        success("Xoá tính chất lao động thành công");
+      } else {
+        warn(`Danh mục đang được sử dụng`);
+      }
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không xóa được danh mục ${errors}`);
     }
   };
 
@@ -200,8 +214,16 @@ function AddLaborForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
-        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
         cancel={cancel}
       />
       <Dialog

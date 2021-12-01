@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import "./AddTransferForm.scss";
 import ProductApi from "../../api/productApi";
 import { useLocation } from "react-router";
@@ -16,24 +15,17 @@ import Dialog from "../../components/Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
-const schema = yup.object({
-  maNhanVien: yup
-    .string()
-    .nullable()
-    .required("Mã nhân viên không được bỏ trống."),
-  idPhongBan: yup.number().typeError("Phòng ban không được bỏ trống."),
-  to: yup.number().nullable().required("Tổ không được bỏ trống."),
-  // idChucVu: yup.number().nullable().required("Chức vụ không được bỏ trống."),
-  trangThai: yup.boolean(),
-});
+import { schema } from "../../ultis/TransferValidation";
+
 function AddTransferForm(props) {
   const { error, warn, info, success } = useToast();
 
   let location = useLocation();
   let query = new URLSearchParams(location.search);
+  let eName = query.get("hoTen");
   const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
-
+  const eCode = query.get("maNhanVien");
   // const onHandleSubmit = (data) => {
   //   console.log(data);
   //   JSON.stringify(data);
@@ -42,6 +34,7 @@ function AddTransferForm(props) {
   //get param from detail
   let { match, history } = props;
   let { id } = match.params;
+  console.log(id);
 
   // states contain data
   const [startDate, setStartDate] = useState();
@@ -57,7 +50,7 @@ function AddTransferForm(props) {
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
-    "Bạn chắc chắn muốn thêm thông tin thuyên chuyển mới"
+    "Bạn chắc chắn muốn thêm thông tin công tác mới"
   );
 
   const [showCheckDialog, setShowCheckDialog] = useState(false);
@@ -79,7 +72,7 @@ function AddTransferForm(props) {
         const responeseEm = await ProductApi.getAllNv();
         setDataEmployee(responeseEm);
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốn sửa thông tin thuyên chuyển");
+          setDescription("Bạn chắc chắn muốn sửa thông tin công tác");
           const response = await ProductApi.getDCDetail(id);
           setDataDetailDC(response);
           setNest(response.idPhongBan);
@@ -91,6 +84,20 @@ function AddTransferForm(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDC.length !== 0) {
+        document.title = `Thay đổi thông tin vị trí công tác của nhân viên ${dataDetailDC.tenNhanVien}`;
+      } else if (id === undefined && eName) {
+        document.title = `Thủ tục công tác cho nhân viên ${eName}`;
+      } else if (id === undefined) {
+        document.title = `Thủ tục công tác`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDC]);
 
   const [file, setFile] = useState({
     file: null,
@@ -125,7 +132,7 @@ function AddTransferForm(props) {
           ? true
           : false
         : true,
-    maNhanVien: id !== undefined ? dataDetailDC.maNhanVien : null,
+    maNhanVien: id !== undefined ? dataDetailDC.maNhanVien : eCode,
     //idChucVu: id !== undefined ? dataDetailDC.idChucVu : null,
   };
   //define method of react-hooks-form
@@ -174,6 +181,7 @@ function AddTransferForm(props) {
   };
   //method handle submit
   const onHandleSubmit = async (data) => {
+    const nameEm = dataEmployee.filter((item) => item.id === data.maNhanVien);
     console.log(data);
     try {
       if (id !== undefined) {
@@ -188,17 +196,17 @@ function AddTransferForm(props) {
           formData.append("maNhanVien", data.maNhanVien);
           await PutApi.PutDC(formData, id);
         } catch (errors) {
-          errors("Không thể sửa thông tin thuyên chuyển");
+          errors("Không thể sửa thông tin công tác");
         }
 
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa thông tin thuyên chuyển của nhân viên ${dataDetailDC.tenNhanVien}`,
+          thaoTac: `Sửa thông tincông tác của nhân viên ${dataDetailDC.tenNhanVien}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
         success(
-          `Sửa thông tin thuyên chuyển cho nhân viên ${dataDetailDC.tenNhanVien} thành công`
+          `Sửa thông tin công tác cho nhân viên ${dataDetailDC.tenNhanVien} thành công`
         );
       } else {
         try {
@@ -212,46 +220,45 @@ function AddTransferForm(props) {
           formData.append("maNhanVien", data.maNhanVien);
           await ProductApi.PostDC(formData);
         } catch (errors) {
-          errors("Không thể thêm thông tin thuyên chuyển");
+          errors("Không thể thêm thông tin công tác");
         }
 
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm thuyên chuyển mới cho nhân viên ${dataDetailDC.tenNhanVien}`,
+          thaoTac: `Thêm công tác mới cho nhân viên ${nameEm[0].hoTen}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
         success(
-          `Thêm thông tin thuyên chuyển cho nhân viên ${dataDetailDC.tenNhanVien} thành công`
+          `Thêm thông tin công tác cho nhân viên ${nameEm[0].hoTen} thành công`
         );
       }
       history.goBack();
     } catch (errors) {
-      console.log("errors", error);
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Có lỗi xảy ra.`);
     }
   };
+  console.log(dataDetailDC);
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDC(id);
       await ProductApi.PostLS({
         tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa thuyên chuyển của nhân viên ${dataDetailDC.tenNhanVien}`,
+        thaoTac: `Xóa thông tin công tác của nhân viên ${dataDetailDC.tenNhanVien}`,
         maNhanVien: decoded.id,
         tenNhanVien: decoded.givenName,
       });
       success(
-        `Xoá thông tin thuyên chuyển cho nhân viên ${dataDetailDC.tenNhanVien} thành công`
+        `Xoá thông tin công tác cho nhân viên ${dataDetailDC.tenNhanVien} thành công`
       );
       history.push(`/transfer`);
-    } catch (error) {
-      error(`Có lỗi xảy ra ${errors}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra.`);
     }
   };
   const handleChangeNest = (e) => {
     setNest(e.target.value);
   };
-  console.log(nest);
 
   return (
     <>
@@ -259,7 +266,7 @@ function AddTransferForm(props) {
         <div className="Submit-button sticky-top">
           <div>
             <h2 className="">
-              {dataDetailDC.length !== 0 ? "Sửa" : "Thêm"} thủ tục thuyên chuyển
+              {dataDetailDC.length !== 0 ? "Sửa" : "Thêm"} thủ tục công tác
             </h2>
           </div>
           <div className="button">
@@ -297,7 +304,7 @@ function AddTransferForm(props) {
           <div className="container-div-form">
             <div className="container-salary">
               <div>
-                <h3>Thủ tục thuyên chuyển</h3>
+                <h3>Thông tin công tác</h3>
               </div>
             </div>
             <div className="row">
@@ -319,6 +326,7 @@ function AddTransferForm(props) {
                         : "form-control col-sm-6 border-danger"
                     }
                     list="employeeCode"
+                    readOnly={eCode ? true : false}
                   />
                   <datalist id="employeeCode">
                     {dataEmployee
@@ -520,8 +528,8 @@ function AddTransferForm(props) {
         title="Thông báo"
         description={
           id !== undefined
-            ? "Bạn chưa thay đổi thông tin thuyên chuyển"
-            : "Bạn chưa nhập thông tin thuyên chuyển"
+            ? "Bạn chưa thay đổi thông tincông tác"
+            : "Bạn chưa nhập thông tincông tác"
         }
         confirm={null}
         cancel={cancel}
@@ -529,7 +537,7 @@ function AddTransferForm(props) {
       <Dialog
         show={showDeleteDialog}
         title="Thông báo"
-        description={`Bạn chắc chắn muốn xóa thông tin thuyên chuyển`}
+        description={`Bạn chắc chắn muốn xóa thông tincông tác`}
         confirm={handleDelete}
         cancel={cancel}
       />

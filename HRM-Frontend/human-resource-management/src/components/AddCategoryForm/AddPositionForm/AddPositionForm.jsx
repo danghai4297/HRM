@@ -9,14 +9,12 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
+import {schema} from "../../../ultis/CategoryValidation";
 
-const schema = yup.object({
-  maChucVu: yup.string().required("Mã chức vụ được bỏ trống."),
-  tenChucVu: yup.string().required("Tên chức vụ không được bỏ trống."),
-  phuCap: yup.number().typeError("Phụ cấp không được bỏ trống và là số."),
-});
+
+
 function AddPositionForm(props) {
-  const { error, success } = useToast();
+  const { error, success, warn } = useToast();
 
   let { match, history } = props;
   let { id } = match.params;
@@ -39,7 +37,7 @@ function AddPositionForm(props) {
   };
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchPositionCategory = async () => {
       try {
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa danh mục chức vụ");
@@ -50,7 +48,38 @@ function AddPositionForm(props) {
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList();
+    fetchPositionCategory();
+  }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDMCV.length !== 0) {
+        document.title = `Thay đổi danh mục ${dataDetailDMCV.tenChucVu}`;
+      } else if (id === undefined) {
+        document.title = `Tạo danh mục chức vụ mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDMCV]);
+
+  useEffect(() => {
+    const handlePositionId = async () => {
+      if (id === undefined) {
+        const responsePosition = await ProductApi.getAllDMCV();
+        const codeIncre =
+          responsePosition !== null &&
+          responsePosition[responsePosition.length - 1].maChucVu;
+        const autoCodeIncre = Number(codeIncre.slice(2)) + 1;
+        const codePosition = "CV";
+        if (autoCodeIncre < 10) {
+          setValue("maChucVu", codePosition.concat(`0${autoCodeIncre}`));
+        } else if (autoCodeIncre >= 10) {
+          setValue("maChucVu", codePosition.concat(`${autoCodeIncre}`));
+        }
+      }
+    };
+    handlePositionId();
   }, []);
 
   const intitalValue = {
@@ -64,6 +93,7 @@ function AddPositionForm(props) {
     handleSubmit,
     formState: { errors },
     reset,
+    setValue,
     getValues,
   } = useForm({
     resolver: yupResolver(schema),
@@ -114,23 +144,27 @@ function AddPositionForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }
   };
 
   const handleDelete = async () => {
     try {
-      await DeleteApi.deleteDMCV(id);
-      await ProductApi.PostLS({
-        tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa danh mục chức vụ: ${dataDetailDMCV.tenChucVu}`,
-        maNhanVien: decoded.id,
-        tenNhanVien: decoded.givenName,
-      });
-      success("Xoá danh mục chức vụ thành công");
-      history.goBack();
+      if (dataDetailDMCV.trangThai === "Chưa sử dụng") {
+        await DeleteApi.deleteDMCV(id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Xóa danh mục chức vụ: ${dataDetailDMCV.tenChucVu}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        success("Xoá danh mục chức vụ thành công");
+        history.goBack();
+      } else {
+        warn(`Danh mục đang được sử dụng`);
+      }
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không xóa được danh mục ${errors}`);
     }
   };
 
@@ -195,6 +229,7 @@ function AddPositionForm(props) {
                         ? "form-control col-sm-6"
                         : "form-control col-sm-6 border-danger "
                     }
+                    readOnly
                   />
                   <span className="message">{errors.maChucVu?.message}</span>
                 </div>

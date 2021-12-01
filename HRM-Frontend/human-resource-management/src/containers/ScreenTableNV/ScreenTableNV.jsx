@@ -9,6 +9,7 @@ import { ExportCSV } from "../../components/ExportFile/ExportFile";
 import TablePagination from "../../components/TablePagination/TablePagination";
 import productApi from "../../api/productApi";
 import { Link } from "react-router-dom";
+import { useDocumentTitle } from "../../hook/TitleDocument";
 
 ScreenTableNV.propTypes = {};
 
@@ -16,6 +17,7 @@ function ScreenTableNV(props) {
   const link = "/profile/detail/";
   const fileName = "DSNV";
   const [dataAllNv, setdataAllNv] = useState([]);
+  useDocumentTitle("Hồ sơ");
 
   useEffect(() => {
     const fetchNvList = async () => {

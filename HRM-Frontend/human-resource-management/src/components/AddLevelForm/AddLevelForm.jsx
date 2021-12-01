@@ -13,22 +13,9 @@ import moment from "moment/moment.js";
 import { stringify } from "query-string";
 import DialogCheck from "../Dialog/DialogCheck";
 import { useToast } from "../Toast/Toast";
+import {schema} from "../../ultis/LevelValidation";
 
-const schema = yup.object({
-  tenTruong: yup
-    .string()
-    .nullable()
-    .required("Tên trường không được bỏ trống."),
-  idChuyenMon: yup.number().typeError("Chuyên môn không được bỏ trống."),
-  idHinhThucDaoTao: yup
-    .number()
-    .typeError("Hình thức đào tạo không được bỏ trống."),
-  idTrinhDo: yup
-    .number()
-    .typeError("Trình độ không được bỏ trống."),
-  tuThoiGian: yup.date().nullable().required("Từ ngày không được bỏ trống"),
-  denThoiGian: yup.date().nullable().required("Đến ngày không được bỏ trống"),
-});
+
 function AddLevelForm(props) {
   const { error, warn, info, success } = useToast();
 
@@ -40,7 +27,7 @@ function AddLevelForm(props) {
   //  console.log(query.get("hoTen"));
 
   let eCode = query.get("maNhanVien");
-  let eName = query.get("hoVaTen");
+  let eName = query.get("hoTen");
   let { id } = match.params;
 
   const [dataDetailTDVH, setdataDetailTDVH] = useState([]);
@@ -84,12 +71,25 @@ function AddLevelForm(props) {
           const response = await ProductApi.getTDDetail(id);
           setdataDetailTDVH(response);
         }
-      } catch (error) {
-        console.log("false to fetch nv list: ", error);
+      } catch (errors) {
+        error("Có lỗi xảy ra.")
       }
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailTDVH.length !== 0) {
+        document.title = `Thay đổi trình độ nhân viên ${dataDetailTDVH.tenNhanVien}`;
+      } else if (id === undefined) {
+        document.title = `Tạo trình độ nhân viên ${eName}`;
+      }
+    };
+    titlePage();
+  }, [dataDetailTDVH]);
+
   //ussing react-hooks-form
   const intitalValue = {
     maNhanVien: id !== undefined ? `${dataDetailTDVH.maNhanVien}` : eCode,
@@ -168,8 +168,7 @@ function AddLevelForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      console.log("Có lỗi xảy ra: ", error);
-      error(`Có lỗi xảy ra ${errors}`)
+      error(`Có lỗi xảy ra.`);
     }
   };
 
@@ -178,9 +177,11 @@ function AddLevelForm(props) {
       await DeleteApi.deleteTDVH(id);
       history.push(`/profile/detail/${dataDetailTDVH.maNhanVien}`);
       success(
-        `Xoá thông tin trình độ cho nhân viên ${dataDetailTDVH.tenNhanVien} thành công`
+        `Xoá thông tin trình độ cho nhân viên ${dataDetailTDVH.tenNhanVien} thành công.`
       );
-    } catch (error) {}
+    } catch (errors) {
+      error(`Xoá thông tin trình độ cho nhân viên ${dataDetailTDVH.tenNhanVien} không thành công.`)
+    }
   };
 
   return (

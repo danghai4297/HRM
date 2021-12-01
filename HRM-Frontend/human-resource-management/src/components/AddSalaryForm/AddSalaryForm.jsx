@@ -19,50 +19,14 @@ import Dialog from "../../components/Dialog/Dialog";
 import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import jwt_decode from "jwt-decode";
-
-const schema = yup.object({
-  maHopDong: yup
-    .string()
-    .nullable()
-    .required("Mã hợp đồng không được bỏ trống."),
-  idNhomLuong: yup
-    .number()
-    .nullable()
-    .required("Nhóm lương không được bỏ trống."),
-  heSoLuong: yup
-    .number()
-    .positive("Hệ số lương không thể là số âm.")
-    .typeError("Hệ số lương không được bỏ trống."),
-  bacLuong: yup.string().nullable().required("Bậc lương không được bỏ trống."),
-  ngayHieuLuc: yup
-    .date()
-    .nullable()
-    .required("Ngày hết hạn không được bỏ trống."),
-  // ngayKetThuc: yup.date().nullable().required("Ngày có hiệu lực không được bỏ trống."),
-  luongCoBan: yup
-    .number()
-    .positive("Lương cơ bản không thể là số âm.")
-    .typeError("Lương cơ bản không được bỏ trống và phải là số."),
-  phuCapTrachNhiem: yup
-    .number()
-    .positive("Phụ cấp chức vụ không thể là số âm.")
-    .typeError("Phụ cấp chức vụ không được bỏ trống và phải là số."),
-  phuCapKhac: yup
-    .number()
-    .positive("Phụ cấp khác không thể là số âm.")
-    .typeError("Phụ cấp khác không được bỏ trống và phải là số."),
-  tongLuong: yup.number(),
-  thoiHanLenLuong: yup
-    .string()
-    .nullable()
-    .required("thời hạn lên lương không được bỏ trống."),
-  trangThai: yup.boolean(),
-});
+import { schema } from "../../ultis/SalaryValidation";
+import NumberFormat from "react-number-format";
 
 function AddSalaryForm(props) {
   let location = useLocation();
   let query = new URLSearchParams(location.search);
   const contractCode = query.get("maHopDong");
+  let eName = query.get("hoTen");
   const { error, warn, info, success } = useToast();
   const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
@@ -96,7 +60,10 @@ function AddSalaryForm(props) {
   const [dataAllHD, setDataAllHD] = useState([]);
   const [rsSalary, setRsSalary] = useState(0);
   const [contractCodes, setContractCodes] = useState();
-
+  const [DemoSalary, setDemoSalary] = useState(0);
+  const [allowance, setAllowance] = useState("");
+  const [OtherAllowance, setOtherAllowance] = useState("");
+  const [totalSalary, setTotalSalary] = useState();
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
@@ -116,6 +83,8 @@ function AddSalaryForm(props) {
           setDataLDetail(response);
           setStartDate(moment(response.ngayHieuLuc));
           setEndDate(moment(response.ngayKetThuc));
+          setAllowance(response.phuCapTrachNhiem);
+          setTotalSalary(response.tongLuong);
         }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -125,11 +94,26 @@ function AddSalaryForm(props) {
   }, []);
 
   useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataLDetail.length !== 0) {
+        document.title = `Thay đổi thông tin lương của nhân viên ${dataLDetail.tenNhanVien}`;
+      } else if (id === undefined && eName) {
+        document.title = `Tạo lương mới cho nhân viên ${eName}`;
+      } else if (id === undefined) {
+        document.title = `Tạo lương mới`;
+      }
+    };
+    titlePage();
+  }, [dataLDetail]);
+
+  useEffect(() => {
     const getContractCode = async () => {
       try {
         if (contractCodes !== undefined) {
           const responseDetailHD = await ProductApi.getHdDetail(contractCodes);
-          setValue("phuCapTrachNhiem", responseDetailHD.phuCapChucVu);
+          //setValue("phuCapTrachNhiem", responseDetailHD.phuCapChucVu);
+          setAllowance(responseDetailHD.phuCapChucVu);
           console.log(responseDetailHD);
         }
       } catch (error) {
@@ -139,7 +123,7 @@ function AddSalaryForm(props) {
     getContractCode();
   }, [contractCodes]);
 
-  console.log(contractCodes);
+  //console.log(contractCodes);
 
   const [file, setFile] = useState({
     file: null,
@@ -157,7 +141,6 @@ function AddSalaryForm(props) {
       //path: URL.createObjectURL(e.target.files[0]),
     });
   };
-
   const intitalValue = {
     idNhomLuong: id !== undefined ? dataLDetail.idNhomLuong : null,
     heSoLuong: id !== undefined ? dataLDetail.heSoLuong : null,
@@ -208,10 +191,6 @@ function AddSalaryForm(props) {
       "idNhomLuong",
       "heSoLuong",
       "bacLuong",
-      "luongCoBan",
-      "phuCapTrachNhiem",
-      "phuCapKhac",
-      "tongLuong",
       "thoiHanLenLuong",
       "ngayHieuLuc",
       "ngayKetThuc",
@@ -223,10 +202,6 @@ function AddSalaryForm(props) {
       intitalValue.idNhomLuong,
       intitalValue.heSoLuong,
       intitalValue.bacLuong,
-      intitalValue.luongCoBan,
-      intitalValue.phuCapTrachNhiem,
-      intitalValue.phuCapKhac,
-      intitalValue.tongLuong,
       intitalValue.thoiHanLenLuong,
       intitalValue.ngayHieuLuc,
       intitalValue.ngayKetThuc,
@@ -234,10 +209,12 @@ function AddSalaryForm(props) {
       intitalValue.trangThai,
       intitalValue.maHopDong,
     ];
-    // return JSON.stringify(values) === JSON.stringify(dfValue);
     if (
       JSON.stringify(values) === JSON.stringify(dfValue) &&
-      file.file === null
+      file.file === null &&
+      intitalValue.phuCapTrachNhiem == allowance &&
+      intitalValue.tongLuong == totalSalary &&
+      intitalValue.luongCoBan == DemoSalary &&  intitalValue.phuCapKhac == OtherAllowance
     ) {
       return true;
     }
@@ -255,14 +232,6 @@ function AddSalaryForm(props) {
       [e.target.name]: e.target.value,
     });
   };
-  //console.log(salary);
-
-  // useEffect(() => {
-  //   reset(intitalValue.heSoLuong);
-  // }, [intitalValue.heSoLuong]);
-
-  console.log(startDate);
-  console.log(endDate);
 
   useEffect(() => {
     if (id !== undefined) {
@@ -274,26 +243,23 @@ function AddSalaryForm(props) {
       });
     }
     let rss = 0;
+    // rss +=
+    //   Number(salary.heSoLuong) * Number(salary.luongCoBan) +
+    //   Number(salary.phuCapKhac) +
+    //   Number(getValues("phuCapTrachNhiem"));
+    // setValue("tongLuong", rss);
     rss +=
-      Number(salary.heSoLuong) * Number(salary.luongCoBan) +
-      Number(salary.phuCapKhac) +
-      Number(getValues("phuCapTrachNhiem"));
+      Number(salary.heSoLuong) * Number(DemoSalary) +
+      Number(allowance) +
+      Number(OtherAllowance);
     setValue("tongLuong", rss);
-  }, [
-    salary.heSoLuong,
-    salary.luongCoBan,
-    salary.phuCapKhac,
-    //  salary.phuCapTrachNhiem,
-  ]);
+    setTotalSalary(rss);
+  }, [salary.heSoLuong, DemoSalary, OtherAllowance, allowance]);
 
   const onHandleSubmit = async (data) => {
+    const nameCon = dataAllHD.filter((item) => item.id === data.maHopDong);
     let maHopDong = data.maHopDong;
     console.log(data);
-    // if (endDateRs !== undefined) {
-    //   let obj = { ngayKetThuc: endDateRs };
-    //   Object.assign(data, obj);
-    //   console.log(Object.assign(data, obj));
-    // }
     try {
       if (id !== undefined) {
         try {
@@ -304,9 +270,9 @@ function AddSalaryForm(props) {
           formData.append("heSoLuong", data.heSoLuong);
           formData.append("bacLuong", data.bacLuong);
           formData.append("luongCoBan", data.luongCoBan);
-          formData.append("phuCapTrachNhiem", data.phuCapTrachNhiem);
+          formData.append("phuCapTrachNhiem", allowance);
           formData.append("phuCapKhac", data.phuCapKhac);
-          formData.append("tongLuong", data.tongLuong);
+          formData.append("tongLuong", totalSalary);
           formData.append("thoiHanLenLuong", data.thoiHanLenLuong);
           formData.append("ngayHieuLuc", startDate.format("MM/DD/YYYY"));
           formData.append("ngayKetThuc", endDate.format("MM/DD/YYYY"));
@@ -314,7 +280,7 @@ function AddSalaryForm(props) {
           formData.append("trangThai", data.trangThai);
           await PutApi.PutL(formData, id);
         } catch (errors) {
-          error(`Lỗi:${errors}`);
+          error(`Có lỗi xảy ra.`);
         }
 
         await ProductApi.PostLS({
@@ -334,9 +300,9 @@ function AddSalaryForm(props) {
         formData.append("heSoLuong", data.heSoLuong);
         formData.append("bacLuong", data.bacLuong);
         formData.append("luongCoBan", data.luongCoBan);
-        formData.append("phuCapTrachNhiem", data.phuCapTrachNhiem);
+        formData.append("phuCapTrachNhiem", allowance);
         formData.append("phuCapKhac", data.phuCapKhac);
-        formData.append("tongLuong", data.tongLuong);
+        formData.append("tongLuong", totalSalary);
         formData.append("thoiHanLenLuong", data.thoiHanLenLuong);
         formData.append("ngayHieuLuc", startDate.format("MM/DD/YYYY"));
         formData.append("ngayKetThuc", endDate.format("MM/DD/YYYY"));
@@ -345,20 +311,20 @@ function AddSalaryForm(props) {
         await ProductApi.PostL(formData);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm lương mới trong hợp đồng ${maHopDong} của nhân viên ${dataLDetail.tenNhanVien}`,
+          thaoTac: `Thêm lương mới trong hợp đồng ${maHopDong} của nhân viên ${nameCon[0].tenNhanVien}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
         success(
-          `thêm thông tin lương cho nhân viên ${dataLDetail.tenNhanVien} thành công`
+          `Thêm lương mới trong hợp đồng ${maHopDong} của nhân viên ${nameCon[0].tenNhanVien} thành công`
         );
       }
       history.goBack();
     } catch (errors) {
-      console.log("errors: ", errors);
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Có lỗi xảy ra.`);
     }
   };
+
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteL(id);
@@ -373,7 +339,7 @@ function AddSalaryForm(props) {
       );
       history.push(`/salary`);
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Có lỗi xảy ra.`);
     }
   };
 
@@ -398,7 +364,7 @@ function AddSalaryForm(props) {
         <div className="Submit-button sticky-top">
           <div>
             <h2 className="">
-              {dataLDetail.length !== 0 ? "Sửa" : "Thêm"} hồ sơ lương
+              {dataLDetail.length !== 0 ? "Sửa" : "Thêm"} thông tin lương
             </h2>
           </div>
           <div className="button">
@@ -446,13 +412,32 @@ function AddSalaryForm(props) {
                 <div className="salary-cal">
                   <span className="mr-3">
                     Tiền Lương:
-                    <input
+                    {/* <input
                       {...register("tongLuong")}
                       className="border-0"
                       // value={rsSalary}
                       // defaultValue={calSalary()}
                       readOnly
-                    ></input>
+                    ></input> */}
+                    <Controller
+                      control={control}
+                      name="tongLuong"
+                      render={({ field }) => (
+                        <NumberFormat
+                          // onValueChange={(values) => {
+                          //   // const { formattedValue, value } = values;
+                          //   //field.onChange(values.value);
+                          //  // setDemoSalary(values.value);
+                          // }}
+                          id="tongLuong"
+                          thousandSeparator={true}
+                          value={totalSalary}
+                          className="border-0"
+                          {...field.value}
+                          readOnly
+                        />
+                      )}
+                    />
                   </span>
                 </div>
                 <span className="message-1">{errors.tongLuong?.message}</span>
@@ -590,7 +575,7 @@ function AddSalaryForm(props) {
                   >
                     Lương cơ bản
                   </label>
-                  <input
+                  {/* <input
                     type="text"
                     {...register("luongCoBan", {
                       onChange: (e) => handleOnChange(e),
@@ -602,6 +587,28 @@ function AddSalaryForm(props) {
                         : "form-control col-sm-6 border-danger"
                     }
                     // value={salary.luongCoBan}
+                  /> */}
+                  <Controller
+                    control={control}
+                    name="luongCoBan"
+                    render={({ field }) => (
+                      <NumberFormat
+                        onValueChange={(values) => {
+                          // const { formattedValue, value } = values;
+                          field.onChange(values.value);
+                          setDemoSalary(values.value);
+                        }}
+                        id="luongCoBan"
+                        thousandSeparator={true}
+                        value={field.value}
+                        className={
+                          !errors.luongCoBan
+                            ? "form-control col-sm-6 "
+                            : "form-control col-sm-6 border-danger"
+                        }
+                        {...field.value}
+                      />
+                    )}
                   />
                   <span className="message">{errors.luongCoBan?.message}</span>
                 </div>
@@ -642,7 +649,7 @@ function AddSalaryForm(props) {
                   >
                     Phụ cấp chức vụ
                   </label>
-                  <input
+                  {/* <input
                     type="text"
                     {...register("phuCapTrachNhiem", {
                       onChange: (e) => handleOnChange(e),
@@ -653,6 +660,30 @@ function AddSalaryForm(props) {
                         ? "form-control col-sm-6 "
                         : "form-control col-sm-6 border-danger"
                     }
+                    readOnly
+                  /> */}
+                  <Controller
+                    control={control}
+                    name="phuCapTrachNhiem"
+                    render={({ field }) => (
+                      <NumberFormat
+                        // onValueChange={(values) => {
+                        //   // const { formattedValue, value } = values;
+                        //   //field.onChange(values.value);
+                        //  // setDemoSalary(values.value);
+                        // }}
+                        id="phuCapTrachNhiem"
+                        thousandSeparator={true}
+                        value={allowance}
+                        className={
+                          !errors.phuCapTrachNhiem
+                            ? "form-control col-sm-6 "
+                            : "form-control col-sm-6 border-danger"
+                        }
+                        {...field.value}
+                        readOnly
+                      />
+                    )}
                   />
                   <span className="message">
                     {errors.phuCapTrachNhiem?.message}
@@ -667,7 +698,7 @@ function AddSalaryForm(props) {
                   >
                     Phụ cấp khác
                   </label>
-                  <input
+                  {/* <input
                     type="text"
                     {...register("phuCapKhac", {
                       onChange: (e) => handleOnChange(e),
@@ -678,6 +709,28 @@ function AddSalaryForm(props) {
                         ? "form-control col-sm-6 "
                         : "form-control col-sm-6 border-danger"
                     }
+                  /> */}
+                  <Controller
+                    control={control}
+                    name="phuCapKhac"
+                    render={({ field }) => (
+                      <NumberFormat
+                        onValueChange={(values) => {
+                          // const { formattedValue, value } = values;
+                          field.onChange(values.value);
+                          setOtherAllowance(values.value);
+                        }}
+                        id="phuCapKhac"
+                        thousandSeparator={true}
+                        value={field.value}
+                        className={
+                          !errors.phuCapKhac
+                            ? "form-control col-sm-6 "
+                            : "form-control col-sm-6 border-danger"
+                        }
+                        {...field.value}
+                      />
+                    )}
                   />
                   <span className="message">{errors.phuCapKhac?.message}</span>
                 </div>

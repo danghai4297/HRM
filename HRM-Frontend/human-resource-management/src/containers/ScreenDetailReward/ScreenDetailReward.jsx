@@ -23,8 +23,16 @@ function ScreenDetailReward(props) {
     };
     fetchNvList();
   }, []);
-  console.log(dataDetailKt);
-  
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailKt.length !== 0)
+        document.title = `Chi tiết khen thưởng của nhân viên ${dataDetailKt.hoTen}`;
+    };
+    titlePage();
+  }, [dataDetailKt]);
+
   return (
     <>
       <div className="main-screen-reward">
@@ -81,7 +89,8 @@ function ScreenDetailReward(props) {
             <SubDetail
               titleLeft="Tệp đính kèm"
               itemLeft={dataDetailKt.bangChung === null ? "Không" : "Có"}
-              titleRight={null}
+              titleRight="Nội dung"
+              itemRight={dataDetailKt.noiDung}
             />
           </div>
         </div>

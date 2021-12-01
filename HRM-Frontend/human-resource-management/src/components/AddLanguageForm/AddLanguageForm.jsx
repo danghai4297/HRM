@@ -12,19 +12,9 @@ import { DatePicker } from "antd";
 import moment from "moment/moment.js";
 import DialogCheck from "../Dialog/DialogCheck";
 import { useToast } from "../Toast/Toast";
+import {schema} from "../../ultis/LanguageValidation";
 
-const schema = yup.object({
-  idDanhMucNgoaiNgu: yup
-    .number()
-    .typeError("Ngoại ngữ không được bỏ trống."),
-  ngayCap: yup.date().nullable().required("Ngày cấp không được bỏ trống."),
-  trinhDo: yup.string().nullable().required("Trình độ không được bỏ trống."),
-  noiCap: yup.string().nullable().required("Nơi cấp không được bỏ trống."),
-  maNhanVien: yup
-    .string()
-    .nullable()
-    .required("Mã nhân viên không được bỏ trống."),
-});
+
 function AddLanguageForm(props) {
   const { error, warn, info, success } = useToast();
 
@@ -35,6 +25,7 @@ function AddLanguageForm(props) {
   let query = new URLSearchParams(location.search);
   console.log(query.get("maNhanVien"));
   const eCode = query.get("maNhanVien");
+  let eName = query.get("hoTen");
   let { id } = match.params;
 
   const [dataDetailNN, setdataDetailNN] = useState([]);
@@ -61,14 +52,32 @@ function AddLanguageForm(props) {
           const response = await ProductApi.getNNDetail(id);
           setdataDetailNN(response);
         }
-      } catch (error) {
-        console.log("false to fetch nv list: ", error);
+      } catch (errors) {
+        error("Có lỗi xảy ra.")
       }
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailNN.length !== 0) {
+        document.title = `Thay đổi ngoại ngữ cho nhân viên ${dataDetailNN.tenNhanVien}`;
+      } else if (id === undefined) {
+        document.title = `Tạo ngoại ngữ của nhân viên ${eName}`;
+      }
+    };
+    titlePage();
+  }, [dataDetailNN]);
+
   const intitalValue = {
-    ngayCap:  id !== undefined ?(moment(dataDetailNN.ngayCap)._d == "Invalid Date"?dataDetailNN.ngayCap:moment(dataDetailNN.ngayCap)):dataDetailNN.ngayCap,
+    ngayCap:
+      id !== undefined
+        ? moment(dataDetailNN.ngayCap)._d == "Invalid Date"
+          ? dataDetailNN.ngayCap
+          : moment(dataDetailNN.ngayCap)
+        : dataDetailNN.ngayCap,
     trinhDo: id !== undefined ? `${dataDetailNN.trinhDo}` : null,
     noiCap: id !== undefined ? `${dataDetailNN.noiCap}` : null,
     maNhanVien: id !== undefined ? `${dataDetailNN.maNhanVien}` : eCode,
@@ -125,7 +134,7 @@ function AddLanguageForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Có lỗi xảy ra.`);
     }
   };
   const handleDelete = async () => {
@@ -135,8 +144,8 @@ function AddLanguageForm(props) {
       success(
         `Xoá thông tin trình độ cho nhân viên ${dataDetailNN.tenNhanVien} thành công`
       );
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra.`);
     }
   };
   return (

@@ -13,21 +13,7 @@ import Dialog from "../../components/Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
-
-const regexDate = /^[0-9]{2}[\/]{1}[0-9]{2}[\/]{1}[0-9]{4}$/g;
-const schema = yup.object({
-  idDanhMucKhenThuong: yup
-    .number()
-    .typeError("Loại kỷ luật không được bỏ trống."),
-  maNhanVien: yup
-    .string()
-    .nullable()
-    .required("Mã nhân viên không được bỏ trống."),
-  //thoiGian: yup.string().required("Thời gian không được bỏ trống."),
-  noiDung: yup.string().nullable().required("Nội dung không được bỏ trống."),
-  lyDo: yup.string().nullable().required("Lý do không được bỏ trống."),
-  loai: yup.boolean(),
-});
+import { schema } from "../../ultis/RewardAndDisciplineValidation";
 
 function AddDisciplineForm(props) {
   const { error, warn, info, success } = useToast();
@@ -37,8 +23,10 @@ function AddDisciplineForm(props) {
   let { id } = match.params;
   let location = useLocation();
   let query = new URLSearchParams(location.search);
+  let eName = query.get("hoTen");
   const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
+  const eCode = query.get("maNhanVien");
 
   const [dataKLDetail, setDataKLDetail] = useState([]);
   const [dataKL, setDataKL] = useState([]);
@@ -72,11 +60,25 @@ function AddDisciplineForm(props) {
           setDataKLDetail(responseKT);
         }
       } catch (error) {
-        console.log("false to fetch nv list: ", error);
+        error("Có lỗi xảy ra.");
       }
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataKLDetail.length !== 0) {
+        document.title = `Thay đổi thông tin kỷ luật của nhân viên ${dataKLDetail.hoTen}`;
+      } else if (id === undefined && eName) {
+        document.title = `Tạo kỷ luật cho nhân viên ${eName}`;
+      } else if (id === undefined) {
+        document.title = `Tạo kỷ luật`;
+      }
+    };
+    titlePage();
+  }, [dataKLDetail]);
 
   const [file, setFile] = useState({
     file: null,
@@ -95,7 +97,7 @@ function AddDisciplineForm(props) {
     });
   };
   const intitalValue = {
-    maNhanVien: id !== undefined ? dataKLDetail.maNhanVien : null,
+    maNhanVien: id !== undefined ? dataKLDetail.maNhanVien : eCode,
     idDanhMucKhenThuong:
       id !== undefined ? dataKLDetail.idDanhMucKhenThuong : null,
     noiDung: id !== undefined ? dataKLDetail.noiDung : null,
@@ -149,6 +151,7 @@ function AddDisciplineForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
+    const nameEm = dataEmployee.filter((item) => item.id === data.maNhanVien);
     console.log(data);
     try {
       if (id !== undefined) {
@@ -184,18 +187,17 @@ function AddDisciplineForm(props) {
         await ProductApi.PostKTvKL(formData);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm kỷ luật mới cho nhân viên ${dataKLDetail.hoTen}`,
+          thaoTac: `Thêm kỷ luật mới cho nhân viên ${nameEm[0].hoTen}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
         success(
-          `thêm thông tin kỷ luật cho nhân viên ${dataKLDetail.hoTen} thành công`
+          `Thêm thông tin kỷ luật cho nhân viên ${nameEm[0].hoTen} thành công`
         );
       }
       history.goBack();
-    } catch (error) {
-      console.log("errors", error);
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra.`);
     }
   };
   const handleDelete = async () => {
@@ -211,8 +213,8 @@ function AddDisciplineForm(props) {
         `Xoá thông tin kỷ luật cho nhân viên ${dataKLDetail.hoTen} thành công`
       );
       history.push(`/reward`);
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra`);
     }
   };
   return (
@@ -263,7 +265,7 @@ function AddDisciplineForm(props) {
           <div className="container-div-form">
             <div className="container-salary">
               <div>
-                <h3>Thông tin khen thưởng</h3>
+                <h3>Thông tin kỷ luật</h3>
               </div>
             </div>
             <div className="row">
@@ -285,6 +287,7 @@ function AddDisciplineForm(props) {
                         : "form-control col-sm-6 border-danger"
                     }
                     list="employeeCode"
+                    readOnly={eCode ? true : false}
                   />
                   <datalist id="employeeCode">
                     {dataEmployee
@@ -325,7 +328,7 @@ function AddDisciplineForm(props) {
                     class="col-sm-4 justify-content-start"
                     htmlFor="idDanhMucKhenThuong"
                   >
-                    Loại khen thưởng
+                    Loại kỷ luật
                   </label>
                   <select
                     type="text"

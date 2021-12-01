@@ -9,16 +9,12 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
+import {schema} from "../../../ultis/CategoryValidation";
 
-const schema = yup.object({
-  tenNgach: yup
-    .string()
-    .nullable()
-    .required("Tên ngạch công chức không được bỏ trống."),
-});
+
 
 function AddCSRForm(props) {
-  const { error, success } = useToast();
+  const { error, success, warn } = useToast();
   let { match, history } = props;
   let { id } = match.params;
   const token = sessionStorage.getItem("resultObj");
@@ -38,7 +34,7 @@ function AddCSRForm(props) {
   };
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchCSRCategory = async () => {
       try {
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa ngạch công chức");
@@ -49,8 +45,20 @@ function AddCSRForm(props) {
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList();
+    fetchCSRCategory();
   }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDMNCC.length !== 0) {
+        document.title = `Thay đổi danh mục ${dataDetailDMNCC.tenNgach}`;
+      } else if (id === undefined) {
+        document.title = `Tạo danh mục ngạch công chức mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDMNCC]);
 
   const {
     register,
@@ -103,26 +111,28 @@ function AddCSRForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }
-    console.log(data);
   };
 
   const handleDelete = async () => {
     try {
-      await DeleteApi.deleteDMNCC(id);
-      await ProductApi.PostLS({
-        tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa ngạch
-        công chức: ${dataDetailDMNCC.tenNgach}`,
-        maNhanVien: decoded.id,
-        tenNhanVien: decoded.givenName,
-      });
-      success("Xoá ngạch công chức thành công");
-
-      history.goBack();
+      if (dataDetailDMNCC.trangThai === "Chưa sử dụng") {
+        await DeleteApi.deleteDMNCC(id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Xóa ngạch
+          công chức: ${dataDetailDMNCC.tenNgach}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        success("Xoá ngạch công chức thành công");
+        history.goBack();
+      } else {
+        warn(`Danh mục đang được sử dụng`);
+      }
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không xóa được danh mục ${errors}`);
     }
   };
 

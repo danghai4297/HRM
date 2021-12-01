@@ -7,11 +7,13 @@ import { ExportCSV } from "../../components/ExportFile/ExportFile";
 import TablePagination from "../../components/TablePagination/TablePagination";
 import { Link } from "react-router-dom";
 import LoginApi from "../../api/login";
+import { useDocumentTitle } from "../../hook/TitleDocument";
 
 function ScreenAccount(props) {
   const link = "/account/detail/";
   const fileName = "Danhsachhopdong";
   const [dataAllAcc, setdataAllAcc] = useState([]);
+  useDocumentTitle("Danh sách tài khoản");
 
   useEffect(() => {
     const fetchNvList = async () => {

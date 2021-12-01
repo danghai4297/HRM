@@ -9,13 +9,12 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
+import {schema} from "../../../ultis/CategoryValidation";
 
-const schema = yup.object({
-  tenChuyenMon: yup.string().required("Tên chuyên môn không được bỏ trống."),
-  maChuyenMon: yup.string().required("Mã chuyên môn không được bỏ trống."),
-});
+
+
 function AddSpecializeForm(props) {
-  const { error, success } = useToast();
+  const { error, success, warn } = useToast();
   let { match, history } = props;
   let { id } = match.params;
 
@@ -30,7 +29,6 @@ function AddSpecializeForm(props) {
     "Bạn chắc chắn muốn thêm danh mục chuyên môn mới"
   );
 
-
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
@@ -38,19 +36,49 @@ function AddSpecializeForm(props) {
   };
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchSpecializeCategory = async () => {
       try {
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa danh mục chuyên môn");
           const response = await ProductApi.getDetailDMCM(id);
           setdataDetailDMCM(response);
-
         }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList();
+    fetchSpecializeCategory();
+  }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDMCM.length !== 0) {
+        document.title = `Thay đổi danh mục ${dataDetailDMCM.tenChuyenMon}`;
+      } else if (id === undefined) {
+        document.title = `Tạo danh mục chuyên môn mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDMCM]);
+
+  useEffect(() => {
+    const handleSpecializeId = async () => {
+      if (id === undefined) {
+        const responseSpecialize = await ProductApi.getAllDMCM();
+        const codeIncre =
+          responseSpecialize !== null &&
+          responseSpecialize[responseSpecialize.length - 1].maChuyenMon;
+        const autoCodeIncre = Number(codeIncre.slice(3)) + 1;
+        const codeSpecialize = "CM";
+        if (autoCodeIncre < 10) {
+          setValue("maChuyenMon", codeSpecialize.concat(`0${autoCodeIncre}`));
+        } else if (autoCodeIncre >= 10) {
+          setValue("maChuyenMon", codeSpecialize.concat(`${autoCodeIncre}`));
+        }
+      }
+    };
+    handleSpecializeId();
   }, []);
 
   const intitalValue = {
@@ -62,6 +90,7 @@ function AddSpecializeForm(props) {
     register,
     handleSubmit,
     reset,
+    setValue,
     getValues,
     formState: { errors },
   } = useForm({
@@ -90,13 +119,15 @@ function AddSpecializeForm(props) {
     let tendm = data.tenChuyenMon;
 
     try {
-      console.log(data)
+      console.log(data);
       if (id !== undefined) {
         await PutApi.PutDMCM(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
           thaoTac: `Sửa danh mục chuyên môn: ${
-            dataDetailDMCM.tenChuyenMon !== tendm ? `${dataDetailDMCM.tenChuyenMon} -->` : ""
+            dataDetailDMCM.tenChuyenMon !== tendm
+              ? `${dataDetailDMCM.tenChuyenMon} -->`
+              : ""
           } ${tendm}`,
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
@@ -114,23 +145,27 @@ function AddSpecializeForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }
   };
 
   const handleDelete = async () => {
     try {
-      await DeleteApi.deleteDMCM(id);
-      await ProductApi.PostLS({
-        tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa danh mục chuyên môn: ${dataDetailDMCM.tenChuyenMon}`,
-        maNhanVien: decoded.id,
-        tenNhanVien: decoded.givenName,
-      });
-      success("Xoá danh mục chuyên môn thành công");
-      history.goBack();
+      if (dataDetailDMCM.trangThai === "Chưa sử dụng") {
+        await DeleteApi.deleteDMCM(id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Xóa danh mục chuyên môn: ${dataDetailDMCM.tenChuyenMon}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        success("Xoá danh mục chuyên môn thành công");
+        history.goBack();
+      } else {
+        warn(`Danh mục đang được sử dụng`);
+      }
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không xóa được danh mục ${errors}`);
     }
   };
 
@@ -195,6 +230,7 @@ function AddSpecializeForm(props) {
                         ? "form-control col-sm-6"
                         : "form-control col-sm-6 border-danger "
                     }
+                    readOnly
                   />
                   <span className="message">{errors.maChuyenMon?.message}</span>
                 </div>
@@ -229,8 +265,16 @@ function AddSpecializeForm(props) {
       <Dialog
         show={showDialog}
         title="Thông báo"
-        description={Object.values(errors).length !== 0 ? "Bạn chưa nhập đầy đủ thông tin" : description}
-        confirm={Object.values(errors).length !== 0 ? null : handleSubmit(onHandleSubmit)}
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
         cancel={cancel}
       />
       <Dialog

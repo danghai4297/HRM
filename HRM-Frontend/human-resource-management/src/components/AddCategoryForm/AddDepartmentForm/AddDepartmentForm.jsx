@@ -9,13 +9,11 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
+import {schema} from "../../../ultis/CategoryValidation";
 
-const schema = yup.object({
-  maPhongBan: yup.string().required("Mã phòng ban không được bỏ trống."),
-  tenPhongBan: yup.string().required("Tên phòng ban không được bỏ trống."),
-});
+
 function AddDepartmentForm(props) {
-  const { error, success } = useToast();
+  const { error, success, warn } = useToast();
 
   let { match, history } = props;
   let { id } = match.params;
@@ -38,7 +36,7 @@ function AddDepartmentForm(props) {
   };
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchDepartmentCategory = async () => {
       try {
         if (id !== undefined) {
           setDescription("Bạn chắc chắn muốn sửa phòng ban");
@@ -49,7 +47,38 @@ function AddDepartmentForm(props) {
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList();
+    fetchDepartmentCategory();
+  }, []);
+
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailDMPB.length !== 0) {
+        document.title = `Thay đổi danh mục ${dataDetailDMPB.tenPhongBan}`;
+      } else if (id === undefined) {
+        document.title = `Tạo danh mục phòng ban mới`;
+      }
+    };
+    titlePage();
+  }, [dataDetailDMPB]);
+
+  useEffect(() => {
+    const handleDepartmentId = async () => {
+      if (id === undefined) {
+        const responseDepartment = await ProductApi.getAllDMPB();
+        const codeIncre =
+          responseDepartment !== null &&
+          responseDepartment[responseDepartment.length - 1].maPhongBan;
+        const autoCodeIncre = Number(codeIncre.slice(2)) + 1;
+        const codeDepartment = "PB";
+        if (autoCodeIncre < 10) {
+          setValue("maPhongBan", codeDepartment.concat(`0${autoCodeIncre}`));
+        } else if (autoCodeIncre >= 10) {
+          setValue("maPhongBan", codeDepartment.concat(`${autoCodeIncre}`));
+        }
+      }
+    };
+    handleDepartmentId();
   }, []);
 
   const intitalValue = {
@@ -62,6 +91,7 @@ function AddDepartmentForm(props) {
     handleSubmit,
     formState: { errors },
     reset,
+    setValue,
     getValues,
   } = useForm({
     resolver: yupResolver(schema),
@@ -113,24 +143,27 @@ function AddDepartmentForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }
   };
 
   const handleDelete = async () => {
     try {
-      await DeleteApi.deleteDMPB(id);
-      await ProductApi.PostLS({
-        tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa phòng ban: ${dataDetailDMPB.tenPhongBan}`,
-        maNhanVien: decoded.id,
-        tenNhanVien: decoded.givenName,
-      });
-      success("Xoá phòng ban thành công");
-
-      history.goBack();
+      if (dataDetailDMPB.trangThai === "Chưa sử dụng") {
+        await DeleteApi.deleteDMPB(id);
+        await ProductApi.PostLS({
+          tenTaiKhoan: decoded.userName,
+          thaoTac: `Xóa phòng ban: ${dataDetailDMPB.tenPhongBan}`,
+          maNhanVien: decoded.id,
+          tenNhanVien: decoded.givenName,
+        });
+        success("Xoá phòng ban thành công");
+        history.goBack();
+      } else {
+        warn(`Danh mục đang được sử dụng`);
+      }
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Không xóa được danh mục ${errors}`);
     }
   };
 
@@ -195,6 +228,7 @@ function AddDepartmentForm(props) {
                         ? "form-control col-sm-6"
                         : "form-control col-sm-6 border-danger "
                     }
+                    readOnly
                   />
                   <span className="message">{errors.maPhongBan?.message}</span>
                 </div>

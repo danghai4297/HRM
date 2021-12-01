@@ -24,6 +24,15 @@ function ScreenDetailForeignLanguage(props) {
     fetchNvList();
   }, []);
 
+  useEffect(() => {
+    //Hàm đặt tên cho trang
+    const titlePage = () => {
+      if (dataDetailNN.length !== 0)
+        document.title = `Chi tiết ngoại ngữ nhân viên ${dataDetailNN.tenNhanVien}`;
+    };
+    titlePage();
+  }, [dataDetailNN]);
+
   return (
     <>
       <div className="main-screen-language">
