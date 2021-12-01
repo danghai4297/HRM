@@ -38,8 +38,8 @@ export const NVCOLUMNS = [
   },
 
   {
-    Header: "Mục Khen thưởng",
-    accessor: "idDanhMucKhenThuong",
+    Header: "Mục Kỷ luật",
+    accessor: "danhMucKhenThuong",
     minWidth: 408,
     Filter: SelectColumnFilter,
     disableFilters: true,
