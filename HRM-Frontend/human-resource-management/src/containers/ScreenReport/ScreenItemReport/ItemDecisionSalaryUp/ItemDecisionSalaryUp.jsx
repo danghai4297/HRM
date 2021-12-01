@@ -3,6 +3,7 @@ import { DatePicker } from "antd";
 import { format } from "date-fns";
 import { da } from "date-fns/locale";
 import React, { useEffect, useRef, useState } from "react";
+import NumberFormat from "react-number-format";
 import { useReactToPrint } from "react-to-print";
 import { useToast } from "../../../../components/Toast/Toast";
 import { ComponentToPrint } from "../../../../components/ToPrint/ComponentToPrint";
@@ -25,18 +26,6 @@ function ItemDecisionSalaryUp() {
   let dayX = format(new Date(dateX), "dd");
   let monthX = format(new Date(dateX), "MM");
   let yearX = format(new Date(dateX), "yyyy");
-
-  // useEffect(() => {
-  //   const fetchNvList = async () => {
-  //     try {
-  //       const response = await ProductApi.getAllDMPB();
-  //       setDataDmpb(response);
-  //     } catch (error) {
-  //       console.log("false to fetch nv list: ", error);
-  //     }
-  //   };
-  //   fetchNvList();
-  // }, []);
 
   return (
     <div className="reportEx">
@@ -81,10 +70,16 @@ function ItemDecisionSalaryUp() {
           <div className="select-row2">
             <label>Mức lương cũ</label>
             <div>
-              <input
+              {/* <input
                 type="number"
                 min="0"
                 defaultValue={0}
+                class="form-control"
+                id="title"
+                onChange={(e) => setSalary(e.target.value)}
+              /> */}
+              <NumberFormat
+                thousandSeparator={true}
                 class="form-control"
                 id="title"
                 onChange={(e) => setSalary(e.target.value)}
@@ -95,11 +90,17 @@ function ItemDecisionSalaryUp() {
           <div className="select-row2">
             <label>Mức lương mới</label>
             <div>
-              <input
+              {/* <input
                 type="number"
                 min="0"
                 class="form-control"
                 defaultValue={0}
+                id="title"
+                onChange={(e) => setNewSalary(e.target.value)}
+              /> */}
+              <NumberFormat
+                thousandSeparator={true}
+                class="form-control"
                 id="title"
                 onChange={(e) => setNewSalary(e.target.value)}
               />
@@ -179,10 +180,23 @@ function ItemDecisionSalaryUp() {
                 <span className="color">Vị trí công tác:</span> {workplace}
               </p>
               <p>
-                <span className="color">Mức lương có:</span> {salary} đ/tháng
+                <span className="color">Mức lương có:</span>{" "}
+                <NumberFormat
+                  value={salary}
+                  displayType="text"
+                  type="text"
+                  thousandSeparator={true}
+                />{" "}
+                đ/tháng
               </p>
               <p>
-                <span className="color">Mức lương mới:</span> {newSalary}{" "}
+                <span className="color">Mức lương mới:</span>{" "}
+                <NumberFormat
+                  value={newSalary}
+                  displayType="text"
+                  type="text"
+                  thousandSeparator={true}
+                />{" "}
                 d/tháng
               </p>
               <p>

@@ -288,7 +288,7 @@ function AddTransferForm(props) {
             </h2>
           </div>
           <div className="button">
-            <input
+            {/* <input
               type="submit"
               className={
                 dataDetailDC.length !== 0 ? "btn btn-danger" : "delete-button"
@@ -297,7 +297,7 @@ function AddTransferForm(props) {
               onClick={() => {
                 setShowDeleteDialog(true);
               }}
-            />
+            /> */}
             <input
               type="submit"
               className="btn btn-secondary ml-3"

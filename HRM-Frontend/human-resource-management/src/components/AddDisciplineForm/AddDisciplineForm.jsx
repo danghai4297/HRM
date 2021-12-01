@@ -250,7 +250,7 @@ function AddDisciplineForm(props) {
             </h2>
           </div>
           <div className="button">
-            <input
+            {/* <input
               type="submit"
               className={
                 dataKLDetail.length !== 0 ? "btn btn-danger" : "delete-button"
@@ -259,7 +259,7 @@ function AddDisciplineForm(props) {
               onClick={() => {
                 setShowDeleteDialog(true);
               }}
-            />
+            /> */}
             <input
               type="submit"
               className="btn btn-secondary ml-3"

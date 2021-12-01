@@ -384,7 +384,7 @@ function AddSalaryForm(props) {
             </h2>
           </div>
           <div className="button">
-            <input
+            {/* <input
               type="submit"
               className={
                 dataLDetail.length !== 0 ? "btn btn-danger" : "delete-button"
@@ -393,7 +393,7 @@ function AddSalaryForm(props) {
                 setShowDeleteDialog(true);
               }}
               value="Xoá"
-            />
+            /> */}
             <input
               type="submit"
               className="btn btn-secondary ml-3"

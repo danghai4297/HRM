@@ -39,7 +39,7 @@ export const NVCOLUMNS = [
 
   {
     Header: "Mục Khen thưởng",
-    accessor: "idDanhMucKhenThuong",
+    accessor: "danhMucKhenThuong",
     minWidth: 408,
     Filter: SelectColumnFilter,
     disableFilters: true,

@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import NumberFormat from "react-number-format";
 import SelectColumnFilter from "../../components/TablePagination/SelectColumnFilter";
 
 export const NVCOLUMNSTDVH = [
@@ -422,6 +423,16 @@ export const NVCOLUMNSL = [
     sticky: "left",
     minWidth: 70,
     Filter: SelectColumnFilter,
+    Cell: ({ value }) => {
+      return (
+        <NumberFormat
+          value={value}
+          displayType="text"
+          type="text"
+          thousandSeparator={true}
+        />
+      );
+    },
     disableFilters: true,
 
     show: true,
@@ -456,6 +467,16 @@ export const NVCOLUMNSL = [
     minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
+    Cell: ({ value }) => {
+      return (
+        <NumberFormat
+          value={value}
+          displayType="text"
+          type="text"
+          thousandSeparator={true}
+        />
+      );
+    },
     show: false,
   },
   {
@@ -464,8 +485,19 @@ export const NVCOLUMNSL = [
     minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
+    Cell: ({ value }) => {
+      return (
+        <NumberFormat
+          value={value}
+          displayType="text"
+          type="text"
+          thousandSeparator={true}
+        />
+      );
+    },
     show: false,
   },
+
   {
     Header: "Ngày hiệu lực",
     accessor: "ngayHieuLuc",
