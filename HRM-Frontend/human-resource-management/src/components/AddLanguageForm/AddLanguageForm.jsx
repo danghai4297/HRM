@@ -52,8 +52,8 @@ function AddLanguageForm(props) {
           const response = await ProductApi.getNNDetail(id);
           setdataDetailNN(response);
         }
-      } catch (error) {
-        console.log("false to fetch nv list: ", error);
+      } catch (errors) {
+        error("Có lỗi xảy ra.")
       }
     };
     fetchNvList();
@@ -134,7 +134,7 @@ function AddLanguageForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Có lỗi xảy ra.`);
     }
   };
   const handleDelete = async () => {
@@ -144,8 +144,8 @@ function AddLanguageForm(props) {
       success(
         `Xoá thông tin trình độ cho nhân viên ${dataDetailNN.tenNhanVien} thành công`
       );
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra.`);
     }
   };
   return (

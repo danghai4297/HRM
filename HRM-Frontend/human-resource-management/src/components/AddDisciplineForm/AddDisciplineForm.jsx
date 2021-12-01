@@ -60,7 +60,7 @@ function AddDisciplineForm(props) {
           setDataKLDetail(responseKT);
         }
       } catch (error) {
-        console.log("false to fetch nv list: ", error);
+        error("Có lỗi xảy ra.");
       }
     };
     fetchNvList();
@@ -196,9 +196,8 @@ function AddDisciplineForm(props) {
         );
       }
       history.goBack();
-    } catch (error) {
-      console.log("errors", error);
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra.`);
     }
   };
   const handleDelete = async () => {
@@ -214,8 +213,8 @@ function AddDisciplineForm(props) {
         `Xoá thông tin kỷ luật cho nhân viên ${dataKLDetail.hoTen} thành công`
       );
       history.push(`/reward`);
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra`);
     }
   };
   return (

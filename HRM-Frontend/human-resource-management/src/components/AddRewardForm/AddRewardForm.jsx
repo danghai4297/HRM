@@ -161,7 +161,7 @@ function AddRewardForm(props) {
           formData.append("maNhanVien", data.maNhanVien);
           await PutApi.PutKTvKL(formData, id);
         } catch (errors) {
-          error(`Lỗi${errors}`);
+          error(`Có lỗi xảy ra.`);
         }
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
@@ -194,8 +194,7 @@ function AddRewardForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      console.log("errors", errors);
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Có lỗi xảy ra.`);
     }
   };
   console.log(dataKTDetail);
@@ -213,7 +212,7 @@ function AddRewardForm(props) {
         `Xoá thông tin khen thưởng cho nhân viên ${dataKTDetail.hoTen} thành công`
       );
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Có lỗi xảy ra.`);
     }
   };
   return (

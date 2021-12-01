@@ -52,8 +52,8 @@ function AddFamilyForm(props) {
           setdataDetailNT(response);
           setGender(response.gioiTinh);
         }
-      } catch (error) {
-        console.log("false to fetch nv list: ", error);
+      } catch (errors) {
+        error("Có lỗi xảy ra.");
       }
     };
     fetchNvList();
@@ -164,7 +164,7 @@ function AddFamilyForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Có lỗi xảy ra.`);
     }
   };
   const handleDelete = async () => {
@@ -175,7 +175,7 @@ function AddFamilyForm(props) {
         `Xoá thông tin gia đình cho nhân viên ${dataDetailNT.tenNhanVien} thành công`
       );
     } catch (errors) {
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Có lỗi xảy ra.`);
     }
   };
   return (

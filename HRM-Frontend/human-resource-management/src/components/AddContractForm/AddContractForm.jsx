@@ -72,8 +72,8 @@ function AddContractForm(props) {
           // setEndDate(moment(responseHD.hopDongDenNgay));
           setStartDate(moment(responseHD.hopDongTuNgay));
         }
-      } catch (error) {
-        console.log("false to fetch nv list: ", error);
+      } catch (errors) {
+       error("Có lỗi xảy ra");
       }
     };
     fetchNvList();
@@ -95,25 +95,30 @@ function AddContractForm(props) {
 
   useEffect(() => {
     const handleId = async () => {
-      if (id === undefined) {
-        const responseAllHD = await ProductApi.getAllHd();
-        setDataAllHD(responseAllHD);
-        const idCree =
-          responseAllHD !== null ? responseAllHD[0].idCre : undefined;
-        setRsIdCre(idCree + 1);
-        const idIncre =
-          responseAllHD !== null ? responseAllHD[0].id : undefined;
-        console.log(idIncre);
-        const increCode = Number(idIncre.slice(2)) + 1;
-        const rsCode = "HD";
-        if (increCode < 10) {
-          // setRsId(rsCode.concat(`0${increCode}`));
-          setValue("maHopDong", rsCode.concat(`0${increCode}`));
-        } else if (increCode >= 10) {
-          //setRsId(rsCode.concat(`${increCode}`));
-          setValue("maHopDong", rsCode.concat(`${increCode}`));
+      try {
+        if (id === undefined) {
+          const responseAllHD = await ProductApi.getAllHd();
+          setDataAllHD(responseAllHD);
+          const idCree =
+            responseAllHD !== null ? responseAllHD[0].idCre : undefined;
+          setRsIdCre(idCree + 1);
+          const idIncre =
+            responseAllHD !== null ? responseAllHD[0].id : undefined;
+          console.log(idIncre);
+          const increCode = Number(idIncre.slice(2)) + 1;
+          const rsCode = "HD";
+          if (increCode < 10) {
+            // setRsId(rsCode.concat(`0${increCode}`));
+            setValue("maHopDong", rsCode.concat(`0${increCode}`));
+          } else if (increCode >= 10) {
+            //setRsId(rsCode.concat(`${increCode}`));
+            setValue("maHopDong", rsCode.concat(`${increCode}`));
+          }
         }
+      } catch (errors) {
+        error("Có lỗi xảy ra");
       }
+      
     };
     handleId();
   }, []);
@@ -239,12 +244,19 @@ function AddContractForm(props) {
           `Sửa thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
         );
       } else {
-        await ProductApi.postHD(data);
-        if (file.file !== null) {
-          const formData = new FormData();
-          formData.append("bangChung", file.file);
-          //formData.append("maHopDong", data.id);
-          await PutApi.PutAHD(formData, data.maHopDong);
+        try {
+          await ProductApi.postHD(data);
+          if (file.file !== null) {
+            const formData = new FormData();
+            formData.append("bangChung", file.file);
+            //formData.append("maHopDong", data.id);
+            await PutApi.PutAHD(formData, data.maHopDong);
+            success(
+              `Thêm hợp đồng mới ${maHopDong} cho nhân viên ${nameEm[0].hoTen} thành công`
+            );
+          }
+        } catch (errors) {
+          error("Không thể thêm hợp đồng mới");
         }
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
@@ -252,14 +264,11 @@ function AddContractForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-        success(
-          `Thêm hợp đồng mới ${maHopDong} cho nhân viên ${nameEm[0].hoTen} thành công`
-        );
+      
       }
       history.goBack();
     } catch (errors) {
-      console.log("errors", error);
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Có lỗi xảy ra`);
     }
   };
 
@@ -276,11 +285,10 @@ function AddContractForm(props) {
         `Xoá thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
       );
       history.push(`/contract`);
-    } catch (error) {
-      error(`Có lỗi xảy ra ${error}`);
+    } catch (errors) {
+      error(`Có lỗi xảy ra`);
     }
   };
-  console.log(dataDetailHd);
   return (
     <>
       <div className="container-form">

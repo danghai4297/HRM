@@ -71,8 +71,8 @@ function AddLevelForm(props) {
           const response = await ProductApi.getTDDetail(id);
           setdataDetailTDVH(response);
         }
-      } catch (error) {
-        console.log("false to fetch nv list: ", error);
+      } catch (errors) {
+        error("Có lỗi xảy ra.")
       }
     };
     fetchNvList();
@@ -168,8 +168,7 @@ function AddLevelForm(props) {
       }
       history.goBack();
     } catch (errors) {
-      console.log("Có lỗi xảy ra: ", error);
-      error(`Có lỗi xảy ra ${errors}`);
+      error(`Có lỗi xảy ra.`);
     }
   };
 
@@ -178,9 +177,11 @@ function AddLevelForm(props) {
       await DeleteApi.deleteTDVH(id);
       history.push(`/profile/detail/${dataDetailTDVH.maNhanVien}`);
       success(
-        `Xoá thông tin trình độ cho nhân viên ${dataDetailTDVH.tenNhanVien} thành công`
+        `Xoá thông tin trình độ cho nhân viên ${dataDetailTDVH.tenNhanVien} thành công.`
       );
-    } catch (error) {}
+    } catch (errors) {
+      error(`Xoá thông tin trình độ cho nhân viên ${dataDetailTDVH.tenNhanVien} không thành công.`)
+    }
   };
 
   return (
