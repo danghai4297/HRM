@@ -114,16 +114,14 @@ function AddSalaryForm(props) {
           const responseDetailHD = await ProductApi.getHdDetail(contractCodes);
           //setValue("phuCapTrachNhiem", responseDetailHD.phuCapChucVu);
           setAllowance(responseDetailHD.phuCapChucVu);
-          console.log(responseDetailHD);
         }
       } catch (error) {
-        console.log("false to fetch nv list: ", error);
+        console.log("Có lỗi xảy ra: ", error);
+        setAllowance("");
       }
     };
     getContractCode();
   }, [contractCodes]);
-
-  //console.log(contractCodes);
 
   const [file, setFile] = useState({
     file: null,
@@ -214,7 +212,8 @@ function AddSalaryForm(props) {
       file.file === null &&
       intitalValue.phuCapTrachNhiem == allowance &&
       intitalValue.tongLuong == totalSalary &&
-      intitalValue.luongCoBan == DemoSalary &&  intitalValue.phuCapKhac == OtherAllowance
+      intitalValue.luongCoBan == DemoSalary &&
+      intitalValue.phuCapKhac == OtherAllowance
     ) {
       return true;
     }
@@ -243,11 +242,6 @@ function AddSalaryForm(props) {
       });
     }
     let rss = 0;
-    // rss +=
-    //   Number(salary.heSoLuong) * Number(salary.luongCoBan) +
-    //   Number(salary.phuCapKhac) +
-    //   Number(getValues("phuCapTrachNhiem"));
-    // setValue("tongLuong", rss);
     rss +=
       Number(salary.heSoLuong) * Number(DemoSalary) +
       Number(allowance) +
@@ -263,63 +257,85 @@ function AddSalaryForm(props) {
     try {
       if (id !== undefined) {
         try {
-          const formData = new FormData();
-          formData.append("bangChung", file.file);
-          // formData.append("maHopDong", data.maHopDong);
-          formData.append("idNhomLuong", data.idNhomLuong);
-          formData.append("heSoLuong", data.heSoLuong);
-          formData.append("bacLuong", data.bacLuong);
-          formData.append("luongCoBan", data.luongCoBan);
-          formData.append("phuCapTrachNhiem", allowance);
-          formData.append("phuCapKhac", data.phuCapKhac);
-          formData.append("tongLuong", totalSalary);
-          formData.append("thoiHanLenLuong", data.thoiHanLenLuong);
-          formData.append("ngayHieuLuc", startDate.format("MM/DD/YYYY"));
-          formData.append("ngayKetThuc", endDate.format("MM/DD/YYYY"));
-          formData.append("ghiChu", data.ghiChu);
-          formData.append("trangThai", data.trangThai);
-          await PutApi.PutL(formData, id);
+          if (
+            dataAllHD
+              .filter((item) => item.trangThai === "Kích hoạt")
+              .map((item) => item.id)
+              .includes(data.maHopDong)
+          ) {
+            const formData = new FormData();
+            formData.append("bangChung", file.file);
+            // formData.append("maHopDong", data.maHopDong);
+            formData.append("idNhomLuong", data.idNhomLuong);
+            formData.append("heSoLuong", data.heSoLuong);
+            formData.append("bacLuong", data.bacLuong);
+            formData.append("luongCoBan", data.luongCoBan);
+            formData.append("phuCapTrachNhiem", allowance);
+            formData.append("phuCapKhac", data.phuCapKhac);
+            formData.append("tongLuong", totalSalary);
+            formData.append("thoiHanLenLuong", data.thoiHanLenLuong);
+            formData.append("ngayHieuLuc", startDate.format("MM/DD/YYYY"));
+            formData.append("ngayKetThuc", endDate.format("MM/DD/YYYY"));
+            formData.append("ghiChu", data.ghiChu);
+            formData.append("trangThai", data.trangThai);
+            await PutApi.PutL(formData, id);
+            await ProductApi.PostLS({
+              tenTaiKhoan: decoded.userName,
+              thaoTac: `Sửa thông tin lương trong hợp đồng ${maHopDong} của nhân viên ${dataLDetail.tenNhanVien}`,
+              maNhanVien: decoded.id,
+              tenNhanVien: decoded.givenName,
+            });
+            success(
+              `Sửa thông tin lương cho nhân viên ${dataLDetail.tenNhanVien} thành công`
+            );
+            history.goBack();
+          } else {
+            error("Hợp đồng vô hiệu hoặc mã hợp đồng không tồn tại.");
+          }
         } catch (errors) {
           error(`Có lỗi xảy ra.`);
         }
-
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa thông tin lương trong hợp đồng ${maHopDong} của nhân viên ${dataLDetail.tenNhanVien}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success(
-          `Sửa thông tin lương cho nhân viên ${dataLDetail.tenNhanVien} thành công`
-        );
       } else {
-        const formData = new FormData();
-        formData.append("bangChung", file.file);
-        formData.append("maHopDong", data.maHopDong);
-        formData.append("idNhomLuong", data.idNhomLuong);
-        formData.append("heSoLuong", data.heSoLuong);
-        formData.append("bacLuong", data.bacLuong);
-        formData.append("luongCoBan", data.luongCoBan);
-        formData.append("phuCapTrachNhiem", allowance);
-        formData.append("phuCapKhac", data.phuCapKhac);
-        formData.append("tongLuong", totalSalary);
-        formData.append("thoiHanLenLuong", data.thoiHanLenLuong);
-        formData.append("ngayHieuLuc", startDate.format("MM/DD/YYYY"));
-        formData.append("ngayKetThuc", endDate.format("MM/DD/YYYY"));
-        formData.append("ghiChu", data.ghiChu);
-        formData.append("trangThai", data.trangThai);
-        await ProductApi.PostL(formData);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm lương mới trong hợp đồng ${maHopDong} của nhân viên ${nameCon[0].tenNhanVien}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success(
-          `Thêm lương mới trong hợp đồng ${maHopDong} của nhân viên ${nameCon[0].tenNhanVien} thành công`
-        );
+        try {
+          if (
+            dataAllHD
+              .filter((item) => item.trangThai === "Kích hoạt")
+              .map((item) => item.id)
+              .includes(data.maHopDong)
+          ) {
+            const formData = new FormData();
+            formData.append("bangChung", file.file);
+            formData.append("maHopDong", data.maHopDong);
+            formData.append("idNhomLuong", data.idNhomLuong);
+            formData.append("heSoLuong", data.heSoLuong);
+            formData.append("bacLuong", data.bacLuong);
+            formData.append("luongCoBan", data.luongCoBan);
+            formData.append("phuCapTrachNhiem", allowance);
+            formData.append("phuCapKhac", data.phuCapKhac);
+            formData.append("tongLuong", totalSalary);
+            formData.append("thoiHanLenLuong", data.thoiHanLenLuong);
+            formData.append("ngayHieuLuc", startDate.format("MM/DD/YYYY"));
+            formData.append("ngayKetThuc", endDate.format("MM/DD/YYYY"));
+            formData.append("ghiChu", data.ghiChu);
+            formData.append("trangThai", data.trangThai);
+            await ProductApi.PostL(formData);
+            await ProductApi.PostLS({
+              tenTaiKhoan: decoded.userName,
+              thaoTac: `Thêm lương mới trong hợp đồng ${maHopDong} của nhân viên ${nameCon[0].tenNhanVien}`,
+              maNhanVien: decoded.id,
+              tenNhanVien: decoded.givenName,
+            });
+            success(
+              `Thêm lương mới trong hợp đồng ${maHopDong} của nhân viên ${nameCon[0].tenNhanVien} thành công`
+            );
+            history.goBack();
+          } else {
+            error("Hợp đồng vô hiệu hoặc mã hợp đồng không tồn tại.");
+          }
+        } catch (error) {
+          error("Thêm lương mới thất bại.");
+        }
       }
-      history.goBack();
     } catch (errors) {
       error(`Có lỗi xảy ra.`);
     }

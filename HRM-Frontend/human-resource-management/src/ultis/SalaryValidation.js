@@ -19,7 +19,11 @@ export const schema = yup.object({
   ngayHieuLuc: yup
     .date()
     .nullable()
-    .required("Ngày hết hạn không được bỏ trống."),
+    .required("Ngày hiệu lực không được bỏ trống."),
+    ngayKetThuc: yup
+    .date()
+    .nullable()
+    .required("Ngày kết thúc không được bỏ trống."),
   // ngayKetThuc: yup.date().nullable().required("Ngày có hiệu lực không được bỏ trống."),
   luongCoBan: yup
     .number()

@@ -12,30 +12,9 @@ import PutApi from "../../api/putAAPI";
 import DeleteApi from "../../../src/api/deleteAPI";
 import ProductApi from "../../api/productApi";
 import LoginApi from "../../api/login.js";
-import {schema} from "../../ultis/RegisterAccountValidation";
+import { schema } from "../../ultis/RegisterAccountValidation";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-// const passwordReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/g;
-// const notAllowNull = /^\s*\S.*$/g;
-// const schema = yup.object({
-//     maNhanVien:yup
-//     .string()
-//     .matches(notAllowNull, "Mã nhân viên không được là khoảng trống.")
-//     .nullable()
-//     .required("Mã nhân viên không được bỏ trống."),
-//   password: yup
-//     .string()
-//     .matches(passwordReg, "Mật khẩu không đúng định dạng.")
-//     .required("Mật khẩu hiện tại không được bỏ trống."),
-//   confirmPassword: yup
-//     .string()
-//     .matches(passwordReg, "Xác nhận mật khẩu không đúng định dạng.")
-//     .required("Mật khẩu mới không được bỏ trống."),
-//   userName: yup
-//     .string()
-//     .matches(notAllowNull, "Tài khoản không được là khoảng trống.")
-//     .nullable()
-//     .required("Tên đăng nhập không được bỏ trống."),
-// });
 function RegisterAccount(props) {
   const { error, warn, info, success } = useToast();
 
@@ -47,7 +26,18 @@ function RegisterAccount(props) {
   const [newPassword, setNewPassword] = useState();
   const [rePassword, setRePassword] = useState();
   const [dataIdEmployee, setDataIdEmployee] = useState([]);
-
+  const [passwordTypeNP, setPasswordTypeNP] = useState("password");
+  const [passwordTypeRP, setPasswordTypeRP] = useState("password");
+  const [visibleNP, setvisibleNP] = useState(false);
+  const [visibleRP, setvisibleRP] = useState(false);
+  const handleClickEyesNP = () => {
+    setvisibleNP((visiblity) => !visiblity);
+    setPasswordTypeNP(!visibleNP ? "text" : "password");
+  };
+  const handleClickEyesRP = () => {
+    setvisibleRP((visiblity) => !visiblity);
+    setPasswordTypeRP(!visibleRP ? "text" : "password");
+  };
   useEffect(() => {
     const fetchNvList = async () => {
       try {
@@ -83,7 +73,6 @@ function RegisterAccount(props) {
       } catch (errors) {
         error("Không thể thêm tài khoản.");
       }
-    
     } else if (newPassword !== rePassword) {
       warn("Nhập lại mật khẩu không đúng.");
     }
@@ -99,7 +88,7 @@ function RegisterAccount(props) {
       <div className="container-div">
         <form
           action=""
-          class="profile-form"
+          class="profile-form-1"
           // onSubmit={handleSubmit(onHandleSubmit)}
         >
           <div className="container-form-password">
@@ -113,41 +102,41 @@ function RegisterAccount(props) {
               </div>
             </div>
             <div className="row justify-content-center">
-              <div class="input-group-lg">
-                <div className="input-eyes">
+              <div class="col-5">
+                <div className="input-group">
                   <input
                     type="text"
                     {...register("maNhanVien")}
                     id="maNhanVien"
                     className={
                       !errors.maNhanVien
-                        ? "form-control  "
-                        : "form-control border-danger "
+                        ? "form-control"
+                        : "form-control border-danger"
                     }
                     placeholder="Mã nhân viên"
                     list="employees"
                   />
-                  <datalist id="employees">
+                </div>
+                <datalist id="employees" >
                     {dataIdEmployee.map((item, key) => (
                       <option key={key} value={item.id}>
                         {item.hoTen}
                       </option>
                     ))}
                   </datalist>
-                </div>
                 <span className="message-e">{errors.maNhanVien?.message}</span>
               </div>
             </div>
             <div className="row justify-content-center">
-              <div class="input-group-lg">
-                <div className="input-eyes">
+              <div class="col-5">
+                <div className="input-group">
                   <input
                     type="text"
                     {...register("userName")}
                     id="userName"
                     className={
                       !errors.userName
-                        ? "form-control  "
+                        ? "form-control"
                         : "form-control border-danger "
                     }
                     placeholder="Tên tài khoản"
@@ -157,44 +146,62 @@ function RegisterAccount(props) {
               </div>
             </div>
             <div className="row justify-content-center">
-              <div class="input-group-lg">
-                <div className="input-eyes">
-                  <input
-                    type={passwordInputTypeNP}
-                    {...register("password", {
-                      onChange: (e) => setNewPassword(e.target.value),
-                    })}
-                    id="password"
-                    className={
-                      !errors.password
-                        ? "form-control  "
-                        : "form-control border-danger "
-                    }
-                    placeholder="Mật khẩu"
-                  />
-                  <span className="password-toogle-icon-np">{IconNP}</span>
-                </div>
+              <div class="col-5">
+                  <div class="input-group">
+                    <input
+                      type={passwordTypeNP}
+                      {...register("password", {
+                        onChange: (e) => setNewPassword(e.target.value),
+                      })}
+                      className={
+                        !errors.password
+                          ? "form-control"
+                          : "form-control border-danger"
+                      }
+                      placeholder="Mật khẩu"
+                    />
+                    <div class="input-group-append">
+                      <button
+                        class="btn btn-outline-secondary col-12"
+                        type="button"
+                        onClick={handleClickEyesNP}
+                      >
+                        <FontAwesomeIcon
+                          icon={visibleNP ? "eye-slash" : "eye"}
+                        />
+                      </button>
+                    </div>
+                  </div>
                 <span className="message-e">{errors.password?.message}</span>
               </div>
             </div>
             <div className="row justify-content-center">
-              <div class="input-group-lg">
-                <div className="input-eyes">
-                  <input
-                    type={passwordInputTypeRP}
-                    {...register("confirmPassword", {
-                      onChange: (e) => setRePassword(e.target.value),
-                    })}
-                    id="confirmPassword"
-                    className={
-                      !errors.confirmPassword
-                        ? "form-control  "
-                        : "form-control border-danger "
-                    }
-                    placeholder="Xác nhận mật khẩu"
-                  />
-                  <span className="password-toogle-icon-rp">{IconRP}</span>
-                </div>
+              <div class="col-5">
+                  <div class="input-group">
+                    <input
+                      type={passwordTypeRP}
+                      {...register("confirmPassword", {
+                        onChange: (e) => setRePassword(e.target.value),
+                      })}
+                      className={
+                        !errors.confirmPassword
+                          ? "form-control  "
+                          : "form-control border-danger "
+                      }
+                      placeholder="Xác nhận mật khẩu"
+                    />
+                    <div class="input-group-append">
+                      <button
+                        class="btn btn-outline-secondary col-12"
+                        type="button"
+                        onClick={handleClickEyesRP}
+                      >
+                        <FontAwesomeIcon
+                          icon={visibleRP ? "eye-slash" : "eye"}
+                        />
+                      </button>
+                    </div>
+                  </div>
                 <span className="message-e">
                   {errors.confirmPassword?.message}
                 </span>

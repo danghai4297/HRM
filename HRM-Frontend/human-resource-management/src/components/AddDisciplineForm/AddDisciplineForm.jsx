@@ -156,46 +156,69 @@ function AddDisciplineForm(props) {
     try {
       if (id !== undefined) {
         try {
-          const formData = new FormData();
-          formData.append("bangChung", file.file);
-          formData.append("idDanhMucKhenThuong", data.idDanhMucKhenThuong);
-          formData.append("noiDung", data.noiDung);
-          formData.append("lyDo", data.lyDo);
-          formData.append("loai", data.loai);
-          formData.append("maNhanVien", data.maNhanVien);
-          await PutApi.PutKTvKL(formData, id);
+          if (
+            dataEmployee
+              .filter((item) => item.trangThaiLaoDong === "Đang làm việc")
+              .map((item) => item.id)
+              .includes(data.maNhanVien)
+          ) {
+            const formData = new FormData();
+            formData.append("bangChung", file.file);
+            formData.append("idDanhMucKhenThuong", data.idDanhMucKhenThuong);
+            formData.append("noiDung", data.noiDung);
+            formData.append("lyDo", data.lyDo);
+            formData.append("loai", data.loai);
+            formData.append("maNhanVien", data.maNhanVien);
+            await PutApi.PutKTvKL(formData, id);
+            await ProductApi.PostLS({
+              tenTaiKhoan: decoded.userName,
+              thaoTac: `Sửa thông tin kỷ luật của nhân viên ${dataKLDetail.hoTen}`,
+              maNhanVien: decoded.id,
+              tenNhanVien: decoded.givenName,
+            });
+            success(
+              `Sửa thông tin kỷ luật cho nhân viên ${dataKLDetail.hoTen} thành công`
+            );
+            history.goBack();
+          } else {
+            error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
+          }
         } catch (errors) {
-          error(`Lỗi${errors}`);
+          error(`Sửa thông tin kỷ luật thất bại.`);
         }
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa thông tin kỷ luật của nhân viên ${dataKLDetail.hoTen}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success(
-          `Sửa thông tin kỷ luật cho nhân viên ${dataKLDetail.hoTen} thành công`
-        );
       } else {
-        const formData = new FormData();
-        formData.append("bangChung", file.file);
-        formData.append("idDanhMucKhenThuong", data.idDanhMucKhenThuong);
-        formData.append("noiDung", data.noiDung);
-        formData.append("lyDo", data.lyDo);
-        formData.append("loai", data.loai);
-        formData.append("maNhanVien", data.maNhanVien);
-        await ProductApi.PostKTvKL(formData);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm kỷ luật mới cho nhân viên ${nameEm[0].hoTen}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success(
-          `Thêm thông tin kỷ luật cho nhân viên ${nameEm[0].hoTen} thành công`
-        );
+        try {
+          if (
+            dataEmployee
+              .filter((item) => item.trangThaiLaoDong === "Đang làm việc")
+              .map((item) => item.id)
+              .includes(data.maNhanVien)
+          ) {
+            const formData = new FormData();
+            formData.append("bangChung", file.file);
+            formData.append("idDanhMucKhenThuong", data.idDanhMucKhenThuong);
+            formData.append("noiDung", data.noiDung);
+            formData.append("lyDo", data.lyDo);
+            formData.append("loai", data.loai);
+            formData.append("maNhanVien", data.maNhanVien);
+            await ProductApi.PostKTvKL(formData);
+            await ProductApi.PostLS({
+              tenTaiKhoan: decoded.userName,
+              thaoTac: `Thêm kỷ luật mới cho nhân viên ${nameEm[0].hoTen}`,
+              maNhanVien: decoded.id,
+              tenNhanVien: decoded.givenName,
+            });
+            success(
+              `Thêm thông tin kỷ luật cho nhân viên ${nameEm[0].hoTen} thành công`
+            );
+            history.goBack();
+          } else {
+            error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
+          }
+        } catch (errors) {
+          error("Thêm thông tin kỷ luật thất bại.");
+        }
       }
-      history.goBack();
     } catch (errors) {
       error(`Có lỗi xảy ra.`);
     }

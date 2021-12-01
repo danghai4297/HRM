@@ -1,9 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import "./ChangePasswordForm.scss";
-import usePasswordToggle from "./usePasswordToggle";
 import { useState } from "react";
 import Dialog from "../../components/Dialog/Dialog";
 import { useToast } from "../Toast/Toast";
@@ -11,17 +9,40 @@ import jwt_decode from "jwt-decode";
 import LoginApi from "../../api/login";
 import { useDocumentTitle } from "../../hook/TitleDocument";
 import { schema } from "../../ultis/ChangePasswordValidation";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function ChangePasswordForm(props) {
   const { error, warn, info, success } = useToast();
 
   const { history } = props;
-  const [passwordInputTypeOP, IconOP] = usePasswordToggle();
-  const [passwordInputTypeNP, IconNP] = usePasswordToggle();
-  const [passwordInputTypeRP, IconRP] = usePasswordToggle();
   const [currentPassword, setCurrentPassword] = useState();
   const [newPassword, setNewPassword] = useState();
   const [rePassword, setRePassword] = useState();
+  const [visible, setvisible] = useState(false);
+  const [visibleNP, setvisibleNP] = useState(false);
+  const [visibleRP, setvisibleRP] = useState(false);
+  const [passwordType, setPasswordType] = useState("password");
+  const [passwordTypeNP, setPasswordTypeNP] = useState("password");
+  const [passwordTypeRP, setPasswordTypeRP] = useState("password");
+  const handleClickEyesOP = () => {
+    setvisible((visiblity) => !visiblity);
+    setPasswordType(!visible ? "text" : "password");
+  };
+  const handleClickEyesNP = () => {
+    setvisibleNP((visiblity) => !visiblity);
+    setPasswordTypeNP(!visibleNP ? "text" : "password");
+  };
+  const handleClickEyesRP = () => {
+    setvisibleRP((visiblity) => !visiblity);
+    setPasswordTypeRP(!visibleRP ? "text" : "password");
+  };
+  const [showDialog, setShowDialog] = useState(false);
+  const [description, setDescription] = useState(
+    "Bạn chắc chắn muốn đổi mật khẩu mới."
+  );
+  const cancel = () => {
+    setShowDialog(false);
+  };
   const {
     register,
     handleSubmit,
@@ -50,10 +71,11 @@ function ChangePasswordForm(props) {
     }
   };
   return (
+    <>
     <div className="container-form">
       <div className="Submit-form">
         <div className="setH2">
-          <h2>Mật Khẩu</h2>
+          <h2>Mật khẩu</h2>
         </div>
       </div>
 
@@ -76,20 +98,29 @@ function ChangePasswordForm(props) {
             <div className="row justify-content-center">
               <div class="input-group-lg">
                 <div className="input-eyes">
-                  <input
-                    type={passwordInputTypeOP}
-                    {...register("oldPassword", {
-                      onChange: (e) => setCurrentPassword(e.target.value),
-                    })}
-                    id="oldPassword"
-                    className={
-                      !errors.oldPassword
-                        ? "form-control  "
-                        : "form-control border-danger "
-                    }
-                    placeholder="Mật khẩu hiện tại"
-                  />
-                  <span className="password-toogle-icon">{IconOP}</span>
+                  <div class="input-group">
+                    <input
+                      type={passwordType}
+                      {...register("oldPassword", {
+                        onChange: (e) => setCurrentPassword(e.target.value),
+                      })}
+                      className={
+                        !errors.oldPassword
+                          ? "form-control  "
+                          : "form-control border-danger "
+                      }
+                      placeholder="Mật khẩu hiện tại"
+                    />
+                    <div class="input-group-append">
+                      <button
+                        class="btn btn-outline-secondary"
+                        type="button"
+                        onClick={handleClickEyesOP}
+                      >
+                        <FontAwesomeIcon icon={visible ? "eye-slash" : "eye"} />
+                      </button>
+                    </div>
+                  </div>
                 </div>
                 <span className="message-e">{errors.oldPassword?.message}</span>
               </div>
@@ -97,60 +128,65 @@ function ChangePasswordForm(props) {
             <div className="row justify-content-center">
               <div class="input-group-lg">
                 <div className="input-eyes">
-                  <input
-                    type={passwordInputTypeNP}
-                    {...register("newPassword", {
-                      onChange: (e) => setNewPassword(e.target.value),
-                    })}
-                    id="newPassword"
-                    className={
-                      !errors.newPassword
-                        ? "form-control  "
-                        : "form-control border-danger "
-                    }
-                    placeholder="Thêm mật khẩu mới"
-                  />
-                  <span className="password-toogle-icon-np1">{IconNP}</span>
+                 
+                  <div class="input-group">
+                    <input
+                      type={passwordTypeNP}
+                      {...register("newPassword", {
+                        onChange: (e) => setNewPassword(e.target.value),
+                      })}
+                      className={
+                        !errors.newPassword
+                          ? "form-control  "
+                          : "form-control border-danger "
+                      }
+                      placeholder="Thêm mật khẩu mới"
+                    />
+                    <div class="input-group-append">
+                      <button
+                        class="btn btn-outline-secondary"
+                        type="button"
+                        onClick={handleClickEyesNP}
+                      >
+                        <FontAwesomeIcon
+                          icon={visibleNP ? "eye-slash" : "eye"}
+                        />
+                      </button>
+                    </div>
+                  </div>
                 </div>
                 <span className="message-e">{errors.newPassword?.message}</span>
               </div>
             </div>
             <div className="row justify-content-center">
-              {/* <div class="input-group-lg">
-                <div className="input-eyes">
-                  <input
-                    type={passwordInputTypeRP}
-                    {...register("xacNhanMatKhau")}
-                    id="xacNhanMatKhau"
-                    className={
-                      !errors.xacNhanMatKhau
-                        ? "form-control  "
-                        : "form-control border-danger "
-                    }
-                    placeholder="Xác nhận mật khẩu mới"
-                  />
-                  <span className="password-toogle-icon-rp">{IconRP}</span>
-                </div>
-                <span className="message-e">
-                  {errors.xacNhanMatKhau?.message}
-                </span>
-              </div> */}
+         
               <div class="input-group-lg">
                 <div className="input-eyes">
-                  <input
-                    type={passwordInputTypeRP}
-                    {...register("confirmPassword", {
-                      onChange: (e) => setRePassword(e.target.value),
-                    })}
-                    id="confirmPassword"
-                    className={
-                      !errors.confirmPassword
-                        ? "form-control  "
-                        : "form-control border-danger "
-                    }
-                    placeholder="Xác nhận mật khẩu mới"
-                  />
-                  <span className="password-toogle-icon-rp1">{IconRP}</span>
+                  <div class="input-group">
+                    <input
+                      type={passwordTypeRP}
+                      {...register("confirmPassword", {
+                        onChange: (e) => setRePassword(e.target.value),
+                      })}
+                      className={
+                        !errors.confirmPassword
+                          ? "form-control  "
+                          : "form-control border-danger "
+                      }
+                      placeholder="Thêm mật khẩu mới"
+                    />
+                    <div class="input-group-append">
+                      <button
+                        class="btn btn-outline-secondary"
+                        type="button"
+                        onClick={handleClickEyesRP}
+                      >
+                        <FontAwesomeIcon
+                          icon={visibleRP ? "eye-slash" : "eye"}
+                        />
+                      </button>
+                    </div>
+                  </div>
                 </div>
                 <span className="message-e">
                   {errors.confirmPassword?.message}
@@ -170,11 +206,27 @@ function ChangePasswordForm(props) {
             type="submit"
             className="btn btn-primary ml-3"
             value="Lưu"
-            onClick={handleSubmit(onHandleSubmit)}
+            onClick={()=>setShowDialog(true)}
           />
         </div>
       </div>
     </div>
+    <Dialog
+        show={showDialog}
+        title="Thông báo"
+        description={
+          Object.values(errors).length !== 0
+            ? "Bạn chưa nhập đầy đủ thông tin"
+            : description
+        }
+        confirm={
+          Object.values(errors).length !== 0
+            ? null
+            : handleSubmit(onHandleSubmit)
+        }
+        cancel={cancel}
+      />
+    </>
   );
 }
 
