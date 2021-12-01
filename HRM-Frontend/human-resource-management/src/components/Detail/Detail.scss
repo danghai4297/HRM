@@ -826,9 +826,11 @@
               .iconss {
                 transform: rotate(180deg);
                 color: black;
+                transition: 0.5s !important;
               }
               .iconsss {
                 color: black;
+                transition: 0.5s !important;
               }
               .main-arrow-button {
                 background: transparent;
@@ -936,4 +938,13 @@
       font-size: large;
     }
   }
+}
+.iconss {
+  transform: rotate(180deg);
+  color: black;
+  transition: 0.5s !important;
+}
+.iconsss {
+  color: black;
+  transition: 0.5s !important;
 }

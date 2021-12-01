@@ -91,9 +91,9 @@ function AddTransferForm(props) {
       if (dataDetailDC.length !== 0) {
         document.title = `Thay đổi thông tin vị trí công tác của nhân viên ${dataDetailDC.tenNhanVien}`;
       } else if (id === undefined && eName) {
-        document.title = `Tạo hoặc điều chuyển vị trí công tác cho nhân viên ${eName}`;
+        document.title = `Thủ tục công tác cho nhân viên ${eName}`;
       } else if (id === undefined) {
-        document.title = `Tạo hoặc điều chuyển vị trí công tác`;
+        document.title = `Thủ tục công tác`;
       }
     };
     titlePage();
