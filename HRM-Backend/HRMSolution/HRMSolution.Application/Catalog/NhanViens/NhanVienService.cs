@@ -263,13 +263,18 @@ namespace HRMSolution.Application.Catalog.NhanViens
 
 
                     var dieuChuyen = await _context.dieuChuyens.Where(x => x.maNhanVien == nhanVien.maNhanVien).FirstOrDefaultAsync();
-                    dieuChuyen.trangThai = false;
+                    if (dieuChuyen != null)
+                    {
+                        dieuChuyen.trangThai = false;
+                    }
 
                     var hopDong = await _context.hopDongs.Where(x => x.maNhanVien == nhanVien.maNhanVien).FirstOrDefaultAsync();
-                    hopDong.trangThai = false;
-
-                    var luong = await _context.luongs.Where(x => x.maHopDong == hopDong.maHopDong).FirstOrDefaultAsync();
-                    luong.trangThai = false;
+                    if (hopDong != null)
+                    {
+                        hopDong.trangThai = false;
+                        var luong = await _context.luongs.Where(x => x.maHopDong == hopDong.maHopDong).FirstOrDefaultAsync();
+                        luong.trangThai = false;
+                    }
 
                     var result = await _context.SaveChangesAsync();
                     if (result == 0)
