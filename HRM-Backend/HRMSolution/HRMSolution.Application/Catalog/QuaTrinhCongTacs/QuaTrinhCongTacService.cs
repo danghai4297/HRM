@@ -15,18 +15,18 @@ using System.IO;
 
 namespace HRMSolution.Application.Catalog.DieuChuyens
 {
-    public class DieuChuyenService : IDieuChuyenService
+    public class QuaTrinhCongTacService : IQuaTrinhCongTacService
     {
         private readonly HRMDbContext _context;
         private readonly IStorageService _storageService;
         private const string USER_CONTENT_FOLDER_NAME = "user-content";
-        public DieuChuyenService(HRMDbContext context, IStorageService storageService)
+        public QuaTrinhCongTacService(HRMDbContext context, IStorageService storageService)
         {
             _context = context;
             _storageService = storageService;
         }
 
-        public async Task<int> Create(DieuChuyenCreateRequest request)
+        public async Task<int> Create(QuaTrinhCongTacCreateRequest request)
         {
             if (request.maNhanVien == null || request.ngayHieuLuc == null || request.idPhongBan == 0 || request.to == 0)
             {
@@ -109,7 +109,7 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
             }
         }
 
-        public async Task<List<DieuChuyenViewModel>> GetAll()
+        public async Task<List<QuaTrinhCongTacViewModel>> GetAll()
         {
             var query = from dc in _context.dieuChuyens
                         join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
@@ -122,7 +122,7 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
             }
             else
             {
-                var data = await query.Select(x => new DieuChuyenViewModel()
+                var data = await query.Select(x => new QuaTrinhCongTacViewModel()
                 {
                     id = x.dc.id,
                     maNhanVien = x.dc.maNhanVien,
@@ -140,7 +140,7 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
             }
         }
 
-        public async Task<DieuChuyenViewModel> GetById(int id)
+        public async Task<QuaTrinhCongTacViewModel> GetById(int id)
         {
             var dieuChuyen = await _context.dieuChuyens.FindAsync(id);
             if (dieuChuyen == null)
@@ -155,7 +155,7 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                             join nv in _context.nhanViens on dc.maNhanVien equals nv.maNhanVien
                             where dc.id == id
                             select new { dc, pb, to, nv };
-                var data = await query.Select(x => new DieuChuyenViewModel()
+                var data = await query.Select(x => new QuaTrinhCongTacViewModel()
                 {
                     id = x.dc.id,
                     maNhanVien = x.dc.maNhanVien,
@@ -174,7 +174,7 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
             }
         }
 
-        public async Task<int> Update(int id, DieuChuyenUpdateRequest request)
+        public async Task<int> Update(int id, QuaTrinhCongTacUpdateRequest request)
         {
             var dieuChuyen = await _context.dieuChuyens.FindAsync(id);
             if (dieuChuyen == null || request.maNhanVien == null || request.ngayHieuLuc == null || request.idPhongBan == 0 || request.to == 0)

@@ -255,6 +255,10 @@ namespace HRMSolution.Application.Catalog.HopDongs
             }
             else
             {
+                //if(request.trangThai == false)
+                //{
+                //    var luong = await _context.luongs.Where(x => x.maHopDong == maHopDong && x.trangThai == true).FirstOrDefaultAsync();
+                //}
                 hopDong.id = request.idCre;
                 hopDong.idLoaiHopDong = request.idLoaiHopDong;
                 hopDong.idChucDanh = request.idChucDanh;

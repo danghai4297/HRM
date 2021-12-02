@@ -43,7 +43,7 @@ namespace HRMSolution.NUnitTest
         [Test, Order(3)]
         public void Transfer_Create_Success()
         {
-            DieuChuyenCreateRequest transferCreating = new DieuChuyenCreateRequest()
+            QuaTrinhCongTacCreateRequest transferCreating = new QuaTrinhCongTacCreateRequest()
             {
                 maNhanVien = "NV0002",
                 ngayHieuLuc = "2022,4,14",
@@ -58,7 +58,7 @@ namespace HRMSolution.NUnitTest
         [Test, Order(4)]
         public void Transfer_Create_Failure1()
         {
-            DieuChuyenCreateRequest transferCreating = new DieuChuyenCreateRequest()
+            QuaTrinhCongTacCreateRequest transferCreating = new QuaTrinhCongTacCreateRequest()
             {
                 maNhanVien = null,
                 ngayHieuLuc = "2022,4,14",
@@ -73,7 +73,7 @@ namespace HRMSolution.NUnitTest
         [Test, Order(5)]
         public void Transfer_Create_Failure2()
         {
-            DieuChuyenCreateRequest transferCreating = new DieuChuyenCreateRequest()
+            QuaTrinhCongTacCreateRequest transferCreating = new QuaTrinhCongTacCreateRequest()
             {
                 maNhanVien = "NV0002",
                 ngayHieuLuc = null,
@@ -88,7 +88,7 @@ namespace HRMSolution.NUnitTest
         [Test, Order(6)]
         public void Transfer_Create_Failure3()
         {
-            DieuChuyenCreateRequest transferCreating = new DieuChuyenCreateRequest()
+            QuaTrinhCongTacCreateRequest transferCreating = new QuaTrinhCongTacCreateRequest()
             {
                 maNhanVien = "NV0002",
                 ngayHieuLuc = "2022,4,14",
@@ -103,7 +103,7 @@ namespace HRMSolution.NUnitTest
         [Test, Order(6)]
         public void Transfer_Create_Failure4()
         {
-            DieuChuyenCreateRequest transferCreating = new DieuChuyenCreateRequest()
+            QuaTrinhCongTacCreateRequest transferCreating = new QuaTrinhCongTacCreateRequest()
             {
                 maNhanVien = "NV0002",
                 ngayHieuLuc = "2022,4,14",
@@ -118,7 +118,7 @@ namespace HRMSolution.NUnitTest
         [Test, Order(7)]
         public void Transfer_Update_Success()
         {
-            DieuChuyenUpdateRequest transferUpdating = new DieuChuyenUpdateRequest()
+            QuaTrinhCongTacUpdateRequest transferUpdating = new QuaTrinhCongTacUpdateRequest()
             {
                 maNhanVien = "NV0001",
                 ngayHieuLuc = "2022,4,14",
@@ -133,7 +133,7 @@ namespace HRMSolution.NUnitTest
         [Test, Order(8)]
         public void Transfer_Update_Failure1()
         {
-            DieuChuyenUpdateRequest transferUpdating = new DieuChuyenUpdateRequest()
+            QuaTrinhCongTacUpdateRequest transferUpdating = new QuaTrinhCongTacUpdateRequest()
             {
                 maNhanVien = "NV0001",
                 ngayHieuLuc = "2022,4,14",
@@ -148,7 +148,7 @@ namespace HRMSolution.NUnitTest
         [Test, Order(9)]
         public void Transfer_Update_Failure2()
         {
-            DieuChuyenUpdateRequest transferUpdating = new DieuChuyenUpdateRequest()
+            QuaTrinhCongTacUpdateRequest transferUpdating = new QuaTrinhCongTacUpdateRequest()
             {
                 maNhanVien = "NV0001",
                 ngayHieuLuc = null,
@@ -163,7 +163,7 @@ namespace HRMSolution.NUnitTest
         [Test, Order(10)]
         public void Transfer_Update_Failure3()
         {
-            DieuChuyenUpdateRequest transferUpdating = new DieuChuyenUpdateRequest()
+            QuaTrinhCongTacUpdateRequest transferUpdating = new QuaTrinhCongTacUpdateRequest()
             {
                 maNhanVien = "NV0001",
                 ngayHieuLuc = "2022,4,14",
@@ -178,7 +178,7 @@ namespace HRMSolution.NUnitTest
         [Test, Order(11)]
         public void Transfer_Update_Failure4()
         {
-            DieuChuyenUpdateRequest transferUpdating = new DieuChuyenUpdateRequest()
+            QuaTrinhCongTacUpdateRequest transferUpdating = new QuaTrinhCongTacUpdateRequest()
             {
                 maNhanVien = "NV0001",
                 ngayHieuLuc = "2022,4,14",
@@ -193,7 +193,7 @@ namespace HRMSolution.NUnitTest
         [Test, Order(11)]
         public void Transfer_Update_Failure5()
         {
-            DieuChuyenUpdateRequest transferUpdating = new DieuChuyenUpdateRequest()
+            QuaTrinhCongTacUpdateRequest transferUpdating = new QuaTrinhCongTacUpdateRequest()
             {
                 maNhanVien = "NV0001",
                 ngayHieuLuc = "2022,4,14",
