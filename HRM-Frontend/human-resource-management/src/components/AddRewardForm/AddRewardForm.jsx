@@ -152,6 +152,11 @@ function AddRewardForm(props) {
     try {
       if (id !== undefined) {
         try {
+          if(dataEmployee
+            .filter(
+              (item) => item.trangThaiLaoDong === "Đang làm việc"
+            )
+            .map((item)=> item.id).includes(data.maNhanVien)){
           const formData = new FormData();
           formData.append("bangChung", file.file);
           formData.append("idDanhMucKhenThuong", data.idDanhMucKhenThuong);
@@ -160,20 +165,30 @@ function AddRewardForm(props) {
           formData.append("loai", data.loai);
           formData.append("maNhanVien", data.maNhanVien);
           await PutApi.PutKTvKL(formData, id);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Sửa thông tin khen thưởng của nhân viên ${dataKTDetail.hoTen}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success(
+            `Sửa thông tin khen thưởng cho nhân viên ${dataKTDetail.hoTen} thành công`
+          );
+          history.goBack();
+            }else{
+              error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
+            }
         } catch (errors) {
-          error(`Có lỗi xảy ra.`);
+          error(`Sửa thông tin khen thưởng cho nhân viên không thành công.`);
         }
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa thông tin khen thưởng của nhân viên ${dataKTDetail.hoTen}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success(
-          `Sửa thông tin khen thưởng cho nhân viên ${dataKTDetail.hoTen} thành công`
-        );
       } else {
-        const formData = new FormData();
+        try {
+          if(dataEmployee
+            .filter(
+              (item) => item.trangThaiLaoDong === "Đang làm việc"
+            )
+            .map((item)=> item.id).includes(data.maNhanVien)){
+          const formData = new FormData();
         formData.append("bangChung", file.file);
         formData.append("idDanhMucKhenThuong", data.idDanhMucKhenThuong);
         formData.append("noiDung", data.noiDung);
@@ -181,7 +196,6 @@ function AddRewardForm(props) {
         formData.append("loai", data.loai);
         formData.append("maNhanVien", data.maNhanVien);
         await ProductApi.PostKTvKL(formData);
-
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
           thaoTac: `Thêm khen thưởng mới cho nhân viên ${nameEm[0].hoTen}`,
@@ -191,8 +205,14 @@ function AddRewardForm(props) {
         success(
           `Thêm thông tin khen thưởng cho nhân viên ${nameEm[0].hoTen} thành công`
         );
+        history.goBack();
+        }else{
+          error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
+        }
+        } catch (error) {
+          error("Không thể thêm thông tin khen thưởng cho nhân viên.");
+        }
       }
-      history.goBack();
     } catch (errors) {
       error(`Có lỗi xảy ra.`);
     }
@@ -225,7 +245,7 @@ function AddRewardForm(props) {
             </h2>
           </div>
           <div className="button">
-            <input
+            {/* <input
               type="submit"
               className={
                 dataKTDetail.length !== 0 ? "btn btn-danger" : "delete-button"
@@ -234,7 +254,7 @@ function AddRewardForm(props) {
               onClick={() => {
                 setShowDeleteDialog(true);
               }}
-            />
+            /> */}
             <input
               type="submit"
               className="btn btn-secondary ml-3"

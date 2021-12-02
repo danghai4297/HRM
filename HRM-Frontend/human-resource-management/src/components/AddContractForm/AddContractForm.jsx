@@ -51,7 +51,7 @@ function AddContractForm(props) {
   const [rsId, setRsId] = useState();
   const [rsIdCre, setRsIdCre] = useState();
   const [dataIdEmployee, setDataIdEmployee] = useState([]);
-
+  const [impID, setImpID] = useState();
   useEffect(() => {
     const fetchNvList = async () => {
       try {
@@ -224,50 +224,79 @@ function AddContractForm(props) {
 
     try {
       if (id !== undefined) {
-        if (file.file !== null) {
-          await DeleteApi.deleteAHD(data.maHopDong);
-          const formData = new FormData();
-          formData.append("bangChung", file.file);
-          //formData.append("maHopDong", data.id);
-          await PutApi.PutAHD(formData, data.maHopDong);
+        try {
+          if (
+            dataIdEmployee
+              .filter((item) => item.trangThaiLaoDong === "Đang làm việc")
+              .map((item) => item.id)
+              .includes(data.maNhanVien)
+          ) {
+            if (file.file !== null) {
+              await DeleteApi.deleteAHD(data.maHopDong);
+              const formData = new FormData();
+              formData.append("bangChung", file.file);
+              //formData.append("maHopDong", data.id);
+              await PutApi.PutAHD(formData, data.maHopDong);
+            }
+            await PutApi.PutHD(data, id);
+            await ProductApi.PostLS({
+              tenTaiKhoan: decoded.userName,
+              thaoTac: `Sửa thông tin hợp đồng ${maHopDong} của nhân viên ${dataDetailHd.tenNhanVien}`,
+              maNhanVien: decoded.id,
+              tenNhanVien: decoded.givenName,
+            });
+            success(
+              `Sửa thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
+            );
+            history.goBack();
+          } else {
+            error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
+          }
+        } catch (errors) {
+          error("Không thể sửa thông tin hợp đồng.");
         }
-        await PutApi.PutHD(data, id);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa thông tin hợp đồng ${maHopDong} của nhân viên ${dataDetailHd.tenNhanVien}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success(
-          `Sửa thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
-        );
       } else {
         try {
-          await ProductApi.postHD(data);
-          if (file.file !== null) {
-            const formData = new FormData();
-            formData.append("bangChung", file.file);
-            //formData.append("maHopDong", data.id);
-            await PutApi.PutAHD(formData, data.maHopDong);
+          if (
+            dataIdEmployee
+              .filter((item) => item.trangThaiLaoDong === "Đang làm việc")
+              .map((item) => item.id)
+              .includes(data.maNhanVien)
+          ) {
+            await ProductApi.postHD(data);
+            if (file.file !== null) {
+              const formData = new FormData();
+              formData.append("bangChung", file.file);
+              //formData.append("maHopDong", data.id);
+              await PutApi.PutAHD(formData, data.maHopDong);
+            }
+            await ProductApi.PostLS({
+              tenTaiKhoan: decoded.userName,
+              thaoTac: `Thêm hợp đồng mới ${maHopDong} cho nhân viên ${nameEm[0].hoTen}`,
+              maNhanVien: decoded.id,
+              tenNhanVien: decoded.givenName,
+            });
             success(
               `Thêm hợp đồng mới ${maHopDong} cho nhân viên ${nameEm[0].hoTen} thành công`
             );
+            history.goBack();
+          } else {
+            error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
           }
         } catch (errors) {
           error("Không thể thêm hợp đồng mới");
         }
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm hợp đồng mới ${maHopDong} cho nhân viên ${nameEm[0].hoTen}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
       }
-      history.goBack();
     } catch (errors) {
-      error(`Có lỗi xảy ra`);
+      error(`Có lỗi xảy ra.`);
     }
   };
+  console.log(
+    dataIdEmployee
+      .filter((item) => item.trangThaiLaoDong === "Đang làm việc")
+      .map((item) => item.id)
+      .includes(impID)
+  );
 
   const handleDelete = async () => {
     try {
@@ -296,7 +325,7 @@ function AddContractForm(props) {
             </h2>
           </div>
           <div className="button">
-            <input
+            {/* <input
               type="submit"
               className={
                 dataDetailHd.length !== 0 ? "btn btn-danger" : "delete-button"
@@ -305,7 +334,7 @@ function AddContractForm(props) {
               onClick={() => {
                 setShowDeleteDialog(true);
               }}
-            />
+            /> */}
             <input
               type="submit"
               className="btn btn-secondary ml-3"
@@ -344,7 +373,9 @@ function AddContractForm(props) {
                   </label>
                   <input
                     //type="text"
-                    {...register("maNhanVien")}
+                    {...register("maNhanVien", {
+                      onChange: (e) => setImpID(e.target.value),
+                    })}
                     id="maNhanVien"
                     className={
                       !errors.maNhanVien

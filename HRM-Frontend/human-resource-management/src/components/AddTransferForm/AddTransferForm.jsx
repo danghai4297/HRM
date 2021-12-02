@@ -183,8 +183,15 @@ function AddTransferForm(props) {
   const onHandleSubmit = async (data) => {
     const nameEm = dataEmployee.filter((item) => item.id === data.maNhanVien);
     console.log(data);
+    
+    
     try {
       if (id !== undefined) {
+        if(dataEmployee
+          .filter(
+            (item) => item.trangThaiLaoDong === "Đang làm việc"
+          )
+          .map((item)=> item.id).includes(data.maNhanVien)){
         try {
           const formData = new FormData();
           formData.append("bangChung", file.file);
@@ -195,20 +202,28 @@ function AddTransferForm(props) {
           formData.append("trangThai", data.trangThai);
           formData.append("maNhanVien", data.maNhanVien);
           await PutApi.PutDC(formData, id);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Sửa thông tin công tác của nhân viên ${dataDetailDC.tenNhanVien}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success(
+            `Sửa thông tin công tác cho nhân viên ${dataDetailDC.tenNhanVien} thành công`
+          );
+          history.goBack();
         } catch (errors) {
           errors("Không thể sửa thông tin công tác");
-        }
-
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa thông tincông tác của nhân viên ${dataDetailDC.tenNhanVien}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success(
-          `Sửa thông tin công tác cho nhân viên ${dataDetailDC.tenNhanVien} thành công`
-        );
+        }  
+      }else{
+        error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
+      }
       } else {
+        if(dataEmployee
+          .filter(
+            (item) => item.trangThaiLaoDong === "Đang làm việc"
+          )
+          .map((item)=> item.id).includes(data.maNhanVien)){
         try {
           const formData = new FormData();
           formData.append("bangChung", file.file);
@@ -219,21 +234,24 @@ function AddTransferForm(props) {
           formData.append("trangThai", data.trangThai);
           formData.append("maNhanVien", data.maNhanVien);
           await ProductApi.PostDC(formData);
+          history.goBack();
+          success(
+            `Thêm thông tin công tác cho nhân viên ${nameEm[0].hoTen} thành công`
+          );
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Thêm công tác mới cho nhân viên ${nameEm[0].hoTen}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
         } catch (errors) {
           errors("Không thể thêm thông tin công tác");
         }
-
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm công tác mới cho nhân viên ${nameEm[0].hoTen}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success(
-          `Thêm thông tin công tác cho nhân viên ${nameEm[0].hoTen} thành công`
-        );
+      }else{
+        error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
       }
-      history.goBack();
+      }
+     
     } catch (errors) {
       error(`Có lỗi xảy ra.`);
     }
@@ -270,7 +288,7 @@ function AddTransferForm(props) {
             </h2>
           </div>
           <div className="button">
-            <input
+            {/* <input
               type="submit"
               className={
                 dataDetailDC.length !== 0 ? "btn btn-danger" : "delete-button"
@@ -279,7 +297,7 @@ function AddTransferForm(props) {
               onClick={() => {
                 setShowDeleteDialog(true);
               }}
-            />
+            /> */}
             <input
               type="submit"
               className="btn btn-secondary ml-3"
@@ -338,7 +356,7 @@ function AddTransferForm(props) {
                           {item.hoTen}
                         </option>
                       ))}
-                  </datalist>
+                  </datalist> 
                   <span className="message">{errors.maNhanVien?.message}</span>
                 </div>
               </div>
