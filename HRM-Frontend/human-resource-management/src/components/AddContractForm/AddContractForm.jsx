@@ -28,7 +28,6 @@ function AddContractForm(props) {
   let { id } = match.params;
   const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
-  console.log(id);
 
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
@@ -73,7 +72,7 @@ function AddContractForm(props) {
           setStartDate(moment(responseHD.hopDongTuNgay));
         }
       } catch (errors) {
-       error("Có lỗi xảy ra");
+        error("Có lỗi xảy ra");
       }
     };
     fetchNvList();
@@ -118,7 +117,6 @@ function AddContractForm(props) {
       } catch (errors) {
         error("Có lỗi xảy ra");
       }
-      
     };
     handleId();
   }, []);
@@ -264,7 +262,6 @@ function AddContractForm(props) {
           maNhanVien: decoded.id,
           tenNhanVien: decoded.givenName,
         });
-      
       }
       history.goBack();
     } catch (errors) {
