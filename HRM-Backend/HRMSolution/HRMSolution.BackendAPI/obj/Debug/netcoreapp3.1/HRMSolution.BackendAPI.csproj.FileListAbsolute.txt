@@ -80,8 +80,6 @@ E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Debug\netcoreapp3.1\HR
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Debug\netcoreapp3.1\HRMSolution.BackendAPI.MvcApplicationPartsAssemblyInfo.cs
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Debug\netcoreapp3.1\HRMSolution.BackendAPI.MvcApplicationPartsAssemblyInfo.cache
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Debug\netcoreapp3.1\staticwebassets\HRMSolution.BackendAPI.StaticWebAssets.Manifest.cache
-E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Debug\netcoreapp3.1\staticwebassets\HRMSolution.BackendAPI.StaticWebAssets.xml
-E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Debug\netcoreapp3.1\scopedcss\bundle\HRMSolution.BackendAPI.styles.css
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Debug\netcoreapp3.1\HRMSolution.BackendAPI.RazorTargetAssemblyInfo.cache
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Debug\netcoreapp3.1\HRMSolution.BackendAPI.csproj.CopyComplete
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Debug\netcoreapp3.1\HRMSolution.BackendAPI.dll
