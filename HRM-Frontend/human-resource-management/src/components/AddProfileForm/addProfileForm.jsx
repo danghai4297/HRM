@@ -579,7 +579,7 @@ function AddProfileForm(props) {
 
   //console.log(emCode);
   console.log(file.file);
-  console.log(rsId);
+  console.log(endDate);
 
   //handle image
   //const [file, setFile] = useState("/Images/userIcon.png");
@@ -2099,7 +2099,9 @@ function AddProfileForm(props) {
                   <div class="form-check mb-3 form-inline">
                     <input
                       type="checkbox"
-                      {...register("vaoDang")}
+                      {...register("vaoDang",{
+                        onChange: (e) => setEndDate(e.target.value) 
+                      })}
                       id="vaoDang"
                       className="form-check-input"
                       onClick={handleClickParty}
@@ -2145,6 +2147,9 @@ function AddProfileForm(props) {
                         />
                       )}
                     />
+                     <span className="message">
+                      {errors.ngayVaoDang?.message}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -2180,6 +2185,9 @@ function AddProfileForm(props) {
                         />
                       )}
                     />
+                      <span className="message">
+                      {errors.ngayVaoDangChinhThuc?.message}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -2267,9 +2275,16 @@ function AddProfileForm(props) {
                       type="text"
                       {...register("thuongBinh")}
                       id="thuongBinh"
-                      className="form-control col-sm-6"
+                      className={
+                        !errors.thuongBinh
+                          ? "form-control col-sm-6"
+                          : "form-control col-sm-6 border-danger"
+                      }
                       disabled={!veterans}
                     />
+                      <span className="message">
+                      {errors.thuongBinh?.message}
+                    </span>
                   </div>
                 </div>
               </div>

@@ -219,7 +219,7 @@ function AddContractForm(props) {
     }
     return false;
   };
-
+  
   const onHandleSubmit = async (data) => {
     const nameEm = dataIdEmployee.filter((item) => item.id === data.maNhanVien);
     let maHopDong = data.maHopDong;
@@ -324,7 +324,7 @@ function AddContractForm(props) {
             </h2>
           </div>
           <div className="button">
-            {/* <input
+            <input
               type="submit"
               className={
                 dataDetailHd.length !== 0 ? "btn btn-danger" : "delete-button"
@@ -333,7 +333,7 @@ function AddContractForm(props) {
               onClick={() => {
                 setShowDeleteDialog(true);
               }}
-            /> */}
+            />
             <input
               type="submit"
               className="btn btn-secondary ml-3"
