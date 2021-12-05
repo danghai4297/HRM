@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React from "react";
 
 import "./ScreenCategory.scss";
 import SideBarLeftCategory from "./SideBarLeftCategory";
@@ -15,10 +15,7 @@ import ItemDeal from "./ScreenItemCategory/ItemDeal/ItemDeal";
 import ItemWages from "./ScreenItemCategory/ItemWages/ItemWages";
 import ItemTraining from "./ScreenItemCategory/ItemTraining/ItemTraining";
 import ItemCivil from "./ScreenItemCategory/ItemCivil/ItemCivil";
-import { Button } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Route, Switch, Redirect } from "react-router-dom";
-import ScreenNotFound from "../ScreenProject/ScreenNotFound";
 import ItemMarriage from "./ScreenItemCategory/ItemMarriage/ItemMarriage";
 import ItemRelation from "./ScreenItemCategory/ItemRelation/ItemRelation";
 import ItemReligion from "./ScreenItemCategory/ItemReligion/ItemReligion";
@@ -269,7 +266,9 @@ function ScreenCategory() {
                 path="/category/duty/:id"
                 component={AddPositionForm}
               />
-              {/* <Route component={ScreenNotFound} /> */}
+              <Route path="*">
+                <Redirect to="/category" />
+              </Route>
             </Switch>
           </div>
         </div>

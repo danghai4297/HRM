@@ -1,14 +1,14 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-import "./SubDetail.scss";
+import "../../components/Detail/SubDetail.scss";
 
-function SubDetail(props) {
+function SubDetail2(props) {
   const { titleLeft, itemLeft, titleRight, itemRight } = props;
 
   return (
     <div className="containss">
       <Row className="item">
-        <Col xl>
+        <Col>
           <Row className="row-replace">
             <Col>
               <p>{titleLeft}</p>
@@ -36,4 +36,4 @@ function SubDetail(props) {
   );
 }
 
-export default SubDetail;
+export default SubDetail2;

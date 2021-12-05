@@ -4,9 +4,13 @@ import SubDetail from "./SubDetail";
 import { links } from "./ScrollData";
 import dateFormat from "dateformat";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import ProductApi from "../../api/productApi";
 import TableBasic from "../TablePagination/TableBasic";
+import IconButton from "@mui/material/IconButton";
+import Button from "@mui/material/Button";
+import { createTheme } from "@mui/material/styles";
+import { red } from "@mui/material/colors";
 import {
   NVCOLUMNSDC,
   NVCOLUMNSHD,
@@ -32,6 +36,16 @@ import {
 function Detail(props) {
   let { match, history } = props;
   let { id } = match.params;
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: red[500],
+      },
+      secondary: {
+        main: "#f44336",
+      },
+    },
+  });
 
   const [dataDetailNv, setdataDetailNv] = useState([]);
   const [dataDetailTDVH, setdataDetailTDVH] = useState([]);
@@ -157,12 +171,12 @@ function Detail(props) {
         <div className="first-information">
           <div className="left-path">
             <div className="icons">
-              <button className="btn-back" onClick={history.goBack}>
+              <IconButton className="btn-back" onClick={history.goBack}>
                 <FontAwesomeIcon
                   className="icon-btn"
                   icon={["fas", "long-arrow-alt-left"]}
                 />
-              </button>
+              </IconButton>
             </div>
 
             <div className="avatar">
@@ -272,10 +286,16 @@ function Detail(props) {
           </div>
           <div className="right-path">
             <Link to={`/profile/${id}`}>
-              <Button variant="dark">Sửa</Button>
+              <Button variant="contained" className="btn-edit-detail">
+                Sửa
+              </Button>
             </Link>
             <Link to={`/profile/pdf/${id}`}>
-              <Button variant="light">
+              <Button
+                variant="contained"
+                theme={theme}
+                className="btn-edit-detail"
+              >
                 <FontAwesomeIcon icon={["fas", "download"]} />
               </Button>
             </Link>
@@ -309,8 +329,9 @@ function Detail(props) {
                   <h3>Thông tin cơ bản</h3>
                 </div>
                 <div className="arrow-button">
-                  <button
+                  <IconButton
                     className="main-arrow-button"
+                    color="default"
                     onClick={() => {
                       setDropBase(!dropBase);
                     }}
@@ -319,7 +340,7 @@ function Detail(props) {
                       icon={["fas", "chevron-down"]}
                       className={!dropBase ? "iconss" : "iconsss"}
                     />
-                  </button>
+                  </IconButton>
                 </div>
               </div>
               {dropBase && (
@@ -394,7 +415,7 @@ function Detail(props) {
                   <h3>Thông tin liên hệ</h3>
                 </div>
                 <div className="arrow-button">
-                  <button
+                  <IconButton
                     className="main-arrow-button"
                     onClick={() => {
                       setDropContact(!dropContact);
@@ -404,7 +425,7 @@ function Detail(props) {
                       icon={["fas", "chevron-down"]}
                       className={!dropContact ? "iconss" : "iconsss"}
                     />
-                  </button>
+                  </IconButton>
                 </div>
               </div>
               {dropContact && (
@@ -446,7 +467,7 @@ function Detail(props) {
                   <h3>Thông tin công việc</h3>
                 </div>
                 <div className="arrow-button">
-                  <button
+                  <IconButton
                     className="main-arrow-button"
                     onClick={() => {
                       setDropJob(!dropJob);
@@ -456,7 +477,7 @@ function Detail(props) {
                       icon={["fas", "chevron-down"]}
                       className={!dropJob ? "iconss" : "iconsss"}
                     />
-                  </button>
+                  </IconButton>
                 </div>
               </div>
               {dropJob && (
@@ -492,7 +513,7 @@ function Detail(props) {
                   <h3>Thông tin bảo hiểm</h3>
                 </div>
                 <div className="arrow-button">
-                  <button
+                  <IconButton
                     className="main-arrow-button"
                     onClick={() => {
                       setDropInsurance(!dropInsurance);
@@ -502,7 +523,7 @@ function Detail(props) {
                       icon={["fas", "chevron-down"]}
                       className={!dropInsurance ? "iconss" : "iconsss"}
                     />
-                  </button>
+                  </IconButton>
                 </div>
               </div>
               {dropInsurance && (
@@ -528,7 +549,7 @@ function Detail(props) {
                   <h3>Thông tin chính trị, quân sự, y tế</h3>
                 </div>
                 <div className="arrow-button">
-                  <button
+                  <IconButton
                     className="main-arrow-button"
                     onClick={() => {
                       setDropPolitics(!dropPolitics);
@@ -538,7 +559,7 @@ function Detail(props) {
                       icon={["fas", "chevron-down"]}
                       className={!dropPolitics ? "iconss" : "iconsss"}
                     />
-                  </button>
+                  </IconButton>
                 </div>
               </div>
               {dropPolitics && (
@@ -618,7 +639,7 @@ function Detail(props) {
                   <h3>Lịch sử bản thân</h3>
                 </div>
                 <div className="arrow-button">
-                  <button
+                  <IconButton
                     className="main-arrow-button"
                     onClick={() => {
                       setDropHistory(!dropHistory);
@@ -628,7 +649,7 @@ function Detail(props) {
                       icon={["fas", "chevron-down"]}
                       className={!dropHistory ? "iconss" : "iconsss"}
                     />
-                  </button>
+                  </IconButton>
                 </div>
               </div>
 
@@ -682,7 +703,7 @@ function Detail(props) {
                   </div>
                 </div>
                 <div className="arrow-button">
-                  <button
+                  <IconButton
                     className="main-arrow-button"
                     onClick={() => {
                       setDropCultural(!dropCultural);
@@ -692,7 +713,7 @@ function Detail(props) {
                       icon={["fas", "chevron-down"]}
                       className={!dropCultural ? "iconss" : "iconsss"}
                     />
-                  </button>
+                  </IconButton>
                 </div>
               </div>
               {dropCultural && (
@@ -748,7 +769,7 @@ function Detail(props) {
                   <h3>Thông tin gia đình</h3>
                 </div>
                 <div className="arrow-button">
-                  <button
+                  <IconButton
                     className="main-arrow-button"
                     onClick={() => {
                       setDropFamily(!dropFamily);
@@ -758,7 +779,7 @@ function Detail(props) {
                       icon={["fas", "chevron-down"]}
                       className={!dropFamily ? "iconss" : "iconsss"}
                     />
-                  </button>
+                  </IconButton>
                 </div>
               </div>
               {dropFamily && (
@@ -791,7 +812,7 @@ function Detail(props) {
                   <h3>Hợp đồng lao động</h3>
                 </div>
                 <div className="arrow-button">
-                  <button
+                  <IconButton
                     className="main-arrow-button"
                     onClick={() => {
                       setDropContract(!dropContract);
@@ -801,7 +822,7 @@ function Detail(props) {
                       icon={["fas", "chevron-down"]}
                       className={!dropContract ? "iconss" : "iconsss"}
                     />
-                  </button>
+                  </IconButton>
                 </div>
               </div>
               {dropContract && (
@@ -834,7 +855,7 @@ function Detail(props) {
                   <h3>Hồ sơ lương</h3>
                 </div>
                 <div className="arrow-button">
-                  <button
+                  <IconButton
                     className="main-arrow-button"
                     onClick={() => {
                       setDropSalary(!dropSalary);
@@ -844,7 +865,7 @@ function Detail(props) {
                       icon={["fas", "chevron-down"]}
                       className={!dropSalary ? "iconss" : "iconsss"}
                     />
-                  </button>
+                  </IconButton>
                 </div>
               </div>
               {dropSalary && (
@@ -886,7 +907,7 @@ function Detail(props) {
                   <h3>Quá trình công tác</h3>
                 </div>
                 <div className="arrow-button">
-                  <button
+                  <IconButton
                     className="main-arrow-button"
                     onClick={() => {
                       setDropTransfer(!dropTransfer);
@@ -896,7 +917,7 @@ function Detail(props) {
                       icon={["fas", "chevron-down"]}
                       className={!dropTransfer ? "iconss" : "iconsss"}
                     />
-                  </button>
+                  </IconButton>
                 </div>
               </div>
               {dropTransfer && (
@@ -929,7 +950,7 @@ function Detail(props) {
                   <h3>Khen thưởng</h3>
                 </div>
                 <div className="arrow-button">
-                  <button
+                  <IconButton
                     className="main-arrow-button"
                     onClick={() => {
                       setDropReward(!dropReward);
@@ -939,7 +960,7 @@ function Detail(props) {
                       icon={["fas", "chevron-down"]}
                       className={!dropReward ? "iconss" : "iconsss"}
                     />
-                  </button>
+                  </IconButton>
                 </div>
               </div>
               {dropReward && (
@@ -972,7 +993,7 @@ function Detail(props) {
                   <h3>Kỷ luật</h3>
                 </div>
                 <div className="arrow-button">
-                  <button
+                  <IconButton
                     className="main-arrow-button"
                     onClick={() => {
                       setDropDiscipline(!dropDiscipline);
@@ -982,7 +1003,7 @@ function Detail(props) {
                       icon={["fas", "chevron-down"]}
                       className={!dropDiscipline ? "iconss" : "iconsss"}
                     />
-                  </button>
+                  </IconButton>
                 </div>
               </div>
               {dropDiscipline && (

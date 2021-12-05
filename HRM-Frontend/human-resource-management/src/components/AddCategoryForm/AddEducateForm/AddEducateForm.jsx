@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import "./AddEducateForm";
 import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
@@ -9,9 +8,7 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
-import {schema} from "../../../ultis/CategoryValidation";
-
-
+import { schema } from "../../../ultis/EducateValidation";
 
 function AddEducateForm(props) {
   const { error, success, warn } = useToast();

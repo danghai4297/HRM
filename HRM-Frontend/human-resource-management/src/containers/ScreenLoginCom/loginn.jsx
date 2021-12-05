@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import "./Login.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,7 +9,7 @@ import { useToast } from "../../components/Toast/Toast";
 import { Button, Col, Row } from "react-bootstrap";
 import { useDocumentTitle } from "../../hook/TitleDocument";
 
-function LogIn(props) {
+function LogIn() {
   let history = useHistory();
 
   const { error } = useToast();
@@ -47,7 +47,11 @@ function LogIn(props) {
         <div className="left-login">
           <img src="/Images/loginImage.png" alt="" />
         </div>
-        <div className="right-login">
+        <div
+          className={
+            sessionStorage.getItem("resultObj") ? "right-login2" : "right-login"
+          }
+        >
           {sessionStorage.getItem("resultObj") ? (
             <>
               <div>
@@ -98,7 +102,7 @@ function LogIn(props) {
                       }
                     }}
                   >
-                    Quay lại
+                    <FontAwesomeIcon icon={["fas", "home"]} />
                   </Button>
                 </Col>
                 <Col>
@@ -109,7 +113,7 @@ function LogIn(props) {
                       history.go("/login");
                     }}
                   >
-                    Thoát tài khoản
+                    <FontAwesomeIcon icon={["fas", "sign-out-alt"]} />
                   </Button>
                 </Col>
               </Row>
@@ -128,6 +132,11 @@ function LogIn(props) {
                   {...register("userName")}
                   id="userName"
                   placeholder="Tài khoản"
+                  onKeyPress={(e) => {
+                    if (e.key === "Enter") {
+                      handleSubmit(onHandleSubmit)();
+                    }
+                  }}
                 />
               </div>
               <div className="form-group">
@@ -139,6 +148,11 @@ function LogIn(props) {
                   {...register("password")}
                   id="password"
                   placeholder="Mật khẩu"
+                  onKeyPress={(e) => {
+                    if (e.key === "Enter") {
+                      handleSubmit(onHandleSubmit)();
+                    }
+                  }}
                 />
               </div>
               <input

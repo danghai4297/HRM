@@ -63,6 +63,7 @@ export const NVCOLUMNSHD = [
     Header: "Chức Vụ",
     accessor: "chucVu",
     minWidth: 215,
+    Filter: SelectColumnFilter,
     disableFilters: true,
 
     show: true,

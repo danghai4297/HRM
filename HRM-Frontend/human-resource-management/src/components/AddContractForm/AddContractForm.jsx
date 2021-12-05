@@ -28,7 +28,6 @@ function AddContractForm(props) {
   let { id } = match.params;
   const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
-  console.log(id);
 
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
@@ -52,7 +51,7 @@ function AddContractForm(props) {
   const [rsId, setRsId] = useState();
   const [rsIdCre, setRsIdCre] = useState();
   const [dataIdEmployee, setDataIdEmployee] = useState([]);
-  const [impID,setImpID] = useState();
+  const [impID, setImpID] = useState();
   useEffect(() => {
     const fetchNvList = async () => {
       try {
@@ -73,7 +72,7 @@ function AddContractForm(props) {
           setStartDate(moment(responseHD.hopDongTuNgay));
         }
       } catch (errors) {
-       error("Có lỗi xảy ra");
+        error("Có lỗi xảy ra");
       }
     };
     fetchNvList();
@@ -118,7 +117,6 @@ function AddContractForm(props) {
       } catch (errors) {
         error("Có lỗi xảy ra");
       }
-      
     };
     handleId();
   }, []);
@@ -224,33 +222,34 @@ function AddContractForm(props) {
     const nameEm = dataIdEmployee.filter((item) => item.id === data.maNhanVien);
     let maHopDong = data.maHopDong;
 
-    try {  
+    try {
       if (id !== undefined) {
         try {
-          if(dataIdEmployee
-            .filter(
-              (item) => item.trangThaiLaoDong === "Đang làm việc"
-            )
-            .map((item) => item.id).includes(data.maNhanVien)){
-          if (file.file !== null) {
-            await DeleteApi.deleteAHD(data.maHopDong);
-            const formData = new FormData();
-            formData.append("bangChung", file.file);
-            //formData.append("maHopDong", data.id);
-            await PutApi.PutAHD(formData, data.maHopDong);
-          }
-          await PutApi.PutHD(data, id);
-          await ProductApi.PostLS({
-            tenTaiKhoan: decoded.userName,
-            thaoTac: `Sửa thông tin hợp đồng ${maHopDong} của nhân viên ${dataDetailHd.tenNhanVien}`,
-            maNhanVien: decoded.id,
-            tenNhanVien: decoded.givenName,
-          });
-          success(
-            `Sửa thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
-          );
-          history.goBack();
-          }else{
+          if (
+            dataIdEmployee
+              .filter((item) => item.trangThaiLaoDong === "Đang làm việc")
+              .map((item) => item.id)
+              .includes(data.maNhanVien)
+          ) {
+            if (file.file !== null) {
+              await DeleteApi.deleteAHD(data.maHopDong);
+              const formData = new FormData();
+              formData.append("bangChung", file.file);
+              //formData.append("maHopDong", data.id);
+              await PutApi.PutAHD(formData, data.maHopDong);
+            }
+            await PutApi.PutHD(data, id);
+            await ProductApi.PostLS({
+              tenTaiKhoan: decoded.userName,
+              thaoTac: `Sửa thông tin hợp đồng ${maHopDong} của nhân viên ${dataDetailHd.tenNhanVien}`,
+              maNhanVien: decoded.id,
+              tenNhanVien: decoded.givenName,
+            });
+            success(
+              `Sửa thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
+            );
+            history.goBack();
+          } else {
             error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
           }
         } catch (errors) {
@@ -258,31 +257,32 @@ function AddContractForm(props) {
         }
       } else {
         try {
-          if(dataIdEmployee
-            .filter(
-              (item) => item.trangThaiLaoDong === "Đang làm việc"
-            )
-            .map((item) => item.id).includes(data.maNhanVien)){
-              await ProductApi.postHD(data);
-              if (file.file !== null) {
-                const formData = new FormData();
-                formData.append("bangChung", file.file);
-                //formData.append("maHopDong", data.id);
-                await PutApi.PutAHD(formData, data.maHopDong);
-                }
-                await ProductApi.PostLS({
-                  tenTaiKhoan: decoded.userName,
-                  thaoTac: `Thêm hợp đồng mới ${maHopDong} cho nhân viên ${nameEm[0].hoTen}`,
-                  maNhanVien: decoded.id,
-                  tenNhanVien: decoded.givenName,
-                });
-                success(
-                  `Thêm hợp đồng mới ${maHopDong} cho nhân viên ${nameEm[0].hoTen} thành công`
-                );
-                history.goBack();
-            }else{
-              error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
+          if (
+            dataIdEmployee
+              .filter((item) => item.trangThaiLaoDong === "Đang làm việc")
+              .map((item) => item.id)
+              .includes(data.maNhanVien)
+          ) {
+            await ProductApi.postHD(data);
+            if (file.file !== null) {
+              const formData = new FormData();
+              formData.append("bangChung", file.file);
+              //formData.append("maHopDong", data.id);
+              await PutApi.PutAHD(formData, data.maHopDong);
             }
+            await ProductApi.PostLS({
+              tenTaiKhoan: decoded.userName,
+              thaoTac: `Thêm hợp đồng mới ${maHopDong} cho nhân viên ${nameEm[0].hoTen}`,
+              maNhanVien: decoded.id,
+              tenNhanVien: decoded.givenName,
+            });
+            success(
+              `Thêm hợp đồng mới ${maHopDong} cho nhân viên ${nameEm[0].hoTen} thành công`
+            );
+            history.goBack();
+          } else {
+            error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
+          }
         } catch (errors) {
           error("Không thể thêm hợp đồng mới");
         }
@@ -291,12 +291,13 @@ function AddContractForm(props) {
       error(`Có lỗi xảy ra.`);
     }
   };
-  console.log(dataIdEmployee
-    .filter(
-      (item) => item.trangThaiLaoDong === "Đang làm việc"
-    )
-    .map((item) => item.id).includes(impID));
-  
+  console.log(
+    dataIdEmployee
+      .filter((item) => item.trangThaiLaoDong === "Đang làm việc")
+      .map((item) => item.id)
+      .includes(impID)
+  );
+
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteHD(id);
@@ -372,8 +373,8 @@ function AddContractForm(props) {
                   </label>
                   <input
                     //type="text"
-                    {...register("maNhanVien",{
-                      onChange: (e) => setImpID(e.target.value)
+                    {...register("maNhanVien", {
+                      onChange: (e) => setImpID(e.target.value),
                     })}
                     id="maNhanVien"
                     className={

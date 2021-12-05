@@ -127,17 +127,17 @@ const ProductApi = {
 
   //all điều chuyển nv
   getAllDCNV: () => {
-    const url = "/DieuChuyen";
+    const url = "/QuaTrinhCongTac";
     return axiosClient.get(url);
   },
   //add điều chuyển
   PostDC: (data) => {
-    const url = "/DieuChuyen";
+    const url = "/QuaTrinhCongTac";
     return axiosClient.post(url, data);
   },
   //detail DC
   getDCDetail: (id) => {
-    const url = `/DieuChuyen/dieu-chuyen/${id}`;
+    const url = `/QuaTrinhCongTac/qua-trinh-cong-tac/${id}`;
     return axiosClient.get(url);
   },
 
@@ -755,7 +755,6 @@ const ProductApi = {
     const url = `/BaoCao/bao-cao-nguoi-than-danh-muc-phong-ban-gioi-tinh-trang-thai/${ageX}/${ageY}/${idDm}/${idPb}/${gender}/${status}`;
     return axiosClient.get(url);
   },
-  
 };
 
 export default ProductApi;

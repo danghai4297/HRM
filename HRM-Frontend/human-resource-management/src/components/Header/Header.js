@@ -3,6 +3,7 @@ import "./Header.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AccountContext } from "../../Contexts/StateContext";
 import { useHistory, Link } from "react-router-dom";
+import Avatar from "@mui/material/Avatar";
 import jwt_decode from "jwt-decode";
 function Header() {
   const { account, setAccount } = useContext(AccountContext);
@@ -12,6 +13,8 @@ function Header() {
     history.replace("/login");
     setAccount(false);
   };
+  const token = sessionStorage.getItem("resultObj");
+
   return (
     <>
       <div className="header-com">
@@ -20,14 +23,10 @@ function Header() {
           <button className="button-top" onClick={() => setAccount(!account)}>
             <div className="screen-account">
               <div className="header-icon">
-                {sessionStorage.getItem("resultObj") &&
-                jwt_decode(sessionStorage.getItem("resultObj")).anh !== null ? (
-                  <img
-                    className="picture-account"
-                    src={`https://localhost:5001/${
-                      jwt_decode(sessionStorage.getItem("resultObj")).anh
-                    }`}
-                    alt=""
+                {token && jwt_decode(token).anh !== null ? (
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={`https://localhost:5001/${jwt_decode(token).anh}`}
                   />
                 ) : (
                   <FontAwesomeIcon
@@ -38,8 +37,7 @@ function Header() {
               </div>
               <div className="account-name">
                 <h5 className="account-style">
-                  {sessionStorage.getItem("resultObj") &&
-                    jwt_decode(sessionStorage.getItem("resultObj")).givenName}
+                  {token && jwt_decode(token).givenName}
                 </h5>
               </div>
             </div>
@@ -49,14 +47,10 @@ function Header() {
             <div className="detail-information">
               <div className="first-information">
                 <div className="detail-second-icon">
-                  {sessionStorage.getItem("resultObj") &&
-                  jwt_decode(sessionStorage.getItem("resultObj")).anh !==
-                    null ? (
+                  {token && jwt_decode(token).anh !== null ? (
                     <img
                       className="picture-account-2"
-                      src={`https://localhost:5001/${
-                        jwt_decode(sessionStorage.getItem("resultObj")).anh
-                      }`}
+                      src={`https://localhost:5001/${jwt_decode(token).anh}`}
                       alt=""
                     />
                   ) : (
@@ -67,10 +61,7 @@ function Header() {
                   )}
                 </div>
                 <div>
-                  <h5>
-                    {sessionStorage.getItem("resultObj") &&
-                      jwt_decode(sessionStorage.getItem("resultObj")).givenName}
-                  </h5>
+                  <h5>{token && jwt_decode(token).givenName}</h5>
                 </div>
                 <div>
                   <Link to="/change" onClick={() => setAccount(false)}>
