@@ -9,9 +9,7 @@ import DeleteApi from "../../../api/deleteAPI";
 import Dialog from "../../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
-import {schema} from "../../../ultis/CategoryValidation";
-
-
+import { schema } from "../../../ultis/SalaryGroupValidation";
 
 function AddSalaryGroupForm(props) {
   const { error, success, warn } = useToast();

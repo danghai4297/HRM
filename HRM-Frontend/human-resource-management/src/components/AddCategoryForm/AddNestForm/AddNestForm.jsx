@@ -9,7 +9,7 @@ import DeleteApi from "../../../api/deleteAPI";
 import PutApi from "../../../api/putAAPI";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../Toast/Toast";
-import { schema } from "../../../ultis/CategoryValidation";
+import { schema } from "../../../ultis/NestValidation";
 
 function AddNestForm(props) {
   const { error, success, warn } = useToast();

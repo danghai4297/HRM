@@ -1,15 +1,28 @@
 import React, { useEffect, useState } from "react";
 import SubDetail from "../../components/Detail/SubDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button } from "react-bootstrap";
 import "./ScreenDetailTransfer.scss";
 import ProductApi from "../../api/productApi";
 import { Link } from "react-router-dom";
 import dateFormat from "dateformat";
 import { vtctht } from "./DataTransfer";
+import IconButton from "@mui/material/IconButton";
+import Button from "@mui/material/Button";
+import { createTheme } from "@mui/material/styles";
+import { grey } from "@mui/material/colors";
 function ScreenDetailTransfer(props) {
   let { match, history } = props;
   let { id } = match.params;
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: grey[50],
+      },
+      secondary: {
+        main: "#f44336",
+      },
+    },
+  });
 
   const [dataDetailDC, setDataDetailDC] = useState([]);
 
@@ -39,26 +52,31 @@ function ScreenDetailTransfer(props) {
       <div className="main-screen-transfer">
         <div className="first-main-transfer">
           <div className="first-path-transfer">
-            <button className="btn-back" onClick={history.goBack}>
+            <IconButton className="btn-back" onClick={history.goBack}>
               <FontAwesomeIcon
                 className="icon-btn"
                 icon={["fas", "long-arrow-alt-left"]}
               />
-            </button>
+            </IconButton>
           </div>
           <div className="second-path-transfer">
             <h2>Quá trình công tác</h2>
           </div>
           <div className="third-path-transfer">
             <Link to={`/transfer/${id}`}>
-              <Button variant="light" className="btn-fix-transfer">
+              <Button
+                variant="contained"
+                theme={theme}
+                className="btn-fix-transfer"
+              >
                 Sửa
               </Button>
             </Link>
             {dataDetailDC.bangChung !== null && (
               <Button
-                variant="light"
+                variant="contained"
                 className="btn-fix-transfer"
+                theme={theme}
                 onClick={() => {
                   window.open(
                     `https://localhost:5001${dataDetailDC.bangChung}`

@@ -1,5 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import ProductApi from "../../api/productApi";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import { createTheme } from "@mui/material/styles";
+import { red } from "@mui/material/colors";
 import {
   cmndTccHC,
   lhkc,
@@ -11,15 +15,25 @@ import {
   ttqs,
   ttyt,
 } from "../../components/Detail/Data";
-import SubDetail from "../../components/Detail/SubDetail";
 import dateFormat from "dateformat";
 import { useReactToPrint } from "react-to-print";
 import { ComponentToPrint } from "../../components/ToPrint/ComponentToPrint";
 import "./PDF.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SubDetail2 from "../SubDetail2/SubDetail2";
 function PDF(props) {
   let { match, history } = props;
   let { id } = match.params;
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: red[500],
+      },
+      secondary: {
+        main: "#f44336",
+      },
+    },
+  });
 
   const componentRef = useRef();
   const handlePrint = useReactToPrint({
@@ -43,15 +57,20 @@ function PDF(props) {
   return (
     <>
       <div>
-        <button className="btn-back" onClick={history.goBack}>
+        <IconButton className="btn-back" onClick={history.goBack}>
           <FontAwesomeIcon
             className="icon-btn"
             icon={["fas", "long-arrow-alt-left"]}
           />
-        </button>
-        <button className="button-pdf" onClick={handlePrint}>
+        </IconButton>
+        <Button
+          variant="contained"
+          theme={theme}
+          className="button-pdf"
+          onClick={handlePrint}
+        >
           <FontAwesomeIcon icon={["fas", "file-pdf"]} />
-        </button>
+        </Button>
       </div>
 
       <div className="right-information-pdf" id="right">
@@ -83,7 +102,7 @@ function PDF(props) {
             </div>
             {ttc.map((detail, key) => {
               return (
-                <SubDetail
+                <SubDetail2
                   key={key}
                   titleLeft={detail.title1}
                   itemLeft={
@@ -107,7 +126,7 @@ function PDF(props) {
             </div>
             {cmndTccHC.map((detail, key) => {
               return (
-                <SubDetail
+                <SubDetail2
                   key={key}
                   titleLeft={detail.title1}
                   itemLeft={
@@ -139,7 +158,7 @@ function PDF(props) {
             </div>
             {sdtEK.map((detail, key) => {
               return (
-                <SubDetail
+                <SubDetail2
                   key={key}
                   titleLeft={detail.title1}
                   itemLeft={dataDetailNv[detail.data1]}
@@ -153,7 +172,7 @@ function PDF(props) {
             </div>
             {lhkc.map((detail, key) => {
               return (
-                <SubDetail
+                <SubDetail2
                   key={key}
                   titleLeft={detail.title1}
                   itemLeft={dataDetailNv[detail.data1]}
@@ -174,7 +193,7 @@ function PDF(props) {
             </div>
             {ttnv.map((detail, key) => {
               return (
-                <SubDetail
+                <SubDetail2
                   key={key}
                   titleLeft={detail.title1}
                   itemLeft={dataDetailNv[detail.data1]}
@@ -197,7 +216,7 @@ function PDF(props) {
             </div>
             {ttbh.map((detail, key) => {
               return (
-                <SubDetail
+                <SubDetail2
                   key={key}
                   titleLeft={detail.title1}
                   itemLeft={dataDetailNv[detail.data1]}
@@ -219,7 +238,7 @@ function PDF(props) {
             </div>
             {ttct.map((detail, key) => {
               return (
-                <SubDetail
+                <SubDetail2
                   key={key}
                   titleLeft={detail.title1}
                   itemLeft={
@@ -243,7 +262,7 @@ function PDF(props) {
             </div>
             {ttqs.map((detail, key) => {
               return (
-                <SubDetail
+                <SubDetail2
                   key={key}
                   titleLeft={detail.title1}
                   itemLeft={
@@ -262,7 +281,7 @@ function PDF(props) {
             </div>
             {ttyt.map((detail, key) => {
               return (
-                <SubDetail
+                <SubDetail2
                   key={key}
                   titleLeft={detail.title1}
                   itemLeft={dataDetailNv[detail.data1]}

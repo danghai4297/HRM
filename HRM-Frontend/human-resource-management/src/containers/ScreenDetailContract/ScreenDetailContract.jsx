@@ -1,15 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button } from "react-bootstrap";
 import "./ScreenDetailContract.scss";
 import SubDetail from "../../components/Detail/SubDetail";
 import ProductApi from "../../api/productApi";
 import { Link } from "react-router-dom";
 import dateFormat from "dateformat";
 import { ttc } from "./DataContract";
+import IconButton from "@mui/material/IconButton";
+import Button from "@mui/material/Button";
+import { createTheme } from "@mui/material/styles";
+import { grey } from "@mui/material/colors";
 function ScreenDetailContract(props) {
   let { match, history } = props;
   let { id } = match.params;
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: grey[50],
+      },
+      secondary: {
+        main: "#f44336",
+      },
+    },
+  });
 
   const [dataDetailHd, setdataDetailHd] = useState([]);
 
@@ -38,18 +51,18 @@ function ScreenDetailContract(props) {
     history.goBack();
     // setDocumentTitle("Hợp đồng");
   };
-  console.log(dataDetailHd);
+
   return (
     <>
       <div className="main-screen-contract">
         <div className="first-main-contract">
           <div className="first-path-contract">
-            <button className="btn-back" onClick={btnBack}>
+            <IconButton className="btn-back" onClick={btnBack}>
               <FontAwesomeIcon
                 className="icon-btn"
                 icon={["fas", "long-arrow-alt-left"]}
               />
-            </button>
+            </IconButton>
           </div>
           <div className="second-path-contract">
             <h2>Chi tiết hợp đồng</h2>
@@ -57,7 +70,11 @@ function ScreenDetailContract(props) {
           <div className="third-path-contract">
             {dataDetailHd.trangThai === "Kích hoạt" && (
               <Link to={`/contract/${id}`}>
-                <Button variant="light" className="btn-fix-contract">
+                <Button
+                  variant="contained"
+                  theme={theme}
+                  className="btn-fix-contract"
+                >
                   Sửa
                 </Button>
               </Link>

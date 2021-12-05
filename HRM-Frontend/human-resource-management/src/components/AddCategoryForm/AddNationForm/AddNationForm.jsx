@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import "./AddNationForm.scss";
 import { useState } from "react";
 import ProductApi from "../../../api/productApi";
@@ -17,7 +16,6 @@ function AddNationForm(props) {
   const { error, success, warn } = useToast();
   let { match, history } = props;
   let { id } = match.params;
-
   const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
 
