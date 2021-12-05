@@ -79,6 +79,7 @@ function AddRewardForm(props) {
   const [file, setFile] = useState({
     file: null,
     path: "/Images/userIcon.png",
+    size:null,
   });
   const handleChange = (e) => {
     console.log(e);
@@ -90,9 +91,11 @@ function AddRewardForm(props) {
           : "/Images/userIcon.png",
       //file: e.target.files[0],
       //path: URL.createObjectURL(e.target.files[0]),
+      size: e.fileList.length !== 0 ?e.file.size:null,
     });
   };
-
+ console.log(file.size);
+ 
   const intitalValue = {
     maNhanVien: id !== undefined ? dataKTDetail.maNhanVien : eCode,
     idDanhMucKhenThuong:
@@ -157,24 +160,28 @@ function AddRewardForm(props) {
               (item) => item.trangThaiLaoDong === "Đang làm việc"
             )
             .map((item)=> item.id).includes(data.maNhanVien)){
-          const formData = new FormData();
-          formData.append("bangChung", file.file);
-          formData.append("idDanhMucKhenThuong", data.idDanhMucKhenThuong);
-          formData.append("noiDung", data.noiDung);
-          formData.append("lyDo", data.lyDo);
-          formData.append("loai", data.loai);
-          formData.append("maNhanVien", data.maNhanVien);
-          await PutApi.PutKTvKL(formData, id);
-          await ProductApi.PostLS({
-            tenTaiKhoan: decoded.userName,
-            thaoTac: `Sửa thông tin khen thưởng của nhân viên ${dataKTDetail.hoTen}`,
-            maNhanVien: decoded.id,
-            tenNhanVien: decoded.givenName,
-          });
-          success(
-            `Sửa thông tin khen thưởng cho nhân viên ${dataKTDetail.hoTen} thành công`
-          );
-          history.goBack();
+              if(file.size < 20000000){
+                const formData = new FormData();
+                formData.append("bangChung", file.file);
+                formData.append("idDanhMucKhenThuong", data.idDanhMucKhenThuong);
+                formData.append("noiDung", data.noiDung);
+                formData.append("lyDo", data.lyDo);
+                formData.append("loai", data.loai);
+                formData.append("maNhanVien", data.maNhanVien);
+                await PutApi.PutKTvKL(formData, id);
+                await ProductApi.PostLS({
+                  tenTaiKhoan: decoded.userName,
+                  thaoTac: `Sửa thông tin khen thưởng của nhân viên ${dataKTDetail.hoTen}`,
+                  maNhanVien: decoded.id,
+                  tenNhanVien: decoded.givenName,
+                });
+                success(
+                  `Sửa thông tin khen thưởng cho nhân viên ${dataKTDetail.hoTen} thành công`
+                );
+                history.goBack();
+              }else{
+                error("Tệp đính kèm không được quá 20MB.");
+              }
             }else{
               error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
             }
@@ -188,24 +195,28 @@ function AddRewardForm(props) {
               (item) => item.trangThaiLaoDong === "Đang làm việc"
             )
             .map((item)=> item.id).includes(data.maNhanVien)){
-          const formData = new FormData();
-        formData.append("bangChung", file.file);
-        formData.append("idDanhMucKhenThuong", data.idDanhMucKhenThuong);
-        formData.append("noiDung", data.noiDung);
-        formData.append("lyDo", data.lyDo);
-        formData.append("loai", data.loai);
-        formData.append("maNhanVien", data.maNhanVien);
-        await ProductApi.PostKTvKL(formData);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm khen thưởng mới cho nhân viên ${nameEm[0].hoTen}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success(
-          `Thêm thông tin khen thưởng cho nhân viên ${nameEm[0].hoTen} thành công`
-        );
-        history.goBack();
+              if(file.size < 20000000){
+                const formData = new FormData();
+                formData.append("bangChung", file.file);
+                formData.append("idDanhMucKhenThuong", data.idDanhMucKhenThuong);
+                formData.append("noiDung", data.noiDung);
+                formData.append("lyDo", data.lyDo);
+                formData.append("loai", data.loai);
+                formData.append("maNhanVien", data.maNhanVien);
+                await ProductApi.PostKTvKL(formData);
+                await ProductApi.PostLS({
+                  tenTaiKhoan: decoded.userName,
+                  thaoTac: `Thêm khen thưởng mới cho nhân viên ${nameEm[0].hoTen}`,
+                  maNhanVien: decoded.id,
+                  tenNhanVien: decoded.givenName,
+                });
+                success(
+                  `Thêm thông tin khen thưởng cho nhân viên ${nameEm[0].hoTen} thành công`
+                );
+                history.goBack();
+              }else{
+                error("Tệp đính kèm không được quá 20MB.");
+              }
         }else{
           error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
         }

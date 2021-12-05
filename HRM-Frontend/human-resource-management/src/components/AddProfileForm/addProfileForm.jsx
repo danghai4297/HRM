@@ -351,20 +351,23 @@ function AddProfileForm(props) {
   const [file, setFile] = useState({
     file: null,
     path: "/Images/userIcon.png",
+    size: null,
   });
   const handleChange = (e) => {
-    console.log(e);
-    setFile({
-      file: e.fileList.length !== 0 ? e.file : null,
-      path:
-        e.fileList.length !== 0
-          ? URL.createObjectURL(e.file)
-          : "/Images/userIcon.png",
-      //file: e.target.files[0],
-      //path: URL.createObjectURL(e.target.files[0]),
-    });
+   // console.log(e.file.size);
+      setFile({
+        file: e.fileList.length !== 0 ? e.file : null,
+        path:
+          e.fileList.length !== 0
+            ? URL.createObjectURL(e.file)
+            : "/Images/userIcon.png",
+        //file: e.target.files[0],
+        //path: URL.createObjectURL(e.target.files[0]),
+        size: e.fileList.length !== 0 ?e.file.size:null,
+      });
   };
-
+  
+   
   useEffect(() => {
     if (dataDetailEmployee) {
       reset(intitalValue);
@@ -543,6 +546,7 @@ function AddProfileForm(props) {
     console.log(data);
     try {
       if (id !== undefined) {
+        if(file.size <20000000){
         await PutApi.PutNV(data, id);
         await ProductApi.PostLS({
           tenTaiKhoan: decoded.userName,
@@ -557,23 +561,31 @@ function AddProfileForm(props) {
           formData.append("maNhanVien", data.id);
           await PutApi.PutIMG(formData, data.id);
         }
-      } else {
-        await ProductApi.postNv(data);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm nhân viên mới${data.hoTen}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        if (file.file !== null) {
-          const formData = new FormData();
-          formData.append("anh", file.file);
-          formData.append("maNhanVien", data.id);
-          await PutApi.PutIMG(formData, data.id);
-        }
-        success(`Thêm hồ sơ nhân viên ${data.hoTen} thành công`);
+        history.goBack();
+      }else{
+        error("Không thể upload file quá 20M");
       }
-      history.goBack();
+      } else {
+        if(file.size <20000000){
+          await ProductApi.postNv(data);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Thêm nhân viên mới${data.hoTen}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          if (file.file !== null) {
+            const formData = new FormData();
+            formData.append("anh", file.file);
+            formData.append("maNhanVien", data.id);
+            await PutApi.PutIMG(formData, data.id);
+          }
+          success(`Thêm hồ sơ nhân viên ${data.hoTen} thành công`);
+          history.goBack();
+        }else{
+          error("Không thể upload file quá 20M");
+        }
+        }
     } catch (error) {}
   };
 
@@ -659,10 +671,10 @@ function AddProfileForm(props) {
             /> */}
 
               <Upload
-                beforeUpload={() => false}
+                beforeUpload={()=>false}
                 onChange={handleChange}
                 maxCount={1}
-                accept=".jpg,.png"
+                accept=".jpg,.png,.pdf"
               >
                 <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
               </Upload>
@@ -2099,8 +2111,8 @@ function AddProfileForm(props) {
                   <div class="form-check mb-3 form-inline">
                     <input
                       type="checkbox"
-                      {...register("vaoDang",{
-                        onChange: (e) => setEndDate(e.target.value) 
+                      {...register("vaoDang", {
+                        onChange: (e) => setEndDate(e.target.value),
                       })}
                       id="vaoDang"
                       className="form-check-input"
@@ -2147,7 +2159,7 @@ function AddProfileForm(props) {
                         />
                       )}
                     />
-                     <span className="message">
+                    <span className="message">
                       {errors.ngayVaoDang?.message}
                     </span>
                   </div>
@@ -2185,7 +2197,7 @@ function AddProfileForm(props) {
                         />
                       )}
                     />
-                      <span className="message">
+                    <span className="message">
                       {errors.ngayVaoDangChinhThuc?.message}
                     </span>
                   </div>
@@ -2282,7 +2294,7 @@ function AddProfileForm(props) {
                       }
                       disabled={!veterans}
                     />
-                      <span className="message">
+                    <span className="message">
                       {errors.thuongBinh?.message}
                     </span>
                   </div>
