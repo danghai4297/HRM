@@ -354,20 +354,19 @@ function AddProfileForm(props) {
     size: null,
   });
   const handleChange = (e) => {
-   // console.log(e.file.size);
-      setFile({
-        file: e.fileList.length !== 0 ? e.file : null,
-        path:
-          e.fileList.length !== 0
-            ? URL.createObjectURL(e.file)
-            : "/Images/userIcon.png",
-        //file: e.target.files[0],
-        //path: URL.createObjectURL(e.target.files[0]),
-        size: e.fileList.length !== 0 ?e.file.size:null,
-      });
+    // console.log(e.file.size);
+    setFile({
+      file: e.fileList.length !== 0 ? e.file : null,
+      path:
+        e.fileList.length !== 0
+          ? URL.createObjectURL(e.file)
+          : "/Images/userIcon.png",
+      //file: e.target.files[0],
+      //path: URL.createObjectURL(e.target.files[0]),
+      size: e.fileList.length !== 0 ? e.file.size : null,
+    });
   };
-  
-   
+
   useEffect(() => {
     if (dataDetailEmployee) {
       reset(intitalValue);
@@ -546,27 +545,27 @@ function AddProfileForm(props) {
     console.log(data);
     try {
       if (id !== undefined) {
-        if(file.size <20000000){
-        await PutApi.PutNV(data, id);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa thông tin của nhân viên ${dataDetailEmployee.hoTen}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        if (file.file !== null) {
-          await DeleteApi.deleteANV(data.id);
-          const formData = new FormData();
-          formData.append("anh", file.file);
-          formData.append("maNhanVien", data.id);
-          await PutApi.PutIMG(formData, data.id);
+        if (file.size < 20000000) {
+          await PutApi.PutNV(data, id);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Sửa thông tin của nhân viên ${dataDetailEmployee.hoTen}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          if (file.file !== null) {
+            await DeleteApi.deleteANV(data.id);
+            const formData = new FormData();
+            formData.append("anh", file.file);
+            formData.append("maNhanVien", data.id);
+            await PutApi.PutIMG(formData, data.id);
+          }
+          history.goBack();
+        } else {
+          error("Không thể upload file quá 20M");
         }
-        history.goBack();
-      }else{
-        error("Không thể upload file quá 20M");
-      }
       } else {
-        if(file.size <20000000){
+        if (file.size < 20000000) {
           await ProductApi.postNv(data);
           await ProductApi.PostLS({
             tenTaiKhoan: decoded.userName,
@@ -582,10 +581,10 @@ function AddProfileForm(props) {
           }
           success(`Thêm hồ sơ nhân viên ${data.hoTen} thành công`);
           history.goBack();
-        }else{
+        } else {
           error("Không thể upload file quá 20M");
         }
-        }
+      }
     } catch (error) {}
   };
 
@@ -671,7 +670,7 @@ function AddProfileForm(props) {
             /> */}
 
               <Upload
-                beforeUpload={()=>false}
+                beforeUpload={() => false}
                 onChange={handleChange}
                 maxCount={1}
                 accept=".jpg,.png,.pdf"
@@ -1055,6 +1054,7 @@ function AddProfileForm(props) {
                           ? "form-control col-sm-6 "
                           : "form-control col-sm-6 border-danger"
                       }
+                      placeholder="VD: HS4010110169971"
                     />
                     <span className="message">{errors.bhyt?.message}</span>
                   </div>
@@ -1076,6 +1076,7 @@ function AddProfileForm(props) {
                           ? "form-control col-sm-6 "
                           : "form-control col-sm-6 border-danger"
                       }
+                      placeholder="VD: 0110169971"
                     />
                     <span className="message">{errors.bhxh?.message}</span>
                   </div>
@@ -1099,6 +1100,7 @@ function AddProfileForm(props) {
                           ? "form-control col-sm-6 "
                           : "form-control col-sm-6 border-danger"
                       }
+                      placeholder="VD: 0500080664"
                     />
                     <span className="message">{errors.maSoThue?.message}</span>
                   </div>
@@ -1123,6 +1125,7 @@ function AddProfileForm(props) {
                           ? "form-control col-sm-6 "
                           : "form-control col-sm-6 border-danger"
                       }
+                      placeholder="VD: 019099000071"
                     />
                     <span className="message">{errors.cccd?.message}</span>
                   </div>
@@ -1144,6 +1147,7 @@ function AddProfileForm(props) {
                           ? "form-control col-sm-6 "
                           : "form-control col-sm-6 border-danger"
                       }
+                      placeholder="VD: B4815163"
                     />
                     <span className="message">{errors.hoChieu?.message}</span>
                   </div>
@@ -1354,6 +1358,7 @@ function AddProfileForm(props) {
                           ? "form-control col-sm-6 "
                           : "form-control col-sm-6 border-danger"
                       }
+                      placeholder="VD: +84967761999"
                     />
                     <span className="message">{errors.diDong?.message}</span>
                   </div>
@@ -1375,6 +1380,7 @@ function AddProfileForm(props) {
                           ? "form-control col-sm-6 "
                           : "form-control col-sm-6 border-danger"
                       }
+                      placeholder="VD: xxx@gmail.com"
                     />
                     <span className="message">{errors.email?.message}</span>
                   </div>
@@ -1444,6 +1450,7 @@ function AddProfileForm(props) {
                           ? "form-control col-sm-6 "
                           : "form-control col-sm-6 border-danger"
                       }
+                      placeholder="VD: 02433452311"
                     />
                     <span className="message">{errors.dienThoai?.message}</span>
                   </div>
@@ -1513,6 +1520,7 @@ function AddProfileForm(props) {
                           ? "form-control col-sm-6 "
                           : "form-control col-sm-6 border-danger"
                       }
+                      placeholder="VD: xxx@gmail.com"
                     />
                     <span className="message">
                       {errors.lhkc_email?.message}

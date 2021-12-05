@@ -1,4 +1,4 @@
-.scroll-form{
+.scroll-form {
   overflow: auto;
   height: 750px;
 }
@@ -39,7 +39,6 @@
   padding: 2rem;
   margin: 2em;
   height: auto;
-  
 }
 .container-div-form2 {
   background-color: white;
@@ -50,6 +49,11 @@
     width: 1em;
     height: 1em;
   }
+}
+::placeholder {
+  color: #b3b3b3 !important;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
 }
 .container-ava {
   background-color: white;
@@ -73,6 +77,6 @@
 .delete-button {
   display: none;
 }
-.form-width{
+.form-width {
   width: 100% !important;
 }
