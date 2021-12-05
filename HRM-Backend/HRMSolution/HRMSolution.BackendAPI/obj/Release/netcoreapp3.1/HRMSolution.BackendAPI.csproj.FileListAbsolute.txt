@@ -85,3 +85,4 @@ E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\HRMSolution.BackendAPI.dll
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\HRMSolution.BackendAPI.pdb
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\HRMSolution.BackendAPI.genruntimeconfig.cache
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\bin\Release\netcoreapp3.1\appsettings.Production.json

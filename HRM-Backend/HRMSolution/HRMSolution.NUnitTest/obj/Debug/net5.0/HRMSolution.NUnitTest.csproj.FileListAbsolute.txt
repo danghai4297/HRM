@@ -316,3 +316,4 @@ C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.NUnitTest\
 C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.NUnitTest\obj\Debug\net5.0\ref\HRMSolution.NUnitTest.dll
 C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.NUnitTest\obj\Debug\net5.0\HRMSolution.NUnitTest.pdb
 C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.NUnitTest\obj\Debug\net5.0\HRMSolution.NUnitTest.genruntimeconfig.cache
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.NUnitTest\bin\Debug\net5.0\appsettings.Production.json

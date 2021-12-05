@@ -561,6 +561,7 @@ E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\wwwroot\user-content\nguyen-cong-minh.jpg
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\appsettings.Development.json
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\appsettings.json
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\appsettings.Production.json
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\HRMSolution.BackendAPI.dll
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\HRMSolution.BackendAPI.deps.json
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\win-x64\PubTmp\Out\HRMSolution.BackendAPI.runtimeconfig.json

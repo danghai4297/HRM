@@ -11,10 +11,10 @@ C:\Users\Ngoc Huong\Documents\HRM\HRM-Backend\HRMSolution\HRMSolution.Utilities\
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Utilities\bin\Debug\netcoreapp3.1\HRMSolution.Utilities.deps.json
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Utilities\bin\Debug\netcoreapp3.1\HRMSolution.Utilities.dll
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Utilities\bin\Debug\netcoreapp3.1\HRMSolution.Utilities.pdb
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Utilities\obj\Debug\netcoreapp3.1\HRMSolution.Utilities.csproj.AssemblyReference.cache
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Utilities\obj\Debug\netcoreapp3.1\HRMSolution.Utilities.GeneratedMSBuildEditorConfig.editorconfig
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Utilities\obj\Debug\netcoreapp3.1\HRMSolution.Utilities.AssemblyInfoInputs.cache
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Utilities\obj\Debug\netcoreapp3.1\HRMSolution.Utilities.AssemblyInfo.cs
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Utilities\obj\Debug\netcoreapp3.1\HRMSolution.Utilities.csproj.CoreCompileInputs.cache
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Utilities\obj\Debug\netcoreapp3.1\HRMSolution.Utilities.dll
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Utilities\obj\Debug\netcoreapp3.1\HRMSolution.Utilities.pdb
-E:\HRM\HRM-Backend\HRMSolution\HRMSolution.Utilities\obj\Debug\netcoreapp3.1\HRMSolution.Utilities.csproj.AssemblyReference.cache
