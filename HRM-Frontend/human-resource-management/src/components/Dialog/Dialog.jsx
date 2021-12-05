@@ -1,4 +1,5 @@
 import React from "react";
+import "./Dialog.scss";
 
 export default function Dialog({ show, title, description, confirm, cancel }) {
   if (!show) {
