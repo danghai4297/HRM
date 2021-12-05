@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import "./ItemExcel.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ExportDashBoard } from "../ExportFile/ExportDashBoard";
+import { ExportCSV } from "../ExportFile/ExportFile";
 
 ItemExcel.propTypes = {
   title: PropTypes.array,

@@ -14,15 +14,14 @@ export const ExportDashBoard = ({ csvData, fileName, title }) => {
   const exportToCSV = (csvData, fileName) => {
     const ws = XLSX.utils.json_to_sheet(csvData);
 
-    const wb = { Sheets: { data: ws }, SheetNames: ["dataSheet1"] };
+    const wb = { Sheets: { data: ws }, SheetNames: ["data"] };
 
     const excelBuffer = XLSX.write(wb, { bookType: "xlsx", type: "array" });
 
     const data = new Blob([excelBuffer], { type: fileType });
 
-    FileSaver.saveAs(data, fileName + fileExtension);   
+    FileSaver.saveAs(data, fileName + fileExtension);
   };
-
   return (
     <div onClick={(e) => exportToCSV(csvData, fileName)} className="bot-excel">
       <h>Danh sach {title}</h>
