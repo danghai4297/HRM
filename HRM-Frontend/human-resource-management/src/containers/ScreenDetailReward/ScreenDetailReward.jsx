@@ -1,14 +1,27 @@
 import React, { useEffect, useState } from "react";
 import SubDetail from "../../components/Detail/SubDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button } from "react-bootstrap";
 import "./ScreenDetailReward.scss";
 import ProductApi from "../../api/productApi";
 import { Link } from "react-router-dom";
 import { ttkt } from "./DataReward";
+import IconButton from "@mui/material/IconButton";
+import Button from "@mui/material/Button";
+import { createTheme } from "@mui/material/styles";
+import { grey } from "@mui/material/colors";
 function ScreenDetailReward(props) {
   let { match, history } = props;
   let { id } = match.params;
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: grey[50],
+      },
+      secondary: {
+        main: "#f44336",
+      },
+    },
+  });
 
   const [dataDetailKt, setdataDetailKt] = useState([]);
 
@@ -38,25 +51,30 @@ function ScreenDetailReward(props) {
       <div className="main-screen-reward">
         <div className="first-main-reward">
           <div className="first-path-reward">
-            <button className="btn-back-reward" onClick={history.goBack}>
+            <IconButton className="btn-back-reward" onClick={history.goBack}>
               <FontAwesomeIcon
                 className="icon-btn"
                 icon={["fas", "long-arrow-alt-left"]}
               />
-            </button>
+            </IconButton>
           </div>
           <div className="second-path-reward">
             <h2>Thủ tục khen thưởng</h2>
           </div>
           <div className="third-path-reward">
             <Link to={`/reward/${id}`}>
-              <Button variant="light" className="btn-fix-reward">
+              <Button
+                variant="contained"
+                theme={theme}
+                className="btn-fix-reward"
+              >
                 Sửa
               </Button>
             </Link>
             {dataDetailKt.bangChung !== null && (
               <Button
-                variant="light"
+                variant="contained"
+                theme={theme}
                 className="btn-fix-reward"
                 onClick={() => {
                   window.open(

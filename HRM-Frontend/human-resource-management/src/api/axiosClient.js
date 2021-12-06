@@ -4,7 +4,7 @@ import queryString from "query-string";
 // Set up default config for http requests here
 // Please have a look at here `https://github.com/axios/axios#requestconfig` for the full list of configs
 const axiosClient = axios.create({
-  baseURL: "https://localhost:5001/api",
+  baseURL: "http://localhost:8000/api",
   headers: {
     "content-type": "application/json multipart/form-data",
   },
@@ -12,7 +12,8 @@ const axiosClient = axios.create({
 });
 axiosClient.interceptors.request.use(async (config) => {
   // Handle token here ...
-  config.headers["Authorization"] = "Bearer " + sessionStorage.getItem("resultObj");
+  config.headers["Authorization"] =
+    "Bearer " + sessionStorage.getItem("resultObj");
   return config;
 });
 axiosClient.interceptors.response.use(

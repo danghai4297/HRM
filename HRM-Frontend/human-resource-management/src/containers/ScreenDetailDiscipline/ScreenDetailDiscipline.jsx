@@ -1,14 +1,27 @@
 import React, { useEffect, useState } from "react";
 import SubDetail from "../../components/Detail/SubDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button } from "react-bootstrap";
 import "./ScreenDetailDiscipline.scss";
 import ProductApi from "../../api/productApi";
 import { Link } from "react-router-dom";
 import { ttkl } from "./DataDiscipline";
+import IconButton from "@mui/material/IconButton";
+import Button from "@mui/material/Button";
+import { createTheme } from "@mui/material/styles";
+import { grey } from "@mui/material/colors";
 function ScreenDetailDiscipline(props) {
   let { match, history } = props;
   let { id } = match.params;
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: grey[50],
+      },
+      secondary: {
+        main: "#f44336",
+      },
+    },
+  });
 
   const [dataKLDetail, setDataKLDetail] = useState([]);
 
@@ -38,25 +51,33 @@ function ScreenDetailDiscipline(props) {
       <div className="main-screen-discipline">
         <div className="first-main-discipline">
           <div className="first-path-discipline">
-            <button className="btn-back-discipline" onClick={history.goBack}>
+            <IconButton
+              className="btn-back-discipline"
+              onClick={history.goBack}
+            >
               <FontAwesomeIcon
                 className="icon-btn"
                 icon={["fas", "long-arrow-alt-left"]}
               />
-            </button>
+            </IconButton>
           </div>
           <div className="second-path-discipline">
             <h2>Thủ tục kỷ luật</h2>
           </div>
           <div className="third-path-discipline">
             <Link to={`/discipline/${id}`}>
-              <Button variant="light" className="btn-fix-discipline">
+              <Button
+                variant="contained"
+                theme={theme}
+                className="btn-fix-discipline"
+              >
                 Sửa
               </Button>
             </Link>
             {dataKLDetail.bangChung !== null && (
               <Button
-                variant="light"
+                variant="contained"
+                theme={theme}
                 className="btn-fix-discipline"
                 onClick={() => {
                   window.open(

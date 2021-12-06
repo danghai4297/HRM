@@ -5,6 +5,7 @@ import { Link, useRouteMatch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SideBarContext } from "../../Contexts/StateContext";
+import IconButton from "@mui/material/IconButton";
 function SideBarLeft() {
   const { sideBar, setSiderBar } = useContext(SideBarContext);
 
@@ -40,12 +41,12 @@ function SideBarLeft() {
               HRM
             </h1>
           </div>
-          <button
+          <IconButton
             className={sideBar === false ? "btnmenu-change" : "btnmenu"}
             onClick={() => setSiderBar(!sideBar)}
           >
             <FontAwesomeIcon icon={["fas", "bars"]} />
-          </button>
+          </IconButton>
         </li>
 
         {sessionStorage.getItem("resultObj") &&

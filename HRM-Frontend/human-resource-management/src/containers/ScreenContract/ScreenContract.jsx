@@ -42,7 +42,11 @@ function ScreenContract(props) {
           </div>
           <div className="button">
             <Link to="/contract/add" className="link-item">
-              <input type="submit" className="btn btn-primary" value="Thêm" />
+              <input
+                type="submit"
+                className="btn btn-primary addTable"
+                value="Thêm"
+              />
             </Link>
 
             {/* export excel */}

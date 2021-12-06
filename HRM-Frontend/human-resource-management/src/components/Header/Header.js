@@ -3,6 +3,7 @@ import "./Header.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AccountContext } from "../../Contexts/StateContext";
 import { useHistory, Link } from "react-router-dom";
+import Avatar from "@mui/material/Avatar";
 import jwt_decode from "jwt-decode";
 function Header() {
   const { account, setAccount } = useContext(AccountContext);
@@ -23,10 +24,9 @@ function Header() {
             <div className="screen-account">
               <div className="header-icon">
                 {token && jwt_decode(token).anh !== null ? (
-                  <img
-                    className="picture-account"
-                    src={`https://localhost:5001/${jwt_decode(token).anh}`}
-                    alt=""
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={`http://localhost:8000/${jwt_decode(token).anh}`}
                   />
                 ) : (
                   <FontAwesomeIcon

@@ -1,17 +1,30 @@
 import React, { useEffect, useState } from "react";
 import SubDetail from "../../components/Detail/SubDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./ScreenDetailSalary.scss";
 import ProductApi from "../../api/productApi";
 import dateFormat from "dateformat";
 import { ttc } from "./DataSalary";
 import NumberFormat from "react-number-format";
+import IconButton from "@mui/material/IconButton";
+import Button from "@mui/material/Button";
+import { createTheme } from "@mui/material/styles";
+import { grey } from "@mui/material/colors";
 
 function ScreenDetailSalary(props) {
   let { match, history } = props;
   let { id } = match.params;
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: grey[50],
+      },
+      secondary: {
+        main: "#f44336",
+      },
+    },
+  });
 
   const [dataLDetail, setDataLDetail] = useState([]);
   useEffect(() => {
@@ -25,7 +38,7 @@ function ScreenDetailSalary(props) {
     };
     fetchNvList();
   }, []);
-  console.log(dataLDetail);
+
   useEffect(() => {
     //Hàm đặt tên cho trang
     const titlePage = () => {
@@ -40,12 +53,12 @@ function ScreenDetailSalary(props) {
       <div className="main-screen-salary">
         <div className="first-main-salary">
           <div className="first-path-salary">
-            <button className="btn-back" onClick={history.goBack}>
+            <IconButton className="btn-back" onClick={history.goBack}>
               <FontAwesomeIcon
                 className="icon-btn"
                 icon={["fas", "long-arrow-alt-left"]}
               />
-            </button>
+            </IconButton>
           </div>
           <div className="second-path-salary">
             <h2>Chi tiết hồ sơ lương</h2>
@@ -53,14 +66,19 @@ function ScreenDetailSalary(props) {
           <div className="third-path-salary">
             {dataLDetail.trangThai === "Kích hoạt" && (
               <Link to={`/salary/${id}`}>
-                <Button variant="light" className="btn-fix-salary">
+                <Button
+                  theme={theme}
+                  variant="contained"
+                  className="btn-fix-salary"
+                >
                   Sửa
                 </Button>
               </Link>
             )}
             {dataLDetail.bangChung !== null && (
               <Button
-                variant="light"
+                theme={theme}
+                variant="contained"
                 className="btn-fix-salary"
                 onClick={() => {
                   window.open(`https://localhost:5001${dataLDetail.bangChung}`);

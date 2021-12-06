@@ -144,6 +144,7 @@
               background: transparent;
               border: none;
               margin-left: 65%;
+              font-size: medium !important;
             }
           }
         }
@@ -242,9 +243,6 @@
 
   border: none;
   border-radius: 4px;
-  .icon-btn:hover {
-    font-size: large;
-  }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .contents {
@@ -826,11 +824,11 @@
               .iconss {
                 transform: rotate(180deg);
                 color: black;
-                transition: 0.5s !important;
+                transition: 0.3s !important;
               }
               .iconsss {
                 color: black;
-                transition: 0.5s !important;
+                transition: 0.3s !important;
               }
               .main-arrow-button {
                 background: transparent;
@@ -934,17 +932,18 @@
 
     border: none;
     border-radius: 4px;
-    .icon-btn:hover {
-      font-size: large;
-    }
   }
 }
 .iconss {
   transform: rotate(180deg);
   color: black;
-  transition: 0.5s !important;
+  transition: 0.3s !important;
 }
 .iconsss {
   color: black;
-  transition: 0.5s !important;
+  transition: 0.3s !important;
+}
+.btn-edit-detail {
+  margin: 20px !important;
+  height: 40px !important;
 }

@@ -137,7 +137,7 @@ const ProductApi = {
   },
   //detail DC
   getDCDetail: (id) => {
-    const url = `/QuaTrinhCongTac/dieu-chuyen/${id}`;
+    const url = `/QuaTrinhCongTac/qua-trinh-cong-tac/${id}`;
     return axiosClient.get(url);
   },
 

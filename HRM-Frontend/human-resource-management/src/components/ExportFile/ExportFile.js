@@ -6,7 +6,12 @@ import * as FileSaver from "file-saver";
 import * as XLSX from "xlsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import jwt_decode from "jwt-decode";
+import ProductApi from "../../api/productApi";
+
 export const ExportCSV = ({ ful, csvData, fileName }) => {
+  const token = sessionStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
   const fileType =
     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8";
 
@@ -24,9 +29,19 @@ export const ExportCSV = ({ ful, csvData, fileName }) => {
     FileSaver.saveAs(data, fileName + fileExtension);
   };
 
+  const handleClick = async (csvData, fileName) => {
+    exportToCSV(csvData, fileName);
+    await ProductApi.PostLS({
+      tenTaiKhoan: decoded.userName,
+      thaoTac: `Tải về file ${fileName}`,
+      maNhanVien: decoded.id,
+      tenNhanVien: decoded.givenName,
+    });
+  };
+
   return (
     <button
-      onClick={(e) => exportToCSV(csvData, fileName)}
+      onClick={(e) => handleClick(csvData, fileName)}
       className="btn-export"
       type="submit"
     >

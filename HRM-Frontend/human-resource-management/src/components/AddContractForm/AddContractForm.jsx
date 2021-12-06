@@ -325,19 +325,19 @@ function AddContractForm(props) {
             </h2>
           </div>
           <div className="button">
-            {/* <input
+            <input
               type="submit"
               className={
-                dataDetailHd.length !== 0 ? "btn btn-danger" : "delete-button"
+                dataDetailHd.length !== 0 ? "btn-danger" : "delete-button"
               }
               value="Xoá"
               onClick={() => {
                 setShowDeleteDialog(true);
               }}
-            /> */}
+            />
             <input
               type="submit"
-              className="btn btn-secondary ml-3"
+              className="secondary btn ml-3"
               value="Huỷ"
               onClick={history.goBack}
             />
