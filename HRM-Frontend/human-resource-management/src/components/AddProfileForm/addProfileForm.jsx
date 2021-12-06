@@ -2099,8 +2099,8 @@ function AddProfileForm(props) {
                   <div class="form-check mb-3 form-inline">
                     <input
                       type="checkbox"
-                      {...register("vaoDang",{
-                        onChange: (e) => setEndDate(e.target.value) 
+                      {...register("vaoDang", {
+                        onChange: (e) => setEndDate(e.target.checked),
                       })}
                       id="vaoDang"
                       className="form-check-input"
@@ -2147,7 +2147,7 @@ function AddProfileForm(props) {
                         />
                       )}
                     />
-                     <span className="message">
+                    <span className="message">
                       {errors.ngayVaoDang?.message}
                     </span>
                   </div>
@@ -2185,7 +2185,7 @@ function AddProfileForm(props) {
                         />
                       )}
                     />
-                      <span className="message">
+                    <span className="message">
                       {errors.ngayVaoDangChinhThuc?.message}
                     </span>
                   </div>
@@ -2282,7 +2282,7 @@ function AddProfileForm(props) {
                       }
                       disabled={!veterans}
                     />
-                      <span className="message">
+                    <span className="message">
                       {errors.thuongBinh?.message}
                     </span>
                   </div>
