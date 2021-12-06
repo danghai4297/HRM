@@ -6,15 +6,15 @@ import { DatePicker } from "antd";
 import { useLocation } from "react-router";
 import ProductApi from "../../api/productApi";
 import PutApi from "../../api/putAAPI";
-import DeleteApi from "../../../src/api/deleteAPI";
+import DeleteApi from "../../api/deleteAPI";
 import DialogCheck from "../Dialog/DialogCheck";
 import { useToast } from "../Toast/Toast";
-import Dialog from "../../components/Dialog/Dialog";
+import Dialog from "../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import { schema } from "../../ultis/RewardAndDisciplineValidation";
-
+import "./RewardForm";
 function AddRewardForm(props) {
   const { error, warn, info, success } = useToast();
 

@@ -1,5 +1,5 @@
 import React from "react";
-import "./AddProfileForm.scss";
+import "./ProfileForm.scss";
 import { Controller, useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../FontAwesomeIcons/index";
@@ -13,9 +13,9 @@ import ProductApi from "../../api/productApi";
 import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import PutApi from "../../api/putAAPI";
-import DeleteApi from "../../../src/api/deleteAPI";
+import DeleteApi from "../../api/deleteAPI";
 import DialogCheck from "../Dialog/DialogCheck";
-import Dialog from "../../components/Dialog/Dialog";
+import Dialog from "../Dialog/Dialog";
 import { useToast } from "../Toast/Toast";
 import jwt_decode from "jwt-decode";
 import { schema } from "../../ultis/ProfileValidation";
@@ -2120,7 +2120,7 @@ function AddProfileForm(props) {
                     <input
                       type="checkbox"
                       {...register("vaoDang", {
-                        onChange: (e) => setEndDate(e.target.value),
+                        onChange: (e) => setEndDate(e.target.checked),
                       })}
                       id="vaoDang"
                       className="form-check-input"

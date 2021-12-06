@@ -138,8 +138,8 @@ function ScreenDetailContract(props) {
           >
             <button className="btn-fix-contract">
               <FontAwesomeIcon
+                className="icon-contract"
                 icon={["fas", "arrow-right"]}
-                style={{ fontSize: "50px" }}
               />
             </button>
           </Link>
