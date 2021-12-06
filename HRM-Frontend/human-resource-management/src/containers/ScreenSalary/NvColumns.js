@@ -7,6 +7,8 @@ export const NVCOLUMNS = [
     Header: "Mã nhân viên",
     accessor: "maNhanVien",
     sticky: "left",
+    minWidth: 100,
+
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -14,7 +16,7 @@ export const NVCOLUMNS = [
   {
     Header: "Họ tên",
     accessor: "tenNhanVien",
-    minWidth: 200,
+    minWidth: 180,
     sticky: "left",
     Filter: SelectColumnFilter,
     disableFilters: true,
@@ -24,7 +26,6 @@ export const NVCOLUMNS = [
     Header: "Tổng lương",
     accessor: "tongLuong",
     minWidth: 150,
-    sticky: "left",
     Filter: SelectColumnFilter,
     disableFilters: true,
     Cell: ({ value }) => {
@@ -42,7 +43,7 @@ export const NVCOLUMNS = [
   {
     Header: "Mã hợp đồng",
     accessor: "maHopDong",
-    minWidth: 200,
+    minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -59,7 +60,7 @@ export const NVCOLUMNS = [
   {
     Header: "Nhóm lương",
     accessor: "nhomLuong",
-    minWidth: 200,
+    minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -68,14 +69,14 @@ export const NVCOLUMNS = [
   {
     Header: "Hệ số lương",
     accessor: "heSoLuong",
-    minWidth: 200,
+    minWidth: 80,
     Filter: SelectColumnFilter,
     show: true,
   },
   {
     Header: "Bậc lương",
     accessor: "bacLuong",
-    minWidth: 300,
+    minWidth: 80,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -83,7 +84,7 @@ export const NVCOLUMNS = [
   {
     Header: "Lương cơ bản",
     accessor: "luongCoBan",
-    minWidth: 200,
+    minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
     Cell: ({ value }) => {
@@ -101,7 +102,7 @@ export const NVCOLUMNS = [
   {
     Header: "Phụ cấp trách nhiệm",
     accessor: "phuCapTrachNhiem",
-    minWidth: 150,
+    minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: true,
     Cell: ({ value }) => {
@@ -119,7 +120,7 @@ export const NVCOLUMNS = [
   {
     Header: "Phụ cấp khác",
     accessor: "phuCapKhac",
-    minWidth: 200,
+    minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
     Cell: ({ value }) => {
@@ -170,7 +171,7 @@ export const NVCOLUMNS = [
     minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: true,
-    show: true,
+    show: false,
   },
   {
     Header: "Trạng thái",
