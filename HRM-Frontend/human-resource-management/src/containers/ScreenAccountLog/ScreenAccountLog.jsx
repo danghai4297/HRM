@@ -34,9 +34,6 @@ function ScreenAccountLog(props) {
             <h2 className="">Lịch sử làm việc</h2>
           </div>
           <div className="button">
-            <Link to="/contract/add" className="link-item">
-              <input type="submit" className="btn btn-primary" value="Thêm" />
-            </Link>
             <ReactHTMLTableToExcel
               id="test-table-xls-button"
               className="download-table-xls-button"

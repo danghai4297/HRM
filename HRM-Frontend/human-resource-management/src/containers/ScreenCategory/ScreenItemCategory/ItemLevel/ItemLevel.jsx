@@ -35,7 +35,7 @@ function ItemLevel(props) {
           </div>
           <div className="button">
             <Link to="/category/level/add" className="link-item">
-              <input type="submit" className="btn btn-primary" value="Thêm" />
+              <input type="submit" className="btn btn-primary addTable" value="Thêm" />
             </Link>
             <ReactHTMLTableToExcel
               id="test-table-xls-button"

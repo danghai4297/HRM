@@ -12,19 +12,19 @@ import ProductApi from "../../../../api/productApi";
 function ItemNest(props) {
   const link = "/category/nest/";
   const fileName = "Danhmucto";
-    const [dataAll, setDataAll] = useState([]);
+  const [dataAll, setDataAll] = useState([]);
 
-    useEffect(() => {
-      const fetchNvList = async () => {
-        try {
-          const response = await ProductApi.getAllDMT();
-          setDataAll(response);
-        } catch (error) {
-          console.log("false to fetch nv list: ", error);
-        }
-      };
-      fetchNvList();
-    }, []);
+  useEffect(() => {
+    const fetchNvList = async () => {
+      try {
+        const response = await ProductApi.getAllDMT();
+        setDataAll(response);
+      } catch (error) {
+        console.log("false to fetch nv list: ", error);
+      }
+    };
+    fetchNvList();
+  }, []);
 
   return (
     <>
@@ -35,7 +35,11 @@ function ItemNest(props) {
           </div>
           <div className="button">
             <Link to="/category/nest/add" className="link-item">
-              <input type="submit" className="btn btn-primary" value="Thêm" />
+              <input
+                type="submit"
+                className="btn btn-primary addTable"
+                value="Thêm"
+              />
             </Link>
             <ReactHTMLTableToExcel
               id="test-table-xls-button"

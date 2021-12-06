@@ -1,23 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { DatePicker } from "antd";
 import { useLocation } from "react-router";
 import ProductApi from "../../api/productApi";
 import PutApi from "../../api/putAAPI";
-import DeleteApi from "../../../src/api/deleteAPI";
+import DeleteApi from "../../api/deleteAPI";
+//import { DatePicker } from "antd";
 import DialogCheck from "../Dialog/DialogCheck";
 import { useToast } from "../Toast/Toast";
-import Dialog from "../../components/Dialog/Dialog";
+import Dialog from "../Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import { schema } from "../../ultis/RewardAndDisciplineValidation";
-
-function AddRewardForm(props) {
+import "./DisciplineForm.scss"
+function AddDisciplineForm(props) {
   const { error, warn, info, success } = useToast();
 
+  // const { objectData } = props;
   let { match, history } = props;
   let { id } = match.params;
   let location = useLocation();
@@ -26,37 +27,40 @@ function AddRewardForm(props) {
   const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
   const eCode = query.get("maNhanVien");
-  const [dataKTDetail, setDataKTDetail] = useState([]);
-  const [dataKT, setDataKT] = useState([]);
-  const [dataEmployee, setDataEmployee] = useState([]);
 
+  const [dataKLDetail, setDataKLDetail] = useState([]);
+  const [dataKL, setDataKL] = useState([]);
+  console.log(id);
+  const [dataEmployee, setDataEmployee] = useState([]);
   const [dataDetailNN, setdataDetailNN] = useState([]);
   const [dataNN, setDataNN] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
-    "Bạn chắc chắn muốn thêm thông tin khen thưởng mới"
+    "Bạn chắc chắn muốn thêm thông tin kỷ luật mới"
   );
   const [showCheckDialog, setShowCheckDialog] = useState(false);
+
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
     setShowCheckDialog(false);
   };
+
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const response = await ProductApi.getAllDMKT();
-        setDataKT(response);
+        const response = await ProductApi.getAllDMKL();
+        setDataKL(response);
         const responeseEm = await ProductApi.getAllNv();
         setDataEmployee(responeseEm);
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốn sửa thông tin khen thưởng");
+          setDescription("Bạn chắc chắn muốn sửa thông tin kỷ luật");
           const responseKT = await ProductApi.getKTvKLDetail(id);
-          setDataKTDetail(responseKT);
+          setDataKLDetail(responseKT);
         }
       } catch (error) {
-        console.log("false to fetch nv list: ", error);
+        error("Có lỗi xảy ra.");
       }
     };
     fetchNvList();
@@ -65,20 +69,21 @@ function AddRewardForm(props) {
   useEffect(() => {
     //Hàm đặt tên cho trang
     const titlePage = () => {
-      if (dataKTDetail.length !== 0) {
-        document.title = `Thay đổi thông tin khen thưởng của nhân viên ${dataKTDetail.hoTen}`;
+      if (dataKLDetail.length !== 0) {
+        document.title = `Thay đổi thông tin kỷ luật của nhân viên ${dataKLDetail.hoTen}`;
       } else if (id === undefined && eName) {
-        document.title = `Tạo khen thưởng cho nhân viên ${eName}`;
+        document.title = `Tạo kỷ luật cho nhân viên ${eName}`;
       } else if (id === undefined) {
-        document.title = `Tạo khen thưởng`;
+        document.title = `Tạo kỷ luật`;
       }
     };
     titlePage();
-  }, [dataKTDetail]);
+  }, [dataKLDetail]);
 
   const [file, setFile] = useState({
     file: null,
     path: "/Images/userIcon.png",
+    size:null,
   });
   const handleChange = (e) => {
     console.log(e);
@@ -90,34 +95,35 @@ function AddRewardForm(props) {
           : "/Images/userIcon.png",
       //file: e.target.files[0],
       //path: URL.createObjectURL(e.target.files[0]),
+      size: e.fileList.length !== 0 ?e.file.size:null,
     });
   };
-
   const intitalValue = {
-    maNhanVien: id !== undefined ? dataKTDetail.maNhanVien : eCode,
+    maNhanVien: id !== undefined ? dataKLDetail.maNhanVien : eCode,
     idDanhMucKhenThuong:
-      id !== undefined ? dataKTDetail.idDanhMucKhenThuong : null,
-    noiDung: id !== undefined ? dataKTDetail.noiDung : null,
-    lyDo: id !== undefined ? dataKTDetail.lyDo : null,
-    // anh: id !== undefined ? dataKTDetail.anh : null,
-    loai: true,
+      id !== undefined ? dataKLDetail.idDanhMucKhenThuong : null,
+    noiDung: id !== undefined ? dataKLDetail.noiDung : null,
+    lyDo: id !== undefined ? dataKLDetail.lyDo : null,
+    anh: id !== undefined ? dataKLDetail.anh : null,
+    loai: false,
   };
 
   const {
     register,
     handleSubmit,
-    reset,
+    control,
     getValues,
+    reset,
     formState: { errors },
   } = useForm({
     defaultValues: intitalValue,
     resolver: yupResolver(schema),
   });
   useEffect(() => {
-    if (dataKTDetail) {
+    if (dataKLDetail) {
       reset(intitalValue);
     }
-  }, [dataKTDetail]);
+  }, [dataKLDetail]);
 
   const checkInputChange = () => {
     const values = getValues([
@@ -125,7 +131,7 @@ function AddRewardForm(props) {
       "idDanhMucKhenThuong",
       "noiDung",
       "lyDo",
-      // "anh",
+      "anh",
       "loai",
     ]);
     const dfValue = [
@@ -133,10 +139,10 @@ function AddRewardForm(props) {
       intitalValue.idDanhMucKhenThuong,
       intitalValue.noiDung,
       intitalValue.lyDo,
-      // intitalValue.anh,
+      intitalValue.anh,
       intitalValue.loai,
     ];
-    // return JSON.stringify(values) === JSON.stringify(dfValue);
+    //return JSON.stringify(values) === JSON.stringify(dfValue);
     if (
       JSON.stringify(values) === JSON.stringify(dfValue) &&
       file.file === null
@@ -152,87 +158,97 @@ function AddRewardForm(props) {
     try {
       if (id !== undefined) {
         try {
-          if(dataEmployee
-            .filter(
-              (item) => item.trangThaiLaoDong === "Đang làm việc"
-            )
-            .map((item)=> item.id).includes(data.maNhanVien)){
-          const formData = new FormData();
-          formData.append("bangChung", file.file);
-          formData.append("idDanhMucKhenThuong", data.idDanhMucKhenThuong);
-          formData.append("noiDung", data.noiDung);
-          formData.append("lyDo", data.lyDo);
-          formData.append("loai", data.loai);
-          formData.append("maNhanVien", data.maNhanVien);
-          await PutApi.PutKTvKL(formData, id);
-          await ProductApi.PostLS({
-            tenTaiKhoan: decoded.userName,
-            thaoTac: `Sửa thông tin khen thưởng của nhân viên ${dataKTDetail.hoTen}`,
-            maNhanVien: decoded.id,
-            tenNhanVien: decoded.givenName,
-          });
-          success(
-            `Sửa thông tin khen thưởng cho nhân viên ${dataKTDetail.hoTen} thành công`
-          );
-          history.goBack();
+          if (
+            dataEmployee
+              .filter((item) => item.trangThaiLaoDong === "Đang làm việc")
+              .map((item) => item.id)
+              .includes(data.maNhanVien)
+          ) {
+            if(file.size < 20000000){
+              const formData = new FormData();
+              formData.append("bangChung", file.file);
+              formData.append("idDanhMucKhenThuong", data.idDanhMucKhenThuong);
+              formData.append("noiDung", data.noiDung);
+              formData.append("lyDo", data.lyDo);
+              formData.append("loai", data.loai);
+              formData.append("maNhanVien", data.maNhanVien);
+              await PutApi.PutKTvKL(formData, id);
+              await ProductApi.PostLS({
+                tenTaiKhoan: decoded.userName,
+                thaoTac: `Sửa thông tin kỷ luật của nhân viên ${dataKLDetail.hoTen}`,
+                maNhanVien: decoded.id,
+                tenNhanVien: decoded.givenName,
+              });
+              success(
+                `Sửa thông tin kỷ luật cho nhân viên ${dataKLDetail.hoTen} thành công`
+              );
+              history.goBack();
             }else{
-              error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
+              error("Tệp đính kèm không được quá 20MB.");
             }
+          } else {
+            error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
+          }
         } catch (errors) {
-          error(`Sửa thông tin khen thưởng cho nhân viên không thành công.`);
+          error(`Sửa thông tin kỷ luật thất bại.`);
         }
       } else {
         try {
-          if(dataEmployee
-            .filter(
-              (item) => item.trangThaiLaoDong === "Đang làm việc"
-            )
-            .map((item)=> item.id).includes(data.maNhanVien)){
-          const formData = new FormData();
-        formData.append("bangChung", file.file);
-        formData.append("idDanhMucKhenThuong", data.idDanhMucKhenThuong);
-        formData.append("noiDung", data.noiDung);
-        formData.append("lyDo", data.lyDo);
-        formData.append("loai", data.loai);
-        formData.append("maNhanVien", data.maNhanVien);
-        await ProductApi.PostKTvKL(formData);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm khen thưởng mới cho nhân viên ${nameEm[0].hoTen}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success(
-          `Thêm thông tin khen thưởng cho nhân viên ${nameEm[0].hoTen} thành công`
-        );
-        history.goBack();
-        }else{
-          error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
-        }
-        } catch (error) {
-          error("Không thể thêm thông tin khen thưởng cho nhân viên.");
+          if (
+            dataEmployee
+              .filter((item) => item.trangThaiLaoDong === "Đang làm việc")
+              .map((item) => item.id)
+              .includes(data.maNhanVien)
+          ) {
+            if(file.size < 20000000){
+              const formData = new FormData();
+              formData.append("bangChung", file.file);
+              formData.append("idDanhMucKhenThuong", data.idDanhMucKhenThuong);
+              formData.append("noiDung", data.noiDung);
+              formData.append("lyDo", data.lyDo);
+              formData.append("loai", data.loai);
+              formData.append("maNhanVien", data.maNhanVien);
+              await ProductApi.PostKTvKL(formData);
+              await ProductApi.PostLS({
+                tenTaiKhoan: decoded.userName,
+                thaoTac: `Thêm kỷ luật mới cho nhân viên ${nameEm[0].hoTen}`,
+                maNhanVien: decoded.id,
+                tenNhanVien: decoded.givenName,
+              });
+              success(
+                `Thêm thông tin kỷ luật cho nhân viên ${nameEm[0].hoTen} thành công`
+              );
+              history.goBack();
+            }else{
+              error("Tệp đính kèm không được quá 20MB.");
+            }
+           
+          } else {
+            error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
+          }
+        } catch (errors) {
+          error("Thêm thông tin kỷ luật thất bại.");
         }
       }
     } catch (errors) {
       error(`Có lỗi xảy ra.`);
     }
   };
-  console.log(dataKTDetail);
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteKTvKL(id);
       await ProductApi.PostLS({
         tenTaiKhoan: decoded.userName,
-        thaoTac: `Xóa khen thưởng của nhân viên ${dataKTDetail.hoTen}`,
+        thaoTac: `Xóa kỷ luật của nhân viên ${dataKLDetail.hoTen}`,
         maNhanVien: decoded.id,
         tenNhanVien: decoded.givenName,
       });
-      history.push(`/reward`);
       success(
-        `Xoá thông tin khen thưởng cho nhân viên ${dataKTDetail.hoTen} thành công`
+        `Xoá thông tin kỷ luật cho nhân viên ${dataKLDetail.hoTen} thành công`
       );
+      history.push(`/reward`);
     } catch (errors) {
-      error(`Có lỗi xảy ra.`);
+      error(`Có lỗi xảy ra`);
     }
   };
   return (
@@ -241,14 +257,14 @@ function AddRewardForm(props) {
         <div className="Submit-button sticky-top">
           <div>
             <h2 className="">
-              {dataKTDetail.length !== 0 ? "Sửa" : "Thêm"} thủ tục khen thưởng
+              {dataKLDetail.length !== 0 ? "Sửa" : "Thêm"} thủ tục kỷ luật
             </h2>
           </div>
           <div className="button">
             {/* <input
               type="submit"
               className={
-                dataKTDetail.length !== 0 ? "btn btn-danger" : "delete-button"
+                dataKLDetail.length !== 0 ? "btn btn-danger" : "delete-button"
               }
               value="Xoá"
               onClick={() => {
@@ -264,7 +280,7 @@ function AddRewardForm(props) {
             <input
               type="submit"
               className="btn btn-primary ml-3"
-              value={dataKTDetail.length !== 0 ? "Sửa" : "Lưu"}
+              value={dataKLDetail.length !== 0 ? "Sửa" : "Lưu"}
               onClick={() => {
                 if (checkInputChange()) {
                   setShowCheckDialog(true);
@@ -283,7 +299,7 @@ function AddRewardForm(props) {
           <div className="container-div-form">
             <div className="container-salary">
               <div>
-                <h3>Thông tin khen thưởng</h3>
+                <h3>Thông tin kỷ luật</h3>
               </div>
             </div>
             <div className="row">
@@ -332,7 +348,6 @@ function AddRewardForm(props) {
                   <Upload
                     beforeUpload={() => false}
                     onChange={handleChange}
-                    //accept=".docx,.xlsx,.pdf"
                     maxCount={1}
                   >
                     <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
@@ -347,7 +362,7 @@ function AddRewardForm(props) {
                     class="col-sm-4 justify-content-start"
                     htmlFor="idDanhMucKhenThuong"
                   >
-                    Loại khen thưởng
+                    Loại kỷ luật
                   </label>
                   <select
                     type="text"
@@ -360,7 +375,7 @@ function AddRewardForm(props) {
                     }
                   >
                     <option value=""></option>
-                    {dataKT.map((item, key) => (
+                    {dataKL.map((item, key) => (
                       <option key={key} value={item.id}>
                         {item.tenDanhMuc}
                       </option>
@@ -444,8 +459,8 @@ function AddRewardForm(props) {
         title="Thông báo"
         description={
           id !== undefined
-            ? "Bạn chưa thay đổi thông tin khen thưởng"
-            : "Bạn chưa nhập thông tin khen thưởng"
+            ? "Bạn chưa thay đổi thông tin kỷ luật"
+            : "Bạn chưa nhập thông tin kỷ luật"
         }
         confirm={null}
         cancel={cancel}
@@ -453,7 +468,7 @@ function AddRewardForm(props) {
       <Dialog
         show={showDeleteDialog}
         title="Thông báo"
-        description={`Bạn chắc chắn muốn xóa thông tin khen thưởng `}
+        description={`Bạn chắc chắn muốn xóa thông tin kỷ luật`}
         confirm={handleDelete}
         cancel={cancel}
       />
@@ -461,4 +476,4 @@ function AddRewardForm(props) {
   );
 }
 
-export default AddRewardForm;
+export default AddDisciplineForm;
