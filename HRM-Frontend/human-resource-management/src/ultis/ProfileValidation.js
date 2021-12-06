@@ -177,8 +177,7 @@ export const schema = yup.object().shape({
   // //phongBan: yup.string().required("Phòng Ban động không được bỏ trống."),
   idNgachCongChuc: yup
     .number()
-    .nullable()
-    .required("Ngạch công chức không được bỏ trống."),
+    .typeError("Ngạch công chức không được bỏ trống."),
   // lsbt_biBatDiTu: yup
   //   .string()
   //   .required("Lịch sử bản thân không được bỏ trống."),
@@ -278,17 +277,17 @@ export const schema = yup.object().shape({
     .matches(allNull, "Lịch sử bản thân không thể là khoảng trống.")
     .nullable()
     .notRequired(),
-    vaoDang:yup.boolean(),
-    // ngayVaoDang: yup.date().when("vaoDang",{
+    // vaoDang:yup.boolean(),
+    // // ngayVaoDang: yup.date().when("vaoDang",{
+    // //   is:true,
+    // //   then:yup.date().nullable().required("Ngày vào Đảng không được để trống"),
+    // //   otherwise:yup.date().nullable().required("Ngày vào Đảng 2 không được để trống"),
+    // // }),
+    // ngayVaoDangChinhThuc: yup.date().when("vaoDang",{
     //   is:true,
-    //   then:yup.date().nullable().required("Ngày vào Đảng không được để trống"),
-    //   otherwise:yup.date().nullable().required("Ngày vào Đảng 2 không được để trống"),
+    //   then:yup.date().nullable().required("Ngày chính thức không được để trống"),
+    //   otherwise:yup.date().nullable().notRequired(),
     // }),
-    ngayVaoDangChinhThuc: yup.date().when("vaoDang",{
-      is:true,
-      then:yup.date().nullable().required("Ngày chính thức không được để trống"),
-     // otherwise:yup.date().nullable().notRequired(),
-    }),
     // laThuongBinh:yup.boolean(),
     // thuongBinh: yup.string().when("laThuongBinh",{
     //   is:true,

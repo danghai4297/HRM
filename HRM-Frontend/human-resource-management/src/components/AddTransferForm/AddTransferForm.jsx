@@ -102,6 +102,7 @@ function AddTransferForm(props) {
   const [file, setFile] = useState({
     file: null,
     path: "/Images/userIcon.png",
+    size:null,
   });
   const handleChange = (e) => {
     console.log(e);
@@ -113,6 +114,7 @@ function AddTransferForm(props) {
           : "/Images/userIcon.png",
       //file: e.target.files[0],
       //path: URL.createObjectURL(e.target.files[0]),
+      size: e.fileList.length !== 0 ?e.file.size:null,
     });
   };
 
@@ -193,25 +195,29 @@ function AddTransferForm(props) {
           )
           .map((item)=> item.id).includes(data.maNhanVien)){
         try {
-          const formData = new FormData();
-          formData.append("bangChung", file.file);
-          formData.append("ngayHieuLuc", startDate.format("MM/DD/YYYY"));
-          formData.append("idPhongBan", data.idPhongBan);
-          formData.append("to", data.to);
-          formData.append("chiTiet", data.chiTiet);
-          formData.append("trangThai", data.trangThai);
-          formData.append("maNhanVien", data.maNhanVien);
-          await PutApi.PutDC(formData, id);
-          await ProductApi.PostLS({
-            tenTaiKhoan: decoded.userName,
-            thaoTac: `Sửa thông tin công tác của nhân viên ${dataDetailDC.tenNhanVien}`,
-            maNhanVien: decoded.id,
-            tenNhanVien: decoded.givenName,
-          });
-          success(
-            `Sửa thông tin công tác cho nhân viên ${dataDetailDC.tenNhanVien} thành công`
-          );
-          history.goBack();
+          if(file.size < 20000000){
+            const formData = new FormData();
+            formData.append("bangChung", file.file);
+            formData.append("ngayHieuLuc", startDate.format("MM/DD/YYYY"));
+            formData.append("idPhongBan", data.idPhongBan);
+            formData.append("to", data.to);
+            formData.append("chiTiet", data.chiTiet);
+            formData.append("trangThai", data.trangThai);
+            formData.append("maNhanVien", data.maNhanVien);
+            await PutApi.PutDC(formData, id);
+            await ProductApi.PostLS({
+              tenTaiKhoan: decoded.userName,
+              thaoTac: `Sửa thông tin công tác của nhân viên ${dataDetailDC.tenNhanVien}`,
+              maNhanVien: decoded.id,
+              tenNhanVien: decoded.givenName,
+            });
+            success(
+              `Sửa thông tin công tác cho nhân viên ${dataDetailDC.tenNhanVien} thành công`
+            );
+            history.goBack();
+          }else{
+            error("Tệp đính kèm không được quá 20MB.");
+          }
         } catch (errors) {
           errors("Không thể sửa thông tin công tác");
         }  
@@ -225,25 +231,30 @@ function AddTransferForm(props) {
           )
           .map((item)=> item.id).includes(data.maNhanVien)){
         try {
-          const formData = new FormData();
-          formData.append("bangChung", file.file);
-          formData.append("ngayHieuLuc", startDate.format("MM/DD/YYYY"));
-          formData.append("idPhongBan", data.idPhongBan);
-          formData.append("to", data.to);
-          formData.append("chiTiet", data.chiTiet);
-          formData.append("trangThai", data.trangThai);
-          formData.append("maNhanVien", data.maNhanVien);
-          await ProductApi.PostDC(formData);
-          history.goBack();
-          success(
-            `Thêm thông tin công tác cho nhân viên ${nameEm[0].hoTen} thành công`
-          );
-          await ProductApi.PostLS({
-            tenTaiKhoan: decoded.userName,
-            thaoTac: `Thêm công tác mới cho nhân viên ${nameEm[0].hoTen}`,
-            maNhanVien: decoded.id,
-            tenNhanVien: decoded.givenName,
-          });
+          if(file.size < 20000000){
+            const formData = new FormData();
+            formData.append("bangChung", file.file);
+            formData.append("ngayHieuLuc", startDate.format("MM/DD/YYYY"));
+            formData.append("idPhongBan", data.idPhongBan);
+            formData.append("to", data.to);
+            formData.append("chiTiet", data.chiTiet);
+            formData.append("trangThai", data.trangThai);
+            formData.append("maNhanVien", data.maNhanVien);
+            await ProductApi.PostDC(formData);
+            history.goBack();
+            success(
+              `Thêm thông tin công tác cho nhân viên ${nameEm[0].hoTen} thành công`
+            );
+            await ProductApi.PostLS({
+              tenTaiKhoan: decoded.userName,
+              thaoTac: `Thêm công tác mới cho nhân viên ${nameEm[0].hoTen}`,
+              maNhanVien: decoded.id,
+              tenNhanVien: decoded.givenName,
+            });
+          }else{
+            error("Tệp đính kèm không được quá 20MB.");
+          }
+          
         } catch (errors) {
           errors("Không thể thêm thông tin công tác");
         }

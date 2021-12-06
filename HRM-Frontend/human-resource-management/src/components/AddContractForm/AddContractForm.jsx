@@ -124,6 +124,7 @@ function AddContractForm(props) {
   const [file, setFile] = useState({
     file: null,
     path: "/Images/userIcon.png",
+    size: null,
   });
   const handleChange = (e) => {
     console.log(e);
@@ -135,6 +136,7 @@ function AddContractForm(props) {
           : "/Images/userIcon.png",
       //file: e.target.files[0],
       //path: URL.createObjectURL(e.target.files[0]),
+      size: e.fileList.length !== 0 ?e.file.size:null,
     });
   };
 
@@ -221,7 +223,6 @@ function AddContractForm(props) {
   const onHandleSubmit = async (data) => {
     const nameEm = dataIdEmployee.filter((item) => item.id === data.maNhanVien);
     let maHopDong = data.maHopDong;
-
     try {
       if (id !== undefined) {
         try {
@@ -231,24 +232,28 @@ function AddContractForm(props) {
               .map((item) => item.id)
               .includes(data.maNhanVien)
           ) {
-            if (file.file !== null) {
-              await DeleteApi.deleteAHD(data.maHopDong);
-              const formData = new FormData();
-              formData.append("bangChung", file.file);
-              //formData.append("maHopDong", data.id);
-              await PutApi.PutAHD(formData, data.maHopDong);
+            if(file.size <20000000){
+              if (file.file !== null) {
+                await DeleteApi.deleteAHD(data.maHopDong);
+                const formData = new FormData();
+                formData.append("bangChung", file.file);
+                //formData.append("maHopDong", data.id);
+                await PutApi.PutAHD(formData, data.maHopDong);
+              }
+              await PutApi.PutHD(data, id);
+              await ProductApi.PostLS({
+                tenTaiKhoan: decoded.userName,
+                thaoTac: `Sửa thông tin hợp đồng ${maHopDong} của nhân viên ${dataDetailHd.tenNhanVien}`,
+                maNhanVien: decoded.id,
+                tenNhanVien: decoded.givenName,
+              });
+              success(
+                `Sửa thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
+              );
+              history.goBack();
+            }else{
+              error("Tệp đính kèm không thể quá 20M");
             }
-            await PutApi.PutHD(data, id);
-            await ProductApi.PostLS({
-              tenTaiKhoan: decoded.userName,
-              thaoTac: `Sửa thông tin hợp đồng ${maHopDong} của nhân viên ${dataDetailHd.tenNhanVien}`,
-              maNhanVien: decoded.id,
-              tenNhanVien: decoded.givenName,
-            });
-            success(
-              `Sửa thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
-            );
-            history.goBack();
           } else {
             error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
           }
@@ -263,23 +268,28 @@ function AddContractForm(props) {
               .map((item) => item.id)
               .includes(data.maNhanVien)
           ) {
-            await ProductApi.postHD(data);
-            if (file.file !== null) {
-              const formData = new FormData();
-              formData.append("bangChung", file.file);
-              //formData.append("maHopDong", data.id);
-              await PutApi.PutAHD(formData, data.maHopDong);
+            if(file.size < 20000000){
+              await ProductApi.postHD(data);
+              if (file.file !== null) {
+                const formData = new FormData();
+                formData.append("bangChung", file.file);
+                //formData.append("maHopDong", data.id);
+                await PutApi.PutAHD(formData, data.maHopDong);
+              }
+              await ProductApi.PostLS({
+                tenTaiKhoan: decoded.userName,
+                thaoTac: `Thêm hợp đồng mới ${maHopDong} cho nhân viên ${nameEm[0].hoTen}`,
+                maNhanVien: decoded.id,
+                tenNhanVien: decoded.givenName,
+              });
+              success(
+                `Thêm hợp đồng mới ${maHopDong} cho nhân viên ${nameEm[0].hoTen} thành công`
+              );
+              history.goBack();
+            }else{
+              error("Tệp đính kèm không thể quá 20MB.");
             }
-            await ProductApi.PostLS({
-              tenTaiKhoan: decoded.userName,
-              thaoTac: `Thêm hợp đồng mới ${maHopDong} cho nhân viên ${nameEm[0].hoTen}`,
-              maNhanVien: decoded.id,
-              tenNhanVien: decoded.givenName,
-            });
-            success(
-              `Thêm hợp đồng mới ${maHopDong} cho nhân viên ${nameEm[0].hoTen} thành công`
-            );
-            history.goBack();
+            
           } else {
             error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
           }
