@@ -1,6 +1,13 @@
 import React from "react";
+import "./Dialog.scss";
 
-export default function DialogCheck({ show, title, description, confirm, cancel }) {
+export default function DialogCheck({
+  show,
+  title,
+  description,
+  confirm,
+  cancel,
+}) {
   if (!show) {
     return <></>;
   }

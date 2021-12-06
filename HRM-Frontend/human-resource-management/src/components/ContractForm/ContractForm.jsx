@@ -219,7 +219,7 @@ function AddContractForm(props) {
     }
     return false;
   };
-  
+
   const onHandleSubmit = async (data) => {
     const nameEm = dataIdEmployee.filter((item) => item.id === data.maNhanVien);
     let maHopDong = data.maHopDong;
@@ -338,7 +338,7 @@ function AddContractForm(props) {
             <input
               type="submit"
               className={
-                dataDetailHd.length !== 0 ? "btn btn-danger" : "delete-button"
+                dataDetailHd.length !== 0 ? "btn-danger" : "delete-button"
               }
               value="Xoá"
               onClick={() => {
@@ -347,7 +347,7 @@ function AddContractForm(props) {
             />
             <input
               type="submit"
-              className="btn btn-secondary ml-3"
+              className="secondary btn ml-3"
               value="Huỷ"
               onClick={history.goBack}
             />

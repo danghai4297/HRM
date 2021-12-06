@@ -149,7 +149,6 @@ function AddFamilyForm(props) {
 
   console.log(dataDetailNT);
   const onHandleSubmit = async (data) => {
-    console.log(data);
     try {
       if (id !== undefined) {
         await PutApi.PutNT(data, id);

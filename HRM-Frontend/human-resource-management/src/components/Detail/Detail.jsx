@@ -183,7 +183,7 @@ function Detail(props) {
               <div className="icon-second">
                 {dataDetailNv.anh !== null ? (
                   <img
-                    src={`https://localhost:5001/${dataDetailNv.anh}`}
+                    src={`http://localhost:8000/${dataDetailNv.anh}`}
                     alt=""
                   />
                 ) : (

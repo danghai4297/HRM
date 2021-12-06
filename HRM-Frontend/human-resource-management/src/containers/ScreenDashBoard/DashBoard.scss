@@ -88,7 +88,7 @@
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .Screen-dash-board {
         overflow: auto;
-        max-height: 860px;
+        max-height: 780px;
         width: 100%;
         display: block;
 
@@ -113,7 +113,6 @@
     }
 
     .item-dash-board {
-        // border: 1px solid black;
         width: 100%;
         height: 15rem;
 
@@ -138,6 +137,111 @@
     }
 }
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
+    .Screen-dash-board {
+        overflow: auto;
+        max-height: 780px;
+        width: 100%;
+        display: block;
+
+        background-color: #f4f1f6;
+        // border-radius: 15px;
+    }
+    .Screen-dash-board::-webkit-scrollbar {
+        width: 6px;
+        // height: 6px;
+        border-radius: 20px;
+    }
+    .Screen-dash-board::-webkit-scrollbar-track {
+        background-color: #efefef;
+        border-radius: 20px;
+    }
+    .Screen-dash-board::-webkit-scrollbar-thumb {
+        background-color: rgb(129, 129, 129);
+        border-radius: 6px;
+    }
+    .Screen-dash-board::-webkit-scrollbar-thumb:hover {
+        background-color: rgb(158, 158, 158);
+    }
+
+    .item-dash-board {
+        width: 100%;
+        height: 15rem;
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        .item-da {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 25rem;
+        }
+    }
+    .excel-item {
+        // border: 1px solid black;
+        width: 100%;
+        margin-top: 15rem;
+        height: 15rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .item-da {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            height: 100%;
+            width: 25rem;
+        }
+    }
 }
 @media screen and (min-width: 1440px) and (max-width: 1600px) {
+    .Screen-dash-board {
+        overflow: auto;
+        max-height: 780px;
+        width: 100%;
+        display: block;
+
+        background-color: #f4f1f6;
+        // border-radius: 15px;
+    }
+    .Screen-dash-board::-webkit-scrollbar {
+        width: 6px;
+        // height: 6px;
+        border-radius: 20px;
+    }
+    .Screen-dash-board::-webkit-scrollbar-track {
+        background-color: #efefef;
+        border-radius: 20px;
+    }
+    .Screen-dash-board::-webkit-scrollbar-thumb {
+        background-color: rgb(129, 129, 129);
+        border-radius: 6px;
+    }
+    .Screen-dash-board::-webkit-scrollbar-thumb:hover {
+        background-color: rgb(158, 158, 158);
+    }
+
+    .item-dash-board {
+        width: 100%;
+        height: 15rem;
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        .item-da {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 25%;
+        }
+    }
 }

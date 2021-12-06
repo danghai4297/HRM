@@ -26,7 +26,7 @@ export const NVCOLUMNS2 = [
       return row.anh === null ? (
         <img src="/Images/loginImage.png" width={60} alt="" />
       ) : (
-        <img src={`https://localhost:5001${row.anh}`} width={60} alt="" />
+        <img src={`http://localhost:8000${row.anh}`} width={60} alt="" />
       );
     },
     sticky: "left",

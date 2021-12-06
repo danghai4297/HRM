@@ -26,7 +26,7 @@ function Header() {
                 {token && jwt_decode(token).anh !== null ? (
                   <Avatar
                     alt="Remy Sharp"
-                    src={`https://localhost:5001/${jwt_decode(token).anh}`}
+                    src={`http://localhost:8000/${jwt_decode(token).anh}`}
                   />
                 ) : (
                   <FontAwesomeIcon
