@@ -14,7 +14,7 @@ function Header() {
     setAccount(false);
   };
   const token = sessionStorage.getItem("resultObj");
-
+  console.log(jwt_decode(token).anh);
   return (
     <>
       <div className="header-com">
@@ -50,7 +50,7 @@ function Header() {
                   {token && jwt_decode(token).anh !== null ? (
                     <img
                       className="picture-account-2"
-                      src={`https://localhost:5001/${jwt_decode(token).anh}`}
+                      src={`http://localhost:8000/${jwt_decode(token).anh}`}
                       alt=""
                     />
                   ) : (

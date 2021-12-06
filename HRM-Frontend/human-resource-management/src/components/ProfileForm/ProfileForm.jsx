@@ -2120,7 +2120,7 @@ function AddProfileForm(props) {
                     <input
                       type="checkbox"
                       {...register("vaoDang", {
-                        onChange: (e) => setEndDate(e.target.value),
+                        onChange: (e) => setEndDate(e.target.checked),
                       })}
                       id="vaoDang"
                       className="form-check-input"

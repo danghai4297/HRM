@@ -136,7 +136,7 @@ function AddContractForm(props) {
           : "/Images/userIcon.png",
       //file: e.target.files[0],
       //path: URL.createObjectURL(e.target.files[0]),
-      size: e.fileList.length !== 0 ?e.file.size:null,
+      size: e.fileList.length !== 0 ? e.file.size : null,
     });
   };
 
@@ -232,7 +232,7 @@ function AddContractForm(props) {
               .map((item) => item.id)
               .includes(data.maNhanVien)
           ) {
-            if(file.size <20000000){
+            if (file.size < 20000000) {
               if (file.file !== null) {
                 await DeleteApi.deleteAHD(data.maHopDong);
                 const formData = new FormData();
@@ -251,7 +251,7 @@ function AddContractForm(props) {
                 `Sửa thông tin hợp đồng cho nhân viên ${dataDetailHd.tenNhanVien} thành công`
               );
               history.goBack();
-            }else{
+            } else {
               error("Tệp đính kèm không thể quá 20M");
             }
           } else {
@@ -268,7 +268,7 @@ function AddContractForm(props) {
               .map((item) => item.id)
               .includes(data.maNhanVien)
           ) {
-            if(file.size < 20000000){
+            if (file.size < 20000000) {
               await ProductApi.postHD(data);
               if (file.file !== null) {
                 const formData = new FormData();
@@ -286,10 +286,9 @@ function AddContractForm(props) {
                 `Thêm hợp đồng mới ${maHopDong} cho nhân viên ${nameEm[0].hoTen} thành công`
               );
               history.goBack();
-            }else{
+            } else {
               error("Tệp đính kèm không thể quá 20MB.");
             }
-            
           } else {
             error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
           }
