@@ -33,7 +33,7 @@ function ScreenAccount(props) {
       <div className="screen-table-nv">
         <div className="herder-content sticky-top">
           <div>
-            <h2 className="">Danh sách hợp đồng</h2>
+            <h2 className="">Danh sách tài khoản</h2>
           </div>
           <div className="button">
             <Link to="/account/add" className="link-item">

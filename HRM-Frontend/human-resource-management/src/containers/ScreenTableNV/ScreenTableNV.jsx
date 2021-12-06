@@ -54,7 +54,7 @@ function ScreenTableNV(props) {
           </div>
           <div className="button">
             <Link to="/profile/add" className="link-item">
-              <input type="submit" className="btn addTable" value="Thêm" />
+              <input type="submit" className="btn btn-primary" value="Thêm" />
             </Link>
             <div onClick={(e) => handleClick()}>
               <ReactHTMLTableToExcel

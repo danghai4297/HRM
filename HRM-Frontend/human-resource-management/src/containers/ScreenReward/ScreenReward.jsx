@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { NVCOLUMNS } from "./NvColumns";
+import { NVCOLUMNS, NVCOLUMNSMD } from "./NvColumns";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ExportCSV } from "../../components/ExportFile/ExportFile";
@@ -14,7 +14,19 @@ function ScreenReward(props) {
   const link = "/reward/detail/";
   const fileName = "DSkhenthuong";
   const [dataDskt, setDataDskt] = useState([]);
+  const [columns, setColumns] = useState([]);
   useDocumentTitle("Khen thưởng");
+
+  useEffect(() => {
+    const reSizeTable = () => {
+      if (window.innerWidth < 1025) {
+        setColumns(NVCOLUMNSMD);
+      } else {
+        setColumns(NVCOLUMNS);
+      }
+    };
+    reSizeTable();
+  }, [window.innerWidth]);
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -27,6 +39,28 @@ function ScreenReward(props) {
     };
     fetchNvList();
   }, []);
+
+  // const reSizeTable = () => {
+  //   if ((w > 769) & (w < 1025)) {
+  //     return (
+  //       <TablePagination
+  //         link={link}
+  //         tid="tableHd"
+  //         columns={NVCOLUMNS}
+  //         data={dataDskt}
+  //       />
+  //     );
+  //   } else if (w < 769) {
+  //     return (
+  //       <TablePagination
+  //         link={link}
+  //         tid="tableHd"
+  //         columns={NVCOLUMNSMD}
+  //         data={dataDskt}
+  //       />
+  //     );
+  //   }
+  // };
 
   return (
     <>
@@ -58,7 +92,7 @@ function ScreenReward(props) {
           <TablePagination
             link={link}
             tid="tableHd"
-            columns={NVCOLUMNS}
+            columns={columns}
             data={dataDskt}
           />
         </div>

@@ -10,11 +10,25 @@ import productApi from "../../api/productApi";
 import { Link } from "react-router-dom";
 import { useDocumentTitle } from "../../hook/TitleDocument";
 
+import jwt_decode from "jwt-decode";
+import ProductApi from "../../api/productApi";
+
 function ScreenSalary(props) {
+  const token = sessionStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
   const link = "/salary/detail/";
   let fileName = "Danhsachluong";
   const [dataAllL, setDataAllL] = useState([]);
   useDocumentTitle("Danh sách lương");
+
+  const handleClick = async () => {
+    await ProductApi.PostLS({
+      tenTaiKhoan: decoded.userName,
+      thaoTac: `Tải về file ${fileName}`,
+      maNhanVien: decoded.id,
+      tenNhanVien: decoded.givenName,
+    });
+  };
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -43,14 +57,16 @@ function ScreenSalary(props) {
                 value="Thêm"
               />
             </Link>
-            <ReactHTMLTableToExcel
-              id="test-table-xls-button"
-              className="download-table-xls-button"
-              table="tabledc"
-              fileName={fileName}
-              sheet="tablexls"
-              buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
-            />
+            <div onClick={(e) => handleClick()}>
+              <ReactHTMLTableToExcel
+                id="test-table-xls-button"
+                className="download-table-xls-button"
+                table="tabledc"
+                fileName={fileName}
+                sheet="tablexls"
+                buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
+              />
+            </div>
             <ExportCSV csvData={dataAllL} fileName={fileName} />
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { NVCOLUMNS } from "./NvColumns";
+import { NVCOLUMNS, NVCOLUMNSMD } from "./NvColumns";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ExportCSV } from "../../components/ExportFile/ExportFile";
@@ -14,7 +14,20 @@ function ScreenDiscipline(props) {
   const link = "/discipline/detail/";
   const fileName = "DSkyluat";
   const [dataAllkl, setDataAllKl] = useState([]);
+  const [columns, setColumns] = useState([]);
+
   useDocumentTitle("Kỷ luật");
+
+  useEffect(() => {
+    const reSizeTable = () => {
+      if (window.innerWidth < 1025) {
+        setColumns(NVCOLUMNSMD);
+      } else {
+        setColumns(NVCOLUMNS);
+      }
+    };
+    reSizeTable();
+  }, [window.innerWidth]);
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -58,7 +71,7 @@ function ScreenDiscipline(props) {
           <TablePagination
             link={link}
             tid="tableHd"
-            columns={NVCOLUMNS}
+            columns={columns}
             data={dataAllkl}
           />
         </div>

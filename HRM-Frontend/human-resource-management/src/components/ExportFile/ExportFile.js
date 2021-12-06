@@ -45,7 +45,7 @@ export const ExportCSV = ({ ful, csvData, fileName }) => {
       className="btn-export"
       type="submit"
     >
-      <FontAwesomeIcon icon={["fas", "file-excel"]} /> All
+      <FontAwesomeIcon icon={["fas", "file-excel"]} /> Tất cả
     </button>
     // <button onClick={(e) => exportToCSV(csvData, fileName)}>Export</button>
   );

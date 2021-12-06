@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import NumberFormat from "react-number-format";
 import SelectColumnFilter from "../../components/TablePagination/SelectColumnFilter";
 
 export const NVCOLUMNSHD = [
@@ -16,7 +17,7 @@ export const NVCOLUMNSHD = [
     Header: "Họ Và Tên",
     accessor: "tenNhanVien",
     sticky: "left",
-    minWidth: 200,
+    minWidth: 180,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -44,7 +45,7 @@ export const NVCOLUMNSHD = [
   {
     Header: "Chức Danh",
     accessor: "chucDanh",
-    minWidth: 215,
+    minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -53,16 +54,25 @@ export const NVCOLUMNSHD = [
   {
     Header: "Phụ Cấp Chức Danh",
     accessor: "phuCapChucDanh",
-    minWidth: 280,
+    minWidth: 170,
     Filter: SelectColumnFilter,
     disableFilters: true,
-
-    show: false,
+    Cell: ({ value }) => {
+      return (
+        <NumberFormat
+          value={value}
+          displayType="text"
+          type="text"
+          thousandSeparator={true}
+        />
+      );
+    },
+    show: true,
   },
   {
     Header: "Chức Vụ",
     accessor: "chucVu",
-    minWidth: 215,
+    minWidth: 80,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -71,16 +81,25 @@ export const NVCOLUMNSHD = [
   {
     Header: "Phụ Cấp Chức Vụ",
     accessor: "phuCapChucVu",
-    minWidth: 280,
+    minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
-
-    show: false,
+    Cell: ({ value }) => {
+      return (
+        <NumberFormat
+          value={value}
+          displayType="text"
+          type="text"
+          thousandSeparator={true}
+        />
+      );
+    },
+    show: true,
   },
   {
     Header: "Từ Ngày",
     accessor: "hopDongTuNgay",
-    minWidth: 210,
+    minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
     Cell: ({ value }) => {
@@ -92,7 +111,7 @@ export const NVCOLUMNSHD = [
   {
     Header: "Đến Ngày",
     accessor: "hopDongDenNgay",
-    minWidth: 210,
+    minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
     Cell: ({ value }) => {
@@ -110,7 +129,7 @@ export const NVCOLUMNSHD = [
         <img src="/Images/orangeC.png" width={20} alt="" />
       );
     },
-    minWidth: 180,
+    minWidth: 20,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
