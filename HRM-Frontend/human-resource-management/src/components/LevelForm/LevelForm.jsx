@@ -2,19 +2,18 @@ import React, { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import "./AddLevelForm.scss";
-import DeleteApi from "../../../src/api/deleteAPI";
-import PutApi from "../../../src/api/putAAPI";
-import ProductApi from "../../../src/api/productApi";
-import Dialog from "../../components/Dialog/Dialog";
+import "./LevelForm.scss";
+import DeleteApi from "../../api/deleteAPI";
+import PutApi from "../../api/putAAPI";
+import ProductApi from "../../api/productApi";
+import Dialog from "../Dialog/Dialog";
 import { useLocation } from "react-router-dom";
 import { DatePicker } from "antd";
 import moment from "moment/moment.js";
 import { stringify } from "query-string";
 import DialogCheck from "../Dialog/DialogCheck";
 import { useToast } from "../Toast/Toast";
-import {schema} from "../../ultis/LevelValidation";
-
+import { schema } from "../../ultis/LevelValidation";
 
 function AddLevelForm(props) {
   const { error, warn, info, success } = useToast();
@@ -72,7 +71,7 @@ function AddLevelForm(props) {
           setdataDetailTDVH(response);
         }
       } catch (errors) {
-        error("Có lỗi xảy ra.")
+        error("Có lỗi xảy ra.");
       }
     };
     fetchNvList();
@@ -180,7 +179,9 @@ function AddLevelForm(props) {
         `Xoá thông tin trình độ cho nhân viên ${dataDetailTDVH.tenNhanVien} thành công.`
       );
     } catch (errors) {
-      error(`Xoá thông tin trình độ cho nhân viên ${dataDetailTDVH.tenNhanVien} không thành công.`)
+      error(
+        `Xoá thông tin trình độ cho nhân viên ${dataDetailTDVH.tenNhanVien} không thành công.`
+      );
     }
   };
 
