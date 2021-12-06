@@ -587,28 +587,28 @@ video {
 
 body {
   background-color: #eee;
-  font-family: Poppins, sans-serif;
+  //font-family: Poppins, sans-serif;
 }
 
-.btn {
-  --tw-bg-opacity: 1;
-  background-color: rgba(37, 99, 235, var(--tw-bg-opacity));
-  border-radius: 0.75rem;
-  font-weight: 500;
-  margin-right: 1rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
+// .btn {
+//   --tw-bg-opacity: 1;
+//   background-color: rgba(37, 99, 235, var(--tw-bg-opacity));
+//   border-radius: 0.75rem;
+//   font-weight: 500;
+//   margin-right: 1rem;
+//   padding-top: 0.75rem;
+//   padding-bottom: 0.75rem;
+//   padding-left: 1rem;
+//   padding-right: 1rem;
+//   --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+//   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+//   --tw-text-opacity: 1;
+//   color: rgba(255, 255, 255, var(--tw-text-opacity));
+//   -webkit-user-select: none;
+//      -moz-user-select: none;
+//       -ms-user-select: none;
+//           user-select: none;
+// }
 
 .btn:hover {
   --tw-bg-opacity: 1;

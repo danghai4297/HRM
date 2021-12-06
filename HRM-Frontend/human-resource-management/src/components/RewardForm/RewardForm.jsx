@@ -249,7 +249,7 @@ function AddRewardForm(props) {
   return (
     <>
       <div className="container-form">
-        <div className="Submit-button sticky-top">
+        <div className="Submit-button">
           <div>
             <h2 className="">
               {dataKTDetail.length !== 0 ? "Sửa" : "Thêm"} thủ tục khen thưởng
