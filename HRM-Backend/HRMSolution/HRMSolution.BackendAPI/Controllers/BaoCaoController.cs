@@ -32,42 +32,42 @@ namespace HRMSolution.BackendAPI.Controllers
             var nhanViens = await _baoCaoService.GetAllByPhongBan(id);
             return Ok(nhanViens);
         }
-        
+
         [HttpGet("bao-cao-gioi-tinh/{gioiTinh}")]
         public async Task<IActionResult> GetByGioiTinh(bool gioiTinh)
         {
             var nhanViens = await _baoCaoService.GetAllByGioiTinh(gioiTinh);
             return Ok(nhanViens);
         }
-        
+
         [HttpGet("bao-cao-trang-thai/{trangthai}")]
         public async Task<IActionResult> GetByTrangThai(bool trangthai)
         {
             var nhanViens = await _baoCaoService.GetAllByTrangThai(trangthai);
             return Ok(nhanViens);
         }
-        
+
         [HttpGet("bao-cao-phong-ban-trang-thai/{id}/{trangThai}")]
         public async Task<IActionResult> GetByPhongBanVaTrangThai(int id, bool trangThai)
         {
             var nhanViens = await _baoCaoService.GetAllByPhongBanVaTrangThai(id, trangThai);
             return Ok(nhanViens);
         }
-        
+
         [HttpGet("bao-cao-phong-ban-gioi-tinh/{id}/{gioiTinh}")]
         public async Task<IActionResult> GetByPhongBanVaGioiTinh(int id, bool gioiTinh)
         {
             var nhanViens = await _baoCaoService.GetAllByPhongBanVaGioiTinh(id, gioiTinh);
             return Ok(nhanViens);
         }
-        
+
         [HttpGet("bao-cao-trang-thai-gioi-tinh/{trangThai}/{gioiTinh}")]
         public async Task<IActionResult> GetByTTVaGT(bool trangThai, bool gioiTinh)
         {
             var nhanViens = await _baoCaoService.GetAllByTrangThaiVaGioiTinh(trangThai, gioiTinh);
             return Ok(nhanViens);
         }
-        
+
         [HttpGet("bao-cao-phong-ban-trang-thai-gioi-tinh/{id}/{trangThai}/{gioiTinh}")]
         public async Task<IActionResult> GetByPhongBanVaTTVaGT(int id, bool trangThai, bool gioiTinh)
         {
@@ -102,7 +102,7 @@ namespace HRMSolution.BackendAPI.Controllers
             var nhanViens = await _baoCaoService.GetAllByHopDongHLVaTTVaGT(tuNgay, denNgay, trangThai, gioiTinh);
             return Ok(nhanViens);
         }
-        
+
         [HttpGet("bao-cao-phong-ban-hop-dong-trang-thai-gioi-tinh/{id}/{tuNgay}/{denNgay}/{trangThai}/{gioiTinh}")]
         public async Task<IActionResult> GetByAllBaoCao(int id, DateTime tuNgay, DateTime denNgay, bool trangThai, bool gioiTinh)
         {
@@ -110,7 +110,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok(nhanViens);
         }
 
-        
+
         [HttpGet("bao-cao-phong-ban-hop-dong/{id}/{tuNgay}/{denNgay}")]
         public async Task<IActionResult> GetByPBvaHD(int id, DateTime tuNgay, DateTime denNgay)
         {
@@ -124,7 +124,7 @@ namespace HRMSolution.BackendAPI.Controllers
             var nhanViens = await _baoCaoService.GetAllByPhongBanVaHDVaTrangThai(id, tuNgay, denNgay, trangThai);
             return Ok(nhanViens);
         }
-        
+
         [HttpGet("bao-cao-phong-ban-hop-dong-gioi-tinh/{id}/{tuNgay}/{denNgay}/{gioiTinh}")]
         public async Task<IActionResult> GetByPBvaHDvaGT(int id, DateTime tuNgay, DateTime denNgay, bool gioiTinh)
         {
@@ -132,14 +132,14 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok(nhanViens);
         }
 
-        
+
         [HttpGet("bao-cao-len-luong/{tuNgay}/{denNgay}")]
         public async Task<IActionResult> GetByAllBaoCaoLenLuong(DateTime tuNgay, DateTime denNgay)
         {
             var nhanViens = await _baoCaoService.GetAllLenLuong(tuNgay, denNgay);
             return Ok(nhanViens);
         }
-        
+
         [HttpGet("bao-cao-len-luong-phong-ban/{id}/{tuNgay}/{denNgay}")]
         public async Task<IActionResult> GetByAllBaoCaoLenLuongByPhongBan(int id, DateTime tuNgay, DateTime denNgay)
         {
@@ -412,21 +412,21 @@ namespace HRMSolution.BackendAPI.Controllers
             var nhanViens = await _baoCaoService.GetAllNguoiThanTheoDanhMucVaPhongBanVaMaNhanVienVaTrangThai(tu, den, idDanhMuc, idPhongBan, maNhanVien, trangThai);
             return Ok(nhanViens);
         }
-        
+
         [HttpGet("bao-cao-nguoi-than-danh-muc-nhan-vien-gioi-tinh-trang-thai/{tu}/{den}/{idDanhMuc}/{maNhanVien}/{gioiTinh}/{trangThai}")]
         public async Task<IActionResult> GetByAllBaoCaoNguoiThanDanhMucVaNhanVienVaGioiTinhVaTrangThai(int tu, int den, int idDanhMuc, string maNhanVien, bool gioiTinh, bool trangThai)
         {
             var nhanViens = await _baoCaoService.GetAllNguoiThanTheoDanhMucVaMaNhanVienVaGioiTinhVaTrangThai(tu, den, idDanhMuc, maNhanVien, gioiTinh, trangThai);
             return Ok(nhanViens);
         }
-       
+
         [HttpGet("bao-cao-nguoi-than-danh-muc-phong-ban-gioi-tinh-trang-thai/{tu}/{den}/{idDanhMuc}/{idPhongBan}/{gioiTinh}/{trangThai}")]
         public async Task<IActionResult> GetByAllBaoCaoNguoiThanDanhMucVaPhongBanVaGioiTinhVaTrangThai(int tu, int den, int idDanhMuc, int idPhongBan, bool gioiTinh, bool trangThai)
         {
             var nhanViens = await _baoCaoService.GetAllNguoiThanTheoDanhMucVaPhongBanVaGioiTinhVaTrangThai(tu, den, idDanhMuc, idPhongBan, gioiTinh, trangThai);
             return Ok(nhanViens);
         }
-      
+
         [HttpGet("bao-cao-nguoi-than-phong-ban-nhan-vien-gioi-tinh-trang-thai/{tu}/{den}/{idDanhMuc}/{idPhongBan}/{gioiTinh}/{trangThai}")]
         public async Task<IActionResult> GetByAllBaoCaoNguoiThanPhongBanVaNhanVienVaGioiTinhVaTrangThai(int tu, int den, int idPhongBan, string maNhanVien, bool gioiTinh, bool trangThai)
         {
@@ -438,6 +438,13 @@ namespace HRMSolution.BackendAPI.Controllers
         public async Task<IActionResult> GetByAllBaoCaoNguoiThanDanhMucVaPhongBanVanNhanVienVaGioiTinhVaTrangThai(int tu, int den, int idDanhMuc, int idPhongBan, string maNhanVien, bool gioiTinh, bool trangThai)
         {
             var nhanViens = await _baoCaoService.GetAllNguoiThanDanhMucVaPhongBanVaMaNhanVienVaGioiTinhVaTrangThai(tu, den, idDanhMuc, idPhongBan, maNhanVien, gioiTinh, trangThai);
+            return Ok(nhanViens);
+        }
+
+        [HttpGet("bao-cao-luong/{maNhanVien}")]
+        public async Task<IActionResult> GetByAllBaoCaoLuongTheoMaNhanVie(string maNhanVien)
+        {
+            var nhanViens = await _baoCaoService.GetAllBaoCaoLuong(maNhanVien);
             return Ok(nhanViens);
         }
     }

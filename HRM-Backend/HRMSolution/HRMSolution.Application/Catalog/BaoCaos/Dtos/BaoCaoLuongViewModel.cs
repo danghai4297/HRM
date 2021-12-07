@@ -12,7 +12,7 @@ namespace HRMSolution.Application.Catalog.BaoCaos.Dtos
         public string tenTo { get; set; }
         public string atm { get; set; }
         public string nganHang { get; set; }
-        public int id { get; set; }
+        public int idLuong { get; set; }
         public string maHopDong { get; set; }
         public string tenNhomLuong { get; set; }
         public float heSoLuong { get; set; }

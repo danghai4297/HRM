@@ -1880,9 +1880,46 @@ namespace HRMSolution.Application.Catalog.BaoCaos
             return data;
         }
 
-        public Task<List<BaoCaoLuongViewModel>> GetAllBaoCaoLuong(string maNhanVien)
+        public async Task<List<BaoCaoLuongViewModel>> GetAllBaoCaoLuong(string maNhanVien)
         {
-            throw new NotImplementedException();
+            var queryPb = from dc in _context.dieuChuyens
+                          join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
+                          join to in _context.danhMucTos on dc.to equals to.idTo
+                          where dc.trangThai == true
+                          select new { dc, pb, phongBan = pb.tenPhongBan, to = to.tenTo };
+            var query = from nv in _context.nhanViens
+                        join hd in _context.hopDongs on nv.maNhanVien equals hd.maNhanVien
+                        join l in _context.luongs on hd.maHopDong equals l.maHopDong
+                        join dml in _context.danhMucNhomLuongs on l.idNhomLuong equals dml.id
+                        join v in queryPb on nv.maNhanVien equals v.dc.maNhanVien
+                        where nv.maNhanVien == maNhanVien && hd.trangThai == true && l.trangThai == true
+                        select new { nv, v, hd, l, dml };
+            var data = await query.Select(x => new BaoCaoLuongViewModel()
+            {
+                maNhanVien = x.nv.maNhanVien,
+                tenNhanVien = x.nv.hoTen,
+                tenPhongBan = x.v.phongBan,
+                tenTo = x.v.to,
+                atm = x.nv.atm,
+                nganHang = x.nv.nganHang,
+                idLuong = x.l.id,
+                maHopDong = x.l.maHopDong,
+                tenNhomLuong = x.dml.tenNhomLuong,
+                heSoLuong = x.l.heSoLuong,
+                bacLuong = x.l.bacLuong,
+                luongCoBan = x.l.luongCoBan,
+                phuCapChucDanh = x.l.phuCapChucDanh,
+                phuCapChucVu = x.l.phuCapChucVu,
+                phuCapTrachNhiem = x.l.phuCapTrachNhiem,
+                phuCapKhac = x.l.phuCapKhac,
+                tongLuong = x.l.tongLuong,
+                thoiHanLenLuong = x.l.thoiHanLenLuong,
+                ngayHieuLuc = x.l.ngayHieuLuc,
+                ngayKetThuc = x.l.ngayKetThuc,
+                ghiChu = x.l.ghiChu
+            }).ToListAsync();
+
+            return data;
         }
     }
 }
