@@ -64,7 +64,7 @@ namespace HRMSolution.BackendAPI
 
             services.AddDbContext<HRMDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Data")));
-
+            services.AddCors();
 
             services.AddIdentity<AppUser, AppRole>()
                 .AddEntityFrameworkStores<HRMDbContext>()
@@ -177,16 +177,17 @@ namespace HRMSolution.BackendAPI
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
-
-            app.UseAuthentication();
-            app.UseRouting();
 
             app.UseCors(x => x
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .SetIsOriginAllowed(origin => true) // allow any origin
                 .AllowCredentials());
+            app.UseStaticFiles();
+            app.UseAuthentication();
+            app.UseRouting();
+
+
 
             app.UseAuthorization();
 

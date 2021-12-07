@@ -94,6 +94,7 @@ namespace HRMSolution.NUnitTest
                                     .UseInMemoryDatabase(databaseName: "HRM")
                                     .Options;
             _context = new HRMDbContext(dbContextOptions);
+
             storageService = new FileStorageService(webHostEnvironment);
             danhMucChucDanhService = new DanhMucChucDanhService(_context);
             danhMucChucVuService = new DanhMucChucVuService(_context);
