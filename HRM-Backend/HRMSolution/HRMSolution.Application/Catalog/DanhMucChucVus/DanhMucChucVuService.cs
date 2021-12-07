@@ -24,7 +24,8 @@ namespace HRMSolution.Application.Catalog.DanhMucChucDanhs
 
         public async Task<int> Create(DanhMucChucVuCreateRequest request)
         {
-            if (request.maChucVu == null || request.tenChucVu == null)
+            var check = await _context.danhMucChucVus.Where(x => x.tenChucVu == request.tenChucVu).FirstOrDefaultAsync();
+            if (request.maChucVu == null || request.tenChucVu == null || check != null)
             {
                 return 0;
             }

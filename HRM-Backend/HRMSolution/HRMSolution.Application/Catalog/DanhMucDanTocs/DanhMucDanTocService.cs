@@ -20,7 +20,8 @@ namespace HRMSolution.Application.Catalog.DanhMucDanTocs
         }
         public async Task<int> Create(DanhMucDanTocCreateRequest request)
         {
-            if (request.tenDanhMuc == null)
+            var check = await _context.danhMucDanTocs.Where(x => x.tenDanhMuc == request.tenDanhMuc).FirstOrDefaultAsync();
+            if (request.tenDanhMuc == null || check != null)
             {
                 return 0;
             }
