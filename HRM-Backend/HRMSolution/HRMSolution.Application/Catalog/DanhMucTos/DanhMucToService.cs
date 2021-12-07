@@ -98,13 +98,15 @@ namespace HRMSolution.Application.Catalog.DanhMucTos
                             join pb in _context.danhMucPhongBans on p.idPhongBan equals pb.id
                             where p.idTo == id
                             select new { p, pb };
+                var check = await _context.dieuChuyens.Where(x => x.to == id).FirstOrDefaultAsync();
                 var data = await query.Select(x => new DanhMucToViewModel()
                 {
                     id = x.p.idTo,
                     maTo = x.p.maTo,
                     tenTo = x.p.tenTo,
                     idPhongBan = x.p.idPhongBan,
-                    tenPhongBan = x.pb.tenPhongBan
+                    tenPhongBan = x.pb.tenPhongBan,
+                    trangThai = check == null ? "Chưa sử dụng" : "Đang sử dụng"
                 }).FirstAsync();
                 return data;
             }

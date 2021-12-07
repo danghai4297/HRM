@@ -85,6 +85,7 @@ namespace HRMSolution.Application.System.Users
 
             var query = from x in _userManager.Users
                         join nv in _context.nhanViens on x.maNhanVien equals nv.maNhanVien
+                        orderby x.maNhanVien ascending
                         select new { x, nv };
             var data = await query.Select(x => new UserVm()
             {

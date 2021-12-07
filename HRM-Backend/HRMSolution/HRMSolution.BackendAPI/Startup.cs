@@ -61,10 +61,10 @@ namespace HRMSolution.BackendAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           
+
             services.AddDbContext<HRMDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Data")));
-            
+
 
             services.AddIdentity<AppUser, AppRole>()
                 .AddEntityFrameworkStores<HRMDbContext>()
@@ -94,7 +94,7 @@ namespace HRMSolution.BackendAPI
             services.AddTransient<INguoiThanService, NguoiThanService>();
             services.AddTransient<INgoaiNguService, NgoaiNguService>();
             services.AddTransient<ITrinhDoVanHoaService, TrinhDoVanHoaService>();
-            services.AddTransient<IDieuChuyenService, DieuChuyenService>();
+            services.AddTransient<IQuaTrinhCongTacService, QuaTrinhCongTacService>();
             services.AddTransient<IStorageService, FileStorageService>();
             services.AddTransient<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
@@ -187,11 +187,11 @@ namespace HRMSolution.BackendAPI
                 .AllowAnyHeader()
                 .SetIsOriginAllowed(origin => true) // allow any origin
                 .AllowCredentials());
-            
+
             app.UseAuthorization();
 
             app.UseSwagger();
-            app.UseSwaggerUI(x=> 
+            app.UseSwaggerUI(x =>
             {
                 x.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger HRMSolution V1");
 

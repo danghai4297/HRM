@@ -166,7 +166,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
         {
             var nhanVien = await _context.nhanViens.FindAsync(id);
 
-            
+
 
             if (nhanVien == null || request.hoTen == null || request.quocTich == null || request.ngaySinh == null || request.diDong == null || request.cccd == null || request.noiCapCCCD == null
                 || request.ngayCapCCCD == null || request.ngayHetHanCCCD == null || request.noiSinh == null || request.queQuan == null || request.thuongTru == null || request.ngheNghiep == null
@@ -177,96 +177,202 @@ namespace HRMSolution.Application.Catalog.NhanViens
             }
             else
             {
-                var id_lhkc = await _context.lienHeKhanCaps.Where(x => x.maNhanVien == id).FirstOrDefaultAsync();
-                var lhkc = await _context.lienHeKhanCaps.FindAsync(id_lhkc.id);
+                if (request.trangThaiLaoDong == false)
+                {
+                    var id_lhkc = await _context.lienHeKhanCaps.Where(x => x.maNhanVien == id).FirstOrDefaultAsync();
+                    var lhkc = await _context.lienHeKhanCaps.FindAsync(id_lhkc.id);
 
-                var id_yt = await _context.yTes.Where(x => x.maNhanVien == id).FirstOrDefaultAsync();
-                var yt = await _context.yTes.FindAsync(id_yt.id);
+                    var id_yt = await _context.yTes.Where(x => x.maNhanVien == id).FirstOrDefaultAsync();
+                    var yt = await _context.yTes.FindAsync(id_yt.id);
 
-                var id_lsbt = await _context.lichSuBanThans.Where(x => x.maNhanVien == id).FirstOrDefaultAsync();
-                var lsbt = await _context.lichSuBanThans.FindAsync(id_lsbt.id);
-                nhanVien.hoTen = request.hoTen;
-                nhanVien.quocTich = request.quocTich;
-                nhanVien.ngaySinh = request.ngaySinh;
-                nhanVien.gioiTinh = request.gioiTinh;
-                nhanVien.dienThoai = request.dienThoai;
-                nhanVien.dienThoaiKhac = request.dienThoaiKhac;
-                nhanVien.diDong = request.diDong;
-                nhanVien.email = request.email;
-                nhanVien.facebook = request.facebook;
-                nhanVien.skype = request.skype;
-                nhanVien.maSoThue = request.maSoThue;
-                nhanVien.cccd = request.cccd;
-                nhanVien.noiCapCCCD = request.noiCapCCCD;
-                nhanVien.ngayCapCCCD = request.ngayCapCCCD;
-                nhanVien.ngayHetHanCCCD = request.ngayHetHanCCCD;
-                nhanVien.hoChieu = request.hoChieu;
-                nhanVien.noiCapHoChieu = request.noiCapHoChieu;
-                nhanVien.ngayCapHoChieu = request.ngayCapHoChieu;
-                nhanVien.ngayHetHanHoChieu = request.ngayHetHanHoChieu;
-                nhanVien.noiSinh = request.noiSinh;
-                nhanVien.queQuan = request.queQuan;
-                nhanVien.thuongTru = request.thuongTru;
-                nhanVien.tamTru = request.tamTru;
-                nhanVien.ngheNghiep = request.ngheNghiep;
-                nhanVien.chucVuHienTai = request.chucVuHienTai;
-                nhanVien.ngayTuyenDung = request.ngayTuyenDung;
-                nhanVien.ngayThuViec = request.ngayThuViec;
-                nhanVien.congViecChinh = request.congViecChinh;
-                nhanVien.ngayVaoBan = request.ngayVaoBan;
-                nhanVien.ngayChinhThuc = request.ngayChinhThuc;
-                nhanVien.coQuanTuyenDung = request.coQuanTuyenDung;
-                nhanVien.ngachCongChucNoiDung = request.ngachCongChucNoiDung;
-                nhanVien.vaoDang = request.vaoDang;
-                nhanVien.ngayVaoDang = request.ngayVaoDang;
-                nhanVien.ngayVaoDangChinhThuc = request.ngayVaoDangChinhThuc;
-                nhanVien.quanNhan = request.quanNhan;
-                nhanVien.ngayNhapNgu = request.ngayNhapNgu;
-                nhanVien.ngayXuatNgu = request.ngayXuatNgu;
-                nhanVien.quanHamCaoNhat = request.quanHamCaoNhat;
-                nhanVien.danhHieuCaoNhat = request.danhHieuCaoNhat;
-                nhanVien.ngayVaoDoan = request.ngayVaoDoan;
-                nhanVien.noiThamGia = request.noiThamGia;
-                nhanVien.laThuongBinh = request.laThuongBinh;
-                nhanVien.laConChinhSach = request.laConChinhSach;
-                nhanVien.thuongBinh = request.thuongBinh;
-                nhanVien.conChinhSach = request.conChinhSach;
-                nhanVien.bhxh = request.bhxh;
-                nhanVien.bhyt = request.bhyt;
-                nhanVien.atm = request.atm;
-                nhanVien.nganHang = request.nganHang;
-                nhanVien.trangThaiLaoDong = request.trangThaiLaoDong;
-                nhanVien.ngayNghiViec = request.ngayNghiViec;
-                nhanVien.lyDoNghiViec = request.lyDoNghiViec;
-                nhanVien.tinhChatLaoDong = request.tinhChatLaoDong;
-                nhanVien.idDanhMucHonNhan = request.idDanhMucHonNhan;
-                nhanVien.idDanToc = request.idDanToc;
-                nhanVien.idTonGiao = request.idTonGiao;
-                nhanVien.idNgachCongChuc = request.idNgachCongChuc;
-                yt.nhomMau = request.yt_nhomMau;
-                yt.chieuCao = request.yt_chieuCao;
-                yt.canNang = request.yt_canNang;
-                yt.tinhTrangSucKhoe = request.yt_tinhTrangSucKhoe;
-                yt.benhTat = request.yt_benhTat;
-                yt.luuY = request.yt_luuY;
-                yt.khuyetTat = request.yt_khuyetTat;
-                lsbt.biBatDiTu = request.lsbt_biBatDiTu;
-                lsbt.thamGiaChinhTri = request.lsbt_thamGiaChinhTri;
-                lsbt.thanNhanNuocNgoai = request.lsbt_thanNhanNuocNgoai;
-                lhkc.hoTen = request.hoTen;
-                lhkc.quanHe = request.lhkc_quanHe;
-                lhkc.dienThoai = request.lhkc_dienThoai;
-                lhkc.email = request.lhkc_email;
-                lhkc.diaChi = request.lhkc_diaChi;
+                    var id_lsbt = await _context.lichSuBanThans.Where(x => x.maNhanVien == id).FirstOrDefaultAsync();
+                    var lsbt = await _context.lichSuBanThans.FindAsync(id_lsbt.id);
+                    nhanVien.hoTen = request.hoTen;
+                    nhanVien.quocTich = request.quocTich;
+                    nhanVien.ngaySinh = request.ngaySinh;
+                    nhanVien.gioiTinh = request.gioiTinh;
+                    nhanVien.dienThoai = request.dienThoai;
+                    nhanVien.dienThoaiKhac = request.dienThoaiKhac;
+                    nhanVien.diDong = request.diDong;
+                    nhanVien.email = request.email;
+                    nhanVien.facebook = request.facebook;
+                    nhanVien.skype = request.skype;
+                    nhanVien.maSoThue = request.maSoThue;
+                    nhanVien.cccd = request.cccd;
+                    nhanVien.noiCapCCCD = request.noiCapCCCD;
+                    nhanVien.ngayCapCCCD = request.ngayCapCCCD;
+                    nhanVien.ngayHetHanCCCD = request.ngayHetHanCCCD;
+                    nhanVien.hoChieu = request.hoChieu;
+                    nhanVien.noiCapHoChieu = request.noiCapHoChieu;
+                    nhanVien.ngayCapHoChieu = request.ngayCapHoChieu;
+                    nhanVien.ngayHetHanHoChieu = request.ngayHetHanHoChieu;
+                    nhanVien.noiSinh = request.noiSinh;
+                    nhanVien.queQuan = request.queQuan;
+                    nhanVien.thuongTru = request.thuongTru;
+                    nhanVien.tamTru = request.tamTru;
+                    nhanVien.ngheNghiep = request.ngheNghiep;
+                    nhanVien.chucVuHienTai = request.chucVuHienTai;
+                    nhanVien.ngayTuyenDung = request.ngayTuyenDung;
+                    nhanVien.ngayThuViec = request.ngayThuViec;
+                    nhanVien.congViecChinh = request.congViecChinh;
+                    nhanVien.ngayVaoBan = request.ngayVaoBan;
+                    nhanVien.ngayChinhThuc = request.ngayChinhThuc;
+                    nhanVien.coQuanTuyenDung = request.coQuanTuyenDung;
+                    nhanVien.ngachCongChucNoiDung = request.ngachCongChucNoiDung;
+                    nhanVien.vaoDang = request.vaoDang;
+                    nhanVien.ngayVaoDang = request.ngayVaoDang;
+                    nhanVien.ngayVaoDangChinhThuc = request.ngayVaoDangChinhThuc;
+                    nhanVien.quanNhan = request.quanNhan;
+                    nhanVien.ngayNhapNgu = request.ngayNhapNgu;
+                    nhanVien.ngayXuatNgu = request.ngayXuatNgu;
+                    nhanVien.quanHamCaoNhat = request.quanHamCaoNhat;
+                    nhanVien.danhHieuCaoNhat = request.danhHieuCaoNhat;
+                    nhanVien.ngayVaoDoan = request.ngayVaoDoan;
+                    nhanVien.noiThamGia = request.noiThamGia;
+                    nhanVien.laThuongBinh = request.laThuongBinh;
+                    nhanVien.laConChinhSach = request.laConChinhSach;
+                    nhanVien.thuongBinh = request.thuongBinh;
+                    nhanVien.conChinhSach = request.conChinhSach;
+                    nhanVien.bhxh = request.bhxh;
+                    nhanVien.bhyt = request.bhyt;
+                    nhanVien.atm = request.atm;
+                    nhanVien.nganHang = request.nganHang;
+                    nhanVien.trangThaiLaoDong = request.trangThaiLaoDong;
+                    nhanVien.ngayNghiViec = request.ngayNghiViec;
+                    nhanVien.lyDoNghiViec = request.lyDoNghiViec;
+                    nhanVien.tinhChatLaoDong = request.tinhChatLaoDong;
+                    nhanVien.idDanhMucHonNhan = request.idDanhMucHonNhan;
+                    nhanVien.idDanToc = request.idDanToc;
+                    nhanVien.idTonGiao = request.idTonGiao;
+                    nhanVien.idNgachCongChuc = request.idNgachCongChuc;
+                    yt.nhomMau = request.yt_nhomMau;
+                    yt.chieuCao = request.yt_chieuCao;
+                    yt.canNang = request.yt_canNang;
+                    yt.tinhTrangSucKhoe = request.yt_tinhTrangSucKhoe;
+                    yt.benhTat = request.yt_benhTat;
+                    yt.luuY = request.yt_luuY;
+                    yt.khuyetTat = request.yt_khuyetTat;
+                    lsbt.biBatDiTu = request.lsbt_biBatDiTu;
+                    lsbt.thamGiaChinhTri = request.lsbt_thamGiaChinhTri;
+                    lsbt.thanNhanNuocNgoai = request.lsbt_thanNhanNuocNgoai;
+                    lhkc.hoTen = request.hoTen;
+                    lhkc.quanHe = request.lhkc_quanHe;
+                    lhkc.dienThoai = request.lhkc_dienThoai;
+                    lhkc.email = request.lhkc_email;
+                    lhkc.diaChi = request.lhkc_diaChi;
 
-                var result = await _context.SaveChangesAsync();
-                if (result == 0)
-                    return 0;
+
+                    var dieuChuyen = await _context.dieuChuyens.Where(x => x.maNhanVien == nhanVien.maNhanVien).FirstOrDefaultAsync();
+                    if (dieuChuyen != null)
+                    {
+                        dieuChuyen.trangThai = false;
+                    }
+
+                    var hopDong = await _context.hopDongs.Where(x => x.maNhanVien == nhanVien.maNhanVien).FirstOrDefaultAsync();
+                    if (hopDong != null)
+                    {
+                        hopDong.trangThai = false;
+                        var luong = await _context.luongs.Where(x => x.maHopDong == hopDong.maHopDong).FirstOrDefaultAsync();
+                        luong.trangThai = false;
+                    }
+
+                    var result = await _context.SaveChangesAsync();
+                    if (result == 0)
+                        return 0;
+                    else
+                        return 1;
+                }
                 else
-                    return 1;
+                {
+                    var id_lhkc = await _context.lienHeKhanCaps.Where(x => x.maNhanVien == id).FirstOrDefaultAsync();
+                    var lhkc = await _context.lienHeKhanCaps.FindAsync(id_lhkc.id);
+
+                    var id_yt = await _context.yTes.Where(x => x.maNhanVien == id).FirstOrDefaultAsync();
+                    var yt = await _context.yTes.FindAsync(id_yt.id);
+
+                    var id_lsbt = await _context.lichSuBanThans.Where(x => x.maNhanVien == id).FirstOrDefaultAsync();
+                    var lsbt = await _context.lichSuBanThans.FindAsync(id_lsbt.id);
+                    nhanVien.hoTen = request.hoTen;
+                    nhanVien.quocTich = request.quocTich;
+                    nhanVien.ngaySinh = request.ngaySinh;
+                    nhanVien.gioiTinh = request.gioiTinh;
+                    nhanVien.dienThoai = request.dienThoai;
+                    nhanVien.dienThoaiKhac = request.dienThoaiKhac;
+                    nhanVien.diDong = request.diDong;
+                    nhanVien.email = request.email;
+                    nhanVien.facebook = request.facebook;
+                    nhanVien.skype = request.skype;
+                    nhanVien.maSoThue = request.maSoThue;
+                    nhanVien.cccd = request.cccd;
+                    nhanVien.noiCapCCCD = request.noiCapCCCD;
+                    nhanVien.ngayCapCCCD = request.ngayCapCCCD;
+                    nhanVien.ngayHetHanCCCD = request.ngayHetHanCCCD;
+                    nhanVien.hoChieu = request.hoChieu;
+                    nhanVien.noiCapHoChieu = request.noiCapHoChieu;
+                    nhanVien.ngayCapHoChieu = request.ngayCapHoChieu;
+                    nhanVien.ngayHetHanHoChieu = request.ngayHetHanHoChieu;
+                    nhanVien.noiSinh = request.noiSinh;
+                    nhanVien.queQuan = request.queQuan;
+                    nhanVien.thuongTru = request.thuongTru;
+                    nhanVien.tamTru = request.tamTru;
+                    nhanVien.ngheNghiep = request.ngheNghiep;
+                    nhanVien.chucVuHienTai = request.chucVuHienTai;
+                    nhanVien.ngayTuyenDung = request.ngayTuyenDung;
+                    nhanVien.ngayThuViec = request.ngayThuViec;
+                    nhanVien.congViecChinh = request.congViecChinh;
+                    nhanVien.ngayVaoBan = request.ngayVaoBan;
+                    nhanVien.ngayChinhThuc = request.ngayChinhThuc;
+                    nhanVien.coQuanTuyenDung = request.coQuanTuyenDung;
+                    nhanVien.ngachCongChucNoiDung = request.ngachCongChucNoiDung;
+                    nhanVien.vaoDang = request.vaoDang;
+                    nhanVien.ngayVaoDang = request.ngayVaoDang;
+                    nhanVien.ngayVaoDangChinhThuc = request.ngayVaoDangChinhThuc;
+                    nhanVien.quanNhan = request.quanNhan;
+                    nhanVien.ngayNhapNgu = request.ngayNhapNgu;
+                    nhanVien.ngayXuatNgu = request.ngayXuatNgu;
+                    nhanVien.quanHamCaoNhat = request.quanHamCaoNhat;
+                    nhanVien.danhHieuCaoNhat = request.danhHieuCaoNhat;
+                    nhanVien.ngayVaoDoan = request.ngayVaoDoan;
+                    nhanVien.noiThamGia = request.noiThamGia;
+                    nhanVien.laThuongBinh = request.laThuongBinh;
+                    nhanVien.laConChinhSach = request.laConChinhSach;
+                    nhanVien.thuongBinh = request.thuongBinh;
+                    nhanVien.conChinhSach = request.conChinhSach;
+                    nhanVien.bhxh = request.bhxh;
+                    nhanVien.bhyt = request.bhyt;
+                    nhanVien.atm = request.atm;
+                    nhanVien.nganHang = request.nganHang;
+                    nhanVien.trangThaiLaoDong = request.trangThaiLaoDong;
+                    nhanVien.ngayNghiViec = request.ngayNghiViec;
+                    nhanVien.lyDoNghiViec = request.lyDoNghiViec;
+                    nhanVien.tinhChatLaoDong = request.tinhChatLaoDong;
+                    nhanVien.idDanhMucHonNhan = request.idDanhMucHonNhan;
+                    nhanVien.idDanToc = request.idDanToc;
+                    nhanVien.idTonGiao = request.idTonGiao;
+                    nhanVien.idNgachCongChuc = request.idNgachCongChuc;
+                    yt.nhomMau = request.yt_nhomMau;
+                    yt.chieuCao = request.yt_chieuCao;
+                    yt.canNang = request.yt_canNang;
+                    yt.tinhTrangSucKhoe = request.yt_tinhTrangSucKhoe;
+                    yt.benhTat = request.yt_benhTat;
+                    yt.luuY = request.yt_luuY;
+                    yt.khuyetTat = request.yt_khuyetTat;
+                    lsbt.biBatDiTu = request.lsbt_biBatDiTu;
+                    lsbt.thamGiaChinhTri = request.lsbt_thamGiaChinhTri;
+                    lsbt.thanNhanNuocNgoai = request.lsbt_thanNhanNuocNgoai;
+                    lhkc.hoTen = request.hoTen;
+                    lhkc.quanHe = request.lhkc_quanHe;
+                    lhkc.dienThoai = request.lhkc_dienThoai;
+                    lhkc.email = request.lhkc_email;
+                    lhkc.diaChi = request.lhkc_diaChi;
+
+                    var result = await _context.SaveChangesAsync();
+                    if (result == 0)
+                        return 0;
+                    else
+                        return 1;
+                }
             }
-
-
         }
 
         public async Task<List<NhanVienViewModel>> GetAll()

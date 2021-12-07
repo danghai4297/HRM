@@ -66,7 +66,7 @@ namespace HRMSolution.NUnitTest
         protected IDanhMucToService danhMucToService;
         protected IDanhMucTrinhDoService danhMucTrinhDoService;
         //IService Tranfer
-        protected IDieuChuyenService DieuChuyenService;
+        protected IQuaTrinhCongTacService DieuChuyenService;
         //IService Contract
         protected IHopDongService HopDongService;
         //IService Reward
@@ -118,7 +118,7 @@ namespace HRMSolution.NUnitTest
             LichSuService = new LichSuService(_context);
             UserService = new UserService(_userManager, _signInManager, _config, _context);
             LuongService = new LuongService(_context, storageService);
-            DieuChuyenService = new DieuChuyenService(_context, storageService);
+            DieuChuyenService = new QuaTrinhCongTacService(_context, storageService);
             KhenThuongKyLuatService = new KhenThuongKyLuatService(_context, storageService);
             HopDongService = new HopDongService(_context, storageService);
             NhanVienService = new NhanVienService(_context, storageService);

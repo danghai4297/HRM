@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HRMSolution.Application.Catalog.DieuChuyens.Dtos
 {
-    public class DieuChuyenViewModel
+    public class QuaTrinhCongTacViewModel
     {
         public int id { get; set; }
         public string maNhanVien { get; set; }
