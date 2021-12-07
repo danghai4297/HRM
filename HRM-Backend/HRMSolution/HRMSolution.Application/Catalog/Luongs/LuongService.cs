@@ -46,6 +46,8 @@ namespace HRMSolution.Application.Catalog.Luongs
                         heSoLuong = request.heSoLuong,
                         bacLuong = request.bacLuong,
                         luongCoBan = request.luongCoBan,
+                        phuCapChucDanh = request.phuCapChucDanh,
+                        phuCapChucVu = request.phuCapChucVu,
                         phuCapTrachNhiem = request.phuCapTrachNhiem,
                         phuCapKhac = request.phuCapKhac,
                         tongLuong = request.tongLuong,
@@ -78,6 +80,8 @@ namespace HRMSolution.Application.Catalog.Luongs
                         heSoLuong = request.heSoLuong,
                         bacLuong = request.bacLuong,
                         luongCoBan = request.luongCoBan,
+                        phuCapChucDanh = request.phuCapChucDanh,
+                        phuCapChucVu = request.phuCapChucVu,
                         phuCapTrachNhiem = request.phuCapTrachNhiem,
                         phuCapKhac = request.phuCapKhac,
                         tongLuong = request.tongLuong,
@@ -158,7 +162,10 @@ namespace HRMSolution.Application.Catalog.Luongs
                     maHopDong = x.hd.maHopDong,
                     maNhanVien = x.hd.maNhanVien,
                     tenNhanVien = x.nv.hoTen,
-                    idNhomLuong = x.l.idNhomLuong
+                    idNhomLuong = x.l.idNhomLuong,
+                    phuCapChucDanh = x.l.phuCapChucDanh,
+                    phuCapChucVu = x.l.phuCapChucVu,
+                    ghiChu = x.l.ghiChu
                 }).ToListAsync();
 
                 return data;
@@ -200,7 +207,9 @@ namespace HRMSolution.Application.Catalog.Luongs
                     maNhanVien = x.hd.maNhanVien,
                     tenNhanVien = x.nv.hoTen,
                     idNhomLuong = x.l.idNhomLuong,
-                    ghiChu = x.l.ghiChu
+                    ghiChu = x.l.ghiChu,
+                    phuCapChucDanh = x.l.phuCapChucDanh,
+                    phuCapChucVu = x.l.phuCapChucVu,
                 }).FirstAsync();
 
                 return data;
@@ -221,6 +230,8 @@ namespace HRMSolution.Application.Catalog.Luongs
                 luong.heSoLuong = request.heSoLuong;
                 luong.bacLuong = request.bacLuong;
                 luong.luongCoBan = request.luongCoBan;
+                luong.phuCapChucDanh = request.phuCapChucDanh;
+                luong.phuCapChucVu = request.phuCapChucVu;
                 luong.phuCapTrachNhiem = request.phuCapTrachNhiem;
                 luong.phuCapKhac = request.phuCapKhac;
                 luong.tongLuong = request.tongLuong;

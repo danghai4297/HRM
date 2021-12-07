@@ -468,6 +468,19 @@ namespace HRMSolution.Application.Catalog.NhanViens
         {
             var query = from nv in _context.nhanViens
                         join dc in _context.dieuChuyens on nv.maNhanVien equals dc.maNhanVien
+                        where dc.trangThai == true
+                        select new { nv, dc };
+            var data = await query.Select(x => new MaTenViewModel()
+            {
+                id = x.nv.maNhanVien,
+                hoTen = x.nv.hoTen
+            }).ToListAsync();
+            return data;
+        }
+        public async Task<List<MaTenViewModel>> GetAllNhanVienAccount()
+        {
+            var query = from nv in _context.nhanViens
+                        join dc in _context.dieuChuyens on nv.maNhanVien equals dc.maNhanVien
                         where dc.trangThai == true && dc.idPhongBan == 1
                         select new { nv, dc };
             var data = await query.Select(x => new MaTenViewModel()
@@ -874,5 +887,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
 
 
         }
+
+
     }
 }

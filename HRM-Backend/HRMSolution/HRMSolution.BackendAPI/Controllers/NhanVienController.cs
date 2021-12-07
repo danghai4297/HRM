@@ -32,6 +32,12 @@ namespace HRMSolution.BackendAPI.Controllers
             var nhanViens = await _nhanVienService.GetAllMaVaTen();
             return Ok(nhanViens);
         }
+        [HttpGet("ma-ten-account")]
+        public async Task<IActionResult> GetAllEmployeeByIdAndNameToAccount()
+        {
+            var nhanViens = await _nhanVienService.GetAllNhanVienAccount();
+            return Ok(nhanViens);
+        }
         [HttpGet("nghiviec")]
         public async Task<IActionResult> GetEmployeeResignation()
         {

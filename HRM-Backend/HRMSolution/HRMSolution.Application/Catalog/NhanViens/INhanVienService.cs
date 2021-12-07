@@ -15,6 +15,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
         Task<int> DeleteImage(string maNhanVien);
         Task<List<NhanVienViewModel>> GetAll();
         Task<List<MaTenViewModel>> GetAllMaVaTen();
+        Task<List<MaTenViewModel>> GetAllNhanVienAccount();
         Task<NhanVienDetailViewModel> GetByMaNV(string maNhanVien);
         Task<List<NhanVienViewModel>> GetAllNVNghi();
     }
