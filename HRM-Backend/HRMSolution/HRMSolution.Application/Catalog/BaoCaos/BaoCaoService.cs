@@ -1,5 +1,5 @@
 ﻿using HRMSolution.Application.Catalog.BaoCaos;
-using HRMSolution.Application.Catalog.BaosCao.Dtos;
+using HRMSolution.Application.Catalog.BaoCaos.Dtos;
 using HRMSolution.Data.EF;
 using System;
 using System.Collections.Generic;
@@ -1878,6 +1878,11 @@ namespace HRMSolution.Application.Catalog.BaoCaos
             }).ToListAsync();
 
             return data;
+        }
+
+        public Task<List<BaoCaoLuongViewModel>> GetAllBaoCaoLuong(string maNhanVien)
+        {
+            throw new NotImplementedException();
         }
     }
 }

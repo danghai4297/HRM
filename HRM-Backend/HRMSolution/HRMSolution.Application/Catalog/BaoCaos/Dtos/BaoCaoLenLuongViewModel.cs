@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace HRMSolution.Application.Catalog.BaosCao.Dtos
+namespace HRMSolution.Application.Catalog.BaoCaos.Dtos
 {
     public class BaoCaoLenLuongViewModel
     {
