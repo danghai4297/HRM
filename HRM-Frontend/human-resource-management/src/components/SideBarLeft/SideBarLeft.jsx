@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./SideBarLeft.scss";
-import { SideBarData } from "./SideBarDate";
+import { SideBarData } from "./SideBarData";
 import { Link, useRouteMatch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

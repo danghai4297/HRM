@@ -278,17 +278,15 @@ export const schema = yup.object().shape({
     .matches(allNull, "Lịch sử bản thân không thể là khoảng trống.")
     .nullable()
     .notRequired(),
-  // vaoDang:yup.boolean(),
-  // // ngayVaoDang: yup.date().when("vaoDang",{
-  // //   is:true,
-  // //   then:yup.date().nullable().required("Ngày vào Đảng không được để trống"),
-  // //   otherwise:yup.date().nullable().required("Ngày vào Đảng 2 không được để trống"),
-  // // }),
-  // ngayVaoDangChinhThuc: yup.date().when("vaoDang",{
-  //   is:true,
-  //   then:yup.date().nullable().required("Ngày chính thức không được để trống"),
-  //   otherwise:yup.date().nullable().notRequired(),
-  // }),
+  vaoDang: yup.boolean(),
+  ngayVaoDang: yup.date().when("vaoDang", {
+    is: true,
+    then: yup.date().nullable().required("Ngày vào Đảng không được để trống"),
+  }),
+  ngayVaoDangChinhThuc: yup.date().when("vaoDang", {
+    is: true,
+    then: yup.date().nullable().required("Ngày chính thức không được để trống"),
+  }),
   // laThuongBinh:yup.boolean(),
   // thuongBinh: yup.string().when("laThuongBinh",{
   //   is:true,
