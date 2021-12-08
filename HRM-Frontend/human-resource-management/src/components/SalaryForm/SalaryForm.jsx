@@ -249,7 +249,7 @@ function AddSalaryForm(props) {
       Number(allowance) +
       Number(OtherAllowance);
     setValue("tongLuong", rss);
-    setTotalSalary(rss);
+    setTotalSalary(rss.toFixed(0));
   }, [salary.heSoLuong, DemoSalary, OtherAllowance, allowance]);
 
   const onHandleSubmit = async (data) => {

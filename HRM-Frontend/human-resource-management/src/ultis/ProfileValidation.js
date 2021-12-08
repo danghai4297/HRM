@@ -279,11 +279,12 @@ export const schema = yup.object().shape({
     .nullable()
     .notRequired(),
   // vaoDang:yup.boolean(),
-  // // ngayVaoDang: yup.date().when("vaoDang",{
-  // //   is:true,
-  // //   then:yup.date().nullable().required("Ngày vào Đảng không được để trống"),
-  // //   otherwise:yup.date().nullable().required("Ngày vào Đảng 2 không được để trống"),
-  // // }),
+  // ngayVaoDang: yup.date().when("vaoDang",{
+  //   is:true,
+  //   then:yup.date().nullable().required("Ngày vào Đảng không được để trống"),
+  //   is:false,
+  //   then:yup.date().nullable().required("Ngày vào Đảng 2 không được để trống"),
+  // }),
   // ngayVaoDangChinhThuc: yup.date().when("vaoDang",{
   //   is:true,
   //   then:yup.date().nullable().required("Ngày chính thức không được để trống"),
