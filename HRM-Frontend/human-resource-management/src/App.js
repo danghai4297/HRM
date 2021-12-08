@@ -3,8 +3,8 @@ import "./App.css";
 import "./components/FontAwesomeIcons/index";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ListProvider } from "./Contexts/ListContext";
-import ScreenProject from "./containers/ScreenProject/ScreenProject";
-import LogIn from "./containers/ScreenLoginCom/loginn";
+import ScreenProject from "./router/ScreenProject/ScreenProject";
+import LogIn from "./pages/Account/ScreenLoginCom/loginn";
 import { AccountContext, SideBarContext } from "./Contexts/StateContext";
 
 import {
