@@ -6,8 +6,7 @@ const phoneRexlandline = /^((02)+([0-9]{9})|)$/g;
 const tax = /((0)([0-7])([0-9]){8})$/g;
 const cccdRegex = /((0)([0-9]){2}([0-3]){1}([0-9]){8})$/g;
 const atm = /^(?:[1-9]\d*|)$/g;
-const bhyt =
-  /^((DN|HX|CH|NN|DK|HC|XK|HT|DB|NO|CT|XB|TN|CS|QN|CA|CY|XN|MS|CC|CK|CB|KC|HD|TE|BT|HN|DT|DK|XD|TS|TC|TQ|TA|TY|HG|LS|PV|CN|HS|SV|GB|GD){1}([1-5]){1}([0-9]){2}([0-9]){10}|)$/g;
+const bhyt = /^((DN|HX|CH|NN|DK|HC|XK|HT|DB|NO|CT|XB|TN|CS|QN|CA|CY|XN|MS|CC|CK|CB|KC|HD|TE|BT|HN|DT|DK|XD|TS|TC|TQ|TA|TY|HG|LS|PV|CN|HS|SV|GB|GD){1}([1-5]){1}([0-9]){2}([0-9]){10}|)$/g;
 const bhxh = /^(([0-9]){10}|)$/g;
 const hoChieu = /^(([A-Z]{1})([0-9]){7}|)$/g;
 const email = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4}|)$/g;
@@ -218,7 +217,7 @@ export const schema = yup.object().shape({
     .matches(allNull, "Tạm trú không thể là khoảng trống.")
     .nullable()
     .notRequired(),
-  NoiCapHoChieu: yup
+  noiCapHoChieu: yup
     .string()
     .matches(allNull, "Nơi cấp hộ chiếu không thể là khoảng trống.")
     .nullable()
@@ -278,24 +277,49 @@ export const schema = yup.object().shape({
     .matches(allNull, "Lịch sử bản thân không thể là khoảng trống.")
     .nullable()
     .notRequired(),
-  // vaoDang:yup.boolean(),
-  // // ngayVaoDang: yup.date().when("vaoDang",{
-  // //   is:true,
-  // //   then:yup.date().nullable().required("Ngày vào Đảng không được để trống"),
-  // //   otherwise:yup.date().nullable().required("Ngày vào Đảng 2 không được để trống"),
-  // // }),
-  // ngayVaoDangChinhThuc: yup.date().when("vaoDang",{
-  //   is:true,
-  //   then:yup.date().nullable().required("Ngày chính thức không được để trống"),
-  //   otherwise:yup.date().nullable().notRequired(),
-  // }),
-  // laThuongBinh:yup.boolean(),
-  // thuongBinh: yup.string().when("laThuongBinh",{
-  //   is:true,
-  //   then: yup.string().nullable().required("Thương binh hạng không được bỏ trống"),
-  //   otherwise:yup.string()
-  //   .matches(allNull, "Không thể là khoảng trống.")
-  //   .nullable()
-  //   .notRequired(),
-  // }),
+  vaoDang: yup.boolean(),
+  ngayVaoDang: yup.date().when("vaoDang", {
+    is: true,
+    then: yup.date().nullable().required("Ngày vào Đảng không được để trống"),
+  }),
+  ngayVaoDangChinhThuc: yup.date().when("vaoDang", {
+    is: true,
+    then: yup.date().nullable().required("Ngày chính thức không được để trống"),
+  }),
+  quanNhan: yup.boolean(),
+  ngayNhapNgu: yup.date().when("quanNhan", {
+    is: true,
+    then: yup.date().nullable().required("Ngày nhập ngũ không được để trống"),
+  }),
+  ngayXuatNgu: yup.date().when("quanNhan", {
+    is: true,
+    then: yup.date().nullable().required("Ngày xuất ngũ không được để trống"),
+  }),
+  laThuongBinh: yup.boolean(),
+  thuongBinh: yup.string().nullable().when("laThuongBinh", {
+    is: true,
+    then: yup
+      .string()
+      .matches(notAllowNull, "Thương binh hạng không thể là khoảng trống.")
+      .nullable()
+      .required("Thương binh hạng không được bỏ trống"),
+   
+  }),
+  laConChinhSach: yup.boolean(),
+  conChinhSach: yup.string().nullable().when("laConChinhSach", {
+    is: true,
+    then: yup
+      .string()
+      .matches(notAllowNull, "Con chính sách không thể là khoảng trống.")
+      .nullable()
+      .required("Con chính sách không được bỏ trống"),
+  }),
+  quanHamCaoNhat: yup.string().nullable().when("quanNhan", {
+    is: true,
+    then: yup.string().matches(allNull, "Quân hàm cao nhất không thể là khoảng trống.").nullable().notRequired(),
+  }),
+  danhHieuCaoNhat:yup.string().nullable().when("quanNhan", {
+    is: true,
+    then: yup.string().matches(allNull, "Danh hiệu cao nhất không thể là khoảng trống.").nullable().notRequired(),
+  }),
 });

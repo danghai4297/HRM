@@ -755,6 +755,11 @@ const ProductApi = {
     const url = `/BaoCao/bao-cao-nguoi-than-danh-muc-phong-ban-gioi-tinh-trang-thai/${ageX}/${ageY}/${idDm}/${idPb}/${gender}/${status}`;
     return axiosClient.get(url);
   },
+  //Rp hồ sơ lương
+  getRpHSL: (id) => {
+    const url = `/BaoCao/bao-cao-luong/${id}`;
+    return axiosClient.get(url);
+  },
 };
 
 export default ProductApi;
