@@ -114,7 +114,6 @@ function AddSalaryForm(props) {
       try {
         if (contractCodes !== undefined) {
           const responseDetailHD = await ProductApi.getHdDetail(contractCodes);
-          //setValue("phuCapTrachNhiem", responseDetailHD.phuCapChucVu);
           setAllowance(responseDetailHD.phuCapChucVu);
         }
       } catch (error) {
@@ -151,8 +150,6 @@ function AddSalaryForm(props) {
         e.fileList.length !== 0
           ? URL.createObjectURL(e.file)
           : "/Images/userIcon.png",
-      //file: e.target.files[0],
-      //path: URL.createObjectURL(e.target.files[0]),
       size: e.fileList.length !== 0 ? e.file.size : null,
     });
   };
@@ -262,11 +259,20 @@ function AddSalaryForm(props) {
     rss +=
       Number(salary.heSoLuong) * Number(DemoSalary) +
       Number(allowance) +
-      Number(OtherAllowance) + Number(titleAllowance) + (Number(DemoSalary)*Number(responsibilityAllowance));
-    let fixTotal = ((rss/1000).toFixed(0))*1000;
+      Number(OtherAllowance) +
+      Number(titleAllowance) +
+      Number(DemoSalary) * Number(responsibilityAllowance);
+    let fixTotal = (rss / 1000).toFixed(0) * 1000;
     setValue("tongLuong", rss);
     setTotalSalary(fixTotal);
-  }, [salary.heSoLuong, DemoSalary, OtherAllowance, allowance,responsibilityAllowance,titleAllowance]);
+  }, [
+    salary.heSoLuong,
+    DemoSalary,
+    OtherAllowance,
+    allowance,
+    responsibilityAllowance,
+    titleAllowance,
+  ]);
 
   const onHandleSubmit = async (data) => {
     const nameCon = dataAllHD.filter((item) => item.id === data.maHopDong);
@@ -385,21 +391,6 @@ function AddSalaryForm(props) {
     }
   };
 
-  // useEffect(() => {
-  //   if(id!== undefined){
-  //     setSalaryTime(Number(getValues("thoiHanLenLuong")));
-  //   }
-  //   if (
-  //     salaryTime !== undefined &&
-  //     endDate !== undefined &&
-  //     salaryTime !== 0 &&
-  //     endDate !== null
-  //   ) {
-  //     const rs = endDate.clone();
-  //     setEndDateRs(rs.add(salaryTime, "years"));
-  //   }
-  // }, [salaryTime, endDate]);
-
   return (
     <>
       <div className="container-form">
@@ -410,16 +401,6 @@ function AddSalaryForm(props) {
             </h2>
           </div>
           <div className="button">
-            {/* <input
-              type="submit"
-              className={
-                dataLDetail.length !== 0 ? "btn btn-danger" : "delete-button"
-              }
-              onClick={() => {
-                setShowDeleteDialog(true);
-              }}
-              value="Xoá"
-            /> */}
             <input
               type="submit"
               className="btn btn-secondary ml-3"
@@ -743,7 +724,9 @@ function AddSalaryForm(props) {
                       />
                     )}
                   />
-                  <span className="message">{errors.phuCapTrachNhiem?.message}</span>
+                  <span className="message">
+                    {errors.phuCapTrachNhiem?.message}
+                  </span>
                 </div>
               </div>
             </div>

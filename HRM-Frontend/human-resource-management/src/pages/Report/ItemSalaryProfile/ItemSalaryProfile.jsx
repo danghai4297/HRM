@@ -31,7 +31,6 @@ function ItemSalaryProfile() {
         console.log("false to fetch nv list: ", error);
       }
     };
-
     fetchNvList();
   }, []);
 
@@ -58,25 +57,21 @@ function ItemSalaryProfile() {
         </div>
         <div className="roww">
           <div className="select-row2">
-            <label>Tên nhân viên</label>
+            <label>Nhân viên</label>
             <div>
-              <select
+              <input
+                type="text"
                 className="form-control selectpicker"
                 onChange={(e) => setIdNv(e.target.value)}
-              >
-                <option value="Tất cả">Tất cả</option>
+                list="contractCode"
+              />
+              <datalist id="contractCode">
                 {dataNv.map((item, key) => (
                   <option key={key} value={item.id}>
                     {item.hoTen}{" "}
                   </option>
                 ))}
-              </select>
-            </div>
-          </div>
-          <div className="select-row2">
-            <label>Mã nhân viên</label>
-            <div>
-              <input type="text" class="form-control" value={idNv} />
+              </datalist>
             </div>
           </div>
         </div>
