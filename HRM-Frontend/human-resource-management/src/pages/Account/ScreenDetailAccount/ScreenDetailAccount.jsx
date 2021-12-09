@@ -47,7 +47,7 @@ function ScreenDetailAccount(props) {
           <div className="third-path-account">
             <Link to={`/account/addRole/${id}`}>
               <Button variant="light" className="btn-fix-account">
-                Role
+                Thêm quyền
               </Button>
             </Link>
             <Button
@@ -68,7 +68,7 @@ function ScreenDetailAccount(props) {
                 }
               }}
             >
-              Reset
+              Mật khẩu mới
             </Button>
           </div>
         </div>

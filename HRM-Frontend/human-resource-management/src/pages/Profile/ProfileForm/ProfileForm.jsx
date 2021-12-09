@@ -396,7 +396,7 @@ function AddProfileForm(props) {
       "cccd",
       "noiCapCCCD",
       "hoChieu",
-      "noiCapHoChieu",
+      "NoiCapHoChieu",
       "noiSinh",
       "queQuan",
       "thuongTru",

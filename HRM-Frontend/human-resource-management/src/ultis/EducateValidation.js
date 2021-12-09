@@ -1,9 +1,9 @@
 import * as yup from "yup";
-const dontAllowOnlySpace = /^\s*\S.*$/g;
+const notOnlySpace = /^(?!\s+$).*/g;
 export const schema = yup.object({
   tenHinhThuc: yup
     .string()
     .nullable()
-    .matches(dontAllowOnlySpace, "Tên hình thức không được bỏ trống.")
-    .required("Tên lao động không được bỏ trống."),
+    .matches(notOnlySpace, "Tên hình thức không được chỉ là khoảng trống.")
+    .required("Tên hình thức không được bỏ trống."),
 });
