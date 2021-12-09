@@ -22,7 +22,8 @@ namespace HRMSolution.Application.Catalog.DanhMucPhongBans
 
         public async Task<int> Create(DanhMucPhongBanCreateRequest request)
         {
-            if (request.maPhongBan == null || request.tenPhongBan == null)
+            var check = await _context.danhMucPhongBans.Where(x => x.tenPhongBan == request.tenPhongBan).FirstOrDefaultAsync();
+            if (request.maPhongBan == null || request.tenPhongBan == null || check != null)
             {
                 return 0;
             }

@@ -22,7 +22,8 @@ namespace HRMSolution.Application.Catalog.DanhMucTrinhDos
 
         public async Task<int> Create(DanhMucTrinhDoCreateRequest request)
         {
-            if (request.tenTrinhDo == null)
+            var check = await _context.danhMucTrinhDos.Where(x => x.tenTrinhDo == request.tenTrinhDo).FirstOrDefaultAsync();
+            if (request.tenTrinhDo == null || check != null)
             {
                 return 0;
             }

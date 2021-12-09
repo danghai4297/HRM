@@ -21,7 +21,8 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
 
         public async Task<int> Create(DanhMucLoaiHopDongCreateRequest request)
         {
-            if (request.maLoaiHopDong == null || request.tenLoaiHopDong == null)
+            var check = await _context.danhMucLoaiHopDongs.Where(x => x.tenLoaiHopDong == request.tenLoaiHopDong).FirstOrDefaultAsync();
+            if (request.maLoaiHopDong == null || request.tenLoaiHopDong == null || check != null)
             {
                 return 0;
             }
