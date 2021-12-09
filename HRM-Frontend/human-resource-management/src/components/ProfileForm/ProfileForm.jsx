@@ -26,6 +26,7 @@ function AddProfileForm(props) {
   let { id } = match.params;
   const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
+
   //handle checkbox
   const [checkedSoldier, setCheckedSoldier] = useState(false);
   const handleClick = () => setCheckedSoldier(!checkedSoldier);

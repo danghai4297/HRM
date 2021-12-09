@@ -119,7 +119,7 @@ function ItemDecisionSalaryUp() {
         </div>
 
         <div className="roww row-btn">
-          <button className="button-pdf" onClick={handlePrint}>
+          <button className="pdfx" onClick={handlePrint}>
             <FontAwesomeIcon icon={["fas", "file-pdf"]} />
           </button>
         </div>

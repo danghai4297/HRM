@@ -1,7 +1,7 @@
 import * as yup from "yup";
 
 const notAllowNull = /^\s*\S.*$/g;
-const allNull = /^(?!\s+$).*/g;
+// const allNull = /^(?!\s+$).*/g;
 export const schema = yup.object({
   tenTruong: yup
     .string()

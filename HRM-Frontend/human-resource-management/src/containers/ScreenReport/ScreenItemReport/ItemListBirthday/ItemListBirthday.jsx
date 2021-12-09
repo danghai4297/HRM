@@ -153,7 +153,7 @@ function ItemListBirthday() {
             value="Hiển thị báo cáo"
             onClick={handelReport}
           />
-          <button className="button-pdf" onClick={handlePrint}>
+          <button className="pdfx" onClick={handlePrint}>
             <FontAwesomeIcon icon={["fas", "file-pdf"]} />
           </button>
           <ExportCSV csvData={dataRp} fileName="Báo cáo danh sách nhân viên" />

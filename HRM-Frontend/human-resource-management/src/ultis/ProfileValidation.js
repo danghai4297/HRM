@@ -2,7 +2,7 @@ import * as yup from "yup";
 const phoneRex = /([\|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})$\b/;
 const phoneRex1 = /^(([+|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})|)$/;
 const phoneRexlandline = /^((02)+([0-9]{9})|)$/g;
-const number = /^\d+$/;
+// const number = /^\d+$/;
 const tax = /((0)([0-7])([0-9]){8})$/g;
 const cccdRegex = /((0)([0-9]){2}([0-3]){1}([0-9]){8})$/g;
 const atm = /^(?:[1-9]\d*|)$/g;

@@ -9,6 +9,7 @@ import TablePagination from "../../components/TablePagination/TablePagination";
 import { Link } from "react-router-dom";
 import ProductApi from "../../api/productApi";
 import { useDocumentTitle } from "../../hook/TitleDocument";
+import useWindowDimensions from "../../hook/useWindowDimensions";
 
 function ScreenReward(props) {
   const link = "/reward/detail/";
@@ -17,16 +18,18 @@ function ScreenReward(props) {
   const [columns, setColumns] = useState([]);
   useDocumentTitle("Khen thưởng");
 
+  const { width } = useWindowDimensions();
+
   useEffect(() => {
     const reSizeTable = () => {
-      if (window.innerWidth < 1025) {
+      if (width < 1025) {
         setColumns(NVCOLUMNSMD);
       } else {
         setColumns(NVCOLUMNS);
       }
     };
     reSizeTable();
-  }, [window.innerWidth]);
+  }, [width]);
 
   useEffect(() => {
     const fetchNvList = async () => {

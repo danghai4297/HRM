@@ -1,6 +1,6 @@
 import * as yup from "yup";
 const notAllowNull = /^\s*\S.*$/g;
-const allNull = /^(?!\s+$).*/g;
+// const allNull = /^(?!\s+$).*/g;
 export const schema = yup.object({
   idDanhMucNgoaiNgu: yup.number().typeError("Ngoại ngữ không được bỏ trống."),
   ngayCap: yup.date().nullable().required("Ngày cấp không được bỏ trống."),

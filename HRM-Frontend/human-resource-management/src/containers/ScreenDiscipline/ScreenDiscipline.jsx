@@ -9,6 +9,7 @@ import TablePagination from "../../components/TablePagination/TablePagination";
 import ProductApi from "../../api/productApi";
 import { Link } from "react-router-dom";
 import { useDocumentTitle } from "../../hook/TitleDocument";
+import useWindowDimensions from "../../hook/useWindowDimensions";
 
 function ScreenDiscipline(props) {
   const link = "/discipline/detail/";
@@ -17,17 +18,18 @@ function ScreenDiscipline(props) {
   const [columns, setColumns] = useState([]);
 
   useDocumentTitle("Kỷ luật");
+  const { width } = useWindowDimensions();
 
   useEffect(() => {
     const reSizeTable = () => {
-      if (window.innerWidth < 1025) {
+      if (width < 1025) {
         setColumns(NVCOLUMNSMD);
       } else {
         setColumns(NVCOLUMNS);
       }
     };
     reSizeTable();
-  }, [window.innerWidth]);
+  }, [width]);
 
   useEffect(() => {
     const fetchNvList = async () => {
