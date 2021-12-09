@@ -70,6 +70,6 @@ namespace HRMSolution.Application.Catalog.BaoCaos
         Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanTheoDanhMucVaMaNhanVienVaGioiTinhVaTrangThai(int tuoiTu, int den, int idDanhMuc, string maNhanVien, bool gioiTinh, bool trangThai);
         Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanPhongBanVaMaNhanVienVaGioiTinhVaTrangThai(int tuoiTu, int den, int idPhongBan, string maNhanVien, bool gioiTinh, bool trangThai);
         Task<List<BaoCaoNguoiThanViewModel>> GetAllNguoiThanDanhMucVaPhongBanVaMaNhanVienVaGioiTinhVaTrangThai(int tuoiTu, int den, int idDanhMuc, int idPhongBan, string maNhanVien, bool gioiTinh, bool trangThai);
-        Task<List<BaoCaoLuongViewModel>> GetAllBaoCaoLuong(string maNhanVien);
+        Task<BaoCaoLuongViewModel> GetAllBaoCaoLuong(string maNhanVien);
     }
 }

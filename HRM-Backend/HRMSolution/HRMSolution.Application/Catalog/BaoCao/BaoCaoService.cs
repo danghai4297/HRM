@@ -1880,7 +1880,7 @@ namespace HRMSolution.Application.Catalog.BaoCaos
             return data;
         }
 
-        public async Task<List<BaoCaoLuongViewModel>> GetAllBaoCaoLuong(string maNhanVien)
+        public async Task<BaoCaoLuongViewModel> GetAllBaoCaoLuong(string maNhanVien)
         {
             var queryPb = from dc in _context.dieuChuyens
                           join pb in _context.danhMucPhongBans on dc.idPhongBan equals pb.id
@@ -1917,7 +1917,7 @@ namespace HRMSolution.Application.Catalog.BaoCaos
                 ngayHieuLuc = x.l.ngayHieuLuc,
                 ngayKetThuc = x.l.ngayKetThuc,
                 ghiChu = x.l.ghiChu
-            }).ToListAsync();
+            }).FirstAsync();
 
             return data;
         }
