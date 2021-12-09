@@ -7,6 +7,7 @@ export const NVCOLUMNSSALARY = [
     accessor: "maNhanVien",
     sticky: "left",
     Filter: SelectColumnFilter,
+    minWidth: 50,
     disableFilters: true,
     show: true,
   },
@@ -14,7 +15,7 @@ export const NVCOLUMNSSALARY = [
     Header: "Họ tên",
     accessor: "tenNhanVien",
     sticky: "left",
-    minWidth: 200,
+    minWidth: 150,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -23,7 +24,6 @@ export const NVCOLUMNSSALARY = [
     Header: "Tổng lương",
     accessor: "tongLuong",
     minWidth: 100,
-    sticky: "left",
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -31,7 +31,7 @@ export const NVCOLUMNSSALARY = [
   {
     Header: "Mã hợp đồng",
     accessor: "maHopDong",
-    minWidth: 70,
+    minWidth: 50,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -105,7 +105,7 @@ export const NVCOLUMNSSALARY = [
   {
     Header: "Ngày hiệu lực",
     accessor: "ngayHieuLuc",
-    minWidth: 200,
+    minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
     Cell: ({ value }) => {
@@ -116,21 +116,13 @@ export const NVCOLUMNSSALARY = [
   {
     Header: "Ngày lên lương",
     accessor: "ngayKetThuc",
-    minWidth: 200,
+    minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
     Cell: ({ value }) => {
       return format(new Date(value), "dd/MM/yyyy");
     },
     show: true,
-  },
-  {
-    Header: "Ghi chú",
-    accessor: "ghiChu",
-    minWidth: 200,
-    Filter: SelectColumnFilter,
-    disableFilters: true,
-    show: false,
   },
   {
     Header: "Trạng thái",
@@ -146,14 +138,6 @@ export const NVCOLUMNSSALARY = [
     disableFilters: true,
     show: true,
   },
-  {
-    Header: "Trạng thái",
-    accessor: "trangThai",
-    minWidth: 70,
-    Filter: SelectColumnFilter,
-    disableFilters: true,
-    show: false,
-  },
 ];
 
 export const NVCOLUMNSHD = [
@@ -161,7 +145,7 @@ export const NVCOLUMNSHD = [
     Header: "Mã Nhân Viên",
     accessor: "maNhanVien",
     sticky: "left",
-    minWidth: 70,
+    minWidth: 50,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -171,7 +155,7 @@ export const NVCOLUMNSHD = [
     Header: "Họ Và Tên",
     accessor: "tenNhanVien",
     sticky: "left",
-    minWidth: 200,
+    minWidth: 150,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -180,7 +164,7 @@ export const NVCOLUMNSHD = [
   {
     Header: "Mã Hợp Đồng",
     accessor: "id",
-    minWidth: 130,
+    minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -188,8 +172,8 @@ export const NVCOLUMNSHD = [
   },
   {
     Header: "Loại Hợp Đồng",
-    accessor: "idLoaiHopDong",
-    minWidth: 218,
+    accessor: "loaiHopDong",
+    minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -198,8 +182,8 @@ export const NVCOLUMNSHD = [
 
   {
     Header: "Chức Danh",
-    accessor: "idChucDanh",
-    minWidth: 280,
+    accessor: "chucDanh",
+    minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -208,7 +192,7 @@ export const NVCOLUMNSHD = [
   {
     Header: "Từ Ngày",
     accessor: "hopDongTuNgay",
-    minWidth: 210,
+    minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
     Cell: ({ value }) => {
@@ -220,7 +204,7 @@ export const NVCOLUMNSHD = [
   {
     Header: "Đến Ngày",
     accessor: "hopDongDenNgay",
-    minWidth: 210,
+    minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
     Cell: ({ value }) => {
@@ -238,27 +222,9 @@ export const NVCOLUMNSHD = [
         <img src="/Images/orangeC.png" width={20} alt="" />
       );
     },
-    minWidth: 180,
+    minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
-  },
-  {
-    Header: "Trạng thái",
-
-    accessor: "trangThai",
-    minWidth: 200,
-    Filter: SelectColumnFilter,
-    disableFilters: false,
-    show: false,
-  },
-  {
-    Header: "Ghi chú",
-    accessor: "ghiChu",
-    minWidth: 400,
-    Filter: SelectColumnFilter,
-    disableFilters: true,
-
-    show: false,
   },
 ];

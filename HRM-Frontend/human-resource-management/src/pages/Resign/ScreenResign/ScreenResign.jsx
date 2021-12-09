@@ -1,24 +1,40 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { NVCOLUMNS2 } from "./NvColumns";
+import { NVCOLUMNS2, NVCOLUMNSRESIZE } from "./NvColumns";
 
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
+import useWindowDimensions from "../../../hook/useWindowDimensions";
+import ProductApi from "../../../api/productApi";
 import { ExportCSV } from "../../../components/ExportFile/ExportFile";
 import TablePagination from "../../../components/TablePagination/TablePagination";
-import productApi from "../../../api/productApi";
-import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
 
 function ScreenResign(props) {
   const link = "/profile/detail/";
   const fileName = "DSnhanviennguviec";
   const [dataAllNvnv, setDataAllNvnv] = useState([]);
+  const [columns, setColumns] = useState([]);
+
   useDocumentTitle("Nghỉ việc");
+
+  const { width } = useWindowDimensions();
+
+  useEffect(() => {
+    const reSizeTable = () => {
+      if (width < 1025) {
+        setColumns(NVCOLUMNSRESIZE);
+      } else {
+        setColumns(NVCOLUMNS2);
+      }
+    };
+    reSizeTable();
+  }, [width]);
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const responseNv = await productApi.getAllNvnv();
+        const responseNv = await ProductApi.getAllNvnv();
         setDataAllNvnv(responseNv);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -50,7 +66,7 @@ function ScreenResign(props) {
           <TablePagination
             link={link}
             tid="tableHd"
-            columns={NVCOLUMNS2}
+            columns={columns}
             data={dataAllNvnv}
           />
         </div>

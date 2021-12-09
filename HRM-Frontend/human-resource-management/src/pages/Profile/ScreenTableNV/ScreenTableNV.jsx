@@ -2,17 +2,17 @@ import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./ScreenTableNV.scss";
-import { NVCOLUMNS2 } from "./NvColumns";
+import { NVCOLUMNS2, NVCOLUMNSRESIZE } from "./NvColumns";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ExportCSV } from "../../../components/ExportFile/ExportFile";
 import TablePagination from "../../../components/TablePagination/TablePagination";
-import productApi from "../../../api/productApi";
 import { Link } from "react-router-dom";
 import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
 
 import jwt_decode from "jwt-decode";
 import ProductApi from "../../../api/productApi";
+import useWindowDimensions from "../../../hook/useWindowDimensions";
 
 ScreenTableNV.propTypes = {};
 
@@ -22,7 +22,22 @@ function ScreenTableNV(props) {
   const link = "/profile/detail/";
   const fileName = "DSNV";
   const [dataAllNv, setdataAllNv] = useState([]);
+  const [columns, setColumns] = useState([]);
+
   useDocumentTitle("Hồ sơ");
+
+  const { width } = useWindowDimensions();
+
+  useEffect(() => {
+    const reSizeTable = () => {
+      if (width < 1025) {
+        setColumns(NVCOLUMNSRESIZE);
+      } else {
+        setColumns(NVCOLUMNS2);
+      }
+    };
+    reSizeTable();
+  }, [width]);
 
   const handleClick = async () => {
     await ProductApi.PostLS({
@@ -36,7 +51,7 @@ function ScreenTableNV(props) {
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const responseNv = await productApi.getAllNv();
+        const responseNv = await ProductApi.getAllNv();
         setdataAllNv(responseNv);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -73,7 +88,7 @@ function ScreenTableNV(props) {
           <TablePagination
             link={link}
             tid="tablenv"
-            columns={NVCOLUMNS2}
+            columns={columns}
             data={dataAllNv}
           />
         </div>

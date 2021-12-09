@@ -326,14 +326,14 @@ function AddContractForm(props) {
   return (
     <>
       <div className="container-form">
-        <div className="Submit-button sticky-top">
+        <div className="Submit-button">
           <div>
             <h2 className="">
               {dataDetailHd.length !== 0 ? "Sửa" : "Thêm"} hợp đồng
             </h2>
           </div>
           <div className="button">
-            <input
+            {/* <input
               type="submit"
               className={
                 dataDetailHd.length !== 0 ? "btn-danger" : "delete-button"
@@ -342,7 +342,7 @@ function AddContractForm(props) {
               onClick={() => {
                 setShowDeleteDialog(true);
               }}
-            />
+            /> */}
             <input
               type="submit"
               className="btn-secondary btn ml-3"

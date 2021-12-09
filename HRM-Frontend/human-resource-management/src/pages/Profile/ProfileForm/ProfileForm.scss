@@ -83,3 +83,16 @@
 .ant-upload.ant-upload-select {
   display: block;
 }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .scroll-form {
+    overflow: auto;
+    height:700px;
+    font-size: 10px;
+    h3{
+      font-size: 15px;
+    }
+    h5{
+      font-size: 13px;
+    }
+  }
+}

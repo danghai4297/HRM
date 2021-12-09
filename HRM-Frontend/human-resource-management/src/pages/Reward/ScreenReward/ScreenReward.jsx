@@ -7,8 +7,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ExportCSV } from "../../../components/ExportFile/ExportFile";
 import TablePagination from "../../../components/TablePagination/TablePagination";
 import { Link } from "react-router-dom";
-import ProductApi from "../../../api/productApi";
 import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
+import useWindowDimensions from "../../../hook/useWindowDimensions";
+import ProductApi from "../../../api/productApi";
 
 function ScreenReward(props) {
   const link = "/reward/detail/";
@@ -17,16 +18,18 @@ function ScreenReward(props) {
   const [columns, setColumns] = useState([]);
   useDocumentTitle("Khen thưởng");
 
+  const { width } = useWindowDimensions();
+
   useEffect(() => {
     const reSizeTable = () => {
-      if (window.innerWidth < 1025) {
+      if (width < 1025) {
         setColumns(NVCOLUMNSMD);
       } else {
         setColumns(NVCOLUMNS);
       }
     };
     reSizeTable();
-  }, [window.innerWidth]);
+  }, [width]);
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -39,28 +42,6 @@ function ScreenReward(props) {
     };
     fetchNvList();
   }, []);
-
-  // const reSizeTable = () => {
-  //   if ((w > 769) & (w < 1025)) {
-  //     return (
-  //       <TablePagination
-  //         link={link}
-  //         tid="tableHd"
-  //         columns={NVCOLUMNS}
-  //         data={dataDskt}
-  //       />
-  //     );
-  //   } else if (w < 769) {
-  //     return (
-  //       <TablePagination
-  //         link={link}
-  //         tid="tableHd"
-  //         columns={NVCOLUMNSMD}
-  //         data={dataDskt}
-  //       />
-  //     );
-  //   }
-  // };
 
   return (
     <>

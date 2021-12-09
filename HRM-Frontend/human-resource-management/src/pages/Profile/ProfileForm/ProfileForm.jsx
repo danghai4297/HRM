@@ -25,6 +25,7 @@ function AddProfileForm(props) {
   let { id } = match.params;
   const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
+
   //handle checkbox
   const [checkedSoldier, setCheckedSoldier] = useState(false);
   const handleClick = () => setCheckedSoldier(!checkedSoldier);
@@ -1250,22 +1251,22 @@ function AddProfileForm(props) {
                   <div className="form-group form-inline">
                     <label
                       class="col-sm-4 justify-content-start"
-                      htmlFor="NoiCapHoChieu"
+                      htmlFor="noiCapHoChieu"
                     >
                       Nơi cấp hộ chiếu
                     </label>
                     <input
                       type="text"
-                      {...register("NoiCapHoChieu")}
-                      id="NoiCapHoChieu"
+                      {...register("noiCapHoChieu")}
+                      id="noiCapHoChieu"
                       className={
-                        !errors.NoiCapHoChieu
+                        !errors.noiCapHoChieu
                           ? "form-control col-sm-6 "
                           : "form-control col-sm-6 border-danger"
                       }
                     />
                     <span className="message">
-                      {errors.NoiCapHoChieu?.message}
+                      {errors.noiCapHoChieu?.message}
                     </span>
                   </div>
                 </div>
@@ -2128,10 +2129,8 @@ function AddProfileForm(props) {
                               "ngayVaoDang",
                               "ngayVaoDangChinhThuc",
                             ]);
-                            // reset({
-                            //   ngayVaoDang: undefined,
-                            //   ngayVaoDangChinhThuc: undefined,
-                            // });
+                            resetField("ngayVaoDang");
+                            resetField("ngayVaoDangChinhThuc");
                           }
                         },
                       })}
@@ -2231,7 +2230,21 @@ function AddProfileForm(props) {
                   <div class="form-check mb-2 form-inline">
                     <input
                       type="checkbox"
-                      {...register("quanNhan")}
+                      {...register("quanNhan", {
+                        onChange: (e) => {
+                          if (e.target.checked === false) {
+                            clearErrors(["ngayNhapNgu", "ngayXuatNgu"]);
+                            // reset({
+                            //   ngayVaoDang: undefined,
+                            //   ngayVaoDangChinhThuc: undefined,
+                            // });
+                            resetField("ngayNhapNgu");
+                            resetField("ngayXuatNgu");
+                            resetField("quanHamCaoNhat");
+                            resetField("danhHieuCaoNhat");
+                          }
+                        },
+                      })}
                       id="quanNhan"
                       className="form-check-input"
                       onClick={handleClick}
@@ -2249,7 +2262,14 @@ function AddProfileForm(props) {
                   <div className="form-check form-inline">
                     <input
                       type="checkbox"
-                      {...register("laThuongBinh")}
+                      {...register("laThuongBinh", {
+                        onChange: (e) => {
+                          if (e.target.checked === false) {
+                            clearErrors("thuongBinh");
+                           resetField("thuongBinh");
+                          }
+                        },
+                      })}
                       id="laThuongBinh"
                       className="form-check-input"
                       onClick={handleClickVeteransy}
@@ -2295,6 +2315,9 @@ function AddProfileForm(props) {
                         />
                       )}
                     />
+                    <span className="message">
+                      {errors.ngayNhapNgu?.message}
+                    </span>
                   </div>
                 </div>
                 <div className="col">
@@ -2353,13 +2376,23 @@ function AddProfileForm(props) {
                         />
                       )}
                     />
+                    <span className="message">
+                      {errors.ngayXuatNgu?.message}
+                    </span>
                   </div>
                 </div>
                 <div className="col">
                   <div className="form-check form-inline">
                     <input
                       type="checkbox"
-                      {...register("laConChinhSach")}
+                      {...register("laConChinhSach", {
+                        onChange: (e) => {
+                          if (e.target.checked === false) {
+                            clearErrors("conChinhSach");
+                            resetField("conChinhSach");
+                          }
+                        },
+                      })}
                       id="laConChinhSach"
                       className="form-check-input"
                       onClick={handleClickPolicy}
@@ -2387,9 +2420,16 @@ function AddProfileForm(props) {
                       type="text"
                       {...register("quanHamCaoNhat")}
                       id="quanHamCaoNhat"
-                      className="form-control col-sm-6"
+                      className={
+                        !errors.quanHamCaoNhat
+                          ? "form-control col-sm-6"
+                          : "form-control col-sm-6 border-danger"
+                      }
                       disabled={!checkedSoldier}
                     />
+                     <span className="message">
+                      {errors.quanHamCaoNhat?.message}
+                    </span>
                   </div>
                 </div>
                 <div className="col">
@@ -2404,9 +2444,16 @@ function AddProfileForm(props) {
                       type="text"
                       {...register("conChinhSach")}
                       id="conChinhSach"
-                      className="form-control col-sm-6"
+                      className={
+                        !errors.conChinhSach
+                          ? "form-control col-sm-6"
+                          : "form-control col-sm-6 border-danger"
+                      }
                       disabled={!policy}
                     />
+                    <span className="message">
+                      {errors.conChinhSach?.message}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -2423,9 +2470,16 @@ function AddProfileForm(props) {
                       type="text"
                       {...register("danhHieuCaoNhat")}
                       id="danhHieuCaoNhat"
-                      className="form-control col-sm-6"
+                      className={
+                        !errors.danhHieuCaoNhat
+                          ? "form-control col-sm-6"
+                          : "form-control col-sm-6 border-danger"
+                      }
                       disabled={!checkedSoldier}
                     />
+                     <span className="message">
+                      {errors.danhHieuCaoNhat?.message}
+                    </span>
                   </div>
                 </div>
               </div>

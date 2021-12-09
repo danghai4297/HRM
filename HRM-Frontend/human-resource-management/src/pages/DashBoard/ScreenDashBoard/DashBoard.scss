@@ -85,7 +85,7 @@
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 100px) and (max-width: 1023px) {
     .Screen-dash-board {
         overflow: auto;
         max-height: 780px;
@@ -116,7 +116,8 @@
         width: 100%;
         height: 15rem;
 
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: center;
 
@@ -125,15 +126,52 @@
             align-items: center;
             justify-content: center;
             height: 100%;
-            width: 90%;
+            width: 50%;
         }
-    }
-    .two-table {
-        opacity: 0;
     }
 
     .excel-item {
-        opacity: 0;
+        // border: 1px solid black;
+        width: 100%;
+        height: 15rem;
+        margin-top: 15rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .item-da {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            height: 80%;
+            width: 50%;
+        }
+    }
+
+    .two-table {
+        // border: 1px solid black;
+        width: 100%;
+        margin-top: 2rem;
+        display: block;
+        justify-content: space-around;
+
+        .tablex {
+            width: 95%;
+            background-color: white;
+            border-radius: 1rem;
+
+            margin: 1rem;
+
+            h3 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 0.5rem;
+                color: rgb(62, 62, 95);
+            }
+        }
     }
 }
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
@@ -177,7 +215,7 @@
             align-items: center;
             justify-content: center;
             height: 100%;
-            width: 25rem;
+            width: 48%;
         }
     }
     .excel-item {
@@ -196,7 +234,31 @@
             justify-content: center;
 
             height: 100%;
-            width: 25rem;
+            width: 45%;
+        }
+    }
+
+    .two-table {
+        // border: 1px solid black;
+        width: 100%;
+        margin-top: 2rem;
+        display: block;
+        justify-content: space-around;
+
+        .tablex {
+            width: 95%;
+            background-color: white;
+            border-radius: 1rem;
+
+            margin: 2rem 1rem 1rem;
+
+            h3 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 0.5rem;
+                color: rgb(62, 62, 95);
+            }
         }
     }
 }

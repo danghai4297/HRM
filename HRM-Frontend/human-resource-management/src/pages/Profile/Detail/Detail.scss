@@ -148,10 +148,6 @@
             }
           }
         }
-        .table {
-          min-height: 100px;
-          margin-top: 2%;
-        }
 
         .main-title {
           z-index: 1;
@@ -181,6 +177,11 @@
       background-color: rgb(158, 158, 158);
     }
   }
+}
+.table {
+  display: block;
+  min-height: 100px;
+  margin-top: 2%;
 }
 .titles {
   width: 100%;
@@ -406,12 +407,6 @@
               }
             }
           }
-          .table {
-            min-width: 768px;
-            max-width: 1023px;
-            min-height: 100px;
-            margin-top: 2%;
-          }
 
           .main-title {
             z-index: 1;
@@ -636,10 +631,6 @@
               }
             }
           }
-          .table {
-            min-height: 100px;
-            margin-top: 2%;
-          }
 
           .main-title {
             z-index: 1;
@@ -847,10 +838,6 @@
                 margin-left: 65%;
               }
             }
-          }
-          .table {
-            min-height: 100px;
-            margin-top: 2%;
           }
 
           .main-title {

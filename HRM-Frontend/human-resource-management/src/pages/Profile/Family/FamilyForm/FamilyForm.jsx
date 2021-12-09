@@ -179,7 +179,7 @@ function AddFamilyForm(props) {
   return (
     <>
       <div className="container-form">
-        <div className="Submit-button sticky-top">
+        <div className="Submit-button">
           <div>
             <h2 className="">
               {dataDetailNT.length !== 0 ? "Sửa" : "Thêm"} thông tin gia đình

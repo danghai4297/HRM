@@ -226,27 +226,7 @@ function ItemListFamily() {
       } catch (e) {
         error("Thực hiện không thành công");
       }
-    }
-    // else if (
-    //   (nexus == 0) &
-    //   (status === "Tất cả") &
-    //   (department !== "Tất cả") &
-    //   (idNv !== "Tất cả") &
-    //   (gender === "Tất cả")
-    // ) {
-    //   try {
-    //     const resp = await ProductApi.getRpAllNtPbNv(
-    //       ageX,
-    //       ageY,
-    //       department,
-    //       idNv
-    //     );
-    //     setDataRp(resp);
-    //   } catch (e) {
-    //     error("Thực hiện không thành công");
-    //   }
-    // }
-    else if (
+    } else if (
       (nexus == 0) &
       (status === "Tất cả") &
       (department !== "Tất cả") &
@@ -271,22 +251,7 @@ function ItemListFamily() {
       } catch (e) {
         error("Thực hiện không thành công");
       }
-    }
-    //  else if (
-    //   (nexus == 0) &
-    //   (status !== "Tất cả") &
-    //   (department === "Tất cả") &
-    //   (idNv !== "Tất cả") &
-    //   (gender === "Tất cả")
-    // ) {
-    //   try {
-    //     const resp = await ProductApi.getRpAllNtNvTt(ageX, ageY, idNv, status);
-    //     setDataRp(resp);
-    //   } catch (e) {
-    //     error("Thực hiện không thành công");
-    //   }
-    // }
-    else if (
+    } else if (
       (nexus == 0) &
       (status !== "Tất cả") &
       (department === "Tất cả") &
@@ -304,28 +269,7 @@ function ItemListFamily() {
       } catch (e) {
         error("Thực hiện không thành công");
       }
-    }
-    //  else if (
-    //   (nexus != 0) &
-    //   (status === "Tất cả") &
-    //   (department !== "Tất cả") &
-    //   (idNv !== "Tất cả") &
-    //   (gender === "Tất cả")
-    // ) {
-    //   try {
-    //     const resp = await ProductApi.getRpAllNtDmPbNv(
-    //       ageX,
-    //       ageY,
-    //       nexus,
-    //       department,
-    //       idNv
-    //     );
-    //     setDataRp(resp);
-    //   } catch (e) {
-    //     error("Thực hiện không thành công");
-    //   }
-    // }
-    else if (
+    } else if (
       (nexus != 0) &
       (status === "Tất cả") &
       (department !== "Tất cả") &
@@ -364,26 +308,6 @@ function ItemListFamily() {
         error("Thực hiện không thành công");
       }
     }
-    //  else if (
-    //   (nexus != 0) &
-    //   (status !== "Tất cả") &
-    //   (department === "Tất cả") &
-    //   (idNv !== "Tất cả") &
-    //   (gender === "Tất cả")
-    // ) {
-    //   try {
-    //     const resp = await ProductApi.getRpAllNtDmNvTt(
-    //       ageX,
-    //       ageY,
-    //       nexus,
-    //       idNv,
-    //       status
-    //     );
-    //     setDataRp(resp);
-    //   } catch (e) {
-    //     error("Thực hiện không thành công");
-    //   }
-    // }
     else if (
       (nexus == 0) &
       (status !== "Tất cả") &
@@ -404,27 +328,6 @@ function ItemListFamily() {
         error("Thực hiện không thành công");
       }
     }
-    // else if (
-    //   (nexus != 0) &
-    //   (status !== "Tất cả") &
-    //   (department !== "Tất cả") &
-    //   (idNv === "Tất cả") &
-    //   (gender !== "Tất cả")
-    // ) {
-    //   try {
-    //     const resp = await ProductApi.getRpAllNtDmPbGtTt(
-    //       ageX,
-    //       ageY,
-    //       nexus,
-    //       department,
-    //       gender,
-    //       status
-    //     );
-    //     setDataRp(resp);
-    //   } catch (e) {
-    //     error("Thực hiện không thành công");
-    //   }
-    // }
   };
 
   useDidMountEffect(() => {
@@ -510,19 +413,6 @@ function ItemListFamily() {
                   </option>
                 ))}
               </select>
-
-              {/* <input
-                class="form-control"
-                list="employees"
-                onChange={(e) => setIdNv(e.target.value)}
-              />
-              <datalist id="employees">
-                {dataNv.map((item, key) => (
-                  <option key={key} value={item.id}>
-                    {item.hoTen}{" "}
-                  </option>
-                ))}
-              </datalist> */}
             </div>
           </div>
           <div className="select-row2">
@@ -573,7 +463,7 @@ function ItemListFamily() {
             value="Hiển thị báo cáo"
             onClick={handelReport}
           />
-          <button className="button-pdf" onClick={handlePrint}>
+          <button className="pdfx" onClick={handlePrint}>
             <FontAwesomeIcon icon={["fas", "file-pdf"]} />
           </button>
           <ExportCSV csvData={dataRp} fileName="Báo cáo danh sách nhân viên" />
