@@ -98,16 +98,20 @@ function AddLanguageForm(props) {
         });
         success("Sửa danh mục ngoại ngữ thành công");
       } else {
-        await ProductApi.PostDMNN(data);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm danh mục ngoại ngữ mới: ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("Thêm danh mục ngoại ngữ thành công");
+        try {
+          await ProductApi.PostDMNN(data);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Thêm danh mục ngoại ngữ mới: ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Thêm danh mục ngoại ngữ thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể thêm danh mục đã tồn tại");
+        }
       }
-      history.goBack();
     } catch (errors) {
       error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }

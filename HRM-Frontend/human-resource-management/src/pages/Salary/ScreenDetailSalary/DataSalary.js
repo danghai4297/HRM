@@ -32,8 +32,14 @@ export const ttc = [
   {
     title1: "Lương cơ bản",
     data1: ["luongCoBan", false, true],
-    title2: "Phụ cấp chức vụ",
-    data2: ["phuCapTrachNhiem", false, true],
+    title2: "Phụ cấp trách nhiệm",
+    data2: ["phuCapTrachNhiem", false, false],
+  },
+  {
+    title1: "Phụ cấp chức vụ",
+    data1: ["phuCapChucVu", false, true],
+    title2: "Phụ cấp chức danh",
+    data2: ["phuCapChucDanh", false, true],
   },
   {
     title1: "Phụ cấp khác",

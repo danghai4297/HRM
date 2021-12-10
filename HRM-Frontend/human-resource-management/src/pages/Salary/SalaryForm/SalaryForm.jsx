@@ -85,7 +85,9 @@ function AddSalaryForm(props) {
           setDataLDetail(response);
           setStartDate(moment(response.ngayHieuLuc));
           setEndDate(moment(response.ngayKetThuc));
-          setAllowance(response.phuCapTrachNhiem);
+          setAllowance(response.phuCapChucVu);
+          setResponsibilityAllowance(response.phuCapTrachNhiem);
+          setTitleAllowance(response.phuCapChucDanh);
           setTotalSalary(response.tongLuong);
         }
       } catch (error) {
@@ -295,8 +297,10 @@ function AddSalaryForm(props) {
               formData.append("heSoLuong", data.heSoLuong);
               formData.append("bacLuong", data.bacLuong);
               formData.append("luongCoBan", data.luongCoBan);
-              formData.append("phuCapTrachNhiem", allowance);
+              formData.append("phuCapTrachNhiem", responsibilityAllowance);
               formData.append("phuCapKhac", data.phuCapKhac);
+              formData.append("phuCapChucVu", allowance);
+              formData.append("phuCapChucDanh", titleAllowance);
               formData.append("tongLuong", totalSalary);
               formData.append("thoiHanLenLuong", data.thoiHanLenLuong);
               formData.append("ngayHieuLuc", startDate.format("MM/DD/YYYY"));
@@ -339,8 +343,10 @@ function AddSalaryForm(props) {
               formData.append("heSoLuong", data.heSoLuong);
               formData.append("bacLuong", data.bacLuong);
               formData.append("luongCoBan", data.luongCoBan);
-              formData.append("phuCapTrachNhiem", allowance);
+              formData.append("phuCapTrachNhiem", responsibilityAllowance);
               formData.append("phuCapKhac", data.phuCapKhac);
+              formData.append("phuCapChucVu", allowance);
+              formData.append("phuCapChucDanh", titleAllowance);
               formData.append("tongLuong", totalSalary);
               formData.append("thoiHanLenLuong", data.thoiHanLenLuong);
               formData.append("ngayHieuLuc", startDate.format("MM/DD/YYYY"));

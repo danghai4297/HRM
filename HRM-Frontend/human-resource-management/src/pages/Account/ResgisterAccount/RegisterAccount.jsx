@@ -13,6 +13,7 @@ import ProductApi from "../../../api/productApi";
 import LoginApi from "../../../api/login.js";
 import { schema } from "../../../ultis/RegisterAccountValidation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
 
 function RegisterAccount(props) {
   const { error, warn, info, success } = useToast();
@@ -29,6 +30,7 @@ function RegisterAccount(props) {
   const [passwordTypeRP, setPasswordTypeRP] = useState("password");
   const [visibleNP, setvisibleNP] = useState(false);
   const [visibleRP, setvisibleRP] = useState(false);
+  useDocumentTitle("Tạo tài khoản");
   const handleClickEyesNP = () => {
     setvisibleNP((visiblity) => !visiblity);
     setPasswordTypeNP(!visibleNP ? "text" : "password");
@@ -40,7 +42,7 @@ function RegisterAccount(props) {
   useEffect(() => {
     const fetchNvList = async () => {
       try {
-        const responseIdEmployee = await ProductApi.getAllNvMT();
+        const responseIdEmployee = await ProductApi.getAllNS();
         setDataIdEmployee(responseIdEmployee);
         // if (id !== undefined) {
         // }
@@ -80,7 +82,7 @@ function RegisterAccount(props) {
     <div className="container-form">
       <div className="Submit-form">
         <div className="setH2">
-          <h2>Đăng ký tài khoản</h2>
+          <h2>Tạo tài khoản</h2>
         </div>
       </div>
 

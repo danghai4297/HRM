@@ -14,7 +14,7 @@ function SubDetail(props) {
               <p>{titleLeft}</p>
             </Col>
             <Col className="border-bottom rows" xs={6}>
-              <p>{itemLeft === null ? "-" : itemLeft}</p>
+              <p>{itemLeft === null ? "-" : itemLeft} </p>
             </Col>
           </Row>
         </Col>
@@ -27,7 +27,7 @@ function SubDetail(props) {
               className={titleRight === null ? "" : "border-bottom rows"}
               xs={6}
             >
-              <p>{itemRight === null ? "-" : itemRight}</p>
+              <p>{itemRight === null ? "-" : itemRight} </p>
             </Col>
           </Row>
         </Col>

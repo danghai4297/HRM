@@ -91,75 +91,75 @@ const PutApi = {
     return axiosClient.put(url, data);
   },
   // Sửa trình độ văn hoá
-  PutTDVH: (data,id) =>{
-    const url =`/TrinhDoVanHoa/${id}`;
+  PutTDVH: (data, id) => {
+    const url = `/TrinhDoVanHoa/${id}`;
     return axiosClient.put(url, data);
   },
   // Sửa ngoại ngữ
-  PutNN:(data,id) =>{
-    const url =`/NgoaiNgu/${id}`;
+  PutNN: (data, id) => {
+    const url = `/NgoaiNgu/${id}`;
     return axiosClient.put(url, data);
   },
 
   // Sửa người thân
-  PutNT:(data,id)=>{
-    const url =`/NguoiThan/${id}`;
+  PutNT: (data, id) => {
+    const url = `/NguoiThan/${id}`;
     return axiosClient.put(url, data);
   },
   // Sửa ảnh nhân viên
-  PutIMG:(data,id)=>{
-    const url =`/NhanVien/image/${id}`;
+  PutIMG: (data, id) => {
+    const url = `/NhanVien/image/${id}`;
     return axiosClient.put(url, data);
   },
   // Sửa hợp đồng
-  PutHD:(data,id)=>{
+  PutHD: (data, id) => {
     const url = `/HopDong/${id}`;
-    return axiosClient.put(url,data)
+    return axiosClient.put(url, data);
   },
   //Sửa bằng chứng hợp đồng
-  PutAHD:(data,id)=>{
+  PutAHD: (data, id) => {
     const url = `/HopDong/bangChung/${id}`;
-    return axiosClient.put(url,data)
+    return axiosClient.put(url, data);
   },
   // Sửa lương
-  PutL:(data,id)=>{
-    const url =`/Luong/${id}`;
-    return axiosClient.put(url,data)
+  PutL: (data, id) => {
+    const url = `/Luong/${id}`;
+    return axiosClient.put(url, data);
   },
   // Sửa bằng chứng lương
-  PutAL:(data,id)=>{
-    const url =`/Luong/bangChung/${id}`;
-    return axiosClient.put(url,data)
+  PutAL: (data, id) => {
+    const url = `/Luong/bangChung/${id}`;
+    return axiosClient.put(url, data);
   },
   // Sửa điều chuyển
-  PutDC:(data,id)=>{
-    const url =`/DieuChuyen/${id}`;
-    return axiosClient.put(url,data)
+  PutDC: (data, id) => {
+    const url = `/QuaTrinhCongTac/${id}`;
+    return axiosClient.put(url, data);
   },
   // Sửa trạng thái lương
-  PutTLL:(id) => {
+  PutTLL: (id) => {
     const url = `/Luong/trang-thai/${id}`;
-    return axiosClient.put(url)
+    return axiosClient.put(url);
   },
   // Sửa trạng thái hợp đồng
-  PutTLHD:(id) => {
+  PutTLHD: (id) => {
     const url = `/HopDong/trang-thai/${id}`;
-    return axiosClient.put(url)
+    return axiosClient.put(url);
   },
   // Sửa khen thưởng và kỷ luật
-  PutKTvKL:(data,id)=>{
-    const url =`/KhenThuongKyLuat/${id}`;
-    return axiosClient.put(url,data)
+  PutKTvKL: (data, id) => {
+    const url = `/KhenThuongKyLuat/${id}`;
+    return axiosClient.put(url, data);
   },
   // Sửa bằng chứng khen thưởng và kỷ luật
-  PutAKTvKL:(data,id)=>{
-    const url =`/KhenThuongKyLuat/image/${id}`;
-    return axiosClient.put(url,data)
+  PutAKTvKL: (data, id) => {
+    const url = `/KhenThuongKyLuat/image/${id}`;
+    return axiosClient.put(url, data);
   },
   //Sửa nhân viên
-  PutNV:(data,id)=>{
-    const url =`/NhanVien/${id}`;
-    return axiosClient.put(url,data)
+  PutNV: (data, id) => {
+    const url = `/NhanVien/${id}`;
+    return axiosClient.put(url, data);
   },
 };
 export default PutApi;

@@ -37,6 +37,11 @@ const LoginApi = {
     const url = `/User/reset-password/${id}`;
     return axiosClient.get(url);
   },
+  //Delete account
+  deleteAccount: (id) => {
+    const url = `/User/${id}`;
+    return axiosClient.delete(url);
+  },
 };
 
 export default LoginApi;

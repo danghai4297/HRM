@@ -131,16 +131,20 @@ function AddNestForm(props) {
         });
         success("Sửa danh mục tổ thành công");
       } else {
-        await ProductApi.PostDMT(data);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm danh mục tổ mới: ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("Thêm danh mục tổ thành công");
+        try {
+          await ProductApi.PostDMT(data);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Thêm danh mục tổ mới: ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Thêm danh mục tổ thành công");
+          history.goBack();
+        } catch (errors) {
+          error(`Phòng ban đã tồn tại tổ này`);
+        }
       }
-      history.goBack();
     } catch (errors) {
       error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }

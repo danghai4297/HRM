@@ -760,6 +760,11 @@ const ProductApi = {
     const url = `/BaoCao/bao-cao-luong/${id}`;
     return axiosClient.get(url);
   },
+  //get all nhân viên phòng nhân sự
+  getAllNS: () => {
+    const url = `/NhanVien/ma-ten-account`;
+    return axiosClient.get(url);
+  },
 };
 
 export default ProductApi;

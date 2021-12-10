@@ -38,7 +38,7 @@ function ScreenDetailSalary(props) {
     };
     fetchNvList();
   }, []);
-
+  console.log(dataLDetail);
   useEffect(() => {
     //Hàm đặt tên cho trang
     const titlePage = () => {

@@ -3,11 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./ScreenAddRole.scss";
 import LoginApi from "../../../api/login";
 import { useToast } from "../../../components/Toast/Toast";
+import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
 
 function ScreenAddRole(props) {
   const { error, warn, info, success } = useToast();
   let { match, history } = props;
   let { id } = match.params;
+  useDocumentTitle("Thêm quyền cho tài khoản");
 
   const [dataDetailTk, setdataDetailTk] = useState([]);
   const [roless, setRoless] = useState([]);
