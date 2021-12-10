@@ -63,7 +63,18 @@ namespace HRMSolution.NUnitTest
             var result = danhMucNgachCongChucService.Create(RankCreating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
+        [Test, Order(4)]
+        public void Rank_Create_Failure2()
+        {
+            DanhMucNgachCongChucCreateRequest RankCreating = new DanhMucNgachCongChucCreateRequest()
+            {
 
+                tenNgach = "Loại C"
+
+            };
+            var result = danhMucNgachCongChucService.Create(RankCreating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
 
         [Test, Order(5)]
         public void Rank_Update_Success()
@@ -72,7 +83,7 @@ namespace HRMSolution.NUnitTest
             {
 
 
-                tenNgach = "Loại C"
+                tenNgach = "Loại E"
 
             };
             var result = danhMucNgachCongChucService.Update(1, RankUpdating);
@@ -106,7 +117,19 @@ namespace HRMSolution.NUnitTest
             var result = danhMucNgachCongChucService.Update(6, RankUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
+        [Test, Order(7)]
+        public void Rank_Update_Failure3()
+        {
+            DanhMucNgachCongChucUpdateRequest RankUpdating = new DanhMucNgachCongChucUpdateRequest()
+            {
 
+
+                tenNgach = "Loại E"
+
+            };
+            var result = danhMucNgachCongChucService.Update(1, RankUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
         [Test, Order(8)]
         public void Rank_Delete_Success()
         {

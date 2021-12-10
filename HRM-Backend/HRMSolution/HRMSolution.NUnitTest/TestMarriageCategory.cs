@@ -63,7 +63,18 @@ namespace HRMSolution.NUnitTest
             var result = danhMucHonNhanService.Create(MarriageCreating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
+        [Test, Order(3)]
+        public void Marriage_Create_Failure2()
+        {
+            DanhMucHonNhanCreateRequest MarriageCreating = new DanhMucHonNhanCreateRequest()
+            {
 
+                tenDanhMuc = "Đã kết hôn"
+
+            };
+            var result = danhMucHonNhanService.Create(MarriageCreating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
 
         [Test, Order(5)]
         public void Marriage_Update_Success()
@@ -72,7 +83,7 @@ namespace HRMSolution.NUnitTest
             {
 
 
-                tenDanhMuc = "Đã kết hôn"
+                tenDanhMuc = "Góa"
 
             };
             var result = danhMucHonNhanService.Update(1, MarriageUpdating);
@@ -104,6 +115,19 @@ namespace HRMSolution.NUnitTest
 
             };
             var result = danhMucHonNhanService.Update(6, MarriageUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(7)]
+        public void Marriage_Update_Failure3()
+        {
+            DanhMucHonNhanUpdateRequest MarriageUpdating = new DanhMucHonNhanUpdateRequest()
+            {
+
+
+                tenDanhMuc = "Góa"
+
+            };
+            var result = danhMucHonNhanService.Update(1, MarriageUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
 

@@ -82,6 +82,18 @@ namespace HRMSolution.NUnitTest
             var result = danhMucPhongBanService.Create(DepartmentCreating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
+        [Test, Order(6)]
+        public void Department_Create_Failure4()
+        {
+            DanhMucPhongBanCreateRequest DepartmentCreating = new DanhMucPhongBanCreateRequest()
+            {
+                maPhongBan = "PB04",
+                tenPhongBan = "Phòng tài chính kế toán"
+
+            };
+            var result = danhMucPhongBanService.Create(DepartmentCreating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
         [Test, Order(7)]
         public void Department_Update_Success()
         {
@@ -89,7 +101,7 @@ namespace HRMSolution.NUnitTest
             {
 
                 maPhongBan = "PB01",
-                tenPhongBan = "Phòng tài chính kế toán"
+                tenPhongBan = "Phòng tài chính tổng hợp"
 
             };
             var result = danhMucPhongBanService.Update(1, DepartmentUpdating);
@@ -147,7 +159,19 @@ namespace HRMSolution.NUnitTest
             var result = danhMucPhongBanService.Update(6, DepartmentUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
+        [Test, Order(11)]
+        public void Department_Update_Failure5()
+        {
+            DanhMucPhongBanUpdateRequest DepartmentUpdating = new DanhMucPhongBanUpdateRequest()
+            {
 
+                maPhongBan = "PB01",
+                tenPhongBan = "Phòng tài chính tổng hợp"
+
+            };
+            var result = danhMucPhongBanService.Update(1, DepartmentUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
         [Test, Order(12)]
         public void Department_Delete_Success()
         {
@@ -169,6 +193,6 @@ namespace HRMSolution.NUnitTest
             var result = danhMucPhongBanService.GetAll();
             Assert.That(result.Result.Count, Is.EqualTo(2));
         }
-        
+
     }
 }

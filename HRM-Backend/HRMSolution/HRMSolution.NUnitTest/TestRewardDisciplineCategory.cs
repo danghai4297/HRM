@@ -92,7 +92,7 @@ namespace HRMSolution.NUnitTest
             {
 
 
-                tenDanhMuc = "Thưởng Nhân viên suất xác năm"
+                tenDanhMuc = "Thưởng Nhân viên suất xác quý"
 
 
             };

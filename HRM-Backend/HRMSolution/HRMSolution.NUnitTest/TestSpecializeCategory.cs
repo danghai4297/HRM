@@ -94,7 +94,7 @@ namespace HRMSolution.NUnitTest
             {
 
                 maChuyenMon = "CM01",
-                tenChuyenMon = "Kinh tế"
+                tenChuyenMon = "Ngoại giao"
 
             };
             var result = danhMucChuyenMonService.Update(1, SpecializeUpdating);

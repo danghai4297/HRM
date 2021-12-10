@@ -94,7 +94,7 @@ namespace HRMSolution.NUnitTest
             {
 
                 maNhomLuong = "MNL01",
-                tenNhomLuong = "Nhóm 3"
+                tenNhomLuong = "Nhóm 7"
 
             };
             var result = danhMucNhomLuongService.Update(1, SalaryGrUpdating);

@@ -94,7 +94,7 @@ namespace HRMSolution.NUnitTest
             {
 
                 maLoaiHopDong = "MHD01",
-                tenLoaiHopDong = "Hợp đồng vô thời hạn"
+                tenLoaiHopDong = "Hợp đồng 5 năm"
 
             };
             var result = danhMucLoaiHopDongService.Update(1, TyContractUpdating);

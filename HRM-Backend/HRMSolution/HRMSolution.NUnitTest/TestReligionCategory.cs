@@ -72,7 +72,7 @@ namespace HRMSolution.NUnitTest
             {
 
 
-                tenDanhMuc = "Phật Giáo"
+                tenDanhMuc = "Do Thái"
 
             };
             var result = danhMucTonGiaoService.Update(1, ReligionUpdating);

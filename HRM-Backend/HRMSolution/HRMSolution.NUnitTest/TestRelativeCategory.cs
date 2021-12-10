@@ -63,7 +63,18 @@ namespace HRMSolution.NUnitTest
             var result = danhMucNguoiThanService.Create(RelativeCreating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
+        [Test, Order(4)]
+        public void Relative_Create_Failure2()
+        {
+            DanhMucNguoiThanCreateRequest RelativeCreating = new DanhMucNguoiThanCreateRequest()
+            {
 
+                tenDanhMuc = "Anh"
+
+            };
+            var result = danhMucNguoiThanService.Create(RelativeCreating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
 
         [Test, Order(5)]
         public void Relative_Update_Success()
@@ -72,7 +83,7 @@ namespace HRMSolution.NUnitTest
             {
 
 
-                tenDanhMuc = "Anh"
+                tenDanhMuc = "Anh Họ"
 
             };
             var result = danhMucNguoiThanService.Update(1, RelativeUpdating);
@@ -106,7 +117,19 @@ namespace HRMSolution.NUnitTest
             var result = danhMucNguoiThanService.Update(6, RelativeUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
+        [Test, Order(7)]
+        public void Relative_Update_Failure3()
+        {
+            DanhMucNguoiThanUpdateRequest RelativeUpdating = new DanhMucNguoiThanUpdateRequest()
+            {
 
+
+                tenDanhMuc = "Anh Họ"
+
+            };
+            var result = danhMucNguoiThanService.Update(1, RelativeUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
         [Test, Order(8)]
         public void Relative_Delete_Success()
         {
