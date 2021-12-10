@@ -63,7 +63,18 @@ namespace HRMSolution.NUnitTest
             var result = danhMucTrinhDoService.Create(LevelCreating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
+        [Test, Order(4)]
+        public void Level_Create_Failure2()
+        {
+            DanhMucTrinhDoCreateRequest LevelCreating = new DanhMucTrinhDoCreateRequest()
+            {
 
+                tenTrinhDo = "Trung Bình"
+
+            };
+            var result = danhMucTrinhDoService.Create(LevelCreating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
 
         [Test, Order(5)]
         public void Level_Update_Success()
@@ -72,7 +83,7 @@ namespace HRMSolution.NUnitTest
             {
 
 
-                tenTrinhDo = "Trung Bình"
+                tenTrinhDo = "Trung Bình Khá"
 
             };
             var result = danhMucTrinhDoService.Update(1, LevelUpdating);
@@ -104,6 +115,19 @@ namespace HRMSolution.NUnitTest
 
             };
             var result = danhMucTrinhDoService.Update(6, LevelUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(7)]
+        public void Level_Update_Failure3()
+        {
+            DanhMucTrinhDoUpdateRequest LevelUpdating = new DanhMucTrinhDoUpdateRequest()
+            {
+
+
+                tenTrinhDo = "Trung Bình Khá"
+
+            };
+            var result = danhMucTrinhDoService.Update(1, LevelUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
 

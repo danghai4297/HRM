@@ -63,7 +63,18 @@ namespace HRMSolution.NUnitTest
             var result = danhMucNgoaiNguService.Create(LanguageCreating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
+        [Test, Order(4)]
+        public void Language_Create_Failure2()
+        {
+            DanhMucNgoaiNguCreateRequest LanguageCreating = new DanhMucNgoaiNguCreateRequest()
+            {
 
+                tenDanhMuc = "Pháp"
+
+            };
+            var result = danhMucNgoaiNguService.Create(LanguageCreating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
 
         [Test, Order(5)]
         public void Language_Update_Success()
@@ -72,7 +83,7 @@ namespace HRMSolution.NUnitTest
             {
 
 
-                tenDanhMuc = "Pháp"
+                tenDanhMuc = "Singapo"
 
             };
             var result = danhMucNgoaiNguService.Update(1, LanguageUpdating);
@@ -100,7 +111,7 @@ namespace HRMSolution.NUnitTest
             {
 
 
-                tenDanhMuc = "Pháp"
+                tenDanhMuc = "Singapo"
 
             };
             var result = danhMucNgoaiNguService.Update(6, LanguageUpdating);

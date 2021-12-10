@@ -64,7 +64,18 @@ namespace HRMSolution.NUnitTest
             var result = danhMucHinhThucDaoTaoService.Create(EducateCreating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
+        [Test, Order(3)]
+        public void Educate_Create_Failure2()
+        {
+            DanhMucHinhThucDaoTaoCreateRequest EducateCreating = new DanhMucHinhThucDaoTaoCreateRequest()
+            {
 
+                tenHinhThuc = "Tại Chức"
+
+            };
+            var result = danhMucHinhThucDaoTaoService.Create(EducateCreating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
 
         [Test, Order(5)]
         public void Educate_Update_Success()
@@ -73,7 +84,7 @@ namespace HRMSolution.NUnitTest
             {
 
 
-                tenHinhThuc = "Tại Chức"
+                tenHinhThuc = "Tại Chức Loại 2"
 
             };
             var result = danhMucHinhThucDaoTaoService.Update(1, EducateUpdating);
@@ -99,12 +110,19 @@ namespace HRMSolution.NUnitTest
         {
             DanhMucHinhThucDaoTaoUpdateRequest EducateUpdating = new DanhMucHinhThucDaoTaoUpdateRequest()
             {
-
-
                 tenHinhThuc = "Tại Chức"
-
             };
             var result = danhMucHinhThucDaoTaoService.Update(6, EducateUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(7)]
+        public void Educate_Update_Failure3()
+        {
+            DanhMucHinhThucDaoTaoUpdateRequest EducateUpdating = new DanhMucHinhThucDaoTaoUpdateRequest()
+            {
+                tenHinhThuc = "Tại Chức Loại 2"
+            };
+            var result = danhMucHinhThucDaoTaoService.Update(1, EducateUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
 

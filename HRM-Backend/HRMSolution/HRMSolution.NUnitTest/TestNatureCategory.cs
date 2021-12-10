@@ -63,7 +63,18 @@ namespace HRMSolution.NUnitTest
             var result = danhMucTinhChatLaoDongService.Create(NatureCreating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
+        [Test, Order(4)]
+        public void Nature_Create_Failure2()
+        {
+            DanhMucTinhChatLaoDongCreateRequest NatureCreating = new DanhMucTinhChatLaoDongCreateRequest()
+            {
 
+                tenLaoDong = "Cộng Tác Viên"
+
+            };
+            var result = danhMucTinhChatLaoDongService.Create(NatureCreating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
 
         [Test, Order(5)]
         public void Nature_Update_Success()
@@ -72,7 +83,7 @@ namespace HRMSolution.NUnitTest
             {
 
 
-                tenLaoDong = "Cộng Tác Viên"
+                tenLaoDong = "Cộng Tác Viên Loại 2"
 
             };
             var result = danhMucTinhChatLaoDongService.Update(1, NatureUpdating);
@@ -92,9 +103,21 @@ namespace HRMSolution.NUnitTest
             Assert.That(result.Result, Is.EqualTo(0));
         }
 
-
-        [Test, Order(7)]
+        [Test, Order(6)]
         public void Nature_Update_Failure2()
+        {
+            DanhMucTinhChatLaoDongUpdateRequest NatureUpdating = new DanhMucTinhChatLaoDongUpdateRequest()
+            {
+
+
+                tenLaoDong = "Cộng Tác Viên Loại 2"
+
+            };
+            var result = danhMucTinhChatLaoDongService.Update(1, NatureUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(7)]
+        public void Nature_Update_Failure3()
         {
             DanhMucTinhChatLaoDongUpdateRequest NatureUpdating = new DanhMucTinhChatLaoDongUpdateRequest()
             {

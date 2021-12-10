@@ -106,7 +106,7 @@ namespace HRMSolution.NUnitTest
             {
 
                 maNhomLuong = "MNL01",
-                tenNhomLuong = "Nhóm 3"
+                tenNhomLuong = "Nhóm 7"
 
             };
             var result = danhMucNhomLuongService.Update(1, SalaryGrUpdating);
@@ -165,7 +165,7 @@ namespace HRMSolution.NUnitTest
             Assert.That(result.Result, Is.EqualTo(0));
         }
         [Test, Order(11)]
-        public void SalaryGr_Update_Failure4()
+        public void SalaryGr_Update_Failure5()
         {
             DanhMucNhomLuongUpdateRequest SalaryGrUpdating = new DanhMucNhomLuongUpdateRequest()
             {

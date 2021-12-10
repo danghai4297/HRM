@@ -87,13 +87,18 @@ namespace HRMSolution.NUnitTest
             var result = danhMucChucDanhService.Create(titleCreating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
-        [Test, Order(4)]
+
+        [Test, Order(6)]
+
         public void Title_Create_Failure4()
         {
             DanhMucChucDanhCreateRequest titleCreating = new DanhMucChucDanhCreateRequest()
             {
+
                 maChucDanh = "CD04",
                 tenChucDanh = "Bác Học",
+
+
                 phuCap = (float)100000.0
             };
             var result = danhMucChucDanhService.Create(titleCreating);
@@ -164,19 +169,23 @@ namespace HRMSolution.NUnitTest
             var result = danhMucChucDanhService.Update(5, titleUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
-        [Test, Order(8)]
+
+        [Test, Order(11)]
+
         public void Title_Update_Failure5()
         {
             DanhMucChucDanhUpdateRequest titleUpdating = new DanhMucChucDanhUpdateRequest()
             {
 
-                maChucDanh = "CD01",
-                tenChucDanh = "Thạc Sĩ nước ngoài",
+
+                maChucDanh = "CD03",
+                tenChucDanh = "Tiến Sĩ",
                 phuCap = (float)100000.0
             };
-            var result = danhMucChucDanhService.Update(1, titleUpdating);
+            var result = danhMucChucDanhService.Update(3, titleUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
+            
         [Test, Order(12)]
         public void Title_Delete_Success()
         {
@@ -192,24 +201,5 @@ namespace HRMSolution.NUnitTest
             Assert.That(result.Result, Is.EqualTo(0));
         }
 
-
-        //[Test, Order(4)]
-        //public void Cat_Create_2()
-        //{
-        //    DanhMucChucDanhCreateRequest titleCreating = new DanhMucChucDanhCreateRequest()
-        //    {
-        //        maChucDanh = null,
-        //        tenChucDanh = null,
-        //        phuCap = (float)100000.0
-        //    };
-        //    var result = danhMucChucDanhService.Create(titleCreating);
-        //    Assert.That(result.Result, Is.EqualTo(0));
-        //}
-        //[Test, Order(3)]
-        //public void Cat_GetById_2()
-        //{
-        //    var result = danhMucChucDanhService.GetById(4);
-        //    Assert.That(result.Result., Is.EqualTo(4));
-        //}
     }
 }

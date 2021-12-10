@@ -63,7 +63,18 @@ namespace HRMSolution.NUnitTest
             var result = danhMucDanTocService.Create(NationCreating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
+        [Test, Order(4)]
+        public void Nation_Create_Failure2()
+        {
+            DanhMucDanTocCreateRequest NationCreating = new DanhMucDanTocCreateRequest()
+            {
 
+                tenDanhMuc = "Mường"
+
+            };
+            var result = danhMucDanTocService.Create(NationCreating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
 
         [Test, Order(5)]
         public void Nation_Update_Success()
@@ -72,7 +83,7 @@ namespace HRMSolution.NUnitTest
             {
 
 
-                tenDanhMuc = "Mường"
+                tenDanhMuc = "Hơ Mông"
 
             };
             var result = danhMucDanTocService.Update(1, NationUpdating);
@@ -106,7 +117,19 @@ namespace HRMSolution.NUnitTest
             var result = danhMucDanTocService.Update(6, NationUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
+        [Test, Order(7)]
+        public void Nation_Update_Failure3()
+        {
+            DanhMucDanTocUpdateRequest NationUpdating = new DanhMucDanTocUpdateRequest()
+            {
 
+
+                tenDanhMuc = "Hơ Mông"
+
+            };
+            var result = danhMucDanTocService.Update(1, NationUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
         [Test, Order(8)]
         public void Nation_Delete_Success()
         {

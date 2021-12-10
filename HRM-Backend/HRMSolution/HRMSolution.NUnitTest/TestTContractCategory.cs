@@ -106,7 +106,7 @@ namespace HRMSolution.NUnitTest
             {
 
                 maLoaiHopDong = "MHD01",
-                tenLoaiHopDong = "Hợp đồng vô thời hạn"
+                tenLoaiHopDong = "Hợp đồng 5 năm"
 
             };
             var result = danhMucLoaiHopDongService.Update(1, TyContractUpdating);
@@ -165,7 +165,7 @@ namespace HRMSolution.NUnitTest
             Assert.That(result.Result, Is.EqualTo(0));
         }
         [Test, Order(11)]
-        public void TyContract_Update_Failure4()
+        public void TyContract_Update_Failure5()
         {
             DanhMucLoaiHopDongUpdateRequest TyContractUpdating = new DanhMucLoaiHopDongUpdateRequest()
             {

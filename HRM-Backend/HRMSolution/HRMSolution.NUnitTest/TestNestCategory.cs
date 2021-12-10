@@ -90,6 +90,18 @@ namespace HRMSolution.NUnitTest
             var result = danhMucToService.Create(NestCreating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
+        [Test, Order(6)]
+        public void Nest_Create_Failure4()
+        {
+            DanhMucToCreateRequest NestCreating = new DanhMucToCreateRequest()
+            {
+                maTo = "T03",
+                tenTo = "Tổ giám sát",
+                idPhongBan = 2
+            };
+            var result = danhMucToService.Create(NestCreating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
         [Test, Order(7)]
         public void Nest_Update_Success()
         {
@@ -154,13 +166,27 @@ namespace HRMSolution.NUnitTest
 
                 maTo = "T06",
                 tenTo = "Tổ giám sát",
-                idPhongBan = 6
+                idPhongBan = 1
 
             };
             var result = danhMucToService.Update(6, NestUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
 
+        [Test, Order(11)]
+        public void Nest_Update_Failure5()
+        {
+            DanhMucToUpdateRequest NestUpdating = new DanhMucToUpdateRequest()
+            {
+
+                maTo = "T01",
+                tenTo = "Tổ giám sát",
+                idPhongBan = 1
+
+            };
+            var result = danhMucToService.Update(1, NestUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
         [Test, Order(12)]
         public void Nest_Delete_Success()
         {

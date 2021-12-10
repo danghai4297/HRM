@@ -106,7 +106,7 @@ namespace HRMSolution.NUnitTest
             {
 
                 maChuyenMon = "CM01",
-                tenChuyenMon = "Kinh tế"
+                tenChuyenMon = "Ngoại giao"
 
             };
             var result = danhMucChuyenMonService.Update(1, SpecializeUpdating);
@@ -165,7 +165,7 @@ namespace HRMSolution.NUnitTest
             Assert.That(result.Result, Is.EqualTo(0));
         }
         [Test, Order(11)]
-        public void Specialize_Update_Failure4()
+        public void Specialize_Update_Failure5()
         {
             DanhMucChuyenMonUpdateRequest SpecializeUpdating = new DanhMucChuyenMonUpdateRequest()
             {
