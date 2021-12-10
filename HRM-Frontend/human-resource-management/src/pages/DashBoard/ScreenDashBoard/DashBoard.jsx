@@ -50,7 +50,7 @@ function DashBoard() {
               title="Nhân viên"
               link="/profile"
               color="rgba(27, 92, 173,1)"
-              colorBot="rgba(58, 127, 213,1)"
+              colorBot="rgb(26, 115, 232)"
             />
           </div>
           <div className="item-da">
@@ -59,7 +59,7 @@ function DashBoard() {
               fontIcon="file-signature"
               title="hợp đồng"
               link="/contract"
-              color="rgba(34, 141, 34,1)"
+              color="rgb(67, 160, 71)"
               colorBot="rgba(47, 185, 47,1)"
             />
           </div>
@@ -69,7 +69,7 @@ function DashBoard() {
               fontIcon="money-check-alt"
               title="lương nhân viên"
               link="/salary"
-              color="rgba(255, 180, 0,1)"
+              color="rgb(255, 167, 38)"
               colorBot="rgba(249, 201, 86,1)"
             />
           </div>
@@ -79,8 +79,8 @@ function DashBoard() {
               fontIcon="users-slash"
               title="N.viên nghỉ việc"
               link="/resign"
-              color="rgba(255, 81, 20,1)"
-              colorBot="rgba(253, 110, 59,1)"
+              color="rgb(236, 64, 122)"
+              colorBot="rgb(216, 27, 96)"
             />
           </div>
         </div>
