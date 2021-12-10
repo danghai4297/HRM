@@ -736,7 +736,7 @@ function Detail(props) {
                       </Link>
                     </div>
                   </div>
-                  <div className="table">
+                  <div className="tablexx">
                     <TableBasic
                       link="/profile/detail/level/"
                       columns={NVCOLUMNSTDVH}
@@ -757,7 +757,7 @@ function Detail(props) {
                       </Link>
                     </div>
                   </div>
-                  <div className="table">
+                  <div className="tablexx">
                     <TableBasic
                       link="/profile/detail/language/"
                       columns={NVCOLUMNSNN}
@@ -800,7 +800,7 @@ function Detail(props) {
                       </Link>
                     </div>
                   </div>
-                  <div className="table">
+                  <div className="tablexx">
                     <TableBasic
                       link="/profile/detail/family/"
                       columns={NVCOLUMNSNT}
@@ -843,7 +843,7 @@ function Detail(props) {
                       </Link>
                     </div>
                   </div>
-                  <div className="table">
+                  <div className="tablexx">
                     <TableBasic
                       link="/contract/detail/"
                       columns={NVCOLUMNSHD}
@@ -895,7 +895,7 @@ function Detail(props) {
                       </Link>
                     </div>
                   </div>
-                  <div className="table">
+                  <div className="tablexx">
                     <TableBasic
                       link="/salary/detail/"
                       columns={NVCOLUMNSL}
@@ -938,7 +938,7 @@ function Detail(props) {
                       </Link>
                     </div>
                   </div>
-                  <div className="table">
+                  <div className="tablexx">
                     <TableBasic
                       link="/transfer/detail/"
                       columns={NVCOLUMNSDC}
@@ -981,7 +981,7 @@ function Detail(props) {
                       </Link>
                     </div>
                   </div>
-                  <div className="table">
+                  <div className="tablexx">
                     <TableBasic
                       link="/reward/detail/"
                       columns={NVCOLUMNSKTvKL}
@@ -1024,7 +1024,7 @@ function Detail(props) {
                       </Link>
                     </div>
                   </div>
-                  <div className="table">
+                  <div className="tablexx">
                     <TableBasic
                       link="/discipline/detail/"
                       columns={NVCOLUMNSKTvKL}
