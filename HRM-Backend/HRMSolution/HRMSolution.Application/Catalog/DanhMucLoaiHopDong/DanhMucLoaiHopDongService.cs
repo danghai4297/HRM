@@ -107,7 +107,8 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
         public async Task<int> Update(int id, DanhMucLoaiHopDongUpdateRequest request)
         {
             var danhMucLoaiHopDong = await _context.danhMucLoaiHopDongs.FindAsync(id);
-            if (danhMucLoaiHopDong == null || request.maLoaiHopDong == null || request.tenLoaiHopDong == null)
+            var check = await _context.danhMucLoaiHopDongs.Where(x => x.tenLoaiHopDong == request.tenLoaiHopDong).FirstOrDefaultAsync();
+            if (danhMucLoaiHopDong == null || request.maLoaiHopDong == null || request.tenLoaiHopDong == null || check != null)
             {
                 return 0;
             }

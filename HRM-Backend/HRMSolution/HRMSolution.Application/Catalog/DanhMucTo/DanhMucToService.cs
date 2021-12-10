@@ -117,7 +117,9 @@ namespace HRMSolution.Application.Catalog.DanhMucTos
         public async Task<int> Update(int id, DanhMucToUpdateRequest request)
         {
             var danhMucTo = await _context.danhMucTos.FindAsync(id);
-            if (danhMucTo == null || request.maTo == null || request.tenTo == null)
+            var checkPB = await _context.danhMucPhongBans.Where(x => x.id == request.idPhongBan).FirstOrDefaultAsync();
+            var check = await _context.danhMucTos.Where(x => x.tenTo == request.tenTo && x.idPhongBan == checkPB.id).FirstOrDefaultAsync();
+            if (danhMucTo == null || request.maTo == null || request.tenTo == null || check != null)
             {
                 return 0;
             }
