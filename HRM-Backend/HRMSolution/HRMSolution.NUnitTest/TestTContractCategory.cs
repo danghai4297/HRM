@@ -52,6 +52,18 @@ namespace HRMSolution.NUnitTest
             Assert.That(result.Result, Is.EqualTo(1));
         }
         [Test, Order(4)]
+        public void TyContract_Create_Failure4()
+        {
+            DanhMucLoaiHopDongCreateRequest TyContractCreating = new DanhMucLoaiHopDongCreateRequest()
+            {
+                maLoaiHopDong = "MHD03",
+                tenLoaiHopDong = "Hợp đồng vô thời hạn"
+
+            };
+            var result = danhMucLoaiHopDongService.Create(TyContractCreating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(4)]
         public void TyContract_Create_Failure1()
         {
             DanhMucLoaiHopDongCreateRequest TyContractCreating = new DanhMucLoaiHopDongCreateRequest()
@@ -99,6 +111,19 @@ namespace HRMSolution.NUnitTest
             };
             var result = danhMucLoaiHopDongService.Update(1, TyContractUpdating);
             Assert.That(result.Result, Is.EqualTo(1));
+        }
+        [Test, Order(8)]
+        public void TyContract_Update_Failure4()
+        {
+            DanhMucLoaiHopDongUpdateRequest TyContractUpdating = new DanhMucLoaiHopDongUpdateRequest()
+            {
+
+                maLoaiHopDong = "MHD01",
+                tenLoaiHopDong = "Hợp đồng vô thời hạn"
+
+            };
+            var result = danhMucLoaiHopDongService.Update(1, TyContractUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
         }
         [Test, Order(8)]
         public void TyContract_Update_Failure1()

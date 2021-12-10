@@ -95,7 +95,7 @@ namespace HRMSolution.NUnitTest
                                     .Options;
             _context = new HRMDbContext(dbContextOptions);
 
-            storageService = new FileStorageService(webHostEnvironment);
+            //storageService = new FileStorageService(webHostEnvironment);
             danhMucChucDanhService = new DanhMucChucDanhService(_context);
             danhMucChucVuService = new DanhMucChucVuService(_context);
             danhMucChuyenMonService = new DanhMucChuyenMonService(_context);

@@ -52,6 +52,18 @@ namespace HRMSolution.NUnitTest
             Assert.That(result.Result, Is.EqualTo(1));
         }
         [Test, Order(4)]
+        public void Religion_Create_Failure4()
+        {
+            DanhMucTonGiaoCreateRequest ReligionCreating = new DanhMucTonGiaoCreateRequest()
+            {
+
+                tenDanhMuc = "Phật Giáo"
+
+            };
+            var result = danhMucTonGiaoService.Create(ReligionCreating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(4)]
         public void Religion_Create_Failure1()
         {
             DanhMucTonGiaoCreateRequest ReligionCreating = new DanhMucTonGiaoCreateRequest()
@@ -77,6 +89,19 @@ namespace HRMSolution.NUnitTest
             };
             var result = danhMucTonGiaoService.Update(1, ReligionUpdating);
             Assert.That(result.Result, Is.EqualTo(1));
+        }
+        [Test, Order(6)]
+        public void Religion_Update_Failure4()
+        {
+            DanhMucTonGiaoUpdateRequest ReligionUpdating = new DanhMucTonGiaoUpdateRequest()
+            {
+
+
+                tenDanhMuc = "Phật Giáo"
+
+            };
+            var result = danhMucTonGiaoService.Update(1, ReligionUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
         }
         [Test, Order(6)]
         public void Religion_Update_Failure1()
