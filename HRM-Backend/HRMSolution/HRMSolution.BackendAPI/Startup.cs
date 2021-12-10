@@ -24,7 +24,9 @@ using HRMSolution.Application.Catalog.Luongs;
 using HRMSolution.Application.Catalog.NgoaiNgus;
 using HRMSolution.Application.Catalog.NguoiThans;
 using HRMSolution.Application.Catalog.NhanViens;
+using HRMSolution.Application.Catalog.TaiKhoan;
 using HRMSolution.Application.Catalog.TrinhDoVanHoas;
+using HRMSolution.Application.Catalog.XacThuc;
 using HRMSolution.Application.Common;
 using HRMSolution.Application.System.Users;
 using HRMSolution.Data.EF;
@@ -99,9 +101,10 @@ namespace HRMSolution.BackendAPI
             services.AddTransient<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
             services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
-            services.AddTransient<IUserService, UserService>();
             services.AddTransient<ILichSuService, LichSuService>();
             services.AddTransient<IBaoCaoService, BaoCaoService>();
+            services.AddTransient<IXacThucService, XacThucService>();
+            services.AddTransient<ITaiKhoanService, TaiKhoanService>();
             services.AddControllers();
 
 

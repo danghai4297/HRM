@@ -1,5 +1,5 @@
-﻿using HRMSolution.Application.System.Users;
-using HRMSolution.Application.System.Users.Dtos;
+﻿using HRMSolution.Application.Catalog.TaiKhoan;
+using HRMSolution.Application.Catalog.TaiKhoan.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -13,36 +13,20 @@ namespace HRMSolution.BackendAPI.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    public class UserController : ControllerBase
+    public class TaiKhoanController : ControllerBase
     {
-        private readonly IUserService _userService;
-        public UserController(IUserService userService)
+        private readonly ITaiKhoanService _taiKhoanService;
+        public TaiKhoanController(ITaiKhoanService taiKhoanService)
         {
-            _userService = userService;
+            _taiKhoanService = taiKhoanService;
         }
-        [HttpPost("authenticate")]
-        [AllowAnonymous]
-        public async Task<IActionResult> Authenticate([FromBody] LoginRequest request)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            var result = await _userService.Authencate(request);
-
-            if (string.IsNullOrEmpty(result))
-            {
-                return BadRequest();
-            }
-            return Ok(new { token = result });
-        }
-
         [HttpPost("create")]
-        public async Task<IActionResult> CreateAccount([FromBody] RegisterRequest request)
+        public async Task<IActionResult> CreateAccount([FromBody] CreateAccountRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var result = await _userService.Register(request);
+            var result = await _taiKhoanService.Create(request);
             if (result == false)
             {
                 return BadRequest();
@@ -50,12 +34,12 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpPut("change-password{id}")]
-        public async Task<IActionResult> ChangePassword(Guid id, [FromBody] UserUpdateRequest request)
+        public async Task<IActionResult> ChangePassword(Guid id, [FromBody] AccountUpdateRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var result = await _userService.ChangePassword(id, request);
+            var result = await _taiKhoanService.ChangePassword(id, request);
             if (result == false)
             {
                 return BadRequest(result);
@@ -68,7 +52,7 @@ namespace HRMSolution.BackendAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var result = await _userService.ResetPassword(id);
+            var result = await _taiKhoanService.ResetPassword(id);
             if (result == null)
             {
                 return BadRequest(result);
@@ -77,12 +61,12 @@ namespace HRMSolution.BackendAPI.Controllers
         }
 
         [HttpPut("{id}/roles")]
-        public async Task<IActionResult> SetRoleAssign(Guid id, [FromBody] RoleAssignRequest request)
+        public async Task<IActionResult> SetRole(Guid id, [FromBody] RoleAssignRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var result = await _userService.RoleAssign(id, request);
+            var result = await _taiKhoanService.RoleAssign(id, request);
             if (result == false)
             {
                 return BadRequest(result);
@@ -93,19 +77,19 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAccount(Guid id)
         {
-            var result = await _userService.Delete(id);
+            var result = await _taiKhoanService.Delete(id);
             return Ok(result);
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAccountById(Guid id)
         {
-            var user = await _userService.GetById(id);
+            var user = await _taiKhoanService.GetById(id);
             return Ok(user);
         }
         [HttpGet()]
         public async Task<IActionResult> GetAllAccount()
         {
-            var user = await _userService.GetAll();
+            var user = await _taiKhoanService.GetAll();
             return Ok(user);
         }
     }
