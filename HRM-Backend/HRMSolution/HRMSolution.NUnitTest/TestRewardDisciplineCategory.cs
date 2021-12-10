@@ -59,6 +59,19 @@ namespace HRMSolution.NUnitTest
             Assert.That(result.Result, Is.EqualTo(1));
         }
         [Test, Order(4)]
+        public void RewardDiscipline_Create_Failure()
+        {
+            DanhMucKhenThuongKyLuatCreateRequest RewardDisciplineCreating = new DanhMucKhenThuongKyLuatCreateRequest()
+            {
+
+                tenDanhMuc = "Thưởng Nhân viên suất xác năm",
+                tieuDe = "Khen thưởng"
+
+            };
+            var result = danhMucKhenThuongKyLuatService.Create(RewardDisciplineCreating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(4)]
         public void RewardDiscipline_Create_Failure1()
         {
             DanhMucKhenThuongKyLuatCreateRequest RewardDisciplineCreating = new DanhMucKhenThuongKyLuatCreateRequest()
@@ -98,6 +111,20 @@ namespace HRMSolution.NUnitTest
             };
             var result = danhMucKhenThuongKyLuatService.Update(1, RewardDisciplineUpdating);
             Assert.That(result.Result, Is.EqualTo(1));
+        }
+        [Test, Order(7)]
+        public void RewardDiscipline_Update_Failure4()
+        {
+            DanhMucKhenThuongKyLuatUpdateRequest RewardDisciplineUpdating = new DanhMucKhenThuongKyLuatUpdateRequest()
+            {
+
+
+                tenDanhMuc = "Thưởng Nhân viên suất xác năm"
+
+
+            };
+            var result = danhMucKhenThuongKyLuatService.Update(1, RewardDisciplineUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
         }
         [Test, Order(7)]
         public void RewardDiscipline_Update_Failure1()

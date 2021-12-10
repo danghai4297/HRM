@@ -87,13 +87,18 @@ namespace HRMSolution.NUnitTest
             var result = danhMucChucDanhService.Create(titleCreating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
+
         [Test, Order(6)]
+
         public void Title_Create_Failure4()
         {
             DanhMucChucDanhCreateRequest titleCreating = new DanhMucChucDanhCreateRequest()
             {
-                maChucDanh = "CD03",
-                tenChucDanh = "Cử Nhân",
+
+                maChucDanh = "CD04",
+                tenChucDanh = "Bác Học",
+
+
                 phuCap = (float)100000.0
             };
             var result = danhMucChucDanhService.Create(titleCreating);
@@ -164,11 +169,14 @@ namespace HRMSolution.NUnitTest
             var result = danhMucChucDanhService.Update(5, titleUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
+
         [Test, Order(11)]
+
         public void Title_Update_Failure5()
         {
             DanhMucChucDanhUpdateRequest titleUpdating = new DanhMucChucDanhUpdateRequest()
             {
+
 
                 maChucDanh = "CD03",
                 tenChucDanh = "Tiến Sĩ",
@@ -177,7 +185,7 @@ namespace HRMSolution.NUnitTest
             var result = danhMucChucDanhService.Update(3, titleUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
-
+            
         [Test, Order(12)]
         public void Title_Delete_Success()
         {

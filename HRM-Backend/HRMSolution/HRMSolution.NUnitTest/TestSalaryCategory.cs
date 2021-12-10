@@ -52,6 +52,18 @@ namespace HRMSolution.NUnitTest
             Assert.That(result.Result, Is.EqualTo(1));
         }
         [Test, Order(4)]
+        public void SalaryGr_Create_Failure4()
+        {
+            DanhMucNhomLuongCreateRequest SalaryGrCreating = new DanhMucNhomLuongCreateRequest()
+            {
+                maNhomLuong = "MNL03",
+                tenNhomLuong = "Nhóm 3"
+
+            };
+            var result = danhMucNhomLuongService.Create(SalaryGrCreating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(4)]
         public void SalaryGr_Create_Failure1()
         {
             DanhMucNhomLuongCreateRequest SalaryGrCreating = new DanhMucNhomLuongCreateRequest()
@@ -101,6 +113,19 @@ namespace HRMSolution.NUnitTest
             Assert.That(result.Result, Is.EqualTo(1));
         }
         [Test, Order(8)]
+        public void SalaryGr_Update_Failure4()
+        {
+            DanhMucNhomLuongUpdateRequest SalaryGrUpdating = new DanhMucNhomLuongUpdateRequest()
+            {
+
+                maNhomLuong = "MNL01",
+                tenNhomLuong = "Nhóm 3"
+
+            };
+            var result = danhMucNhomLuongService.Update(1, SalaryGrUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(8)]
         public void SalaryGr_Update_Failure1()
         {
             DanhMucNhomLuongUpdateRequest SalaryGrUpdating = new DanhMucNhomLuongUpdateRequest()
@@ -140,7 +165,7 @@ namespace HRMSolution.NUnitTest
             Assert.That(result.Result, Is.EqualTo(0));
         }
         [Test, Order(11)]
-        public void SalaryGr_Update_Failure4()
+        public void SalaryGr_Update_Failure5()
         {
             DanhMucNhomLuongUpdateRequest SalaryGrUpdating = new DanhMucNhomLuongUpdateRequest()
             {

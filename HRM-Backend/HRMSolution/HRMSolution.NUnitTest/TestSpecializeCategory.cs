@@ -52,6 +52,18 @@ namespace HRMSolution.NUnitTest
             Assert.That(result.Result, Is.EqualTo(1));
         }
         [Test, Order(4)]
+        public void Specialize_Create_Failure4()
+        {
+            DanhMucChuyenMonCreateRequest SpecializeCreating = new DanhMucChuyenMonCreateRequest()
+            {
+                maChuyenMon = "CM05",
+                tenChuyenMon = "Kinh tế"
+
+            };
+            var result = danhMucChuyenMonService.Create(SpecializeCreating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(4)]
         public void Specialize_Create_Failure1()
         {
             DanhMucChuyenMonCreateRequest SpecializeCreating = new DanhMucChuyenMonCreateRequest()
@@ -101,6 +113,19 @@ namespace HRMSolution.NUnitTest
             Assert.That(result.Result, Is.EqualTo(1));
         }
         [Test, Order(8)]
+        public void Specialize_Update_Failure4()
+        {
+            DanhMucChuyenMonUpdateRequest SpecializeUpdating = new DanhMucChuyenMonUpdateRequest()
+            {
+
+                maChuyenMon = "CM01",
+                tenChuyenMon = "Kinh tế"
+
+            };
+            var result = danhMucChuyenMonService.Update(1, SpecializeUpdating);
+            Assert.That(result.Result, Is.EqualTo(0));
+        }
+        [Test, Order(8)]
         public void Specialize_Update_Failure1()
         {
             DanhMucChuyenMonUpdateRequest SpecializeUpdating = new DanhMucChuyenMonUpdateRequest()
@@ -140,7 +165,7 @@ namespace HRMSolution.NUnitTest
             Assert.That(result.Result, Is.EqualTo(0));
         }
         [Test, Order(11)]
-        public void Specialize_Update_Failure4()
+        public void Specialize_Update_Failure5()
         {
             DanhMucChuyenMonUpdateRequest SpecializeUpdating = new DanhMucChuyenMonUpdateRequest()
             {
