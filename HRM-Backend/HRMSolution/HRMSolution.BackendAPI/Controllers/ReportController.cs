@@ -12,10 +12,10 @@ namespace HRMSolution.BackendAPI.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    public class BaoCaoController : ControllerBase
+    public class ReportController : ControllerBase
     {
         private readonly IReportService _reportService;
-        public BaoCaoController(IReportService reportService)
+        public ReportController(IReportService reportService)
         {
             _reportService = reportService;
         }
