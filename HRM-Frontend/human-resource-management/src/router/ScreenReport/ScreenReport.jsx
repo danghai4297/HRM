@@ -1,6 +1,6 @@
 import React from "react";
 import Switch from "react-bootstrap/esm/Switch";
-import { Redirect, Route } from "react-router";
+import { Redirect, Route, useHistory } from "react-router-dom";
 import "./ScreenReport.scss";
 import ItemDecisionSalaryUp from "../../pages/Report/ItemDecisionSalaryUp/ItemDecisionSalaryUp";
 import ItemListBirthday from "../../pages/Report/ItemListBirthday/ItemListBirthday";
@@ -68,6 +68,9 @@ function ScreenReport() {
               path="/report/insuranceBook"
               component={ItemListInsuranceBook}
             />
+            <Route path="*">
+              <Redirect to="/report/profileEmployee" />
+            </Route>
           </Switch>
         </div>
       </div>

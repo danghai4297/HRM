@@ -20,7 +20,7 @@ import {
   NVCOLUMNSNT,
   NVCOLUMNSTDVH,
 } from "./NvColumns";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, Redirect } from "react-router-dom";
 import {
   cmndTccHC,
   lhkc,
@@ -36,6 +36,8 @@ import {
 function Detail(props) {
   let { match, history } = props;
   let { id } = match.params;
+  const id2 = id;
+  console.log(id2);
   const theme = createTheme({
     palette: {
       primary: {
@@ -58,7 +60,7 @@ function Detail(props) {
   const [dataLuong, setDataLuong] = useState([]);
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchDetailEmployee = async () => {
       try {
         const responseNv = await ProductApi.getNvDetail(id);
         setdataDetailNv(responseNv);
@@ -72,9 +74,10 @@ function Detail(props) {
         setDataLuong(responseNv.luongs);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
+        history.goBack();
       }
     };
-    fetchNvList();
+    fetchDetailEmployee();
   }, []);
 
   const [dropBase, setDropBase] = useState(true);
@@ -118,55 +121,58 @@ function Detail(props) {
 
   // Hàm setTimeout để tự di chuyển đến tiêu đề
   useEffect(() => {
-    setTimeout(() => {
-      switch (query.get("move")) {
-        case "moveToContract":
-          const heightContract = document.getElementById("right");
-          const locationContract =
-            document.querySelector("#contract").offsetTop;
-          heightContract.scrollTo({
-            top: locationContract - 260,
-            behavior: "smooth",
-          });
-          break;
-        case "moveToSalary":
-          const heightSalary = document.getElementById("right");
-          const locationSalary = document.querySelector("#salary").offsetTop;
-          heightSalary.scrollTo({
-            top: locationSalary - 260,
-            behavior: "smooth",
-          });
-          break;
-        case "moveToTransfer":
-          const heightTransfer = document.getElementById("right");
-          const locationTransfer =
-            document.querySelector("#transfer").offsetTop;
-          heightTransfer.scrollTo({
-            top: locationTransfer - 260,
-            behavior: "smooth",
-          });
-          break;
-        case "moveToReward":
-          const heightReward = document.getElementById("right");
-          const locationReward = document.querySelector("#reward").offsetTop;
-          heightReward.scrollTo({
-            top: locationReward - 260,
-            behavior: "smooth",
-          });
-          break;
-        case "moveToDiscipline":
-          const heightDiscipline = document.getElementById("right");
-          const locationDiscipline =
-            document.querySelector("#discipline").offsetTop;
-          heightDiscipline.scrollTo({
-            top: locationDiscipline - 260,
-            behavior: "smooth",
-          });
-          break;
-        default:
-          break;
-      }
-    }, 200);
+    const moveTo = () => {
+      setTimeout(() => {
+        switch (query.get("move")) {
+          case "moveToContract":
+            const heightContract = document.getElementById("right");
+            const locationContract =
+              document.querySelector("#contract").offsetTop;
+            heightContract.scrollTo({
+              top: locationContract - 260,
+              behavior: "smooth",
+            });
+            break;
+          case "moveToSalary":
+            const heightSalary = document.getElementById("right");
+            const locationSalary = document.querySelector("#salary").offsetTop;
+            heightSalary.scrollTo({
+              top: locationSalary - 260,
+              behavior: "smooth",
+            });
+            break;
+          case "moveToTransfer":
+            const heightTransfer = document.getElementById("right");
+            const locationTransfer =
+              document.querySelector("#transfer").offsetTop;
+            heightTransfer.scrollTo({
+              top: locationTransfer - 260,
+              behavior: "smooth",
+            });
+            break;
+          case "moveToReward":
+            const heightReward = document.getElementById("right");
+            const locationReward = document.querySelector("#reward").offsetTop;
+            heightReward.scrollTo({
+              top: locationReward - 260,
+              behavior: "smooth",
+            });
+            break;
+          case "moveToDiscipline":
+            const heightDiscipline = document.getElementById("right");
+            const locationDiscipline =
+              document.querySelector("#discipline").offsetTop;
+            heightDiscipline.scrollTo({
+              top: locationDiscipline - 260,
+              behavior: "smooth",
+            });
+            break;
+          default:
+            break;
+        }
+      }, 200);
+    };
+    moveTo();
   }, []);
 
   return (

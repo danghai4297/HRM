@@ -22,10 +22,13 @@ import "./PDF.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SubDetail2 from "../../../components/SubDetail/SubDetail2";
 import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
+import jwt_decode from "jwt-decode";
 
 function PDF(props) {
   let { match, history } = props;
   let { id } = match.params;
+  const token = sessionStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
   const theme = createTheme({
     palette: {
       primary: {
@@ -41,6 +44,15 @@ function PDF(props) {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
+  const printPdf = async () => {
+    handlePrint();
+    await ProductApi.PostLS({
+      tenTaiKhoan: decoded.userName,
+      thaoTac: `Tải về hồ sơ nhân viên`,
+      maNhanVien: decoded.id,
+      tenNhanVien: decoded.givenName,
+    });
+  };
 
   useDocumentTitle("Tải về hồ sơ nhân viên");
 
@@ -81,7 +93,7 @@ function PDF(props) {
           variant="contained"
           theme={theme}
           className="button-pdf"
-          onClick={handlePrint}
+          onClick={printPdf}
         >
           <FontAwesomeIcon icon={["fas", "file-pdf"]} />
         </Button>

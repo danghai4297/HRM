@@ -95,6 +95,7 @@ function AddCSRForm(props) {
           tenNhanVien: decoded.givenName,
         });
         success("Sửa ngạch công chức thành công");
+        history.goBack();
       } else {
         try {
           await ProductApi.PostDMNCC(data);

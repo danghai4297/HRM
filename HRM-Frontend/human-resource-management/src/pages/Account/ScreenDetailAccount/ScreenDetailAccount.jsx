@@ -12,11 +12,14 @@ import Dialog from "../../../components/Dialog/Dialog";
 import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
 import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
+import ProductApi from "../../../api/productApi";
 
 function ScreenDetailAccount(props) {
   let { match, history } = props;
   let { id } = match.params;
   const { success, warn, error } = useToast();
+  const token = sessionStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
 
   const [dataDetailTk, setdataDetailTk] = useState([]);
   const [resetPassword, setResetPassword] = useState();
@@ -24,21 +27,42 @@ function ScreenDetailAccount(props) {
   useDocumentTitle("Chi tiết tài khoản");
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchDetailAccount = async () => {
       try {
         const responseKT = await LoginApi.getTkDetail(id);
         setdataDetailTk(responseKT);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
+        history.goBack();
       }
     };
-    fetchNvList();
+    fetchDetailAccount();
   }, []);
+
   const cancel = () => {
     setShowDeleteDialog(false);
   };
 
-  const handleDelete = async () => {
+  const resetNewPassword = async () => {
+    if (
+      sessionStorage.getItem("resultObj") &&
+      jwt_decode(sessionStorage.getItem("resultObj")).userName ===
+        dataDetailTk.userName
+    ) {
+      warn(`Không được tự reset tài khoản này`);
+    } else {
+      setResetPassword(await LoginApi.getResetPassword(id));
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Đổi mật khẩu mới cho tài khoản ${dataDetailTk.userName}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
+      success(`Reset mật khẩu tài khoản ${dataDetailTk.userName} thành công`);
+    }
+  };
+
+  const handleDeleteAccount = async () => {
     try {
       await LoginApi.deleteAccount(id);
       history.goBack();
@@ -74,20 +98,7 @@ function ScreenDetailAccount(props) {
             <Button
               variant="light"
               className="btn-fix-account"
-              onClick={async () => {
-                if (
-                  sessionStorage.getItem("resultObj") &&
-                  jwt_decode(sessionStorage.getItem("resultObj")).userName ===
-                    dataDetailTk.userName
-                ) {
-                  warn(`Không được tự reset tài khoản này`);
-                } else {
-                  setResetPassword(await LoginApi.getResetPassword(id));
-                  success(
-                    `Reset mật khẩu tài khoản ${dataDetailTk.userName} thành công`
-                  );
-                }
-              }}
+              onClick={resetNewPassword}
             >
               Mật khẩu mới
             </Button>
@@ -137,7 +148,7 @@ function ScreenDetailAccount(props) {
         show={showDeleteDialog}
         title="Thông báo"
         description={`Bạn chắc chắn muốn xóa tài khoản này không `}
-        confirm={handleDelete}
+        confirm={handleDeleteAccount}
         cancel={cancel}
       />
     </>

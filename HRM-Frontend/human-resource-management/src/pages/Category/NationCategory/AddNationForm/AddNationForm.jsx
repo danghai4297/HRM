@@ -99,6 +99,7 @@ function AddNationForm(props) {
           tenNhanVien: decoded.givenName,
         });
         success("Sửa danh mục dân tộc thành công");
+        history.goBack();
       } else {
         try {
           await ProductApi.PostDMDT(data);

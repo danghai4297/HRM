@@ -20,6 +20,7 @@ function ScreenDetailLevel(props) {
         setdataDetailTD(responseTD);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
+        history.goBack();
       }
     };
     fetchNvList();

@@ -95,7 +95,7 @@ function AddProfileForm(props) {
           if (response.vaoDang !== "Không") {
             setChekedParty(true);
           }
-          if (response.quanNhan !== "không") {
+          if (response.quanNhan !== "Không") {
             setCheckedSoldier(true);
           }
           if (response.laConChinhSach == true) {
@@ -126,23 +126,25 @@ function AddProfileForm(props) {
 
   useEffect(() => {
     const handleId = async () => {
-      const responseAllId = await ProductApi.getAllNv();
-      setAllIdEm(responseAllId);
-      const idIncre =
-        responseAllId !== null
-          ? responseAllId[responseAllId.length - 1].id
-          : undefined;
-      console.log(idIncre);
-      const increCode = Number(idIncre.slice(2)) + 1;
-      const rsCode = "NV";
-      if (increCode < 10) {
-        setRsId(rsCode.concat(`000${increCode}`));
-      } else if (increCode >= 10 && increCode < 100) {
-        setRsId(rsCode.concat(`00${increCode}`));
-      } else if (increCode >= 100 && increCode < 1000) {
-        setRsId(rsCode.concat(`0${increCode}`));
-      } else {
-        setRsId(rsCode.concat(`${increCode}`));
+      if (id === undefined) {
+        const responseAllId = await ProductApi.getAllNv();
+        setAllIdEm(responseAllId);
+        const idIncre =
+          responseAllId !== null
+            ? responseAllId[responseAllId.length - 1].id
+            : undefined;
+        console.log(idIncre);
+        const increCode = Number(idIncre.slice(2)) + 1;
+        const rsCode = "NV";
+        if (increCode < 10) {
+          setRsId(rsCode.concat(`000${increCode}`));
+        } else if (increCode >= 10 && increCode < 100) {
+          setRsId(rsCode.concat(`00${increCode}`));
+        } else if (increCode >= 100 && increCode < 1000) {
+          setRsId(rsCode.concat(`0${increCode}`));
+        } else {
+          setRsId(rsCode.concat(`${increCode}`));
+        }
       }
     };
     handleId();
@@ -397,7 +399,7 @@ function AddProfileForm(props) {
       "cccd",
       "noiCapCCCD",
       "hoChieu",
-      "NoiCapHoChieu",
+      "noiCapHoChieu",
       "noiSinh",
       "queQuan",
       "thuongTru",
@@ -532,7 +534,6 @@ function AddProfileForm(props) {
       intitalValue.ngayVaoDoan,
       intitalValue.ngayNghiViec,
     ];
-    //return JSON.stringify(values) === JSON.stringify(dfValue);
     if (
       JSON.stringify(values) === JSON.stringify(dfValue) &&
       file.file === null
@@ -657,7 +658,7 @@ function AddProfileForm(props) {
                         ? file.path
                         : dataDetailEmployee.anh == null
                         ? file.path
-                        : `https://localhost:5001/${dataDetailEmployee.anh}`
+                        : `http://localhost:8000/${dataDetailEmployee.anh}`
                       : file.path
                   }
                   className="icon"
@@ -2266,7 +2267,7 @@ function AddProfileForm(props) {
                         onChange: (e) => {
                           if (e.target.checked === false) {
                             clearErrors("thuongBinh");
-                           resetField("thuongBinh");
+                            resetField("thuongBinh");
                           }
                         },
                       })}
@@ -2427,7 +2428,7 @@ function AddProfileForm(props) {
                       }
                       disabled={!checkedSoldier}
                     />
-                     <span className="message">
+                    <span className="message">
                       {errors.quanHamCaoNhat?.message}
                     </span>
                   </div>
@@ -2477,7 +2478,7 @@ function AddProfileForm(props) {
                       }
                       disabled={!checkedSoldier}
                     />
-                     <span className="message">
+                    <span className="message">
                       {errors.danhHieuCaoNhat?.message}
                     </span>
                   </div>
