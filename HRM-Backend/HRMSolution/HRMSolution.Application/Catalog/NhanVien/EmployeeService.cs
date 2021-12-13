@@ -459,7 +459,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     NgachCongChuc = x.ncc.tenNgach,
                     lyDoNghiViec = x.nv.lyDoNghiViec,
                     anh = x.nv.anh,
-                    phongBan = x.xx.phongBan ?? String.Empty
+                    tenPhongBan = x.xx.phongBan ?? String.Empty
                 }).ToListAsync();
                 return data;
             }
