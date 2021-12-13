@@ -196,7 +196,7 @@ const ProductApi = {
 
   //all dm ngạch công chức
   getAllDMNCC: () => {
-    const url = "/CRSCategory";
+    const url = "/CSRCategory";
     return axiosClient.get(url);
   },
 
@@ -282,7 +282,7 @@ const ProductApi = {
   },
   //add danh mục ngạch công chức
   PostDMNCC: (data) => {
-    const url = "/CRSCategory";
+    const url = "/CSRCategory";
     return axiosClient.post(url, data);
   },
   //add danh mục ngoại ngữ
@@ -388,7 +388,7 @@ const ProductApi = {
 
   //Detail dm ngạch công chức
   getDetailDMNCC: (id) => {
-    const url = `/CRSCategory/${id}`;
+    const url = `/CSRCategory/${id}`;
     return axiosClient.get(url);
   },
 

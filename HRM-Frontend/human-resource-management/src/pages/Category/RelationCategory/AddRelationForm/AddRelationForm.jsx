@@ -88,14 +88,19 @@ function AddRelationForm(props) {
     let tendm = data.tenDanhMuc;
     try {
       if (id !== undefined) {
-        await PutApi.PutDMNT(data, id);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục người thân: ${dataDetailDMNT.tenDanhMuc} --> ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("Sửa danh mục người thân thành công");
+        try {
+          await PutApi.PutDMNT(data, id);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Sửa danh mục người thân: ${dataDetailDMNT.tenDanhMuc} --> ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Sửa danh mục người thân thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể sửa thành danh mục đã tồn tại");
+        }
       } else {
         try {
           await ProductApi.PostDMNT(data);

@@ -44,7 +44,7 @@ const DeleteApi = {
 
   //delete dm ngạch công chức
   deleteDMNCC: (id) => {
-    const url = `/CRSCategory/${id}`;
+    const url = `/CSRCategory/${id}`;
     return axiosClient.delete(url);
   },
 

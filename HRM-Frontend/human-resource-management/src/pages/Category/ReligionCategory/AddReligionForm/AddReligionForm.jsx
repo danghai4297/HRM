@@ -42,6 +42,7 @@ function AddReligionForm(props) {
           setdataDetailDMTG(response);
         }
       } catch (error) {
+        history.goBack();
         console.log("false to fetch nv list: ", error);
       }
     };
@@ -90,14 +91,19 @@ function AddReligionForm(props) {
 
     try {
       if (id !== undefined) {
-        await PutApi.PutDMTG(data, id);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục Tôn giáo: ${dataDetailDMTG.tenDanhMuc} --> ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("Sửa danh mục Tôn giáo thành công");
+        try {
+          await PutApi.PutDMTG(data, id);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Sửa danh mục Tôn giáo: ${dataDetailDMTG.tenDanhMuc} --> ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Sửa danh mục Tôn giáo thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể sửa thành danh mục đã tồn tại");
+        }
       } else {
         try {
           await ProductApi.PostDMTG(data);

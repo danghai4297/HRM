@@ -41,6 +41,7 @@ function AddSalaryGroupForm(props) {
           setdataDetailDMNL(response);
         }
       } catch (error) {
+        history.goBack();
         console.log("false to fetch nv list: ", error);
       }
     };
@@ -114,21 +115,25 @@ function AddSalaryGroupForm(props) {
 
   const onHandleSubmit = async (data) => {
     let tendm = data.tenNhomLuong;
-
     try {
       if (id !== undefined) {
-        await PutApi.PutDMNL(data, id);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục nhóm lương: ${
-            dataDetailDMNL.tenNhomLuong !== tendm
-              ? `${dataDetailDMNL.tenNhomLuong} -->`
-              : ""
-          } ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("Sửa danh mục nhóm lương thành công");
+        try {
+          await PutApi.PutDMNL(data, id);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Sửa danh mục nhóm lương: ${
+              dataDetailDMNL.tenNhomLuong !== tendm
+                ? `${dataDetailDMNL.tenNhomLuong} -->`
+                : ""
+            } ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Sửa danh mục nhóm lương thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể sửa thành danh mục đã tồn tại");
+        }
       } else {
         try {
           await ProductApi.PostDMNL(data);

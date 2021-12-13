@@ -41,6 +41,7 @@ function AddBonusForm(props) {
           setdataDetailDMKT(response);
         }
       } catch (error) {
+        history.goBack();
         console.log("false to fetch nv list: ", error);
       }
     };
@@ -88,14 +89,19 @@ function AddBonusForm(props) {
     try {
       let tendm = data.tenDanhMuc;
       if (id !== undefined) {
-        await PutApi.PutDMKTvKL(data, id);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục khen thưởng: ${dataDetailDMKT.tenDanhMuc} --> ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("Sửa danh mục khen thưởng thành công");
+        try {
+          await PutApi.PutDMKTvKL(data, id);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Sửa danh mục khen thưởng: ${dataDetailDMKT.tenDanhMuc} --> ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Sửa danh mục khen thưởng thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể sửa thành danh mục đã tồn tại");
+        }
       } else {
         try {
           await ProductApi.PostDMKTvKL(data);

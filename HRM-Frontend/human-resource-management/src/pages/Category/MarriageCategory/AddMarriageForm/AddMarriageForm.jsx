@@ -41,6 +41,7 @@ function AddMarriageForm(props) {
           setdataDetailDMHN(response);
         }
       } catch (error) {
+        history.goBack();
         console.log("false to fetch nv list: ", error);
       }
     };
@@ -89,14 +90,19 @@ function AddMarriageForm(props) {
 
     try {
       if (id !== undefined) {
-        await PutApi.PutDMHN(data, id);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục hôn nhân: ${dataDetailDMHN.tenDanhMuc} --> ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("Sửa danh mục hôn nhân thành công");
+        try {
+          await PutApi.PutDMHN(data, id);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Sửa danh mục hôn nhân: ${dataDetailDMHN.tenDanhMuc} --> ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Sửa danh mục hôn nhân thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể sửa thành danh mục đã tồn tại");
+        }
       } else {
         try {
           await ProductApi.PostDMHN(data);

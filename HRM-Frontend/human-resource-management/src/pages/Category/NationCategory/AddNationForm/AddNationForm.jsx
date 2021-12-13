@@ -44,6 +44,7 @@ function AddNationForm(props) {
           setdataDetailDMDT(response);
         }
       } catch (error) {
+        history.goBack();
         console.log("false to fetch nv list: ", error);
       }
     };
@@ -91,15 +92,19 @@ function AddNationForm(props) {
     let tendm = data.tenDanhMuc;
     try {
       if (id !== undefined) {
-        await PutApi.PutDMDT(data, id);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục dân tộc: ${dataDetailDMDT.tenDanhMuc} --> ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("Sửa danh mục dân tộc thành công");
-        history.goBack();
+        try {
+          await PutApi.PutDMDT(data, id);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Sửa danh mục dân tộc: ${dataDetailDMDT.tenDanhMuc} --> ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Sửa danh mục dân tộc thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể sửa thành danh mục đã tồn tại");
+        }
       } else {
         try {
           await ProductApi.PostDMDT(data);
