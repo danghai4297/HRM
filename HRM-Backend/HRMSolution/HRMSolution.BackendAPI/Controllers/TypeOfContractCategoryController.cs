@@ -15,21 +15,21 @@ namespace HRMSolution.BackendAPI.Controllers
     [Authorize]
     public class TypeOfContractCategoryController : ControllerBase
     {
-        private readonly ITypeOfContractCategoryService _danhMucLoaiHopDongService;
-        public TypeOfContractCategoryController(ITypeOfContractCategoryService danhMucLoaiHopDongService)
+        private readonly ITypeOfContractCategoryService _typeOfContractCategoryService;
+        public TypeOfContractCategoryController(ITypeOfContractCategoryService typeOfContractCategoryService)
         {
-            _danhMucLoaiHopDongService = danhMucLoaiHopDongService;
+            _typeOfContractCategoryService = typeOfContractCategoryService;
         }
         [HttpGet()]
         public async Task<IActionResult> GetAllCategory()
         {
-            var danhMucLHD = await _danhMucLoaiHopDongService.GetAll();
+            var danhMucLHD = await _typeOfContractCategoryService.GetAll();
             return Ok(danhMucLHD);
         }
         [HttpPost]
         public async Task<IActionResult> CreateCategory([FromBody] DanhMucLoaiHopDongCreateRequest request)
         {
-            var result = await _danhMucLoaiHopDongService.Create(request);
+            var result = await _typeOfContractCategoryService.Create(request);
             if (result == 0)
                 return BadRequest();
             return Ok();
@@ -37,7 +37,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {
-            var result = await _danhMucLoaiHopDongService.Delete(id);
+            var result = await _typeOfContractCategoryService.Delete(id);
             if (result == 0)
                 return BadRequest();
             return Ok();
@@ -45,7 +45,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCategoryById(int id)
         {
-            var result = await _danhMucLoaiHopDongService.GetById(id);
+            var result = await _typeOfContractCategoryService.GetById(id);
             if (result == null)
                 return BadRequest();
             return Ok(result);
@@ -53,7 +53,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCategory(int id, DanhMucLoaiHopDongUpdateRequest request)
         {
-            var result = await _danhMucLoaiHopDongService.Update(id, request);
+            var result = await _typeOfContractCategoryService.Update(id, request);
             if (result == 0)
                 return BadRequest();
             return Ok();

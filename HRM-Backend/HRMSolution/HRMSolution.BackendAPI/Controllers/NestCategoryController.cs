@@ -15,21 +15,21 @@ namespace HRMSolution.BackendAPI.Controllers
     [Authorize]
     public class NestCategoryController : ControllerBase
     {
-        private readonly INestCategoryService _danhMucToService;
-        public NestCategoryController(INestCategoryService danhMucToService)
+        private readonly INestCategoryService _nestCategoryService;
+        public NestCategoryController(INestCategoryService nestCategoryService)
         {
-            _danhMucToService = danhMucToService;
+            _nestCategoryService = nestCategoryService;
         }
         [HttpGet]
         public async Task<IActionResult> GetAllCategory()
         {
-            var danhMucTo = await _danhMucToService.GetAll();
+            var danhMucTo = await _nestCategoryService.GetAll();
             return Ok(danhMucTo);
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCategoryById(int id)
         {
-            var danhMucTo = await _danhMucToService.GetDetail(id);
+            var danhMucTo = await _nestCategoryService.GetDetail(id);
             if (danhMucTo == null)
                 return BadRequest();
             return Ok(danhMucTo);
@@ -37,7 +37,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateCategory([FromBody] DanhMucToCreateRequest request)
         {
-            var result = await _danhMucToService.Create(request);
+            var result = await _nestCategoryService.Create(request);
             if (result == 0)
                 return BadRequest();
             return Ok();
@@ -46,7 +46,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {
-            var result = await _danhMucToService.Delete(id);
+            var result = await _nestCategoryService.Delete(id);
             if (result == 0)
                 return BadRequest();
             return Ok();
@@ -55,7 +55,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, DanhMucToUpdateRequest request)
         {
-            var result = await _danhMucToService.Update(id, request);
+            var result = await _nestCategoryService.Update(id, request);
             if (result == 0)
                 return BadRequest();
             return Ok();

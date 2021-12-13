@@ -15,28 +15,28 @@ namespace HRMSolution.BackendAPI.Controllers
     [Authorize]
     public class RewardDisciplineCategoryController : ControllerBase
     {
-        private readonly IRewardDisciplineCategoryService _danhMucKhenThuongKyLuatService;
-        public RewardDisciplineCategoryController(IRewardDisciplineCategoryService danhMucKhenThuongKyLuatService)
+        private readonly IRewardDisciplineCategoryService _rewardDisciplineCategoryService;
+        public RewardDisciplineCategoryController(IRewardDisciplineCategoryService rewardDisciplineCategoryService)
         {
-            _danhMucKhenThuongKyLuatService = danhMucKhenThuongKyLuatService;
+            _rewardDisciplineCategoryService = rewardDisciplineCategoryService;
         }
         [HttpGet("khen-thuong")]
         public async Task<IActionResult> GetKhenThuongAll()
         {
-            var danhMucKTKL = await _danhMucKhenThuongKyLuatService.GetAllKhenThuong();
+            var danhMucKTKL = await _rewardDisciplineCategoryService.GetAllKhenThuong();
             return Ok(danhMucKTKL);
         }
         [HttpGet("ky-luat")]
         public async Task<IActionResult> GetKyLuatAll()
         {
-            var danhMucKTKL = await _danhMucKhenThuongKyLuatService.GetAllKyLuat();
+            var danhMucKTKL = await _rewardDisciplineCategoryService.GetAllKyLuat();
             return Ok(danhMucKTKL);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCategoryById(int id)
         {
-            var result = await _danhMucKhenThuongKyLuatService.GetById(id);
+            var result = await _rewardDisciplineCategoryService.GetById(id);
             if (result == null)
                 return BadRequest();
             return Ok(result);
@@ -45,7 +45,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateCategory([FromBody] DanhMucKhenThuongKyLuatCreateRequest request)
         {
-            var result = await _danhMucKhenThuongKyLuatService.Create(request);
+            var result = await _rewardDisciplineCategoryService.Create(request);
             if (result == 0)
                 return BadRequest();
             return Ok();
@@ -53,7 +53,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {
-            var result = await _danhMucKhenThuongKyLuatService.Delete(id);
+            var result = await _rewardDisciplineCategoryService.Delete(id);
             if (result == 0)
                 return BadRequest();
             return Ok();
@@ -61,7 +61,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCategory(int id, DanhMucKhenThuongKyLuatUpdateRequest request)
         {
-            var result = await _danhMucKhenThuongKyLuatService.Update(id, request);
+            var result = await _rewardDisciplineCategoryService.Update(id, request);
             if (result == 0)
                 return BadRequest();
             return Ok();

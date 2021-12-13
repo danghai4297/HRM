@@ -15,39 +15,39 @@ namespace HRMSolution.BackendAPI.Controllers
     [Authorize]
     public class EmployeeController : ControllerBase
     {
-        private readonly IEmployeeService _employee;
-        public EmployeeController(IEmployeeService employee)
+        private readonly IEmployeeService _employeeService;
+        public EmployeeController(IEmployeeService employeeService)
         {
-            _employee = employee;
+            _employeeService = employeeService;
         }
         [HttpGet()]
         public async Task<IActionResult> GetAllEmployee()
         {
-            var nhanViens = await _employee.GetAll();
+            var nhanViens = await _employeeService.GetAll();
             return Ok(nhanViens);
         }
         [HttpGet("ma-ten")]
         public async Task<IActionResult> GetAllEmployeeByIdAndName()
         {
-            var nhanViens = await _employee.GetAllMaVaTen();
+            var nhanViens = await _employeeService.GetAllMaVaTen();
             return Ok(nhanViens);
         }
         [HttpGet("ma-ten-account")]
         public async Task<IActionResult> GetAllEmployeeByIdAndNameToAccount()
         {
-            var nhanViens = await _employee.GetAllNhanVienAccount();
+            var nhanViens = await _employeeService.GetAllNhanVienAccount();
             return Ok(nhanViens);
         }
         [HttpGet("nghiviec")]
         public async Task<IActionResult> GetEmployeeResignation()
         {
-            var nhanViens = await _employee.GetAllNVNghi();
+            var nhanViens = await _employeeService.GetAllNVNghi();
             return Ok(nhanViens);
         }
         [HttpGet("{maNhanVien}")]
         public async Task<IActionResult> GetEmployeeById(string maNhanVien)
         {
-            var nhanViens = await _employee.GetByMaNV(maNhanVien);
+            var nhanViens = await _employeeService.GetByMaNV(maNhanVien);
             if (nhanViens == null)
                 return BadRequest();
             return Ok(nhanViens);
@@ -56,7 +56,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateEmployee([FromBody] NhanVienCreateRequest request)
         {
-            var result = await _employee.Create(request);
+            var result = await _employeeService.Create(request);
             if (result == 0)
                 return BadRequest();
             return Ok();
@@ -65,7 +65,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpPut("{maNhanVien}")]
         public async Task<IActionResult> UpdateEmployee(string maNhanVien, [FromBody] NhanVienUpdateRequest request)
         {
-            var result = await _employee.Update(maNhanVien, request);
+            var result = await _employeeService.Update(maNhanVien, request);
             if (result == 0)
                 return BadRequest();
             return Ok();
@@ -73,7 +73,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpPut("image/{maNhanVien}")]
         public async Task<IActionResult> UpdateEmployeeImage(string maNhanVien, [FromForm] NhanVienUpdateImageRequest request)
         {
-            var result = await _employee.UpdateImage(maNhanVien, request);
+            var result = await _employeeService.UpdateImage(maNhanVien, request);
             if (result == 0)
                 return BadRequest();
             return Ok();
@@ -81,7 +81,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpDelete("image/{maNhanVien}")]
         public async Task<IActionResult> DeleteEmployeeImage(string maNhanVien)
         {
-            var result = await _employee.DeleteImage(maNhanVien);
+            var result = await _employeeService.DeleteImage(maNhanVien);
             if (result == 0)
                 return BadRequest();
             return Ok();

@@ -14,21 +14,21 @@ namespace HRMSolution.BackendAPI.Controllers
     [Authorize]
     public class DepartmentCategoryController : ControllerBase
     {
-        private readonly IDepartmentCategoryService _danhMucPhongBanService;
-        public DepartmentCategoryController(IDepartmentCategoryService danhMucPhongBanService)
+        private readonly IDepartmentCategoryService _departmentCategoryService;
+        public DepartmentCategoryController(IDepartmentCategoryService departmentCategoryService)
         {
-            _danhMucPhongBanService = danhMucPhongBanService;
+            _departmentCategoryService = departmentCategoryService;
         }
         [HttpGet]
         public async Task<IActionResult> GetAllCategory()
         {
-            var danhMucPhongBan = await _danhMucPhongBanService.GetAll();
+            var danhMucPhongBan = await _departmentCategoryService.GetAll();
             return Ok(danhMucPhongBan);
         }
         [HttpPost]
         public async Task<IActionResult> CreateCategory([FromBody] DanhMucPhongBanCreateRequest request)
         {
-            var result = await _danhMucPhongBanService.Create(request);
+            var result = await _departmentCategoryService.Create(request);
             if (result == 0)
                 return BadRequest();
             return Ok();
@@ -36,7 +36,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {
-            var result = await _danhMucPhongBanService.Delete(id);
+            var result = await _departmentCategoryService.Delete(id);
             if (result == 0)
                 return BadRequest();
             return Ok();
@@ -44,7 +44,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCategoryById(int id)
         {
-            var result = await _danhMucPhongBanService.GetById(id);
+            var result = await _departmentCategoryService.GetById(id);
             if (result == null)
                 return BadRequest();
             return Ok(result);
@@ -52,7 +52,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCategory(int id, DanhMucPhongBanUpdateRequest request)
         {
-            var result = await _danhMucPhongBanService.Update(id, request);
+            var result = await _departmentCategoryService.Update(id, request);
             if (result == 0)
                 return BadRequest();
             return Ok();

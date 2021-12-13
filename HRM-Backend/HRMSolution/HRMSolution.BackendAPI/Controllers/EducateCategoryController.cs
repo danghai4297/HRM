@@ -14,21 +14,21 @@ namespace HRMSolution.BackendAPI.Controllers
     [Authorize]
     public class EducateCategoryController : ControllerBase
     {
-        private readonly IEducateCategoryService _danhMucHinhThucDaoTaoService;
-        public EducateCategoryController(IEducateCategoryService danhMucHinhThucDaoTaoService)
+        private readonly IEducateCategoryService _educateCategoryService;
+        public EducateCategoryController(IEducateCategoryService educateCategoryService)
         {
-            _danhMucHinhThucDaoTaoService = danhMucHinhThucDaoTaoService;
+            _educateCategoryService = educateCategoryService;
         }
         [HttpGet()]
         public async Task<IActionResult> GetAllCategory()
         {
-            var danhMucHinhThucDaoTao = await _danhMucHinhThucDaoTaoService.GetAll();
+            var danhMucHinhThucDaoTao = await _educateCategoryService.GetAll();
             return Ok(danhMucHinhThucDaoTao);
         }
         [HttpPost]
         public async Task<IActionResult> CreateCategory([FromBody] DanhMucHinhThucDaoTaoCreateRequest request)
         {
-            var dmhtdt = await _danhMucHinhThucDaoTaoService.Create(request);
+            var dmhtdt = await _educateCategoryService.Create(request);
             if (dmhtdt == 0)
                 return BadRequest();
             return Ok();
@@ -37,7 +37,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCategoryById(int id)
         {
-            var result = await _danhMucHinhThucDaoTaoService.GetById(id);
+            var result = await _educateCategoryService.GetById(id);
             if (result == null)
                 return BadRequest();
             return Ok(result);
@@ -45,7 +45,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {
-            var result = await _danhMucHinhThucDaoTaoService.Delete(id);
+            var result = await _educateCategoryService.Delete(id);
             if (result == 0)
                 return BadRequest();
             return Ok();
@@ -54,7 +54,7 @@ namespace HRMSolution.BackendAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCategory(int id, DanhMucHinhThucDaoTaoUpdateRequest request)
         {
-            var result = await _danhMucHinhThucDaoTaoService.Update(id, request);
+            var result = await _educateCategoryService.Update(id, request);
             if (result == 0)
                 return BadRequest();
             return Ok();
