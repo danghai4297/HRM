@@ -579,7 +579,7 @@ export const NVCOLUMNS2 = [
     accessor: "trangThaiLaoDong",
     minWidth: 200,
     Filter: SelectColumnFilter,
-    disableFilters: false,
+    disableFilters: true,
     show: false,
   },
 ];
@@ -1120,7 +1120,7 @@ export const NVCOLUMNSRESIZE = [
     accessor: "phongBan",
     minWidth: 200,
     Filter: SelectColumnFilter,
-    disableFilters: false,
+    disableFilters: true,
 
     show: true,
   },
@@ -1165,4 +1165,3 @@ export const NVCOLUMNSRESIZE = [
     show: false,
   },
 ];
-
