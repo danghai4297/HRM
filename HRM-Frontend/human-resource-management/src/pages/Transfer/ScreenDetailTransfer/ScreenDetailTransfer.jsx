@@ -33,6 +33,7 @@ function ScreenDetailTransfer(props) {
         setDataDetailDC(response);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
+        history.goBack();
       }
     };
     fetchNvList();

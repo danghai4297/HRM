@@ -13,15 +13,16 @@ function ScreenDetailFamily(props) {
   const [dataDetailNT, setdataDetailNT] = useState([]);
 
   useEffect(() => {
-    const fetchNvList = async () => {
+    const fetchDetailFamily = async () => {
       try {
         const responseNT = await ProductApi.getNTDetail(id);
         setdataDetailNT(responseNT);
       } catch (error) {
+        history.goBack();
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList();
+    fetchDetailFamily();
   }, []);
 
   useEffect(() => {

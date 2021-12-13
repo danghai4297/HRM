@@ -6,6 +6,7 @@ import jwt_decode from "jwt-decode";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SideBarContext } from "../../Contexts/StateContext";
 import IconButton from "@mui/material/IconButton";
+import Tooltip from "@mui/material/Tooltip";
 function SideBarLeft() {
   const { sideBar, setSiderBar } = useContext(SideBarContext);
 
@@ -14,15 +15,17 @@ function SideBarLeft() {
       path: val.link,
     });
     return (
-      <Link to={val.link} className="link-item" id={match ? "actived" : ""}>
-        <li
-          className={sideBar !== false ? "row" : "row changes"}
-          id={match ? "active" : ""}
-        >
-          <div id="icon">{val.icon}</div>
-          {sideBar !== false && <div className="title-bar">{val.title}</div>}
-        </li>
-      </Link>
+      <Tooltip title={val.title} placement="right">
+        <Link to={val.link} className="link-item" id={match ? "actived" : ""}>
+          <li
+            className={sideBar !== false ? "row" : "row changes"}
+            id={match ? "active" : ""}
+          >
+            <div id="icon">{val.icon}</div>
+            {sideBar !== false && <div className="title-bar">{val.title}</div>}
+          </li>
+        </Link>
+      </Tooltip>
     );
   }
 

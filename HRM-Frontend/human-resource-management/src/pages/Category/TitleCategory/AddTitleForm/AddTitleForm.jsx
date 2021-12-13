@@ -115,7 +115,6 @@ function AddTitleForm(props) {
 
   const onHandleSubmit = async (data) => {
     let tendm = data.tenChucDanh;
-
     try {
       setShowDialog(true);
       if (id !== undefined) {
@@ -132,16 +131,20 @@ function AddTitleForm(props) {
         });
         success("Sửa danh mục chức danh thành công");
       } else {
-        await ProductApi.PostDMCD(data);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm danh mục chức danh mới: ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("Thêm danh mục chức danh thành công");
+        try {
+          await ProductApi.PostDMCD(data);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Thêm danh mục chức danh mới: ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Thêm danh mục chức danh thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể thêm danh mục đã tồn tại");
+        }
       }
-      history.goBack();
     } catch (errors) {
       error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }

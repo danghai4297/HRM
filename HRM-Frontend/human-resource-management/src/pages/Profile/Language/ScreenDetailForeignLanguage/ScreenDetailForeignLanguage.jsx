@@ -19,6 +19,7 @@ function ScreenDetailForeignLanguage(props) {
         setdataDetailNN(responseNN);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
+        history.goBack();
       }
     };
     fetchNvList();

@@ -21,9 +21,14 @@ import { ComponentToPrint } from "../../../components/ToPrint/ComponentToPrint";
 import "./PDF.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SubDetail2 from "../../../components/SubDetail/SubDetail2";
+import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
+import jwt_decode from "jwt-decode";
+
 function PDF(props) {
   let { match, history } = props;
   let { id } = match.params;
+  const token = sessionStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
   const theme = createTheme({
     palette: {
       primary: {
@@ -39,20 +44,41 @@ function PDF(props) {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
+  const printPdf = async () => {
+    handlePrint();
+    await ProductApi.PostLS({
+      tenTaiKhoan: decoded.userName,
+      thaoTac: `Tải về hồ sơ nhân viên`,
+      maNhanVien: decoded.id,
+      tenNhanVien: decoded.givenName,
+    });
+  };
+
+  useDocumentTitle("Tải về hồ sơ nhân viên");
 
   const [dataDetailNv, setdataDetailNv] = useState([]);
+  const [dataAllNv, setdataAllNv] = useState([]);
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
         const responseNv = await ProductApi.getNvDetail(id);
         setdataDetailNv(responseNv);
+        const responseAllNv = await ProductApi.getAllNv();
+        setdataAllNv(responseAllNv);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
     };
     fetchNvList();
   }, []);
+
+  const chooseItem = async (newId) => {
+    try {
+      const newResponse = await ProductApi.getNvDetail(newId);
+      setdataDetailNv(newResponse);
+    } catch (error) {}
+  };
 
   return (
     <>
@@ -67,10 +93,23 @@ function PDF(props) {
           variant="contained"
           theme={theme}
           className="button-pdf"
-          onClick={handlePrint}
+          onClick={printPdf}
         >
           <FontAwesomeIcon icon={["fas", "file-pdf"]} />
         </Button>
+        <select
+          className="form-control col-sm-6 custom-select"
+          onChange={(e) => chooseItem(e.target.value)}
+        >
+          <option value={dataDetailNv.id}>{dataDetailNv.hoTen}</option>
+          {dataAllNv
+            .map((items, key) => (
+              <option key={key} value={items.id}>
+                {items.hoTen}
+              </option>
+            ))
+            .filter((item) => item.id !== dataDetailNv.id)}
+        </select>
       </div>
 
       <div className="right-information-pdf" id="right">

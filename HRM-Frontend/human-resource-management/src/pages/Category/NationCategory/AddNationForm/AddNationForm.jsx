@@ -99,17 +99,22 @@ function AddNationForm(props) {
           tenNhanVien: decoded.givenName,
         });
         success("Sửa danh mục dân tộc thành công");
+        history.goBack();
       } else {
-        await ProductApi.PostDMDT(data);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm danh mục dân tộc mới: ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("Thêm danh mục dân tộc thành công");
+        try {
+          await ProductApi.PostDMDT(data);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Thêm danh mục dân tộc mới: ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Thêm danh mục dân tộc thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể thêm danh mục đã tồn tại");
+        }
       }
-      history.goBack();
     } catch (errors) {
       error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }

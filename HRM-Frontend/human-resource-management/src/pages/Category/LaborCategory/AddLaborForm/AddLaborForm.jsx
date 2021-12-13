@@ -99,17 +99,21 @@ function AddLaborForm(props) {
         });
         success("Sửa tính chất lao động thành công");
       } else {
-        await ProductApi.PostDMTCLD(data);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm tính
-          chất lao động mới: ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("Thêm tính chất lao động thành công");
+        try {
+          await ProductApi.PostDMTCLD(data);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Thêm tính
+            chất lao động mới: ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Thêm tính chất lao động thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể thêm danh mục đã tồn tại");
+        }
       }
-      history.goBack();
     } catch (errors) {
       error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }

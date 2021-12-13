@@ -27,12 +27,14 @@ function ScreenDetailSalary(props) {
   });
 
   const [dataLDetail, setDataLDetail] = useState([]);
+
   useEffect(() => {
     const fetchNvList = async () => {
       try {
         const response = await ProductApi.getLDetail(id);
         setDataLDetail(response);
       } catch (error) {
+        history.goBack();
         console.log("false to fetch nv list: ", error);
       }
     };

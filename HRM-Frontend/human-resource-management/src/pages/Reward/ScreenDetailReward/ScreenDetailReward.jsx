@@ -32,6 +32,7 @@ function ScreenDetailReward(props) {
         setdataDetailKt(responseKT);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
+        history.goBack();
       }
     };
     fetchNvList();

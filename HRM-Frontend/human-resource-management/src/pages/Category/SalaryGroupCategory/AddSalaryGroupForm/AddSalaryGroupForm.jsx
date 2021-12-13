@@ -130,16 +130,20 @@ function AddSalaryGroupForm(props) {
         });
         success("Sửa danh mục nhóm lương thành công");
       } else {
-        await ProductApi.PostDMNL(data);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Thêm danh mục nhóm lương mới: ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("Thêm danh mục nhóm lương thành công");
+        try {
+          await ProductApi.PostDMNL(data);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Thêm danh mục nhóm lương mới: ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Thêm danh mục nhóm lương thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể thêm danh mục đã tồn tại");
+        }
       }
-      history.goBack();
     } catch (errors) {
       error(`Không thêm hoặc sửa danh mục được ${errors}`);
     }

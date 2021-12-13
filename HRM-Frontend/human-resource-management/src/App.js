@@ -1,4 +1,3 @@
-// <<<<<<< HEAD
 import "./App.css";
 import "./components/FontAwesomeIcons/index";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -15,31 +14,11 @@ import {
 } from "react-router-dom";
 import { useState } from "react";
 import ToastProvider from "./components/Toast/ToastProvider";
-import jwt_decode from "jwt-decode";
+// import ScreenNotFound from "./pages/Error/ScreenNotFound";
 
 function App() {
   const [account, setAccount] = useState(false);
   const [sideBar, setSiderBar] = useState(true);
-
-  const changePage = () => {
-    const returnHome =
-      sessionStorage.getItem("resultObj") &&
-      jwt_decode(sessionStorage.getItem("resultObj"))
-        .role.split(";")
-        .includes("user");
-    const returnCategory =
-      sessionStorage.getItem("resultObj") &&
-      jwt_decode(sessionStorage.getItem("resultObj"))
-        .role.split(";")
-        .includes("admin");
-    if (returnHome) {
-      return <Redirect to="/home" />;
-    } else if (returnCategory) {
-      return <Redirect to="/category" />;
-    } else {
-      return <Redirect to="/login" />;
-    }
-  };
 
   return (
     <ListProvider>
@@ -47,7 +26,7 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/">
-              {changePage}
+              <Redirect to="/login" />
             </Route>
             <Route exact path="/login">
               <LogIn />
