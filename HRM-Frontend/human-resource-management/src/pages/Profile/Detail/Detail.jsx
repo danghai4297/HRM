@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./Detail.scss";
 import SubDetail from "../../../components/SubDetail/SubDetail";
 import { links } from "./ScrollData";
@@ -11,6 +11,7 @@ import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
 import { createTheme } from "@mui/material/styles";
 import { red } from "@mui/material/colors";
+import ScreenNotFound from "../../Error/ScreenNotFound";
 import {
   NVCOLUMNSDC,
   NVCOLUMNSHD,
@@ -36,8 +37,7 @@ import {
 function Detail(props) {
   let { match, history } = props;
   let { id } = match.params;
-  const id2 = id;
-  console.log(id2);
+
   const theme = createTheme({
     palette: {
       primary: {
