@@ -42,6 +42,7 @@ function AddPositionForm(props) {
           setdataDetailDMCV(response);
         }
       } catch (error) {
+        history.goBack();
         console.log("false to fetch nv list: ", error);
       }
     };
@@ -117,18 +118,23 @@ function AddPositionForm(props) {
     let tendm = data.tenChucVu;
     try {
       if (id !== undefined) {
-        await PutApi.PutDMCV(data, id);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục chức vụ: ${
-            dataDetailDMCV.tenChucVu !== tendm
-              ? `${dataDetailDMCV.tenChucVu} -->`
-              : ""
-          } ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("Sửa danh mục chức vụ thành công");
+        try {
+          await PutApi.PutDMCV(data, id);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Sửa danh mục chức vụ: ${
+              dataDetailDMCV.tenChucVu !== tendm
+                ? `${dataDetailDMCV.tenChucVu} -->`
+                : ""
+            } ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Sửa danh mục chức vụ thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể sửa thành danh mục đã tồn tại");
+        }
       } else {
         try {
           await ProductApi.PostDMCV(data);

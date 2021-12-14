@@ -45,6 +45,7 @@ function AddNestForm(props) {
           setdataDetailDMT(response);
         }
       } catch (error) {
+        history.goBack();
         console.log("false to fetch nv list: ", error);
       }
     };
@@ -120,16 +121,21 @@ function AddNestForm(props) {
 
     try {
       if (id !== undefined) {
-        await PutApi.PutDMT(data, id);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục tổ: ${
-            dataDetailDMT.tenTo !== tendm ? `${dataDetailDMT.tenTo} -->` : ""
-          } ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("Sửa danh mục tổ thành công");
+        try {
+          await PutApi.PutDMT(data, id);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Sửa danh mục tổ: ${
+              dataDetailDMT.tenTo !== tendm ? `${dataDetailDMT.tenTo} -->` : ""
+            } ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Sửa danh mục tổ thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể sửa thành danh mục đã tồn tại");
+        }
       } else {
         try {
           await ProductApi.PostDMT(data);

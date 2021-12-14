@@ -41,6 +41,7 @@ function AddSpecializeForm(props) {
           setdataDetailDMCM(response);
         }
       } catch (error) {
+        history.goBack();
         console.log("false to fetch nv list: ", error);
       }
     };
@@ -118,18 +119,23 @@ function AddSpecializeForm(props) {
     try {
       console.log(data);
       if (id !== undefined) {
-        await PutApi.PutDMCM(data, id);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục chuyên môn: ${
-            dataDetailDMCM.tenChuyenMon !== tendm
-              ? `${dataDetailDMCM.tenChuyenMon} -->`
-              : ""
-          } ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("Sửa danh mục chuyên môn thành công");
+        try {
+          await PutApi.PutDMCM(data, id);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Sửa danh mục chuyên môn: ${
+              dataDetailDMCM.tenChuyenMon !== tendm
+                ? `${dataDetailDMCM.tenChuyenMon} -->`
+                : ""
+            } ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Sửa danh mục chuyên môn thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể sửa thành danh mục đã tồn tại");
+        }
       } else {
         try {
           await ProductApi.PostDMCM(data);

@@ -42,6 +42,7 @@ function AddTitleForm(props) {
           setdataDetailDMCD(response);
         }
       } catch (error) {
+        history.goBack();
         console.log("false to fetch nv list: ", error);
       }
     };
@@ -118,18 +119,23 @@ function AddTitleForm(props) {
     try {
       setShowDialog(true);
       if (id !== undefined) {
-        await PutApi.PutDMCD(data, id);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục chức danh: ${
-            dataDetailDMCD.tenChucDanh !== tendm
-              ? `${dataDetailDMCD.tenChucDanh} thành`
-              : ""
-          } ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("Sửa danh mục chức danh thành công");
+        try {
+          await PutApi.PutDMCD(data, id);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Sửa danh mục chức danh: ${
+              dataDetailDMCD.tenChucDanh !== tendm
+                ? `${dataDetailDMCD.tenChucDanh} thành`
+                : ""
+            } ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Sửa danh mục chức danh thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể sửa thành danh mục đã tồn tại");
+        }
       } else {
         try {
           await ProductApi.PostDMCD(data);

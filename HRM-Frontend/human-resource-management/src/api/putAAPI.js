@@ -35,7 +35,7 @@ const PutApi = {
   },
   //Sửa danh mục ngạch công chức
   PutDMNCC: (data, id) => {
-    const url = `/CRSCategory/${id}`;
+    const url = `/CSRCategory/${id}`;
     return axiosClient.put(url, data);
   },
   //Sửa danh mục ngoại ngữ

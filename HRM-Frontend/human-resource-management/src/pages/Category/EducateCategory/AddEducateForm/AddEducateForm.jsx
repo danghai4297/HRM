@@ -41,6 +41,7 @@ function AddEducateForm(props) {
           setdataDetailDMHTDT(response);
         }
       } catch (error) {
+        history.goBack();
         console.log("false to fetch nv list: ", error);
       }
     };
@@ -89,15 +90,20 @@ function AddEducateForm(props) {
 
     try {
       if (id !== undefined) {
-        await PutApi.PutDMHTDT(data, id);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa hình
-          thức đào tạo: ${dataDetailDMHTDT.tenHinhThuc} thành ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("Sửa hình thức đào tạo thành công");
+        try {
+          await PutApi.PutDMHTDT(data, id);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Sửa hình
+            thức đào tạo: ${dataDetailDMHTDT.tenHinhThuc} thành ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Sửa hình thức đào tạo thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể sửa thành danh mục đã tồn tại");
+        }
       } else {
         try {
           await ProductApi.PostDMHTDT(data);

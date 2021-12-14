@@ -42,6 +42,7 @@ function AddDepartmentForm(props) {
           setdataDetailDMPB(response);
         }
       } catch (error) {
+        history.goBack();
         console.log("false to fetch nv list: ", error);
       }
     };
@@ -117,18 +118,23 @@ function AddDepartmentForm(props) {
     let tendm = data.tenPhongBan;
     try {
       if (id !== undefined) {
-        await PutApi.PutDMPB(data, id);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa phòng ban: ${
-            dataDetailDMPB.tenPhongBan !== tendm
-              ? `${dataDetailDMPB.tenPhongBan} -->`
-              : ""
-          } ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("sửa phòng ban thành công");
+        try {
+          await PutApi.PutDMPB(data, id);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Sửa phòng ban: ${
+              dataDetailDMPB.tenPhongBan !== tendm
+                ? `${dataDetailDMPB.tenPhongBan} -->`
+                : ""
+            } ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Sửa phòng ban thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể sửa thành danh mục đã tồn tại");
+        }
       } else {
         try {
           await ProductApi.PostDMPB(data);

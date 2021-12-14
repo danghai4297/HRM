@@ -41,6 +41,7 @@ function AddLanguageForm(props) {
           setdataDetailDMNN(response);
         }
       } catch (error) {
+        history.goBack();
         console.log("false to fetch nv list: ", error);
       }
     };
@@ -89,14 +90,19 @@ function AddLanguageForm(props) {
 
     try {
       if (id !== undefined) {
-        await PutApi.PutDMNN(data, id);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục ngoại ngữ: ${dataDetailDMNN.tenDanhMuc} --> ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("Sửa danh mục ngoại ngữ thành công");
+        try {
+          await PutApi.PutDMNN(data, id);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Sửa danh mục ngoại ngữ: ${dataDetailDMNN.tenDanhMuc} --> ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Sửa danh mục ngoại ngữ thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể sửa thành danh mục đã tồn tại");
+        }
       } else {
         try {
           await ProductApi.PostDMNN(data);

@@ -43,6 +43,7 @@ function AddLevelForm(props) {
           setdataDetailDMTD(response);
         }
       } catch (error) {
+        history.goBack();
         console.log("false to fetch nv list: ", error);
       }
     };
@@ -91,14 +92,19 @@ function AddLevelForm(props) {
 
     try {
       if (id !== undefined) {
-        await PutApi.PutDMTD(data, id);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục trình độ: ${dataDetailDMTD.tenTrinhDo} --> ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("Sửa trình độ thành công");
+        try {
+          await PutApi.PutDMTD(data, id);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Sửa danh mục trình độ: ${dataDetailDMTD.tenTrinhDo} --> ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Sửa trình độ thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể sửa thành danh mục đã tồn tại");
+        }
       } else {
         try {
           await ProductApi.PostDMTD(data);

@@ -39,6 +39,7 @@ function AddCSRForm(props) {
           setdataDetailDMNCC(response);
         }
       } catch (error) {
+        history.goBack();
         console.log("false to fetch nv list: ", error);
       }
     };
@@ -86,16 +87,20 @@ function AddCSRForm(props) {
     let tendm = data.tenNgach;
     try {
       if (id !== undefined) {
-        await PutApi.PutDMNCC(data, id);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa ngạch
-          công chức: ${dataDetailDMNCC.tenNgach} --> ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("Sửa ngạch công chức thành công");
-        history.goBack();
+        try {
+          await PutApi.PutDMNCC(data, id);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Sửa ngạch
+            công chức: ${dataDetailDMNCC.tenNgach} --> ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Sửa ngạch công chức thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể sửa thành danh mục đã tồn tại");
+        }
       } else {
         try {
           await ProductApi.PostDMNCC(data);

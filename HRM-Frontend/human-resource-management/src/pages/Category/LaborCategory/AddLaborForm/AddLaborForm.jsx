@@ -41,6 +41,7 @@ function AddLaborForm(props) {
           setdataDetailDMTCLD(response);
         }
       } catch (error) {
+        history.goBack();
         console.log("false to fetch nv list: ", error);
       }
     };
@@ -89,15 +90,20 @@ function AddLaborForm(props) {
 
     try {
       if (id !== undefined) {
-        await PutApi.PutDMTCLD(data, id);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa tính
-          chất lao động: ${dataDetailDMTCLD.tenLaoDong} --> ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("Sửa tính chất lao động thành công");
+        try {
+          await PutApi.PutDMTCLD(data, id);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Sửa tính
+            chất lao động: ${dataDetailDMTCLD.tenLaoDong} --> ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Sửa tính chất lao động thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể sửa thành danh mục đã tồn tại");
+        }
       } else {
         try {
           await ProductApi.PostDMTCLD(data);

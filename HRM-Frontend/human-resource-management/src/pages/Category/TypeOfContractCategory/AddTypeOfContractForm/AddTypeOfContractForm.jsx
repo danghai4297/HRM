@@ -42,6 +42,7 @@ function AddTypeOfContractForm(props) {
           setdataDetailDMLHD(response);
         }
       } catch (error) {
+        history.goBack();
         console.log("false to fetch nv list: ", error);
       }
     };
@@ -128,18 +129,23 @@ function AddTypeOfContractForm(props) {
 
     try {
       if (id !== undefined) {
-        await PutApi.PutDMLHD(data, id);
-        await ProductApi.PostLS({
-          tenTaiKhoan: decoded.userName,
-          thaoTac: `Sửa danh mục loại hợp đồng: ${
-            dataDetailDMLHD.tenLoaiHopDong !== tendm
-              ? `${dataDetailDMLHD.tenLoaiHopDong} thành`
-              : ""
-          } ${tendm}`,
-          maNhanVien: decoded.id,
-          tenNhanVien: decoded.givenName,
-        });
-        success("Sửa danh mục loại hợp đồng thành công");
+        try {
+          await PutApi.PutDMLHD(data, id);
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Sửa danh mục loại hợp đồng: ${
+              dataDetailDMLHD.tenLoaiHopDong !== tendm
+                ? `${dataDetailDMLHD.tenLoaiHopDong} thành`
+                : ""
+            } ${tendm}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
+          success("Sửa danh mục loại hợp đồng thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể sửa thành danh mục đã tồn tại");
+        }
       } else {
         try {
           await ProductApi.PostDMLHD(data);
