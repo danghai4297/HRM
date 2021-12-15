@@ -52,7 +52,7 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                     }
                     else
                     {
-                        dieuChuyen.bangChung = await this.SaveFile(request.bangChung);
+                        dieuChuyen.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
                     }
                     _context.dieuChuyens.Add(dieuChuyen);
 
@@ -77,7 +77,7 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                     }
                     else
                     {
-                        dieuChuyen.bangChung = await this.SaveFile(request.bangChung);
+                        dieuChuyen.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
                     }
                     _context.dieuChuyens.Add(dieuChuyen);
                 }
@@ -196,7 +196,7 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                 else
                 {
                     await _storageService.DeleteFileAsync(dieuChuyen.bangChung);
-                    dieuChuyen.bangChung = await this.SaveFile(request.bangChung);
+                    dieuChuyen.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
                 }
                 var result = await _context.SaveChangesAsync();
                 if (result == 0)
@@ -205,10 +205,10 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                     return 1;
             }
         }
-        private async Task<string> SaveFile(IFormFile file)
+        private async Task<string> SaveFile(IFormFile file, string name)
         {
             var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(originalFileName)}";
+            var fileName = $"{name}{Path.GetExtension(originalFileName)}";
             await _storageService.SaveFileAsync(file.OpenReadStream(), fileName);
             return "/" + USER_CONTENT_FOLDER_NAME + "/" + fileName;
         }

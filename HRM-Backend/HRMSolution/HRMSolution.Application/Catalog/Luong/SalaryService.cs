@@ -63,7 +63,7 @@ namespace HRMSolution.Application.Catalog.Luongs
                     }
                     else
                     {
-                        luong.bangChung = await this.SaveFile(request.bangChung);
+                        luong.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
                     }
                     _context.luongs.Add(luong);
                 }
@@ -97,7 +97,7 @@ namespace HRMSolution.Application.Catalog.Luongs
                     }
                     else
                     {
-                        luong.bangChung = await this.SaveFile(request.bangChung);
+                        luong.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
                     }
                     _context.luongs.Add(luong);
                 }
@@ -247,7 +247,7 @@ namespace HRMSolution.Application.Catalog.Luongs
                 else
                 {
                     await _storageService.DeleteFileAsync(luong.bangChung);
-                    luong.bangChung = await this.SaveFile(request.bangChung);
+                    luong.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
                 }
 
                 var result = await _context.SaveChangesAsync();
@@ -257,10 +257,10 @@ namespace HRMSolution.Application.Catalog.Luongs
                     return 1;
             }
         }
-        private async Task<string> SaveFile(IFormFile file)
+        private async Task<string> SaveFile(IFormFile file, string name)
         {
             var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-            var fileName = $"{"ahihi"}{Path.GetExtension(originalFileName)}";
+            var fileName = $"{name}{Path.GetExtension(originalFileName)}";
             await _storageService.SaveFileAsync(file.OpenReadStream(), fileName);
             return "/" + USER_CONTENT_FOLDER_NAME + "/" + fileName;
         }

@@ -47,7 +47,7 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                 }
                 else
                 {
-                    ktkl.anh = await this.SaveFile(request.bangChung);
+                    ktkl.anh = await this.SaveFile(request.bangChung, request.tenFile);
                 }
                 _context.khenThuongKyLuats.Add(ktkl);
                 var result = await _context.SaveChangesAsync();
@@ -194,7 +194,7 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                 else
                 {
                     await _storageService.DeleteFileAsync(ktkl.anh);
-                    ktkl.anh = await this.SaveFile(request.bangChung);
+                    ktkl.anh = await this.SaveFile(request.bangChung, request.tenFile);
                 }
 
                 var result = await _context.SaveChangesAsync();
@@ -205,10 +205,10 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
             }
         }
 
-        private async Task<string> SaveFile(IFormFile file)
+        private async Task<string> SaveFile(IFormFile file, string name)
         {
             var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(originalFileName)}";
+            var fileName = $"{name}{Path.GetExtension(originalFileName)}";
             await _storageService.SaveFileAsync(file.OpenReadStream(), fileName);
             return "/" + USER_CONTENT_FOLDER_NAME + "/" + fileName;
         }

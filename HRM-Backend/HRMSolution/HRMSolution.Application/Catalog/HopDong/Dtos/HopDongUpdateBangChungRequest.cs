@@ -8,5 +8,6 @@ namespace HRMSolution.Application.Catalog.HopDongs.Dtos
     public class HopDongUpdateBangChungRequest
     {
         public IFormFile bangChung { get; set; }
+        public string tenFile { get; set; }
     }
 }

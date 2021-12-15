@@ -22,5 +22,6 @@ namespace HRMSolution.Application.Catalog.Luongs.Dtos
         public string ghiChu { get; set; }
         public bool trangThai { get; set; }
         public IFormFile bangChung { get; set; }
+        public string tenFile { get; set; }
     }
 }
