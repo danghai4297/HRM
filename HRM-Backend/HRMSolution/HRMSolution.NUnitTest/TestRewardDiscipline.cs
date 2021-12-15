@@ -214,12 +214,7 @@ namespace HRMSolution.NUnitTest
             var result = KhenThuongKyLuatService.Update(1, update);
             Assert.That(result.Result, Is.EqualTo(0));
         }
-        [Test, Order(15)]
-        public void RewardDiscipline_Delete_Failure()
-        {
-            var result = KhenThuongKyLuatService.Delete(8);
-            Assert.That(result.Result, Is.EqualTo(0));
-        }
+        
         [Test, Order(1)]
         public void RewardDiscipline_GetAllReward_Success()
         {

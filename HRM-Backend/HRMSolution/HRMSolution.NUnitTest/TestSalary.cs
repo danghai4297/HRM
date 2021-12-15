@@ -355,17 +355,6 @@ namespace HRMSolution.NUnitTest
             var result = LuongService.Update(1, update);
             Assert.That(result.Result, Is.EqualTo(0));
         }
-        //[Test, Order(17)]
-        //public void Salary_Delete_Success()
-        //{
-        //    var result = LuongService.Delete(1);
-        //    Assert.That(result.Result, Is.EqualTo(1));
-        //}
-        [Test, Order(17)]
-        public void Salary_Delete_Failure()
-        {
-            var result = LuongService.Delete(8);
-            Assert.That(result.Result, Is.EqualTo(0));
-        }
+        
     }
 }

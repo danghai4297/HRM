@@ -205,19 +205,6 @@ namespace HRMSolution.NUnitTest
             var result = DieuChuyenService.Update(6, transferUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
-        //[Test, Order(12)]
-        //public void Transfer_Delete_Success()
-        //{
-
-        //    var result = DieuChuyenService.Delete(1);
-        //    Assert.That(result.Result, Is.EqualTo(1));
-        //}
-        [Test, Order(13)]
-        public void Transfer_Delete_Failure()
-        {
-
-            var result = DieuChuyenService.Delete(6);
-            Assert.That(result.Result, Is.EqualTo(0));
-        }
+        
     }
 }

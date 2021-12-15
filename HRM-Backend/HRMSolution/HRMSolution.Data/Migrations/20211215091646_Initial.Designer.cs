@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HRMSolution.Data.Migrations
 {
     [DbContext(typeof(HRMDbContext))]
-    [Migration("20211207170033_Inital")]
-    partial class Inital
+    [Migration("20211215091646_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -49,7 +49,7 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            ConcurrencyStamp = "78f58b5e-3002-4e39-a0e2-b221cdfef788",
+                            ConcurrencyStamp = "0f69691d-d8a4-4acf-8f37-c523391a7658",
                             Name = "admin",
                             NormalizedName = "admin",
                             ghiChu = "Administrator role"
@@ -57,7 +57,7 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec"),
-                            ConcurrencyStamp = "dda029c5-0403-4956-8e61-32c5751c0bee",
+                            ConcurrencyStamp = "5114c121-2882-4f72-9168-d798c3046159",
                             Name = "user",
                             NormalizedName = "user",
                             ghiChu = "User role"
@@ -126,11 +126,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5aa5eb9b-60ea-490e-8885-359dc2075914",
+                            ConcurrencyStamp = "ee0e831f-8dfa-44b6-a9a9-ae4fe5dae34a",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHYVMQmLs5RmIvo2Yjh/XwgGKyAKiaxdXOWJfampuFlXtyjKLniZozBJrPkSz8wbVg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELi3In8Geprpj08DbK3/ZYq7KD57zvAFhLobgMZFNpnWRvvSFI3OcC8G5V1uKSrd+A==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -141,11 +141,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("1db26eb2-1870-4129-f60a-08d9978ff76b"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5f0fddea-e719-42cd-a290-5ff0bda25c26",
+                            ConcurrencyStamp = "e85d785e-3e6d-4f47-8fcb-b1b796e44965",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "user1",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEmezskmhnZivQlQHw0MRq3zhRHYWis8BlCLMRgH/VKy/QskbqW3fn+oCPUB34SetQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHPIjKxGS+5FYZLdPgat6dqhOwSVfR3ABFraNY8vyosgloAaKlAJCc/OWVXmVQuTdA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -156,11 +156,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("ccf28057-5be9-4405-957b-460e0ce106a7"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e1a282dd-bdda-4f81-9719-83ac647ba432",
+                            ConcurrencyStamp = "7412c232-0b35-4ae5-b146-597e21343302",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "user3",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKMhv1D4YWW+3Fqsnn2ztWxaQiFivAQmfzXhjhvqnJJnru+vSN/6J1Br6uYah/4VCw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEApAJ/OPrAFiw6+QmQzEfeh1tdHuReZgvFoeBYSgGuGr+TE6uaRpApVYfU8JRr51gA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -1431,7 +1431,7 @@ namespace HRMSolution.Data.Migrations
                             chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0001",
-                            ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            ngayHieuLuc = new DateTime(2021, 5, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             to = 1,
                             trangThai = false
                         },
@@ -1441,7 +1441,7 @@ namespace HRMSolution.Data.Migrations
                             chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0001",
-                            ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
+                            ngayHieuLuc = new DateTime(2021, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             to = 2,
                             trangThai = false
                         },
@@ -6550,7 +6550,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD01",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 737, DateTimeKind.Local).AddTicks(7693),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 710, DateTimeKind.Local).AddTicks(8503),
                             id = 1,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -6562,7 +6562,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD02",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 737, DateTimeKind.Local).AddTicks(9616),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(333),
                             id = 2,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -6574,7 +6574,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD03",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 737, DateTimeKind.Local).AddTicks(9717),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(403),
                             id = 3,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -6586,7 +6586,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD04",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 737, DateTimeKind.Local).AddTicks(9731),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(414),
                             id = 4,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -6598,7 +6598,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD05",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 737, DateTimeKind.Local).AddTicks(9744),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(421),
                             id = 5,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -6610,7 +6610,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD06",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 737, DateTimeKind.Local).AddTicks(9757),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(429),
                             id = 6,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -6622,7 +6622,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD07",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 737, DateTimeKind.Local).AddTicks(9771),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(437),
                             id = 7,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -6634,7 +6634,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD08",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 737, DateTimeKind.Local).AddTicks(9786),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(443),
                             id = 8,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -6646,7 +6646,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD09",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 737, DateTimeKind.Local).AddTicks(9799),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(450),
                             id = 9,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -6658,7 +6658,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD10",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 737, DateTimeKind.Local).AddTicks(9812),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(458),
                             id = 10,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -6670,7 +6670,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD11",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 737, DateTimeKind.Local).AddTicks(9825),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(465),
                             id = 11,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -6682,7 +6682,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD12",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 737, DateTimeKind.Local).AddTicks(9839),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(472),
                             id = 12,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -6694,7 +6694,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD13",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 737, DateTimeKind.Local).AddTicks(9851),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(480),
                             id = 13,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -6706,7 +6706,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD14",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 737, DateTimeKind.Local).AddTicks(9867),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(486),
                             id = 14,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -6718,7 +6718,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD15",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 737, DateTimeKind.Local).AddTicks(9933),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(493),
                             id = 15,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -6730,7 +6730,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD16",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 737, DateTimeKind.Local).AddTicks(9975),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(501),
                             id = 16,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -6742,7 +6742,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD17",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(507),
                             id = 17,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -6754,7 +6754,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD18",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(18),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(523),
                             id = 18,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -6766,7 +6766,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD19",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(31),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(531),
                             id = 19,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -6778,7 +6778,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD20",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(40),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(538),
                             id = 20,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -6790,7 +6790,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD21",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(49),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(544),
                             id = 21,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -6802,7 +6802,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD22",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(58),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(551),
                             id = 22,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -6814,7 +6814,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD23",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(67),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(558),
                             id = 23,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -6826,7 +6826,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD24",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(77),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(565),
                             id = 24,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -6838,7 +6838,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD25",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(88),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(571),
                             id = 25,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -6850,7 +6850,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD26",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(101),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(578),
                             id = 26,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -6862,7 +6862,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD27",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(114),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(585),
                             id = 27,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -6874,7 +6874,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD28",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(127),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(593),
                             id = 28,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -6886,7 +6886,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD29",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(140),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(599),
                             id = 29,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -6898,7 +6898,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD30",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(152),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(607),
                             id = 30,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -6910,7 +6910,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD31",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(166),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(613),
                             id = 31,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -6922,7 +6922,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD32",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(179),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(620),
                             id = 32,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -6934,7 +6934,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD33",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(191),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(627),
                             id = 33,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -6946,7 +6946,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD34",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(204),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(635),
                             id = 34,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -6958,7 +6958,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD35",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(217),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(642),
                             id = 35,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -6970,7 +6970,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD36",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(230),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(648),
                             id = 36,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -6982,7 +6982,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD37",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(243),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(656),
                             id = 37,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -6994,7 +6994,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD38",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(255),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(662),
                             id = 38,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -7006,7 +7006,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD39",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(268),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(669),
                             id = 39,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -7018,7 +7018,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD40",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(281),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(676),
                             id = 40,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -7030,7 +7030,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD41",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(295),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(827),
                             id = 41,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -7042,7 +7042,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD42",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(308),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(834),
                             id = 42,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -7054,7 +7054,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD43",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(321),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(841),
                             id = 43,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -7066,7 +7066,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD44",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(333),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(847),
                             id = 44,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -7078,7 +7078,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD45",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(346),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(854),
                             id = 45,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -7090,7 +7090,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD46",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(355),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(861),
                             id = 46,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -7102,7 +7102,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD47",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(367),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(868),
                             id = 47,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -7114,7 +7114,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD48",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(380),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(875),
                             id = 48,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -7126,7 +7126,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD49",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(393),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(882),
                             id = 49,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -7138,7 +7138,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD50",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(406),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(888),
                             id = 50,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -7150,7 +7150,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD51",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(422),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(895),
                             id = 51,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -7162,7 +7162,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD52",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(435),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(902),
                             id = 52,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -7174,7 +7174,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD53",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(448),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(909),
                             id = 53,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -7186,7 +7186,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD54",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(461),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(916),
                             id = 54,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -7198,7 +7198,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD55",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(473),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(922),
                             id = 55,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -7210,7 +7210,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD56",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(486),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(929),
                             id = 56,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -7222,7 +7222,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD57",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(500),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(936),
                             id = 57,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -7234,7 +7234,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD58",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(513),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(942),
                             id = 58,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -7246,7 +7246,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD59",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(528),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(949),
                             id = 59,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -7258,7 +7258,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD60",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(541),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(955),
                             id = 60,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -7270,7 +7270,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD61",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(554),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(963),
                             id = 61,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -7282,7 +7282,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD62",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(567),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(970),
                             id = 62,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -7294,7 +7294,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD63",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(580),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(977),
                             id = 63,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -7306,7 +7306,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD64",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(593),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(984),
                             id = 64,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -7318,7 +7318,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD65",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(606),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(990),
                             id = 65,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -7330,7 +7330,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD66",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(618),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(997),
                             id = 66,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -7342,7 +7342,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD67",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(631),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1004),
                             id = 67,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -7354,7 +7354,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD68",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(646),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1011),
                             id = 68,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -7366,7 +7366,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD69",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(659),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1017),
                             id = 69,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -7378,7 +7378,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD70",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(672),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1024),
                             id = 70,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -7390,7 +7390,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD71",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(685),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1031),
                             id = 71,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -7402,7 +7402,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD72",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(698),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1039),
                             id = 72,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -7414,7 +7414,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD73",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(712),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1045),
                             id = 73,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -7426,7 +7426,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD74",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(728),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1053),
                             id = 74,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -7438,7 +7438,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD75",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(740),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1060),
                             id = 75,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -7450,7 +7450,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD76",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(753),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1067),
                             id = 76,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -7462,7 +7462,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD77",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(766),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1074),
                             id = 77,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -7474,7 +7474,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD78",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(778),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1082),
                             id = 78,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -7486,7 +7486,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD79",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(798),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1089),
                             id = 79,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -7498,7 +7498,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD80",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(811),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1245),
                             id = 80,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -7510,7 +7510,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD81",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(825),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1261),
                             id = 81,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -7522,7 +7522,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD82",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(838),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1268),
                             id = 82,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -7534,7 +7534,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD83",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(851),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1275),
                             id = 83,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -7546,7 +7546,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD84",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(864),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1282),
                             id = 84,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -7558,7 +7558,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD85",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(875),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1289),
                             id = 85,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -7570,7 +7570,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD86",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(888),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1296),
                             id = 86,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -7582,7 +7582,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD87",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(901),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1302),
                             id = 87,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -7594,7 +7594,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD88",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(914),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1309),
                             id = 88,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -7606,7 +7606,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD89",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(927),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1316),
                             id = 89,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -7618,7 +7618,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD90",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(940),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1322),
                             id = 90,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -7630,7 +7630,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD91",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(953),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1329),
                             id = 91,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -7642,7 +7642,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD92",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(966),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1336),
                             id = 92,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -7654,7 +7654,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD93",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(978),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1343),
                             id = 93,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -7666,7 +7666,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD94",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(991),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1350),
                             id = 94,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -7678,7 +7678,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD95",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1004),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1356),
                             id = 95,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -7690,7 +7690,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD96",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1017),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1363),
                             id = 96,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -7702,7 +7702,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD97",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1030),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1370),
                             id = 97,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -7714,7 +7714,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD98",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1043),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1377),
                             id = 98,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -7726,7 +7726,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD99",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1056),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1383),
                             id = 99,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -7738,7 +7738,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD100",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1068),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1390),
                             id = 100,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -7750,7 +7750,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD101",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1082),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1397),
                             id = 101,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -7762,7 +7762,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD102",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1095),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1403),
                             id = 102,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -7774,7 +7774,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD103",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1108),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1410),
                             id = 103,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -7786,7 +7786,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD104",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1121),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1417),
                             id = 104,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -7798,7 +7798,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD105",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1134),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1424),
                             id = 105,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -7810,7 +7810,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD106",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1146),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1430),
                             id = 106,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -7822,7 +7822,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD107",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1159),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1437),
                             id = 107,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -7834,7 +7834,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD108",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1172),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1444),
                             id = 108,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -7846,7 +7846,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD109",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1185),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1450),
                             id = 109,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -7858,7 +7858,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD110",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1198),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1457),
                             id = 110,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -7870,7 +7870,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD111",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1211),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1464),
                             id = 111,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -7882,7 +7882,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD112",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1224),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1470),
                             id = 112,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -7894,7 +7894,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD113",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1237),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1477),
                             id = 113,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -7906,7 +7906,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD114",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1250),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1483),
                             id = 114,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -7918,7 +7918,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD115",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1263),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1490),
                             id = 115,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -7930,7 +7930,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD116",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1276),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1497),
                             id = 116,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -7942,7 +7942,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD117",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1289),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1504),
                             id = 117,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -7954,7 +7954,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD118",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1302),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1510),
                             id = 118,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -7966,7 +7966,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD119",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1315),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1517),
                             id = 119,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -7978,7 +7978,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD120",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1328),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1524),
                             id = 120,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -7990,7 +7990,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD121",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1341),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1530),
                             id = 121,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -8002,7 +8002,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD122",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1353),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1537),
                             id = 122,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -8014,7 +8014,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD123",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1366),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1544),
                             id = 123,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -8026,7 +8026,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD124",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1379),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1551),
                             id = 124,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -8038,7 +8038,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD125",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1391),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1557),
                             id = 125,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -8050,7 +8050,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD126",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1403),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1564),
                             id = 126,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -8062,7 +8062,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD127",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1416),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1571),
                             id = 127,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -8074,7 +8074,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD128",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1430),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1577),
                             id = 128,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -8086,7 +8086,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD129",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1443),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1584),
                             id = 129,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -8098,7 +8098,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD130",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1456),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1590),
                             id = 130,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -8110,7 +8110,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD131",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1469),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1597),
                             id = 131,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -8122,7 +8122,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD132",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1483),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1604),
                             id = 132,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -8134,7 +8134,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD133",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1496),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1612),
                             id = 133,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -8146,7 +8146,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD134",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1509),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1619),
                             id = 134,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -8158,7 +8158,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD135",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1523),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1626),
                             id = 135,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -8170,7 +8170,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD136",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1536),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1633),
                             id = 136,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -8182,7 +8182,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD137",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1549),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1640),
                             id = 137,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -8194,7 +8194,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD138",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1564),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1647),
                             id = 138,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -8206,7 +8206,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD139",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1577),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1654),
                             id = 139,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -8218,7 +8218,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD140",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1591),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1663),
                             id = 140,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -8230,7 +8230,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD141",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1602),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1670),
                             id = 141,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -8242,7 +8242,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD142",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1616),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1679),
                             id = 142,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -8254,7 +8254,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD143",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1635),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1685),
                             id = 143,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -8266,7 +8266,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD144",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1649),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1692),
                             id = 144,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -8278,7 +8278,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD145",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1662),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1704),
                             id = 145,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -8290,7 +8290,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD146",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1675),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1711),
                             id = 146,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -8302,7 +8302,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD147",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1688),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1717),
                             id = 147,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -8314,7 +8314,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD148",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1701),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1724),
                             id = 148,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -8326,7 +8326,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD149",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1715),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1731),
                             id = 149,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -8338,7 +8338,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD150",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1728),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1737),
                             id = 150,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -8350,7 +8350,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD151",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1743),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1744),
                             id = 151,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -8362,7 +8362,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD152",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1756),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1751),
                             id = 152,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -8374,7 +8374,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD153",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1769),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1758),
                             id = 153,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -8386,7 +8386,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD154",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1782),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1765),
                             id = 154,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -8398,7 +8398,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD155",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1795),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1772),
                             id = 155,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -8410,7 +8410,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD156",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1807),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1778),
                             id = 156,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -8422,7 +8422,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD157",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1822),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1787),
                             id = 157,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -8434,7 +8434,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD158",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1835),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1793),
                             id = 158,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -8446,7 +8446,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD159",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1848),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1801),
                             id = 159,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -8458,7 +8458,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD160",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1861),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1807),
                             id = 160,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -8470,7 +8470,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD161",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1875),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1814),
                             id = 161,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -8482,7 +8482,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD162",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1889),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1820),
                             id = 162,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -8494,7 +8494,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD163",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1901),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1827),
                             id = 163,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -8506,7 +8506,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD164",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1914),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1834),
                             id = 164,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -8518,7 +8518,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD165",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1925),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1841),
                             id = 165,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -8530,7 +8530,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD166",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1938),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1848),
                             id = 166,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -8542,7 +8542,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD167",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1951),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1855),
                             id = 167,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -8554,7 +8554,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD168",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1964),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1862),
                             id = 168,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -8566,7 +8566,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD169",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1977),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1868),
                             id = 169,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -8578,7 +8578,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD170",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(1989),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1875),
                             id = 170,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -8590,7 +8590,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD171",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2003),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1883),
                             id = 171,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -8602,7 +8602,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD172",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2016),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1890),
                             id = 172,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -8614,7 +8614,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD173",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2028),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1897),
                             id = 173,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -8626,7 +8626,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD174",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2042),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1904),
                             id = 174,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -8638,7 +8638,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD175",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2056),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1911),
                             id = 175,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -8650,7 +8650,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD176",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2070),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1917),
                             id = 176,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -8662,7 +8662,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD177",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2083),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1924),
                             id = 177,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -8674,7 +8674,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD178",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2096),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1932),
                             id = 178,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -8686,7 +8686,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD179",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2109),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1938),
                             id = 179,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -8698,7 +8698,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD180",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2122),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1945),
                             id = 180,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -8710,7 +8710,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD181",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2135),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1951),
                             id = 181,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -8722,7 +8722,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD182",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2148),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1958),
                             id = 182,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -8734,7 +8734,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD183",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2161),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1965),
                             id = 183,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -8746,7 +8746,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD184",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2174),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1972),
                             id = 184,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -8758,7 +8758,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD185",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2187),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1978),
                             id = 185,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -8770,7 +8770,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD186",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2201),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1985),
                             id = 186,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -8782,7 +8782,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD187",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2214),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1991),
                             id = 187,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -8794,7 +8794,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD188",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2227),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(1998),
                             id = 188,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -8806,7 +8806,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD189",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2241),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2005),
                             id = 189,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -8818,7 +8818,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD190",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2254),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2011),
                             id = 190,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -8830,7 +8830,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD191",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2268),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2018),
                             id = 191,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -8842,7 +8842,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD192",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2281),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2025),
                             id = 192,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -8854,7 +8854,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD193",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2294),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2031),
                             id = 193,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -8866,7 +8866,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD194",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2307),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2038),
                             id = 194,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -8878,7 +8878,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD195",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2320),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2045),
                             id = 195,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -8890,7 +8890,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD196",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2334),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2051),
                             id = 196,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -8902,7 +8902,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD197",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2346),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2058),
                             id = 197,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -8914,7 +8914,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD198",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2359),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2065),
                             id = 198,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -8926,7 +8926,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD199",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2371),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2072),
                             id = 199,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -8938,7 +8938,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD200",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2385),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2079),
                             id = 200,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -8950,7 +8950,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD201",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2398),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2086),
                             id = 201,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -8962,7 +8962,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD202",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2413),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2092),
                             id = 202,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -8974,7 +8974,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD203",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2426),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2099),
                             id = 203,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -8986,7 +8986,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD204",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2439),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2106),
                             id = 204,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -8998,7 +8998,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD205",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2452),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2112),
                             id = 205,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -9010,7 +9010,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD206",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2465),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2119),
                             id = 206,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9022,7 +9022,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD207",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2483),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2125),
                             id = 207,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -9034,7 +9034,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD208",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2497),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2278),
                             id = 208,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -9046,7 +9046,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD209",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2509),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2290),
                             id = 209,
                             idChucDanh = 1,
                             idChucVu = 4,
@@ -9058,7 +9058,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD210",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2525),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2297),
                             id = 210,
                             idChucDanh = 1,
                             idChucVu = 5,
@@ -9070,7 +9070,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD211",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2538),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2304),
                             id = 211,
                             idChucDanh = 1,
                             idChucVu = 6,
@@ -9082,7 +9082,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD212",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2551),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2311),
                             id = 212,
                             idChucDanh = 1,
                             idChucVu = 7,
@@ -9094,7 +9094,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD213",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2566),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2318),
                             id = 213,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9106,7 +9106,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD214",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2579),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2324),
                             id = 214,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9118,7 +9118,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD215",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2592),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2331),
                             id = 215,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9130,7 +9130,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD216",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2605),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2338),
                             id = 216,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9142,7 +9142,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD217",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2618),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2346),
                             id = 217,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9154,7 +9154,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD218",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2631),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2354),
                             id = 218,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9166,7 +9166,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD219",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2643),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2362),
                             id = 219,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9178,7 +9178,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD220",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2656),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2370),
                             id = 220,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9190,7 +9190,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD221",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2670),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2377),
                             id = 221,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9202,7 +9202,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD222",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2683),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2383),
                             id = 212,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9214,7 +9214,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD223",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2696),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2390),
                             id = 223,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9226,7 +9226,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD224",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2710),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2398),
                             id = 224,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9238,7 +9238,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD225",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2722),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2405),
                             id = 225,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9250,7 +9250,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD226",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2735),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2411),
                             id = 226,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9262,7 +9262,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD227",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2748),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2418),
                             id = 227,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9274,7 +9274,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD228",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2762),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2425),
                             id = 228,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9286,7 +9286,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD229",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2774),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2431),
                             id = 229,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9298,7 +9298,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD230",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2788),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2438),
                             id = 230,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9310,7 +9310,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD231",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2801),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2445),
                             id = 231,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9322,7 +9322,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD232",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2813),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2452),
                             id = 232,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9334,7 +9334,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD233",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2826),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2458),
                             id = 233,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9346,7 +9346,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD234",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2838),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2465),
                             id = 234,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9358,7 +9358,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD235",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2851),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2472),
                             id = 235,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9370,7 +9370,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD236",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2864),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2479),
                             id = 236,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9382,7 +9382,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD237",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2877),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2486),
                             id = 237,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9394,7 +9394,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD238",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2890),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2492),
                             id = 238,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9406,7 +9406,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD239",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2904),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2499),
                             id = 239,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9418,7 +9418,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD240",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2916),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2506),
                             id = 240,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9430,7 +9430,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD241",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2929),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2513),
                             id = 241,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9442,7 +9442,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD242",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2943),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2520),
                             id = 242,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9454,7 +9454,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD243",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2958),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2527),
                             id = 243,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9466,7 +9466,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD244",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2970),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2533),
                             id = 244,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9478,7 +9478,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD245",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2983),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2541),
                             id = 245,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9490,7 +9490,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD246",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(2996),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2548),
                             id = 246,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9502,7 +9502,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD247",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3009),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2554),
                             id = 247,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9514,7 +9514,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD248",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3024),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2561),
                             id = 248,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9526,7 +9526,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD249",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3037),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2568),
                             id = 249,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9538,7 +9538,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD250",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3051),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2575),
                             id = 250,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9550,7 +9550,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD251",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3064),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2581),
                             id = 251,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9562,7 +9562,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD252",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3077),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2588),
                             id = 252,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9574,7 +9574,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD253",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3090),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2595),
                             id = 253,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9586,7 +9586,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD254",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3104),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2601),
                             id = 254,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9598,7 +9598,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD255",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3118),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2608),
                             id = 255,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9610,7 +9610,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD256",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3130),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2615),
                             id = 256,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9622,7 +9622,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD257",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3142),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2622),
                             id = 257,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9634,7 +9634,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD258",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3155),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2629),
                             id = 258,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9646,7 +9646,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD259",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3168),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2635),
                             id = 259,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9658,7 +9658,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD260",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3182),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2642),
                             id = 260,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9670,7 +9670,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD261",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3195),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2649),
                             id = 261,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9682,7 +9682,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD262",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3209),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2655),
                             id = 262,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9694,7 +9694,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD263",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3221),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2662),
                             id = 263,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9706,7 +9706,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD264",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3234),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2669),
                             id = 264,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9718,7 +9718,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD265",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3247),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2676),
                             id = 265,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9730,7 +9730,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD266",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3261),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2683),
                             id = 266,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9742,7 +9742,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD267",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3274),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2689),
                             id = 267,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9754,7 +9754,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD268",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3286),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2696),
                             id = 268,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9766,7 +9766,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD269",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3299),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2703),
                             id = 269,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9778,7 +9778,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD270",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3312),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2709),
                             id = 270,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9790,7 +9790,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD271",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3331),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2716),
                             id = 271,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9802,7 +9802,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD272",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3345),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2723),
                             id = 272,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9814,7 +9814,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD273",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3359),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2735),
                             id = 273,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9826,7 +9826,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD274",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3372),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2742),
                             id = 274,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9838,7 +9838,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD275",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3384),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2749),
                             id = 275,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9850,7 +9850,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD276",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3397),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2755),
                             id = 276,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9862,7 +9862,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD277",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3411),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2762),
                             id = 277,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9874,7 +9874,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD278",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3424),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2769),
                             id = 278,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9886,7 +9886,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD279",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3438),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2775),
                             id = 279,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9898,7 +9898,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD280",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3450),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2782),
                             id = 280,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9910,7 +9910,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD281",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3464),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2789),
                             id = 281,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9922,7 +9922,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD282",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3477),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2796),
                             id = 282,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9934,7 +9934,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD283",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3490),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2805),
                             id = 283,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9946,7 +9946,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD284",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3503),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2813),
                             id = 284,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9958,7 +9958,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD285",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3516),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2820),
                             id = 285,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9970,7 +9970,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD286",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3529),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2826),
                             id = 286,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9982,7 +9982,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD287",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3541),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2833),
                             id = 287,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -9994,7 +9994,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD288",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3554),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2841),
                             id = 288,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10006,7 +10006,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD289",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3567),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2848),
                             id = 289,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10018,7 +10018,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD290",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3580),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2856),
                             id = 290,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10030,7 +10030,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD291",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3593),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2863),
                             id = 291,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10042,7 +10042,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD292",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3605),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2870),
                             id = 292,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10054,7 +10054,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD293",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3618),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2876),
                             id = 293,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10066,7 +10066,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD294",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3631),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2883),
                             id = 294,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10078,7 +10078,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD295",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3643),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2890),
                             id = 295,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10090,7 +10090,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD296",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3656),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2897),
                             id = 296,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10102,7 +10102,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD297",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3669),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2904),
                             id = 297,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10114,7 +10114,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD298",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3682),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2910),
                             id = 298,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10126,7 +10126,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD299",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3695),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2917),
                             id = 299,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10138,7 +10138,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD300",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3707),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2924),
                             id = 300,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10150,7 +10150,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD301",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3720),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2930),
                             id = 301,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10162,7 +10162,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD302",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3733),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2937),
                             id = 302,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10174,7 +10174,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD303",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3746),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2943),
                             id = 303,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10186,7 +10186,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD304",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3759),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2950),
                             id = 304,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10198,7 +10198,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD305",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3771),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2957),
                             id = 305,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10210,7 +10210,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD306",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3784),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2964),
                             id = 306,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10222,7 +10222,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD307",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3797),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2971),
                             id = 307,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10234,7 +10234,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD308",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3809),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2977),
                             id = 308,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10246,7 +10246,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD309",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3822),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2984),
                             id = 309,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10258,7 +10258,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD310",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3835),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2991),
                             id = 310,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10270,7 +10270,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD311",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3848),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(2998),
                             id = 311,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10282,7 +10282,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD312",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3861),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3005),
                             id = 312,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10294,7 +10294,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD313",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3874),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3014),
                             id = 313,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10306,7 +10306,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD314",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3887),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3021),
                             id = 314,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10318,7 +10318,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD315",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3902),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3028),
                             id = 315,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10330,7 +10330,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD316",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3915),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3035),
                             id = 316,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10342,7 +10342,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD317",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3930),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3041),
                             id = 317,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10354,7 +10354,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD318",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3943),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3048),
                             id = 318,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10366,7 +10366,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD319",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3955),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3055),
                             id = 319,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10378,7 +10378,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD320",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3969),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3062),
                             id = 320,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10390,7 +10390,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD321",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3982),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3068),
                             id = 321,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10402,7 +10402,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD322",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(3994),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3075),
                             id = 322,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10414,7 +10414,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD323",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4007),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3082),
                             id = 323,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10426,7 +10426,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD324",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4021),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3088),
                             id = 324,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10438,7 +10438,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD325",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4034),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3095),
                             id = 325,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10450,7 +10450,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD326",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4047),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3102),
                             id = 326,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10462,7 +10462,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD327",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4060),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3108),
                             id = 327,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10474,7 +10474,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD328",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4072),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3115),
                             id = 328,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10486,7 +10486,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD329",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4085),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3122),
                             id = 329,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10498,7 +10498,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD330",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4098),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3130),
                             id = 330,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10510,7 +10510,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD331",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4110),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3136),
                             id = 331,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10522,7 +10522,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD332",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4123),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3144),
                             id = 332,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10534,7 +10534,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD333",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4137),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3151),
                             id = 333,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10546,7 +10546,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD334",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4151),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3158),
                             id = 334,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10558,7 +10558,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD335",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4169),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3165),
                             id = 335,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10570,7 +10570,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD336",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4182),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3174),
                             id = 336,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10582,7 +10582,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD337",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4195),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3188),
                             id = 337,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10594,7 +10594,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD338",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4207),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3195),
                             id = 338,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10606,7 +10606,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD339",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4220),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3202),
                             id = 339,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10618,7 +10618,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD340",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4233),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3210),
                             id = 340,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10630,7 +10630,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD341",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4246),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3217),
                             id = 341,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10642,7 +10642,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD342",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4259),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3224),
                             id = 342,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10654,7 +10654,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD343",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4269),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3231),
                             id = 343,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10666,7 +10666,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD344",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4282),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3237),
                             id = 344,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10678,7 +10678,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD345",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4295),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3244),
                             id = 345,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10690,7 +10690,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD346",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4308),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3251),
                             id = 346,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10702,7 +10702,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD347",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4321),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3258),
                             id = 347,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10714,7 +10714,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD348",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4334),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3264),
                             id = 348,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10726,7 +10726,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD349",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4347),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3271),
                             id = 349,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10738,7 +10738,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD350",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4360),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3278),
                             id = 350,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10750,7 +10750,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD351",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4373),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3284),
                             id = 351,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10762,7 +10762,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD352",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4386),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3291),
                             id = 352,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10774,7 +10774,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD353",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4400),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3299),
                             id = 353,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10786,7 +10786,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD354",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4413),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3306),
                             id = 354,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10798,7 +10798,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD355",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4426),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3312),
                             id = 355,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10810,7 +10810,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD356",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4438),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3320),
                             id = 356,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10822,7 +10822,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD357",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4451),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3326),
                             id = 357,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10834,7 +10834,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD358",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4464),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3335),
                             id = 358,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10846,7 +10846,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD359",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4477),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3342),
                             id = 359,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10858,7 +10858,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD360",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4490),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3349),
                             id = 360,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10870,7 +10870,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD361",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4501),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3355),
                             id = 361,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10882,7 +10882,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD362",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4515),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3362),
                             id = 362,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10894,7 +10894,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD363",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4528),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3369),
                             id = 363,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10906,7 +10906,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD364",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4541),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3376),
                             id = 364,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10918,7 +10918,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD365",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4553),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3382),
                             id = 365,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10930,7 +10930,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD366",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4566),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3389),
                             id = 366,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10942,7 +10942,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD367",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4579),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3396),
                             id = 367,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10954,7 +10954,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD368",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4592),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3402),
                             id = 368,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10966,7 +10966,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD369",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4604),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3409),
                             id = 369,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10978,7 +10978,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD370",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4619),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3416),
                             id = 370,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -10990,7 +10990,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD371",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4632),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3423),
                             id = 371,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11002,7 +11002,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD372",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4646),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3432),
                             id = 372,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11014,7 +11014,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD373",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4659),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3438),
                             id = 373,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11026,7 +11026,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD374",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4672),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3445),
                             id = 374,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11038,7 +11038,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD375",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4684),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3452),
                             id = 375,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11050,7 +11050,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD376",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4698),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3458),
                             id = 376,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11062,7 +11062,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD377",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4712),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3466),
                             id = 377,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11074,7 +11074,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD378",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4726),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3473),
                             id = 378,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11086,7 +11086,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD379",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4739),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3480),
                             id = 379,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11098,7 +11098,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD380",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4752),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3488),
                             id = 380,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11110,7 +11110,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD381",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4765),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3495),
                             id = 381,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11122,7 +11122,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD382",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4778),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3501),
                             id = 382,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11134,7 +11134,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD383",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4791),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3508),
                             id = 383,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11146,7 +11146,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD384",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4804),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3515),
                             id = 384,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11158,7 +11158,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD385",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4817),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3522),
                             id = 385,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11170,7 +11170,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD386",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4830),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3529),
                             id = 386,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11182,7 +11182,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD387",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4843),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3536),
                             id = 387,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11194,7 +11194,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD388",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4855),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3543),
                             id = 388,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11206,7 +11206,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD389",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4868),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3551),
                             id = 389,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11218,7 +11218,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD390",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4881),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3558),
                             id = 390,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11230,7 +11230,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD391",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4893),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3565),
                             id = 391,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11242,7 +11242,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD392",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4907),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3571),
                             id = 392,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11254,7 +11254,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD393",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4920),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3578),
                             id = 393,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11266,7 +11266,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD394",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4933),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3584),
                             id = 394,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11278,7 +11278,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD395",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4945),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3591),
                             id = 395,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11290,7 +11290,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD396",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4958),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3743),
                             id = 396,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11302,7 +11302,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD397",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4971),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3750),
                             id = 397,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11314,7 +11314,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD398",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(4990),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3757),
                             id = 398,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11326,7 +11326,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD399",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5003),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3763),
                             id = 399,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11338,7 +11338,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD400",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5016),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3775),
                             id = 400,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11350,7 +11350,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD401",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5028),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3783),
                             id = 401,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11362,7 +11362,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD402",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5039),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3789),
                             id = 402,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11374,7 +11374,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD403",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5052),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3796),
                             id = 403,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11386,7 +11386,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD404",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5065),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3803),
                             id = 404,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11398,7 +11398,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD405",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5078),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3809),
                             id = 405,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11410,7 +11410,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD406",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5092),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3816),
                             id = 406,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11422,7 +11422,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD407",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5106),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3823),
                             id = 407,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11434,7 +11434,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD408",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5119),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3829),
                             id = 408,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11446,7 +11446,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD409",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5132),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3836),
                             id = 409,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11458,7 +11458,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD410",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5146),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3842),
                             id = 410,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11470,7 +11470,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD411",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5161),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3849),
                             id = 411,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11482,7 +11482,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD412",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5177),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3856),
                             id = 412,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11494,7 +11494,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD413",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5191),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3862),
                             id = 413,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11506,7 +11506,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD414",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5203),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3869),
                             id = 414,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11518,7 +11518,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD415",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5216),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3876),
                             id = 415,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11530,7 +11530,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD416",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5229),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3883),
                             id = 416,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11542,7 +11542,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD417",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5242),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3889),
                             id = 417,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11554,7 +11554,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD418",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5257),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3896),
                             id = 418,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11566,7 +11566,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD419",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5271),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3902),
                             id = 419,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11578,7 +11578,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD420",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5285),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3909),
                             id = 420,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11590,7 +11590,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD421",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5299),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3916),
                             id = 421,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11602,7 +11602,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD422",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5312),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3926),
                             id = 422,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11614,7 +11614,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD423",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5326),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3939),
                             id = 423,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11626,7 +11626,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD424",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5338),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3951),
                             id = 424,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11638,7 +11638,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD425",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5351),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(3993),
                             id = 425,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11650,7 +11650,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD426",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5364),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4016),
                             id = 426,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11662,7 +11662,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD427",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5377),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4030),
                             id = 427,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11674,7 +11674,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD428",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5391),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4044),
                             id = 428,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11686,7 +11686,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD429",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5404),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4056),
                             id = 429,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11698,7 +11698,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD430",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5418),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4068),
                             id = 430,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11710,7 +11710,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD431",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5431),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4081),
                             id = 431,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11722,7 +11722,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD432",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5445),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4093),
                             id = 432,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11734,7 +11734,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD433",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5458),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4107),
                             id = 433,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11746,7 +11746,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD434",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5470),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4119),
                             id = 434,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11758,7 +11758,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD435",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5484),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4130),
                             id = 435,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11770,7 +11770,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD436",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5496),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4141),
                             id = 436,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11782,7 +11782,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD437",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5509),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4153),
                             id = 437,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11794,7 +11794,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD438",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5522),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4165),
                             id = 438,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11806,7 +11806,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD439",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5535),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4188),
                             id = 439,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11818,7 +11818,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD440",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5548),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4199),
                             id = 440,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11830,7 +11830,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD441",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5560),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4210),
                             id = 441,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11842,7 +11842,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD442",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5573),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4221),
                             id = 442,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11854,7 +11854,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD443",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5587),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4233),
                             id = 443,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11866,7 +11866,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD444",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5599),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4245),
                             id = 444,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11878,7 +11878,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD445",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5613),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4255),
                             id = 445,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11890,7 +11890,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD446",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5626),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4406),
                             id = 446,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11902,7 +11902,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD447",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5639),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4417),
                             id = 447,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11914,7 +11914,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD448",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5652),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4428),
                             id = 448,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11926,7 +11926,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD449",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5665),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4440),
                             id = 449,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11938,7 +11938,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD450",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5679),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4451),
                             id = 450,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11950,7 +11950,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD451",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5692),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4465),
                             id = 451,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11962,7 +11962,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD452",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5705),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4475),
                             id = 452,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11974,7 +11974,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD453",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5717),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4487),
                             id = 453,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11986,7 +11986,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD454",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5730),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4496),
                             id = 454,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -11998,7 +11998,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD455",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5743),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4506),
                             id = 455,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12010,7 +12010,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD456",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5756),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4523),
                             id = 456,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12022,7 +12022,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD457",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5768),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4548),
                             id = 457,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12034,7 +12034,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD458",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5781),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4572),
                             id = 458,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12046,7 +12046,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD459",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5794),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4597),
                             id = 459,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12058,7 +12058,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD460",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5807),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4620),
                             id = 460,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12070,7 +12070,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD461",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5821),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4643),
                             id = 461,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12082,7 +12082,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD462",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5842),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4668),
                             id = 462,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12094,7 +12094,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD463",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5857),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4694),
                             id = 463,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12106,7 +12106,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD464",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5870),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4720),
                             id = 464,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12118,7 +12118,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD465",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5883),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4747),
                             id = 465,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12130,7 +12130,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD466",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5895),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4759),
                             id = 466,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12142,7 +12142,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD467",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5908),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4770),
                             id = 467,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12154,7 +12154,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD468",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5922),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4786),
                             id = 468,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12166,7 +12166,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD469",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5935),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4812),
                             id = 469,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12178,7 +12178,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD470",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5948),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4822),
                             id = 470,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12190,7 +12190,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD471",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5961),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4833),
                             id = 471,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12202,7 +12202,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD472",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5975),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4846),
                             id = 472,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12214,7 +12214,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD473",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(5989),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4870),
                             id = 473,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12226,7 +12226,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD474",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6002),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4895),
                             id = 474,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12238,7 +12238,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD475",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6015),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4920),
                             id = 475,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12250,7 +12250,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD476",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6030),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4943),
                             id = 476,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12262,7 +12262,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD477",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6044),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4968),
                             id = 477,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12274,7 +12274,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD478",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6057),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(4983),
                             id = 478,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12286,7 +12286,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD479",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6067),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5001),
                             id = 479,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12298,7 +12298,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD480",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6081),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5020),
                             id = 480,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12310,7 +12310,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD481",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6094),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5031),
                             id = 481,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12322,7 +12322,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD482",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6107),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5045),
                             id = 482,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12334,7 +12334,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD483",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6120),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5062),
                             id = 483,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12346,7 +12346,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD484",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6135),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5079),
                             id = 484,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12358,7 +12358,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD485",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6148),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5090),
                             id = 485,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12370,7 +12370,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD486",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6162),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5107),
                             id = 486,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12382,7 +12382,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD487",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6176),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5129),
                             id = 487,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12394,7 +12394,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD488",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6188),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5155),
                             id = 488,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12406,7 +12406,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD489",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6201),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5181),
                             id = 489,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12418,7 +12418,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD490",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6214),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5203),
                             id = 490,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12430,7 +12430,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD491",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6228),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5223),
                             id = 491,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12442,7 +12442,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD492",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6240),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5242),
                             id = 492,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12454,7 +12454,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD493",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6255),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5261),
                             id = 493,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12466,7 +12466,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD494",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6268),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5272),
                             id = 494,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -12478,7 +12478,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD495",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6280),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5289),
                             id = 495,
                             idChucDanh = 3,
                             idChucVu = 7,
@@ -12490,7 +12490,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD496",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6294),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5306),
                             id = 496,
                             idChucDanh = 3,
                             idChucVu = 6,
@@ -12502,7 +12502,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD497",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6307),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5322),
                             id = 497,
                             idChucDanh = 3,
                             idChucVu = 5,
@@ -12514,7 +12514,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD498",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6320),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5340),
                             id = 498,
                             idChucDanh = 3,
                             idChucVu = 4,
@@ -12526,7 +12526,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD499",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6333),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5358),
                             id = 499,
                             idChucDanh = 1,
                             idChucVu = 3,
@@ -12538,7 +12538,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD500",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6346),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5375),
                             id = 500,
                             idChucDanh = 1,
                             idChucVu = 2,
@@ -12550,7 +12550,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             maHopDong = "HD501",
                             hopDongDenNgay = new DateTime(2022, 3, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            hopDongTuNgay = new DateTime(2021, 12, 8, 0, 0, 30, 738, DateTimeKind.Local).AddTicks(6359),
+                            hopDongTuNgay = new DateTime(2021, 12, 15, 16, 16, 42, 711, DateTimeKind.Local).AddTicks(5394),
                             id = 501,
                             idChucDanh = 1,
                             idChucVu = 1,
@@ -42828,7 +42828,7 @@ namespace HRMSolution.Data.Migrations
                             chucVuHienTai = "Nhân Viên",
                             coQuanTuyenDung = "Phát Đạt",
                             congViecChinh = "Nhân viên kinh doanh",
-                            diDong = "096102186",
+                            diDong = "0961021860",
                             dienThoai = "02407621987",
                             email = "email@gmail.com",
                             facebook = "fb.com/thongtin",
@@ -64092,5513 +64092,5513 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 1,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(8884),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 707, DateTimeKind.Local).AddTicks(9758),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0001",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 732, DateTimeKind.Local).AddTicks(6173)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 707, DateTimeKind.Local).AddTicks(293)
                         },
                         new
                         {
                             id = 2,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9501),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(264),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0002",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9479)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(246)
                         },
                         new
                         {
                             id = 3,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9518),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(277),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0003",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9516)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(275)
                         },
                         new
                         {
                             id = 4,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9523),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(281),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0004",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9522)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(279)
                         },
                         new
                         {
                             id = 5,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9528),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(284),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0005",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9527)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(283)
                         },
                         new
                         {
                             id = 6,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9532),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(288),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0006",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9531)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(286)
                         },
                         new
                         {
                             id = 7,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9536),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(291),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0007",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9535)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(289)
                         },
                         new
                         {
                             id = 8,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9540),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(293),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0008",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9538)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(292)
                         },
                         new
                         {
                             id = 9,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9543),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(296),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0009",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9542)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(295)
                         },
                         new
                         {
                             id = 10,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9547),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(301),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0010",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9546)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(300)
                         },
                         new
                         {
                             id = 11,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9550),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(304),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0011",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9549)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(303)
                         },
                         new
                         {
                             id = 12,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9554),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(307),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0012",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9553)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(306)
                         },
                         new
                         {
                             id = 13,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9558),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(310),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0013",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9557)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(309)
                         },
                         new
                         {
                             id = 14,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9562),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(313),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0014",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9560)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(312)
                         },
                         new
                         {
                             id = 15,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9565),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(316),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0015",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9564)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(315)
                         },
                         new
                         {
                             id = 16,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9569),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(319),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0016",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9567)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(318)
                         },
                         new
                         {
                             id = 17,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9573),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(322),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0017",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9572)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(321)
                         },
                         new
                         {
                             id = 18,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9576),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(325),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0018",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9575)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(324)
                         },
                         new
                         {
                             id = 19,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9580),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(328),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0019",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9578)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(327)
                         },
                         new
                         {
                             id = 20,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9584),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(331),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0020",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9582)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(330)
                         },
                         new
                         {
                             id = 21,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9587),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(334),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0021",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9585)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(333)
                         },
                         new
                         {
                             id = 22,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9590),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(337),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0022",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9589)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(336)
                         },
                         new
                         {
                             id = 23,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9594),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(340),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0023",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9593)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(338)
                         },
                         new
                         {
                             id = 24,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9598),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(343),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0024",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9596)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(341)
                         },
                         new
                         {
                             id = 25,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9601),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(346),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0025",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9600)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(344)
                         },
                         new
                         {
                             id = 26,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9605),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(348),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0026",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9603)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(347)
                         },
                         new
                         {
                             id = 27,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9608),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(351),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0027",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9607)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(350)
                         },
                         new
                         {
                             id = 28,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9611),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(354),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0028",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9610)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(353)
                         },
                         new
                         {
                             id = 29,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9614),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(357),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0029",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9613)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(356)
                         },
                         new
                         {
                             id = 30,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9618),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(361),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0030",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9617)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(360)
                         },
                         new
                         {
                             id = 31,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9622),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(364),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0031",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9620)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(363)
                         },
                         new
                         {
                             id = 32,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9625),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(367),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0032",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9624)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(366)
                         },
                         new
                         {
                             id = 33,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9628),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(370),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0033",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9627)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(369)
                         },
                         new
                         {
                             id = 34,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9633),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(373),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0034",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9631)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(372)
                         },
                         new
                         {
                             id = 35,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9636),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(376),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0035",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9635)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(374)
                         },
                         new
                         {
                             id = 36,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9640),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(378),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0036",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9639)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(377)
                         },
                         new
                         {
                             id = 37,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9644),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(381),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0037",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9642)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(380)
                         },
                         new
                         {
                             id = 38,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9647),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(384),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0038",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9646)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(383)
                         },
                         new
                         {
                             id = 39,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9651),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(387),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0039",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9650)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(386)
                         },
                         new
                         {
                             id = 40,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9654),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(390),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0040",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9653)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(389)
                         },
                         new
                         {
                             id = 41,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9658),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(393),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0041",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9656)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(392)
                         },
                         new
                         {
                             id = 42,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9661),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(396),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0042",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9660)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(395)
                         },
                         new
                         {
                             id = 43,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9665),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(399),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0043",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9664)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(398)
                         },
                         new
                         {
                             id = 44,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9669),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(402),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0044",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9667)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(401)
                         },
                         new
                         {
                             id = 45,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9673),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(405),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0045",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9671)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(404)
                         },
                         new
                         {
                             id = 46,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9677),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(408),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0046",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9676)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(407)
                         },
                         new
                         {
                             id = 47,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9680),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(411),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0047",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9679)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(410)
                         },
                         new
                         {
                             id = 48,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9685),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(414),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0048",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9683)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(413)
                         },
                         new
                         {
                             id = 49,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9688),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(417),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0049",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9687)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(415)
                         },
                         new
                         {
                             id = 50,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9691),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(420),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0050",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9690)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(418)
                         },
                         new
                         {
                             id = 51,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9695),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(423),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0051",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9693)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(422)
                         },
                         new
                         {
                             id = 52,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9698),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(426),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0052",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9697)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(424)
                         },
                         new
                         {
                             id = 53,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9702),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(428),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0053",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9700)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(427)
                         },
                         new
                         {
                             id = 54,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9705),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(432),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0054",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9703)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(431)
                         },
                         new
                         {
                             id = 55,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9725),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(435),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0055",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9723)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(433)
                         },
                         new
                         {
                             id = 56,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9729),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(438),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0056",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9727)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(437)
                         },
                         new
                         {
                             id = 57,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9732),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(441),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0057",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9731)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(440)
                         },
                         new
                         {
                             id = 58,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9736),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(457),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0058",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9735)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(456)
                         },
                         new
                         {
                             id = 59,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9740),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(460),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0059",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9738)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(459)
                         },
                         new
                         {
                             id = 60,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9744),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(463),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0060",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9742)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(462)
                         },
                         new
                         {
                             id = 61,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9748),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(466),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0061",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9747)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(464)
                         },
                         new
                         {
                             id = 62,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9751),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(469),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0062",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9750)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(467)
                         },
                         new
                         {
                             id = 63,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9755),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(471),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0063",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9753)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(470)
                         },
                         new
                         {
                             id = 64,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9759),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(474),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0064",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9757)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(473)
                         },
                         new
                         {
                             id = 65,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9763),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(477),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0065",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9762)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(476)
                         },
                         new
                         {
                             id = 66,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9767),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(480),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0066",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9765)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(479)
                         },
                         new
                         {
                             id = 67,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9771),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(483),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0067",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9770)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(482)
                         },
                         new
                         {
                             id = 68,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9775),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(486),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0068",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9773)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(485)
                         },
                         new
                         {
                             id = 69,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9779),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(489),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0069",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9777)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(488)
                         },
                         new
                         {
                             id = 70,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9782),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(492),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0070",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9781)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(491)
                         },
                         new
                         {
                             id = 71,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9786),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(495),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0071",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9784)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(494)
                         },
                         new
                         {
                             id = 72,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9790),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(499),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0072",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9788)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(498)
                         },
                         new
                         {
                             id = 73,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9793),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(502),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0073",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9792)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(501)
                         },
                         new
                         {
                             id = 74,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9797),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(505),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0074",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9795)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(504)
                         },
                         new
                         {
                             id = 75,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9800),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(508),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0075",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9799)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(506)
                         },
                         new
                         {
                             id = 76,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9804),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(511),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0076",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9802)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(509)
                         },
                         new
                         {
                             id = 77,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9808),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(513),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0077",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9806)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(512)
                         },
                         new
                         {
                             id = 78,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9812),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(516),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0078",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9810)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(515)
                         },
                         new
                         {
                             id = 79,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9815),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(519),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0079",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9814)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(518)
                         },
                         new
                         {
                             id = 80,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9819),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(522),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0080",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9817)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(521)
                         },
                         new
                         {
                             id = 81,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9822),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(525),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0081",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9821)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(524)
                         },
                         new
                         {
                             id = 82,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9826),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(529),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0082",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9825)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(528)
                         },
                         new
                         {
                             id = 83,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9830),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(532),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0083",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9828)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(530)
                         },
                         new
                         {
                             id = 84,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9833),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(534),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0084",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9832)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(533)
                         },
                         new
                         {
                             id = 85,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9836),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(537),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0085",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9835)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(536)
                         },
                         new
                         {
                             id = 86,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9841),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(540),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0086",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9839)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(539)
                         },
                         new
                         {
                             id = 87,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9844),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(543),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0087",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9843)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(542)
                         },
                         new
                         {
                             id = 88,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9848),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(546),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0088",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9846)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(545)
                         },
                         new
                         {
                             id = 89,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9852),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(549),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0089",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9851)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(548)
                         },
                         new
                         {
                             id = 90,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9856),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(552),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0090",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9854)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(551)
                         },
                         new
                         {
                             id = 91,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9859),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(555),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0091",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9858)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(553)
                         },
                         new
                         {
                             id = 92,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9863),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(557),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0092",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9861)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(556)
                         },
                         new
                         {
                             id = 93,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9867),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(560),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0093",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9865)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(559)
                         },
                         new
                         {
                             id = 94,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9870),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(563),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0094",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9869)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(562)
                         },
                         new
                         {
                             id = 95,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9875),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(567),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0095",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9873)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(566)
                         },
                         new
                         {
                             id = 96,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9878),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(570),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0096",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9877)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(569)
                         },
                         new
                         {
                             id = 97,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9882),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(573),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0097",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9881)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(572)
                         },
                         new
                         {
                             id = 98,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9885),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(576),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0098",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9884)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(574)
                         },
                         new
                         {
                             id = 99,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9889),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(578),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0099",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9887)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(577)
                         },
                         new
                         {
                             id = 100,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9892),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(581),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0100",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9891)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(580)
                         },
                         new
                         {
                             id = 101,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9895),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(584),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0101",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9894)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(583)
                         },
                         new
                         {
                             id = 102,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9899),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(587),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0102",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9897)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(586)
                         },
                         new
                         {
                             id = 103,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9902),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(590),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0103",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9901)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(589)
                         },
                         new
                         {
                             id = 104,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9906),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(593),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0104",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9904)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(592)
                         },
                         new
                         {
                             id = 105,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9909),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(596),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0105",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9908)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(595)
                         },
                         new
                         {
                             id = 106,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9912),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(599),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0106",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9911)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(597)
                         },
                         new
                         {
                             id = 107,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9916),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(602),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0107",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9914)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(600)
                         },
                         new
                         {
                             id = 108,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9920),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(606),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0108",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9919)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(604)
                         },
                         new
                         {
                             id = 109,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9923),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(609),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0109",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9922)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(608)
                         },
                         new
                         {
                             id = 110,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9927),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(612),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0110",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9925)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(611)
                         },
                         new
                         {
                             id = 111,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9930),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(615),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0111",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9929)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(613)
                         },
                         new
                         {
                             id = 112,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9934),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(617),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0112",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9932)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(616)
                         },
                         new
                         {
                             id = 113,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9937),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(620),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0113",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9936)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(619)
                         },
                         new
                         {
                             id = 114,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9941),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(623),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0114",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9939)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(622)
                         },
                         new
                         {
                             id = 115,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9945),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(626),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0115",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9943)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(625)
                         },
                         new
                         {
                             id = 116,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9949),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(629),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0116",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9947)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(628)
                         },
                         new
                         {
                             id = 117,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9954),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(632),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0117",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9951)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(631)
                         },
                         new
                         {
                             id = 118,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9962),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(635),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0118",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9959)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(634)
                         },
                         new
                         {
                             id = 119,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9969),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(638),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0119",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9966)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(636)
                         },
                         new
                         {
                             id = 120,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9976),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(640),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0120",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 733, DateTimeKind.Local).AddTicks(9973)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(639)
                         },
                         new
                         {
                             id = 121,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(20),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(644),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0121",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(18)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(643)
                         },
                         new
                         {
                             id = 122,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(24),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(647),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0122",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(23)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(646)
                         },
                         new
                         {
                             id = 123,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(28),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(650),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0123",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(26)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(649)
                         },
                         new
                         {
                             id = 124,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(32),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(653),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0124",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(30)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(652)
                         },
                         new
                         {
                             id = 125,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(35),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(656),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0125",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(34)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(654)
                         },
                         new
                         {
                             id = 126,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(39),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(658),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0126",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(38)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(657)
                         },
                         new
                         {
                             id = 127,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(43),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(661),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0127",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(41)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(660)
                         },
                         new
                         {
                             id = 128,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(46),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(664),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0128",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(45)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(663)
                         },
                         new
                         {
                             id = 129,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(50),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(667),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0129",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(49)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(666)
                         },
                         new
                         {
                             id = 130,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(53),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(670),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0130",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(52)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(669)
                         },
                         new
                         {
                             id = 131,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(57),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(673),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0131",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(55)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(671)
                         },
                         new
                         {
                             id = 132,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(60),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(676),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0132",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(59)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(674)
                         },
                         new
                         {
                             id = 133,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(64),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(679),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0133",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(62)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(677)
                         },
                         new
                         {
                             id = 134,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(68),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(682),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0134",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(66)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(681)
                         },
                         new
                         {
                             id = 135,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(71),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(685),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0135",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(70)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(684)
                         },
                         new
                         {
                             id = 136,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(74),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(688),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0136",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(73)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(687)
                         },
                         new
                         {
                             id = 137,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(78),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(691),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0137",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(76)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(690)
                         },
                         new
                         {
                             id = 138,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(81),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(694),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0138",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(80)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(693)
                         },
                         new
                         {
                             id = 139,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(85),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(697),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0139",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(83)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(696)
                         },
                         new
                         {
                             id = 140,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(97),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(700),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0140",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(95)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(698)
                         },
                         new
                         {
                             id = 141,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(100),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(702),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0141",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(99)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(701)
                         },
                         new
                         {
                             id = 142,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(104),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(705),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0142",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(102)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(704)
                         },
                         new
                         {
                             id = 143,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(107),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(713),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0143",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(106)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(712)
                         },
                         new
                         {
                             id = 144,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(111),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(716),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0144",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(109)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(715)
                         },
                         new
                         {
                             id = 145,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(114),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(719),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0145",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(113)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(718)
                         },
                         new
                         {
                             id = 146,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(118),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(722),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0146",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(116)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(721)
                         },
                         new
                         {
                             id = 147,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(122),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(726),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0147",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(120)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(725)
                         },
                         new
                         {
                             id = 148,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(125),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(729),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0148",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(124)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(727)
                         },
                         new
                         {
                             id = 149,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(129),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(732),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0149",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(127)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(730)
                         },
                         new
                         {
                             id = 150,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(132),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(734),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0150",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(131)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(733)
                         },
                         new
                         {
                             id = 151,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(135),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(737),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0151",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(134)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(736)
                         },
                         new
                         {
                             id = 152,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(139),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(740),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0152",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(137)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(739)
                         },
                         new
                         {
                             id = 153,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(142),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(743),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0153",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(141)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(742)
                         },
                         new
                         {
                             id = 154,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(146),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(746),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0154",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(144)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(745)
                         },
                         new
                         {
                             id = 155,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(150),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(749),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0155",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(148)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(748)
                         },
                         new
                         {
                             id = 156,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(153),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(752),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0156",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(152)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(751)
                         },
                         new
                         {
                             id = 157,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(157),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(755),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0157",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(156)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(754)
                         },
                         new
                         {
                             id = 158,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(161),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(758),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0158",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(159)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(757)
                         },
                         new
                         {
                             id = 159,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(164),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(761),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0159",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(163)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(760)
                         },
                         new
                         {
                             id = 160,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(168),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(764),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0160",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(167)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(763)
                         },
                         new
                         {
                             id = 161,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(172),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(767),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0161",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(170)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(766)
                         },
                         new
                         {
                             id = 162,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(175),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(770),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0162",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(174)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(769)
                         },
                         new
                         {
                             id = 163,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(178),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(773),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0163",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(177)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(772)
                         },
                         new
                         {
                             id = 164,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(182),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(776),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0164",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(180)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(775)
                         },
                         new
                         {
                             id = 165,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(185),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(779),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0165",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(184)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(778)
                         },
                         new
                         {
                             id = 166,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(189),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(782),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0166",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(187)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(780)
                         },
                         new
                         {
                             id = 167,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(192),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(784),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0167",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(191)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(783)
                         },
                         new
                         {
                             id = 168,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(196),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(787),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0168",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(194)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(786)
                         },
                         new
                         {
                             id = 169,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(203),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(790),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0169",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(202)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(789)
                         },
                         new
                         {
                             id = 170,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(207),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(793),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0170",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(205)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(792)
                         },
                         new
                         {
                             id = 171,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(210),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(796),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0171",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(209)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(795)
                         },
                         new
                         {
                             id = 172,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(213),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(799),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0172",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(212)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(798)
                         },
                         new
                         {
                             id = 173,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(217),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(802),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0173",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(215)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(801)
                         },
                         new
                         {
                             id = 174,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(220),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(805),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0174",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(219)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(804)
                         },
                         new
                         {
                             id = 175,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(224),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(808),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0175",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(223)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(807)
                         },
                         new
                         {
                             id = 176,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(227),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(811),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0176",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(226)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(810)
                         },
                         new
                         {
                             id = 177,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(231),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(814),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0177",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(229)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(813)
                         },
                         new
                         {
                             id = 178,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(234),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(817),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0178",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(233)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(816)
                         },
                         new
                         {
                             id = 179,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(237),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(820),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0179",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(236)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(819)
                         },
                         new
                         {
                             id = 180,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(241),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(823),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0180",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(239)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(822)
                         },
                         new
                         {
                             id = 181,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(244),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(826),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0181",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(243)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(824)
                         },
                         new
                         {
                             id = 182,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(248),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(828),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0182",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(247)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(827)
                         },
                         new
                         {
                             id = 183,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(252),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(831),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0183",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(250)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(830)
                         },
                         new
                         {
                             id = 184,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(256),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(834),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0184",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(253)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(833)
                         },
                         new
                         {
                             id = 185,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(259),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(837),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0185",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(257)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(836)
                         },
                         new
                         {
                             id = 186,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(262),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(841),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0186",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(261)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(839)
                         },
                         new
                         {
                             id = 187,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(266),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(843),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0187",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(264)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(842)
                         },
                         new
                         {
                             id = 188,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(269),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(846),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0188",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(268)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(845)
                         },
                         new
                         {
                             id = 189,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(272),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(849),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0189",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(271)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(848)
                         },
                         new
                         {
                             id = 190,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(276),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(853),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0190",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(275)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(851)
                         },
                         new
                         {
                             id = 191,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(279),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(855),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0191",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(278)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(854)
                         },
                         new
                         {
                             id = 192,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(283),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(858),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0192",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(281)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(857)
                         },
                         new
                         {
                             id = 193,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(286),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(861),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0193",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(285)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(860)
                         },
                         new
                         {
                             id = 194,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(290),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(864),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0194",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(288)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(863)
                         },
                         new
                         {
                             id = 195,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(293),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(867),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0195",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(292)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(866)
                         },
                         new
                         {
                             id = 196,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(297),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(870),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0196",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(296)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(869)
                         },
                         new
                         {
                             id = 197,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(301),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(873),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0197",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(299)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(872)
                         },
                         new
                         {
                             id = 198,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(305),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(876),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0198",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(304)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(874)
                         },
                         new
                         {
                             id = 199,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(309),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(879),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0199",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(308)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(878)
                         },
                         new
                         {
                             id = 200,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(312),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(882),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0200",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(311)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(881)
                         },
                         new
                         {
                             id = 201,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(316),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(885),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0201",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(315)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(884)
                         },
                         new
                         {
                             id = 202,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(320),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(888),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0202",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(318)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(887)
                         },
                         new
                         {
                             id = 203,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(324),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(891),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0203",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(322)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(890)
                         },
                         new
                         {
                             id = 204,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(327),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(894),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0204",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(326)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(893)
                         },
                         new
                         {
                             id = 205,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(331),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(897),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0205",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(330)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(895)
                         },
                         new
                         {
                             id = 206,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(334),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(899),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0206",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(333)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(898)
                         },
                         new
                         {
                             id = 207,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(338),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(902),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0207",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(336)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(901)
                         },
                         new
                         {
                             id = 208,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(341),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(905),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0208",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(340)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(904)
                         },
                         new
                         {
                             id = 209,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(345),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(908),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0209",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(343)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(907)
                         },
                         new
                         {
                             id = 210,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(350),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(911),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0210",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(348)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(910)
                         },
                         new
                         {
                             id = 211,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(353),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(914),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0211",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(352)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(913)
                         },
                         new
                         {
                             id = 212,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(360),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(917),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0212",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(359)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(916)
                         },
                         new
                         {
                             id = 213,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(364),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(920),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0213",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(362)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(919)
                         },
                         new
                         {
                             id = 214,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(367),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(923),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0214",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(366)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(922)
                         },
                         new
                         {
                             id = 215,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(371),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(926),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0215",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(369)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(925)
                         },
                         new
                         {
                             id = 216,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(374),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(929),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0216",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(373)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(928)
                         },
                         new
                         {
                             id = 217,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(377),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(932),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0217",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(376)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(931)
                         },
                         new
                         {
                             id = 218,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(381),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(935),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0218",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(379)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(933)
                         },
                         new
                         {
                             id = 219,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(384),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(937),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0219",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(383)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(936)
                         },
                         new
                         {
                             id = 220,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(387),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(940),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0220",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(386)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(939)
                         },
                         new
                         {
                             id = 221,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(391),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(943),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0221",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(390)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(942)
                         },
                         new
                         {
                             id = 222,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(394),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(947),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0222",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(393)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(945)
                         },
                         new
                         {
                             id = 223,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(398),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(950),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0223",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(396)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(948)
                         },
                         new
                         {
                             id = 224,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(401),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(952),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0224",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(400)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(951)
                         },
                         new
                         {
                             id = 225,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(411),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(956),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0225",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(410)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(955)
                         },
                         new
                         {
                             id = 226,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(415),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(959),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0226",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(414)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(958)
                         },
                         new
                         {
                             id = 227,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(419),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(962),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0227",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(417)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(961)
                         },
                         new
                         {
                             id = 228,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(422),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(969),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0228",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(421)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(968)
                         },
                         new
                         {
                             id = 229,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(425),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(972),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0229",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(424)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(970)
                         },
                         new
                         {
                             id = 230,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(429),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(974),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0230",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(428)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(973)
                         },
                         new
                         {
                             id = 231,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(433),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(977),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0231",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(431)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(976)
                         },
                         new
                         {
                             id = 232,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(436),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(980),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0232",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(434)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(979)
                         },
                         new
                         {
                             id = 233,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(439),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(983),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0233",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(438)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(982)
                         },
                         new
                         {
                             id = 234,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(443),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(986),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0234",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(441)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(985)
                         },
                         new
                         {
                             id = 235,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(446),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(989),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0235",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(444)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(987)
                         },
                         new
                         {
                             id = 236,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(449),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(991),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0236",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(448)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(990)
                         },
                         new
                         {
                             id = 237,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(453),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(994),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0237",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(451)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(993)
                         },
                         new
                         {
                             id = 238,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(456),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(998),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0238",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(455)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(997)
                         },
                         new
                         {
                             id = 239,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(460),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1001),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0239",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(458)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1000)
                         },
                         new
                         {
                             id = 240,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(464),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1004),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0240",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(462)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1003)
                         },
                         new
                         {
                             id = 241,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(467),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1007),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0241",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(466)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1005)
                         },
                         new
                         {
                             id = 242,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(471),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1009),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0242",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(469)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1008)
                         },
                         new
                         {
                             id = 243,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(475),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1012),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0243",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(473)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1011)
                         },
                         new
                         {
                             id = 244,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(478),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1015),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0244",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(476)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1014)
                         },
                         new
                         {
                             id = 245,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(481),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1018),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0245",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(480)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1017)
                         },
                         new
                         {
                             id = 246,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(484),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1021),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0246",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(483)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1020)
                         },
                         new
                         {
                             id = 247,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(488),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1024),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0247",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(486)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1023)
                         },
                         new
                         {
                             id = 248,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(491),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1027),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0248",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(490)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1026)
                         },
                         new
                         {
                             id = 249,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(495),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1030),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0249",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(493)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1029)
                         },
                         new
                         {
                             id = 250,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(498),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1033),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0250",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(497)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1032)
                         },
                         new
                         {
                             id = 251,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(502),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1036),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0251",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(500)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1035)
                         },
                         new
                         {
                             id = 252,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(505),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1039),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0252",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(504)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1038)
                         },
                         new
                         {
                             id = 253,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(508),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1042),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0253",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(507)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1041)
                         },
                         new
                         {
                             id = 254,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(512),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1045),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0254",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(510)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1044)
                         },
                         new
                         {
                             id = 255,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(515),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1048),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0255",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(514)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1047)
                         },
                         new
                         {
                             id = 256,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(520),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1051),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0256",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(518)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1049)
                         },
                         new
                         {
                             id = 257,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(523),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1053),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0257",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(522)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1052)
                         },
                         new
                         {
                             id = 258,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(527),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1056),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0258",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(526)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1055)
                         },
                         new
                         {
                             id = 259,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(531),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1059),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0259",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(529)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1058)
                         },
                         new
                         {
                             id = 260,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(534),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1062),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0260",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(533)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1061)
                         },
                         new
                         {
                             id = 261,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(537),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1065),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0261",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(536)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1064)
                         },
                         new
                         {
                             id = 262,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(541),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1068),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0262",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(539)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1067)
                         },
                         new
                         {
                             id = 263,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(544),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1071),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0263",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(543)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1070)
                         },
                         new
                         {
                             id = 264,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(548),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1074),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0264",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(547)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1073)
                         },
                         new
                         {
                             id = 265,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(552),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1077),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0265",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(550)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1076)
                         },
                         new
                         {
                             id = 266,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(555),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1080),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0266",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(554)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1079)
                         },
                         new
                         {
                             id = 267,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(559),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1083),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0267",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(557)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1082)
                         },
                         new
                         {
                             id = 268,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(563),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1086),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0268",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(561)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1085)
                         },
                         new
                         {
                             id = 269,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(567),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1089),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0269",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(565)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1088)
                         },
                         new
                         {
                             id = 270,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(571),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1092),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0270",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(569)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1091)
                         },
                         new
                         {
                             id = 271,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(575),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1095),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0271",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(573)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1094)
                         },
                         new
                         {
                             id = 272,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(578),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1097),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0272",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(576)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1096)
                         },
                         new
                         {
                             id = 273,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(581),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1100),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0273",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(580)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1099)
                         },
                         new
                         {
                             id = 274,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(585),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1103),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0274",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(583)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1102)
                         },
                         new
                         {
                             id = 275,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(588),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1106),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0275",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(587)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1105)
                         },
                         new
                         {
                             id = 276,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(595),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1109),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0276",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(590)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1108)
                         },
                         new
                         {
                             id = 277,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(602),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1113),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0277",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(600)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1112)
                         },
                         new
                         {
                             id = 278,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(605),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1116),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0278",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(604)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1114)
                         },
                         new
                         {
                             id = 279,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(609),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1118),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0279",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(607)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1117)
                         },
                         new
                         {
                             id = 280,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(612),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1121),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0280",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(611)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1120)
                         },
                         new
                         {
                             id = 281,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(616),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1124),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0281",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(614)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1123)
                         },
                         new
                         {
                             id = 282,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(619),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1127),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0282",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(618)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1126)
                         },
                         new
                         {
                             id = 283,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(622),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1130),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0283",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(621)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1129)
                         },
                         new
                         {
                             id = 284,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(626),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1133),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0284",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(624)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1132)
                         },
                         new
                         {
                             id = 285,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(629),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1136),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0285",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(628)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1135)
                         },
                         new
                         {
                             id = 286,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(633),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1139),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0286",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(631)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1137)
                         },
                         new
                         {
                             id = 287,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(636),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1141),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0287",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(635)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1140)
                         },
                         new
                         {
                             id = 288,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(640),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1144),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0288",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(638)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1143)
                         },
                         new
                         {
                             id = 289,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(643),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1147),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0289",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(642)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1146)
                         },
                         new
                         {
                             id = 290,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(647),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1151),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0290",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(646)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1149)
                         },
                         new
                         {
                             id = 291,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(650),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1154),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0291",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(649)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1153)
                         },
                         new
                         {
                             id = 292,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(654),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1157),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0292",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(652)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1155)
                         },
                         new
                         {
                             id = 293,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(657),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1159),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0293",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(656)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1158)
                         },
                         new
                         {
                             id = 294,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(661),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1162),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0294",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(660)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1161)
                         },
                         new
                         {
                             id = 295,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(665),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1165),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0295",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(663)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1164)
                         },
                         new
                         {
                             id = 296,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(668),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1168),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0296",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(667)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1167)
                         },
                         new
                         {
                             id = 297,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(671),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1171),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0297",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(670)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1170)
                         },
                         new
                         {
                             id = 298,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(675),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1174),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0298",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(673)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1173)
                         },
                         new
                         {
                             id = 299,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(678),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1177),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0299",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(677)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1176)
                         },
                         new
                         {
                             id = 300,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(682),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1180),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0300",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(680)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1179)
                         },
                         new
                         {
                             id = 301,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(685),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1183),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0301",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(684)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1181)
                         },
                         new
                         {
                             id = 302,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(688),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1185),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0302",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(687)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1184)
                         },
                         new
                         {
                             id = 303,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(692),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1189),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0303",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(691)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1188)
                         },
                         new
                         {
                             id = 304,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(696),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1192),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0304",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(694)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1191)
                         },
                         new
                         {
                             id = 305,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(700),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1195),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0305",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(698)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1193)
                         },
                         new
                         {
                             id = 306,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(703),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1198),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0306",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(702)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1196)
                         },
                         new
                         {
                             id = 307,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(706),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1201),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0307",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(705)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1200)
                         },
                         new
                         {
                             id = 308,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(710),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1204),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0308",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(709)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1203)
                         },
                         new
                         {
                             id = 309,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(714),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1207),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0309",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(712)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1206)
                         },
                         new
                         {
                             id = 310,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(724),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1210),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0310",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(723)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1208)
                         },
                         new
                         {
                             id = 311,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(728),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1212),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0311",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(726)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1211)
                         },
                         new
                         {
                             id = 312,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(731),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1215),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0312",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(730)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1214)
                         },
                         new
                         {
                             id = 313,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(735),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1222),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0313",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(733)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1221)
                         },
                         new
                         {
                             id = 314,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(738),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1225),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0314",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(736)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1224)
                         },
                         new
                         {
                             id = 315,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(741),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1228),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0315",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(740)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1227)
                         },
                         new
                         {
                             id = 316,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(746),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1233),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0316",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(745)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1232)
                         },
                         new
                         {
                             id = 317,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(749),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1236),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0317",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(748)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1235)
                         },
                         new
                         {
                             id = 318,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(753),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1239),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0318",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(751)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1238)
                         },
                         new
                         {
                             id = 319,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(756),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1242),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0319",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(755)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1241)
                         },
                         new
                         {
                             id = 320,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(760),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1245),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0320",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(758)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1244)
                         },
                         new
                         {
                             id = 321,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(763),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1248),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0321",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(762)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1247)
                         },
                         new
                         {
                             id = 322,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(766),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1251),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0322",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(765)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1250)
                         },
                         new
                         {
                             id = 323,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(770),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1254),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0323",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(769)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1253)
                         },
                         new
                         {
                             id = 324,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(773),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1257),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0324",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(772)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1256)
                         },
                         new
                         {
                             id = 325,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(777),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1260),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0325",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(775)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1258)
                         },
                         new
                         {
                             id = 326,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(780),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1262),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0326",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(779)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1261)
                         },
                         new
                         {
                             id = 327,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(784),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1265),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0327",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(783)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1264)
                         },
                         new
                         {
                             id = 328,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(788),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1268),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0328",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(786)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1267)
                         },
                         new
                         {
                             id = 329,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(792),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1272),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0329",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(790)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1271)
                         },
                         new
                         {
                             id = 330,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(795),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1275),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0330",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(794)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1274)
                         },
                         new
                         {
                             id = 331,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(798),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1278),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0331",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(797)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1277)
                         },
                         new
                         {
                             id = 332,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(802),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1282),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0332",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(800)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1281)
                         },
                         new
                         {
                             id = 333,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(805),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1285),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0333",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(804)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1284)
                         },
                         new
                         {
                             id = 334,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(808),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1288),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0334",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(807)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1287)
                         },
                         new
                         {
                             id = 335,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(812),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1291),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0335",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(811)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1290)
                         },
                         new
                         {
                             id = 336,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(816),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1293),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0336",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(815)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1292)
                         },
                         new
                         {
                             id = 337,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(820),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1296),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0337",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(819)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1295)
                         },
                         new
                         {
                             id = 338,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(824),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1299),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0338",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(822)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1298)
                         },
                         new
                         {
                             id = 339,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(832),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1303),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0339",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(831)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1302)
                         },
                         new
                         {
                             id = 340,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(836),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1306),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0340",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(834)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1305)
                         },
                         new
                         {
                             id = 341,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(839),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1309),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0341",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(837)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1308)
                         },
                         new
                         {
                             id = 342,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(843),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1313),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0342",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(841)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1311)
                         },
                         new
                         {
                             id = 343,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(846),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1315),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0343",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(844)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1314)
                         },
                         new
                         {
                             id = 344,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(849),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1319),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0344",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(848)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1318)
                         },
                         new
                         {
                             id = 345,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(853),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1322),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0345",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(851)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1321)
                         },
                         new
                         {
                             id = 346,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(856),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1325),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0346",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(855)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1324)
                         },
                         new
                         {
                             id = 347,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(861),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1328),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0347",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(858)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1326)
                         },
                         new
                         {
                             id = 348,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(864),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1331),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0348",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(863)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1329)
                         },
                         new
                         {
                             id = 349,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(868),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1334),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0349",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(866)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1332)
                         },
                         new
                         {
                             id = 350,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(871),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1337),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0350",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(870)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1335)
                         },
                         new
                         {
                             id = 351,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(874),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1340),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0351",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(873)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1339)
                         },
                         new
                         {
                             id = 352,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(878),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1343),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0352",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(876)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1341)
                         },
                         new
                         {
                             id = 353,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(881),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1346),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0353",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(880)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1345)
                         },
                         new
                         {
                             id = 354,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(885),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1349),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0354",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(883)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1348)
                         },
                         new
                         {
                             id = 355,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(888),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1352),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0355",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(887)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1351)
                         },
                         new
                         {
                             id = 356,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(892),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1355),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0356",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(891)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1353)
                         },
                         new
                         {
                             id = 357,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(896),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1357),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0357",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(894)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1356)
                         },
                         new
                         {
                             id = 358,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(899),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1360),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0358",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(898)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1359)
                         },
                         new
                         {
                             id = 359,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(902),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1363),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0359",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(901)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1362)
                         },
                         new
                         {
                             id = 360,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(907),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1366),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0360",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(905)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1365)
                         },
                         new
                         {
                             id = 361,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(910),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1369),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0361",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(909)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1368)
                         },
                         new
                         {
                             id = 362,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(913),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1372),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0362",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(912)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1370)
                         },
                         new
                         {
                             id = 363,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(917),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1374),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0363",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(916)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1373)
                         },
                         new
                         {
                             id = 364,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(922),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1377),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0364",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(919)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1376)
                         },
                         new
                         {
                             id = 365,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(925),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1381),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0365",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(924)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1380)
                         },
                         new
                         {
                             id = 366,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(930),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1384),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0366",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(928)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1383)
                         },
                         new
                         {
                             id = 367,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(933),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1387),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0367",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(932)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1386)
                         },
                         new
                         {
                             id = 368,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(937),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1391),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0368",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(935)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1390)
                         },
                         new
                         {
                             id = 369,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(940),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1394),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0369",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(939)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1393)
                         },
                         new
                         {
                             id = 370,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(944),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1397),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0370",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(942)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1395)
                         },
                         new
                         {
                             id = 371,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(947),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1399),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0371",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(946)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1398)
                         },
                         new
                         {
                             id = 372,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(951),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1402),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0372",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(949)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1401)
                         },
                         new
                         {
                             id = 373,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(954),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1405),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0373",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(953)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1404)
                         },
                         new
                         {
                             id = 374,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(958),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1408),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0374",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(956)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1407)
                         },
                         new
                         {
                             id = 375,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(961),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1411),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0375",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(960)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1410)
                         },
                         new
                         {
                             id = 376,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(965),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1414),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0376",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(963)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1413)
                         },
                         new
                         {
                             id = 377,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(969),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1417),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0377",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(967)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1416)
                         },
                         new
                         {
                             id = 378,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(972),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1420),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0378",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(970)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1419)
                         },
                         new
                         {
                             id = 379,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(975),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1423),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0379",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(974)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1422)
                         },
                         new
                         {
                             id = 380,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(979),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1426),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0380",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(977)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1424)
                         },
                         new
                         {
                             id = 381,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(982),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1429),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0381",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(980)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1428)
                         },
                         new
                         {
                             id = 382,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(985),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1432),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0382",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(984)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1431)
                         },
                         new
                         {
                             id = 383,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(988),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1435),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0383",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(987)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1434)
                         },
                         new
                         {
                             id = 384,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(992),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1438),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0384",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(990)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1437)
                         },
                         new
                         {
                             id = 385,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(996),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1441),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0385",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(995)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1440)
                         },
                         new
                         {
                             id = 386,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1000),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1444),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0386",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(999)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1443)
                         },
                         new
                         {
                             id = 387,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1004),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1447),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0387",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1002)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1446)
                         },
                         new
                         {
                             id = 388,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1007),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1450),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0388",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1006)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1449)
                         },
                         new
                         {
                             id = 389,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1011),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1453),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0389",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1009)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1451)
                         },
                         new
                         {
                             id = 390,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1014),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1456),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0390",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1013)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1455)
                         },
                         new
                         {
                             id = 391,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1017),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1459),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0391",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1016)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1457)
                         },
                         new
                         {
                             id = 392,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1021),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1462),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0392",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1019)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1461)
                         },
                         new
                         {
                             id = 393,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1024),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1465),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0393",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1023)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1464)
                         },
                         new
                         {
                             id = 394,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1028),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1469),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0394",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1026)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1468)
                         },
                         new
                         {
                             id = 395,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1038),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1472),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0395",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1037)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1470)
                         },
                         new
                         {
                             id = 396,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1041),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1474),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0396",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1040)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1473)
                         },
                         new
                         {
                             id = 397,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1045),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1477),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0397",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1043)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1476)
                         },
                         new
                         {
                             id = 398,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1048),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1484),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0398",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1047)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1483)
                         },
                         new
                         {
                             id = 399,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1051),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1487),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0399",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1050)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1486)
                         },
                         new
                         {
                             id = 400,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1055),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1490),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0400",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1053)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1489)
                         },
                         new
                         {
                             id = 401,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1058),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1493),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0401",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1057)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1491)
                         },
                         new
                         {
                             id = 402,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1061),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1497),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0402",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1060)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1496)
                         },
                         new
                         {
                             id = 403,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1066),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1500),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0403",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1064)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1499)
                         },
                         new
                         {
                             id = 404,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1069),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1503),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0404",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1068)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1501)
                         },
                         new
                         {
                             id = 405,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1072),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1506),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0405",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1071)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1504)
                         },
                         new
                         {
                             id = 406,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1076),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1509),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0406",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1074)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1508)
                         },
                         new
                         {
                             id = 407,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1079),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1512),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0407",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1078)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1511)
                         },
                         new
                         {
                             id = 408,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1083),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1515),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0408",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1081)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1513)
                         },
                         new
                         {
                             id = 409,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1086),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1517),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0409",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1085)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1516)
                         },
                         new
                         {
                             id = 410,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1090),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1520),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0410",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1088)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1519)
                         },
                         new
                         {
                             id = 411,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1093),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1524),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0411",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1092)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1523)
                         },
                         new
                         {
                             id = 412,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1097),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1527),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0412",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1095)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1526)
                         },
                         new
                         {
                             id = 413,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1101),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1530),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0413",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1099)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1529)
                         },
                         new
                         {
                             id = 414,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1104),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1533),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0414",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1103)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1532)
                         },
                         new
                         {
                             id = 415,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1107),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1537),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0415",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1106)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1535)
                         },
                         new
                         {
                             id = 416,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1111),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1540),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0416",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1109)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1538)
                         },
                         new
                         {
                             id = 417,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1114),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1542),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0417",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1113)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1541)
                         },
                         new
                         {
                             id = 418,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1118),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1545),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0418",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1116)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1544)
                         },
                         new
                         {
                             id = 419,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1121),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1548),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0419",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1120)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1547)
                         },
                         new
                         {
                             id = 420,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1125),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1552),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0420",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1124)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1551)
                         },
                         new
                         {
                             id = 421,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1130),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1555),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0421",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1129)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1554)
                         },
                         new
                         {
                             id = 422,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1135),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1558),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0422",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1134)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1556)
                         },
                         new
                         {
                             id = 423,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1138),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1560),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0423",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1137)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1559)
                         },
                         new
                         {
                             id = 424,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1142),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1564),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0424",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1140)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1563)
                         },
                         new
                         {
                             id = 425,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1145),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1567),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0425",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1143)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1566)
                         },
                         new
                         {
                             id = 426,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1149),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1570),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0426",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1147)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1569)
                         },
                         new
                         {
                             id = 427,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1152),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1573),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0427",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1151)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1572)
                         },
                         new
                         {
                             id = 428,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1156),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1576),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0428",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1155)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1575)
                         },
                         new
                         {
                             id = 429,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1160),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1579),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0429",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1159)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1577)
                         },
                         new
                         {
                             id = 430,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1164),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1582),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0430",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1162)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1580)
                         },
                         new
                         {
                             id = 431,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1168),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1584),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0431",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1167)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1583)
                         },
                         new
                         {
                             id = 432,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1172),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1587),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0432",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1170)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1586)
                         },
                         new
                         {
                             id = 433,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1176),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1592),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0433",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1174)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1591)
                         },
                         new
                         {
                             id = 434,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1179),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1595),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0434",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1178)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1594)
                         },
                         new
                         {
                             id = 435,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1183),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1598),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0435",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1181)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1597)
                         },
                         new
                         {
                             id = 436,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1186),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1601),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0436",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1185)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1600)
                         },
                         new
                         {
                             id = 437,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1189),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1604),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0437",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1188)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1603)
                         },
                         new
                         {
                             id = 438,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1193),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1607),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0438",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1192)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1606)
                         },
                         new
                         {
                             id = 439,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1197),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1610),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0439",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1195)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1609)
                         },
                         new
                         {
                             id = 440,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1200),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1613),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0440",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1199)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1612)
                         },
                         new
                         {
                             id = 441,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1203),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1616),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0441",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1202)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1614)
                         },
                         new
                         {
                             id = 442,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1207),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1618),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0442",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1206)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1617)
                         },
                         new
                         {
                             id = 443,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1210),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1621),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0443",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1209)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1620)
                         },
                         new
                         {
                             id = 444,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1214),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1624),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0444",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1212)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1623)
                         },
                         new
                         {
                             id = 445,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1217),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1627),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0445",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1216)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1626)
                         },
                         new
                         {
                             id = 446,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1222),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1631),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0446",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1221)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1629)
                         },
                         new
                         {
                             id = 447,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1226),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1633),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0447",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1224)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1632)
                         },
                         new
                         {
                             id = 448,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1230),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1636),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0448",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1227)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1635)
                         },
                         new
                         {
                             id = 449,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1233),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1639),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0449",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1231)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1638)
                         },
                         new
                         {
                             id = 450,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1236),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1642),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0450",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1235)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1641)
                         },
                         new
                         {
                             id = 451,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1240),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1645),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0451",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1238)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1644)
                         },
                         new
                         {
                             id = 452,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1243),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1648),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0452",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1242)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1646)
                         },
                         new
                         {
                             id = 453,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1246),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1650),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0453",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1245)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1649)
                         },
                         new
                         {
                             id = 454,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1250),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1653),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0454",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1248)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1652)
                         },
                         new
                         {
                             id = 455,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1253),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1656),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0455",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1252)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1655)
                         },
                         new
                         {
                             id = 456,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1257),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1659),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0456",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1255)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1658)
                         },
                         new
                         {
                             id = 457,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1260),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1662),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0457",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1259)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1661)
                         },
                         new
                         {
                             id = 458,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1263),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1665),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0458",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1262)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1664)
                         },
                         new
                         {
                             id = 459,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1267),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1670),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0459",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1266)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1669)
                         },
                         new
                         {
                             id = 460,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1271),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1673),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0460",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1269)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1672)
                         },
                         new
                         {
                             id = 461,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1275),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1676),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0461",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1273)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1675)
                         },
                         new
                         {
                             id = 462,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1278),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1679),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0462",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1277)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1678)
                         },
                         new
                         {
                             id = 463,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1282),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1682),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0463",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1280)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1680)
                         },
                         new
                         {
                             id = 464,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1285),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1685),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0464",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1284)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1683)
                         },
                         new
                         {
                             id = 465,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1289),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1687),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0465",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1287)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1686)
                         },
                         new
                         {
                             id = 466,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1292),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1690),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0466",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1291)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1689)
                         },
                         new
                         {
                             id = 467,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1296),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1693),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0467",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1294)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1692)
                         },
                         new
                         {
                             id = 468,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1299),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1696),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0468",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1298)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1695)
                         },
                         new
                         {
                             id = 469,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1303),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1699),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0469",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1302)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1698)
                         },
                         new
                         {
                             id = 470,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1306),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1702),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0470",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1305)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1701)
                         },
                         new
                         {
                             id = 471,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1310),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1705),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0471",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1308)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1703)
                         },
                         new
                         {
                             id = 472,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1314),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1709),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0472",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1312)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1707)
                         },
                         new
                         {
                             id = 473,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1317),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1711),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0473",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1316)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1710)
                         },
                         new
                         {
                             id = 474,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1320),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1714),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0474",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1319)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1713)
                         },
                         new
                         {
                             id = 475,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1324),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1717),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0475",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1322)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1716)
                         },
                         new
                         {
                             id = 476,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1327),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1721),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0476",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1326)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1719)
                         },
                         new
                         {
                             id = 477,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1331),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1723),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0477",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1329)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1722)
                         },
                         new
                         {
                             id = 478,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1334),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1726),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0478",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1333)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1725)
                         },
                         new
                         {
                             id = 479,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1338),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1729),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0479",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1336)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1728)
                         },
                         new
                         {
                             id = 480,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1347),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1732),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0480",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1346)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1731)
                         },
                         new
                         {
                             id = 481,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1351),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1735),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0481",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1349)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1734)
                         },
                         new
                         {
                             id = 482,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1355),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1738),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0482",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1354)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1737)
                         },
                         new
                         {
                             id = 483,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1358),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1745),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0483",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1357)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1744)
                         },
                         new
                         {
                             id = 484,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1362),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1748),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0484",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1360)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1747)
                         },
                         new
                         {
                             id = 485,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1366),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1752),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0485",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1364)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1751)
                         },
                         new
                         {
                             id = 486,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1369),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1755),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0486",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1368)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1754)
                         },
                         new
                         {
                             id = 487,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1376),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1759),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0487",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1375)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1757)
                         },
                         new
                         {
                             id = 488,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1379),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1762),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0488",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1378)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1760)
                         },
                         new
                         {
                             id = 489,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1383),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1765),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0489",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1381)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1764)
                         },
                         new
                         {
                             id = 490,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1386),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1768),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0490",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1385)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1767)
                         },
                         new
                         {
                             id = 491,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1390),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1771),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0491",
                             tenTruong = "Đại Học Bách Khoa",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1388)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1770)
                         },
                         new
                         {
                             id = 492,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1393),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1774),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0492",
                             tenTruong = "Đại Học Kinh Tế Quốc Dân",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1392)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1772)
                         },
                         new
                         {
                             id = 493,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1397),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1777),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0493",
                             tenTruong = "Đại Học Kinh Doanh và Công Nghệ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1395)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1776)
                         },
                         new
                         {
                             id = 494,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1400),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1780),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0494",
                             tenTruong = "Đại Học Mở",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1399)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1779)
                         },
                         new
                         {
                             id = 495,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1403),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1783),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 1,
                             maNhanVien = "NV0495",
                             tenTruong = "Học Viện Ngân Hàng",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1402)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1782)
                         },
                         new
                         {
                             id = 496,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1407),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1786),
                             idChuyenMon = 1,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 2,
                             maNhanVien = "NV0496",
                             tenTruong = "Học Viện Phụ Nữ",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1405)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1785)
                         },
                         new
                         {
                             id = 497,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1410),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1789),
                             idChuyenMon = 2,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0497",
                             tenTruong = "Đại Học Ngoại Thương",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1409)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1788)
                         },
                         new
                         {
                             id = 498,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1414),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1792),
                             idChuyenMon = 3,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0498",
                             tenTruong = "Đại Học Thăng Long",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1412)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1791)
                         },
                         new
                         {
                             id = 499,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1417),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1795),
                             idChuyenMon = 4,
                             idHinhThucDaoTao = 1,
                             idTrinhDo = 2,
                             maNhanVien = "NV0499",
                             tenTruong = "Học Viện Tài Chính",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1416)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1794)
                         },
                         new
                         {
                             id = 500,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1420),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1798),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0500",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1419)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1797)
                         },
                         new
                         {
                             id = 501,
-                            denThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1424),
+                            denThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1801),
                             idChuyenMon = 5,
                             idHinhThucDaoTao = 2,
                             idTrinhDo = 1,
                             maNhanVien = "NV0501",
                             tenTruong = "Đại Học Thủy Lợi",
-                            tuThoiGian = new DateTime(2021, 12, 8, 0, 0, 30, 734, DateTimeKind.Local).AddTicks(1422)
+                            tuThoiGian = new DateTime(2021, 12, 15, 16, 16, 42, 708, DateTimeKind.Local).AddTicks(1800)
                         });
                 });
 

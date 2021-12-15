@@ -757,7 +757,7 @@ namespace HRMSolution.Data.Extentions
                     gioiTinh = true,
                     anh = "/user-content/9-trai.jpg",
                     dienThoai = "02407621987",
-                    diDong = "096102186",
+                    diDong = "0961021860",
                     cccd = "033098006441",
                     ngayCapCCCD = DateTime.ParseExact("2021-07-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture),
                     ngayHetHanCCCD = DateTime.ParseExact("2029-07-21 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture),
@@ -26055,8 +26055,8 @@ namespace HRMSolution.Data.Extentions
                 new Luong() { id = 501, maHopDong = "HD501", idNhomLuong = 1, bacLuong = "1", thoiHanLenLuong = "1", ngayHieuLuc = DateTime.ParseExact("2021-11-17 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), ngayKetThuc = DateTime.ParseExact("2022-11-17 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), trangThai = true, heSoLuong = (float)1.0, luongCoBan = (float)1000000.0, phuCapKhac = (float)100000.0,  phuCapChucVu= (float)100000.0,phuCapChucDanh= (float)100000.0, tongLuong = (float)1300000.0 }
                 );
             modelbulder.Entity<DieuChuyen>().HasData(
-                new DieuChuyen() { id = 1, maNhanVien = "NV0001", ngayHieuLuc = DateTime.ParseExact("2021-11-17 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), idPhongBan = 1, to = 1, chiTiet = "Không", trangThai = false },
-                new DieuChuyen() { id = 2, maNhanVien = "NV0001", ngayHieuLuc = DateTime.ParseExact("2021-11-17 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), idPhongBan = 1, to = 2, chiTiet = "Không", trangThai = false },
+                new DieuChuyen() { id = 1, maNhanVien = "NV0001", ngayHieuLuc = DateTime.ParseExact("2021-05-17 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), idPhongBan = 1, to = 1, chiTiet = "Không", trangThai = false },
+                new DieuChuyen() { id = 2, maNhanVien = "NV0001", ngayHieuLuc = DateTime.ParseExact("2021-08-17 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), idPhongBan = 1, to = 2, chiTiet = "Không", trangThai = false },
                 new DieuChuyen() { id = 3, maNhanVien = "NV0001", ngayHieuLuc = DateTime.ParseExact("2021-11-17 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), idPhongBan = 1, to = 2, chiTiet = "Không", trangThai = true },
                 new DieuChuyen() { id = 4, maNhanVien = "NV0002", ngayHieuLuc = DateTime.ParseExact("2021-11-17 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), idPhongBan = 1, to = 2, chiTiet = "Không", trangThai = true },
                 new DieuChuyen() { id = 5, maNhanVien = "NV0003", ngayHieuLuc = DateTime.ParseExact("2021-11-17 13:26", "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture), idPhongBan = 1, to = 2, chiTiet = "Không", trangThai = true },
