@@ -260,7 +260,7 @@ namespace HRMSolution.Application.Catalog.Luongs
         private async Task<string> SaveFile(IFormFile file)
         {
             var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(originalFileName)}";
+            var fileName = $"{"ahihi"}{Path.GetExtension(originalFileName)}";
             await _storageService.SaveFileAsync(file.OpenReadStream(), fileName);
             return "/" + USER_CONTENT_FOLDER_NAME + "/" + fileName;
         }

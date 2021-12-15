@@ -262,18 +262,22 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     lhkc.diaChi = request.lhkc_diaChi;
 
 
-                    var dieuChuyen = await _context.dieuChuyens.Where(x => x.maNhanVien == nhanVien.maNhanVien).FirstOrDefaultAsync();
+                    var dieuChuyen = await _context.dieuChuyens.Where(x => x.maNhanVien == nhanVien.maNhanVien && x.trangThai == true).FirstOrDefaultAsync();
                     if (dieuChuyen != null)
                     {
                         dieuChuyen.trangThai = false;
                     }
 
-                    var hopDong = await _context.hopDongs.Where(x => x.maNhanVien == nhanVien.maNhanVien).FirstOrDefaultAsync();
+                    var hopDong = await _context.hopDongs.Where(x => x.maNhanVien == nhanVien.maNhanVien && x.trangThai == true).FirstOrDefaultAsync();
                     if (hopDong != null)
                     {
                         hopDong.trangThai = false;
-                        var luong = await _context.luongs.Where(x => x.maHopDong == hopDong.maHopDong).FirstOrDefaultAsync();
-                        luong.trangThai = false;
+                        var luong = await _context.luongs.Where(x => x.maHopDong == hopDong.maHopDong && x.trangThai == true).FirstOrDefaultAsync();
+                        if (luong != null)
+                        {
+                            luong.trangThai = false;
+                        }
+
                     }
 
                     var result = await _context.SaveChangesAsync();
@@ -628,7 +632,8 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     dcNgayHieuLuc = x.dc.ngayHieuLuc,
                     dcPhong = x.pb.tenPhongBan,
                     dcTo = x.to.tenTo,
-                    dcChiTiet = x.dc.chiTiet
+                    dcChiTiet = x.dc.chiTiet,
+                    trangThai = x.dc.trangThai == true ? "Kích hoạt" : "Vô hiệu"
                 }).ToListAsync();
 
                 //List Lương

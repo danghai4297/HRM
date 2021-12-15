@@ -255,19 +255,33 @@ namespace HRMSolution.Application.Catalog.HopDongs
             }
             else
             {
-                //if(request.trangThai == false)
-                //{
-                //    var luong = await _context.luongs.Where(x => x.maHopDong == maHopDong && x.trangThai == true).FirstOrDefaultAsync();
-                //}
-                hopDong.id = request.idCre;
-                hopDong.idLoaiHopDong = request.idLoaiHopDong;
-                hopDong.idChucDanh = request.idChucDanh;
-                hopDong.idChucVu = request.idChucVu;
-                hopDong.hopDongTuNgay = request.hopDongTuNgay;
-                hopDong.hopDongDenNgay = request.hopDongDenNgay;
-                hopDong.ghiChu = request.ghiChu;
-                hopDong.trangThai = request.trangThai;
-                hopDong.maNhanVien = request.maNhanVien;
+                if (request.trangThai == false)
+                {
+                    var luong = await _context.luongs.Where(x => x.maHopDong == maHopDong && x.trangThai == true).FirstOrDefaultAsync();
+                    luong.trangThai = false;
+
+                    hopDong.id = request.idCre;
+                    hopDong.idLoaiHopDong = request.idLoaiHopDong;
+                    hopDong.idChucDanh = request.idChucDanh;
+                    hopDong.idChucVu = request.idChucVu;
+                    hopDong.hopDongTuNgay = request.hopDongTuNgay;
+                    hopDong.hopDongDenNgay = request.hopDongDenNgay;
+                    hopDong.ghiChu = request.ghiChu;
+                    hopDong.trangThai = request.trangThai;
+                    hopDong.maNhanVien = request.maNhanVien;
+                }
+                else
+                {
+                    hopDong.id = request.idCre;
+                    hopDong.idLoaiHopDong = request.idLoaiHopDong;
+                    hopDong.idChucDanh = request.idChucDanh;
+                    hopDong.idChucVu = request.idChucVu;
+                    hopDong.hopDongTuNgay = request.hopDongTuNgay;
+                    hopDong.hopDongDenNgay = request.hopDongDenNgay;
+                    hopDong.ghiChu = request.ghiChu;
+                    hopDong.trangThai = request.trangThai;
+                    hopDong.maNhanVien = request.maNhanVien;
+                }
 
                 var result = await _context.SaveChangesAsync();
                 if (result == 0)
