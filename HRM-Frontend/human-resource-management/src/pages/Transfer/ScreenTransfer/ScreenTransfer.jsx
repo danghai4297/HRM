@@ -33,7 +33,7 @@ function ScreenTransfer(props) {
       <div className="screen-table-nv">
         <div className="herder-content sticky-top">
           <div>
-            <h2 className="">Danh sách điều chuyển</h2>
+            <h2 className="">Danh sách quá trình công tác</h2>
           </div>
           <div className="button">
             <Link to="/transfer/add" className="link-item">

@@ -9,7 +9,7 @@ import { ttc } from "./DataContract";
 import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
 import { createTheme } from "@mui/material/styles";
-import { grey } from "@mui/material/colors";
+import { indigo, cyan } from "@mui/material/colors";
 
 function ScreenDetailContract(props) {
   let { match, history } = props;
@@ -17,10 +17,10 @@ function ScreenDetailContract(props) {
   const theme = createTheme({
     palette: {
       primary: {
-        main: grey[50],
+        main: indigo[400],
       },
       secondary: {
-        main: "#f44336",
+        main: cyan[700],
       },
     },
   });
@@ -80,6 +80,7 @@ function ScreenDetailContract(props) {
               <Button
                 variant="contained"
                 theme={theme}
+                color="secondary"
                 className="btn-fix-contract"
                 onClick={() => {
                   window.open(`http://localhost:8000${dataDetailHd.bangChung}`);

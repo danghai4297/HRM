@@ -34,11 +34,13 @@ function AddFamilyForm(props) {
     "Bạn chắc chắn muốn thêm thông tin gia đình mới"
   );
   const [showCheckDialog, setShowCheckDialog] = useState(false);
+  const [showEsc, setShowEsc] = useState(false);
 
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
     setShowCheckDialog(false);
+    setShowEsc(false);
   };
   useEffect(() => {
     const fetchNvList = async () => {
@@ -200,11 +202,17 @@ function AddFamilyForm(props) {
               type="submit"
               className="btn btn-secondary ml-3"
               value="Huỷ"
-              onClick={history.goBack}
+              onClick={() => {
+                if (!checkInputChange()) {
+                  setShowEsc(true);
+                } else {
+                  history.goBack();
+                }
+              }}
             />
             <input
               type="submit"
-              className="btn btn-primary ml-3"
+              className="btn btn-primary ml-3 btn-form"
               value={dataDetailNT.length !== 0 ? "Sửa" : "Lưu"}
               onClick={() => {
                 if (checkInputChange()) {
@@ -521,6 +529,13 @@ function AddFamilyForm(props) {
         title="Thông báo"
         description={`Bạn chắc chắn muốn xóa thông tin gia đình `}
         confirm={handleDelete}
+        cancel={cancel}
+      />
+      <Dialog
+        show={showEsc}
+        title="Thông báo"
+        description={"Bạn có chắc chắn muốn hủy không"}
+        confirm={history.goBack}
         cancel={cancel}
       />
     </>

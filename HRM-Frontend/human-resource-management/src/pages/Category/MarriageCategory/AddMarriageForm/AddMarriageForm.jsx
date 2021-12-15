@@ -171,7 +171,7 @@ function AddMarriageForm(props) {
             />
             <input
               type="submit"
-              className="btn btn-primary ml-3"
+              className="btn btn-primary ml-3 btn-form"
               value={dataDetailDMHN.length !== 0 ? "Sửa" : "Lưu"}
               onClick={() => {
                 if (checkInputMarriageChange()) {
