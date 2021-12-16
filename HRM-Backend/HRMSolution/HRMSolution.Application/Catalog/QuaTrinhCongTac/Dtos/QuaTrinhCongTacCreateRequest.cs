@@ -14,5 +14,6 @@ namespace HRMSolution.Application.Catalog.DieuChuyens.Dtos
         public string chiTiet { get; set; }
         public bool trangThai { get; set; }
         public IFormFile bangChung { get; set; }
+        public string tenFile { get; set; }
     }
 }

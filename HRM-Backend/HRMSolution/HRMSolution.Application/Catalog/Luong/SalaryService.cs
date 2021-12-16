@@ -39,67 +39,134 @@ namespace HRMSolution.Application.Catalog.Luongs
 
                 if (query == null)
                 {
-                    var luong = new Luong()
+                    if (request.ghiChu == "null")
                     {
-                        maHopDong = request.maHopDong,
-                        idNhomLuong = request.idNhomLuong,
-                        heSoLuong = request.heSoLuong,
-                        bacLuong = request.bacLuong,
-                        luongCoBan = request.luongCoBan,
-                        phuCapChucDanh = request.phuCapChucDanh,
-                        phuCapChucVu = request.phuCapChucVu,
-                        phuCapTrachNhiem = request.phuCapTrachNhiem,
-                        phuCapKhac = request.phuCapKhac,
-                        tongLuong = request.tongLuong,
-                        thoiHanLenLuong = request.thoiHanLenLuong,
-                        ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
-                        ngayKetThuc = DateTime.Parse(request.ngayKetThuc),
-                        ghiChu = request.ghiChu,
-                        trangThai = true,
-                    };
-                    if (request.bangChung is null)
-                    {
-                        luong.bangChung = null;
+                        var luong = new Luong()
+                        {
+                            maHopDong = request.maHopDong,
+                            idNhomLuong = request.idNhomLuong,
+                            heSoLuong = request.heSoLuong,
+                            bacLuong = request.bacLuong,
+                            luongCoBan = request.luongCoBan,
+                            phuCapChucDanh = request.phuCapChucDanh,
+                            phuCapChucVu = request.phuCapChucVu,
+                            phuCapTrachNhiem = request.phuCapTrachNhiem,
+                            phuCapKhac = request.phuCapKhac,
+                            tongLuong = request.tongLuong,
+                            thoiHanLenLuong = request.thoiHanLenLuong,
+                            ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
+                            ngayKetThuc = DateTime.Parse(request.ngayKetThuc),
+                            ghiChu = null,
+                            trangThai = true,
+                        };
+                        if (request.bangChung is null)
+                        {
+                            luong.bangChung = null;
+                        }
+                        else
+                        {
+                            luong.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
+                        }
+                        _context.luongs.Add(luong);
                     }
                     else
                     {
-                        luong.bangChung = await this.SaveFile(request.bangChung);
+                        var luong = new Luong()
+                        {
+                            maHopDong = request.maHopDong,
+                            idNhomLuong = request.idNhomLuong,
+                            heSoLuong = request.heSoLuong,
+                            bacLuong = request.bacLuong,
+                            luongCoBan = request.luongCoBan,
+                            phuCapChucDanh = request.phuCapChucDanh,
+                            phuCapChucVu = request.phuCapChucVu,
+                            phuCapTrachNhiem = request.phuCapTrachNhiem,
+                            phuCapKhac = request.phuCapKhac,
+                            tongLuong = request.tongLuong,
+                            thoiHanLenLuong = request.thoiHanLenLuong,
+                            ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
+                            ngayKetThuc = DateTime.Parse(request.ngayKetThuc),
+                            ghiChu = request.ghiChu,
+                            trangThai = true,
+                        };
+                        if (request.bangChung is null)
+                        {
+                            luong.bangChung = null;
+                        }
+                        else
+                        {
+                            luong.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
+                        }
+                        _context.luongs.Add(luong);
                     }
-                    _context.luongs.Add(luong);
+
                 }
                 else
                 {
                     var luong_update = await _context.luongs.FindAsync(query.id);
 
                     luong_update.trangThai = false;
-
-                    var luong = new Luong()
+                    if (request.ghiChu == "null")
                     {
-                        maHopDong = request.maHopDong,
-                        idNhomLuong = request.idNhomLuong,
-                        heSoLuong = request.heSoLuong,
-                        bacLuong = request.bacLuong,
-                        luongCoBan = request.luongCoBan,
-                        phuCapChucDanh = request.phuCapChucDanh,
-                        phuCapChucVu = request.phuCapChucVu,
-                        phuCapTrachNhiem = request.phuCapTrachNhiem,
-                        phuCapKhac = request.phuCapKhac,
-                        tongLuong = request.tongLuong,
-                        thoiHanLenLuong = request.thoiHanLenLuong,
-                        ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
-                        ngayKetThuc = DateTime.Parse(request.ngayKetThuc),
-                        ghiChu = request.ghiChu,
-                        trangThai = true,
-                    };
-                    if (request.bangChung is null)
-                    {
-                        luong.bangChung = null;
+                        var luong = new Luong()
+                        {
+                            maHopDong = request.maHopDong,
+                            idNhomLuong = request.idNhomLuong,
+                            heSoLuong = request.heSoLuong,
+                            bacLuong = request.bacLuong,
+                            luongCoBan = request.luongCoBan,
+                            phuCapChucDanh = request.phuCapChucDanh,
+                            phuCapChucVu = request.phuCapChucVu,
+                            phuCapTrachNhiem = request.phuCapTrachNhiem,
+                            phuCapKhac = request.phuCapKhac,
+                            tongLuong = request.tongLuong,
+                            thoiHanLenLuong = request.thoiHanLenLuong,
+                            ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
+                            ngayKetThuc = DateTime.Parse(request.ngayKetThuc),
+                            ghiChu = null,
+                            trangThai = true,
+                        };
+                        if (request.bangChung is null)
+                        {
+                            luong.bangChung = null;
+                        }
+                        else
+                        {
+                            luong.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
+                        }
+                        _context.luongs.Add(luong);
                     }
                     else
                     {
-                        luong.bangChung = await this.SaveFile(request.bangChung);
+                        var luong = new Luong()
+                        {
+                            maHopDong = request.maHopDong,
+                            idNhomLuong = request.idNhomLuong,
+                            heSoLuong = request.heSoLuong,
+                            bacLuong = request.bacLuong,
+                            luongCoBan = request.luongCoBan,
+                            phuCapChucDanh = request.phuCapChucDanh,
+                            phuCapChucVu = request.phuCapChucVu,
+                            phuCapTrachNhiem = request.phuCapTrachNhiem,
+                            phuCapKhac = request.phuCapKhac,
+                            tongLuong = request.tongLuong,
+                            thoiHanLenLuong = request.thoiHanLenLuong,
+                            ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
+                            ngayKetThuc = DateTime.Parse(request.ngayKetThuc),
+                            ghiChu = request.ghiChu,
+                            trangThai = true,
+                        };
+                        if (request.bangChung is null)
+                        {
+                            luong.bangChung = null;
+                        }
+                        else
+                        {
+                            luong.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
+                        }
+                        _context.luongs.Add(luong);
                     }
-                    _context.luongs.Add(luong);
+
                 }
 
                 var result = await _context.SaveChangesAsync();
@@ -226,41 +293,73 @@ namespace HRMSolution.Application.Catalog.Luongs
             }
             else
             {
-                luong.idNhomLuong = request.idNhomLuong;
-                luong.heSoLuong = request.heSoLuong;
-                luong.bacLuong = request.bacLuong;
-                luong.luongCoBan = request.luongCoBan;
-                luong.phuCapChucDanh = request.phuCapChucDanh;
-                luong.phuCapChucVu = request.phuCapChucVu;
-                luong.phuCapTrachNhiem = request.phuCapTrachNhiem;
-                luong.phuCapKhac = request.phuCapKhac;
-                luong.tongLuong = request.tongLuong;
-                luong.thoiHanLenLuong = request.thoiHanLenLuong;
-                luong.ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc);
-                luong.ngayKetThuc = DateTime.Parse(request.ngayKetThuc);
-                luong.ghiChu = request.ghiChu;
-                luong.trangThai = request.trangThai;
-                if (request.bangChung is null)
+                if (request.ghiChu == "null")
                 {
-                    //luong.bangChung = luong.bangChung;
+                    luong.idNhomLuong = request.idNhomLuong;
+                    luong.heSoLuong = request.heSoLuong;
+                    luong.bacLuong = request.bacLuong;
+                    luong.luongCoBan = request.luongCoBan;
+                    luong.phuCapChucDanh = request.phuCapChucDanh;
+                    luong.phuCapChucVu = request.phuCapChucVu;
+                    luong.phuCapTrachNhiem = request.phuCapTrachNhiem;
+                    luong.phuCapKhac = request.phuCapKhac;
+                    luong.tongLuong = request.tongLuong;
+                    luong.thoiHanLenLuong = request.thoiHanLenLuong;
+                    luong.ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc);
+                    luong.ngayKetThuc = DateTime.Parse(request.ngayKetThuc);
+                    luong.ghiChu = null;
+                    luong.trangThai = request.trangThai;
+                    if (request.bangChung is null)
+                    {
+                        //luong.bangChung = luong.bangChung;
+                    }
+                    else
+                    {
+                        await _storageService.DeleteFileAsync(luong.bangChung);
+                        luong.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
+                    }
+
                 }
                 else
                 {
-                    await _storageService.DeleteFileAsync(luong.bangChung);
-                    luong.bangChung = await this.SaveFile(request.bangChung);
-                }
+                    luong.idNhomLuong = request.idNhomLuong;
+                    luong.heSoLuong = request.heSoLuong;
+                    luong.bacLuong = request.bacLuong;
+                    luong.luongCoBan = request.luongCoBan;
+                    luong.phuCapChucDanh = request.phuCapChucDanh;
+                    luong.phuCapChucVu = request.phuCapChucVu;
+                    luong.phuCapTrachNhiem = request.phuCapTrachNhiem;
+                    luong.phuCapKhac = request.phuCapKhac;
+                    luong.tongLuong = request.tongLuong;
+                    luong.thoiHanLenLuong = request.thoiHanLenLuong;
+                    luong.ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc);
+                    luong.ngayKetThuc = DateTime.Parse(request.ngayKetThuc);
+                    luong.ghiChu = request.ghiChu;
+                    luong.trangThai = request.trangThai;
+                    if (request.bangChung is null)
+                    {
+                        //luong.bangChung = luong.bangChung;
+                    }
+                    else
+                    {
+                        await _storageService.DeleteFileAsync(luong.bangChung);
+                        luong.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
+                    }
 
+                }
                 var result = await _context.SaveChangesAsync();
+
+
                 if (result == 0)
                     return 0;
                 else
                     return 1;
             }
         }
-        private async Task<string> SaveFile(IFormFile file)
+        private async Task<string> SaveFile(IFormFile file, string name)
         {
             var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-            var fileName = $"{"ahihi"}{Path.GetExtension(originalFileName)}";
+            var fileName = $"{name}{Path.GetExtension(originalFileName)}";
             await _storageService.SaveFileAsync(file.OpenReadStream(), fileName);
             return "/" + USER_CONTENT_FOLDER_NAME + "/" + fileName;
         }
