@@ -91,12 +91,17 @@ function ScreenDetailAccount(props) {
           </div>
           <div className="third-path-account">
             <Link to={`/account/addRole/${id}`}>
-              <Button variant="light" className="btn-fix-account">
+              <Button
+                variant="contained"
+                color="success"
+                className="btn-fix-account"
+              >
                 Thêm quyền
               </Button>
             </Link>
             <Button
-              variant="light"
+              variant="contained"
+              color="secondary"
               className="btn-fix-account"
               onClick={resetNewPassword}
             >

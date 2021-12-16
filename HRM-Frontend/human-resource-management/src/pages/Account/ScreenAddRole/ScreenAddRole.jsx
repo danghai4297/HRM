@@ -21,6 +21,7 @@ function ScreenAddRole(props) {
         setdataDetailTk(responseKT);
         setRoless(responseKT.roles);
       } catch (error) {
+        history.goBack();
         console.log("false to fetch nv list: ", error);
       }
     };
