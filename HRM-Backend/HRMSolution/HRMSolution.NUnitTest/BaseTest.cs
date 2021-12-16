@@ -39,6 +39,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace HRMSolution.NUnitTest
 {
     public class BaseTest
@@ -48,43 +49,44 @@ namespace HRMSolution.NUnitTest
         protected SignInManager<AppUser> _signInManager;
         protected IConfiguration _config;
         //IService Category
-        protected IDanhMucChucDanhService danhMucChucDanhService;
-        protected IDanhMucChucVuService danhMucChucVuService;
-        protected IDanhMucChuyenMonService danhMucChuyenMonService;
-        protected IDanhMucDanTocService danhMucDanTocService;
-        protected IDanhMucHinhThucDaoTaoService danhMucHinhThucDaoTaoService;
-        protected IDanhMucHonNhanService danhMucHonNhanService;
-        protected IDanhMucKhenThuongKyLuatService danhMucKhenThuongKyLuatService;
-        protected IDanhMucLoaiHopDongService danhMucLoaiHopDongService;
-        protected IDanhMucNgachCongChucService danhMucNgachCongChucService;
-        protected IDanhMucNgoaiNguService danhMucNgoaiNguService;
-        protected IDanhMucNguoiThanService danhMucNguoiThanService;
-        protected IDanhMucNhomLuongService danhMucNhomLuongService;
-        protected IDanhMucPhongBanService danhMucPhongBanService;
-        protected IDanhMucTinhChatLaoDongService danhMucTinhChatLaoDongService;
-        protected IDanhMucTonGiaoService danhMucTonGiaoService;
-        protected IDanhMucToService danhMucToService;
-        protected IDanhMucTrinhDoService danhMucTrinhDoService;
+        protected Application.Catalog.DanhMucChucDanhs.ITitleCategoryService danhMucChucDanhService;
+        protected Application.Catalog.DanhMucChucVus.IPositionCategoryService danhMucChucVuService;
+        protected ISpecializeCategoryService danhMucChuyenMonService;
+        protected INationCategoryService danhMucDanTocService;
+        protected IEducateCategoryService danhMucHinhThucDaoTaoService;
+        protected IMarriageCategoryService danhMucHonNhanService;
+        protected IRewardDisciplineCategoryService danhMucKhenThuongKyLuatService;
+        protected ITypeOfContractCategoryService danhMucLoaiHopDongService;
+        protected ICSRCategoryService danhMucNgachCongChucService;
+        protected ILanguageCategoryService danhMucNgoaiNguService;
+        protected IRelationCategoryService danhMucNguoiThanService;
+        protected ISalaryGroupCategoryService danhMucNhomLuongService;
+        protected IDepartmentCategoryService danhMucPhongBanService;
+        protected ILaborCategoryService danhMucTinhChatLaoDongService;
+        protected IReligionCategoryService danhMucTonGiaoService;
+        protected INestCategoryService danhMucToService;
+        protected ILevelCategoryService danhMucTrinhDoService;
         //IService Tranfer
-        protected IQuaTrinhCongTacService DieuChuyenService;
+        protected IWorkingProcessService DieuChuyenService;
         //IService Contract
-        protected IHopDongService HopDongService;
+        protected ILaborContractService HopDongService;
         //IService Reward
-        protected IKhenThuongKyLuatService KhenThuongKyLuatService;
+        protected IRewardDisciplineService KhenThuongKyLuatService;
         //IService History
-        protected ILichSuService LichSuService;
+        protected IHistoryService LichSuService;
         //IService Salary
-        protected ILuongService LuongService;
+        protected ISalaryService LuongService;
         //IService Language
-        protected INgoaiNguService NgoaiNguService;
+        protected ILanguageService NgoaiNguService;
         //IService Family
-        protected INguoiThanService NguoiThanService;
+        protected IFamilyRelationshipService NguoiThanService;
         //IService Employee
-        protected INhanVienService NhanVienService;
+        protected IEmployeeService NhanVienService;
         //IService EducationLevel
-        protected ITrinhDoVanHoaService TrinhDoVanHoaService;
+        protected IEducationLevelService TrinhDoVanHoaService;
         //IService User
         protected IUserService UserService;
+
         protected IStorageService storageService;
         protected IWebHostEnvironment webHostEnvironment;
         protected string _userContentFolder;
@@ -94,35 +96,36 @@ namespace HRMSolution.NUnitTest
                                     .UseInMemoryDatabase(databaseName: "HRM")
                                     .Options;
             _context = new HRMDbContext(dbContextOptions);
-
+            //webHostEnvironment = new WebHostEnvironment();
+            //_userManager = new UserManager<AppUser>();
             //storageService = new FileStorageService(webHostEnvironment);
-            danhMucChucDanhService = new DanhMucChucDanhService(_context);
-            danhMucChucVuService = new DanhMucChucVuService(_context);
-            danhMucChuyenMonService = new DanhMucChuyenMonService(_context);
-            danhMucDanTocService = new DanhMucDanTocService(_context);
-            danhMucHinhThucDaoTaoService = new DanhMucHinhThucDaoTaoService(_context);
-            danhMucHonNhanService = new DanhMucHonNhanService(_context);
-            danhMucKhenThuongKyLuatService = new DanhMucKhenThuongKyLuatService(_context);
-            danhMucLoaiHopDongService = new DanhMucLoaiHopDongService(_context);
-            danhMucNgachCongChucService = new DanhMucNgachCongChucService(_context);
-            danhMucNgoaiNguService = new DanhMucNgoaiNguService(_context);
-            danhMucNguoiThanService = new DanhMucNguoiThanService(_context);
-            danhMucNhomLuongService = new DanhMucNhomLuongService(_context);
-            danhMucPhongBanService = new DanhMucPhongBanService(_context);
+            danhMucChucDanhService = new TitleCategoryService(_context);
+            danhMucChucVuService = new PositionCategoryService(_context);
+            danhMucChuyenMonService = new SpecializeCategoryService(_context);
+            danhMucDanTocService = new NationCategoryService(_context);
+            danhMucHinhThucDaoTaoService = new EducateCategoryService(_context);
+            danhMucHonNhanService = new MarriageCategoryService(_context);
+            danhMucKhenThuongKyLuatService = new RewardDisciplineCategoryService(_context);
+            danhMucLoaiHopDongService = new TypeOfContractCategoryService(_context);
+            danhMucNgachCongChucService = new CSRCategoryService(_context);
+            danhMucNgoaiNguService = new LanguageCategoryService(_context);
+            danhMucNguoiThanService = new RelationCategoryService(_context);
+            danhMucNhomLuongService = new SalaryGroupCategoryService(_context);
+            danhMucPhongBanService = new DepartmentCategoryService(_context);
             danhMucTinhChatLaoDongService = new DanhMucTinhChatLaoDongService(_context);
-            danhMucTonGiaoService = new DanhMucTonGiaoService(_context);
-            danhMucToService = new DanhMucToService(_context);
-            danhMucTrinhDoService = new DanhMucTrinhDoService(_context);
-            TrinhDoVanHoaService = new TrinhDoVanHoaService(_context);
-            NguoiThanService = new NguoiThanService(_context);
-            NgoaiNguService = new NgoaiNguService(_context);
-            LichSuService = new LichSuService(_context);
+            danhMucTonGiaoService = new ReligionCategoryService(_context);
+            danhMucToService = new NestCategoryService(_context);
+            danhMucTrinhDoService = new LevelCategoryService(_context);
+            TrinhDoVanHoaService = new EducationLevelService(_context);
+            NguoiThanService = new FamilyRelationshipService(_context);
+            NgoaiNguService = new LanguageService(_context);
+            LichSuService = new HistoryService(_context);
             UserService = new UserService(_userManager, _signInManager, _config, _context);
-            LuongService = new LuongService(_context, storageService);
-            DieuChuyenService = new QuaTrinhCongTacService(_context, storageService);
-            KhenThuongKyLuatService = new KhenThuongKyLuatService(_context, storageService);
-            HopDongService = new HopDongService(_context, storageService);
-            NhanVienService = new NhanVienService(_context, storageService);
+            LuongService = new SalaryService(_context, storageService);
+            DieuChuyenService = new WorkingProcessService(_context, storageService);
+            KhenThuongKyLuatService = new RewardDisciplineService(_context, storageService);
+            HopDongService = new LaborContractService(_context, storageService);
+            NhanVienService = new EmployeeService(_context, storageService);
         }
     }
 }

@@ -11,5 +11,6 @@ namespace HRMSolution.Application.Catalog.NhanViens.Dtos
         public string dcPhong { get; set; }
         public string dcTo { get; set; }
         public string dcChiTiet { get; set; }
+        public string trangThai { get; set; }
     }
 }

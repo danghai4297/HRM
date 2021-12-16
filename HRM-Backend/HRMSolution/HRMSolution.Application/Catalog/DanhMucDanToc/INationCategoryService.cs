@@ -1,0 +1,18 @@
+﻿using HRMSolution.Application.Catalog.DanhMucDanTocs.Dtos;
+using HRMSolution.Data.Entities;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HRMSolution.Application.Catalog.DanhMucDanTocs
+{
+    public interface INationCategoryService
+    {
+        Task<int> Create(DanhMucDanTocCreateRequest request);
+        Task<int> Update(int id, DanhMucDanTocUpdateRequest request);
+        Task<int> Delete(int idDanhMucDanToc);
+        Task<List<DanhMucDanTocViewModel>> GetAll();
+        Task<DanhMucDanTocViewModel> GetById(int id);
+    }
+}

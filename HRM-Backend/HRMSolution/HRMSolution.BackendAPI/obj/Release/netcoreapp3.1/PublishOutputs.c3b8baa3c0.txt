@@ -554,11 +554,13 @@ E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\user-content\aba3710c-5222-4c49-956f-d76ce45662f8.jpg
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\user-content\adf9a14f-5c5a-4d66-b2da-539ddedabcba.jpg
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\user-content\ae703d0b-5d08-4766-8a37-173a2f4d180d.PNG
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\user-content\ahihi.jpg
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\user-content\b08a39a2-9d91-4043-ae29-c53283f10d97.jpg
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\user-content\c0b5bc6a-56c2-4ee7-9fe8-c3fc59b12706.PNG
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\user-content\e14d22b6-ff1b-457b-9440-e0cf6a9991ff.docx
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\user-content\f98252bb-1c51-428f-9d33-d1353a292dd9.jpg
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\user-content\ha-nhat-dan.jpg
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\user-content\hihi
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\user-content\nguyen-cong-minh.jpg
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.Development.json
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.json
