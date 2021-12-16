@@ -12,8 +12,9 @@ export const schema = yup.object({
   // idChucVu: yup.number().nullable().required("Chức vụ không được bỏ trống."),
   trangThai: yup.boolean(),
   chiTiet: yup
-  .string()
-  .matches(allNull, "Chi tiết không thể là khoảng trống.")
-  .nullable()
-  .notRequired(),
+    .string()
+    .matches(allNull, "Chi tiết không thể là khoảng trống.")
+    .max(300, "Chi tiết không được vượt quá 300 kí tự")
+    .nullable()
+    .notRequired(),
 });

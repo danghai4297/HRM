@@ -6,6 +6,7 @@ export const schema = yup.object({
   tenTruong: yup
     .string()
     .matches(notAllowNull, "Tên trường không được là khoảng trống.")
+    .max(50, "Tên trường không được vượt quá 50 kí tự")
     .nullable()
     .required("Tên trường không được bỏ trống."),
   idChuyenMon: yup.number().typeError("Chuyên môn không được bỏ trống."),

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import "./AddPositionForm.scss";
 import ProductApi from "../../../../api/productApi";
@@ -9,6 +9,7 @@ import Dialog from "../../../../components/Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../../../components/Toast/Toast";
 import { schema } from "../../../../ultis/PositionCategory";
+import NumberFormat from "react-number-format";
 
 function AddPositionForm(props) {
   const { error, success, warn } = useToast();
@@ -91,6 +92,7 @@ function AddPositionForm(props) {
     handleSubmit,
     formState: { errors },
     reset,
+    control,
     setValue,
     getValues,
   } = useForm({
@@ -272,15 +274,25 @@ function AddPositionForm(props) {
                   >
                     Phụ cấp
                   </label>
-                  <input
-                    type="text"
-                    {...register("phuCap")}
-                    id="phuCap"
-                    className={
-                      !errors.phuCap
-                        ? "form-control col-sm-6"
-                        : "form-control col-sm-6 border-danger "
-                    }
+                  <Controller
+                    control={control}
+                    name="phuCap"
+                    render={({ field }) => (
+                      <NumberFormat
+                        onValueChange={(values) => {
+                          field.onChange(values.value);
+                        }}
+                        id="phuCap"
+                        thousandSeparator={true}
+                        value={field.value}
+                        className={
+                          !errors.phuCapChucDanh
+                            ? "form-control col-sm-6 "
+                            : "form-control col-sm-6 border-danger"
+                        }
+                        {...field.value}
+                      />
+                    )}
                   />
                   <span className="message">{errors.phuCap?.message}</span>
                 </div>

@@ -270,7 +270,7 @@ function AddLanguageForm(props) {
                     class="col-sm-4 justify-content-start"
                     htmlFor="ngayCap"
                   >
-                    ngày cấp
+                    Ngày cấp
                   </label>
                   {/* <input
                     type="text"
