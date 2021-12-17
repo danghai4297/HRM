@@ -18,7 +18,7 @@ namespace HRMSolution.Data.Configurations
             builder.Property(x => x.noiDung).HasMaxLength(100);
             builder.Property(x => x.lyDo).HasMaxLength(150);
             builder.Property(x => x.maNhanVien).IsRequired().HasMaxLength(10);
-            builder.Property(x => x.anh).HasMaxLength(100);
+            builder.Property(x => x.bangChung).HasMaxLength(100);
 
         }
     }

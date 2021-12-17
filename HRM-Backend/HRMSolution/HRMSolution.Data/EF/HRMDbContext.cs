@@ -68,7 +68,7 @@ namespace HRMSolution.Data.EF
             modelBuilder.ApplyConfiguration(new DanhMucToConfiguration());
             modelBuilder.ApplyConfiguration(new DanhMucTonGiaoConfiguration());
             modelBuilder.ApplyConfiguration(new DanhMucTrinhDoConfiguration());
-            modelBuilder.ApplyConfiguration(new DieuChuyenConfiguration());
+            modelBuilder.ApplyConfiguration(new QuaTrinhCongTacConfiguration());
             modelBuilder.ApplyConfiguration(new HinhThucDaoTaoConfiguration());
             modelBuilder.ApplyConfiguration(new HopDongConfiguration());
             modelBuilder.ApplyConfiguration(new LienHeKhanCapConfiguration());

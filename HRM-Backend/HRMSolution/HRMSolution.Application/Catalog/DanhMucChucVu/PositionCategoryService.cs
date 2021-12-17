@@ -119,7 +119,7 @@ namespace HRMSolution.Application.Catalog.DanhMucChucDanhs
         public async Task<int> Update(int id, DanhMucChucVuUpdateRequest request)
         {
             var danhMucChucVu = await _context.danhMucChucVus.FindAsync(id);
-            var check = await _context.danhMucChucVus.Where(x => x.tenChucVu == request.tenChucVu).FirstOrDefaultAsync();
+            var check = await _context.danhMucChucVus.Where(x => x.tenChucVu == request.tenChucVu && x.maChucVu != request.maChucVu).FirstOrDefaultAsync();
             if (danhMucChucVu == null || request.maChucVu == null || request.tenChucVu == null || check != null)
             {
                 return 0;

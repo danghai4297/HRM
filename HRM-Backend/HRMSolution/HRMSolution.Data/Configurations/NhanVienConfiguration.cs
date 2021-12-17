@@ -9,12 +9,12 @@ namespace HRMSolution.Data.Configurations
 
         public void Configure(EntityTypeBuilder<NhanVien> builder)
         {
-            
+
             builder.ToTable("NhanVien");
             builder.HasKey(x => x.maNhanVien);
             builder.Property(x => x.maNhanVien).HasMaxLength(10).IsRequired();
             builder.Property(x => x.hoTen).HasMaxLength(50).IsRequired();
-            
+
             builder.Property(x => x.quocTich).IsRequired().HasMaxLength(50);
 
             builder.Property(x => x.ngaySinh).HasColumnType("datetime").IsRequired();
@@ -24,9 +24,9 @@ namespace HRMSolution.Data.Configurations
             builder.Property(x => x.dienThoaiKhac).HasMaxLength(16);
             builder.Property(x => x.diDong).HasMaxLength(16).IsRequired();
             builder.Property(x => x.email).HasMaxLength(50);
-            builder.Property(x => x.facebook).HasMaxLength(25);
-            builder.Property(x => x.skype).HasMaxLength(25);
-            
+            builder.Property(x => x.facebook).HasMaxLength(50);
+            builder.Property(x => x.skype).HasMaxLength(50);
+            builder.Property(x => x.maSoThue).HasMaxLength(25);
             builder.Property(x => x.cccd).HasMaxLength(15).IsRequired();
             builder.Property(x => x.noiCapCCCD).HasMaxLength(25).IsRequired();
             builder.Property(x => x.ngayCapCCCD).HasColumnType("datetime").IsRequired();
@@ -36,7 +36,7 @@ namespace HRMSolution.Data.Configurations
             builder.Property(x => x.noiCapHoChieu).HasMaxLength(25);
             builder.Property(x => x.ngayCapHoChieu).HasColumnType("datetime");
             builder.Property(x => x.ngayHetHanHoChieu).HasColumnType("datetime");
-            
+
             builder.Property(x => x.noiSinh).HasMaxLength(150).IsRequired();
             builder.Property(x => x.queQuan).HasMaxLength(150).IsRequired();
             builder.Property(x => x.thuongTru).HasMaxLength(150).IsRequired();
@@ -72,7 +72,7 @@ namespace HRMSolution.Data.Configurations
             builder.Property(x => x.idDanToc).IsRequired();
             builder.Property(x => x.idNgachCongChuc).IsRequired();
             builder.Property(x => x.idTonGiao).IsRequired();
-            
+
 
 
 

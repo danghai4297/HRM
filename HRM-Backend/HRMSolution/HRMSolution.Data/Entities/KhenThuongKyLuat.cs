@@ -11,7 +11,7 @@ namespace HRMSolution.Data.Entities
         public string noiDung { get; set; }
         public string lyDo { get; set; }
         public bool loai { get; set; }
-        public string anh { get; set; }
+        public string bangChung { get; set; }
         public string maNhanVien { get; set; }
 
         public DanhMucKhenThuongKyLuat DanhMucKhenThuongKyLuat { get; set; }
