@@ -391,7 +391,7 @@ function AddContractForm(props) {
                         : "form-control col-sm-6 border-danger"
                     }
                     list="employees"
-                    readOnly={ecode ? true : false}
+                    readOnly={ecode || id ? true : false}
                   />
                   <datalist id="employees">
                     {dataIdEmployee

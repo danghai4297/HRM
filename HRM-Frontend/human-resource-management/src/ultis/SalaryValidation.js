@@ -15,12 +15,16 @@ export const schema = yup.object({
     .number()
     .positive("Hệ số lương không thể là số âm.")
     .typeError("Hệ số lương không được bỏ trống."),
-  bacLuong: yup.string().matches(notAllowNull, "Bậc lương không được là khoảng trống.").nullable().required("Bậc lương không được bỏ trống."),
+  bacLuong: yup
+    .string()
+    .matches(notAllowNull, "Bậc lương không được là khoảng trống.")
+    .nullable()
+    .required("Bậc lương không được bỏ trống."),
   ngayHieuLuc: yup
     .date()
     .nullable()
     .required("Ngày hiệu lực không được bỏ trống."),
-    ngayKetThuc: yup
+  ngayKetThuc: yup
     .date()
     .nullable()
     .required("Ngày kết thúc không được bỏ trống."),
@@ -29,10 +33,10 @@ export const schema = yup.object({
     .number()
     .positive("Lương cơ bản không thể là số âm.")
     .typeError("Lương cơ bản không được bỏ trống và phải là số."),
-  // phuCapTrachNhiem: yup
-  //   .number()
-  //   .positive("Phụ cấp chức vụ không thể là số âm.")
-  //   .typeError("Phụ cấp chức vụ không được bỏ trống và phải là số."),
+  phuCapTrachNhiem: yup
+    .number()
+    .moreThan(-1, "Phụ cấp trách nhiêm không thể là số âm.")
+    .typeError("Phụ cấp trách nhiệm không được bỏ trống và phải là số."),
   phuCapKhac: yup
     .number()
     .positive("Phụ cấp khác không thể là số âm.")
@@ -44,9 +48,9 @@ export const schema = yup.object({
     .nullable()
     .required("thời hạn lên lương không được bỏ trống."),
   trangThai: yup.boolean(),
-  ghiChu:yup 
-  .string()
-  .matches(allNull, "Ghi chú không thể là khoảng trống.")
-  .nullable()
-  .notRequired(),
+  ghiChu: yup
+    .string()
+    .matches(allNull, "Ghi chú không thể là khoảng trống.")
+    .nullable()
+    .notRequired(),
 });

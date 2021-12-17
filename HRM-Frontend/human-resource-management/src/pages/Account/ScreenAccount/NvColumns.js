@@ -5,7 +5,7 @@ export const NVCOLUMNSHD = [
   {
     Header: "Mã nhân viên",
     accessor: "maNhanVien",
-    minWidth: 100,
+    minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -14,7 +14,7 @@ export const NVCOLUMNSHD = [
   {
     Header: "Họ Và Tên",
     accessor: "fullName",
-    minWidth: 200,
+    minWidth: 280,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -23,7 +23,7 @@ export const NVCOLUMNSHD = [
   {
     Header: "Điện thoại",
     accessor: "phoneNumber",
-    minWidth: 200,
+    minWidth: 250,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -45,28 +45,17 @@ export const NVCOLUMNSHD = [
     minWidth: 280,
     Filter: SelectColumnFilter,
     disableFilters: true,
-
     show: true,
   },
   {
     Header: "Ngày sinh",
     accessor: "dob",
-    minWidth: 250,
+    minWidth: 350,
     Filter: SelectColumnFilter,
     disableFilters: true,
     Cell: ({ value }) => {
       return format(new Date(value), "dd/MM/yyyy");
     },
-
-    show: true,
-  },
-  {
-    Header: "Chức vụ",
-    accessor: "roles",
-    minWidth: 280,
-    Filter: SelectColumnFilter,
-    disableFilters: true,
-
     show: true,
   },
 ];

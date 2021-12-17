@@ -36,15 +36,14 @@ function AddProfileForm(props) {
   const [policy, setPolicy] = useState(false);
   const handleClickPolicy = () => setPolicy(!policy);
   const [resignation, setResignation] = useState(false);
-  const handleResignation = (e) => {
-    console.log(e.target.value);
-
-    if (e.target.value == "false") {
-      setResignation(!resignation);
-    } else {
-      setResignation(false);
-    }
-  };
+  // const handleResignation = (e) => {
+  //   console.log(e.target.value);
+  //   if (e.target.value == "false") {
+  //     setResignation(!resignation);
+  //   } else {
+  //     setResignation(false);
+  //   }
+  // };
 
   const [endDate, setEndDate] = useState();
 
@@ -593,7 +592,7 @@ function AddProfileForm(props) {
 
   //console.log(emCode);
   // console.log(file.file);
-  console.log(endDate);
+  console.log(resignation);
 
   //handle image
   //const [file, setFile] = useState("/Images/userIcon.png");
@@ -1890,7 +1889,18 @@ function AddProfileForm(props) {
                     </label>
                     <select
                       type="text"
-                      {...register("trangThaiLaoDong")}
+                      {...register("trangThaiLaoDong", {
+                        onChange: (e) => {
+                          if (e.target.checked == false) {
+                            setResignation(!resignation);
+                            clearErrors(["lyDoNghiViec", "ngayNghiViec"]);
+                            resetField("lyDoNghiViec");
+                            resetField("ngayNghiViec");
+                          } else {
+                            setResignation(false);
+                          }
+                        },
+                      })}
                       id="trangThaiLaoDong"
                       className={
                         !errors.trangThaiLaoDong
@@ -1898,7 +1908,14 @@ function AddProfileForm(props) {
                           : "form-control col-sm-6 border-danger custom-select"
                       }
                       onChange={(e) => {
-                        handleResignation(e);
+                        if (e.target.value == "false") {
+                          setResignation(!resignation);
+                          clearErrors(["lyDoNghiViec", "ngayNghiViec"]);
+                          resetField("lyDoNghiViec");
+                          resetField("ngayNghiViec");
+                        } else {
+                          setResignation(false);
+                        }
                       }}
                     >
                       <option value=""></option>
@@ -1959,6 +1976,9 @@ function AddProfileForm(props) {
                       className="form-control col-sm-6"
                       disabled={!resignation}
                     />
+                    <span className="message">
+                      {errors.lyDoNghiViec?.message}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -1993,6 +2013,9 @@ function AddProfileForm(props) {
                         />
                       )}
                     />
+                    <span className="message">
+                      {errors.ngayNghiViec?.message}
+                    </span>
                   </div>
                 </div>
               </div>

@@ -160,7 +160,22 @@ export const schema = yup.object().shape({
     .boolean()
     .nullable()
     .required("Trạng thái lao động không được bỏ trống."),
-
+  lyDoNghiViec: yup
+    .string()
+    .nullable()
+    .when("trangThaiLaoDong", {
+      is: true,
+      then: yup
+        .string()
+        .matches(notAllowNull, "Lý do nghỉ việc không thể là khoảng trống.")
+        .nullable()
+        .required("Lý do nghỉ việc  không được bỏ trống"),
+    }),
+  ngayNghiViec: yup.date().when("trangThaiLaoDong", {
+    is: true,
+    then: yup.date().nullable().required("Ngày nghỉ việc không được để trống"),
+    otherwise: yup.date().nullable().notRequired(),
+  }),
   tinhChatLaoDong: yup
     .number()
     .nullable()

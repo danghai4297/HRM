@@ -165,7 +165,7 @@ export const NVCOLUMNSDC = [
     Header: "Phòng",
     accessor: "dcPhong",
     sticky: "left",
-    minWidth: 200,
+    minWidth: 400,
     Filter: SelectColumnFilter,
     disableFilters: true,
 
@@ -196,14 +196,6 @@ export const NVCOLUMNSDC = [
     Header: "Chi tiết",
     accessor: "dcChiTiet",
     minWidth: 300,
-    Filter: SelectColumnFilter,
-    disableFilters: true,
-    show: true,
-  },
-  {
-    Header: "Chức vụ",
-    accessor: "dcChucVu",
-    minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,

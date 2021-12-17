@@ -43,7 +43,6 @@ function ScreenAddRole(props) {
     try {
       await LoginApi.PutRole(
         {
-          id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
           roles: [
             {
               id: "8D04DCE2-969A-435D-BBA4-DF3F325983DC",
@@ -123,6 +122,7 @@ function ScreenAddRole(props) {
                 className="btn btn-primary ml-3"
                 value={"Thêm"}
                 onClick={onHandleSubmit}
+                disabled={checkUser === false && checkAdmin === false}
               />
             </div>
           </div>

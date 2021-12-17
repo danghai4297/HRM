@@ -1,3 +1,4 @@
+import NumberFormat from "react-number-format";
 import SelectColumnFilter from "../../../../components/TablePagination/SelectColumnFilter";
 
 export const NVCOLUMNS = [
@@ -36,5 +37,15 @@ export const NVCOLUMNS = [
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
+    Cell: ({ value }) => {
+      return (
+        <NumberFormat
+          value={value}
+          displayType="text"
+          type="text"
+          thousandSeparator={true}
+        />
+      );
+    },
   },
 ];

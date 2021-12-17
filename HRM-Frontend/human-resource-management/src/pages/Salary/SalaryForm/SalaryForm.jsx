@@ -59,7 +59,7 @@ function AddSalaryForm(props) {
   const [dataAllHD, setDataAllHD] = useState([]);
   const [rsSalary, setRsSalary] = useState(0);
   const [contractCodes, setContractCodes] = useState();
-  const [DemoSalary, setDemoSalary] = useState(0);
+  const [DemoSalary, setDemoSalary] = useState("");
   const [allowance, setAllowance] = useState("");
   const [OtherAllowance, setOtherAllowance] = useState("");
   const [titleAllowance, setTitleAllowance] = useState("");
@@ -117,6 +117,13 @@ function AddSalaryForm(props) {
         if (contractCodes !== undefined) {
           const responseDetailHD = await ProductApi.getHdDetail(contractCodes);
           setAllowance(responseDetailHD.phuCapChucVu);
+          setTitleAllowance(responseDetailHD.phuCapChucDanh);
+        } else if (query.get("maHopDong")) {
+          const responseDetailHD = await ProductApi.getHdDetail(
+            query.get("maHopDong")
+          );
+          setAllowance(responseDetailHD.phuCapChucVu);
+          setTitleAllowance(responseDetailHD.phuCapChucDanh);
         }
       } catch (error) {
         console.log("Có lỗi xảy ra: ", error);
@@ -125,20 +132,23 @@ function AddSalaryForm(props) {
     };
     getContractCode();
   }, [contractCodes]);
-  useEffect(() => {
-    const getTitleAlowance = async () => {
-      try {
-        if (contractCodes !== undefined) {
-          const responseDetailHD = await ProductApi.getHdDetail(contractCodes);
-          setTitleAllowance(responseDetailHD.phuCapChucDanh);
-        }
-      } catch (error) {
-        console.log("Có lỗi xảy ra: ", error);
-        setTitleAllowance("");
-      }
-    };
-    getTitleAlowance();
-  }, [contractCodes]);
+  // useEffect(() => {
+  //   const getTitleAlowance = async () => {
+  //     try {
+  //       if (contractCodes !== undefined) {
+  //         const responseDetailHD = await ProductApi.getHdDetail(contractCodes);
+
+  //       } }else if(query.get("maHopDong")){
+  //         const responseDetailHD = await ProductApi.getHdDetail(contractCodes);
+  //         setTitleAllowance(responseDetailHD.phuCapChucDanh);
+  //       }
+  //     } catch (error) {
+  //       console.log("Có lỗi xảy ra: ", error);
+  //       setTitleAllowance("");
+  //     }
+  //   };
+  //   getTitleAlowance();
+  // }, [contractCodes]);
   const [file, setFile] = useState({
     file: null,
     path: "/Images/userIcon.png",
@@ -159,9 +169,13 @@ function AddSalaryForm(props) {
     idNhomLuong: id !== undefined ? dataLDetail.idNhomLuong : null,
     heSoLuong: id !== undefined ? dataLDetail.heSoLuong : null,
     bacLuong: id !== undefined ? dataLDetail.bacLuong : null,
-    luongCoBan: id !== undefined ? dataLDetail.luongCoBan : null,
-    phuCapTrachNhiem: id !== undefined ? dataLDetail.phuCapTrachNhiem : null,
-    phuCapKhac: id !== undefined ? dataLDetail.phuCapKhac : null,
+    luongCoBan: id !== undefined ? dataLDetail.luongCoBan : DemoSalary,
+    phuCapTrachNhiem:
+      id !== undefined ? dataLDetail.phuCapTrachNhiem : responsibilityAllowance,
+    phuCapKhac: id !== undefined ? dataLDetail.phuCapKhac : OtherAllowance,
+    phuCapChucDanh:
+      id !== undefined ? dataLDetail.phuCapChucDanh : titleAllowance,
+    phuCapChucVu: id !== undefined ? dataLDetail.phuCapChucVu : allowance,
     tongLuong: id !== undefined ? dataLDetail.tongLuong : rsSalary,
     thoiHanLenLuong: id !== undefined ? dataLDetail.thoiHanLenLuong : null,
     ngayHieuLuc:
@@ -226,15 +240,18 @@ function AddSalaryForm(props) {
     if (
       JSON.stringify(values) === JSON.stringify(dfValue) &&
       file.file === null &&
-      intitalValue.phuCapTrachNhiem == allowance &&
+      intitalValue.phuCapTrachNhiem == responsibilityAllowance &&
       intitalValue.tongLuong == totalSalary &&
       intitalValue.luongCoBan == DemoSalary &&
-      intitalValue.phuCapKhac == OtherAllowance
+      intitalValue.phuCapKhac == OtherAllowance &&
+      intitalValue.phuCapChucDanh == titleAllowance &&
+      intitalValue.phuCapChucVu == allowance
     ) {
       return true;
     }
     return false;
   };
+
   useEffect(() => {
     if (dataLDetail) {
       reset(intitalValue);
@@ -265,7 +282,7 @@ function AddSalaryForm(props) {
       Number(titleAllowance) +
       Number(DemoSalary) * Number(responsibilityAllowance);
     let fixTotal = (rss / 1000).toFixed(0) * 1000;
-    setValue("tongLuong", rss);
+    //setValue("tongLuong", rss);
     setTotalSalary(fixTotal);
   }, [
     salary.heSoLuong,
@@ -494,7 +511,7 @@ function AddSalaryForm(props) {
                         : "form-control col-sm-6 border-danger"
                     }
                     list="contractCode"
-                    readOnly={contractCode ? true : false}
+                    readOnly={contractCode || id ? true : false}
                   />
                   <datalist id="contractCode">
                     {dataAllHD
@@ -674,20 +691,20 @@ function AddSalaryForm(props) {
                 <div className="form-group form-inline">
                   <label
                     className="col-sm-4 justify-content-start"
-                    htmlFor="phuCapTrachNhiem"
+                    htmlFor="phuCapChucVu"
                   >
                     Phụ cấp chức vụ
                   </label>
                   <Controller
                     control={control}
-                    name="phuCapTrachNhiem"
+                    name="phuCapChucVu"
                     render={({ field }) => (
                       <NumberFormat
-                        id="phuCapTrachNhiem"
+                        id="phuCapChucVu"
                         thousandSeparator={true}
                         value={allowance}
                         className={
-                          !errors.phuCapTrachNhiem
+                          !errors.phuCapChucVu
                             ? "form-control col-sm-6 "
                             : "form-control col-sm-6 border-danger"
                         }
@@ -697,7 +714,7 @@ function AddSalaryForm(props) {
                     )}
                   />
                   <span className="message">
-                    {errors.phuCapTrachNhiem?.message}
+                    {errors.phuCapChucVu?.message}
                   </span>
                 </div>
               </div>

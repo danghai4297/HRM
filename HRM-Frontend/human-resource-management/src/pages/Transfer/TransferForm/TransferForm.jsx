@@ -354,7 +354,7 @@ function AddTransferForm(props) {
                         : "form-control col-sm-6 border-danger"
                     }
                     list="employeeCode"
-                    readOnly={eCode ? true : false}
+                    readOnly={eCode || id ? true : false}
                   />
                   <datalist id="employeeCode">
                     {dataEmployee
