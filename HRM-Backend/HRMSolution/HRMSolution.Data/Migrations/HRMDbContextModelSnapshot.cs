@@ -47,7 +47,7 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            ConcurrencyStamp = "6a073888-ad99-471e-bfe7-702bbdaa7953",
+                            ConcurrencyStamp = "9c69d577-6697-46ee-ac98-df89b2d7cb87",
                             Name = "admin",
                             NormalizedName = "admin",
                             ghiChu = "Administrator role"
@@ -55,7 +55,7 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec"),
-                            ConcurrencyStamp = "71948f0a-052f-4b62-a90a-48b112caed5e",
+                            ConcurrencyStamp = "64ecd56e-6e0c-4f2a-ac6c-9e8c659bd47f",
                             Name = "user",
                             NormalizedName = "user",
                             ghiChu = "User role"
@@ -124,11 +124,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "034b5451-3836-424b-850a-6e7dcc4645df",
+                            ConcurrencyStamp = "152f1649-15e6-4815-8e7a-80763f87608c",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIsohf84XA8tTVfP1JXhVfsShcBWtJI1bIatEioZB7fiP53VL5idU02f+3pW2VvWiw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECKjKBIcukmADCRbi65UZThKcyPY37nXTQqzQQsGGGyxx4r5C/4OQijKK6xxLAXp9A==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -139,11 +139,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("1db26eb2-1870-4129-f60a-08d9978ff76b"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c8042930-487e-4c63-bb15-feccc3ec4795",
+                            ConcurrencyStamp = "94fb6d18-04f8-4cf0-bdb7-002594c27987",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "user1",
-                            PasswordHash = "AQAAAAEAACcQAAAAENSRbhmxrt5qp0scmsbfSIjdY/fBHKCCuGk9blqPnrgAQJVFSfFVFNTcGY/rK7xQzw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECcgtf3JymnZ+Mo8POM6cJwOOxmUUIBdvDto6ZyDkFrqsrcDY2kl9E+BANfUP064og==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -154,11 +154,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("ccf28057-5be9-4405-957b-460e0ce106a7"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "69267fed-156f-4c6f-b021-1ca05101bbac",
+                            ConcurrencyStamp = "837ebfc9-d430-4b91-9715-191ed6acfe01",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "user3",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOJkj9e/wJOg+jCQIXb7BGDGrw6ojCBilRUC9Smru2ZaCPHcLy1nRnwtcsSNmMGgYA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHcouCU8iK2PGebBgtJ7elQKeV46x8AQpX8yeK/NTbt/MipXaPpCWOe9eGZGrPR8sg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -21917,7 +21917,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD01",
                             ngayHieuLuc = new DateTime(2021, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -21925,7 +21925,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -21934,7 +21934,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD02",
                             ngayHieuLuc = new DateTime(2021, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -21942,7 +21942,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -21951,7 +21951,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD03",
                             ngayHieuLuc = new DateTime(2021, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -21959,7 +21959,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -21968,7 +21968,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD04",
                             ngayHieuLuc = new DateTime(2021, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -21976,7 +21976,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -21985,7 +21985,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD05",
                             ngayHieuLuc = new DateTime(2021, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -21993,7 +21993,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22002,7 +22002,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD06",
                             ngayHieuLuc = new DateTime(2021, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22010,7 +22010,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22019,7 +22019,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD07",
                             ngayHieuLuc = new DateTime(2021, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22027,7 +22027,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22036,7 +22036,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD08",
                             ngayHieuLuc = new DateTime(2021, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22044,7 +22044,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22053,7 +22053,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD09",
                             ngayHieuLuc = new DateTime(2021, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22061,7 +22061,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22070,7 +22070,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD10",
                             ngayHieuLuc = new DateTime(2021, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22078,7 +22078,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22087,7 +22087,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD11",
                             ngayHieuLuc = new DateTime(2021, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22095,7 +22095,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22104,7 +22104,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD12",
                             ngayHieuLuc = new DateTime(2021, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22112,7 +22112,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22121,7 +22121,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD13",
                             ngayHieuLuc = new DateTime(2021, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22129,7 +22129,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22138,7 +22138,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD14",
                             ngayHieuLuc = new DateTime(2021, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22146,7 +22146,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22155,7 +22155,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD15",
                             ngayHieuLuc = new DateTime(2021, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22163,7 +22163,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22172,7 +22172,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD16",
                             ngayHieuLuc = new DateTime(2021, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22180,7 +22180,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22189,7 +22189,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD17",
                             ngayHieuLuc = new DateTime(2021, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22197,7 +22197,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22206,7 +22206,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD18",
                             ngayHieuLuc = new DateTime(2021, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22214,7 +22214,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22223,7 +22223,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD19",
                             ngayHieuLuc = new DateTime(2021, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22231,7 +22231,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22240,7 +22240,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD20",
                             ngayHieuLuc = new DateTime(2021, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22248,7 +22248,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22257,7 +22257,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD21",
                             ngayHieuLuc = new DateTime(2021, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22265,7 +22265,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22274,7 +22274,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD22",
                             ngayHieuLuc = new DateTime(2021, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22282,7 +22282,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22291,7 +22291,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD23",
                             ngayHieuLuc = new DateTime(2021, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22299,7 +22299,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22308,7 +22308,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD24",
                             ngayHieuLuc = new DateTime(2021, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22316,7 +22316,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22325,7 +22325,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD25",
                             ngayHieuLuc = new DateTime(2021, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22333,7 +22333,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22342,7 +22342,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD26",
                             ngayHieuLuc = new DateTime(2021, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22350,7 +22350,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22359,7 +22359,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD27",
                             ngayHieuLuc = new DateTime(2021, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22367,7 +22367,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22376,7 +22376,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD28",
                             ngayHieuLuc = new DateTime(2021, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22384,7 +22384,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22393,7 +22393,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD29",
                             ngayHieuLuc = new DateTime(2021, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22401,7 +22401,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22410,7 +22410,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD30",
                             ngayHieuLuc = new DateTime(2021, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22418,7 +22418,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22427,7 +22427,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD31",
                             ngayHieuLuc = new DateTime(2021, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22435,7 +22435,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22444,7 +22444,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD32",
                             ngayHieuLuc = new DateTime(2021, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22452,7 +22452,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22461,7 +22461,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD33",
                             ngayHieuLuc = new DateTime(2021, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22469,7 +22469,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22478,7 +22478,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD34",
                             ngayHieuLuc = new DateTime(2021, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22486,7 +22486,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22495,7 +22495,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD35",
                             ngayHieuLuc = new DateTime(2021, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22503,7 +22503,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22512,7 +22512,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD36",
                             ngayHieuLuc = new DateTime(2021, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22520,7 +22520,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22529,7 +22529,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD37",
                             ngayHieuLuc = new DateTime(2021, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22537,7 +22537,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22546,7 +22546,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD38",
                             ngayHieuLuc = new DateTime(2021, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22554,7 +22554,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22563,7 +22563,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD39",
                             ngayHieuLuc = new DateTime(2021, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22571,7 +22571,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22580,7 +22580,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD40",
                             ngayHieuLuc = new DateTime(2021, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22588,7 +22588,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22597,7 +22597,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD41",
                             ngayHieuLuc = new DateTime(2021, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22605,7 +22605,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22614,7 +22614,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD42",
                             ngayHieuLuc = new DateTime(2021, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22622,7 +22622,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22631,7 +22631,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD43",
                             ngayHieuLuc = new DateTime(2021, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22639,7 +22639,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22648,7 +22648,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD44",
                             ngayHieuLuc = new DateTime(2021, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22656,7 +22656,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22665,7 +22665,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD45",
                             ngayHieuLuc = new DateTime(2021, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22673,7 +22673,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22682,7 +22682,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD46",
                             ngayHieuLuc = new DateTime(2021, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22690,7 +22690,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22699,7 +22699,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD47",
                             ngayHieuLuc = new DateTime(2021, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22707,7 +22707,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22716,7 +22716,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD48",
                             ngayHieuLuc = new DateTime(2021, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22724,7 +22724,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22733,7 +22733,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD49",
                             ngayHieuLuc = new DateTime(2021, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22741,7 +22741,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22750,7 +22750,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD50",
                             ngayHieuLuc = new DateTime(2021, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22758,7 +22758,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22767,7 +22767,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD51",
                             ngayHieuLuc = new DateTime(2021, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22775,7 +22775,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22784,7 +22784,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD52",
                             ngayHieuLuc = new DateTime(2021, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22792,7 +22792,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22801,7 +22801,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD53",
                             ngayHieuLuc = new DateTime(2021, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22809,7 +22809,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22818,7 +22818,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD54",
                             ngayHieuLuc = new DateTime(2021, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22826,7 +22826,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22835,7 +22835,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD55",
                             ngayHieuLuc = new DateTime(2021, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22843,7 +22843,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22852,7 +22852,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD56",
                             ngayHieuLuc = new DateTime(2021, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22860,7 +22860,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22869,7 +22869,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD57",
                             ngayHieuLuc = new DateTime(2021, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22877,7 +22877,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22886,7 +22886,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD58",
                             ngayHieuLuc = new DateTime(2021, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22894,7 +22894,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22903,7 +22903,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD59",
                             ngayHieuLuc = new DateTime(2021, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22911,7 +22911,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -22920,7 +22920,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD60",
                             ngayHieuLuc = new DateTime(2021, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22928,7 +22928,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22937,7 +22937,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD61",
                             ngayHieuLuc = new DateTime(2021, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22945,7 +22945,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22954,7 +22954,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD62",
                             ngayHieuLuc = new DateTime(2021, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22962,7 +22962,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22971,7 +22971,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD63",
                             ngayHieuLuc = new DateTime(2021, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22979,7 +22979,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -22988,7 +22988,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD64",
                             ngayHieuLuc = new DateTime(2021, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -22996,7 +22996,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23005,7 +23005,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD65",
                             ngayHieuLuc = new DateTime(2021, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23013,7 +23013,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23022,7 +23022,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD66",
                             ngayHieuLuc = new DateTime(2021, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23030,7 +23030,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23039,7 +23039,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD67",
                             ngayHieuLuc = new DateTime(2021, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23047,7 +23047,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23056,7 +23056,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD68",
                             ngayHieuLuc = new DateTime(2021, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23064,7 +23064,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23073,7 +23073,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD69",
                             ngayHieuLuc = new DateTime(2021, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23081,7 +23081,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23090,7 +23090,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD70",
                             ngayHieuLuc = new DateTime(2021, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23098,7 +23098,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23107,7 +23107,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD71",
                             ngayHieuLuc = new DateTime(2021, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23115,7 +23115,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23124,7 +23124,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD72",
                             ngayHieuLuc = new DateTime(2021, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23132,7 +23132,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23141,7 +23141,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD73",
                             ngayHieuLuc = new DateTime(2021, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23149,7 +23149,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23158,7 +23158,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD74",
                             ngayHieuLuc = new DateTime(2021, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23166,7 +23166,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23175,7 +23175,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD75",
                             ngayHieuLuc = new DateTime(2021, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23183,7 +23183,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23192,7 +23192,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD76",
                             ngayHieuLuc = new DateTime(2021, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23200,7 +23200,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23209,7 +23209,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD77",
                             ngayHieuLuc = new DateTime(2021, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23217,7 +23217,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23226,7 +23226,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD78",
                             ngayHieuLuc = new DateTime(2021, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23234,7 +23234,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23243,7 +23243,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD79",
                             ngayHieuLuc = new DateTime(2021, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23251,7 +23251,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23260,7 +23260,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD80",
                             ngayHieuLuc = new DateTime(2021, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23268,7 +23268,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23277,7 +23277,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD81",
                             ngayHieuLuc = new DateTime(2021, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23285,7 +23285,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23294,7 +23294,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD82",
                             ngayHieuLuc = new DateTime(2021, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23302,7 +23302,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23311,7 +23311,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD83",
                             ngayHieuLuc = new DateTime(2021, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23319,7 +23319,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23328,7 +23328,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD84",
                             ngayHieuLuc = new DateTime(2021, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23336,7 +23336,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23345,7 +23345,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD85",
                             ngayHieuLuc = new DateTime(2021, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23353,7 +23353,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23362,7 +23362,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD86",
                             ngayHieuLuc = new DateTime(2021, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23370,7 +23370,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23379,7 +23379,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD87",
                             ngayHieuLuc = new DateTime(2021, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23387,7 +23387,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23396,7 +23396,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD88",
                             ngayHieuLuc = new DateTime(2021, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23404,7 +23404,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23413,7 +23413,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD89",
                             ngayHieuLuc = new DateTime(2021, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23421,7 +23421,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23430,7 +23430,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD90",
                             ngayHieuLuc = new DateTime(2021, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23438,7 +23438,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23447,7 +23447,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD91",
                             ngayHieuLuc = new DateTime(2021, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23455,7 +23455,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23464,7 +23464,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD92",
                             ngayHieuLuc = new DateTime(2021, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23472,7 +23472,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23481,7 +23481,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD93",
                             ngayHieuLuc = new DateTime(2021, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23489,7 +23489,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23498,7 +23498,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD94",
                             ngayHieuLuc = new DateTime(2021, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23506,7 +23506,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23515,7 +23515,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD95",
                             ngayHieuLuc = new DateTime(2021, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23523,7 +23523,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23532,7 +23532,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD96",
                             ngayHieuLuc = new DateTime(2021, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23540,7 +23540,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23549,7 +23549,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD97",
                             ngayHieuLuc = new DateTime(2021, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23557,7 +23557,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23566,7 +23566,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD98",
                             ngayHieuLuc = new DateTime(2021, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23574,7 +23574,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23583,7 +23583,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD99",
                             ngayHieuLuc = new DateTime(2021, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23591,7 +23591,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23600,7 +23600,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD100",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23608,7 +23608,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23617,7 +23617,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD101",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23625,7 +23625,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23634,7 +23634,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD102",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23642,7 +23642,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23651,7 +23651,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD103",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23659,7 +23659,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23668,7 +23668,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD104",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23676,7 +23676,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23685,7 +23685,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD105",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23693,7 +23693,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23702,7 +23702,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD106",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23710,7 +23710,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23719,7 +23719,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD107",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23727,7 +23727,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23736,7 +23736,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD108",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23744,7 +23744,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23753,7 +23753,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD109",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23761,7 +23761,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23770,7 +23770,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD110",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23778,7 +23778,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23787,7 +23787,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD111",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23795,7 +23795,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23804,7 +23804,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD112",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23812,7 +23812,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23821,7 +23821,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD113",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23829,7 +23829,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23838,7 +23838,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD114",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23846,7 +23846,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23855,7 +23855,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD115",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23863,7 +23863,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23872,7 +23872,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD116",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23880,7 +23880,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23889,7 +23889,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD117",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23897,7 +23897,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23906,7 +23906,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD118",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23914,7 +23914,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23923,7 +23923,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD119",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23931,7 +23931,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -23940,7 +23940,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD120",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23948,7 +23948,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23957,7 +23957,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD121",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23965,7 +23965,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -23974,7 +23974,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD122",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23982,7 +23982,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -23991,7 +23991,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD123",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -23999,7 +23999,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24008,7 +24008,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD124",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24016,7 +24016,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24025,7 +24025,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD125",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24033,7 +24033,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24042,7 +24042,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD126",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24050,7 +24050,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24059,7 +24059,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD127",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24067,7 +24067,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24076,7 +24076,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD128",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24084,7 +24084,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24093,7 +24093,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD129",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24101,7 +24101,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24110,7 +24110,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD130",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24118,7 +24118,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24127,7 +24127,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD131",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24135,7 +24135,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24144,7 +24144,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD132",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24152,7 +24152,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24161,7 +24161,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD133",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24169,7 +24169,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24178,7 +24178,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD134",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24186,7 +24186,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24195,7 +24195,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD135",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24203,7 +24203,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24212,7 +24212,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD136",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24220,7 +24220,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24229,7 +24229,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD137",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24237,7 +24237,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24246,7 +24246,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD138",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24254,7 +24254,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24263,7 +24263,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD139",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24271,7 +24271,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24280,7 +24280,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD140",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24288,7 +24288,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24297,7 +24297,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD141",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24305,7 +24305,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24314,7 +24314,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD142",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24322,7 +24322,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24331,7 +24331,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD143",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24339,7 +24339,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24348,7 +24348,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD144",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24356,7 +24356,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24365,7 +24365,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD145",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24373,7 +24373,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24382,7 +24382,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD146",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24390,7 +24390,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24399,7 +24399,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD147",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24407,7 +24407,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24416,7 +24416,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD148",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24424,7 +24424,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24433,7 +24433,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD149",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24441,7 +24441,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24450,7 +24450,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD150",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24458,7 +24458,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24467,7 +24467,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD151",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24475,7 +24475,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24484,7 +24484,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD152",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24492,7 +24492,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24501,7 +24501,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD153",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24509,7 +24509,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24518,7 +24518,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD154",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24526,7 +24526,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24535,7 +24535,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD155",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24543,7 +24543,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24552,7 +24552,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD156",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24560,7 +24560,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24569,7 +24569,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD157",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24577,7 +24577,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24586,7 +24586,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD158",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24594,7 +24594,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24603,7 +24603,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD159",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24611,7 +24611,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24620,7 +24620,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD160",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24628,7 +24628,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24637,7 +24637,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD161",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24645,7 +24645,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24654,7 +24654,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD162",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24662,7 +24662,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24671,7 +24671,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD163",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24679,7 +24679,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24688,7 +24688,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD164",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24696,7 +24696,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24705,7 +24705,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD165",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24713,7 +24713,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24722,7 +24722,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD166",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24730,7 +24730,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24739,7 +24739,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD167",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24747,7 +24747,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24756,7 +24756,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD168",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24764,7 +24764,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24773,7 +24773,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD169",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24781,7 +24781,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -24790,7 +24790,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD170",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24798,7 +24798,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24807,7 +24807,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD171",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24815,7 +24815,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24824,7 +24824,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD172",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24832,7 +24832,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24841,7 +24841,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD173",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24849,7 +24849,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24858,7 +24858,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD174",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24866,7 +24866,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24875,7 +24875,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD175",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24883,7 +24883,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24892,7 +24892,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD176",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24900,7 +24900,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24909,7 +24909,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD177",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24917,7 +24917,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24926,7 +24926,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD178",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24934,7 +24934,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24943,7 +24943,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD179",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24951,7 +24951,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24960,7 +24960,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD180",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24968,7 +24968,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24977,7 +24977,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD181",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -24985,7 +24985,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -24994,7 +24994,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD182",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25002,7 +25002,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25011,7 +25011,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD183",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25019,7 +25019,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25028,7 +25028,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD184",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25036,7 +25036,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25045,7 +25045,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD185",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25053,7 +25053,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25062,7 +25062,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD186",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25070,7 +25070,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25079,7 +25079,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD187",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25087,7 +25087,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25096,7 +25096,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD188",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25104,7 +25104,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25113,7 +25113,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD189",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25121,7 +25121,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25130,7 +25130,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD190",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25138,7 +25138,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25147,7 +25147,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD191",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25155,7 +25155,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25164,7 +25164,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD192",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25172,7 +25172,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25181,7 +25181,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD193",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25189,7 +25189,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25198,7 +25198,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD194",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25206,7 +25206,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25215,7 +25215,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD195",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25223,7 +25223,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25232,7 +25232,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD196",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25240,7 +25240,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25249,7 +25249,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD197",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25257,7 +25257,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25266,7 +25266,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD198",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25274,7 +25274,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25283,7 +25283,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD199",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25291,7 +25291,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25300,7 +25300,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD200",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25308,7 +25308,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25317,7 +25317,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD201",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25325,7 +25325,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25334,7 +25334,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD202",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25342,7 +25342,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25351,7 +25351,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD203",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25359,7 +25359,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25368,7 +25368,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD204",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25376,7 +25376,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25385,7 +25385,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD205",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25393,7 +25393,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25402,7 +25402,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD206",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25410,7 +25410,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25419,7 +25419,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD207",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25427,7 +25427,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25436,7 +25436,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD208",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25444,7 +25444,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25453,7 +25453,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD209",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25461,7 +25461,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25470,7 +25470,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD210",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25478,7 +25478,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25487,7 +25487,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD211",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25495,7 +25495,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25504,7 +25504,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD212",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25512,7 +25512,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25521,7 +25521,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD213",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25529,7 +25529,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25538,7 +25538,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD214",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25546,7 +25546,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25555,7 +25555,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD215",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25563,7 +25563,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25572,7 +25572,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD216",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25580,7 +25580,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25589,7 +25589,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD217",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25597,7 +25597,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25606,7 +25606,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD218",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25614,7 +25614,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25623,7 +25623,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD219",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25631,7 +25631,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25640,7 +25640,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD220",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25648,7 +25648,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25657,7 +25657,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD221",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25665,7 +25665,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25674,7 +25674,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD222",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25682,7 +25682,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25691,7 +25691,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD223",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25699,7 +25699,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25708,7 +25708,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD224",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25716,7 +25716,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25725,7 +25725,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD225",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25733,7 +25733,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25742,7 +25742,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD226",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25750,7 +25750,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25759,7 +25759,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD227",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25767,7 +25767,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25776,7 +25776,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD228",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25784,7 +25784,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25793,7 +25793,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD229",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25801,7 +25801,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -25810,7 +25810,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD230",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25818,7 +25818,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25827,7 +25827,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD231",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25835,7 +25835,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -25844,7 +25844,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD232",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25852,7 +25852,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25861,7 +25861,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD233",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25869,7 +25869,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -25878,7 +25878,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD234",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25886,7 +25886,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25895,7 +25895,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD235",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25903,7 +25903,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -25912,7 +25912,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD236",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25920,7 +25920,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25929,7 +25929,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD237",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25937,7 +25937,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -25946,7 +25946,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD238",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25954,7 +25954,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -25963,7 +25963,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD239",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25971,7 +25971,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -25980,7 +25980,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD240",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -25988,7 +25988,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -25997,7 +25997,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD241",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26005,7 +26005,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26014,7 +26014,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD242",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26022,7 +26022,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -26031,7 +26031,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD243",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26039,7 +26039,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26048,7 +26048,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD244",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26056,7 +26056,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -26065,7 +26065,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD245",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26073,7 +26073,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26082,7 +26082,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD246",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26090,7 +26090,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -26099,7 +26099,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD247",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26107,7 +26107,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26116,7 +26116,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD248",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26124,7 +26124,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -26133,7 +26133,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD249",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26141,7 +26141,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -26150,7 +26150,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD250",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26158,7 +26158,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26167,7 +26167,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD251",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26175,7 +26175,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -26184,7 +26184,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD252",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26192,7 +26192,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -26201,7 +26201,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD253",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26209,7 +26209,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26218,7 +26218,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD254",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26226,7 +26226,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -26235,7 +26235,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD255",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26243,7 +26243,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26252,7 +26252,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD256",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26260,7 +26260,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -26269,7 +26269,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD257",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26277,7 +26277,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26286,7 +26286,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD258",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26294,7 +26294,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26303,7 +26303,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD259",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26311,7 +26311,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26320,7 +26320,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD260",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26328,7 +26328,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -26337,7 +26337,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD261",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26345,7 +26345,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26354,7 +26354,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD262",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26362,7 +26362,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -26371,7 +26371,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD263",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26379,7 +26379,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26388,7 +26388,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD264",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26396,7 +26396,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -26405,7 +26405,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD265",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26413,7 +26413,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26422,7 +26422,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD266",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26430,7 +26430,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -26439,7 +26439,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD267",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26447,7 +26447,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26456,7 +26456,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD268",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26464,7 +26464,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -26473,7 +26473,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD269",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26481,7 +26481,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26490,7 +26490,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD270",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26498,7 +26498,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -26507,7 +26507,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD271",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26515,7 +26515,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26524,7 +26524,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD272",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26532,7 +26532,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26541,7 +26541,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD273",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26549,7 +26549,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -26558,7 +26558,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD274",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26566,7 +26566,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26575,7 +26575,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD275",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26583,7 +26583,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26592,7 +26592,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD276",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26600,7 +26600,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26609,7 +26609,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD277",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26617,7 +26617,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -26626,7 +26626,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD278",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26634,7 +26634,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26643,7 +26643,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD279",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26651,7 +26651,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -26660,7 +26660,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD280",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26668,7 +26668,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26677,7 +26677,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD281",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26685,7 +26685,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26694,7 +26694,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD282",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26702,7 +26702,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26711,7 +26711,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD283",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26719,7 +26719,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26728,7 +26728,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD284",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26736,7 +26736,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26745,7 +26745,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD285",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26753,7 +26753,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26762,7 +26762,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD286",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26770,7 +26770,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26779,7 +26779,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD287",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26787,7 +26787,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26796,7 +26796,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD288",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26804,7 +26804,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26813,7 +26813,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD289",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26821,7 +26821,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26830,7 +26830,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD290",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26838,7 +26838,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26847,7 +26847,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD291",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26855,7 +26855,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26864,7 +26864,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD292",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26872,7 +26872,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26881,7 +26881,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD293",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26889,7 +26889,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26898,7 +26898,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD294",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26906,7 +26906,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26915,7 +26915,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD295",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26923,7 +26923,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26932,7 +26932,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD296",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26940,7 +26940,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26949,7 +26949,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD297",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26957,7 +26957,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26966,7 +26966,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD298",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26974,7 +26974,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -26983,7 +26983,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD299",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -26991,7 +26991,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27000,7 +27000,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD300",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27008,7 +27008,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27017,7 +27017,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD301",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27025,7 +27025,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27034,7 +27034,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD302",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27042,7 +27042,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27051,7 +27051,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD303",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27059,7 +27059,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27068,7 +27068,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD304",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27076,7 +27076,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27085,7 +27085,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD305",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27093,7 +27093,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27102,7 +27102,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD306",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27110,7 +27110,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27119,7 +27119,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD307",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27127,7 +27127,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27136,7 +27136,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD308",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27144,7 +27144,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27153,7 +27153,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD309",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27161,7 +27161,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27170,7 +27170,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD310",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27178,7 +27178,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27187,7 +27187,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD311",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27195,7 +27195,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27204,7 +27204,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD312",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27212,7 +27212,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27221,7 +27221,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD313",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27229,7 +27229,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27238,7 +27238,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD314",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27246,7 +27246,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27255,7 +27255,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD315",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27263,7 +27263,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27272,7 +27272,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD316",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27280,7 +27280,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27289,7 +27289,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD317",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27297,7 +27297,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27306,7 +27306,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD318",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27314,7 +27314,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27323,7 +27323,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD319",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27331,7 +27331,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27340,7 +27340,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD320",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27348,7 +27348,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27357,7 +27357,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD321",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27365,7 +27365,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27374,7 +27374,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD322",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27382,7 +27382,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27391,7 +27391,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD323",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27399,7 +27399,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27408,7 +27408,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD324",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27416,7 +27416,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27425,7 +27425,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD325",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27433,7 +27433,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27442,7 +27442,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD326",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27450,7 +27450,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27459,7 +27459,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD327",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27467,7 +27467,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27476,7 +27476,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD328",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27484,7 +27484,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27493,7 +27493,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD329",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27501,7 +27501,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27510,7 +27510,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD330",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27518,7 +27518,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27527,7 +27527,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD331",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27535,7 +27535,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27544,7 +27544,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD332",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27552,7 +27552,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27561,7 +27561,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD333",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27569,7 +27569,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27578,7 +27578,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD334",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27586,7 +27586,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27595,7 +27595,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD335",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27603,7 +27603,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27612,7 +27612,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD336",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27620,7 +27620,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27629,7 +27629,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD337",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27637,7 +27637,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27646,7 +27646,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD338",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27654,7 +27654,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27663,7 +27663,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD339",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27671,7 +27671,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -27680,7 +27680,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD340",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27688,7 +27688,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27697,7 +27697,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD341",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27705,7 +27705,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -27714,7 +27714,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD342",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27722,7 +27722,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27731,7 +27731,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD343",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27739,7 +27739,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -27748,7 +27748,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD344",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27756,7 +27756,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27765,7 +27765,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD345",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27773,7 +27773,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -27782,7 +27782,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD346",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27790,7 +27790,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27799,7 +27799,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD347",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27807,7 +27807,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -27816,7 +27816,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD348",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27824,7 +27824,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27833,7 +27833,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD349",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27841,7 +27841,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -27850,7 +27850,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD350",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27858,7 +27858,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -27867,7 +27867,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD351",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27875,7 +27875,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27884,7 +27884,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD352",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27892,7 +27892,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -27901,7 +27901,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD353",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27909,7 +27909,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27918,7 +27918,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD354",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27926,7 +27926,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -27935,7 +27935,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD355",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27943,7 +27943,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27952,7 +27952,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD356",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27960,7 +27960,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -27969,7 +27969,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD357",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27977,7 +27977,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -27986,7 +27986,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD358",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -27994,7 +27994,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -28003,7 +28003,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD359",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28011,7 +28011,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -28020,7 +28020,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD360",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28028,7 +28028,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28037,7 +28037,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD361",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28045,7 +28045,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -28054,7 +28054,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD362",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28062,7 +28062,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -28071,7 +28071,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD363",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28079,7 +28079,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28088,7 +28088,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD364",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28096,7 +28096,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -28105,7 +28105,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD365",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28113,7 +28113,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28122,7 +28122,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD366",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28130,7 +28130,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -28139,7 +28139,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD367",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28147,7 +28147,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28156,7 +28156,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD368",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28164,7 +28164,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28173,7 +28173,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD369",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28181,7 +28181,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28190,7 +28190,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD370",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28198,7 +28198,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -28207,7 +28207,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD371",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28215,7 +28215,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28224,7 +28224,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD372",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28232,7 +28232,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -28241,7 +28241,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD373",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28249,7 +28249,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28258,7 +28258,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD374",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28266,7 +28266,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -28275,7 +28275,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD375",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28283,7 +28283,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28292,7 +28292,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD376",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28300,7 +28300,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -28309,7 +28309,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD377",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28317,7 +28317,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28326,7 +28326,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD378",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28334,7 +28334,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -28343,7 +28343,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD379",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28351,7 +28351,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28360,7 +28360,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD380",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28368,7 +28368,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -28377,7 +28377,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD381",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28385,7 +28385,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28394,7 +28394,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD382",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28402,7 +28402,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28411,7 +28411,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD383",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28419,7 +28419,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -28428,7 +28428,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD384",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28436,7 +28436,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28445,7 +28445,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD385",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28453,7 +28453,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28462,7 +28462,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD386",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28470,7 +28470,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28479,7 +28479,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD387",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28487,7 +28487,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -28496,7 +28496,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD388",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28504,7 +28504,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28513,7 +28513,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD389",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28521,7 +28521,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -28530,7 +28530,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD390",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28538,7 +28538,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28547,7 +28547,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD391",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28555,7 +28555,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28564,7 +28564,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD392",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28572,7 +28572,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28581,7 +28581,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD393",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28589,7 +28589,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28598,7 +28598,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD394",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28606,7 +28606,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28615,7 +28615,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD395",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28623,7 +28623,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28632,7 +28632,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD396",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28640,7 +28640,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28649,7 +28649,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD397",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28657,7 +28657,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28666,7 +28666,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD398",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28674,7 +28674,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28683,7 +28683,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD399",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28691,7 +28691,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28700,7 +28700,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD400",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28708,7 +28708,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28717,7 +28717,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD401",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28725,7 +28725,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28734,7 +28734,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD402",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28742,7 +28742,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28751,7 +28751,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD403",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28759,7 +28759,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28768,7 +28768,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD404",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28776,7 +28776,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28785,7 +28785,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD405",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28793,7 +28793,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28802,7 +28802,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD406",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28810,7 +28810,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28819,7 +28819,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD407",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28827,7 +28827,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28836,7 +28836,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD408",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28844,7 +28844,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28853,7 +28853,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD409",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28861,7 +28861,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28870,7 +28870,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD410",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28878,7 +28878,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28887,7 +28887,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD411",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28895,7 +28895,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28904,7 +28904,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD412",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28912,7 +28912,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28921,7 +28921,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD413",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28929,7 +28929,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28938,7 +28938,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD414",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28946,7 +28946,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28955,7 +28955,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD415",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28963,7 +28963,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28972,7 +28972,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD416",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28980,7 +28980,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -28989,7 +28989,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD417",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -28997,7 +28997,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29006,7 +29006,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD418",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29014,7 +29014,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29023,7 +29023,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD419",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29031,7 +29031,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29040,7 +29040,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD420",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29048,7 +29048,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29057,7 +29057,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD421",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29065,7 +29065,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29074,7 +29074,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD422",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29082,7 +29082,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29091,7 +29091,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD423",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29099,7 +29099,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29108,7 +29108,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD424",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29116,7 +29116,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29125,7 +29125,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD425",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29133,7 +29133,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29142,7 +29142,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD426",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29150,7 +29150,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29159,7 +29159,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD427",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29167,7 +29167,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29176,7 +29176,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD428",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29184,7 +29184,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29193,7 +29193,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD429",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29201,7 +29201,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29210,7 +29210,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD430",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29218,7 +29218,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29227,7 +29227,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD431",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29235,7 +29235,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29244,7 +29244,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD432",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29252,7 +29252,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29261,7 +29261,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD433",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29269,7 +29269,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29278,7 +29278,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD434",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29286,7 +29286,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29295,7 +29295,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD435",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29303,7 +29303,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29312,7 +29312,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD436",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29320,7 +29320,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29329,7 +29329,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD437",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29337,7 +29337,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29346,7 +29346,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD438",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29354,7 +29354,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29363,7 +29363,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD439",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29371,7 +29371,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29380,7 +29380,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD440",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29388,7 +29388,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29397,7 +29397,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD441",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29405,7 +29405,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29414,7 +29414,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD442",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29422,7 +29422,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29431,7 +29431,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD443",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29439,7 +29439,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29448,7 +29448,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD444",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29456,7 +29456,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29465,7 +29465,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD445",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29473,7 +29473,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29482,7 +29482,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD446",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29490,7 +29490,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29499,7 +29499,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD447",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29507,7 +29507,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29516,7 +29516,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD448",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29524,7 +29524,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29533,7 +29533,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD449",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29541,7 +29541,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -29550,7 +29550,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD450",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29558,7 +29558,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29567,7 +29567,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD451",
                             ngayHieuLuc = new DateTime(2021, 11, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29575,7 +29575,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -29584,7 +29584,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD452",
                             ngayHieuLuc = new DateTime(2021, 11, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29592,7 +29592,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29601,7 +29601,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD453",
                             ngayHieuLuc = new DateTime(2021, 11, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29609,7 +29609,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -29618,7 +29618,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD454",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29626,7 +29626,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29635,7 +29635,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD455",
                             ngayHieuLuc = new DateTime(2021, 11, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29643,7 +29643,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -29652,7 +29652,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD456",
                             ngayHieuLuc = new DateTime(2021, 11, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29660,7 +29660,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29669,7 +29669,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD457",
                             ngayHieuLuc = new DateTime(2021, 11, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29677,7 +29677,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -29686,7 +29686,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD458",
                             ngayHieuLuc = new DateTime(2021, 11, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29694,7 +29694,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29703,7 +29703,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD459",
                             ngayHieuLuc = new DateTime(2021, 11, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29711,7 +29711,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -29720,7 +29720,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD460",
                             ngayHieuLuc = new DateTime(2021, 11, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29728,7 +29728,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -29737,7 +29737,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD461",
                             ngayHieuLuc = new DateTime(2021, 11, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29745,7 +29745,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29754,7 +29754,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD462",
                             ngayHieuLuc = new DateTime(2021, 11, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29762,7 +29762,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -29771,7 +29771,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD463",
                             ngayHieuLuc = new DateTime(2021, 11, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29779,7 +29779,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29788,7 +29788,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD464",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29796,7 +29796,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -29805,7 +29805,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD465",
                             ngayHieuLuc = new DateTime(2021, 11, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29813,7 +29813,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29822,7 +29822,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD466",
                             ngayHieuLuc = new DateTime(2021, 11, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29830,7 +29830,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -29839,7 +29839,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD467",
                             ngayHieuLuc = new DateTime(2021, 11, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29847,7 +29847,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29856,7 +29856,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD468",
                             ngayHieuLuc = new DateTime(2021, 11, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29864,7 +29864,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -29873,7 +29873,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD469",
                             ngayHieuLuc = new DateTime(2021, 11, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29881,7 +29881,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -29890,7 +29890,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD470",
                             ngayHieuLuc = new DateTime(2021, 11, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29898,7 +29898,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29907,7 +29907,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD471",
                             ngayHieuLuc = new DateTime(2021, 11, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29915,7 +29915,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -29924,7 +29924,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD472",
                             ngayHieuLuc = new DateTime(2021, 11, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29932,7 +29932,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -29941,7 +29941,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD473",
                             ngayHieuLuc = new DateTime(2021, 11, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29949,7 +29949,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29958,7 +29958,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD474",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29966,7 +29966,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -29975,7 +29975,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD475",
                             ngayHieuLuc = new DateTime(2021, 11, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -29983,7 +29983,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -29992,7 +29992,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD476",
                             ngayHieuLuc = new DateTime(2021, 11, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30000,7 +30000,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -30009,7 +30009,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD477",
                             ngayHieuLuc = new DateTime(2021, 11, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30017,7 +30017,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -30026,7 +30026,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD478",
                             ngayHieuLuc = new DateTime(2021, 11, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30034,7 +30034,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -30043,7 +30043,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD479",
                             ngayHieuLuc = new DateTime(2021, 11, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30051,7 +30051,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -30060,7 +30060,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD480",
                             ngayHieuLuc = new DateTime(2021, 11, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30068,7 +30068,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -30077,7 +30077,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD481",
                             ngayHieuLuc = new DateTime(2021, 11, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30085,7 +30085,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -30094,7 +30094,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD482",
                             ngayHieuLuc = new DateTime(2021, 11, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30102,7 +30102,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -30111,7 +30111,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD483",
                             ngayHieuLuc = new DateTime(2021, 11, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30119,7 +30119,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -30128,7 +30128,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD484",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30136,7 +30136,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -30145,7 +30145,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD485",
                             ngayHieuLuc = new DateTime(2021, 11, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30153,7 +30153,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -30162,7 +30162,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD486",
                             ngayHieuLuc = new DateTime(2021, 11, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30170,7 +30170,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -30179,7 +30179,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD487",
                             ngayHieuLuc = new DateTime(2021, 11, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30187,7 +30187,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -30196,7 +30196,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD488",
                             ngayHieuLuc = new DateTime(2021, 11, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30204,7 +30204,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -30213,7 +30213,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD489",
                             ngayHieuLuc = new DateTime(2021, 11, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30221,7 +30221,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -30230,7 +30230,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD490",
                             ngayHieuLuc = new DateTime(2021, 11, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30238,7 +30238,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -30247,7 +30247,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD491",
                             ngayHieuLuc = new DateTime(2021, 11, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30255,7 +30255,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -30264,7 +30264,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD492",
                             ngayHieuLuc = new DateTime(2021, 11, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30272,7 +30272,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -30281,7 +30281,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD493",
                             ngayHieuLuc = new DateTime(2021, 11, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30289,7 +30289,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = false
                         },
                         new
@@ -30298,7 +30298,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD494",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30306,7 +30306,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         },
                         new
@@ -30315,7 +30315,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 6f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD495",
                             ngayHieuLuc = new DateTime(2021, 11, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30324,7 +30324,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapKhac = 100000f,
                             phuCapTrachNhiem = 0.3f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 7900000f,
+                            tongLuong = 8390000f,
                             trangThai = true
                         },
                         new
@@ -30333,7 +30333,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 6f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD496",
                             ngayHieuLuc = new DateTime(2021, 11, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30342,7 +30342,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapKhac = 100000f,
                             phuCapTrachNhiem = 0.3f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 8000000f,
+                            tongLuong = 8490000f,
                             trangThai = true
                         },
                         new
@@ -30351,7 +30351,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "6",
                             heSoLuong = 8f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD497",
                             ngayHieuLuc = new DateTime(2021, 11, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30360,7 +30360,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapKhac = 100000f,
                             phuCapTrachNhiem = 0.3f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 10200000f,
+                            tongLuong = 10690000f,
                             trangThai = false
                         },
                         new
@@ -30369,7 +30369,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "6",
                             heSoLuong = 8f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD498",
                             ngayHieuLuc = new DateTime(2021, 11, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30378,7 +30378,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapKhac = 100000f,
                             phuCapTrachNhiem = 0.3f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 10400000f,
+                            tongLuong = 10890000f,
                             trangThai = true
                         },
                         new
@@ -30387,7 +30387,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD499",
                             ngayHieuLuc = new DateTime(2021, 11, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30395,7 +30395,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 300000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1500000f,
+                            tongLuong = 1990000f,
                             trangThai = false
                         },
                         new
@@ -30404,7 +30404,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD500",
                             ngayHieuLuc = new DateTime(2021, 11, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30412,7 +30412,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 200000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1400000f,
+                            tongLuong = 1890000f,
                             trangThai = true
                         },
                         new
@@ -30421,7 +30421,7 @@ namespace HRMSolution.Data.Migrations
                             bacLuong = "1",
                             heSoLuong = 1f,
                             idNhomLuong = 1,
-                            luongCoBan = 1000000f,
+                            luongCoBan = 1490000f,
                             maHopDong = "HD501",
                             ngayHieuLuc = new DateTime(2021, 11, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
                             ngayKetThuc = new DateTime(2022, 11, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -30429,7 +30429,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
                             thoiHanLenLuong = "1",
-                            tongLuong = 1300000f,
+                            tongLuong = 1790000f,
                             trangThai = true
                         });
                 });
