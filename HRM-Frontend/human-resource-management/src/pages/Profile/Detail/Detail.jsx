@@ -10,7 +10,7 @@ import TableBasic from "../../../components/TablePagination/TableBasic";
 import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
 import { createTheme } from "@mui/material/styles";
-import { red } from "@mui/material/colors";
+import { cyan, indigo } from "@mui/material/colors";
 import ScreenNotFound from "../../Error/ScreenNotFound";
 import {
   NVCOLUMNSDC,
@@ -41,10 +41,10 @@ function Detail(props) {
   const theme = createTheme({
     palette: {
       primary: {
-        main: red[500],
+        main: indigo[400],
       },
       secondary: {
-        main: "#f44336",
+        main: cyan[700],
       },
     },
   });
@@ -296,7 +296,11 @@ function Detail(props) {
           </div>
           <div className="right-path">
             <Link to={`/profile/${id}`}>
-              <Button variant="contained" className="btn-edit-detail">
+              <Button
+                variant="contained"
+                theme={theme}
+                className="btn-edit-detail"
+              >
                 Sửa
               </Button>
             </Link>
@@ -304,6 +308,7 @@ function Detail(props) {
               <Button
                 variant="contained"
                 theme={theme}
+                color="secondary"
                 className="btn-edit-detail"
               >
                 <FontAwesomeIcon icon={["fas", "download"]} />

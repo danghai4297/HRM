@@ -171,7 +171,7 @@ function AddDisciplineForm(props) {
             />
             <input
               type="submit"
-              className="btn btn-primary ml-3"
+              className="btn btn-primary ml-3 btn-form"
               value={dataDetailDMKL.length !== 0 ? "Sửa" : "Lưu"}
               onClick={() => {
                 if (checkInputDisciplineChange()) {

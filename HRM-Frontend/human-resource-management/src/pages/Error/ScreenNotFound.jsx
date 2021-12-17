@@ -1,10 +1,21 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useDocumentTitle } from "../../hook/useDocumentTitle/TitleDocument";
+import "./ScreenNotFound.scss";
 function ScreenNotFound() {
-  let location = useLocation();
+  useDocumentTitle("404 Not Found");
   return (
-    <div>
-      <h1>Page Not match for <code>{location.pathname}</code></h1>
+    <div id="notfound">
+      <div class="notfound">
+        <div class="notfound-404">
+          <h3>Không tìm thấy trang</h3>
+          <h1>
+            <span>4</span>
+            <span>0</span>
+            <span>4</span>
+          </h1>
+        </div>
+        <h2>Xin lỗi nhưng trang bạn tìm kiếm không có</h2>
+      </div>
     </div>
   );
 }

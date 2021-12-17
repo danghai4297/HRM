@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import "./AddTitleForm.scss";
 import ProductApi from "../../../../api/productApi";
@@ -9,6 +9,7 @@ import Dialog from "../../../../components/Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../../../components/Toast/Toast";
 import { schema } from "../../../../ultis/TitleValidation";
+import NumberFormat from "react-number-format";
 
 function AddTitleForm(props) {
   const { error, success, warn } = useToast();
@@ -92,6 +93,7 @@ function AddTitleForm(props) {
     formState: { errors },
     reset,
     setValue,
+    control,
     getValues,
   } = useForm({
     resolver: yupResolver(schema),
@@ -204,7 +206,7 @@ function AddTitleForm(props) {
             />
             <input
               type="submit"
-              className="btn btn-primary ml-3"
+              className="btn btn-primary ml-3 btn-form"
               value={dataDetailDMCD.length !== 0 ? "Sửa" : "Lưu"}
               onClick={() => {
                 if (checkInputTitleChange()) {
@@ -273,16 +275,25 @@ function AddTitleForm(props) {
                   >
                     Phụ cấp
                   </label>
-                  <input
-                    type="text"
-                    {...register("phuCap")}
-                    id="phuCap"
-                    defaultValue={dataDetailDMCD.phuCap}
-                    className={
-                      !errors.phuCap
-                        ? "form-control col-sm-6"
-                        : "form-control col-sm-6 border-danger "
-                    }
+                  <Controller
+                    control={control}
+                    name="phuCap"
+                    render={({ field }) => (
+                      <NumberFormat
+                        onValueChange={(values) => {
+                          field.onChange(values.value);
+                        }}
+                        id="phuCap"
+                        thousandSeparator={true}
+                        value={field.value}
+                        className={
+                          !errors.phuCapChucDanh
+                            ? "form-control col-sm-6 "
+                            : "form-control col-sm-6 border-danger"
+                        }
+                        {...field.value}
+                      />
+                    )}
                   />
                   <span className="message">{errors.phuCap?.message}</span>
                 </div>

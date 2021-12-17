@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import SubDetail from "../../../../components/SubDetail/SubDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button } from "react-bootstrap";
+import Button from "@mui/material/Button";
+import { createTheme } from "@mui/material/styles";
+import { indigo } from "@mui/material/colors";
 import "./ScreenDetailFamily.scss";
 import ProductApi from "../../../../api/productApi";
 import { Link } from "react-router-dom";
@@ -10,6 +12,13 @@ import { ttc } from "./DataFamily";
 function ScreenDetailFamily(props) {
   let { match, history } = props;
   let { id } = match.params;
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: indigo[400],
+      },
+    },
+  });
   const [dataDetailNT, setdataDetailNT] = useState([]);
 
   useEffect(() => {
@@ -51,7 +60,11 @@ function ScreenDetailFamily(props) {
           </div>
           <div className="third-path-family">
             <Link to={`/profile/detail/family/update/${id}`}>
-              <Button variant="light" className="btn-fix-family">
+              <Button
+                variant="contained"
+                theme={theme}
+                className="btn-fix-family"
+              >
                 Sửa
               </Button>
             </Link>

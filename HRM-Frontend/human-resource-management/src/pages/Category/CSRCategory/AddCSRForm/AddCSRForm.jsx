@@ -174,7 +174,7 @@ function AddCSRForm(props) {
             />
             <input
               type="submit"
-              className="btn btn-primary ml-3"
+              className="btn btn-primary ml-3 btn-form"
               value={dataDetailDMNCC.length !== 0 ? "Sửa" : "Lưu"}
               onClick={() => {
                 if (checkInputChange()) {

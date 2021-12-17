@@ -67,6 +67,7 @@ function PDF(props) {
         const responseAllNv = await ProductApi.getAllNv();
         setdataAllNv(responseAllNv);
       } catch (error) {
+        history.goBack();
         console.log("false to fetch nv list: ", error);
       }
     };
@@ -76,6 +77,7 @@ function PDF(props) {
   const chooseItem = async (newId) => {
     try {
       const newResponse = await ProductApi.getNvDetail(newId);
+      history.replace(`/profile/pdf/${newId}`);
       setdataDetailNv(newResponse);
     } catch (error) {}
   };

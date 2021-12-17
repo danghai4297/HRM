@@ -1,6 +1,6 @@
 .scroll-form {
   overflow: auto;
-  height: 750px;
+  height: 80vh;
 }
 .scroll-form::-webkit-scrollbar {
   width: 6px;
@@ -86,13 +86,19 @@
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .scroll-form {
     overflow: auto;
-    height:700px;
+    height: 70vh;
     font-size: 10px;
-    h3{
+    h3 {
       font-size: 15px;
     }
-    h5{
+    h5 {
       font-size: 13px;
     }
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1600px) {
+  .scroll-form {
+    overflow: auto;
+    height: 75vh;
   }
 }

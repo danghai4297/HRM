@@ -63,11 +63,13 @@ function AddProfileForm(props) {
     "Bạn chắc chắn muốn thêm thông tin nhân viên mới."
   );
   const [showCheckDialog, setShowCheckDialog] = useState(false);
+  const [showEsc, setShowEsc] = useState(false);
 
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
     setShowCheckDialog(false);
+    setShowEsc(false);
   };
 
   //const idCode = "NV0001";
@@ -623,11 +625,17 @@ function AddProfileForm(props) {
               type="submit"
               className="btn btn-secondary ml-3"
               value="Huỷ"
-              onClick={history.goBack}
+              onClick={() => {
+                if (!checkInputChange()) {
+                  setShowEsc(true);
+                } else {
+                  history.goBack();
+                }
+              }}
             />
             <input
               type="submit"
-              className="btn btn-primary ml-3"
+              className="btn btn-primary ml-3 btn-form"
               value={dataDetailEmployee.length !== 0 ? "Sửa" : "Lưu"}
               onClick={() => {
                 if (checkInputChange()) {
@@ -2797,13 +2805,13 @@ function AddProfileForm(props) {
         confirm={null}
         cancel={cancel}
       />
-      {/* <Dialog
-        show={showDeleteDialog}
+      <Dialog
+        show={showEsc}
         title="Thông báo"
-        description={`Bạn chắc chắn muốn xóa thông tin trình độ `}
-        confirm={handleDelete}
+        description={"Bạn có chắc chắn muốn hủy không"}
+        confirm={history.goBack}
         cancel={cancel}
-      /> */}
+      />
     </>
   );
 }

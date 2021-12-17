@@ -204,7 +204,7 @@ function AddNestForm(props) {
             />
             <input
               type="submit"
-              className="btn btn-primary ml-3"
+              className="btn btn-primary ml-3 btn-form"
               value={dataDetailDMT.length !== 0 ? "Sửa" : "Lưu"}
               onClick={() => {
                 if (checkInputNestChange()) {

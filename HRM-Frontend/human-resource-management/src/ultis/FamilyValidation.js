@@ -1,14 +1,16 @@
 import * as yup from "yup";
 const notAllowNull = /^\s*\S.*$/g;
 const allNull = /^(?!\s+$).*/g;
-const phoneRegex = /(([+][(]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})/g;
+const phoneRegex =
+  /(([+][(]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})/g;
 export const schema = yup.object({
   idDanhMucNguoiThan: yup
     .number()
     .typeError("Danh mục người thân không được bỏ trống."),
   tenNguoiThan: yup
     .string()
-    .matches(notAllowNull, "Tên người thân không được là khoảng trống.") 
+    .matches(notAllowNull, "Tên người thân không được là khoảng trống.")
+    .max(40, "Tên người thân không được vượt quá 40 kí tự")
     .nullable()
     .required("Tên người thân không được bỏ trống."),
   gioiTinh: yup.boolean().nullable().required("Giới tính không được bỏ trống."),
@@ -20,16 +22,19 @@ export const schema = yup.object({
   quanHe: yup
     .string()
     .matches(notAllowNull, "Quan hệ không được là khoảng trống.")
+    .max(50, "Quan hệ không được vượt quá 50 kí tự")
     .nullable()
     .required("Quan hệ không được bỏ trống."),
   ngheNghiep: yup
     .string()
     .matches(notAllowNull, "Nghề nghiệp không được là khoảng trống.")
+    .max(50, "Nghề nghiệp không được vượt quá 50 kí tự")
     .nullable()
     .required("Nghề nghệp không được bỏ trống."),
   diaChi: yup
     .string()
     .matches(notAllowNull, "Địa chỉ không được là khoảng trống.")
+    .max(150, "Địa chỉ không được vượt quá 150 kí tự")
     .nullable()
     .required("Địa chỉ không được bỏ trống."),
   dienThoai: yup
@@ -37,9 +42,10 @@ export const schema = yup.object({
     .matches(phoneRegex, "Điện thoại phải là số")
     .nullable()
     .required("Điện thoại không được bỏ trống."),
-    khac:yup
+  khac: yup
     .string()
     .matches(allNull, "Thông tin khác không thể là khoảng trống.")
+    .max(300, "Thông tin khác không được vượt quá 300 kí tự")
     .nullable()
     .notRequired(),
 });

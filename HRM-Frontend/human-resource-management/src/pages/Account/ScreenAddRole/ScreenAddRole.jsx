@@ -6,7 +6,7 @@ import { useToast } from "../../../components/Toast/Toast";
 import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
 
 function ScreenAddRole(props) {
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
   let { match, history } = props;
   let { id } = match.params;
   useDocumentTitle("Thêm quyền cho tài khoản");
@@ -21,6 +21,7 @@ function ScreenAddRole(props) {
         setdataDetailTk(responseKT);
         setRoless(responseKT.roles);
       } catch (error) {
+        history.goBack();
         console.log("false to fetch nv list: ", error);
       }
     };

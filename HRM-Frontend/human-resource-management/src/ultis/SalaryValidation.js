@@ -18,6 +18,7 @@ export const schema = yup.object({
   bacLuong: yup
     .string()
     .matches(notAllowNull, "Bậc lương không được là khoảng trống.")
+    .max(10, "Bậc lương không được vượt quá 10 kí tự")
     .nullable()
     .required("Bậc lương không được bỏ trống."),
   ngayHieuLuc: yup
@@ -45,12 +46,14 @@ export const schema = yup.object({
   thoiHanLenLuong: yup
     .string()
     .matches(notAllowNull, "Thời hạn lên lương không được là khoảng trống.")
+    .max(10, "Thời hạn lên lương không được vượt quá 10 kí tự")
     .nullable()
-    .required("thời hạn lên lương không được bỏ trống."),
+    .required("Thời hạn lên lương không được bỏ trống."),
   trangThai: yup.boolean(),
   ghiChu: yup
     .string()
     .matches(allNull, "Ghi chú không thể là khoảng trống.")
+    .max(100, "Ghi chú không được vượt quá 100 kí tự")
     .nullable()
     .notRequired(),
 });

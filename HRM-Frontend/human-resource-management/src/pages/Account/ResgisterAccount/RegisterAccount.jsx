@@ -215,7 +215,7 @@ function RegisterAccount(props) {
           />
           <input
             type="submit"
-            className="btn btn-primary ml-3"
+            className="btn btn-primary ml-3 btn-form"
             value="Lưu"
             onClick={handleSubmit(onHandleSubmit)}
           />

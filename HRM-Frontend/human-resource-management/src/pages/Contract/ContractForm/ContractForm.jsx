@@ -34,12 +34,14 @@ function AddContractForm(props) {
     "Bạn chắc chắn muốn thêm hợp đồng mới"
   );
   const [showCheckDialog, setShowCheckDialog] = useState(false);
+  const [showEsc, setShowEsc] = useState(false);
   const [startDate, setStartDate] = useState();
   const [endDate, setEndDate] = useState();
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
     setShowCheckDialog(false);
+    setShowEsc(false);
   };
 
   const [dataDetailHd, setdataDetailHd] = useState([]);
@@ -347,11 +349,17 @@ function AddContractForm(props) {
               type="submit"
               className="btn-secondary btn ml-3"
               value="Huỷ"
-              onClick={history.goBack}
+              onClick={() => {
+                if (!checkInputChange()) {
+                  setShowEsc(true);
+                } else {
+                  history.goBack();
+                }
+              }}
             />
             <input
               type="submit"
-              className="btn btn-primary ml-3"
+              className="btn btn-primary ml-3 btn-form"
               value={dataDetailHd.length !== 0 ? "Sửa" : "Lưu"}
               onClick={() => {
                 if (checkInputChange()) {
@@ -704,6 +712,13 @@ function AddContractForm(props) {
         title="Thông báo"
         description={`Bạn chắc chắn muốn xóa thông tin hợp đồng `}
         confirm={handleDelete}
+        cancel={cancel}
+      />
+      <Dialog
+        show={showEsc}
+        title="Thông báo"
+        description={"Bạn có chắc chắn muốn hủy không"}
+        confirm={history.goBack}
         cancel={cancel}
       />
     </>

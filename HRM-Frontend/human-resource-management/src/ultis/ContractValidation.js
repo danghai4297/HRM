@@ -24,9 +24,10 @@ export const schema = yup.object().shape({
     .nullable()
     .required("Ngày hết hạn không được bỏ trống"),
   idCre: yup.number(),
-  ghiChu:yup
-  .string()
-  .matches(allNull, "Ghi chú không thể là khoảng trống.")
-  .nullable()
-  .notRequired(),
+  ghiChu: yup
+    .string()
+    .matches(allNull, "Ghi chú không thể là khoảng trống.")
+    .max(300, "Ghi chú không được vượt quá 300 kí tự")
+    .nullable()
+    .notRequired(),
 });

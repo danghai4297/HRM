@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from "react";
 import SubDetail from "../../../../components/SubDetail/SubDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button } from "react-bootstrap";
+import Button from "@mui/material/Button";
 import "./ScreenDetailLevel.scss";
 import ProductApi from "../../../../api/productApi";
 import { Link } from "react-router-dom";
 import dateFormat from "dateformat";
 import { ttc } from "./DataLevel";
+import { createTheme } from "@mui/material/styles";
+import { indigo } from "@mui/material/colors";
 
 function ScreenDetailLevel(props) {
   let { match, history } = props;
   let { id } = match.params;
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: indigo[400],
+      },
+    },
+  });
   const [dataDetailTD, setdataDetailTD] = useState([]);
 
   useEffect(() => {
@@ -52,7 +61,7 @@ function ScreenDetailLevel(props) {
           </div>
           <div className="third-path-level">
             <Link to={`/profile/detail/level/update/${id}`}>
-              <Button variant="light" className="btn-fix">
+              <Button variant="contained" theme={theme} className="btn-fix">
                 Sửa
               </Button>
             </Link>
