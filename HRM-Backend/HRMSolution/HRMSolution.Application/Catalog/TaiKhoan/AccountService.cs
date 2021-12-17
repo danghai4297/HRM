@@ -59,10 +59,40 @@ namespace HRMSolution.Application.Catalog.TaiKhoan
                 maNhanVien = request.maNhanVien,
             };
             var result = await _userManager.CreateAsync(user, request.Password);
+            await _userManager.AddToRoleAsync(user, "user");
             if (result.Succeeded)
             {
                 return true;
             }
+            return true;
+        }
+
+        public async Task<bool> RoleAssign(Guid id, RoleAssignRequest request)
+        {
+            var user = await _userManager.FindByIdAsync(id.ToString());
+            if (user == null)
+            {
+                return false;
+            }
+            var removedRoles = request.Roles.Where(x => x.Selected == false).Select(x => x.Name).ToList();
+            foreach (var roleName in removedRoles)
+            {
+                if (await _userManager.IsInRoleAsync(user, roleName) == true)
+                {
+                    await _userManager.RemoveFromRoleAsync(user, roleName);
+                }
+            }
+            await _userManager.RemoveFromRolesAsync(user, removedRoles);
+
+            var addedRoles = request.Roles.Where(x => x.Selected).Select(x => x.Name).ToList();
+            foreach (var roleName in addedRoles)
+            {
+                if (await _userManager.IsInRoleAsync(user, roleName) == false)
+                {
+                    await _userManager.AddToRoleAsync(user, roleName);
+                }
+            }
+
             return true;
         }
 
@@ -142,34 +172,7 @@ namespace HRMSolution.Application.Catalog.TaiKhoan
             else return null;
         }
 
-        public async Task<bool> RoleAssign(Guid id, RoleAssignRequest request)
-        {
-            var user = await _userManager.FindByIdAsync(id.ToString());
-            if (user == null)
-            {
-                return false;
-            }
-            var removedRoles = request.Roles.Where(x => x.Selected == false).Select(x => x.Name).ToList();
-            foreach (var roleName in removedRoles)
-            {
-                if (await _userManager.IsInRoleAsync(user, roleName) == true)
-                {
-                    await _userManager.RemoveFromRoleAsync(user, roleName);
-                }
-            }
-            await _userManager.RemoveFromRolesAsync(user, removedRoles);
 
-            var addedRoles = request.Roles.Where(x => x.Selected).Select(x => x.Name).ToList();
-            foreach (var roleName in addedRoles)
-            {
-                if (await _userManager.IsInRoleAsync(user, roleName) == false)
-                {
-                    await _userManager.AddToRoleAsync(user, roleName);
-                }
-            }
-
-            return true;
-        }
         public static string GenerateRandomPassword(PasswordOptions opts = null)
         {
             if (opts == null) opts = new PasswordOptions()

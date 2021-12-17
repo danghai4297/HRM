@@ -43,11 +43,11 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                 };
                 if (request.bangChung is null)
                 {
-                    ktkl.anh = "";
+                    ktkl.bangChung = "";
                 }
                 else
                 {
-                    ktkl.anh = await this.SaveFile(request.bangChung, request.tenFile);
+                    ktkl.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
                 }
                 _context.khenThuongKyLuats.Add(ktkl);
                 var result = await _context.SaveChangesAsync();
@@ -68,7 +68,7 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
             }
             else
             {
-                await _storageService.DeleteFileAsync(ktkl.anh);
+                await _storageService.DeleteFileAsync(ktkl.bangChung);
                 _context.khenThuongKyLuats.Remove(ktkl);
                 var result = await _context.SaveChangesAsync();
                 if (result == 0)
@@ -104,7 +104,7 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                     maNhanVien = x.p.maNhanVien,
                     hoTen = x.nv.hoTen,
                     idDanhMucKhenThuong = x.p.idDanhMucKhenThuong,
-                    bangChung = x.p.anh
+                    bangChung = x.p.bangChung
                 }).ToListAsync();
                 return data;
             }
@@ -137,7 +137,7 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                     maNhanVien = x.p.maNhanVien,
                     hoTen = x.nv.hoTen,
                     idDanhMucKhenThuong = x.p.idDanhMucKhenThuong,
-                    bangChung = x.p.anh
+                    bangChung = x.p.bangChung
                 }).FirstAsync();
                 return data;
             }
@@ -167,7 +167,7 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                     maNhanVien = x.p.maNhanVien,
                     hoTen = x.nv.hoTen,
                     idDanhMucKhenThuong = x.p.idDanhMucKhenThuong,
-                    bangChung = x.p.anh
+                    bangChung = x.p.bangChung
                 }).ToListAsync();
                 return data;
             }
@@ -193,8 +193,8 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                 }
                 else
                 {
-                    await _storageService.DeleteFileAsync(ktkl.anh);
-                    ktkl.anh = await this.SaveFile(request.bangChung, request.tenFile);
+                    await _storageService.DeleteFileAsync(ktkl.bangChung);
+                    ktkl.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
                 }
 
                 var result = await _context.SaveChangesAsync();
