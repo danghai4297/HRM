@@ -6,7 +6,8 @@ import { ExportCSV } from "../../../components/ExportFile/ExportFile";
 import { useToast } from "../../../components/Toast/Toast";
 import { ComponentToPrint } from "../../../components/ToPrint/ComponentToPrint";
 import useDidMountEffect from "../../../hook/useDidMountEffect/useDidMountEffect";
-
+import ReactHTMLTableToExcel from "react-html-table-to-excel";
+import jwt_decode from "jwt-decode";
 import ListItems from "./ListItem";
 
 function ItemListFamily() {
@@ -15,6 +16,26 @@ function ItemListFamily() {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
+
+  const token = sessionStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
+  const handleClick = async () => {
+    await ProductApi.PostLS({
+      tenTaiKhoan: decoded.userName,
+      thaoTac: `Tải về file báo cáo gia đình nhân viên`,
+      maNhanVien: decoded.id,
+      tenNhanVien: decoded.givenName,
+    });
+  };
+
+  const handleClickPdf = async () => {
+    await ProductApi.PostLS({
+      tenTaiKhoan: decoded.userName,
+      thaoTac: `Tạo file báo cáo gia đình nhân viên`,
+      maNhanVien: decoded.id,
+      tenNhanVien: decoded.givenName,
+    });
+  };
 
   const { error, warn, info, success } = useToast();
 
@@ -307,8 +328,7 @@ function ItemListFamily() {
       } catch (e) {
         error("Thực hiện không thành công");
       }
-    }
-    else if (
+    } else if (
       (nexus == 0) &
       (status !== "Tất cả") &
       (department !== "Tất cả") &
@@ -463,10 +483,21 @@ function ItemListFamily() {
             value="Hiển thị báo cáo"
             onClick={handelReport}
           />
-          <button className="pdfx" onClick={handlePrint}>
-            <FontAwesomeIcon icon={["fas", "file-pdf"]} />
-          </button>
-          <ExportCSV csvData={dataRp} fileName="Báo cáo danh sách nhân viên" />
+          <div onClick={(e) => handleClickPdf()}>
+            <button className="pdfx" onClick={handlePrint}>
+              <FontAwesomeIcon icon={["fas", "file-pdf"]} />
+            </button>
+          </div>
+          <div onClick={(e) => handleClick()}>
+            <ReactHTMLTableToExcel
+              id="test-table-xls-button"
+              className="download-table-xls-button"
+              table="tableFamily"
+              filename="Danh sach gia dinh nhan vien"
+              sheet="tablexls"
+              buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
+            />
+          </div>
         </div>
       </div>
       <div className="report-emp">
@@ -484,7 +515,7 @@ function ItemListFamily() {
             </h6>
           </div>
           <div className="rp-table">
-            <table className="table">
+            <table className="table" id="tableFamily">
               <thead>
                 <tr>
                   <th scope="col">Mã Nhân Viên</th>
