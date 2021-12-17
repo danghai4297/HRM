@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Data\\HRMSolution.Data.csproj": {}
+    "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Data\\HRMSolution.Data.csproj": {}
   },
   "projects": {
-    "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Data\\HRMSolution.Data.csproj": {
+    "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Data\\HRMSolution.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Data\\HRMSolution.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Data\\HRMSolution.Data.csproj",
         "projectName": "HRMSolution.Data",
-        "projectPath": "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Data\\HRMSolution.Data.csproj",
-        "packagesPath": "C:\\Users\\Mina\\.nuget\\packages\\",
-        "outputPath": "E:\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Data\\obj\\",
+        "projectPath": "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Data\\HRMSolution.Data.csproj",
+        "packagesPath": "C:\\Users\\Ngoc Huong\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ngoc Huong\\Documents\\HRM\\HRM-Backend\\HRMSolution\\HRMSolution.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ngoc Huong\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -92,7 +92,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+>>>>>>> a5865c75838261644bbc1bb4a9b14ade2eb688cf
         }
       }
     }
