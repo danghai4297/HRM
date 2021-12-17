@@ -20,7 +20,7 @@ import { schema } from "../../../ultis/ContractValidation";
 function AddContractForm(props) {
   let location = useLocation();
   let query = new URLSearchParams(location.search);
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
   const ecode = query.get("maNhanVien");
   let eName = query.get("hoTen");
   let { match, history } = props;
@@ -36,7 +36,6 @@ function AddContractForm(props) {
   const [showCheckDialog, setShowCheckDialog] = useState(false);
   const [showEsc, setShowEsc] = useState(false);
   const [startDate, setStartDate] = useState();
-  const [endDate, setEndDate] = useState();
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);

@@ -43,6 +43,9 @@ function AddProfileForm(props) {
       setResignation(!resignation);
     } else {
       setResignation(false);
+      clearErrors(["lyDoNghiViec", "ngayNghiViec"]);
+      resetField("lyDoNghiViec", { defaultValue: null });
+      resetField("ngayNghiViec", { defaultValue: null });
     }
   };
 
@@ -105,6 +108,9 @@ function AddProfileForm(props) {
           }
           if (response.laThuongBinh == true) {
             setVeterans(true);
+          }
+          if (response.trangThaiLaoDong == "Đã nghỉ việc") {
+            setResignation(true);
           }
         }
       } catch (error) {
@@ -1958,15 +1964,22 @@ function AddProfileForm(props) {
                       class="col-sm-4 justify-content-start"
                       htmlFor="lyDoNghiViec"
                     >
-                      Lý do nghỉ
+                      Lý do nghỉ việc
                     </label>
                     <input
                       type="text"
                       {...register("lyDoNghiViec")}
                       id="lyDoNghiViec"
-                      className="form-control col-sm-6"
+                      className={
+                        !errors.lyDoNghiViec
+                          ? "form-control col-sm-6"
+                          : "form-control col-sm-6 border-danger"
+                      }
                       disabled={!resignation}
                     />
+                    <span className="message">
+                      {errors.lyDoNghiViec?.message}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -2001,6 +2014,9 @@ function AddProfileForm(props) {
                         />
                       )}
                     />
+                    <span className="message">
+                      {errors.ngayNghiViec?.message}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -2138,8 +2154,10 @@ function AddProfileForm(props) {
                               "ngayVaoDang",
                               "ngayVaoDangChinhThuc",
                             ]);
-                            resetField("ngayVaoDang");
-                            resetField("ngayVaoDangChinhThuc");
+                            resetField("ngayVaoDang", { defaultValue: null });
+                            resetField("ngayVaoDangChinhThuc", {
+                              defaultValue: null,
+                            });
                           }
                         },
                       })}
@@ -2247,10 +2265,14 @@ function AddProfileForm(props) {
                             //   ngayVaoDang: undefined,
                             //   ngayVaoDangChinhThuc: undefined,
                             // });
-                            resetField("ngayNhapNgu");
-                            resetField("ngayXuatNgu");
-                            resetField("quanHamCaoNhat");
-                            resetField("danhHieuCaoNhat");
+                            resetField("ngayNhapNgu", { defaultValue: null });
+                            resetField("ngayXuatNgu", { defaultValue: null });
+                            resetField("quanHamCaoNhat", {
+                              defaultValue: null,
+                            });
+                            resetField("danhHieuCaoNhat", {
+                              defaultValue: null,
+                            });
                           }
                         },
                       })}
@@ -2275,7 +2297,7 @@ function AddProfileForm(props) {
                         onChange: (e) => {
                           if (e.target.checked === false) {
                             clearErrors("thuongBinh");
-                            resetField("thuongBinh");
+                            resetField("thuongBinh", { defaultValue: null });
                           }
                         },
                       })}
@@ -2398,7 +2420,7 @@ function AddProfileForm(props) {
                         onChange: (e) => {
                           if (e.target.checked === false) {
                             clearErrors("conChinhSach");
-                            resetField("conChinhSach");
+                            resetField("conChinhSach", { defaultValue: null });
                           }
                         },
                       })}
@@ -2549,7 +2571,7 @@ function AddProfileForm(props) {
                       class="col-sm-4 justify-content-start"
                       htmlFor="yt_chieuCao"
                     >
-                      Chiều cao(cm)
+                      Chiều cao(m)
                     </label>
                     <input
                       type="text"

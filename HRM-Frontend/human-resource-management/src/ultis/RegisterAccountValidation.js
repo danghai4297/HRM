@@ -3,7 +3,6 @@ import * as yup from "yup";
 const passwordReg =
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/g;
 const notAllowNull = /^\s*\S.*$/g;
-const userName = /^[a-zA-Z]*$/g;
 export const schema = yup.object({
   maNhanVien: yup
     .string()
@@ -20,7 +19,7 @@ export const schema = yup.object({
     .required("Mật khẩu mới không được bỏ trống."),
   userName: yup
     .string()
-    .matches(userName, "Tài khoản không đúng định dạng")
+    .matches(notAllowNull, "Tài khoản không đúng định dạng")
     .nullable()
     .required("Tên đăng nhập không được bỏ trống."),
 });
