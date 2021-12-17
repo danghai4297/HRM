@@ -35,6 +35,7 @@ E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\lib\jquery\dist\jquery.min.js
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\lib\jquery\dist\jquery.min.map
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\lib\jquery\LICENSE.txt
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\user-content\.txt
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\user-content\068ba015-df62-4e5c-ae57-f267bc88b167.jpg
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\user-content\0b340d47-2d4c-481d-9b50-58d34527eb45.jpg
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\user-content\1-gai.jpg
@@ -562,6 +563,7 @@ E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\user-content\ha-nhat-dan.jpg
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\user-content\hihi
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\user-content\nguyen-cong-minh.jpg
+E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\user-content\vvv.docx
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.Development.json
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.json
 E:\HRM\HRM-Backend\HRMSolution\HRMSolution.BackendAPI\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.Production.json

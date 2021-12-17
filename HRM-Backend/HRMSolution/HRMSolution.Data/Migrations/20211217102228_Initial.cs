@@ -386,9 +386,9 @@ namespace HRMSolution.Data.Migrations
                     dienThoaiKhac = table.Column<string>(type: "nvarchar(16)", maxLength: 16, nullable: true),
                     diDong = table.Column<string>(type: "nvarchar(16)", maxLength: 16, nullable: false),
                     email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    facebook = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: true),
-                    skype = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: true),
-                    maSoThue = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    facebook = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    skype = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    maSoThue = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: true),
                     cccd = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
                     noiCapCCCD = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
                     ngayCapCCCD = table.Column<DateTime>(type: "datetime", nullable: false),
@@ -528,7 +528,7 @@ namespace HRMSolution.Data.Migrations
                     noiDung = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     lyDo = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: true),
                     loai = table.Column<bool>(type: "bit", nullable: false),
-                    anh = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    bangChung = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     maNhanVien = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false)
                 },
                 constraints: table =>
@@ -802,8 +802,8 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName", "ghiChu" },
                 values: new object[,]
                 {
-                    { new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"), "6a073888-ad99-471e-bfe7-702bbdaa7953", "admin", "admin", "Administrator role" },
-                    { new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec"), "71948f0a-052f-4b62-a90a-48b112caed5e", "user", "user", "User role" }
+                    { new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"), "fc7cb2cc-596c-468a-97f5-bbd97d0c4981", "admin", "admin", "Administrator role" },
+                    { new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec"), "e587ec0a-8d98-4b5b-8d80-da254d37ddb8", "user", "user", "User role" }
                 });
 
             migrationBuilder.InsertData(
@@ -822,9 +822,9 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "maNhanVien" },
                 values: new object[,]
                 {
-                    { new Guid("ccf28057-5be9-4405-957b-460e0ce106a7"), 0, "69267fed-156f-4c6f-b021-1ca05101bbac", null, true, false, null, null, "user3", "AQAAAAEAACcQAAAAEOJkj9e/wJOg+jCQIXb7BGDGrw6ojCBilRUC9Smru2ZaCPHcLy1nRnwtcsSNmMGgYA==", null, false, "", false, "user3", "NV0003" },
-                    { new Guid("1db26eb2-1870-4129-f60a-08d9978ff76b"), 0, "c8042930-487e-4c63-bb15-feccc3ec4795", null, true, false, null, null, "user1", "AQAAAAEAACcQAAAAENSRbhmxrt5qp0scmsbfSIjdY/fBHKCCuGk9blqPnrgAQJVFSfFVFNTcGY/rK7xQzw==", null, false, "", false, "user1", "NV0002" },
-                    { new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"), 0, "034b5451-3836-424b-850a-6e7dcc4645df", null, true, false, null, null, "admin", "AQAAAAEAACcQAAAAEIsohf84XA8tTVfP1JXhVfsShcBWtJI1bIatEioZB7fiP53VL5idU02f+3pW2VvWiw==", null, false, "", false, "admin", "NV0001" }
+                    { new Guid("ccf28057-5be9-4405-957b-460e0ce106a7"), 0, "6bedf79a-3e37-4294-8112-7bce002d2e44", null, true, false, null, null, "user3", "AQAAAAEAACcQAAAAEH2vx5mWZj9LJPhYbwp+OpkG6j34zcNCEaxUmybKRSLEk2pMl+nzzhtg42vuxesU7A==", null, false, "", false, "user3", "NV0003" },
+                    { new Guid("1db26eb2-1870-4129-f60a-08d9978ff76b"), 0, "5e49e77f-4ae9-4ca8-92a7-86294fb2c00a", null, true, false, null, null, "user1", "AQAAAAEAACcQAAAAEJRuHSc7WJuveBwRx6EZ4WHoPVP0uk/12OHB6VOLkEy0ZhNi1m3yTB6m0FEdM19Nkg==", null, false, "", false, "user1", "NV0002" },
+                    { new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"), 0, "8817f446-a993-4f1c-815b-3d1a9658f1f1", null, true, false, null, null, "admin", "AQAAAAEAACcQAAAAEBI3Rd1kIDwARsJgvuBzZSObhkra8nVyj6nbnBpn43lEaKC9hsrZI3SekvQjSYFg3A==", null, false, "", false, "admin", "NV0001" }
                 });
 
             migrationBuilder.InsertData(
@@ -2314,7 +2314,7 @@ namespace HRMSolution.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "KhenThuongKyLuat",
-                columns: new[] { "id", "anh", "idDanhMucKhenThuong", "loai", "lyDo", "maNhanVien", "noiDung" },
+                columns: new[] { "id", "bangChung", "idDanhMucKhenThuong", "loai", "lyDo", "maNhanVien", "noiDung" },
                 values: new object[,]
                 {
                     { 5, null, 4, false, "Phạt đi làm muộn", "NV0035", "Phạt nhân viên" },
@@ -2324,7 +2324,7 @@ namespace HRMSolution.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "KhenThuongKyLuat",
-                columns: new[] { "id", "anh", "idDanhMucKhenThuong", "loai", "lyDo", "maNhanVien", "noiDung" },
+                columns: new[] { "id", "bangChung", "idDanhMucKhenThuong", "loai", "lyDo", "maNhanVien", "noiDung" },
                 values: new object[,]
                 {
                     { 2, null, 4, false, "Phạt tác phong", "NV0001", "Phạt nhân viên" },

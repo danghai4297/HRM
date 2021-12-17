@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HRMSolution.Data.Migrations
 {
     [DbContext(typeof(HRMDbContext))]
-    [Migration("20211216202131_Initial")]
+    [Migration("20211217102228_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,7 +49,7 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            ConcurrencyStamp = "6a073888-ad99-471e-bfe7-702bbdaa7953",
+                            ConcurrencyStamp = "fc7cb2cc-596c-468a-97f5-bbd97d0c4981",
                             Name = "admin",
                             NormalizedName = "admin",
                             ghiChu = "Administrator role"
@@ -57,7 +57,7 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec"),
-                            ConcurrencyStamp = "71948f0a-052f-4b62-a90a-48b112caed5e",
+                            ConcurrencyStamp = "e587ec0a-8d98-4b5b-8d80-da254d37ddb8",
                             Name = "user",
                             NormalizedName = "user",
                             ghiChu = "User role"
@@ -126,11 +126,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "034b5451-3836-424b-850a-6e7dcc4645df",
+                            ConcurrencyStamp = "8817f446-a993-4f1c-815b-3d1a9658f1f1",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIsohf84XA8tTVfP1JXhVfsShcBWtJI1bIatEioZB7fiP53VL5idU02f+3pW2VvWiw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBI3Rd1kIDwARsJgvuBzZSObhkra8nVyj6nbnBpn43lEaKC9hsrZI3SekvQjSYFg3A==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -141,11 +141,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("1db26eb2-1870-4129-f60a-08d9978ff76b"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c8042930-487e-4c63-bb15-feccc3ec4795",
+                            ConcurrencyStamp = "5e49e77f-4ae9-4ca8-92a7-86294fb2c00a",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "user1",
-                            PasswordHash = "AQAAAAEAACcQAAAAENSRbhmxrt5qp0scmsbfSIjdY/fBHKCCuGk9blqPnrgAQJVFSfFVFNTcGY/rK7xQzw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJRuHSc7WJuveBwRx6EZ4WHoPVP0uk/12OHB6VOLkEy0ZhNi1m3yTB6m0FEdM19Nkg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -156,11 +156,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("ccf28057-5be9-4405-957b-460e0ce106a7"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "69267fed-156f-4c6f-b021-1ca05101bbac",
+                            ConcurrencyStamp = "6bedf79a-3e37-4294-8112-7bce002d2e44",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "user3",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOJkj9e/wJOg+jCQIXb7BGDGrw6ojCBilRUC9Smru2ZaCPHcLy1nRnwtcsSNmMGgYA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEH2vx5mWZj9LJPhYbwp+OpkG6j34zcNCEaxUmybKRSLEk2pMl+nzzhtg42vuxesU7A==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -12559,7 +12559,7 @@ namespace HRMSolution.Data.Migrations
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("anh")
+                    b.Property<string>("bangChung")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -42183,8 +42183,8 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("facebook")
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<bool>("gioiTinh")
                         .HasColumnType("bit");
@@ -42221,7 +42221,8 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("maSoThue")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
 
                     b.Property<string>("ngachCongChucNoiDung")
                         .HasMaxLength(50)
@@ -42317,8 +42318,8 @@ namespace HRMSolution.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("skype")
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("tamTru")
                         .HasMaxLength(150)
