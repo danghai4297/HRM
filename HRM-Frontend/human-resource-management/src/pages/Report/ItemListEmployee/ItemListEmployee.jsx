@@ -4,10 +4,11 @@ import { format } from "date-fns";
 import React, { useEffect, useRef, useState } from "react";
 import { useReactToPrint } from "react-to-print";
 import ProductApi from "../../../api/productApi";
-import { ExportCSV } from "../../../components/ExportFile/ExportFile";
 import { useToast } from "../../../components/Toast/Toast";
 import { ComponentToPrint } from "../../../components/ToPrint/ComponentToPrint";
 import useDidMountEffect from "../../../hook/useDidMountEffect/useDidMountEffect";
+import ReactHTMLTableToExcel from "react-html-table-to-excel";
+import jwt_decode from "jwt-decode";
 
 import "./ItemListEmployee.scss";
 import ListItems from "./ListItem";
@@ -33,6 +34,26 @@ function ItemListEmployee() {
   const [checkPb, setCheckPb] = useState(true);
   const [checkHd, setCheckHd] = useState(true);
   const [dataRp, setDataRp] = useState([]);
+  
+  const token = sessionStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
+  const handleClick = async () => {
+    await ProductApi.PostLS({
+      tenTaiKhoan: decoded.userName,
+      thaoTac: `Tải về file báo cáo nhân viên`,
+      maNhanVien: decoded.id,
+      tenNhanVien: decoded.givenName,
+    });
+  };
+
+  const handleClickPdf = async () => {
+    await ProductApi.PostLS({
+      tenTaiKhoan: decoded.userName,
+      thaoTac: `Tạo file báo cáo nhân viên`,
+      maNhanVien: decoded.id,
+      tenNhanVien: decoded.givenName,
+    });
+  };
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -381,20 +402,6 @@ function ItemListEmployee() {
         error("Thực hiện không thành công");
       }
     }
-    // try {
-    //   let sdate = format(new Date(startDate), "yyyy-MM-dd");
-    //   let edate = format(new Date(endDate), "yyyy-MM-dd");
-    //   const respb = await ProductApi.getRpAllPbHdTtGt(
-    //     department,
-    //     sdate,
-    //     edate,
-    //     status,
-    //     gender
-    //   );
-    //   setDataRp(respb);
-    // } catch (e) {
-    //   error("Thực hiện không thành công");
-    // }
   };
 
   return (
@@ -498,10 +505,21 @@ function ItemListEmployee() {
             value="Hiển thị báo cáo"
             onClick={handelReport}
           />
-          <button className="pdfx" onClick={handlePrint}>
-            <FontAwesomeIcon icon={["fas", "file-pdf"]} />
-          </button>
-          <ExportCSV csvData={dataRp} fileName="Báo cáo danh sách nhân viên" />
+          <div onClick={(e) => handleClickPdf()}>
+            <button className="pdfx" onClick={handlePrint}>
+              <FontAwesomeIcon icon={["fas", "file-pdf"]} />
+            </button>
+          </div>
+          <div onClick={(e) => handleClick()}>
+            <ReactHTMLTableToExcel
+              id="test-table-xls-button"
+              className="download-table-xls-button"
+              table="tableEmployee"
+              filename="Danh sach nhan vien"
+              sheet="tablexls"
+              buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
+            />
+          </div>
         </div>
       </div>
       <div className="report-emp">
@@ -519,7 +537,7 @@ function ItemListEmployee() {
             </h6>
           </div>
           <div className="rp-table">
-            <table className="table">
+            <table className="table" id="tableEmployee">
               <thead>
                 <tr>
                   <th scope="col">Mã Nhân Viên</th>

@@ -9,6 +9,8 @@ import { useToast } from "../../../components/Toast/Toast";
 import { ComponentToPrint } from "../../../components/ToPrint/ComponentToPrint";
 import useDidMountEffect from "../../../hook/useDidMountEffect/useDidMountEffect";
 import ListItems from "./ListItem";
+import ReactHTMLTableToExcel from "react-html-table-to-excel";
+import jwt_decode from "jwt-decode";
 
 function ItemListSalaryGroup() {
   var today = new Date();
@@ -26,6 +28,26 @@ function ItemListSalaryGroup() {
   const [check, setCheck] = useState("Tất cả");
   const [checkPb, setCheckPb] = useState(false);
   const [dataRp, setDataRp] = useState([]);
+
+  const token = sessionStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
+  const handleClick = async () => {
+    await ProductApi.PostLS({
+      tenTaiKhoan: decoded.userName,
+      thaoTac: `Tải về file báo cáo nhóm lương`,
+      maNhanVien: decoded.id,
+      tenNhanVien: decoded.givenName,
+    });
+  };
+
+  const handleClickPdf = async () => {
+    await ProductApi.PostLS({
+      tenTaiKhoan: decoded.userName,
+      thaoTac: `Tạo file báo cáo nhóm lương`,
+      maNhanVien: decoded.id,
+      tenNhanVien: decoded.givenName,
+    });
+  };
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -129,15 +151,26 @@ function ItemListSalaryGroup() {
             value="Hiển thị báo cáo"
             onClick={handelReport}
           />
-          <button className="pdfx" onClick={handlePrint}>
-            <FontAwesomeIcon icon={["fas", "file-pdf"]} />
-          </button>
-          <ExportCSV csvData={dataRp} fileName="Báo cáo danh sách nhân viên" />
+          <div onClick={(e) => handleClickPdf()}>
+            <button className="pdfx" onClick={handlePrint}>
+              <FontAwesomeIcon icon={["fas", "file-pdf"]} />
+            </button>
+          </div>
+          <div onClick={(e) => handleClick()}>
+            <ReactHTMLTableToExcel
+              id="test-table-xls-button"
+              className="download-table-xls-button"
+              table="tableGroupSalary"
+              filename="Danh sach nhan vien"
+              sheet="tablexls"
+              buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
+            />
+          </div>
         </div>
       </div>
       <div className="report-emp">
         <ComponentToPrint ref={componentRef}>
-          <div className="rp-herder">
+          <div className="rp-herder" id="tableGroupSalary">
             <b>HRM</b>
             <p>-------------------------</p>
             <h2>{title}</h2>
