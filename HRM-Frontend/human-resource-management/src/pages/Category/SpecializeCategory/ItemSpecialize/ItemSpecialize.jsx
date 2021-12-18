@@ -10,12 +10,14 @@ import { NVCOLUMNS } from "./NvColumns";
 import ProductApi from "../../../../api/productApi";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
+import { useDocumentTitle } from "../../../../hook/useDocumentTitle/TitleDocument";
 
 function ItemSpecialize(props) {
   const link = "/category/specialize/";
   const fileName = "Danhmucchuyenmon";
   const [dataDmcm, setDataDmcm] = useState([]);
   const [open, setOpen] = useState(false);
+  useDocumentTitle("Danh mục chuyên môn");
 
   useEffect(() => {
     const fetchNvList = async () => {

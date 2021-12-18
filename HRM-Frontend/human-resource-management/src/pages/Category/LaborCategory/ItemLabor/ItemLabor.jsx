@@ -10,12 +10,14 @@ import TablePagination from "../../../../components/TablePagination/TablePaginat
 import ProductApi from "../../../../api/productApi";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
+import { useDocumentTitle } from "../../../../hook/useDocumentTitle/TitleDocument";
 
 function ItemLabor() {
   const link = "/category/labor/";
   const fileName = "Tinhchatlaodong";
   const [dataDmtcld, setDataDmtcld] = useState([]);
   const [open, setOpen] = useState(false);
+  useDocumentTitle("Danh mục tính chất lao động");
 
   useEffect(() => {
     const fetchNvList = async () => {

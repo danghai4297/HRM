@@ -1,6 +1,5 @@
 import React from "react";
-import Switch from "react-bootstrap/esm/Switch";
-import { Redirect, Route, useHistory } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import "./ScreenReport.scss";
 import ItemDecisionSalaryUp from "../../pages/Report/ItemDecisionSalaryUp/ItemDecisionSalaryUp";
 import ItemListBirthday from "../../pages/Report/ItemListBirthday/ItemListBirthday";
@@ -13,6 +12,7 @@ import ItemListSalaryGroup from "../../pages/Report/ItemListSalaryGroup/ItemList
 import ItemListSalaryUp from "../../pages/Report/ItemListSalaryUp/ItemListSalaryUp";
 import ItemSalaryProfile from "../../pages/Report/ItemSalaryProfile/ItemSalaryProfile";
 import SidebarLeftReport from "../../components/SidebarReport/SidebarLeftReport";
+import ScreenNotFound from "../../pages/Error/ScreenNotFound";
 function ScreenReport() {
   return (
     <>
@@ -69,7 +69,7 @@ function ScreenReport() {
               component={ItemListInsuranceBook}
             />
             <Route path="*">
-              <Redirect to="/report/profileEmployee" />
+              <ScreenNotFound />
             </Route>
           </Switch>
         </div>

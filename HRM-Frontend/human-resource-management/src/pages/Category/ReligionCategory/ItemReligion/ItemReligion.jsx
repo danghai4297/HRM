@@ -8,11 +8,13 @@ import { Link } from "react-router-dom";
 import { ExportCSV } from "../../../../components/ExportFile/ExportFile";
 import TablePagination from "../../../../components/TablePagination/TablePagination";
 import ProductApi from "../../../../api/productApi";
+import { useDocumentTitle } from "../../../../hook/useDocumentTitle/TitleDocument";
 
 function ItemReligion(props) {
   const link = "/category/religion/";
   const fileName = "Danhmuctongiao";
   const [dataDmtl, setDataDmtl] = useState([]);
+  useDocumentTitle("Danh mục tôn giáo");
 
   useEffect(() => {
     const fetchNvList = async () => {

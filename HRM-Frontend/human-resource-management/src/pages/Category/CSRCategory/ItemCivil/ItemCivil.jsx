@@ -10,12 +10,14 @@ import TablePagination from "../../../../components/TablePagination/TablePaginat
 import ProductApi from "../../../../api/productApi";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
+import { useDocumentTitle } from "../../../../hook/useDocumentTitle/TitleDocument";
 
 function ItemCivil(props) {
   const link = "/category/civil/";
   const fileName = "Ngachcongchuc";
   const [dataDmncc, setDataDmncc] = useState([]);
   const [open, setOpen] = useState(false);
+  useDocumentTitle("Danh mục ngạch công chức");
 
   useEffect(() => {
     const fetchNvList = async () => {

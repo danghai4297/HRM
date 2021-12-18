@@ -12,6 +12,7 @@ import jwt_decode from "jwt-decode";
 
 import "./ItemListEmployee.scss";
 import ListItems from "./ListItem";
+import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
 
 function ItemListEmployee() {
   var today = new Date();
@@ -21,6 +22,8 @@ function ItemListEmployee() {
   });
 
   const { error, warn, info, success } = useToast();
+
+  useDocumentTitle("Báo cáo danh sách nhân viên");
 
   const [title, settitle] = useState("");
 

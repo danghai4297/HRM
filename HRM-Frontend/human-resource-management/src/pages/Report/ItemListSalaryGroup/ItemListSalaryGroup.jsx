@@ -11,6 +11,7 @@ import useDidMountEffect from "../../../hook/useDidMountEffect/useDidMountEffect
 import ListItems from "./ListItem";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import jwt_decode from "jwt-decode";
+import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
 
 function ItemListSalaryGroup() {
   var today = new Date();
@@ -20,6 +21,8 @@ function ItemListSalaryGroup() {
   });
 
   const { error, warn, info, success } = useToast();
+
+  useDocumentTitle("Báo cáo danh sách nhóm lương");
 
   const [title, settitle] = useState("");
 

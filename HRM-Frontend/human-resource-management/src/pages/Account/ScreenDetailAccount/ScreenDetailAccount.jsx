@@ -13,6 +13,8 @@ import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
 import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
 import ProductApi from "../../../api/productApi";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function ScreenDetailAccount(props) {
   let { match, history } = props;
@@ -24,6 +26,7 @@ function ScreenDetailAccount(props) {
   const [dataDetailTk, setdataDetailTk] = useState([]);
   const [resetPassword, setResetPassword] = useState();
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [open, setOpen] = useState(false);
   useDocumentTitle("Chi tiết tài khoản");
 
   useEffect(() => {
@@ -38,6 +41,10 @@ function ScreenDetailAccount(props) {
     };
     fetchDetailAccount();
   }, []);
+
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataDetailTk]);
 
   const cancel = () => {
     setShowDeleteDialog(false);
@@ -156,6 +163,12 @@ function ScreenDetailAccount(props) {
         confirm={handleDeleteAccount}
         cancel={cancel}
       />
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

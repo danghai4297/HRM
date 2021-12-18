@@ -6,6 +6,7 @@ import { useReactToPrint } from "react-to-print";
 import ProductApi from "../../../api/productApi";
 import { useToast } from "../../../components/Toast/Toast";
 import { ComponentToPrint } from "../../../components/ToPrint/ComponentToPrint";
+import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
 import "./ItemSalaryProfile.scss";
 
 function ItemSalaryProfile() {
@@ -16,6 +17,8 @@ function ItemSalaryProfile() {
   });
 
   const { error, warn, info, success } = useToast();
+
+  useDocumentTitle("Báo cáo hồ sơ lương");
 
   const [title, settitle] = useState("");
   const [dataNv, setDataNv] = useState([]);

@@ -8,6 +8,7 @@ import { useReactToPrint } from "react-to-print";
 import { useToast } from "../../../components/Toast/Toast";
 import { ComponentToPrint } from "../../../components/ToPrint/ComponentToPrint";
 import "./ItemDecisionSalaryUp.scss";
+import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
 
 function ItemDecisionSalaryUp() {
   var today = new Date();
@@ -15,6 +16,8 @@ function ItemDecisionSalaryUp() {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
+
+  useDocumentTitle("Báo cáo quyết định lên lương");
 
   const [title, settitle] = useState("Quyết định");
   const [name, setName] = useState("...");

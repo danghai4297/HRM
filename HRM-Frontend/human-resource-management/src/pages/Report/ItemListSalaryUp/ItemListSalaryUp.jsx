@@ -10,6 +10,7 @@ import useDidMountEffect from "../../../hook/useDidMountEffect/useDidMountEffect
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import jwt_decode from "jwt-decode";
 import ListItemSalaryup from "./ListItemSalaryup";
+import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
 
 function ItemListSalaryUp() {
   var today = new Date();
@@ -19,6 +20,8 @@ function ItemListSalaryUp() {
   });
 
   const { error, warn, info, success } = useToast();
+
+  useDocumentTitle("Báo cáo danh sách nâng lương");
 
   const [title, settitle] = useState("");
 

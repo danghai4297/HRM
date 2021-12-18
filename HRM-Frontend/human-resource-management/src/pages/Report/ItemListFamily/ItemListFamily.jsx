@@ -9,8 +9,10 @@ import useDidMountEffect from "../../../hook/useDidMountEffect/useDidMountEffect
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import jwt_decode from "jwt-decode";
 import ListItems from "./ListItem";
+import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
 
 function ItemListFamily() {
+  useDocumentTitle("Báo cáo danh sách người thân");
   var today = new Date();
   const componentRef = useRef();
   const handlePrint = useReactToPrint({

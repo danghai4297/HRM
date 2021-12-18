@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 
 import "./ScreenCategory.scss";
 import SideBarLeftCategory from "../../components/SidebarCategory/SideBarLeftCategory";
@@ -15,13 +15,7 @@ import ItemDeal from "../../pages/Category/TypeOfContractCategory/ItemDeal/ItemD
 import ItemWages from "../../pages/Category/SalaryGroupCategory/ItemWages/ItemWages";
 import ItemTraining from "../../pages/Category/EducateCategory/ItemTraining/ItemTraining";
 import ItemCivil from "../../pages/Category/CSRCategory/ItemCivil/ItemCivil";
-import {
-  Route,
-  Switch,
-  Redirect,
-  useHistory,
-  useLocation,
-} from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import ItemMarriage from "../../pages/Category/MarriageCategory/ItemMarriage/ItemMarriage";
 import ItemRelation from "../../pages/Category/RelationCategory/ItemRelation/ItemRelation";
 import ItemReligion from "../../pages/Category/ReligionCategory/ItemReligion/ItemReligion";
@@ -46,13 +40,9 @@ import AddNestForm from "../../pages/Category/NestCategory/AddNestForm/AddNestFo
 import AddNationForm from "../../pages/Category/NationCategory/AddNationForm/AddNationForm";
 import ItemLabor from "../../pages/Category/LaborCategory/ItemLabor/ItemLabor";
 import AddLaborForm from "../../pages/Category/LaborCategory/AddLaborForm/AddLaborForm";
+import ScreenNotFound from "../../pages/Error/ScreenNotFound";
 
 function ScreenCategory() {
-  const location = useLocation();
-  const history = useHistory();
-  const [state, setstate] = useState(location.pathname);
-  console.log(state);
-  console.log(location.pathname);
   return (
     <>
       <div className="main-all">
@@ -279,7 +269,7 @@ function ScreenCategory() {
                 component={AddPositionForm}
               />
               <Route path="*">
-                <Redirect to="/category/nation" />
+                <ScreenNotFound />
               </Route>
             </Switch>
           </div>

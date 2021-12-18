@@ -10,12 +10,14 @@ import TablePagination from "../../../../components/TablePagination/TablePaginat
 import ProductApi from "../../../../api/productApi";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
+import { useDocumentTitle } from "../../../../hook/useDocumentTitle/TitleDocument";
 
 function ItemLangguage(props) {
   const link = "/category/language/";
   const fileName = "Danhmucngoaingu";
   const [dataDmnn, setDataDmnn] = useState([]);
   const [open, setOpen] = useState(false);
+  useDocumentTitle("Danh mục ngoại ngữ");
 
   useEffect(() => {
     const fetchNvList = async () => {

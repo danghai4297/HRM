@@ -10,12 +10,14 @@ import TablePagination from "../../../../components/TablePagination/TablePaginat
 import ProductApi from "../../../../api/productApi";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
+import { useDocumentTitle } from "../../../../hook/useDocumentTitle/TitleDocument";
 
 function ItemDeal(props) {
   const link = "/category/deal/";
   const fileName = "Cacloaihopdong";
   const [dataClhd, setDataClhd] = useState([]);
   const [open, setOpen] = useState(false);
+  useDocumentTitle("Danh mục loại hợp đồng");
 
   useEffect(() => {
     const fetchNvList = async () => {

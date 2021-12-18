@@ -11,6 +11,7 @@ import useDidMountEffect from "../../../hook/useDidMountEffect/useDidMountEffect
 import ListItems from "./ListItem";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import jwt_decode from "jwt-decode";
+import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
 
 function ItemListPolicyFront() {
   var today = new Date();
@@ -20,6 +21,8 @@ function ItemListPolicyFront() {
   });
 
   const { error, warn, info, success } = useToast();
+
+  useDocumentTitle("Báo cáo danh sách diện chính sách");
 
   const [title, settitle] = useState("");
 

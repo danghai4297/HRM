@@ -8,18 +8,20 @@ import TablePagination from "../../../components/TablePagination/TablePagination
 import { Link } from "react-router-dom";
 import LoginApi from "../../../api/login";
 import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function ScreenAccount(props) {
   const link = "/account/detail/";
   const fileName = "Danhsachhopdong";
   const [dataAllAcc, setdataAllAcc] = useState([]);
+  const [open, setOpen] = useState(false);
   useDocumentTitle("Danh sách tài khoản");
 
   useEffect(() => {
     const fetchNvList = async () => {
       try {
         const response = await LoginApi.getAllAcc();
-        // console.log(responseNv);
         setdataAllAcc(response);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -27,6 +29,10 @@ function ScreenAccount(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataAllAcc]);
 
   return (
     <>
@@ -64,6 +70,12 @@ function ScreenAccount(props) {
           />
         </div>
       </div>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

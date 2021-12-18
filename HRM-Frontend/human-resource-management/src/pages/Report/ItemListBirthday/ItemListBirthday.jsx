@@ -11,6 +11,7 @@ import useDidMountEffect from "../../../hook/useDidMountEffect/useDidMountEffect
 import jwt_decode from "jwt-decode";
 
 import ListItemSalaryup from "./ListItemSalaryup";
+import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
 
 function ItemListBirthday() {
   var today = new Date();
@@ -22,6 +23,8 @@ function ItemListBirthday() {
   const { error, warn, info, success } = useToast();
 
   const [title, settitle] = useState("");
+
+  useDocumentTitle("Báo cáo danh sách sinh nhật");
 
   const [dataDmpb, setDataDmpb] = useState([]);
   const [department, setDepartment] = useState("Tất cả");

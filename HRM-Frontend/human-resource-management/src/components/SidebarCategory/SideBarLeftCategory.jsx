@@ -2,20 +2,13 @@ import React from "react";
 import { SideBarLeftCategoryData } from "./SideBarLeftCategoryData";
 import { Link, useRouteMatch } from "react-router-dom";
 import "./SideBarLeftCategory.scss";
-import { useDocumentTitle } from "../../hook/useDocumentTitle/TitleDocument";
 function SideBarLeftCategory() {
-  const [documentTitle, setDocumentTitle] =
-    useDocumentTitle("Danh mục dân tộc");
   function ListMenu({ val }) {
     let match = useRouteMatch({
       path: val.link,
     });
     return (
-      <Link
-        to={val.link}
-        className="category-link"
-        onClick={() => setDocumentTitle(val.title)}
-      >
+      <Link to={val.link} className="category-link">
         <li className="category-row" id={match ? "actives" : ""}>
           <div>
             <h5 className="name-title">{val.title}</h5>

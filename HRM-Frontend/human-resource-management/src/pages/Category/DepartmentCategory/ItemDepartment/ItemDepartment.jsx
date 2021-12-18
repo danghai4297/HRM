@@ -10,12 +10,14 @@ import TablePagination from "../../../../components/TablePagination/TablePaginat
 import ProductApi from "../../../../api/productApi";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
+import { useDocumentTitle } from "../../../../hook/useDocumentTitle/TitleDocument";
 
 function ItemDepartment(props) {
   const link = "/category/department/";
   const fileName = "Cacphongban";
   const [dataDmpb, setDataDmpb] = useState([]);
   const [open, setOpen] = useState(false);
+  useDocumentTitle("Danh mục phòng ban");
 
   useEffect(() => {
     const fetchNvList = async () => {
