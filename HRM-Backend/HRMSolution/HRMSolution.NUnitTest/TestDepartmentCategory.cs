@@ -180,12 +180,13 @@ namespace HRMSolution.NUnitTest
             Assert.That(result.Result, Is.EqualTo(1));
         }
         [Test, Order(13)]
-        public void Department_Delete_Failure()
+        public void Department_Delete_Failure1()
         {
 
             var result = danhMucPhongBanService.Delete(6);
             Assert.That(result.Result, Is.EqualTo(0));
         }
+        
         [Test, Order(1)]
         public void Department_GetAll_Success()
         {
