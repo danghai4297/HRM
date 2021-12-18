@@ -16,6 +16,8 @@ import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import jwt_decode from "jwt-decode";
 import { schema } from "../../../ultis/ContractValidation";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function AddContractForm(props) {
   let location = useLocation();
@@ -52,6 +54,7 @@ function AddContractForm(props) {
   const [rsIdCre, setRsIdCre] = useState();
   const [dataIdEmployee, setDataIdEmployee] = useState([]);
   const [impID, setImpID] = useState();
+  const [open, setOpen] = useState(false);
   useEffect(() => {
     const fetchNvList = async () => {
       try {
@@ -64,12 +67,15 @@ function AddContractForm(props) {
         const responseIdEmployee = await ProductApi.getAllNv();
         setDataIdEmployee(responseIdEmployee);
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốn sửa hợp đồng");
-          const responseHD = await ProductApi.getHdDetail(id);
-          setdataDetailHd(responseHD);
-          setStartDate(responseHD.hopDongTuNgay);
-          // setEndDate(moment(responseHD.hopDongDenNgay));
-          setStartDate(moment(responseHD.hopDongTuNgay));
+          try {
+            setDescription("Bạn chắc chắn muốn sửa hợp đồng");
+            const responseHD = await ProductApi.getHdDetail(id);
+            setdataDetailHd(responseHD);
+            setStartDate(responseHD.hopDongTuNgay);
+            setStartDate(moment(responseHD.hopDongTuNgay));
+          } catch (error) {
+            history.goBack();
+          }
         }
       } catch (errors) {
         error("Có lỗi xảy ra");
@@ -107,10 +113,8 @@ function AddContractForm(props) {
           const increCode = Number(idIncre.slice(2)) + 1;
           const rsCode = "HD";
           if (increCode < 10) {
-            // setRsId(rsCode.concat(`0${increCode}`));
             setValue("maHopDong", rsCode.concat(`0${increCode}`));
           } else if (increCode >= 10) {
-            //setRsId(rsCode.concat(`${increCode}`));
             setValue("maHopDong", rsCode.concat(`${increCode}`));
           }
         }
@@ -121,26 +125,28 @@ function AddContractForm(props) {
     handleId();
   }, []);
 
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataDetailHd, dataAllHD]);
+
   const [file, setFile] = useState({
     file: null,
     path: "/Images/userIcon.png",
     size: null,
+    name: null,
   });
   const handleChange = (e) => {
-    console.log(e);
     setFile({
       file: e.fileList.length !== 0 ? e.file : null,
       path:
         e.fileList.length !== 0
           ? URL.createObjectURL(e.file)
           : "/Images/userIcon.png",
-      //file: e.target.files[0],
-      //path: URL.createObjectURL(e.target.files[0]),
       size: e.fileList.length !== 0 ? e.file.size : null,
+      name: e.fileList.length !== 0 ? e.file.name : null,
     });
   };
 
-  // console.log(dataAllHD);
   const intitalValue = {
     maNhanVien: id !== undefined ? dataDetailHd.maNhanVien : ecode,
     idChucDanh: id !== undefined ? dataDetailHd.idChucDanh : null,
@@ -210,7 +216,6 @@ function AddContractForm(props) {
       intitalValue.maHopDong,
       intitalValue.trangThai,
     ];
-    //return JSON.stringify(values) === JSON.stringify(dfValue);
     if (
       JSON.stringify(values) === JSON.stringify(dfValue) &&
       file.file === null
@@ -237,7 +242,7 @@ function AddContractForm(props) {
                 await DeleteApi.deleteAHD(data.maHopDong);
                 const formData = new FormData();
                 formData.append("bangChung", file.file);
-                //formData.append("maHopDong", data.id);
+                formData.append("tenFile", file.name);
                 await PutApi.PutAHD(formData, data.maHopDong);
               }
               await PutApi.PutHD(data, id);
@@ -273,7 +278,7 @@ function AddContractForm(props) {
               if (file.file !== null) {
                 const formData = new FormData();
                 formData.append("bangChung", file.file);
-                //formData.append("maHopDong", data.id);
+                formData.append("tenFile", file.name);
                 await PutApi.PutAHD(formData, data.maHopDong);
               }
               await ProductApi.PostLS({
@@ -334,16 +339,6 @@ function AddContractForm(props) {
             </h2>
           </div>
           <div className="button">
-            {/* <input
-              type="submit"
-              className={
-                dataDetailHd.length !== 0 ? "btn-danger" : "delete-button"
-              }
-              value="Xoá"
-              onClick={() => {
-                setShowDeleteDialog(true);
-              }}
-            /> */}
             <input
               type="submit"
               className="btn-secondary btn ml-3"
@@ -370,11 +365,7 @@ function AddContractForm(props) {
             />
           </div>
         </div>
-        <form
-          action=""
-          class="profile-form"
-          // onSubmit={handleSubmit(onHandleSubmit)}
-        >
+        <form action="" class="profile-form">
           <div className="container-div-form">
             <h3>Thông tin chung</h3>
             <div className="row">
@@ -387,7 +378,6 @@ function AddContractForm(props) {
                     Mã nhân viên
                   </label>
                   <input
-                    //type="text"
                     {...register("maNhanVien", {
                       onChange: (e) => setImpID(e.target.value),
                     })}
@@ -398,7 +388,7 @@ function AddContractForm(props) {
                         : "form-control col-sm-6 border-danger"
                     }
                     list="employees"
-                    readOnly={ecode ? true : false}
+                    readOnly={ecode || id ? true : false}
                   />
                   <datalist id="employees">
                     {dataIdEmployee
@@ -457,7 +447,6 @@ function AddContractForm(props) {
                     type="text"
                     {...register("maHopDong")}
                     id="maHopDong"
-                    //value={rsId}
                     className={
                       !errors.maHopDong
                         ? "form-control col-sm-6 "
@@ -572,13 +561,9 @@ function AddContractForm(props) {
                         }
                         placeholder="DD/MM/YYYY"
                         format="DD/MM/YYYY"
-                        // allowClear={false}
-                        //value={moment(field.value)}
-                        // value={id!== undefined?moment(field.value):startDate}
                         value={field.value}
                         onChange={(event) => {
                           field.onChange(event);
-                          //setStartDate(event)
                         }}
                         {...field._d}
                       />
@@ -629,9 +614,7 @@ function AddContractForm(props) {
                         }
                         placeholder="DD/MM/YYYY"
                         format="DD/MM/YYYY"
-                        // value={moment(field.value)}
                         value={field.value}
-                        //value={endDate}
                         onChange={(event) => {
                           field.onChange(event);
                         }}
@@ -720,6 +703,12 @@ function AddContractForm(props) {
         confirm={history.goBack}
         cancel={cancel}
       />
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

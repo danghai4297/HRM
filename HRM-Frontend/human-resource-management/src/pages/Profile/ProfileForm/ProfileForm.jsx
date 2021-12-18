@@ -1,7 +1,6 @@
 import React from "react";
 import "./ProfileForm.scss";
 import { Controller, useForm } from "react-hook-form";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../../components/FontAwesomeIcons/index";
 import { useState, useEffect } from "react";
 import { DatePicker } from "antd";
@@ -18,9 +17,11 @@ import Dialog from "../../../components/Dialog/Dialog";
 import { useToast } from "../../../components/Toast/Toast";
 import jwt_decode from "jwt-decode";
 import { schema } from "../../../ultis/ProfileValidation";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function AddProfileForm(props) {
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
   const { match, history } = props;
   let { id } = match.params;
   const token = sessionStorage.getItem("resultObj");
@@ -36,9 +37,8 @@ function AddProfileForm(props) {
   const [policy, setPolicy] = useState(false);
   const handleClickPolicy = () => setPolicy(!policy);
   const [resignation, setResignation] = useState(false);
+  const [open, setOpen] = useState(false);
   const handleResignation = (e) => {
-    console.log(e.target.value);
-
     if (e.target.value == "false") {
       setResignation(!resignation);
     } else {
@@ -51,7 +51,6 @@ function AddProfileForm(props) {
 
   const [endDate, setEndDate] = useState();
 
-  //const [date, setDate] = useState(new Date());
   //State contain category
   const [dataDetailEmployee, setDataDetailEmployee] = useState([]);
   const [dataMarrige, setDataMarrige] = useState([]);
@@ -59,7 +58,6 @@ function AddProfileForm(props) {
   const [dataReligion, setDataReligion] = useState([]);
   const [dataCRS, setDataCRS] = useState([]);
   const [dataLabor, setDataLabor] = useState([]);
-  const [emCode, setEmCode] = useState("");
   const [allIdEm, setAllIdEm] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
@@ -78,7 +76,6 @@ function AddProfileForm(props) {
 
   //const idCode = "NV0001";
   const [rsId, setRsId] = useState();
-  //console.log(Number(idCode.slice(2))+1);
   useEffect(() => {
     const fetchNvList = async () => {
       try {
@@ -157,6 +154,10 @@ function AddProfileForm(props) {
     };
     handleId();
   }, []);
+
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataDetailEmployee, allIdEm]);
 
   const intitalValue = {
     id: id !== undefined ? dataDetailEmployee.id : rsId,
@@ -366,15 +367,12 @@ function AddProfileForm(props) {
     size: null,
   });
   const handleChange = (e) => {
-    // console.log(e.file.size);
     setFile({
       file: e.fileList.length !== 0 ? e.file : null,
       path:
         e.fileList.length !== 0
           ? URL.createObjectURL(e.file)
           : "/Images/userIcon.png",
-      //file: e.target.files[0],
-      //path: URL.createObjectURL(e.target.files[0]),
       size: e.fileList.length !== 0 ? e.file.size : null,
     });
   };
@@ -601,7 +599,7 @@ function AddProfileForm(props) {
 
   //console.log(emCode);
   // console.log(file.file);
-  console.log(endDate);
+  console.log(resignation);
 
   //handle image
   //const [file, setFile] = useState("/Images/userIcon.png");
@@ -2811,6 +2809,12 @@ function AddProfileForm(props) {
         confirm={history.goBack}
         cancel={cancel}
       />
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

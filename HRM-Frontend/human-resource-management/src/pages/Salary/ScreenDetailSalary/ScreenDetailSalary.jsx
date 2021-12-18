@@ -11,6 +11,8 @@ import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
 import { createTheme } from "@mui/material/styles";
 import { indigo, cyan } from "@mui/material/colors";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function ScreenDetailSalary(props) {
   let { match, history } = props;
@@ -28,6 +30,7 @@ function ScreenDetailSalary(props) {
   });
 
   const [dataLDetail, setDataLDetail] = useState([]);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -41,6 +44,10 @@ function ScreenDetailSalary(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataLDetail]);
 
   useEffect(() => {
     //Hàm đặt tên cho trang
@@ -165,6 +172,12 @@ function ScreenDetailSalary(props) {
           </Link>
         </div>
       </div>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

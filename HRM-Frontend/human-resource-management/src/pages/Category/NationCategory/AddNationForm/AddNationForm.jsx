@@ -11,6 +11,8 @@ import { useToast } from "../../../../components/Toast/Toast";
 import jwt_decode from "jwt-decode";
 import { useDocumentTitle } from "../../../../hook/useDocumentTitle/TitleDocument";
 import { schema } from "../../../../ultis/CategoryValidation";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function AddNationForm(props) {
   const { error, success, warn } = useToast();
@@ -28,6 +30,7 @@ function AddNationForm(props) {
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm danh mục dân tộc"
   );
+  const [open, setOpen] = useState(false);
 
   const cancel = () => {
     setShowDialog(false);
@@ -50,6 +53,12 @@ function AddNationForm(props) {
     };
     fetchNationCategory();
   }, []);
+
+  useEffect(() => {
+    if (id !== undefined) {
+      setOpen(!open);
+    }
+  }, [dataDetailDMDT]);
 
   useEffect(() => {
     //Hàm đặt tên cho trang
@@ -243,6 +252,12 @@ function AddNationForm(props) {
         confirm={handleDelete}
         cancel={cancel}
       />
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

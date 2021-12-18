@@ -10,12 +10,15 @@ import ProductApi from "../../../api/productApi";
 import { Link } from "react-router-dom";
 import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
 import useWindowDimensions from "../../../hook/useWindowDimensions";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function ScreenDiscipline(props) {
   const link = "/discipline/detail/";
   const fileName = "DSkyluat";
   const [dataAllkl, setDataAllKl] = useState([]);
   const [columns, setColumns] = useState([]);
+  const [open, setOpen] = useState(false);
 
   useDocumentTitle("Kỷ luật");
   const { width } = useWindowDimensions();
@@ -42,6 +45,10 @@ function ScreenDiscipline(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataAllkl]);
 
   return (
     <>
@@ -78,6 +85,12 @@ function ScreenDiscipline(props) {
           />
         </div>
       </div>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

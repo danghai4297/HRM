@@ -1,10 +1,10 @@
 import * as yup from "yup";
-
+const notAllowNull = /^\s*\S.*$/g;
 const passwordReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/g;
 export const schema = yup.object({
   oldPassword: yup
     .string()
-    .matches(passwordReg, "Mật khẩu hiện tại không đúng định dạng.")
+    .matches(notAllowNull, "Mật khẩu hiện tại không được là khoảng trống.")
     .required("Mật khẩu hiện tại không được bỏ trống."),
     newPassword: yup
     .string()

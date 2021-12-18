@@ -8,11 +8,14 @@ import { Link } from "react-router-dom";
 import { ExportCSV } from "../../../../components/ExportFile/ExportFile";
 import TablePagination from "../../../../components/TablePagination/TablePagination";
 import ProductApi from "../../../../api/productApi";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function ItemCivil(props) {
   const link = "/category/civil/";
   const fileName = "Ngachcongchuc";
   const [dataDmncc, setDataDmncc] = useState([]);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -26,6 +29,10 @@ function ItemCivil(props) {
     fetchNvList();
   }, []);
 
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataDmncc]);
+
   return (
     <>
       <div className="screen-table-nv">
@@ -35,7 +42,11 @@ function ItemCivil(props) {
           </div>
           <div className="button">
             <Link to="/category/civil/add" className="link-item">
-              <input type="submit" className="btn btn-primary addTable" value="Thêm" />
+              <input
+                type="submit"
+                className="btn btn-primary addTable"
+                value="Thêm"
+              />
             </Link>
             <ReactHTMLTableToExcel
               id="test-table-xls-button"
@@ -57,6 +68,12 @@ function ItemCivil(props) {
           />
         </div>
       </div>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

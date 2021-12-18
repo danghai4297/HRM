@@ -10,12 +10,15 @@ import { Link } from "react-router-dom";
 import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
 import useWindowDimensions from "../../../hook/useWindowDimensions";
 import ProductApi from "../../../api/productApi";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function ScreenReward(props) {
   const link = "/reward/detail/";
   const fileName = "DSkhenthuong";
   const [dataDskt, setDataDskt] = useState([]);
   const [columns, setColumns] = useState([]);
+  const [open, setOpen] = useState(false);
   useDocumentTitle("Khen thưởng");
 
   const { width } = useWindowDimensions();
@@ -42,6 +45,10 @@ function ScreenReward(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataDskt]);
 
   return (
     <>
@@ -78,6 +85,12 @@ function ScreenReward(props) {
           />
         </div>
       </div>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

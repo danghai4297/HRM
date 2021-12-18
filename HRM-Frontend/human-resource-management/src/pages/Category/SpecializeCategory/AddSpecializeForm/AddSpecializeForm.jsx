@@ -9,6 +9,8 @@ import Dialog from "../../../../components/Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../../../components/Toast/Toast";
 import { schema } from "../../../../ultis/SpecializeValidation";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function AddSpecializeForm(props) {
   const { error, success, warn } = useToast();
@@ -25,6 +27,7 @@ function AddSpecializeForm(props) {
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm danh mục chuyên môn mới"
   );
+  const [open, setOpen] = useState(false);
 
   const cancel = () => {
     setShowDialog(false);
@@ -47,6 +50,12 @@ function AddSpecializeForm(props) {
     };
     fetchSpecializeCategory();
   }, []);
+
+  useEffect(() => {
+    if (id !== undefined) {
+      setOpen(!open);
+    }
+  }, [dataDetailDMCM]);
 
   useEffect(() => {
     //Hàm đặt tên cho trang
@@ -298,6 +307,12 @@ function AddSpecializeForm(props) {
         confirm={handleDelete}
         cancel={cancel}
       />
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

@@ -9,6 +9,8 @@ import Dialog from "../../../../components/Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../../../components/Toast/Toast";
 import { schema } from "../../../../ultis/TypeOfContractValidation";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function AddTypeOfContractForm(props) {
   const { error, success, warn } = useToast();
@@ -26,6 +28,7 @@ function AddTypeOfContractForm(props) {
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm danh mục loại hợp đồng mới"
   );
+  const [open, setOpen] = useState(false);
 
   const cancel = () => {
     setShowDialog(false);
@@ -48,6 +51,12 @@ function AddTypeOfContractForm(props) {
     };
     fetchTypeOfContractCategory();
   }, []);
+
+  useEffect(() => {
+    if (id !== undefined) {
+      setOpen(!open);
+    }
+  }, [dataDetailDMLHD]);
 
   useEffect(() => {
     //Hàm đặt tên cho trang
@@ -313,6 +322,12 @@ function AddTypeOfContractForm(props) {
         confirm={handleDelete}
         cancel={cancel}
       />
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

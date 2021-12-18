@@ -9,6 +9,8 @@ import TablePagination from "../../../components/TablePagination/TablePagination
 import productApi from "../../../api/productApi";
 import { Link } from "react-router-dom";
 import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 import jwt_decode from "jwt-decode";
 import ProductApi from "../../../api/productApi";
@@ -19,6 +21,7 @@ function ScreenSalary(props) {
   const link = "/salary/detail/";
   let fileName = "Danhsachluong";
   const [dataAllL, setDataAllL] = useState([]);
+  const [open, setOpen] = useState(false);
   useDocumentTitle("Danh sách lương");
 
   const handleClick = async () => {
@@ -41,6 +44,10 @@ function ScreenSalary(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataAllL]);
 
   return (
     <>
@@ -79,6 +86,12 @@ function ScreenSalary(props) {
           />
         </div>
       </div>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

@@ -9,11 +9,14 @@ import TablePagination from "../../../components/TablePagination/TablePagination
 import productApi from "../../../api/productApi";
 import { Link } from "react-router-dom";
 import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function ScreenTransfer(props) {
   const link = "/transfer/detail/";
   let fileName = "danhsachdieuchuyen";
   const [dataDCAll, setDataDCAll] = useState([]);
+  const [open, setOpen] = useState(false);
   useDocumentTitle("Quá trình công tác");
 
   useEffect(() => {
@@ -28,12 +31,16 @@ function ScreenTransfer(props) {
     fetchNvList();
   }, []);
 
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataDCAll]);
+
   return (
     <>
       <div className="screen-table-nv">
         <div className="herder-content sticky-top">
           <div>
-            <h2 className="">Danh sách quá trình công tác</h2>
+            <h2 className="">Quá trình công tác</h2>
           </div>
           <div className="button">
             <Link to="/transfer/add" className="link-item">
@@ -63,6 +70,12 @@ function ScreenTransfer(props) {
           />
         </div>
       </div>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

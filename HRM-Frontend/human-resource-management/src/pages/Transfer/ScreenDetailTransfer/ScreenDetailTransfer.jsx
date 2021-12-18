@@ -10,6 +10,9 @@ import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
 import { createTheme } from "@mui/material/styles";
 import { indigo, cyan } from "@mui/material/colors";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
+
 function ScreenDetailTransfer(props) {
   let { match, history } = props;
   let { id } = match.params;
@@ -25,6 +28,7 @@ function ScreenDetailTransfer(props) {
   });
 
   const [dataDetailDC, setDataDetailDC] = useState([]);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -38,6 +42,10 @@ function ScreenDetailTransfer(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataDetailDC]);
 
   useEffect(() => {
     //Hàm đặt tên cho trang
@@ -64,15 +72,17 @@ function ScreenDetailTransfer(props) {
             <h2>Quá trình công tác</h2>
           </div>
           <div className="third-path-transfer">
-            <Link to={`/transfer/${id}`}>
-              <Button
-                variant="contained"
-                theme={theme}
-                className="btn-fix-transfer"
-              >
-                Sửa
-              </Button>
-            </Link>
+            {dataDetailDC.trangThai === "Kích hoạt" && (
+              <Link to={`/transfer/${id}`}>
+                <Button
+                  variant="contained"
+                  theme={theme}
+                  className="btn-fix-transfer"
+                >
+                  Sửa
+                </Button>
+              </Link>
+            )}
             {dataDetailDC.bangChung !== null && (
               <Button
                 variant="contained"
@@ -134,6 +144,12 @@ function ScreenDetailTransfer(props) {
           </Link>
         </div>
       </div>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

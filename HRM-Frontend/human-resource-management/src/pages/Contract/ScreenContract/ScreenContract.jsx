@@ -13,6 +13,8 @@ import { useReactToPrint } from "react-to-print";
 import { ComponentToPrint } from "../../../components/ToPrint/ComponentToPrint";
 import { Button } from "react-bootstrap";
 import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 import jwt_decode from "jwt-decode";
 import ProductApi from "../../../api/productApi";
@@ -23,6 +25,7 @@ function ScreenContract(props) {
   const link = "/contract/detail/";
   const fileName = "Danhsachhopdong";
   const [dataAllHd, setdataAllHd] = useState([]);
+  const [open, setOpen] = useState(false);
   useDocumentTitle("Hợp đồng");
 
   const handleClick = async () => {
@@ -38,7 +41,6 @@ function ScreenContract(props) {
     const fetchNvList = async () => {
       try {
         const responseNv = await productApi.getAllHd();
-        // console.log(responseNv);
         setdataAllHd(responseNv);
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -46,6 +48,10 @@ function ScreenContract(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataAllHd]);
 
   return (
     <>
@@ -87,6 +93,12 @@ function ScreenContract(props) {
           />
         </div>
       </div>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

@@ -146,8 +146,8 @@ export const ttnv = [
   {
     title1: "Tính chất lao động",
     data1: "tinhChatLaoDong",
-    title2: "Ngày hết hạn hộ chiếu",
-    data2: ["ngayHetHanHoChieu", true],
+    title2: "Công việc chính",
+    data2: ["congViecChinh", false],
   },
   {
     title1: "Lý do nghỉ",

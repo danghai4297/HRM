@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useLocation } from "react-router";
 import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
 import DeleteApi from "../../../api/deleteAPI";
-//import { DatePicker } from "antd";
 import DialogCheck from "../../../components/Dialog/DialogCheck";
 import { useToast } from "../../../components/Toast/Toast";
 import Dialog from "../../../components/Dialog/Dialog";
@@ -14,10 +13,12 @@ import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import { schema } from "../../../ultis/RewardAndDisciplineValidation";
 import "./DisciplineForm.scss";
-function AddDisciplineForm(props) {
-  const { error, warn, info, success } = useToast();
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
-  // const { objectData } = props;
+function AddDisciplineForm(props) {
+  const { error, success } = useToast();
+
   let { match, history } = props;
   let { id } = match.params;
   let location = useLocation();
@@ -29,10 +30,7 @@ function AddDisciplineForm(props) {
 
   const [dataKLDetail, setDataKLDetail] = useState([]);
   const [dataKL, setDataKL] = useState([]);
-  console.log(id);
   const [dataEmployee, setDataEmployee] = useState([]);
-  const [dataDetailNN, setdataDetailNN] = useState([]);
-  const [dataNN, setDataNN] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
@@ -40,6 +38,7 @@ function AddDisciplineForm(props) {
   );
   const [showCheckDialog, setShowCheckDialog] = useState(false);
   const [showEsc, setShowEsc] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const cancel = () => {
     setShowDialog(false);
@@ -56,9 +55,13 @@ function AddDisciplineForm(props) {
         const responeseEm = await ProductApi.getAllNv();
         setDataEmployee(responeseEm);
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốn sửa thông tin kỷ luật");
-          const responseKT = await ProductApi.getKTvKLDetail(id);
-          setDataKLDetail(responseKT);
+          try {
+            setDescription("Bạn chắc chắn muốn sửa thông tin kỷ luật");
+            const responseKT = await ProductApi.getKTvKLDetail(id);
+            setDataKLDetail(responseKT);
+          } catch (error) {
+            history.goBack();
+          }
         }
       } catch (error) {
         error("Có lỗi xảy ra.");
@@ -66,6 +69,12 @@ function AddDisciplineForm(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    if (id !== undefined) {
+      setOpen(!open);
+    }
+  }, [dataKLDetail]);
 
   useEffect(() => {
     //Hàm đặt tên cho trang
@@ -85,6 +94,7 @@ function AddDisciplineForm(props) {
     file: null,
     path: "/Images/userIcon.png",
     size: null,
+    name: null,
   });
   const handleChange = (e) => {
     console.log(e);
@@ -94,9 +104,8 @@ function AddDisciplineForm(props) {
         e.fileList.length !== 0
           ? URL.createObjectURL(e.file)
           : "/Images/userIcon.png",
-      //file: e.target.files[0],
-      //path: URL.createObjectURL(e.target.files[0]),
       size: e.fileList.length !== 0 ? e.file.size : null,
+      name: e.fileList.length !== 0 ? e.file.name : null,
     });
   };
   const intitalValue = {
@@ -143,7 +152,6 @@ function AddDisciplineForm(props) {
       intitalValue.anh,
       intitalValue.loai,
     ];
-    //return JSON.stringify(values) === JSON.stringify(dfValue);
     if (
       JSON.stringify(values) === JSON.stringify(dfValue) &&
       file.file === null
@@ -173,6 +181,7 @@ function AddDisciplineForm(props) {
               formData.append("lyDo", data.lyDo);
               formData.append("loai", data.loai);
               formData.append("maNhanVien", data.maNhanVien);
+              formData.append("tenFile", file.name);
               await PutApi.PutKTvKL(formData, id);
               await ProductApi.PostLS({
                 tenTaiKhoan: decoded.userName,
@@ -209,6 +218,7 @@ function AddDisciplineForm(props) {
               formData.append("lyDo", data.lyDo);
               formData.append("loai", data.loai);
               formData.append("maNhanVien", data.maNhanVien);
+              formData.append("tenFile", file.name);
               await ProductApi.PostKTvKL(formData);
               await ProductApi.PostLS({
                 tenTaiKhoan: decoded.userName,
@@ -261,16 +271,6 @@ function AddDisciplineForm(props) {
             </h2>
           </div>
           <div className="button">
-            {/* <input
-              type="submit"
-              className={
-                dataKLDetail.length !== 0 ? "btn btn-danger" : "delete-button"
-              }
-              value="Xoá"
-              onClick={() => {
-                setShowDeleteDialog(true);
-              }}
-            /> */}
             <input
               type="submit"
               className="btn btn-secondary ml-3"
@@ -297,11 +297,7 @@ function AddDisciplineForm(props) {
             />
           </div>
         </div>
-        <form
-          action=""
-          class="profile-form"
-          // onSubmit={handleSubmit(onHandleSubmit)}
-        >
+        <form action="" class="profile-form">
           <div className="container-div-form">
             <div className="container-salary">
               <div>
@@ -327,7 +323,7 @@ function AddDisciplineForm(props) {
                         : "form-control col-sm-6 border-danger"
                     }
                     list="employeeCode"
-                    readOnly={eCode ? true : false}
+                    readOnly={eCode || id ? true : false}
                   />
                   <datalist id="employeeCode">
                     {dataEmployee
@@ -439,7 +435,6 @@ function AddDisciplineForm(props) {
             <input
               type="text"
               {...register("loai")}
-              //defaultValue={true}
               style={{ display: "none" }}
             />
           </div>
@@ -485,6 +480,12 @@ function AddDisciplineForm(props) {
         confirm={history.goBack}
         cancel={cancel}
       />
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

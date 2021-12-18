@@ -34,10 +34,10 @@ export const schema = yup.object({
     .number()
     .positive("Lương cơ bản không thể là số âm.")
     .typeError("Lương cơ bản không được bỏ trống và phải là số."),
-  // phuCapTrachNhiem: yup
-  //   .number()
-  //   .positive("Phụ cấp chức vụ không thể là số âm.")
-  //   .typeError("Phụ cấp chức vụ không được bỏ trống và phải là số."),
+  phuCapTrachNhiem: yup
+    .number()
+    .moreThan(-1, "Phụ cấp trách nhiêm không thể là số âm.")
+    .typeError("Phụ cấp trách nhiệm không được bỏ trống và phải là số."),
   phuCapKhac: yup
     .number()
     .positive("Phụ cấp khác không thể là số âm.")

@@ -9,6 +9,9 @@ import ProductApi from "../../../../api/productApi";
 import { Link } from "react-router-dom";
 import dateFormat from "dateformat";
 import { ttc } from "./DataFamily";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
+
 function ScreenDetailFamily(props) {
   let { match, history } = props;
   let { id } = match.params;
@@ -20,6 +23,7 @@ function ScreenDetailFamily(props) {
     },
   });
   const [dataDetailNT, setdataDetailNT] = useState([]);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const fetchDetailFamily = async () => {
@@ -33,6 +37,10 @@ function ScreenDetailFamily(props) {
     };
     fetchDetailFamily();
   }, []);
+
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataDetailNT]);
 
   useEffect(() => {
     //Hàm đặt tên cho trang
@@ -92,6 +100,12 @@ function ScreenDetailFamily(props) {
           </div>
         </div>
       </div>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }
