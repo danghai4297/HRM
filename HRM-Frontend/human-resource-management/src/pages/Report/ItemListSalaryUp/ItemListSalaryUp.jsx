@@ -233,7 +233,7 @@ function ItemListSalaryUp() {
             </h6>
           </div>
           <div className="rp-table">
-            <table className="table" id="tableSalaryUp">
+            <table className="table table-bordered" id="tableSalaryUp">
               <thead>
                 <tr>
                   <th scope="col">Mã Nhân Viên</th>

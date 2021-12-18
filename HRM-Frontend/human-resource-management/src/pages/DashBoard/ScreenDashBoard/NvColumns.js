@@ -15,7 +15,7 @@ export const NVCOLUMNSSALARY = [
     Header: "Họ tên",
     accessor: "tenNhanVien",
     sticky: "left",
-    minWidth: 150,
+    minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: true,
     show: true,
@@ -155,7 +155,7 @@ export const NVCOLUMNSHD = [
     Header: "Họ Và Tên",
     accessor: "tenNhanVien",
     sticky: "left",
-    minWidth: 150,
+    minWidth: 200,
     Filter: SelectColumnFilter,
     disableFilters: true,
 

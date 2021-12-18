@@ -515,7 +515,7 @@ function ItemListFamily() {
             </h6>
           </div>
           <div className="rp-table">
-            <table className="table" id="tableFamily">
+            <table className="table table-bordered" id="tableFamily">
               <thead>
                 <tr>
                   <th scope="col">Mã Nhân Viên</th>

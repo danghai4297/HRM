@@ -34,7 +34,7 @@ function ItemListEmployee() {
   const [checkPb, setCheckPb] = useState(true);
   const [checkHd, setCheckHd] = useState(true);
   const [dataRp, setDataRp] = useState([]);
-  
+
   const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
   const handleClick = async () => {
@@ -537,7 +537,7 @@ function ItemListEmployee() {
             </h6>
           </div>
           <div className="rp-table">
-            <table className="table" id="tableEmployee">
+            <table className="table table-bordered" id="tableEmployee">
               <thead>
                 <tr>
                   <th scope="col">Mã Nhân Viên</th>

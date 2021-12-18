@@ -182,7 +182,7 @@ function ItemListPartyMember() {
             </h6>
           </div>
           <div className="rp-table">
-            <table className="table" id="tablePaty">
+            <table className="table table-bordered" id="tablePaty">
               <thead>
                 <tr>
                   <th scope="col">Mã Nhân Viên</th>

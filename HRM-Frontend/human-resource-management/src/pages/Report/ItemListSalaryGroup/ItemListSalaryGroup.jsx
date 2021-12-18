@@ -183,7 +183,7 @@ function ItemListSalaryGroup() {
             </h6>
           </div>
           <div className="rp-table">
-            <table className="table">
+            <table className="table table-bordered">
               <thead>
                 <tr>
                   <th scope="col">Mã Nhân Viên</th>
