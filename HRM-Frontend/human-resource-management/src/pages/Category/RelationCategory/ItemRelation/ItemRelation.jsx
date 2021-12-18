@@ -8,11 +8,14 @@ import { Link } from "react-router-dom";
 import { ExportCSV } from "../../../../components/ExportFile/ExportFile";
 import TablePagination from "../../../../components/TablePagination/TablePagination";
 import ProductApi from "../../../../api/productApi";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function ItemRelation(props) {
   const link = "/category/relation/";
   const fileName = "Danhmucquanhe";
   const [dataDmnt, setDataDmnt] = useState([]);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -26,12 +29,16 @@ function ItemRelation(props) {
     fetchNvList();
   }, []);
 
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataDmnt]);
+
   return (
     <>
       <div className="screen-table-nv">
         <div className="herder-content sticky-top">
           <div>
-            <h4 className="">Danh mục quan hệ</h4>
+            <h4 className="">Danh mục người thân</h4>
           </div>
           <div className="button">
             <Link to="/category/relation/add" className="link-item">
@@ -61,6 +68,12 @@ function ItemRelation(props) {
           />
         </div>
       </div>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

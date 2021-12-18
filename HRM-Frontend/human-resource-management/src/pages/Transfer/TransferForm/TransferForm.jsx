@@ -16,9 +16,11 @@ import jwt_decode from "jwt-decode";
 import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import { schema } from "../../../ultis/TransferValidation";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function AddTransferForm(props) {
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
 
   let location = useLocation();
   let query = new URLSearchParams(location.search);
@@ -26,10 +28,6 @@ function AddTransferForm(props) {
   const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
   const eCode = query.get("maNhanVien");
-  // const onHandleSubmit = (data) => {
-  //   console.log(data);
-  //   JSON.stringify(data);
-  // };
 
   //get param from detail
   let { match, history } = props;
@@ -44,9 +42,6 @@ function AddTransferForm(props) {
   const [dataPosition, setDataPosition] = useState([]);
   const [nest, setNest] = useState();
   const [dataEmployee, setDataEmployee] = useState([]);
-
-  const [dataDetailNN, setdataDetailNN] = useState([]);
-  const [dataNN, setDataNN] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
@@ -55,6 +50,7 @@ function AddTransferForm(props) {
 
   const [showCheckDialog, setShowCheckDialog] = useState(false);
   const [showEsc, setShowEsc] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const cancel = () => {
     setShowDialog(false);
@@ -75,11 +71,15 @@ function AddTransferForm(props) {
         const responeseEm = await ProductApi.getAllNv();
         setDataEmployee(responeseEm);
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốn sửa thông tin công tác");
-          const response = await ProductApi.getDCDetail(id);
-          setDataDetailDC(response);
-          setNest(response.idPhongBan);
-          setStartDate(moment(response.ngayHieuLuc));
+          try {
+            setDescription("Bạn chắc chắn muốn sửa thông tin công tác");
+            const response = await ProductApi.getDCDetail(id);
+            setDataDetailDC(response);
+            setNest(response.idPhongBan);
+            setStartDate(moment(response.ngayHieuLuc));
+          } catch (error) {
+            history.goBack();
+          }
         }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -87,6 +87,12 @@ function AddTransferForm(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    if (id !== undefined) {
+      setOpen(!open);
+    }
+  }, [dataDetailDC]);
 
   useEffect(() => {
     //Hàm đặt tên cho trang
@@ -106,18 +112,17 @@ function AddTransferForm(props) {
     file: null,
     path: "/Images/userIcon.png",
     size: null,
+    name: null,
   });
   const handleChange = (e) => {
-    console.log(e);
     setFile({
       file: e.fileList.length !== 0 ? e.file : null,
       path:
         e.fileList.length !== 0
           ? URL.createObjectURL(e.file)
           : "/Images/userIcon.png",
-      //file: e.target.files[0],
-      //path: URL.createObjectURL(e.target.files[0]),
       size: e.fileList.length !== 0 ? e.file.size : null,
+      name: e.fileList.length !== 0 ? e.file.name : null,
     });
   };
 
@@ -138,8 +143,8 @@ function AddTransferForm(props) {
           : false
         : true,
     maNhanVien: id !== undefined ? dataDetailDC.maNhanVien : eCode,
-    //idChucVu: id !== undefined ? dataDetailDC.idChucVu : null,
   };
+
   //define method of react-hooks-form
   const {
     register,
@@ -152,6 +157,7 @@ function AddTransferForm(props) {
     defaultValues: intitalValue,
     resolver: yupResolver(schema),
   });
+
   useEffect(() => {
     if (dataDetailDC) {
       reset(intitalValue);
@@ -175,7 +181,6 @@ function AddTransferForm(props) {
       intitalValue.trangThai,
       intitalValue.maNhanVien,
     ];
-    //return JSON.stringify(values) === JSON.stringify(dfValue);
     if (
       JSON.stringify(values) === JSON.stringify(dfValue) &&
       file.file === null
@@ -184,10 +189,10 @@ function AddTransferForm(props) {
     }
     return false;
   };
+
   //method handle submit
   const onHandleSubmit = async (data) => {
     const nameEm = dataEmployee.filter((item) => item.id === data.maNhanVien);
-    console.log(data);
 
     try {
       if (id !== undefined) {
@@ -207,6 +212,7 @@ function AddTransferForm(props) {
               formData.append("chiTiet", data.chiTiet);
               formData.append("trangThai", data.trangThai);
               formData.append("maNhanVien", data.maNhanVien);
+              formData.append("tenFile", file.name);
               await PutApi.PutDC(formData, id);
               await ProductApi.PostLS({
                 tenTaiKhoan: decoded.userName,
@@ -244,6 +250,7 @@ function AddTransferForm(props) {
               formData.append("chiTiet", data.chiTiet);
               formData.append("trangThai", data.trangThai);
               formData.append("maNhanVien", data.maNhanVien);
+              formData.append("tenFile", file.name);
               await ProductApi.PostDC(formData);
               history.goBack();
               success(
@@ -269,7 +276,7 @@ function AddTransferForm(props) {
       error(`Có lỗi xảy ra.`);
     }
   };
-  console.log(dataDetailDC);
+
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteDC(id);
@@ -301,16 +308,6 @@ function AddTransferForm(props) {
             </h2>
           </div>
           <div className="button">
-            {/* <input
-              type="submit"
-              className={
-                dataDetailDC.length !== 0 ? "btn btn-danger" : "delete-button"
-              }
-              value="Xoá"
-              onClick={() => {
-                setShowDeleteDialog(true);
-              }}
-            /> */}
             <input
               type="submit"
               className="btn btn-secondary ml-3"
@@ -412,7 +409,6 @@ function AddTransferForm(props) {
                       onChange: (e) => handleChangeNest(e),
                     })}
                     id="idPhongBan"
-                    //  onChange={(e) => setNest(e.target.value)}
                     className={
                       !errors.idPhongBan
                         ? "form-control col-sm-6 custom-select"
@@ -585,6 +581,12 @@ function AddTransferForm(props) {
         confirm={history.goBack}
         cancel={cancel}
       />
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

@@ -12,6 +12,8 @@ import moment from "moment/moment.js";
 import DialogCheck from "../../../../components/Dialog/DialogCheck";
 import { useToast } from "../../../../components/Toast/Toast";
 import { schema } from "../../../../ultis/LevelValidation";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function AddLevelForm(props) {
   const { error, warn, info, success } = useToast();
@@ -41,6 +43,7 @@ function AddLevelForm(props) {
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm thông tin trình độ mới"
   );
+  const [open, setOpen] = useState(false);
   // const [notChangeDialog,setNotChangeDialog] = useState(false);
 
   const cancel = () => {
@@ -76,6 +79,12 @@ function AddLevelForm(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    if (id !== undefined) {
+      setOpen(!open);
+    }
+  }, [dataDetailTDVH]);
 
   useEffect(() => {
     //Hàm đặt tên cho trang
@@ -539,6 +548,12 @@ function AddLevelForm(props) {
         confirm={history.goBack}
         cancel={cancel}
       />
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

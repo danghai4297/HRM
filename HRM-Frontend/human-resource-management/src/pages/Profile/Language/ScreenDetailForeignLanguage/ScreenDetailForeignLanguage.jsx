@@ -9,6 +9,9 @@ import ProductApi from "../../../../api/productApi";
 import { Link } from "react-router-dom";
 import dateFormat from "dateformat";
 import { ttc } from "./DataForeignLanguage";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
+
 function ScreenDetailForeignLanguage(props) {
   let { match, history } = props;
   let { id } = match.params;
@@ -20,6 +23,7 @@ function ScreenDetailForeignLanguage(props) {
     },
   });
   const [dataDetailNN, setdataDetailNN] = useState([]);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -33,6 +37,10 @@ function ScreenDetailForeignLanguage(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataDetailNN]);
 
   useEffect(() => {
     //Hàm đặt tên cho trang
@@ -92,6 +100,12 @@ function ScreenDetailForeignLanguage(props) {
           </div>
         </div>
       </div>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

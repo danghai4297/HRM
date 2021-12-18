@@ -9,6 +9,8 @@ import Dialog from "../../../../components/Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../../../components/Toast/Toast";
 import { schema } from "../../../../ultis/SalaryGroupValidation";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function AddSalaryGroupForm(props) {
   const { error, success, warn } = useToast();
@@ -25,6 +27,7 @@ function AddSalaryGroupForm(props) {
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm danh mục nhóm lương mới"
   );
+  const [open, setOpen] = useState(false);
 
   const cancel = () => {
     setShowDialog(false);
@@ -47,6 +50,12 @@ function AddSalaryGroupForm(props) {
     };
     fetchSalaryGroupCategory();
   }, []);
+
+  useEffect(() => {
+    if (id !== undefined) {
+      setOpen(!open);
+    }
+  }, [dataDetailDMNL]);
 
   useEffect(() => {
     //Hàm đặt tên cho trang
@@ -296,6 +305,12 @@ function AddSalaryGroupForm(props) {
         confirm={handleDelete}
         cancel={cancel}
       />
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

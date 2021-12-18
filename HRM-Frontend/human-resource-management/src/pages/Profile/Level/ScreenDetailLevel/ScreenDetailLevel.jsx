@@ -9,6 +9,8 @@ import dateFormat from "dateformat";
 import { ttc } from "./DataLevel";
 import { createTheme } from "@mui/material/styles";
 import { indigo } from "@mui/material/colors";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function ScreenDetailLevel(props) {
   let { match, history } = props;
@@ -21,6 +23,7 @@ function ScreenDetailLevel(props) {
     },
   });
   const [dataDetailTD, setdataDetailTD] = useState([]);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -34,6 +37,10 @@ function ScreenDetailLevel(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataDetailTD]);
 
   useEffect(() => {
     //Hàm đặt tên cho trang
@@ -94,6 +101,12 @@ function ScreenDetailLevel(props) {
           </div>
         </div>
       </div>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

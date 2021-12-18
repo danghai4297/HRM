@@ -16,7 +16,7 @@ function LogIn() {
 
   const { register, handleSubmit } = useForm({});
 
-  useDocumentTitle("HRM Project");
+  useDocumentTitle("HRM");
 
   const onHandleSubmit = async (data) => {
     try {

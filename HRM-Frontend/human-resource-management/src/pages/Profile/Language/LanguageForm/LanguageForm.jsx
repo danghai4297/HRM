@@ -13,6 +13,8 @@ import moment from "moment/moment.js";
 import DialogCheck from "../../../../components/Dialog/DialogCheck";
 import { useToast } from "../../../../components/Toast/Toast";
 import { schema } from "../../../../ultis/LanguageValidation";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function AddLanguageForm(props) {
   const { error, warn, info, success } = useToast();
@@ -36,6 +38,7 @@ function AddLanguageForm(props) {
   );
   const [showCheckDialog, setShowCheckDialog] = useState(false);
   const [showEsc, setShowEsc] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const cancel = () => {
     setShowDialog(false);
@@ -59,6 +62,10 @@ function AddLanguageForm(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataDetailNN]);
 
   useEffect(() => {
     //Hàm đặt tên cho trang
@@ -424,6 +431,12 @@ function AddLanguageForm(props) {
         confirm={history.goBack}
         cancel={cancel}
       />
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

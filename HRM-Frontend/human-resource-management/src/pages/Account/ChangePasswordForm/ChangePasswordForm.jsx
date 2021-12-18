@@ -12,7 +12,7 @@ import { schema } from "../../../ultis/ChangePasswordValidation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function ChangePasswordForm(props) {
-  const { error, warn, info, success } = useToast();
+  const { error, warn, success } = useToast();
 
   const { history } = props;
   const [currentPassword, setCurrentPassword] = useState();
@@ -80,11 +80,7 @@ function ChangePasswordForm(props) {
         </div>
 
         <div className="container-div">
-          <form
-            action=""
-            class="profile-form"
-            // onSubmit={handleSubmit(onHandleSubmit)}
-          >
+          <form action="" class="profile-form">
             <div className="container-form-password">
               <div className="container-password">
                 <div className="">

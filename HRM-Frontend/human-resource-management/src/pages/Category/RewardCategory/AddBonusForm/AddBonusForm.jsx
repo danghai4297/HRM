@@ -9,6 +9,8 @@ import DeleteApi from "../../../../api/deleteAPI";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../../../components/Toast/Toast";
 import { schema } from "../../../../ultis/CategoryValidation";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function AddBonusForm(props) {
   const { error, success, warn } = useToast();
@@ -25,6 +27,7 @@ function AddBonusForm(props) {
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm danh mục khen thưởng mới"
   );
+  const [open, setOpen] = useState(false);
 
   const cancel = () => {
     setShowDialog(false);
@@ -47,6 +50,12 @@ function AddBonusForm(props) {
     };
     fetchBonusCategory();
   }, []);
+
+  useEffect(() => {
+    if (id !== undefined) {
+      setOpen(!open);
+    }
+  }, [dataDetailDMKT]);
 
   useEffect(() => {
     //Hàm đặt tên cho trang
@@ -262,6 +271,12 @@ function AddBonusForm(props) {
         confirm={handleDelete}
         cancel={cancel}
       />
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

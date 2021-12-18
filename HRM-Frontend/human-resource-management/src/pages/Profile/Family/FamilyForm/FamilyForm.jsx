@@ -12,6 +12,8 @@ import moment from "moment/moment.js";
 import { useToast } from "../../../../components/Toast/Toast";
 import DialogCheck from "../../../../components/Dialog/DialogCheck";
 import { schema } from "../../../../ultis/FamilyValidation";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function AddFamilyForm(props) {
   const { error, warn, info, success } = useToast();
@@ -35,6 +37,7 @@ function AddFamilyForm(props) {
   );
   const [showCheckDialog, setShowCheckDialog] = useState(false);
   const [showEsc, setShowEsc] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const cancel = () => {
     setShowDialog(false);
@@ -59,6 +62,12 @@ function AddFamilyForm(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    if (id !== undefined) {
+      setOpen(!open);
+    }
+  }, [dataDetailNT]);
 
   useEffect(() => {
     //Hàm đặt tên cho trang
@@ -538,6 +547,12 @@ function AddFamilyForm(props) {
         confirm={history.goBack}
         cancel={cancel}
       />
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

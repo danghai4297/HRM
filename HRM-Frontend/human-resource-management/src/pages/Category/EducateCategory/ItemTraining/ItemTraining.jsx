@@ -8,11 +8,14 @@ import { Link } from "react-router-dom";
 import { ExportCSV } from "../../../../components/ExportFile/ExportFile";
 import TablePagination from "../../../../components/TablePagination/TablePagination";
 import ProductApi from "../../../../api/productApi";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function ItemTraining(props) {
   const link = "/category/training/";
   const fileName = "Hinhthucdaotao";
   const [dataDmHtdt, setDataDmHtdt] = useState([]);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -25,6 +28,10 @@ function ItemTraining(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataDmHtdt]);
 
   return (
     <>
@@ -61,6 +68,12 @@ function ItemTraining(props) {
           />
         </div>
       </div>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

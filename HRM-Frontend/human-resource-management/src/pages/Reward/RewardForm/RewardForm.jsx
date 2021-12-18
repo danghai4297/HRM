@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { DatePicker } from "antd";
 import { useLocation } from "react-router";
 import ProductApi from "../../../api/productApi";
 import PutApi from "../../../api/putAAPI";
@@ -14,8 +13,11 @@ import { Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import { schema } from "../../../ultis/RewardAndDisciplineValidation";
 import "./RewardForm";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
+
 function AddRewardForm(props) {
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
 
   let { match, history } = props;
   let { id } = match.params;
@@ -28,9 +30,6 @@ function AddRewardForm(props) {
   const [dataKTDetail, setDataKTDetail] = useState([]);
   const [dataKT, setDataKT] = useState([]);
   const [dataEmployee, setDataEmployee] = useState([]);
-
-  const [dataDetailNN, setdataDetailNN] = useState([]);
-  const [dataNN, setDataNN] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
@@ -38,6 +37,7 @@ function AddRewardForm(props) {
   );
   const [showCheckDialog, setShowCheckDialog] = useState(false);
   const [showEsc, setShowEsc] = useState(false);
+  const [open, setOpen] = useState(false);
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
@@ -52,9 +52,13 @@ function AddRewardForm(props) {
         const responeseEm = await ProductApi.getAllNv();
         setDataEmployee(responeseEm);
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốn sửa thông tin khen thưởng");
-          const responseKT = await ProductApi.getKTvKLDetail(id);
-          setDataKTDetail(responseKT);
+          try {
+            setDescription("Bạn chắc chắn muốn sửa thông tin khen thưởng");
+            const responseKT = await ProductApi.getKTvKLDetail(id);
+            setDataKTDetail(responseKT);
+          } catch (error) {
+            history.goBack();
+          }
         }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -62,6 +66,12 @@ function AddRewardForm(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    if (id !== undefined) {
+      setOpen(!open);
+    }
+  }, [dataKTDetail]);
 
   useEffect(() => {
     //Hàm đặt tên cho trang
@@ -81,21 +91,19 @@ function AddRewardForm(props) {
     file: null,
     path: "/Images/userIcon.png",
     size: null,
+    name: null,
   });
   const handleChange = (e) => {
-    console.log(e);
     setFile({
       file: e.fileList.length !== 0 ? e.file : null,
       path:
         e.fileList.length !== 0
           ? URL.createObjectURL(e.file)
           : "/Images/userIcon.png",
-      //file: e.target.files[0],
-      //path: URL.createObjectURL(e.target.files[0]),
       size: e.fileList.length !== 0 ? e.file.size : null,
+      name: e.fileList.length !== 0 ? e.file.name : null,
     });
   };
-  console.log(file.size);
 
   const intitalValue = {
     maNhanVien: id !== undefined ? dataKTDetail.maNhanVien : eCode,
@@ -103,7 +111,6 @@ function AddRewardForm(props) {
       id !== undefined ? dataKTDetail.idDanhMucKhenThuong : null,
     noiDung: id !== undefined ? dataKTDetail.noiDung : null,
     lyDo: id !== undefined ? dataKTDetail.lyDo : null,
-    // anh: id !== undefined ? dataKTDetail.anh : null,
     loai: true,
   };
 
@@ -129,7 +136,6 @@ function AddRewardForm(props) {
       "idDanhMucKhenThuong",
       "noiDung",
       "lyDo",
-      // "anh",
       "loai",
     ]);
     const dfValue = [
@@ -137,10 +143,8 @@ function AddRewardForm(props) {
       intitalValue.idDanhMucKhenThuong,
       intitalValue.noiDung,
       intitalValue.lyDo,
-      // intitalValue.anh,
       intitalValue.loai,
     ];
-    // return JSON.stringify(values) === JSON.stringify(dfValue);
     if (
       JSON.stringify(values) === JSON.stringify(dfValue) &&
       file.file === null
@@ -152,7 +156,7 @@ function AddRewardForm(props) {
 
   const onHandleSubmit = async (data) => {
     const nameEm = dataEmployee.filter((item) => item.id === data.maNhanVien);
-    console.log(data);
+
     try {
       if (id !== undefined) {
         try {
@@ -170,6 +174,7 @@ function AddRewardForm(props) {
               formData.append("lyDo", data.lyDo);
               formData.append("loai", data.loai);
               formData.append("maNhanVien", data.maNhanVien);
+              formData.append("tenFile", file.name);
               await PutApi.PutKTvKL(formData, id);
               await ProductApi.PostLS({
                 tenTaiKhoan: decoded.userName,
@@ -206,6 +211,7 @@ function AddRewardForm(props) {
               formData.append("lyDo", data.lyDo);
               formData.append("loai", data.loai);
               formData.append("maNhanVien", data.maNhanVien);
+              formData.append("tenFile", file.name);
               await ProductApi.PostKTvKL(formData);
               await ProductApi.PostLS({
                 tenTaiKhoan: decoded.userName,
@@ -231,7 +237,7 @@ function AddRewardForm(props) {
       error(`Có lỗi xảy ra.`);
     }
   };
-  console.log(dataKTDetail);
+
   const handleDelete = async () => {
     try {
       await DeleteApi.deleteKTvKL(id);
@@ -259,16 +265,6 @@ function AddRewardForm(props) {
             </h2>
           </div>
           <div className="button">
-            {/* <input
-              type="submit"
-              className={
-                dataKTDetail.length !== 0 ? "btn btn-danger" : "delete-button"
-              }
-              value="Xoá"
-              onClick={() => {
-                setShowDeleteDialog(true);
-              }}
-            /> */}
             <input
               type="submit"
               className="btn btn-secondary ml-3"
@@ -295,11 +291,7 @@ function AddRewardForm(props) {
             />
           </div>
         </div>
-        <form
-          action=""
-          class="profile-form"
-          // onSubmit={handleSubmit(onHandleSubmit)}
-        >
+        <form action="" class="profile-form">
           <div className="container-div-form">
             <div className="container-salary">
               <div>
@@ -352,7 +344,6 @@ function AddRewardForm(props) {
                   <Upload
                     beforeUpload={() => false}
                     onChange={handleChange}
-                    //accept=".docx,.xlsx,.pdf"
                     maxCount={1}
                   >
                     <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
@@ -438,7 +429,6 @@ function AddRewardForm(props) {
             <input
               type="text"
               {...register("loai")}
-              //defaultValue={true}
               style={{ display: "none" }}
             />
           </div>
@@ -484,6 +474,12 @@ function AddRewardForm(props) {
         confirm={history.goBack}
         cancel={cancel}
       />
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

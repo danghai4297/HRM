@@ -9,6 +9,8 @@ import Dialog from "../../../../components/Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../../../components/Toast/Toast";
 import { schema } from "../../../../ultis/DepartmentValidation";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function AddDepartmentForm(props) {
   const { error, success, warn } = useToast();
@@ -26,6 +28,7 @@ function AddDepartmentForm(props) {
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm phòng ban mới"
   );
+  const [open, setOpen] = useState(false);
 
   const cancel = () => {
     setShowDialog(false);
@@ -48,6 +51,12 @@ function AddDepartmentForm(props) {
     };
     fetchDepartmentCategory();
   }, []);
+
+  useEffect(() => {
+    if (id !== undefined) {
+      setOpen(!open);
+    }
+  }, [dataDetailDMPB]);
 
   useEffect(() => {
     //Hàm đặt tên cho trang
@@ -295,6 +304,12 @@ function AddDepartmentForm(props) {
         confirm={handleDelete}
         cancel={cancel}
       />
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

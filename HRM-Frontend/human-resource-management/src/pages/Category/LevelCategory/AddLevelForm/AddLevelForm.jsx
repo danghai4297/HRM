@@ -10,6 +10,8 @@ import DialogCheck from "../../../../components/Dialog/DialogCheck";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../../../components/Toast/Toast";
 import { schema } from "../../../../ultis/LevelCategoryValidation";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function AddLevelForm(props) {
   const { error, success, warn } = useToast();
@@ -27,6 +29,7 @@ function AddLevelForm(props) {
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm danh mục trình độ mới"
   );
+  const [open, setOpen] = useState(false);
 
   const cancel = () => {
     setShowDialog(false);
@@ -49,6 +52,12 @@ function AddLevelForm(props) {
     };
     fetchLevelCategory();
   }, []);
+
+  useEffect(() => {
+    if (id !== undefined) {
+      setOpen(!open);
+    }
+  }, [dataDetailDMTD]);
 
   useEffect(() => {
     //Hàm đặt tên cho trang
@@ -243,6 +252,12 @@ function AddLevelForm(props) {
         confirm={handleDelete}
         cancel={cancel}
       />
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

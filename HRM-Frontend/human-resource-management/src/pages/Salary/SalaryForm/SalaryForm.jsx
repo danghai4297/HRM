@@ -1,8 +1,7 @@
-import React, { useRef } from "react";
+import React from "react";
 import "./SalaryForm.scss";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../../components/FontAwesomeIcons/index";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -20,13 +19,15 @@ import { UploadOutlined } from "@ant-design/icons";
 import jwt_decode from "jwt-decode";
 import { schema } from "../../../ultis/SalaryValidation";
 import NumberFormat from "react-number-format";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function AddSalaryForm(props) {
   let location = useLocation();
   let query = new URLSearchParams(location.search);
   const contractCode = query.get("maHopDong");
   let eName = query.get("hoTen");
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
   const token = sessionStorage.getItem("resultObj");
   const decoded = jwt_decode(token);
 
@@ -43,8 +44,6 @@ function AddSalaryForm(props) {
   const [dataLDetail, setDataLDetail] = useState([]);
   const [dataNL, setDataNL] = useState([]);
 
-  const [dataDetailNN, setdataDetailNN] = useState([]);
-  const [dataNN, setDataNN] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [description, setDescription] = useState(
@@ -56,7 +55,6 @@ function AddSalaryForm(props) {
   const [salaryTime, setSalaryTime] = useState();
   const [endDate, setEndDate] = useState();
   const [startDate, setStartDate] = useState();
-  const [endDateRs, setEndDateRs] = useState();
   const [dataAllHD, setDataAllHD] = useState([]);
   const [rsSalary, setRsSalary] = useState(0);
   const [contractCodes, setContractCodes] = useState();
@@ -66,6 +64,7 @@ function AddSalaryForm(props) {
   const [titleAllowance, setTitleAllowance] = useState("");
   const [responsibilityAllowance, setResponsibilityAllowance] = useState("");
   const [totalSalary, setTotalSalary] = useState();
+  const [open, setOpen] = useState(false);
 
   const cancel = () => {
     setShowDialog(false);
@@ -82,21 +81,25 @@ function AddSalaryForm(props) {
         const responseAllHD = await ProductApi.getAllHd();
         setDataAllHD(responseAllHD);
         if (id !== undefined) {
-          setDescription("Bạn chắc chắn muốn sửa thông tin lương");
-          const response = await ProductApi.getLDetail(id);
-          setDataLDetail(response);
-          setStartDate(moment(response.ngayHieuLuc));
-          setEndDate(moment(response.ngayKetThuc));
-          setAllowance(response.phuCapChucVu);
-          setResponsibilityAllowance(response.phuCapTrachNhiem);
-          setTitleAllowance(response.phuCapChucDanh);
-          setTotalSalary(response.tongLuong);
+          try {
+            setDescription("Bạn chắc chắn muốn sửa thông tin lương");
+            const response = await ProductApi.getLDetail(id);
+            setDataLDetail(response);
+            setStartDate(moment(response.ngayHieuLuc));
+            setEndDate(moment(response.ngayKetThuc));
+            setAllowance(response.phuCapChucVu);
+            setResponsibilityAllowance(response.phuCapTrachNhiem);
+            setTitleAllowance(response.phuCapChucDanh);
+            setTotalSalary(response.tongLuong);
+          } catch (error) {
+            history.goBack();
+          }
         }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
       }
     };
-    fetchNvList(dataLDetail);
+    fetchNvList();
   }, []);
 
   useEffect(() => {
@@ -134,30 +137,21 @@ function AddSalaryForm(props) {
     };
     getContractCode();
   }, [contractCodes]);
-  // useEffect(() => {
-  //   const getTitleAlowance = async () => {
-  //     try {
-  //       if (contractCodes !== undefined) {
-  //         const responseDetailHD = await ProductApi.getHdDetail(contractCodes);
 
-  //       } }else if(query.get("maHopDong")){
-  //         const responseDetailHD = await ProductApi.getHdDetail(contractCodes);
-  //         setTitleAllowance(responseDetailHD.phuCapChucDanh);
-  //       }
-  //     } catch (error) {
-  //       console.log("Có lỗi xảy ra: ", error);
-  //       setTitleAllowance("");
-  //     }
-  //   };
-  //   getTitleAlowance();
-  // }, [contractCodes]);
+  useEffect(() => {
+    if (id !== undefined) {
+      setOpen(!open);
+    }
+  }, [dataLDetail]);
+
   const [file, setFile] = useState({
     file: null,
     path: "/Images/userIcon.png",
     size: null,
+    name: null,
   });
+
   const handleChange = (e) => {
-    console.log(e);
     setFile({
       file: e.fileList.length !== 0 ? e.file : null,
       path:
@@ -165,6 +159,7 @@ function AddSalaryForm(props) {
           ? URL.createObjectURL(e.file)
           : "/Images/userIcon.png",
       size: e.fileList.length !== 0 ? e.file.size : null,
+      name: e.fileList.length !== 0 ? e.file.name : null,
     });
   };
   const intitalValue = {
@@ -206,11 +201,9 @@ function AddSalaryForm(props) {
   const {
     register,
     handleSubmit,
-    setValue,
     getValues,
     control,
     reset,
-    watch,
     formState: { errors },
   } = useForm({
     defaultValues: intitalValue,
@@ -284,7 +277,6 @@ function AddSalaryForm(props) {
       Number(titleAllowance) +
       Number(DemoSalary) * Number(responsibilityAllowance);
     let fixTotal = (rss / 1000).toFixed(0) * 1000;
-    //setValue("tongLuong", rss);
     setTotalSalary(fixTotal);
   }, [
     salary.heSoLuong,
@@ -298,7 +290,6 @@ function AddSalaryForm(props) {
   const onHandleSubmit = async (data) => {
     const nameCon = dataAllHD.filter((item) => item.id === data.maHopDong);
     let maHopDong = data.maHopDong;
-    console.log(data);
     try {
       if (id !== undefined) {
         try {
@@ -326,6 +317,7 @@ function AddSalaryForm(props) {
               formData.append("ngayKetThuc", endDate.format("MM/DD/YYYY"));
               formData.append("ghiChu", data.ghiChu);
               formData.append("trangThai", data.trangThai);
+              formData.append("tenFile", file.name);
               await PutApi.PutL(formData, id);
               await ProductApi.PostLS({
                 tenTaiKhoan: decoded.userName,
@@ -372,6 +364,7 @@ function AddSalaryForm(props) {
               formData.append("ngayKetThuc", endDate.format("MM/DD/YYYY"));
               formData.append("ghiChu", data.ghiChu);
               formData.append("trangThai", data.trangThai);
+              formData.append("tenFile", file.name);
               await ProductApi.PostL(formData);
               await ProductApi.PostLS({
                 tenTaiKhoan: decoded.userName,
@@ -452,11 +445,7 @@ function AddSalaryForm(props) {
             />
           </div>
         </div>
-        <form
-          action=""
-          className="profile-form"
-          // onSubmit={handleSubmit(onHandleSubmit)}
-        >
+        <form action="" className="profile-form">
           <div className="container-div-form">
             <div className="container-salary">
               <div>
@@ -466,23 +455,11 @@ function AddSalaryForm(props) {
                 <div className="salary-cal">
                   <span className="mr-3">
                     Tiền Lương:
-                    {/* <input
-                      {...register("tongLuong")}
-                      className="border-0"
-                      // value={rsSalary}
-                      // defaultValue={calSalary()}
-                      readOnly
-                    ></input> */}
                     <Controller
                       control={control}
                       name="tongLuong"
                       render={({ field }) => (
                         <NumberFormat
-                          // onValueChange={(values) => {
-                          //   // const { formattedValue, value } = values;
-                          //   //field.onChange(values.value);
-                          //  // setDemoSalary(values.value);
-                          // }}
                           id="tongLuong"
                           thousandSeparator={true}
                           value={totalSalary}
@@ -551,23 +528,12 @@ function AddSalaryForm(props) {
                         : "form-control col-sm-6 border-danger custom-select"
                     }
                   >
-                    {/* <option value={dataLDetail.idNhomLuong}>
-                    {dataLDetail.nhomLuong}
-                  </option> */}
                     <option value=""></option>
                     {dataNL.map((item, key) => (
                       <option key={key} value={item.id}>
                         {item.tenNhomLuong}
                       </option>
                     ))}
-                    {/* {
-                    dataNL
-                    .filter((item) => item.id !== dataLDetail.idNhomLuong)
-                    .map((item, key) => (
-                      <option key={key} value={item.id}>
-                        {item.tenNhomLuong}{" "}
-                      </option>
-                    ))} */}
                   </select>
                   <span className="message">{errors.idNhomLuong?.message}</span>
                 </div>
@@ -588,7 +554,6 @@ function AddSalaryForm(props) {
                       onChange: (e) => handleOnChange(e),
                     })}
                     id="heSoLuong"
-                    // value={salary.heSoLuong}
                     className={
                       !errors.heSoLuong
                         ? "form-control col-sm-6 "
@@ -629,26 +594,12 @@ function AddSalaryForm(props) {
                   >
                     Lương cơ bản
                   </label>
-                  {/* <input
-                    type="text"
-                    {...register("luongCoBan", {
-                      onChange: (e) => handleOnChange(e),
-                    })}
-                    id="luongCoBan"
-                    className={
-                      !errors.luongCoBan
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                    // value={salary.luongCoBan}
-                  /> */}
                   <Controller
                     control={control}
                     name="luongCoBan"
                     render={({ field }) => (
                       <NumberFormat
                         onValueChange={(values) => {
-                          // const { formattedValue, value } = values;
                           field.onChange(values.value);
                           setDemoSalary(values.value);
                         }}
@@ -681,7 +632,6 @@ function AddSalaryForm(props) {
                       onChange: (e) => setSalaryTime(Number(e.target.value)),
                     })}
                     id="thoiHanLenLuong"
-                    // onChange={(e)=>setSalaryTime(Number(e.target.value))}
                     className={
                       !errors.thoiHanLenLuong
                         ? "form-control col-sm-6 "
@@ -881,9 +831,6 @@ function AddSalaryForm(props) {
                         }
                         placeholder="DD/MM/YYYY"
                         format="DD/MM/YYYY"
-                        // value={endDateRs}
-                        // {...field._d}
-                        // disabled={true}
                         value={field.value}
                         onChange={(event) => {
                           field.onChange(event);
@@ -1008,6 +955,12 @@ function AddSalaryForm(props) {
         confirm={history.goBack}
         cancel={cancel}
       />
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

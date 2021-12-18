@@ -9,12 +9,15 @@ import useWindowDimensions from "../../../hook/useWindowDimensions";
 import ProductApi from "../../../api/productApi";
 import { ExportCSV } from "../../../components/ExportFile/ExportFile";
 import TablePagination from "../../../components/TablePagination/TablePagination";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function ScreenResign(props) {
   const link = "/profile/detail/";
   const fileName = "DSnhanviennguviec";
   const [dataAllNvnv, setDataAllNvnv] = useState([]);
   const [columns, setColumns] = useState([]);
+  const [open, setOpen] = useState(false);
 
   useDocumentTitle("Nghỉ việc");
 
@@ -42,6 +45,10 @@ function ScreenResign(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataAllNvnv]);
 
   return (
     <>
@@ -71,6 +78,12 @@ function ScreenResign(props) {
           />
         </div>
       </div>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

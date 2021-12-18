@@ -13,6 +13,8 @@ import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
 import jwt_decode from "jwt-decode";
 import ProductApi from "../../../api/productApi";
 import useWindowDimensions from "../../../hook/useWindowDimensions";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 ScreenTableNV.propTypes = {};
 
@@ -23,6 +25,7 @@ function ScreenTableNV(props) {
   const fileName = "DSNV";
   const [dataAllNv, setdataAllNv] = useState([]);
   const [columns, setColumns] = useState([]);
+  const [open, setOpen] = useState(false);
 
   useDocumentTitle("Hồ sơ");
 
@@ -60,6 +63,10 @@ function ScreenTableNV(props) {
     fetchNvList();
   }, []);
 
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataAllNv]);
+
   return (
     <>
       <div className="screen-table-nv">
@@ -93,6 +100,12 @@ function ScreenTableNV(props) {
           />
         </div>
       </div>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

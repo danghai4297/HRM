@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./DashBoard.scss";
-
 import ItemDashBoard from "../ItemDashBoard/ItemDashBoard";
 import ItemExcel from "../ItemExcel/ItemExcel";
 import TableBasic from "../../../components/TablePagination/TableBasic";
 import ProductApi from "../../../api/productApi";
 import { NVCOLUMNSHD, NVCOLUMNSSALARY } from "./NvColumns";
 import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 DashBoard.propTypes = {};
 
@@ -19,6 +20,7 @@ function DashBoard() {
   const [dataAllHd, setDataAllHd] = useState([]);
   const [dataAllLNV, setDataAllLNV] = useState([]);
   const [dataAllNVnv, setDataAllNVnv] = useState([]);
+  const [open, setOpen] = useState(false);
   useDocumentTitle("Tổng quan");
 
   useEffect(() => {
@@ -38,6 +40,10 @@ function DashBoard() {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataAllNv]);
 
   return (
     <>
@@ -121,6 +127,12 @@ function DashBoard() {
           </div>
         </div>
       </div>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

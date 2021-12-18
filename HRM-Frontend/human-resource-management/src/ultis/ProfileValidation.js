@@ -2,7 +2,6 @@ import * as yup from "yup";
 const phoneRex = /([\|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})$\b/;
 const phoneRex1 = /^(([+|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})|)$/;
 const phoneRexlandline = /^((02)+([0-9]{9})|)$/g;
-// const number = /^\d+$/;
 const tax = /((0)([0-7])([0-9]){8})$/g;
 const cccdRegex = /((0)([0-9]))/g;
 const atm = /^(?:[1-9]\d*|)$/g;
@@ -103,22 +102,12 @@ export const schema = yup.object().shape({
     .date()
     .nullable()
     .required("Ngày cấp CMND/CCCD không được bỏ trống."),
-  // ngayCapHoChieu: yup.date().required("Ngày cấp CMND/CCCD không được bỏ trống."),
-  // ngayChinhThuc: yup.date().required("Ngày cấp CMND/CCCD không được bỏ trống."),
-  // //ngayVaoDoan: yup.date().required("Ngày cấp CMND/CCCD không được bỏ trống."),
-  // ngayThuViec: yup.date().required("Ngày cấp CMND/CCCD không được bỏ trống."),
-  // ngayVaoBan: yup.date().required("Ngày cấp CMND/CCCD không được bỏ trống."),
-  // ngayVaoDang: yup.date().required("Ngày cấp CMND/CCCD không được bỏ trống."),
-  // ngayVaoDangChinhThuc: yup.date().required("Ngày cấp CMND/CCCD không được bỏ trống."),
-  // ngayXuatNgu: yup.date().required("Ngày cấp CMND/CCCD không được bỏ trống."),
   noiCapCCCD: yup
     .string()
     .matches(notAllowNull, "Nơi cấp CMND/CCCD không được là khoảng trống.")
     .max(25, "Nơi cấp CMND/CCCD không được vượt quá 25 kí tự")
     .nullable()
     .required("Nơi cấp CMND/CCCD không được bỏ trống."),
-  // ngayNhapNgu: yup.date().required("Nơi cấp CMND/CCCD không được bỏ trống."),
-  // ngayHetHanHoChieu: yup.date().required("Nơi cấp CMND/CCCD không được bỏ trống."),
   ngayHetHanCCCD: yup
     .date()
     .nullable()
@@ -158,7 +147,6 @@ export const schema = yup.object().shape({
     .max(50, "Nghề nghiệp không được vượt quá 50 kí tự")
     .nullable()
     .required("Nghề nghiệp không được bỏ trống."),
-  // ngayTuyenDung: yup.date().required("Ngày tuyển dụng không được bỏ trống."),
   coQuanTuyenDung: yup
     .string()
     .matches(notAllowNull, "Cơ quan tuyển dụng không được là khoảng trống.")
@@ -175,22 +163,22 @@ export const schema = yup.object().shape({
     .boolean()
     .nullable()
     .required("Trạng thái lao động không được bỏ trống."),
+  ngayNghiViec: yup.date().when("trangThaiLaoDong", {
+    is: false,
+    then: yup.date().nullable().required("Ngày nghỉ việc không được để trống"),
+    otherwise: yup.date().nullable().notRequired(),
+  }),
   lyDoNghiViec: yup
     .string()
     .nullable()
     .when("trangThaiLaoDong", {
-      is: true,
+      is: false,
       then: yup
         .string()
         .matches(notAllowNull, "Lý do nghỉ việc không thể là khoảng trống.")
         .nullable()
-        .required("Lý do nghỉ việc  không được bỏ trống"),
+        .required("Lý do nghỉ việc không được bỏ trống"),
     }),
-  ngayNghiViec: yup.date().when("trangThaiLaoDong", {
-    is: true,
-    then: yup.date().nullable().required("Ngày nghỉ việc không được để trống"),
-    otherwise: yup.date().nullable().notRequired(),
-  }),
   tinhChatLaoDong: yup
     .number()
     .nullable()
@@ -206,7 +194,6 @@ export const schema = yup.object().shape({
     .max(50, "Công việc chính không được vượt quá 50 kí tự")
     .nullable()
     .required("Công việc chính không được bỏ trống."),
-  // //phongBan: yup.string().required("Phòng Ban động không được bỏ trống."),
   idNgachCongChuc: yup
     .number()
     .typeError("Ngạch công chức không được bỏ trống."),

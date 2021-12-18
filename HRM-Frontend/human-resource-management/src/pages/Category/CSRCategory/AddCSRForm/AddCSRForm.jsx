@@ -9,6 +9,8 @@ import Dialog from "../../../../components/Dialog/Dialog";
 import jwt_decode from "jwt-decode";
 import { useToast } from "../../../../components/Toast/Toast";
 import { schema } from "../../../../ultis/CSRValidation";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function AddCSRForm(props) {
   const { error, success, warn } = useToast();
@@ -24,6 +26,8 @@ function AddCSRForm(props) {
   const [description, setDescription] = useState(
     "Bạn chắc chắn muốn thêm ngạch công chức mới"
   );
+  const [open, setOpen] = useState(false);
+
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
@@ -45,6 +49,12 @@ function AddCSRForm(props) {
     };
     fetchCSRCategory();
   }, []);
+
+  useEffect(() => {
+    if (id !== undefined) {
+      setOpen(!open);
+    }
+  }, [dataDetailDMNCC]);
 
   useEffect(() => {
     //Hàm đặt tên cho trang
@@ -244,6 +254,12 @@ function AddCSRForm(props) {
         confirm={handleDelete}
         cancel={cancel}
       />
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

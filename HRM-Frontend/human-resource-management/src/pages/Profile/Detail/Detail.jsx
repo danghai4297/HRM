@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import "./Detail.scss";
 import SubDetail from "../../../components/SubDetail/SubDetail";
 import { links } from "./ScrollData";
@@ -11,7 +11,6 @@ import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
 import { createTheme } from "@mui/material/styles";
 import { cyan, indigo } from "@mui/material/colors";
-import ScreenNotFound from "../../Error/ScreenNotFound";
 import {
   NVCOLUMNSDC,
   NVCOLUMNSHD,
@@ -21,7 +20,7 @@ import {
   NVCOLUMNSNT,
   NVCOLUMNSTDVH,
 } from "./NvColumns";
-import { Link, useLocation, Redirect } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   cmndTccHC,
   lhkc,
@@ -33,6 +32,8 @@ import {
   ttqs,
   ttyt,
 } from "./Data";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function Detail(props) {
   let { match, history } = props;
@@ -79,7 +80,7 @@ function Detail(props) {
     };
     fetchDetailEmployee();
   }, []);
-
+  console.log(dataDetailNv);
   const [dropBase, setDropBase] = useState(true);
   const [dropContact, setDropContact] = useState(true);
   const [dropJob, setDropJob] = useState(true);
@@ -93,6 +94,7 @@ function Detail(props) {
   const [dropTransfer, setDropTransfer] = useState(true);
   const [dropReward, setDropReward] = useState(true);
   const [dropDiscipline, setDropDiscipline] = useState(true);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     //Hàm đặt tên cho trang
@@ -101,6 +103,10 @@ function Detail(props) {
         document.title = `Chi tiết hồ sơ nhân viên ${dataDetailNv.hoTen}`;
     };
     titlePage();
+  }, [dataDetailNv]);
+
+  useEffect(() => {
+    setOpen(!open);
   }, [dataDetailNv]);
 
   //Hàm tự động chuyển đến tiêu đề
@@ -1048,6 +1054,12 @@ function Detail(props) {
           </div>
         </div>
       </div>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

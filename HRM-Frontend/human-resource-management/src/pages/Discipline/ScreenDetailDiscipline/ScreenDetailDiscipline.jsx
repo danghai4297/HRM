@@ -9,6 +9,9 @@ import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
 import { createTheme } from "@mui/material/styles";
 import { indigo, cyan } from "@mui/material/colors";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
+
 function ScreenDetailDiscipline(props) {
   let { match, history } = props;
   let { id } = match.params;
@@ -23,6 +26,7 @@ function ScreenDetailDiscipline(props) {
     },
   });
   const [dataKLDetail, setDataKLDetail] = useState([]);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -36,6 +40,10 @@ function ScreenDetailDiscipline(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataKLDetail]);
 
   useEffect(() => {
     //Hàm đặt tên cho trang
@@ -131,6 +139,12 @@ function ScreenDetailDiscipline(props) {
           </Link>
         </div>
       </div>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }
