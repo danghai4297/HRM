@@ -1,5 +1,5 @@
 .reportEx {
-    height: 835px;
+    height: 90vh;
     overflow: auto;
 }
 .select-info {
@@ -98,4 +98,33 @@
 }
 .reportEx::-webkit-scrollbar-thumb:hover {
     background-color: rgb(158, 158, 158);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .reportEx {
+        height: 780px;
+    }
+    .select-info {
+        overflow-x: scroll;
+        width: 500px;
+    }
+    .report-emp {
+        width: 500px;
+        overflow-x: scroll;
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+    .reportEx {
+        height: 780px;
+    }
+    .select-info {
+        overflow-x: scroll;
+        width: 700px;
+    }
+    .report-emp {
+        width: 700px;
+        overflow-x: scroll;
+    }
+}
+@media screen and (min-width: 1440px) and (max-width: 1600px) {
 }
