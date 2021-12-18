@@ -43,7 +43,7 @@ namespace HRMSolution.Data.EF
         public DbSet<NhanVien> nhanViens { get; set; }
         public DbSet<TrinhDoVanHoa> trinhDoVanHoas { get; set; }
         public DbSet<YTe> yTes { get; set; }
-        public DbSet<KhenThuongKyLuat> khenThuongKyLuats {get; set; }
+        public DbSet<KhenThuongKyLuat> khenThuongKyLuats { get; set; }
         public DbSet<LichSu> lichSus { get; set; }
         public DbSet<DanhMucNhomLuong> danhMucNhomLuongs { get; set; }
         public DbSet<AppUser> appUsers { get; set; }
@@ -140,7 +140,7 @@ namespace HRMSolution.Data.EF
             modelBuilder.Entity<TrinhDoVanHoa>()
                 .HasOne(x => x.NhanVien)
                 .WithMany(b => b.TrinhDoVanHoas)
-                .HasForeignKey(x=>x.maNhanVien);
+                .HasForeignKey(x => x.maNhanVien);
             modelBuilder.Entity<DanhMucTo>()
                 .HasOne(x => x.DanhMucPhongBan)
                 .WithMany(x => x.DanhMucTos)
@@ -205,8 +205,6 @@ namespace HRMSolution.Data.EF
             //DataSeedinng
             modelBuilder.seed();
 
-
-            //base.OnModelCreating(modelBuilder);
         }
     }
 }

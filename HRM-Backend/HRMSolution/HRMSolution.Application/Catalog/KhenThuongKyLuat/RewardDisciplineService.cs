@@ -207,8 +207,9 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
 
         private async Task<string> SaveFile(IFormFile file, string name)
         {
+            var defaultName = name.Substring(0, name.LastIndexOf("."));
             var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-            var fileName = $"{name}{Path.GetExtension(originalFileName)}";
+            var fileName = $"{defaultName}{Path.GetExtension(originalFileName)}";
             await _storageService.SaveFileAsync(file.OpenReadStream(), fileName);
             return "/" + USER_CONTENT_FOLDER_NAME + "/" + fileName;
         }
