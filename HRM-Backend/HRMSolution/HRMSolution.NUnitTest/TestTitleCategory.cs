@@ -182,7 +182,7 @@ namespace HRMSolution.NUnitTest
                 tenChucDanh = "Tiến Sĩ",
                 phuCap = (float)100000.0
             };
-            var result = danhMucChucDanhService.Update(3, titleUpdating);
+            var result = danhMucChucDanhService.Update(6, titleUpdating);
             Assert.That(result.Result, Is.EqualTo(0));
         }
             
