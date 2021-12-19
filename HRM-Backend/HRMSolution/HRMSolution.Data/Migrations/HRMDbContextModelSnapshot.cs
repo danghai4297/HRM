@@ -47,7 +47,7 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            ConcurrencyStamp = "9cd1aa36-d1c9-4725-8cdf-4e71c6ff7cbd",
+                            ConcurrencyStamp = "96cf4a36-8fd9-4c91-9627-91290ca27b22",
                             Name = "admin",
                             NormalizedName = "admin",
                             ghiChu = "Administrator role"
@@ -55,7 +55,7 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec"),
-                            ConcurrencyStamp = "d156c00b-7f0e-4ab7-b73b-3f2e208dfe58",
+                            ConcurrencyStamp = "a47e95c4-df1f-4df2-93c3-3713c1327f2e",
                             Name = "user",
                             NormalizedName = "user",
                             ghiChu = "User role"
@@ -124,11 +124,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d6e4c44f-8af0-484f-8380-06a0e7240676",
+                            ConcurrencyStamp = "6e9fbe64-1de8-4b4e-8839-a648bea01f20",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPMa5g4/f1kU5BgZt0L0bDEPTWM/o+CjGue+VArxMfXGLTBOm8pjhLVsHr1/zsAfhA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAn5NVPEtaLQcpLhKMeDtDo/R5n5ZEtbfS125XN86ocHn/ur97ZXsIlhLt07KNRq6A==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -139,11 +139,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("1db26eb2-1870-4129-f60a-08d9978ff76b"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "45210126-b274-401c-97e2-b159951b5f93",
+                            ConcurrencyStamp = "490fc6ad-b611-47b9-954f-72055f76473c",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "user1",
-                            PasswordHash = "AQAAAAEAACcQAAAAEI4GMN4IKg74V3JRfyKYD1EFnE9vFCZ24wUiEBcbx4XZDxILH+rAksnF49v8kzX7sQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEG0AmSq09klfiMs3efuelq0BIWUt3vdC3jDsOlC7Eb/CzcZn24Dvr6yCRsW/wRsmzA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -154,11 +154,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("ccf28057-5be9-4405-957b-460e0ce106a7"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "669b8a0f-17ac-4a37-87f0-79f579fcd92e",
+                            ConcurrencyStamp = "98c9fe4d-c4e8-4bd7-a792-ab372f6a7507",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "user3",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMn48N3dhOsRdKW6cyhhOcESRJv1A91RJ/bxlxHsH3cEJl5Fyc0hycxmbhdIqk9CJw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECbSLwUqGTZXyvAsEpfaCdoGS1PGLLg350qfQU98E4eAGKioD2tf8VkCgjKV+WWegw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -1139,105 +1139,105 @@ namespace HRMSolution.Data.Migrations
                         {
                             idTo = 7,
                             idPhongBan = 2,
-                            maTo = "T06",
+                            maTo = "T07",
                             tenTo = "Tổ hỗ trợ"
                         },
                         new
                         {
                             idTo = 8,
                             idPhongBan = 2,
-                            maTo = "T07",
+                            maTo = "T08",
                             tenTo = "Tổ đánh giá"
                         },
                         new
                         {
                             idTo = 9,
                             idPhongBan = 2,
-                            maTo = "T08",
+                            maTo = "T09",
                             tenTo = "Tổ nội bộ"
                         },
                         new
                         {
                             idTo = 10,
                             idPhongBan = 3,
-                            maTo = "T09",
+                            maTo = "T10",
                             tenTo = "Tổ tài chính"
                         },
                         new
                         {
                             idTo = 11,
                             idPhongBan = 3,
-                            maTo = "T10",
+                            maTo = "T11",
                             tenTo = "Tổ kế toán lương"
                         },
                         new
                         {
                             idTo = 12,
                             idPhongBan = 3,
-                            maTo = "T11",
+                            maTo = "T12",
                             tenTo = "Tổ kế toán chung"
                         },
                         new
                         {
                             idTo = 13,
                             idPhongBan = 3,
-                            maTo = "T12",
+                            maTo = "T13",
                             tenTo = "Tổ dự toán"
                         },
                         new
                         {
                             idTo = 14,
                             idPhongBan = 4,
-                            maTo = "T13",
+                            maTo = "T14",
                             tenTo = "Tổ IT"
                         },
                         new
                         {
                             idTo = 15,
                             idPhongBan = 4,
-                            maTo = "T14",
+                            maTo = "T15",
                             tenTo = "Tổ lắp đặt"
                         },
                         new
                         {
                             idTo = 16,
                             idPhongBan = 4,
-                            maTo = "T15",
+                            maTo = "T16",
                             tenTo = "Tổ sửa chữa"
                         },
                         new
                         {
                             idTo = 17,
                             idPhongBan = 4,
-                            maTo = "T16",
+                            maTo = "T17",
                             tenTo = "Tổ bảo trì"
                         },
                         new
                         {
                             idTo = 18,
                             idPhongBan = 5,
-                            maTo = "T17",
+                            maTo = "T18",
                             tenTo = "Tổ giám sát"
                         },
                         new
                         {
                             idTo = 19,
                             idPhongBan = 5,
-                            maTo = "T18",
+                            maTo = "T19",
                             tenTo = "Tổ hỗ trợ"
                         },
                         new
                         {
                             idTo = 20,
                             idPhongBan = 5,
-                            maTo = "T19",
+                            maTo = "T20",
                             tenTo = "Tổ quản lý, lưu trữ"
                         },
                         new
                         {
                             idTo = 21,
                             idPhongBan = 5,
-                            maTo = "T20",
+                            maTo = "T21",
                             tenTo = "Tổ nghiên cứu"
                         });
                 });
@@ -1426,7 +1426,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 1,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0001",
                             ngayHieuLuc = new DateTime(2021, 5, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1436,7 +1435,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 2,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0001",
                             ngayHieuLuc = new DateTime(2021, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1446,7 +1444,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 3,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0001",
                             ngayHieuLuc = new DateTime(2021, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1456,7 +1453,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 5,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0003",
                             ngayHieuLuc = new DateTime(2021, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1466,7 +1462,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 6,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0004",
                             ngayHieuLuc = new DateTime(2021, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1476,7 +1471,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 7,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0005",
                             ngayHieuLuc = new DateTime(2021, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1486,7 +1480,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 8,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0006",
                             ngayHieuLuc = new DateTime(2021, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1496,7 +1489,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 9,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0007",
                             ngayHieuLuc = new DateTime(2021, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1506,7 +1498,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 10,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0008",
                             ngayHieuLuc = new DateTime(2021, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1516,7 +1507,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 11,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0009",
                             ngayHieuLuc = new DateTime(2021, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1526,7 +1516,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 12,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0010",
                             ngayHieuLuc = new DateTime(2021, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1536,7 +1525,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 13,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0011",
                             ngayHieuLuc = new DateTime(2021, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1546,7 +1534,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 14,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0012",
                             ngayHieuLuc = new DateTime(2021, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1556,7 +1543,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 15,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0013",
                             ngayHieuLuc = new DateTime(2021, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1566,7 +1552,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 16,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0014",
                             ngayHieuLuc = new DateTime(2021, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1576,7 +1561,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 17,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0015",
                             ngayHieuLuc = new DateTime(2021, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1586,7 +1570,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 18,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0016",
                             ngayHieuLuc = new DateTime(2021, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1596,7 +1579,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 19,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0017",
                             ngayHieuLuc = new DateTime(2021, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1606,7 +1588,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 20,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0018",
                             ngayHieuLuc = new DateTime(2021, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1616,7 +1597,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 21,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0019",
                             ngayHieuLuc = new DateTime(2021, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1626,7 +1606,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 22,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0020",
                             ngayHieuLuc = new DateTime(2021, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1636,7 +1615,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 23,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0021",
                             ngayHieuLuc = new DateTime(2021, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1646,7 +1624,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 24,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0022",
                             ngayHieuLuc = new DateTime(2021, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1656,7 +1633,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 25,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0023",
                             ngayHieuLuc = new DateTime(2021, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1666,7 +1642,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 26,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0024",
                             ngayHieuLuc = new DateTime(2021, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1676,7 +1651,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 27,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0025",
                             ngayHieuLuc = new DateTime(2021, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1686,7 +1660,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 28,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0026",
                             ngayHieuLuc = new DateTime(2021, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1696,7 +1669,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 29,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0027",
                             ngayHieuLuc = new DateTime(2021, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1706,7 +1678,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 30,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0028",
                             ngayHieuLuc = new DateTime(2021, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1716,7 +1687,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 31,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0029",
                             ngayHieuLuc = new DateTime(2021, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1726,7 +1696,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 32,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0030",
                             ngayHieuLuc = new DateTime(2021, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1736,7 +1705,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 33,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0031",
                             ngayHieuLuc = new DateTime(2021, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1746,7 +1714,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 34,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0032",
                             ngayHieuLuc = new DateTime(2021, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1756,7 +1723,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 35,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0033",
                             ngayHieuLuc = new DateTime(2021, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1766,7 +1732,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 36,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0034",
                             ngayHieuLuc = new DateTime(2021, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1776,7 +1741,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 37,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0035",
                             ngayHieuLuc = new DateTime(2021, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1786,7 +1750,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 38,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0036",
                             ngayHieuLuc = new DateTime(2021, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1796,7 +1759,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 39,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0037",
                             ngayHieuLuc = new DateTime(2021, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1806,7 +1768,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 40,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0038",
                             ngayHieuLuc = new DateTime(2021, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1816,7 +1777,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 41,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0039",
                             ngayHieuLuc = new DateTime(2021, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1826,7 +1786,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 42,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0040",
                             ngayHieuLuc = new DateTime(2021, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1836,7 +1795,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 43,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0041",
                             ngayHieuLuc = new DateTime(2021, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1846,7 +1804,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 44,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0042",
                             ngayHieuLuc = new DateTime(2021, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1856,7 +1813,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 45,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0043",
                             ngayHieuLuc = new DateTime(2021, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1866,7 +1822,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 46,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0044",
                             ngayHieuLuc = new DateTime(2021, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1876,7 +1831,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 47,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0045",
                             ngayHieuLuc = new DateTime(2021, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1886,7 +1840,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 48,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0046",
                             ngayHieuLuc = new DateTime(2021, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1896,7 +1849,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 49,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0047",
                             ngayHieuLuc = new DateTime(2021, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1906,7 +1858,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 50,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0048",
                             ngayHieuLuc = new DateTime(2021, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1916,7 +1867,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 51,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0049",
                             ngayHieuLuc = new DateTime(2021, 1, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1926,7 +1876,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 52,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0050",
                             ngayHieuLuc = new DateTime(2021, 2, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1936,7 +1885,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 53,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0051",
                             ngayHieuLuc = new DateTime(2021, 3, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1946,7 +1894,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 54,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0052",
                             ngayHieuLuc = new DateTime(2021, 4, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1956,7 +1903,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 55,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0053",
                             ngayHieuLuc = new DateTime(2021, 5, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1966,7 +1912,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 56,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0054",
                             ngayHieuLuc = new DateTime(2021, 6, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1976,7 +1921,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 57,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0055",
                             ngayHieuLuc = new DateTime(2021, 7, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1986,7 +1930,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 58,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0056",
                             ngayHieuLuc = new DateTime(2021, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -1996,7 +1939,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 59,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0057",
                             ngayHieuLuc = new DateTime(2021, 9, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2006,7 +1948,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 60,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0058",
                             ngayHieuLuc = new DateTime(2021, 10, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2016,7 +1957,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 61,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0059",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2026,7 +1966,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 62,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0060",
                             ngayHieuLuc = new DateTime(2021, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2036,7 +1975,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 63,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0061",
                             ngayHieuLuc = new DateTime(2021, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2046,7 +1984,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 64,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0062",
                             ngayHieuLuc = new DateTime(2021, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2056,7 +1993,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 65,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0063",
                             ngayHieuLuc = new DateTime(2021, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2066,7 +2002,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 66,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0064",
                             ngayHieuLuc = new DateTime(2021, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2076,7 +2011,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 67,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0065",
                             ngayHieuLuc = new DateTime(2021, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2086,7 +2020,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 68,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0066",
                             ngayHieuLuc = new DateTime(2021, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2096,7 +2029,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 69,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0067",
                             ngayHieuLuc = new DateTime(2021, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2106,7 +2038,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 70,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0068",
                             ngayHieuLuc = new DateTime(2021, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2116,7 +2047,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 71,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0069",
                             ngayHieuLuc = new DateTime(2021, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2126,7 +2056,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 72,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0070",
                             ngayHieuLuc = new DateTime(2021, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2136,7 +2065,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 73,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0071",
                             ngayHieuLuc = new DateTime(2021, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2146,7 +2074,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 74,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0072",
                             ngayHieuLuc = new DateTime(2021, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2156,7 +2083,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 75,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0073",
                             ngayHieuLuc = new DateTime(2021, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2166,7 +2092,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 76,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0074",
                             ngayHieuLuc = new DateTime(2021, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2176,7 +2101,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 77,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0075",
                             ngayHieuLuc = new DateTime(2021, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2186,7 +2110,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 78,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0076",
                             ngayHieuLuc = new DateTime(2021, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2196,7 +2119,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 79,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0077",
                             ngayHieuLuc = new DateTime(2021, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2206,7 +2128,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 80,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0078",
                             ngayHieuLuc = new DateTime(2021, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2216,7 +2137,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 81,
-                            chiTiet = "Không",
                             idPhongBan = 1,
                             maNhanVien = "NV0079",
                             ngayHieuLuc = new DateTime(2021, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2226,207 +2146,186 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 82,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0080",
                             ngayHieuLuc = new DateTime(2021, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            to = 5,
+                            to = 6,
                             trangThai = true
                         },
                         new
                         {
                             id = 83,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0081",
                             ngayHieuLuc = new DateTime(2021, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            to = 5,
+                            to = 6,
                             trangThai = true
                         },
                         new
                         {
                             id = 84,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0082",
                             ngayHieuLuc = new DateTime(2021, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            to = 5,
+                            to = 6,
                             trangThai = true
                         },
                         new
                         {
                             id = 85,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0083",
                             ngayHieuLuc = new DateTime(2021, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            to = 5,
+                            to = 6,
                             trangThai = true
                         },
                         new
                         {
                             id = 86,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0084",
                             ngayHieuLuc = new DateTime(2021, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            to = 5,
+                            to = 6,
                             trangThai = true
                         },
                         new
                         {
                             id = 87,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0085",
                             ngayHieuLuc = new DateTime(2021, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            to = 5,
+                            to = 6,
                             trangThai = true
                         },
                         new
                         {
                             id = 88,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0086",
                             ngayHieuLuc = new DateTime(2021, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            to = 5,
+                            to = 6,
                             trangThai = true
                         },
                         new
                         {
                             id = 89,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0087",
                             ngayHieuLuc = new DateTime(2021, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            to = 5,
+                            to = 6,
                             trangThai = true
                         },
                         new
                         {
                             id = 90,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0088",
                             ngayHieuLuc = new DateTime(2021, 4, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            to = 5,
+                            to = 6,
                             trangThai = true
                         },
                         new
                         {
                             id = 91,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0089",
                             ngayHieuLuc = new DateTime(2021, 5, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            to = 5,
+                            to = 6,
                             trangThai = true
                         },
                         new
                         {
                             id = 92,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0090",
                             ngayHieuLuc = new DateTime(2021, 6, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            to = 5,
+                            to = 6,
                             trangThai = true
                         },
                         new
                         {
                             id = 93,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0091",
                             ngayHieuLuc = new DateTime(2021, 7, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            to = 5,
+                            to = 6,
                             trangThai = true
                         },
                         new
                         {
                             id = 94,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0092",
                             ngayHieuLuc = new DateTime(2021, 8, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            to = 5,
+                            to = 6,
                             trangThai = true
                         },
                         new
                         {
                             id = 95,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0093",
                             ngayHieuLuc = new DateTime(2021, 9, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            to = 5,
+                            to = 6,
                             trangThai = true
                         },
                         new
                         {
                             id = 96,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0094",
                             ngayHieuLuc = new DateTime(2021, 10, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            to = 5,
+                            to = 6,
                             trangThai = true
                         },
                         new
                         {
                             id = 97,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0095",
                             ngayHieuLuc = new DateTime(2021, 11, 20, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            to = 5,
+                            to = 6,
                             trangThai = true
                         },
                         new
                         {
                             id = 98,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0096",
                             ngayHieuLuc = new DateTime(2021, 12, 21, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            to = 5,
+                            to = 6,
                             trangThai = true
                         },
                         new
                         {
                             id = 99,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0097",
                             ngayHieuLuc = new DateTime(2021, 1, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            to = 5,
+                            to = 6,
                             trangThai = true
                         },
                         new
                         {
                             id = 100,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0098",
                             ngayHieuLuc = new DateTime(2021, 2, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            to = 5,
+                            to = 6,
                             trangThai = true
                         },
                         new
                         {
                             id = 101,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0099",
                             ngayHieuLuc = new DateTime(2021, 3, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
-                            to = 5,
+                            to = 6,
                             trangThai = true
                         },
                         new
                         {
                             id = 102,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0100",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2436,7 +2335,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 103,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0101",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2446,7 +2344,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 104,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0102",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2456,7 +2353,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 105,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0103",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2466,7 +2362,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 106,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0104",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2476,7 +2371,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 107,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0105",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2486,7 +2380,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 108,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0106",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2496,7 +2389,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 109,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0107",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2506,7 +2398,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 110,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0108",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2516,7 +2407,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 111,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0109",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2526,7 +2416,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 112,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0110",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2536,7 +2425,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 113,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0111",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2546,7 +2434,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 114,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0112",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2556,7 +2443,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 115,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0113",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2566,7 +2452,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 116,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0114",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2576,7 +2461,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 117,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0115",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2586,7 +2470,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 118,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0116",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2596,7 +2479,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 119,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0117",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2606,7 +2488,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 120,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0118",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2616,7 +2497,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 121,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0119",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2626,7 +2506,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 122,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0120",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2636,7 +2515,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 123,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0121",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2646,7 +2524,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 124,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0122",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2656,7 +2533,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 125,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0123",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2666,7 +2542,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 126,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0124",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2676,7 +2551,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 127,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0125",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2686,7 +2560,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 128,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0126",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2696,7 +2569,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 129,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0127",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2706,7 +2578,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 130,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0128",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2716,7 +2587,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 131,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0129",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2726,7 +2596,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 132,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0130",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2736,7 +2605,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 133,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0131",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2746,7 +2614,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 134,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0132",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2756,7 +2623,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 135,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0133",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2766,7 +2632,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 136,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0134",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2776,7 +2641,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 137,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0135",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2786,7 +2650,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 138,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0136",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2796,7 +2659,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 139,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0137",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2806,7 +2668,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 140,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0138",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2816,7 +2677,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 141,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0139",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2826,7 +2686,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 142,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0140",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2836,7 +2695,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 143,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0141",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2846,7 +2704,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 144,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0142",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2856,7 +2713,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 145,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0143",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2866,7 +2722,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 146,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0144",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2876,7 +2731,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 147,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0145",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2886,7 +2740,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 148,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0146",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2896,7 +2749,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 149,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0147",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2906,7 +2758,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 150,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0148",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2916,7 +2767,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 151,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0149",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2926,7 +2776,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 152,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0150",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2936,7 +2785,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 153,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0151",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2946,7 +2794,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 154,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0152",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2956,7 +2803,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 155,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0153",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2966,7 +2812,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 156,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0154",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2976,7 +2821,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 157,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0155",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2986,7 +2830,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 158,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0156",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -2996,7 +2839,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 159,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0157",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3006,7 +2848,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 160,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0158",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3016,7 +2857,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 161,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0159",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3026,7 +2866,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 162,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0160",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3036,7 +2875,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 163,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0161",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3046,7 +2884,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 164,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0162",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3056,7 +2893,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 165,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0163",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3066,7 +2902,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 166,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0164",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3076,7 +2911,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 167,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0165",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3086,7 +2920,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 168,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0166",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3096,7 +2929,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 169,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0167",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3106,7 +2938,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 170,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0168",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3116,7 +2947,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 171,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0169",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3126,7 +2956,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 172,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0170",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3136,7 +2965,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 173,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0171",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3146,7 +2974,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 174,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0172",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3156,7 +2983,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 175,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0173",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3166,7 +2992,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 176,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0174",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3176,7 +3001,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 177,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0175",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3186,7 +3010,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 178,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0176",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3196,7 +3019,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 179,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0177",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3206,7 +3028,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 180,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0178",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3216,7 +3037,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 181,
-                            chiTiet = "Không",
                             idPhongBan = 2,
                             maNhanVien = "NV0179",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3226,7 +3046,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 182,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0180",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3236,7 +3055,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 183,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0181",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3246,7 +3064,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 184,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0182",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3256,7 +3073,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 185,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0183",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3266,7 +3082,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 186,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0184",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3276,7 +3091,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 187,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0185",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3286,7 +3100,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 188,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0186",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3296,7 +3109,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 189,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0187",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3306,7 +3118,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 190,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0188",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3316,7 +3127,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 191,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0189",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3326,7 +3136,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 192,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0190",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3336,7 +3145,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 193,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0191",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3346,7 +3154,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 194,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0192",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3356,7 +3163,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 195,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0193",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3366,7 +3172,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 196,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0194",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3376,7 +3181,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 197,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0195",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3386,7 +3190,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 198,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0196",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3396,7 +3199,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 199,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0197",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3406,7 +3208,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 200,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0198",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3416,7 +3217,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 201,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0199",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3426,7 +3226,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 202,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0200",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3436,7 +3235,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 203,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0201",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3446,7 +3244,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 204,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0202",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3456,7 +3253,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 205,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0203",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3466,7 +3262,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 206,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0204",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3476,7 +3271,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 207,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0205",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3486,7 +3280,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 208,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0206",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3496,7 +3289,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 209,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0207",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3506,7 +3298,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 210,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0208",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3516,7 +3307,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 211,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0209",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3526,7 +3316,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 212,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0210",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3536,7 +3325,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 213,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0211",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3546,7 +3334,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 214,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0212",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3556,7 +3343,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 215,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0213",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3566,7 +3352,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 216,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0214",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3576,7 +3361,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 217,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0215",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3586,7 +3370,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 218,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0216",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3596,7 +3379,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 219,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0217",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3606,7 +3388,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 220,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0218",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3616,7 +3397,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 221,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0219",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3626,7 +3406,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 222,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0220",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3636,7 +3415,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 223,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0221",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3646,7 +3424,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 224,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0222",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3656,7 +3433,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 225,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0223",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3666,7 +3442,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 226,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0224",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3676,7 +3451,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 227,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0225",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3686,7 +3460,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 228,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0226",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3696,7 +3469,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 229,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0227",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3706,7 +3478,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 230,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0228",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3716,7 +3487,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 231,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0229",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3726,7 +3496,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 232,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0230",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3736,7 +3505,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 233,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0231",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3746,7 +3514,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 234,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0232",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3756,7 +3523,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 235,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0233",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3766,7 +3532,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 236,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0234",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3776,7 +3541,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 237,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0235",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3786,7 +3550,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 238,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0236",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3796,7 +3559,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 239,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0237",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3806,7 +3568,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 240,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0238",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3816,7 +3577,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 241,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0239",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3826,7 +3586,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 242,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0240",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3836,7 +3595,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 243,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0241",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3846,7 +3604,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 244,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0242",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3856,7 +3613,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 245,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0243",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3866,7 +3622,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 246,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0244",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3876,7 +3631,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 247,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0245",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3886,7 +3640,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 248,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0246",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3896,7 +3649,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 249,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0247",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3906,7 +3658,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 250,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0248",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3916,7 +3667,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 251,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0249",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3926,7 +3676,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 252,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0250",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3936,7 +3685,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 253,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0251",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3946,7 +3694,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 254,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0252",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3956,7 +3703,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 255,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0253",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3966,7 +3712,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 256,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0254",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3976,7 +3721,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 257,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0255",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3986,7 +3730,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 258,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0256",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -3996,7 +3739,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 259,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0257",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4006,7 +3748,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 260,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0258",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4016,7 +3757,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 261,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0259",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4026,7 +3766,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 262,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0260",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4036,7 +3775,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 263,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0261",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4046,7 +3784,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 264,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0262",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4056,7 +3793,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 265,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0263",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4066,7 +3802,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 266,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0264",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4076,7 +3811,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 267,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0265",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4086,7 +3820,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 268,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0266",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4096,7 +3829,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 269,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0267",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4106,7 +3838,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 270,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0268",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4116,7 +3847,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 271,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0269",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4126,7 +3856,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 272,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0270",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4136,7 +3865,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 273,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0271",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4146,7 +3874,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 274,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0272",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4156,7 +3883,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 275,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0273",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4166,7 +3892,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 276,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0274",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4176,7 +3901,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 277,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0275",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4186,7 +3910,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 278,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0276",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4196,7 +3919,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 279,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0277",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4206,7 +3928,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 280,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0278",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4216,7 +3937,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 281,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0279",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4226,7 +3946,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 282,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0280",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4236,7 +3955,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 283,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0281",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4246,7 +3964,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 284,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0282",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4256,7 +3973,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 285,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0283",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4266,7 +3982,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 286,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0284",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4276,7 +3991,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 287,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0285",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4286,7 +4000,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 288,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0286",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4296,7 +4009,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 289,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0287",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4306,7 +4018,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 290,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0288",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4316,7 +4027,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 291,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0289",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4326,7 +4036,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 292,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0290",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4336,7 +4045,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 293,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0291",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4346,7 +4054,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 294,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0292",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4356,7 +4063,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 295,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0293",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4366,7 +4072,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 296,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0294",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4376,7 +4081,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 297,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0295",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4386,7 +4090,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 298,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0296",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4396,7 +4099,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 299,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0297",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4406,7 +4108,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 300,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0298",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4416,7 +4117,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 301,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0299",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4426,7 +4126,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 302,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0300",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4436,7 +4135,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 303,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0301",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4446,7 +4144,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 304,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0302",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4456,7 +4153,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 305,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0303",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4466,7 +4162,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 306,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0304",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4476,7 +4171,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 307,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0305",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4486,7 +4180,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 308,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0306",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4496,7 +4189,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 309,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0307",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4506,7 +4198,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 310,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0308",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4516,7 +4207,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 311,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0309",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4526,7 +4216,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 312,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0310",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4536,7 +4225,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 313,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0311",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4546,7 +4234,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 314,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0312",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4556,7 +4243,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 315,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0313",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4566,7 +4252,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 316,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0314",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4576,7 +4261,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 317,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0315",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4586,7 +4270,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 318,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0316",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4596,7 +4279,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 319,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0317",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4606,7 +4288,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 320,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0318",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4616,7 +4297,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 321,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0319",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4626,7 +4306,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 322,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0320",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4636,7 +4315,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 323,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0321",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4646,7 +4324,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 324,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0322",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4656,7 +4333,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 325,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0323",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4666,7 +4342,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 326,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0324",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4676,7 +4351,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 327,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0325",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4686,7 +4360,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 328,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0326",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4696,7 +4369,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 329,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0327",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4706,7 +4378,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 330,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0328",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4716,7 +4387,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 331,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0329",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4726,7 +4396,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 332,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0330",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4736,7 +4405,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 333,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0331",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4746,7 +4414,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 334,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0332",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4756,7 +4423,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 335,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0333",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4766,7 +4432,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 336,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0334",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4776,7 +4441,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 337,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0335",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4786,7 +4450,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 338,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0336",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4796,7 +4459,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 339,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0337",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4806,7 +4468,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 340,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0338",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4816,7 +4477,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 341,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0339",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4826,7 +4486,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 342,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0340",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4836,7 +4495,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 343,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0341",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4846,7 +4504,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 344,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0342",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4856,7 +4513,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 345,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0343",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4866,7 +4522,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 346,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0344",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4876,7 +4531,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 347,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0345",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4886,7 +4540,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 348,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0346",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4896,7 +4549,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 349,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0347",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4906,7 +4558,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 350,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0348",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4916,7 +4567,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 351,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0349",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4926,7 +4576,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 352,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0350",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4936,7 +4585,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 353,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0351",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4946,7 +4594,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 354,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0352",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4956,7 +4603,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 355,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0353",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4966,7 +4612,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 356,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0354",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4976,7 +4621,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 357,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0355",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4986,7 +4630,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 358,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0356",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -4996,7 +4639,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 359,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0357",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5006,7 +4648,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 360,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0358",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5016,7 +4657,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 361,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0359",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5026,7 +4666,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 362,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0360",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5036,7 +4675,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 363,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0361",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5046,7 +4684,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 364,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0362",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5056,7 +4693,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 365,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0363",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5066,7 +4702,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 366,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0364",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5076,7 +4711,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 367,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0365",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5086,7 +4720,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 368,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0366",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5096,7 +4729,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 369,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0367",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5106,7 +4738,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 370,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0368",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5116,7 +4747,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 371,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0369",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5126,7 +4756,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 372,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0370",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5136,7 +4765,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 373,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0371",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5146,7 +4774,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 374,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0372",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5156,7 +4783,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 375,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0373",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5166,7 +4792,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 376,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0374",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5176,7 +4801,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 377,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0375",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5186,7 +4810,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 378,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0376",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5196,7 +4819,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 379,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0377",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5206,7 +4828,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 380,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0378",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5216,7 +4837,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 381,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0379",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5226,7 +4846,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 382,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0380",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5236,7 +4855,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 383,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0381",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5246,7 +4864,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 384,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0382",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5256,7 +4873,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 385,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0383",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5266,7 +4882,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 386,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0384",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5276,7 +4891,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 387,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0385",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5286,7 +4900,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 388,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0386",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5296,7 +4909,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 389,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0387",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5306,7 +4918,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 390,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0388",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5316,7 +4927,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 391,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0389",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5326,7 +4936,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 392,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0390",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5336,7 +4945,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 393,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0391",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5346,7 +4954,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 394,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0392",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5356,7 +4963,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 395,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0393",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5366,7 +4972,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 396,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0394",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5376,7 +4981,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 397,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0395",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5386,7 +4990,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 398,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0396",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5396,7 +4999,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 399,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0397",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5406,7 +5008,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 400,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0398",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5416,7 +5017,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 401,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0399",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5426,7 +5026,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 402,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0400",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5436,7 +5035,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 403,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0401",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5446,7 +5044,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 404,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0402",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5456,7 +5053,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 405,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0403",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5466,7 +5062,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 406,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0404",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5476,7 +5071,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 407,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0405",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5486,7 +5080,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 408,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0406",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5496,7 +5089,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 409,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0407",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5506,7 +5098,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 410,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0408",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5516,7 +5107,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 411,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0409",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5526,7 +5116,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 412,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0410",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5536,7 +5125,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 413,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0411",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5546,7 +5134,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 414,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0412",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5556,7 +5143,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 415,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0413",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5566,7 +5152,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 416,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0414",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5576,7 +5161,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 417,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0415",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5586,7 +5170,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 418,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0416",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5596,7 +5179,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 419,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0417",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5606,7 +5188,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 420,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0418",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5616,7 +5197,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 421,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0419",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5626,7 +5206,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 422,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0420",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5636,7 +5215,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 423,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0421",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5646,7 +5224,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 424,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0422",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5656,7 +5233,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 425,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0423",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5666,7 +5242,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 426,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0424",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5676,7 +5251,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 427,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0425",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5686,7 +5260,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 428,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0426",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5696,7 +5269,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 429,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0427",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5706,7 +5278,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 430,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0428",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5716,7 +5287,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 431,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0429",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5726,7 +5296,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 432,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0430",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5736,7 +5305,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 433,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0431",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5746,7 +5314,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 434,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0432",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5756,7 +5323,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 435,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0433",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5766,7 +5332,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 436,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0434",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5776,7 +5341,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 437,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0435",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5786,7 +5350,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 438,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0436",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5796,7 +5359,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 439,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0437",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5806,7 +5368,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 440,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0438",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5816,7 +5377,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 441,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0439",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5826,7 +5386,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 442,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0440",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5836,7 +5395,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 443,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0441",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5846,7 +5404,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 444,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0442",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5856,7 +5413,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 445,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0443",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5866,7 +5422,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 446,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0444",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5876,7 +5431,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 447,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0445",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5886,7 +5440,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 448,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0446",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5896,7 +5449,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 449,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0447",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5906,7 +5458,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 450,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0448",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5916,7 +5467,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 451,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0449",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5926,7 +5476,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 452,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0450",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5936,7 +5485,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 453,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0451",
                             ngayHieuLuc = new DateTime(2021, 11, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5946,7 +5494,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 454,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0452",
                             ngayHieuLuc = new DateTime(2021, 11, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5956,7 +5503,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 455,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0453",
                             ngayHieuLuc = new DateTime(2021, 11, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5966,7 +5512,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 456,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0454",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5976,7 +5521,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 457,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0455",
                             ngayHieuLuc = new DateTime(2021, 11, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5986,7 +5530,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 458,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0456",
                             ngayHieuLuc = new DateTime(2021, 11, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -5996,7 +5539,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 459,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0457",
                             ngayHieuLuc = new DateTime(2021, 11, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6006,7 +5548,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 460,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0458",
                             ngayHieuLuc = new DateTime(2021, 11, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6016,7 +5557,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 461,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0459",
                             ngayHieuLuc = new DateTime(2021, 11, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6026,7 +5566,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 462,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0460",
                             ngayHieuLuc = new DateTime(2021, 11, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6036,7 +5575,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 463,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0461",
                             ngayHieuLuc = new DateTime(2021, 11, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6046,7 +5584,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 464,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0462",
                             ngayHieuLuc = new DateTime(2021, 11, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6056,7 +5593,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 465,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0463",
                             ngayHieuLuc = new DateTime(2021, 11, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6066,7 +5602,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 466,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0464",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6076,7 +5611,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 467,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0465",
                             ngayHieuLuc = new DateTime(2021, 11, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6086,7 +5620,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 468,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0466",
                             ngayHieuLuc = new DateTime(2021, 11, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6096,7 +5629,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 469,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0467",
                             ngayHieuLuc = new DateTime(2021, 11, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6106,7 +5638,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 470,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0468",
                             ngayHieuLuc = new DateTime(2021, 11, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6116,7 +5647,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 471,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0469",
                             ngayHieuLuc = new DateTime(2021, 11, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6126,7 +5656,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 472,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0470",
                             ngayHieuLuc = new DateTime(2021, 11, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6136,7 +5665,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 473,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0471",
                             ngayHieuLuc = new DateTime(2021, 11, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6146,7 +5674,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 474,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0472",
                             ngayHieuLuc = new DateTime(2021, 11, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6156,7 +5683,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 475,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0473",
                             ngayHieuLuc = new DateTime(2021, 11, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6166,7 +5692,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 476,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0474",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6176,7 +5701,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 477,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0475",
                             ngayHieuLuc = new DateTime(2021, 11, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6186,7 +5710,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 478,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0476",
                             ngayHieuLuc = new DateTime(2021, 11, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6196,7 +5719,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 479,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0477",
                             ngayHieuLuc = new DateTime(2021, 11, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6206,7 +5728,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 480,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0478",
                             ngayHieuLuc = new DateTime(2021, 11, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6216,7 +5737,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 481,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0479",
                             ngayHieuLuc = new DateTime(2021, 11, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6226,7 +5746,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 482,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0480",
                             ngayHieuLuc = new DateTime(2021, 11, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6236,7 +5755,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 483,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0481",
                             ngayHieuLuc = new DateTime(2021, 11, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6246,7 +5764,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 484,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0482",
                             ngayHieuLuc = new DateTime(2021, 11, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6256,7 +5773,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 485,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0483",
                             ngayHieuLuc = new DateTime(2021, 11, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6266,7 +5782,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 486,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0484",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6276,7 +5791,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 487,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0485",
                             ngayHieuLuc = new DateTime(2021, 11, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6286,7 +5800,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 488,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0486",
                             ngayHieuLuc = new DateTime(2021, 11, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6296,7 +5809,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 489,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0487",
                             ngayHieuLuc = new DateTime(2021, 11, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6306,7 +5818,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 490,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0488",
                             ngayHieuLuc = new DateTime(2021, 11, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6316,7 +5827,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 491,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0489",
                             ngayHieuLuc = new DateTime(2021, 11, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6326,7 +5836,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 492,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0490",
                             ngayHieuLuc = new DateTime(2021, 11, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6336,7 +5845,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 493,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0491",
                             ngayHieuLuc = new DateTime(2021, 11, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6346,7 +5854,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 494,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0492",
                             ngayHieuLuc = new DateTime(2021, 11, 19, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6356,7 +5863,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 495,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0493",
                             ngayHieuLuc = new DateTime(2021, 11, 18, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6366,7 +5872,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 496,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0494",
                             ngayHieuLuc = new DateTime(2021, 11, 17, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6376,7 +5881,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 497,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0495",
                             ngayHieuLuc = new DateTime(2021, 11, 16, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6386,7 +5890,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 498,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0496",
                             ngayHieuLuc = new DateTime(2021, 11, 15, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6396,7 +5899,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 499,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0497",
                             ngayHieuLuc = new DateTime(2021, 11, 14, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6406,7 +5908,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 500,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0498",
                             ngayHieuLuc = new DateTime(2021, 11, 13, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6416,7 +5917,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 501,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0499",
                             ngayHieuLuc = new DateTime(2021, 11, 12, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6426,7 +5926,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 502,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0500",
                             ngayHieuLuc = new DateTime(2021, 11, 11, 13, 26, 0, 0, DateTimeKind.Unspecified),
@@ -6436,7 +5935,6 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 503,
-                            chiTiet = "Không",
                             idPhongBan = 3,
                             maNhanVien = "NV0501",
                             ngayHieuLuc = new DateTime(2021, 11, 10, 13, 26, 0, 0, DateTimeKind.Unspecified),
