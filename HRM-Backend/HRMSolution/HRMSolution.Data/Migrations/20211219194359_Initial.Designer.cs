@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HRMSolution.Data.Migrations
 {
     [DbContext(typeof(HRMDbContext))]
-    [Migration("20211217180434_Initial")]
+    [Migration("20211219194359_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,7 +49,7 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            ConcurrencyStamp = "4364d749-df7e-4b58-ada5-614a1d0024da",
+                            ConcurrencyStamp = "c7729dff-2446-46a7-8cd1-3169ea2dd601",
                             Name = "admin",
                             NormalizedName = "admin",
                             ghiChu = "Administrator role"
@@ -57,7 +57,7 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec"),
-                            ConcurrencyStamp = "a8a0eacb-c3fc-4fde-b8c6-5ff4c9a018fb",
+                            ConcurrencyStamp = "06ebc65a-acb3-4a70-9b33-3420a02ca3f1",
                             Name = "user",
                             NormalizedName = "user",
                             ghiChu = "User role"
@@ -126,11 +126,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5613845f-27d3-4c71-90e6-63432cc22fed",
+                            ConcurrencyStamp = "d525a2f6-15e3-4281-bbd9-d77319fb175b",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHyTzO2ON0wRoaETi5FM1G30/i5T1L0aoczvGAPaav0uX4Q1iGbvaTkkoJqSkis1vQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENE/kznufLTfQDBwqqihZHilEjDQQm5rR8SjDLMO88KGa6XfT37t8reCPXwB92WPAg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -141,11 +141,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("1db26eb2-1870-4129-f60a-08d9978ff76b"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2cc3711b-ca24-45f1-a512-0d90773a7f13",
+                            ConcurrencyStamp = "b8ab3d1c-1f0e-429a-8d4b-3bc0e6341df9",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "user1",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDGHseUJ4a7RD3xOXkUR7IsktLmsKxwY4pihDkD3BaCRgLyWLwAjS5g9FY/6VgmKaA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIDTwUsx8q8zXa1Zl1kr8ip9SRvn1TrDp2KDPadUiNwcpOEQY4OGG6ofPQe5x3nVyg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -156,11 +156,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("ccf28057-5be9-4405-957b-460e0ce106a7"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b54f5f2a-c51d-476d-88fa-fd303c86786a",
+                            ConcurrencyStamp = "8f876baf-7882-4224-90da-4a6d811212be",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "user3",
-                            PasswordHash = "AQAAAAEAACcQAAAAEL3FKbH6biyjQRMpiyAzFfT+tdNAHs6hiKXLA8EdgbkrsRjCjaRmB8ldWa/jO9IGAw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMwq0zrX2ROpijdMWMWhUSL+tWVKF3jJ1aWo2Zhqj7/Nu4vVuZ7RnEbLU6KTYqv2aQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -348,7 +348,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             id = 3,
                             maChuyenMon = "CM03",
-                            tenChuyenMon = "Quản tị kinh doanh"
+                            tenChuyenMon = "Quản trị kinh doanh"
                         },
                         new
                         {
@@ -21926,6 +21926,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -21943,6 +21944,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -21960,6 +21962,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -21977,6 +21980,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -21994,6 +21998,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22011,6 +22016,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22028,6 +22034,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22045,6 +22052,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22062,6 +22070,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22079,6 +22088,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22096,6 +22106,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22113,6 +22124,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22130,6 +22142,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22147,6 +22160,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22164,6 +22178,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22181,6 +22196,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22198,6 +22214,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22215,6 +22232,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22232,6 +22250,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22249,6 +22268,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22266,6 +22286,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22283,6 +22304,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22300,6 +22322,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22317,6 +22340,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22334,6 +22358,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22351,6 +22376,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22368,6 +22394,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22385,6 +22412,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22402,6 +22430,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22419,6 +22448,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22436,6 +22466,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22453,6 +22484,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22470,6 +22502,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22487,6 +22520,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22504,6 +22538,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22521,6 +22556,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22538,6 +22574,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22555,6 +22592,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22572,6 +22610,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22589,6 +22628,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22606,6 +22646,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22623,6 +22664,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22640,6 +22682,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22657,6 +22700,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22674,6 +22718,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22691,6 +22736,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22708,6 +22754,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22725,6 +22772,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22742,6 +22790,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22759,6 +22808,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22776,6 +22826,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22793,6 +22844,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22810,6 +22862,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22827,6 +22880,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22844,6 +22898,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22861,6 +22916,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22878,6 +22934,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22895,6 +22952,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22912,6 +22970,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -22929,6 +22988,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22946,6 +23006,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22963,6 +23024,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22980,6 +23042,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -22997,6 +23060,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23014,6 +23078,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23031,6 +23096,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23048,6 +23114,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23065,6 +23132,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23082,6 +23150,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23099,6 +23168,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23116,6 +23186,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23133,6 +23204,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23150,6 +23222,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23167,6 +23240,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23184,6 +23258,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23201,6 +23276,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23218,6 +23294,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23235,6 +23312,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23252,6 +23330,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23269,6 +23348,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23286,6 +23366,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23303,6 +23384,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23320,6 +23402,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23337,6 +23420,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23354,6 +23438,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23371,6 +23456,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23388,6 +23474,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23405,6 +23492,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23422,6 +23510,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23439,6 +23528,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23456,6 +23546,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23473,6 +23564,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23490,6 +23582,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23507,6 +23600,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23524,6 +23618,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23541,6 +23636,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23558,6 +23654,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23575,6 +23672,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23592,6 +23690,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23609,6 +23708,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23626,6 +23726,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23643,6 +23744,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23660,6 +23762,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23677,6 +23780,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23694,6 +23798,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23711,6 +23816,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23728,6 +23834,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23745,6 +23852,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23762,6 +23870,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23779,6 +23888,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23796,6 +23906,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23813,6 +23924,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23830,6 +23942,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23847,6 +23960,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23864,6 +23978,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23881,6 +23996,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23898,6 +24014,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23915,6 +24032,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23932,6 +24050,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -23949,6 +24068,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -23966,6 +24086,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -23983,6 +24104,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24000,6 +24122,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24017,6 +24140,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24034,6 +24158,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24051,6 +24176,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24068,6 +24194,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24085,6 +24212,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24102,6 +24230,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24119,6 +24248,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24136,6 +24266,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24153,6 +24284,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24170,6 +24302,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24187,6 +24320,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24204,6 +24338,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24221,6 +24356,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24238,6 +24374,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24255,6 +24392,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24272,6 +24410,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24289,6 +24428,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24306,6 +24446,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24323,6 +24464,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24340,6 +24482,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24357,6 +24500,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24374,6 +24518,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24391,6 +24536,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24408,6 +24554,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24425,6 +24572,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24442,6 +24590,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24459,6 +24608,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24476,6 +24626,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24493,6 +24644,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24510,6 +24662,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24527,6 +24680,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24544,6 +24698,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24561,6 +24716,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24578,6 +24734,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24595,6 +24752,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24612,6 +24770,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24629,6 +24788,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24646,6 +24806,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24663,6 +24824,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24680,6 +24842,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24697,6 +24860,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24714,6 +24878,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24731,6 +24896,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24748,6 +24914,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24765,6 +24932,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24782,6 +24950,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -24799,6 +24968,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24816,6 +24986,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24833,6 +25004,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24850,6 +25022,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24867,6 +25040,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24884,6 +25058,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24901,6 +25076,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24918,6 +25094,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24935,6 +25112,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24952,6 +25130,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24969,6 +25148,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -24986,6 +25166,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25003,6 +25184,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25020,6 +25202,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25037,6 +25220,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25054,6 +25238,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25071,6 +25256,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25088,6 +25274,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25105,6 +25292,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25122,6 +25310,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25139,6 +25328,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25156,6 +25346,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25173,6 +25364,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25190,6 +25382,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25207,6 +25400,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25224,6 +25418,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25241,6 +25436,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25258,6 +25454,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25275,6 +25472,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25292,6 +25490,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25309,6 +25508,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25326,6 +25526,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25343,6 +25544,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25360,6 +25562,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25377,6 +25580,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25394,6 +25598,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25411,6 +25616,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25428,6 +25634,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25445,6 +25652,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25462,6 +25670,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25479,6 +25688,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25496,6 +25706,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25513,6 +25724,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25530,6 +25742,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25547,6 +25760,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25564,6 +25778,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25581,6 +25796,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25598,6 +25814,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25615,6 +25832,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25632,6 +25850,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25649,6 +25868,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25666,6 +25886,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25683,6 +25904,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25700,6 +25922,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25717,6 +25940,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25734,6 +25958,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25751,6 +25976,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25768,6 +25994,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25785,6 +26012,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25802,6 +26030,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -25819,6 +26048,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25836,6 +26066,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -25853,6 +26084,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25870,6 +26102,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -25887,6 +26120,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25904,6 +26138,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -25921,6 +26156,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25938,6 +26174,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -25955,6 +26192,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -25972,6 +26210,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -25989,6 +26228,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -26006,6 +26246,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26023,6 +26264,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -26040,6 +26282,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26057,6 +26300,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -26074,6 +26318,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26091,6 +26336,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -26108,6 +26354,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26125,6 +26372,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -26142,6 +26390,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -26159,6 +26408,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26176,6 +26426,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -26193,6 +26444,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -26210,6 +26462,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26227,6 +26480,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -26244,6 +26498,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26261,6 +26516,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -26278,6 +26534,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26295,6 +26552,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26312,6 +26570,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26329,6 +26588,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -26346,6 +26606,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26363,6 +26624,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -26380,6 +26642,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26397,6 +26660,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -26414,6 +26678,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26431,6 +26696,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -26448,6 +26714,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26465,6 +26732,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -26482,6 +26750,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26499,6 +26768,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -26516,6 +26786,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26533,6 +26804,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26550,6 +26822,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -26567,6 +26840,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26584,6 +26858,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26601,6 +26876,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26618,6 +26894,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -26635,6 +26912,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26652,6 +26930,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -26669,6 +26948,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26686,6 +26966,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26703,6 +26984,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26720,6 +27002,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26737,6 +27020,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26754,6 +27038,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26771,6 +27056,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26788,6 +27074,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26805,6 +27092,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26822,6 +27110,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26839,6 +27128,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26856,6 +27146,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26873,6 +27164,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26890,6 +27182,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26907,6 +27200,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26924,6 +27218,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26941,6 +27236,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26958,6 +27254,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26975,6 +27272,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -26992,6 +27290,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27009,6 +27308,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27026,6 +27326,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27043,6 +27344,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27060,6 +27362,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27077,6 +27380,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27094,6 +27398,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27111,6 +27416,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27128,6 +27434,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27145,6 +27452,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27162,6 +27470,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27179,6 +27488,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27196,6 +27506,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27213,6 +27524,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27230,6 +27542,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27247,6 +27560,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27264,6 +27578,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27281,6 +27596,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27298,6 +27614,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27315,6 +27632,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27332,6 +27650,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27349,6 +27668,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27366,6 +27686,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27383,6 +27704,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27400,6 +27722,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27417,6 +27740,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27434,6 +27758,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27451,6 +27776,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27468,6 +27794,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27485,6 +27812,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27502,6 +27830,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27519,6 +27848,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27536,6 +27866,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27553,6 +27884,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27570,6 +27902,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27587,6 +27920,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27604,6 +27938,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27621,6 +27956,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27638,6 +27974,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27655,6 +27992,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27672,6 +28010,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -27689,6 +28028,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27706,6 +28046,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -27723,6 +28064,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27740,6 +28082,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -27757,6 +28100,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27774,6 +28118,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -27791,6 +28136,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27808,6 +28154,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -27825,6 +28172,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27842,6 +28190,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -27859,6 +28208,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -27876,6 +28226,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27893,6 +28244,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -27910,6 +28262,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27927,6 +28280,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -27944,6 +28298,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27961,6 +28316,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -27978,6 +28334,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -27995,6 +28352,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -28012,6 +28370,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -28029,6 +28388,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28046,6 +28406,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -28063,6 +28424,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -28080,6 +28442,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28097,6 +28460,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -28114,6 +28478,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28131,6 +28496,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -28148,6 +28514,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28165,6 +28532,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28182,6 +28550,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28199,6 +28568,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -28216,6 +28586,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28233,6 +28604,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -28250,6 +28622,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28267,6 +28640,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -28284,6 +28658,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28301,6 +28676,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -28318,6 +28694,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28335,6 +28712,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -28352,6 +28730,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28369,6 +28748,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -28386,6 +28766,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28403,6 +28784,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28420,6 +28802,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -28437,6 +28820,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28454,6 +28838,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28471,6 +28856,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28488,6 +28874,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -28505,6 +28892,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28522,6 +28910,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -28539,6 +28928,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28556,6 +28946,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28573,6 +28964,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28590,6 +28982,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28607,6 +29000,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28624,6 +29018,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28641,6 +29036,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28658,6 +29054,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28675,6 +29072,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28692,6 +29090,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28709,6 +29108,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28726,6 +29126,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28743,6 +29144,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28760,6 +29162,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28777,6 +29180,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28794,6 +29198,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28811,6 +29216,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28828,6 +29234,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28845,6 +29252,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28862,6 +29270,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28879,6 +29288,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28896,6 +29306,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28913,6 +29324,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28930,6 +29342,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28947,6 +29360,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28964,6 +29378,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28981,6 +29396,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -28998,6 +29414,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29015,6 +29432,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29032,6 +29450,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29049,6 +29468,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29066,6 +29486,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29083,6 +29504,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29100,6 +29522,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29117,6 +29540,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29134,6 +29558,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29151,6 +29576,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29168,6 +29594,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29185,6 +29612,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29202,6 +29630,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29219,6 +29648,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29236,6 +29666,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29253,6 +29684,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29270,6 +29702,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29287,6 +29720,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29304,6 +29738,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29321,6 +29756,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29338,6 +29774,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29355,6 +29792,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29372,6 +29810,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29389,6 +29828,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29406,6 +29846,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29423,6 +29864,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29440,6 +29882,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29457,6 +29900,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29474,6 +29918,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29491,6 +29936,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29508,6 +29954,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29525,6 +29972,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29542,6 +29990,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -29559,6 +30008,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29576,6 +30026,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -29593,6 +30044,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29610,6 +30062,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -29627,6 +30080,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29644,6 +30098,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -29661,6 +30116,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29678,6 +30134,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -29695,6 +30152,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29712,6 +30170,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -29729,6 +30188,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -29746,6 +30206,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29763,6 +30224,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -29780,6 +30242,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29797,6 +30260,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -29814,6 +30278,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29831,6 +30296,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -29848,6 +30314,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29865,6 +30332,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -29882,6 +30350,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -29899,6 +30368,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29916,6 +30386,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -29933,6 +30404,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -29950,6 +30422,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -29967,6 +30440,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -29984,6 +30458,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -30001,6 +30476,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -30018,6 +30494,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -30035,6 +30512,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -30052,6 +30530,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -30069,6 +30548,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -30086,6 +30566,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -30103,6 +30584,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -30120,6 +30602,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -30137,6 +30620,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = false
@@ -30154,6 +30638,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 3787000f,
                             trangThai = true
@@ -30171,6 +30656,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 7720000f,
                             trangThai = false
@@ -30188,6 +30674,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 7229000f,
                             trangThai = true
@@ -30205,6 +30692,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 6737000f,
                             trangThai = false
@@ -30222,6 +30710,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 6245000f,
                             trangThai = true
@@ -30239,6 +30728,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 5753000f,
                             trangThai = false
@@ -30256,6 +30746,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 5262000f,
                             trangThai = true
@@ -30273,6 +30764,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 7720000f,
                             trangThai = true
@@ -30290,6 +30782,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 7299000f,
                             trangThai = false
@@ -30307,6 +30800,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 6737000f,
                             trangThai = true
@@ -30396,6 +30890,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 300000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 6445100f,
                             trangThai = false
@@ -30413,6 +30908,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 200000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 5853000f,
                             trangThai = true
@@ -30430,6 +30926,7 @@ namespace HRMSolution.Data.Migrations
                             phuCapChucDanh = 100000f,
                             phuCapChucVu = 100000f,
                             phuCapKhac = 100000f,
+                            phuCapTrachNhiem = 0f,
                             thoiHanLenLuong = "1",
                             tongLuong = 5262000f,
                             trangThai = true
