@@ -29,7 +29,11 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
         public async Task<int> Create(QuaTrinhCongTacCreateRequest request)
         {
             char[] charsToTrim = { '*', ' ', '\'' };
-            var chiTiet = request.chiTiet.Trim(charsToTrim);
+            var chiTiet = request.chiTiet;
+            if (chiTiet != null)
+            {
+                chiTiet = chiTiet.Trim(charsToTrim);
+            }
             if (request.maNhanVien == null || request.ngayHieuLuc == null || request.idPhongBan == 0 || request.to == 0)
             {
                 return 0;

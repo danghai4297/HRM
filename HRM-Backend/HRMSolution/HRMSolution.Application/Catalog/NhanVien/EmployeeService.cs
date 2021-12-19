@@ -30,44 +30,176 @@ namespace HRMSolution.Application.Catalog.NhanViens
             char[] charsToTrim = { '*', ' ', '\'' };
             var hoTen = request.hoTen.Trim(charsToTrim);
             var quocTich = request.quocTich.Trim(charsToTrim);
-            var email = request.email.Trim(charsToTrim);
-            var facebook = request.facebook.Trim(charsToTrim);
-            var skype = request.skype.Trim(charsToTrim);
-            var maSoThue = request.maSoThue.Trim(charsToTrim);
+
+            var email = request.email;
+            if (email != null)
+            {
+                email = email.Trim(charsToTrim);
+            }
+
+            var facebook = request.facebook;
+            if (facebook != null)
+            {
+                facebook = facebook.Trim(charsToTrim);
+            }
+
+            var skype = request.skype;
+            if (skype != null)
+            {
+                skype = skype.Trim(charsToTrim);
+            }
+
+            var maSoThue = request.maSoThue;
+            if (maSoThue != null)
+            {
+                maSoThue = maSoThue.Trim(charsToTrim);
+            }
             var cccd = request.cccd.Trim(charsToTrim);
             var noiCapCCCD = request.noiCapCCCD.Trim(charsToTrim);
-            var hoChieu = request.hoChieu.Trim(charsToTrim);
-            var noiCapHoChieu = request.noiCapHoChieu.Trim(charsToTrim);
+
+            var hoChieu = request.hoChieu;
+            if (hoChieu != null)
+            {
+                hoChieu = hoChieu.Trim(charsToTrim);
+            }
+            var noiCapHoChieu = request.noiCapHoChieu;
+            if (noiCapHoChieu != null)
+            {
+                noiCapHoChieu = noiCapHoChieu.Trim(charsToTrim);
+            }
             var noiSinh = request.noiSinh.Trim(charsToTrim);
             var queQuan = request.queQuan.Trim(charsToTrim);
             var thuongTru = request.thuongTru.Trim(charsToTrim);
-            var tamTru = request.tamTru.Trim(charsToTrim);
+
+            var tamTru = request.tamTru;
+            if (tamTru != null)
+            {
+                tamTru = noiCapHoChieu.Trim(charsToTrim);
+            }
+
             var ngheNghiep = request.ngheNghiep.Trim(charsToTrim);
             var chucVuHienTai = request.chucVuHienTai.Trim(charsToTrim);
             var congViecChinh = request.congViecChinh.Trim(charsToTrim);
             var coQuanTuyenDung = request.coQuanTuyenDung.Trim(charsToTrim);
-            var ngachCongChucNoiDung = request.ngachCongChucNoiDung.Trim(charsToTrim);
-            var quanHamCaoNhat = request.quanHamCaoNhat.Trim(charsToTrim);
-            var danhHieuCaoNhat = request.danhHieuCaoNhat.Trim(charsToTrim);
-            var noiThamGia = request.noiThamGia.Trim(charsToTrim);
-            var thuongBinh = request.thuongBinh.Trim(charsToTrim);
-            var conChinhSach = request.conChinhSach.Trim(charsToTrim);
-            var bhxh = request.bhxh.Trim(charsToTrim);
-            var bhyt = request.bhyt.Trim(charsToTrim);
-            var atm = request.atm.Trim(charsToTrim);
-            var nganHang = request.nganHang.Trim(charsToTrim);
-            var lyDoNghiViec = request.lyDoNghiViec.Trim(charsToTrim);
-            var yt_nhomMau = request.yt_nhomMau.Trim(charsToTrim);
-            var yt_tinhTrangSucKhoe = request.yt_tinhTrangSucKhoe.Trim(charsToTrim);
-            var yt_benhTat = request.yt_benhTat.Trim(charsToTrim);
-            var yt_luuY = request.yt_luuY.Trim(charsToTrim);
+
+            var ngachCongChucNoiDung = request.ngachCongChucNoiDung;
+            if (ngachCongChucNoiDung != null)
+            {
+                ngachCongChucNoiDung = ngachCongChucNoiDung.Trim(charsToTrim);
+            }
+
+            var quanHamCaoNhat = request.quanHamCaoNhat;
+            if (quanHamCaoNhat != null)
+            {
+                quanHamCaoNhat = quanHamCaoNhat.Trim(charsToTrim);
+            }
+
+            var danhHieuCaoNhat = request.danhHieuCaoNhat;
+            if (danhHieuCaoNhat != null)
+            {
+                danhHieuCaoNhat = danhHieuCaoNhat.Trim(charsToTrim);
+            }
+
+            var noiThamGia = request.noiThamGia;
+            if (noiThamGia != null)
+            {
+                noiThamGia = noiThamGia.Trim(charsToTrim);
+            }
+
+            var thuongBinh = request.thuongBinh;
+            if (thuongBinh != null)
+            {
+                thuongBinh = thuongBinh.Trim(charsToTrim);
+            }
+
+            var conChinhSach = request.conChinhSach;
+            if (conChinhSach != null)
+            {
+                conChinhSach = conChinhSach.Trim(charsToTrim);
+            }
+
+            var bhxh = request.bhxh;
+            if (bhxh != null)
+            {
+                bhxh = bhxh.Trim(charsToTrim);
+            }
+
+            var bhyt = request.bhyt;
+            if (bhyt != null)
+            {
+                bhyt = bhyt.Trim(charsToTrim);
+            }
+
+            var atm = request.atm;
+            if (atm != null)
+            {
+                atm = atm.Trim(charsToTrim);
+            }
+
+            var nganHang = request.nganHang;
+            if (nganHang != null)
+            {
+                nganHang = nganHang.Trim(charsToTrim);
+            }
+
+            var lyDoNghiViec = request.lyDoNghiViec;
+            if (lyDoNghiViec != null)
+            {
+                lyDoNghiViec = lyDoNghiViec.Trim(charsToTrim);
+            }
+
+            var yt_nhomMau = request.yt_nhomMau;
+            if (yt_nhomMau != null)
+            {
+                yt_nhomMau = yt_nhomMau.Trim(charsToTrim);
+            }
+
+            var yt_tinhTrangSucKhoe = request.yt_tinhTrangSucKhoe;
+            if (yt_tinhTrangSucKhoe != null)
+            {
+                yt_tinhTrangSucKhoe = yt_tinhTrangSucKhoe.Trim(charsToTrim);
+            }
+
+            var yt_benhTat = request.yt_benhTat;
+            if (yt_benhTat != null)
+            {
+                yt_benhTat = yt_benhTat.Trim(charsToTrim);
+            }
+
+            var yt_luuY = request.yt_luuY;
+            if (yt_luuY != null)
+            {
+                yt_luuY = yt_luuY.Trim(charsToTrim);
+            }
+
             var lhkc_hoTen = request.lhkc_hoTen.Trim(charsToTrim);
             var lhkc_quanHe = request.lhkc_quanHe.Trim(charsToTrim);
-            var lhkc_email = request.lhkc_email.Trim(charsToTrim);
+
+            var lhkc_email = request.lhkc_email;
+            if (lhkc_email != null)
+            {
+                lhkc_email = lhkc_email.Trim(charsToTrim);
+            }
+
             var lhkc_diaChi = request.lhkc_diaChi.Trim(charsToTrim);
-            var lsbt_biBatDiTu = request.lsbt_biBatDiTu.Trim(charsToTrim);
-            var lsbt_thamGiaChinhTri = request.lsbt_thamGiaChinhTri.Trim(charsToTrim);
-            var lsbt_thanNhanNuocNgoai = request.lsbt_thanNhanNuocNgoai.Trim(charsToTrim);
+            var lsbt_biBatDiTu = request.lsbt_biBatDiTu;
+            if (lsbt_biBatDiTu != null)
+            {
+                lsbt_biBatDiTu = lsbt_biBatDiTu.Trim(charsToTrim);
+            }
+
+            var lsbt_thamGiaChinhTri = request.lsbt_thamGiaChinhTri;
+            if (lsbt_thamGiaChinhTri != null)
+            {
+                lsbt_thamGiaChinhTri = lsbt_thamGiaChinhTri.Trim(charsToTrim);
+            }
+
+            var lsbt_thanNhanNuocNgoai = request.lsbt_thanNhanNuocNgoai;
+            if (lsbt_thanNhanNuocNgoai != null)
+            {
+                lsbt_thanNhanNuocNgoai = lsbt_thanNhanNuocNgoai.Trim(charsToTrim);
+            }
+
             if (request.id == null || request.hoTen == null || request.quocTich == null || request.ngaySinh == null || request.diDong == null || request.cccd == null || request.noiCapCCCD == null
                 || request.ngayCapCCCD == null || request.ngayHetHanCCCD == null || request.noiSinh == null || request.queQuan == null || request.thuongTru == null || request.ngheNghiep == null
                 || request.chucVuHienTai == null || request.congViecChinh == null || request.coQuanTuyenDung == null || request.idDanhMucHonNhan == 0 || request.idDanToc <= 0 || request.idNgachCongChuc <= 0
@@ -209,44 +341,175 @@ namespace HRMSolution.Application.Catalog.NhanViens
             char[] charsToTrim = { '*', ' ', '\'' };
             var hoTen = request.hoTen.Trim(charsToTrim);
             var quocTich = request.quocTich.Trim(charsToTrim);
-            var email = request.email.Trim(charsToTrim);
-            var facebook = request.facebook.Trim(charsToTrim);
-            var skype = request.skype.Trim(charsToTrim);
-            var maSoThue = request.maSoThue.Trim(charsToTrim);
+
+            var email = request.email;
+            if (email != null)
+            {
+                email = email.Trim(charsToTrim);
+            }
+
+            var facebook = request.facebook;
+            if (facebook != null)
+            {
+                facebook = facebook.Trim(charsToTrim);
+            }
+
+            var skype = request.skype;
+            if (skype != null)
+            {
+                skype = skype.Trim(charsToTrim);
+            }
+
+            var maSoThue = request.maSoThue;
+            if (maSoThue != null)
+            {
+                maSoThue = maSoThue.Trim(charsToTrim);
+            }
             var cccd = request.cccd.Trim(charsToTrim);
             var noiCapCCCD = request.noiCapCCCD.Trim(charsToTrim);
-            var hoChieu = request.hoChieu.Trim(charsToTrim);
-            var noiCapHoChieu = request.noiCapHoChieu.Trim(charsToTrim);
+
+            var hoChieu = request.hoChieu;
+            if (hoChieu != null)
+            {
+                hoChieu = hoChieu.Trim(charsToTrim);
+            }
+            var noiCapHoChieu = request.noiCapHoChieu;
+            if (noiCapHoChieu != null)
+            {
+                noiCapHoChieu = noiCapHoChieu.Trim(charsToTrim);
+            }
             var noiSinh = request.noiSinh.Trim(charsToTrim);
             var queQuan = request.queQuan.Trim(charsToTrim);
             var thuongTru = request.thuongTru.Trim(charsToTrim);
-            var tamTru = request.tamTru.Trim(charsToTrim);
+
+            var tamTru = request.tamTru;
+            if (tamTru != null)
+            {
+                tamTru = noiCapHoChieu.Trim(charsToTrim);
+            }
+
             var ngheNghiep = request.ngheNghiep.Trim(charsToTrim);
             var chucVuHienTai = request.chucVuHienTai.Trim(charsToTrim);
             var congViecChinh = request.congViecChinh.Trim(charsToTrim);
             var coQuanTuyenDung = request.coQuanTuyenDung.Trim(charsToTrim);
-            var ngachCongChucNoiDung = request.ngachCongChucNoiDung.Trim(charsToTrim);
-            var quanHamCaoNhat = request.quanHamCaoNhat.Trim(charsToTrim);
-            var danhHieuCaoNhat = request.danhHieuCaoNhat.Trim(charsToTrim);
-            var noiThamGia = request.noiThamGia.Trim(charsToTrim);
-            var thuongBinh = request.thuongBinh.Trim(charsToTrim);
-            var conChinhSach = request.conChinhSach.Trim(charsToTrim);
-            var bhxh = request.bhxh.Trim(charsToTrim);
-            var bhyt = request.bhyt.Trim(charsToTrim);
-            var atm = request.atm.Trim(charsToTrim);
-            var nganHang = request.nganHang.Trim(charsToTrim);
-            var lyDoNghiViec = request.lyDoNghiViec.Trim(charsToTrim);
-            var yt_nhomMau = request.yt_nhomMau.Trim(charsToTrim);
-            var yt_tinhTrangSucKhoe = request.yt_tinhTrangSucKhoe.Trim(charsToTrim);
-            var yt_benhTat = request.yt_benhTat.Trim(charsToTrim);
-            var yt_luuY = request.yt_luuY.Trim(charsToTrim);
+
+            var ngachCongChucNoiDung = request.ngachCongChucNoiDung;
+            if (ngachCongChucNoiDung != null)
+            {
+                ngachCongChucNoiDung = ngachCongChucNoiDung.Trim(charsToTrim);
+            }
+
+            var quanHamCaoNhat = request.quanHamCaoNhat;
+            if (quanHamCaoNhat != null)
+            {
+                quanHamCaoNhat = quanHamCaoNhat.Trim(charsToTrim);
+            }
+
+            var danhHieuCaoNhat = request.danhHieuCaoNhat;
+            if (danhHieuCaoNhat != null)
+            {
+                danhHieuCaoNhat = danhHieuCaoNhat.Trim(charsToTrim);
+            }
+
+            var noiThamGia = request.noiThamGia;
+            if (noiThamGia != null)
+            {
+                noiThamGia = noiThamGia.Trim(charsToTrim);
+            }
+
+            var thuongBinh = request.thuongBinh;
+            if (thuongBinh != null)
+            {
+                thuongBinh = thuongBinh.Trim(charsToTrim);
+            }
+
+            var conChinhSach = request.conChinhSach;
+            if (conChinhSach != null)
+            {
+                conChinhSach = conChinhSach.Trim(charsToTrim);
+            }
+
+            var bhxh = request.bhxh;
+            if (bhxh != null)
+            {
+                bhxh = bhxh.Trim(charsToTrim);
+            }
+
+            var bhyt = request.bhyt;
+            if (bhyt != null)
+            {
+                bhyt = bhyt.Trim(charsToTrim);
+            }
+
+            var atm = request.atm;
+            if (atm != null)
+            {
+                atm = atm.Trim(charsToTrim);
+            }
+
+            var nganHang = request.nganHang;
+            if (nganHang != null)
+            {
+                nganHang = nganHang.Trim(charsToTrim);
+            }
+
+            var lyDoNghiViec = request.lyDoNghiViec;
+            if (lyDoNghiViec != null)
+            {
+                lyDoNghiViec = lyDoNghiViec.Trim(charsToTrim);
+            }
+
+            var yt_nhomMau = request.yt_nhomMau;
+            if (yt_nhomMau != null)
+            {
+                yt_nhomMau = yt_nhomMau.Trim(charsToTrim);
+            }
+
+            var yt_tinhTrangSucKhoe = request.yt_tinhTrangSucKhoe;
+            if (yt_tinhTrangSucKhoe != null)
+            {
+                yt_tinhTrangSucKhoe = yt_tinhTrangSucKhoe.Trim(charsToTrim);
+            }
+
+            var yt_benhTat = request.yt_benhTat;
+            if (yt_benhTat != null)
+            {
+                yt_benhTat = yt_benhTat.Trim(charsToTrim);
+            }
+
+            var yt_luuY = request.yt_luuY;
+            if (yt_luuY != null)
+            {
+                yt_luuY = yt_luuY.Trim(charsToTrim);
+            }
+
             var lhkc_hoTen = request.lhkc_hoTen.Trim(charsToTrim);
             var lhkc_quanHe = request.lhkc_quanHe.Trim(charsToTrim);
-            var lhkc_email = request.lhkc_email.Trim(charsToTrim);
+
+            var lhkc_email = request.lhkc_email;
+            if (lhkc_email != null)
+            {
+                lhkc_email = lhkc_email.Trim(charsToTrim);
+            }
+
             var lhkc_diaChi = request.lhkc_diaChi.Trim(charsToTrim);
-            var lsbt_biBatDiTu = request.lsbt_biBatDiTu.Trim(charsToTrim);
-            var lsbt_thamGiaChinhTri = request.lsbt_thamGiaChinhTri.Trim(charsToTrim);
-            var lsbt_thanNhanNuocNgoai = request.lsbt_thanNhanNuocNgoai.Trim(charsToTrim);
+            var lsbt_biBatDiTu = request.lsbt_biBatDiTu;
+            if (lsbt_biBatDiTu != null)
+            {
+                lsbt_biBatDiTu = lsbt_biBatDiTu.Trim(charsToTrim);
+            }
+
+            var lsbt_thamGiaChinhTri = request.lsbt_thamGiaChinhTri;
+            if (lsbt_thamGiaChinhTri != null)
+            {
+                lsbt_thamGiaChinhTri = lsbt_thamGiaChinhTri.Trim(charsToTrim);
+            }
+
+            var lsbt_thanNhanNuocNgoai = request.lsbt_thanNhanNuocNgoai;
+            if (lsbt_thanNhanNuocNgoai != null)
+            {
+                lsbt_thanNhanNuocNgoai = lsbt_thanNhanNuocNgoai.Trim(charsToTrim);
+            }
 
             var nhanVien = await _context.nhanViens.FindAsync(id);
 

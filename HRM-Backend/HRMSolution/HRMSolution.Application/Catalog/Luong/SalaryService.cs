@@ -31,7 +31,11 @@ namespace HRMSolution.Application.Catalog.Luongs
             char[] charsToTrim = { '*', ' ', '\'' };
             var bacLuong = request.bacLuong.Trim(charsToTrim);
             var thoiHanLenLuong = request.thoiHanLenLuong.Trim(charsToTrim);
-            var ghiChu = request.ghiChu.Trim(charsToTrim);
+            var ghiChu = request.ghiChu;
+            if (ghiChu != null)
+            {
+                ghiChu = ghiChu.Trim(charsToTrim);
+            }
             if (request.maHopDong == null || request.idNhomLuong == 0 || request.thoiHanLenLuong == null || request.ngayHieuLuc == null || request.ngayKetThuc == null || request.bacLuong == null
                 || request.thoiHanLenLuong == null)
             {
@@ -292,7 +296,11 @@ namespace HRMSolution.Application.Catalog.Luongs
             char[] charsToTrim = { '*', ' ', '\'' };
             var bacLuong = request.bacLuong.Trim(charsToTrim);
             var thoiHanLenLuong = request.thoiHanLenLuong.Trim(charsToTrim);
-            var ghiChu = request.ghiChu.Trim(charsToTrim);
+            var ghiChu = request.ghiChu;
+            if (ghiChu != null)
+            {
+                ghiChu = ghiChu.Trim(charsToTrim);
+            }
             var luong = await _context.luongs.FindAsync(id);
             if (luong == null || request.idNhomLuong == 0 || request.thoiHanLenLuong == null || request.ngayHieuLuc == null || request.ngayKetThuc == null || request.bacLuong == null
                 || request.thoiHanLenLuong == null)

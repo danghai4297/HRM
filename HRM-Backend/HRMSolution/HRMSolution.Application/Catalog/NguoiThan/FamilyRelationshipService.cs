@@ -27,7 +27,12 @@ namespace HRMSolution.Application.Catalog.NguoiThans
             var quanHe = request.quanHe.Trim(charsToTrim);
             var ngheNghiep = request.ngheNghiep.Trim(charsToTrim);
             var diaChi = request.diaChi.Trim(charsToTrim);
-            var khac = request.khac.Trim(charsToTrim);
+            var khac = request.khac;
+            if (request.khac != null)
+            {
+                khac = khac.Trim(charsToTrim);
+            }
+
             if (request.tenNguoiThan == null || request.ngaySinh == null || request.ngheNghiep == null || request.diaChi == null || request.dienThoai == null || request.idDanhMucNguoiThan == 0 || request.maNhanVien == null)
             {
                 return 0;

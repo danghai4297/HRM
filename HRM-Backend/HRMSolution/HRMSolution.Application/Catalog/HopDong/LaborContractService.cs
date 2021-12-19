@@ -28,7 +28,11 @@ namespace HRMSolution.Application.Catalog.HopDongs
         public async Task<int> Create(HopDongCreateRequest request)
         {
             char[] charsToTrim = { '*', ' ', '\'' };
-            var ghiChu = request.ghiChu.Trim(charsToTrim);
+            var ghiChu = request.ghiChu;
+            if (ghiChu != null)
+            {
+                ghiChu = ghiChu.Trim(charsToTrim);
+            }
             if (request.maHopDong == null || request.idLoaiHopDong == 0 || request.idChucDanh == 0 || request.idChucVu == 0 || request.maNhanVien == null)
             {
                 return 0;
@@ -251,7 +255,11 @@ namespace HRMSolution.Application.Catalog.HopDongs
         public async Task<int> Update(string maHopDong, HopDongUpdateRequest request)
         {
             char[] charsToTrim = { '*', ' ', '\'' };
-            var ghiChu = request.ghiChu.Trim(charsToTrim);
+            var ghiChu = request.ghiChu;
+            if (ghiChu != null)
+            {
+                ghiChu = ghiChu.Trim(charsToTrim);
+            }
             var hopDong = await _context.hopDongs.FindAsync(maHopDong);
             if (hopDong == null || request.idLoaiHopDong == 0 || request.idChucDanh == 0 || request.idChucVu == 0 || request.maNhanVien == null)
             {
