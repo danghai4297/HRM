@@ -22,6 +22,8 @@ namespace HRMSolution.Application.Catalog.DanhMucTos
 
         public async Task<int> Create(DanhMucToCreateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var tenDanhMuc = request.tenTo.Trim(charsToTrim);
             var checkPB = await _context.danhMucPhongBans.Where(x => x.id == request.idPhongBan).FirstOrDefaultAsync();
             var check = await _context.danhMucTos.Where(x => x.tenTo == request.tenTo && x.idPhongBan == checkPB.id).FirstOrDefaultAsync();
             if (request.maTo == null || request.tenTo == null || check != null)
@@ -33,7 +35,7 @@ namespace HRMSolution.Application.Catalog.DanhMucTos
                 var danhMucTo = new DanhMucTo()
                 {
                     maTo = request.maTo,
-                    tenTo = request.tenTo,
+                    tenTo = tenDanhMuc,
                     idPhongBan = request.idPhongBan
                 };
                 _context.danhMucTos.Add(danhMucTo);
@@ -116,6 +118,8 @@ namespace HRMSolution.Application.Catalog.DanhMucTos
 
         public async Task<int> Update(int id, DanhMucToUpdateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var tenDanhMuc = request.tenTo.Trim(charsToTrim);
             var danhMucTo = await _context.danhMucTos.FindAsync(id);
             var checkPB = await _context.danhMucPhongBans.Where(x => x.id == request.idPhongBan).FirstOrDefaultAsync();
             var check = await _context.danhMucTos.Where(x => x.tenTo == request.tenTo && x.idPhongBan == checkPB.id).FirstOrDefaultAsync();
@@ -126,7 +130,7 @@ namespace HRMSolution.Application.Catalog.DanhMucTos
             else
             {
                 danhMucTo.maTo = request.maTo;
-                danhMucTo.tenTo = request.tenTo;
+                danhMucTo.tenTo = tenDanhMuc;
                 danhMucTo.idPhongBan = request.idPhongBan;
                 var result = await _context.SaveChangesAsync();
                 if (result == 0)

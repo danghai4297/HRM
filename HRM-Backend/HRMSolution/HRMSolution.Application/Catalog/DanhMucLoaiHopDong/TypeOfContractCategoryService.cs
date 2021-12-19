@@ -21,6 +21,8 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
 
         public async Task<int> Create(DanhMucLoaiHopDongCreateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var tenDanhMuc = request.tenLoaiHopDong.Trim(charsToTrim);
             var check = await _context.danhMucLoaiHopDongs.Where(x => x.tenLoaiHopDong == request.tenLoaiHopDong).FirstOrDefaultAsync();
             if (request.maLoaiHopDong == null || request.tenLoaiHopDong == null || check != null)
             {
@@ -31,7 +33,7 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
                 var danhMucLoaiHopDong = new DanhMucLoaiHopDong()
                 {
                     maLoaiHopDong = request.maLoaiHopDong,
-                    tenLoaiHopDong = request.tenLoaiHopDong
+                    tenLoaiHopDong = tenDanhMuc
 
                 };
                 _context.danhMucLoaiHopDongs.Add(danhMucLoaiHopDong);
@@ -106,6 +108,8 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
 
         public async Task<int> Update(int id, DanhMucLoaiHopDongUpdateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var tenDanhMuc = request.tenLoaiHopDong.Trim(charsToTrim);
             var danhMucLoaiHopDong = await _context.danhMucLoaiHopDongs.FindAsync(id);
             var check = await _context.danhMucLoaiHopDongs.Where(x => x.tenLoaiHopDong == request.tenLoaiHopDong).FirstOrDefaultAsync();
             if (danhMucLoaiHopDong == null || request.maLoaiHopDong == null || request.tenLoaiHopDong == null || check != null)
@@ -115,7 +119,7 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
             else
             {
                 danhMucLoaiHopDong.maLoaiHopDong = request.maLoaiHopDong;
-                danhMucLoaiHopDong.tenLoaiHopDong = request.tenLoaiHopDong;
+                danhMucLoaiHopDong.tenLoaiHopDong = tenDanhMuc;
                 var result = await _context.SaveChangesAsync();
                 if (result == 0)
                     return 0;

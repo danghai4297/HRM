@@ -10,11 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HRMSolution.Data.Migrations
 {
     [DbContext(typeof(HRMDbContext))]
-<<<<<<< HEAD:HRM-Backend/HRMSolution/HRMSolution.Data/Migrations/20211217171301_Initial.Designer.cs
-    [Migration("20211217171301_Initial")]
-=======
-    [Migration("20211217180434_Initial")]
->>>>>>> 49924fbb07c5aaee4430ae0fb76016af1af16af7:HRM-Backend/HRMSolution/HRMSolution.Data/Migrations/20211217180434_Initial.Designer.cs
+    [Migration("20211218170739_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,11 +49,7 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-<<<<<<< HEAD:HRM-Backend/HRMSolution/HRMSolution.Data/Migrations/20211217171301_Initial.Designer.cs
-                            ConcurrencyStamp = "6ce4084d-c8d0-42a2-815f-a82c508cfa18",
-=======
-                            ConcurrencyStamp = "4364d749-df7e-4b58-ada5-614a1d0024da",
->>>>>>> 49924fbb07c5aaee4430ae0fb76016af1af16af7:HRM-Backend/HRMSolution/HRMSolution.Data/Migrations/20211217180434_Initial.Designer.cs
+                            ConcurrencyStamp = "6a5f307a-627f-4cb2-b4c9-d2f1d713c095",
                             Name = "admin",
                             NormalizedName = "admin",
                             ghiChu = "Administrator role"
@@ -65,11 +57,7 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec"),
-<<<<<<< HEAD:HRM-Backend/HRMSolution/HRMSolution.Data/Migrations/20211217171301_Initial.Designer.cs
-                            ConcurrencyStamp = "1cacee78-9c78-43e1-b0fb-f045e5986f4a",
-=======
-                            ConcurrencyStamp = "a8a0eacb-c3fc-4fde-b8c6-5ff4c9a018fb",
->>>>>>> 49924fbb07c5aaee4430ae0fb76016af1af16af7:HRM-Backend/HRMSolution/HRMSolution.Data/Migrations/20211217180434_Initial.Designer.cs
+                            ConcurrencyStamp = "915aad64-e351-49ec-b267-32a2261e525c",
                             Name = "user",
                             NormalizedName = "user",
                             ghiChu = "User role"
@@ -138,19 +126,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
                             AccessFailedCount = 0,
-<<<<<<< HEAD:HRM-Backend/HRMSolution/HRMSolution.Data/Migrations/20211217171301_Initial.Designer.cs
-                            ConcurrencyStamp = "d45a7c68-69e5-48d4-9c62-31d5cbf750ef",
+                            ConcurrencyStamp = "1eefe8aa-0e95-4b5f-81b7-7eaa1a42a986",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKLh5s2NzMGhKUplyMuduP6jGZD0mKHttQ6cKhWLvKLbapi2IlRMFxAVBT70eE4rRA==",
-=======
-                            ConcurrencyStamp = "5613845f-27d3-4c71-90e6-63432cc22fed",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHyTzO2ON0wRoaETi5FM1G30/i5T1L0aoczvGAPaav0uX4Q1iGbvaTkkoJqSkis1vQ==",
->>>>>>> 49924fbb07c5aaee4430ae0fb76016af1af16af7:HRM-Backend/HRMSolution/HRMSolution.Data/Migrations/20211217180434_Initial.Designer.cs
+                            PasswordHash = "AQAAAAEAACcQAAAAEKuS5lXVAgyf03mMTQtIFptUwwwUuik7VucxpmLuYfFIau9AUcFq6Y6bLgioaVBK8Q==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -161,19 +141,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("1db26eb2-1870-4129-f60a-08d9978ff76b"),
                             AccessFailedCount = 0,
-<<<<<<< HEAD:HRM-Backend/HRMSolution/HRMSolution.Data/Migrations/20211217171301_Initial.Designer.cs
-                            ConcurrencyStamp = "4d49462f-b061-49ec-98e8-943436a54b68",
+                            ConcurrencyStamp = "b504de19-27da-4c73-b489-176418b0ae6a",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "user1",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFIkz3JjCnQnUk1FuGAAV/6l4gTtM/3ScX9Z/UVsmMCWPDYYZDnT+kftI43A/0SU/Q==",
-=======
-                            ConcurrencyStamp = "2cc3711b-ca24-45f1-a512-0d90773a7f13",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedUserName = "user1",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDGHseUJ4a7RD3xOXkUR7IsktLmsKxwY4pihDkD3BaCRgLyWLwAjS5g9FY/6VgmKaA==",
->>>>>>> 49924fbb07c5aaee4430ae0fb76016af1af16af7:HRM-Backend/HRMSolution/HRMSolution.Data/Migrations/20211217180434_Initial.Designer.cs
+                            PasswordHash = "AQAAAAEAACcQAAAAEOenOXk4gxSFrCitETKYfw5Z1C8JV5ODbd+gvhOVfisHQUEBqi17lBkR2Yi/4OVpsQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -184,19 +156,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("ccf28057-5be9-4405-957b-460e0ce106a7"),
                             AccessFailedCount = 0,
-<<<<<<< HEAD:HRM-Backend/HRMSolution/HRMSolution.Data/Migrations/20211217171301_Initial.Designer.cs
-                            ConcurrencyStamp = "abe4912b-b34d-4a7e-8cbd-64ffdc6481e8",
+                            ConcurrencyStamp = "1cdde1e1-9a45-47fa-ade7-9d6c4204a3ea",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "user3",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGzNMsKiHGbx6nUM2RmK1lqMZY8rcOX99P/trCPljMS+K3Y1o2n68ILEqKIUs31LFw==",
-=======
-                            ConcurrencyStamp = "b54f5f2a-c51d-476d-88fa-fd303c86786a",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedUserName = "user3",
-                            PasswordHash = "AQAAAAEAACcQAAAAEL3FKbH6biyjQRMpiyAzFfT+tdNAHs6hiKXLA8EdgbkrsRjCjaRmB8ldWa/jO9IGAw==",
->>>>>>> 49924fbb07c5aaee4430ae0fb76016af1af16af7:HRM-Backend/HRMSolution/HRMSolution.Data/Migrations/20211217180434_Initial.Designer.cs
+                            PasswordHash = "AQAAAAEAACcQAAAAED3qgBuB0g8GxgHxxMpG8H/dclFKrONfgk37rJSkJ0XyaIn+KTYuxiBAQH9JdBqIdQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -384,7 +348,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             id = 3,
                             maChuyenMon = "CM03",
-                            tenChuyenMon = "Quản tị kinh doanh"
+                            tenChuyenMon = "Quản trị kinh doanh"
                         },
                         new
                         {

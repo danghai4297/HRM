@@ -28,6 +28,8 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
 
         public async Task<int> Create(QuaTrinhCongTacCreateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var chiTiet = request.chiTiet.Trim(charsToTrim);
             if (request.maNhanVien == null || request.ngayHieuLuc == null || request.idPhongBan == 0 || request.to == 0)
             {
                 return 0;
@@ -43,7 +45,7 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                         ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
                         idPhongBan = request.idPhongBan,
                         to = request.to,
-                        chiTiet = request.chiTiet,
+                        chiTiet = chiTiet,
                         trangThai = true
                     };
                     if (request.bangChung is null)
@@ -176,6 +178,8 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
 
         public async Task<int> Update(int id, QuaTrinhCongTacUpdateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var chiTiet = request.chiTiet.Trim(charsToTrim);
             var dieuChuyen = await _context.dieuChuyens.FindAsync(id);
             if (dieuChuyen == null || request.maNhanVien == null || request.ngayHieuLuc == null || request.idPhongBan == 0 || request.to == 0)
             {
@@ -187,7 +191,7 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                 dieuChuyen.ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc);
                 dieuChuyen.idPhongBan = request.idPhongBan;
                 dieuChuyen.to = request.to;
-                dieuChuyen.chiTiet = request.chiTiet;
+                dieuChuyen.chiTiet = chiTiet;
                 dieuChuyen.trangThai = request.trangThai;
                 if (request.bangChung is null)
                 {

@@ -21,6 +21,9 @@ namespace HRMSolution.Application.Catalog.NgoaiNgus
 
         public async Task<int> Create(NgoaiNguCreateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var noiCap = request.noiCap.Trim(charsToTrim);
+            var trinhDo = request.trinhDo.Trim(charsToTrim);
             if (request.idDanhMucNgoaiNgu == 0 || request.ngayCap == null || request.noiCap == null || request.trinhDo == null || request.maNhanVien == null)
             {
                 return 0;
@@ -31,8 +34,8 @@ namespace HRMSolution.Application.Catalog.NgoaiNgus
                 {
                     idDanhMucNgoaiNgu = request.idDanhMucNgoaiNgu,
                     ngayCap = request.ngayCap,
-                    noiCap = request.noiCap,
-                    trinhDo = request.trinhDo,
+                    noiCap = noiCap,
+                    trinhDo = trinhDo,
                     maNhanVien = request.maNhanVien
                 };
                 _context.ngoaiNgus.Add(ngoaiNgu);
@@ -94,6 +97,9 @@ namespace HRMSolution.Application.Catalog.NgoaiNgus
 
         public async Task<int> Update(int id, NgoaiNguUpdateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var noiCap = request.noiCap.Trim(charsToTrim);
+            var trinhDo = request.trinhDo.Trim(charsToTrim);
             var ngoaiNgu = await _context.ngoaiNgus.FindAsync(id);
             if (ngoaiNgu == null || request.idDanhMucNgoaiNgu == 0 || request.ngayCap == null || request.noiCap == null || request.trinhDo == null || request.maNhanVien == null)
             {
@@ -103,8 +109,8 @@ namespace HRMSolution.Application.Catalog.NgoaiNgus
             {
                 ngoaiNgu.idDanhMucNgoaiNgu = request.idDanhMucNgoaiNgu;
                 ngoaiNgu.ngayCap = request.ngayCap;
-                ngoaiNgu.trinhDo = request.trinhDo;
-                ngoaiNgu.noiCap = request.noiCap;
+                ngoaiNgu.trinhDo = trinhDo;
+                ngoaiNgu.noiCap = noiCap;
                 ngoaiNgu.maNhanVien = request.maNhanVien;
 
                 var result = await _context.SaveChangesAsync();

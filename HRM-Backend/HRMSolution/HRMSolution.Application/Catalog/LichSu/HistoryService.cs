@@ -19,6 +19,11 @@ namespace HRMSolution.Application.Catalog.LichSus
         }
         public async Task<int> Create(LichSuCreateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var tenTaiKhoan = request.tenTaiKhoan.Trim(charsToTrim);
+            var thaoTac = request.thaoTac.Trim(charsToTrim);
+            var tenNhanVien = request.tenNhanVien.Trim(charsToTrim);
+            var maNhanVien = request.maNhanVien.Trim(charsToTrim);
             if (request.tenNhanVien == null || request.tenTaiKhoan == null || request.thaoTac == null || request.maNhanVien == null)
             {
                 return 0;
@@ -27,11 +32,11 @@ namespace HRMSolution.Application.Catalog.LichSus
             {
                 var lichSu = new LichSu()
                 {
-                    tenTaiKhoan = request.tenTaiKhoan,
-                    thaoTac = request.thaoTac,
-                    tenNhanVien = request.tenNhanVien,
+                    tenTaiKhoan = tenTaiKhoan,
+                    thaoTac = thaoTac,
+                    tenNhanVien = tenNhanVien,
                     ngayThucHien = DateTime.Now,
-                    maNhanVien = request.maNhanVien
+                    maNhanVien = maNhanVien
                 };
                 _context.lichSus.Add(lichSu);
                 var result = await _context.SaveChangesAsync();

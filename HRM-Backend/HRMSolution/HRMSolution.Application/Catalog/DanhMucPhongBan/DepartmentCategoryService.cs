@@ -22,6 +22,8 @@ namespace HRMSolution.Application.Catalog.DanhMucPhongBans
 
         public async Task<int> Create(DanhMucPhongBanCreateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var tenDanhMuc = request.tenPhongBan.Trim(charsToTrim);
             var check = await _context.danhMucPhongBans.Where(x => x.tenPhongBan == request.tenPhongBan).FirstOrDefaultAsync();
             if (request.maPhongBan == null || request.tenPhongBan == null || check != null)
             {
@@ -32,7 +34,7 @@ namespace HRMSolution.Application.Catalog.DanhMucPhongBans
                 var danhMucPhongBan = new DanhMucPhongBan()
                 {
                     maPhongBan = request.maPhongBan,
-                    tenPhongBan = request.tenPhongBan
+                    tenPhongBan = tenDanhMuc
                 };
                 _context.danhMucPhongBans.Add(danhMucPhongBan);
                 var result = await _context.SaveChangesAsync();
@@ -105,6 +107,8 @@ namespace HRMSolution.Application.Catalog.DanhMucPhongBans
 
         public async Task<int> Update(int id, DanhMucPhongBanUpdateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var tenDanhMuc = request.tenPhongBan.Trim(charsToTrim);
             var danhMucPhongBan = await _context.danhMucPhongBans.FindAsync(id);
             var check = await _context.danhMucPhongBans.Where(x => x.tenPhongBan == request.tenPhongBan).FirstOrDefaultAsync();
             if (danhMucPhongBan == null || request.maPhongBan == null || request.tenPhongBan == null || check != null)
@@ -114,7 +118,7 @@ namespace HRMSolution.Application.Catalog.DanhMucPhongBans
             else
             {
                 danhMucPhongBan.maPhongBan = request.maPhongBan;
-                danhMucPhongBan.tenPhongBan = request.tenPhongBan;
+                danhMucPhongBan.tenPhongBan = tenDanhMuc;
                 var result = await _context.SaveChangesAsync();
                 if (result == 0)
                     return 0;

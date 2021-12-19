@@ -28,6 +28,10 @@ namespace HRMSolution.Application.Catalog.Luongs
 
         public async Task<int> Create(LuongCreateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var bacLuong = request.bacLuong.Trim(charsToTrim);
+            var thoiHanLenLuong = request.thoiHanLenLuong.Trim(charsToTrim);
+            var ghiChu = request.ghiChu.Trim(charsToTrim);
             if (request.maHopDong == null || request.idNhomLuong == 0 || request.thoiHanLenLuong == null || request.ngayHieuLuc == null || request.ngayKetThuc == null || request.bacLuong == null
                 || request.thoiHanLenLuong == null)
             {
@@ -46,14 +50,14 @@ namespace HRMSolution.Application.Catalog.Luongs
                             maHopDong = request.maHopDong,
                             idNhomLuong = request.idNhomLuong,
                             heSoLuong = request.heSoLuong,
-                            bacLuong = request.bacLuong,
+                            bacLuong = bacLuong,
                             luongCoBan = request.luongCoBan,
                             phuCapChucDanh = request.phuCapChucDanh,
                             phuCapChucVu = request.phuCapChucVu,
                             phuCapTrachNhiem = request.phuCapTrachNhiem,
                             phuCapKhac = request.phuCapKhac,
                             tongLuong = request.tongLuong,
-                            thoiHanLenLuong = request.thoiHanLenLuong,
+                            thoiHanLenLuong = thoiHanLenLuong,
                             ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
                             ngayKetThuc = DateTime.Parse(request.ngayKetThuc),
                             ghiChu = null,
@@ -76,17 +80,17 @@ namespace HRMSolution.Application.Catalog.Luongs
                             maHopDong = request.maHopDong,
                             idNhomLuong = request.idNhomLuong,
                             heSoLuong = request.heSoLuong,
-                            bacLuong = request.bacLuong,
+                            bacLuong = bacLuong,
                             luongCoBan = request.luongCoBan,
                             phuCapChucDanh = request.phuCapChucDanh,
                             phuCapChucVu = request.phuCapChucVu,
                             phuCapTrachNhiem = request.phuCapTrachNhiem,
                             phuCapKhac = request.phuCapKhac,
                             tongLuong = request.tongLuong,
-                            thoiHanLenLuong = request.thoiHanLenLuong,
+                            thoiHanLenLuong = thoiHanLenLuong,
                             ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
                             ngayKetThuc = DateTime.Parse(request.ngayKetThuc),
-                            ghiChu = request.ghiChu,
+                            ghiChu = ghiChu,
                             trangThai = true,
                         };
                         if (request.bangChung is null)
@@ -113,14 +117,14 @@ namespace HRMSolution.Application.Catalog.Luongs
                             maHopDong = request.maHopDong,
                             idNhomLuong = request.idNhomLuong,
                             heSoLuong = request.heSoLuong,
-                            bacLuong = request.bacLuong,
+                            bacLuong = bacLuong,
                             luongCoBan = request.luongCoBan,
                             phuCapChucDanh = request.phuCapChucDanh,
                             phuCapChucVu = request.phuCapChucVu,
                             phuCapTrachNhiem = request.phuCapTrachNhiem,
                             phuCapKhac = request.phuCapKhac,
                             tongLuong = request.tongLuong,
-                            thoiHanLenLuong = request.thoiHanLenLuong,
+                            thoiHanLenLuong = thoiHanLenLuong,
                             ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
                             ngayKetThuc = DateTime.Parse(request.ngayKetThuc),
                             ghiChu = null,
@@ -143,14 +147,14 @@ namespace HRMSolution.Application.Catalog.Luongs
                             maHopDong = request.maHopDong,
                             idNhomLuong = request.idNhomLuong,
                             heSoLuong = request.heSoLuong,
-                            bacLuong = request.bacLuong,
+                            bacLuong = bacLuong,
                             luongCoBan = request.luongCoBan,
                             phuCapChucDanh = request.phuCapChucDanh,
                             phuCapChucVu = request.phuCapChucVu,
                             phuCapTrachNhiem = request.phuCapTrachNhiem,
                             phuCapKhac = request.phuCapKhac,
                             tongLuong = request.tongLuong,
-                            thoiHanLenLuong = request.thoiHanLenLuong,
+                            thoiHanLenLuong = thoiHanLenLuong,
                             ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
                             ngayKetThuc = DateTime.Parse(request.ngayKetThuc),
                             ghiChu = request.ghiChu,
@@ -285,6 +289,10 @@ namespace HRMSolution.Application.Catalog.Luongs
 
         public async Task<int> Update(int id, LuongUpdateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var bacLuong = request.bacLuong.Trim(charsToTrim);
+            var thoiHanLenLuong = request.thoiHanLenLuong.Trim(charsToTrim);
+            var ghiChu = request.ghiChu.Trim(charsToTrim);
             var luong = await _context.luongs.FindAsync(id);
             if (luong == null || request.idNhomLuong == 0 || request.thoiHanLenLuong == null || request.ngayHieuLuc == null || request.ngayKetThuc == null || request.bacLuong == null
                 || request.thoiHanLenLuong == null)
@@ -297,14 +305,14 @@ namespace HRMSolution.Application.Catalog.Luongs
                 {
                     luong.idNhomLuong = request.idNhomLuong;
                     luong.heSoLuong = request.heSoLuong;
-                    luong.bacLuong = request.bacLuong;
+                    luong.bacLuong = bacLuong;
                     luong.luongCoBan = request.luongCoBan;
                     luong.phuCapChucDanh = request.phuCapChucDanh;
                     luong.phuCapChucVu = request.phuCapChucVu;
                     luong.phuCapTrachNhiem = request.phuCapTrachNhiem;
                     luong.phuCapKhac = request.phuCapKhac;
                     luong.tongLuong = request.tongLuong;
-                    luong.thoiHanLenLuong = request.thoiHanLenLuong;
+                    luong.thoiHanLenLuong = thoiHanLenLuong;
                     luong.ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc);
                     luong.ngayKetThuc = DateTime.Parse(request.ngayKetThuc);
                     luong.ghiChu = null;
@@ -324,17 +332,17 @@ namespace HRMSolution.Application.Catalog.Luongs
                 {
                     luong.idNhomLuong = request.idNhomLuong;
                     luong.heSoLuong = request.heSoLuong;
-                    luong.bacLuong = request.bacLuong;
+                    luong.bacLuong = bacLuong;
                     luong.luongCoBan = request.luongCoBan;
                     luong.phuCapChucDanh = request.phuCapChucDanh;
                     luong.phuCapChucVu = request.phuCapChucVu;
                     luong.phuCapTrachNhiem = request.phuCapTrachNhiem;
                     luong.phuCapKhac = request.phuCapKhac;
                     luong.tongLuong = request.tongLuong;
-                    luong.thoiHanLenLuong = request.thoiHanLenLuong;
+                    luong.thoiHanLenLuong = thoiHanLenLuong;
                     luong.ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc);
                     luong.ngayKetThuc = DateTime.Parse(request.ngayKetThuc);
-                    luong.ghiChu = request.ghiChu;
+                    luong.ghiChu = ghiChu;
                     luong.trangThai = request.trangThai;
                     if (request.bangChung is null)
                     {

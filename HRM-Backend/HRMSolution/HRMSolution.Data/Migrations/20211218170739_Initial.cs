@@ -802,13 +802,8 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName", "ghiChu" },
                 values: new object[,]
                 {
-<<<<<<< HEAD:HRM-Backend/HRMSolution/HRMSolution.Data/Migrations/20211217171301_Initial.cs
-                    { new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"), "6ce4084d-c8d0-42a2-815f-a82c508cfa18", "admin", "admin", "Administrator role" },
-                    { new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec"), "1cacee78-9c78-43e1-b0fb-f045e5986f4a", "user", "user", "User role" }
-=======
-                    { new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"), "4364d749-df7e-4b58-ada5-614a1d0024da", "admin", "admin", "Administrator role" },
-                    { new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec"), "a8a0eacb-c3fc-4fde-b8c6-5ff4c9a018fb", "user", "user", "User role" }
->>>>>>> 49924fbb07c5aaee4430ae0fb76016af1af16af7:HRM-Backend/HRMSolution/HRMSolution.Data/Migrations/20211217180434_Initial.cs
+                    { new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"), "6a5f307a-627f-4cb2-b4c9-d2f1d713c095", "admin", "admin", "Administrator role" },
+                    { new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec"), "915aad64-e351-49ec-b267-32a2261e525c", "user", "user", "User role" }
                 });
 
             migrationBuilder.InsertData(
@@ -827,15 +822,9 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "maNhanVien" },
                 values: new object[,]
                 {
-<<<<<<< HEAD:HRM-Backend/HRMSolution/HRMSolution.Data/Migrations/20211217171301_Initial.cs
-                    { new Guid("ccf28057-5be9-4405-957b-460e0ce106a7"), 0, "abe4912b-b34d-4a7e-8cbd-64ffdc6481e8", null, true, false, null, null, "user3", "AQAAAAEAACcQAAAAEGzNMsKiHGbx6nUM2RmK1lqMZY8rcOX99P/trCPljMS+K3Y1o2n68ILEqKIUs31LFw==", null, false, "", false, "user3", "NV0003" },
-                    { new Guid("1db26eb2-1870-4129-f60a-08d9978ff76b"), 0, "4d49462f-b061-49ec-98e8-943436a54b68", null, true, false, null, null, "user1", "AQAAAAEAACcQAAAAEFIkz3JjCnQnUk1FuGAAV/6l4gTtM/3ScX9Z/UVsmMCWPDYYZDnT+kftI43A/0SU/Q==", null, false, "", false, "user1", "NV0002" },
-                    { new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"), 0, "d45a7c68-69e5-48d4-9c62-31d5cbf750ef", null, true, false, null, null, "admin", "AQAAAAEAACcQAAAAEKLh5s2NzMGhKUplyMuduP6jGZD0mKHttQ6cKhWLvKLbapi2IlRMFxAVBT70eE4rRA==", null, false, "", false, "admin", "NV0001" }
-=======
-                    { new Guid("ccf28057-5be9-4405-957b-460e0ce106a7"), 0, "b54f5f2a-c51d-476d-88fa-fd303c86786a", null, true, false, null, null, "user3", "AQAAAAEAACcQAAAAEL3FKbH6biyjQRMpiyAzFfT+tdNAHs6hiKXLA8EdgbkrsRjCjaRmB8ldWa/jO9IGAw==", null, false, "", false, "user3", "NV0003" },
-                    { new Guid("1db26eb2-1870-4129-f60a-08d9978ff76b"), 0, "2cc3711b-ca24-45f1-a512-0d90773a7f13", null, true, false, null, null, "user1", "AQAAAAEAACcQAAAAEDGHseUJ4a7RD3xOXkUR7IsktLmsKxwY4pihDkD3BaCRgLyWLwAjS5g9FY/6VgmKaA==", null, false, "", false, "user1", "NV0002" },
-                    { new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"), 0, "5613845f-27d3-4c71-90e6-63432cc22fed", null, true, false, null, null, "admin", "AQAAAAEAACcQAAAAEHyTzO2ON0wRoaETi5FM1G30/i5T1L0aoczvGAPaav0uX4Q1iGbvaTkkoJqSkis1vQ==", null, false, "", false, "admin", "NV0001" }
->>>>>>> 49924fbb07c5aaee4430ae0fb76016af1af16af7:HRM-Backend/HRMSolution/HRMSolution.Data/Migrations/20211217180434_Initial.cs
+                    { new Guid("ccf28057-5be9-4405-957b-460e0ce106a7"), 0, "1cdde1e1-9a45-47fa-ade7-9d6c4204a3ea", null, true, false, null, null, "user3", "AQAAAAEAACcQAAAAED3qgBuB0g8GxgHxxMpG8H/dclFKrONfgk37rJSkJ0XyaIn+KTYuxiBAQH9JdBqIdQ==", null, false, "", false, "user3", "NV0003" },
+                    { new Guid("1db26eb2-1870-4129-f60a-08d9978ff76b"), 0, "b504de19-27da-4c73-b489-176418b0ae6a", null, true, false, null, null, "user1", "AQAAAAEAACcQAAAAEOenOXk4gxSFrCitETKYfw5Z1C8JV5ODbd+gvhOVfisHQUEBqi17lBkR2Yi/4OVpsQ==", null, false, "", false, "user1", "NV0002" },
+                    { new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"), 0, "1eefe8aa-0e95-4b5f-81b7-7eaa1a42a986", null, true, false, null, null, "admin", "AQAAAAEAACcQAAAAEKuS5lXVAgyf03mMTQtIFptUwwwUuik7VucxpmLuYfFIau9AUcFq6Y6bLgioaVBK8Q==", null, false, "", false, "admin", "NV0001" }
                 });
 
             migrationBuilder.InsertData(
@@ -870,7 +859,7 @@ namespace HRMSolution.Data.Migrations
                 {
                     { 1, "CM01", "Tài chính – ngân hàng" },
                     { 2, "CM02", "Hành chính văn phòng" },
-                    { 3, "CM03", "Quản tị kinh doanh" },
+                    { 3, "CM03", "Quản trị kinh doanh" },
                     { 5, "CM05", "Kinh Tế" },
                     { 4, "CM04", "Kế toán – kiểm toán" }
                 });

@@ -27,9 +27,11 @@ namespace HRMSolution.Application.Catalog.DanhMucDanTocs
             }
             else
             {
+                char[] charsToTrim = { '*', ' ', '\'' };
+                var tenDanhMuc = request.tenDanhMuc.Trim(charsToTrim);
                 var danhMucDanToc = new DanhMucDanToc()
                 {
-                    tenDanhMuc = request.tenDanhMuc
+                    tenDanhMuc = tenDanhMuc
                 };
                 _context.danhMucDanTocs.Add(danhMucDanToc);
                 var result = await _context.SaveChangesAsync();
@@ -63,13 +65,15 @@ namespace HRMSolution.Application.Catalog.DanhMucDanTocs
         {
             var danhMucDanToc = await _context.danhMucDanTocs.FindAsync(id);
             var check = await _context.danhMucDanTocs.Where(x => x.tenDanhMuc == request.tenDanhMuc).FirstOrDefaultAsync();
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var tenDanhMuc = request.tenDanhMuc.Trim(charsToTrim);
             if (danhMucDanToc == null || request.tenDanhMuc == null || check != null)
             {
                 return 0;
             }
             else
             {
-                danhMucDanToc.tenDanhMuc = request.tenDanhMuc;
+                danhMucDanToc.tenDanhMuc = tenDanhMuc;
                 var result = await _context.SaveChangesAsync();
                 if (result == 0)
                     return 0;

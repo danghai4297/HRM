@@ -22,6 +22,12 @@ namespace HRMSolution.Application.Catalog.NguoiThans
 
         public async Task<int> Create(NguoiThanCreateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var tenNguoiThan = request.tenNguoiThan.Trim(charsToTrim);
+            var quanHe = request.quanHe.Trim(charsToTrim);
+            var ngheNghiep = request.ngheNghiep.Trim(charsToTrim);
+            var diaChi = request.diaChi.Trim(charsToTrim);
+            var khac = request.khac.Trim(charsToTrim);
             if (request.tenNguoiThan == null || request.ngaySinh == null || request.ngheNghiep == null || request.diaChi == null || request.dienThoai == null || request.idDanhMucNguoiThan == 0 || request.maNhanVien == null)
             {
                 return 0;
@@ -30,14 +36,14 @@ namespace HRMSolution.Application.Catalog.NguoiThans
             {
                 var nguoiThan = new NguoiThan()
                 {
-                    tenNguoiThan = request.tenNguoiThan,
+                    tenNguoiThan = tenNguoiThan,
                     gioiTinh = request.gioiTinh,
                     ngaySinh = request.ngaySinh,
-                    quanHe = request.quanHe,
-                    ngheNghiep = request.ngheNghiep,
-                    diaChi = request.diaChi,
+                    quanHe = quanHe,
+                    ngheNghiep = ngheNghiep,
+                    diaChi = diaChi,
                     dienThoai = request.dienThoai,
-                    khac = request.khac,
+                    khac = khac,
                     idDanhMucNguoiThan = request.idDanhMucNguoiThan,
                     maNhanVien = request.maNhanVien
                 };
@@ -104,6 +110,12 @@ namespace HRMSolution.Application.Catalog.NguoiThans
 
         public async Task<int> Update(int id, NguoiThanUpdateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var tenNguoiThan = request.tenNguoiThan.Trim(charsToTrim);
+            var quanHe = request.quanHe.Trim(charsToTrim);
+            var ngheNghiep = request.ngheNghiep.Trim(charsToTrim);
+            var diaChi = request.diaChi.Trim(charsToTrim);
+            var khac = request.khac.Trim(charsToTrim);
             var nguoiThan = await _context.nguoiThans.FindAsync(id);
             if (nguoiThan == null || request.tenNguoiThan == null || request.ngaySinh == null || request.ngheNghiep == null || request.diaChi == null || request.dienThoai == null || request.idDanhMucNguoiThan == 0 || request.maNhanVien == null)
             {
@@ -111,14 +123,14 @@ namespace HRMSolution.Application.Catalog.NguoiThans
             }
             else
             {
-                nguoiThan.tenNguoiThan = request.tenNguoiThan;
+                nguoiThan.tenNguoiThan = tenNguoiThan;
                 nguoiThan.gioiTinh = request.gioiTinh;
                 nguoiThan.ngaySinh = request.ngaySinh;
-                nguoiThan.quanHe = request.quanHe;
-                nguoiThan.ngheNghiep = request.ngheNghiep;
-                nguoiThan.diaChi = request.diaChi;
+                nguoiThan.quanHe = quanHe;
+                nguoiThan.ngheNghiep = ngheNghiep;
+                nguoiThan.diaChi = diaChi;
                 nguoiThan.dienThoai = request.dienThoai;
-                nguoiThan.khac = request.khac;
+                nguoiThan.khac = khac;
                 nguoiThan.idDanhMucNguoiThan = request.idDanhMucNguoiThan;
                 nguoiThan.maNhanVien = request.maNhanVien;
 
