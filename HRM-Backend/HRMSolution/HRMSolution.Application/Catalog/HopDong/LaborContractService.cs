@@ -39,32 +39,10 @@ namespace HRMSolution.Application.Catalog.HopDongs
             }
             else
             {
-                var queryHopDong = await _context.hopDongs.Where(x => x.maNhanVien == request.maNhanVien && x.trangThai == true).FirstOrDefaultAsync();
-                if (queryHopDong == null)
+                if (request.ghiChu == null || request.ghiChu == "" || request.ghiChu == "null")
                 {
-                    var hopDong = new HopDong()
-                    {
-                        id = request.idCre,
-                        maHopDong = request.maHopDong,
-                        idLoaiHopDong = request.idLoaiHopDong,
-                        idChucDanh = request.idChucDanh,
-                        idChucVu = request.idChucVu,
-                        hopDongTuNgay = request.hopDongTuNgay,
-                        hopDongDenNgay = request.hopDongDenNgay,
-                        ghiChu = ghiChu,
-                        trangThai = true,
-                        maNhanVien = request.maNhanVien
-                    };
-                    _context.hopDongs.Add(hopDong);
-                }
-                else
-                {
-                    var hopDong_update = await _context.hopDongs.FindAsync(queryHopDong.maHopDong);
-
-                    hopDong_update.trangThai = false;
-
-                    var queryLuong = await _context.luongs.Where(x => x.maHopDong == queryHopDong.maHopDong && x.trangThai == true).FirstOrDefaultAsync();
-                    if (queryLuong == null)
+                    var queryHopDong = await _context.hopDongs.Where(x => x.maNhanVien == request.maNhanVien && x.trangThai == true).FirstOrDefaultAsync();
+                    if (queryHopDong == null)
                     {
                         var hopDong = new HopDong()
                         {
@@ -75,7 +53,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
                             idChucVu = request.idChucVu,
                             hopDongTuNgay = request.hopDongTuNgay,
                             hopDongDenNgay = request.hopDongDenNgay,
-                            ghiChu = ghiChu,
+                            ghiChu = null,
                             trangThai = true,
                             maNhanVien = request.maNhanVien
                         };
@@ -83,8 +61,54 @@ namespace HRMSolution.Application.Catalog.HopDongs
                     }
                     else
                     {
-                        var luong_update = await _context.luongs.FindAsync(queryLuong.id);
-                        luong_update.trangThai = false;
+                        var hopDong_update = await _context.hopDongs.FindAsync(queryHopDong.maHopDong);
+
+                        hopDong_update.trangThai = false;
+
+                        var queryLuong = await _context.luongs.Where(x => x.maHopDong == queryHopDong.maHopDong && x.trangThai == true).FirstOrDefaultAsync();
+                        if (queryLuong == null)
+                        {
+                            var hopDong = new HopDong()
+                            {
+                                id = request.idCre,
+                                maHopDong = request.maHopDong,
+                                idLoaiHopDong = request.idLoaiHopDong,
+                                idChucDanh = request.idChucDanh,
+                                idChucVu = request.idChucVu,
+                                hopDongTuNgay = request.hopDongTuNgay,
+                                hopDongDenNgay = request.hopDongDenNgay,
+                                ghiChu = null,
+                                trangThai = true,
+                                maNhanVien = request.maNhanVien
+                            };
+                            _context.hopDongs.Add(hopDong);
+                        }
+                        else
+                        {
+                            var luong_update = await _context.luongs.FindAsync(queryLuong.id);
+                            luong_update.trangThai = false;
+                            var hopDong = new HopDong()
+                            {
+                                id = request.idCre,
+                                maHopDong = request.maHopDong,
+                                idLoaiHopDong = request.idLoaiHopDong,
+                                idChucDanh = request.idChucDanh,
+                                idChucVu = request.idChucVu,
+                                hopDongTuNgay = request.hopDongTuNgay,
+                                hopDongDenNgay = request.hopDongDenNgay,
+                                ghiChu = null,
+                                trangThai = true,
+                                maNhanVien = request.maNhanVien
+                            };
+                            _context.hopDongs.Add(hopDong);
+                        }
+                    }
+                }
+                else
+                {
+                    var queryHopDong = await _context.hopDongs.Where(x => x.maNhanVien == request.maNhanVien && x.trangThai == true).FirstOrDefaultAsync();
+                    if (queryHopDong == null)
+                    {
                         var hopDong = new HopDong()
                         {
                             id = request.idCre,
@@ -94,13 +118,58 @@ namespace HRMSolution.Application.Catalog.HopDongs
                             idChucVu = request.idChucVu,
                             hopDongTuNgay = request.hopDongTuNgay,
                             hopDongDenNgay = request.hopDongDenNgay,
-                            ghiChu = ghiChu,
+                            ghiChu = request.ghiChu.Trim(charsToTrim),
                             trangThai = true,
                             maNhanVien = request.maNhanVien
                         };
                         _context.hopDongs.Add(hopDong);
                     }
+                    else
+                    {
+                        var hopDong_update = await _context.hopDongs.FindAsync(queryHopDong.maHopDong);
+
+                        hopDong_update.trangThai = false;
+
+                        var queryLuong = await _context.luongs.Where(x => x.maHopDong == queryHopDong.maHopDong && x.trangThai == true).FirstOrDefaultAsync();
+                        if (queryLuong == null)
+                        {
+                            var hopDong = new HopDong()
+                            {
+                                id = request.idCre,
+                                maHopDong = request.maHopDong,
+                                idLoaiHopDong = request.idLoaiHopDong,
+                                idChucDanh = request.idChucDanh,
+                                idChucVu = request.idChucVu,
+                                hopDongTuNgay = request.hopDongTuNgay,
+                                hopDongDenNgay = request.hopDongDenNgay,
+                                ghiChu = request.ghiChu.Trim(charsToTrim),
+                                trangThai = true,
+                                maNhanVien = request.maNhanVien
+                            };
+                            _context.hopDongs.Add(hopDong);
+                        }
+                        else
+                        {
+                            var luong_update = await _context.luongs.FindAsync(queryLuong.id);
+                            luong_update.trangThai = false;
+                            var hopDong = new HopDong()
+                            {
+                                id = request.idCre,
+                                maHopDong = request.maHopDong,
+                                idLoaiHopDong = request.idLoaiHopDong,
+                                idChucDanh = request.idChucDanh,
+                                idChucVu = request.idChucVu,
+                                hopDongTuNgay = request.hopDongTuNgay,
+                                hopDongDenNgay = request.hopDongDenNgay,
+                                ghiChu = request.ghiChu.Trim(charsToTrim),
+                                trangThai = true,
+                                maNhanVien = request.maNhanVien
+                            };
+                            _context.hopDongs.Add(hopDong);
+                        }
+                    }
                 }
+
                 var result = await _context.SaveChangesAsync();
                 if (result == 0)
                     return 0;
@@ -255,11 +324,6 @@ namespace HRMSolution.Application.Catalog.HopDongs
         public async Task<int> Update(string maHopDong, HopDongUpdateRequest request)
         {
             char[] charsToTrim = { '*', ' ', '\'' };
-            var ghiChu = request.ghiChu;
-            if (ghiChu != null)
-            {
-                ghiChu = ghiChu.Trim(charsToTrim);
-            }
             var hopDong = await _context.hopDongs.FindAsync(maHopDong);
             if (hopDong == null || request.idLoaiHopDong == 0 || request.idChucDanh == 0 || request.idChucVu == 0 || request.maNhanVien == null)
             {
@@ -267,33 +331,67 @@ namespace HRMSolution.Application.Catalog.HopDongs
             }
             else
             {
-                if (request.trangThai == false)
+                if (request.ghiChu == null || request.ghiChu == "" || request.ghiChu == "null")
                 {
-                    var luong = await _context.luongs.Where(x => x.maHopDong == maHopDong && x.trangThai == true).FirstOrDefaultAsync();
-                    luong.trangThai = false;
+                    if (request.trangThai == false)
+                    {
+                        var luong = await _context.luongs.Where(x => x.maHopDong == maHopDong && x.trangThai == true).FirstOrDefaultAsync();
+                        luong.trangThai = false;
 
-                    hopDong.id = request.idCre;
-                    hopDong.idLoaiHopDong = request.idLoaiHopDong;
-                    hopDong.idChucDanh = request.idChucDanh;
-                    hopDong.idChucVu = request.idChucVu;
-                    hopDong.hopDongTuNgay = request.hopDongTuNgay;
-                    hopDong.hopDongDenNgay = request.hopDongDenNgay;
-                    hopDong.ghiChu = ghiChu;
-                    hopDong.trangThai = request.trangThai;
-                    hopDong.maNhanVien = request.maNhanVien;
+                        hopDong.id = request.idCre;
+                        hopDong.idLoaiHopDong = request.idLoaiHopDong;
+                        hopDong.idChucDanh = request.idChucDanh;
+                        hopDong.idChucVu = request.idChucVu;
+                        hopDong.hopDongTuNgay = request.hopDongTuNgay;
+                        hopDong.hopDongDenNgay = request.hopDongDenNgay;
+                        hopDong.ghiChu = null;
+                        hopDong.trangThai = request.trangThai;
+                        hopDong.maNhanVien = request.maNhanVien;
+                    }
+                    else
+                    {
+                        hopDong.id = request.idCre;
+                        hopDong.idLoaiHopDong = request.idLoaiHopDong;
+                        hopDong.idChucDanh = request.idChucDanh;
+                        hopDong.idChucVu = request.idChucVu;
+                        hopDong.hopDongTuNgay = request.hopDongTuNgay;
+                        hopDong.hopDongDenNgay = request.hopDongDenNgay;
+                        hopDong.ghiChu = null;
+                        hopDong.trangThai = request.trangThai;
+                        hopDong.maNhanVien = request.maNhanVien;
+                    }
                 }
                 else
                 {
-                    hopDong.id = request.idCre;
-                    hopDong.idLoaiHopDong = request.idLoaiHopDong;
-                    hopDong.idChucDanh = request.idChucDanh;
-                    hopDong.idChucVu = request.idChucVu;
-                    hopDong.hopDongTuNgay = request.hopDongTuNgay;
-                    hopDong.hopDongDenNgay = request.hopDongDenNgay;
-                    hopDong.ghiChu = ghiChu;
-                    hopDong.trangThai = request.trangThai;
-                    hopDong.maNhanVien = request.maNhanVien;
+                    if (request.trangThai == false)
+                    {
+                        var luong = await _context.luongs.Where(x => x.maHopDong == maHopDong && x.trangThai == true).FirstOrDefaultAsync();
+                        luong.trangThai = false;
+
+                        hopDong.id = request.idCre;
+                        hopDong.idLoaiHopDong = request.idLoaiHopDong;
+                        hopDong.idChucDanh = request.idChucDanh;
+                        hopDong.idChucVu = request.idChucVu;
+                        hopDong.hopDongTuNgay = request.hopDongTuNgay;
+                        hopDong.hopDongDenNgay = request.hopDongDenNgay;
+                        hopDong.ghiChu = request.ghiChu.Trim(charsToTrim);
+                        hopDong.trangThai = request.trangThai;
+                        hopDong.maNhanVien = request.maNhanVien;
+                    }
+                    else
+                    {
+                        hopDong.id = request.idCre;
+                        hopDong.idLoaiHopDong = request.idLoaiHopDong;
+                        hopDong.idChucDanh = request.idChucDanh;
+                        hopDong.idChucVu = request.idChucVu;
+                        hopDong.hopDongTuNgay = request.hopDongTuNgay;
+                        hopDong.hopDongDenNgay = request.hopDongDenNgay;
+                        hopDong.ghiChu = request.ghiChu.Trim(charsToTrim);
+                        hopDong.trangThai = request.trangThai;
+                        hopDong.maNhanVien = request.maNhanVien;
+                    }
                 }
+
 
                 var result = await _context.SaveChangesAsync();
                 if (result == 0)
