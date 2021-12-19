@@ -61,7 +61,7 @@ function Header() {
                 </div>
               </div>
               <div>
-                <button onClick={logout} className="button-account">
+                <button onClick={logout} className="button-accounts">
                   <FontAwesomeIcon icon={["fas", "sign-out-alt"]} /> Đăng xuất
                 </button>
               </div>

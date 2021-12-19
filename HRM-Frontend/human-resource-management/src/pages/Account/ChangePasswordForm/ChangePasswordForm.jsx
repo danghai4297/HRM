@@ -51,16 +51,16 @@ function ChangePasswordForm(props) {
     resolver: yupResolver(schema),
   });
   useDocumentTitle("Đổi mật khẩu");
-  console.log(currentPassword);
-  console.log(newPassword);
-  console.log(rePassword);
+
   const idAccount = jwt_decode(sessionStorage.getItem("resultObj")).idAccount;
   const onHandleSubmit = async (data) => {
     if (currentPassword !== newPassword && newPassword === rePassword) {
       try {
         await LoginApi.PutChangePassword(data, idAccount);
         success("Đổi mật khẩu thành công.");
-        history.goBack();
+
+        sessionStorage.removeItem("resultObj");
+        history.push("/login");
       } catch (errors) {
         error("Đổi mật khẩu không thành công!");
       }

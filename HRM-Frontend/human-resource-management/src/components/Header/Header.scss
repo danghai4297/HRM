@@ -70,6 +70,16 @@
         border: none;
         background: #e9e8e8;
         font-size: medium;
+        color: cadetblue;
+      }
+      .button-accounts {
+        border: none;
+        background: #e9e8e8;
+        font-size: medium;
+        color: darkgoldenrod;
+      }
+      .button-accounts:hover {
+        font-size: 15px;
       }
       .button-account:hover {
         font-size: 15px;

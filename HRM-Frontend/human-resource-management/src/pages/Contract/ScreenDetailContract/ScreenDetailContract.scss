@@ -48,7 +48,7 @@
 }
 .all-contract-contract {
   background: white;
-  height: 13vh;
+  height: 11vh;
   width: 90%;
   margin: 3%;
   margin-left: 4%;
@@ -74,10 +74,13 @@
 .btn-move-contract:hover {
   background: #f5f5f0;
   padding-left: 4.5%;
+  .icon-contract {
+    background: #f5f5f0;
+  }
 }
 .icon-contract {
   font-size: 50px;
-  background: #f5f5f0;
+  background: white;
   box-shadow: none !important;
   border: none !important;
 }

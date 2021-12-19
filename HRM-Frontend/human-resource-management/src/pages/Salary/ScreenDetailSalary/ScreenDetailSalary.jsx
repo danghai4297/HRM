@@ -165,6 +165,7 @@ function ScreenDetailSalary(props) {
           >
             <button className="btn-fix-salary">
               <FontAwesomeIcon
+                className="icon-salary"
                 icon={["fas", "arrow-right"]}
                 style={{ fontSize: "50px" }}
               />

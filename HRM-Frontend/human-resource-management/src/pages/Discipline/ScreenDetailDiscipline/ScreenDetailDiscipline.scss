@@ -61,6 +61,12 @@
 .btn-move-discipline:hover {
   background: #f5f5f0;
   padding-left: 4.5%;
+  .icon-discipline {
+    background: #f5f5f0;
+  }
+}
+.icon-discipline {
+  background: white;
 }
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   .main-screen-discipline {

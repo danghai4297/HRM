@@ -130,6 +130,7 @@ function ScreenDetailReward(props) {
           >
             <button className="btn-fix-reward">
               <FontAwesomeIcon
+                className="icon-reward"
                 icon={["fas", "arrow-right"]}
                 style={{ fontSize: "50px" }}
               />

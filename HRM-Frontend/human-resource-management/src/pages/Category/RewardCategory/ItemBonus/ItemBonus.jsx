@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { NVCOLUMNS } from "./NvColumns";
@@ -12,7 +12,7 @@ import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 import { useDocumentTitle } from "../../../../hook/useDocumentTitle/TitleDocument";
 
-function ItemBonus(props) {
+function ItemBonus() {
   const link = "/category/bonus/";
   const fileName = "Danhmuckhenthuong";
   const [dataDmkt, setDataDmkt] = useState([]);

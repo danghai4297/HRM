@@ -137,6 +137,7 @@ function ScreenDetailTransfer(props) {
           >
             <button className="btn-fix-transfer">
               <FontAwesomeIcon
+                className="icon-transfer"
                 icon={["fas", "arrow-right"]}
                 style={{ fontSize: "50px" }}
               />

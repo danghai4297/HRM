@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { NVCOLUMNS } from "./NvColumns";
@@ -8,12 +8,15 @@ import { Link } from "react-router-dom";
 import { ExportCSV } from "../../../../components/ExportFile/ExportFile";
 import TablePagination from "../../../../components/TablePagination/TablePagination";
 import ProductApi from "../../../../api/productApi";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 import { useDocumentTitle } from "../../../../hook/useDocumentTitle/TitleDocument";
 
-function ItemReligion(props) {
+function ItemReligion() {
   const link = "/category/religion/";
   const fileName = "Danhmuctongiao";
   const [dataDmtl, setDataDmtl] = useState([]);
+  const [open, setOpen] = useState(false);
   useDocumentTitle("Danh mục tôn giáo");
 
   useEffect(() => {
@@ -27,6 +30,10 @@ function ItemReligion(props) {
     };
     fetchNvList();
   }, []);
+
+  useEffect(() => {
+    setOpen(!open);
+  }, [dataDmtl]);
 
   return (
     <>
@@ -63,6 +70,12 @@ function ItemReligion(props) {
           />
         </div>
       </div>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }

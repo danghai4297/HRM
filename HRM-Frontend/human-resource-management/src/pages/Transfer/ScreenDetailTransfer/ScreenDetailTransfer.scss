@@ -76,6 +76,12 @@
 .btn-move-transfer:hover {
   background: #f5f5f0;
   padding-left: 4.5%;
+  .icon-transfer {
+    background: #f5f5f0;
+  }
+}
+.icon-transfer {
+  background: white;
 }
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   .main-screen-transfer {

@@ -132,6 +132,7 @@ function ScreenDetailDiscipline(props) {
           >
             <button className="btn-fix-discipline">
               <FontAwesomeIcon
+                className="icon-discipline"
                 icon={["fas", "arrow-right"]}
                 style={{ fontSize: "50px" }}
               />

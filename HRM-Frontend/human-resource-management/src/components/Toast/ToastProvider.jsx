@@ -59,7 +59,6 @@ function ToastProvider(props) {
             variant="filled"
             onClose={hide}
             severity={message.type}
-            className="alert"
           >
             {message.text}
           </Alert>

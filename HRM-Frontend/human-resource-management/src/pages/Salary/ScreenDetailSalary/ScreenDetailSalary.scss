@@ -95,6 +95,12 @@
 .btn-move-salary:hover {
   background: #f5f5f0;
   padding-left: 4.5%;
+  .icon-salary {
+    background: #f5f5f0;
+  }
+}
+.icon-salary {
+  background: white;
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .main-screen-salary {
