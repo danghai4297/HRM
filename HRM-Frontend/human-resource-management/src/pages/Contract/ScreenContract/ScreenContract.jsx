@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./ScreenContract.scss";
@@ -9,9 +9,6 @@ import { ExportCSV } from "../../../components/ExportFile/ExportFile";
 import TablePagination from "../../../components/TablePagination/TablePagination";
 import productApi from "../../../api/productApi";
 import { Link } from "react-router-dom";
-import { useReactToPrint } from "react-to-print";
-import { ComponentToPrint } from "../../../components/ToPrint/ComponentToPrint";
-import { Button } from "react-bootstrap";
 import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";

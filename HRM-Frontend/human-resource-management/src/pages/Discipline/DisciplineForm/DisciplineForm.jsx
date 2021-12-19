@@ -97,7 +97,6 @@ function AddDisciplineForm(props) {
     name: null,
   });
   const handleChange = (e) => {
-    console.log(e);
     setFile({
       file: e.fileList.length !== 0 ? e.file : null,
       path:
@@ -121,7 +120,6 @@ function AddDisciplineForm(props) {
   const {
     register,
     handleSubmit,
-    control,
     getValues,
     reset,
     formState: { errors },
@@ -163,7 +161,6 @@ function AddDisciplineForm(props) {
 
   const onHandleSubmit = async (data) => {
     const nameEm = dataEmployee.filter((item) => item.id === data.maNhanVien);
-    console.log(data);
     try {
       if (id !== undefined) {
         try {

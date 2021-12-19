@@ -14,7 +14,6 @@ import {
 } from "react-router-dom";
 import { useState } from "react";
 import ToastProvider from "./components/Toast/ToastProvider";
-// import ScreenNotFound from "./pages/Error/ScreenNotFound";
 
 function App() {
   const [account, setAccount] = useState(false);

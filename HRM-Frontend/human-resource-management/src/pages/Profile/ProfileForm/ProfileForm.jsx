@@ -138,7 +138,6 @@ function AddProfileForm(props) {
           responseAllId !== null
             ? responseAllId[responseAllId.length - 1].id
             : undefined;
-        console.log(idIncre);
         const increCode = Number(idIncre.slice(2)) + 1;
         const rsCode = "NV";
         if (increCode < 10) {
@@ -551,7 +550,6 @@ function AddProfileForm(props) {
 
   //get data from form
   const onHandleSubmit = async (data) => {
-    console.log(data);
     try {
       if (id !== undefined) {
         if (file.size < 20000000) {
@@ -597,12 +595,7 @@ function AddProfileForm(props) {
     } catch (error) {}
   };
 
-  //console.log(emCode);
-  // console.log(file.file);
-  console.log(resignation);
-
   //handle image
-  //const [file, setFile] = useState("/Images/userIcon.png");
 
   return (
     <>
@@ -614,18 +607,6 @@ function AddProfileForm(props) {
             </h2>
           </div>
           <div className="button">
-            {/* <input
-            type="submit"
-            className={
-              dataDetailEmployee.length !== 0
-                ? "btn btn-danger"
-                : "delete-button"
-            }
-            value="Xoá"
-            onClick={() => {
-              setShowDeleteDialog(true);
-            }}
-          /> */}
             <input
               type="submit"
               className="btn btn-secondary ml-3"
@@ -649,16 +630,11 @@ function AddProfileForm(props) {
                   setShowDialog(true);
                 }
               }}
-              // onClick={handleSubmit(onHandleSubmit)}
             />
           </div>
         </div>
         <div className="scroll-form">
-          <form
-            action=""
-            class="profile-form"
-            // onSubmit={handleSubmit(onHandleSubmit)}
-          >
+          <form action="" class="profile-form">
             {/* container import image */}
             <div className="container-ava">
               <span>
@@ -677,13 +653,6 @@ function AddProfileForm(props) {
                   alt=""
                 />
               </span>
-              {/* <Controller
-              name="anh"
-              control={control}
-              render={({ field, onChange }) => (
-                
-              )}
-            /> */}
 
               <Upload
                 beforeUpload={() => false}
@@ -693,13 +662,6 @@ function AddProfileForm(props) {
               >
                 <Button icon={<UploadOutlined />}>Chọn thư mục</Button>
               </Upload>
-              {/* <input
-              type="file"
-              // {...register2("anh")}
-              accept="Images/*"
-              class="form-control-file"
-              onChange={handleChange}
-            ></input> */}
             </div>
             {/* Container thông tin cơ bản */}
             <div className="container-div-form">
@@ -721,7 +683,6 @@ function AddProfileForm(props) {
                           ? "form-control col-sm-6 "
                           : "form-control col-sm-6 border-danger"
                       }
-                      //onChange={(e) => setEmCode(e.target.value)}
                       readOnly
                     />
                     <span className="message">{errors.id?.message}</span>
@@ -840,9 +801,6 @@ function AddProfileForm(props) {
                           {item.tenDanhMuc}
                         </option>
                       ))}
-                      {/* <option value="1">Độc thân</option>
-                    <option value="2">Đã có gia đình</option>
-                    <option value="3">Ly dị</option> */}
                     </select>
                     <span className="message">
                       {errors.idDanhMucHonNhan?.message}
@@ -1831,27 +1789,6 @@ function AddProfileForm(props) {
                     </span>
                   </div>
                 </div>
-                {/* <div className="col">
-              <div className="form-group form-inline">
-                <label
-                  class="col-sm-4 justify-content-start"
-                  htmlFor="phongBan"
-                >
-                  Phòng Ban
-                </label>
-                <select
-                  type="text"
-                  {...register("phongBan")}
-                  id="phongBan"
-                  className={
-                    !errors.phongBan
-                      ? "form-control col-sm-6 custom-select"
-                      : "form-control col-sm-6 border-danger custom-select"
-                  }
-                />
-                <span className="message">{errors.phongBan?.message}</span>
-              </div>
-            </div> */}
               </div>
               <div className="row">
                 <div className="col-6">
@@ -1877,19 +1814,6 @@ function AddProfileForm(props) {
                     </span>
                   </div>
                 </div>
-                {/* <div className="col">
-              <div class="form-group form-inline">
-                <label class="col-sm-4 justify-content-start" htmlFor="to">
-                  Tổ
-                </label>
-                <select
-                  type="text"
-                  {...register("to")}
-                  id="to"
-                  className="form-control col-sm-6 custom-select"
-                ></select>
-              </div>
-            </div> */}
               </div>
               <div className="row">
                 <div className="col-6">
@@ -2062,12 +1986,6 @@ function AddProfileForm(props) {
                     >
                       Ngày vào Đoàn
                     </label>
-                    {/* <input
-                    type="text"
-                    {...register("ngayVaoDoan")}
-                    id="ngayVaoDoan"
-                    className="form-control col-sm-6"
-                  /> */}
                     <Controller
                       name="ngayVaoDoan"
                       control={control}
@@ -2259,10 +2177,6 @@ function AddProfileForm(props) {
                         onChange: (e) => {
                           if (e.target.checked === false) {
                             clearErrors(["ngayNhapNgu", "ngayXuatNgu"]);
-                            // reset({
-                            //   ngayVaoDang: undefined,
-                            //   ngayVaoDangChinhThuc: undefined,
-                            // });
                             resetField("ngayNhapNgu", { defaultValue: null });
                             resetField("ngayXuatNgu", { defaultValue: null });
                             resetField("quanHamCaoNhat", {

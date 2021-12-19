@@ -12,7 +12,7 @@ import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 import { useDocumentTitle } from "../../../../hook/useDocumentTitle/TitleDocument";
 
-function ItemPunish(props) {
+function ItemPunish() {
   const link = "/category/punish/";
   const fileName = "Danhmuckyluat";
   const [dataDmkl, setDataDmkl] = useState([]);

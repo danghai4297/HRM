@@ -109,7 +109,6 @@ function AddContractForm(props) {
           setRsIdCre(idCree + 1);
           const idIncre =
             responseAllHD !== null ? responseAllHD[0].id : undefined;
-          console.log(idIncre);
           const increCode = Number(idIncre.slice(2)) + 1;
           const rsCode = "HD";
           if (increCode < 10) {
@@ -305,12 +304,6 @@ function AddContractForm(props) {
       error(`Có lỗi xảy ra.`);
     }
   };
-  console.log(
-    dataIdEmployee
-      .filter((item) => item.trangThaiLaoDong === "Đang làm việc")
-      .map((item) => item.id)
-      .includes(impID)
-  );
 
   const handleDelete = async () => {
     try {

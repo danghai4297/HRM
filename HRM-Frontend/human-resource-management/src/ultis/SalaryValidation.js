@@ -29,7 +29,6 @@ export const schema = yup.object({
     .date()
     .nullable()
     .required("Ngày kết thúc không được bỏ trống."),
-  // ngayKetThuc: yup.date().nullable().required("Ngày có hiệu lực không được bỏ trống."),
   luongCoBan: yup
     .number()
     .positive("Lương cơ bản không thể là số âm.")

@@ -16,14 +16,12 @@ import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 
 function AddLevelForm(props) {
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
 
   let { match, history } = props;
 
   let location = useLocation();
   let query = new URLSearchParams(location.search);
-  //  console.log(query.get("maNhanVien"));
-  //  console.log(query.get("hoTen"));
 
   let eCode = query.get("maNhanVien");
   let eName = query.get("hoTen");
@@ -44,7 +42,6 @@ function AddLevelForm(props) {
     "Bạn chắc chắn muốn thêm thông tin trình độ mới"
   );
   const [open, setOpen] = useState(false);
-  // const [notChangeDialog,setNotChangeDialog] = useState(false);
 
   const cancel = () => {
     setShowDialog(false);
@@ -52,9 +49,7 @@ function AddLevelForm(props) {
     setShowCheckDialog(false);
     setShowEsc(false);
   };
-  //console.log(eCode);
 
-  //console.log(dataDetailTDVH);
   useEffect(() => {
     const fetchNvList = async () => {
       try {
@@ -66,9 +61,6 @@ function AddLevelForm(props) {
         setDataTD(responseTD);
 
         if (id !== undefined) {
-          // if(checkInputChange === true){
-          //   setDescription("Bạn chưa thay dổi");
-          // }
           setDescription("Bạn chắc chắn muốn sửa trình độ");
           const response = await ProductApi.getTDDetail(id);
           setdataDetailTDVH(response);
@@ -98,7 +90,7 @@ function AddLevelForm(props) {
     titlePage();
   }, [dataDetailTDVH]);
 
-  //ussing react-hooks-form
+  //using react-hooks-form
   const intitalValue = {
     maNhanVien: id !== undefined ? `${dataDetailTDVH.maNhanVien}` : eCode,
     idChuyenMon: id !== undefined ? `${dataDetailTDVH.idChuyenMon}` : null,
@@ -119,13 +111,11 @@ function AddLevelForm(props) {
     idTrinhDo: id !== undefined ? `${dataDetailTDVH.idTrinhDo}` : null,
     tenTruong: id !== undefined ? `${dataDetailTDVH.tenTruong}` : null,
   };
-  //  console.log(typeof(intitalValue.tuThoiGian));
 
   const {
     register,
     handleSubmit,
     control,
-    setValue,
     getValues,
     reset,
     formState: { errors },
@@ -237,16 +227,11 @@ function AddLevelForm(props) {
                   setShowDialog(true);
                 }
               }}
-              // onClick={handleSubmit(onHandleSubmit)}
             />
           </div>
         </div>
 
-        <form
-          action=""
-          class="profile-form"
-          // onSubmit={handleSubmit(onHandleSubmit)}
-        >
+        <form action="" class="profile-form">
           {/* Container thông tin cơ bản */}
           <div className="container-div-form">
             <h3>Thông tin chung</h3>
@@ -262,10 +247,6 @@ function AddLevelForm(props) {
                   <input
                     type="text"
                     {...register("maNhanVien")}
-                    // defaultValue={
-                    //   id !== undefined ? de.maNhanVien : eCode
-                    // }
-                    //setValue={id !== undefined ? dataDetailTDVH.maNhanVien : eCode}
                     id="maNhanVien"
                     className={
                       !errors.maNhanVien
@@ -289,7 +270,6 @@ function AddLevelForm(props) {
                     type="text"
                     {...register("idChuyenMon")}
                     id="idChuyenMon"
-                    //defaultValue={defaultValue.idChuyenMon}
                     className={
                       !errors.idChuyenMon
                         ? "form-control col-sm-6 custom-select"
@@ -322,7 +302,6 @@ function AddLevelForm(props) {
                   </label>
                   <input
                     type="text"
-                    // defaultValue={defaultValue.tenTruong}
                     {...register("tenTruong")}
                     id="tenTruong"
                     className={
@@ -414,17 +393,6 @@ function AddLevelForm(props) {
                   >
                     Từ ngày
                   </label>
-                  {/* <input
-                    type="text"
-                    {...register("tuThoiGian")}
-                    id="tuThoiGian"
-                    className={
-                      !errors.tuThoiGian
-                        ? "form-control col-sm-6"
-                        : "form-control col-sm-6 border-danger"
-                    }
-                    placeholder="DD/MM/YYYY"
-                  /> */}
 
                   <Controller
                     name="tuThoiGian"
@@ -458,27 +426,13 @@ function AddLevelForm(props) {
                   >
                     Đến ngày
                   </label>
-                  {/* <input
-                    type="text"
-                    {...register("denThoiGian")}
-                    id="denThoiGian"
-                    className={
-                      !errors.denThoiGian
-                        ? "form-control col-sm-6 "
-                        : "form-control col-sm-6 border-danger"
-                    }
-                    placeholder="DD/MM/YYYY"
-                  /> */}
+
                   <Controller
                     name="denThoiGian"
                     control={control}
-                    // defaultValue={defaultValue}
-
                     render={({ field, onChange }) => (
                       <DatePicker
                         id="denThoiGian"
-                        // defaultValue={moment(dataDetailTDVH.denThoiGian)._d}
-                        //defaultValue={moment(dataDetailTDVH.denThoiGian)}
                         className={
                           !errors.denThoiGian
                             ? "form-control col-sm-6"
@@ -486,17 +440,11 @@ function AddLevelForm(props) {
                         }
                         placeholder="DD/MM/YYYY"
                         format="DD/MM/YYYY"
-                        // onChange={(event) => {
-                        //   handleChangeDate(event);
-                        // }}
                         value={field.value}
                         onChange={(event) => {
                           field.onChange(event);
                         }}
-                        //selected={field}
                         {...field._d}
-
-                        //inputRef={dates}
                       />
                     )}
                   />

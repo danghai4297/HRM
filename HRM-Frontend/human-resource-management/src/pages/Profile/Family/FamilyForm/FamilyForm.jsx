@@ -16,15 +16,15 @@ import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 
 function AddFamilyForm(props) {
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
 
   let { match, history } = props;
   let { id } = match.params;
 
   let location = useLocation();
-  console.log(location);
+
   let query = new URLSearchParams(location.search);
-  console.log(query.get("maNhanVien"));
+
   const eCode = query.get("maNhanVien");
   let eName = query.get("hoTen");
   const [dataDetailNT, setdataDetailNT] = useState([]);
@@ -155,9 +155,6 @@ function AddFamilyForm(props) {
     return JSON.stringify(values) === JSON.stringify(dfValue);
   };
 
-  console.log(gender);
-
-  console.log(dataDetailNT);
   const onHandleSubmit = async (data) => {
     try {
       if (id !== undefined) {

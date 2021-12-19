@@ -32,7 +32,6 @@ function AddTransferForm(props) {
   //get param from detail
   let { match, history } = props;
   let { id } = match.params;
-  console.log(id);
 
   // states contain data
   const [startDate, setStartDate] = useState();

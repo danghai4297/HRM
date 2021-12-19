@@ -1,6 +1,4 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { DatePicker } from "antd";
-import { format } from "date-fns";
 import React, { useEffect, useRef, useState } from "react";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import { useReactToPrint } from "react-to-print";
@@ -20,7 +18,7 @@ function ItemListBirthday() {
     content: () => componentRef.current,
   });
 
-  const { error, warn, info, success } = useToast();
+  const { error, info } = useToast();
 
   const [title, settitle] = useState("");
 

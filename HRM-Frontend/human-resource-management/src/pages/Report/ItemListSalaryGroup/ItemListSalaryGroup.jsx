@@ -1,10 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { DatePicker } from "antd";
-import { format } from "date-fns";
 import React, { useEffect, useRef, useState } from "react";
 import { useReactToPrint } from "react-to-print";
 import ProductApi from "../../../api/productApi";
-import { ExportCSV } from "../../../components/ExportFile/ExportFile";
 import { useToast } from "../../../components/Toast/Toast";
 import { ComponentToPrint } from "../../../components/ToPrint/ComponentToPrint";
 import useDidMountEffect from "../../../hook/useDidMountEffect/useDidMountEffect";
@@ -20,7 +17,7 @@ function ItemListSalaryGroup() {
     content: () => componentRef.current,
   });
 
-  const { error, warn, info, success } = useToast();
+  const { error, info } = useToast();
 
   useDocumentTitle("Báo cáo danh sách nhóm lương");
 

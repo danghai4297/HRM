@@ -1,11 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { DatePicker } from "antd";
 import { format } from "date-fns";
-import { da } from "date-fns/locale";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import NumberFormat from "react-number-format";
 import { useReactToPrint } from "react-to-print";
-import { useToast } from "../../../components/Toast/Toast";
 import { ComponentToPrint } from "../../../components/ToPrint/ComponentToPrint";
 import "./ItemDecisionSalaryUp.scss";
 import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
@@ -73,14 +71,6 @@ function ItemDecisionSalaryUp() {
           <div className="select-row2">
             <label>Mức lương cũ</label>
             <div>
-              {/* <input
-                type="number"
-                min="0"
-                defaultValue={0}
-                class="form-control"
-                id="title"
-                onChange={(e) => setSalary(e.target.value)}
-              /> */}
               <NumberFormat
                 thousandSeparator={true}
                 class="form-control"
@@ -93,14 +83,6 @@ function ItemDecisionSalaryUp() {
           <div className="select-row2">
             <label>Mức lương mới</label>
             <div>
-              {/* <input
-                type="number"
-                min="0"
-                class="form-control"
-                defaultValue={0}
-                id="title"
-                onChange={(e) => setNewSalary(e.target.value)}
-              /> */}
               <NumberFormat
                 thousandSeparator={true}
                 class="form-control"

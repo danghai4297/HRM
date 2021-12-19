@@ -19,7 +19,7 @@ function ItemListSalaryUp() {
     content: () => componentRef.current,
   });
 
-  const { error, warn, info, success } = useToast();
+  const { error, warn, info } = useToast();
 
   useDocumentTitle("Báo cáo danh sách nâng lương");
 

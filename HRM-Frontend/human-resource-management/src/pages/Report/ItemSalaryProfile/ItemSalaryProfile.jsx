@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import NumberFormat from "react-number-format";
 import { useReactToPrint } from "react-to-print";
 import ProductApi from "../../../api/productApi";
@@ -16,7 +16,7 @@ function ItemSalaryProfile() {
     content: () => componentRef.current,
   });
 
-  const { error, warn, info, success } = useToast();
+  const { error } = useToast();
 
   useDocumentTitle("Báo cáo hồ sơ lương");
 

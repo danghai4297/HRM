@@ -11,10 +11,6 @@ export const schema = yup.object().shape({
   idLoaiHopDong: yup.number().typeError("Loại hợp đồng không được bỏ trống."),
   idChucDanh: yup.number().typeError("Chức danh không được bỏ trống."),
   idChucVu: yup.number().typeError("Chức vụ không được bỏ trống."),
-  // maHopDong: yup
-  //   .string()
-  //   .nullable()
-  //   .required("Lương cơ bản không được bỏ trống."),
   hopDongTuNgay: yup
     .date()
     .nullable()

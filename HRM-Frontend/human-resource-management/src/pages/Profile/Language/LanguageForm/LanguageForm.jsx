@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { useLocation } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import DeleteApi from "../../../../api/deleteAPI";
 import PutApi from "../../../../api/putAAPI";
 import ProductApi from "../../../../api/productApi";
@@ -17,14 +16,14 @@ import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 
 function AddLanguageForm(props) {
-  const { error, warn, info, success } = useToast();
+  const { error, success } = useToast();
 
   let { match, history } = props;
 
   let location = useLocation();
-  console.log(location);
+
   let query = new URLSearchParams(location.search);
-  console.log(query.get("maNhanVien"));
+
   const eCode = query.get("maNhanVien");
   let eName = query.get("hoTen");
   let { id } = match.params;
@@ -127,7 +126,6 @@ function AddLanguageForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
-    console.log(data);
     try {
       if (id !== undefined) {
         await PutApi.PutNN(data, id);
