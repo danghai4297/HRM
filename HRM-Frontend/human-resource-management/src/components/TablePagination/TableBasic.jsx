@@ -108,7 +108,6 @@ function TableBasic(props) {
             <tbody {...getTableBodyProps()} className="bodyy">
               {page.map((row, index) => {
                 prepareRow(row);
-                // console.log(row);
                 return (
                   <Link
                     to={link + row.original.id}

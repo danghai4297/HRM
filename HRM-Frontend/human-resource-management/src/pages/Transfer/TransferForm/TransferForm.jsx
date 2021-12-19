@@ -76,6 +76,7 @@ function AddTransferForm(props) {
             setDataDetailDC(response);
             setNest(response.idPhongBan);
             setStartDate(moment(response.ngayHieuLuc));
+            setDetail(response.chiTiet);
           } catch (error) {
             history.goBack();
           }
@@ -163,12 +164,13 @@ function AddTransferForm(props) {
     }
   }, [dataDetailDC]);
 
+  const [detail, setDetail] = useState();
+
   const checkInputChange = () => {
     const values = getValues([
       "ngayHieuLuc",
       "idPhongBan",
       "to",
-      "chiTiet",
       "trangThai",
       "maNhanVien",
     ]);
@@ -176,13 +178,13 @@ function AddTransferForm(props) {
       intitalValue.ngayHieuLuc,
       intitalValue.idPhongBan,
       intitalValue.to,
-      intitalValue.chiTiet,
       intitalValue.trangThai,
       intitalValue.maNhanVien,
     ];
     if (
       JSON.stringify(values) === JSON.stringify(dfValue) &&
-      file.file === null
+      file.file === null &&
+      (detail == intitalValue.other || detail == undefined)
     ) {
       return true;
     }
@@ -497,7 +499,9 @@ function AddTransferForm(props) {
                   <textarea
                     type="text"
                     rows="1"
-                    {...register("chiTiet")}
+                    {...register("chiTiet", {
+                      onChange: (e) => setDetail(e.target.value),
+                    })}
                     id="chiTiet"
                     className={
                       !errors.chiTiet
@@ -560,8 +564,8 @@ function AddTransferForm(props) {
         title="Thông báo"
         description={
           id !== undefined
-            ? "Bạn chưa thay đổi thông tincông tác"
-            : "Bạn chưa nhập thông tincông tác"
+            ? "Bạn chưa thay đổi thông tin công tác"
+            : "Bạn chưa nhập thông tin công tác"
         }
         confirm={null}
         cancel={cancel}
@@ -569,7 +573,7 @@ function AddTransferForm(props) {
       <Dialog
         show={showDeleteDialog}
         title="Thông báo"
-        description={`Bạn chắc chắn muốn xóa thông tincông tác`}
+        description={`Bạn chắc chắn muốn xóa thông tin công tác`}
         confirm={handleDelete}
         cancel={cancel}
       />

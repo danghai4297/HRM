@@ -64,21 +64,6 @@ function ScreenAddRole(props) {
     } catch (e) {
       error("Không thành công!");
     }
-    console.log({
-      id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-      roles: [
-        {
-          id: "8D04DCE2-969A-435D-BBA4-DF3F325983DC",
-          name: "admin",
-          selected: checkAdmin,
-        },
-        {
-          id: "30c6f17d-e44f-4e5d-9bf9-1bd98c377cec",
-          name: "user",
-          selected: checkUser,
-        },
-      ],
-    });
   };
 
   return (

@@ -81,7 +81,7 @@ function Detail(props) {
     };
     fetchDetailEmployee();
   }, []);
-  console.log(dataDetailNv);
+
   const [dropBase, setDropBase] = useState(true);
   const [dropContact, setDropContact] = useState(true);
   const [dropJob, setDropJob] = useState(true);

@@ -55,6 +55,7 @@ function AddFamilyForm(props) {
           const response = await ProductApi.getNTDetail(id);
           setdataDetailNT(response);
           setGender(response.gioiTinh);
+          setOther(response.khac);
         }
       } catch (errors) {
         error("Có lỗi xảy ra.");
@@ -101,12 +102,7 @@ function AddFamilyForm(props) {
     ngheNghiep: id !== undefined ? `${dataDetailNT.ngheNghiep}` : null,
     diaChi: id !== undefined ? `${dataDetailNT.diaChi}` : null,
     dienThoai: id !== undefined ? `${dataDetailNT.dienThoai}` : null,
-    khac:
-      id !== undefined
-        ? `${dataDetailNT.khac}` === null
-          ? null
-          : `${dataDetailNT.khac}`
-        : null,
+    khac: id !== undefined ? dataDetailNT.khac : null,
     maNhanVien: id !== undefined ? `${dataDetailNT.maNhanVien}` : eCode,
   };
 
@@ -127,6 +123,8 @@ function AddFamilyForm(props) {
     }
   }, [dataDetailNT]);
 
+  const [other, setOther] = useState();
+
   const checkInputChange = () => {
     const values = getValues([
       "idDanhMucNguoiThan",
@@ -137,7 +135,6 @@ function AddFamilyForm(props) {
       "diaChi",
       "dienThoai",
       "maNhanVien",
-      "khac",
       "ngaySinh",
     ]);
     const dfValue = [
@@ -149,10 +146,15 @@ function AddFamilyForm(props) {
       intitalValue.diaChi,
       intitalValue.dienThoai,
       intitalValue.maNhanVien,
-      intitalValue.khac,
       intitalValue.ngaySinh,
     ];
-    return JSON.stringify(values) === JSON.stringify(dfValue);
+    if (
+      JSON.stringify(values) === JSON.stringify(dfValue) &&
+      (other == intitalValue.other || other == undefined)
+    ) {
+      return true;
+    }
+    return false;
   };
 
   const onHandleSubmit = async (data) => {
@@ -230,11 +232,7 @@ function AddFamilyForm(props) {
             />
           </div>
         </div>
-        <form
-          action=""
-          class="profile-form"
-          // onSubmit={handleSubmit(onHandleSubmit)}
-        >
+        <form action="" class="profile-form">
           {/* Container thông tin cơ bản */}
           <div className="container-div-form">
             <h3>Thông tin chung</h3>
@@ -336,13 +334,6 @@ function AddFamilyForm(props) {
                         : "form-control col-sm-6 border-danger "
                     }
                   />
-                  {/* <option value={dataDetailTDVH.idHinhThucDaoTao}>{dataDetailTDVH.tenHinhThuc}</option>
-                  {dataHTDT.map((item,key)=>(
-                    <option key={key} value={item.id}>
-                    {item.tenHinhThuc}{" "}
-                  </option>
-                  ))} */}
-
                   <span className="message">{errors.quanHe?.message}</span>
                 </div>
               </div>
@@ -386,7 +377,7 @@ function AddFamilyForm(props) {
                   <Controller
                     name="ngaySinh"
                     control={control}
-                    render={({ field, onChange }) => (
+                    render={({ field }) => (
                       <DatePicker
                         id="ngaySinh"
                         className={
@@ -396,18 +387,11 @@ function AddFamilyForm(props) {
                         }
                         placeholder="DD/MM/YYYY"
                         format="DD/MM/YYYY"
-                        //defaultValue={moment(dataDetailTDVH.tuThoiGian)}
-                        // onChange={(event) => {
-                        //   handleChangeDate(event);
-                        // }}
                         value={field.value}
                         onChange={(event) => {
                           field.onChange(event);
                         }}
-                        //selected={field}
                         {...field._d}
-
-                        //inputRef={dates}
                       />
                     )}
                   />
@@ -489,7 +473,9 @@ function AddFamilyForm(props) {
                   <textarea
                     type="text"
                     rows="4"
-                    {...register("khac")}
+                    {...register("khac", {
+                      onChange: (e) => setOther(e.target.value),
+                    })}
                     id="khac"
                     className={
                       !errors.khac

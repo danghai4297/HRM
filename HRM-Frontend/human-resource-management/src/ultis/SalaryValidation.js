@@ -13,7 +13,7 @@ export const schema = yup.object({
     .required("Nhóm lương không được bỏ trống."),
   heSoLuong: yup
     .number()
-    .positive("Hệ số lương không thể là số âm.")
+    .moreThan(0, "Hệ số lương không thể là số âm.")
     .typeError("Hệ số lương không được bỏ trống."),
   bacLuong: yup
     .string()
@@ -35,11 +35,11 @@ export const schema = yup.object({
     .typeError("Lương cơ bản không được bỏ trống và phải là số."),
   phuCapTrachNhiem: yup
     .number()
-    .moreThan(-1, "Phụ cấp trách nhiêm không thể là số âm.")
+    .moreThan(-1, "Phụ cấp trách nhiệm không thể là số âm.")
     .typeError("Phụ cấp trách nhiệm không được bỏ trống và phải là số."),
   phuCapKhac: yup
     .number()
-    .positive("Phụ cấp khác không thể là số âm.")
+    .moreThan(-1, "Phụ cấp khác không thể là số âm.")
     .typeError("Phụ cấp khác không được bỏ trống và phải là số."),
   tongLuong: yup.number(),
   thoiHanLenLuong: yup

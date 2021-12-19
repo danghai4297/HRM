@@ -58,8 +58,6 @@ function PDF(props) {
 
   const [dataDetailNv, setdataDetailNv] = useState([]);
   const [dataAllNv, setdataAllNv] = useState([]);
-  const [removeItem, setRemoveItem] = useState(true);
-  const [changeItem, setChangeItem] = useState();
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -78,16 +76,11 @@ function PDF(props) {
 
   const chooseItem = async (newId) => {
     try {
-      setChangeItem(newId);
       const newResponse = await ProductApi.getNvDetail(newId);
       history.replace(`/profile/pdf/${newId}`);
       setdataDetailNv(newResponse);
     } catch (error) {}
   };
-
-  useEffect(() => {
-    setRemoveItem(false);
-  }, [changeItem]);
 
   return (
     <>
@@ -112,15 +105,12 @@ function PDF(props) {
           className="form-control col-sm-6 custom-select"
           onChange={(e) => chooseItem(e.target.value)}
         >
-          {removeItem && (
-            <option value={dataDetailNv.id}>{dataDetailNv.hoTen}</option>
-          )}
-
           {dataAllNv.map((items, key) => (
             <option key={key} value={items.id}>
               {items.hoTen}
             </option>
           ))}
+          <option value={dataDetailNv.id}>{dataDetailNv.hoTen}</option>
         </select>
       </div>
 
