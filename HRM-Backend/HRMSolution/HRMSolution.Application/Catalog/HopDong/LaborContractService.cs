@@ -366,17 +366,33 @@ namespace HRMSolution.Application.Catalog.HopDongs
                     if (request.trangThai == false)
                     {
                         var luong = await _context.luongs.Where(x => x.maHopDong == maHopDong && x.trangThai == true).FirstOrDefaultAsync();
-                        luong.trangThai = false;
+                        if (luong != null)
+                        {
+                            luong.trangThai = false;
 
-                        hopDong.id = request.idCre;
-                        hopDong.idLoaiHopDong = request.idLoaiHopDong;
-                        hopDong.idChucDanh = request.idChucDanh;
-                        hopDong.idChucVu = request.idChucVu;
-                        hopDong.hopDongTuNgay = request.hopDongTuNgay;
-                        hopDong.hopDongDenNgay = request.hopDongDenNgay;
-                        hopDong.ghiChu = request.ghiChu.Trim(charsToTrim);
-                        hopDong.trangThai = request.trangThai;
-                        hopDong.maNhanVien = request.maNhanVien;
+                            hopDong.id = request.idCre;
+                            hopDong.idLoaiHopDong = request.idLoaiHopDong;
+                            hopDong.idChucDanh = request.idChucDanh;
+                            hopDong.idChucVu = request.idChucVu;
+                            hopDong.hopDongTuNgay = request.hopDongTuNgay;
+                            hopDong.hopDongDenNgay = request.hopDongDenNgay;
+                            hopDong.ghiChu = request.ghiChu.Trim(charsToTrim);
+                            hopDong.trangThai = request.trangThai;
+                            hopDong.maNhanVien = request.maNhanVien;
+                        }
+                        else
+                        {
+                            hopDong.id = request.idCre;
+                            hopDong.idLoaiHopDong = request.idLoaiHopDong;
+                            hopDong.idChucDanh = request.idChucDanh;
+                            hopDong.idChucVu = request.idChucVu;
+                            hopDong.hopDongTuNgay = request.hopDongTuNgay;
+                            hopDong.hopDongDenNgay = request.hopDongDenNgay;
+                            hopDong.ghiChu = request.ghiChu.Trim(charsToTrim);
+                            hopDong.trangThai = request.trangThai;
+                            hopDong.maNhanVien = request.maNhanVien;
+                        }
+
                     }
                     else
                     {
