@@ -29,11 +29,6 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
         public async Task<int> Create(QuaTrinhCongTacCreateRequest request)
         {
             char[] charsToTrim = { '*', ' ', '\'' };
-            var chiTiet = request.chiTiet;
-            if (chiTiet != null)
-            {
-                chiTiet = chiTiet.Trim(charsToTrim);
-            }
             if (request.maNhanVien == null || request.ngayHieuLuc == null || request.idPhongBan == 0 || request.to == 0)
             {
                 return 0;
@@ -43,49 +38,102 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                 var query = await _context.dieuChuyens.Where(x => x.trangThai == true && x.maNhanVien == request.maNhanVien).FirstOrDefaultAsync();
                 if (query == null)
                 {
-                    var dieuChuyen = new DieuChuyen()
+                    if (request.chiTiet == "null" || request.chiTiet == "" || request.chiTiet == null)
                     {
-                        maNhanVien = request.maNhanVien,
-                        ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
-                        idPhongBan = request.idPhongBan,
-                        to = request.to,
-                        chiTiet = chiTiet,
-                        trangThai = true
-                    };
-                    if (request.bangChung is null)
-                    {
-                        dieuChuyen.bangChung = null;
+                        var dieuChuyen = new DieuChuyen()
+                        {
+                            maNhanVien = request.maNhanVien,
+                            ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
+                            idPhongBan = request.idPhongBan,
+                            to = request.to,
+                            chiTiet = null,
+                            trangThai = true
+                        };
+                        if (request.bangChung is null)
+                        {
+                            dieuChuyen.bangChung = null;
+                        }
+                        else
+                        {
+                            dieuChuyen.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
+                        }
+                        _context.dieuChuyens.Add(dieuChuyen);
                     }
                     else
                     {
-                        dieuChuyen.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
+                        var dieuChuyen = new DieuChuyen()
+                        {
+                            maNhanVien = request.maNhanVien,
+                            ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
+                            idPhongBan = request.idPhongBan,
+                            to = request.to,
+                            chiTiet = request.chiTiet.Trim(charsToTrim),
+                            trangThai = true
+                        };
+                        if (request.bangChung is null)
+                        {
+                            dieuChuyen.bangChung = null;
+                        }
+                        else
+                        {
+                            dieuChuyen.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
+                        }
+                        _context.dieuChuyens.Add(dieuChuyen);
                     }
-                    _context.dieuChuyens.Add(dieuChuyen);
+
 
                 }
                 else
                 {
-                    var dc_update = await _context.dieuChuyens.FindAsync(query.id);
-                    dc_update.trangThai = false;
+                    if (request.chiTiet == "null" || request.chiTiet == "" || request.chiTiet == null)
+                    {
+                        var dc_update = await _context.dieuChuyens.FindAsync(query.id);
+                        dc_update.trangThai = false;
 
-                    var dieuChuyen = new DieuChuyen()
-                    {
-                        maNhanVien = request.maNhanVien,
-                        ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
-                        idPhongBan = request.idPhongBan,
-                        to = request.to,
-                        chiTiet = request.chiTiet,
-                        trangThai = true
-                    };
-                    if (request.bangChung is null)
-                    {
-                        dieuChuyen.bangChung = null;
+                        var dieuChuyen = new DieuChuyen()
+                        {
+                            maNhanVien = request.maNhanVien,
+                            ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
+                            idPhongBan = request.idPhongBan,
+                            to = request.to,
+                            chiTiet = null,
+                            trangThai = true
+                        };
+                        if (request.bangChung is null)
+                        {
+                            dieuChuyen.bangChung = null;
+                        }
+                        else
+                        {
+                            dieuChuyen.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
+                        }
+                        _context.dieuChuyens.Add(dieuChuyen);
                     }
                     else
                     {
-                        dieuChuyen.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
+                        var dc_update = await _context.dieuChuyens.FindAsync(query.id);
+                        dc_update.trangThai = false;
+
+                        var dieuChuyen = new DieuChuyen()
+                        {
+                            maNhanVien = request.maNhanVien,
+                            ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
+                            idPhongBan = request.idPhongBan,
+                            to = request.to,
+                            chiTiet = request.chiTiet.Trim(charsToTrim),
+                            trangThai = true
+                        };
+                        if (request.bangChung is null)
+                        {
+                            dieuChuyen.bangChung = null;
+                        }
+                        else
+                        {
+                            dieuChuyen.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
+                        }
+                        _context.dieuChuyens.Add(dieuChuyen);
                     }
-                    _context.dieuChuyens.Add(dieuChuyen);
+
                 }
                 var result = await _context.SaveChangesAsync();
                 if (result == 0)
@@ -183,7 +231,6 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
         public async Task<int> Update(int id, QuaTrinhCongTacUpdateRequest request)
         {
             char[] charsToTrim = { '*', ' ', '\'' };
-            var chiTiet = request.chiTiet.Trim(charsToTrim);
             var dieuChuyen = await _context.dieuChuyens.FindAsync(id);
             if (dieuChuyen == null || request.maNhanVien == null || request.ngayHieuLuc == null || request.idPhongBan == 0 || request.to == 0)
             {
@@ -191,21 +238,43 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
             }
             else
             {
-                dieuChuyen.maNhanVien = request.maNhanVien;
-                dieuChuyen.ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc);
-                dieuChuyen.idPhongBan = request.idPhongBan;
-                dieuChuyen.to = request.to;
-                dieuChuyen.chiTiet = chiTiet;
-                dieuChuyen.trangThai = request.trangThai;
-                if (request.bangChung is null)
+                if (request.chiTiet == "null" || request.chiTiet == "" || request.chiTiet == null)
                 {
-                    //dieuChuyen.bangChung = null;
+                    dieuChuyen.maNhanVien = request.maNhanVien;
+                    dieuChuyen.ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc);
+                    dieuChuyen.idPhongBan = request.idPhongBan;
+                    dieuChuyen.to = request.to;
+                    dieuChuyen.chiTiet = null;
+                    dieuChuyen.trangThai = request.trangThai;
+                    if (request.bangChung is null)
+                    {
+                        //dieuChuyen.bangChung = null;
+                    }
+                    else
+                    {
+                        await _storageService.DeleteFileAsync(dieuChuyen.bangChung);
+                        dieuChuyen.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
+                    }
                 }
                 else
                 {
-                    await _storageService.DeleteFileAsync(dieuChuyen.bangChung);
-                    dieuChuyen.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
+                    dieuChuyen.maNhanVien = request.maNhanVien;
+                    dieuChuyen.ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc);
+                    dieuChuyen.idPhongBan = request.idPhongBan;
+                    dieuChuyen.to = request.to;
+                    dieuChuyen.chiTiet = request.chiTiet.Trim(charsToTrim);
+                    dieuChuyen.trangThai = request.trangThai;
+                    if (request.bangChung is null)
+                    {
+                        //dieuChuyen.bangChung = null;
+                    }
+                    else
+                    {
+                        await _storageService.DeleteFileAsync(dieuChuyen.bangChung);
+                        dieuChuyen.bangChung = await this.SaveFile(request.bangChung, request.tenFile);
+                    }
                 }
+
                 var result = await _context.SaveChangesAsync();
                 if (result == 0)
                     return 0;

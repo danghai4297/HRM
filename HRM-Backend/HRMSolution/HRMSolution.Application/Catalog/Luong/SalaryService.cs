@@ -43,7 +43,7 @@ namespace HRMSolution.Application.Catalog.Luongs
 
                 if (query == null)
                 {
-                    if (request.ghiChu == "null")
+                    if (request.ghiChu == "null" || request.ghiChu == "" || request.ghiChu == null)
                     {
                         var luong = new Luong()
                         {
@@ -110,7 +110,7 @@ namespace HRMSolution.Application.Catalog.Luongs
                     var luong_update = await _context.luongs.FindAsync(query.id);
 
                     luong_update.trangThai = false;
-                    if (request.ghiChu == "null")
+                    if (request.ghiChu == "null" || request.ghiChu == "" || request.ghiChu == null)
                     {
                         var luong = new Luong()
                         {
@@ -300,7 +300,7 @@ namespace HRMSolution.Application.Catalog.Luongs
             }
             else
             {
-                if (request.ghiChu == "null")
+                if (request.ghiChu == "null" || request.ghiChu == "" || request.ghiChu == null)
                 {
                     luong.idNhomLuong = request.idNhomLuong;
                     luong.heSoLuong = request.heSoLuong;

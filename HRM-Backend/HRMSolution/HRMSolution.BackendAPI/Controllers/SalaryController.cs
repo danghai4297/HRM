@@ -13,7 +13,7 @@ namespace HRMSolution.BackendAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class SalaryController : ControllerBase
     {
         private readonly ISalaryService _salaryService;
