@@ -21,6 +21,8 @@ namespace HRMSolution.Application.Catalog.TrinhDoVanHoas
 
         public async Task<int> Create(TrinhDoVanHoaCreateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var tenTruong = request.tenTruong.Trim(charsToTrim);
             if (request.tenTruong == null || request.idChuyenMon <= 0 || request.idHinhThucDaoTao <= 0 || request.idTrinhDo <= 0 || request.maNhanVien == null)
             {
                 return 0;
@@ -29,7 +31,7 @@ namespace HRMSolution.Application.Catalog.TrinhDoVanHoas
             {
                 var tdvh = new TrinhDoVanHoa()
                 {
-                    tenTruong = request.tenTruong,
+                    tenTruong = tenTruong,
                     idChuyenMon = request.idChuyenMon,
                     tuThoiGian = request.tuThoiGian,
                     denThoiGian = request.denThoiGian,
@@ -136,6 +138,8 @@ namespace HRMSolution.Application.Catalog.TrinhDoVanHoas
 
         public async Task<int> Update(int id, TrinhDoVanHoaUpdateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var tenTruong = request.tenTruong.Trim(charsToTrim);
             var trinhDoVanHoa = await _context.trinhDoVanHoas.FindAsync(id);
             if (trinhDoVanHoa == null || request.tenTruong == null || request.idChuyenMon <= 0 || request.idHinhThucDaoTao <= 0 || request.idTrinhDo <= 0 || request.maNhanVien == null)
             {
@@ -143,7 +147,7 @@ namespace HRMSolution.Application.Catalog.TrinhDoVanHoas
             }
             else
             {
-                trinhDoVanHoa.tenTruong = request.tenTruong;
+                trinhDoVanHoa.tenTruong = tenTruong;
                 trinhDoVanHoa.idChuyenMon = request.idChuyenMon;
                 trinhDoVanHoa.tuThoiGian = request.tuThoiGian;
                 trinhDoVanHoa.denThoiGian = request.denThoiGian;

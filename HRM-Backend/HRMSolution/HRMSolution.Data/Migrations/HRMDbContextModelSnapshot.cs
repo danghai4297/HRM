@@ -47,7 +47,11 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
+<<<<<<< HEAD
                             ConcurrencyStamp = "c7729dff-2446-46a7-8cd1-3169ea2dd601",
+=======
+                            ConcurrencyStamp = "6a5f307a-627f-4cb2-b4c9-d2f1d713c095",
+>>>>>>> c1850e24b2820d77fba1ccc4977351d6c8351ecd
                             Name = "admin",
                             NormalizedName = "admin",
                             ghiChu = "Administrator role"
@@ -55,7 +59,11 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec"),
+<<<<<<< HEAD
                             ConcurrencyStamp = "06ebc65a-acb3-4a70-9b33-3420a02ca3f1",
+=======
+                            ConcurrencyStamp = "915aad64-e351-49ec-b267-32a2261e525c",
+>>>>>>> c1850e24b2820d77fba1ccc4977351d6c8351ecd
                             Name = "user",
                             NormalizedName = "user",
                             ghiChu = "User role"
@@ -124,11 +132,19 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
                             AccessFailedCount = 0,
+<<<<<<< HEAD
                             ConcurrencyStamp = "d525a2f6-15e3-4281-bbd9-d77319fb175b",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "admin",
                             PasswordHash = "AQAAAAEAACcQAAAAENE/kznufLTfQDBwqqihZHilEjDQQm5rR8SjDLMO88KGa6XfT37t8reCPXwB92WPAg==",
+=======
+                            ConcurrencyStamp = "1eefe8aa-0e95-4b5f-81b7-7eaa1a42a986",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedUserName = "admin",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKuS5lXVAgyf03mMTQtIFptUwwwUuik7VucxpmLuYfFIau9AUcFq6Y6bLgioaVBK8Q==",
+>>>>>>> c1850e24b2820d77fba1ccc4977351d6c8351ecd
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -139,11 +155,19 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("1db26eb2-1870-4129-f60a-08d9978ff76b"),
                             AccessFailedCount = 0,
+<<<<<<< HEAD
                             ConcurrencyStamp = "b8ab3d1c-1f0e-429a-8d4b-3bc0e6341df9",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "user1",
                             PasswordHash = "AQAAAAEAACcQAAAAEIDTwUsx8q8zXa1Zl1kr8ip9SRvn1TrDp2KDPadUiNwcpOEQY4OGG6ofPQe5x3nVyg==",
+=======
+                            ConcurrencyStamp = "b504de19-27da-4c73-b489-176418b0ae6a",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedUserName = "user1",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOenOXk4gxSFrCitETKYfw5Z1C8JV5ODbd+gvhOVfisHQUEBqi17lBkR2Yi/4OVpsQ==",
+>>>>>>> c1850e24b2820d77fba1ccc4977351d6c8351ecd
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -154,11 +178,19 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("ccf28057-5be9-4405-957b-460e0ce106a7"),
                             AccessFailedCount = 0,
+<<<<<<< HEAD
                             ConcurrencyStamp = "8f876baf-7882-4224-90da-4a6d811212be",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "user3",
                             PasswordHash = "AQAAAAEAACcQAAAAEMwq0zrX2ROpijdMWMWhUSL+tWVKF3jJ1aWo2Zhqj7/Nu4vVuZ7RnEbLU6KTYqv2aQ==",
+=======
+                            ConcurrencyStamp = "1cdde1e1-9a45-47fa-ade7-9d6c4204a3ea",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedUserName = "user3",
+                            PasswordHash = "AQAAAAEAACcQAAAAED3qgBuB0g8GxgHxxMpG8H/dclFKrONfgk37rJSkJ0XyaIn+KTYuxiBAQH9JdBqIdQ==",
+>>>>>>> c1850e24b2820d77fba1ccc4977351d6c8351ecd
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,

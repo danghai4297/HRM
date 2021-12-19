@@ -27,6 +27,9 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
         }
         public async Task<int> Create(KhenThuongKyLuatCreateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var noiDung = request.noiDung.Trim(charsToTrim);
+            var lyDo = request.lyDo.Trim(charsToTrim);
             if (request.idDanhMucKhenThuong == 0 || request.noiDung == null || request.lyDo == null || request.maNhanVien == null)
             {
                 return 0;
@@ -36,8 +39,8 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                 var ktkl = new KhenThuongKyLuat()
                 {
                     idDanhMucKhenThuong = request.idDanhMucKhenThuong,
-                    noiDung = request.noiDung,
-                    lyDo = request.lyDo,
+                    noiDung = noiDung,
+                    lyDo = lyDo,
                     loai = request.loai,
                     maNhanVien = request.maNhanVien,
                 };
@@ -175,6 +178,9 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
 
         public async Task<int> Update(int id, KhenThuongKyLuatUpdateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var noiDung = request.noiDung.Trim(charsToTrim);
+            var lyDo = request.lyDo.Trim(charsToTrim);
             var ktkl = await _context.khenThuongKyLuats.FindAsync(id);
             if (ktkl == null || request.idDanhMucKhenThuong == 0 || request.noiDung == null || request.lyDo == null || request.maNhanVien == null)
             {
@@ -183,13 +189,13 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
             else
             {
                 ktkl.idDanhMucKhenThuong = request.idDanhMucKhenThuong;
-                ktkl.noiDung = request.noiDung;
-                ktkl.lyDo = request.lyDo;
+                ktkl.noiDung = noiDung;
+                ktkl.lyDo = lyDo;
                 ktkl.loai = request.loai;
                 ktkl.maNhanVien = request.maNhanVien;
                 if (request.bangChung is null)
                 {
-                    //ktkl.anh = "";
+
                 }
                 else
                 {
@@ -207,8 +213,9 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
 
         private async Task<string> SaveFile(IFormFile file, string name)
         {
+            var defaultName = name.Substring(0, name.LastIndexOf("."));
             var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-            var fileName = $"{name}{Path.GetExtension(originalFileName)}";
+            var fileName = $"{defaultName}{Path.GetExtension(originalFileName)}";
             await _storageService.SaveFileAsync(file.OpenReadStream(), fileName);
             return "/" + USER_CONTENT_FOLDER_NAME + "/" + fileName;
         }

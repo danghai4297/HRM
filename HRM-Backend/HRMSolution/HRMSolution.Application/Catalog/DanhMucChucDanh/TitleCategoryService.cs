@@ -30,9 +30,11 @@ namespace HRMSolution.Application.Catalog.DanhMucChucDanhs
             }
             else
             {
+                char[] charsToTrim = { '*', ' ', '\'' };
+                var tenDanhMuc = request.tenChucDanh.Trim(charsToTrim);
                 var danhMucChucDanh = new DanhMucChucDanh()
                 {
-                    tenChucDanh = request.tenChucDanh,
+                    tenChucDanh = tenDanhMuc,
                     maChucDanh = request.maChucDanh,
                     phuCap = request.phuCap
                 };
@@ -117,6 +119,8 @@ namespace HRMSolution.Application.Catalog.DanhMucChucDanhs
 
         public async Task<int> Update(int id, DanhMucChucDanhUpdateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var tenDanhMuc = request.tenChucDanh.Trim(charsToTrim);
             var danhMucChucDanh = await _context.danhMucChucDanhs.FindAsync(id);
             var check = await _context.danhMucChucDanhs.Where(x => x.tenChucDanh == request.tenChucDanh && x.maChucDanh != request.maChucDanh).FirstOrDefaultAsync();
             if (danhMucChucDanh == null || request.maChucDanh == null || request.tenChucDanh == null || check != null)
@@ -126,7 +130,7 @@ namespace HRMSolution.Application.Catalog.DanhMucChucDanhs
             else
             {
                 danhMucChucDanh.maChucDanh = request.maChucDanh;
-                danhMucChucDanh.tenChucDanh = request.tenChucDanh;
+                danhMucChucDanh.tenChucDanh = tenDanhMuc;
                 danhMucChucDanh.phuCap = request.phuCap;
                 var result = await _context.SaveChangesAsync();
                 if (result == 0)

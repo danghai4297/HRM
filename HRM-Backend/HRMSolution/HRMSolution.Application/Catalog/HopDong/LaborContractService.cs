@@ -27,6 +27,12 @@ namespace HRMSolution.Application.Catalog.HopDongs
         }
         public async Task<int> Create(HopDongCreateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var ghiChu = request.ghiChu;
+            if (ghiChu != null)
+            {
+                ghiChu = ghiChu.Trim(charsToTrim);
+            }
             if (request.maHopDong == null || request.idLoaiHopDong == 0 || request.idChucDanh == 0 || request.idChucVu == 0 || request.maNhanVien == null)
             {
                 return 0;
@@ -45,7 +51,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
                         idChucVu = request.idChucVu,
                         hopDongTuNgay = request.hopDongTuNgay,
                         hopDongDenNgay = request.hopDongDenNgay,
-                        ghiChu = request.ghiChu,
+                        ghiChu = ghiChu,
                         trangThai = true,
                         maNhanVien = request.maNhanVien
                     };
@@ -69,7 +75,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
                             idChucVu = request.idChucVu,
                             hopDongTuNgay = request.hopDongTuNgay,
                             hopDongDenNgay = request.hopDongDenNgay,
-                            ghiChu = request.ghiChu,
+                            ghiChu = ghiChu,
                             trangThai = true,
                             maNhanVien = request.maNhanVien
                         };
@@ -88,7 +94,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
                             idChucVu = request.idChucVu,
                             hopDongTuNgay = request.hopDongTuNgay,
                             hopDongDenNgay = request.hopDongDenNgay,
-                            ghiChu = request.ghiChu,
+                            ghiChu = ghiChu,
                             trangThai = true,
                             maNhanVien = request.maNhanVien
                         };
@@ -248,6 +254,12 @@ namespace HRMSolution.Application.Catalog.HopDongs
 
         public async Task<int> Update(string maHopDong, HopDongUpdateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var ghiChu = request.ghiChu;
+            if (ghiChu != null)
+            {
+                ghiChu = ghiChu.Trim(charsToTrim);
+            }
             var hopDong = await _context.hopDongs.FindAsync(maHopDong);
             if (hopDong == null || request.idLoaiHopDong == 0 || request.idChucDanh == 0 || request.idChucVu == 0 || request.maNhanVien == null)
             {
@@ -266,7 +278,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
                     hopDong.idChucVu = request.idChucVu;
                     hopDong.hopDongTuNgay = request.hopDongTuNgay;
                     hopDong.hopDongDenNgay = request.hopDongDenNgay;
-                    hopDong.ghiChu = request.ghiChu;
+                    hopDong.ghiChu = ghiChu;
                     hopDong.trangThai = request.trangThai;
                     hopDong.maNhanVien = request.maNhanVien;
                 }
@@ -278,7 +290,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
                     hopDong.idChucVu = request.idChucVu;
                     hopDong.hopDongTuNgay = request.hopDongTuNgay;
                     hopDong.hopDongDenNgay = request.hopDongDenNgay;
-                    hopDong.ghiChu = request.ghiChu;
+                    hopDong.ghiChu = ghiChu;
                     hopDong.trangThai = request.trangThai;
                     hopDong.maNhanVien = request.maNhanVien;
                 }
@@ -333,8 +345,9 @@ namespace HRMSolution.Application.Catalog.HopDongs
         }
         private async Task<string> SaveFile(IFormFile file, string name)
         {
+            var defaultName = name.Substring(0, name.LastIndexOf("."));
             var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-            var fileName = $"{name}{Path.GetExtension(originalFileName)}";
+            var fileName = $"{defaultName}{Path.GetExtension(originalFileName)}";
             await _storageService.SaveFileAsync(file.OpenReadStream(), fileName);
             return "/" + USER_CONTENT_FOLDER_NAME + "/" + fileName;
         }

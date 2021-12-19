@@ -28,6 +28,12 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
 
         public async Task<int> Create(QuaTrinhCongTacCreateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var chiTiet = request.chiTiet;
+            if (chiTiet != null)
+            {
+                chiTiet = chiTiet.Trim(charsToTrim);
+            }
             if (request.maNhanVien == null || request.ngayHieuLuc == null || request.idPhongBan == 0 || request.to == 0)
             {
                 return 0;
@@ -43,7 +49,7 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                         ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc),
                         idPhongBan = request.idPhongBan,
                         to = request.to,
-                        chiTiet = request.chiTiet,
+                        chiTiet = chiTiet,
                         trangThai = true
                     };
                     if (request.bangChung is null)
@@ -176,6 +182,8 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
 
         public async Task<int> Update(int id, QuaTrinhCongTacUpdateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var chiTiet = request.chiTiet.Trim(charsToTrim);
             var dieuChuyen = await _context.dieuChuyens.FindAsync(id);
             if (dieuChuyen == null || request.maNhanVien == null || request.ngayHieuLuc == null || request.idPhongBan == 0 || request.to == 0)
             {
@@ -187,7 +195,7 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                 dieuChuyen.ngayHieuLuc = DateTime.Parse(request.ngayHieuLuc);
                 dieuChuyen.idPhongBan = request.idPhongBan;
                 dieuChuyen.to = request.to;
-                dieuChuyen.chiTiet = request.chiTiet;
+                dieuChuyen.chiTiet = chiTiet;
                 dieuChuyen.trangThai = request.trangThai;
                 if (request.bangChung is null)
                 {
@@ -207,8 +215,9 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
         }
         private async Task<string> SaveFile(IFormFile file, string name)
         {
+            var defaultName = name.Substring(0, name.LastIndexOf("."));
             var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-            var fileName = $"{name}{Path.GetExtension(originalFileName)}";
+            var fileName = $"{defaultName}{Path.GetExtension(originalFileName)}";
             await _storageService.SaveFileAsync(file.OpenReadStream(), fileName);
             return "/" + USER_CONTENT_FOLDER_NAME + "/" + fileName;
         }

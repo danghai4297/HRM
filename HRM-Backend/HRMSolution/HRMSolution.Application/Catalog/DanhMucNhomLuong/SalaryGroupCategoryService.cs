@@ -22,6 +22,8 @@ namespace HRMSolution.Application.Catalog.DanhMucNhomLuongs
 
         public async Task<int> Create(DanhMucNhomLuongCreateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var tenDanhMuc = request.tenNhomLuong.Trim(charsToTrim);
             var check = await _context.danhMucNhomLuongs.Where(x => x.tenNhomLuong == request.tenNhomLuong).FirstOrDefaultAsync();
             if (request.maNhomLuong == null || request.tenNhomLuong == null || check != null)
             {
@@ -32,7 +34,7 @@ namespace HRMSolution.Application.Catalog.DanhMucNhomLuongs
                 var danhMucNhomLuong = new DanhMucNhomLuong()
                 {
                     maNhomLuong = request.maNhomLuong,
-                    tenNhomLuong = request.tenNhomLuong
+                    tenNhomLuong = tenDanhMuc
                 };
                 _context.danhMucNhomLuongs.Add(danhMucNhomLuong);
                 var result = await _context.SaveChangesAsync();
@@ -104,6 +106,8 @@ namespace HRMSolution.Application.Catalog.DanhMucNhomLuongs
 
         public async Task<int> Update(int id, DanhMucNhomLuongUpdateRequest request)
         {
+            char[] charsToTrim = { '*', ' ', '\'' };
+            var tenDanhMuc = request.tenNhomLuong.Trim(charsToTrim);
             var danhMucNhomLuong = await _context.danhMucNhomLuongs.FindAsync(id);
             var check = await _context.danhMucNhomLuongs.Where(x => x.tenNhomLuong == request.tenNhomLuong).FirstOrDefaultAsync();
             if (danhMucNhomLuong == null || request.maNhomLuong == null || request.tenNhomLuong == null || check != null)
@@ -113,7 +117,7 @@ namespace HRMSolution.Application.Catalog.DanhMucNhomLuongs
             else
             {
                 danhMucNhomLuong.maNhomLuong = request.maNhomLuong;
-                danhMucNhomLuong.tenNhomLuong = request.tenNhomLuong;
+                danhMucNhomLuong.tenNhomLuong = tenDanhMuc;
                 var result = await _context.SaveChangesAsync();
                 if (result == 0)
                     return 0;
