@@ -82,7 +82,8 @@ namespace HRMSolution.Application.Catalog.DanhMucTos
                     maTo = x.p.maTo,
                     tenTo = x.p.tenTo,
                     idPhongBan = x.p.idPhongBan,
-                    tenPhongBan = x.pb.tenPhongBan
+                    tenPhongBan = x.pb.tenPhongBan,
+                    maPhongBan = x.pb.maPhongBan
                 }).ToListAsync();
                 return data;
             }
@@ -110,6 +111,7 @@ namespace HRMSolution.Application.Catalog.DanhMucTos
                     tenTo = x.p.tenTo,
                     idPhongBan = x.p.idPhongBan,
                     tenPhongBan = x.pb.tenPhongBan,
+                    maPhongBan = x.pb.maPhongBan,
                     trangThai = check == null ? "Chưa sử dụng" : "Đang sử dụng"
                 }).FirstAsync();
                 return data;
