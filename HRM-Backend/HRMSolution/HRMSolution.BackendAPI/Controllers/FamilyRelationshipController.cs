@@ -46,7 +46,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateFamily(int id, NguoiThanUpdateRequest request)
+        public async Task<IActionResult> UpdateFamily(int id, [FromBody] NguoiThanUpdateRequest request)
         {
             var result = await _familyRelationship.Update(id, request);
             if (result == 0)

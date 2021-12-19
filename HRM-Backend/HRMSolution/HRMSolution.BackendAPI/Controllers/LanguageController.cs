@@ -46,7 +46,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateLanguage(int id, NgoaiNguUpdateRequest request)
+        public async Task<IActionResult> UpdateLanguage(int id, [FromBody] NgoaiNguUpdateRequest request)
         {
             var result = await _languageService.Update(id, request);
             if (result == 0)

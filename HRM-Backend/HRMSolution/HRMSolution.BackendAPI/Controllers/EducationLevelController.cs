@@ -51,7 +51,7 @@ namespace HRMSolution.BackendAPI.Controllers
             return Ok();
         }
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateEducationLevel(int id, TrinhDoVanHoaUpdateRequest request)
+        public async Task<IActionResult> UpdateEducationLevel(int id, [FromBody] TrinhDoVanHoaUpdateRequest request)
         {
             var result = await _educationLevelService.Update(id, request);
             if (result == 0)
