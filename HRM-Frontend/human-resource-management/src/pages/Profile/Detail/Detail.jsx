@@ -34,6 +34,7 @@ import {
 } from "./Data";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
+import { useToast } from "../../../components/Toast/Toast";
 
 function Detail(props) {
   let { match, history } = props;
@@ -180,6 +181,8 @@ function Detail(props) {
     };
     moveTo();
   }, []);
+
+  const { error } = useToast();
 
   return (
     <>
@@ -894,22 +897,33 @@ function Detail(props) {
                   <div className="title">
                     <div className="title-cultural"></div>
                     <div className="icon-cultural">
-                      <Link
-                        to={`/salary/add?maHopDong=${
-                          dataDetailHd.length !== 0 &&
-                          dataDetailHd.filter(
-                            (a) => a.trangThai === "Kích hoạt"
-                          ).length !== 0
-                            ? dataDetailHd.filter(
-                                (a) => a.trangThai === "Kích hoạt"
-                              )[0].id
-                            : ""
-                        }&hoTen=${dataDetailNv.hoTen}`}
-                      >
-                        <button className="btn-cultural">
+                      {dataDetailHd.length !== 0 &&
+                      dataDetailHd.filter((a) => a.trangThai === "Kích hoạt")
+                        .length !== 0 ? (
+                        <Link
+                          to={`/salary/add?maHopDong=${
+                            dataDetailHd.length !== 0 &&
+                            dataDetailHd.filter(
+                              (a) => a.trangThai === "Kích hoạt"
+                            )[0].id
+                          }&hoTen=${dataDetailNv.hoTen}`}
+                        >
+                          <button className="btn-cultural">
+                            <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
+                          </button>
+                        </Link>
+                      ) : (
+                        <button
+                          className="btn-cultural"
+                          onClick={() =>
+                            error(
+                              "Không thể thêm lương cho nhân viên chưa có hợp đồng"
+                            )
+                          }
+                        >
                           <FontAwesomeIcon icon={["fas", "plus"]} /> Thêm
                         </button>
-                      </Link>
+                      )}
                     </div>
                   </div>
                   <div className="tablexx">
