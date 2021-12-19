@@ -346,7 +346,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
                             hopDong.idChucVu = request.idChucVu;
                             hopDong.hopDongTuNgay = request.hopDongTuNgay;
                             hopDong.hopDongDenNgay = request.hopDongDenNgay;
-                            hopDong.ghiChu = request.ghiChu.Trim(charsToTrim);
+                            hopDong.ghiChu = null;
                             hopDong.trangThai = request.trangThai;
                             hopDong.maNhanVien = request.maNhanVien;
                         }
@@ -358,7 +358,7 @@ namespace HRMSolution.Application.Catalog.HopDongs
                             hopDong.idChucVu = request.idChucVu;
                             hopDong.hopDongTuNgay = request.hopDongTuNgay;
                             hopDong.hopDongDenNgay = request.hopDongDenNgay;
-                            hopDong.ghiChu = request.ghiChu.Trim(charsToTrim);
+                            hopDong.ghiChu = null;
                             hopDong.trangThai = request.trangThai;
                             hopDong.maNhanVien = request.maNhanVien;
                         }
