@@ -248,7 +248,6 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                     dieuChuyen.trangThai = request.trangThai;
                     if (request.bangChung is null)
                     {
-                        //dieuChuyen.bangChung = null;
                     }
                     else
                     {
@@ -266,7 +265,6 @@ namespace HRMSolution.Application.Catalog.DieuChuyens
                     dieuChuyen.trangThai = request.trangThai;
                     if (request.bangChung is null)
                     {
-                        //dieuChuyen.bangChung = null;
                     }
                     else
                     {

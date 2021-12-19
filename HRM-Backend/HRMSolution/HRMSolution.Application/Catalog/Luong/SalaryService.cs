@@ -318,7 +318,6 @@ namespace HRMSolution.Application.Catalog.Luongs
                     luong.trangThai = request.trangThai;
                     if (request.bangChung is null)
                     {
-                        //luong.bangChung = luong.bangChung;
                     }
                     else
                     {
@@ -345,7 +344,6 @@ namespace HRMSolution.Application.Catalog.Luongs
                     luong.trangThai = request.trangThai;
                     if (request.bangChung is null)
                     {
-                        //luong.bangChung = luong.bangChung;
                     }
                     else
                     {
