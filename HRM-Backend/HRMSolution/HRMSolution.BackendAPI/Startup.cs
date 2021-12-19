@@ -28,7 +28,6 @@ using HRMSolution.Application.Catalog.TaiKhoan;
 using HRMSolution.Application.Catalog.TrinhDoVanHoas;
 using HRMSolution.Application.Catalog.XacThuc;
 using HRMSolution.Application.Common;
-using HRMSolution.Application.System.Users;
 using HRMSolution.Data.EF;
 using HRMSolution.Data.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;

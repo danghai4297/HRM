@@ -25,7 +25,6 @@ using HRMSolution.Application.Catalog.NguoiThans;
 using HRMSolution.Application.Catalog.NhanViens;
 using HRMSolution.Application.Catalog.TrinhDoVanHoas;
 using HRMSolution.Application.Common;
-using HRMSolution.Application.System.Users;
 using HRMSolution.Data.EF;
 using HRMSolution.Data.Entities;
 using Microsoft.AspNetCore.Hosting;
@@ -84,8 +83,6 @@ namespace HRMSolution.NUnitTest
         protected IEmployeeService NhanVienService;
         //IService EducationLevel
         protected IEducationLevelService TrinhDoVanHoaService;
-        //IService User
-        protected IUserService UserService;
 
         protected IStorageService storageService;
         protected IWebHostEnvironment webHostEnvironment;
@@ -96,9 +93,6 @@ namespace HRMSolution.NUnitTest
                                     .UseInMemoryDatabase(databaseName: "HRM")
                                     .Options;
             _context = new HRMDbContext(dbContextOptions);
-            //webHostEnvironment = new WebHostEnvironment();
-            //_userManager = new UserManager<AppUser>();
-            //storageService = new FileStorageService(webHostEnvironment);
             danhMucChucDanhService = new TitleCategoryService(_context);
             danhMucChucVuService = new PositionCategoryService(_context);
             danhMucChuyenMonService = new SpecializeCategoryService(_context);
@@ -120,7 +114,6 @@ namespace HRMSolution.NUnitTest
             NguoiThanService = new FamilyRelationshipService(_context);
             NgoaiNguService = new LanguageService(_context);
             LichSuService = new HistoryService(_context);
-            UserService = new UserService(_userManager, _signInManager, _config, _context);
             LuongService = new SalaryService(_context, storageService);
             DieuChuyenService = new WorkingProcessService(_context, storageService);
             KhenThuongKyLuatService = new RewardDisciplineService(_context, storageService);
