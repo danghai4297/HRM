@@ -318,6 +318,7 @@ function AddSalaryForm(props) {
               formData.append("ghiChu", data.ghiChu);
               formData.append("trangThai", data.trangThai);
               formData.append("tenFile", file.name);
+
               await PutApi.PutL(formData, id);
               await ProductApi.PostLS({
                 tenTaiKhoan: decoded.userName,
