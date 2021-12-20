@@ -1,7 +1,6 @@
 import "./App.css";
 import "./components/FontAwesomeIcons/index";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { ListProvider } from "./Contexts/ListContext";
 import ScreenProject from "./router/ScreenProject/ScreenProject";
 import LogIn from "./pages/Account/ScreenLoginCom/loginn";
 import { AccountContext, SideBarContext } from "./Contexts/StateContext";
@@ -20,25 +19,23 @@ function App() {
   const [sideBar, setSiderBar] = useState(true);
 
   return (
-    <ListProvider>
-      <ToastProvider>
-        <Router>
-          <Switch>
-            <Route exact path="/">
-              <Redirect to="/login" />
-            </Route>
-            <Route exact path="/login">
-              <LogIn />
-            </Route>
-            <AccountContext.Provider value={{ account, setAccount }}>
-              <SideBarContext.Provider value={{ sideBar, setSiderBar }}>
-                <ScreenProject />
-              </SideBarContext.Provider>
-            </AccountContext.Provider>
-          </Switch>
-        </Router>
-      </ToastProvider>
-    </ListProvider>
+    <ToastProvider>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Redirect to="/login" />
+          </Route>
+          <Route exact path="/login">
+            <LogIn />
+          </Route>
+          <AccountContext.Provider value={{ account, setAccount }}>
+            <SideBarContext.Provider value={{ sideBar, setSiderBar }}>
+              <ScreenProject />
+            </SideBarContext.Provider>
+          </AccountContext.Provider>
+        </Switch>
+      </Router>
+    </ToastProvider>
   );
 }
 

@@ -50,9 +50,6 @@ function RegisterAccount(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  console.log(currentPassword);
-  console.log(newPassword);
-  console.log(rePassword);
 
   const onHandleSubmit = async (data) => {
     if (newPassword === rePassword) {

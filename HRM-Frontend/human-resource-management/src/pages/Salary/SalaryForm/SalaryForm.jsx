@@ -91,6 +91,7 @@ function AddSalaryForm(props) {
             setResponsibilityAllowance(response.phuCapTrachNhiem);
             setTitleAllowance(response.phuCapChucDanh);
             setTotalSalary(response.tongLuong);
+            setGhiChu(response.ghiChu);
           } catch (error) {
             history.goBack();
           }
@@ -198,6 +199,8 @@ function AddSalaryForm(props) {
       id !== undefined ? dataLDetail.maHopDong : query.get("maHopDong"),
   };
 
+  const [ghiChu, setGhiChu] = useState();
+
   const {
     register,
     handleSubmit,
@@ -217,7 +220,6 @@ function AddSalaryForm(props) {
       "thoiHanLenLuong",
       "ngayHieuLuc",
       "ngayKetThuc",
-      "ghiChu",
       "trangThai",
       "maHopDong",
     ]);
@@ -228,7 +230,6 @@ function AddSalaryForm(props) {
       intitalValue.thoiHanLenLuong,
       intitalValue.ngayHieuLuc,
       intitalValue.ngayKetThuc,
-      intitalValue.ghiChu,
       intitalValue.trangThai,
       intitalValue.maHopDong,
     ];
@@ -240,7 +241,8 @@ function AddSalaryForm(props) {
       intitalValue.luongCoBan == DemoSalary &&
       intitalValue.phuCapKhac == OtherAllowance &&
       intitalValue.phuCapChucDanh == titleAllowance &&
-      intitalValue.phuCapChucVu == allowance
+      intitalValue.phuCapChucVu == allowance &&
+      (ghiChu == intitalValue.ghiChu || ghiChu == undefined)
     ) {
       return true;
     }
@@ -302,7 +304,6 @@ function AddSalaryForm(props) {
             if (file.size < 20000000) {
               const formData = new FormData();
               formData.append("bangChung", file.file);
-              // formData.append("maHopDong", data.maHopDong);
               formData.append("idNhomLuong", data.idNhomLuong);
               formData.append("heSoLuong", data.heSoLuong);
               formData.append("bacLuong", data.bacLuong);
@@ -856,7 +857,9 @@ function AddSalaryForm(props) {
                   </label>
                   <textarea
                     type="text"
-                    {...register("ghiChu")}
+                    {...register("ghiChu", {
+                      onChange: (e) => setGhiChu(e.target.value),
+                    })}
                     id="ghiChu"
                     className={
                       !errors.ghiChu

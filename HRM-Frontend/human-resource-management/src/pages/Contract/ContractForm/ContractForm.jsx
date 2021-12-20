@@ -73,6 +73,7 @@ function AddContractForm(props) {
             setdataDetailHd(responseHD);
             setStartDate(responseHD.hopDongTuNgay);
             setStartDate(moment(responseHD.hopDongTuNgay));
+            setGhiChu(responseHD.ghiChu);
           } catch (error) {
             history.goBack();
           }
@@ -169,6 +170,8 @@ function AddContractForm(props) {
     idCre: id !== undefined ? dataDetailHd.idCre : rsIdCre,
   };
 
+  const [ghiChu, setGhiChu] = useState();
+
   const {
     register,
     handleSubmit,
@@ -192,6 +195,7 @@ function AddContractForm(props) {
       reset(intitalValue);
     }
   }, [dataAllHD]);
+
   const checkInputChange = () => {
     const values = getValues([
       "maNhanVien",
@@ -200,7 +204,6 @@ function AddContractForm(props) {
       "idLoaiHopDong",
       "hopDongTuNgay",
       "hopDongDenNgay",
-      "ghiChu",
       "maHopDong",
       "trangThai",
     ]);
@@ -211,13 +214,13 @@ function AddContractForm(props) {
       intitalValue.idLoaiHopDong,
       intitalValue.hopDongTuNgay,
       intitalValue.hopDongDenNgay,
-      intitalValue.ghiChu,
       intitalValue.maHopDong,
       intitalValue.trangThai,
     ];
     if (
       JSON.stringify(values) === JSON.stringify(dfValue) &&
-      file.file === null
+      file.file === null &&
+      (ghiChu == intitalValue.ghiChu || ghiChu == undefined)
     ) {
       return true;
     }
@@ -225,6 +228,7 @@ function AddContractForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
+    console.log(data);
     const nameEm = dataIdEmployee.filter((item) => item.id === data.maNhanVien);
     let maHopDong = data.maHopDong;
     try {
@@ -520,7 +524,9 @@ function AddContractForm(props) {
                   </label>
                   <input
                     type="text"
-                    {...register("ghiChu")}
+                    {...register("ghiChu", {
+                      onChange: (e) => setGhiChu(e.target.value),
+                    })}
                     id="ghiChu"
                     className={
                       !errors.ghiChu

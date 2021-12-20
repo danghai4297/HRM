@@ -126,7 +126,6 @@ function AddSpecializeForm(props) {
     let tendm = data.tenChuyenMon;
 
     try {
-      console.log(data);
       if (id !== undefined) {
         try {
           await PutApi.PutDMCM(data, id);
