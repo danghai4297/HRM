@@ -83,7 +83,7 @@ namespace HRMSolution.Application.Catalog.NgoaiNgus
                 {
                     id = x.p.id,
                     danhMucNgoaiNgu = x.dmnn.tenDanhMuc,
-                    ngayCap = x.p.ngayCap,
+                    ngayCap = DateTime.SpecifyKind(x.p.ngayCap, DateTimeKind.Utc),
                     trinhDo = x.p.trinhDo,
                     noiCap = x.p.noiCap,
                     maNhanVien = x.p.maNhanVien,

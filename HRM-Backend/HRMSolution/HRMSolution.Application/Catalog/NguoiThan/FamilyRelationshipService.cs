@@ -98,7 +98,7 @@ namespace HRMSolution.Application.Catalog.NguoiThans
                     id = x.p.id,
                     tenNguoiThan = x.p.tenNguoiThan,
                     gioiTinh = x.p.gioiTinh == true ? "Nam" : "Nữ",
-                    ngaySinh = x.p.ngaySinh,
+                    ngaySinh = DateTime.SpecifyKind(x.p.ngaySinh, DateTimeKind.Utc),
                     danhMucNguoiThan = x.dmnt.tenDanhMuc,
                     quanHe = x.p.quanHe,
                     ngheNghiep = x.p.ngheNghiep,
@@ -120,7 +120,11 @@ namespace HRMSolution.Application.Catalog.NguoiThans
             var quanHe = request.quanHe.Trim(charsToTrim);
             var ngheNghiep = request.ngheNghiep.Trim(charsToTrim);
             var diaChi = request.diaChi.Trim(charsToTrim);
-            var khac = request.khac.Trim(charsToTrim);
+            var khac = request.khac;
+            if (request.khac != null)
+            {
+                khac = khac.Trim(charsToTrim);
+            }
             var nguoiThan = await _context.nguoiThans.FindAsync(id);
             if (nguoiThan == null || request.tenNguoiThan == null || request.ngaySinh == null || request.ngheNghiep == null || request.diaChi == null || request.dienThoai == null || request.idDanhMucNguoiThan == 0 || request.maNhanVien == null)
             {

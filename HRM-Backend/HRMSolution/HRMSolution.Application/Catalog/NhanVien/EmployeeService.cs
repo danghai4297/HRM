@@ -199,7 +199,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
             {
                 lsbt_thanNhanNuocNgoai = lsbt_thanNhanNuocNgoai.Trim(charsToTrim);
             }
-
+            Nullable<DateTime> d = null;
             if (request.id == null || request.hoTen == null || request.quocTich == null || request.ngaySinh == null || request.diDong == null || request.cccd == null || request.noiCapCCCD == null
                 || request.ngayCapCCCD == null || request.ngayHetHanCCCD == null || request.noiSinh == null || request.queQuan == null || request.thuongTru == null || request.ngheNghiep == null
                 || request.chucVuHienTai == null || request.congViecChinh == null || request.coQuanTuyenDung == null || request.idDanhMucHonNhan == 0 || request.idDanToc <= 0 || request.idNgachCongChuc <= 0
@@ -216,7 +216,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     maNhanVien = request.id,
                     hoTen = hoTen,
                     quocTich = quocTich,
-                    ngaySinh = request.ngaySinh,
+                    ngaySinh = request.ngaySinh.AddHours(1),
                     gioiTinh = request.gioiTinh,
                     dienThoai = request.dienThoai,
                     dienThoaiKhac = request.dienThoaiKhac,
@@ -750,12 +750,21 @@ namespace HRMSolution.Application.Catalog.NhanViens
             }
             else
             {
+                //var size = query.ToList();
+                //var list = new List<NhanVienViewModel>();
+
+                //foreach (var item in query)
+                //{
+                //    var ngayVaoDang = checkDate(item.nv.ngayVaoDang);
+                //    list.Add(new NhanVienViewModel { ngayVaoDang = ngayVaoDang });
+                //}
+
                 var data = await query.Select(x => new NhanVienViewModel()
                 {
                     id = x.nv.maNhanVien,
                     hoTen = x.nv.hoTen,
                     quocTich = x.nv.quocTich,
-                    ngaySinh = x.nv.ngaySinh,
+                    ngaySinh = DateTime.SpecifyKind(x.nv.ngaySinh, DateTimeKind.Utc),
                     gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
                     dienThoai = x.nv.dienThoai,
                     dienThoaiKhac = x.nv.dienThoaiKhac,
@@ -766,8 +775,8 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     maSoThue = x.nv.maSoThue,
                     cccd = x.nv.cccd,
                     noiCapCCCD = x.nv.noiCapCCCD,
-                    ngayCapCCCD = x.nv.ngayCapCCCD,
-                    ngayHetHanCCCD = x.nv.ngayHetHanCCCD,
+                    ngayCapCCCD = DateTime.SpecifyKind(x.nv.ngayCapCCCD, DateTimeKind.Utc),
+                    ngayHetHanCCCD = DateTime.SpecifyKind(x.nv.ngayHetHanCCCD, DateTimeKind.Utc),
                     hoChieu = x.nv.hoChieu,
                     noiCapHoChieu = x.nv.noiCapHoChieu,
                     ngayCapHoChieu = x.nv.ngayCapHoChieu,
@@ -791,7 +800,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     ngayXuatNgu = x.nv.ngayXuatNgu,
                     quanHamCaoNhat = x.nv.quanHamCaoNhat,
                     danhHieuCaoNhat = x.nv.danhHieuCaoNhat,
-                    ngayVaoDoan = x.nv.ngayVaoDoan,
+                    ngayVaoDoan = x.nv.ngayVaoDoan.Value,
                     noiThamGia = x.nv.noiThamGia,
                     laThuongBinh = x.nv.laThuongBinh,
                     laConChinhSach = x.nv.laConChinhSach,
@@ -810,9 +819,58 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     anh = x.nv.anh,
                     tenPhongBan = x.xx.phongBan ?? String.Empty
                 }).ToListAsync();
+                foreach (var item in data)
+                {
+                    DateTime temp = item.ngayVaoDang.Value;
+                    if (temp != null)
+                    {
+                        item.ngayVaoDang = DateTime.SpecifyKind(temp, DateTimeKind.Utc);
+
+                    }
+                    DateTime temp2 = item.ngayVaoDoan.Value;
+                    if (temp2 != null)
+                    {
+                        item.ngayVaoDoan = DateTime.SpecifyKind(temp2, DateTimeKind.Utc);
+
+                    }
+                    DateTime temp3 = item.ngayNhapNgu.Value;
+                    if (temp3 != null)
+                    {
+                        item.ngayNhapNgu = DateTime.SpecifyKind(temp3, DateTimeKind.Utc);
+
+                    }
+                    DateTime temp4 = item.ngayXuatNgu.Value;
+                    if (temp4 != null)
+                    {
+                        item.ngayXuatNgu = DateTime.SpecifyKind(temp4, DateTimeKind.Utc);
+
+                    }
+                    DateTime temp5 = item.ngayNghiViec.Value;
+                    if (temp5 != null)
+                    {
+                        item.ngayNghiViec = DateTime.SpecifyKind(temp5, DateTimeKind.Utc);
+
+                    }
+                    DateTime temp6 = item.ngayVaoDangChinhThuc.Value;
+                    if (temp6 != null)
+                    {
+                        item.ngayVaoDangChinhThuc = DateTime.SpecifyKind(temp6, DateTimeKind.Utc);
+
+                    }
+                }
                 return data;
             }
         }
+
+        public DateTime? checkDate(DateTime? date)
+        {
+            if (date == null)
+                return null;
+            var x = DateTime.SpecifyKind(date.Value, DateTimeKind.Utc);
+            return x;
+        }
+
+
         public async Task<List<MaTenViewModel>> GetAllMaVaTen()
         {
             var query = from nv in _context.nhanViens
