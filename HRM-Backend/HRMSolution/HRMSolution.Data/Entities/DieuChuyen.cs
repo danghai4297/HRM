@@ -8,7 +8,7 @@ namespace HRMSolution.Data.Entities
     {
         public int id { get; set; }
         public string maNhanVien { get; set; }
-        public DateTime? ngayHieuLuc { get; set; }
+        public DateTime ngayHieuLuc { get; set; }
         public int idPhongBan { get; set; }
         public int to { get; set; }
         public string chiTiet { get; set; }

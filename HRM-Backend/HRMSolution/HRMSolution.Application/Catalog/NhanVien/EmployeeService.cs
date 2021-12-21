@@ -919,7 +919,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     id = x.nv.maNhanVien,
                     hoTen = x.nv.hoTen,
                     quocTich = x.nv.quocTich,
-                    ngaySinh = x.nv.ngaySinh,
+                    ngaySinh = DateTime.SpecifyKind(x.nv.ngaySinh, DateTimeKind.Utc),
                     gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
                     dienThoai = x.nv.dienThoai,
                     dienThoaiKhac = x.nv.dienThoaiKhac,
@@ -930,8 +930,8 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     maSoThue = x.nv.maSoThue,
                     cccd = x.nv.cccd,
                     noiCapCCCD = x.nv.noiCapCCCD,
-                    ngayCapCCCD = x.nv.ngayCapCCCD,
-                    ngayHetHanCCCD = x.nv.ngayHetHanCCCD,
+                    ngayCapCCCD = DateTime.SpecifyKind(x.nv.ngayCapCCCD, DateTimeKind.Utc),
+                    ngayHetHanCCCD = DateTime.SpecifyKind(x.nv.ngayHetHanCCCD, DateTimeKind.Utc),
                     hoChieu = x.nv.hoChieu,
                     noiCapHoChieu = x.nv.noiCapHoChieu,
                     ngayCapHoChieu = x.nv.ngayCapHoChieu,
@@ -1032,7 +1032,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 var dataDc = await queryDc.Select(x => new DieuChuyenViewModel()
                 {
                     id = x.dc.id,
-                    dcNgayHieuLuc = x.dc.ngayHieuLuc,
+                    dcNgayHieuLuc = DateTime.SpecifyKind(x.dc.ngayHieuLuc, DateTimeKind.Utc),
                     dcPhong = x.pb.tenPhongBan,
                     dcTo = x.to.tenTo,
                     dcChiTiet = x.dc.chiTiet,
@@ -1059,8 +1059,8 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     phuCapKhac = x.l.phuCapKhac,
                     tongLuong = x.l.tongLuong,
                     thoiHanLenLuong = x.l.thoiHanLenLuong,
-                    ngayHieuLuc = x.l.ngayHieuLuc,
-                    ngayKetThuc = x.l.ngayKetThuc,
+                    ngayHieuLuc = DateTime.SpecifyKind(x.l.ngayHieuLuc, DateTimeKind.Utc),
+                    ngayKetThuc = DateTime.SpecifyKind(x.l.ngayKetThuc, DateTimeKind.Utc),
                     trangThai = x.l.trangThai == true ? "Kích hoạt" : "Vô hiệu"
                 }).Distinct().ToListAsync();
 
@@ -1080,8 +1080,8 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     idLoaiHopDong = x.lhd.tenLoaiHopDong,
                     idChucDanh = x.dmcd.tenChucDanh,
                     idChucVu = x.dmcv.tenChucVu,
-                    hdHopDongTuNgay = x.hd.hopDongTuNgay,
-                    hdHopDongDenNgay = x.hd.hopDongDenNgay,
+                    hdHopDongTuNgay = DateTime.SpecifyKind(x.hd.hopDongTuNgay, DateTimeKind.Utc),
+                    hdHopDongDenNgay = DateTime.SpecifyKind(x.hd.hopDongDenNgay, DateTimeKind.Utc),
                     hdGhiChu = x.hd.ghiChu,
                     trangThai = x.hd.trangThai == true ? "Kích hoạt" : "Vô hiệu",
 
@@ -1102,8 +1102,8 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     tdvhTenTruong = x.tdvh.tenTruong,
                     tdvhChuyenMon = x.dmcm.tenChuyenMon,
                     tdvhTrinhDo = x.dmtd.tenTrinhDo,
-                    tdvhtuThoiGian = x.tdvh.tuThoiGian,
-                    tdvhdenThoiGian = x.tdvh.denThoiGian,
+                    tdvhtuThoiGian = DateTime.SpecifyKind(x.tdvh.tuThoiGian, DateTimeKind.Utc),
+                    tdvhdenThoiGian = DateTime.SpecifyKind(x.tdvh.denThoiGian, DateTimeKind.Utc),
                     tdvhHinhThucDaoTao = x.htdt.tenHinhThuc
                 }).ToListAsync();
 
@@ -1118,7 +1118,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 {
                     id = x.nn.id,
                     nnDanhMucNgoaiNgu = x.dmnn.tenDanhMuc,
-                    nnNgayCap = x.nn.ngayCap,
+                    nnNgayCap = DateTime.SpecifyKind(x.nn.ngayCap, DateTimeKind.Utc),
                     nnNoiCap = x.nn.noiCap,
                     nnTrinhDo = x.nn.trinhDo
                 }).ToListAsync();
@@ -1135,7 +1135,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     id = x.nt.id,
                     ntTenNguoiThan = x.nt.tenNguoiThan,
                     ntGioiTinh = x.nt.gioiTinh == true ? "Nam" : "Nữ",
-                    ntNgaySinh = x.nt.ngaySinh,
+                    ntNgaySinh = DateTime.SpecifyKind(x.nt.ngaySinh, DateTimeKind.Utc),
                     ntQuanHe = x.nt.quanHe,
                     ntNgheNghiep = x.nt.ngheNghiep,
                     ntDiaChi = x.nt.diaChi,
@@ -1171,7 +1171,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     id = x.nv.maNhanVien,
                     hoTen = x.nv.hoTen,
                     quocTich = x.nv.quocTich,
-                    ngaySinh = x.nv.ngaySinh,
+                    ngaySinh = DateTime.SpecifyKind(x.nv.ngaySinh, DateTimeKind.Utc),
                     gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
                     noiSinh = x.nv.noiSinh,
                     queQuan = x.nv.queQuan,
@@ -1188,8 +1188,8 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     honNhan = x.hn.tenDanhMuc,
                     cccd = x.nv.cccd,
                     noiCapCCCD = x.nv.noiCapCCCD,
-                    ngayCapCCCD = x.nv.ngayCapCCCD,
-                    ngayHetHanCCCD = x.nv.ngayHetHanCCCD,
+                    ngayCapCCCD = DateTime.SpecifyKind(x.nv.ngayCapCCCD, DateTimeKind.Utc),
+                    ngayHetHanCCCD = DateTime.SpecifyKind(x.nv.ngayHetHanCCCD, DateTimeKind.Utc),
                     hoChieu = x.nv.hoChieu,
                     noiCapHoChieu = x.nv.noiCapHoChieu,
                     ngayCapHoChieu = x.nv.ngayCapHoChieu,
