@@ -12,8 +12,8 @@ export const ttc = [
     data2: ["loaiHopDong", false],
   },
   {
-    title1: "Trạng thái",
-    data1: ["trangThai", false],
+    title1: "Chức vụ",
+    data1: ["chucVu", false],
     title2: "Chức danh công việc",
     data2: ["chucDanh", false],
   },
@@ -24,8 +24,8 @@ export const ttc = [
     data2: ["hopDongDenNgay", true],
   },
   {
-    title1: "Chức vụ",
-    data1: ["chucVu", false],
+    title1: "Trạng thái",
+    data1: ["trangThai", false],
     title2: "Ghi chú",
     data2: ["ghiChu", false],
   },

@@ -447,7 +447,7 @@ function AddSalaryForm(props) {
           </div>
         </div>
         <form action="" className="profile-form">
-          <div className="container-div-form">
+          <div className="container-div-form-salary">
             <div className="container-salary">
               <div>
                 <h3>Thông tin chung</h3>

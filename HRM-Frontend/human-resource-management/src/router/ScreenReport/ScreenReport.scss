@@ -3,7 +3,7 @@
   .first-main {
     width: 20%;
     .title-first {
-      margin: 1.8rem 0 0 6rem;
+      margin: 1.8rem 0 0 3rem;
     }
     .cate-sidebar {
       width: 90%;
@@ -11,7 +11,8 @@
       min-height: 300px;
       margin-left: 8%;
       margin-top: 3.1rem;
-      box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+      box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+        0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
     }
   }
   .second-main {

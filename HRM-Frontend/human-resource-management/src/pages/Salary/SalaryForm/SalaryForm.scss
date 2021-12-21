@@ -18,11 +18,13 @@
   margin-left: 13%;
   text-align: left;
 }
-.container-div-form {
+.container-div-form-salary {
   background-color: white;
   padding: 2rem;
   margin: 2em;
   margin-top: 0;
+  height: 70vh;
+  overflow: auto;
 }
 .container-salary {
   display: flex;

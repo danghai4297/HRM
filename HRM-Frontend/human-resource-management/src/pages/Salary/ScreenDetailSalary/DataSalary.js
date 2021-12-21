@@ -26,14 +26,8 @@ export const ttc = [
   {
     title1: "Thời hạn lên lương",
     data1: ["thoiHanLenLuong", false, false],
-    title2: "Trạng thái",
-    data2: ["trangThai", false, false],
-  },
-  {
-    title1: "Lương cơ bản",
-    data1: ["luongCoBan", false, true],
-    title2: "Phụ cấp trách nhiệm",
-    data2: ["phuCapTrachNhiem", false, false],
+    title2: "Lương cơ bản",
+    data2: ["luongCoBan", false, true],
   },
   {
     title1: "Phụ cấp chức vụ",
@@ -42,8 +36,14 @@ export const ttc = [
     data2: ["phuCapChucDanh", false, true],
   },
   {
-    title1: "Phụ cấp khác",
-    data1: ["phuCapKhac", false, true],
+    title1: "Phụ cấp trách nhiệm",
+    data1: ["phuCapTrachNhiem", false, false],
+    title2: "Phụ cấp khác",
+    data2: ["phuCapKhac", false, true],
+  },
+  {
+    title1: "Trạng thái",
+    data1: ["trangThai", false, false],
     title2: "Tổng lương",
     data2: ["tongLuong", false, true],
   },

@@ -296,7 +296,7 @@
         .row-detail {
           width: 100%;
           .fast-information {
-            font-size: 8px;
+            font-size: 1vh;
             width: 70px;
           }
           .col {
@@ -311,7 +311,7 @@
       }
       .right-path {
         width: 10%;
-
+        padding-top: 0;
         .btn {
           float: right;
           display: block;
@@ -329,7 +329,7 @@
     .main-information {
       display: flex;
       width: 98%;
-      height: 83%;
+      height: 63vh;
       // margin: 0.6em;
       margin-left: 0.6em;
       .left-header-information {
@@ -339,6 +339,7 @@
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 10px;
         height: 63vh;
+        overflow: auto;
         // margin-right: 0.5rem;
         .list-left {
           margin: 0;
@@ -384,7 +385,7 @@
 
               h3 {
                 padding: 3%;
-                font-size: 1em;
+                font-size: medium;
                 margin: 0;
               }
               .h3s {
@@ -520,7 +521,8 @@
         .row-detail {
           width: 100%;
           .fast-information {
-            font-size: 8px;
+            font-size: 1vh;
+            padding-top: 1.5vh;
             width: 70px;
           }
           .col {
@@ -535,7 +537,7 @@
       }
       .right-path {
         width: 10%;
-
+        padding-top: 0;
         .btn {
           float: right;
           display: block;
@@ -563,6 +565,7 @@
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 10px;
         height: 63vh;
+        overflow: auto;
         // margin-right: 0.5rem;
         .list-left {
           margin: 0;
@@ -605,10 +608,9 @@
             .name-title {
               cursor: pointer;
               width: 80%;
-
               h3 {
                 padding: 3%;
-                font-size: 1em;
+                font-size: 1rem;
                 margin: 0;
               }
               .h3s {
