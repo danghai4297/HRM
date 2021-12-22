@@ -133,7 +133,7 @@ function TablePagination(props) {
         <div className="search-table">
           <input
             className="search-input"
-            placeholder="Search"
+            placeholder="Tìm kiếm"
             aria-label="true"
             value={globalFilter || ""}
             onChange={(e) => setGlobalFilter(e.target.value)}
