@@ -54,7 +54,7 @@ namespace HRMSolution.BackendAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateEmployee([FromBody] NhanVienCreateRequest request)
+        public async Task<IActionResult> CreateEmployee([FromForm] NhanVienCreateRequest request)
         {
             var result = await _employeeService.Create(request);
             if (result == 0)
@@ -63,7 +63,7 @@ namespace HRMSolution.BackendAPI.Controllers
         }
 
         [HttpPut("{maNhanVien}")]
-        public async Task<IActionResult> UpdateEmployee(string maNhanVien, [FromBody] NhanVienUpdateRequest request)
+        public async Task<IActionResult> UpdateEmployee(string maNhanVien, [FromForm] NhanVienUpdateRequest request)
         {
             var result = await _employeeService.Update(maNhanVien, request);
             if (result == 0)

@@ -199,7 +199,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
             {
                 lsbt_thanNhanNuocNgoai = lsbt_thanNhanNuocNgoai.Trim(charsToTrim);
             }
-            Nullable<DateTime> d = null;
+            DateTime? dt = null;
             if (request.id == null || request.hoTen == null || request.quocTich == null || request.ngaySinh == null || request.diDong == null || request.cccd == null || request.noiCapCCCD == null
                 || request.ngayCapCCCD == null || request.ngayHetHanCCCD == null || request.noiSinh == null || request.queQuan == null || request.thuongTru == null || request.ngheNghiep == null
                 || request.chucVuHienTai == null || request.congViecChinh == null || request.coQuanTuyenDung == null || request.idDanhMucHonNhan == 0 || request.idDanToc <= 0 || request.idNgachCongChuc <= 0
@@ -216,7 +216,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     maNhanVien = request.id,
                     hoTen = hoTen,
                     quocTich = quocTich,
-                    ngaySinh = request.ngaySinh.AddHours(1),
+                    ngaySinh = DateTime.Parse(request.ngaySinh),
                     gioiTinh = request.gioiTinh,
                     dienThoai = request.dienThoai,
                     dienThoaiKhac = request.dienThoaiKhac,
@@ -227,34 +227,34 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     maSoThue = maSoThue,
                     cccd = cccd,
                     noiCapCCCD = noiCapCCCD,
-                    ngayCapCCCD = request.ngayCapCCCD,
-                    ngayHetHanCCCD = request.ngayHetHanCCCD,
+                    ngayCapCCCD = DateTime.Parse(request.ngayCapCCCD),
+                    ngayHetHanCCCD = DateTime.Parse(request.ngayHetHanCCCD),
                     hoChieu = hoChieu,
                     noiCapHoChieu = noiCapHoChieu,
-                    ngayCapHoChieu = request.ngayCapHoChieu,
-                    ngayHetHanHoChieu = request.ngayHetHanHoChieu,
+                    ngayCapHoChieu = request.ngayCapHoChieu == null ? dt : DateTime.Parse(request.ngayCapHoChieu.ToString()),
+                    ngayHetHanHoChieu = request.ngayHetHanHoChieu == null ? dt : DateTime.Parse(request.ngayHetHanHoChieu.ToString()),
                     noiSinh = noiSinh,
                     queQuan = queQuan,
                     thuongTru = thuongTru,
                     tamTru = tamTru,
                     ngheNghiep = ngheNghiep,
                     chucVuHienTai = chucVuHienTai,
-                    ngayTuyenDung = request.ngayTuyenDung,
-                    ngayThuViec = request.ngayThuViec,
+                    ngayTuyenDung = request.ngayTuyenDung == null ? dt : DateTime.Parse(request.ngayTuyenDung.ToString()),
+                    ngayThuViec = request.ngayThuViec == null ? dt : DateTime.Parse(request.ngayThuViec.ToString()),
                     congViecChinh = congViecChinh,
-                    ngayVaoBan = request.ngayVaoBan,
-                    ngayChinhThuc = request.ngayChinhThuc,
+                    ngayVaoBan = request.ngayVaoBan == null ? dt : DateTime.Parse(request.ngayVaoBan.ToString()),
+                    ngayChinhThuc = request.ngayChinhThuc == null ? dt : DateTime.Parse(request.ngayChinhThuc.ToString()),
                     coQuanTuyenDung = coQuanTuyenDung,
                     ngachCongChucNoiDung = ngachCongChucNoiDung,
                     vaoDang = request.vaoDang,
-                    ngayVaoDang = request.ngayVaoDang,
-                    ngayVaoDangChinhThuc = request.ngayVaoDangChinhThuc,
+                    ngayVaoDang = request.ngayVaoDang == null ? dt : DateTime.Parse(request.ngayVaoDang.ToString()),
+                    ngayVaoDangChinhThuc = request.ngayVaoDangChinhThuc == null ? dt : DateTime.Parse(request.ngayVaoDangChinhThuc.ToString()),
                     quanNhan = request.quanNhan,
-                    ngayNhapNgu = request.ngayNhapNgu,
-                    ngayXuatNgu = request.ngayXuatNgu,
+                    ngayNhapNgu = request.ngayNhapNgu == null ? dt : DateTime.Parse(request.ngayNhapNgu.ToString()),
+                    ngayXuatNgu = request.ngayXuatNgu == null ? dt : DateTime.Parse(request.ngayXuatNgu.ToString()),
                     quanHamCaoNhat = quanHamCaoNhat,
                     danhHieuCaoNhat = danhHieuCaoNhat,
-                    ngayVaoDoan = request.ngayVaoDoan,
+                    ngayVaoDoan = request.ngayVaoDoan == null ? dt : DateTime.Parse(request.ngayVaoDoan.ToString()),
                     noiThamGia = noiThamGia,
                     laThuongBinh = request.laThuongBinh,
                     laConChinhSach = request.laConChinhSach,
@@ -265,7 +265,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     atm = atm,
                     nganHang = nganHang,
                     trangThaiLaoDong = request.trangThaiLaoDong,
-                    ngayNghiViec = request.ngayNghiViec,
+                    ngayNghiViec = request.ngayNghiViec == null ? dt : DateTime.Parse(request.ngayNghiViec.ToString()),
                     lyDoNghiViec = lyDoNghiViec,
                     tinhChatLaoDong = request.tinhChatLaoDong,
                     idDanhMucHonNhan = request.idDanhMucHonNhan,
@@ -512,7 +512,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
             }
 
             var nhanVien = await _context.nhanViens.FindAsync(id);
-
+            DateTime? dt = null;
             if (nhanVien == null || request.hoTen == null || request.quocTich == null || request.ngaySinh == null || request.diDong == null || request.cccd == null || request.noiCapCCCD == null
                 || request.ngayCapCCCD == null || request.ngayHetHanCCCD == null || request.noiSinh == null || request.queQuan == null || request.thuongTru == null || request.ngheNghiep == null
                 || request.chucVuHienTai == null || request.congViecChinh == null || request.coQuanTuyenDung == null || request.idDanhMucHonNhan == 0 || request.idDanToc <= 0 || request.idNgachCongChuc <= 0
@@ -534,7 +534,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     var lsbt = await _context.lichSuBanThans.FindAsync(id_lsbt.id);
                     nhanVien.hoTen = hoTen;
                     nhanVien.quocTich = quocTich;
-                    nhanVien.ngaySinh = request.ngaySinh;
+                    nhanVien.ngaySinh = DateTime.Parse(request.ngaySinh);
                     nhanVien.gioiTinh = request.gioiTinh;
                     nhanVien.dienThoai = request.dienThoai;
                     nhanVien.dienThoaiKhac = request.dienThoaiKhac;
@@ -545,34 +545,34 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     nhanVien.maSoThue = maSoThue;
                     nhanVien.cccd = cccd;
                     nhanVien.noiCapCCCD = noiCapCCCD;
-                    nhanVien.ngayCapCCCD = request.ngayCapCCCD;
-                    nhanVien.ngayHetHanCCCD = request.ngayHetHanCCCD;
+                    nhanVien.ngayCapCCCD = DateTime.Parse(request.ngayCapCCCD);
+                    nhanVien.ngayHetHanCCCD = DateTime.Parse(request.ngayHetHanCCCD);
                     nhanVien.hoChieu = hoChieu;
                     nhanVien.noiCapHoChieu = noiCapHoChieu;
-                    nhanVien.ngayCapHoChieu = request.ngayCapHoChieu;
-                    nhanVien.ngayHetHanHoChieu = request.ngayHetHanHoChieu;
+                    nhanVien.ngayCapHoChieu = request.ngayCapHoChieu == null ? dt : DateTime.Parse(request.ngayCapHoChieu.ToString());
+                    nhanVien.ngayHetHanHoChieu = request.ngayHetHanHoChieu == null ? dt : DateTime.Parse(request.ngayHetHanHoChieu.ToString());
                     nhanVien.noiSinh = noiSinh;
                     nhanVien.queQuan = queQuan;
                     nhanVien.thuongTru = thuongTru;
                     nhanVien.tamTru = tamTru;
                     nhanVien.ngheNghiep = ngheNghiep;
                     nhanVien.chucVuHienTai = chucVuHienTai;
-                    nhanVien.ngayTuyenDung = request.ngayTuyenDung;
-                    nhanVien.ngayThuViec = request.ngayThuViec;
+                    nhanVien.ngayTuyenDung = request.ngayTuyenDung == null ? dt : DateTime.Parse(request.ngayTuyenDung.ToString());
+                    nhanVien.ngayThuViec = request.ngayThuViec == null ? dt : DateTime.Parse(request.ngayThuViec.ToString()); ;
                     nhanVien.congViecChinh = congViecChinh;
-                    nhanVien.ngayVaoBan = request.ngayVaoBan;
-                    nhanVien.ngayChinhThuc = request.ngayChinhThuc;
+                    nhanVien.ngayVaoBan = request.ngayVaoBan == null ? dt : DateTime.Parse(request.ngayVaoBan.ToString());
+                    nhanVien.ngayChinhThuc = request.ngayChinhThuc == null ? dt : DateTime.Parse(request.ngayChinhThuc.ToString());
                     nhanVien.coQuanTuyenDung = request.coQuanTuyenDung;
                     nhanVien.ngachCongChucNoiDung = ngachCongChucNoiDung;
                     nhanVien.vaoDang = request.vaoDang;
-                    nhanVien.ngayVaoDang = request.ngayVaoDang;
-                    nhanVien.ngayVaoDangChinhThuc = request.ngayVaoDangChinhThuc;
+                    nhanVien.ngayVaoDang = request.ngayVaoDang == null ? dt : DateTime.Parse(request.ngayVaoDang.ToString());
+                    nhanVien.ngayVaoDangChinhThuc = request.ngayVaoDangChinhThuc == null ? dt : DateTime.Parse(request.ngayVaoDangChinhThuc.ToString());
                     nhanVien.quanNhan = request.quanNhan;
-                    nhanVien.ngayNhapNgu = request.ngayNhapNgu;
-                    nhanVien.ngayXuatNgu = request.ngayXuatNgu;
+                    nhanVien.ngayNhapNgu = request.ngayNhapNgu == null ? dt : DateTime.Parse(request.ngayNhapNgu.ToString());
+                    nhanVien.ngayXuatNgu = request.ngayXuatNgu == null ? dt : DateTime.Parse(request.ngayXuatNgu.ToString());
                     nhanVien.quanHamCaoNhat = quanHamCaoNhat;
                     nhanVien.danhHieuCaoNhat = danhHieuCaoNhat;
-                    nhanVien.ngayVaoDoan = request.ngayVaoDoan;
+                    nhanVien.ngayVaoDoan = request.ngayVaoDoan == null ? dt : DateTime.Parse(request.ngayVaoDoan.ToString());
                     nhanVien.noiThamGia = noiThamGia;
                     nhanVien.laThuongBinh = request.laThuongBinh;
                     nhanVien.laConChinhSach = request.laConChinhSach;
@@ -583,7 +583,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     nhanVien.atm = atm;
                     nhanVien.nganHang = nganHang;
                     nhanVien.trangThaiLaoDong = request.trangThaiLaoDong;
-                    nhanVien.ngayNghiViec = request.ngayNghiViec;
+                    nhanVien.ngayNghiViec = request.ngayNghiViec == null ? dt : DateTime.Parse(request.ngayNghiViec.ToString());
                     nhanVien.lyDoNghiViec = lyDoNghiViec;
                     nhanVien.tinhChatLaoDong = request.tinhChatLaoDong;
                     nhanVien.idDanhMucHonNhan = request.idDanhMucHonNhan;
@@ -643,7 +643,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     var lsbt = await _context.lichSuBanThans.FindAsync(id_lsbt.id);
                     nhanVien.hoTen = hoTen;
                     nhanVien.quocTich = quocTich;
-                    nhanVien.ngaySinh = request.ngaySinh;
+                    nhanVien.ngaySinh = DateTime.Parse(request.ngaySinh);
                     nhanVien.gioiTinh = request.gioiTinh;
                     nhanVien.dienThoai = request.dienThoai;
                     nhanVien.dienThoaiKhac = request.dienThoaiKhac;
@@ -654,34 +654,34 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     nhanVien.maSoThue = maSoThue;
                     nhanVien.cccd = cccd;
                     nhanVien.noiCapCCCD = noiCapCCCD;
-                    nhanVien.ngayCapCCCD = request.ngayCapCCCD;
-                    nhanVien.ngayHetHanCCCD = request.ngayHetHanCCCD;
+                    nhanVien.ngayCapCCCD = DateTime.Parse(request.ngayCapCCCD);
+                    nhanVien.ngayHetHanCCCD = DateTime.Parse(request.ngayHetHanCCCD);
                     nhanVien.hoChieu = hoChieu;
                     nhanVien.noiCapHoChieu = noiCapHoChieu;
-                    nhanVien.ngayCapHoChieu = request.ngayCapHoChieu;
-                    nhanVien.ngayHetHanHoChieu = request.ngayHetHanHoChieu;
+                    nhanVien.ngayCapHoChieu = request.ngayCapHoChieu == null ? dt : DateTime.Parse(request.ngayCapHoChieu.ToString());
+                    nhanVien.ngayHetHanHoChieu = request.ngayHetHanHoChieu == null ? dt : DateTime.Parse(request.ngayHetHanHoChieu.ToString());
                     nhanVien.noiSinh = noiSinh;
                     nhanVien.queQuan = queQuan;
                     nhanVien.thuongTru = thuongTru;
                     nhanVien.tamTru = tamTru;
                     nhanVien.ngheNghiep = ngheNghiep;
                     nhanVien.chucVuHienTai = chucVuHienTai;
-                    nhanVien.ngayTuyenDung = request.ngayTuyenDung;
-                    nhanVien.ngayThuViec = request.ngayThuViec;
+                    nhanVien.ngayTuyenDung = request.ngayTuyenDung == null ? dt : DateTime.Parse(request.ngayTuyenDung.ToString());
+                    nhanVien.ngayThuViec = request.ngayThuViec == null ? dt : DateTime.Parse(request.ngayThuViec.ToString());
                     nhanVien.congViecChinh = congViecChinh;
-                    nhanVien.ngayVaoBan = request.ngayVaoBan;
-                    nhanVien.ngayChinhThuc = request.ngayChinhThuc;
+                    nhanVien.ngayVaoBan = request.ngayVaoBan == null ? dt : DateTime.Parse(request.ngayVaoBan.ToString());
+                    nhanVien.ngayChinhThuc = request.ngayChinhThuc == null ? dt : DateTime.Parse(request.ngayChinhThuc.ToString());
                     nhanVien.coQuanTuyenDung = coQuanTuyenDung;
                     nhanVien.ngachCongChucNoiDung = ngachCongChucNoiDung;
                     nhanVien.vaoDang = request.vaoDang;
-                    nhanVien.ngayVaoDang = request.ngayVaoDang;
-                    nhanVien.ngayVaoDangChinhThuc = request.ngayVaoDangChinhThuc;
+                    nhanVien.ngayVaoDang = request.ngayVaoDang == null ? dt : DateTime.Parse(request.ngayVaoDang.ToString());
+                    nhanVien.ngayVaoDangChinhThuc = request.ngayVaoDangChinhThuc == null ? dt : DateTime.Parse(request.ngayVaoDangChinhThuc.ToString());
                     nhanVien.quanNhan = request.quanNhan;
-                    nhanVien.ngayNhapNgu = request.ngayNhapNgu;
-                    nhanVien.ngayXuatNgu = request.ngayXuatNgu;
+                    nhanVien.ngayNhapNgu = request.ngayNhapNgu == null ? dt : DateTime.Parse(request.ngayNhapNgu.ToString());
+                    nhanVien.ngayXuatNgu = request.ngayXuatNgu == null ? dt : DateTime.Parse(request.ngayXuatNgu.ToString());
                     nhanVien.quanHamCaoNhat = quanHamCaoNhat;
                     nhanVien.danhHieuCaoNhat = danhHieuCaoNhat;
-                    nhanVien.ngayVaoDoan = request.ngayVaoDoan;
+                    nhanVien.ngayVaoDoan = request.ngayVaoDoan == null ? dt : DateTime.Parse(request.ngayVaoDoan.ToString());
                     nhanVien.noiThamGia = noiThamGia;
                     nhanVien.laThuongBinh = request.laThuongBinh;
                     nhanVien.laConChinhSach = request.laConChinhSach;
@@ -692,7 +692,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     nhanVien.atm = atm;
                     nhanVien.nganHang = nganHang;
                     nhanVien.trangThaiLaoDong = request.trangThaiLaoDong;
-                    nhanVien.ngayNghiViec = request.ngayNghiViec;
+                    nhanVien.ngayNghiViec = request.ngayNghiViec == null ? dt : DateTime.Parse(request.ngayNghiViec.ToString());
                     nhanVien.lyDoNghiViec = lyDoNghiViec;
                     nhanVien.tinhChatLaoDong = request.tinhChatLaoDong;
                     nhanVien.idDanhMucHonNhan = request.idDanhMucHonNhan;
@@ -724,6 +724,14 @@ namespace HRMSolution.Application.Catalog.NhanViens
             }
         }
 
+        public DateTime? checkDate(DateTime? date)
+        {
+            DateTime dt;
+            if (date == null)
+                return null;
+            dt = DateTime.SpecifyKind(date.Value, DateTimeKind.Utc);
+            return dt;
+        }
         public async Task<List<NhanVienViewModel>> GetAll()
         {
             //Phòng Ban
@@ -750,21 +758,12 @@ namespace HRMSolution.Application.Catalog.NhanViens
             }
             else
             {
-                //var size = query.ToList();
-                //var list = new List<NhanVienViewModel>();
-
-                //foreach (var item in query)
-                //{
-                //    var ngayVaoDang = checkDate(item.nv.ngayVaoDang);
-                //    list.Add(new NhanVienViewModel { ngayVaoDang = ngayVaoDang });
-                //}
-
                 var data = await query.Select(x => new NhanVienViewModel()
                 {
                     id = x.nv.maNhanVien,
                     hoTen = x.nv.hoTen,
                     quocTich = x.nv.quocTich,
-                    ngaySinh = DateTime.SpecifyKind(x.nv.ngaySinh, DateTimeKind.Utc),
+                    ngaySinh = x.nv.ngaySinh,
                     gioiTinh = x.nv.gioiTinh == true ? "Nam" : "Nữ",
                     dienThoai = x.nv.dienThoai,
                     dienThoaiKhac = x.nv.dienThoaiKhac,
@@ -775,8 +774,8 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     maSoThue = x.nv.maSoThue,
                     cccd = x.nv.cccd,
                     noiCapCCCD = x.nv.noiCapCCCD,
-                    ngayCapCCCD = DateTime.SpecifyKind(x.nv.ngayCapCCCD, DateTimeKind.Utc),
-                    ngayHetHanCCCD = DateTime.SpecifyKind(x.nv.ngayHetHanCCCD, DateTimeKind.Utc),
+                    ngayCapCCCD = x.nv.ngayCapCCCD,
+                    ngayHetHanCCCD = x.nv.ngayHetHanCCCD,
                     hoChieu = x.nv.hoChieu,
                     noiCapHoChieu = x.nv.noiCapHoChieu,
                     ngayCapHoChieu = x.nv.ngayCapHoChieu,
@@ -800,7 +799,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     ngayXuatNgu = x.nv.ngayXuatNgu,
                     quanHamCaoNhat = x.nv.quanHamCaoNhat,
                     danhHieuCaoNhat = x.nv.danhHieuCaoNhat,
-                    ngayVaoDoan = x.nv.ngayVaoDoan.Value,
+                    ngayVaoDoan = x.nv.ngayVaoDoan,
                     noiThamGia = x.nv.noiThamGia,
                     laThuongBinh = x.nv.laThuongBinh,
                     laConChinhSach = x.nv.laConChinhSach,
@@ -819,56 +818,11 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     anh = x.nv.anh,
                     tenPhongBan = x.xx.phongBan ?? String.Empty
                 }).ToListAsync();
-                foreach (var item in data)
-                {
-                    DateTime temp = item.ngayVaoDang.Value;
-                    if (temp != null)
-                    {
-                        item.ngayVaoDang = DateTime.SpecifyKind(temp, DateTimeKind.Utc);
-
-                    }
-                    DateTime temp2 = item.ngayVaoDoan.Value;
-                    if (temp2 != null)
-                    {
-                        item.ngayVaoDoan = DateTime.SpecifyKind(temp2, DateTimeKind.Utc);
-
-                    }
-                    DateTime temp3 = item.ngayNhapNgu.Value;
-                    if (temp3 != null)
-                    {
-                        item.ngayNhapNgu = DateTime.SpecifyKind(temp3, DateTimeKind.Utc);
-
-                    }
-                    DateTime temp4 = item.ngayXuatNgu.Value;
-                    if (temp4 != null)
-                    {
-                        item.ngayXuatNgu = DateTime.SpecifyKind(temp4, DateTimeKind.Utc);
-
-                    }
-                    DateTime temp5 = item.ngayNghiViec.Value;
-                    if (temp5 != null)
-                    {
-                        item.ngayNghiViec = DateTime.SpecifyKind(temp5, DateTimeKind.Utc);
-
-                    }
-                    DateTime temp6 = item.ngayVaoDangChinhThuc.Value;
-                    if (temp6 != null)
-                    {
-                        item.ngayVaoDangChinhThuc = DateTime.SpecifyKind(temp6, DateTimeKind.Utc);
-
-                    }
-                }
                 return data;
             }
         }
 
-        public DateTime? checkDate(DateTime? date)
-        {
-            if (date == null)
-                return null;
-            var x = DateTime.SpecifyKind(date.Value, DateTimeKind.Utc);
-            return x;
-        }
+
 
 
         public async Task<List<MaTenViewModel>> GetAllMaVaTen()
