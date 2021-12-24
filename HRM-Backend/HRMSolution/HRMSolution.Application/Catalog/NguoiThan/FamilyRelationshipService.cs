@@ -19,19 +19,20 @@ namespace HRMSolution.Application.Catalog.NguoiThans
         {
             _context = context;
         }
-
-        public async Task<int> Create(NguoiThanCreateRequest request)
+        public string checkNull(string stringCheck)
         {
             char[] charsToTrim = { '*', ' ', '\'' };
-            var tenNguoiThan = request.tenNguoiThan.Trim(charsToTrim);
-            var quanHe = request.quanHe.Trim(charsToTrim);
-            var ngheNghiep = request.ngheNghiep.Trim(charsToTrim);
-            var diaChi = request.diaChi.Trim(charsToTrim);
-            var khac = request.khac;
-            if (request.khac != null)
+            if (stringCheck == null || stringCheck == "null" || stringCheck == "")
             {
-                khac = khac.Trim(charsToTrim);
+                return null;
             }
+            else
+            {
+                return stringCheck.Trim(charsToTrim);
+            }
+        }
+        public async Task<int> Create(NguoiThanCreateRequest request)
+        {
 
             if (request.tenNguoiThan == null || request.ngaySinh == null || request.ngheNghiep == null || request.diaChi == null || request.dienThoai == null || request.idDanhMucNguoiThan == 0 || request.maNhanVien == null)
             {
@@ -41,14 +42,14 @@ namespace HRMSolution.Application.Catalog.NguoiThans
             {
                 var nguoiThan = new NguoiThan()
                 {
-                    tenNguoiThan = tenNguoiThan,
+                    tenNguoiThan = checkNull(request.tenNguoiThan),
                     gioiTinh = request.gioiTinh,
                     ngaySinh = request.ngaySinh,
-                    quanHe = quanHe,
-                    ngheNghiep = ngheNghiep,
-                    diaChi = diaChi,
+                    quanHe = checkNull(request.quanHe),
+                    ngheNghiep = checkNull(request.ngheNghiep),
+                    diaChi = checkNull(request.diaChi),
                     dienThoai = request.dienThoai,
-                    khac = khac,
+                    khac = checkNull(request.khac),
                     idDanhMucNguoiThan = request.idDanhMucNguoiThan,
                     maNhanVien = request.maNhanVien
                 };
@@ -115,16 +116,6 @@ namespace HRMSolution.Application.Catalog.NguoiThans
 
         public async Task<int> Update(int id, NguoiThanUpdateRequest request)
         {
-            char[] charsToTrim = { '*', ' ', '\'' };
-            var tenNguoiThan = request.tenNguoiThan.Trim(charsToTrim);
-            var quanHe = request.quanHe.Trim(charsToTrim);
-            var ngheNghiep = request.ngheNghiep.Trim(charsToTrim);
-            var diaChi = request.diaChi.Trim(charsToTrim);
-            var khac = request.khac;
-            if (request.khac != null)
-            {
-                khac = khac.Trim(charsToTrim);
-            }
             var nguoiThan = await _context.nguoiThans.FindAsync(id);
             if (nguoiThan == null || request.tenNguoiThan == null || request.ngaySinh == null || request.ngheNghiep == null || request.diaChi == null || request.dienThoai == null || request.idDanhMucNguoiThan == 0 || request.maNhanVien == null)
             {
@@ -132,14 +123,14 @@ namespace HRMSolution.Application.Catalog.NguoiThans
             }
             else
             {
-                nguoiThan.tenNguoiThan = tenNguoiThan;
+                nguoiThan.tenNguoiThan = checkNull(request.tenNguoiThan);
                 nguoiThan.gioiTinh = request.gioiTinh;
                 nguoiThan.ngaySinh = request.ngaySinh;
-                nguoiThan.quanHe = quanHe;
-                nguoiThan.ngheNghiep = ngheNghiep;
-                nguoiThan.diaChi = diaChi;
+                nguoiThan.quanHe = checkNull(request.quanHe);
+                nguoiThan.ngheNghiep = checkNull(request.ngheNghiep);
+                nguoiThan.diaChi = checkNull(request.diaChi);
                 nguoiThan.dienThoai = request.dienThoai;
-                nguoiThan.khac = khac;
+                nguoiThan.khac = checkNull(request.khac);
                 nguoiThan.idDanhMucNguoiThan = request.idDanhMucNguoiThan;
                 nguoiThan.maNhanVien = request.maNhanVien;
 
