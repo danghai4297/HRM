@@ -28,21 +28,13 @@ namespace HRMSolution.Application.Catalog.NhanViens
         public string checkNull(string stringCheck)
         {
             char[] charsToTrim = { '*', ' ', '\'' };
-            if (stringCheck == null)
+            if (stringCheck != null && stringCheck != "null" && stringCheck != "")
             {
-                return null;
-            }
-            else if (stringCheck == "null")
-            {
-                return null;
-            }
-            else if (stringCheck == "")
-            {
-                return null;
+                return stringCheck.Trim(charsToTrim);
             }
             else
             {
-                return stringCheck.Trim(charsToTrim);
+                return null;
             }
         }
 
@@ -81,30 +73,30 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     ngayHetHanCCCD = DateTime.Parse(request.ngayHetHanCCCD),
                     hoChieu = checkNull(request.hoChieu),
                     noiCapHoChieu = checkNull(request.noiCapHoChieu),
-                    ngayCapHoChieu = request.ngayCapHoChieu == null ? dt : DateTime.Parse(request.ngayCapHoChieu.ToString()),
-                    ngayHetHanHoChieu = request.ngayHetHanHoChieu == null ? dt : DateTime.Parse(request.ngayHetHanHoChieu.ToString()),
+                    ngayCapHoChieu = request.ngayCapHoChieu == "null" || request.ngayCapHoChieu == "undefined" ? dt : DateTime.Parse(request.ngayCapHoChieu.ToString()),
+                    ngayHetHanHoChieu = request.ngayHetHanHoChieu == "null" || request.ngayHetHanHoChieu == "undefined" ? dt : DateTime.Parse(request.ngayHetHanHoChieu.ToString()),
                     noiSinh = checkNull(request.noiSinh),
                     queQuan = checkNull(request.queQuan),
                     thuongTru = checkNull(request.thuongTru),
                     tamTru = checkNull(request.tamTru),
                     ngheNghiep = checkNull(request.ngheNghiep),
                     chucVuHienTai = checkNull(request.chucVuHienTai),
-                    ngayTuyenDung = request.ngayTuyenDung == null ? dt : DateTime.Parse(request.ngayTuyenDung.ToString()),
-                    ngayThuViec = request.ngayThuViec == null ? dt : DateTime.Parse(request.ngayThuViec.ToString()),
+                    ngayTuyenDung = request.ngayTuyenDung == "null" || request.ngayTuyenDung == "undefined" ? dt : DateTime.Parse(request.ngayTuyenDung.ToString()),
+                    ngayThuViec = request.ngayThuViec == "null" || request.ngayThuViec == "undefined" ? dt : DateTime.Parse(request.ngayThuViec.ToString()),
                     congViecChinh = checkNull(request.congViecChinh),
-                    ngayVaoBan = request.ngayVaoBan == null ? dt : DateTime.Parse(request.ngayVaoBan.ToString()),
-                    ngayChinhThuc = request.ngayChinhThuc == null ? dt : DateTime.Parse(request.ngayChinhThuc.ToString()),
+                    ngayVaoBan = request.ngayVaoBan == "null" || request.ngayVaoBan == "undefined" ? dt : DateTime.Parse(request.ngayVaoBan.ToString()),
+                    ngayChinhThuc = request.ngayChinhThuc == "null" || request.ngayChinhThuc == "undefined" ? dt : DateTime.Parse(request.ngayChinhThuc.ToString()),
                     coQuanTuyenDung = checkNull(request.coQuanTuyenDung),
                     ngachCongChucNoiDung = checkNull(request.ngachCongChucNoiDung),
                     vaoDang = request.vaoDang,
-                    ngayVaoDang = request.ngayVaoDang == null ? dt : DateTime.Parse(request.ngayVaoDang.ToString()),
-                    ngayVaoDangChinhThuc = request.ngayVaoDangChinhThuc == null ? dt : DateTime.Parse(request.ngayVaoDangChinhThuc.ToString()),
+                    ngayVaoDang = request.ngayVaoDang == "null" || request.ngayVaoDang == "undefined" ? dt : DateTime.Parse(request.ngayVaoDang.ToString()),
+                    ngayVaoDangChinhThuc = request.ngayVaoDangChinhThuc == "null" || request.ngayVaoDangChinhThuc == "Invalid date" ? dt : DateTime.Parse(request.ngayVaoDangChinhThuc.ToString()),
                     quanNhan = request.quanNhan,
-                    ngayNhapNgu = request.ngayNhapNgu == null ? dt : DateTime.Parse(request.ngayNhapNgu.ToString()),
-                    ngayXuatNgu = request.ngayXuatNgu == null ? dt : DateTime.Parse(request.ngayXuatNgu.ToString()),
+                    ngayNhapNgu = request.ngayNhapNgu == "null" || request.ngayNhapNgu == "undefined" ? dt : DateTime.Parse(request.ngayNhapNgu.ToString()),
+                    ngayXuatNgu = request.ngayXuatNgu == "null" || request.ngayXuatNgu == "undefined" ? dt : DateTime.Parse(request.ngayXuatNgu.ToString()),
                     quanHamCaoNhat = checkNull(request.quanHamCaoNhat),
                     danhHieuCaoNhat = checkNull(request.danhHieuCaoNhat),
-                    ngayVaoDoan = request.ngayVaoDoan == null ? dt : DateTime.Parse(request.ngayVaoDoan.ToString()),
+                    ngayVaoDoan = request.ngayVaoDoan == "null" || request.ngayVaoDoan == "undefined" ? dt : DateTime.Parse(request.ngayVaoDoan.ToString()),
                     noiThamGia = checkNull(request.noiThamGia),
                     laThuongBinh = request.laThuongBinh,
                     laConChinhSach = request.laConChinhSach,
@@ -115,7 +107,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     atm = checkNull(request.atm),
                     nganHang = checkNull(request.nganHang),
                     trangThaiLaoDong = request.trangThaiLaoDong,
-                    ngayNghiViec = request.ngayNghiViec == null ? dt : DateTime.Parse(request.ngayNghiViec.ToString()),
+                    ngayNghiViec = request.ngayNghiViec == "null" || request.ngayNghiViec == "undefined" ? dt : DateTime.Parse(request.ngayNghiViec.ToString()),
                     lyDoNghiViec = checkNull(request.lyDoNghiViec),
                     tinhChatLaoDong = request.tinhChatLaoDong,
                     idDanhMucHonNhan = request.idDanhMucHonNhan,
@@ -243,30 +235,30 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 nhanVien.ngayHetHanCCCD = DateTime.Parse(request.ngayHetHanCCCD);
                 nhanVien.hoChieu = checkNull(request.hoChieu);
                 nhanVien.noiCapHoChieu = checkNull(request.noiCapHoChieu);
-                nhanVien.ngayCapHoChieu = request.ngayCapHoChieu == null ? dt : DateTime.Parse(request.ngayCapHoChieu.ToString());
-                nhanVien.ngayHetHanHoChieu = request.ngayHetHanHoChieu == null ? dt : DateTime.Parse(request.ngayHetHanHoChieu.ToString());
+                nhanVien.ngayCapHoChieu = request.ngayCapHoChieu == "null" || request.ngayCapHoChieu == "undefined" ? dt : DateTime.Parse(request.ngayCapHoChieu.ToString());
+                nhanVien.ngayHetHanHoChieu = request.ngayHetHanHoChieu == "null" || request.ngayHetHanHoChieu == "undefined" ? dt : DateTime.Parse(request.ngayHetHanHoChieu.ToString());
                 nhanVien.noiSinh = checkNull(request.noiSinh);
                 nhanVien.queQuan = checkNull(request.queQuan);
                 nhanVien.thuongTru = checkNull(request.thuongTru);
                 nhanVien.tamTru = checkNull(request.tamTru);
                 nhanVien.ngheNghiep = checkNull(request.ngheNghiep);
                 nhanVien.chucVuHienTai = checkNull(request.chucVuHienTai);
-                nhanVien.ngayTuyenDung = request.ngayTuyenDung == null ? dt : DateTime.Parse(request.ngayTuyenDung.ToString());
-                nhanVien.ngayThuViec = request.ngayThuViec == null ? dt : DateTime.Parse(request.ngayThuViec.ToString()); ;
+                nhanVien.ngayTuyenDung = request.ngayTuyenDung == "null" || request.ngayTuyenDung == "undefined" ? dt : DateTime.Parse(request.ngayTuyenDung.ToString());
+                nhanVien.ngayThuViec = request.ngayThuViec == "null" || request.ngayThuViec == "undefined" ? dt : DateTime.Parse(request.ngayThuViec.ToString()); ;
                 nhanVien.congViecChinh = checkNull(request.congViecChinh);
-                nhanVien.ngayVaoBan = request.ngayVaoBan == null ? dt : DateTime.Parse(request.ngayVaoBan.ToString());
-                nhanVien.ngayChinhThuc = request.ngayChinhThuc == null ? dt : DateTime.Parse(request.ngayChinhThuc.ToString());
+                nhanVien.ngayVaoBan = request.ngayVaoBan == "null" || request.ngayVaoBan == "undefined" ? dt : DateTime.Parse(request.ngayVaoBan.ToString());
+                nhanVien.ngayChinhThuc = request.ngayChinhThuc == "null" || request.ngayChinhThuc == "undefined" ? dt : DateTime.Parse(request.ngayChinhThuc.ToString());
                 nhanVien.coQuanTuyenDung = request.coQuanTuyenDung;
                 nhanVien.ngachCongChucNoiDung = checkNull(request.ngachCongChucNoiDung);
                 nhanVien.vaoDang = request.vaoDang;
-                nhanVien.ngayVaoDang = request.ngayVaoDang == null ? dt : DateTime.Parse(request.ngayVaoDang.ToString());
-                nhanVien.ngayVaoDangChinhThuc = request.ngayVaoDangChinhThuc == null ? dt : DateTime.Parse(request.ngayVaoDangChinhThuc.ToString());
+                nhanVien.ngayVaoDang = request.ngayVaoDang == "null" || request.ngayVaoDang == "undefined" ? dt : DateTime.Parse(request.ngayVaoDang.ToString());
+                nhanVien.ngayVaoDangChinhThuc = request.ngayVaoDangChinhThuc == "null" || request.ngayVaoDangChinhThuc == "undefined" ? dt : DateTime.Parse(request.ngayVaoDangChinhThuc.ToString());
                 nhanVien.quanNhan = request.quanNhan;
-                nhanVien.ngayNhapNgu = request.ngayNhapNgu == null ? dt : DateTime.Parse(request.ngayNhapNgu.ToString());
-                nhanVien.ngayXuatNgu = request.ngayXuatNgu == null ? dt : DateTime.Parse(request.ngayXuatNgu.ToString());
+                nhanVien.ngayNhapNgu = request.ngayNhapNgu == "null" || request.ngayNhapNgu == "undefined" ? dt : DateTime.Parse(request.ngayNhapNgu.ToString());
+                nhanVien.ngayXuatNgu = request.ngayXuatNgu == "null" || request.ngayXuatNgu == "undefined" ? dt : DateTime.Parse(request.ngayXuatNgu.ToString());
                 nhanVien.quanHamCaoNhat = checkNull(request.quanHamCaoNhat);
                 nhanVien.danhHieuCaoNhat = checkNull(request.danhHieuCaoNhat);
-                nhanVien.ngayVaoDoan = request.ngayVaoDoan == null ? dt : DateTime.Parse(request.ngayVaoDoan.ToString());
+                nhanVien.ngayVaoDoan = request.ngayVaoDoan == "null" || request.ngayVaoDoan == "undefined" ? dt : DateTime.Parse(request.ngayVaoDoan.ToString());
                 nhanVien.noiThamGia = checkNull(request.noiThamGia);
                 nhanVien.laThuongBinh = request.laThuongBinh;
                 nhanVien.laConChinhSach = request.laConChinhSach;
@@ -277,7 +269,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 nhanVien.atm = checkNull(request.atm);
                 nhanVien.nganHang = checkNull(request.nganHang);
                 nhanVien.trangThaiLaoDong = request.trangThaiLaoDong;
-                nhanVien.ngayNghiViec = request.ngayNghiViec == null ? dt : DateTime.Parse(request.ngayNghiViec.ToString());
+                nhanVien.ngayNghiViec = request.ngayNghiViec == "null" || request.ngayNghiViec == "undefined" ? dt : DateTime.Parse(request.ngayNghiViec.ToString());
                 nhanVien.lyDoNghiViec = checkNull(request.lyDoNghiViec);
                 nhanVien.tinhChatLaoDong = request.tinhChatLaoDong;
                 nhanVien.idDanhMucHonNhan = request.idDanhMucHonNhan;
