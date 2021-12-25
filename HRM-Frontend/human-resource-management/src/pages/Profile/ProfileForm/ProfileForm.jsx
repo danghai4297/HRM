@@ -67,6 +67,32 @@ function AddProfileForm(props) {
   const [showCheckDialog, setShowCheckDialog] = useState(false);
   const [showEsc, setShowEsc] = useState(false);
 
+  const [LDN, setLDN] = useState();
+  const [NCCND, setNCCND] = useState();
+  const [NTG, setNTG] = useState();
+  const [QHCN, setQHCN] = useState();
+  const [DHCN, setDHCN] = useState();
+  const [TNNN, setTNNN] = useState();
+  const [TGC, setTGC] = useState();
+  const [BBDT, setBBDT] = useState();
+  const [TTSK, setTTSK] = useState();
+  const [LY, setLY] = useState();
+  const [BT, setBT] = useState();
+  const [NM, setNM] = useState();
+  const [lhkcE, setLhkcE] = useState();
+  const [SKY, setSKY] = useState();
+  const [FB, setFB] = useState();
+  const [ECN, setECN] = useState();
+  const [NHANG, setNHANG] = useState();
+  const [ATM, setATM] = useState();
+  const [TTRU, setTTRU] = useState();
+  const [DTNR, setDTNR] = useState();
+  const [BHYT, setBHYT] = useState();
+  const [BHXH, setBHXH] = useState();
+  const [NCHC, setNCHC] = useState();
+  const [HC, setHC] = useState();
+  const [DTK, setDTK] = useState();
+
   const cancel = () => {
     setShowDialog(false);
     setShowDeleteDialog(false);
@@ -109,6 +135,31 @@ function AddProfileForm(props) {
           if (response.trangThaiLaoDong == "Đã nghỉ việc") {
             setResignation(true);
           }
+          setLDN(response.lyDoNghiViec);
+          setNCCND(response.ngachCongChucNoiDung);
+          setNTG(response.noiThamGia);
+          setQHCN(response.quanHamCaoNhat);
+          setDHCN(response.danhHieuCaoNhat);
+          setTNNN(response.thanNhanNuocNgoai);
+          setTGC(response.thamGiaChinhTri);
+          setBBDT(response.biBatDiTu);
+          setTTSK(response.ytTinhTrangSucKhoe);
+          setLY(response.ytLuuY);
+          setBT(response.ytBenhTat);
+          setNM(response.ytNhomMau);
+          setLhkcE(response.lhkcEmail);
+          setSKY(response.skype);
+          setFB(response.facebook);
+          setECN(response.email);
+          setNHANG(response.nganHang);
+          setATM(response.atm);
+          setTTRU(response.tamTru);
+          setDTNR(response.dienThoai);
+          setBHYT(response.bhyt);
+          setBHXH(response.bhxh);
+          setNCHC(response.noiCapHoChieu);
+          setHC(response.hoChieu);
+          setDTK(response.dienThoaiKhac);
         }
       } catch (error) {
         console.log("false to fetch nv list: ", error);
@@ -394,60 +445,60 @@ function AddProfileForm(props) {
       "hoTen",
       "quocTich",
       "gioiTinh",
-      "dienThoai",
-      "dienThoaiKhac",
+      //"dienThoai",
+      // "dienThoaiKhac",
       "diDong",
-      "email",
-      "facebook",
-      "skype",
+      //"email",
+      //"facebook",
+      //"skype",
       "maSoThue",
       "cccd",
       "noiCapCCCD",
-      "hoChieu",
-      "noiCapHoChieu",
+      //"hoChieu",
+      //"noiCapHoChieu",
       "noiSinh",
       "queQuan",
       "thuongTru",
-      "tamTru",
+      //"tamTru",
       "ngheNghiep",
       "chucVuHienTai",
       "congViecChinh",
       "coQuanTuyenDung",
-      "ngachCongChucNoiDung",
+      //"ngachCongChucNoiDung",
       "vaoDang",
       "quanNhan",
-      "quanHamCaoNhat",
-      "danhHieuCaoNhat",
-      "noiThamGia",
+      // "quanHamCaoNhat",
+      //"danhHieuCaoNhat",
+      //"noiThamGia",
       "laThuongBinh",
       "laConChinhSach",
       "thuongBinh",
       "conChinhSach",
-      "bhxh",
-      "bhyt",
-      "atm",
-      "nganHang",
+      //"bhxh",
+      //"bhyt",
+      //"atm",
+      //"nganHang",
       "trangThaiLaoDong",
       "tinhChatLaoDong",
       "idDanhMucHonNhan",
       "idDanToc",
       "idTonGiao",
       "idNgachCongChuc",
-      "yt_nhomMau",
+      //"yt_nhomMau",
       "yt_chieuCao",
       "yt_canNang",
-      "yt_tinhTrangSucKhoe",
-      "yt_benhTat",
-      "yt_luuY",
+      //"yt_tinhTrangSucKhoe",
+      //"yt_benhTat",
+      //"yt_luuY",
       "yt_khuyetTat",
       "lhkc_hoTen",
       "lhkc_quanHe",
       "lhkc_dienThoai",
-      "lhkc_email",
+      //"lhkc_email",
       "lhkc_diaChi",
-      "lsbt_biBatDiTu",
-      "lsbt_thamGiaChinhTri",
-      "lsbt_thanNhanNuocNgoai",
+      //"lsbt_biBatDiTu",
+      //"lsbt_thamGiaChinhTri",
+      //"lsbt_thanNhanNuocNgoai",
       "ngaySinh",
       "ngayCapCCCD",
       "ngayHetHanCCCD",
@@ -469,60 +520,60 @@ function AddProfileForm(props) {
       intitalValue.hoTen,
       intitalValue.quocTich,
       intitalValue.gioiTinh,
-      intitalValue.dienThoai,
-      intitalValue.dienThoaiKhac,
+      //intitalValue.dienThoai,
+      //intitalValue.dienThoaiKhac,
       intitalValue.diDong,
-      intitalValue.email,
-      intitalValue.facebook,
-      intitalValue.skype,
+      //intitalValue.email,
+      //intitalValue.facebook,
+      //intitalValue.skype,
       intitalValue.maSoThue,
       intitalValue.cccd,
       intitalValue.noiCapCCCD,
-      intitalValue.hoChieu,
-      intitalValue.noiCapHoChieu,
+      //intitalValue.hoChieu,
+      //intitalValue.noiCapHoChieu,
       intitalValue.noiSinh,
       intitalValue.queQuan,
       intitalValue.thuongTru,
-      intitalValue.tamTru,
+      //intitalValue.tamTru,
       intitalValue.ngheNghiep,
       intitalValue.chucVuHienTai,
       intitalValue.congViecChinh,
       intitalValue.coQuanTuyenDung,
-      intitalValue.ngachCongChucNoiDung,
+      //intitalValue.ngachCongChucNoiDung,
       intitalValue.vaoDang,
       intitalValue.quanNhan,
-      intitalValue.quanHamCaoNhat,
-      intitalValue.danhHieuCaoNhat,
-      intitalValue.noiThamGia,
+      //intitalValue.quanHamCaoNhat,
+      //intitalValue.danhHieuCaoNhat,
+      //intitalValue.noiThamGia,
       intitalValue.laThuongBinh,
       intitalValue.laConChinhSach,
       intitalValue.thuongBinh,
       intitalValue.conChinhSach,
-      intitalValue.bhxh,
-      intitalValue.bhyt,
-      intitalValue.atm,
-      intitalValue.nganHang,
+      //intitalValue.bhxh,
+      //intitalValue.bhyt,
+      //intitalValue.atm,
+      //intitalValue.nganHang,
       intitalValue.trangThaiLaoDong,
       intitalValue.tinhChatLaoDong,
       intitalValue.idDanhMucHonNhan,
       intitalValue.idDanToc,
       intitalValue.idTonGiao,
       intitalValue.idNgachCongChuc,
-      intitalValue.yt_nhomMau,
+      //intitalValue.yt_nhomMau,
       intitalValue.yt_chieuCao,
       intitalValue.yt_canNang,
-      intitalValue.yt_tinhTrangSucKhoe,
-      intitalValue.yt_benhTat,
-      intitalValue.yt_luuY,
+      //intitalValue.yt_tinhTrangSucKhoe,
+      //intitalValue.yt_benhTat,
+      //intitalValue.yt_luuY,
       intitalValue.yt_khuyetTat,
       intitalValue.lhkc_hoTen,
       intitalValue.lhkc_quanHe,
       intitalValue.lhkc_dienThoai,
-      intitalValue.lhkc_email,
+      //intitalValue.lhkc_email,
       intitalValue.lhkc_diaChi,
-      intitalValue.lsbt_biBatDiTu,
-      intitalValue.lsbt_thamGiaChinhTri,
-      intitalValue.lsbt_thanNhanNuocNgoai,
+      //intitalValue.lsbt_biBatDiTu,
+      //intitalValue.lsbt_thamGiaChinhTri,
+      //intitalValue.lsbt_thanNhanNuocNgoai,
       intitalValue.ngaySinh,
       intitalValue.ngayCapCCCD,
       intitalValue.ngayHetHanCCCD,
@@ -541,7 +592,32 @@ function AddProfileForm(props) {
     ];
     if (
       JSON.stringify(values) === JSON.stringify(dfValue) &&
-      file.file === null
+      file.file === null &&
+      (LDN == intitalValue.lyDoNghiViec || LDN == undefined) &&
+      (NCCND == intitalValue.ngachCongChucNoiDung || NCCND == undefined) &&
+      (QHCN == intitalValue.quanHamCaoNhat || QHCN == undefined) &&
+      (NTG == intitalValue.noiThamGia || NTG == undefined) &&
+      (DTK == intitalValue.dienThoaiKhac || DTK == undefined) &&
+      (BHXH == intitalValue.bhxh || BHXH == undefined) &&
+      (HC == intitalValue.hoChieu || HC == undefined) &&
+      (NCHC == intitalValue.noiCapHoChieu || NCHC == undefined) &&
+      (BHYT == intitalValue.bhyt || BHYT == undefined) &&
+      (DTNR == intitalValue.dienThoai || DTNR == undefined) &&
+      (TTRU == intitalValue.tamTru || TTRU == undefined) &&
+      (ATM == intitalValue.atm || ATM == undefined) &&
+      (NHANG == intitalValue.nganHang || NHANG == undefined) &&
+      (ECN == intitalValue.email || ECN == undefined) &&
+      (FB == intitalValue.facebook || FB == undefined) &&
+      (SKY == intitalValue.skype || SKY == undefined) &&
+      (lhkcE == intitalValue.lhkc_email || lhkcE == undefined) &&
+      (NM == intitalValue.yt_nhomMau || NM == undefined) &&
+      (BT == intitalValue.yt_benhTat || BT == undefined) &&
+      (LY == intitalValue.yt_luuY || LY == undefined) &&
+      (TTSK == intitalValue.yt_tinhTrangSucKhoe || TTSK == undefined) &&
+      (BBDT == intitalValue.lsbt_biBatDiTu || BBDT == undefined) &&
+      (TGC == intitalValue.lsbt_thamGiaChinhTri || TGC == undefined) &&
+      (TNNN == intitalValue.lsbt_thanNhanNuocNgoai || TNNN == undefined) &&
+      (DHCN == intitalValue.danhHieuCaoNhat || DHCN == undefined)
     ) {
       return true;
     }
@@ -550,10 +626,173 @@ function AddProfileForm(props) {
 
   //get data from form
   const onHandleSubmit = async (data) => {
+    console.log(data);
+    console.log(moment(null).format("MM/DD/YYYY"));
+    console.log(
+      data.ngayVaoBan == "Invalid date" || data.ngayVaoBan == undefined
+        ? null
+        : moment(data.ngaySinh).format("MM/DD/YYYY")
+    );
     try {
       if (id !== undefined) {
         if (file.size < 20000000) {
-          await PutApi.PutNV(data, id);
+          const formData1 = new FormData();
+          formData1.append("hoTen", data.hoTen);
+          formData1.append("quocTich", data.quocTich);
+          formData1.append(
+            "ngaySinh",
+            data.ngaySinh == "Invalid date" || data.ngaySinh == undefined
+              ? null
+              : moment(data.ngaySinh).format("MM/DD/YYYY")
+          );
+          formData1.append("gioiTinh", data.gioiTinh);
+          formData1.append("dienThoai", data.dienThoai);
+          formData1.append("dienThoaiKhac", data.dienThoaiKhac);
+          formData1.append("diDong", data.diDong);
+          formData1.append("email", data.email);
+          formData1.append("facebook", data.facebook);
+          formData1.append("skype", data.skype);
+          formData1.append("maSoThue", data.maSoThue);
+          formData1.append("cccd", data.cccd);
+          formData1.append("noiCapCCCD", data.noiCapCCCD);
+          formData1.append(
+            "ngayCapCCCD",
+            data.ngayCapCCCD == "Invalid date" || data.ngayCapCCCD == undefined
+              ? null
+              : moment(data.ngayCapCCCD).format("MM/DD/YYYY")
+          );
+          formData1.append(
+            "ngayHetHanCCCD",
+            data.ngayHetHanCCCD == "Invalid date" ||
+              data.ngayHetHanCCCD == undefined
+              ? null
+              : moment(data.ngayHetHanCCCD).format("MM/DD/YYYY")
+          );
+          formData1.append("hoChieu", data.hoChieu);
+          formData1.append("noiCapHoChieu", data.noiCapHoChieu);
+          formData1.append(
+            "ngayCapHoChieu",
+            data.ngayCapHoChieu == "Invalid date" ||
+              data.ngayCapHoChieu == undefined
+              ? null
+              : moment(data.ngayCapHoChieu).format("MM/DD/YYYY")
+          );
+          formData1.append(
+            "ngayHetHanHoChieu",
+            data.ngayHetHanHoChieu == "Invalid date" ||
+              data.ngayHetHanHoChieu == undefined
+              ? null
+              : moment(data.ngayHetHanHoChieu).format("MM/DD/YYYY")
+          );
+          formData1.append("noiSinh", data.noiSinh);
+          formData1.append("queQuan", data.queQuan);
+          formData1.append("thuongTru", data.thuongTru);
+          formData1.append("tamTru", data.tamTru);
+          formData1.append("ngheNghiep", data.ngheNghiep);
+          formData1.append("chucVuHienTai", data.chucVuHienTai);
+          formData1.append(
+            "ngayTuyenDung",
+            data.ngayTuyenDung == "Invalid date" ||
+              data.ngayTuyenDung == undefined
+              ? null
+              : moment(data.ngayTuyenDung).format("MM/DD/YYYY")
+          );
+          formData1.append(
+            "ngayThuViec",
+            data.ngayThuViec == "Invalid date" || data.ngayThuViec == undefined
+              ? null
+              : moment(data.ngayThuViec).format("MM/DD/YYYY")
+          );
+          formData1.append("congViecChinh", data.congViecChinh);
+          formData1.append(
+            "ngayChinhThuc",
+            data.ngayChinhThuc == "Invalid date" ||
+              data.ngayChinhThuc == undefined
+              ? null
+              : moment(data.ngayChinhThuc).format("MM/DD/YYYY")
+          );
+          formData1.append("coQuanTuyenDung", data.coQuanTuyenDung);
+          formData1.append("ngachCongChucNoiDung", data.ngachCongChucNoiDung);
+          formData1.append("vaoDang", data.vaoDang);
+          formData1.append(
+            "ngayVaoDang",
+            data.ngayVaoDang == "Invalid date" || data.ngayVaoDang == undefined
+              ? null
+              : moment(data.ngayVaoDang).format("MM/DD/YYYY")
+          );
+          formData1.append(
+            "ngayVaoDangChinhThuc",
+            data.ngayVaoDangChinhThuc == "Invalid date" ||
+              data.ngayVaoDangChinhThuc == undefined
+              ? null
+              : moment(data.ngayVaoDangChinhThuc).format("MM/DD/YYYY")
+          );
+          formData1.append("quanNhan", data.quanNhan);
+          formData1.append(
+            "ngayNhapNgu",
+            data.ngayNhapNgu == "Invalid date" || data.ngayNhapNgu == undefined
+              ? null
+              : moment(data.ngayNhapNgu).format("MM/DD/YYYY")
+          );
+          formData1.append(
+            "ngayXuatNgu",
+            data.ngayXuatNgu == "Invalid date" || data.ngayXuatNgu == undefined
+              ? null
+              : moment(data.ngayXuatNgu).format("MM/DD/YYYY")
+          );
+          formData1.append("quanHamCaoNhat", data.quanHamCaoNhat);
+          formData1.append("danhHieuCaoNhat", data.danhHieuCaoNhat);
+          formData1.append(
+            "ngayVaoDoan",
+            data.ngayVaoDoan == "Invalid date" || data.ngayVaoDoan == undefined
+              ? null
+              : moment(data.ngayVaoDoan).format("MM/DD/YYYY")
+          );
+          formData1.append("noiThamGia", data.noiThamGia);
+          formData1.append("laThuongBinh", data.laThuongBinh);
+          formData1.append("laConChinhSach", data.laConChinhSach);
+          formData1.append("thuongBinh", data.thuongBinh);
+          formData1.append("conChinhSach", data.conChinhSach);
+          formData1.append("bhxh", data.bhxh);
+          formData1.append("bhyt", data.bhyt);
+          formData1.append("atm", data.atm);
+          formData1.append("nganHang", data.nganHang);
+          formData1.append("trangThaiLaoDong", data.trangThaiLaoDong);
+          formData1.append(
+            "ngayNghiViec",
+            data.ngayNghiViec == "Invalid date" ||
+              data.ngayNghiViec == undefined
+              ? null
+              : moment(data.ngayNghiViec).format("MM/DD/YYYY")
+          );
+          formData1.append("lyDoNghiViec", data.lyDoNghiViec);
+          formData1.append("tinhChatLaoDong", data.tinhChatLaoDong);
+          formData1.append("idDanhMucHonNhan", data.idDanhMucHonNhan);
+          formData1.append("idDanToc", data.idDanToc);
+          formData1.append("idTonGiao", data.idTonGiao);
+          formData1.append("idNgachCongChuc", data.idNgachCongChuc);
+          formData1.append("yt_nhomMau", data.yt_nhomMau);
+          formData1.append("yt_chieuCao", data.yt_chieuCao);
+          formData1.append("yt_canNang", data.yt_canNang);
+          formData1.append("yt_tinhTrangSucKhoe", data.yt_tinhTrangSucKhoe);
+          formData1.append("yt_benhTat", data.yt_benhTat);
+          formData1.append("yt_luuY", data.yt_luuY);
+          formData1.append("yt_khuyetTat", data.yt_khuyetTat);
+          // formData1.append("yt_maNhanVien", data.yt_maNhanVien);
+          formData1.append("lhkc_hoTen", data.lhkc_hoTen);
+          formData1.append("lhkc_quanHe", data.lhkc_quanHe);
+          formData1.append("lhkc_dienThoai", data.lhkc_dienThoai);
+          formData1.append("lhkc_email", data.lhkc_email);
+          formData1.append("lhkc_diaChi", data.lhkc_diaChi);
+          // formData1.append("lhkc_maNhanVien", data.lhkc_maNhanVien);
+          formData1.append("lsbt_biBatDiTu", data.lsbt_biBatDiTu);
+          formData1.append("lsbt_thamGiaChinhTri", data.lsbt_thamGiaChinhTri);
+          formData1.append(
+            "lsbt_thanNhanNuocNgoai",
+            data.lsbt_thanNhanNuocNgoai
+          );
+          // formData1.append("lsbt_maNhanVien", data.lsbt_maNhanVien);
+          await PutApi.PutNV(formData1, id);
           await ProductApi.PostLS({
             tenTaiKhoan: decoded.userName,
             thaoTac: `Sửa thông tin của nhân viên ${dataDetailEmployee.hoTen}`,
@@ -562,10 +801,10 @@ function AddProfileForm(props) {
           });
           if (file.file !== null) {
             await DeleteApi.deleteANV(data.id);
-            const formData = new FormData();
-            formData.append("anh", file.file);
-            formData.append("maNhanVien", data.id);
-            await PutApi.PutIMG(formData, data.id);
+            const formDataImg = new FormData();
+            formDataImg.append("anh", file.file);
+            formDataImg.append("maNhanVien", data.id);
+            await PutApi.PutIMG(formDataImg, data.id);
           }
           history.goBack();
         } else {
@@ -573,7 +812,164 @@ function AddProfileForm(props) {
         }
       } else {
         if (file.size < 20000000) {
-          await ProductApi.postNv(data);
+          const formData1 = new FormData();
+          formData1.append("id", data.id);
+          formData1.append("hoTen", data.hoTen);
+          formData1.append("quocTich", data.quocTich);
+          formData1.append(
+            "ngaySinh",
+            data.ngaySinh == "Invalid date" || data.ngaySinh == undefined
+              ? null
+              : moment(data.ngaySinh).format("MM/DD/YYYY")
+          );
+          formData1.append("gioiTinh", data.gioiTinh);
+          formData1.append("dienThoai", data.dienThoai);
+          formData1.append("dienThoaiKhac", data.dienThoaiKhac);
+          formData1.append("diDong", data.diDong);
+          formData1.append("email", data.email);
+          formData1.append("facebook", data.facebook);
+          formData1.append("skype", data.skype);
+          formData1.append("maSoThue", data.maSoThue);
+          formData1.append("cccd", data.cccd);
+          formData1.append("noiCapCCCD", data.noiCapCCCD);
+          formData1.append(
+            "ngayCapCCCD",
+            data.ngayCapCCCD == "Invalid date" || data.ngayCapCCCD == undefined
+              ? null
+              : moment(data.ngayCapCCCD).format("MM/DD/YYYY")
+          );
+          formData1.append(
+            "ngayHetHanCCCD",
+            data.ngayHetHanCCCD == "Invalid date" ||
+              data.ngayHetHanCCCD == undefined
+              ? null
+              : moment(data.ngayHetHanCCCD).format("MM/DD/YYYY")
+          );
+          formData1.append("hoChieu", data.hoChieu);
+          formData1.append("noiCapHoChieu", data.noiCapHoChieu);
+          formData1.append(
+            "ngayCapHoChieu",
+            data.ngayCapHoChieu == "Invalid date" ||
+              data.ngayCapHoChieu == undefined
+              ? null
+              : moment(data.ngayCapHoChieu).format("MM/DD/YYYY")
+          );
+          formData1.append(
+            "ngayHetHanHoChieu",
+            data.ngayHetHanHoChieu == "Invalid date" ||
+              data.ngayHetHanHoChieu == undefined
+              ? null
+              : moment(data.ngayHetHanHoChieu).format("MM/DD/YYYY")
+          );
+          formData1.append("noiSinh", data.noiSinh);
+          formData1.append("queQuan", data.queQuan);
+          formData1.append("thuongTru", data.thuongTru);
+          formData1.append("tamTru", data.tamTru);
+          formData1.append("ngheNghiep", data.ngheNghiep);
+          formData1.append("chucVuHienTai", data.chucVuHienTai);
+          formData1.append(
+            "ngayTuyenDung",
+            data.ngayTuyenDung == "Invalid date" ||
+              data.ngayTuyenDung == undefined
+              ? null
+              : moment(data.ngayTuyenDung).format("MM/DD/YYYY")
+          );
+          formData1.append(
+            "ngayThuViec",
+            data.ngayThuViec == "Invalid date" || data.ngayThuViec == undefined
+              ? null
+              : moment(data.ngayThuViec).format("MM/DD/YYYY")
+          );
+          formData1.append("congViecChinh", data.congViecChinh);
+          formData1.append(
+            "ngayChinhThuc",
+            data.ngayChinhThuc == "Invalid date" ||
+              data.ngayChinhThuc == undefined
+              ? null
+              : moment(data.ngayChinhThuc).format("MM/DD/YYYY")
+          );
+          formData1.append("coQuanTuyenDung", data.coQuanTuyenDung);
+          formData1.append("ngachCongChucNoiDung", data.ngachCongChucNoiDung);
+          formData1.append("vaoDang", data.vaoDang);
+          formData1.append(
+            "ngayVaoDang",
+            data.ngayVaoDang == "Invalid date" || data.ngayVaoDang == undefined
+              ? null
+              : moment(data.ngayVaoDang).format("MM/DD/YYYY")
+          );
+          formData1.append(
+            "ngayVaoDangChinhThuc",
+            data.ngayVaoDangChinhThuc == "Invalid date" ||
+              data.ngayVaoDangChinhThuc == undefined
+              ? null
+              : moment(data.ngayVaoDangChinhThuc).format("MM/DD/YYYY")
+          );
+          formData1.append("quanNhan", data.quanNhan);
+          formData1.append(
+            "ngayNhapNgu",
+            data.ngayNhapNgu == "Invalid date" || data.ngayNhapNgu == undefined
+              ? null
+              : moment(data.ngayNhapNgu).format("MM/DD/YYYY")
+          );
+          formData1.append(
+            "ngayXuatNgu",
+            data.ngayXuatNgu == "Invalid date" || data.ngayXuatNgu == undefined
+              ? null
+              : moment(data.ngayXuatNgu).format("MM/DD/YYYY")
+          );
+          formData1.append("quanHamCaoNhat", data.quanHamCaoNhat);
+          formData1.append("danhHieuCaoNhat", data.danhHieuCaoNhat);
+          formData1.append(
+            "ngayVaoDoan",
+            data.ngayVaoDoan == "Invalid date" || data.ngayVaoDoan == undefined
+              ? null
+              : moment(data.ngayVaoDoan).format("MM/DD/YYYY")
+          );
+          formData1.append("noiThamGia", data.noiThamGia);
+          formData1.append("laThuongBinh", data.laThuongBinh);
+          formData1.append("laConChinhSach", data.laConChinhSach);
+          formData1.append("thuongBinh", data.thuongBinh);
+          formData1.append("conChinhSach", data.conChinhSach);
+          formData1.append("bhxh", data.bhxh);
+          formData1.append("bhyt", data.bhyt);
+          formData1.append("atm", data.atm);
+          formData1.append("nganHang", data.nganHang);
+          formData1.append("trangThaiLaoDong", data.trangThaiLaoDong);
+          formData1.append(
+            "ngayNghiViec",
+            data.ngayNghiViec == "Invalid date" ||
+              data.ngayNghiViec == undefined
+              ? null
+              : moment(data.ngayNghiViec).format("MM/DD/YYYY")
+          );
+          formData1.append("lyDoNghiViec", data.lyDoNghiViec);
+          formData1.append("tinhChatLaoDong", data.tinhChatLaoDong);
+          formData1.append("idDanhMucHonNhan", data.idDanhMucHonNhan);
+          formData1.append("idDanToc", data.idDanToc);
+          formData1.append("idTonGiao", data.idTonGiao);
+          formData1.append("idNgachCongChuc", data.idNgachCongChuc);
+          formData1.append("yt_nhomMau", data.yt_nhomMau);
+          formData1.append("yt_chieuCao", data.yt_chieuCao);
+          formData1.append("yt_canNang", data.yt_canNang);
+          formData1.append("yt_tinhTrangSucKhoe", data.yt_tinhTrangSucKhoe);
+          formData1.append("yt_benhTat", data.yt_benhTat);
+          formData1.append("yt_luuY", data.yt_luuY);
+          formData1.append("yt_khuyetTat", data.yt_khuyetTat);
+          formData1.append("yt_maNhanVien", data.yt_maNhanVien);
+          formData1.append("lhkc_hoTen", data.lhkc_hoTen);
+          formData1.append("lhkc_quanHe", data.lhkc_quanHe);
+          formData1.append("lhkc_dienThoai", data.lhkc_dienThoai);
+          formData1.append("lhkc_email", data.lhkc_email);
+          formData1.append("lhkc_diaChi", data.lhkc_diaChi);
+          formData1.append("lhkc_maNhanVien", data.lhkc_maNhanVien);
+          formData1.append("lsbt_biBatDiTu", data.lsbt_biBatDiTu);
+          formData1.append("lsbt_thamGiaChinhTri", data.lsbt_thamGiaChinhTri);
+          formData1.append(
+            "lsbt_thanNhanNuocNgoai",
+            data.lsbt_thanNhanNuocNgoai
+          );
+          formData1.append("lsbt_maNhanVien", data.lsbt_maNhanVien);
+          await ProductApi.postNv(formData1);
           await ProductApi.PostLS({
             tenTaiKhoan: decoded.userName,
             thaoTac: `Thêm nhân viên mới${data.hoTen}`,
@@ -581,10 +977,10 @@ function AddProfileForm(props) {
             tenNhanVien: decoded.givenName,
           });
           if (file.file !== null) {
-            const formData = new FormData();
-            formData.append("anh", file.file);
-            formData.append("maNhanVien", data.id);
-            await PutApi.PutIMG(formData, data.id);
+            const formDataImg = new FormData();
+            formDataImg.append("anh", file.file);
+            formDataImg.append("maNhanVien", data.id);
+            await PutApi.PutIMG(formDataImg, data.id);
           }
           success(`Thêm hồ sơ nhân viên ${data.hoTen} thành công`);
           history.goBack();
@@ -592,7 +988,9 @@ function AddProfileForm(props) {
           error("Không thể upload file quá 20M");
         }
       }
-    } catch (error) {}
+    } catch (errors) {
+      console.log(errors);
+    }
   };
 
   //handle image
@@ -695,7 +1093,9 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("atm")}
+                      {...register("atm", {
+                        onChange: (e) => setATM(e.target.value),
+                      })}
                       id="atm"
                       className={
                         !errors.atm
@@ -739,7 +1139,9 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("nganHang")}
+                      {...register("nganHang", {
+                        onChange: (e) => setNHANG(e.target.value),
+                      })}
                       id="nganHang"
                       className={
                         !errors.nganHang
@@ -997,7 +1399,9 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("tamTru")}
+                      {...register("tamTru", {
+                        onChange: (e) => setTTRU(e.target.value),
+                      })}
                       id="tamTru"
                       className={
                         !errors.tamTru
@@ -1021,7 +1425,9 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("bhyt")}
+                      {...register("bhyt", {
+                        onChange: (e) => setBHYT(e.target.value),
+                      })}
                       id="bhyt"
                       className={
                         !errors.bhyt
@@ -1043,7 +1449,9 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("bhxh")}
+                      {...register("bhxh", {
+                        onChange: (e) => setBHXH(e.target.value),
+                      })}
                       id="bhxh"
                       className={
                         !errors.bhxh
@@ -1114,7 +1522,9 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("hoChieu")}
+                      {...register("hoChieu", {
+                        onChange: (e) => setHC(e.target.value),
+                      })}
                       id="hoChieu"
                       className={
                         !error.hoChieu
@@ -1228,7 +1638,9 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("noiCapHoChieu")}
+                      {...register("noiCapHoChieu", {
+                        onChange: (e) => setNCHC(e.target.value),
+                      })}
                       id="noiCapHoChieu"
                       className={
                         !errors.noiCapHoChieu
@@ -1347,7 +1759,9 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("email")}
+                      {...register("email", {
+                        onChange: (e) => setECN(e.target.value),
+                      })}
                       id="email"
                       className={
                         !errors.email
@@ -1371,7 +1785,9 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("dienThoaiKhac")}
+                      {...register("dienThoaiKhac", {
+                        onChange: (e) => setDTK(e.target.value),
+                      })}
                       id="dienThoaiKhac"
                       className={
                         !errors.dienThoaiKhac
@@ -1394,7 +1810,9 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("facebook")}
+                      {...register("facebook", {
+                        onChange: (e) => setFB(e.target.value),
+                      })}
                       id="facebook"
                       className={
                         !errors.facebook
@@ -1417,7 +1835,9 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("dienThoai")}
+                      {...register("dienThoai", {
+                        onChange: (e) => setDTNR(e.target.value),
+                      })}
                       id="dienThoai"
                       className={
                         !errors.dienThoai
@@ -1439,7 +1859,9 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("skype")}
+                      {...register("skype", {
+                        onChange: (e) => setSKY(e.target.value),
+                      })}
                       id="skype"
                       className={
                         !errors.skype
@@ -1487,7 +1909,9 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("lhkc_email")}
+                      {...register("lhkc_email", {
+                        onChange: (e) => setLhkcE(e.target.value),
+                      })}
                       id="lhkc_email"
                       className={
                         !errors.lhkc_email
@@ -1890,7 +2314,9 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("lyDoNghiViec")}
+                      {...register("lyDoNghiViec", {
+                        onChange: (e) => setLDN(e.target.value),
+                      })}
                       id="lyDoNghiViec"
                       className={
                         !errors.lyDoNghiViec
@@ -2021,7 +2447,9 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("ngachCongChucNoiDung")}
+                      {...register("ngachCongChucNoiDung", {
+                        onChange: (e) => setNCCND(e.target.value),
+                      })}
                       id="ngachCongChucNoiDung"
                       className={
                         !errors.ngachCongChucNoiDung
@@ -2044,7 +2472,9 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("noiThamGia")}
+                      {...register("noiThamGia", {
+                        onChange: (e) => setNTG(e.target.value),
+                      })}
                       id="noiThamGia"
                       className={
                         !errors.noiThamGia
@@ -2361,7 +2791,9 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("quanHamCaoNhat")}
+                      {...register("quanHamCaoNhat", {
+                        onChange: (e) => setQHCN(e.target.value),
+                      })}
                       id="quanHamCaoNhat"
                       className={
                         !errors.quanHamCaoNhat
@@ -2411,7 +2843,9 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("danhHieuCaoNhat")}
+                      {...register("danhHieuCaoNhat", {
+                        onChange: (e) => setDHCN(e.target.value),
+                      })}
                       id="danhHieuCaoNhat"
                       className={
                         !errors.danhHieuCaoNhat
@@ -2439,7 +2873,9 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("yt_nhomMau")}
+                      {...register("yt_nhomMau", {
+                        onChange: (e) => setNM(e.target.value),
+                      })}
                       id="yt_nhomMau"
                       className={
                         !errors.yt_nhomMau
@@ -2462,7 +2898,9 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("yt_benhTat")}
+                      {...register("yt_benhTat", {
+                        onChange: (e) => setBT(e.target.value),
+                      })}
                       id="yt_benhTat"
                       className={
                         !errors.yt_benhTat
@@ -2510,7 +2948,9 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("yt_luuY")}
+                      {...register("yt_luuY", {
+                        onChange: (e) => setLY(e.target.value),
+                      })}
                       id="yt_luuY"
                       className={
                         !errors.yt_luuY
@@ -2574,7 +3014,9 @@ function AddProfileForm(props) {
                     </label>
                     <input
                       type="text"
-                      {...register("yt_tinhTrangSucKhoe")}
+                      {...register("yt_tinhTrangSucKhoe", {
+                        onChange: (e) => setTTSK(e.target.value),
+                      })}
                       id="yt_tinhTrangSucKhoe"
                       className={
                         !errors.yt_tinhTrangSucKhoe
@@ -2610,7 +3052,9 @@ function AddProfileForm(props) {
                     </label>
                     <textarea
                       type="text"
-                      {...register("lsbt_biBatDiTu")}
+                      {...register("lsbt_biBatDiTu", {
+                        onChange: (e) => setBBDT(e.target.value),
+                      })}
                       rows="4"
                       id="lsbt_biBatDiTu"
                       className={
@@ -2638,7 +3082,9 @@ function AddProfileForm(props) {
                     <textarea
                       type="text"
                       rows="4"
-                      {...register("lsbt_thamGiaChinhTri")}
+                      {...register("lsbt_thamGiaChinhTri", {
+                        onChange: (e) => setTGC(e.target.value),
+                      })}
                       id="lsbt_thamGiaChinhTri"
                       className={
                         !errors.lsbt_thamGiaChinhTri
@@ -2665,7 +3111,9 @@ function AddProfileForm(props) {
                     <textarea
                       type="text"
                       rows="4"
-                      {...register("lsbt_thanNhanNuocNgoai")}
+                      {...register("lsbt_thanNhanNuocNgoai", {
+                        onChange: (e) => setTNNN(e.target.value),
+                      })}
                       id="lsbt_thanNhanNuocNgoai"
                       className={
                         !errors.lsbt_thanNhanNuocNgoai

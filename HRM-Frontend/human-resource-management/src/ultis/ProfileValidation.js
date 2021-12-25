@@ -4,7 +4,7 @@ const phoneRex1 = /^(([+|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})|)$/;
 const phoneRexlandline = /^((02)+([0-9]{9})|)$/g;
 const tax = /((0)([0-7])([0-9]){8})$/g;
 const cccdRegex = /((0)([0-9]))/g;
-const atm = /^(?:[1-9]\d*|)$/g;
+const atm = /^(?:[0-9]\d*|)$/g;
 const bhyt =
   /^((DN|HX|CH|NN|DK|HC|XK|HT|DB|NO|CT|XB|TN|CS|QN|CA|CY|XN|MS|CC|CK|CB|KC|HD|TE|BT|HN|DT|DK|XD|TS|TC|TQ|TA|TY|HG|LS|PV|CN|HS|SV|GB|GD){1}([1-5]){1}([0-9]){2}([0-9]){10}|)$/g;
 const bhxh = /^(([0-9]){10}|)$/g;

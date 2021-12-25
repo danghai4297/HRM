@@ -77,6 +77,7 @@ function AddTransferForm(props) {
             setNest(response.idPhongBan);
             setStartDate(moment(response.ngayHieuLuc));
             setDetail(response.chiTiet);
+            setImpID(response.maNhanVien);
           } catch (error) {
             history.goBack();
           }
@@ -164,6 +165,21 @@ function AddTransferForm(props) {
     }
   }, [dataDetailDC]);
 
+  const [dateOfStartJob, setDateOfStartJob] = useState();
+  const [impID, setImpID] = useState();
+  useEffect(() => {
+    const getDateByEmCode = async () => {
+      try {
+        if (impID !== undefined) {
+          const responseEm = await ProductApi.getNvDetail(impID);
+          setDateOfStartJob(responseEm.ngayChinhThuc);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getDateByEmCode();
+  }, [impID]);
   const [detail, setDetail] = useState();
 
   const checkInputChange = () => {
@@ -193,88 +209,91 @@ function AddTransferForm(props) {
 
   //method handle submit
   const onHandleSubmit = async (data) => {
-    const nameEm = dataEmployee.filter((item) => item.id === data.maNhanVien);
-
-    try {
-      if (id !== undefined) {
-        if (
-          dataEmployee
-            .filter((item) => item.trangThaiLaoDong === "Đang làm việc")
-            .map((item) => item.id)
-            .includes(data.maNhanVien)
-        ) {
-          try {
-            if (file.size < 20000000) {
-              const formData = new FormData();
-              formData.append("bangChung", file.file);
-              formData.append("ngayHieuLuc", startDate.format("MM/DD/YYYY"));
-              formData.append("idPhongBan", data.idPhongBan);
-              formData.append("to", data.to);
-              formData.append("chiTiet", data.chiTiet);
-              formData.append("trangThai", data.trangThai);
-              formData.append("maNhanVien", data.maNhanVien);
-              formData.append("tenFile", file.name);
-              await PutApi.PutDC(formData, id);
-              await ProductApi.PostLS({
-                tenTaiKhoan: decoded.userName,
-                thaoTac: `Sửa thông tin công tác của nhân viên ${dataDetailDC.tenNhanVien}`,
-                maNhanVien: decoded.id,
-                tenNhanVien: decoded.givenName,
-              });
-              success(
-                `Sửa thông tin công tác cho nhân viên ${dataDetailDC.tenNhanVien} thành công`
-              );
-              history.goBack();
-            } else {
-              error("Tệp đính kèm không được quá 20MB.");
+    if (moment(dateOfStartJob) > startDate) {
+      error("Ngày hiệu lực không thể xảy ra trước ngày Chính thức.");
+    } else {
+      const nameEm = dataEmployee.filter((item) => item.id === data.maNhanVien);
+      try {
+        if (id !== undefined) {
+          if (
+            dataEmployee
+              .filter((item) => item.trangThaiLaoDong === "Đang làm việc")
+              .map((item) => item.id)
+              .includes(data.maNhanVien)
+          ) {
+            try {
+              if (file.size < 20000000) {
+                const formData = new FormData();
+                formData.append("bangChung", file.file);
+                formData.append("ngayHieuLuc", startDate.format("MM/DD/YYYY"));
+                formData.append("idPhongBan", data.idPhongBan);
+                formData.append("to", data.to);
+                formData.append("chiTiet", data.chiTiet);
+                formData.append("trangThai", data.trangThai);
+                formData.append("maNhanVien", data.maNhanVien);
+                formData.append("tenFile", file.name);
+                await PutApi.PutDC(formData, id);
+                await ProductApi.PostLS({
+                  tenTaiKhoan: decoded.userName,
+                  thaoTac: `Sửa thông tin công tác của nhân viên ${dataDetailDC.tenNhanVien}`,
+                  maNhanVien: decoded.id,
+                  tenNhanVien: decoded.givenName,
+                });
+                success(
+                  `Sửa thông tin công tác cho nhân viên ${dataDetailDC.tenNhanVien} thành công`
+                );
+                history.goBack();
+              } else {
+                error("Tệp đính kèm không được quá 20MB.");
+              }
+            } catch (errors) {
+              errors("Không thể sửa thông tin công tác");
             }
-          } catch (errors) {
-            errors("Không thể sửa thông tin công tác");
+          } else {
+            error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
           }
         } else {
-          error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
-        }
-      } else {
-        if (
-          dataEmployee
-            .filter((item) => item.trangThaiLaoDong === "Đang làm việc")
-            .map((item) => item.id)
-            .includes(data.maNhanVien)
-        ) {
-          try {
-            if (file.size < 20000000) {
-              const formData = new FormData();
-              formData.append("bangChung", file.file);
-              formData.append("ngayHieuLuc", startDate.format("MM/DD/YYYY"));
-              formData.append("idPhongBan", data.idPhongBan);
-              formData.append("to", data.to);
-              formData.append("chiTiet", data.chiTiet);
-              formData.append("trangThai", data.trangThai);
-              formData.append("maNhanVien", data.maNhanVien);
-              formData.append("tenFile", file.name);
-              await ProductApi.PostDC(formData);
-              history.goBack();
-              success(
-                `Thêm thông tin công tác cho nhân viên ${nameEm[0].hoTen} thành công`
-              );
-              await ProductApi.PostLS({
-                tenTaiKhoan: decoded.userName,
-                thaoTac: `Thêm công tác mới cho nhân viên ${nameEm[0].hoTen}`,
-                maNhanVien: decoded.id,
-                tenNhanVien: decoded.givenName,
-              });
-            } else {
-              error("Tệp đính kèm không được quá 20MB.");
+          if (
+            dataEmployee
+              .filter((item) => item.trangThaiLaoDong === "Đang làm việc")
+              .map((item) => item.id)
+              .includes(data.maNhanVien)
+          ) {
+            try {
+              if (file.size < 20000000) {
+                const formData = new FormData();
+                formData.append("bangChung", file.file);
+                formData.append("ngayHieuLuc", startDate.format("MM/DD/YYYY"));
+                formData.append("idPhongBan", data.idPhongBan);
+                formData.append("to", data.to);
+                formData.append("chiTiet", data.chiTiet);
+                formData.append("trangThai", data.trangThai);
+                formData.append("maNhanVien", data.maNhanVien);
+                formData.append("tenFile", file.name);
+                await ProductApi.PostDC(formData);
+                history.goBack();
+                success(
+                  `Thêm thông tin công tác cho nhân viên ${nameEm[0].hoTen} thành công`
+                );
+                await ProductApi.PostLS({
+                  tenTaiKhoan: decoded.userName,
+                  thaoTac: `Thêm công tác mới cho nhân viên ${nameEm[0].hoTen}`,
+                  maNhanVien: decoded.id,
+                  tenNhanVien: decoded.givenName,
+                });
+              } else {
+                error("Tệp đính kèm không được quá 20MB.");
+              }
+            } catch (errors) {
+              errors("Không thể thêm thông tin công tác");
             }
-          } catch (errors) {
-            errors("Không thể thêm thông tin công tác");
+          } else {
+            error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
           }
-        } else {
-          error("Nhân viên đã nghỉ việc hoặc mã nhân viên không tồn tại.");
         }
+      } catch (errors) {
+        error(`Có lỗi xảy ra.`);
       }
-    } catch (errors) {
-      error(`Có lỗi xảy ra.`);
     }
   };
 
@@ -353,7 +372,11 @@ function AddTransferForm(props) {
                   </label>
                   <input
                     type="text"
-                    {...register("maNhanVien")}
+                    {...register("maNhanVien", {
+                      onChange: (e) => {
+                        setImpID(e.target.value);
+                      },
+                    })}
                     id="maNhanVien"
                     className={
                       !errors.maNhanVien
