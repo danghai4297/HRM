@@ -22,21 +22,13 @@ namespace HRMSolution.Application.Catalog.NguoiThans
         public string checkNull(string stringCheck)
         {
             char[] charsToTrim = { '*', ' ', '\'' };
-            if (stringCheck == null)
+            if (stringCheck != null && stringCheck != "null" && stringCheck != "")
             {
-                return null;
-            }
-            else if (stringCheck == "null")
-            {
-                return null;
-            }
-            else if (stringCheck == "")
-            {
-                return null;
+                return stringCheck.Trim(charsToTrim);
             }
             else
             {
-                return stringCheck.Trim(charsToTrim);
+                return null;
             }
         }
         public async Task<int> Create(NguoiThanCreateRequest request)

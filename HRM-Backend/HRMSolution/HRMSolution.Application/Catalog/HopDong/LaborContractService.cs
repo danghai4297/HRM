@@ -29,21 +29,13 @@ namespace HRMSolution.Application.Catalog.HopDongs
         public string checkNull(string stringCheck)
         {
             char[] charsToTrim = { '*', ' ', '\'' };
-            if (stringCheck == null)
+            if (stringCheck != null && stringCheck != "null" && stringCheck != "")
             {
-                return null;
-            }
-            else if (stringCheck == "null")
-            {
-                return null;
-            }
-            else if (stringCheck == "")
-            {
-                return null;
+                return stringCheck.Trim(charsToTrim);
             }
             else
             {
-                return stringCheck.Trim(charsToTrim);
+                return null;
             }
         }
 
