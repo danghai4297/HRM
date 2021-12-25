@@ -28,7 +28,15 @@ namespace HRMSolution.Application.Catalog.NhanViens
         public string checkNull(string stringCheck)
         {
             char[] charsToTrim = { '*', ' ', '\'' };
-            if (stringCheck == null || stringCheck == "null" || stringCheck == "")
+            if (stringCheck == null)
+            {
+                return null;
+            }
+            else if (stringCheck == "null")
+            {
+                return null;
+            }
+            else if (stringCheck == "")
             {
                 return null;
             }
@@ -60,8 +68,8 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     quocTich = checkNull(request.quocTich),
                     ngaySinh = DateTime.Parse(request.ngaySinh),
                     gioiTinh = request.gioiTinh,
-                    dienThoai = request.dienThoai,
-                    dienThoaiKhac = request.dienThoaiKhac,
+                    dienThoai = checkNull(request.dienThoai),
+                    dienThoaiKhac = checkNull(request.dienThoaiKhac),
                     diDong = request.diDong,
                     email = checkNull(request.email),
                     facebook = checkNull(request.facebook),
@@ -222,8 +230,8 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 nhanVien.quocTich = checkNull(request.quocTich);
                 nhanVien.ngaySinh = DateTime.Parse(request.ngaySinh);
                 nhanVien.gioiTinh = request.gioiTinh;
-                nhanVien.dienThoai = request.dienThoai;
-                nhanVien.dienThoaiKhac = request.dienThoaiKhac;
+                nhanVien.dienThoai = checkNull(request.dienThoai);
+                nhanVien.dienThoaiKhac = checkNull(request.dienThoaiKhac);
                 nhanVien.diDong = request.diDong;
                 nhanVien.email = checkNull(request.email);
                 nhanVien.facebook = checkNull(request.facebook);
