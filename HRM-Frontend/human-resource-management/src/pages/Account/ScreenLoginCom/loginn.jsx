@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./Login.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,7 +17,13 @@ function LogIn() {
   const { register, handleSubmit } = useForm({});
 
   useDocumentTitle("HRM");
+  const [visible, setvisible] = useState(false);
+  const [passwordType, setPasswordType] = useState("password");
 
+  const handleClickEyesOP = () => {
+    setvisible((visiblity) => !visiblity);
+    setPasswordType(!visible ? "text" : "password");
+  };
   const onHandleSubmit = async (data) => {
     try {
       await LoginApi.PostLoginAccount(data);
@@ -141,10 +147,13 @@ function LogIn() {
               </div>
               <div className="form-group">
                 <span>
-                  <FontAwesomeIcon icon={["fas", "lock"]} />
+                  <FontAwesomeIcon
+                    onClick={handleClickEyesOP}
+                    icon={visible ? ["fas", "lock-open"] : ["fas", "lock"]}
+                  />
                 </span>
                 <input
-                  type="password"
+                  type={passwordType}
                   {...register("password")}
                   id="password"
                   placeholder="Mật khẩu"

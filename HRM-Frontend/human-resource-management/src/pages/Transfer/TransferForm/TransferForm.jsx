@@ -209,8 +209,12 @@ function AddTransferForm(props) {
 
   //method handle submit
   const onHandleSubmit = async (data) => {
-    if (moment(dateOfStartJob) > startDate) {
-      error("Ngày hiệu lực không thể xảy ra trước ngày Chính thức.");
+    if (moment(dateOfStartJob).format("L") > moment(startDate).format("L")) {
+      error(
+        `Ngày hiệu lực không thể xảy ra trước ngày Chính thức(${moment(
+          dateOfStartJob
+        ).format("DD/MM/YYYY")}).`
+      );
     } else {
       const nameEm = dataEmployee.filter((item) => item.id === data.maNhanVien);
       try {

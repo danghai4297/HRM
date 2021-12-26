@@ -7,10 +7,7 @@ export const schema = yup.object({
     .matches(notAllowNull, "Mã hợp đồng không được là khoảng trống.")
     .nullable()
     .required("Mã hợp đồng không được bỏ trống."),
-  idNhomLuong: yup
-    .number()
-    .nullable()
-    .required("Nhóm lương không được bỏ trống."),
+  idNhomLuong: yup.number().typeError("Nhóm lương không được bỏ trống."),
   heSoLuong: yup
     .number()
     .moreThan(0, "Hệ số lương không thể là số âm.")

@@ -307,10 +307,16 @@ function AddSalaryForm(props) {
   const onHandleSubmit = async (data) => {
     console.log(startDate < moment(startDateOfContract));
     if (startDate < moment(startDateOfContract)) {
-      error("ngày bắt đầu lương không được bắt đầu trước ngày ký hợp đồng");
+      error(
+        `ngày bắt đầu lương không được bắt đầu trước ngày ký hợp đồng(${moment(
+          startDateOfContract
+        ).format("L")})`
+      );
     } else if (endDate > moment(endDateOfContract)) {
       error(
-        "Ngày kết thúc lương không được kết thúc sau ngày kết thúc hợp đồng"
+        `Ngày kết thúc lương không được kết thúc sau ngày kết thúc hợp đồng(${moment(
+          endDateOfContract
+        ).format("L")})`
       );
     } else if (startDate > endDate) {
       error("Ngày bắt đầu không thể xảy ra sau ngày kết thúc lương");

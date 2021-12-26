@@ -52,16 +52,20 @@ function RegisterAccount(props) {
   });
 
   const onHandleSubmit = async (data) => {
-    if (newPassword === rePassword) {
-      try {
-        await LoginApi.PostAcc(data);
-        success("Thêm tài khoản thành công");
-        history.goBack();
-      } catch (errors) {
-        error("Không thể thêm tài khoản.");
+    if (dataIdEmployee.map((item) => item.id).includes(data.maNhanVien)) {
+      if (newPassword === rePassword) {
+        try {
+          await LoginApi.PostAcc(data);
+          success("Thêm tài khoản thành công");
+          history.goBack();
+        } catch (errors) {
+          error("Không thể thêm tài khoản.");
+        }
+      } else if (newPassword !== rePassword) {
+        warn("Nhập lại mật khẩu không đúng.");
       }
-    } else if (newPassword !== rePassword) {
-      warn("Nhập lại mật khẩu không đúng.");
+    } else {
+      error("Mã nhân viên không có trong phòng ban quản lý nhân sự.");
     }
   };
   return (

@@ -261,7 +261,11 @@ function AddContractForm(props) {
       moment(dateOfStartJob).format("L") >
       moment(data.hopDongTuNgay).format("L")
     ) {
-      error("Ngày bắt đầu của hợp đồng không thể xảy ra sau ngày chính thức.");
+      error(
+        `Ngày bắt đầu của hợp đồng không thể xảy ra trước ngày chính thức(${moment(
+          dateOfStartJob
+        ).format("DD/MM/YYYY")}).`
+      );
     } else {
       const nameEm = dataIdEmployee.filter(
         (item) => item.id === data.maNhanVien

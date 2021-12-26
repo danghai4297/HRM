@@ -626,370 +626,482 @@ function AddProfileForm(props) {
 
   //get data from form
   const onHandleSubmit = async (data) => {
-    console.log(data);
-    console.log(moment(null).format("MM/DD/YYYY"));
-    console.log(
-      data.ngayVaoBan == "Invalid date" || data.ngayVaoBan == undefined
-        ? null
-        : moment(data.ngaySinh).format("MM/DD/YYYY")
-    );
-    try {
-      if (id !== undefined) {
-        if (file.size < 20000000) {
-          const formData1 = new FormData();
-          formData1.append("hoTen", data.hoTen);
-          formData1.append("quocTich", data.quocTich);
-          formData1.append(
-            "ngaySinh",
-            data.ngaySinh == "Invalid date" || data.ngaySinh == undefined
-              ? null
-              : moment(data.ngaySinh).format("MM/DD/YYYY")
-          );
-          formData1.append("gioiTinh", data.gioiTinh);
-          formData1.append("dienThoai", data.dienThoai);
-          formData1.append("dienThoaiKhac", data.dienThoaiKhac);
-          formData1.append("diDong", data.diDong);
-          formData1.append("email", data.email);
-          formData1.append("facebook", data.facebook);
-          formData1.append("skype", data.skype);
-          formData1.append("maSoThue", data.maSoThue);
-          formData1.append("cccd", data.cccd);
-          formData1.append("noiCapCCCD", data.noiCapCCCD);
-          formData1.append(
-            "ngayCapCCCD",
-            data.ngayCapCCCD == "Invalid date" || data.ngayCapCCCD == undefined
-              ? null
-              : moment(data.ngayCapCCCD).format("MM/DD/YYYY")
-          );
-          formData1.append(
-            "ngayHetHanCCCD",
-            data.ngayHetHanCCCD == "Invalid date" ||
-              data.ngayHetHanCCCD == undefined
-              ? null
-              : moment(data.ngayHetHanCCCD).format("MM/DD/YYYY")
-          );
-          formData1.append("hoChieu", data.hoChieu);
-          formData1.append("noiCapHoChieu", data.noiCapHoChieu);
-          formData1.append(
-            "ngayCapHoChieu",
-            data.ngayCapHoChieu == "Invalid date" ||
-              data.ngayCapHoChieu == undefined
-              ? null
-              : moment(data.ngayCapHoChieu).format("MM/DD/YYYY")
-          );
-          formData1.append(
-            "ngayHetHanHoChieu",
-            data.ngayHetHanHoChieu == "Invalid date" ||
-              data.ngayHetHanHoChieu == undefined
-              ? null
-              : moment(data.ngayHetHanHoChieu).format("MM/DD/YYYY")
-          );
-          formData1.append("noiSinh", data.noiSinh);
-          formData1.append("queQuan", data.queQuan);
-          formData1.append("thuongTru", data.thuongTru);
-          formData1.append("tamTru", data.tamTru);
-          formData1.append("ngheNghiep", data.ngheNghiep);
-          formData1.append("chucVuHienTai", data.chucVuHienTai);
-          formData1.append(
-            "ngayTuyenDung",
-            data.ngayTuyenDung == "Invalid date" ||
-              data.ngayTuyenDung == undefined
-              ? null
-              : moment(data.ngayTuyenDung).format("MM/DD/YYYY")
-          );
-          formData1.append(
-            "ngayThuViec",
-            data.ngayThuViec == "Invalid date" || data.ngayThuViec == undefined
-              ? null
-              : moment(data.ngayThuViec).format("MM/DD/YYYY")
-          );
-          formData1.append("congViecChinh", data.congViecChinh);
-          formData1.append(
-            "ngayChinhThuc",
-            data.ngayChinhThuc == "Invalid date" ||
-              data.ngayChinhThuc == undefined
-              ? null
-              : moment(data.ngayChinhThuc).format("MM/DD/YYYY")
-          );
-          formData1.append("coQuanTuyenDung", data.coQuanTuyenDung);
-          formData1.append("ngachCongChucNoiDung", data.ngachCongChucNoiDung);
-          formData1.append("vaoDang", data.vaoDang);
-          formData1.append(
-            "ngayVaoDang",
-            data.ngayVaoDang == "Invalid date" || data.ngayVaoDang == undefined
-              ? null
-              : moment(data.ngayVaoDang).format("MM/DD/YYYY")
-          );
-          formData1.append(
-            "ngayVaoDangChinhThuc",
-            data.ngayVaoDangChinhThuc == "Invalid date" ||
-              data.ngayVaoDangChinhThuc == undefined
-              ? null
-              : moment(data.ngayVaoDangChinhThuc).format("MM/DD/YYYY")
-          );
-          formData1.append("quanNhan", data.quanNhan);
-          formData1.append(
-            "ngayNhapNgu",
-            data.ngayNhapNgu == "Invalid date" || data.ngayNhapNgu == undefined
-              ? null
-              : moment(data.ngayNhapNgu).format("MM/DD/YYYY")
-          );
-          formData1.append(
-            "ngayXuatNgu",
-            data.ngayXuatNgu == "Invalid date" || data.ngayXuatNgu == undefined
-              ? null
-              : moment(data.ngayXuatNgu).format("MM/DD/YYYY")
-          );
-          formData1.append("quanHamCaoNhat", data.quanHamCaoNhat);
-          formData1.append("danhHieuCaoNhat", data.danhHieuCaoNhat);
-          formData1.append(
-            "ngayVaoDoan",
-            data.ngayVaoDoan == "Invalid date" || data.ngayVaoDoan == undefined
-              ? null
-              : moment(data.ngayVaoDoan).format("MM/DD/YYYY")
-          );
-          formData1.append("noiThamGia", data.noiThamGia);
-          formData1.append("laThuongBinh", data.laThuongBinh);
-          formData1.append("laConChinhSach", data.laConChinhSach);
-          formData1.append("thuongBinh", data.thuongBinh);
-          formData1.append("conChinhSach", data.conChinhSach);
-          formData1.append("bhxh", data.bhxh);
-          formData1.append("bhyt", data.bhyt);
-          formData1.append("atm", data.atm);
-          formData1.append("nganHang", data.nganHang);
-          formData1.append("trangThaiLaoDong", data.trangThaiLaoDong);
-          formData1.append(
-            "ngayNghiViec",
-            data.ngayNghiViec == "Invalid date" ||
-              data.ngayNghiViec == undefined
-              ? null
-              : moment(data.ngayNghiViec).format("MM/DD/YYYY")
-          );
-          formData1.append("lyDoNghiViec", data.lyDoNghiViec);
-          formData1.append("tinhChatLaoDong", data.tinhChatLaoDong);
-          formData1.append("idDanhMucHonNhan", data.idDanhMucHonNhan);
-          formData1.append("idDanToc", data.idDanToc);
-          formData1.append("idTonGiao", data.idTonGiao);
-          formData1.append("idNgachCongChuc", data.idNgachCongChuc);
-          formData1.append("yt_nhomMau", data.yt_nhomMau);
-          formData1.append("yt_chieuCao", data.yt_chieuCao);
-          formData1.append("yt_canNang", data.yt_canNang);
-          formData1.append("yt_tinhTrangSucKhoe", data.yt_tinhTrangSucKhoe);
-          formData1.append("yt_benhTat", data.yt_benhTat);
-          formData1.append("yt_luuY", data.yt_luuY);
-          formData1.append("yt_khuyetTat", data.yt_khuyetTat);
-          // formData1.append("yt_maNhanVien", data.yt_maNhanVien);
-          formData1.append("lhkc_hoTen", data.lhkc_hoTen);
-          formData1.append("lhkc_quanHe", data.lhkc_quanHe);
-          formData1.append("lhkc_dienThoai", data.lhkc_dienThoai);
-          formData1.append("lhkc_email", data.lhkc_email);
-          formData1.append("lhkc_diaChi", data.lhkc_diaChi);
-          // formData1.append("lhkc_maNhanVien", data.lhkc_maNhanVien);
-          formData1.append("lsbt_biBatDiTu", data.lsbt_biBatDiTu);
-          formData1.append("lsbt_thamGiaChinhTri", data.lsbt_thamGiaChinhTri);
-          formData1.append(
-            "lsbt_thanNhanNuocNgoai",
-            data.lsbt_thanNhanNuocNgoai
-          );
-          // formData1.append("lsbt_maNhanVien", data.lsbt_maNhanVien);
-          await PutApi.PutNV(formData1, id);
-          await ProductApi.PostLS({
-            tenTaiKhoan: decoded.userName,
-            thaoTac: `Sửa thông tin của nhân viên ${dataDetailEmployee.hoTen}`,
-            maNhanVien: decoded.id,
-            tenNhanVien: decoded.givenName,
-          });
-          if (file.file !== null) {
-            await DeleteApi.deleteANV(data.id);
-            const formDataImg = new FormData();
-            formDataImg.append("anh", file.file);
-            formDataImg.append("maNhanVien", data.id);
-            await PutApi.PutIMG(formDataImg, data.id);
+    if (
+      data.ngayCapCCCD !== null &&
+      data.ngayCapCCCD !== undefined &&
+      data.ngaySinh >= data.ngayCapCCCD
+    ) {
+      error("Ngày cấp CCCD không được xảy ra trước ngày sinh.");
+    } else if (
+      data.ngayCapCCCD !== null &&
+      data.ngayCapCCCD !== undefined &&
+      data.ngayHetHanCCCD !== null &&
+      data.ngayHetHanCCCD !== undefined &&
+      moment(data.ngayCapCCCD).format("L") >=
+        moment(data.ngayHetHanCCCD).format("L")
+    ) {
+      error("Ngày cấp CCCD không được xảy ra sau ngày hết hạn CCCD.");
+    } else if (
+      data.ngayCapHoChieu !== null &&
+      data.ngayCapHoChieu !== undefined &&
+      data.ngaySinh >= data.ngayCapHoChieu
+    ) {
+      error("Ngày chấp hộ chiếu không được xảy ra trước ngày sinh.");
+    } else if (
+      data.ngayCapHoChieu !== null &&
+      data.ngayCapHoChieu !== undefined &&
+      data.ngayHetHanHoChieu !== null &&
+      data.ngayHetHanHoChieu !== undefined &&
+      moment(data.ngayCapHoChieu).format("L") >=
+        moment(data.ngayHetHanHoChieu).format("L")
+    ) {
+      error("Ngày cấp hộ chiếu không được xảy ra sau ngày hết hạn hộ chiếu.");
+    } else if (
+      data.ngayTuyenDung !== null &&
+      data.ngayTuyenDung !== undefined &&
+      data.ngaySinh >= data.ngayTuyenDung
+    ) {
+      error("Ngày tuyển dụng không được xảy ra trước ngày sinh.");
+    } else if (
+      data.ngayTuyenDung !== null &&
+      data.ngayTuyenDung !== undefined &&
+      data.ngayThuViec !== null &&
+      data.ngayThuViec !== undefined &&
+      data.ngayTuyenDung > data.ngayThuViec
+    ) {
+      error("Ngày thử việc không được xảy ra trước ngày tuyển dụng.");
+    } else if (
+      data.ngayTuyenDung !== null &&
+      data.ngayTuyenDung !== undefined &&
+      data.ngayChinhThuc !== null &&
+      data.ngayChinhThuc !== undefined &&
+      data.ngayTuyenDung > data.ngayChinhThuc
+    ) {
+      error("Ngày chính thưc không được xảy ra trước ngày ngày tuyển dụng.");
+    } else if (
+      data.ngayThuViec !== null &&
+      data.ngayThuViec !== undefined &&
+      data.ngayVaoBan !== null &&
+      data.ngayVaoBan !== undefined &&
+      data.ngayThuViec > data.ngayVaoBan
+    ) {
+      error("Ngày vào ban không được xảy ra trước ngày thử việc.");
+    } else if (
+      data.ngayVaoDoan !== null &&
+      data.ngayVaoDoan !== undefined &&
+      data.ngaySinh >= data.ngayVaoDoan
+    ) {
+      error("Ngày vào đoàn không được xảy ra trước ngày sinh.");
+    } else if (
+      data.ngayVaoDang !== null &&
+      data.ngayVaoDang !== undefined &&
+      data.ngaySinh >= data.ngayVaoDang
+    ) {
+      error("Ngày vào đảng không được xảy ra trước ngày sinh.");
+    } else if (
+      data.ngayVaoDang !== null &&
+      data.ngayVaoDang !== undefined &&
+      data.ngayVaoDoan !== null &&
+      data.ngayVaoDoan !== undefined &&
+      moment(data.ngayVaoDoan).format("L") >=
+        moment(data.ngayVaoDang).format("L")
+    ) {
+      error("Ngày vào Đảng không được xảy ra trước ngày vào Đoàn.");
+    } else if (
+      data.ngayVaoDang !== null &&
+      data.ngayVaoDang !== undefined &&
+      data.ngayVaoDangChinhThuc !== null &&
+      data.ngayVaoDangChinhThuc !== undefined &&
+      moment(data.ngayVaoDang).format("L") >=
+        moment(data.ngayVaoDangChinhThuc).format("L")
+    ) {
+      error("Ngày vào Đảng chính thức không được xảy ra trước ngày vào Đảng.");
+    } else if (
+      data.ngayNhapNgu !== null &&
+      data.ngayNhapNgu !== undefined &&
+      data.ngaySinh >= data.ngayNhapNgu
+    ) {
+      error("Ngày nhập ngũ không được xảy ra trước ngày sinh.");
+    } else if (
+      data.ngayNhapNgu !== null &&
+      data.ngayNhapNgu !== undefined &&
+      data.ngayXuatNgu !== null &&
+      data.ngayXuatNgu !== undefined &&
+      moment(data.ngayNhapNgu).format("L") >=
+        moment(data.ngayXuatNgu).format("L")
+    ) {
+      error("Ngày xuất ngũ không được xảy ra trước ngày nhập ngũ.");
+    } else {
+      try {
+        if (id !== undefined) {
+          if (file.size < 20000000) {
+            const formData1 = new FormData();
+            formData1.append("hoTen", data.hoTen);
+            formData1.append("quocTich", data.quocTich);
+            formData1.append(
+              "ngaySinh",
+              data.ngaySinh == "Invalid date" || data.ngaySinh == undefined
+                ? null
+                : moment(data.ngaySinh).format("MM/DD/YYYY")
+            );
+            formData1.append("gioiTinh", data.gioiTinh);
+            formData1.append("dienThoai", data.dienThoai);
+            formData1.append("dienThoaiKhac", data.dienThoaiKhac);
+            formData1.append("diDong", data.diDong);
+            formData1.append("email", data.email);
+            formData1.append("facebook", data.facebook);
+            formData1.append("skype", data.skype);
+            formData1.append("maSoThue", data.maSoThue);
+            formData1.append("cccd", data.cccd);
+            formData1.append("noiCapCCCD", data.noiCapCCCD);
+            formData1.append(
+              "ngayCapCCCD",
+              data.ngayCapCCCD == "Invalid date" ||
+                data.ngayCapCCCD == undefined
+                ? null
+                : moment(data.ngayCapCCCD).format("MM/DD/YYYY")
+            );
+            formData1.append(
+              "ngayHetHanCCCD",
+              data.ngayHetHanCCCD == "Invalid date" ||
+                data.ngayHetHanCCCD == undefined
+                ? null
+                : moment(data.ngayHetHanCCCD).format("MM/DD/YYYY")
+            );
+            formData1.append("hoChieu", data.hoChieu);
+            formData1.append("noiCapHoChieu", data.noiCapHoChieu);
+            formData1.append(
+              "ngayCapHoChieu",
+              data.ngayCapHoChieu == "Invalid date" ||
+                data.ngayCapHoChieu == undefined
+                ? null
+                : moment(data.ngayCapHoChieu).format("MM/DD/YYYY")
+            );
+            formData1.append(
+              "ngayHetHanHoChieu",
+              data.ngayHetHanHoChieu == "Invalid date" ||
+                data.ngayHetHanHoChieu == undefined
+                ? null
+                : moment(data.ngayHetHanHoChieu).format("MM/DD/YYYY")
+            );
+            formData1.append("noiSinh", data.noiSinh);
+            formData1.append("queQuan", data.queQuan);
+            formData1.append("thuongTru", data.thuongTru);
+            formData1.append("tamTru", data.tamTru);
+            formData1.append("ngheNghiep", data.ngheNghiep);
+            formData1.append("chucVuHienTai", data.chucVuHienTai);
+            formData1.append(
+              "ngayTuyenDung",
+              data.ngayTuyenDung == "Invalid date" ||
+                data.ngayTuyenDung == undefined
+                ? null
+                : moment(data.ngayTuyenDung).format("MM/DD/YYYY")
+            );
+            formData1.append(
+              "ngayThuViec",
+              data.ngayThuViec == "Invalid date" ||
+                data.ngayThuViec == undefined
+                ? null
+                : moment(data.ngayThuViec).format("MM/DD/YYYY")
+            );
+            formData1.append("congViecChinh", data.congViecChinh);
+            formData1.append(
+              "ngayChinhThuc",
+              data.ngayChinhThuc == "Invalid date" ||
+                data.ngayChinhThuc == undefined
+                ? null
+                : moment(data.ngayChinhThuc).format("MM/DD/YYYY")
+            );
+            formData1.append("coQuanTuyenDung", data.coQuanTuyenDung);
+            formData1.append("ngachCongChucNoiDung", data.ngachCongChucNoiDung);
+            formData1.append("vaoDang", data.vaoDang);
+            formData1.append(
+              "ngayVaoDang",
+              data.ngayVaoDang == "Invalid date" ||
+                data.ngayVaoDang == undefined
+                ? null
+                : moment(data.ngayVaoDang).format("MM/DD/YYYY")
+            );
+            formData1.append(
+              "ngayVaoDangChinhThuc",
+              data.ngayVaoDangChinhThuc == "Invalid date" ||
+                data.ngayVaoDangChinhThuc == undefined
+                ? null
+                : moment(data.ngayVaoDangChinhThuc).format("MM/DD/YYYY")
+            );
+            formData1.append("quanNhan", data.quanNhan);
+            formData1.append(
+              "ngayNhapNgu",
+              data.ngayNhapNgu == "Invalid date" ||
+                data.ngayNhapNgu == undefined
+                ? null
+                : moment(data.ngayNhapNgu).format("MM/DD/YYYY")
+            );
+            formData1.append(
+              "ngayXuatNgu",
+              data.ngayXuatNgu == "Invalid date" ||
+                data.ngayXuatNgu == undefined
+                ? null
+                : moment(data.ngayXuatNgu).format("MM/DD/YYYY")
+            );
+            formData1.append("quanHamCaoNhat", data.quanHamCaoNhat);
+            formData1.append("danhHieuCaoNhat", data.danhHieuCaoNhat);
+            formData1.append(
+              "ngayVaoDoan",
+              data.ngayVaoDoan == "Invalid date" ||
+                data.ngayVaoDoan == undefined
+                ? null
+                : moment(data.ngayVaoDoan).format("MM/DD/YYYY")
+            );
+            formData1.append("noiThamGia", data.noiThamGia);
+            formData1.append("laThuongBinh", data.laThuongBinh);
+            formData1.append("laConChinhSach", data.laConChinhSach);
+            formData1.append("thuongBinh", data.thuongBinh);
+            formData1.append("conChinhSach", data.conChinhSach);
+            formData1.append("bhxh", data.bhxh);
+            formData1.append("bhyt", data.bhyt);
+            formData1.append("atm", data.atm);
+            formData1.append("nganHang", data.nganHang);
+            formData1.append("trangThaiLaoDong", data.trangThaiLaoDong);
+            formData1.append(
+              "ngayNghiViec",
+              data.ngayNghiViec == "Invalid date" ||
+                data.ngayNghiViec == undefined
+                ? null
+                : moment(data.ngayNghiViec).format("MM/DD/YYYY")
+            );
+            formData1.append("lyDoNghiViec", data.lyDoNghiViec);
+            formData1.append("tinhChatLaoDong", data.tinhChatLaoDong);
+            formData1.append("idDanhMucHonNhan", data.idDanhMucHonNhan);
+            formData1.append("idDanToc", data.idDanToc);
+            formData1.append("idTonGiao", data.idTonGiao);
+            formData1.append("idNgachCongChuc", data.idNgachCongChuc);
+            formData1.append("yt_nhomMau", data.yt_nhomMau);
+            formData1.append("yt_chieuCao", data.yt_chieuCao);
+            formData1.append("yt_canNang", data.yt_canNang);
+            formData1.append("yt_tinhTrangSucKhoe", data.yt_tinhTrangSucKhoe);
+            formData1.append("yt_benhTat", data.yt_benhTat);
+            formData1.append("yt_luuY", data.yt_luuY);
+            formData1.append("yt_khuyetTat", data.yt_khuyetTat);
+            // formData1.append("yt_maNhanVien", data.yt_maNhanVien);
+            formData1.append("lhkc_hoTen", data.lhkc_hoTen);
+            formData1.append("lhkc_quanHe", data.lhkc_quanHe);
+            formData1.append("lhkc_dienThoai", data.lhkc_dienThoai);
+            formData1.append("lhkc_email", data.lhkc_email);
+            formData1.append("lhkc_diaChi", data.lhkc_diaChi);
+            // formData1.append("lhkc_maNhanVien", data.lhkc_maNhanVien);
+            formData1.append("lsbt_biBatDiTu", data.lsbt_biBatDiTu);
+            formData1.append("lsbt_thamGiaChinhTri", data.lsbt_thamGiaChinhTri);
+            formData1.append(
+              "lsbt_thanNhanNuocNgoai",
+              data.lsbt_thanNhanNuocNgoai
+            );
+            // formData1.append("lsbt_maNhanVien", data.lsbt_maNhanVien);
+            await PutApi.PutNV(formData1, id);
+            await ProductApi.PostLS({
+              tenTaiKhoan: decoded.userName,
+              thaoTac: `Sửa thông tin của nhân viên ${dataDetailEmployee.hoTen}`,
+              maNhanVien: decoded.id,
+              tenNhanVien: decoded.givenName,
+            });
+            if (file.file !== null) {
+              await DeleteApi.deleteANV(data.id);
+              const formDataImg = new FormData();
+              formDataImg.append("anh", file.file);
+              formDataImg.append("maNhanVien", data.id);
+              await PutApi.PutIMG(formDataImg, data.id);
+            }
+            history.goBack();
+          } else {
+            error("Không thể upload file quá 20M");
           }
-          history.goBack();
         } else {
-          error("Không thể upload file quá 20M");
-        }
-      } else {
-        if (file.size < 20000000) {
-          const formData1 = new FormData();
-          formData1.append("id", data.id);
-          formData1.append("hoTen", data.hoTen);
-          formData1.append("quocTich", data.quocTich);
-          formData1.append(
-            "ngaySinh",
-            data.ngaySinh == "Invalid date" || data.ngaySinh == undefined
-              ? null
-              : moment(data.ngaySinh).format("MM/DD/YYYY")
-          );
-          formData1.append("gioiTinh", data.gioiTinh);
-          formData1.append("dienThoai", data.dienThoai);
-          formData1.append("dienThoaiKhac", data.dienThoaiKhac);
-          formData1.append("diDong", data.diDong);
-          formData1.append("email", data.email);
-          formData1.append("facebook", data.facebook);
-          formData1.append("skype", data.skype);
-          formData1.append("maSoThue", data.maSoThue);
-          formData1.append("cccd", data.cccd);
-          formData1.append("noiCapCCCD", data.noiCapCCCD);
-          formData1.append(
-            "ngayCapCCCD",
-            data.ngayCapCCCD == "Invalid date" || data.ngayCapCCCD == undefined
-              ? null
-              : moment(data.ngayCapCCCD).format("MM/DD/YYYY")
-          );
-          formData1.append(
-            "ngayHetHanCCCD",
-            data.ngayHetHanCCCD == "Invalid date" ||
-              data.ngayHetHanCCCD == undefined
-              ? null
-              : moment(data.ngayHetHanCCCD).format("MM/DD/YYYY")
-          );
-          formData1.append("hoChieu", data.hoChieu);
-          formData1.append("noiCapHoChieu", data.noiCapHoChieu);
-          formData1.append(
-            "ngayCapHoChieu",
-            data.ngayCapHoChieu == "Invalid date" ||
-              data.ngayCapHoChieu == undefined
-              ? null
-              : moment(data.ngayCapHoChieu).format("MM/DD/YYYY")
-          );
-          formData1.append(
-            "ngayHetHanHoChieu",
-            data.ngayHetHanHoChieu == "Invalid date" ||
-              data.ngayHetHanHoChieu == undefined
-              ? null
-              : moment(data.ngayHetHanHoChieu).format("MM/DD/YYYY")
-          );
-          formData1.append("noiSinh", data.noiSinh);
-          formData1.append("queQuan", data.queQuan);
-          formData1.append("thuongTru", data.thuongTru);
-          formData1.append("tamTru", data.tamTru);
-          formData1.append("ngheNghiep", data.ngheNghiep);
-          formData1.append("chucVuHienTai", data.chucVuHienTai);
-          formData1.append(
-            "ngayTuyenDung",
-            data.ngayTuyenDung == "Invalid date" ||
-              data.ngayTuyenDung == undefined
-              ? null
-              : moment(data.ngayTuyenDung).format("MM/DD/YYYY")
-          );
-          formData1.append(
-            "ngayThuViec",
-            data.ngayThuViec == "Invalid date" || data.ngayThuViec == undefined
-              ? null
-              : moment(data.ngayThuViec).format("MM/DD/YYYY")
-          );
-          formData1.append("congViecChinh", data.congViecChinh);
-          formData1.append(
-            "ngayChinhThuc",
-            data.ngayChinhThuc == "Invalid date" ||
-              data.ngayChinhThuc == undefined
-              ? null
-              : moment(data.ngayChinhThuc).format("MM/DD/YYYY")
-          );
-          formData1.append("coQuanTuyenDung", data.coQuanTuyenDung);
-          formData1.append("ngachCongChucNoiDung", data.ngachCongChucNoiDung);
-          formData1.append("vaoDang", data.vaoDang);
-          formData1.append(
-            "ngayVaoDang",
-            data.ngayVaoDang == "Invalid date" || data.ngayVaoDang == undefined
-              ? null
-              : moment(data.ngayVaoDang).format("MM/DD/YYYY")
-          );
-          formData1.append(
-            "ngayVaoDangChinhThuc",
-            data.ngayVaoDangChinhThuc == "Invalid date" ||
-              data.ngayVaoDangChinhThuc == undefined
-              ? null
-              : moment(data.ngayVaoDangChinhThuc).format("MM/DD/YYYY")
-          );
-          formData1.append("quanNhan", data.quanNhan);
-          formData1.append(
-            "ngayNhapNgu",
-            data.ngayNhapNgu == "Invalid date" || data.ngayNhapNgu == undefined
-              ? null
-              : moment(data.ngayNhapNgu).format("MM/DD/YYYY")
-          );
-          formData1.append(
-            "ngayXuatNgu",
-            data.ngayXuatNgu == "Invalid date" || data.ngayXuatNgu == undefined
-              ? null
-              : moment(data.ngayXuatNgu).format("MM/DD/YYYY")
-          );
-          formData1.append("quanHamCaoNhat", data.quanHamCaoNhat);
-          formData1.append("danhHieuCaoNhat", data.danhHieuCaoNhat);
-          formData1.append(
-            "ngayVaoDoan",
-            data.ngayVaoDoan == "Invalid date" || data.ngayVaoDoan == undefined
-              ? null
-              : moment(data.ngayVaoDoan).format("MM/DD/YYYY")
-          );
-          formData1.append("noiThamGia", data.noiThamGia);
-          formData1.append("laThuongBinh", data.laThuongBinh);
-          formData1.append("laConChinhSach", data.laConChinhSach);
-          formData1.append("thuongBinh", data.thuongBinh);
-          formData1.append("conChinhSach", data.conChinhSach);
-          formData1.append("bhxh", data.bhxh);
-          formData1.append("bhyt", data.bhyt);
-          formData1.append("atm", data.atm);
-          formData1.append("nganHang", data.nganHang);
-          formData1.append("trangThaiLaoDong", data.trangThaiLaoDong);
-          formData1.append(
-            "ngayNghiViec",
-            data.ngayNghiViec == "Invalid date" ||
-              data.ngayNghiViec == undefined
-              ? null
-              : moment(data.ngayNghiViec).format("MM/DD/YYYY")
-          );
-          formData1.append("lyDoNghiViec", data.lyDoNghiViec);
-          formData1.append("tinhChatLaoDong", data.tinhChatLaoDong);
-          formData1.append("idDanhMucHonNhan", data.idDanhMucHonNhan);
-          formData1.append("idDanToc", data.idDanToc);
-          formData1.append("idTonGiao", data.idTonGiao);
-          formData1.append("idNgachCongChuc", data.idNgachCongChuc);
-          formData1.append("yt_nhomMau", data.yt_nhomMau);
-          formData1.append("yt_chieuCao", data.yt_chieuCao);
-          formData1.append("yt_canNang", data.yt_canNang);
-          formData1.append("yt_tinhTrangSucKhoe", data.yt_tinhTrangSucKhoe);
-          formData1.append("yt_benhTat", data.yt_benhTat);
-          formData1.append("yt_luuY", data.yt_luuY);
-          formData1.append("yt_khuyetTat", data.yt_khuyetTat);
-          formData1.append("yt_maNhanVien", data.yt_maNhanVien);
-          formData1.append("lhkc_hoTen", data.lhkc_hoTen);
-          formData1.append("lhkc_quanHe", data.lhkc_quanHe);
-          formData1.append("lhkc_dienThoai", data.lhkc_dienThoai);
-          formData1.append("lhkc_email", data.lhkc_email);
-          formData1.append("lhkc_diaChi", data.lhkc_diaChi);
-          formData1.append("lhkc_maNhanVien", data.lhkc_maNhanVien);
-          formData1.append("lsbt_biBatDiTu", data.lsbt_biBatDiTu);
-          formData1.append("lsbt_thamGiaChinhTri", data.lsbt_thamGiaChinhTri);
-          formData1.append(
-            "lsbt_thanNhanNuocNgoai",
-            data.lsbt_thanNhanNuocNgoai
-          );
-          formData1.append("lsbt_maNhanVien", data.lsbt_maNhanVien);
-          await ProductApi.postNv(formData1);
-          await ProductApi.PostLS({
-            tenTaiKhoan: decoded.userName,
-            thaoTac: `Thêm nhân viên mới${data.hoTen}`,
-            maNhanVien: decoded.id,
-            tenNhanVien: decoded.givenName,
-          });
-          if (file.file !== null) {
-            const formDataImg = new FormData();
-            formDataImg.append("anh", file.file);
-            formDataImg.append("maNhanVien", data.id);
-            await PutApi.PutIMG(formDataImg, data.id);
+          if (file.size < 20000000) {
+            const formData1 = new FormData();
+            formData1.append("id", data.id);
+            formData1.append("hoTen", data.hoTen);
+            formData1.append("quocTich", data.quocTich);
+            formData1.append(
+              "ngaySinh",
+              data.ngaySinh == "Invalid date" || data.ngaySinh == undefined
+                ? null
+                : moment(data.ngaySinh).format("MM/DD/YYYY")
+            );
+            formData1.append("gioiTinh", data.gioiTinh);
+            formData1.append("dienThoai", data.dienThoai);
+            formData1.append("dienThoaiKhac", data.dienThoaiKhac);
+            formData1.append("diDong", data.diDong);
+            formData1.append("email", data.email);
+            formData1.append("facebook", data.facebook);
+            formData1.append("skype", data.skype);
+            formData1.append("maSoThue", data.maSoThue);
+            formData1.append("cccd", data.cccd);
+            formData1.append("noiCapCCCD", data.noiCapCCCD);
+            formData1.append(
+              "ngayCapCCCD",
+              data.ngayCapCCCD == "Invalid date" ||
+                data.ngayCapCCCD == undefined
+                ? null
+                : moment(data.ngayCapCCCD).format("MM/DD/YYYY")
+            );
+            formData1.append(
+              "ngayHetHanCCCD",
+              data.ngayHetHanCCCD == "Invalid date" ||
+                data.ngayHetHanCCCD == undefined
+                ? null
+                : moment(data.ngayHetHanCCCD).format("MM/DD/YYYY")
+            );
+            formData1.append("hoChieu", data.hoChieu);
+            formData1.append("noiCapHoChieu", data.noiCapHoChieu);
+            formData1.append(
+              "ngayCapHoChieu",
+              data.ngayCapHoChieu == "Invalid date" ||
+                data.ngayCapHoChieu == undefined
+                ? null
+                : moment(data.ngayCapHoChieu).format("MM/DD/YYYY")
+            );
+            formData1.append(
+              "ngayHetHanHoChieu",
+              data.ngayHetHanHoChieu == "Invalid date" ||
+                data.ngayHetHanHoChieu == undefined
+                ? null
+                : moment(data.ngayHetHanHoChieu).format("MM/DD/YYYY")
+            );
+            formData1.append("noiSinh", data.noiSinh);
+            formData1.append("queQuan", data.queQuan);
+            formData1.append("thuongTru", data.thuongTru);
+            formData1.append("tamTru", data.tamTru);
+            formData1.append("ngheNghiep", data.ngheNghiep);
+            formData1.append("chucVuHienTai", data.chucVuHienTai);
+            formData1.append(
+              "ngayTuyenDung",
+              data.ngayTuyenDung == "Invalid date" ||
+                data.ngayTuyenDung == undefined
+                ? null
+                : moment(data.ngayTuyenDung).format("MM/DD/YYYY")
+            );
+            formData1.append(
+              "ngayThuViec",
+              data.ngayThuViec == "Invalid date" ||
+                data.ngayThuViec == undefined
+                ? null
+                : moment(data.ngayThuViec).format("MM/DD/YYYY")
+            );
+            formData1.append("congViecChinh", data.congViecChinh);
+            formData1.append(
+              "ngayChinhThuc",
+              data.ngayChinhThuc == "Invalid date" ||
+                data.ngayChinhThuc == undefined
+                ? null
+                : moment(data.ngayChinhThuc).format("MM/DD/YYYY")
+            );
+            formData1.append("coQuanTuyenDung", data.coQuanTuyenDung);
+            formData1.append("ngachCongChucNoiDung", data.ngachCongChucNoiDung);
+            formData1.append("vaoDang", data.vaoDang);
+            formData1.append(
+              "ngayVaoDang",
+              data.ngayVaoDang == "Invalid date" ||
+                data.ngayVaoDang == undefined
+                ? null
+                : moment(data.ngayVaoDang).format("MM/DD/YYYY")
+            );
+            formData1.append(
+              "ngayVaoDangChinhThuc",
+              data.ngayVaoDangChinhThuc == "Invalid date" ||
+                data.ngayVaoDangChinhThuc == undefined
+                ? null
+                : moment(data.ngayVaoDangChinhThuc).format("MM/DD/YYYY")
+            );
+            formData1.append("quanNhan", data.quanNhan);
+            formData1.append(
+              "ngayNhapNgu",
+              data.ngayNhapNgu == "Invalid date" ||
+                data.ngayNhapNgu == undefined
+                ? null
+                : moment(data.ngayNhapNgu).format("MM/DD/YYYY")
+            );
+            formData1.append(
+              "ngayXuatNgu",
+              data.ngayXuatNgu == "Invalid date" ||
+                data.ngayXuatNgu == undefined
+                ? null
+                : moment(data.ngayXuatNgu).format("MM/DD/YYYY")
+            );
+            formData1.append("quanHamCaoNhat", data.quanHamCaoNhat);
+            formData1.append("danhHieuCaoNhat", data.danhHieuCaoNhat);
+            formData1.append(
+              "ngayVaoDoan",
+              data.ngayVaoDoan == "Invalid date" ||
+                data.ngayVaoDoan == undefined
+                ? null
+                : moment(data.ngayVaoDoan).format("MM/DD/YYYY")
+            );
+            formData1.append("noiThamGia", data.noiThamGia);
+            formData1.append("laThuongBinh", data.laThuongBinh);
+            formData1.append("laConChinhSach", data.laConChinhSach);
+            formData1.append("thuongBinh", data.thuongBinh);
+            formData1.append("conChinhSach", data.conChinhSach);
+            formData1.append("bhxh", data.bhxh);
+            formData1.append("bhyt", data.bhyt);
+            formData1.append("atm", data.atm);
+            formData1.append("nganHang", data.nganHang);
+            formData1.append("trangThaiLaoDong", data.trangThaiLaoDong);
+            formData1.append(
+              "ngayNghiViec",
+              data.ngayNghiViec == "Invalid date" ||
+                data.ngayNghiViec == undefined
+                ? null
+                : moment(data.ngayNghiViec).format("MM/DD/YYYY")
+            );
+            formData1.append("lyDoNghiViec", data.lyDoNghiViec);
+            formData1.append("tinhChatLaoDong", data.tinhChatLaoDong);
+            formData1.append("idDanhMucHonNhan", data.idDanhMucHonNhan);
+            formData1.append("idDanToc", data.idDanToc);
+            formData1.append("idTonGiao", data.idTonGiao);
+            formData1.append("idNgachCongChuc", data.idNgachCongChuc);
+            formData1.append("yt_nhomMau", data.yt_nhomMau);
+            formData1.append("yt_chieuCao", data.yt_chieuCao);
+            formData1.append("yt_canNang", data.yt_canNang);
+            formData1.append("yt_tinhTrangSucKhoe", data.yt_tinhTrangSucKhoe);
+            formData1.append("yt_benhTat", data.yt_benhTat);
+            formData1.append("yt_luuY", data.yt_luuY);
+            formData1.append("yt_khuyetTat", data.yt_khuyetTat);
+            formData1.append("yt_maNhanVien", data.yt_maNhanVien);
+            formData1.append("lhkc_hoTen", data.lhkc_hoTen);
+            formData1.append("lhkc_quanHe", data.lhkc_quanHe);
+            formData1.append("lhkc_dienThoai", data.lhkc_dienThoai);
+            formData1.append("lhkc_email", data.lhkc_email);
+            formData1.append("lhkc_diaChi", data.lhkc_diaChi);
+            formData1.append("lhkc_maNhanVien", data.lhkc_maNhanVien);
+            formData1.append("lsbt_biBatDiTu", data.lsbt_biBatDiTu);
+            formData1.append("lsbt_thamGiaChinhTri", data.lsbt_thamGiaChinhTri);
+            formData1.append(
+              "lsbt_thanNhanNuocNgoai",
+              data.lsbt_thanNhanNuocNgoai
+            );
+            formData1.append("lsbt_maNhanVien", data.lsbt_maNhanVien);
+            await ProductApi.postNv(formData1);
+            await ProductApi.PostLS({
+              tenTaiKhoan: decoded.userName,
+              thaoTac: `Thêm nhân viên mới${data.hoTen}`,
+              maNhanVien: decoded.id,
+              tenNhanVien: decoded.givenName,
+            });
+            if (file.file !== null) {
+              const formDataImg = new FormData();
+              formDataImg.append("anh", file.file);
+              formDataImg.append("maNhanVien", data.id);
+              await PutApi.PutIMG(formDataImg, data.id);
+            }
+            success(`Thêm hồ sơ nhân viên ${data.hoTen} thành công`);
+            history.goBack();
+          } else {
+            error("Không thể upload file quá 20M");
           }
-          success(`Thêm hồ sơ nhân viên ${data.hoTen} thành công`);
-          history.goBack();
-        } else {
-          error("Không thể upload file quá 20M");
         }
+      } catch (errors) {
+        console.log(errors);
       }
-    } catch (errors) {
-      console.log(errors);
     }
   };
 

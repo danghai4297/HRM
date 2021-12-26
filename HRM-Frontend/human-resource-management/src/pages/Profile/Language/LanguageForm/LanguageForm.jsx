@@ -63,7 +63,9 @@ function AddLanguageForm(props) {
   }, []);
 
   useEffect(() => {
-    setOpen(!open);
+    if (id !== undefined) {
+      setOpen(!open);
+    }
   }, [dataDetailNN]);
 
   useEffect(() => {
