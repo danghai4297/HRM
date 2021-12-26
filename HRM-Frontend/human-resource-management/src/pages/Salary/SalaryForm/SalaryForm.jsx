@@ -302,10 +302,8 @@ function AddSalaryForm(props) {
     responsibilityAllowance,
     titleAllowance,
   ]);
-  console.log(startDate);
-  console.log(startDateOfContract);
+
   const onHandleSubmit = async (data) => {
-    console.log(startDate < moment(startDateOfContract));
     if (startDate < moment(startDateOfContract)) {
       error(
         `ngày bắt đầu lương không được bắt đầu trước ngày ký hợp đồng(${moment(
