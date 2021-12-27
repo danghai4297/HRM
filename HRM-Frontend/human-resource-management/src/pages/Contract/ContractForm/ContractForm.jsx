@@ -250,17 +250,11 @@ function AddContractForm(props) {
       error(
         "Ngày bắt đầu của hợp đồng phải xảy ra trước ngày kết thúc của hợp đồng"
       );
-    } else if (
-      moment(data.hopDongTuNgay).format("L") ==
-      moment(data.hopDongDenNgay).format("L")
-    ) {
+    } else if (moment(data.hopDongTuNgay) == moment(data.hopDongDenNgay)) {
       error(
         "Ngày bắt đầu của hợp đồng không thể cùng là ngày kết thúc của hợp đồng"
       );
-    } else if (
-      moment(dateOfStartJob).format("L") >
-      moment(data.hopDongTuNgay).format("L")
-    ) {
+    } else if (moment(dateOfStartJob) > moment(data.hopDongTuNgay)) {
       error(
         `Ngày bắt đầu của hợp đồng không thể xảy ra trước ngày chính thức(${moment(
           dateOfStartJob

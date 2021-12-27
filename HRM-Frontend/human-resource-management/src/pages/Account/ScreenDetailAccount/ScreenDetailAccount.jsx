@@ -42,6 +42,8 @@ function ScreenDetailAccount(props) {
     fetchDetailAccount();
   }, []);
 
+  console.log(dataDetailTk);
+
   useEffect(() => {
     setOpen(!open);
   }, [dataDetailTk]);
@@ -97,15 +99,18 @@ function ScreenDetailAccount(props) {
             <h2>Chi tiết tài khoản</h2>
           </div>
           <div className="third-path-account">
-            <Link to={`/account/addRole/${id}`}>
-              <Button
-                variant="contained"
-                color="success"
-                className="btn-fix-account"
-              >
-                Thêm quyền
-              </Button>
-            </Link>
+            {dataDetailTk.id !== "69bd714f-9576-45ba-b5b7-f00649be00de" && (
+              <Link to={`/account/addRole/${id}`}>
+                <Button
+                  variant="contained"
+                  color="success"
+                  className="btn-fix-account"
+                >
+                  Thêm quyền
+                </Button>
+              </Link>
+            )}
+
             <Button
               variant="contained"
               color="secondary"
@@ -114,14 +119,16 @@ function ScreenDetailAccount(props) {
             >
               Mật khẩu mới
             </Button>
-            <Button
-              variant="contained"
-              color="error"
-              className="btn-fix-account"
-              onClick={() => setShowDeleteDialog(true)}
-            >
-              Xóa
-            </Button>
+            {dataDetailTk.id !== "69bd714f-9576-45ba-b5b7-f00649be00de" && (
+              <Button
+                variant="contained"
+                color="error"
+                className="btn-fix-account"
+                onClick={() => setShowDeleteDialog(true)}
+              >
+                Xóa
+              </Button>
+            )}
           </div>
         </div>
         <div className="second-main-account">

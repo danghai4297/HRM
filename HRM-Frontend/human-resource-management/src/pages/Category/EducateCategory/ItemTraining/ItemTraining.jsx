@@ -17,7 +17,7 @@ function ItemTraining(props) {
   const fileName = "Hinhthucdaotao";
   const [dataDmHtdt, setDataDmHtdt] = useState([]);
   const [open, setOpen] = useState(false);
-  useDocumentTitle("Danh mục dân tộc");
+  useDocumentTitle("Danh mục hình thức đào tạo");
 
   useEffect(() => {
     const fetchNvList = async () => {
@@ -40,7 +40,7 @@ function ItemTraining(props) {
       <div className="screen-table-nv">
         <div className="herder-content sticky-top">
           <div>
-            <h4 className="">Hình thức đào tạo</h4>
+            <h4 className="">Danh mục hình thức đào tạo</h4>
           </div>
           <div className="button">
             <Link to="/category/training/add" className="link-item">

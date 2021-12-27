@@ -314,7 +314,7 @@ function AddSalaryForm(props) {
       error(
         `Ngày kết thúc lương không được kết thúc sau ngày kết thúc hợp đồng(${moment(
           endDateOfContract
-        ).format("L")})`
+        ).format("DD/MM/YYYY")})`
       );
     } else if (startDate > endDate) {
       error("Ngày bắt đầu không thể xảy ra sau ngày kết thúc lương");

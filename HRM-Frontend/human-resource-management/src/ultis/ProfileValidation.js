@@ -115,7 +115,7 @@ export const schema = yup.object().shape({
   diDong: yup
     .string()
     .nullable()
-    .matches(phoneRex, "Số điện thoại không đúng định dạng")
+    .matches(phoneRex1, "Số điện thoại không đúng định dạng")
     .required("Số điện thoại không được bỏ trống"),
 
   lhkc_hoTen: yup
@@ -133,7 +133,7 @@ export const schema = yup.object().shape({
   lhkc_dienThoai: yup
     .string()
     .nullable()
-    .matches(phoneRex, "Số điện thoại phải là số và đúng định dạng.")
+    .matches(phoneRex1, "Số điện thoại phải là số và đúng định dạng.")
     .required("Số điện thoại không được bỏ trống"),
   lhkc_diaChi: yup
     .string()

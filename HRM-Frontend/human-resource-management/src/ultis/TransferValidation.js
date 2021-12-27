@@ -16,4 +16,8 @@ export const schema = yup.object({
     .max(300, "Chi tiết không được vượt quá 300 kí tự")
     .nullable()
     .notRequired(),
+  ngayHieuLuc: yup
+    .date()
+    .nullable()
+    .required("Ngày hiệu lực không được bỏ trống."),
 });

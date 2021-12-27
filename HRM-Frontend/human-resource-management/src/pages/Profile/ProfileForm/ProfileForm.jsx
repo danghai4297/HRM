@@ -637,8 +637,7 @@ function AddProfileForm(props) {
       data.ngayCapCCCD !== undefined &&
       data.ngayHetHanCCCD !== null &&
       data.ngayHetHanCCCD !== undefined &&
-      moment(data.ngayCapCCCD).format("L") >=
-        moment(data.ngayHetHanCCCD).format("L")
+      moment(data.ngayCapCCCD) >= moment(data.ngayHetHanCCCD)
     ) {
       error("Ngày cấp CCCD không được xảy ra sau ngày hết hạn CCCD.");
     } else if (
@@ -652,8 +651,7 @@ function AddProfileForm(props) {
       data.ngayCapHoChieu !== undefined &&
       data.ngayHetHanHoChieu !== null &&
       data.ngayHetHanHoChieu !== undefined &&
-      moment(data.ngayCapHoChieu).format("L") >=
-        moment(data.ngayHetHanHoChieu).format("L")
+      moment(data.ngayCapHoChieu) >= moment(data.ngayHetHanHoChieu)
     ) {
       error("Ngày cấp hộ chiếu không được xảy ra sau ngày hết hạn hộ chiếu.");
     } else if (
@@ -703,8 +701,7 @@ function AddProfileForm(props) {
       data.ngayVaoDang !== undefined &&
       data.ngayVaoDoan !== null &&
       data.ngayVaoDoan !== undefined &&
-      moment(data.ngayVaoDoan).format("L") >=
-        moment(data.ngayVaoDang).format("L")
+      moment(data.ngayVaoDoan) >= moment(data.ngayVaoDang)
     ) {
       error("Ngày vào Đảng không được xảy ra trước ngày vào Đoàn.");
     } else if (
@@ -712,8 +709,7 @@ function AddProfileForm(props) {
       data.ngayVaoDang !== undefined &&
       data.ngayVaoDangChinhThuc !== null &&
       data.ngayVaoDangChinhThuc !== undefined &&
-      moment(data.ngayVaoDang).format("L") >=
-        moment(data.ngayVaoDangChinhThuc).format("L")
+      moment(data.ngayVaoDang) >= moment(data.ngayVaoDangChinhThuc)
     ) {
       error("Ngày vào Đảng chính thức không được xảy ra trước ngày vào Đảng.");
     } else if (
@@ -727,8 +723,7 @@ function AddProfileForm(props) {
       data.ngayNhapNgu !== undefined &&
       data.ngayXuatNgu !== null &&
       data.ngayXuatNgu !== undefined &&
-      moment(data.ngayNhapNgu).format("L") >=
-        moment(data.ngayXuatNgu).format("L")
+      moment(data.ngayNhapNgu) >= moment(data.ngayXuatNgu)
     ) {
       error("Ngày xuất ngũ không được xảy ra trước ngày nhập ngũ.");
     } else {

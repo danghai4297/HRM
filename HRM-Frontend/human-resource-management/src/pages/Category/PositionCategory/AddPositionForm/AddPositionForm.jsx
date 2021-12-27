@@ -92,8 +92,8 @@ function AddPositionForm(props) {
 
   const intitalValue = {
     maChucVu: `${dataDetailDMCV.maChucVu}`,
-    tenChucVu: `${dataDetailDMCV.tenChucVu}`,
-    phuCap: `${dataDetailDMCV.phuCap}`,
+    tenChucVu: id !== undefined ? `${dataDetailDMCV.tenChucVu}` : null,
+    phuCap: id !== undefined ? `${dataDetailDMCV.phuCap}` : null,
   };
 
   const {
@@ -106,7 +106,7 @@ function AddPositionForm(props) {
     getValues,
   } = useForm({
     resolver: yupResolver(schema),
-    defaultValues: id !== undefined ? intitalValue : null,
+    defaultValues: intitalValue,
   });
 
   useEffect(() => {
@@ -295,7 +295,7 @@ function AddPositionForm(props) {
                         thousandSeparator={true}
                         value={field.value}
                         className={
-                          !errors.phuCapChucDanh
+                          !errors.phuCap
                             ? "form-control col-sm-6 "
                             : "form-control col-sm-6 border-danger"
                         }

@@ -209,7 +209,7 @@ function AddTransferForm(props) {
 
   //method handle submit
   const onHandleSubmit = async (data) => {
-    if (moment(dateOfStartJob).format("L") > moment(startDate).format("L")) {
+    if (moment(dateOfStartJob) > moment(startDate)) {
       error(
         `Ngày hiệu lực không thể xảy ra trước ngày Chính thức(${moment(
           dateOfStartJob
