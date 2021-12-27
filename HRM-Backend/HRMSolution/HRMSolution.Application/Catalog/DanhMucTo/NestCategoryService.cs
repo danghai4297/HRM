@@ -25,7 +25,7 @@ namespace HRMSolution.Application.Catalog.DanhMucTos
             char[] charsToTrim = { '*', ' ', '\'' };
             var tenDanhMuc = request.tenTo.Trim(charsToTrim);
             var checkPB = await _context.danhMucPhongBans.Where(x => x.id == request.idPhongBan).FirstOrDefaultAsync();
-            var check = await _context.danhMucTos.Where(x => x.tenTo == request.tenTo && x.idPhongBan == checkPB.id).FirstOrDefaultAsync();
+            var check = await _context.danhMucTos.Where(x => x.tenTo == tenDanhMuc && x.idPhongBan == checkPB.id).FirstOrDefaultAsync();
             if (request.maTo == null || request.tenTo == null || check != null)
             {
                 return 0;
@@ -124,7 +124,7 @@ namespace HRMSolution.Application.Catalog.DanhMucTos
             var tenDanhMuc = request.tenTo.Trim(charsToTrim);
             var danhMucTo = await _context.danhMucTos.FindAsync(id);
             var checkPB = await _context.danhMucPhongBans.Where(x => x.id == request.idPhongBan).FirstOrDefaultAsync();
-            var check = await _context.danhMucTos.Where(x => x.tenTo == request.tenTo && x.idPhongBan == checkPB.id).FirstOrDefaultAsync();
+            var check = await _context.danhMucTos.Where(x => x.tenTo == tenDanhMuc && x.idPhongBan == checkPB.id).FirstOrDefaultAsync();
             if (danhMucTo == null || request.maTo == null || request.tenTo == null || check != null)
             {
                 return 0;

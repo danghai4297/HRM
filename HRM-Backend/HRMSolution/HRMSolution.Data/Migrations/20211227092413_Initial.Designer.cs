@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HRMSolution.Data.Migrations
 {
     [DbContext(typeof(HRMDbContext))]
-    [Migration("20211219214545_Initial")]
+    [Migration("20211227092413_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,7 +49,7 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            ConcurrencyStamp = "96cf4a36-8fd9-4c91-9627-91290ca27b22",
+                            ConcurrencyStamp = "66d6d348-32ba-4817-848e-108aed222067",
                             Name = "admin",
                             NormalizedName = "admin",
                             ghiChu = "Administrator role"
@@ -57,7 +57,7 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec"),
-                            ConcurrencyStamp = "a47e95c4-df1f-4df2-93c3-3713c1327f2e",
+                            ConcurrencyStamp = "fbd13652-6331-4cc0-bfa7-ecd24753a6cd",
                             Name = "user",
                             NormalizedName = "user",
                             ghiChu = "User role"
@@ -126,11 +126,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6e9fbe64-1de8-4b4e-8839-a648bea01f20",
+                            ConcurrencyStamp = "16c5e9ef-c72e-4bf0-8508-1afecab91f5d",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAn5NVPEtaLQcpLhKMeDtDo/R5n5ZEtbfS125XN86ocHn/ur97ZXsIlhLt07KNRq6A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEx+LgZyZUEUohop3ZheM6UMovNJMjVBdSJIcT2ifcFbqnOzjkteJ7fK9Ak+x+tazg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -141,11 +141,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("1db26eb2-1870-4129-f60a-08d9978ff76b"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "490fc6ad-b611-47b9-954f-72055f76473c",
+                            ConcurrencyStamp = "49e92961-714f-4908-84fe-29861bea680c",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "user1",
-                            PasswordHash = "AQAAAAEAACcQAAAAEG0AmSq09klfiMs3efuelq0BIWUt3vdC3jDsOlC7Eb/CzcZn24Dvr6yCRsW/wRsmzA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMoACbWyrwAtdAK63jOn0PmPF8Re0DjZmnHNgItytQjKBEgNCEkPdwpzwZhrUEZ32A==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -156,11 +156,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             Id = new Guid("ccf28057-5be9-4405-957b-460e0ce106a7"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "98c9fe4d-c4e8-4bd7-a792-ab372f6a7507",
+                            ConcurrencyStamp = "2d2ef781-9f0a-40ff-81b4-a398994031ed",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "user3",
-                            PasswordHash = "AQAAAAEAACcQAAAAECbSLwUqGTZXyvAsEpfaCdoGS1PGLLg350qfQU98E4eAGKioD2tf8VkCgjKV+WWegw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBxub4ZAPORTbhXfT7UBoEgyiHznIeEgVar5wHNRvV9wGKropuhyOgeZEApF/RJnvg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -262,7 +262,7 @@ namespace HRMSolution.Data.Migrations
                             id = 1,
                             maChucVu = "CV01",
                             phuCap = 100000f,
-                            tenChucVu = "Nhân viên"
+                            tenChucVu = "Nhân Viên"
                         },
                         new
                         {
@@ -360,7 +360,7 @@ namespace HRMSolution.Data.Migrations
                         {
                             id = 5,
                             maChuyenMon = "CM05",
-                            tenChuyenMon = "Kinh Tế"
+                            tenChuyenMon = "Kinh tế"
                         });
                 });
 
@@ -682,7 +682,7 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 1,
-                            tenDanhMuc = "Độc Thân"
+                            tenDanhMuc = "Độc thân"
                         },
                         new
                         {
@@ -702,7 +702,7 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 5,
-                            tenDanhMuc = "Ly Thân"
+                            tenDanhMuc = "Ly thân"
                         });
                 });
 
@@ -733,31 +733,31 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 1,
-                            tenDanhMuc = "Thưởng Nhân viên suất xác tháng",
+                            tenDanhMuc = "Thưởng nhân viên xuất sắc tháng",
                             tieuDe = "Khen thưởng"
                         },
                         new
                         {
                             id = 2,
-                            tenDanhMuc = "Thưởng Nhân viên suất xác năm",
+                            tenDanhMuc = "Thưởng nhân viên xuất sắc năm",
                             tieuDe = "Khen thưởng"
                         },
                         new
                         {
                             id = 3,
-                            tenDanhMuc = "Thưởng Nhân viên suất xác quý",
+                            tenDanhMuc = "Thưởng nhân viên xuất sắc quý",
                             tieuDe = "Khen thưởng"
                         },
                         new
                         {
                             id = 4,
-                            tenDanhMuc = "Phạt Nhân viên kém nhất tháng",
+                            tenDanhMuc = "Phạt nhân viên kém nhất tháng",
                             tieuDe = "Kỷ luật"
                         },
                         new
                         {
                             id = 5,
-                            tenDanhMuc = "Phạt Nhân viên kém nhất quý",
+                            tenDanhMuc = "Phạt nhân viên kém nhất quý",
                             tieuDe = "Kỷ luật"
                         });
                 });
@@ -889,7 +889,7 @@ namespace HRMSolution.Data.Migrations
                         new
                         {
                             id = 3,
-                            tenDanhMuc = "Tiếng pháp"
+                            tenDanhMuc = "Tiếng Pháp"
                         });
                 });
 
@@ -931,6 +931,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             id = 4,
                             tenDanhMuc = "Chị"
+                        },
+                        new
+                        {
+                            id = 5,
+                            tenDanhMuc = "Em"
                         });
                 });
 
@@ -1024,13 +1029,13 @@ namespace HRMSolution.Data.Migrations
                         {
                             id = 4,
                             maPhongBan = "PB04",
-                            tenPhongBan = "Phòng Kỹ Thuật"
+                            tenPhongBan = "Phòng kỹ Thuật"
                         },
                         new
                         {
                             id = 5,
                             maPhongBan = "PB05",
-                            tenPhongBan = "Phòng Kế hoạch"
+                            tenPhongBan = "Phòng kế hoạch"
                         });
                 });
 
@@ -1062,6 +1067,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             id = 2,
                             tenTinhChat = "Thử việc"
+                        },
+                        new
+                        {
+                            id = 3,
+                            tenTinhChat = "Thực tập"
                         });
                 });
 
@@ -1378,6 +1388,16 @@ namespace HRMSolution.Data.Migrations
                         {
                             id = 2,
                             tenTrinhDo = "Khá"
+                        },
+                        new
+                        {
+                            id = 3,
+                            tenTrinhDo = "Trung bình khá"
+                        },
+                        new
+                        {
+                            id = 4,
+                            tenTrinhDo = "Trung bình"
                         });
                 });
 
@@ -1406,8 +1426,7 @@ namespace HRMSolution.Data.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<DateTime?>("ngayHieuLuc")
-                        .IsRequired()
+                    b.Property<DateTime>("ngayHieuLuc")
                         .HasColumnType("datetime");
 
                     b.Property<int>("to")
@@ -5978,6 +5997,11 @@ namespace HRMSolution.Data.Migrations
                         {
                             id = 3,
                             tenHinhThuc = "Tại chức"
+                        },
+                        new
+                        {
+                            id = 4,
+                            tenHinhThuc = "Cao học"
                         });
                 });
 

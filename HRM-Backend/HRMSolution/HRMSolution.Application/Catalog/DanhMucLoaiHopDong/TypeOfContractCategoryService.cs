@@ -23,7 +23,7 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
         {
             char[] charsToTrim = { '*', ' ', '\'' };
             var tenDanhMuc = request.tenLoaiHopDong.Trim(charsToTrim);
-            var check = await _context.danhMucLoaiHopDongs.Where(x => x.tenLoaiHopDong == request.tenLoaiHopDong).FirstOrDefaultAsync();
+            var check = await _context.danhMucLoaiHopDongs.Where(x => x.tenLoaiHopDong == tenDanhMuc).FirstOrDefaultAsync();
             if (request.maLoaiHopDong == null || request.tenLoaiHopDong == null || check != null)
             {
                 return 0;
@@ -111,7 +111,7 @@ namespace HRMSolution.Application.Catalog.DanhMucLoaiHopDongs
             char[] charsToTrim = { '*', ' ', '\'' };
             var tenDanhMuc = request.tenLoaiHopDong.Trim(charsToTrim);
             var danhMucLoaiHopDong = await _context.danhMucLoaiHopDongs.FindAsync(id);
-            var check = await _context.danhMucLoaiHopDongs.Where(x => x.tenLoaiHopDong == request.tenLoaiHopDong).FirstOrDefaultAsync();
+            var check = await _context.danhMucLoaiHopDongs.Where(x => x.tenLoaiHopDong == tenDanhMuc).FirstOrDefaultAsync();
             if (danhMucLoaiHopDong == null || request.maLoaiHopDong == null || request.tenLoaiHopDong == null || check != null)
             {
                 return 0;

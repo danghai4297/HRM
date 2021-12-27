@@ -62,7 +62,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     gioiTinh = request.gioiTinh,
                     dienThoai = checkNull(request.dienThoai),
                     dienThoaiKhac = checkNull(request.dienThoaiKhac),
-                    diDong = request.diDong,
+                    diDong = checkNull(request.diDong),
                     email = checkNull(request.email),
                     facebook = checkNull(request.facebook),
                     skype = checkNull(request.skype),
@@ -136,7 +136,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                     {
                         hoTen = checkNull(request.lhkc_hoTen),
                         quanHe = checkNull(request.lhkc_quanHe),
-                        dienThoai = request.lhkc_dienThoai,
+                        dienThoai = checkNull(request.lhkc_dienThoai),
                         email = checkNull(request.lhkc_email),
                         diaChi = checkNull(request.lhkc_diaChi),
                         maNhanVien = request.lhkc_maNhanVien,
@@ -248,7 +248,7 @@ namespace HRMSolution.Application.Catalog.NhanViens
                 nhanVien.congViecChinh = checkNull(request.congViecChinh);
                 nhanVien.ngayVaoBan = request.ngayVaoBan == "null" || request.ngayVaoBan == null ? dt : DateTime.Parse(request.ngayVaoBan.ToString());
                 nhanVien.ngayChinhThuc = request.ngayChinhThuc == "null" || request.ngayChinhThuc == null ? dt : DateTime.Parse(request.ngayChinhThuc.ToString());
-                nhanVien.coQuanTuyenDung = request.coQuanTuyenDung;
+                nhanVien.coQuanTuyenDung = checkNull(request.coQuanTuyenDung);
                 nhanVien.ngachCongChucNoiDung = checkNull(request.ngachCongChucNoiDung);
                 nhanVien.vaoDang = request.vaoDang;
                 nhanVien.ngayVaoDang = request.ngayVaoDang == "null" || request.ngayVaoDang == null ? dt : DateTime.Parse(request.ngayVaoDang.ToString());

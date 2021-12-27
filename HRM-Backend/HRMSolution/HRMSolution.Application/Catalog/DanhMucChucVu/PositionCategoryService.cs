@@ -24,9 +24,9 @@ namespace HRMSolution.Application.Catalog.DanhMucChucDanhs
 
         public async Task<int> Create(DanhMucChucVuCreateRequest request)
         {
-            var check = await _context.danhMucChucVus.Where(x => x.tenChucVu == request.tenChucVu).FirstOrDefaultAsync();
             char[] charsToTrim = { '*', ' ', '\'' };
             var tenDanhMuc = request.tenChucVu.Trim(charsToTrim);
+            var check = await _context.danhMucChucVus.Where(x => x.tenChucVu == tenDanhMuc).FirstOrDefaultAsync();
             if (request.maChucVu == null || request.tenChucVu == null || check != null)
             {
                 return 0;
@@ -123,7 +123,7 @@ namespace HRMSolution.Application.Catalog.DanhMucChucDanhs
             char[] charsToTrim = { '*', ' ', '\'' };
             var tenDanhMuc = request.tenChucVu.Trim(charsToTrim);
             var danhMucChucVu = await _context.danhMucChucVus.FindAsync(id);
-            var check = await _context.danhMucChucVus.Where(x => x.tenChucVu == request.tenChucVu && x.maChucVu != request.maChucVu).FirstOrDefaultAsync();
+            var check = await _context.danhMucChucVus.Where(x => x.tenChucVu == tenDanhMuc && x.maChucVu != request.maChucVu).FirstOrDefaultAsync();
             if (danhMucChucVu == null || request.maChucVu == null || request.tenChucVu == null || check != null)
             {
                 return 0;

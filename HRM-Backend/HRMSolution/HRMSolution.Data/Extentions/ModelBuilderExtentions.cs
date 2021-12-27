@@ -100,7 +100,7 @@ namespace HRMSolution.Data.Extentions
                 );
 
             modelbulder.Entity<DanhMucChucVu>().HasData(
-                new DanhMucChucVu() { id = 1, maChucVu = "CV01", tenChucVu = "Nhân viên", phuCap = 100000 },
+                new DanhMucChucVu() { id = 1, maChucVu = "CV01", tenChucVu = "Nhân Viên", phuCap = 100000 },
                 new DanhMucChucVu() { id = 2, maChucVu = "CV02", tenChucVu = "Trưởng Phòng", phuCap = 200000 },
                 new DanhMucChucVu() { id = 3, maChucVu = "CV03", tenChucVu = "Giám Đốc", phuCap = 300000 },
                 new DanhMucChucVu() { id = 4, maChucVu = "CV04", tenChucVu = "Tổng Giám Đốc", phuCap = 1000000 },
@@ -113,7 +113,7 @@ namespace HRMSolution.Data.Extentions
                 new DanhMucChuyenMon() { id = 2, maChuyenMon = "CM02", tenChuyenMon = "Hành chính văn phòng" },
                 new DanhMucChuyenMon() { id = 3, maChuyenMon = "CM03", tenChuyenMon = "Quản trị kinh doanh" },
                 new DanhMucChuyenMon() { id = 4, maChuyenMon = "CM04", tenChuyenMon = "Kế toán – kiểm toán" },
-                new DanhMucChuyenMon() { id = 5, maChuyenMon = "CM05", tenChuyenMon = "Kinh Tế" }
+                new DanhMucChuyenMon() { id = 5, maChuyenMon = "CM05", tenChuyenMon = "Kinh tế" }
                 );
             modelbulder.Entity<DanhMucDanToc>().HasData(
                 new DanhMucDanToc() { id = 1, tenDanhMuc = "Kinh" },
@@ -173,11 +173,11 @@ namespace HRMSolution.Data.Extentions
                 new DanhMucDanToc() { id = 55, tenDanhMuc = "Người nước ngoài" }
                 );
             modelbulder.Entity<DanhMucKhenThuongKyLuat>().HasData(
-                new DanhMucKhenThuongKyLuat() { id = 1, tenDanhMuc = "Thưởng Nhân viên suất xác tháng", tieuDe = "Khen thưởng" },
-                new DanhMucKhenThuongKyLuat() { id = 2, tenDanhMuc = "Thưởng Nhân viên suất xác năm", tieuDe = "Khen thưởng" },
-                new DanhMucKhenThuongKyLuat() { id = 3, tenDanhMuc = "Thưởng Nhân viên suất xác quý", tieuDe = "Khen thưởng" },
-                new DanhMucKhenThuongKyLuat() { id = 4, tenDanhMuc = "Phạt Nhân viên kém nhất tháng", tieuDe = "Kỷ luật" },
-                new DanhMucKhenThuongKyLuat() { id = 5, tenDanhMuc = "Phạt Nhân viên kém nhất quý", tieuDe = "Kỷ luật" }
+                new DanhMucKhenThuongKyLuat() { id = 1, tenDanhMuc = "Thưởng nhân viên xuất sắc tháng", tieuDe = "Khen thưởng" },
+                new DanhMucKhenThuongKyLuat() { id = 2, tenDanhMuc = "Thưởng nhân viên xuất sắc năm", tieuDe = "Khen thưởng" },
+                new DanhMucKhenThuongKyLuat() { id = 3, tenDanhMuc = "Thưởng nhân viên xuất sắc quý", tieuDe = "Khen thưởng" },
+                new DanhMucKhenThuongKyLuat() { id = 4, tenDanhMuc = "Phạt nhân viên kém nhất tháng", tieuDe = "Kỷ luật" },
+                new DanhMucKhenThuongKyLuat() { id = 5, tenDanhMuc = "Phạt nhân viên kém nhất quý", tieuDe = "Kỷ luật" }
                 );
             modelbulder.Entity<DanhMucLoaiHopDong>().HasData(
                 new DanhMucLoaiHopDong() { id = 1, maLoaiHopDong = "LHD01", tenLoaiHopDong = "Hợp đồng một năm" },
@@ -200,13 +200,14 @@ namespace HRMSolution.Data.Extentions
             modelbulder.Entity<DanhMucNgoaiNgu>().HasData(
                 new DanhMucNgoaiNgu() { id = 1, tenDanhMuc = "Tiếng Anh" },
                 new DanhMucNgoaiNgu() { id = 2, tenDanhMuc = "Tiếng Trung Quốc" },
-                new DanhMucNgoaiNgu() { id = 3, tenDanhMuc = "Tiếng pháp" }
+                new DanhMucNgoaiNgu() { id = 3, tenDanhMuc = "Tiếng Pháp" }
                 );
             modelbulder.Entity<DanhMucNguoiThan>().HasData(
                 new DanhMucNguoiThan() { id = 1, tenDanhMuc = "Bố" },
                 new DanhMucNguoiThan() { id = 2, tenDanhMuc = "Mẹ" },
                 new DanhMucNguoiThan() { id = 3, tenDanhMuc = "Anh" },
-                new DanhMucNguoiThan() { id = 4, tenDanhMuc = "Chị" }
+                new DanhMucNguoiThan() { id = 4, tenDanhMuc = "Chị" },
+                new DanhMucNguoiThan() { id = 5, tenDanhMuc = "Em" }
                 );
             modelbulder.Entity<DanhMucTo>().HasData(
                 new DanhMucTo() { idTo = 1, maTo = "T01", tenTo = "Tổ hành chính", idPhongBan = 1 },
@@ -235,12 +236,13 @@ namespace HRMSolution.Data.Extentions
                 new DanhMucPhongBan() { id = 1, maPhongBan = "PB01", tenPhongBan = "Phòng hành chính-nhân sự" },
                 new DanhMucPhongBan() { id = 2, maPhongBan = "PB02", tenPhongBan = "Phòng pháp chế" },
                 new DanhMucPhongBan() { id = 3, maPhongBan = "PB03", tenPhongBan = "Phòng tài chính kế toán" },
-                new DanhMucPhongBan() { id = 4, maPhongBan = "PB04", tenPhongBan = "Phòng Kỹ Thuật" },
-                new DanhMucPhongBan() { id = 5, maPhongBan = "PB05", tenPhongBan = "Phòng Kế hoạch" }
+                new DanhMucPhongBan() { id = 4, maPhongBan = "PB04", tenPhongBan = "Phòng kỹ Thuật" },
+                new DanhMucPhongBan() { id = 5, maPhongBan = "PB05", tenPhongBan = "Phòng kế hoạch" }
                 );
             modelbulder.Entity<DanhMucTinhChatLaoDong>().HasData(
                 new DanhMucTinhChatLaoDong() { id = 1, tenTinhChat = "Chính thức" },
-                new DanhMucTinhChatLaoDong() { id = 2, tenTinhChat = "Thử việc" }
+                new DanhMucTinhChatLaoDong() { id = 2, tenTinhChat = "Thử việc" },
+                new DanhMucTinhChatLaoDong() { id = 3, tenTinhChat = "Thực tập" }
                 );
 
             modelbulder.Entity<DanhMucTonGiao>().HasData(
@@ -264,20 +266,23 @@ namespace HRMSolution.Data.Extentions
                 );
             modelbulder.Entity<DanhMucTrinhDo>().HasData(
                 new DanhMucTrinhDo() { id = 1, tenTrinhDo = "Giỏi" },
-                new DanhMucTrinhDo() { id = 2, tenTrinhDo = "Khá" }
+                new DanhMucTrinhDo() { id = 2, tenTrinhDo = "Khá" },
+                new DanhMucTrinhDo() { id = 3, tenTrinhDo = "Trung bình khá" },
+                new DanhMucTrinhDo() { id = 4, tenTrinhDo = "Trung bình" }
                 );
 
             modelbulder.Entity<HinhThucDaoTao>().HasData(
                 new HinhThucDaoTao() { id = 1, tenHinhThuc = "Đại học" },
                 new HinhThucDaoTao() { id = 2, tenHinhThuc = "Cao đẳng" },
-                new HinhThucDaoTao() { id = 3, tenHinhThuc = "Tại chức" }
+                new HinhThucDaoTao() { id = 3, tenHinhThuc = "Tại chức" },
+                new HinhThucDaoTao() { id = 4, tenHinhThuc = "Cao học" }
                 );
             modelbulder.Entity<DanhMucHonNhan>().HasData(
-                new DanhMucHonNhan() { id = 1, tenDanhMuc = "Độc Thân" },
+                new DanhMucHonNhan() { id = 1, tenDanhMuc = "Độc thân" },
                 new DanhMucHonNhan() { id = 2, tenDanhMuc = "Ly hôn" },
                 new DanhMucHonNhan() { id = 3, tenDanhMuc = "Đã kết hôn" },
                  new DanhMucHonNhan() { id = 4, tenDanhMuc = "Góa" },
-                 new DanhMucHonNhan() { id = 5, tenDanhMuc = "Ly Thân" }
+                 new DanhMucHonNhan() { id = 5, tenDanhMuc = "Ly thân" }
                 );
             modelbulder.Entity<NhanVien>().HasData(
 

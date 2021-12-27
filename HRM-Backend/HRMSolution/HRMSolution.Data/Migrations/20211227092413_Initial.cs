@@ -802,8 +802,8 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName", "ghiChu" },
                 values: new object[,]
                 {
-                    { new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"), "96cf4a36-8fd9-4c91-9627-91290ca27b22", "admin", "admin", "Administrator role" },
-                    { new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec"), "a47e95c4-df1f-4df2-93c3-3713c1327f2e", "user", "user", "User role" }
+                    { new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"), "66d6d348-32ba-4817-848e-108aed222067", "admin", "admin", "Administrator role" },
+                    { new Guid("30c6f17d-e44f-4e5d-9bf9-1bd98c377cec"), "fbd13652-6331-4cc0-bfa7-ecd24753a6cd", "user", "user", "User role" }
                 });
 
             migrationBuilder.InsertData(
@@ -822,9 +822,9 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "maNhanVien" },
                 values: new object[,]
                 {
-                    { new Guid("ccf28057-5be9-4405-957b-460e0ce106a7"), 0, "98c9fe4d-c4e8-4bd7-a792-ab372f6a7507", null, true, false, null, null, "user3", "AQAAAAEAACcQAAAAECbSLwUqGTZXyvAsEpfaCdoGS1PGLLg350qfQU98E4eAGKioD2tf8VkCgjKV+WWegw==", null, false, "", false, "user3", "NV0003" },
-                    { new Guid("1db26eb2-1870-4129-f60a-08d9978ff76b"), 0, "490fc6ad-b611-47b9-954f-72055f76473c", null, true, false, null, null, "user1", "AQAAAAEAACcQAAAAEG0AmSq09klfiMs3efuelq0BIWUt3vdC3jDsOlC7Eb/CzcZn24Dvr6yCRsW/wRsmzA==", null, false, "", false, "user1", "NV0002" },
-                    { new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"), 0, "6e9fbe64-1de8-4b4e-8839-a648bea01f20", null, true, false, null, null, "admin", "AQAAAAEAACcQAAAAEAn5NVPEtaLQcpLhKMeDtDo/R5n5ZEtbfS125XN86ocHn/ur97ZXsIlhLt07KNRq6A==", null, false, "", false, "admin", "NV0001" }
+                    { new Guid("ccf28057-5be9-4405-957b-460e0ce106a7"), 0, "2d2ef781-9f0a-40ff-81b4-a398994031ed", null, true, false, null, null, "user3", "AQAAAAEAACcQAAAAEBxub4ZAPORTbhXfT7UBoEgyiHznIeEgVar5wHNRvV9wGKropuhyOgeZEApF/RJnvg==", null, false, "", false, "user3", "NV0003" },
+                    { new Guid("1db26eb2-1870-4129-f60a-08d9978ff76b"), 0, "49e92961-714f-4908-84fe-29861bea680c", null, true, false, null, null, "user1", "AQAAAAEAACcQAAAAEMoACbWyrwAtdAK63jOn0PmPF8Re0DjZmnHNgItytQjKBEgNCEkPdwpzwZhrUEZ32A==", null, false, "", false, "user1", "NV0002" },
+                    { new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"), 0, "16c5e9ef-c72e-4bf0-8508-1afecab91f5d", null, true, false, null, null, "admin", "AQAAAAEAACcQAAAAEEx+LgZyZUEUohop3ZheM6UMovNJMjVBdSJIcT2ifcFbqnOzjkteJ7fK9Ak+x+tazg==", null, false, "", false, "admin", "NV0001" }
                 });
 
             migrationBuilder.InsertData(
@@ -832,10 +832,10 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "id", "maChucDanh", "phuCap", "tenChucDanh" },
                 values: new object[,]
                 {
-                    { 2, "CD02", 200000f, "Thạc Sĩ" },
                     { 1, "CD01", 100000f, "Cử Nhân" },
-                    { 4, "CD04", 1000000f, "Chuyên Viên" },
-                    { 3, "CD03", 300000f, "Tiến Sĩ" }
+                    { 2, "CD02", 200000f, "Thạc Sĩ" },
+                    { 3, "CD03", 300000f, "Tiến Sĩ" },
+                    { 4, "CD04", 1000000f, "Chuyên Viên" }
                 });
 
             migrationBuilder.InsertData(
@@ -844,7 +844,7 @@ namespace HRMSolution.Data.Migrations
                 values: new object[,]
                 {
                     { 3, "CV03", 300000f, "Giám Đốc" },
-                    { 1, "CV01", 100000f, "Nhân viên" },
+                    { 1, "CV01", 100000f, "Nhân Viên" },
                     { 2, "CV02", 200000f, "Trưởng Phòng" },
                     { 6, "CV06", 600000f, "Phó Giám Đốc" },
                     { 5, "CV05", 800000f, "Phó Tổng Giám Đốc" },
@@ -860,7 +860,7 @@ namespace HRMSolution.Data.Migrations
                     { 1, "CM01", "Tài chính – ngân hàng" },
                     { 2, "CM02", "Hành chính văn phòng" },
                     { 3, "CM03", "Quản trị kinh doanh" },
-                    { 5, "CM05", "Kinh Tế" },
+                    { 5, "CM05", "Kinh tế" },
                     { 4, "CM04", "Kế toán – kiểm toán" }
                 });
 
@@ -869,23 +869,23 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "id", "tenDanhMuc" },
                 values: new object[,]
                 {
+                    { 37, "Lào" },
                     { 40, "Phù Lá" },
                     { 39, "La Ha" },
                     { 38, "La Chí" },
                     { 32, "Chơ-ro	" },
-                    { 36, "Chu ru" },
                     { 35, "Hà Nhì" },
                     { 34, "Xinh-mun" },
                     { 33, "Kháng" },
                     { 41, "La Hủ" },
-                    { 37, "Lào" },
+                    { 36, "Chu ru" },
                     { 42, "Lự" },
                     { 49, "Bố Y" },
                     { 44, "Chứt" },
                     { 45, "Mảng" },
                     { 46, "Pà Thẻn" },
                     { 47, "Co Lao" },
-                    { 50, "Si La" }
+                    { 48, "Cống" }
                 });
 
             migrationBuilder.InsertData(
@@ -893,14 +893,14 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "id", "tenDanhMuc" },
                 values: new object[,]
                 {
+                    { 50, "Si La" },
                     { 31, "Tà-ôi" },
                     { 52, "Brâu" },
                     { 53, "Ơ Đu" },
-                    { 54, "Rơ măm" },
                     { 55, "Người nước ngoài" },
                     { 43, "Lô Lô" },
                     { 30, "Co" },
-                    { 51, "Pu Péo" },
+                    { 54, "Rơ măm" },
                     { 28, "Mạ" },
                     { 1, "Kinh" },
                     { 2, "Tày" },
@@ -916,10 +916,10 @@ namespace HRMSolution.Data.Migrations
                     { 11, "Ngái" },
                     { 12, "Ê-đê" },
                     { 13, "Ba na" },
-                    { 48, "Cống" },
+                    { 51, "Pu Péo" },
                     { 15, "Sán Chay" },
-                    { 25, "Giáy" },
                     { 26, "Cơ-tu" },
+                    { 25, "Giáy" },
                     { 27, "Gié Triêng" },
                     { 24, "Thổ" },
                     { 23, "Bru-Vân Kiều" },
@@ -940,23 +940,20 @@ namespace HRMSolution.Data.Migrations
                 {
                     { 2, "Cao đẳng" },
                     { 3, "Tại chức" },
+                    { 4, "Cao học" },
                     { 1, "Đại học" }
                 });
 
             migrationBuilder.InsertData(
                 table: "DanhMucHonNhan",
                 columns: new[] { "id", "tenDanhMuc" },
-                values: new object[] { 5, "Ly Thân" });
-
-            migrationBuilder.InsertData(
-                table: "DanhMucHonNhan",
-                columns: new[] { "id", "tenDanhMuc" },
                 values: new object[,]
                 {
-                    { 4, "Góa" },
-                    { 3, "Đã kết hôn" },
+                    { 1, "Độc thân" },
                     { 2, "Ly hôn" },
-                    { 1, "Độc Thân" }
+                    { 3, "Đã kết hôn" },
+                    { 4, "Góa" },
+                    { 5, "Ly thân" }
                 });
 
             migrationBuilder.InsertData(
@@ -964,11 +961,11 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "id", "tenDanhMuc", "tieuDe" },
                 values: new object[,]
                 {
-                    { 2, "Thưởng Nhân viên suất xác năm", "Khen thưởng" },
-                    { 5, "Phạt Nhân viên kém nhất quý", "Kỷ luật" },
-                    { 1, "Thưởng Nhân viên suất xác tháng", "Khen thưởng" },
-                    { 3, "Thưởng Nhân viên suất xác quý", "Khen thưởng" },
-                    { 4, "Phạt Nhân viên kém nhất tháng", "Kỷ luật" }
+                    { 4, "Phạt nhân viên kém nhất tháng", "Kỷ luật" },
+                    { 5, "Phạt nhân viên kém nhất quý", "Kỷ luật" },
+                    { 3, "Thưởng nhân viên xuất sắc quý", "Khen thưởng" },
+                    { 2, "Thưởng nhân viên xuất sắc năm", "Khen thưởng" },
+                    { 1, "Thưởng nhân viên xuất sắc tháng", "Khen thưởng" }
                 });
 
             migrationBuilder.InsertData(
@@ -976,8 +973,8 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "id", "maLoaiHopDong", "tenLoaiHopDong" },
                 values: new object[,]
                 {
-                    { 1, "LHD01", "Hợp đồng một năm" },
                     { 2, "LHD02", "Hợp đồng ba năm" },
+                    { 1, "LHD01", "Hợp đồng một năm" },
                     { 3, "LHD03", "Hợp đồng vô thời hạn" }
                 });
 
@@ -986,12 +983,12 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "id", "tenNgach" },
                 values: new object[,]
                 {
-                    { 5, "Loại C" },
-                    { 1, "Loại A1" },
                     { 2, "Loại A2" },
                     { 3, "Loại A3" },
                     { 4, "Loại B" },
-                    { 6, "Loại D" }
+                    { 5, "Loại C" },
+                    { 6, "Loại D" },
+                    { 1, "Loại A1" }
                 });
 
             migrationBuilder.InsertData(
@@ -999,9 +996,9 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "id", "tenDanhMuc" },
                 values: new object[,]
                 {
-                    { 3, "Tiếng pháp" },
+                    { 2, "Tiếng Trung Quốc" },
                     { 1, "Tiếng Anh" },
-                    { 2, "Tiếng Trung Quốc" }
+                    { 3, "Tiếng Pháp" }
                 });
 
             migrationBuilder.InsertData(
@@ -1009,10 +1006,11 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "id", "tenDanhMuc" },
                 values: new object[,]
                 {
-                    { 4, "Chị" },
-                    { 3, "Anh" },
+                    { 5, "Em" },
+                    { 1, "Bố" },
                     { 2, "Mẹ" },
-                    { 1, "Bố" }
+                    { 3, "Anh" },
+                    { 4, "Chị" }
                 });
 
             migrationBuilder.InsertData(
@@ -1020,9 +1018,9 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "id", "maNhomLuong", "tenNhomLuong" },
                 values: new object[,]
                 {
-                    { 3, "NL03", "Nhóm 3" },
+                    { 1, "NL01", "Nhóm 1" },
                     { 2, "NL02", "Nhóm 2" },
-                    { 1, "NL01", "Nhóm 1" }
+                    { 3, "NL03", "Nhóm 3" }
                 });
 
             migrationBuilder.InsertData(
@@ -1032,9 +1030,9 @@ namespace HRMSolution.Data.Migrations
                 {
                     { 1, "PB01", "Phòng hành chính-nhân sự" },
                     { 2, "PB02", "Phòng pháp chế" },
-                    { 5, "PB05", "Phòng Kế hoạch" },
-                    { 4, "PB04", "Phòng Kỹ Thuật" },
-                    { 3, "PB03", "Phòng tài chính kế toán" }
+                    { 3, "PB03", "Phòng tài chính kế toán" },
+                    { 4, "PB04", "Phòng kỹ Thuật" },
+                    { 5, "PB05", "Phòng kế hoạch" }
                 });
 
             migrationBuilder.InsertData(
@@ -1042,6 +1040,7 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "id", "tenTinhChat" },
                 values: new object[,]
                 {
+                    { 3, "Thực tập" },
                     { 1, "Chính thức" },
                     { 2, "Thử việc" }
                 });
@@ -1051,13 +1050,10 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "id", "tenDanhMuc" },
                 values: new object[,]
                 {
-                    { 14, "Bahá'í giáo" },
                     { 17, "Minh Lý Đạo" },
                     { 16, "Minh Sư Đạo" },
                     { 15, "Hiếu Nghĩa Tà Lơn" },
-                    { 13, "Tịnh độ cư sĩ Phật hội Việt Nam" },
-                    { 10, "Cơ đốc Phục lâm" },
-                    { 11, "Mormon" }
+                    { 13, "Tịnh độ cư sĩ Phật hội Việt Nam" }
                 });
 
             migrationBuilder.InsertData(
@@ -1065,16 +1061,19 @@ namespace HRMSolution.Data.Migrations
                 columns: new[] { "id", "tenDanhMuc" },
                 values: new object[,]
                 {
+                    { 14, "Bahá'í giáo" },
+                    { 11, "Mormon" },
                     { 9, "Tứ Ân Hiếu Nghĩa" },
                     { 8, "Bà-la-môn" },
                     { 7, "Hồi giáo" },
+                    { 6, "Cao Đài" },
                     { 5, "Tin Lành" },
                     { 4, "Hòa Hảo" },
                     { 3, "Phật giáo" },
                     { 2, "Công giáo" },
                     { 1, "không" },
                     { 12, "Bửu Sơn Kỳ Hương" },
-                    { 6, "Cao Đài" }
+                    { 10, "Cơ đốc Phục lâm" }
                 });
 
             migrationBuilder.InsertData(
@@ -1083,7 +1082,9 @@ namespace HRMSolution.Data.Migrations
                 values: new object[,]
                 {
                     { 1, "Giỏi" },
-                    { 2, "Khá" }
+                    { 2, "Khá" },
+                    { 3, "Trung bình khá" },
+                    { 4, "Trung bình" }
                 });
 
             migrationBuilder.InsertData(

@@ -25,7 +25,7 @@ namespace HRMSolution.Application.Catalog.DanhMucChuyenMons
         {
             char[] charsToTrim = { '*', ' ', '\'' };
             var tenDanhMuc = request.tenChuyenMon.Trim(charsToTrim);
-            var check = await _context.danhMucChuyenMons.Where(x => x.tenChuyenMon == request.tenChuyenMon).FirstOrDefaultAsync();
+            var check = await _context.danhMucChuyenMons.Where(x => x.tenChuyenMon == tenDanhMuc).FirstOrDefaultAsync();
             if (request.maChuyenMon == null || request.tenChuyenMon == null || check != null)
             {
                 return 0;
@@ -114,7 +114,7 @@ namespace HRMSolution.Application.Catalog.DanhMucChuyenMons
             char[] charsToTrim = { '*', ' ', '\'' };
             var tenDanhMuc = request.tenChuyenMon.Trim(charsToTrim);
             var danhMucChuyenMon = await _context.danhMucChuyenMons.FindAsync(id);
-            var check = await _context.danhMucChuyenMons.Where(x => x.tenChuyenMon == request.tenChuyenMon).FirstOrDefaultAsync();
+            var check = await _context.danhMucChuyenMons.Where(x => x.tenChuyenMon == tenDanhMuc).FirstOrDefaultAsync();
             if (danhMucChuyenMon == null || request.maChuyenMon == null || request.tenChuyenMon == null || check != null)
             {
                 return 0;
