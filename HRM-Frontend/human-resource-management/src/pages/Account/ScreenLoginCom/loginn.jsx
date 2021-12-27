@@ -127,7 +127,7 @@ function LogIn() {
           ) : (
             <>
               <div className="logo">
-                <h1>3HMD</h1>
+                <h1>HRM</h1>
               </div>
               <div className="form-group">
                 <span>
