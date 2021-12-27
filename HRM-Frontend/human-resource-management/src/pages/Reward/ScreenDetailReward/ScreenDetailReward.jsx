@@ -55,6 +55,8 @@ function ScreenDetailReward(props) {
     titlePage();
   }, [dataDetailKt]);
 
+  console.log(dataDetailKt.bangChung);
+
   return (
     <>
       <div className="main-screen-reward">

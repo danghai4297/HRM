@@ -92,8 +92,8 @@ function AddTitleForm(props) {
 
   const intitalValue = {
     maChucDanh: `${dataDetailDMCD.maChucDanh}`,
-    tenChucDanh: `${dataDetailDMCD.tenChucDanh}`,
-    phuCap: `${dataDetailDMCD.phuCap}`,
+    tenChucDanh: id !== undefined ? `${dataDetailDMCD.tenChucDanh}` : null,
+    phuCap: id !== undefined ? `${dataDetailDMCD.phuCap}` : null,
   };
 
   const {
@@ -106,7 +106,7 @@ function AddTitleForm(props) {
     getValues,
   } = useForm({
     resolver: yupResolver(schema),
-    defaultValues: id !== undefined ? intitalValue : null,
+    defaultValues: intitalValue,
   });
 
   useEffect(() => {
@@ -296,7 +296,7 @@ function AddTitleForm(props) {
                         thousandSeparator={true}
                         value={field.value}
                         className={
-                          !errors.phuCapChucDanh
+                          !errors.phuCap
                             ? "form-control col-sm-6 "
                             : "form-control col-sm-6 border-danger"
                         }

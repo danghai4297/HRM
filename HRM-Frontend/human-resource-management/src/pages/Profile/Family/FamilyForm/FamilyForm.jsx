@@ -156,7 +156,6 @@ function AddFamilyForm(props) {
     }
     return false;
   };
-
   const onHandleSubmit = async (data) => {
     try {
       if (id !== undefined) {
@@ -167,7 +166,9 @@ function AddFamilyForm(props) {
       } else {
         await ProductApi.postNT(data);
         success(
-          `Thêm thông tin gia đình cho nhân viên ${dataDetailNT.tenNhanVien} thành công`
+          `Thêm thông tin gia đình cho nhân viên ${query.get(
+            "hoTen"
+          )} thành công`
         );
       }
       history.goBack();
