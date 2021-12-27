@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import { ExportCSV } from "../../../../components/ExportFile/ExportFile";
 import TablePagination from "../../../../components/TablePagination/TablePagination";
 import { NVCOLUMNS } from "./NvColumns";
 import ProductApi from "../../../../api/productApi";
@@ -58,7 +57,6 @@ function ItemSpecialize(props) {
               sheet="tablexls"
               buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
             />
-            <ExportCSV csvData={dataDmcm} fileName={fileName} />
           </div>
         </div>
         <div className="table-nv">

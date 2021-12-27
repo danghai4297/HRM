@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { NVCOLUMNS, NVCOLUMNSMD } from "./NvColumns";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ExportCSV } from "../../../components/ExportFile/ExportFile";
 import TablePagination from "../../../components/TablePagination/TablePagination";
 import { Link } from "react-router-dom";
 import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
@@ -73,7 +72,6 @@ function ScreenReward(props) {
               sheet="tablexls"
               buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
             />
-            <ExportCSV csvData={dataDskt} fileName={fileName} />
           </div>
         </div>
         <div className="table-nv">

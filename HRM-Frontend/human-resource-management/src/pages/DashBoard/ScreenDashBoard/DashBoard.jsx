@@ -53,7 +53,7 @@ function DashBoard() {
             <ItemDashBoard
               totalEmployees={dataAllNv.length}
               fontIcon="users"
-              title="Nhân viên"
+              title="nhân viên"
               link="/profile"
               color="rgba(27, 92, 173,1)"
               colorBot="rgb(26, 115, 232)"

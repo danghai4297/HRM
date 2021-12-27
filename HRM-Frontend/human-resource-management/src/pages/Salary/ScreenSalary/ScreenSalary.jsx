@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { NVCOLUMNS } from "./NvColumns";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ExportCSV } from "../../../components/ExportFile/ExportFile";
 import TablePagination from "../../../components/TablePagination/TablePagination";
 import productApi from "../../../api/productApi";
 import { Link } from "react-router-dom";
@@ -74,7 +73,6 @@ function ScreenSalary(props) {
                 buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
               />
             </div>
-            <ExportCSV csvData={dataAllL} fileName={fileName} />
           </div>
         </div>
         <div className="table-nv">

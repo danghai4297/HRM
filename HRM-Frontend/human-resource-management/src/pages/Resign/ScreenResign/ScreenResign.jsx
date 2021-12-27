@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
 import useWindowDimensions from "../../../hook/useWindowDimensions";
 import ProductApi from "../../../api/productApi";
-import { ExportCSV } from "../../../components/ExportFile/ExportFile";
 import TablePagination from "../../../components/TablePagination/TablePagination";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -66,7 +65,6 @@ function ScreenResign(props) {
               sheet="tablexls"
               buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
             />
-            <ExportCSV csvData={dataAllNvnv} fileName={fileName} />
           </div>
         </div>
         <div className="table-nv">

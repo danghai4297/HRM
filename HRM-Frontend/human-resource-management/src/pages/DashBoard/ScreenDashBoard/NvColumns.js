@@ -1,9 +1,10 @@
 import { format } from "date-fns";
+import NumberFormat from "react-number-format";
 import SelectColumnFilter from "../../../components/TablePagination/SelectColumnFilter";
 
 export const NVCOLUMNSSALARY = [
   {
-    Header: "Mã nhân viên",
+    Header: "Mã Nhân Viên",
     accessor: "maNhanVien",
     sticky: "left",
     Filter: SelectColumnFilter,
@@ -12,7 +13,7 @@ export const NVCOLUMNSSALARY = [
     show: true,
   },
   {
-    Header: "Họ tên",
+    Header: "Họ Và Tên",
     accessor: "tenNhanVien",
     sticky: "left",
     minWidth: 200,
@@ -21,15 +22,25 @@ export const NVCOLUMNSSALARY = [
     show: true,
   },
   {
-    Header: "Tổng lương",
+    Header: "Tổng Lương",
     accessor: "tongLuong",
     minWidth: 100,
     Filter: SelectColumnFilter,
     disableFilters: true,
+    Cell: ({ value }) => {
+      return (
+        <NumberFormat
+          value={value}
+          displayType="text"
+          type="text"
+          thousandSeparator={true}
+        />
+      );
+    },
     show: true,
   },
   {
-    Header: "Mã hợp đồng",
+    Header: "Mã Hợp Đồng",
     accessor: "maHopDong",
     minWidth: 50,
     Filter: SelectColumnFilter,
@@ -46,7 +57,7 @@ export const NVCOLUMNSSALARY = [
   },
 
   {
-    Header: "Nhóm lương",
+    Header: "Nhóm Lương",
     accessor: "nhomLuong",
     minWidth: 70,
     Filter: SelectColumnFilter,
@@ -54,7 +65,7 @@ export const NVCOLUMNSSALARY = [
   },
 
   {
-    Header: "Hệ số lương",
+    Header: "Hệ Số Lương",
     accessor: "heSoLuong",
     minWidth: 70,
     Filter: SelectColumnFilter,
@@ -62,7 +73,7 @@ export const NVCOLUMNSSALARY = [
     show: true,
   },
   {
-    Header: "Bậc lương",
+    Header: "Bậc Lương",
     accessor: "bacLuong",
     minWidth: 70,
     Filter: SelectColumnFilter,
@@ -70,16 +81,25 @@ export const NVCOLUMNSSALARY = [
     show: true,
   },
   {
-    Header: "Lương cơ bản",
+    Header: "Lương Cơ Bản",
     accessor: "luongCoBan",
     minWidth: 70,
     Filter: SelectColumnFilter,
     disableFilters: true,
-
+    Cell: ({ value }) => {
+      return (
+        <NumberFormat
+          value={value}
+          displayType="text"
+          type="text"
+          thousandSeparator={true}
+        />
+      );
+    },
     show: true,
   },
   {
-    Header: "Phụ cấp trách nhiệm",
+    Header: "Phụ Cấp Trách Nhiệm",
     accessor: "phuCapTrachNhiem",
     minWidth: 70,
     Filter: SelectColumnFilter,
@@ -87,15 +107,25 @@ export const NVCOLUMNSSALARY = [
     show: false,
   },
   {
-    Header: "Phụ cấp khác",
+    Header: "Phụ Cấp Khác",
     accessor: "phuCapKhac",
     minWidth: 70,
     Filter: SelectColumnFilter,
     disableFilters: true,
+    Cell: ({ value }) => {
+      return (
+        <NumberFormat
+          value={value}
+          displayType="text"
+          type="text"
+          thousandSeparator={true}
+        />
+      );
+    },
     show: false,
   },
   {
-    Header: "Thời hạn lên lương",
+    Header: "Thời Hạn Lên Lương",
     accessor: "thoiHanLenLuong",
     minWidth: 180,
     Filter: SelectColumnFilter,
@@ -103,7 +133,7 @@ export const NVCOLUMNSSALARY = [
     show: true,
   },
   {
-    Header: "Ngày hiệu lực",
+    Header: "Ngày Hiệu Lực",
     accessor: "ngayHieuLuc",
     minWidth: 100,
     Filter: SelectColumnFilter,
@@ -114,7 +144,7 @@ export const NVCOLUMNSSALARY = [
     show: true,
   },
   {
-    Header: "Ngày lên lương",
+    Header: "Ngày Lên Lương",
     accessor: "ngayKetThuc",
     minWidth: 100,
     Filter: SelectColumnFilter,
@@ -125,7 +155,7 @@ export const NVCOLUMNSSALARY = [
     show: true,
   },
   {
-    Header: "Trạng thái",
+    Header: "Trạng Thái",
     accessor: (row) => {
       return row.trangThai === "Kích hoạt" ? (
         <img src="/Images/greenC.png" width={20} alt="" />

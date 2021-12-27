@@ -40,7 +40,7 @@ export const ExportDashBoard = ({ csvData, fileName, title }) => {
 
   return (
     <div onClick={(e) => handleClick(csvData, fileName)} className="bot-excel">
-      <h>Danh sach {title}</h>
+      <h>Danh sánh {title}</h>
       <span className="small-icon">
         <FontAwesomeIcon icon={["fas", "chevron-circle-right"]} />
       </span>

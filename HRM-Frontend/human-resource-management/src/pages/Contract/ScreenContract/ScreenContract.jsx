@@ -5,7 +5,6 @@ import "./ScreenContract.scss";
 import { NVCOLUMNSHD } from "./NvColumns";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ExportCSV } from "../../../components/ExportFile/ExportFile";
 import TablePagination from "../../../components/TablePagination/TablePagination";
 import productApi from "../../../api/productApi";
 import { Link } from "react-router-dom";
@@ -77,7 +76,6 @@ function ScreenContract(props) {
                 buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
               />
             </div>
-            <ExportCSV csvData={dataAllHd} fileName={fileName} />
           </div>
         </div>
         <div className="table-nv">

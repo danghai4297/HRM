@@ -5,7 +5,6 @@ import { NVCOLUMNS } from "./NvColumns";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import { ExportCSV } from "../../../../components/ExportFile/ExportFile";
 import TablePagination from "../../../../components/TablePagination/TablePagination";
 import ProductApi from "../../../../api/productApi";
 import Backdrop from "@mui/material/Backdrop";
@@ -58,7 +57,6 @@ function ItemPunish() {
               sheet="tablexls"
               buttonText={<FontAwesomeIcon icon={["fas", "file-excel"]} />}
             />
-            <ExportCSV csvData={dataDmkl} fileName={fileName} />
           </div>
         </div>
         <div className="table-nv">
