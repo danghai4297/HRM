@@ -64,7 +64,7 @@ namespace HRMSolution.NUnitTest
             DanhMucPhongBanCreateRequest DepartmentCreating = new DanhMucPhongBanCreateRequest()
             {
                 maPhongBan = "PB03",
-                tenPhongBan = null
+                tenPhongBan = ""
 
             };
             var result = danhMucPhongBanService.Create(DepartmentCreating);
@@ -186,7 +186,7 @@ namespace HRMSolution.NUnitTest
             var result = danhMucPhongBanService.Delete(6);
             Assert.That(result.Result, Is.EqualTo(0));
         }
-        
+
         [Test, Order(1)]
         public void Department_GetAll_Success()
         {

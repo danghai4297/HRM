@@ -46,7 +46,7 @@ namespace HRMSolution.Application.Catalog.KhenThuongKyLuats
                 };
                 if (request.bangChung is null)
                 {
-                    ktkl.bangChung = "";
+                    ktkl.bangChung = null;
                 }
                 else
                 {
