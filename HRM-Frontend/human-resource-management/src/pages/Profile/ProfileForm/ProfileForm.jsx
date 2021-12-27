@@ -1768,7 +1768,7 @@ function AddProfileForm(props) {
                       class="col-sm-4 justify-content-start"
                       htmlFor="ngayHetHanCCCD"
                     >
-                      Ngày hết hạn
+                      Ngày hết hạn(CMND/CCCD)
                     </label>
                     <Controller
                       name="ngayHetHanCCCD"

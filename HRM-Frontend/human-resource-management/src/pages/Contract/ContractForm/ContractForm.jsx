@@ -53,7 +53,7 @@ function AddContractForm(props) {
   const [rsId, setRsId] = useState();
   const [rsIdCre, setRsIdCre] = useState();
   const [dataIdEmployee, setDataIdEmployee] = useState([]);
-  const [impID, setImpID] = useState();
+  const [impID, setImpID] = useState(ecode);
   const [open, setOpen] = useState(false);
   useEffect(() => {
     const fetchNvList = async () => {
@@ -245,7 +245,6 @@ function AddContractForm(props) {
   };
 
   const onHandleSubmit = async (data) => {
-    console.log(data);
     if (data.hopDongTuNgay > data.hopDongDenNgay) {
       error(
         "Ngày bắt đầu của hợp đồng phải xảy ra trước ngày kết thúc của hợp đồng"

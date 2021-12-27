@@ -4,11 +4,16 @@ import "./ScreenAddRole.scss";
 import LoginApi from "../../../api/login";
 import { useToast } from "../../../components/Toast/Toast";
 import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
+import jwt_decode from "jwt-decode";
+import ProductApi from "../../../api/productApi";
 
 function ScreenAddRole(props) {
   const { error, success } = useToast();
   let { match, history } = props;
   let { id } = match.params;
+  const token = sessionStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
+
   useDocumentTitle("Thêm quyền cho tài khoản");
 
   const [dataDetailTk, setdataDetailTk] = useState([]);
@@ -28,6 +33,7 @@ function ScreenAddRole(props) {
     fetchNvList();
   }, []);
 
+  console.log(dataDetailTk);
   const [checkUser, setCheckUser] = useState(false);
 
   const handleClickUser = () => setCheckUser(!checkUser);
@@ -61,6 +67,12 @@ function ScreenAddRole(props) {
       );
       success("Thành công.");
       history.goBack();
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Thêm quyền tài khoản ${dataDetailTk.userName}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
     } catch (e) {
       error("Không thành công!");
     }
@@ -110,6 +122,13 @@ function ScreenAddRole(props) {
                 onClick={onHandleSubmit}
                 disabled={checkUser === false && checkAdmin === false}
               />
+              {checkUser === false && checkAdmin === false && (
+                <div>
+                  <span style={{ color: "red" }}>
+                    Bạn chưa chọn quyền cho tài khoản
+                  </span>
+                </div>
+              )}
             </div>
           </div>
         </div>

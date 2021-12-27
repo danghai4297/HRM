@@ -9,9 +9,12 @@ import LoginApi from "../../../api/login.js";
 import { schema } from "../../../ultis/RegisterAccountValidation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDocumentTitle } from "../../../hook/useDocumentTitle/TitleDocument";
+import jwt_decode from "jwt-decode";
 
 function RegisterAccount(props) {
   const { error, warn, success } = useToast();
+  const token = sessionStorage.getItem("resultObj");
+  const decoded = jwt_decode(token);
 
   const { history } = props;
   const [currentPassword, setCurrentPassword] = useState();
@@ -58,6 +61,12 @@ function RegisterAccount(props) {
           await LoginApi.PostAcc(data);
           success("Thêm tài khoản thành công");
           history.goBack();
+          await ProductApi.PostLS({
+            tenTaiKhoan: decoded.userName,
+            thaoTac: `Thêm tài khoản ${data.userName}`,
+            maNhanVien: decoded.id,
+            tenNhanVien: decoded.givenName,
+          });
         } catch (errors) {
           error("Không thể thêm tài khoản.");
         }

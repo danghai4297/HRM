@@ -176,7 +176,6 @@ function ItemListPartyMember() {
             <h2>{title}</h2>
           </div>
           <div className="rp-herder-left">
-            <h5>Phòng ban: {department}</h5>
             <h6>
               Hà Nội Ngày: {today.getDate()} Tháng: {today.getMonth() + 1} Năm:{" "}
               {today.getFullYear()}

@@ -84,6 +84,7 @@ function AddSalaryForm(props) {
           try {
             setDescription("Bạn chắc chắn muốn sửa thông tin lương");
             const response = await ProductApi.getLDetail(id);
+            setContractCodes2(response.maHopDong);
             setDataLDetail(response);
             setStartDate(moment(response.ngayHieuLuc));
             setEndDate(moment(response.ngayKetThuc));
@@ -92,7 +93,6 @@ function AddSalaryForm(props) {
             setTitleAllowance(response.phuCapChucDanh);
             setTotalSalary(response.tongLuong);
             setGhiChu(response.ghiChu);
-            setContractCodes2(response.maHopDong);
           } catch (error) {
             history.goBack();
           }
@@ -146,7 +146,7 @@ function AddSalaryForm(props) {
     }
   }, [dataLDetail]);
 
-  const [contractCodes2, setContractCodes2] = useState();
+  const [contractCodes2, setContractCodes2] = useState(query.get("maHopDong"));
   const [startDateOfContract, setStartDateOfContract] = useState();
   const [endDateOfContract, SetEndDateOfContract] = useState();
   useEffect(() => {

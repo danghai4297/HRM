@@ -75,6 +75,12 @@ function ScreenDetailAccount(props) {
     try {
       await LoginApi.deleteAccount(id);
       history.goBack();
+      await ProductApi.PostLS({
+        tenTaiKhoan: decoded.userName,
+        thaoTac: `Đã xóa tài khoản ${dataDetailTk.userName}`,
+        maNhanVien: decoded.id,
+        tenNhanVien: decoded.givenName,
+      });
       success(
         `Xoá tài khoản ${dataDetailTk.userName} của nhân viên ${dataDetailTk.fullName} thành công`
       );
